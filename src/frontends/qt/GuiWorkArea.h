@@ -242,6 +242,18 @@ public Q_SLOTS:
 	void closeCurrentBuffer();
 	/// hide current tab, or the one given by \c clicked_tab_
 	void hideCurrentTab();
+	///
+	bool closeTabsToRight();
+	///
+	bool closeTabsToLeft();
+	///
+	void closeOtherTabs();
+	///
+	void moveToStartCurrentTab();
+	///
+	void moveToEndCurrentTab();
+	///
+	bool openEnclosingFolder();
 	/// close the tab given by \c index
 	void closeTab(int index);
 	///
@@ -268,6 +280,9 @@ private:
 
 	/// true if position is a tab (rather than the blank space in tab bar)
 	bool posIsTab(QPoint position);
+
+	// true if there are tabs to the right of the tab at index
+	bool hasTabsToRight(int index);
 
 	int clicked_tab_;
 	///
