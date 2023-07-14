@@ -523,6 +523,9 @@ void InsetMathHull::metrics(MetricsInfo & mi, Dimension & dim) const
 	if (mi.vmode)
 		top_display_margin += theFontMetrics(mi.base.font).maxHeight() + 2;
 
+	int const ind = indent(*mi.base.bv);
+	mi.extrawidth = ind;
+
 	if (previewState(mi.base.bv)) {
 		preview_->metrics(mi, dim);
 		if (previewTooSmall(dim)) {
@@ -554,6 +557,7 @@ void InsetMathHull::metrics(MetricsInfo & mi, Dimension & dim) const
 	if (numberedType()) {
 		BufferParams::MathNumber const math_number = buffer().params().getMathNumber();
 		int extra_offset = 0;
+		int max_nlwid = 0;
 		for (row_type row = 0; row < nrows(); ++row) {
 			rowinfo(row).offset[mi.base.bv] += extra_offset;
 			docstring const nl = nicelabel(row);
@@ -561,7 +565,6 @@ void InsetMathHull::metrics(MetricsInfo & mi, Dimension & dim) const
 				continue;
 			Dimension dimnl;
 			mathed_string_dim(mi.base.font, nl, dimnl);
-			int const ind = indent(*mi.base.bv);
 			int const x = ind ? ind : (mi.base.textwidth - dim.wid) / 2;
 			// for some reason metrics does not trigger at the
 			// same point as draw, and therefore we use >= instead of >
@@ -569,8 +572,10 @@ void InsetMathHull::metrics(MetricsInfo & mi, Dimension & dim) const
 			    || (math_number == BufferParams::RIGHT
 			        && dimnl.wid >= mi.base.textwidth - x - dim.wid)) {
 				extra_offset += dimnl.height();
-			}
+			} else if (dimnl.wid > max_nlwid)
+				max_nlwid = dimnl.wid;
 		}
+		mi.extrawidth += max_nlwid;
 		dim.des += extra_offset;
 	}
 

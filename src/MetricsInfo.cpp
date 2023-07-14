@@ -152,7 +152,8 @@ int MetricsBase::inPixels(Length const & len) const
 
 MetricsInfo::MetricsInfo(BufferView * bv, FontInfo font, int textwidth,
                          MacroContext const & mc, bool vm, bool tight)
-	: base(bv, font, textwidth), macrocontext(mc), vmode(vm), tight_insets(tight)
+	: base(bv, font, textwidth), macrocontext(mc), vmode(vm), tight_insets(tight),
+	  extrawidth(0)
 {}
 
 

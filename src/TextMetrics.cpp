@@ -485,6 +485,7 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 	par.setBeginOfBody();
 	Font const bufferfont = buffer.params().getFont();
 	CoordCache::Insets & insetCache = bv_->coordCache().insets();
+	map <Inset const *, int> extrawidths;
 	for (auto const & e : par.insetList()) {
 		// FIXME Doesn't this HAVE to be non-empty?
 		// position already initialized?
@@ -521,6 +522,20 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 		MetricsInfo mi(bv_, font.fontInfo(), w, mc, e.pos == 0, tight_);
 		mi.base.outer_font = displayFont(pit, e.pos).fontInfo();
 		e.inset->metrics(mi, dim);
+		/* FIXME: This is a hack. This allows InsetMathHull to state
+		 * that it needs some elbow room beyond its width, in order to
+		 * fit the numbering and/or the left margin (with left
+		 * alignment), which are outside of the inset itself.
+		 *
+		 * To this end, InsetMathHull::metrics() sets a value in
+		 * MetricsInfo::extrawidth and this value is added later to
+		 * the width of the row that contains the inset (when this row
+		 * is tight or shorter than the max allowed width).
+		 *
+		 * See ticket #12320 for details.
+		*/
+		extrawidths[e.inset] = mi.extrawidth;
+
 		if (!insetCache.has(e.inset) || insetCache.dim(e.inset) != dim) {
 			insetCache.add(e.inset, dim);
 			changed = true;
@@ -531,6 +546,12 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 	Row const bigrow = tokenizeParagraph(pit);
 	// Split the row in several rows fitting in available width
 	pm.rows() = breakParagraph(bigrow);
+
+	// Add the needed extra width to the rows that contain the insets that request it
+	for (Row & row : pm.rows())
+		for (Row::Element & e : row)
+			if (e.type == Row::INSET && (row.width() < max_width_ || tight_))
+				row.dim().wid += extrawidths[e.inset];
 
 	/* If there is more than one row, expand the text to the full
 	 * allowable width. This setting here is needed for the
