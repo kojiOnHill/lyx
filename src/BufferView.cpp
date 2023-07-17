@@ -3118,24 +3118,36 @@ Cursor const & BufferView::cursor() const
 
 bool BufferView::singleParUpdate()
 {
-	Text & buftext = buffer_.text();
-	pit_type const bottom_pit = d->cursor_.bottom().pit();
-	TextMetrics & tm = textMetrics(&buftext);
-	Dimension const old_dim = tm.parMetrics(bottom_pit).dim();
+	CursorSlice const & its = d->cursor_.innerTextSlice();
+	pit_type const pit = its.pit();
+	TextMetrics & tm = textMetrics(its.text());
+	Dimension const old_dim = tm.parMetrics(pit).dim();
 
 	// make sure inline completion pointer is ok
 	if (d->inlineCompletionPos_.fixIfBroken())
 		d->inlineCompletionPos_ = DocIterator();
 
-	// In Single Paragraph mode, rebreak only
-	// the (main text, not inset!) paragraph containing the cursor.
-	// (if this paragraph contains insets etc., rebreaking will
-	// recursively descend)
-	tm.redoParagraph(bottom_pit);
-	ParagraphMetrics & pm = tm.parMetrics(bottom_pit);
-	if (pm.height() != old_dim.height()) {
-		// Paragraph height has changed so we cannot proceed to
-		// the singlePar optimisation.
+	/* Try to rebreak only the paragraph containing the cursor (if
+	 * this paragraph contains insets etc., rebreaking will
+	 * recursively descend). We need a full redraw if either
+	 * 1/ the height has changed
+	 * or
+	 * 2/ the width has changed and it was equal to the textmetrics
+	 *    width; the goal is to catch the case of a one-row inset that
+	 *    grows with its contents, but optimize the case of typing at
+	 *    the end of a mmultiple-row paragraph.
+	 *
+	 * NOTE: if only the height has changed, then it should be
+	 *   possible to update all metrics at minimal cost. However,
+	 *   since this is risky, we do not try that right now.
+	 */
+	tm.redoParagraph(pit);
+	ParagraphMetrics & pm = tm.parMetrics(pit);
+	if (pm.height() != old_dim.height()
+		|| (pm.width() != old_dim.width() && old_dim.width() == tm.width())) {
+		// Paragraph height or width has changed so we cannot proceed
+		// to the singlePar optimisation.
+		LYXERR(Debug::PAINTING, "SinglePar optimization failed.");
 		return false;
 	}
 	// Since position() points to the baseline of the first row, we
@@ -3143,11 +3155,11 @@ bool BufferView::singleParUpdate()
 	// the height does not change but the ascent does.
 	pm.setPosition(pm.position() - old_dim.ascent() + pm.ascent());
 
-	tm.updatePosCache(bottom_pit);
+	tm.updatePosCache(pit);
 
 	LYXERR(Debug::PAINTING, "\ny1: " << pm.position() - pm.ascent()
 		<< " y2: " << pm.position() + pm.descent()
-		<< " pit: " << bottom_pit
+		<< " pit: " << pit
 		<< " singlepar: 1");
 	return true;
 }
