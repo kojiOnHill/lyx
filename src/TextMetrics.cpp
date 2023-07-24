@@ -2000,6 +2000,7 @@ void TextMetrics::drawParagraph(PainterInfo & pi, pit_type const pit, int const 
 	if (pm.rows().empty())
 		return;
 	size_t const nrows = pm.rows().size();
+	int const wh = bv_->workHeight();
 	// Remember left and right margin for drawing math numbers
 	Changer changeleft = changeVar(pi.leftx, x + leftMargin(pit));
 	Changer changeright = changeVar(pi.rightx, x + width() - rightMargin(pit));
@@ -2014,15 +2015,17 @@ void TextMetrics::drawParagraph(PainterInfo & pi, pit_type const pit, int const 
 			if (i)
 				y += row.ascent();
 
-			RowPainter rp(pi, *text_, row, row_x, y);
-
-			rp.paintOnlyInsets();
+			// It is not needed to draw on screen if we are not inside
+			bool const inside = (y + row.descent() >= 0 && y - row.ascent() < wh);
+			if (inside) {
+				RowPainter rp(pi, *text_, row, row_x, y);
+				rp.paintOnlyInsets();
+			}
 			y += row.descent();
 		}
 		return;
 	}
 
-	int const ww = bv_->workHeight();
 	Cursor const & cur = bv_->cursor();
 	DocIterator sel_beg = cur.selectionBegin();
 	DocIterator sel_end = cur.selectionEnd();
@@ -2065,7 +2068,7 @@ void TextMetrics::drawParagraph(PainterInfo & pi, pit_type const pit, int const 
 
 		// It is not needed to draw on screen if we are not inside.
 		bool const inside = (y + row.descent() >= 0
-			&& y - row.ascent() < ww);
+			&& y - row.ascent() < wh);
 		if (!inside) {
 			// Inset positions have already been set in nodraw stage.
 			y += row.descent();
