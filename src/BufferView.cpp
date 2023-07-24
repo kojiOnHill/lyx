@@ -3161,7 +3161,6 @@ void BufferView::updateMetrics(Update::flags & update_flags)
 		}
 	}
 	anchor_pm.setPosition(d->anchor_ypos_);
-	tm.updatePosCache(d->anchor_pit_);
 
 	LYXERR(Debug::PAINTING, "metrics: "
 		<< " anchor pit = " << d->anchor_pit_
@@ -3177,7 +3176,6 @@ void BufferView::updateMetrics(Update::flags & update_flags)
 		y1 -= pm.descent();
 		// Save the paragraph position in the cache.
 		pm.setPosition(y1);
-		tm.updatePosCache(pit1);
 		y1 -= pm.ascent();
 	}
 
@@ -3191,7 +3189,6 @@ void BufferView::updateMetrics(Update::flags & update_flags)
 		y2 += pm.ascent();
 		// Save the paragraph position in the cache.
 		pm.setPosition(y2);
-		tm.updatePosCache(pit2);
 		y2 += pm.descent();
 	}
 
