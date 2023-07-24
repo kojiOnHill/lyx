@@ -118,6 +118,12 @@ bool TextMetrics::contains(pit_type pit) const
 }
 
 
+void TextMetrics::forget(pit_type pit)
+{
+	par_metrics_.erase(pit);
+}
+
+
 pair<pit_type, ParagraphMetrics const *> TextMetrics::first() const
 {
 	ParMetricsCache::const_iterator it = par_metrics_.begin();

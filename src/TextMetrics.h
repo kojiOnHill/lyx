@@ -46,6 +46,8 @@ public:
 	///
 	bool contains(pit_type pit) const;
 	///
+	void forget(pit_type pit);
+	///
 	std::pair<pit_type, ParagraphMetrics const *> first() const;
 	///
 	std::pair<pit_type, ParagraphMetrics const *> last() const;
