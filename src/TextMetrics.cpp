@@ -191,8 +191,7 @@ void TextMetrics::newParMetricsDown()
 
 	// do it and update its position.
 	redoParagraph(pit);
-	par_metrics_[pit].setPosition(last.second.position()
-		+ last.second.descent() + par_metrics_[pit].ascent());
+	par_metrics_[pit].setPosition(last.second.bottom() + par_metrics_[pit].ascent());
 	updatePosCache(pit);
 }
 
@@ -206,8 +205,7 @@ void TextMetrics::newParMetricsUp()
 	pit_type const pit = first.first - 1;
 	// do it and update its position.
 	redoParagraph(pit);
-	par_metrics_[pit].setPosition(first.second.position()
-		- first.second.ascent() - par_metrics_[pit].descent());
+	par_metrics_[pit].setPosition(first.second.top() - par_metrics_[pit].descent());
 	updatePosCache(pit);
 }
 
@@ -1466,9 +1464,7 @@ pit_type TextMetrics::getPitNearY(int y)
 	ParMetricsCache::const_iterator last = et;
 	--last;
 
-	ParagraphMetrics const & pm = it->second;
-
-	if (y < it->second.position() - pm.ascent()) {
+	if (y < it->second.top()) {
 		// We are looking for a position that is before the first paragraph in
 		// the cache (which is in priciple off-screen, that is before the
 		// visible part.
@@ -1481,9 +1477,7 @@ pit_type TextMetrics::getPitNearY(int y)
 		return pit;
 	}
 
-	ParagraphMetrics const & pm_last = par_metrics_[last->first];
-
-	if (y >= last->second.position() + pm_last.descent()) {
+	if (y >= par_metrics_[last->first].bottom()) {
 		// We are looking for a position that is after the last paragraph in
 		// the cache (which is in priciple off-screen), that is before the
 		// visible part.
@@ -1500,9 +1494,7 @@ pit_type TextMetrics::getPitNearY(int y)
 		LYXERR(Debug::PAINTING, "examining: pit: " << it->first
 			<< " y: " << it->second.position());
 
-		ParagraphMetrics const & pm2 = par_metrics_[it->first];
-
-		if (it->first >= pit && it->second.position() - pm2.ascent() <= y) {
+		if (it->first >= pit && it->second.top() <= y) {
 			pit = it->first;
 			yy = it->second.position();
 		}
@@ -1519,7 +1511,7 @@ Row const & TextMetrics::getPitAndRowNearY(int & y, pit_type & pit,
 {
 	ParagraphMetrics const & pm = par_metrics_[pit];
 
-	int yy = pm.position() - pm.ascent();
+	int yy = pm.top();
 	LBUFERR(!pm.rows().empty());
 	RowList::const_iterator rit = pm.rows().begin();
 	RowList::const_iterator rlast = pm.rows().end();

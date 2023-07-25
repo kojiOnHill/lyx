@@ -641,8 +641,8 @@ void BufferView::updateScrollbarParameters()
 			<< d->par_height_[pit]);
 	}
 
-	int top_pos = first.second->position() - first.second->ascent();
-	int bottom_pos = last.second->position() + last.second->descent();
+	int top_pos = first.second->top();
+	int bottom_pos = last.second->bottom();
 	bool first_visible = first.first == 0 && top_pos >= 0;
 	bool last_visible = last.first + 1 == int(parsize) && bottom_pos <= height_;
 	if (first_visible && last_visible) {
@@ -2726,7 +2726,7 @@ int BufferView::scrollDown(int pixels)
 	int const ymax = height_ + pixels;
 	while (true) {
 		pair<pit_type, ParagraphMetrics const *> last = tm.last();
-		int bottom_pos = last.second->position() + last.second->descent();
+		int bottom_pos = last.second->bottom();
 		if (lyxrc.scroll_below_document)
 			bottom_pos += height_ - minVisiblePart();
 		if (last.first + 1 == int(text->paragraphs().size())) {
@@ -2751,7 +2751,7 @@ int BufferView::scrollUp(int pixels)
 	int ymin = - pixels;
 	while (true) {
 		pair<pit_type, ParagraphMetrics const *> first = tm.first();
-		int top_pos = first.second->position() - first.second->ascent();
+		int top_pos = first.second->top();
 		if (first.first == 0) {
 			if (top_pos >= 0)
 				return 0;
@@ -3102,10 +3102,8 @@ bool BufferView::singleParUpdate()
 
 	tm.updatePosCache(pit);
 
-	LYXERR(Debug::PAINTING, "\ny1: " << pm.position() - pm.ascent()
-		<< " y2: " << pm.position() + pm.descent()
-		<< " pit: " << pit
-		<< " singlepar: 1");
+	LYXERR(Debug::PAINTING, "\ny1: " << pm.top() << " y2: " << pm.bottom()
+		<< " pit: " << pit << " singlepar: 1");
 	return true;
 }
 
@@ -3653,7 +3651,7 @@ void BufferView::draw(frontend::Painter & pain, bool paint_caret)
 
 		// and possibly grey out below
 		pair<pit_type, ParagraphMetrics const *> lastpm = tm.last();
-		int const y2 = lastpm.second->position() + lastpm.second->descent();
+		int const y2 = lastpm.second->bottom();
 
 		if (y2 < height_) {
 			Color color = buffer().isInternal()
@@ -3674,7 +3672,7 @@ void BufferView::draw(frontend::Painter & pain, bool paint_caret)
 	pair<pit_type, ParagraphMetrics const *> lastpm = tm.last();
 	for (pit_type pit = firstpm.first; pit <= lastpm.first; ++pit) {
 		ParagraphMetrics const & pm = tm.parMetrics(pit);
-		if (pm.position() + pm.descent() > 0) {
+		if (pm.bottom() > 0) {
 			if (d->anchor_pit_ != pit
 			    || d->anchor_ypos_ != pm.position())
 				LYXERR(Debug::PAINTING, "Found new anchor pit = " << d->anchor_pit_
