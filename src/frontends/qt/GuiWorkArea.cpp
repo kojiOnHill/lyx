@@ -990,7 +990,7 @@ void GuiWorkArea::generateSyntheticMouseEvent()
 	// Find the row at which we set the cursor.
 	RowList::const_iterator rit = pm.rows().begin();
 	RowList::const_iterator rlast = pm.rows().end();
-	int yy = pm.position() - pm.ascent();
+	int yy = pm.top();
 	for (--rlast; rit != rlast; ++rit) {
 		int h = rit->height();
 		if ((up && yy + h > 0)
