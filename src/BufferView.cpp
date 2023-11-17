@@ -762,6 +762,7 @@ void BufferView::scrollDocView(int const pixels, bool update)
 	TextMetrics const & tm = textMetrics(&buffer_.text());
 	if (tm.first().second->top() - pixels <= height_
 	     &&  tm.last().second->bottom() - pixels >= 0) {
+		LYXERR(Debug::SCROLLING, "small skip");
 		d->anchor_ypos_ -= pixels;
 		processUpdateFlags(Update::ForceDraw);
 		return;
@@ -784,6 +785,7 @@ void BufferView::scrollDocView(int const pixels, bool update)
 		return;
 	}
 
+	LYXERR(Debug::SCROLLING, "search paragraph");
 	// find paragraph at target position
 	int par_pos = d->scrollbarParameters_.min;
 	pit_type i = 0;
@@ -1097,8 +1099,6 @@ bool BufferView::scrollToCursor(DocIterator const & dit, ScrollType how)
 	d->anchor_ypos_ = - offset + row_dim.ascent();
 	if (how == SCROLL_CENTER)
 		d->anchor_ypos_ += height_/2 - row_dim.height() / 2;
-	else if (!lyxrc.scroll_below_document && d->anchor_pit_ == max_pit)
-		d->anchor_ypos_ = height_ - offset - row_dim.descent();
 	else if (offset > height_)
 		d->anchor_ypos_ = height_ - offset - defaultRowHeight();
 	else
@@ -3129,7 +3129,7 @@ void BufferView::updateMetrics(bool force)
 		return;
 
 	Text & buftext = buffer_.text();
-	pit_type const npit = int(buftext.paragraphs().size());
+	pit_type const lastpit = int(buftext.paragraphs().size()) - 1;
 
 	if (force) {
 		// Clear out the position cache in case of full screen redraw,
@@ -3148,62 +3148,35 @@ void BufferView::updateMetrics(bool force)
 	if (d->inlineCompletionPos_.fixIfBroken())
 		d->inlineCompletionPos_ = DocIterator();
 
-	if (d->anchor_pit_ >= npit)
+	if (d->anchor_pit_ > lastpit)
 		// The anchor pit must have been deleted...
-		d->anchor_pit_ = npit - 1;
+		d->anchor_pit_ = lastpit;
 
-	if (!tm.contains(d->anchor_pit_))
-		// Rebreak anchor paragraph.
-		tm.redoParagraph(d->anchor_pit_);
-	ParagraphMetrics & anchor_pm = tm.parMetrics(d->anchor_pit_);
+	// Update metrics around the anchor
+	tm.updateMetrics(d->anchor_pit_, d->anchor_ypos_, height_);
 
-	// make sure than first paragraph of document is not too low
-	if (d->anchor_pit_ == 0) {
-		int scrollRange = d->scrollbarParameters_.max - d->scrollbarParameters_.min;
-
-		// Complete buffer visible? Then it's easy.
-		if (scrollRange == 0)
-			d->anchor_ypos_ = anchor_pm.ascent();
-		else {
-			// avoid empty space above the first row
-			d->anchor_ypos_ = min(d->anchor_ypos_, anchor_pm.ascent());
-		}
-	}
-	anchor_pm.setPosition(d->anchor_ypos_);
-
-	LYXERR(Debug::PAINTING, "metrics: " << " anchor pit = " << d->anchor_pit_
-	                                    << " anchor ypos = " << d->anchor_ypos_);
-
-	// Redo paragraphs above anchor if necessary.
-	int y1 = d->anchor_ypos_ - anchor_pm.ascent();
-	// We are now just above the anchor paragraph.
-	pit_type pit1 = d->anchor_pit_ - 1;
-	for (; pit1 >= 0 && y1 > 0; --pit1) {
-		if (!tm.contains(pit1))
-			tm.redoParagraph(pit1);
-		ParagraphMetrics & pm = tm.parMetrics(pit1);
-		y1 -= pm.descent();
-		// Save the paragraph position in the cache.
-		pm.setPosition(y1);
-		y1 -= pm.ascent();
+	// Check that the end of the document is not too high
+	int const min_visible = lyxrc.scroll_below_document ? minVisiblePart() : height_;
+	if (tm.last().first == lastpit && tm.last().second->bottom() < min_visible) {
+		d->anchor_ypos_ += min_visible - tm.last().second->bottom();
+		LYXERR(Debug::SCROLLING, "Too high, adjusting anchor ypos to " << d->anchor_ypos_);
+		tm.updateMetrics(d->anchor_pit_, d->anchor_ypos_, height_);
 	}
 
-	// Redo paragraphs below the anchor if necessary.
-	int y2 = d->anchor_ypos_ + anchor_pm.descent();
-	// We are now just below the anchor paragraph.
-	pit_type pit2 = d->anchor_pit_ + 1;
-	for (; pit2 < npit && y2 < height_; ++pit2) {
-		if (!tm.contains(pit2))
-			tm.redoParagraph(pit2);
-		ParagraphMetrics & pm = tm.parMetrics(pit2);
-		y2 += pm.ascent();
-		// Save the paragraph position in the cache.
-		pm.setPosition(y2);
-		y2 += pm.descent();
+	// Check that the start of the document is not too low
+	if (tm.first().first == 0 && tm.first().second->top() > 0) {
+		d->anchor_ypos_ -= tm.first().second->top();
+		LYXERR(Debug::SCROLLING, "Too low, adjusting anchor ypos to " << d->anchor_ypos_);
+		tm.updateMetrics(d->anchor_pit_, d->anchor_ypos_, height_);
 	}
 
-	//FIXME: do we want that?
-	// if updating, remove paragraphs that are outside of screen
+	/* FIXME: do we want that? It avoids potential issues with old
+	 * paragraphs that should have been recomputed but have not, at
+	 * the price of potential extra metrics computaiton. I do not
+	 * think that the performance gain is high, so that for now the
+	 * extra paragraphs are removed
+	 */
+	// Remove paragraphs that are outside of screen
 	while(tm.first().second->bottom() <= 0) {
 		//LYXERR0("Forget pit: " << tm.first().first);
 		tm.forget(tm.first().first);
@@ -3213,6 +3186,8 @@ void BufferView::updateMetrics(bool force)
 		tm.forget(tm.last().first);
 	}
 
+	/* FIXME: if paragraphs outside of the screen are not removed
+	 * above, one has to search for the first visible one here */
 	// Normalize anchor for next time
 	if (d->anchor_pit_ != tm.first().first
 	    || d->anchor_ypos_ != tm.first().second->position()) {
@@ -3222,14 +3197,6 @@ void BufferView::updateMetrics(bool force)
 		d->anchor_pit_ = tm.first().first;
 		d->anchor_ypos_ = tm.first().second->position();
 	}
-
-	LYXERR(Debug::PAINTING, "Metrics: "
-		<< " anchor pit = " << d->anchor_pit_
-		<< " anchor ypos = " << d->anchor_ypos_
-		<< " y1 = " << y1
-		<< " y2 = " << y2
-		<< " pit1 = " << pit1
-		<< " pit2 = " << pit2);
 
 	// Now update the positions of insets in the cache.
 	updatePosCache();
@@ -3698,6 +3665,7 @@ void BufferView::draw(frontend::Painter & pain, bool paint_caret)
 	updateScrollbarParameters();
 
 	// Normalize anchor for next time (in case updateMetrics did not do it yet)
+	// FIXME: is this useful?
 	pair<pit_type, ParagraphMetrics const *> firstpm = tm.first();
 	pair<pit_type, ParagraphMetrics const *> lastpm = tm.last();
 	for (pit_type pit = firstpm.first; pit <= lastpm.first; ++pit) {
@@ -3705,9 +3673,10 @@ void BufferView::draw(frontend::Painter & pain, bool paint_caret)
 		if (pm.bottom() > 0) {
 			if (d->anchor_pit_ != pit
 			    || d->anchor_ypos_ != pm.position())
-				LYXERR(Debug::PAINTING, __func__ << ": Found new anchor pit = " << pit
+				LYXERR0(__func__ << ": Found new anchor pit = " << pit
 						<< "  anchor ypos = " << pm.position()
-						<< " (was " << d->anchor_pit_ << ", " << d->anchor_ypos_ << ")");
+						<< " (was " << d->anchor_pit_ << ", " << d->anchor_ypos_ << ")"
+						   "\nIf you see this message, please report.");
 			d->anchor_pit_ = pit;
 			d->anchor_ypos_ = pm.position();
 			break;

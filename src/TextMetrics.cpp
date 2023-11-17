@@ -216,6 +216,56 @@ void TextMetrics::newParMetricsUp()
 }
 
 
+void TextMetrics::updateMetrics(pit_type const anchor_pit, int const anchor_ypos,
+                                int const bv_height)
+{
+	LASSERT(text_->isMainText(), return);
+	pit_type const npit = pit_type(text_->paragraphs().size());
+
+	if (!contains(anchor_pit))
+		// Rebreak anchor paragraph.
+		redoParagraph(anchor_pit);
+	ParagraphMetrics & anchor_pm = parMetrics(anchor_pit);
+	anchor_pm.setPosition(anchor_ypos);
+
+	// Redo paragraphs above anchor if necessary.
+	int y1 = anchor_ypos - anchor_pm.ascent();
+	// We are now just above the anchor paragraph.
+	pit_type pit1 = anchor_pit - 1;
+	for (; pit1 >= 0 && y1 > 0; --pit1) {
+		if (!contains(pit1))
+			redoParagraph(pit1);
+		ParagraphMetrics & pm = parMetrics(pit1);
+		y1 -= pm.descent();
+		// Save the paragraph position in the cache.
+		pm.setPosition(y1);
+		y1 -= pm.ascent();
+	}
+
+	// Redo paragraphs below the anchor if necessary.
+	int y2 = anchor_ypos + anchor_pm.descent();
+	// We are now just below the anchor paragraph.
+	pit_type pit2 = anchor_pit + 1;
+	for (; pit2 < npit && y2 < bv_height; ++pit2) {
+		if (!contains(pit2))
+			redoParagraph(pit2);
+		ParagraphMetrics & pm = parMetrics(pit2);
+		y2 += pm.ascent();
+		// Save the paragraph position in the cache.
+		pm.setPosition(y2);
+		y2 += pm.descent();
+	}
+
+	LYXERR(Debug::PAINTING, "TextMetrics::updateMetrics "
+		<< " anchor pit = " << anchor_pit
+		<< " anchor ypos = " << anchor_ypos
+		<< " y1 = " << y1
+		<< " y2 = " << y2
+		<< " pit1 = " << pit1
+		<< " pit2 = " << pit2);
+}
+
+
 bool TextMetrics::metrics(MetricsInfo const & mi, Dimension & dim, int min_width)
 {
 	LBUFERR(mi.base.textwidth > 0);
