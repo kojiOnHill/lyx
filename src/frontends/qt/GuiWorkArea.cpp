@@ -199,9 +199,6 @@ void GuiWorkArea::init()
 		});
 
 	d->resetScreen();
-	// A mouse event will happen before the first paint event,
-	// so make sure that the buffer view has an up to date metrics.
-	d->buffer_view_->resize(viewport()->width(), viewport()->height());
 
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setAcceptDrops(true);
@@ -345,7 +342,7 @@ void GuiWorkArea::toggleCaret()
 
 void GuiWorkArea::scheduleRedraw(bool update_metrics)
 {
-	if (!isVisible())
+	if (!isVisible() || view().busy())
 		// No need to redraw in this case.
 		return;
 
@@ -1793,6 +1790,7 @@ bool TabWorkArea::setCurrentWorkArea(GuiWorkArea * work_area)
 
 GuiWorkArea * TabWorkArea::addWorkArea(Buffer & buffer, GuiView & view)
 {
+	view.setBusy(true);
 	GuiWorkArea * wa = new GuiWorkArea(buffer, view);
 	GuiWorkAreaContainer * wac = new GuiWorkAreaContainer(wa);
 	wa->setUpdatesEnabled(false);
@@ -1810,6 +1808,8 @@ GuiWorkArea * TabWorkArea::addWorkArea(Buffer & buffer, GuiView & view)
 		showBar(count() > 1);
 
 	updateTabTexts();
+
+	view.setBusy(false);
 
 	return wa;
 }

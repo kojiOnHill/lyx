@@ -348,6 +348,8 @@ public:
 	/// the shape of the caret
 	frontend::CaretGeometry const & caretGeometry() const;
 
+	/// Returns true when metrics have been computed at least once
+	bool ready() const { return width_ > 0 && height_ > 0; }
 	/// Returns true when the BufferView is not ready for drawing
 	bool busy() const;
 	///

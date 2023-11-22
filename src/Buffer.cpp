@@ -5562,6 +5562,7 @@ Buffer::ReadStatus Buffer::reload()
 	Buffer const * oldparent = d->parent();
 	d->setParent(nullptr);
 	ReadStatus const status = loadLyXFile();
+	setBusy(false);
 	if (status == ReadSuccess) {
 		updateBuffer();
 		changed(true);
@@ -5578,7 +5579,6 @@ Buffer::ReadStatus Buffer::reload()
 	} else {
 		message(bformat(_("Could not reload document %1$s."), disp_fn));
 	}
-	setBusy(false);
 	removePreviews();
 	updatePreviews();
 	errors("Parse");
