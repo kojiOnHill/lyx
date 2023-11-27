@@ -902,7 +902,7 @@ bool InsetMathHull::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 {
 	if (RenderPreview::previewMath()) {
 		reloadPreview(old);
-		cur.screenUpdateFlags(Update::Force);
+		cur.screenUpdateFlags(Update::SinglePar);
 	}
 	return false;
 }
@@ -2273,14 +2273,17 @@ void InsetMathHull::handleFont2(Cursor & cur, docstring const & arg)
 
 void InsetMathHull::edit(Cursor & cur, bool front, EntryDirection entry_from)
 {
+	bool const has_preview = previewState(&cur.bv());
 	cur.push(*this);
 	bool enter_front = (entry_from == Inset::ENTRY_DIRECTION_LEFT ||
 		(entry_from == Inset::ENTRY_DIRECTION_IGNORE && front));
 	enter_front ? idxFirst(cur) : idxLast(cur);
-	// The inset formula dimension is not necessarily the same as the
-	// one of the instant preview image, so we have to indicate to the
-	// BufferView that a metrics update is needed.
-	cur.screenUpdateFlags(Update::Force);
+	if (has_preview) {
+		// The inset formula dimension is in general different from the
+		// one of the instant preview image, so we have to indicate to the
+		// BufferView that a metrics update is needed.
+		cur.screenUpdateFlags(Update::SinglePar);
+	}
 }
 
 

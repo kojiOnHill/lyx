@@ -6386,7 +6386,7 @@ void Text::dispatch(Cursor & cur, FuncRequest & cmd)
 
 	// FIXME: the following code should go in favor of fine grained
 	// update flag treatment.
-	if (singleParUpdate) {
+	if (singleParUpdate || cur.result().screenUpdate() & Update::SinglePar) {
 		// Inserting characters does not change par height in general. So, try
 		// to update _only_ this paragraph. BufferView will detect if a full
 		// metrics update is needed anyway.
