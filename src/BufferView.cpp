@@ -2484,14 +2484,16 @@ void BufferView::clearSelection()
 
 void BufferView::resize(int width, int height)
 {
-	// Update from work area
-	width_ = width;
 	height_ = height;
+	// Update metrics only if width has changed
+	if (width != width_) {
+		width_ = width;
 
-	// Clear the paragraph height cache.
-	d->par_height_.clear();
-	// Redo the metrics.
-	updateMetrics();
+		// Clear the paragraph height cache.
+		d->par_height_.clear();
+		// Redo the metrics.
+		updateMetrics();
+	}
 }
 
 
@@ -3130,6 +3132,8 @@ void BufferView::updateMetrics(bool force)
 {
 	if (!ready())
 		return;
+
+	//LYXERR0("updateMetrics " << _v_(force));
 
 	Text & buftext = buffer_.text();
 	pit_type const lastpit = int(buftext.paragraphs().size()) - 1;
