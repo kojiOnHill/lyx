@@ -6393,23 +6393,24 @@ void Text::dispatch(Cursor & cur, FuncRequest & cmd)
 		cur.screenUpdateFlags(Update::SinglePar | Update::FitCursor);
 		return;
 	}
-	if (!needsUpdate
-	    && &oldTopSlice.inset() == &cur.inset()
-	    && oldTopSlice.idx() == cur.idx()
-	    && !oldSelection // oldSelection is a backup of cur.selection() at the beginning of the function.
-	    && !cur.selection())
-		// FIXME: it would be better if we could just do this
-		//
-		//if (cur.result().update() != Update::FitCursor)
-		//	cur.noScreenUpdate();
-		//
-		// But some LFUNs do not set Update::FitCursor when needed, so we
-		// do it for all. This is not very harmfull as FitCursor will provoke
-		// a full redraw only if needed but still, a proper review of all LFUN
-		// should be done and this needsUpdate boolean can then be removed.
-		cur.screenUpdateFlags(Update::FitCursor);
-	else
+	if (needsUpdate)
 		cur.screenUpdateFlags(Update::Force | Update::FitCursor);
+	else {
+		// oldSelection is a backup of cur.selection() at the beginning of the function.
+	    if (!oldSelection && !cur.selection())
+			// FIXME: it would be better if we could just do this
+			//
+			//if (cur.result().update() != Update::FitCursor)
+			//	cur.noScreenUpdate();
+			//
+			// But some LFUNs do not set Update::FitCursor when needed, so we
+			// do it for all. This is not very harmfull as FitCursor will provoke
+			// a full redraw only if needed but still, a proper review of all LFUN
+			// should be done and this needsUpdate boolean can then be removed.
+			cur.screenUpdateFlags(Update::FitCursor);
+		else
+			cur.screenUpdateFlags(Update::ForceDraw | Update::FitCursor);
+	}
 }
 
 

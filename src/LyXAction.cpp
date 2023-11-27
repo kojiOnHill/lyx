@@ -1655,7 +1655,7 @@ void LyXAction::init()
  * \li Notion: See also #LFUN_FINISHED_FORWARD.
  * \endvar
  */
-		{ LFUN_FINISHED_BACKWARD, "", ReadOnly, Hidden },
+		{ LFUN_FINISHED_BACKWARD, "", ReadOnly | NoUpdate, Hidden },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_FINISHED_FORWARD
@@ -1668,7 +1668,7 @@ void LyXAction::init()
                back into the surrounding text.
  * \endvar
  */
-		{ LFUN_FINISHED_FORWARD, "", ReadOnly, Hidden },
+		{ LFUN_FINISHED_FORWARD, "", ReadOnly | NoUpdate, Hidden },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_FINISHED_LEFT
@@ -1676,7 +1676,7 @@ void LyXAction::init()
  * \li Notion: See also #LFUN_FINISHED_FORWARD.
  * \endvar
  */
-		{ LFUN_FINISHED_LEFT, "", ReadOnly, Hidden },
+		{ LFUN_FINISHED_LEFT, "", ReadOnly | NoUpdate, Hidden },
 
 
 /*!
@@ -1685,7 +1685,7 @@ void LyXAction::init()
  * \li Notion: See also #LFUN_FINISHED_FORWARD
  * \endvar
  */
-		{ LFUN_FINISHED_RIGHT, "", ReadOnly, Hidden },
+		{ LFUN_FINISHED_RIGHT, "", ReadOnly | NoUpdate, Hidden },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_FLEX_INSERT
