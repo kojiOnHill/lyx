@@ -3121,7 +3121,7 @@ void LyXAction::init()
  * \li Origin: Andre, 9 Aug 2002
  * \endvar
  */
-		{ LFUN_MOUSE_DOUBLE, "", ReadOnly, Hidden },
+		{ LFUN_MOUSE_DOUBLE, "", ReadOnly | NoUpdate, Hidden },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_MOUSE_MOTION
@@ -3131,7 +3131,7 @@ void LyXAction::init()
  * \li Origin: Andre, 9 Aug 2002
  * \endvar
  */
-		{ LFUN_MOUSE_MOTION, "", ReadOnly | SingleParUpdate, Hidden },
+		{ LFUN_MOUSE_MOTION, "", ReadOnly | NoUpdate, Hidden },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_MOUSE_PRESS
@@ -3141,7 +3141,7 @@ void LyXAction::init()
  * \li Origin: Andre, 9 Aug 2002
  * \endvar
  */
-		{ LFUN_MOUSE_PRESS, "", ReadOnly, Hidden },
+		{ LFUN_MOUSE_PRESS, "", ReadOnly | NoUpdate, Hidden },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_MOUSE_RELEASE
@@ -3151,7 +3151,7 @@ void LyXAction::init()
  * \li Origin: Andre, 9 Aug 2002
  * \endvar
  */
-		{ LFUN_MOUSE_RELEASE, "", ReadOnly, Hidden },
+		{ LFUN_MOUSE_RELEASE, "", ReadOnly | NoUpdate, Hidden },
 
 
 /*!
@@ -3162,7 +3162,7 @@ void LyXAction::init()
  * \li Origin: Andre, 9 Aug 2002
  * \endvar
  */
-		{ LFUN_MOUSE_TRIPLE, "", ReadOnly, Hidden },
+		{ LFUN_MOUSE_TRIPLE, "", ReadOnly | NoUpdate, Hidden },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_NEWLINE_INSERT
