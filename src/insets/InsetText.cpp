@@ -1207,7 +1207,10 @@ void InsetText::iterateForToc(DocIterator const & cdit, bool output_active,
 		InsetArgument const * arginset = nullptr;
 		for (auto const & elem : par.insetList()) {
 			dit.pos() = elem.pos;
-			elem.inset->addToToc(dit, doing_output, utype, backend);
+			bool const being_output = doing_output &&
+				!par.lookupChange(elem.pos).deleted();
+				// && buffer().params.output_changes;
+			elem.inset->addToToc(dit, being_output, utype, backend);
 			if (InsetArgument const * x = elem.inset->asInsetArgument())
 				if (x->isTocCaption())
 					arginset = x;
