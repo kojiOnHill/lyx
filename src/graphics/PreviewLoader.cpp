@@ -787,6 +787,16 @@ void PreviewLoader::Impl::finishedGenerating(pid_t pid, int retval)
 	// Remove the item from the list of still-executing processes.
 	in_progress_.erase(git);
 
+#if 0
+	/* FIXME : there is no need for all these calls, which recompute
+	 * all metrics for each and every preview. The single call at the
+	 * end of this method is sufficient.
+
+	 * It seems that this whole imageReady mechanism is actually not
+	 * needed. If it is the case, the whole updateFrontend/updateInset
+	 * bloat can go too.
+	 */
+
 	// Tell the outside world
 	list<PreviewImagePtr>::const_reverse_iterator
 		nit  = newimages.rbegin();
@@ -795,6 +805,8 @@ void PreviewLoader::Impl::finishedGenerating(pid_t pid, int retval)
 	for (; nit != nend; ++nit) {
 		imageReady(*nit->get());
 	}
+#endif
+
 	finished_generating_ = true;
 	buffer_.scheduleRedrawWorkAreas();
 }
