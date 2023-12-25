@@ -136,12 +136,16 @@ struct GuiWorkArea::Private
 	///
 	bool need_resize_ = false;
 
+	QInputMethod * im_ = QGuiApplication::inputMethod();
 	/// the current preedit text of the input method
 	docstring preedit_string_;
 	/// Number of lines used by preedit text
 	int preedit_lines_ = 1;
 	/// the attributes of the preedit text
 	QList<QInputMethodEvent::Attribute> preedit_attr_;
+	QRectF im_cursor_rect_;
+	QRectF im_anchor_rect_;
+	QTransform im_item_trans_;
 
 	/// Ratio between physical pixels and device-independent pixels
 	/// We save the last used value to detect changes of the

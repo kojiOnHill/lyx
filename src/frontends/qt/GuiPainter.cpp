@@ -464,7 +464,7 @@ int GuiPainter::preeditText(int x, int y, char_type c,
 			break;
 		case preedit_selecting:
 			// We are in selecting mode: white text on black background.
-			fillRectangle(x, y - height + 1, width, height, Color_black);
+			fillRectangle(x, y - height + 1, width, height, Color_darkgray);
 			temp_font.setColor(Color_white);
 			break;
 		case preedit_cursor:
