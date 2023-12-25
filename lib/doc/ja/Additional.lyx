@@ -1,9 +1,9 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 615
+\lyxformat 619
 \begin_document
 \begin_header
 \save_transient_properties false
-\origin /systemlyxdir/doc/ja/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % DO NOT ALTER THIS PREAMBLE!!!
@@ -56,6 +56,26 @@ ruby
 \end_modules
 \maintain_unincluded_children no
 \begin_local_layout
+### Inserted by lyx2lyx (ams extended theorems) ###
+### This requires a theorems-ams-extended-* module to be loaded
+Style Acknowledgement*
+  CopyStyle             Remark*
+  LatexName             acknowledgement*
+  LabelString           "Acknowledgement."
+  Preamble
+    \theoremstyle{remark}
+    \newtheorem*{acknowledgement*}{\protect\acknowledgementname}
+  EndPreamble
+  LangPreamble
+    \providecommand{\acknowledgementname}{_(Acknowledgement)}
+  EndLangPreamble
+  BabelPreamble
+    \addto\captions$$lang{\renewcommand{\acknowledgementname}{_(Acknowledgement)}}
+  EndBabelPreamble
+  DocBookTag            para
+  DocBookAttr           role="acknowledgement"
+  DocBookItemTag        ""
+End
 #Format 35
 #InsetLayout		Flex:MenuItem
 #LyxType		charstyle
@@ -105,7 +125,7 @@ End
 \fontencoding auto
 \font_roman "lmodern" "IPAexMincho"
 \font_sans "default" "IPAexGothic"
-\font_typewriter "default" "IPAGothic"
+\font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
@@ -163,6 +183,7 @@ End
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \notefontcolor #0000ff
@@ -4612,6 +4633,10 @@ AMS定理(拡張)
 \begin_layout Summary
 本当に説明する必要がありますか？
 
+\end_layout
+
+\begin_layout Acknowledgement*
+謝辞(acknowledgement)です．
 \end_layout
 
 \begin_layout Conclusion*
@@ -25619,22 +25644,22 @@ Serverパイプパスを指定することを忘れないでください．
 \end_layout
 
 \begin_layout Section
-出力検索
+出力先検索
 \end_layout
 
 \begin_layout Standard
-出力検索(forward search)とは，
+出力先検索(forward search)とは，
 英文名が示すとおり，
 いわば原文検索(reverse search)の「逆」を意味します．すなわち，
 \SpecialChar LyX
 内部から，
-ビューアに特定の箇所を表示させることを可能にします．（以下に説明するように）もし出力検索の準備ができていれば，
+ビューアに特定の箇所を表示させることを可能にします．（以下に説明するように）もし出力先検索の準備ができていれば，
 カーソルを\SpecialChar LyX
 文書の好きなところに置いて，
 
 \family sans
 移動\SpecialChar menuseparator
-出力検索
+出力先検索
 \family default
 
 \begin_inset space \thinspace{}
@@ -25642,7 +25667,7 @@ Serverパイプパスを指定することを忘れないでください．
 
 を選択すると（あるいはマウスの右クリックで表示される文脈依存メニューから
 \family sans
-出力検索
+出力先検索
 \family default
 を選択してもよい），
 ビューアも同じ箇所に移動します．もちろん，
@@ -25651,7 +25676,7 @@ Serverパイプパスを指定することを忘れないでください．
 \end_layout
 
 \begin_layout Standard
-出力検索を有効にするためには，
+出力先検索を有効にするためには，
 生成されたPDF/DVI出力ファイルに，
 \SpecialChar TeX
 ソースに関する情報を追加する必要があります．これは，
@@ -25795,7 +25820,7 @@ literal "false"
 
 など，
 一部のビューアでしか，
-完全な出力検索機能は提供されていないことに注意してください
+完全な出力先検索機能は提供されていないことに注意してください
 \begin_inset Foot
 status collapsed
 
@@ -25821,7 +25846,7 @@ literal "false"
 status collapsed
 
 \begin_layout Plain Layout
-Evinceでの出力検索は，
+Evinceでの出力先検索は，
 サードパーティのヘルパースクリプトを使用すれば，
 利用可能になります．詳細については，
 
@@ -25838,9 +25863,9 @@ literal "false"
 \end_inset
 
 など他のビューアには，
-出力検索を使用するのに，
+出力先検索を使用するのに，
 追加のツールを必要とするものもあります．広く使われているPDFビューアの多く（特にAdobe Reader）は，
-出力検索を全く提供していませんが，
+出力先検索を全く提供していませんが，
 他の一部のビューア（たとえばxpdf）では，
 少なくとも，
 文書を読み込み直したり，
@@ -25850,17 +25875,12 @@ synctexの外部コールで提供されています（事前に用意されて�
 \end_layout
 
 \begin_layout Standard
-出力検索は，
+出力先検索は，
 DVI出力とPDF出力の双方で動作します．\SpecialChar LyX
 は，
 過去にあなたが使用したプレビュー形式をチェックして（つまり，
 一時ディレクトリにどちらの形式が存在するかをチェックして），
 その形式に適切な設定を選択します．
-\end_layout
-
-\begin_layout Chapter
-ソフトウェアを追加する必要がある \SpecialChar LyX
-機能
 \end_layout
 
 \begin_layout Section
@@ -27091,7 +27111,7 @@ Pavel Sanda
 \SpecialChar LyX
 は，
 今ではもっとも基本的なRCS/CVS/SVN/GITコマンドをサポートしています．もしもっと洗練されたことを行いたい場合には，
-ターミナル上から手動で行う必要があります．
+ターミナル上もしくは好みのクライアントから手動で行う必要があります．
 \end_layout
 
 \begin_layout Standard
@@ -27180,7 +27200,17 @@ vc-command
 バージョン管理システムが，
 二つのバージョンをマージすることができます．一方，
 圧縮LyXファイルはバイナリファイルであるため，
-バージョン管理システムはマージすることができません．
+バージョン管理システムはマージすることができません．また，
+不必要なマージ衝突を避けるために，
+複数のユーザーが同一文書の作業を行う場合には，
+
+\family sans
+文書\SpecialChar menuseparator
+設定\SpecialChar menuseparator
+出力\SpecialChar menuseparator
+一時特性を保存
+\family default
+を無効にすることをお勧めします．
 \end_layout
 
 \begin_layout Subsection
@@ -27197,7 +27227,7 @@ vc-command
 \family default
 のサブメニューにあります．\SpecialChar LyX
 は，
-RCS 5.7/5.8に対して試験されています．
+RCS 5.7/5.8/5.10に対して試験されています．
 \end_layout
 
 \begin_layout Subsubsection
@@ -29820,7 +29850,7 @@ http://svnbook.red-bean.com/en/1.4/svn.advanced.props.file-portability.html
 パスワード保護されたsshを使用している場合には，
 ターミナルウィンドウでの操作をするように促されます．\SpecialChar LyX
 は，
-GIT 1.7に対して試験を行っています
+GIT 1.7/2.30に対して試験を行っています
 \begin_inset Foot
 status collapsed
 
@@ -29931,7 +29961,26 @@ status collapsed
 
 \end_inset
 
-ファイルが存在する場合にのみ），
+ファイルが存在する場合にのみ
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+このためには，
+
+\family typewriter
+git init
+\family default
+「と」初回リポジトリコミット（あるいは少なくとも
+\family typewriter
+git add
+\family default
+）を手動で行わなくてはなりません．
+\end_layout
+
+\end_inset
+
+），
 お使いの文書をGITに登録します．つまり，
 アーカイブはご自分でチェックアウトしなくてはなりません．
 \end_layout

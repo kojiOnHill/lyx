@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties false
-\origin /systemlyxdir/doc/ja/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % DO NOT ALTER THIS PREAMBLE!!!
@@ -91,7 +91,7 @@ End
 \fontencoding auto
 \font_roman "lmodern" "IPAexMincho"
 \font_sans "default" "IPAexGothic"
-\font_typewriter "default" "IPAGothic"
+\font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
@@ -148,7 +148,6 @@ End
 \suppress_date false
 \justification false
 \use_refstyle 0
-\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \notefontcolor #0000ff
@@ -11603,7 +11602,9 @@ status collapsed
 \end_inset
 
 ] 既存の様式から，
-すべての機能を現在の様式にコピーします．
+すべての機能を現在の様式にコピーします．これは，
+そのときに定義されている様式をコピーすることに注意してください．その後に加えられた変更は，
+コピーされた様式には影響しません．
 \end_layout
 
 \begin_layout Description
@@ -16405,6 +16406,64 @@ tbp
 status collapsed
 
 \begin_layout Plain Layout
+PrettyFormat
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+文字列
+\end_layout
+
+\end_inset
+
+=
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+] このカウンタへの書式付き参照に使われる書式．たとえば，
+表への参照を「表2」のように表示させたいとしましょう．この文字列には，
+「##」やカウンタ指定を入れることができます（
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:カウンタ"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+の
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+LabelString
+\end_layout
+
+\end_inset
+
+の説明を参照）．前者はカウンタ番号そのもので置換されます．したがって，
+節の場合には「第##節」のように指定するか，
+「第
+\backslash
+arabic{section}節」のように指定します（これは第2.7節のように翻訳されます）．
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 RefPrefix
 \end_layout
 
@@ -17265,6 +17324,206 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
+AllowedInInsets
+\end_layout
+
+\end_inset
+
+ この差込枠を挿入することのできる差込枠を，
+コンマ区切りリストの形で入れます．「
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+EndAllowedInInsets
+\end_layout
+
+\end_inset
+
+」で閉じる必要があります．挿入先差込枠の特定の引数に挿入を許可したい場合，
+引数名を@の後に付記してください（例：
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+My_Inset@post:1
+\end_layout
+
+\end_inset
+
+）．現在のところ，
+これは直下の差込枠しかサポートしていないことに注意してください（入れ子となっているものは不可）．
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedInLayouts
+\end_layout
+
+\end_inset
+
+も参照のこと．
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedInLayouts
+\end_layout
+
+\end_inset
+
+ この差込枠を挿入することのできるレイアウトを，
+コンマ区切りリストの形で入れます．「
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+EndAllowedInLayouts
+\end_layout
+
+\end_inset
+
+」で閉じる必要があります．挿入先差込枠の特定の引数に挿入を許可したい場合，
+引数名を@の後に付記してください（例：
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+My_Inset@post:1
+\end_layout
+
+\end_inset
+
+）．現在のところ，
+これは直下のレイアウトしかサポートしていないことに注意してください（入れ子となっているものは不可）．
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedInInsets
+\end_layout
+
+\end_inset
+
+も参照のこと．
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedOccurrences
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+整数
+\end_layout
+
+\end_inset
+
+] 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedInInsets
+\end_layout
+
+\end_inset
+
+または
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedInLayouts
+\end_layout
+
+\end_inset
+
+が定義されているときに，
+これを使用すると，
+特定の差込枠や段落（グループ）にこの差込枠を何回挿入することができるかを指定することができます．
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedOccurrencesPerItem
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+,
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+] これが真に設定されていると，
+（
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+を用いる）箇条書き型環境の中にいるとき，
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+AllowedOccurrences
+\end_layout
+
+\end_inset
+
+は単一段落ごとに適用されます．
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 Argument
 \end_layout
 
@@ -18074,6 +18333,49 @@ nolink "false"
 \end_inset
 
 節をご覧ください．
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+InheritFont
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+0
+\end_layout
+
+\end_inset
+
+,
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+] このパラメータが1のとき，
+この差込枠内のフォントは，
+スクリーン上のみならず\SpecialChar LaTeX
+への書き出しにおいても親から継承されます．0のときには，
+文書の既定フォントが使用されます．
 \end_layout
 
 \begin_layout Description
@@ -21217,9 +21519,133 @@ status collapsed
 \end_inset
 
 2.4」のように表示させたい場合には，
-文字列に「##」を含めます．これは，
-カウンタ番号で置換されます．したがって，
-節の場合には「Section ##」のようにします．
+文字列に「##」を含めるか，
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+LabelString
+\end_layout
+
+\end_inset
+
+でのようにカウンタ指定を含めます．前者はカウンタ番号で置換されます．したがって，
+節の場合には「Section ##」のようにするか，
+「
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+S
+\backslash
+arabic{section}
+\end_layout
+
+\end_inset
+
+」のようにします（これは§2.7のように翻訳されます）．
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+RefFormat
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+文字列
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+文字列
+\end_layout
+
+\end_inset
+
+] とくに，
+単一のカウンタを複数の種類の様式で使用するとき「書式付き参照」で使用するためのものです．たとえば，
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+theorem
+\end_layout
+
+\end_inset
+
+カウンタは，
+往々にしてTheoremやLemmaなど，
+定理型の環境の全種類で使用されます．第１引数は，
+ラベルで使用される前置詞（たとえば，
+
+\begin_inset Quotes erd
+\end_inset
+
+thm
+\begin_inset Quotes erd
+\end_inset
+
+や
+\begin_inset Quotes erd
+\end_inset
+
+lem
+\begin_inset Quotes erd
+\end_inset
+
+）を与え，
+第２変数は，
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+LabelString
+\end_layout
+
+\end_inset
+
+や
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+PrettyFormat
+\end_layout
+
+\end_inset
+
+に与えるような書式指定文字列を与えます．これが与えられなければ，
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+PrettyFormat
+\end_layout
+
+\end_inset
+
+が使用されます．
 \end_layout
 
 \begin_layout Description
@@ -29161,7 +29587,7 @@ natbib
 \begin_inset Text
 
 \begin_layout Plain Layout
-rsphrase
+rotfloat
 \end_layout
 
 \end_inset
@@ -29235,7 +29661,7 @@ nomencl
 \begin_inset Text
 
 \begin_layout Plain Layout
-setspace
+rsphrase
 \end_layout
 
 \end_inset
@@ -29300,7 +29726,7 @@ lyxskak
 \begin_inset Text
 
 \begin_layout Plain Layout
-pdfpages
+pdfcolmk
 \end_layout
 
 \end_inset
@@ -29309,7 +29735,7 @@ pdfpages
 \begin_inset Text
 
 \begin_layout Plain Layout
-shapepar
+setspace
 \end_layout
 
 \end_inset
@@ -29374,7 +29800,7 @@ makeidx
 \begin_inset Text
 
 \begin_layout Plain Layout
-pifont
+pdfpages
 \end_layout
 
 \end_inset
@@ -29383,7 +29809,7 @@ pifont
 \begin_inset Text
 
 \begin_layout Plain Layout
-slashed
+shapepar
 \end_layout
 
 \end_inset
@@ -29448,7 +29874,7 @@ marvosym
 \begin_inset Text
 
 \begin_layout Plain Layout
-pmboxdraw
+pifont
 \end_layout
 
 \end_inset
@@ -29457,7 +29883,7 @@ pmboxdraw
 \begin_inset Text
 
 \begin_layout Plain Layout
-soul
+slashed
 \end_layout
 
 \end_inset
@@ -29522,7 +29948,7 @@ mathdesign
 \begin_inset Text
 
 \begin_layout Plain Layout
-polyglossia
+pmboxdraw
 \end_layout
 
 \end_inset
@@ -29531,7 +29957,7 @@ polyglossia
 \begin_inset Text
 
 \begin_layout Plain Layout
-splitidx
+soul
 \end_layout
 
 \end_inset
@@ -29596,7 +30022,7 @@ mathdots
 \begin_inset Text
 
 \begin_layout Plain Layout
-prettyref
+polyglossia
 \end_layout
 
 \end_inset
@@ -29605,7 +30031,7 @@ prettyref
 \begin_inset Text
 
 \begin_layout Plain Layout
-subfig
+splitidx
 \end_layout
 
 \end_inset
@@ -29670,7 +30096,7 @@ mathrsfs
 \begin_inset Text
 
 \begin_layout Plain Layout
-pxfonts
+prettyref
 \end_layout
 
 \end_inset
@@ -29679,7 +30105,7 @@ pxfonts
 \begin_inset Text
 
 \begin_layout Plain Layout
-subscript
+subfig
 \end_layout
 
 \end_inset
@@ -29744,7 +30170,7 @@ mhchem
 \begin_inset Text
 
 \begin_layout Plain Layout
-refstyle
+pxfonts
 \end_layout
 
 \end_inset
@@ -29753,7 +30179,7 @@ refstyle
 \begin_inset Text
 
 \begin_layout Plain Layout
-tcolorbox
+subscript
 \end_layout
 
 \end_inset
@@ -29818,7 +30244,7 @@ multicol
 \begin_inset Text
 
 \begin_layout Plain Layout
-rotating
+refstyle
 \end_layout
 
 \end_inset
@@ -29892,7 +30318,7 @@ multirow
 \begin_inset Text
 
 \begin_layout Plain Layout
-rotfloat
+rotating
 \end_layout
 
 \end_inset
@@ -30079,11 +30505,11 @@ arg   "dialog-show prefs"
 \end_layout
 
 \begin_layout Description
-added_space 空白マーカ色
+added_space 追加空白色
 \end_layout
 
 \begin_layout Description
-addedtext 追加された文章色
+addedtext 追加文字色
 \end_layout
 
 \begin_layout Description
@@ -30092,6 +30518,10 @@ appendix 付録マーカ色
 
 \begin_layout Description
 background 背景色
+\end_layout
+
+\begin_layout Description
+bookmark しおり標識色
 \end_layout
 
 \begin_layout Description
@@ -30112,6 +30542,10 @@ buttonframe 差込枠の縁色
 
 \begin_layout Description
 buttonhoverbg フォーカスを得ているボタンの背景色
+\end_layout
+
+\begin_layout Description
+buttonhoverbg_broken フォーカスを得ている破損差込枠ボタンの色
 \end_layout
 
 \begin_layout Description
@@ -30139,7 +30573,11 @@ changedtextauthor5 変更された文章:第5著者の色
 \end_layout
 
 \begin_layout Description
-collapsibletext 畳み込み可能枠の文字色
+changedtextcomparison 変更された文章:文書比較（作業領域）
+\end_layout
+
+\begin_layout Description
+collapsible 畳み込み可能枠の文字色
 \end_layout
 
 \begin_layout Description
@@ -30159,6 +30597,18 @@ commandframe コマンド差込枠の縁色
 \end_layout
 
 \begin_layout Description
+command_broken 破損（参照）差込枠の文字色
+\end_layout
+
+\begin_layout Description
+commandbg_broken 破損差込枠の背景色
+\end_layout
+
+\begin_layout Description
+commandframe_broken 破損差込枠の縁色
+\end_layout
+
+\begin_layout Description
 comment コメント色
 \end_layout
 
@@ -30175,7 +30625,7 @@ deletedtext 削除された文章の色
 \end_layout
 
 \begin_layout Description
-deletedtextmodifier 削除された文章の修飾子の色
+deletedtextmodifier 削除された文章の修飾子の色（輝度調整用）
 \end_layout
 
 \begin_layout Description

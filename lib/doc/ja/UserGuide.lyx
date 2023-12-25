@@ -1,9 +1,9 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 615
+\lyxformat 619
 \begin_document
 \begin_header
 \save_transient_properties false
-\origin /systemlyxdir/doc/ja/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % DO NOT ALTER THIS PREAMBLE!!!
@@ -100,7 +100,7 @@ End
 \fontencoding auto
 \font_roman "lmodern" "IPAexMincho"
 \font_sans "default" "IPAexGothic"
-\font_typewriter "default" "IPAGothic"
+\font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
@@ -158,6 +158,7 @@ End
 \suppress_date false
 \justification false
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \notefontcolor #0000ff
@@ -196,7 +197,6 @@ End
 \html_be_strict true
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -849685795 "横田宏治"
 \end_header
 
 \begin_body
@@ -7246,7 +7246,7 @@ name "subsec:見出しの短縮形"
 \end_layout
 
 \begin_layout Subsection
-引用と詩行の空白取り
+引用と詩
 \end_layout
 
 \begin_layout Standard
@@ -8245,7 +8245,7 @@ name "sec:箇条書き（連番）"
 環境中で使用する連番の型を指定することができます．第
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:箇条書きの微調整"
+reference "subsec:調整可能な箇条書き"
 nolink "false"
 
 \end_inset
@@ -8790,10 +8790,10 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsection
-箇条書きの微調整
+調整可能な箇条書き
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:箇条書きの微調整"
+name "subsec:調整可能な箇条書き"
 
 \end_inset
 
@@ -8806,7 +8806,7 @@ status collapsed
 \begin_layout Plain Layout
 箇条書き
 \begin_inset IndexMacro sortkey
-status open
+status collapsed
 
 \begin_layout Plain Layout
 かしようかき
@@ -8819,14 +8819,14 @@ status open
 status open
 
 \begin_layout Plain Layout
+調整可能な—
 —
-—
-の微調整
+
 \begin_inset IndexMacro sortkey
-status open
+status collapsed
 
 \begin_layout Plain Layout
-のひちようせい
+ちようせいかのうな
 \end_layout
 
 \end_inset
@@ -10738,10 +10738,6 @@ arg   "self-insert \""
 \end_layout
 
 \begin_layout LyX-Code
- 
-\end_layout
-
-\begin_layout LyX-Code
 int main(void)
 \end_layout
 
@@ -10962,14 +10958,12 @@ Space
 \end_layout
 
 \begin_layout Verbatim
-
 これは原文儘(verbatim)環境です．
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
-
 この下の2行は空白行です．
 \end_layout
 
@@ -10982,7 +10976,6 @@ Space
 \end_layout
 
 \begin_layout Verbatim
-
 右記の各文字を始め，
 ほぼすべての文字が使えます．例：
 "%&$§#~'`
@@ -11016,7 +11009,6 @@ Space
 \end_layout
 
 \begin_layout Verbatim*
-
 This is Verbatim*.
 \end_layout
 
@@ -14723,10 +14715,6 @@ status open
 \begin_layout Plain Layout
 Mr.
  Edge
-\change_deleted -849685795 1671729385
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -14742,10 +14730,6 @@ status open
 \begin_layout Plain Layout
 Mr.
  Edge
-\change_deleted -849685795 1671729385
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -15650,7 +15634,7 @@ name "subsec:改頁の抑制"
 \series bold
 挿入\SpecialChar menuseparator
 整形\SpecialChar menuseparator
-改頁なし
+改頁の抑制
 \family default
 \series default
 
@@ -20750,11 +20734,6 @@ Opt
 Alt
 \family default
 キーに相当するキーラベルです).
-
-\change_deleted -849685795 1671729385
- 
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -21264,11 +21243,7 @@ status collapsed
 
 \end_inset
 
-me 
-\change_deleted -849685795 1671729385
- 
-\change_unchanged
-si tout le monde ne les aime pas
+me si tout le monde ne les aime pas
 \begin_inset space ~
 \end_inset
 
@@ -22144,7 +22119,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes els
@@ -22168,7 +22151,13 @@ status open
 \begin_inset Quotes erd
 \end_inset
 
-および
+ および
+\family sans
+\series bold
+ 
+\family default
+\series default
+
 \begin_inset Quotes els
 \end_inset
 
@@ -22176,7 +22165,7 @@ status open
 \begin_inset Quotes ers
 \end_inset
 
-という形の引用符を生成する（アメリカなどで一般的）
+ という形の引用符を生成する（アメリカなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22196,7 +22185,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes sls
@@ -22220,7 +22217,19 @@ status open
 \begin_inset Quotes sld
 \end_inset
 
+
+\family sans
+\series bold
+ 
+\family default
+\series default
 および
+\family sans
+\series bold
+ 
+\family default
+\series default
+
 \begin_inset Quotes sls
 \end_inset
 
@@ -22228,6 +22237,12 @@ status open
 \begin_inset Quotes srs
 \end_inset
 
+
+\family sans
+\series bold
+ 
+\family default
+\series default
 という形の引用符を生成する（スウェーデンなどで一般的）
 \end_layout
 
@@ -22248,7 +22263,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes gls
@@ -22272,7 +22295,7 @@ status open
 \begin_inset Quotes grd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes gls
 \end_inset
 
@@ -22280,7 +22303,7 @@ status open
 \begin_inset Quotes grs
 \end_inset
 
-という形の引用符を生成する（ドイツなどで一般的）
+ という形の引用符を生成する（ドイツなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22300,7 +22323,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes pls
@@ -22324,7 +22355,7 @@ status open
 \begin_inset Quotes prd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes pls
 \end_inset
 
@@ -22332,7 +22363,7 @@ status open
 \begin_inset Quotes prs
 \end_inset
 
-という形の引用符を生成する （ポーランドなどで一般的）
+ という形の引用符を生成する （ポーランドなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22352,7 +22383,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes cls
@@ -22376,7 +22415,7 @@ status open
 \begin_inset Quotes crd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes cls
 \end_inset
 
@@ -22384,7 +22423,7 @@ status open
 \begin_inset Quotes crs
 \end_inset
 
-という形の引用符を生成する（スイスなどで一般的）
+ という形の引用符を生成する（スイスなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22404,7 +22443,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes als
@@ -22428,7 +22475,7 @@ status open
 \begin_inset Quotes ard
 \end_inset
 
-および
+ および 
 \begin_inset Quotes als
 \end_inset
 
@@ -22436,7 +22483,7 @@ status open
 \begin_inset Quotes ars
 \end_inset
 
-という形の引用符を生成する（デンマークなどで一般的）
+ という形の引用符を生成する（デンマークなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22456,7 +22503,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes qls
@@ -22480,7 +22535,7 @@ status open
 \begin_inset Quotes qrd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes qls
 \end_inset
 
@@ -22488,7 +22543,7 @@ status open
 \begin_inset Quotes qls
 \end_inset
 
-という形の引用符を生成する（いわゆる単純引用符・非タイポグラフィカル引用符）
+ という形の引用符を生成する（いわゆる単純引用符・非タイポグラフィカル引用符）
 \end_layout
 
 \begin_layout Labeling
@@ -22508,7 +22563,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes bls
@@ -22532,7 +22595,7 @@ status open
 \begin_inset Quotes brd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes bls
 \end_inset
 
@@ -22540,7 +22603,7 @@ status open
 \begin_inset Quotes brs
 \end_inset
 
-という形の引用符を生成する（イギリスなどで一般的）
+ という形の引用符を生成する（イギリスなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22560,7 +22623,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes fls
@@ -22584,7 +22655,7 @@ status open
 \begin_inset Quotes frd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes fls
 \end_inset
 
@@ -22592,7 +22663,7 @@ status open
 \begin_inset Quotes frs
 \end_inset
 
-という形の引用符を生成する（フランスなどで一般的）
+ という形の引用符を生成する（フランスなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22612,7 +22683,15 @@ status open
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes ils
@@ -22636,7 +22715,7 @@ status open
 \begin_inset Quotes ird
 \end_inset
 
-および
+ および 
 \begin_inset Quotes ils
 \end_inset
 
@@ -22644,7 +22723,7 @@ status open
 \begin_inset Quotes irs
 \end_inset
 
-という形の引用符を生成する（フランスなどで一般的）
+ という形の引用符を生成する（フランスなどで一般的）
 \begin_inset Foot
 status collapsed
 
@@ -22678,7 +22757,15 @@ status collapsed
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes rls
@@ -22702,7 +22789,7 @@ status collapsed
 \begin_inset Quotes rrd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes rls
 \end_inset
 
@@ -22710,7 +22797,7 @@ status collapsed
 \begin_inset Quotes rrs
 \end_inset
 
-という形の引用符を生成する（ロシアなどで一般的）
+ という形の引用符を生成する（ロシアなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22730,7 +22817,15 @@ status collapsed
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes wls
@@ -22754,7 +22849,7 @@ status collapsed
 \begin_inset Quotes wrd
 \end_inset
 
-および
+ および 
 \begin_inset Quotes wls
 \end_inset
 
@@ -22762,7 +22857,7 @@ status collapsed
 \begin_inset Quotes wrs
 \end_inset
 
-という形の引用符を生成する（スウェーデンなどで一般的）
+ という形の引用符を生成する（スウェーデンなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22777,12 +22872,20 @@ status collapsed
 外側
 \series default
 
-\begin_inset Quotes grd
+\begin_inset Quotes prd
 \end_inset
 
 
 \series bold
+
+\begin_inset space \space{}
+\end_inset
+
 および
+\begin_inset space \space{}
+\end_inset
+
+
 \series default
 
 \begin_inset Quotes ald
@@ -22803,10 +22906,14 @@ status collapsed
 \end_inset
 
 これが外側
-\begin_inset Quotes grd
+\family sans
+
+\begin_inset Quotes prd
 \end_inset
 
-および
+
+\family default
+ および 
 \begin_inset Quotes ald
 \end_inset
 
@@ -22814,7 +22921,7 @@ status collapsed
 \begin_inset Quotes ard
 \end_inset
 
-という形の引用符を生成する（ハンガリーなどで一般的）
+ という形の引用符を生成する（ハンガリーなどで一般的）
 \end_layout
 
 \begin_layout Labeling
@@ -22936,6 +23043,74 @@ nolink "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring <<Outer>> and <<inner>>:
+
+\family sans
+\begin_inset Quotes prd
+\end_inset
+
+
+\series bold
+外側
+\series default
+
+\begin_inset Quotes pld
+\end_inset
+
+
+\series bold
+
+\begin_inset space \space{}
+\end_inset
+
+および
+\begin_inset space \space{}
+\end_inset
+
+
+\series default
+
+\begin_inset Quotes prs
+\end_inset
+
+
+\series bold
+内側
+\series default
+
+\begin_inset Quotes pls
+\end_inset
+
+ 
+\begin_inset Quotes prd
+\end_inset
+
+
+\family default
+これが外側
+\begin_inset Quotes pld
+\end_inset
+
+ および 
+\family sans
+
+\begin_inset Quotes prs
+\end_inset
+
+
+\family default
+これが内側
+\family sans
+
+\begin_inset Quotes pls
+\end_inset
+
+
+\family default
+ という形の引用符を生成する（ハンガリーなどで一般的）
 \end_layout
 
 \begin_layout Standard
@@ -23225,7 +23400,8 @@ fest」のようになります．
 
 \begin_layout Subsection
 \SpecialChar LyX
-の固有名称
+と\SpecialChar LaTeX
+のロゴ
 \end_layout
 
 \begin_layout Standard
@@ -26446,10 +26622,6 @@ Franz
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_deleted -849685795 1671729385
- 
-\change_unchanged
 
 \end_layout
 
@@ -48617,7 +48789,7 @@ arg   "bookmark-goto 2"
 \end_layout
 
 \begin_layout Subsection
-出力検索
+出力先検索
 \end_layout
 
 \begin_layout Standard
@@ -48625,7 +48797,7 @@ arg   "bookmark-goto 2"
 出力中の対応する箇所に直接移動することができるようにするものです．詳しい説明は，
 取扱説明書『高度な機能篇』の「\SpecialChar LyX
 サーバー\SpecialChar menuseparator
-出力検索」の節をご覧ください．
+出力先検索」の節をご覧ください．
 \end_layout
 
 \begin_layout Section
@@ -54778,7 +54950,7 @@ LaTeX出力オプション LaTeXの書き出し時の設定を提供します．
 
 \family sans
 \series bold
-出力検索
+出力先検索
 \family default
 \series default
 
@@ -58055,10 +58227,10 @@ name "subsec:一般-出力"
 \end_layout
 
 \begin_layout Description
-出力検索 
+出力先検索 
 \series bold
 移動\SpecialChar menuseparator
-出力検索
+出力先検索
 \series default
 
 \begin_inset space \thinspace{}
