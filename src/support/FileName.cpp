@@ -748,7 +748,8 @@ docstring const FileName::absoluteFilePath() const
 
 docstring FileName::displayName(int threshold) const
 {
-	return makeDisplayPath(absFileName(), threshold);
+	return from_utf8(onlyFileName()) + " ("
+		+  makeDisplayPath(onlyPath().absFileName(), threshold) + ")";
 }
 
 
