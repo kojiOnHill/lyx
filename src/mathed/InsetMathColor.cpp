@@ -111,9 +111,9 @@ void InsetMathColor::write(TeXMathStream & os) const
 	bool adjchk = os.latex() && !os.inMathClass() && (normalcolor(color_) || oldstyle_);
 	bool adjust_front = frontclass != "mathord" && adjchk;
 	bool adjust_back = backclass != "mathord" && adjchk;
-	docstring const colswitch =
-		oldstyle_ ? from_ascii("{\\color{") + color_ + from_ascii("}")
-			  : from_ascii("{\\normalcolor ");
+	docstring const colswitch = normalcolor(color_)
+			? from_ascii("{\\normalcolor ")
+			: from_ascii("{\\color{") + color_ + from_ascii("}");
 
 	if (adjust_front && adjust_back) {
 		os << '\\' << frontclass << colswitch << cell(0).front() << '}';
