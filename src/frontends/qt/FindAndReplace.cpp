@@ -630,6 +630,9 @@ void FindAndReplaceWidget::showEvent(QShowEvent * /* ev */)
 		copy_params(*bv, find_work_area_->bufferView());
 		copy_params(*bv, replace_work_area_->bufferView());
 	}
+	// no paragraph indentation for more space
+	find_work_area_->bufferView().buffer().params().setParIndent(Length(0, Length::IN));
+	replace_work_area_->bufferView().buffer().params().setParIndent(Length(0, Length::IN));
 
 	find_work_area_->installEventFilter(this);
 	replace_work_area_->installEventFilter(this);
