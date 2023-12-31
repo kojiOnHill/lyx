@@ -4425,7 +4425,7 @@ docstring Paragraph::asString(pos_type beg, pos_type end, int options, const Out
 		else if (c == META_INSET && (options & AS_STR_INSETS)) {
 			if (c == META_INSET && (options & AS_STR_PLAINTEXT)) {
 				LASSERT(runparams != nullptr, return docstring());
-				if (runparams->find_effective() && getInset(i)->hasToString())
+				if (runparams->find_effective() && getInset(i)->findUsesToString())
 					getInset(i)->toString(os);
 				else
 					getInset(i)->plaintext(os, *runparams);
