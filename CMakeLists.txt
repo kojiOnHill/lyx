@@ -2,9 +2,9 @@
 # Licence details can be found in the file COPYING.
 #
 # Copyright (c) 2006-2011 Peter Kümmel, <syntheticpp@gmx.net>
-# Copyright (c) 2008-2020 Kornel Benko, <Kornel.Benko@berlin.de>
+# Copyright (c) 2008-2024 Kornel Benko, <Kornel.Benko@berlin.de>
 
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.5.0)
 
 set(LYX_PROJECT LyX)
 # Instruct cmake to not use gnu extensions,
