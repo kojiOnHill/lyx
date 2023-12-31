@@ -48,6 +48,11 @@ if(LYX_BUNDLE)
        install_qt_plugin("${QtScope}::QCocoaIntegrationPlugin")
     endif()
 
+    if (APPLE AND LYX_USE_QT MATCHES "QT6")
+      # With QT6, just copy all the plugins
+      file(GLOB QT_PLUGIN_DIRECTORIES "${QT_PLUGINS_DIR}/*")
+      install(DIRECTORY ${QT_PLUGIN_DIRECTORIES} DESTINATION "${qtplugin_dest_dir}/plugins/" COMPONENT Runtime)
+    endif()
     # Install code does the following:
     # - Creates the qt.conf file
     # - install the platform specific plugins (with Qt5)
