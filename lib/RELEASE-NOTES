@@ -361,6 +361,15 @@
 
   Also note, that while it is still possible to compile LyX against Qt 4
   these math symbols will not be displayed correctly anymore on Qt 4.
+  
+* Parentheses inside custom insets (defined in the local layout or in a  
+  custom module) which has the "PassThru" tag set to true, in a hebrew text  
+  will be reversed after conversion of existing documents.  
+ 
+  To avoid that remove the "PassThru" tag, and restore it after  
+  the conversion, or add the name of the inset, inset and the argument, 
+  or layout and argument to the appropriate list, or dictionary in  
+  the function "convert_hebrew_parentheses(document)" in lyx_2_4.py.
 
 !! If upgrading from a LyX version before 2.3.0
 

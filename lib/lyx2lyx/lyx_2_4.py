@@ -1527,27 +1527,131 @@ def convert_hebrew_parentheses(document):
     Up to LyX 2.4, "(" was used as closing parenthesis and
     ")" as opening parenthesis for Hebrew in the LyX source.
     """
-    # print("convert hebrew parentheses")
     current_languages = [document.language]
-    # skip math and pass thru insets
-    skip_insets = ['Formula', 'ERT', 'listings']
+    current_layouts = []
+    current_insets = []
+    # pass thru argument insets
+    skip_layouts_arguments = {}
+    skip_insets_arguments = {}
+    # pass thru insets
+    skip_insets = ['Formula', 'ERT', 'listings', 'Flex URL']
+    # pass thru insets per document class
+    if document.textclass in ['beamer', 'scrarticle-beamer', 'beamerposter', 'article-beamer']:
+	    skip_layouts_arguments.update({
+	    		'Itemize':['1', 'item:2'],
+	    		'Enumerate':['1', 'item:2'],
+	    		'Description':['1', 'item:1'],
+	    		'Part':['1'], 'Section':['1'], 'Section*':['1'],
+	    		'Subsection':['1'], 'Subsection*':['1'],
+	    		'Subsubsection':['1'], 'Subsubsection*':['1'],
+	    		'Frame':['1', '2'], 'AgainFrame':['1', '2'],
+	    		'PlainFrame':['1', '2'], 'FragileFrame':['1', '2'],
+	    		'FrameTitle':['1'], 'FrameSubtitle':['1'],
+	    		'Overprint':['item:1'],
+	    		'Uncover':['1'], 'Only':['1'], 'Block':['1'], 
+	    		'ExampleBlock':['1'], 'AlertBlock':['1'],
+	    		'Quotation':['1'], 'Quote':['1'],
+	    		'Verse':['1'], 'Corollary':['1'],
+	    		'Corollary':['1'], 'Definition':['1'],
+	    		'Definitions':['1'], 'Example':['1'],
+	    		'Examples':['1'], 'Fact':['1'],
+	    		'Lemma':['1'], 'proof':['1'],
+	    		'Theorem':['1'], 'NoteItem':['1'],
+	    		})
+	    skip_insets_arguments.update({
+	    		'Flex Bold':['1'], 'Flex Emphasize':['1'],
+	    		'Flex Alert':['1'], 'Flex Structure':['1'],
+	    		'Flex Only':['1'], 'Flex Uncover':['1'],
+	    		'Flex Visible':['1'], 'Flex Invisible':['1'],
+	    		'Flex Alternative':['1'], 'Flex Beamer Note':['1']
+	    		})
+    elif document.textclass == 'europecv': 
+        skip_layouts_arguments.update({
+	    		'Picture':['1'], 'Item':['1'],
+	    		'MotherTongue':['1']
+	    		})             
+    elif document.textclass in ['acmsiggraph', 'acmsiggraph-0-92']: 
+        skip_insets_arguments.update({'Flex CRcat':['1', '2',  '3']})              
+    elif document.textclass in ['aastex', 'aastex6', 'aastex62']:
+        skip_layouts_arguments.update({'Altaffilation':['1'],})     
+    elif document.textclass == 'jss': 
+        skip_insets.append('Flex Code Chunk')
+    elif document.textclass == 'moderncv':
+        skip_layouts_arguments.update({'Photo':['1', '2'],})
+        skip_insets_arguments.update({'Flex Column':['1']})                 
+    elif document.textclass == 'agutex': 
+        skip_layouts_arguments.update({'Author affiliation':['1']})  
+    elif document.textclass in ['ijmpd', 'ijmpc']: 
+        skip_layouts_arguments.update({'RomanList':['1']})    
+    elif document.textclass in ['jlreq-book', 'jlreq-report', 'jlreq-article']:
+        skip_insets.append('Flex Warichu*') 
+    # pathru insets per module
+    if 'hpstatement' in document.get_module_list():
+        skip_insets.append('Flex H-P number')
+    if 'tcolorbox' in document.get_module_list():
+        skip_layouts_arguments.update({'New Color Box Type':['3']})
+    if 'sweave' in document.get_module_list():
+        skip_insets.extend(['Flex Sweave Options', 'Flex S/R expression', 'Flex Sweave Input File', 'Flex Chunk'])
+    if 'knitr' in document.get_module_list():
+        skip_insets.extend(['Flex Sweave Options', 'Flex S/R expression', 'Flex Chunk'])
+    if 'linguistics' in document.get_module_list():
+        skip_layouts_arguments.update({
+            'Numbered Example (multiline)':['1'],
+            'Numbered Examples (consecutive)':['1'],
+            'Subexample':['1'],
+            })
+    if 'chessboard' in document.get_module_list():
+        skip_insets.append('Flex Mainline')
+        skip_layouts_arguments.update({'NewChessGame':['1']})
+        skip_insets_arguments.update({'Flex ChessBoard':['1']})
+    if 'lilypond' in document.get_module_list(): 
+        skip_insets.append('Flex LilyPond')
+    if 'noweb' in document.get_module_list(): 
+        skip_insets.append('Flex Chunk')
+    if 'multicol' in document.get_module_list(): 
+        skip_insets_arguments.update({'Flex Multiple Columns':['1']})
     i = 0
+    inset_is_arg = False
     while i < len(document.body):
         line = document.body[i]
         if line.startswith('\\lang '):
-            current_languages[-1] = line.lstrip('\\lang ')
-        elif line.startswith('\\begin_layout'):
+            tokenend = len('\\lang ')
+            lang = line[tokenend:].strip()
+            current_languages[-1] = lang
+        elif line.startswith('\\begin_layout '):
             current_languages.append(current_languages[-1])
-            # print (line, current_languages[-1])
+            tokenend = len('\\begin_layout ')
+            layout = line[tokenend:].strip()
+            current_layouts.append(layout)
         elif line.startswith('\\end_layout'):
             current_languages.pop()
+            current_layouts.pop()
+        elif line.startswith('\\begin_inset Argument '):
+            tokenend = len('\\begin_inset Argument ')
+            Argument = line[tokenend:].strip()
+            # all listpreamble:1 arguments are pass thru
+            listpreamble = Argument == 'listpreamble:1'
+            layout_arg = current_layouts and Argument in skip_layouts_arguments.get(current_layouts[-1],[])
+            inset_arg = current_insets and Argument in skip_insets_arguments.get(current_insets[-1],[])
+            if layout_arg or inset_arg or listpreamble:
+                # In these arguments, parentheses must not be changed
+                i = find_end_of_inset(document.body, i) + 1
+                continue
+            else:
+                inset_is_arg = True
         elif line.startswith('\\begin_inset '):
             tokenend = len('\\begin_inset ')
             inset = line[tokenend:].strip()
+            current_insets.append(inset)
             if inset in skip_insets:
                 # In these insets, parentheses must not be changed
                 i = find_end_of_inset(document.body, i)
                 continue
+        elif line.startswith('\\end_inset'):
+            if inset_is_arg:
+                inset_is_arg = False
+            else:     
+                current_insets.pop()
         elif current_languages[-1] == 'hebrew' and not line.startswith('\\'):
             document.body[i] = line.replace('(','\x00').replace(')','(').replace('\x00',')')
         i += 1
