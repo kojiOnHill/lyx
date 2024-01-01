@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2023-11-05 11:07-0500\n"
-"PO-Revision-Date: 2023-09-23 17:47+0200\n"
+"PO-Revision-Date: 2024-01-01 21:54+0100\n"
 "Last-Translator: Enrico Forestieri <forenr@lyx.org>\n"
 "Language-Team: italiano <it@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: C:/cygwin/usr/local/src/lyx/lyx-devel\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
 
@@ -2901,14 +2901,12 @@ msgid "&Extended character table"
 msgstr "Tavola dei caratteri estesa"
 
 #: src/frontends/qt/ui/ListingsUi.ui:334
-#, fuzzy
 msgid "Language[[Programming]]"
-msgstr "Programmazione esperta"
+msgstr "Linguaggio"
 
 #: src/frontends/qt/ui/ListingsUi.ui:343
-#, fuzzy
 msgid "Lan&guage[[Programming]]:"
-msgstr "Programmazione esperta"
+msgstr "Lin&guaggio"
 
 #: src/frontends/qt/ui/ListingsUi.ui:353
 msgid "Select the programming language"
@@ -3059,11 +3057,13 @@ msgstr ""
 "mostrate qui"
 
 #: src/frontends/qt/ui/MarginsUi.ui:38
-#, fuzzy
 msgid ""
 "Use the margin settings provided by the document class.<br>Note that if this "
 "is unchecked, different defaults may be used."
-msgstr "Usa le impostazioni dei margini provvisti dalla classe del documento"
+msgstr ""
+"Utilizza le impostazioni dei margini fornite dalla classe del documento."
+"<br>Si noti che se questa opzione è deselezionata, possono essere utilizzati "
+"valori predefiniti diversi."
 
 #: src/frontends/qt/ui/MarginsUi.ui:41
 msgid "&Default margins"
@@ -4210,7 +4210,6 @@ msgid "Use s&ingle instance"
 msgstr "Singo&la istanza"
 
 #: src/frontends/qt/ui/PrefDocHandlingUi.ui:197
-#, fuzzy
 msgid "Whether to place close button on each tab or only one in the top right."
 msgstr ""
 "Usa un solo pulsante di chiusura in alto a destra invece che un pulsante per "
@@ -5128,15 +5127,16 @@ msgid "&User interface file:"
 msgstr "File interfaccia &utente:"
 
 #: src/frontends/qt/ui/PrefUi.ui:88
-#, fuzzy
 msgid "User interface &style:"
-msgstr "File interfaccia &utente:"
+msgstr "&Stile interfaccia utente:"
 
 #: src/frontends/qt/ui/PrefUi.ui:98
 msgid ""
 "You can set a custom style here. Note that only certain styles may support "
 "dark mode, e.g. fusion on Windows."
 msgstr ""
+"Qui si può impostare uno stile personalizzato. Tenere presente che solo "
+"alcuni stili supportano la modalità scura, ad es. fusion su Windows."
 
 #: src/frontends/qt/ui/PrefUi.ui:126
 msgid "Context Help"
@@ -29266,9 +29266,8 @@ msgid "selection"
 msgstr "Selezione"
 
 #: src/Color.cpp:267
-#, fuzzy
 msgid "selected math"
-msgstr "Testo selezionato"
+msgstr "Matematica (selezione)"
 
 #: src/Color.cpp:268
 msgid "selected text"
@@ -33331,14 +33330,13 @@ msgid "Unapplied changes"
 msgstr "Modifiche non salvate"
 
 #: src/frontends/qt/GuiDocument.cpp:1861
-#, fuzzy
 msgid ""
 "Some changes in the document were not yet applied.\n"
 "Do you want to apply them before closing or dismiss the changes?"
 msgstr ""
-"Alcune modifiche alle impostazioni del documento precedente non erano ancora "
-"state applicate.\n"
-"Volete tornare indietro ed applicarle?"
+"Alcune modifiche alle impostazioni documento non sono state ancora "
+"applicate.\n"
+"Vuoi applicarle prima di chiudere o ignorarle?"
 
 #: src/frontends/qt/GuiDocument.cpp:1863 src/frontends/qt/GuiDocument.cpp:3102
 #: src/frontends/qt/GuiDocument.cpp:3403 src/frontends/qt/GuiDocument.cpp:5038
@@ -33346,24 +33344,21 @@ msgid "&Apply"
 msgstr "&Applica"
 
 #: src/frontends/qt/GuiDocument.cpp:1863 src/frontends/qt/GuiDocument.cpp:1889
-#, fuzzy
 msgid "&Dismiss Changes"
-msgstr "&No, scarta le modifiche"
+msgstr "&Scarta le modifiche"
 
 #: src/frontends/qt/GuiDocument.cpp:1887
-#, fuzzy
 msgid ""
 "Some changes in the previous document were not yet applied.\n"
 "Do you want to switch back in order to apply them or dismiss the changes?"
 msgstr ""
-"Alcune modifiche alle impostazioni del documento precedente non erano ancora "
-"state applicate.\n"
-"Volete tornare indietro ed applicarle?"
+"Alcune modifiche alle impostazioni del documento precedente non sono state "
+"ancora applicate.\n"
+"Volete tornare indietro ed applicarle o ignorarle?"
 
 #: src/frontends/qt/GuiDocument.cpp:1889
-#, fuzzy
 msgid "&Switch Back"
-msgstr "&Sì, torna indietro"
+msgstr "&Torna indietro"
 
 #: src/frontends/qt/GuiDocument.cpp:2333
 msgid "Default margins"
@@ -34091,7 +34086,6 @@ msgstr ""
 
 #: src/frontends/qt/GuiInfo.cpp:148 src/frontends/qt/GuiInfo.cpp:162
 #: src/frontends/qt/GuiInfo.cpp:176
-#, fuzzy
 msgid ""
 "Enter time format specification, using the following placeholders:\n"
 "* h: the hour without a leading zero (1-12 in AM/PM)\n"
@@ -34656,12 +34650,14 @@ msgstr "Oxygen"
 
 #: src/frontends/qt/GuiPrefs.cpp:2544
 msgid "Restart needed"
-msgstr ""
+msgstr "Necessario riavvio"
 
 #: src/frontends/qt/GuiPrefs.cpp:2545
 msgid ""
 "Resetting the user interface style to 'Default' requires a restart of LyX."
 msgstr ""
+"Il ripristino dello stile dell'interfaccia utente su 'Predefinito' richiede "
+"il riavvio di LyX."
 
 #: src/frontends/qt/GuiPrefs.cpp:2600
 msgid "Document Handling"
