@@ -1908,6 +1908,14 @@ contributors = [
                  "21 June 2012",
                  u"bugfixes"),
 
+     contributor(u"Omer Shechter",
+                 "omer.shechter () mail ! huji ! ac ! il",
+                 "GPL",
+                 "GPL statement",
+                 "m=170428353115475",
+                 "03 January 2024",
+                 u"Hebrew Localization"),
+
      contributor(u"Miyata Shigeru",
                  "miyata () kusm ! kyoto-u ! ac ! jp",
                  "",
@@ -2299,6 +2307,14 @@ contributors = [
                  "m=113993670602439",
                  "14 February 2006",
                  u"Qt4 frontend, editing optimisations"),
+
+     contributor(u"Yitzhak Zangi",
+                 "yitzc1 () gmail ! com",
+                 "GPL",
+                 "GPL statement",
+                 "m=170427463709581",
+                 "03 January 2024",
+                 u"Hebrew Localization"),
 
      contributor(u"Henner Zeller",
                  "henner.zeller () freiheit ! com",
