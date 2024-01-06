@@ -2316,6 +2316,14 @@ contributors = [
                  "03 January 2024",
                  u"Hebrew Localization"),
 
+     contributor(u"Kees Zeelenberg",
+                 "kzstatis () gmail ! com",
+                 "GPL",
+                 "LyX Contributions license",
+                 "m=170453607422463",
+                 "6 January 2024",
+                 u"Dutch localization"),
+
      contributor(u"Henner Zeller",
                  "henner.zeller () freiheit ! com",
                  "GPL",
