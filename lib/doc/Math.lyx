@@ -1,5 +1,5 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 616
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -203,6 +203,7 @@ logicalmkup
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \notefontcolor #0000ff
@@ -225,7 +226,7 @@ logicalmkup
 \bullet 1 0 6 -1
 \bullet 2 2 35 -1
 \bullet 3 2 7 -1
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -234,13 +235,6 @@ logicalmkup
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -584632292 "Richard Kimberly Heck"
-\author -563046850 "Jean-Marc LASGOUTTES"
-\author -495245474 "Jean-Marc Lasgouttes"
-\author 177693 "x"
-\author 5863208 "ab"
-\author 47243155 "Jean-Marc"
-\author 232239728 "Owner"
 \end_header
 
 \begin_body
@@ -280,7 +274,7 @@ literal "false"
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 author:
@@ -299,13 +293,7 @@ author:
 
 
 \family sans
-Version 2.
-\change_inserted 47243155 1563226038
-4
-\change_deleted 47243155 1563226038
-3
-\change_unchanged
-.x
+Version 2.4.x
 \end_layout
 
 \begin_layout Standard
@@ -601,32 +589,12 @@ arg   "math-display"
 
 \begin_layout Standard
 To change a display style formula to an inline formula,
- place the cursor inside the formula and use 
-\change_deleted 5863208 1612729312
-one of 
-\change_unchanged
-the shortcut
-\change_deleted 5863208 1612729314
-s
-\change_unchanged
- 
-\change_deleted 5863208 1612729303
-
-\begin_inset Info
-type  "shortcuts"
-arg   "math-mode"
-\end_inset
-
-
-\change_inserted 5863208 1612729281
-
+ place the cursor inside the formula and use the shortcut 
 \begin_inset Info
 type  "shortcuts"
 arg   "math-mutate simple"
 \end_inset
 
-
-\change_unchanged
  or the menu 
 \family sans
 Edit\SpecialChar menuseparator
@@ -634,9 +602,7 @@ Math\SpecialChar menuseparator
 Change formula type
 \family default
 .
- 
-\change_inserted 5863208 1612729555
-Similarly you can use the shortcut 
+ Similarly you can use the shortcut 
 \begin_inset Info
 type  "shortcuts"
 arg   "math-mutate equation"
@@ -644,10 +610,6 @@ arg   "math-mutate equation"
 
  to change from an inline to a display style formula.
  
-\change_deleted 5863208 1612729557
-The same method is used to change an inline formula to a display style formula.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -702,78 +664,6 @@ Only inline formulas are allowed inside tables.
 
 \begin_layout Standard
 
-\change_deleted 232239728 1610897673
-The 
-\family sans
-math toolbar
-\family default
- can be turned on in the menu 
-\family sans
-View\SpecialChar menuseparator
-Toolbars
-\family default
-.
- When you click there on 
-\begin_inset Quotes eld
-\end_inset
-
-Math
-\begin_inset Quotes erd
-\end_inset
-
- the toolbar will be shown permanently at the bottom;
- this state is visualized in the 
-\family sans
-Toolbars
-\family default
- menu with a checkmark.
- When you click in this state again on 
-\begin_inset Quotes eld
-\end_inset
-
-Math
-\begin_inset Quotes erd
-\end_inset
-
- in the 
-\family sans
-Toolbars
-\family default
- menu,
- the 
-\family sans
-math toolbar
-\family default
- is only shown when the cursor is within a formula;
- this state is visualized by the renaming of the menu entry from 
-\begin_inset Quotes eld
-\end_inset
-
-Math
-\begin_inset Quotes erd
-\end_inset
-
- to 
-\begin_inset Quotes eld
-\end_inset
-
-Math
-\begin_inset space ~
-\end_inset
-
-(auto)
-\begin_inset Quotes erd
-\end_inset
-
-.
-\change_inserted 232239728 1610897478
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 232239728 1610918987
-
 \family sans
 Math toolbar
 \family default
@@ -796,18 +686,12 @@ Math
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 232239728 1610897730
 The menu functionality appears to have changed,
  I rewrote the paragraph for the current functionality
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1168,68 +1052,26 @@ always
  be behind the command to end it.
  This space doesn't appear in the output.
  When the space should appear in the output,
- the space must be followed by a 
-\change_deleted 177693 1654668848
-protected
-\change_inserted 177693 1654668851
-non-breaking
-\change_unchanged
- space in normal text.
+ the space must be followed by a non-breaking space in normal text.
 \end_layout
 
 \begin_layout Standard
-A 
-\change_deleted 177693 1654668857
-protected
-\change_inserted 177693 1654668860
-non-breaking
-\change_unchanged
- space is inserted with
-\change_inserted 232239728 1610908934
- 
-\change_deleted 5863208 1612729787
-the menu selection 
-\change_inserted 5863208 1612729774
-
+A non-breaking space is inserted with 
 \begin_inset Info
 type  "shortcuts"
 arg   "command-alternatives math-space ; space-insert protected"
 \end_inset
 
-
-\change_deleted 232239728 1610908788
-
-\begin_inset Info
-type  "shortcuts"
-arg   "command-alternatives space-insert protected;  math-space"
-\end_inset
-
-
-\change_inserted 5863208 1612729766
 or with the menu selection
 \family sans
- 
-\change_inserted 232239728 1610908897
-Insert\SpecialChar menuseparator
+ Insert\SpecialChar menuseparator
 Formatting\SpecialChar menuseparator
-
-\change_deleted 177693 1654668863
-Protected
-\change_inserted 177693 1654668975
-Non-Breaking Normal
-\change_inserted 232239728 1610908897
- Space
+Non-Breaking Normal Space
 \family default
  or 
-\change_inserted 5863208 1612729638
-
 \family sans
 Ctrl+Space
-\change_deleted 5863208 1612729640
-
 \family default
-Ctrl+Space
-\change_unchanged
 .
 \end_layout
 
@@ -1237,15 +1079,7 @@ Ctrl+Space
 \begin_inset Newpage newpage
 \end_inset
 
-
-\change_deleted 5863208 1612098922
-Syntax 
-\change_unchanged
-Explanation
-\change_inserted 5863208 1612100879
- of Syntax Used in this Manual
-\change_unchanged
-
+Explanation of Syntax Used in this Manual
 \end_layout
 
 \begin_layout Itemize
@@ -1253,11 +1087,7 @@ The symbol
 \begin_inset space \textvisiblespace{}
 \end_inset
 
- denotes a space character to be input
-\change_inserted 5863208 1612098935
- by the user
-\change_unchanged
-.
+ denotes a space character to be input by the user.
 \end_layout
 
 \begin_layout Itemize
@@ -1411,13 +1241,7 @@ Inch (1
 \begin_inset space \thinspace{}
 \end_inset
 
-in = 2
-\change_deleted 232239728 1610909338
-,
-\change_inserted 232239728 1610909338
-.
-\change_unchanged
-54
+in = 2.54
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -4183,15 +4007,11 @@ phantom
 \end_inset
 
 
-\change_inserted 5863208 1612176450
-
 \backslash
 mathrm
 \begin_inset space \textvisiblespace{}
 \end_inset
 
-
-\change_unchanged
 F
 \end_layout
 
@@ -4234,15 +4054,11 @@ phantom
 \end_inset
 
 
-\change_inserted 5863208 1612707447
-
 \backslash
 mathrm
 \begin_inset space \textvisiblespace{}
 \end_inset
 
-
-\change_unchanged
 F
 \end_layout
 
@@ -4269,22 +4085,10 @@ F
 
 \backslash
 Lambda
-\change_inserted 5863208 1612707546
-
 \begin_inset space \textvisiblespace{}
 \end_inset
 
-
-\change_unchanged
 ^
-\change_deleted 5863208 1612707563
-
-\begin_inset space \textvisiblespace{}
-\end_inset
-
-
-\change_unchanged
-
 \backslash
 phantom
 \begin_inset space \textvisiblespace{}
@@ -4768,36 +4572,7 @@ To double underline use
 \backslash
 underline
 \series default
- twice
-\change_deleted 5863208 1612707977
- 
-\change_inserted 5863208 1612707993
- (or as many times you want).
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 232239728 1610990247
-It is possible to place up to 6 lines above or below characters.
-\change_deleted 5863208 1612729848
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1610990434
-I put 30 over and under lines in my test so I don't know what the actual maximum is,
- but it's greater than 6.
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+ twice (or as many times you want).
 \end_layout
 
 \begin_layout Standard
@@ -5466,9 +5241,7 @@ hdotsfor
 
 \end_inset
 
- and have the following scheme
-\change_inserted 5863208 1612709418
- (
+ and have the following scheme (
 \family sans
 mathtools
 \family default
@@ -5484,9 +5257,7 @@ Math
 
 Options
 \family default
- for this to work)
-\change_unchanged
-:
+ for this to work):
 \end_layout
 
 \begin_layout Standard
@@ -5880,26 +5651,10 @@ arg   "newline-insert newline"
 \end_inset
 
 
-\change_deleted 47243155 1563226130
-The 
-\change_deleted -563046850 1563190969
-
 \family sans
-Decoration
-\change_inserted -563046850 1563190971
 Appearance
-\change_unchanged
-
 \family default
- 
-\change_deleted -563046850 1563192602
-adds
-\change_inserted -563046850 1563192607
-can be used to add
-\change_unchanged
- parentheses in the selected style around the matrix
-\change_inserted -563046850 1563192780
- or to select the 
+ can be used to add parentheses in the selected style around the matrix or to select the 
 \family sans
 small
 \family default
@@ -5910,11 +5665,7 @@ small
 \end{smallmatrix}\bigr)$
 \end_inset
 
-
-\change_unchanged
 .
-
-\change_inserted -563046850 1563192943
  Here the parentheses have been added manually using commands 
 \series bold
 
@@ -5929,16 +5680,8 @@ bigr).
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -563046850 1563192735
- 
-\change_unchanged
 Alternatively,
- parentheses can 
-\change_deleted -563046850 1563192971
-either 
-\change_unchanged
-be created with the commands 
+ parentheses can be created with the commands 
 \series bold
 
 \backslash
@@ -6557,14 +6300,7 @@ arraystretch
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 47243155 1563226178
-Small inline matrices can also be obtained using 
-\change_deleted 47243155 1563226182
-To set matrices into a text line,
-
-\change_unchanged
- the command 
+Small inline matrices can also be obtained using the command 
 \series bold
 
 \backslash
@@ -6604,10 +6340,6 @@ smallmatrix
 
 \end_inset
 
-
-\change_deleted 47243155 1563226186
- is used
-\change_unchanged
 .
  When it is inserted in a line a blue box with two dashed lines appears.
  Adjust the matrix rows and columns as desired.
@@ -6620,11 +6352,7 @@ C & D
 \end{smallmatrix}\right)$
 \end_inset
 
- in a text line
-\change_inserted 47243155 1563226243
- with automatic delimiters around it
-\change_unchanged
-.
+ in a text line with automatic delimiters around it.
 \end_layout
 
 \begin_layout Section
@@ -8709,15 +8437,7 @@ _7
 \begin_inset space \textvisiblespace{}
 \end_inset
 
-^
-\change_deleted 5863208 1612711596
-
-\begin_inset space \textvisiblespace{}
-\end_inset
-
-
-\change_unchanged
-C
+^C
 \end_layout
 
 \end_inset
@@ -12770,44 +12490,12 @@ predefined
 
 \begin_layout Standard
 Sometimes it is necessary to insert horizontal space into a formula.
- This is done by inserting a 
-\change_deleted 177693 1654668870
-protected
-\change_inserted 177693 1654668872
-non-breaking
-\change_unchanged
- space (shortcut 
-\change_inserted 5863208 1612729962
-
+ This is done by inserting a non-breaking space (shortcut 
 \begin_inset Info
 type  "shortcut"
 arg   "command-alternatives math-space ; space-insert protected"
 \end_inset
 
-
-\change_deleted 5863208 1612729965
-
-\begin_inset Info
-type  "shortcut"
-arg   "command-alternatives space-insert protected ; math-space"
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1611160593
-What is intended here?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 ).
  A 
 \begin_inset Quotes eld
@@ -13374,13 +13062,7 @@ Number of
 \family sans
 Space
 \family default
- keystrokes after inserting the 
-\change_deleted 177693 1654668881
-protected
-\change_inserted 177693 1654668883
-non-breaking
-\change_unchanged
- space
+ keystrokes after inserting the non-breaking space
 \end_layout
 
 \end_inset
@@ -15886,13 +15568,9 @@ fbox
 \end_inset
 
 
-\change_inserted 232239728 1611182042
-
 \begin_inset Formula $\gets\gets$
 \end_inset
 
-
-\change_unchanged
 A=B
 \end_layout
 
@@ -15923,13 +15601,9 @@ fbox
 \end_inset
 
 
-\change_inserted 232239728 1611182036
-
 \begin_inset Formula $\gets\gets$
 \end_inset
 
-
-\change_unchanged
 
 \backslash
 colorbox{green
@@ -18525,24 +18199,6 @@ Display
 
 \end_inset
 
-
-\change_deleted 5863208 1612725771
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1611193306
-This integral did not have its limits set to Display in the original document
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
@@ -22334,7 +21990,7 @@ A=\frac{B}{c}\cdot\maltese
 
 \begin_inset Formula 
 \[
-\maltese A\textrm{\Large\maltese\textit{A}}\textrm{\tiny\maltese\textit{A}}
+\maltese A\textrm{{\Large \maltese\textit{A}}}\textrm{{\tiny \maltese\textit{A}}}
 \]
 
 \end_inset
@@ -29070,36 +28726,12 @@ modulo-
 \begin_layout Standard
 The modulo-function is special,
  because it exists in four variants.
- The variants in a
-\change_deleted -495245474 1689684546
- displayed
-\change_inserted -495245474 1689684548
-n inline
-\change_unchanged
- formula are:
-\change_deleted -495245474 1689684526
-
-\begin_inset Formula 
-\begin{align*}
-\underline{\textrm{Command}\raisebox{-0.9mm}{}} &  & \underline{\textrm{Result}}\\
-\mathrm{a\backslash mod\textrm{␣}b\textrm{␣}} &  & a\mod b\\
-\mathrm{a\backslash pmod\textrm{␣}b\textrm{␣}} &  & a\pmod b\\
-\mathrm{a\backslash bmod\textrm{␣}b\textrm{␣}} &  & a\bmod b\\
-\mathrm{a\backslash pod\textrm{␣}b\textrm{␣}} &  & a\pod b
-\end{align*}
-
-\end_inset
-
-
-\change_inserted -495245474 1689684215
-
+ The variants in an inline formula are:
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align center
-
-\change_inserted -495245474 1689684215
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
 <features booktabs="true" tabularvalignment="middle">
@@ -29110,8 +28742,6 @@ n inline
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684215
 Command
 \end_layout
 
@@ -29121,8 +28751,6 @@ Command
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684215
 Result
 \end_layout
 
@@ -29134,8 +28762,6 @@ Result
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684286
 a
 \backslash
 mod
@@ -29143,8 +28769,6 @@ mod
 \end_inset
 
 b
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -29153,8 +28777,6 @@ b
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684457
 \begin_inset Formula $a\mod b$
 \end_inset
 
@@ -29169,8 +28791,6 @@ b
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684416
 a
 \backslash
 pmod
@@ -29190,8 +28810,6 @@ b
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684474
 \begin_inset Formula $a\pmod b$
 \end_inset
 
@@ -29201,13 +28819,11 @@ b
 \end_inset
 </cell>
 </row>
-<row change="inserted -495245474 1689684088">
+<row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684419
 a
 \backslash
 bmod
@@ -29227,8 +28843,6 @@ b
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684488
 \begin_inset Formula $a\bmod b$
 \end_inset
 
@@ -29238,13 +28852,11 @@ b
 \end_inset
 </cell>
 </row>
-<row change="inserted -495245474 1689684088">
+<row>
 <cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684421
 a
 \backslash
 pod
@@ -29264,8 +28876,6 @@ b
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted -495245474 1689684502
 \begin_inset Formula $a\pod b$
 \end_inset
 
@@ -29280,31 +28890,11 @@ b
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-In a
-\change_deleted -495245474 1689684554
-n inline
-\change_inserted -495245474 1689684556
- display
-\change_unchanged
- formula
-\change_inserted -495245474 1689684559
-,
-
-\change_unchanged
- 
-\change_deleted -495245474 1689684562
-less
-\change_inserted -495245474 1689684563
-more
-\change_unchanged
- space is set before the function names for all variants
-\change_inserted -495245474 1689684688
- but 
+In a display formula,
+ more space is set before the function names for all variants but 
 \series bold
 
 \backslash
@@ -29315,27 +28905,8 @@ mod.
 \series bold
 b
 \series default
- as argument but acts as a binary operator
-\change_unchanged
-.
+ as argument but acts as a binary operator.
  
-\change_deleted -495245474 1689684609
-By default the modulo-functions take only the first character following the command into account.
- To use more than one character,
- put them in \SpecialChar TeX
- braces:
-\begin_inset Formula 
-\begin{align*}
-\underline{\textrm{Command}\raisebox{-0.9mm}{}} &  & \underline{\textrm{Result}}\\
-\mathrm{a\backslash pod\textrm{␣}bcd} &  & a\pod bcd\\
-\mathrm{a\backslash pod\backslash\{bc\to d} &  & a\pod{bc}d
-\end{align*}
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -31731,26 +31302,7 @@ arraycolsep
 
 \backslash
 arraycolsep
-\change_deleted 5863208 1612730022
-
 \series default
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1611406079
-How does units play into this?
- (cm/in/pt) Is the 2 unitless and the result takes on the units of the input value?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \begin_inset Newline newline
 \end_inset
@@ -33992,26 +33544,6 @@ arg   "math-number-toggle"
  The formula number is displayed in \SpecialChar LyX
  behind the formula as a number in parentheses.
  
-\change_deleted 232239728 1611410645
-The number sign is replaced in the output by the formula number.
-\change_deleted 5863208 1612727075
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1611410697
-LyX appears to put the actual formula number in the raw file now
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -37914,21 +37446,15 @@ A=B
 \end_inset
 
 
-\change_inserted -584632292 1686503213
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -584632292 1686503316
 As is obvious,
  commands defined in the preamble do not display `nicely' in LyX itself.
  Most such commands can be defined in LyX using `math macros',
  however,
  which we are about to explain,
  and these do display nicely.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsection
@@ -38920,19 +38446,13 @@ Eating From The Right
 \end_inset
 
 
-\change_inserted -584632292 1686503329
-
 \end_layout
 
 \begin_layout Subsection
-
-\change_inserted -584632292 1686503341
 Math Macros for External Commands
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -584632292 1686503466
 Sometimes,
  you may need to use a LaTeX package which defines a math command that is not natively supported in LyX.
  This is easy enough to do:
@@ -38943,8 +38463,6 @@ Sometimes,
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -584632292 1686503786
 As of LyX 2.4,
  this problem has been solved.
  Just define a math macro with empty LaTeX slot!
@@ -38956,11 +38474,7 @@ As of LyX 2.4,
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -584632292 1686503714
 godelnum.sty
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -38971,8 +38485,6 @@ godelnum.sty
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -584632292 1686503742
 \begin_inset FormulaMacro
 \newcommand{\Godelnum}[1]{}
 {\ulcorner#1\urcorner}
@@ -38982,13 +38494,9 @@ godelnum.sty
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -584632292 1686503753
 The same trick,
  of course,
  can be used for commands defined in the preamble.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -41391,11 +40899,11 @@ nolink "false"
  brace.
 \begin_inset Formula 
 \begin{flalign}
-\hspace{30pt}F_{A} & =\rho·V·g & \footnotesize\begin{array}{ll}
+\hspace{30pt}F_{A} & =\rho·V·g & {\footnotesize \begin{array}{ll}
 \rho & \textrm{density}\\
 V & \textrm{volume}\\
 g & \textrm{gravitational acceleration}
-\end{array} &  & {}\label{eq:within}
+\end{array}} &  & {}\label{eq:within}
 \end{flalign}
 
 \end_inset
@@ -42849,8 +42357,6 @@ literal "true"
 \end_inset
 
 
-\change_inserted 5863208 1612728717
-
 \begin_inset CommandInset href
 LatexCommand href
 name "Description"
@@ -42859,39 +42365,8 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted 5863208 1612728717
-
-\begin_inset CommandInset href
-LatexCommand href
-name "Description"
-target "https://www.tug.org/~hvoss/PDF/mathmode.pdf"
-literal "false"
-
-\end_inset
-
-
-\change_unchanged
  of \SpecialChar LaTeX
 's math abilities
-\change_deleted 5863208 1612728849
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1611367909
-Bad Link
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Bibliography
@@ -42903,8 +42378,6 @@ literal "true"
 \end_inset
 
 
-\change_inserted 5863208 1612728836
-
 \begin_inset CommandInset href
 LatexCommand href
 name "Description"
@@ -42913,19 +42386,6 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted 5863208 1612728836
-
-\begin_inset CommandInset href
-LatexCommand href
-name "Description"
-target "https://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/amsldoc.pdf"
-literal "false"
-
-\end_inset
-
-
-\change_unchanged
  of 
 \begin_inset ERT
 status collapsed
@@ -42941,24 +42401,6 @@ AmS
 
 -\SpecialChar LaTeX
 
-\change_deleted 5863208 1612728851
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1611367919
-Bad Link
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Bibliography
@@ -42970,8 +42412,6 @@ literal "true"
 \end_inset
 
 
-\change_inserted 5863208 1612728963
-
 \begin_inset CommandInset href
 LatexCommand href
 name "List"
@@ -42980,39 +42420,8 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted 5863208 1612728963
-
-\begin_inset CommandInset href
-LatexCommand href
-name "List"
-target "ftp://ftp.dante.de/tex-archive/info/symbols/comprehensive/symbols-a4.pdf"
-literal "false"
-
-\end_inset
-
-
-\change_unchanged
  of all symbols available with \SpecialChar LaTeX
 -packages
-\change_deleted 5863208 1612728966
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 232239728 1611367959
-Bad link
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Bibliography
