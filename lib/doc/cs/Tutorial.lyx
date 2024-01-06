@@ -1,5 +1,5 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 615
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -87,6 +87,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \index Index
@@ -1432,15 +1433,15 @@ Program vlna automaticky přidává chráněné mezery za neslabičné předlož
  Live,
  nebo ho lze samostatně stáhnout na internetu.
 \begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Flex URL
+status open
 
-ftp://math.feld.cvut.cz/pub/olsak/vlna/
+\begin_layout Plain Layout
+
+https://petr.olsak.net/ftp/olsak/vlna/
 \end_layout
 
 \end_inset
@@ -1530,7 +1531,7 @@ Prohlížeč
 \begin_inset Quotes gld
 \end_inset
 
-acroread
+evince
 \begin_inset Quotes grd
 \end_inset
 
@@ -1696,12 +1697,12 @@ jako\SpecialChar endofsentence
 Spusťte \SpecialChar LaTeX
  pro vytvoření souboru 
 \family typewriter
-dvi
+pdf
 \family default
 ,
  příkazem 
 \family sans
-Prohlížet->Dvi
+Dokument->Prohlížet [PDF (pdflatex)]
 \family default
 \SpecialChar endofsentence
  V okně,
@@ -1714,11 +1715,11 @@ u,
  \SpecialChar LyX
  spustí 
 \family typewriter
-xdvi
+evince
 \family default
  (nebo jiný prohlížeč 
 \family typewriter
-dvi
+pdf
 \family default
 ),
  který otevře nové okno,
@@ -1751,13 +1752,6 @@ u.
 
 .
  
-\end_layout
-
-\begin_layout Itemize
-Soubor vytisknete příkazem 
-\family sans
-Soubor->Tisk\SpecialChar endofsentence
-
 \end_layout
 
 \begin_layout Standard
@@ -1947,7 +1941,7 @@ u dokud neuzavřete dialog.
 \end_layout
 
 \begin_layout Description
-Styl
+Vlastnosti
 \begin_inset space ~
 \end_inset
 
@@ -1966,7 +1960,7 @@ ztučnit
 Styl pro jména
 \noun default
  (obvykle kapitálky,
- používají se pro jména lidí) pomocí přepínačů v nabídce Styl
+ používají se pro jména lidí) pomocí přepínačů v nabídce Vlastnosti
 \begin_inset space ~
 \end_inset
 
@@ -2242,7 +2236,7 @@ zvýrazňovat
  \SpecialChar LyX
  čísluje oddíly od jedné a sází hlavičku oddílu (nadpis) větším písmem.
  (Pochopitelně,
- všechno bude vysazeno korektně i v případě dvi či tisku.) Nyní stiskněte tlačítko 
+ všechno bude vysazeno korektně i v případě pdf či tisku.) Nyní stiskněte tlačítko 
 \family sans
 Enter
 \family default
@@ -6022,10 +6016,8 @@ Třída Document
 
 \begin_layout Standard
 Dialog 
-\family typewriter
-D
 \family sans
-okument->Nastavení
+Dokument->Nastavení
 \family default
  obsahuje mnoho voleb,
  které jsou parametry příkazu 
