@@ -1,5 +1,5 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 618
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -107,7 +107,7 @@
 \papersides 1
 \paperpagestyle default
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -116,9 +116,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -1463541724 "Daniel" d3vf4n@tutanota.com
-\author -584632292 "Richard Kimberly Heck"
-\author 5863208 "ab"
 \end_header
 
 \begin_body
@@ -206,11 +203,7 @@ What is \SpecialChar LyX
  articles in refereed scientific journals,
  scripts for plays and movies,
  business proposals,
- presentations
-\change_deleted -1463541724 1692922495
- 
-\change_unchanged
-\SpecialChar ldots
+ presentations\SpecialChar ldots
 
 \end_layout
 
@@ -330,19 +323,10 @@ Suppose you are writing a report.
 \end_inset
 
 Introduction
-\change_deleted -1463541724 1692922782
-\SpecialChar endofsentence
-
-\change_unchanged
-
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted -1463541724 1692922792
 \SpecialChar endofsentence
-
-\change_unchanged
  So,
  you go into whatever menu it is in your word processor that changes font sizes and decide on a new font size.
  Then you turn on bold face.
@@ -472,18 +456,10 @@ how
 \end_inset
 
 What You See Is What You Get
-\change_deleted -1463541724 1692922450
-,
-\change_unchanged
-
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted -1463541724 1692923936
 ,
-
-\change_unchanged
  the \SpecialChar LyX
  model is 
 \begin_inset Quotes eld
@@ -497,25 +473,7 @@ Mean
 \begin_inset Quotes erd
 \end_inset
 
- or 
-\change_deleted -1463541724 1692923839
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-WYSIWYM
-\change_deleted -1463541724 1692923836
-.
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692923925
-.
-
-\change_unchanged
+ or WYSIWYM.
  It's a powerful idea that greatly simplifies the mechanics of writing documents.
  This is also why \SpecialChar LyX
  isn't so good for creating posters and flyers.
@@ -756,30 +714,6 @@ User's Guide
 \emph default
 \SpecialChar endofsentence
 
-\change_deleted 5863208 1693593461
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1693568855
-Changed the fontface of the names in this footnote according to section 2.2.
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1693568875
-Now ALL names in this document use the same fontface.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -812,21 +746,13 @@ Knuth
  hence its excellent printed appearance.
  What comes directly out of \SpecialChar TeX
  is the 
-\change_inserted -1463541724 1692922633
-
 \begin_inset Quotes eld
 \end_inset
 
-
-\change_unchanged
 portable document format
-\change_inserted -1463541724 1692922640
-
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_unchanged
  
 \emph on
 pdf
@@ -1024,30 +950,7 @@ To make it easier to answer your questions and describe all of the features of \
  as described below.
  Before you go ploughing into any of those files,
  however,
- you should read this 
-\change_deleted -1463541724 1693810883
-chapter
-\change_inserted -1463541724 1693810888
-section
-\change_deleted 5863208 1693855500
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1693810943
-Does it refer to this section or the whole document?
- I am going with the former.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- thoroughly,
+ you should read this section thoroughly,
  since it contains a lot of useful information and commentary that can save you some time.
 \end_layout
 
@@ -1098,11 +1001,7 @@ Also,
  is unclear,
  or wrong,
  don't hesitate to let us know!
- You can reach the current document
-\change_inserted -1463541724 1692963407
-ation
-\change_unchanged
- maintainers by emailing 
+ You can reach the current documentation maintainers by emailing 
 \begin_inset CommandInset href
 LatexCommand href
 target "lyx-docs@lists.lyx.org"
@@ -1112,16 +1011,9 @@ literal "false"
 \end_inset
 
 .
-
-\change_deleted -1463541724 1692922571
- 
-\change_inserted -584632292 1610248366
-
 \end_layout
 
 \begin_layout Subsection
-
-\change_inserted -584632292 1610248375
 Where To Get Help
 \end_layout
 
@@ -1137,8 +1029,6 @@ literal "false"
 \end_inset
 
 .
-
-\change_inserted -584632292 1610248524
  You do not have to register to post,
  but you may wish to do so.
  See 
@@ -1160,8 +1050,6 @@ literal "false"
 \end_inset
 
  that will answer many questions about how to get LyX to do various things.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsection
@@ -1220,46 +1108,7 @@ In the printed manuals,
 .
  If you click on such a box with the left mouse button,
  a dialog box will appear containing a list of all the cross-references in the document.
- You can go to the referenced 
-\change_deleted -1463541724 1693811119
-section
-\change_inserted -1463541724 1693811124
-element
-\change_deleted 5863208 1693855665
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1693811295
-This seems to be a leftover of past versions of this document in which the section cross-reference in this document was explicitly mentioned,
- now erased:
- Spanish and Catalan translations still had those explicit mentions.
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1693811291
-Other possible replacement:
- 
-\begin_inset Quotes eld
-\end_inset
-
-item
-\begin_inset Quotes erd
-\end_inset
-
-.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- by right-clicking on the box or by clicking the button 
+ You can go to the referenced element by right-clicking on the box or by clicking the button 
 \family sans
 Go
 \begin_inset space ~
@@ -1298,11 +1147,7 @@ Emphasized Style
 \emph default
  is used for general emphasis,
  generic arguments,
- book
-\change_inserted -1463541724 1692964248
- and manual
-\change_unchanged
- titles,
+ book and manual titles,
  names of sections of other manuals,
  and notes from the authors.
 \end_layout
@@ -1323,12 +1168,7 @@ Typewriter
 Sans Serif
 \family default
  is used for menu,
- button
-\change_deleted -1463541724 1692964370
-,
-
-\change_unchanged
- or dialog box names,
+ button or dialog box names,
  and the names of keyboard keys.
 \end_layout
 
@@ -1338,38 +1178,6 @@ Sans Serif
 Noun Style
 \noun default
  is used for people's names.
-\change_deleted 5863208 1692989367
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692964472
-This document has some person names (Leslie Lamport,
- Donald Knuth) and none of them is typ
-\change_inserted 5863208 1692989355
-e
-\change_inserted -1463541724 1692964472
-set with this font face.
- Shall we change them?
-\change_inserted 5863208 1692989346
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 5863208 1692989349
-Done.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -1378,56 +1186,19 @@ Done.
 Bold
 \series default
  is used for \SpecialChar LaTeX
- code
-\change_inserted -1463541724 1692842469
-.
-\change_unchanged
-
+ code.
 \end_layout
 
 \begin_layout Standard
 When we do need to reference keys,
  we'll use the following prefixing convention:
-\change_deleted 5863208 1692989463
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692842873
-Do not think quotation marks are necessary when already using a different font face to differentiate the text.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
 
-\change_deleted -1463541724 1692842633
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Ctrl+
-\change_deleted -1463541724 1692842626
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  indicates the 
 \family sans
 Control
@@ -1437,24 +1208,9 @@ Control
 
 \begin_layout Itemize
 
-\change_deleted -1463541724 1692842634
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Shift+
-\change_deleted -1463541724 1692842636
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  indicates the 
 \family sans
 Shift
@@ -1464,24 +1220,9 @@ Shift
 
 \begin_layout Itemize
 
-\change_deleted -1463541724 1692842640
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Alt+
-\change_deleted -1463541724 1692842639
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  indicates the 
 \family sans
 Alt
@@ -1495,297 +1236,77 @@ Meta
 
 \begin_layout Itemize
 
-\change_deleted -1463541724 1692842642
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 F1
-\change_deleted -1463541724 1692842642
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  \SpecialChar ldots
  
-\change_deleted -1463541724 1692842644
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 F12
-\change_deleted -1463541724 1692842646
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  are the function keys.
 \end_layout
 
 \begin_layout Itemize
 
-\change_deleted -1463541724 1692842662
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Esc
-\change_deleted -1463541724 1692842663
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  is the escape key.
 \end_layout
 
 \begin_layout Itemize
 
-\change_deleted -1463541724 1692842660
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Left
-\change_deleted -1463541724 1692842658
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964502
 ,
-
-\change_unchanged
  
-\change_deleted -1463541724 1692842658
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Right
-\change_deleted -1463541724 1692842648
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964504
 ,
-
-\change_unchanged
  
-\change_deleted -1463541724 1692842649
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Up
-\change_deleted -1463541724 1692842651
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964516
- and
-\change_unchanged
- 
-\change_deleted -1463541724 1692842650
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
+ and 
 \family sans
 Down
-\change_deleted -1463541724 1692842655
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
 :
  self-explanatory.
 \end_layout
 
 \begin_layout Itemize
 
-\change_deleted -1463541724 1692842666
-
 \family sans
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
 Insert
-\change_deleted -1463541724 1692842664
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964521
 ,
-
-\change_unchanged
  
-\change_deleted -1463541724 1692842665
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Delete
-\change_deleted -1463541724 1692842667
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964524
 ,
-
-\change_unchanged
  
-\change_deleted -1463541724 1692842668
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Home
-\change_deleted -1463541724 1692842670
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964525
 ,
-
-\change_unchanged
  
-\change_deleted -1463541724 1692842671
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 End
-\change_deleted -1463541724 1692842672
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964527
 ,
-
-\change_unchanged
  
-\change_deleted -1463541724 1692842673
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 PageUp
-\change_deleted -1463541724 1692842674
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692964535
- and
-\change_unchanged
- 
-\change_deleted -1463541724 1692842675
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
+ and 
 \family sans
 PageDown
-\change_deleted -1463541724 1692842677
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
 :
  these are the 6
 \begin_inset space ~
@@ -1793,85 +1314,21 @@ PageDown
 
 keys that appear above the cursor keys on many PC keyboards.
  
-\change_deleted -1463541724 1692842683
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 PageUp
-\change_deleted -1463541724 1692842681
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  and 
-\change_deleted -1463541724 1692842756
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 PageDown
-\change_deleted -1463541724 1692842758
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  are called 
-\change_deleted -1463541724 1692842752
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Prior
-\change_deleted -1463541724 1692842750
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  and 
-\change_deleted -1463541724 1692842754
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \family sans
 Next
-\change_deleted -1463541724 1692842755
-
 \family default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  on some keyboards.
 \end_layout
 
@@ -1894,62 +1351,19 @@ Return
 \end_inset
 
 Return
-\change_deleted -1463541724 1692842976
-,
-\change_unchanged
-
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted -1463541724 1692842978
 ,
-
-\change_unchanged
  others as 
 \begin_inset Quotes eld
 \end_inset
 
 Enter
-\change_deleted -1463541724 1692842982
-,
-\change_unchanged
-
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted -1463541724 1692842991
 ,
-\change_deleted 5863208 1692989468
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692966623
-Not direct speech,
- so punctuation goes out of the quoted text.
- See 
-\begin_inset CommandInset href
-LatexCommand href
-name "Cambridge grammar (punctuation)"
-target "https://dictionary.cambridge.org/grammar/british-grammar/punctuation"
-literal "false"
-
-\end_inset
-
- or Collins grammar,
- to name a couple.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
  still others have two keys.
  \SpecialChar LyX
  treats all of them as the same key,
@@ -2556,48 +1970,12 @@ Tutorial
 \emph default
 ,
  starting with the section on 
-\change_deleted -1463541724 1692917771
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_unchanged
-
 \emph on
 \SpecialChar LyX
  for \SpecialChar LaTeX
  users
-\change_deleted -1463541724 1692917763
-
 \emph default
 .
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_inserted -1463541724 1692917775
-.
-\change_deleted 5863208 1692989483
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692918131
-Again,
- don't see the point in quoting text already using a different font face.
- Additionally,
- was not complying to the use of font faces in the manuals stated in section 2.2.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
  (Skimming through the rest of the document wouldn't hurt,
  either.)
 \end_layout
@@ -2711,13 +2089,7 @@ some
 \emph on
 Customization
 \emph default
- 
-\change_deleted -1463541724 1692964787
-M
-\change_inserted -1463541724 1692964788
-m
-\change_unchanged
-anual for more information.
+ manual for more information.
 \end_layout
 
 \begin_layout Standard
@@ -2834,17 +2206,6 @@ literal "false"
  Archives of this list are linked from the main \SpecialChar LyX
  website,
  
-\change_deleted 5863208 1692989524
-
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.lyx.org"
-
-\end_inset
-
-
-\change_inserted 5863208 1692989534
-
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.lyx.org/MailingLists"
@@ -2852,43 +2213,6 @@ literal "false"
 
 \end_inset
 
-
-\change_deleted 5863208 1692989524
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692966662
-Substitute this link for the more specific 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.lyx.org/MailingLists#toc3"
-
-\end_inset
-
- or maybe just 
-\change_deleted 5863208 1692989514
-
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.lyx.org/MailingLists"
-literal "false"
-
-\end_inset
-
-
-\change_inserted -1463541724 1692966662
-?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 .
 \end_layout
 
@@ -2913,88 +2237,12 @@ config.log
 \family default
 ,
  and mention which compiler you are using.
-
-\change_inserted 5863208 1692989585
- 
-\change_deleted -1463541724 1693810816
-
-\begin_inset Quotes eld
-\end_inset
-
-
-\change_inserted 5863208 1692989585
-Part of this information can be found in 
+ Part of this information can be found in 
 \family sans
 Help\SpecialChar menuseparator
 About
 \family default
 .
-\change_deleted -1463541724 1693810814
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_deleted 5863208 1692989598
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692957260
-Shall we mention this information can be found in 
-\family sans
-Help\SpecialChar menuseparator
-About
-\family default
-?
- For instance:
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692966675
-\begin_inset Quotes eld
-\end_inset
-
-Most of this information can be found in 
-\family sans
-Help\SpecialChar menuseparator
-About
-\family default
-.
-\begin_inset Quotes erd
-\end_inset
-
- or
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -1463541724 1692966688
-\begin_inset Quotes eld
-\end_inset
-
-Part of this information can be found in 
-\family sans
-Help\SpecialChar menuseparator
-About
-\family default
-.
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -3083,12 +2331,8 @@ User's Guide
  and the 
 \emph on
 Tutorial
-\change_inserted -1463541724 1692966436
-
 \emph default
 \SpecialChar endofsentence
-
-\change_unchanged
 
 \begin_inset Newline newline
 \end_inset
