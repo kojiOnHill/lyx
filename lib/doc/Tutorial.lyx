@@ -1,5 +1,5 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 614
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -71,6 +71,7 @@ logicalmkup
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \index Index
@@ -89,7 +90,7 @@ logicalmkup
 \papersides 2
 \paperpagestyle headings
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -98,9 +99,6 @@ logicalmkup
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -712698321 "Jürgen Spitzmüller"
-\author -131811572 "Yuriy Skalko"
-\author 177693 "x"
 \end_header
 
 \begin_body
@@ -438,17 +436,8 @@ In this Tutorial,
 \begin_layout Standard
 Finally,
  we have written a file called 
-\change_deleted -712698321 1553351112
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351120
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \emph default
  to let you practice your \SpecialChar LyX
  skills.
@@ -457,17 +446,8 @@ Example (raw)
  As you learn new \SpecialChar LyX
  functions,
  we will suggest that you fix those parts of 
-\change_deleted -712698321 1553351165
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351165
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \emph default
 .
  It also contains 
@@ -500,26 +480,15 @@ Notes
  If you want to cheat,
  or check what you have done,
  there is also a file called 
-\change_deleted -712698321 1553351273
-
-\family typewriter
-example_lyxified.lyx
-\change_inserted -712698321 1553351278
-
-\family default
 \emph on
 Example (LyXified)
-\change_unchanged
-
 \emph default
  which contains the same text written and typeset by a \SpecialChar LyX
  master.
 \end_layout
 
 \begin_layout Standard
-The example files can be found in 
-\change_inserted -712698321 1553351405
-the 
+The example files can be found in the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -532,29 +501,11 @@ General
 File\SpecialChar menuseparator
 Open Example\SpecialChar ldots
 
-\change_deleted -712698321 1553351425
-
 \family default
-the 
-\family typewriter
-examples
-\family default
- directory of \SpecialChar LyX
-'s installation folder
-\change_unchanged
 .
  Open the document 
-\change_deleted -712698321 1553351441
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351441
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \emph default
  and use 
 \family sans
@@ -573,19 +524,9 @@ As
 \begin_layout Standard
 By the way,
  
-\change_deleted -712698321 1553351473
-the 
-\family typewriter
-examples
-\family default
- directory
-\change_inserted -712698321 1553351473
-
 \family sans
 File\SpecialChar menuseparator
 Open Example\SpecialChar ldots
-
-\change_unchanged
 
 \family default
  contains lots of other examples files.
@@ -1579,26 +1520,9 @@ Subsubsection
 Exercise
 \series default
 :
- Fix the section and subsection headings in
-\change_inserted -712698321 1553351516
- 
+ Fix the section and subsection headings in 
 \emph on
 Example (raw)
-\change_deleted -712698321 1553351522
-
-\emph default
-
-\begin_inset Newline newline
-\end_inset
-
-
-\family typewriter
-example_raw.lyx
-\family default
-.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsection
@@ -1736,25 +1660,11 @@ item
 \emph default
 ,
  one way is to use the 
-\change_deleted 177693 1654668928
-
 \family sans
-Protected
-\change_inserted 177693 1654668930
-Non-Breaking
-\change_deleted 177693 1654668945
-
+Non-BreakingNormal
 \begin_inset space ~
 \end_inset
 
-
-\change_inserted 177693 1654668949
-Normal
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
 Break
 \family default
 ,
@@ -1906,25 +1816,15 @@ List
 ) from the rest of the paragraph.
  If you want to have more than one word in the definition,
  then separate the words with 
-\change_deleted 177693 1654668936
-
 \family sans
-Protected
-\change_inserted 177693 1654668939
 Non-Breaking
-\change_unchanged
-
 \begin_inset space ~
 \end_inset
 
-
-\change_inserted 177693 1654668953
 Normal
 \begin_inset space ~
 \end_inset
 
-
-\change_unchanged
 Space
 \family default
 s.
@@ -1938,17 +1838,8 @@ Exercise
 \series default
 :
  Typeset the list in 
-\change_deleted -712698321 1553351539
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351539
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -2043,23 +1934,9 @@ Quote,
 \family sans
 Verse
 \family default
- in
-\change_inserted -712698321 1553351552
- 
+ in 
 \emph on
 Example (raw)
-\change_deleted -712698321 1553351554
-
-\emph default
-
-\begin_inset Newline newline
-\end_inset
-
-
-\family typewriter
-example_raw.lyx
-\change_unchanged
-
 \end_layout
 
 \begin_layout Chapter
@@ -2442,25 +2319,12 @@ from
 \end_inset
 
 Template
-\change_inserted -712698321 1553351676
-
 \family default
 \SpecialChar ldots
-
-\change_unchanged
 .
  Select 
-\change_deleted -712698321 1553351662
-
-\family typewriter
-letter.lyx
-\change_inserted -712698321 1553351666
-
-\family default
 \emph on
 Letter (Standard Class)
-\change_unchanged
-
 \emph default
  as the template.
  Save and print the file to see how the various environments are typeset.
@@ -2671,17 +2535,8 @@ Exercise
  Fix the title,
  date,
  and author in 
-\change_deleted -712698321 1553351568
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351568
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -3055,17 +2910,8 @@ Exercise
 \series default
 :
  Fix the references in 
-\change_deleted -712698321 1553351573
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351573
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -3250,17 +3096,8 @@ Exercise
 \series default
 :
  Fix the footnote in 
-\change_deleted -712698321 1553351579
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351579
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -3458,17 +3295,8 @@ Exercise:
 
 \series default
  Fix the bibliography and citation in 
-\change_deleted -712698321 1553351585
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351585
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -3495,8 +3323,6 @@ List
 \end_inset
 
 TOC
-\change_inserted -712698321 1590305779
-
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -3504,9 +3330,7 @@ TOC
 \begin_inset space \thinspace{}
 \end_inset
 
-References
-\change_unchanged
-\SpecialChar menuseparator
+References\SpecialChar menuseparator
 Table
 \begin_inset space ~
 \end_inset
@@ -3593,17 +3417,8 @@ Exercise
 \series default
 :
  Fix the table of contents in 
-\change_deleted -712698321 1553351589
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351589
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \end_layout
 
 \begin_layout Chapter
@@ -3985,17 +3800,8 @@ Exercise
 \end_inset
 
 1 of 
-\change_deleted -712698321 1553351597
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351597
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \emph default
  into math mode.
 \end_layout
@@ -4282,23 +4088,11 @@ Fractions
 \begin_layout Standard
 To create a fraction,
  click on the fraction button 
-\change_deleted -131811572 1566935165
-
-\begin_inset Info
-type  "icon"
-arg   "math-insert \\frac-square"
-\end_inset
-
-
-\change_inserted -131811572 1566935147
-
 \begin_inset Info
 type  "icon"
 arg   "math-insert \\frac"
 \end_inset
 
-
-\change_unchanged
  in the 
 \family sans
 Math
@@ -4350,17 +4144,8 @@ Exercise
 \end_inset
 
 2 of 
-\change_deleted -712698321 1553351607
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351607
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \emph default
  into math mode.
 \end_layout
@@ -4559,17 +4344,8 @@ Exercise
 \end_inset
 
 3 of 
-\change_deleted -712698321 1553351612
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351612
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \emph default
  into math mode.
 \end_layout
@@ -4588,12 +4364,8 @@ arg   "dialog-show mathmatrix"
  in the 
 \family sans
 Math
-\change_inserted -131811572 1566934540
-
 \family default
- toolbar
-\change_unchanged
-.
+ toolbar.
  A pop-up dialog allows you to choose how many rows and columns you want in your matrix.
  Choose 2 rows and 3 columns and hit 
 \family sans
@@ -4789,17 +4561,8 @@ Exercise
 \series default
 :
  Put the various equations in 
-\change_deleted -712698321 1553351617
-
-\family typewriter
-example_raw.lyx
-\change_inserted -712698321 1553351617
-
-\family default
 \emph on
 Example (raw)
-\change_unchanged
-
 \emph default
  into display mode,
  and see how they are typeset differently.
@@ -5573,11 +5336,7 @@ Bib\SpecialChar TeX
 \begin_layout Standard
 \SpecialChar LyX
  has support for Bib\SpecialChar TeX
-
-\change_inserted -712698321 1590301994
- and Biblatex
-\change_unchanged
-,
+ and Biblatex,
  which allows you to build databases of bibliographical references to be used in multiple documents.
  Select 
 \family sans
@@ -5591,8 +5350,6 @@ List
 \end_inset
 
 TOC
-\change_inserted -712698321 1590301964
-
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -5600,14 +5357,8 @@ TOC
 \begin_inset space \thinspace{}
 \end_inset
 
-References
-\change_unchanged
-\SpecialChar menuseparator
-Bib
-\change_inserted -712698321 1590301973
-(la)
-\change_unchanged
-TeX
+References\SpecialChar menuseparator
+Bib(la)TeX
 \begin_inset space ~
 \end_inset
 
@@ -5621,46 +5372,16 @@ Bib\SpecialChar TeX
  file.
  In the 
 \family sans
-Database
-\change_inserted -712698321 1590302046
-s
-\change_unchanged
-
+Databases
 \family default
- 
-\change_deleted -712698321 1590302066
-field
-\change_inserted -712698321 1590302067
-widget
-\change_unchanged
- you 
-\change_deleted -712698321 1590302057
-load
-\change_inserted -712698321 1590302058
-select
-\change_unchanged
- Bib\SpecialChar TeX
- files
-\change_inserted -712698321 1590302061
- to load
-\change_unchanged
-,
+ widget you select Bib\SpecialChar TeX
+ files to load,
  in the 
 \family sans
 Style
 \family default
- field you can 
-\change_deleted -712698321 1590302077
-load
-\change_inserted -712698321 1590302078
-select a
-\change_unchanged
- Bib\SpecialChar TeX
- style file
-\change_deleted -712698321 1590302081
-s
-\change_unchanged
-.
+ field you can select a Bib\SpecialChar TeX
+ style file.
 \end_layout
 
 \begin_layout Standard
@@ -5693,13 +5414,9 @@ Bib\SpecialChar TeX
 
 \family default
  file.
-
-\change_inserted -712698321 1590302176
  If you want to use Biblatex rather than classic Bib\SpecialChar TeX
 ,
  please refer to the User Guide for instructions.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
