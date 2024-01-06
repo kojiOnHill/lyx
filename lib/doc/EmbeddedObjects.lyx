@@ -1,5 +1,5 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 614
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -222,6 +222,7 @@ varwidth
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \notefontcolor #0000ff
@@ -241,7 +242,7 @@ varwidth
 \papersides 2
 \paperpagestyle default
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -250,11 +251,6 @@ varwidth
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -1382599118 "Daniel"
-\author -712698321 "Jürgen Spitzmüller"
-\author 177693 "x"
-\author 274215730 "scott"
-\author 630872221 "Jean-Pierre Chrétien" jeanpierre.chretien@free.fr
 \end_header
 
 \begin_body
@@ -1803,20 +1799,8 @@ Table
  move the mouse to set the column/row number of the table that should be created and then press a mouse button.
  When you use the menu to create a table,
  a dialog will appear,
- asking you for the number of rows and columns
-\change_inserted -712698321 1554289643
-,
- and you can select a specific (border) style
-\change_unchanged
-.
-\change_deleted -712698321 1554289644
-
-\begin_inset Newline newline
-\end_inset
-
-
-\change_inserted -712698321 1554289645
-
+ asking you for the number of rows and columns,
+ and you can select a specific (border) style.
 \end_layout
 
 \begin_layout Standard
@@ -2031,8 +2015,6 @@ C
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1554289664
 This corresponds to the 
 \begin_inset Quotes eld
 \end_inset
@@ -2045,14 +2027,10 @@ Grid with Head
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1554289664
 Other available styles include:
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -712698321 1554289664
 A 
 \begin_inset Quotes eld
 \end_inset
@@ -2066,14 +2044,10 @@ simple grid
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -712698321 1554289664
 a border-less table with no lines at all,
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -712698321 1554289664
 and a so-called 
 \begin_inset Quotes eld
 \end_inset
@@ -2092,16 +2066,10 @@ Embedded Objects
 Formal Tables
 \emph default
 ).
-
-\change_inserted 630872221 1622640694
  It is also possible to have an horizontal (thin) Footline above the last line.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1554289664
 The default style used in the dialog as well as the style used by the toolbar button can be changed in 
 \family sans
 Document\SpecialChar menuseparator
@@ -2770,29 +2738,7 @@ type  "icon"
 arg   "tabular-feature toggle-line-top"
 \end_inset
 
- 
-\change_deleted -1382599118 1647157945
-adds
-\change_inserted -1382599118 1647157946
-toggles
-\change_unchanged
- a line at the top of
-\change_inserted -1382599118 1647158116
- every cell for
-\change_unchanged
- the current
-\change_inserted -1382599118 1647157889
-ly
-\change_deleted -1382599118 1647157917
- cell / row or of a
-\change_unchanged
- select
-\change_deleted -1382599118 1647157923
-ion
-\change_inserted -1382599118 1647157925
-ed cells
-\change_unchanged
-
+ toggles a line at the top of every cell for the currently selected cells
 \end_layout
 
 \begin_layout Labeling
@@ -2802,29 +2748,7 @@ type  "icon"
 arg   "tabular-feature toggle-line-bottom"
 \end_inset
 
- 
-\change_deleted -1382599118 1647157963
-adds
-\change_inserted -1382599118 1647157964
-toggles
-\change_unchanged
- a line at the bottom of 
-\change_inserted -1382599118 1647158114
-every cell for 
-\change_unchanged
-the current
-\change_inserted -1382599118 1647157991
-ly
-\change_deleted -1382599118 1647158003
- cell / row or of a
-\change_unchanged
- select
-\change_deleted -1382599118 1647158007
-ion
-\change_inserted -1382599118 1647158009
-ed cells
-\change_unchanged
-
+ toggles a line at the bottom of every cell for the currently selected cells
 \end_layout
 
 \begin_layout Labeling
@@ -2834,29 +2758,7 @@ type  "icon"
 arg   "tabular-feature toggle-line-left"
 \end_inset
 
- 
-\change_deleted -1382599118 1647157971
-adds
-\change_inserted -1382599118 1647157972
-toggles
-\change_unchanged
- a line at the left side of 
-\change_inserted -1382599118 1647158111
-every cell for 
-\change_unchanged
-the current
-\change_inserted -1382599118 1647158027
-ly
-\change_deleted -1382599118 1647158069
- cell / row or of a
-\change_unchanged
- select
-\change_deleted -1382599118 1647158043
-ion
-\change_inserted -1382599118 1647158044
-ed cells
-\change_unchanged
-
+ toggles a line at the left side of every cell for the currently selected cells
 \end_layout
 
 \begin_layout Labeling
@@ -2866,63 +2768,27 @@ type  "icon"
 arg   "tabular-feature toggle-line-right"
 \end_inset
 
- 
-\change_deleted -1382599118 1647157974
-adds
-\change_inserted -1382599118 1647157975
-toggles
-\change_unchanged
- a line at the right side of 
-\change_inserted -1382599118 1647158109
-every cell for 
-\change_unchanged
-the current
-\change_inserted -1382599118 1647158061
-ly
-\change_deleted -1382599118 1647158072
- cell / row or of a
-\change_unchanged
- select
-\change_deleted -1382599118 1647158078
-ion
-\change_inserted -1382599118 1647158082
-ed cells
-\change_inserted -712698321 1554289731
-
+ toggles a line at the right side of every cell for the currently selected cells
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-
-\change_inserted -712698321 1554289910
 \begin_inset Info
 type  "icon"
 arg   "tabular-feature toggle-border-lines"
 \end_inset
 
- 
-\change_deleted -1382599118 1647157966
-adds
-\change_inserted -1382599118 1647157967
-toggles
-\change_inserted -712698321 1554289910
- a border around the currently selected cells
-\change_inserted -1382599118 1647040213
-
+ toggles a border around the currently selected cells
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-
-\change_inserted -1382599118 1647158092
 \begin_inset Info
 type  "icon"
 arg   "tabular-feature toggle-inner-lines"
 \end_inset
 
  toggles inner lines for the currently selected cells
-\change_unchanged
-
 \end_layout
 
 \begin_layout Labeling
@@ -2943,14 +2809,10 @@ arg   "tabular-feature unset-all-lines"
 \end_inset
 
  deletes all lines of the current or selected cells - if the current cell is not a multicolumn cell this also affects the current row and column
-\change_inserted -712698321 1554289920
-
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-
-\change_inserted -712698321 1554292586
 \begin_inset Info
 type  "icon"
 arg   "tabular-feature reset-formal-default"
@@ -2958,8 +2820,6 @@ arg   "tabular-feature reset-formal-default"
 
  If using a formal table,
  this resets the border to its default (only horizontal lines in top and bottom rows)
-\change_unchanged
-
 \end_layout
 
 \begin_layout Labeling
@@ -15606,27 +15466,17 @@ formal
 \end_inset
 
 .
- To make a table a formal table
-\change_inserted -712698321 1554290084
-,
+ To make a table a formal table,
  select the table style 
 \begin_inset Quotes eld
 \end_inset
 
-Formal
-\change_deleted 630872221 1622707670
- Table
-\change_inserted 630872221 1622707670
-\SpecialChar ldots
-
-\change_inserted -712698321 1554290084
+Formal\SpecialChar ldots
 
 \begin_inset Quotes erd
 \end_inset
 
- in the Table Creation dialog or
-\change_unchanged
- use the option 
+ in the Table Creation dialog or use the option 
 \family sans
 Formal
 \family default
@@ -15634,16 +15484,12 @@ Formal
 \family sans
 Borders
 \family default
- tab of the table dialog
-\change_inserted -712698321 1554290131
- (if you additionally check the option 
+ tab of the table dialog (if you additionally check the option 
 \family sans
 Use Default Formal Style
 \family default
 ,
- the border lines are adapted to a sensible default)
-\change_unchanged
-.
+ the border lines are adapted to a sensible default).
 \end_layout
 
 \begin_layout Standard
@@ -15664,13 +15510,7 @@ name "tab:Example-booktabs-table"
 
 \end_inset
 
-Example 
-\change_deleted -712698321 1554292310
-booktabs-
-\change_inserted -712698321 1554292311
-formal 
-\change_unchanged
-table
+Example formal table
 \end_layout
 
 \end_inset
@@ -15738,35 +15578,6 @@ Chip
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_deleted -712698321 1554290161
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-cmidrule(r){2-2}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-cmidrule(l){3-4}
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 Detector thickness in µm
 \end_layout
 
@@ -15923,22 +15734,6 @@ MTF at
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_deleted -712698321 1554290260
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-cmidrule[2pt](l{10pt}){1-1}
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 LSF-spatial resolution
 \end_layout
 
@@ -16166,19 +15961,6 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -712698321 1554290929
-Lines that do not span all table columns can be created by setting a table line for multicolumn cells.
- \SpecialChar LyX
- will then internally use the command 
-\series bold
-
-\backslash
-cmidrule
-\series default
- to create this line.
- Its full scheme is
-\change_inserted -712698321 1554291959
 As in table
 \begin_inset space ~
 \end_inset
@@ -16197,19 +15979,13 @@ nolink "false"
  With formal tables,
  the top and bottom borders have to small offset lines to the left and the right.
  Clicking on these will trim the line respectively.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1554291403
 If you need to adjust the length of the trimming or the height of the rules,
  you have to resort to \SpecialChar TeX
  Code.
  The respective command (which is also used for the trimmed mid rules) is this:
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -16218,31 +15994,6 @@ If you need to adjust the length of the trimming or the height of the rules,
 
 \backslash
 cmidrule[height](trim){startcol-endcol}
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -712698321 1554292020
-The options of 
-\series bold
-
-\backslash
-cmidrule
-\series default
- are currently not supported by \SpecialChar LyX
- so you have to use \SpecialChar TeX
- Code to be able to use them.
- 
-\series bold
-
-\backslash
-cmidrule
-\series default
-s can manually be created by inserting the command as \SpecialChar TeX
- Code as the first cell entry of the first cell of a row.
- The line is then drawn in the output above the current row.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -16304,18 +16055,10 @@ trimwidth
 \begin_inset space \thinspace{}
 \end_inset
 
-em
-\change_inserted -712698321 1554291561
- (this is what is done if you use trimming from the dialog)
-\change_unchanged
-.
-\change_inserted -712698321 1554292039
-
+em (this is what is done if you use trimming from the dialog).
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1554292207
 The 
 \emph on
 height
@@ -16355,96 +16098,16 @@ nolink "false"
 \end_inset
 
  exemplifies this (in the sixth row).
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -712698321 1554291078
-\begin_inset VSpace bigskip
-\end_inset
-
-Table
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Example-booktabs-table"
-nolink "false"
-
-\end_inset
-
- was created using the commands
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -712698321 1554291077
-
-\series bold
-
-\backslash
-cmidrule(r){2-2}
-\backslash
-cmidrule(l){3-4}
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -712698321 1554291077
-at the beginning of the second row and
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -712698321 1554291077
-
-\series bold
-
-\backslash
-cmidrule[2pt](l{10pt}){1-1}
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -712698321 1554291077
-in the sixth row.
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -712698321 1554292212
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-You 
-\change_inserted -712698321 1554291573
-also 
-\change_unchanged
-might want to have overlapping 
+You also might want to have overlapping 
 \series bold
 
 \backslash
 cmidrule
 \series default
-s as 
-\change_deleted -712698321 1554296804
-in
-\change_inserted -712698321 1554296808
-exemplified as well
-\change_unchanged
- in Table
+s as exemplified as well in Table
 \begin_inset space ~
 \end_inset
 
@@ -16456,12 +16119,8 @@ nolink "false"
 
 \end_inset
 
-
-\change_inserted -712698321 1554291601
 ,
- even though this is considered bad style (so only use it if you really need to)
-\change_unchanged
-.
+ even though this is considered bad style (so only use it if you really need to).
  This can be achieved with the \SpecialChar TeX
  Code command
 \end_layout
@@ -16492,15 +16151,7 @@ nolink "false"
 
 \begin_layout Standard
 
-\change_deleted -712698321 1554291798
-
 \series bold
-
-\backslash
-cmidrule(r){2-2}
-\backslash
-cmidrule(l){3-4}
-\change_unchanged
 
 \backslash
 morecmidrules
@@ -16514,13 +16165,7 @@ The command for the sixth row is
 
 \begin_layout Standard
 
-\change_deleted -712698321 1554291810
-
 \series bold
-
-\backslash
-midrule
-\change_unchanged
 
 \backslash
 morecmidrules
@@ -16609,17 +16254,7 @@ name "tab:Special-booktabs-table"
 
 \end_inset
 
-Special 
-\change_inserted -712698321 1554292295
-(ugly) 
-\change_deleted -712698321 1554292304
-booktabs
-\change_inserted -712698321 1554292305
-formal 
-\change_deleted -712698321 1554292300
--
-\change_unchanged
-table
+Special (ugly) formal table
 \end_layout
 
 \end_inset
@@ -16687,36 +16322,6 @@ Chip
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_deleted -712698321 1554291732
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-cmidrule(r){2-2}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-cmidrule(l){3-4}
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \begin_inset ERT
 status collapsed
 
@@ -16918,11 +16523,7 @@ status open
 
 
 \backslash
-cmidrule
-\change_inserted -712698321 1554291896
-[2pt](l{7pt})
-\change_unchanged
-{3-4}
+cmidrule[2pt](l{7pt}){3-4}
 \end_layout
 
 \end_inset
@@ -27561,13 +27162,7 @@ arg   "dialog-show-new-inset ref"
 \end_layout
 
 \begin_layout Standard
-It is recommended that you use a 
-\change_deleted 177693 1654669168
-protected
-\change_inserted 177693 1654669170
-non-breaking
-\change_unchanged
- space between the cross-reference name and its number to avoid line breaks between them.
+It is recommended that you use a non-breaking space between the cross-reference name and its number to avoid line breaks between them.
  If a cross-reference refers to a non-existing label,
  you will see two question marks in the output instead of the reference.
 \end_layout
@@ -28646,13 +28241,7 @@ hypcap
 \end_layout
 
 \begin_layout Section
-Float 
-\change_deleted -712698321 1526031763
-Placement 
-\change_inserted -712698321 1526031765
-Settings
-\change_unchanged
-
+Float Settings
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Float-Settings"
@@ -28671,13 +28260,7 @@ Floats
 status open
 
 \begin_layout Plain Layout
-
-\change_deleted -712698321 1526031841
-Placement
-\change_inserted -712698321 1526031842
 Settings
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -28691,17 +28274,9 @@ Settings
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1526033385
 Float Settings can be adjusted at two places in \SpecialChar LyX
 :
- 
-\change_inserted 630872221 1622709604
-i
-\change_deleted 630872221 1622709603
-I
-\change_inserted -712698321 1526033385
-n 
+ in 
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar ldots
@@ -28711,53 +28286,18 @@ Float Settings
 ,
  you can set some options that are used by default for all floats of the document (placement on page and alignment of contents),
  unless you modify the local settings of a float.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1526032513
-The latter can be done by 
-\change_deleted -712698321 1526032513
-R
-\change_inserted -712698321 1526032513
-r
-\change_unchanged
-ight-clicking on a float-box and clicking on 
+The latter can be done by right-clicking on a float-box and clicking on 
 \family sans
-Settings
-\change_inserted -712698321 1526033387
-\SpecialChar ldots
-
-\change_unchanged
+Settings\SpecialChar ldots
 
 \family default
- 
-\change_inserted -712698321 1526032520
-This 
-\change_unchanged
-opens a dialog where you can
-\change_inserted -712698321 1526032584
-,
+ This opens a dialog where you can,
  now only for the given float,
-
-\change_unchanged
- alter the 
-\change_inserted -712698321 1526033452
-global 
-\change_unchanged
-placement 
-\change_deleted -712698321 1526033439
-options that \SpecialChar LaTeX
- uses for positioning the float
-\change_inserted -712698321 1526033493
- and alignment options,
- and adapt some other options that are only available for single floats
-\change_unchanged
-.
-
-\change_inserted -712698321 1526032658
+ alter the global placement and alignment options,
+ and adapt some other options that are only available for single floats.
  All these options,
  both for 
 \family sans
@@ -28771,50 +28311,9 @@ Float Settings
 \family default
 ,
  are described in turn.
-\change_deleted -712698321 1526031652
-
-\begin_inset Newline newline
-\end_inset
-
-The option 
-\family sans
-Span
-\begin_inset space ~
-\end_inset
-
-columns
-\family default
- is only useful for two-column documents:
- If you select it,
- the float will span both columns on the page instead of being confined to just one.
-\begin_inset Newline newline
-\end_inset
-
-The option 
-\family sans
-Rotate
-\begin_inset space ~
-\end_inset
-
-sideways
-\family default
- is used to rotate floats,
- see section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Rotated-Floats"
-nolink "false"
-
-\end_inset
-
-.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsection
-
-\change_inserted -712698321 1526031775
 Float Placement
 \begin_inset CommandInset label
 LatexCommand label
@@ -28829,20 +28328,12 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -712698321 1526031775
 Floats
-\change_unchanged
-
 \begin_inset IndexMacro subentry
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -712698321 1526031775
 Placement
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -28852,14 +28343,10 @@ Placement
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1526032697
 Both in 
 \family sans
 Document\SpecialChar menuseparator
@@ -28871,31 +28358,15 @@ Float Settings
 Float Settings
 \family default
  dialog,
- you can 
-\change_deleted -712698321 1526032811
-You can use one or more of the following options in the float dialog to set
-\change_inserted -712698321 1526032812
-modify
-\change_unchanged
- the placement 
-\change_inserted -712698321 1526033558
-algorithm that \SpecialChar LaTeX
+ you can modify the placement algorithm that \SpecialChar LaTeX
  uses for positioning floats on the page,
- either 
-\change_unchanged
-for 
-\change_inserted -712698321 1526033535
-all floats (
+ either for all floats (
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
 Float Settings
 \family default
-) or 
-\change_unchanged
-a particular float
-\change_inserted -712698321 1526033570
- (local 
+) or a particular float (local 
 \family sans
 Float Settings
 \family default
@@ -28906,11 +28377,7 @@ Placement Settings
 \family default
 .
  By default,
- this is set to
-\change_unchanged
- 
-\change_inserted -712698321 1526033604
-
+ this is set to 
 \family sans
 Class Default
 \family default
@@ -28937,44 +28404,17 @@ Float Settings
  are used,
  which are the Class Defaults by default).
  If you want to change this,
- 
-\change_deleted -712698321 1526033009
-when you uncheck
-\change_inserted -712698321 1526033535
-select
-\change_unchanged
- 
-\change_deleted -712698321 1526031920
-the option
-\change_inserted -712698321 1526033535
-
+ select 
 \family sans
 Placement Settings:
 
-\change_unchanged
-
 \family default
  
-\change_inserted -712698321 1526033535
-
 \family sans
 Custom.
-\change_deleted -712698321 1526031908
-Use
-\begin_inset space ~
-\end_inset
-
-default
-\begin_inset space ~
-\end_inset
-
-placement
-\change_inserted -712698321 1526033535
 
 \family default
- This allows you to select one or more from
-\change_unchanged
-:
+ This allows you to select one or more from:
 \end_layout
 
 \begin_layout Description
@@ -28987,20 +28427,14 @@ if
 \end_inset
 
 possible try to place the float on the position where it has been inserted
-\change_inserted 630872221 1622713522
-
 \end_layout
 
 \begin_layout Description
-
-\change_inserted 630872221 1622713704
 Here,
 \begin_inset space ~
 \end_inset
 
 definitely forces the placement of the float on the position where it has been inserted
-\change_unchanged
-
 \end_layout
 
 \begin_layout Description
@@ -29481,19 +28915,13 @@ literal "true"
 \end_inset
 
 .
-\change_inserted -712698321 1526030561
-
 \end_layout
 
 \begin_layout Subsection
-
-\change_inserted -712698321 1526031989
 Alignment of Float Contents
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1526032316
 In this list of options,
  you can define how the contents of a float (or all floats by default,
  if selected from 
@@ -29558,19 +28986,13 @@ Float Settings
  all floats of the document will have this setting by default (so it is fairly easy,
  for instance,
  to center all floats).
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsection
-
-\change_inserted -712698321 1526030571
 Other Float Options
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1526035716
 These two options are only visible in the local 
 \family sans
 Float Settings
@@ -29580,13 +29002,9 @@ Float Settings
 \family sans
 Document\SpecialChar menuseparator
 Settings.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1526033931
 The option 
 \family sans
 Span
@@ -29601,8 +29019,6 @@ columns
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1526030572
 The option 
 \family sans
 Rotate
@@ -29621,8 +29037,6 @@ nolink "false"
 \end_inset
 
 .
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -30984,13 +30398,7 @@ thefigure
 \begin_inset Quotes erd
 \end_inset
 
- creates a 
-\change_deleted 177693 1654669177
-protected
-\change_inserted 177693 1654669179
-non-breaking
-\change_unchanged
- space.
+ creates a non-breaking space.
 \end_layout
 
 \begin_layout Standard
@@ -40597,13 +40005,7 @@ name "fig:This-is-a"
 
 \end_inset
 
-This is a 
-\change_deleted 274215730 1669306080
-figure wrap
-\change_inserted 274215730 1669306089
-wrapped figure
-\change_unchanged
- float.
+This is a wrapped figure float.
 \end_layout
 
 \end_inset
@@ -40618,47 +40020,19 @@ wrapped figure
 \family sans
 Insert\SpecialChar menuseparator
 Floats\SpecialChar menuseparator
-
-\change_inserted 274215730 1669306057
 Wrapped
 \begin_inset space ~
 \end_inset
 
 Figure
-\change_deleted 274215730 1669306060
-Figure
-\begin_inset space ~
-\end_inset
-
-Wrap
-\begin_inset space ~
-\end_inset
-
-Float
-\change_unchanged
-
 \family default
  or 
-\change_deleted 274215730 1669306067
-
 \family sans
-Table
-\begin_inset space ~
-\end_inset
-
-Wrap
-\begin_inset space ~
-\end_inset
-
-Float
-\change_inserted 274215730 1669306070
 Wrapped
 \begin_inset space ~
 \end_inset
 
 Table
-\change_unchanged
-
 \family default
  if the \SpecialChar LaTeX
 -package 
@@ -43610,13 +42984,9 @@ Input
 
 ).
  
-\change_inserted -712698321 1584102244
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1584102427
 In the section 
 \family sans
 Global Counters & References
@@ -43628,88 +42998,40 @@ Global Counters & References
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -712698321 1584102377
 With the option 
 \family sans
 Strictly maintain
 \family default
 ,
- 
-\change_deleted -712698321 1584102385
-If the option 
-\family sans
-Maintain counters and references
-\family default
- is enabled,
- 
-\change_unchanged
-\SpecialChar LyX
+ \SpecialChar LyX
  will assure that all page numbers,
  references etc.
 \begin_inset space ~
 \end_inset
 
-are correct as if the whole document was 
-\change_deleted -712698321 1584108508
-processed
-\change_inserted -712698321 1584108509
-output
-\change_unchanged
-.
+are correct as if the whole document was output.
  This is useful if you want the selected sub-documents to look exactly as in the context of the whole document.
  However,
  \SpecialChar LyX
- needs to process the whole document in the background for this feature
-\change_inserted -712698321 1584102406
-,
- which can take a long time
-\change_unchanged
-.
-
-\change_deleted -712698321 1584103026
- 
-\change_inserted -712698321 1584102447
-
+ needs to process the whole document in the background for this feature,
+ which can take a long time.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -712698321 1584102489
 With the option 
 \family sans
 Do not maintain
 \family default
 ,
- 
-\change_unchanged
-\SpecialChar LyX
-
-\change_inserted -712698321 1584103270
+ \SpecialChar LyX
  only compiles the master and the included documents.
  Thus the counters will differ from the complete document,
  and references to excluded child documents will not be resolved.
- 
-\change_deleted -712698321 1584102517
-So i
-\change_inserted -712698321 1584102518
-I
-\change_unchanged
-f you want to save compile time and if counters and references do not need to be correct,
- 
-\change_deleted -712698321 1584102523
-disable this checkbox
-\change_inserted -712698321 1584102546
-use this option as this is the fastest one
-\change_unchanged
-.
-\change_inserted -712698321 1584102550
-
+ If you want to save compile time and if counters and references do not need to be correct,
+ use this option as this is the fastest one.
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -712698321 1584109486
 The option 
 \family sans
 Maintain mostly
@@ -43726,8 +43048,6 @@ Maintain mostly
  while giving you more or less correct counters and references.
  They are only more or less correct since the change of size of included documents obviously also changes the pagination of excluded documents,
  but this change cannot be tracked with this method.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
