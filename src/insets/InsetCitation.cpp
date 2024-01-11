@@ -50,7 +50,7 @@ namespace lyx {
 InsetCitation::InsetCitation(Buffer * buf, InsetCommandParams const & p)
 	: InsetCommand(buf, p)
 {
-	buffer().removeBiblioTempFiles();
+	buffer().scheduleBiblioTempRemoval();
 	cleanKeys();
 }
 
@@ -61,7 +61,7 @@ InsetCitation::~InsetCitation()
 		/* We do not use buffer() because Coverity believes that this
 		 * may throw an exception. Actually this code path is not
 		 * taken when buffer_ == 0 */
-		buffer_->removeBiblioTempFiles();
+		buffer_->scheduleBiblioTempRemoval();
 }
 
 
@@ -142,7 +142,7 @@ void InsetCitation::doDispatch(Cursor & cur, FuncRequest & cmd)
 		openCitation();
 		break;
 	case LFUN_INSET_MODIFY: {
-		buffer().removeBiblioTempFiles();
+		buffer().scheduleBiblioTempRemoval();
 		cache.recalculate = true;
 		if (cmd.getArg(0) == "toggleparam") {
 			string cmdname = getCmdName();

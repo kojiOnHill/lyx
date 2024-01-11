@@ -2444,7 +2444,7 @@ void Buffer::invalidateBibinfoCache() const
 {
 	d->bibinfo_cache_valid_ = false;
 	d->cite_labels_valid_ = false;
-	removeBiblioTempFiles();
+	scheduleBiblioTempRemoval();
 	// also invalidate the cache for the parent buffer
 	Buffer const * const pbuf = d->parent();
 	if (pbuf)
@@ -2702,6 +2702,7 @@ void Buffer::removeBiblioTempFiles() const
 	Buffer const * const pbuf = parent();
 	if (pbuf)
 		pbuf->removeBiblioTempFiles();
+	removeBiblioTemps = false;
 }
 
 
@@ -4475,6 +4476,8 @@ void Buffer::setMathFlavor(OutputParams & op) const
 Buffer::ExportStatus Buffer::doExport(string const & target, bool put_in_tempdir,
 	bool includeall, string & result_file) const
 {
+	if (removeBiblioTemps)
+		removeBiblioTempFiles();
 	LYXERR(Debug::FILES, "target=" << target);
 	OutputParams runparams(&params().encoding());
 	string format = target;

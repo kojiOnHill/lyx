@@ -527,6 +527,7 @@ public:
 	string last_export_format;
 	string processing_format;
 
+	// Buffers that are being exported
 	static QSet<Buffer const *> busyBuffers;
 
 	unsigned int smallIconSize;

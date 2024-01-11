@@ -538,9 +538,6 @@ public:
 	/// dereferenced label name
 	void getLabelList(std::vector<std::tuple<docstring, docstring, docstring>> &) const;
 
-	/// This removes the .aux and .bbl files from the temp dir.
-	void removeBiblioTempFiles() const;
-
 	///
 	void changeLanguage(Language const * from, Language const * to);
 
@@ -704,6 +701,8 @@ private:
 	///
 	ExportStatus doExport(std::string const & target, bool put_in_tempdir,
 		std::string & result_file) const;
+	/// This removes the .aux and .bbl files from the temp dir.
+	void removeBiblioTempFiles() const;
 	/// target is a format name optionally followed by a space
 	/// and a destination file-name
 	ExportStatus doExport(std::string const & target, bool put_in_tempdir,
@@ -806,18 +805,20 @@ public:
 	/// of loaded child documents).
 	docstring_list const &
 		getBibfiles(UpdateScope scope = UpdateMaster) const;
-
+	///
+	void scheduleBiblioTempRemoval() const { removeBiblioTemps = true; }
 	/// routines for dealing with possible self-inclusion
 	void pushIncludedBuffer(Buffer const * buf) const;
 	void popIncludedBuffer() const;
 	bool isBufferIncluded(Buffer const * buf) const;
 private:
 	void clearIncludeList() const;
-
-private:
+	///
 	friend class MarkAsExporting;
 	/// mark the buffer as busy exporting something, or not
 	void setExportStatus(bool e) const;
+	///
+	mutable bool removeBiblioTemps = false;
 
 	///
 	References & getReferenceCache(docstring const & label);
