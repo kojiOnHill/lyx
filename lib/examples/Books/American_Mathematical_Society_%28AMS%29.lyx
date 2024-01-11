@@ -1,5 +1,5 @@
 #LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 614
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -13,6 +13,28 @@ figs-within-sections
 theorems-ams-extended
 \end_modules
 \maintain_unincluded_children no
+\begin_local_layout
+### Inserted by lyx2lyx (ams extended theorems) ###
+### This requires theorems-ams-extended module to be loaded
+Style Acknowledgement
+  CopyStyle             Remark
+  LatexName             acknowledgement
+  LabelString           "Acknowledgement \thetheorem."
+  Preamble
+    \theoremstyle{remark}
+    \newtheorem{acknowledgement}[thm]{\protect\acknowledgementname}
+  EndPreamble
+  LangPreamble
+    \providecommand{\acknowledgementname}{_(Acknowledgement)}
+  EndLangPreamble
+  BabelPreamble
+    \addto\captions$$lang{\renewcommand{\acknowledgementname}{_(Acknowledgement)}}
+  EndBabelPreamble
+  DocBookTag            para
+  DocBookAttr           role="acknowledgement"
+  DocBookItemTag        ""
+End
+\end_local_layout
 \language english
 \language_package default
 \inputencoding utf8
