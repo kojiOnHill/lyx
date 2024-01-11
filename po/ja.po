@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lyx-japanese\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2023-12-22 16:29+0900\n"
+"POT-Creation-Date: 2024-01-11 11:07-0500\n"
 "PO-Revision-Date: 2023-12-22 17:51+0900\n"
 "Last-Translator: Koji Yokota <yokota6@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -822,7 +822,7 @@ msgstr "寸法(&Z)："
 #: src/frontends/qt/GuiDocument.cpp:2840 src/frontends/qt/GuiDocument.cpp:2872
 #: src/frontends/qt/GuiDocument.cpp:2883 src/frontends/qt/GuiDocument.cpp:2894
 #: src/frontends/qt/GuiDocument.cpp:2981 src/frontends/qt/GuiDocument.cpp:3590
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiExternal.cpp:76
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiExternal.cpp:76
 #: src/frontends/qt/GuiGraphics.cpp:71 src/frontends/qt/GuiIndex.cpp:46
 #: src/frontends/qt/GuiIndices.cpp:58 src/frontends/qt/GuiListings.cpp:156
 #: src/frontends/qt/GuiListings.cpp:163 src/frontends/qt/GuiPrefs.cpp:2360
@@ -12715,7 +12715,7 @@ msgstr "Fixmeエラー"
 
 #: lib/layouts/fixme.module:83 src/frontends/qt/GuiCompare.cpp:202
 #: src/frontends/qt/GuiDocument.cpp:3039 src/frontends/qt/GuiDocument.cpp:3113
-#: src/frontends/qt/GuiDocument.cpp:5046
+#: src/frontends/qt/GuiDocument.cpp:5044
 msgid "Error"
 msgstr "エラー"
 
@@ -17451,7 +17451,7 @@ msgid "List of Listings"
 msgstr "プログラムリスト一覧"
 
 #: lib/layouts/stdinsets.inc:355 src/frontends/qt/GuiDocument.cpp:1840
-#: src/frontends/qt/GuiDocument.cpp:5069
+#: src/frontends/qt/GuiDocument.cpp:5067
 msgid "Listings[[inset]]"
 msgstr "プログラムリスト"
 
@@ -22534,7 +22534,7 @@ msgid "Big operators"
 msgstr "大演算子"
 
 #: lib/ui/stdtoolbars.inc:226 lib/ui/stdtoolbars.inc:693
-#: src/frontends/qt/GuiDocument.cpp:5359
+#: src/frontends/qt/GuiDocument.cpp:5357
 msgid "Miscellaneous"
 msgstr "その他"
 
@@ -27490,12 +27490,12 @@ msgid "LyX Archive (tar.gz)"
 msgstr "LyX書庫(tar.gz)"
 
 #: lib/examples/Articles:0
-msgid "Game 2"
-msgstr "ゲーム２"
-
-#: lib/examples/Articles:0
 msgid "Game 1"
 msgstr "ゲーム１"
+
+#: lib/examples/Articles:0
+msgid "Game 2"
+msgstr "ゲーム２"
 
 #: lib/examples/Articles:0
 msgid "Example (LyXified)"
@@ -27515,10 +27515,6 @@ msgid "External Material"
 msgstr "外部素材"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "箇条書きのブリット"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "ファインマン図"
 
@@ -27527,12 +27523,16 @@ msgid "Instant Preview"
 msgstr "自動プレビュー"
 
 #: lib/examples/Articles:0
-msgid "Minted Listings"
-msgstr "Mintedプログラムリスト"
+msgid "Itemize Bullets"
+msgstr "箇条書きのブリット"
 
 #: lib/examples/Articles:0
 msgid "Minted File Listing"
 msgstr "Mintedプログラムリストファイル"
+
+#: lib/examples/Articles:0
+msgid "Minted Listings"
+msgstr "Mintedプログラムリスト"
 
 #: lib/examples/Articles:0
 msgid "XY-Figure"
@@ -27547,14 +27547,6 @@ msgid "Graphics and Insets"
 msgstr "グラフィックと差込枠"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "日本語と他言語の混成(platexを使用)"
-
-#: lib/examples/Articles:0
-msgid "Writing Armenian"
-msgstr "アルメニア語の執筆"
-
-#: lib/examples/Articles:0
 msgid "Localization Test (for Developers)"
 msgstr "翻訳テスト(開発者向け)"
 
@@ -27563,8 +27555,20 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "日本語と他言語の混成(CJKutf8を使用)"
 
 #: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "日本語と他言語の混成(platexを使用)"
+
+#: lib/examples/Articles:0
+msgid "Writing Armenian"
+msgstr "アルメニア語の執筆"
+
+#: lib/examples/Articles:0
 msgid "Language Support"
 msgstr "言語サポート"
+
+#: lib/examples/Articles:0
+msgid "Serial Letter 1"
+msgstr "定期郵便１"
 
 #: lib/examples/Articles:0
 msgid "Serial Letter 2"
@@ -27575,44 +27579,40 @@ msgid "Serial Letter 3"
 msgstr "定期郵便３"
 
 #: lib/examples/Articles:0
-msgid "Serial Letter 1"
-msgstr "定期郵便１"
+msgid "Hazard and Precautionary Statements"
+msgstr "危険有害性情報・注意書き"
 
 #: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond Book"
 
 #: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Noweb Listerrors"
-
-#: lib/examples/Articles:0
 msgid "Multilingual Captions"
 msgstr "多言語キャプション"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "危険有害性情報・注意書き"
-
-#: lib/examples/Articles:0
 msgid "Noweb2LyX"
 msgstr "Noweb2LyX"
+
+#: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Noweb Listerrors"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1825
 msgid "Modules"
 msgstr "モジュール"
 
 #: lib/examples/Articles:0
-msgid "Foils Landslide"
-msgstr "Foils横スライド"
+msgid "Beamer (Complex)"
+msgstr "Beamer(複雑)"
 
 #: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer(複雑)"
+msgid "Foils Landslide"
+msgstr "Foils横スライド"
 
 #: lib/examples/Articles:0
 msgid "Welcome"
@@ -27621,6 +27621,14 @@ msgstr "ようこそ"
 #: lib/examples/Articles:0
 msgid "Writing Korean with CJK-ko"
 msgstr "韓国語の執筆(CJK-koを使用)"
+
+#: lib/examples/Articles:0
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "ヘブライ語Article (KOMA-Script)"
+
+#: lib/examples/Articles:0
+msgid "IEEE Transactions Conference"
+msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
@@ -27635,68 +27643,32 @@ msgid "Springers Global Journal Template (V. 3)"
 msgstr "Springer国際誌ひな型(V. 3)"
 
 #: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "ヘブライ語Article (KOMA-Script)"
-
-#: lib/examples/Articles:0
-msgid "IEEE Transactions Conference"
-msgstr "IEEE Transactions Conference"
-
-#: lib/examples/Articles:0
-msgid "02 Foreword"
-msgstr "02巻頭言"
+msgid "00 Main File"
+msgstr "00主幹ファイル"
 
 #: lib/examples/Articles:0
 msgid "01 Dedication"
 msgstr "01献呈"
 
 #: lib/examples/Articles:0
-msgid "06 Part"
-msgstr "06部"
+msgid "02 Foreword"
+msgstr "02巻頭言"
 
 #: lib/examples/Articles:0
 msgid "03 Preface"
 msgstr "03序文"
 
 #: lib/examples/Articles:0
-msgid "07 Chapter"
-msgstr "07章"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10解"
-
-#: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05頭字語"
-
-#: lib/examples/Articles:0
-msgid "11 References"
-msgstr "11書誌情報"
-
-#: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04謝辞"
 
 #: lib/examples/Articles:0
-msgid "09 Glossary"
-msgstr "09用語集"
-
-#: lib/examples/Articles:0
-msgid "08 Appendix"
-msgstr "08付録"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00主幹ファイル"
+msgid "05 Contributor List"
+msgstr "05寄稿者一覧"
 
 #: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06頭字語"
-
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05寄稿者一覧"
 
 #: lib/examples/Articles:0
 msgid "07 Part"
@@ -27713,6 +27685,34 @@ msgstr "09付録"
 #: lib/examples/Articles:0
 msgid "10 Glossary"
 msgstr "10用語集"
+
+#: lib/examples/Articles:0
+msgid "11 References"
+msgstr "11書誌情報"
+
+#: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr "05頭字語"
+
+#: lib/examples/Articles:0
+msgid "06 Part"
+msgstr "06部"
+
+#: lib/examples/Articles:0
+msgid "07 Chapter"
+msgstr "07章"
+
+#: lib/examples/Articles:0
+msgid "08 Appendix"
+msgstr "08付録"
+
+#: lib/examples/Articles:0
+msgid "09 Glossary"
+msgstr "09用語集"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10解"
 
 #: lib/examples/Articles:0
 msgid "Colored"
@@ -28585,7 +28585,7 @@ msgid "Document class not available"
 msgstr "文書クラスが利用不能です"
 
 #: src/BufferParams.cpp:1105 src/Color.cpp:283
-#: src/frontends/qt/GuiDocument.cpp:3730
+#: src/frontends/qt/GuiDocument.cpp:3728
 msgid "greyedout inset text"
 msgstr "淡色表示差込枠本文"
 
@@ -29816,17 +29816,17 @@ msgid "Number %1$s"
 msgstr "番号 %1$s"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:148
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiListings.cpp:163
 msgid "Roman"
 msgstr "ローマン体"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiListings.cpp:163
 msgid "Sans Serif"
 msgstr "サンセリフ体"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:150
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiListings.cpp:163
 msgid "Typewriter"
 msgstr "タイプライタ体"
 
@@ -32316,7 +32316,7 @@ msgid "Filename Suffix"
 msgstr "ファイル名接尾辞"
 
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3516 src/frontends/qt/GuiDocument.cpp:4844
+#: src/frontends/qt/GuiDocument.cpp:3516 src/frontends/qt/GuiDocument.cpp:4842
 #: src/frontends/qt/GuiProgressView.cpp:148
 #: src/frontends/qt/GuiProgressView.cpp:162
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -32324,8 +32324,8 @@ msgid "Yes"
 msgstr "はい"
 
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3515 src/frontends/qt/GuiDocument.cpp:4156
-#: src/frontends/qt/GuiDocument.cpp:4843
+#: src/frontends/qt/GuiDocument.cpp:3515 src/frontends/qt/GuiDocument.cpp:4154
+#: src/frontends/qt/GuiDocument.cpp:4841
 #: src/frontends/qt/GuiProgressView.cpp:114
 #: src/frontends/qt/GuiProgressView.cpp:147
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -33056,7 +33056,7 @@ msgid "Document Class"
 msgstr "文書クラス"
 
 #: src/frontends/qt/GuiDocument.cpp:1826 src/frontends/qt/GuiDocument.cpp:3618
-#: src/frontends/qt/GuiDocument.cpp:5070
+#: src/frontends/qt/GuiDocument.cpp:5068
 msgid "Local Layout"
 msgstr "ローカルのレイアウト"
 
@@ -33084,13 +33084,13 @@ msgstr "PDF特性"
 msgid "Bullets"
 msgstr "ブリット"
 
-#: src/frontends/qt/GuiDocument.cpp:1844 src/frontends/qt/GuiDocument.cpp:5071
+#: src/frontends/qt/GuiDocument.cpp:1844 src/frontends/qt/GuiDocument.cpp:5069
 msgid "LaTeX Preamble"
 msgstr "LaTeXプリアンブル"
 
 #: src/frontends/qt/GuiDocument.cpp:1860 src/frontends/qt/GuiDocument.cpp:1886
 #: src/frontends/qt/GuiDocument.cpp:3099 src/frontends/qt/GuiDocument.cpp:3400
-#: src/frontends/qt/GuiDocument.cpp:5035
+#: src/frontends/qt/GuiDocument.cpp:5033
 msgid "Unapplied changes"
 msgstr "適用されていない変更"
 
@@ -33103,7 +33103,7 @@ msgstr ""
 "閉じたり取り消したりする前に変更点を適用しますか？"
 
 #: src/frontends/qt/GuiDocument.cpp:1863 src/frontends/qt/GuiDocument.cpp:3102
-#: src/frontends/qt/GuiDocument.cpp:3403 src/frontends/qt/GuiDocument.cpp:5038
+#: src/frontends/qt/GuiDocument.cpp:3403 src/frontends/qt/GuiDocument.cpp:5036
 msgid "&Apply"
 msgstr "適用(&A)"
 
@@ -33155,9 +33155,9 @@ msgstr "直接(inputencなし)"
 msgid "Direct (XeTeX/LuaTeX)"
 msgstr "直接(XeTeX/LuaTeX)"
 
-#: src/frontends/qt/GuiDocument.cpp:2808 src/frontends/qt/GuiDocument.cpp:4503
-#: src/frontends/qt/GuiDocument.cpp:4514 src/frontends/qt/GuiDocument.cpp:4525
-#: src/frontends/qt/GuiDocument.cpp:4537
+#: src/frontends/qt/GuiDocument.cpp:2808 src/frontends/qt/GuiDocument.cpp:4501
+#: src/frontends/qt/GuiDocument.cpp:4512 src/frontends/qt/GuiDocument.cpp:4523
+#: src/frontends/qt/GuiDocument.cpp:4535
 msgid " (not installed)"
 msgstr "(未インストール)"
 
@@ -33224,7 +33224,7 @@ msgid "LyX Files (*.lyx)"
 msgstr "LyX文書 (*.lyx)"
 
 #: src/frontends/qt/GuiDocument.cpp:3100 src/frontends/qt/GuiDocument.cpp:3401
-#: src/frontends/qt/GuiDocument.cpp:5036
+#: src/frontends/qt/GuiDocument.cpp:5034
 msgid ""
 "Some changes in the dialog were not yet applied.\n"
 "If you do not apply now, they will be lost after this action."
@@ -33233,11 +33233,11 @@ msgstr ""
 "いま適用しなければ，この動作以降，変更が失われます．"
 
 #: src/frontends/qt/GuiDocument.cpp:3102 src/frontends/qt/GuiDocument.cpp:3403
-#: src/frontends/qt/GuiDocument.cpp:5038
+#: src/frontends/qt/GuiDocument.cpp:5036
 msgid "&Dismiss"
 msgstr "解除(&D)"
 
-#: src/frontends/qt/GuiDocument.cpp:3113 src/frontends/qt/GuiDocument.cpp:5046
+#: src/frontends/qt/GuiDocument.cpp:3113 src/frontends/qt/GuiDocument.cpp:5044
 msgid "Unable to set document class."
 msgstr "文書クラスを設定することができません．"
 
@@ -33314,71 +33314,71 @@ msgstr ""
 "<p><font color=red><b>警告：必須であるにもかかわらず利用可能でないパッケージ"
 "があります！</b></font></p>"
 
-#: src/frontends/qt/GuiDocument.cpp:4158
+#: src/frontends/qt/GuiDocument.cpp:4156
 msgid "per part"
 msgstr "部毎"
 
-#: src/frontends/qt/GuiDocument.cpp:4160
+#: src/frontends/qt/GuiDocument.cpp:4158
 msgid "per chapter"
 msgstr "章毎"
 
-#: src/frontends/qt/GuiDocument.cpp:4162
+#: src/frontends/qt/GuiDocument.cpp:4160
 msgid "per section"
 msgstr "節毎"
 
-#: src/frontends/qt/GuiDocument.cpp:4164
+#: src/frontends/qt/GuiDocument.cpp:4162
 msgid "per subsection"
 msgstr "小節毎"
 
-#: src/frontends/qt/GuiDocument.cpp:4165
+#: src/frontends/qt/GuiDocument.cpp:4163
 msgid "per child document"
 msgstr "子文書毎"
 
-#: src/frontends/qt/GuiDocument.cpp:4192
+#: src/frontends/qt/GuiDocument.cpp:4190
 #, c-format
 msgid "%1$s (not available)"
 msgstr "%1$s (利用不能)"
 
-#: src/frontends/qt/GuiDocument.cpp:4424
+#: src/frontends/qt/GuiDocument.cpp:4422
 msgid "[No options predefined]"
 msgstr "[事前定義されたオプションがありません]"
 
-#: src/frontends/qt/GuiDocument.cpp:4504 src/frontends/qt/GuiDocument.cpp:4515
-#: src/frontends/qt/GuiDocument.cpp:4526
+#: src/frontends/qt/GuiDocument.cpp:4502 src/frontends/qt/GuiDocument.cpp:4513
+#: src/frontends/qt/GuiDocument.cpp:4524
 msgid "Uninstalled used fonts"
 msgstr "使用されているが導入済みでないフォント"
 
-#: src/frontends/qt/GuiDocument.cpp:4505 src/frontends/qt/GuiDocument.cpp:4516
-#: src/frontends/qt/GuiDocument.cpp:4527
+#: src/frontends/qt/GuiDocument.cpp:4503 src/frontends/qt/GuiDocument.cpp:4514
+#: src/frontends/qt/GuiDocument.cpp:4525
 msgid "This font is not installed and won't be used in output"
 msgstr "このフォントは導入されていないので，出力では使用されません"
 
-#: src/frontends/qt/GuiDocument.cpp:4701
+#: src/frontends/qt/GuiDocument.cpp:4699
 msgid "C&ustomize Hyperref Options"
 msgstr "Hyperrefオプションを設定する(&U)"
 
-#: src/frontends/qt/GuiDocument.cpp:4703
+#: src/frontends/qt/GuiDocument.cpp:4701
 msgid "&Use Hyperref Support"
 msgstr "Hyperrefサポートを使う(&U)"
 
-#: src/frontends/qt/GuiDocument.cpp:5058
+#: src/frontends/qt/GuiDocument.cpp:5056
 msgid "Can't set layout!"
 msgstr "レイアウトを設定することができません！"
 
-#: src/frontends/qt/GuiDocument.cpp:5059
+#: src/frontends/qt/GuiDocument.cpp:5057
 #, c-format
 msgid "Unable to set layout for ID: %1$s"
 msgstr "以下のIDのレイアウトを設定することができません：%1$s"
 
-#: src/frontends/qt/GuiDocument.cpp:5138
+#: src/frontends/qt/GuiDocument.cpp:5136
 msgid "Not Found"
 msgstr "見つかりません"
 
-#: src/frontends/qt/GuiDocument.cpp:5200
+#: src/frontends/qt/GuiDocument.cpp:5198
 msgid "Assigned master does not include this file"
 msgstr "割り当てられた親文書はこのファイルを内包していません"
 
-#: src/frontends/qt/GuiDocument.cpp:5201
+#: src/frontends/qt/GuiDocument.cpp:5199
 #, c-format
 msgid ""
 "You must include this file in the document\n"
@@ -33389,11 +33389,11 @@ msgstr ""
 "このファイルを「%1$s」文書に\n"
 "内包させなくてはなりません．"
 
-#: src/frontends/qt/GuiDocument.cpp:5205
+#: src/frontends/qt/GuiDocument.cpp:5203
 msgid "Could not load master"
 msgstr "マスターを読み込むことができませんでした"
 
-#: src/frontends/qt/GuiDocument.cpp:5206
+#: src/frontends/qt/GuiDocument.cpp:5204
 #, c-format
 msgid ""
 "The master document '%1$s'\n"
@@ -33402,23 +33402,23 @@ msgstr ""
 "マスター文書「%1$s」を\n"
 "読み込むことができませんでした．"
 
-#: src/frontends/qt/GuiDocument.cpp:5356
+#: src/frontends/qt/GuiDocument.cpp:5354
 msgid "%1 (missing req.)"
 msgstr "%1 (要件未達)"
 
-#: src/frontends/qt/GuiDocument.cpp:5368
+#: src/frontends/qt/GuiDocument.cpp:5366
 msgid "personal module"
 msgstr "個人モジュール"
 
-#: src/frontends/qt/GuiDocument.cpp:5368
+#: src/frontends/qt/GuiDocument.cpp:5366
 msgid "distributed module"
 msgstr "頒布モジュール"
 
-#: src/frontends/qt/GuiDocument.cpp:5369
+#: src/frontends/qt/GuiDocument.cpp:5367
 msgid "<b>Module name:</b> <i>%1</i> (%2)"
 msgstr "<b>モジュール名：</b> <i>%1</i> (%2)"
 
-#: src/frontends/qt/GuiDocument.cpp:5375
+#: src/frontends/qt/GuiDocument.cpp:5373
 msgid "<b>Note:</b> Some requirements for this module are missing!"
 msgstr "<b>註：</b>このモジュールに必要なものが揃っていません！"
 
@@ -35765,27 +35765,27 @@ msgstr "コードプレビュー"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1プレビュー"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1558
+#: src/frontends/qt/GuiWorkArea.cpp:1578
 msgid "Close File"
 msgstr "ファイルを閉じる"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2096
+#: src/frontends/qt/GuiWorkArea.cpp:2116
 msgid "%1 (read only)"
 msgstr "%1 (読み込み専用)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2104
+#: src/frontends/qt/GuiWorkArea.cpp:2124
 msgid "%1 (modified externally)"
 msgstr "%1 (外部から変更)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2127
+#: src/frontends/qt/GuiWorkArea.cpp:2147
 msgid "&Hide Tab"
 msgstr "タブを非表示にする(&H)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2133
+#: src/frontends/qt/GuiWorkArea.cpp:2153
 msgid "&Close Tab"
 msgstr "タブを閉じる(&C)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2173
+#: src/frontends/qt/GuiWorkArea.cpp:2193
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>ディスク上のファイル %1 は変更されています．</b>"
 

@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2023-11-05 11:07-0500\n"
+"POT-Creation-Date: 2024-01-11 11:07-0500\n"
 "PO-Revision-Date: 2020-07-22 10:09+0800\n"
 "Last-Translator: Winfred Huang <tone90999@hotmail.com>\n"
 "Language-Team: 简体中文 <lyx-docs@lists.lyx.org>\n"
@@ -66,28 +66,28 @@ msgstr ""
 msgid "[[do]]O&pen"
 msgstr "打开(&P)"
 
-#: src/frontends/qt/ui/AboutUi.ui:254
+#: src/frontends/qt/ui/AboutUi.ui:241
 msgid "Credits"
 msgstr "致谢"
 
-#: src/frontends/qt/ui/AboutUi.ui:279 lib/layouts/apa.layout:236
+#: src/frontends/qt/ui/AboutUi.ui:266 lib/layouts/apa.layout:236
 #: lib/layouts/apax.inc:343
 msgid "Copyright"
 msgstr "版权"
 
-#: src/frontends/qt/ui/AboutUi.ui:304
+#: src/frontends/qt/ui/AboutUi.ui:291
 msgid "Build Info"
 msgstr "编译信息"
 
-#: src/frontends/qt/ui/AboutUi.ui:329
+#: src/frontends/qt/ui/AboutUi.ui:316
 msgid "Release Notes"
 msgstr "发行说明"
 
-#: src/frontends/qt/ui/AboutUi.ui:374
+#: src/frontends/qt/ui/AboutUi.ui:361
 msgid "Copy version information to clipboard"
 msgstr ""
 
-#: src/frontends/qt/ui/AboutUi.ui:377
+#: src/frontends/qt/ui/AboutUi.ui:364
 #, fuzzy
 msgid "Copy &Version Info"
 msgstr "插入版本信息"
@@ -265,12 +265,12 @@ msgid ""
 "Here you can define an alternative program to or specific options of BibTeX."
 msgstr "你可在这里设定 BibTeX 的特殊选项或指定其替代程序。"
 
-#: src/frontends/qt/ui/BiblioUi.ui:379 src/frontends/qt/ui/PrefLatexUi.ui:79
+#: src/frontends/qt/ui/BiblioUi.ui:379 src/frontends/qt/ui/PrefLatexUi.ui:82
 msgid "Bibliography Generation"
 msgstr "生成参考文献"
 
 #: src/frontends/qt/ui/BiblioUi.ui:390 src/frontends/qt/ui/IndicesUi.ui:33
-#: src/frontends/qt/ui/PrefLatexUi.ui:192
+#: src/frontends/qt/ui/PrefLatexUi.ui:195
 msgid "&Processor:"
 msgstr "处理程序(&P):"
 
@@ -278,8 +278,8 @@ msgstr "处理程序(&P):"
 msgid "Select a processor"
 msgstr "选择一个处理程序"
 
-#: src/frontends/qt/ui/BiblioUi.ui:424 src/frontends/qt/ui/PrefLatexUi.ui:103
-#: src/frontends/qt/ui/PrefLatexUi.ui:205 src/frontends/qt/GuiPrefs.cpp:635
+#: src/frontends/qt/ui/BiblioUi.ui:424 src/frontends/qt/ui/PrefLatexUi.ui:106
+#: src/frontends/qt/ui/PrefLatexUi.ui:208 src/frontends/qt/GuiPrefs.cpp:635
 #: src/frontends/qt/GuiPrefs.cpp:766
 msgid "Op&tions:"
 msgstr "选项(&T):"
@@ -842,7 +842,7 @@ msgstr "大小(&Z)"
 #: src/frontends/qt/GuiDocument.cpp:2840 src/frontends/qt/GuiDocument.cpp:2872
 #: src/frontends/qt/GuiDocument.cpp:2883 src/frontends/qt/GuiDocument.cpp:2894
 #: src/frontends/qt/GuiDocument.cpp:2981 src/frontends/qt/GuiDocument.cpp:3590
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiExternal.cpp:76
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiExternal.cpp:76
 #: src/frontends/qt/GuiGraphics.cpp:71 src/frontends/qt/GuiIndex.cpp:46
 #: src/frontends/qt/GuiIndices.cpp:58 src/frontends/qt/GuiListings.cpp:156
 #: src/frontends/qt/GuiListings.cpp:163 src/frontends/qt/GuiPrefs.cpp:2360
@@ -1983,7 +1983,7 @@ msgid "Use &old style figures"
 msgstr "使用不齐线数字(&O)"
 
 #: src/frontends/qt/ui/FontUi.ui:184 src/frontends/qt/ui/FontUi.ui:292
-#: src/frontends/qt/ui/FontUi.ui:400 src/frontends/qt/ui/PrefLatexUi.ui:133
+#: src/frontends/qt/ui/FontUi.ui:400 src/frontends/qt/ui/PrefLatexUi.ui:136
 msgid "Options:"
 msgstr "选项:"
 
@@ -2505,7 +2505,7 @@ msgid ""
 "Here you can define an alternative index processor and specify its options."
 msgstr "在这里设定其他索引处理器与命令选项。"
 
-#: src/frontends/qt/ui/IndicesUi.ui:22 src/frontends/qt/ui/PrefLatexUi.ui:181
+#: src/frontends/qt/ui/IndicesUi.ui:22 src/frontends/qt/ui/PrefLatexUi.ui:184
 msgid "Index Generation"
 msgstr "索引生成"
 
@@ -3705,7 +3705,7 @@ msgstr "双面文档(&T)"
 msgid "Line &spacing"
 msgstr "行间距(&S)"
 
-#: src/frontends/qt/ui/ParagraphUi.ui:60 src/Text.cpp:2172
+#: src/frontends/qt/ui/ParagraphUi.ui:60 src/Text.cpp:2183
 #: src/frontends/qt/GuiDocument.cpp:907
 msgid "Single"
 msgstr "单倍行距"
@@ -3714,7 +3714,7 @@ msgstr "单倍行距"
 msgid "1.5"
 msgstr "1.5 倍行距"
 
-#: src/frontends/qt/ui/ParagraphUi.ui:70 src/Text.cpp:2178
+#: src/frontends/qt/ui/ParagraphUi.ui:70 src/Text.cpp:2189
 #: src/frontends/qt/GuiDocument.cpp:911
 msgid "Double"
 msgstr "两倍行距"
@@ -4683,48 +4683,48 @@ msgstr "DVI 预览纸张大小选项(&D):"
 msgid "Optional paper size flag (-paper) for some DVI viewers"
 msgstr "可选纸张大小选项 (-paper)"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:90
+#: src/frontends/qt/ui/PrefLatexUi.ui:93
 msgid "P&rocessor:"
 msgstr "处理程序(&R):"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:113
+#: src/frontends/qt/ui/PrefLatexUi.ui:116
 msgid "BibTeX command and options"
 msgstr "BibTeX 命令和参数"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:120
-#: src/frontends/qt/ui/PrefLatexUi.ui:222
+#: src/frontends/qt/ui/PrefLatexUi.ui:123
+#: src/frontends/qt/ui/PrefLatexUi.ui:225
 msgid "Processor for &Japanese:"
 msgstr "日文处理程序(&J):"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:143
+#: src/frontends/qt/ui/PrefLatexUi.ui:146
 msgid "Specific BibTeX command and options for pLaTeX (Japanese)"
 msgstr "指定 pLaTeX 中的 BibTeX 命令和选项 (仅适用于日文)"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:215
+#: src/frontends/qt/ui/PrefLatexUi.ui:218
 msgid "Index command and options (makeindex, xindy)"
 msgstr "Index 命令和选项 (makeindex, xindy)"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:232
+#: src/frontends/qt/ui/PrefLatexUi.ui:235
 msgid "Specific index command and options for pLaTeX (Japanese)"
 msgstr "指定 index 命令和 pLaTeX 选项 (日文)"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:268
+#: src/frontends/qt/ui/PrefLatexUi.ui:271
 msgid "Command and options for nomencl (usually makeindex)"
 msgstr "nomencl 命令和选项 (如makeindex, xindy)"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:275
+#: src/frontends/qt/ui/PrefLatexUi.ui:278
 msgid "CheckTeX start options and flags"
 msgstr "CheckTeX 命令参数"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:282
+#: src/frontends/qt/ui/PrefLatexUi.ui:285
 msgid "&CheckTeX command:"
 msgstr "CheckTeX 命令(&C):"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:292
+#: src/frontends/qt/ui/PrefLatexUi.ui:295
 msgid "&Nomenclature command:"
 msgstr "术语命令(&N):"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:307
+#: src/frontends/qt/ui/PrefLatexUi.ui:310
 msgid ""
 "Select whether LyX should output Windows or Cygwin style paths to LaTeX "
 "files. Change the default only if the TeX engine was not correctly detected "
@@ -4734,15 +4734,15 @@ msgstr ""
 "仅当配置后 TeX 引擎无法自动判定时方可修改默认值。警告：您在这里的修改将不会保"
 "存。"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:313
+#: src/frontends/qt/ui/PrefLatexUi.ui:316
 msgid "&Use Windows-style paths in LaTeX files"
 msgstr "在 LaTeX 文件中使用 Windows 路径格式(&U)"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:320
+#: src/frontends/qt/ui/PrefLatexUi.ui:323
 msgid "Set class options to default on class change"
 msgstr "当文档类改变时使用缺省设置"
 
-#: src/frontends/qt/ui/PrefLatexUi.ui:323
+#: src/frontends/qt/ui/PrefLatexUi.ui:326
 msgid "R&eset class options when document class changes"
 msgstr "当文档类改变时重置类设置(&E)"
 
@@ -5874,7 +5874,7 @@ msgstr "在每页重复此行为表头 (除第一页)"
 #: src/frontends/qt/ui/TabularUi.ui:1368 src/frontends/qt/ui/TabularUi.ui:1405
 #: src/frontends/qt/ui/TabularUi.ui:1446 src/frontends/qt/ui/TabularUi.ui:1477
 #: src/frontends/qt/ui/TabularUi.ui:1515 src/frontends/qt/GuiToolbar.cpp:677
-#: src/insets/InsetBranch.cpp:79 src/insets/InsetBranch.cpp:82
+#: src/insets/InsetBranch.cpp:81 src/insets/InsetBranch.cpp:84
 msgid "on"
 msgstr "打开"
 
@@ -12811,7 +12811,7 @@ msgstr "Fixme 错误"
 
 #: lib/layouts/fixme.module:83 src/frontends/qt/GuiCompare.cpp:202
 #: src/frontends/qt/GuiDocument.cpp:3039 src/frontends/qt/GuiDocument.cpp:3113
-#: src/frontends/qt/GuiDocument.cpp:5046
+#: src/frontends/qt/GuiDocument.cpp:5044
 msgid "Error"
 msgstr "错误"
 
@@ -17678,7 +17678,7 @@ msgid "List of Listings"
 msgstr "程序列表的列表"
 
 #: lib/layouts/stdinsets.inc:355 src/frontends/qt/GuiDocument.cpp:1840
-#: src/frontends/qt/GuiDocument.cpp:5069
+#: src/frontends/qt/GuiDocument.cpp:5067
 msgid "Listings[[inset]]"
 msgstr "程序列表"
 
@@ -20352,7 +20352,7 @@ msgid "Copy as Reference|R"
 msgstr "复制为引用(R)...|R"
 
 #: lib/ui/stdcontext.inc:61 lib/ui/stdcontext.inc:376 lib/ui/stdmenus.inc:108
-#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4962 src/mathed/InsetMathNest.cpp:570
+#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4973 src/mathed/InsetMathNest.cpp:857
 msgid "Cut"
 msgstr "剪切"
 
@@ -20362,9 +20362,9 @@ msgid "Copy"
 msgstr "复制"
 
 #: lib/ui/stdcontext.inc:63 lib/ui/stdcontext.inc:378 lib/ui/stdmenus.inc:110
-#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4907
+#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4918
 #: src/frontends/qt/GuiToolbar.cpp:464 src/mathed/InsetMathGrid.cpp:1566
-#: src/mathed/InsetMathNest.cpp:539
+#: src/mathed/InsetMathNest.cpp:826
 msgid "Paste"
 msgstr "粘贴"
 
@@ -22918,7 +22918,7 @@ msgid "Big operators"
 msgstr "大运算符"
 
 #: lib/ui/stdtoolbars.inc:226 lib/ui/stdtoolbars.inc:693
-#: src/frontends/qt/GuiDocument.cpp:5359
+#: src/frontends/qt/GuiDocument.cpp:5357
 msgid "Miscellaneous"
 msgstr "杂项"
 
@@ -27906,6 +27906,16 @@ msgstr "外部材料"
 
 #: lib/examples/Articles:0
 #, fuzzy
+msgid "Feynman Diagrams"
+msgstr "Feynman 图|F"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Instant Preview"
+msgstr "即时预览(&P):"
+
+#: lib/examples/Articles:0
+#, fuzzy
 msgid "Itemize Bullets"
 msgstr "项目列表"
 
@@ -27915,13 +27925,9 @@ msgid "Minted File Listing"
 msgstr "行内程序列表(&I)"
 
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr ""
-
-#: lib/examples/Articles:0
 #, fuzzy
-msgid "Feynman Diagrams"
-msgstr "Feynman 图|F"
+msgid "Minted Listings"
+msgstr "程序列表的列表"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -27929,14 +27935,8 @@ msgid "XY-Figure"
 msgstr "图"
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Minted Listings"
-msgstr "程序列表的列表"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Instant Preview"
-msgstr "即时预览(&P):"
+msgid "XY-Pic"
+msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -27954,13 +27954,13 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "多语言标题(C)|C"
 
 #: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr ""
+
+#: lib/examples/Articles:0
 #, fuzzy
 msgid "Writing Armenian"
 msgstr "亚美尼亚语"
-
-#: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -27983,6 +27983,10 @@ msgid "Serial Letter 3"
 msgstr "希伯来语信件"
 
 #: lib/examples/Articles:0
+msgid "Hazard and Precautionary Statements"
+msgstr "危害与预警警示语"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond 书刊"
 
@@ -27991,17 +27995,13 @@ msgid "Multilingual Captions"
 msgstr "多语言标题"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "危害与预警警示语"
+#, fuzzy
+msgid "Noweb2LyX"
+msgstr "Noweb"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr ""
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Noweb2LyX"
-msgstr "Noweb"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1825
 msgid "Modules"
@@ -28009,8 +28009,8 @@ msgstr "模块"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Foils Landslide"
-msgstr "横向幻灯片"
+msgid "Beamer (Complex)"
+msgstr "Beamer 注释"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28019,8 +28019,8 @@ msgstr "FoilTeX"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Beamer (Complex)"
-msgstr "Beamer 注释"
+msgid "Foils Landslide"
+msgstr "横向幻灯片"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28033,13 +28033,8 @@ msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Mathematical Monthly"
-msgstr "美国数学协会 (AMS) 文章"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "IEEE Transactions Journal"
-msgstr "IEEE 期刊"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Beamer 文档 (KOMA-Script)"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28048,13 +28043,28 @@ msgstr "IEEE Transactions Computer Society"
 
 #: lib/examples/Articles:0
 #, fuzzy
+msgid "IEEE Transactions Journal"
+msgstr "IEEE 期刊"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Mathematical Monthly"
+msgstr "美国数学协会 (AMS) 文章"
+
+#: lib/examples/Articles:0
+#, fuzzy
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Springer's Global Journal 模板 (第 3 版)"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Beamer 文档 (KOMA-Script)"
+msgid "00 Main File"
+msgstr "文件丢失"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "01 Dedication"
+msgstr "献辞"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28063,13 +28073,8 @@ msgstr "前言"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "07 Part"
-msgstr "部"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "10 Glossary"
-msgstr "关闭"
+msgid "03 Preface"
+msgstr "序言"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28077,8 +28082,18 @@ msgid "04 Acknowledgements"
 msgstr "致谢"
 
 #: lib/examples/Articles:0
+#, fuzzy
+msgid "05 Contributor List"
+msgstr "贡献者列表"
+
+#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr ""
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "07 Part"
+msgstr "部"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28092,33 +28107,17 @@ msgstr "附录"
 
 #: lib/examples/Articles:0
 #, fuzzy
+msgid "10 Glossary"
+msgstr "关闭"
+
+#: lib/examples/Articles:0
+#, fuzzy
 msgid "11 References"
 msgstr "引用"
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "05 Contributor List"
-msgstr "贡献者列表"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "01 Dedication"
-msgstr "献辞"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "00 Main File"
-msgstr "文件丢失"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "03 Preface"
-msgstr "序言"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "10 Solutions"
-msgstr "解答"
+msgid "05 Acronym"
+msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28136,23 +28135,24 @@ msgid "08 Appendix"
 msgstr "附录"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr ""
-
-#: lib/examples/Articles:0
 #, fuzzy
 msgid "09 Glossary"
 msgstr "关闭"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Simple"
-msgstr "简单简历"
+msgid "10 Solutions"
+msgstr "解答"
 
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Colored"
 msgstr "颜色"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Simple"
+msgstr "简单简历"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28180,8 +28180,8 @@ msgstr "辞典"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日文书刊 (标准类竖排)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日文文档 (标准类竖排)"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28190,8 +28190,8 @@ msgstr "日文书刊 (标准类竖排)"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日文文档 (标准类竖排)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日文书刊 (标准类竖排)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 #, fuzzy
@@ -28974,7 +28974,7 @@ msgid "Document class not available"
 msgstr "未知文档类"
 
 #: src/BufferParams.cpp:1105 src/Color.cpp:283
-#: src/frontends/qt/GuiDocument.cpp:3730
+#: src/frontends/qt/GuiDocument.cpp:3728
 msgid "greyedout inset text"
 msgstr "灰色嵌入文本"
 
@@ -30079,15 +30079,15 @@ msgstr "空白输出"
 msgid "No output file was generated."
 msgstr "未输出文件。"
 
-#: src/Cursor.cpp:417 src/Text.cpp:2195
+#: src/Cursor.cpp:417 src/Text.cpp:2206
 msgid ", Inset: "
 msgstr ", 嵌入项: "
 
-#: src/Cursor.cpp:418 src/Text.cpp:2197
+#: src/Cursor.cpp:418 src/Text.cpp:2208
 msgid ", Cell: "
 msgstr ""
 
-#: src/Cursor.cpp:419 src/Text.cpp:2200
+#: src/Cursor.cpp:419 src/Text.cpp:2211
 msgid ", Position: "
 msgstr ", 位置:　"
 
@@ -30197,17 +30197,17 @@ msgid "Number %1$s"
 msgstr "编号 %1$s"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:148
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiListings.cpp:163
 msgid "Roman"
 msgstr "衬线字体"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiListings.cpp:163
 msgid "Sans Serif"
 msgstr "非衬线字体"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:150
-#: src/frontends/qt/GuiDocument.cpp:5083 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiListings.cpp:163
 msgid "Typewriter"
 msgstr "等宽字体"
 
@@ -30377,59 +30377,59 @@ msgstr ""
 msgid "   options: "
 msgstr " 选项: "
 
-#: src/LaTeX.cpp:63
+#: src/LaTeX.cpp:64
 #, c-format
 msgid "Waiting for LaTeX run number %1$d"
 msgstr "等待 LaTeX 第 %1$d 次执行"
 
-#: src/LaTeX.cpp:341
+#: src/LaTeX.cpp:348
 #, fuzzy
 msgid "Running Bibliography Processor."
 msgstr "执行索引处理器。"
 
-#: src/LaTeX.cpp:402
+#: src/LaTeX.cpp:409
 #, fuzzy
 msgid "Re-Running Bibliography Processor."
 msgstr "执行索引处理器。"
 
-#: src/LaTeX.cpp:444
+#: src/LaTeX.cpp:451
 msgid "Running Index Processor."
 msgstr "执行索引处理器。"
 
-#: src/LaTeX.cpp:453
+#: src/LaTeX.cpp:460
 #, fuzzy
 msgid "Index Processor Error"
 msgstr "执行索引处理器。"
 
-#: src/LaTeX.cpp:454
+#: src/LaTeX.cpp:461
 msgid ""
 "The index processor did not run successfully. Please check the output of "
 "View > Messages Pane!"
 msgstr ""
 
-#: src/LaTeX.cpp:607
+#: src/LaTeX.cpp:614
 #, fuzzy
 msgid "Running Nomenclature Processor."
 msgstr "执行索引处理器。"
 
-#: src/LaTeX.cpp:1111
+#: src/LaTeX.cpp:1118
 msgid "(NOTE: The erroneous command is in the preamble)"
 msgstr "(注意: 出错的命令在导言区)"
 
-#: src/LaTeX.cpp:1603 src/LaTeX.cpp:1609 src/LaTeX.cpp:1618
+#: src/LaTeX.cpp:1610 src/LaTeX.cpp:1616 src/LaTeX.cpp:1625
 msgid "BibTeX error: "
 msgstr "BibTeX 出错: "
 
-#: src/LaTeX.cpp:1625
+#: src/LaTeX.cpp:1632
 msgid "Biber error: "
 msgstr "Biber 错误: "
 
-#: src/LaTeX.cpp:1652
+#: src/LaTeX.cpp:1659
 #, fuzzy
 msgid "Makeindex error: "
 msgstr "Biber 错误: "
 
-#: src/LaTeX.cpp:1661
+#: src/LaTeX.cpp:1668
 #, fuzzy
 msgid "Xindy error: "
 msgstr "Biber 错误: "
@@ -31340,133 +31340,133 @@ msgstr "您不能如此输入两个空格。请参阅功能简介。"
 msgid "Character is uncodable in this verbatim context."
 msgstr "在此 Verbatim 环境下，该字符不能编码。"
 
-#: src/Text.cpp:2140
+#: src/Text.cpp:2151
 msgid "[Change Tracking] "
 msgstr "[追踪改变] "
 
-#: src/Text.cpp:2148
+#: src/Text.cpp:2159
 #, c-format
 msgid "Changed by %1$s[[author]] on %2$s[[date]]. "
 msgstr "由 %1$s[[author]] 在 %2$s[[date]] 修改。"
 
-#: src/Text.cpp:2158 src/mathed/InsetMathFont.cpp:238
+#: src/Text.cpp:2169 src/mathed/InsetMathFont.cpp:238
 #: src/mathed/InsetMathFontOld.cpp:111
 #, c-format
 msgid "Font: %1$s"
 msgstr "字体: %1$s"
 
-#: src/Text.cpp:2163
+#: src/Text.cpp:2174
 #, c-format
 msgid ", Depth: %1$d"
 msgstr ", 深度: %1$d"
 
-#: src/Text.cpp:2169
+#: src/Text.cpp:2180
 msgid ", Spacing: "
 msgstr ", 间隔: "
 
-#: src/Text.cpp:2175 src/frontends/qt/GuiDocument.cpp:909
+#: src/Text.cpp:2186 src/frontends/qt/GuiDocument.cpp:909
 msgid "OneHalf"
 msgstr "1.5 倍行距"
 
-#: src/Text.cpp:2181
+#: src/Text.cpp:2192
 msgid "Other ("
 msgstr "其他 ("
 
-#: src/Text.cpp:2192
+#: src/Text.cpp:2203
 #, fuzzy
 msgid ", Style: "
 msgstr "简历样式:"
 
-#: src/Text.cpp:2198
+#: src/Text.cpp:2209
 msgid ", Paragraph: "
 msgstr ", 段落: "
 
-#: src/Text.cpp:2199
+#: src/Text.cpp:2210
 msgid ", Id: "
 msgstr ", Id: "
 
-#: src/Text.cpp:2209
+#: src/Text.cpp:2220
 msgid ", Char: 0x"
 msgstr ", Char: 0x"
 
-#: src/Text.cpp:2211
+#: src/Text.cpp:2222
 msgid ", Boundary: "
 msgstr ", 边界: "
 
-#: src/Text.cpp:2825
+#: src/Text.cpp:2836
 msgid "No font change defined."
 msgstr "未修改字体。"
 
-#: src/Text.cpp:3531
+#: src/Text.cpp:3542
 msgid "Math editor mode"
 msgstr "数学编辑模式"
 
-#: src/Text.cpp:3533
+#: src/Text.cpp:3544
 msgid "No valid math formula"
 msgstr "非法数学公式"
 
-#: src/Text.cpp:3541 src/mathed/InsetMathNest.cpp:1047
+#: src/Text.cpp:3552 src/mathed/InsetMathNest.cpp:1337
 msgid "Already in regular expression mode"
 msgstr "已经在正则表达式模式下"
 
-#: src/Text.cpp:3554
+#: src/Text.cpp:3565
 msgid "Regexp editor mode"
 msgstr "正则表达式编辑模式"
 
-#: src/Text.cpp:3936
+#: src/Text.cpp:3947
 msgid "Action flattens document structure"
 msgstr ""
 
-#: src/Text.cpp:3937
+#: src/Text.cpp:3948
 msgid ""
 "This action will cause some headings that have been on different level "
 "before to be on the same level since there is no more lower or higher "
 "heading level. Continue still?"
 msgstr ""
 
-#: src/Text.cpp:3942
+#: src/Text.cpp:3953
 msgid "&Yes, continue nonetheless"
 msgstr ""
 
-#: src/Text.cpp:3943
+#: src/Text.cpp:3954
 msgid "&No, quit operation"
 msgstr ""
 
-#: src/Text.cpp:4996
+#: src/Text.cpp:5007
 msgid "Layout "
 msgstr "显示布局 "
 
-#: src/Text.cpp:4997 src/Text.cpp:5578
+#: src/Text.cpp:5008 src/Text.cpp:5589
 msgid " not known"
 msgstr " 未知"
 
-#: src/Text.cpp:5577
+#: src/Text.cpp:5588
 #, fuzzy
 msgid "Table Style "
 msgstr "表格注释"
 
-#: src/Text.cpp:5771 src/frontends/qt/GuiApplication.cpp:1888
+#: src/Text.cpp:5782 src/frontends/qt/GuiApplication.cpp:1889
 msgid "Missing argument"
 msgstr "缺失参数"
 
-#: src/Text.cpp:5936
+#: src/Text.cpp:5947
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr ""
 
-#: src/Text.cpp:5940
+#: src/Text.cpp:5951
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr ""
 
-#: src/Text.cpp:5945 src/Text.cpp:5959
+#: src/Text.cpp:5956 src/Text.cpp:5970
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr ""
 
-#: src/Text.cpp:6118
+#: src/Text.cpp:6129
 msgid "Path to thesaurus directory not set!"
 msgstr "未设定同义词词典目录！"
 
-#: src/Text.cpp:6119
+#: src/Text.cpp:6130
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -31476,7 +31476,7 @@ msgstr ""
 "未指定同义词词典目录。同义词词典不可用。\n"
 "请参考用户手册 6.15.1 节来设置。"
 
-#: src/Text.cpp:6245 src/Text.cpp:6256
+#: src/Text.cpp:6256 src/Text.cpp:6267
 msgid "Paragraph layout set"
 msgstr "段落布局"
 
@@ -31969,7 +31969,7 @@ msgid "This tab contains invalid input. Please fix!"
 msgstr ""
 
 #: src/frontends/qt/ButtonController.cpp:267
-#: src/frontends/qt/GuiApplication.cpp:2006 src/frontends/qt/GuiCompare.cpp:196
+#: src/frontends/qt/GuiApplication.cpp:2007 src/frontends/qt/GuiCompare.cpp:196
 #: src/frontends/qt/GuiSymbols.cpp:346
 msgid "Cancel"
 msgstr "取消"
@@ -32196,91 +32196,91 @@ msgstr ""
 msgid "About LyX"
 msgstr "关于 LyX"
 
-#: src/frontends/qt/GuiApplication.cpp:783
+#: src/frontends/qt/GuiApplication.cpp:784
 msgid "About %1"
 msgstr "关于 %1"
 
-#: src/frontends/qt/GuiApplication.cpp:784 src/frontends/qt/GuiPrefs.cpp:3469
+#: src/frontends/qt/GuiApplication.cpp:785 src/frontends/qt/GuiPrefs.cpp:3469
 msgid "Preferences"
 msgstr "首选项"
 
-#: src/frontends/qt/GuiApplication.cpp:785
+#: src/frontends/qt/GuiApplication.cpp:786
 msgid "Reconfigure"
 msgstr "重新配置"
 
-#: src/frontends/qt/GuiApplication.cpp:786
+#: src/frontends/qt/GuiApplication.cpp:787
 msgid "Restore Defaults"
 msgstr "重置为默认值"
 
-#: src/frontends/qt/GuiApplication.cpp:787
+#: src/frontends/qt/GuiApplication.cpp:788
 msgid "Quit %1"
 msgstr "退出 %1"
 
-#: src/frontends/qt/GuiApplication.cpp:788 src/frontends/qt/GuiInclude.cpp:320
+#: src/frontends/qt/GuiApplication.cpp:789 src/frontends/qt/GuiInclude.cpp:320
 #: src/frontends/qt/GuiInclude.cpp:330 src/frontends/qt/GuiInclude.cpp:335
 msgid "&OK"
 msgstr "确定(&O)"
 
-#: src/frontends/qt/GuiApplication.cpp:790
+#: src/frontends/qt/GuiApplication.cpp:791
 #, fuzzy
 msgid "Apply"
 msgstr "应用(&A)"
 
-#: src/frontends/qt/GuiApplication.cpp:791
+#: src/frontends/qt/GuiApplication.cpp:792
 msgid "Reset"
 msgstr "重置"
 
-#: src/frontends/qt/GuiApplication.cpp:792
+#: src/frontends/qt/GuiApplication.cpp:793
 #, fuzzy
 msgid "Open"
 msgstr "开头语"
 
-#: src/frontends/qt/GuiApplication.cpp:1285
+#: src/frontends/qt/GuiApplication.cpp:1286
 msgid "Nothing to do"
 msgstr "无操作"
 
-#: src/frontends/qt/GuiApplication.cpp:1291
+#: src/frontends/qt/GuiApplication.cpp:1292
 msgid "Unknown action"
 msgstr "未知操作"
 
-#: src/frontends/qt/GuiApplication.cpp:1335
+#: src/frontends/qt/GuiApplication.cpp:1336
 msgid "Command not handled"
 msgstr "无法处理的命令"
 
-#: src/frontends/qt/GuiApplication.cpp:1341
+#: src/frontends/qt/GuiApplication.cpp:1342
 msgid "Command disabled"
 msgstr "被禁止命令"
 
-#: src/frontends/qt/GuiApplication.cpp:1449
+#: src/frontends/qt/GuiApplication.cpp:1450
 #, c-format
 msgid "Bad debug value `%1$s'."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1478 src/frontends/qt/GuiView.cpp:2368
+#: src/frontends/qt/GuiApplication.cpp:1479 src/frontends/qt/GuiView.cpp:2368
 msgid "Command not allowed without a buffer open"
 msgstr "此命令在没有任何缓存打开下不能执行"
 
-#: src/frontends/qt/GuiApplication.cpp:1485
+#: src/frontends/qt/GuiApplication.cpp:1486
 msgid "the <LFUN-COMMAND> argument of buffer-forall is not valid"
 msgstr "buffer-forall 的 <LFUN-COMMAND> 参数无效"
 
-#: src/frontends/qt/GuiApplication.cpp:1562
+#: src/frontends/qt/GuiApplication.cpp:1563
 msgid "Wrong focus!"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1696
+#: src/frontends/qt/GuiApplication.cpp:1697
 msgid "Running configure..."
 msgstr "执行配置程序..."
 
-#: src/frontends/qt/GuiApplication.cpp:1706
+#: src/frontends/qt/GuiApplication.cpp:1707
 msgid "Reloading configuration..."
 msgstr "读入系统配置..."
 
-#: src/frontends/qt/GuiApplication.cpp:1716
+#: src/frontends/qt/GuiApplication.cpp:1717
 msgid "System reconfiguration failed"
 msgstr "重配置系统失败"
 
-#: src/frontends/qt/GuiApplication.cpp:1717
+#: src/frontends/qt/GuiApplication.cpp:1718
 msgid ""
 "The system reconfiguration has failed.\n"
 "Default textclass is used but LyX may\n"
@@ -32292,11 +32292,11 @@ msgstr ""
 "但可能无法正常工作。\n"
 "若需要，请再次重新配置。"
 
-#: src/frontends/qt/GuiApplication.cpp:1722
+#: src/frontends/qt/GuiApplication.cpp:1723
 msgid "System reconfigured"
 msgstr "重配置系统完毕"
 
-#: src/frontends/qt/GuiApplication.cpp:1723
+#: src/frontends/qt/GuiApplication.cpp:1724
 msgid ""
 "The system has been reconfigured.\n"
 "You need to restart LyX to make use of any\n"
@@ -32306,58 +32306,58 @@ msgstr ""
 "您必须重启动 LyX，\n"
 "以便使用更新的文档类列表."
 
-#: src/frontends/qt/GuiApplication.cpp:1804
+#: src/frontends/qt/GuiApplication.cpp:1805
 msgid "Exiting."
 msgstr "退出。"
 
-#: src/frontends/qt/GuiApplication.cpp:1900
+#: src/frontends/qt/GuiApplication.cpp:1901
 #, c-format
 msgid "Opening help file %1$s..."
 msgstr "打开帮助文件 %1$s..."
 
-#: src/frontends/qt/GuiApplication.cpp:1914
+#: src/frontends/qt/GuiApplication.cpp:1915
 msgid "Wrong argument. Must be 'examples' or 'templates'."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1928
+#: src/frontends/qt/GuiApplication.cpp:1929
 #, fuzzy
 msgid "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 msgstr "语法: set-color <lyx_name> <x11_name>"
 
-#: src/frontends/qt/GuiApplication.cpp:1948
+#: src/frontends/qt/GuiApplication.cpp:1949
 #, c-format
 msgid "Set-color \"%1$s\" failed - color is undefined or may not be redefined"
 msgstr "设置颜色 \"%1$s\" 失败 - 未定义或不能重定义颜色"
 
-#: src/frontends/qt/GuiApplication.cpp:2053
+#: src/frontends/qt/GuiApplication.cpp:2054
 #, c-format
 msgid "Cannot iterate more than %1$d times"
 msgstr "不能迭代多于 %1$d 次"
 
-#: src/frontends/qt/GuiApplication.cpp:2153
+#: src/frontends/qt/GuiApplication.cpp:2154
 #, c-format
 msgid "Applied \"%1$s\" to %2$d buffer(s)"
 msgstr "应用“%1$s”到 %2$d 处缓存"
 
-#: src/frontends/qt/GuiApplication.cpp:2239
+#: src/frontends/qt/GuiApplication.cpp:2240
 #, c-format
 msgid "Document defaults saved in %1$s"
 msgstr "文档缺省设置保存至 %1$s"
 
-#: src/frontends/qt/GuiApplication.cpp:2243
+#: src/frontends/qt/GuiApplication.cpp:2244
 msgid "Unable to save document defaults"
 msgstr "无法保存文档缺省设置"
 
-#: src/frontends/qt/GuiApplication.cpp:2477
-#: src/frontends/qt/GuiApplication.cpp:2492
+#: src/frontends/qt/GuiApplication.cpp:2478
+#: src/frontends/qt/GuiApplication.cpp:2493
 msgid "Unknown function."
 msgstr "未知函数。"
 
-#: src/frontends/qt/GuiApplication.cpp:3024
+#: src/frontends/qt/GuiApplication.cpp:3025
 msgid "The current document was closed."
 msgstr "当前文档已关闭。"
 
-#: src/frontends/qt/GuiApplication.cpp:3034
+#: src/frontends/qt/GuiApplication.cpp:3035
 msgid ""
 "LyX has caught an exception, it will now attempt to save all unsaved "
 "documents and exit.\n"
@@ -32365,23 +32365,23 @@ msgid ""
 "Exception: "
 msgstr "LyX 发生异常，将尝试保存所有文档并退出。异常详情: "
 
-#: src/frontends/qt/GuiApplication.cpp:3038
-#: src/frontends/qt/GuiApplication.cpp:3044
+#: src/frontends/qt/GuiApplication.cpp:3039
+#: src/frontends/qt/GuiApplication.cpp:3045
 msgid "Software exception Detected"
 msgstr "检测到软件异常"
 
-#: src/frontends/qt/GuiApplication.cpp:3042
+#: src/frontends/qt/GuiApplication.cpp:3043
 msgid ""
 "LyX has caught some really weird exception, it will now attempt to save all "
 "unsaved documents and exit."
 msgstr "LyX 出现异常，将尝试保存所有文档并退出。"
 
-#: src/frontends/qt/GuiApplication.cpp:3348
-#: src/frontends/qt/GuiApplication.cpp:3360
+#: src/frontends/qt/GuiApplication.cpp:3349
+#: src/frontends/qt/GuiApplication.cpp:3361
 msgid "Could not find UI definition file"
 msgstr "无法读取用户界面定义文件"
 
-#: src/frontends/qt/GuiApplication.cpp:3349
+#: src/frontends/qt/GuiApplication.cpp:3350
 #, c-format
 msgid ""
 "Error while reading the included file\n"
@@ -32392,11 +32392,11 @@ msgstr ""
 "%1$s.\n"
 "请检查您的安装是否完全。"
 
-#: src/frontends/qt/GuiApplication.cpp:3355
+#: src/frontends/qt/GuiApplication.cpp:3356
 msgid "Could not find default UI file"
 msgstr "无法读取默认用户界面文件"
 
-#: src/frontends/qt/GuiApplication.cpp:3356
+#: src/frontends/qt/GuiApplication.cpp:3357
 msgid ""
 "LyX could not find the default UI file!\n"
 "Please check your installation."
@@ -32404,7 +32404,7 @@ msgstr ""
 "LyX 不能找到默认的用户界面文件！\n"
 "请检查您的安装是否完全。"
 
-#: src/frontends/qt/GuiApplication.cpp:3361
+#: src/frontends/qt/GuiApplication.cpp:3362
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -32610,7 +32610,7 @@ msgid "Filename Suffix"
 msgstr "文件名后缀"
 
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3516 src/frontends/qt/GuiDocument.cpp:4844
+#: src/frontends/qt/GuiDocument.cpp:3516 src/frontends/qt/GuiDocument.cpp:4842
 #: src/frontends/qt/GuiProgressView.cpp:148
 #: src/frontends/qt/GuiProgressView.cpp:162
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -32618,8 +32618,8 @@ msgid "Yes"
 msgstr "是"
 
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3515 src/frontends/qt/GuiDocument.cpp:4156
-#: src/frontends/qt/GuiDocument.cpp:4843
+#: src/frontends/qt/GuiDocument.cpp:3515 src/frontends/qt/GuiDocument.cpp:4154
+#: src/frontends/qt/GuiDocument.cpp:4841
 #: src/frontends/qt/GuiProgressView.cpp:114
 #: src/frontends/qt/GuiProgressView.cpp:147
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -33348,7 +33348,7 @@ msgid "Document Class"
 msgstr "文档类"
 
 #: src/frontends/qt/GuiDocument.cpp:1826 src/frontends/qt/GuiDocument.cpp:3618
-#: src/frontends/qt/GuiDocument.cpp:5070
+#: src/frontends/qt/GuiDocument.cpp:5068
 msgid "Local Layout"
 msgstr "本地布局"
 
@@ -33377,13 +33377,13 @@ msgstr "PDF 属性"
 msgid "Bullets"
 msgstr "列表符号"
 
-#: src/frontends/qt/GuiDocument.cpp:1844 src/frontends/qt/GuiDocument.cpp:5071
+#: src/frontends/qt/GuiDocument.cpp:1844 src/frontends/qt/GuiDocument.cpp:5069
 msgid "LaTeX Preamble"
 msgstr "LaTeX 导言区"
 
 #: src/frontends/qt/GuiDocument.cpp:1860 src/frontends/qt/GuiDocument.cpp:1886
 #: src/frontends/qt/GuiDocument.cpp:3099 src/frontends/qt/GuiDocument.cpp:3400
-#: src/frontends/qt/GuiDocument.cpp:5035
+#: src/frontends/qt/GuiDocument.cpp:5033
 msgid "Unapplied changes"
 msgstr "未保存的更改"
 
@@ -33397,7 +33397,7 @@ msgstr ""
 "该操作后你会丢失未应用的修改。"
 
 #: src/frontends/qt/GuiDocument.cpp:1863 src/frontends/qt/GuiDocument.cpp:3102
-#: src/frontends/qt/GuiDocument.cpp:3403 src/frontends/qt/GuiDocument.cpp:5038
+#: src/frontends/qt/GuiDocument.cpp:3403 src/frontends/qt/GuiDocument.cpp:5036
 msgid "&Apply"
 msgstr "应用(&A)"
 
@@ -33452,9 +33452,9 @@ msgstr "语言默认编码 (no inputenc)"
 msgid "Direct (XeTeX/LuaTeX)"
 msgstr "PDF (LuaTeX)"
 
-#: src/frontends/qt/GuiDocument.cpp:2808 src/frontends/qt/GuiDocument.cpp:4503
-#: src/frontends/qt/GuiDocument.cpp:4514 src/frontends/qt/GuiDocument.cpp:4525
-#: src/frontends/qt/GuiDocument.cpp:4537
+#: src/frontends/qt/GuiDocument.cpp:2808 src/frontends/qt/GuiDocument.cpp:4501
+#: src/frontends/qt/GuiDocument.cpp:4512 src/frontends/qt/GuiDocument.cpp:4523
+#: src/frontends/qt/GuiDocument.cpp:4535
 msgid " (not installed)"
 msgstr " (没有安装)"
 
@@ -33522,7 +33522,7 @@ msgid "LyX Files (*.lyx)"
 msgstr "LyX 文档 (*.lyx)"
 
 #: src/frontends/qt/GuiDocument.cpp:3100 src/frontends/qt/GuiDocument.cpp:3401
-#: src/frontends/qt/GuiDocument.cpp:5036
+#: src/frontends/qt/GuiDocument.cpp:5034
 msgid ""
 "Some changes in the dialog were not yet applied.\n"
 "If you do not apply now, they will be lost after this action."
@@ -33531,11 +33531,11 @@ msgstr ""
 "该操作后你会丢失未应用的修改。"
 
 #: src/frontends/qt/GuiDocument.cpp:3102 src/frontends/qt/GuiDocument.cpp:3403
-#: src/frontends/qt/GuiDocument.cpp:5038
+#: src/frontends/qt/GuiDocument.cpp:5036
 msgid "&Dismiss"
 msgstr "丢弃(&D)"
 
-#: src/frontends/qt/GuiDocument.cpp:3113 src/frontends/qt/GuiDocument.cpp:5046
+#: src/frontends/qt/GuiDocument.cpp:3113 src/frontends/qt/GuiDocument.cpp:5044
 msgid "Unable to set document class."
 msgstr "不能设置文档类。"
 
@@ -33611,71 +33611,71 @@ msgid ""
 "font></p>"
 msgstr "警告: 某些必需的软件包不存在！"
 
-#: src/frontends/qt/GuiDocument.cpp:4158
+#: src/frontends/qt/GuiDocument.cpp:4156
 msgid "per part"
 msgstr "按部"
 
-#: src/frontends/qt/GuiDocument.cpp:4160
+#: src/frontends/qt/GuiDocument.cpp:4158
 msgid "per chapter"
 msgstr "按章"
 
-#: src/frontends/qt/GuiDocument.cpp:4162
+#: src/frontends/qt/GuiDocument.cpp:4160
 msgid "per section"
 msgstr "按节"
 
-#: src/frontends/qt/GuiDocument.cpp:4164
+#: src/frontends/qt/GuiDocument.cpp:4162
 msgid "per subsection"
 msgstr "按小节"
 
-#: src/frontends/qt/GuiDocument.cpp:4165
+#: src/frontends/qt/GuiDocument.cpp:4163
 msgid "per child document"
 msgstr "按子文档"
 
-#: src/frontends/qt/GuiDocument.cpp:4192
+#: src/frontends/qt/GuiDocument.cpp:4190
 #, fuzzy, c-format
 msgid "%1$s (not available)"
 msgstr "%1$s (不可用)"
 
-#: src/frontends/qt/GuiDocument.cpp:4424
+#: src/frontends/qt/GuiDocument.cpp:4422
 msgid "[No options predefined]"
 msgstr "[没有预定义选项]"
 
-#: src/frontends/qt/GuiDocument.cpp:4504 src/frontends/qt/GuiDocument.cpp:4515
-#: src/frontends/qt/GuiDocument.cpp:4526
+#: src/frontends/qt/GuiDocument.cpp:4502 src/frontends/qt/GuiDocument.cpp:4513
+#: src/frontends/qt/GuiDocument.cpp:4524
 msgid "Uninstalled used fonts"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:4505 src/frontends/qt/GuiDocument.cpp:4516
-#: src/frontends/qt/GuiDocument.cpp:4527
+#: src/frontends/qt/GuiDocument.cpp:4503 src/frontends/qt/GuiDocument.cpp:4514
+#: src/frontends/qt/GuiDocument.cpp:4525
 msgid "This font is not installed and won't be used in output"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:4701
+#: src/frontends/qt/GuiDocument.cpp:4699
 msgid "C&ustomize Hyperref Options"
 msgstr "自定义的 Hyperref 选项(&U)"
 
-#: src/frontends/qt/GuiDocument.cpp:4703
+#: src/frontends/qt/GuiDocument.cpp:4701
 msgid "&Use Hyperref Support"
 msgstr "使用 hyperref (&U)"
 
-#: src/frontends/qt/GuiDocument.cpp:5058
+#: src/frontends/qt/GuiDocument.cpp:5056
 msgid "Can't set layout!"
 msgstr "无法设置布局文件！"
 
-#: src/frontends/qt/GuiDocument.cpp:5059
+#: src/frontends/qt/GuiDocument.cpp:5057
 #, c-format
 msgid "Unable to set layout for ID: %1$s"
 msgstr "无法为ID %1$s设置布局文件"
 
-#: src/frontends/qt/GuiDocument.cpp:5138
+#: src/frontends/qt/GuiDocument.cpp:5136
 msgid "Not Found"
 msgstr "未找到"
 
-#: src/frontends/qt/GuiDocument.cpp:5200
+#: src/frontends/qt/GuiDocument.cpp:5198
 msgid "Assigned master does not include this file"
 msgstr "指定的主文件并未包含此文件"
 
-#: src/frontends/qt/GuiDocument.cpp:5201
+#: src/frontends/qt/GuiDocument.cpp:5199
 #, c-format
 msgid ""
 "You must include this file in the document\n"
@@ -33683,11 +33683,11 @@ msgid ""
 "feature."
 msgstr "要使用主文档功能，必须在文档 '%1$s' 中包含该文件。"
 
-#: src/frontends/qt/GuiDocument.cpp:5205
+#: src/frontends/qt/GuiDocument.cpp:5203
 msgid "Could not load master"
 msgstr "不能载入主文件"
 
-#: src/frontends/qt/GuiDocument.cpp:5206
+#: src/frontends/qt/GuiDocument.cpp:5204
 #, c-format
 msgid ""
 "The master document '%1$s'\n"
@@ -33696,25 +33696,25 @@ msgstr ""
 "无法载入主文档\n"
 "%1$s。"
 
-#: src/frontends/qt/GuiDocument.cpp:5356
+#: src/frontends/qt/GuiDocument.cpp:5354
 msgid "%1 (missing req.)"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:5368
+#: src/frontends/qt/GuiDocument.cpp:5366
 #, fuzzy
 msgid "personal module"
 msgstr "个人信息"
 
-#: src/frontends/qt/GuiDocument.cpp:5368
+#: src/frontends/qt/GuiDocument.cpp:5366
 msgid "distributed module"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:5369
+#: src/frontends/qt/GuiDocument.cpp:5367
 #, fuzzy
 msgid "<b>Module name:</b> <i>%1</i> (%2)"
 msgstr "(模块名称: %1)"
 
-#: src/frontends/qt/GuiDocument.cpp:5375
+#: src/frontends/qt/GuiDocument.cpp:5373
 msgid "<b>Note:</b> Some requirements for this module are missing!"
 msgstr ""
 
@@ -35336,8 +35336,8 @@ msgstr "自动"
 msgid "Toolbar \"%1$s\" does not support state \"auto\""
 msgstr "工具栏 \"%1$s\" 状态设置为 %2$s"
 
-#: src/frontends/qt/GuiToolbar.cpp:674 src/insets/InsetBranch.cpp:79
-#: src/insets/InsetBranch.cpp:82
+#: src/frontends/qt/GuiToolbar.cpp:674 src/insets/InsetBranch.cpp:81
+#: src/insets/InsetBranch.cpp:84
 msgid "off"
 msgstr "关闭"
 
@@ -36045,29 +36045,29 @@ msgstr "代码预览"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1 预览"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1517
+#: src/frontends/qt/GuiWorkArea.cpp:1578
 msgid "Close File"
 msgstr "关闭文件"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2055
+#: src/frontends/qt/GuiWorkArea.cpp:2116
 msgid "%1 (read only)"
 msgstr "%1 (只读)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2063
+#: src/frontends/qt/GuiWorkArea.cpp:2124
 msgid "%1 (modified externally)"
 msgstr "%1 (已在外部修改)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2086
+#: src/frontends/qt/GuiWorkArea.cpp:2147
 #, fuzzy
 msgid "&Hide Tab"
 msgstr "隐藏标签"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2092
+#: src/frontends/qt/GuiWorkArea.cpp:2153
 #, fuzzy
 msgid "&Close Tab"
 msgstr "关闭标签"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2132
+#: src/frontends/qt/GuiWorkArea.cpp:2193
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>文件 %1 在磁盘上被改变。</b>"
 
@@ -36661,21 +36661,21 @@ msgstr "%1$s (%2$s)"
 msgid "%1$s (%2$s, %3$s)"
 msgstr "%1$s (%2$s, %3$s)"
 
-#: src/insets/InsetBranch.cpp:70 src/insets/InsetBranch.cpp:72
+#: src/insets/InsetBranch.cpp:72 src/insets/InsetBranch.cpp:74
 msgid "active"
 msgstr "活动"
 
-#: src/insets/InsetBranch.cpp:70 src/insets/InsetBranch.cpp:72
+#: src/insets/InsetBranch.cpp:72 src/insets/InsetBranch.cpp:74
 #: src/insets/InsetIndex.cpp:1287
 msgid "non-active"
 msgstr "非活动"
 
-#: src/insets/InsetBranch.cpp:75 src/insets/InsetBranch.cpp:85
+#: src/insets/InsetBranch.cpp:77 src/insets/InsetBranch.cpp:87
 #, c-format
 msgid "master %1$s, child %2$s"
 msgstr "主文档 %1$s, 子文档 %2$s"
 
-#: src/insets/InsetBranch.cpp:89
+#: src/insets/InsetBranch.cpp:91
 #, c-format
 msgid ""
 "Branch Name: %1$s\n"
@@ -36686,21 +36686,21 @@ msgstr ""
 "分支状态: %2$s\n"
 "内嵌项状态: %3$s"
 
-#: src/insets/InsetBranch.cpp:122
+#: src/insets/InsetBranch.cpp:123 src/insets/InsetBranch.cpp:142
+msgid "Branch (undefined): "
+msgstr "分支 (未定义): "
+
+#: src/insets/InsetBranch.cpp:136
 msgid "Branch: "
 msgstr "分支: "
 
-#: src/insets/InsetBranch.cpp:124
+#: src/insets/InsetBranch.cpp:138
 msgid "Branch (child): "
 msgstr "分支 (子文档): "
 
-#: src/insets/InsetBranch.cpp:126
+#: src/insets/InsetBranch.cpp:140
 msgid "Branch (master): "
 msgstr "分支 (主文档): "
-
-#: src/insets/InsetBranch.cpp:128
-msgid "Branch (undefined): "
-msgstr "分支 (未定义): "
 
 #: src/insets/InsetCaption.cpp:333
 msgid ""
@@ -38117,15 +38117,15 @@ msgid ""
 "ignore this."
 msgstr ""
 
-#: src/insets/InsetTabular.cpp:5707
+#: src/insets/InsetTabular.cpp:5719
 msgid "Column movement not supported with multi-columns."
 msgstr ""
 
-#: src/insets/InsetTabular.cpp:5725
+#: src/insets/InsetTabular.cpp:5737
 msgid "Row movement not supported with multi-rows."
 msgstr ""
 
-#: src/insets/InsetTabular.cpp:6246
+#: src/insets/InsetTabular.cpp:6258
 msgid "Selection size should match clipboard content."
 msgstr "选区大小需要与剪贴板中的内容一致。"
 
@@ -38329,7 +38329,7 @@ msgstr "不能在“cases”下修改列数: 功能 %1$s"
 msgid "Color: %1$s"
 msgstr "颜色: %1$s"
 
-#: src/mathed/InsetMathDecoration.cpp:184
+#: src/mathed/InsetMathDecoration.cpp:211
 #, c-format
 msgid "Decoration: %1$s"
 msgstr "装饰: %1$s"
@@ -38431,19 +38431,19 @@ msgstr "数学宏: \\%1$s"
 msgid "Invalid macro! \\%1$s"
 msgstr "无效的宏: \\%1$s"
 
-#: src/mathed/InsetMathNest.cpp:1033
+#: src/mathed/InsetMathNest.cpp:1323
 msgid "create new math text environment ($...$)"
 msgstr "创建新数学文本环境 ($...$)"
 
-#: src/mathed/InsetMathNest.cpp:1036
+#: src/mathed/InsetMathNest.cpp:1326
 msgid "entered math text mode (textrm)"
 msgstr "进入数学文本模式 (textrm)"
 
-#: src/mathed/InsetMathNest.cpp:1058
+#: src/mathed/InsetMathNest.cpp:1348
 msgid "Regular expression editor mode"
 msgstr "正则表达式编辑模式"
 
-#: src/mathed/InsetMathNest.cpp:1993
+#: src/mathed/InsetMathNest.cpp:2283
 #, c-format
 msgid "Cannot apply %1$s here."
 msgstr ""
@@ -38489,7 +38489,7 @@ msgstr "名称引用:"
 msgid "Label Only: "
 msgstr "仅标签"
 
-#: src/mathed/InsetMathSize.cpp:108
+#: src/mathed/InsetMathSize.cpp:108 src/mathed/InsetMathTextsize.cpp:93
 #, c-format
 msgid "Size: %1$s"
 msgstr "大小: %1$s"
@@ -38508,11 +38508,11 @@ msgstr ""
 "无法打开指定文件\n"
 "%1$s."
 
-#: src/output_latex.cpp:1669
+#: src/output_latex.cpp:1676
 msgid "Error in latexParagraphs"
 msgstr "latexParagraphs 出错"
 
-#: src/output_latex.cpp:1670
+#: src/output_latex.cpp:1677
 #, c-format
 msgid ""
 "You are using at least one layout (%1$s) intended for the title, after using "
