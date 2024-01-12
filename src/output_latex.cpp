@@ -494,8 +494,13 @@ void TeXEnvironment(Buffer const & buf, Text const & text,
 }
 
 
-void getArgInsets(otexstream & os, OutputParams const & runparams, Layout::LaTeXArgMap const & latexargs,
-		  map<size_t, lyx::InsetArgument const *> ilist, vector<string> required, string const & prefix)
+// FIXME: pass the \c required vector by reference and add the stuff
+// from \c latexargs to a different vector. This avoids a copy and
+// (more importantly?) a coverity defect.
+void getArgInsets(otexstream & os, OutputParams const & runparams,
+                  Layout::LaTeXArgMap const & latexargs,
+                  map<size_t, lyx::InsetArgument const *> const & ilist,
+                  vector<string> required, string const & prefix)
 {
 	size_t const argnr = latexargs.size();
 	if (argnr == 0)
