@@ -923,8 +923,8 @@ public:
 	///
 	bool isValidRow(row_type const row) const;
 	///
-	void TeXRow(otexstream &, row_type const row,
-		    OutputParams const &, std::list<col_type>, std::list<col_type>) const;
+	void TeXRow(otexstream &, row_type const row, OutputParams const &,
+	            std::list<col_type> const &, std::list<col_type> const &) const;
 
 	/// change associated Buffer
 	void setBuffer(Buffer & buffer);
@@ -982,19 +982,19 @@ private:
 	///
 	// helper function for LaTeX
 	///
-	void TeXTopHLine(otexstream &, row_type row, std::list<col_type>,
-	                 std::list<col_type>) const;
+	void TeXTopHLine(otexstream &, row_type row, std::list<col_type> const &,
+	                 std::list<col_type> const &) const;
 	///
-	void TeXBottomHLine(otexstream &, row_type row, std::list<col_type>,
-	                    std::list<col_type>) const;
+	void TeXBottomHLine(otexstream &, row_type row, std::list<col_type> const &,
+	                    std::list<col_type> const &) const;
 	///
 	void TeXCellPreamble(otexstream &, idx_type cell, bool & ismulticol, bool & ismultirow,
 	                     bool const bidi) const;
 	///
 	void TeXCellPostamble(otexstream &, idx_type cell, bool ismulticol, bool ismultirow) const;
 	///
-	void TeXLongtableHeaderFooter(otexstream &, OutputParams const &, std::list<col_type>,
-	                              std::list<col_type>) const;
+	void TeXLongtableHeaderFooter(otexstream &, OutputParams const &, std::list<col_type> const &,
+	                              std::list<col_type> const &) const;
 
 }; // Tabular
 

@@ -2599,8 +2599,8 @@ bool Tabular::isPartOfMultiRow(row_type row, col_type column) const
 }
 
 
-void Tabular::TeXTopHLine(otexstream & os, row_type row, list<col_type> columns,
-			  list<col_type> logical_columns) const
+void Tabular::TeXTopHLine(otexstream & os, row_type row, list<col_type> const & columns,
+			  list<col_type> const & logical_columns) const
 {
 	// we only output complete row lines and the 1st row here, the rest
 	// is done in Tabular::TeXBottomHLine(...)
@@ -2716,8 +2716,8 @@ void Tabular::TeXTopHLine(otexstream & os, row_type row, list<col_type> columns,
 }
 
 
-void Tabular::TeXBottomHLine(otexstream & os, row_type row, list<col_type> columns,
-			     list<col_type> logical_columns) const
+void Tabular::TeXBottomHLine(otexstream & os, row_type row, list<col_type> const & columns,
+			     list<col_type> const & logical_columns) const
 {
 	// we output bottomlines of row r and the toplines of row r+1
 	// if the latter do not span the whole tabular
@@ -3081,8 +3081,8 @@ void Tabular::TeXCellPostamble(otexstream & os, idx_type cell,
 
 void Tabular::TeXLongtableHeaderFooter(otexstream & os,
 				       OutputParams const & runparams,
-				       list<col_type> columns,
-				       list<col_type> logical_columns) const
+				       list<col_type> const & columns,
+				       list<col_type> const & logical_columns) const
 {
 	if (!is_long_tabular)
 		return;
@@ -3164,7 +3164,7 @@ bool Tabular::isValidRow(row_type row) const
 
 void Tabular::TeXRow(otexstream & os, row_type row,
 		     OutputParams const & runparams,
-		     list<col_type> columns, list<col_type> logical_columns) const
+		     list<col_type> const & columns, list<col_type> const & logical_columns) const
 {
 	//output the top line
 	TeXTopHLine(os, row, columns, logical_columns);
