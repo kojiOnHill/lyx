@@ -81,7 +81,7 @@ private:
 	void latex(otexstream &, OutputParams const &) const override;
 	///
 	void processLatexSorting(otexstream &, OutputParams const &,
-				 docstring const, docstring const) const;
+				 docstring const &, docstring const &) const;
 	///
 	bool showInsetDialog(BufferView *) const override;
 	///

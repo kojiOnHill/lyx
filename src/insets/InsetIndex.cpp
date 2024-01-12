@@ -292,7 +292,7 @@ void InsetIndex::latex(otexstream & ios, OutputParams const & runparams_in) cons
 
 
 void InsetIndex::processLatexSorting(otexstream & os, OutputParams const & runparams,
-				docstring const latex, docstring const spart) const
+				docstring const & latex, docstring const & spart) const
 {
 	if (contains(latex, '\\') && !contains(latex, '@')) {
 		// Now we need to validate that all characters in
