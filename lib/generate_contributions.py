@@ -2132,7 +2132,7 @@ contributors = [
                  "22 February 2005",
                  u"support for optional argument in sections/captions svjour/svjog, egs and llncs document classes. Lot of bug hunting (and fixing!)"),
 
-     contributor(u"Veselin",
+     contributor(u"Veselin Jeliazkov",
                  "vveesskkoo () gmail ! com",
                  "GPL",
                  "Re: po/bg.po update",
