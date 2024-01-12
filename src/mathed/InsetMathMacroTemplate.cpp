@@ -61,9 +61,9 @@ using support::bformat;
 class InsetLabelBox : public InsetMathNest {
 public:
 	///
-	InsetLabelBox(Buffer * buf, MathAtom const & atom, docstring label,
+	InsetLabelBox(Buffer * buf, MathAtom const & atom, docstring const & label,
 		      InsetMathMacroTemplate const & parent, bool frame = false);
-	InsetLabelBox(Buffer * buf, docstring label, InsetMathMacroTemplate const & parent,
+	InsetLabelBox(Buffer * buf, docstring const & label, InsetMathMacroTemplate const & parent,
 		      bool frame = false);
 	///
 	void metrics(MetricsInfo & mi, Dimension & dim) const override;
@@ -82,7 +82,7 @@ protected:
 };
 
 
-InsetLabelBox::InsetLabelBox(Buffer * buf, MathAtom const & atom, docstring label,
+InsetLabelBox::InsetLabelBox(Buffer * buf, MathAtom const & atom, docstring const & label,
 	InsetMathMacroTemplate const & parent, bool frame)
 	: InsetMathNest(buf, 1), parent_(parent), label_(label), frame_(frame)
 {
@@ -90,7 +90,7 @@ InsetLabelBox::InsetLabelBox(Buffer * buf, MathAtom const & atom, docstring labe
 }
 
 
-InsetLabelBox::InsetLabelBox(Buffer * buf, docstring label,
+InsetLabelBox::InsetLabelBox(Buffer * buf, docstring const & label,
 			     InsetMathMacroTemplate const & parent, bool frame)
 	: InsetMathNest(buf, 1), parent_(parent), label_(label), frame_(frame)
 {
@@ -185,7 +185,7 @@ void InsetLabelBox::draw(PainterInfo & pi, int x, int y) const
 class InsetDisplayLabelBox : public InsetLabelBox {
 public:
 	///
-	InsetDisplayLabelBox(Buffer * buf, MathAtom const & atom, docstring label,
+	InsetDisplayLabelBox(Buffer * buf, MathAtom const & atom, docstring const & label,
 			InsetMathMacroTemplate const & parent);
 
 	///
@@ -202,7 +202,7 @@ protected:
 
 
 InsetDisplayLabelBox::InsetDisplayLabelBox(Buffer * buf, MathAtom const & atom,
-				 docstring label,
+				 docstring const & label,
 				 InsetMathMacroTemplate const & parent)
 	: InsetLabelBox(buf, atom, label, parent, true)
 {
