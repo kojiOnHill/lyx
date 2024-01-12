@@ -1,3 +1,115 @@
+What's new in version 2.4.0?
+----------------------------
+
+The new features in LyX 2.4 are detailed in
+https://wiki.lyx.org/LyX/NewInLyX24
+
+* DocBook 5 / ePub / XHTML 5  support
+* Default Unicode for new documents
+* Table improvements (styles and other)
+* Redesign of Find/Replace dialog
+* Flexible text fields
+* Counters
+* Global float settings
+* Insets external editing
+* Dark theme
+
+
+
+What's new in version 2.3.7?
+----------------------------
+
+LyX 2.3.7 is the  result of on-going efforts to make our stable version
+more reliable and more stable. Since it has been quite a long time (for
+unsurprising reasons) since the last update, this one contains more fixes
+than usual. We have fixed a number of crashes.
+
+What's new in version 2.3.6?
+----------------------------
+
+LyX 2.3.6 is the sixth maintenance release in the 2.3.x series. It is the 
+result of on-going efforts to make our stable version more reliable and 
+more stable. Most of the changes are fairly minor, fixes of smallish bugs, 
+but a couple crashes have been fixed, as well. 
+
+One oft-requested feature (going back 13 years) is the ability to create
+new child documents from within the 'include file' dialog. This is now
+possible. Another equally old bug that has been fixed is that pasting
+table content outside a table no longer pastes tab characters.
+
+
+What's new in version 2.3.5?
+----------------------------
+
+LyX 2.3.5 is the fifth maintenance release in the 2.3.x series. 
+
+LyX 2.3.5 is the result of on-going efforts to make our stable version more 
+reliable and more stable. Most of the changes are incremental, but quite a 
+few important bugs have now been fixed.
+
+One important change is that Inkscape 1.0 is now supported: It will be detected 
+and  configured automatically. Users of previous versions have recently reported
+configuration failures when Inkscape 1.0 is installed, leading to an incomplete
+(and all but unusable) installation of LyX. This should also be fixed.
+
+
+What's new in version 2.3.4?
+----------------------------
+
+LyX 2.3.4 is the fourth maintenance release in the 2.3.x series. 
+
+LyX 2.3.4 is the result of on-going efforts to make our stable version more 
+reliable and more stable. One important change is that we have finally fixed
+a large number of bugs related to bibitems (see bug #7548). We have also (we
+hope) fixed a long-standing bug involving the saving of files on Windows to
+Dropbox folders and another involving missing included files.
+
+
+What's new in version 2.3.3?
+----------------------------
+
+LyX 2.3.3 is the third maintenance release in the 2.3.x series. 
+
+LyX 2.3.3 is the result of on-going efforts to make our stable version more 
+reliable and more stable. One important change is that emergency files are
+now renamed when users wish to save them. As a result, older emergency files
+are not over-written. One major update allows for the editing of the contents
+of the user-provided premable, and the contents of ERT insets, in external
+editors, a request that goes back to 2003 and bug #991.
+
+
+What's new in version 2.3.2?
+----------------------------
+
+LyX 2.3.2 is the second maintenance release in the 2.3.x series. 
+
+LyX 2.3.2 is the result of on-going efforts to make our stable version more 
+reliable and more stable. One main fix involves a crash with external viewers 
+on Windows. We have also fixed a number of problems with the output of right-
+to-left languages, thanks to the involvement of users. There was also an 
+infinite loop bug connected with the separation of environments that has been 
+fixed. But, for the most part, the fixes here are incremental.
+  
+
+What's new in version 2.3.1?
+----------------------------
+
+LyX 2.3.1 is the first maintenance release in the 2.3.x series. 
+
+We have fixed a number of bugs and added some new features. Perhaps the most 
+important of these is that Jean-Marc Lasgouttes re-wrote the document painting
+mechanism. This makes LyX snappier, especially on repeated events.
+
+All python scripts distributed with LyX should now be compatible with both
+python 2.x and python 3.x.
+
+One oft-requested enhancement was to restore a keyboard shortcut for opening
+the 'settings' menu of graphics, reference, etc, insets. This is now Control-
+Alt-i, on Windows and Linux, and Control-Option-i on OSX (assuming you are
+using the default keybindings).
+
+
+
 What's new in version 2.3.0?
 ----------------------------
 
@@ -22,6 +134,18 @@ http://wiki.lyx.org/LyX/NewInLyX23
 * Forward/Reverse search and error reporting
 * Change tracking
 * Code preview & highlighting
+
+
+
+What's new in version 2.2.3?
+----------------------------
+
+LyX 2.2.3 is the third maintenance release in the 2.2.x series. 
+
+We have fixed a number of bugs and made a number of improvements. 
+Most of these are relatively minor, but the combined result of fixing 
+them all has led to significant improvements. We encourage all users of 
+2.2.2 to upgrade to this version.
 
 
 What's new in version 2.2.2?
