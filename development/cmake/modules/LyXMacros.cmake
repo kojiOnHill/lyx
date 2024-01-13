@@ -455,7 +455,7 @@ function(determineversionandbuildtype configfile package version dirs date build
   set(${version} ${LYX_VERSION} ${LYX_MAJOR_VERSION} ${LYX_MINOR_VERSION} ${LYX_RELEASE_LEVEL} ${LYX_RELEASE_PATCH} PARENT_SCOPE)
   set(${dirs} ${LYX_DIR_VER} ${LYX_USERDIR_VER} PARENT_SCOPE)
   set(${date} ${LYX_DATE} PARENT_SCOPE)
-  if(LYX_BUILD_TYPE MATCHES "^\(dev\)$")
+  if(LYX_BUILD_TYPE MATCHES "^\(dev(el)?\)$")
     set(${buildtype} "development" PARENT_SCOPE)
   elseif(LYX_BUILD_TYPE MATCHES "^\(alpha|beta|rc|pre\)[0-9]*$")
     set(${buildtype} "prerelease" PARENT_SCOPE)
