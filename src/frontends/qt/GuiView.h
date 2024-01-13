@@ -232,6 +232,8 @@ Q_SIGNALS:
 	void scriptKilled();
 	/// emitted when track changes status toggled
 	void changeTrackingToggled(bool);
+	///
+	void dockWidgetVisibilityChanged();
 
 public Q_SLOTS:
 	///
@@ -245,6 +247,8 @@ public Q_SLOTS:
 	void updateWindowTitle(GuiWorkArea * wa);
 	///
 	void disableShellEscape();
+	///
+	void onDockWidgetVisibilityChanged() { Q_EMIT dockWidgetVisibilityChanged(); }
 
 private Q_SLOTS:
 	///

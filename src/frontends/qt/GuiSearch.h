@@ -43,6 +43,8 @@ public:
 	bool initialiseParams(std::string const &);
 	///
 	bool isMinimized() { return minimized_; }
+	///
+	bool hasCoWidgets(QDockWidget * dw);
 
 private Q_SLOTS:
 	void findChanged();
@@ -59,6 +61,7 @@ private Q_SLOTS:
 	void immediateActTriggered();
 	void immediateClicked();
 	void wrapActTriggered();
+	void onDockWidgetVisibilityChanged();
 Q_SIGNALS:
 	void needTitleBarUpdate() const;
 	void needSizeUpdate() const;

@@ -31,6 +31,9 @@ DockView::DockView(GuiView & parent, QString const & name,
 	hide();
 	connect(&parent, SIGNAL(bufferViewChanged()),
 	        this, SLOT(onBufferViewChanged()));
+	connect(this, SIGNAL(visibilityChanged(bool)),
+		&parent, SLOT(onDockWidgetVisibilityChanged()));
+
 
 	// Make dock widgets sub windows to prevent focusNextPrevChild
 	// (Tab key) switching to the parent rather than to the next

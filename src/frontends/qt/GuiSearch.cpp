@@ -67,9 +67,6 @@ GuiSearchWidget::GuiSearchWidget(QWidget * parent, GuiView & view)
 {
 	setupUi(this);
 
-	// fix height to minimum
-	setFixedHeight(sizeHint().height());
-
 	// align items in grid on top
 	gridLayout->setAlignment(Qt::AlignTop);
 
@@ -126,6 +123,9 @@ GuiSearchWidget::GuiSearchWidget(QWidget * parent, GuiView & view)
 	replacePB->setEnabled(false);
 	replacePrevPB->setEnabled(false);
 	replaceallPB->setEnabled(false);
+
+	connect(&view_, SIGNAL(dockWidgetVisibilityChanged()),
+		this, SLOT(onDockWidgetVisibilityChanged()));
 }
 
 
@@ -568,6 +568,25 @@ void GuiSearchWidget::restoreSession(QString const & session_key)
 }
 
 
+bool GuiSearchWidget::hasCoWidgets(QDockWidget * dw)
+{
+	int res = 0;
+	QList<QDockWidget *> dockWidgets = view_.findChildren<QDockWidget *>();
+	for (int i = 0; i < dockWidgets.size(); ++i) {
+		if (dockWidgets.at(i)->isVisible()
+		    && view_.dockWidgetArea(dockWidgets.at(i)) == view_.dockWidgetArea(dw))
+			++res;
+	}
+	return res > 1;
+}
+
+
+void GuiSearchWidget::onDockWidgetVisibilityChanged()
+{
+	Q_EMIT needSizeUpdate();
+}
+
+
 GuiSearch::GuiSearch(GuiView & parent, Qt::DockWidgetArea area, Qt::WindowFlags flags)
 	: DockView(parent, "findreplace", qt_("Search and Replace"), area, flags),
 	  widget_(new GuiSearchWidget(this, parent))
@@ -661,13 +680,28 @@ void GuiSearch::updateTitle()
 
 void GuiSearch::updateSize()
 {
-	widget_->setFixedHeight(widget_->sizeHint().height());
-	if (widget_->isMinimized())
-		setFixedHeight(widget_->sizeHint().height());
-	else {
-		// undo setFixedHeight
+	// This can be triggered before the search widget is visible
+	// Nothing to do in that case
+	if (!widget_->isVisible())
+		return;
+
+	// if we have more than this widget in the current dock
+	// we do not fix the size as other widgets might want to
+	// remain resizable
+	if (widget_->hasCoWidgets(this)) {
+		widget_->setMaximumHeight(QWIDGETSIZE_MAX);
+		widget_->setMinimumHeight(0);
 		setMaximumHeight(QWIDGETSIZE_MAX);
 		setMinimumHeight(0);
+	} else {
+		widget_->setFixedHeight(widget_->sizeHint().height());
+		if (widget_->isMinimized())
+			setFixedHeight(widget_->sizeHint().height());
+		else {
+			// undo setFixedHeight
+			setMaximumHeight(QWIDGETSIZE_MAX);
+			setMinimumHeight(0);
+		}
 	}
 	update();
 }
