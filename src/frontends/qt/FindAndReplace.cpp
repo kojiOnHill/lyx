@@ -664,13 +664,16 @@ FindAndReplace::FindAndReplace(GuiView & parent,
 	widget_ = new FindAndReplaceWidget(parent);
 	setWidget(widget_);
 	setFocusProxy(widget_);
+	// FIXME: Allow all areas once the dialog re-orientation is fixed
+	setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea | Qt::NoDockWidgetArea);
 #ifdef Q_OS_MAC
 	// On Mac show and floating
 	setFloating(true);
 #endif
 
-	connect(this, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
-	        widget_, SLOT(dockLocationChanged(Qt::DockWidgetArea)));
+//  FIXME: uncomment once the dialog re-orientation is fixed
+//	connect(this, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
+//	        widget_, SLOT(dockLocationChanged(Qt::DockWidgetArea)));
 }
 
 
