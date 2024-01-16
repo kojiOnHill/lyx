@@ -1470,7 +1470,10 @@ void GuiView::showStats()
 		d.already_in_selection_ = false;
 	}
 
-	buf->updateStatistics(from, to);
+	// Don't attempt to calculate stats if
+	// the buffer is busy as this might crash (#12935)
+	if (!busy() && !bv->busy())
+		buf->updateStatistics(from, to);
 
 	QStringList stats;
 	if (word_count_enabled_) {
