@@ -135,6 +135,7 @@ logicalmkup
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \notefontcolor #0000ff
@@ -10277,14 +10278,12 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim
-
 This is Verbatim.
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
-
 The following 2 lines are empty:
 \end_layout
 
@@ -10297,7 +10296,6 @@ The following 2 lines are empty:
 \end_layout
 
 \begin_layout Verbatim
-
 Almost everything is allowed in Verbatim:"%&$§#~'`
 \backslash
 }][{|
@@ -10330,7 +10328,6 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim*
-
 This is Verbatim*.
 \end_layout
 
@@ -33908,10 +33905,10 @@ literal "false"
  nous utilisons le style Bib\SpecialChar TeX
  
 \family sans
-alphadin.bst
+alpha.bst
 \family default
 ,
- qui fournit un style alphanumérique conforme à l'Institut Allemand de Standardisation (DIN).
+ qui fournit un style alphanumérique.
 \end_layout
 
 \begin_layout Standard
@@ -58796,8 +58793,10 @@ bibname
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "../biblio/LyXDocs"
-options "../biblio/alphadin"
+options "alpha"
+encoding "default"
 
 \end_inset
 

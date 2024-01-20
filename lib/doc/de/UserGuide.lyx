@@ -32639,10 +32639,10 @@ literal "false"
  In diesem Dokument wird die Bib\SpecialChar TeX
 -Stildatei 
 \family sans
-alphadin.bst
+alpha.bst
 \family default
  verwendet,
- die einen alphanumerischen Stil nach DIN-Norm bietet.
+ die einen alphanumerischen Stil bietet.
 \end_layout
 
 \begin_layout Standard
@@ -56861,8 +56861,10 @@ bibname
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "../biblio/LyXDocs"
-options "../biblio/alphadin"
+options "alpha"
+encoding "default"
 
 \end_inset
 
