@@ -1631,8 +1631,8 @@ private:
 	std::vector<docstring> terms_; // Up to three entries, in general.
 	docstring sort_as_;
 	docstring command_;
-	bool has_start_range_;
-	bool has_end_range_;
+	bool has_start_range_ = false;
+	bool has_end_range_ = false;
 	docstring see_;
 	vector<docstring> see_alsoes_;
 
