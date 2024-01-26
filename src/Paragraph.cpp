@@ -3150,7 +3150,8 @@ void Paragraph::latex(BufferParams const & bparams,
 				}
 			}
 		} else if (i >= start_pos && (end_pos == -1 || i < end_pos)) {
-			if (!bparams.useNonTeXFonts && !runparams.pass_thru)
+			if (!bparams.useNonTeXFonts && !runparams.pass_thru
+			    && !contains(runparams.pass_thru_chars, c))
 				script = Encodings::isKnownScriptChar(c);
 			if (script != alien_script) {
 				if (!alien_script.empty()) {
