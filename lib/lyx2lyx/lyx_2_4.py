@@ -1915,13 +1915,14 @@ def convert_lineno(document):
     use_lineno = 0
     options = ""
     i = find_token(document.preamble, "\\linenumbers", 1)
-    if i > -1:
+    if i > 0:
         usepkg = re.match(r"\\usepackage(.*){lineno}", document.preamble[i-1])
         if usepkg:
             use_lineno = 1
             options = usepkg.group(1).strip("[]")
             del(document.preamble[i-1:i+1])
-            del_token(document.preamble, "% Added by lyx2lyx", i-2, i-1)
+            if i > 1:
+                del_token(document.preamble, "% Added by lyx2lyx", i-2, i-1)
 
     k = find_token(document.header, "\\index ")
     if options == "":
