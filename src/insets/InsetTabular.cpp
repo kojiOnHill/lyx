@@ -1064,9 +1064,10 @@ void Tabular::updateIndexes()
 	rowofcell.resize(numberofcells);
 	columnofcell.resize(numberofcells);
 	idx_type i = 0;
-	// reset column and row of cells and update their width, alignment and ct status
+	// reset column and row of cells and update their width, alignment, caption, and ct status
 	for (row_type row = 0; row < nrows(); ++row) {
 		for (col_type column = 0; column < ncols(); ++column) {
+			cell_info[row][column].inset->toggleCaptionRow(is_long_tabular && ltCaption(row));
 			if (isPartOfMultiColumn(row, column)) {
 				cell_info[row][column].inset->toggleMultiCol(true);
 				continue;
@@ -2021,6 +2022,7 @@ void Tabular::read(Lexer & lex)
 				       << line << ')' << endl;
 				return;
 			}
+			cell_info[i][j].inset->toggleCaptionRow(is_long_tabular && row_info[i].caption);
 			getTokenValue(line, "multicolumn", cell_info[i][j].multicolumn);
 			getTokenValue(line, "multirow", cell_info[i][j].multirow);
 			getTokenValue(line, "mroffset", cell_info[i][j].mroffset);
@@ -4358,7 +4360,8 @@ bool Tabular::hasNewlines(idx_type cell) const
 
 InsetTableCell::InsetTableCell(Buffer * buf)
 	: InsetText(buf, InsetText::PlainLayout), isFixedWidth(false), isVarwidth(false),
-	  isMultiColumn(false), isMultiRow(false), contentAlign(LYX_ALIGN_CENTER)
+	  isMultiColumn(false), isMultiRow(false), isCaptionRow(false),
+	  contentAlign(LYX_ALIGN_CENTER)
 {}
 
 bool InsetTableCell::allowParagraphCustomization(idx_type) const
@@ -4463,6 +4466,24 @@ void InsetTableCell::metrics(MetricsInfo & mi, Dimension & dim) const
 }
 
 
+bool InsetTableCell::insetAllowed(InsetCode code) const
+{
+	switch (code) {
+	case FLOAT_CODE:
+	case MARGIN_CODE:
+	case MATHMACRO_CODE:
+	case WRAP_CODE:
+		return false;
+
+	case CAPTION_CODE:
+		return isCaptionRow;
+
+	default:
+		return true;
+	}
+}
+
+
 /////////////////////////////////////////////////////////////////////
 //
 // InsetTabular
@@ -4494,24 +4515,6 @@ void InsetTabular::setBuffer(Buffer & buf)
 {
 	tabular.setBuffer(buf);
 	Inset::setBuffer(buf);
-}
-
-
-bool InsetTabular::insetAllowed(InsetCode code) const
-{
-	switch (code) {
-	case FLOAT_CODE:
-	case MARGIN_CODE:
-	case MATHMACRO_CODE:
-	case WRAP_CODE:
-		return false;
-
-	case CAPTION_CODE:
-		return tabular.is_long_tabular;
-
-	default:
-		return true;
-	}
 }
 
 
@@ -7276,6 +7279,8 @@ void InsetTabular::tabularFeatures(Cursor & cur,
 		cur.pit() = 0;
 		cur.pos() = 0;
 		cur.selection(false);
+		// update the captionRow status of all cells
+		tabular.updateIndexes();
 		// If a row is set as caption, then also insert
 		// a caption. Otherwise the LaTeX output is broken.
 		// Select cell if it is non-empty
@@ -7295,6 +7300,8 @@ void InsetTabular::tabularFeatures(Cursor & cur,
 		FuncRequest fr(LFUN_INSET_DISSOLVE, "caption");
 		if (lyx::getStatus(fr).enabled())
 			lyx::dispatch(fr);
+		// update the captionRow status of all cells
+		tabular.updateIndexes();
 		break;
 	}
 
