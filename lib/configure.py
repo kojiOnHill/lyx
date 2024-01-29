@@ -1377,6 +1377,13 @@ def checkConverterEntries():
                     break
                 else:
                     logger.info('+  found LilyPond-book, but version %s is too old.' % version_number)
+            else:
+                logger.info('+  found LilyPond book, but version string does not match: %s' % version_string)
+
+            # If not on Windows, skip the check as argument to python.
+            if os.name != 'nt':
+                break
+
         if not found_lilypond_book:
             logger.info('+  found LilyPond-book, but could not extract version number.')
     #
