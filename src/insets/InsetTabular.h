@@ -1037,6 +1037,8 @@ public:
 	///
 	bool hasSettings() const override { return true; }
 	///
+	bool insetAllowed(InsetCode code) const override;
+	///
 	bool allowSpellCheck() const override { return true; }
 	///
 	bool canTrackChanges() const override { return true; }

@@ -4518,6 +4518,25 @@ void InsetTabular::setBuffer(Buffer & buf)
 }
 
 
+bool InsetTabular::insetAllowed(InsetCode code) const
+{
+	switch (code) {
+	case FLOAT_CODE:
+	case MARGIN_CODE:
+	case MATHMACRO_CODE:
+	case WRAP_CODE:
+		return false;
+
+	case CAPTION_CODE:
+		// this is handled on cell level
+		return false;
+	
+	default:
+		return true;
+	}
+}
+
+
 bool InsetTabular::allowMultiPar() const
 {
 	for (col_type c = 0; c < tabular.ncols(); ++c) {
