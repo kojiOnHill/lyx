@@ -2746,6 +2746,7 @@ dist_scripts_DATA += \
 	scripts/lyxpaperview.py \
 	scripts/lyxpreview2bitmap.py \
 	scripts/lyxpreview_tools.py \
+	scripts/lyxwin_getopt.py \
 	scripts/lyx_batch.pl.in \
 	scripts/prefs2prefs.py \
 	scripts/prefs2prefs_lfuns.py \
