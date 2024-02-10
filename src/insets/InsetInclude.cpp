@@ -1444,21 +1444,27 @@ void InsetInclude::updateBuffer(ParIterator const & it, UpdateType utype, bool c
 	if (!isListings(params()))
 		return;
 
+	Buffer const & master = *buffer().masterBuffer();
+	listings_label_ = master.B_("Program Listing");
+	Counters & counters = master.params().documentClass().counters();
+	docstring const cnt = from_ascii("listing");
+	bool const hasCounter = counters.hasCounter(cnt);
+	if (hasCounter) {
+		counters.saveLastCounter();
+		counters.step(cnt, utype);
+		listings_label_ += " " + convert<docstring>(counters.value(cnt));
+	}
+
 	if (label_)
 		label_->updateBuffer(it, utype, deleted);
+
+	if (hasCounter)
+		counters.restoreLastCounter();
 
 	InsetListingsParams const par(to_utf8(params()["lstparams"]));
 	if (par.getParamValue("caption").empty()) {
 		listings_label_ = buffer().B_("Program Listing");
 		return;
-	}
-	Buffer const & master = *buffer().masterBuffer();
-	Counters & counters = master.params().documentClass().counters();
-	docstring const cnt = from_ascii("listing");
-	listings_label_ = master.B_("Program Listing");
-	if (counters.hasCounter(cnt)) {
-		counters.step(cnt, utype);
-		listings_label_ += " " + convert<docstring>(counters.value(cnt));
 	}
 }
 
