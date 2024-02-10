@@ -91,7 +91,8 @@ revert_language(document, lyxname, babelname="", polyglossianame=""):
 '''
 
 from __future__ import print_function
-import re, sys
+import re
+import sys
 from parser_tools import (find_token, find_end_of_inset, get_containing_layout,
                           get_containing_inset, get_value, get_bool_value)
 from unicode_symbols import unicode_reps
