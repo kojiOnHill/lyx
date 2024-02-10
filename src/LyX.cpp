@@ -1365,9 +1365,14 @@ int parse_import(string const & type, string const & file, string & batch)
 int parse_geometry(string const & arg1, string const &, string &)
 {
 	geometryArg = arg1;
+#if !defined(QPA_XCB)
 	// don't remove "-geometry", it will be pruned out later in the
 	// frontend if need be.
 	return -1;
+#else
+	// but that is only done if QPA_XCB is not defined.
+	return 0;
+#endif
 }
 
 
