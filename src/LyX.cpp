@@ -1371,7 +1371,7 @@ int parse_geometry(string const & arg1, string const &, string &)
 	return -1;
 #else
 	// but that is only done if QPA_XCB is not defined.
-	return 0;
+	return 1;
 #endif
 }
 
