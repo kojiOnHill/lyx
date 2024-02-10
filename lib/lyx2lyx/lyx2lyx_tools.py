@@ -674,16 +674,16 @@ def revert_language(document, lyxname, babelname="", polyglossianame=""):
         parent = get_containing_layout(document.body, i)
         i_e = parent[2] # end line no,
         # print(i, texname, parent, document.body[i+1], file=sys.stderr)
-        
+
         # Move leading space to the previous line:
         if document.body[i+1].startswith(" "):
             document.body[i+1] = document.body[i+1][1:]
             document.body.insert(i, " ")
             continue
-        
+
         # TODO: handle nesting issues with font attributes, e.g.
         # \begin_layout Standard
-        # 
+        #
         # \emph on
         # \lang macedonian
         # Македонски јазик
@@ -692,7 +692,7 @@ def revert_language(document, lyxname, babelname="", polyglossianame=""):
         #  семејство на индоевропски јазици.
         #  Македонскиот е службен и национален јазик во Македонија.
         # \end_layout
-        
+
         # Ensure correct handling of list labels
         if (parent[0] in ["Labeling", "Description"]
             and not " " in "\n".join(document.body[parent[3]:i])):
@@ -711,7 +711,7 @@ def revert_language(document, lyxname, babelname="", polyglossianame=""):
                     labelline[1]]
                 document.body[i+1:i+2] = lines
                 i_e += 4
-  
+
         # Find out where to end the language change.
         langswitch = i
         while True:
@@ -727,14 +727,14 @@ def revert_language(document, lyxname, babelname="", polyglossianame=""):
                 continue
             i_e = langswitch
             break
-        
+
         # use function or environment?
         singlepar = i_e - i < 3
         if not singlepar and parent[0] == "Plain Layout":
             # environment not allowed in some insets
             container = get_containing_inset(document.body, i)
             singlepar = container[0] in singlepar_insets
-            
+
         # Delete empty language switches:
         if not "".join(document.body[i+1:i_e]):
             del document.body[i:i_e]
