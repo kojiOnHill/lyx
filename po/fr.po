@@ -362,8 +362,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-02-04 22:01-0500\n"
-"PO-Revision-Date: 2023-10-16 10:57+0200\n"
+"POT-Creation-Date: 2024-02-11 16:52+0100\n"
+"PO-Revision-Date: 2024-02-11 16:54+0100\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
 "Language: fr\n"
@@ -2751,8 +2751,8 @@ msgstr "Incorporé (input)"
 msgid "Verbatim"
 msgstr "Verbatim"
 
-#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1452
-#: src/insets/InsetInclude.cpp:1458
+#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1448
+#: src/insets/InsetInclude.cpp:1466
 msgid "Program Listing"
 msgstr "Listing de code source"
 
@@ -6879,7 +6879,7 @@ msgstr ""
 
 #: lib/citeengines/biblatex-natbib.citeengine:143
 #: lib/citeengines/biblatex.citeengine:133 lib/layouts/numreport.inc:44
-#: lib/layouts/stdcounters.inc:90
+#: lib/layouts/stdcounters.inc:91
 msgid "Footnote"
 msgstr "Note de bas de page"
 
@@ -12389,7 +12389,7 @@ msgstr "Par le même auteur (bib)"
 msgid "bysame"
 msgstr "du même"
 
-#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:95
+#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:96
 msgid "Footnote (Title)"
 msgstr "Note de bas de page (titre)"
 
@@ -12794,7 +12794,7 @@ msgstr ""
 "ajouter le numéro de section au numéro d'équation, comme dans « (2.1) »."
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:85 src/insets/InsetRef.cpp:643
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:643
 #: src/mathed/InsetMathRef.cpp:372
 msgid "Equation"
 msgstr "Équation"
@@ -17982,15 +17982,19 @@ msgstr "\\Alph{enumiv}."
 msgid "(\\Alph{enumiv})"
 msgstr "(\\Alph{enumiv})"
 
-#: lib/layouts/stdcounters.inc:86
-msgid "Equation ##"
-msgstr "Équation # #"
+#: lib/layouts/stdcounters.inc:82
+msgid "Listing ##"
+msgstr "Listing ##"
 
-#: lib/layouts/stdcounters.inc:91 lib/layouts/stdcounters.inc:96
+#: lib/layouts/stdcounters.inc:87
+msgid "Equation ##"
+msgstr "Équation ##"
+
+#: lib/layouts/stdcounters.inc:92 lib/layouts/stdcounters.inc:97
 msgid "Footnote \\arabic{footnote}"
 msgstr "Note de bas de page \\arabic{footnote}"
 
-#: lib/layouts/stdcounters.inc:97
+#: lib/layouts/stdcounters.inc:98
 msgid "\\fnsymbol{thanks}"
 msgstr "\\fnsymbol{thanks}"
 
@@ -28137,12 +28141,12 @@ msgid "LyX Archive (tar.gz)"
 msgstr "Archive LyX (tar.gz)"
 
 #: lib/examples/Articles:0
-msgid "Game 1"
-msgstr "Partie 1"
-
-#: lib/examples/Articles:0
 msgid "Game 2"
 msgstr "Partie 2"
+
+#: lib/examples/Articles:0
+msgid "Game 1"
+msgstr "Partie 1"
 
 #: lib/examples/Articles:0
 msgid "Example (LyXified)"
@@ -28162,24 +28166,24 @@ msgid "External Material"
 msgstr "Objet externe"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Liste à puces"
-
-#: lib/examples/Articles:0
-msgid "Minted File Listing"
-msgstr "Fichier de listing minted"
+msgid "XY-Figure"
+msgstr "Figure XY"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
 msgstr "XY-Pic"
 
 #: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Liste à puces"
+
+#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Diagrammes de Feynman"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "Figure XY"
+msgid "Minted File Listing"
+msgstr "Fichier de listing minted"
 
 #: lib/examples/Articles:0
 msgid "Minted Listings"
@@ -28198,16 +28202,16 @@ msgid "Localization Test (for Developers)"
 msgstr "Test de localisation (pour les développeurs)"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with CJKutf8)"
-msgstr "Mélange du japonais avec d'autres langues (avec CJKutf8)"
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "Mélange du japonais avec d'autres langues (platex)"
 
 #: lib/examples/Articles:0
 msgid "Writing Armenian"
 msgstr "Écrire de l'Arménien"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "Mélange du japonais avec d'autres langues (platex)"
+msgid "Mixing Japanese with other Languages (with CJKutf8)"
+msgstr "Mélange du japonais avec d'autres langues (avec CJKutf8)"
 
 #: lib/examples/Articles:0
 msgid "Language Support"
@@ -28226,36 +28230,36 @@ msgid "Serial Letter 3"
 msgstr "Lettre en nombre 3"
 
 #: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Liste d'erreurs Noweb"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "Livre LilyPond"
 
 #: lib/examples/Articles:0
-msgid "Multilingual Captions"
-msgstr "Légendes multilingues"
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0
 msgid "Hazard and Precautionary Statements"
 msgstr "Chimie : mentions de danger et conseils de prudence"
 
 #: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Liste d'erreurs Noweb"
-
-#: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
+msgid "Multilingual Captions"
+msgstr "Légendes multilingues"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1825
 msgid "Modules"
 msgstr "Modules"
 
 #: lib/examples/Articles:0
-msgid "Foils Landslide"
-msgstr "Foils paysage"
-
-#: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
+
+#: lib/examples/Articles:0
+msgid "Foils Landslide"
+msgstr "Foils paysage"
 
 #: lib/examples/Articles:0
 msgid "Beamer (Complex)"
@@ -28270,12 +28274,16 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Écriture du coréen avec CJK-ko "
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Article hébreu (KOMA-Script)"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
@@ -28284,62 +28292,6 @@ msgstr "IEEE Transactions Conference"
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Modèle revue Springer Global (V. 3)"
-
-#: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Article hébreu (KOMA-Script)"
-
-#: lib/examples/Articles:0
-msgid "02 Foreword"
-msgstr "02 Préambule"
-
-#: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Partie"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Glossaire"
-
-#: lib/examples/Articles:0
-msgid "04 Acknowledgements"
-msgstr "04 Remerciements"
-
-#: lib/examples/Articles:0
-msgid "06 Acronym"
-msgstr "06 Acronyme"
-
-#: lib/examples/Articles:0
-msgid "08 Author"
-msgstr "08 Auteur"
-
-#: lib/examples/Articles:0
-msgid "09 Appendix"
-msgstr "09 Annexe"
-
-#: lib/examples/Articles:0
-msgid "11 References"
-msgstr "11 Références"
-
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Liste des collaborateurs"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Dédicace"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Fichier principal"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Préface"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Solutions"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -28358,8 +28310,60 @@ msgid "05 Acronym"
 msgstr "05 Acronyme"
 
 #: lib/examples/Articles:0
+msgid "04 Acknowledgements"
+msgstr "04 Remerciements"
+
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 Fichier principal"
+
+#: lib/examples/Articles:0
+msgid "11 References"
+msgstr "11 Références"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03 Préface"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10 Solutions"
+
+#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Glossaire"
+
+#: lib/examples/Articles:0
+msgid "02 Foreword"
+msgstr "02 Préambule"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Dédicace"
+
+#: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 Liste des collaborateurs"
+
+#: lib/examples/Articles:0
+msgid "08 Author"
+msgstr "08 Auteur"
+
+#: lib/examples/Articles:0
+msgid "06 Acronym"
+msgstr "06 Acronyme"
+
+#: lib/examples/Articles:0
+msgid "09 Appendix"
+msgstr "09 Annexe"
+
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Partie"
+
+#: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Glossaire"
 
 #: lib/examples/Articles:0
 msgid "Simple"
@@ -28370,16 +28374,16 @@ msgid "Colored"
 msgstr "En couleurs"
 
 #: lib/examples/Articles:0
-msgid "Chapter 1"
-msgstr "Chapitre 1"
-
-#: lib/examples/Articles:0
 msgid "Chapter 2"
 msgstr "Chapitre 2"
 
 #: lib/examples/Articles:0
 msgid "Main File"
 msgstr "Fichier principal"
+
+#: lib/examples/Articles:0
+msgid "Chapter 1"
+msgstr "Chapitre 1"
 
 #: lib/examples/Articles:0
 msgid "PhD Thesis"
@@ -28390,12 +28394,12 @@ msgid "Theses"
 msgstr "Thèses"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Rapport japonais  (classe standard pour LuaTeX%2C écriture verticale)"
-
-#: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "Livre japonais  (classe standard pour LuaTeX%2C écriture verticale)"
+
+#: lib/examples/Articles:0
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Rapport japonais  (classe standard pour LuaTeX%2C écriture verticale)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
@@ -38586,15 +38590,15 @@ msgstr ""
 "L'information de suivi de modifications pour les lignes/colonnes de tableau "
 "est incomplète. Elle sera ignorée."
 
-#: src/insets/InsetTabular.cpp:5722
+#: src/insets/InsetTabular.cpp:5741
 msgid "Column movement not supported with multi-columns."
 msgstr "Déplacement de colonne non implanté pour les colonnes multiples."
 
-#: src/insets/InsetTabular.cpp:5740
+#: src/insets/InsetTabular.cpp:5759
 msgid "Row movement not supported with multi-rows."
 msgstr "Déplacement de ligne non implanté pour les lignes multiples."
 
-#: src/insets/InsetTabular.cpp:6261
+#: src/insets/InsetTabular.cpp:6280
 msgid "Selection size should match clipboard content."
 msgstr ""
 "La taille de la sélection doit correspondre au contenu du presse-papier."
