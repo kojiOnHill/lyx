@@ -155,7 +155,7 @@ Personnaliser \SpecialChar LyX
 par l'équipe \SpecialChar LyX
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Merci d'envoyer vos commentaires et corrections à la liste de diffusion de la documentation de \SpecialChar LyX
@@ -276,6 +276,12 @@ graphique
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+Mise à jour pour 2.4.0,
+ 11 février 2024 (JPC) ,
+ dernière révision avant publication
 \end_layout
 
 \end_inset
@@ -12249,79 +12255,6 @@ status collapsed
  Ceci est utilise pour regrouper les styles apparentés dans le menu déroulant des styles de la barre d'outils.
  N'importe quelle chaîne de caractères peut être utilisée,
  mais vous voudrez peut-être utiliser des catégories existantes pour vos propres styles.
- Notez bien que ceci copie le style tel qu'il est défini à l'instant de la copie.
- Des modifications ultérieures ne seront pas reportées là où il a été copié.
-\end_layout
-
-\begin_layout Description
-
-\lang english
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-DocBookGenerateTitle
-\end_layout
-
-\end_inset
-
- [
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-bool=false
-\end_layout
-
-\end_inset
-
-]
-\lang french
- engendre une balise 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-title
-\end_layout
-
-\end_inset
-
- après la balise d'encapsulation de paragraphe.
- Ce paramètre ne doit être utilisé qu'avec 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-DocBookWrapperTag
-\end_layout
-
-\end_inset
-
-,
- sinon,
- le titre sera émis avant le contenu de l'environnement.
- Le titre général est le même que l'étiquette LyXHTML:
- une combinaison du type d'environnement et de son numéro.
- L'utilité principale de cette commande se révèle quand DocBook n'a pas de correspondance proche pour un environnement \SpecialChar LaTeX
- et que les utilisateurs doivent se replier sur un conteneur générique comme 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-figure
-\end_layout
-
-\end_inset
-
-,
- qui nécessite un titre alors qu'il n'y en pas en \SpecialChar LaTeX
-.
- Cette commande est largement utilisée dans les environnements de type théorème.
 \end_layout
 
 \begin_layout Description
@@ -12345,6 +12278,8 @@ status collapsed
 \end_inset
 
  sert à copier toutes les caractéristiques d'un style déjà existant dans un nouveau style.
+ Notez bien que ceci copie le style tel qu'il est défini à l'instant de la copie.
+ Des modifications ultérieures ne seront pas reportées là où il a été copié.
 \end_layout
 
 \begin_layout Description
@@ -19744,7 +19679,8 @@ status collapsed
 
 \end_inset
 
-]
+]:
+
 \lang french
  la police dans l'insert est héritée du parent de l'export \SpecialChar LaTeX
  si ce paramètre vaut 1,
@@ -21916,7 +21852,25 @@ Argument 2
 
 \end_inset
 
-;
+.
+ Si plusiuers argumenst sont requis,
+ séparez-les par des virgules,
+ e.g.
+ 
+\lang english
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+Requires 1,2
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
