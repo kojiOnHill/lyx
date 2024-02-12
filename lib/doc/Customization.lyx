@@ -12644,6 +12644,48 @@ string
 status collapsed
 
 \begin_layout Plain Layout
+DependsOn
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name>
+\end_layout
+
+\end_inset
+
+] The name of a style whose preamble should be output 
+\emph on
+before
+\emph default
+ this one.
+ This allows to ensure some ordering of the preamble snippets when macros definitions depend on one another.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note that,
+ besides that functionality,
+ there is no way to ensure any ordering of preambles.
+ The ordering that you see in a given version of \SpecialChar LyX
+ may change without warning in later versions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 DocBookGenerateTitle
 \end_layout
 
@@ -12701,48 +12743,6 @@ figure
 ,
  which requires a title although there is none in LaTeX.
  This feature is heavily used for theorem-like environments.
-\end_layout
-
-\begin_layout Description
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-DependsOn
-\end_layout
-
-\end_inset
-
- [
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<name>
-\end_layout
-
-\end_inset
-
-] The name of a style whose preamble should be output 
-\emph on
-before
-\emph default
- this one.
- This allows to ensure some ordering of the preamble snippets when macros definitions depend on one another.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Note that,
- besides that functionality,
- there is no way to ensure any ordering of preambles.
- The ordering that you see in a given version of \SpecialChar LyX
- may change without warning in later versions.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
