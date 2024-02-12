@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lyx 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-02-04 22:01-0500\n"
+"POT-Creation-Date: 2024-02-12 11:10-0500\n"
 "PO-Revision-Date: 2023-11-08 01:09-0800\n"
 "Last-Translator: Pavel Sanda <sanda@lyx.org>\n"
 "Language-Team: Czech <LL@li.org>\n"
@@ -2348,8 +2348,8 @@ msgstr "Vstup (lze rekurzivně)"
 msgid "Verbatim"
 msgstr "Doslovně"
 
-#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1452
-#: src/insets/InsetInclude.cpp:1458
+#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1448
+#: src/insets/InsetInclude.cpp:1466
 msgid "Program Listing"
 msgstr "Výpis zdrojového kódu"
 
@@ -6358,7 +6358,7 @@ msgstr ""
 
 #: lib/citeengines/biblatex-natbib.citeengine:143
 #: lib/citeengines/biblatex.citeengine:133 lib/layouts/numreport.inc:44
-#: lib/layouts/stdcounters.inc:90
+#: lib/layouts/stdcounters.inc:91
 msgid "Footnote"
 msgstr "Poznámka pod čarou"
 
@@ -11844,7 +11844,7 @@ msgstr "By Same Author (bib)"
 msgid "bysame"
 msgstr "bysame"
 
-#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:95
+#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:96
 msgid "Footnote (Title)"
 msgstr "Patička (titulek)"
 
@@ -12243,7 +12243,7 @@ msgstr ""
 "např. (2.1)"
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:85 src/insets/InsetRef.cpp:643
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:643
 #: src/mathed/InsetMathRef.cpp:372
 msgid "Equation"
 msgstr "Rovnice"
@@ -17391,15 +17391,20 @@ msgstr "\\Alph{enumiv}."
 msgid "(\\Alph{enumiv})"
 msgstr "(\\Alph{enumiv})"
 
-#: lib/layouts/stdcounters.inc:86
+#: lib/layouts/stdcounters.inc:82
+#, fuzzy
+msgid "Listing ##"
+msgstr "Výpis"
+
+#: lib/layouts/stdcounters.inc:87
 msgid "Equation ##"
 msgstr "Rovnice ##"
 
-#: lib/layouts/stdcounters.inc:91 lib/layouts/stdcounters.inc:96
+#: lib/layouts/stdcounters.inc:92 lib/layouts/stdcounters.inc:97
 msgid "Footnote \\arabic{footnote}"
 msgstr "Poznámka pod čarou \\arabic{footnote}"
 
-#: lib/layouts/stdcounters.inc:97
+#: lib/layouts/stdcounters.inc:98
 msgid "\\fnsymbol{thanks}"
 msgstr "\\fnsymbol{thanks}"
 
@@ -37803,15 +37808,15 @@ msgid ""
 "ignore this."
 msgstr "Chybí úplná revizní informace pro řádek/sloupec tabulky. Ignoruji."
 
-#: src/insets/InsetTabular.cpp:5722
+#: src/insets/InsetTabular.cpp:5741
 msgid "Column movement not supported with multi-columns."
 msgstr "Přesun sloupců není podporován s víceřádkovými buňkami."
 
-#: src/insets/InsetTabular.cpp:5740
+#: src/insets/InsetTabular.cpp:5759
 msgid "Row movement not supported with multi-rows."
 msgstr "Přesun řádků není podporován s víceslopucovými buňkami."
 
-#: src/insets/InsetTabular.cpp:6261
+#: src/insets/InsetTabular.cpp:6280
 msgid "Selection size should match clipboard content."
 msgstr "Velikost výběru by měla odpovídat obsahu schránky."
 

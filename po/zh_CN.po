@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-02-04 22:01-0500\n"
+"POT-Creation-Date: 2024-02-12 11:10-0500\n"
 "PO-Revision-Date: 2020-07-22 10:09+0800\n"
 "Last-Translator: Winfred Huang <tone90999@hotmail.com>\n"
 "Language-Team: 简体中文 <lyx-docs@lists.lyx.org>\n"
@@ -2393,8 +2393,8 @@ msgstr "输入"
 msgid "Verbatim"
 msgstr "忠实原文(Verbatim)"
 
-#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1452
-#: src/insets/InsetInclude.cpp:1458
+#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1448
+#: src/insets/InsetInclude.cpp:1466
 msgid "Program Listing"
 msgstr "程序列表"
 
@@ -6374,7 +6374,7 @@ msgstr ""
 
 #: lib/citeengines/biblatex-natbib.citeengine:143
 #: lib/citeengines/biblatex.citeengine:133 lib/layouts/numreport.inc:44
-#: lib/layouts/stdcounters.inc:90
+#: lib/layouts/stdcounters.inc:91
 msgid "Footnote"
 msgstr "脚注"
 
@@ -11929,7 +11929,7 @@ msgstr "按相同作者 (bib)"
 msgid "bysame"
 msgstr "同上"
 
-#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:95
+#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:96
 #, fuzzy
 msgid "Footnote (Title)"
 msgstr "脚注标签"
@@ -12324,7 +12324,7 @@ msgid ""
 msgstr "公式编号会带上节号，例如第二节第一个公式为 2.1。"
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:85 src/insets/InsetRef.cpp:643
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:643
 #: src/mathed/InsetMathRef.cpp:372
 msgid "Equation"
 msgstr "公式"
@@ -17597,16 +17597,21 @@ msgstr "\\Alph{enumiv}."
 msgid "(\\Alph{enumiv})"
 msgstr "\\Alph{enumiv}."
 
-#: lib/layouts/stdcounters.inc:86
+#: lib/layouts/stdcounters.inc:82
+#, fuzzy
+msgid "Listing ##"
+msgstr "程序列表"
+
+#: lib/layouts/stdcounters.inc:87
 msgid "Equation ##"
 msgstr "公式 ##"
 
-#: lib/layouts/stdcounters.inc:91 lib/layouts/stdcounters.inc:96
+#: lib/layouts/stdcounters.inc:92 lib/layouts/stdcounters.inc:97
 #, fuzzy
 msgid "Footnote \\arabic{footnote}"
 msgstr "\\arabic{footnote}"
 
-#: lib/layouts/stdcounters.inc:97
+#: lib/layouts/stdcounters.inc:98
 msgid "\\fnsymbol{thanks}"
 msgstr "\\fnsymbol{thanks}"
 
@@ -38117,15 +38122,15 @@ msgid ""
 "ignore this."
 msgstr ""
 
-#: src/insets/InsetTabular.cpp:5722
+#: src/insets/InsetTabular.cpp:5741
 msgid "Column movement not supported with multi-columns."
 msgstr ""
 
-#: src/insets/InsetTabular.cpp:5740
+#: src/insets/InsetTabular.cpp:5759
 msgid "Row movement not supported with multi-rows."
 msgstr ""
 
-#: src/insets/InsetTabular.cpp:6261
+#: src/insets/InsetTabular.cpp:6280
 msgid "Selection size should match clipboard content."
 msgstr "选区大小需要与剪贴板中的内容一致。"
 

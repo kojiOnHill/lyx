@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-02-04 22:01-0500\n"
+"POT-Creation-Date: 2024-02-12 11:10-0500\n"
 "PO-Revision-Date: 2024-01-01 21:54+0100\n"
 "Last-Translator: Enrico Forestieri <forenr@lyx.org>\n"
 "Language-Team: italiano <it@li.org>\n"
@@ -2378,8 +2378,8 @@ msgstr "Input"
 msgid "Verbatim"
 msgstr "Testuale"
 
-#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1452
-#: src/insets/InsetInclude.cpp:1458
+#: src/frontends/qt/ui/IncludeUi.ui:61 src/insets/InsetInclude.cpp:1448
+#: src/insets/InsetInclude.cpp:1466
 msgid "Program Listing"
 msgstr "Listato di programma"
 
@@ -6461,7 +6461,7 @@ msgstr ""
 
 #: lib/citeengines/biblatex-natbib.citeengine:143
 #: lib/citeengines/biblatex.citeengine:133 lib/layouts/numreport.inc:44
-#: lib/layouts/stdcounters.inc:90
+#: lib/layouts/stdcounters.inc:91
 msgid "Footnote"
 msgstr "Nota a piè pagina"
 
@@ -11958,7 +11958,7 @@ msgstr "Stesso autore (bib)"
 msgid "bysame"
 msgstr "Idem"
 
-#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:95
+#: lib/layouts/ectaart.layout:252 lib/layouts/stdcounters.inc:96
 msgid "Footnote (Title)"
 msgstr "Nota a piè pagina (titolo)"
 
@@ -12358,7 +12358,7 @@ msgstr ""
 "preposto il numero di sezione. Per esempio: '(2.1)'."
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:85 src/insets/InsetRef.cpp:643
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:643
 #: src/mathed/InsetMathRef.cpp:372
 msgid "Equation"
 msgstr "Equazione"
@@ -17525,15 +17525,20 @@ msgstr "\\Alph{enumiv}."
 msgid "(\\Alph{enumiv})"
 msgstr "(\\Alph{enumiv})"
 
-#: lib/layouts/stdcounters.inc:86
+#: lib/layouts/stdcounters.inc:82
+#, fuzzy
+msgid "Listing ##"
+msgstr "Listato"
+
+#: lib/layouts/stdcounters.inc:87
 msgid "Equation ##"
 msgstr "Equazione ##"
 
-#: lib/layouts/stdcounters.inc:91 lib/layouts/stdcounters.inc:96
+#: lib/layouts/stdcounters.inc:92 lib/layouts/stdcounters.inc:97
 msgid "Footnote \\arabic{footnote}"
 msgstr "Nota \\arabic{footnote}"
 
-#: lib/layouts/stdcounters.inc:97
+#: lib/layouts/stdcounters.inc:98
 msgid "\\fnsymbol{thanks}"
 msgstr "\\fnsymbol{thanks}"
 
@@ -38060,15 +38065,15 @@ msgstr ""
 "Le informazioni di tracciamento modifica per riga/colonna di tabella sono "
 "incomplete. Verranno ignorate."
 
-#: src/insets/InsetTabular.cpp:5722
+#: src/insets/InsetTabular.cpp:5741
 msgid "Column movement not supported with multi-columns."
 msgstr "Lo spostamento non è possibile in presenza di multicolonne."
 
-#: src/insets/InsetTabular.cpp:5740
+#: src/insets/InsetTabular.cpp:5759
 msgid "Row movement not supported with multi-rows."
 msgstr "Lo spostamento non è possibile in presenza di multirighe."
 
-#: src/insets/InsetTabular.cpp:6261
+#: src/insets/InsetTabular.cpp:6280
 msgid "Selection size should match clipboard content."
 msgstr ""
 "La dimensione della selezione deve corrispondere al contenuto degli appunti."
