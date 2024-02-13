@@ -2897,13 +2897,31 @@ avant tout
 
 \begin_layout Enumerate
 Récupérez le code source de \SpecialChar LyX
- le plus récent
+ le plus récent,
+ soit via 
+\series bold
+
+\begin_inset CommandInset href
+LatexCommand href
+name "trac"
+target "https://www.lyx.org/trac/browser/lyxgit/lib/doc?rev=master "
+literal "false"
+
+\end_inset
+
+
+\series default
+,
+ soit via 
 \begin_inset Newline newline
 \end_inset
 
 
+\series bold
+
 \begin_inset CommandInset href
 LatexCommand href
+name "git.lyx.org"
 target "https://git.lyx.org/gitweb/?p=lyx.git;a=tree;f=lib/doc;hb=HEAD"
 literal "false"
 
