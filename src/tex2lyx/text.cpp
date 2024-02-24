@@ -5580,6 +5580,16 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			continue;
 		}
 
+		if (t.cs() == "tikzset") {
+			context.check_layout(os);
+			// we catch the argument and output it verbatim in an ERT
+			string const arg = p.getArg('{', '}');
+			output_ert_inset(os,
+				"\\tikzset{" + arg + "}",
+				context);
+			continue;
+		}
+
 		else if (t.cs() == "bibliography") {
 			context.check_layout(os);
 			string BibOpts;
