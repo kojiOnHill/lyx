@@ -1137,15 +1137,6 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 	}
 
 	docstring ret = operator[](key);
-	if (ret.empty() && !xrefs.empty()) {
-		// xr is a (reference to a) BibTeXInfo const *
-		for (auto const & xr : xrefs) {
-			if (xr && !(*xr)[key].empty()) {
-				ret = (*xr)[key];
-				break;
-			}
-		}
-	}
 	if (ret.empty()) {
 		// some special keys
 		// FIXME: dialog, textbefore and textafter have nothing to do with this
@@ -1281,6 +1272,21 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			}
 		} else if (key == "year")
 			ret = getYear();
+	}
+
+	// If we have no result, check in the cross-ref'ed entries
+	if (ret.empty() && !xrefs.empty()) {
+		// xr is a (reference to a) BibTeXInfo const *
+		for (auto const & xr : xrefs) {
+			if (!xr)
+				continue;
+			// use empty BibTeXInfoList to avoid loops
+			BibTeXInfoList xr_dummy;
+			ret = xr->getValueForKey(oldkey, buf, ci, xr_dummy, maxsize);
+			if (!ret.empty())
+				// success!
+				break;
+		}
 	}
 
 	if (cleanit)
