@@ -1279,6 +1279,8 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 
 	// If we have no result, check in the cross-ref'ed entries
 	if (ret.empty() && !xrefs.empty()) {
+		bool const biblatex =
+			buf.params().documentClass().citeFramework() == "biblatex";
 		// xr is a (reference to a) BibTeXInfo const *
 		for (auto const & xr : xrefs) {
 			if (!xr)
@@ -1286,6 +1288,13 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			// use empty BibTeXInfoList to avoid loops
 			BibTeXInfoList xr_dummy;
 			ret = xr->getValueForKey(oldkey, buf, ci, xr_dummy, maxsize);
+			if (!ret.empty())
+				// success!
+				break;
+			// in biblatex, cross-ref'ed titles are mapped
+			// to booktitle. Same for subtitle etc.
+			if (biblatex && prefixIs(key, "book"))
+				ret = (*xr)[key.substr(4)];
 			if (!ret.empty())
 				// success!
 				break;
