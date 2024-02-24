@@ -1138,6 +1138,9 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 
 	docstring ret = operator[](key);
 	if (ret.empty()) {
+		docstring subtype;
+		if (contains(key, ':'))
+			subtype = from_ascii(token(key, ':', 1));
 		// some special keys
 		// FIXME: dialog, textbefore and textafter have nothing to do with this
 		if (key == "dialog" && ci.context == CiteItem::Dialog)
@@ -1163,7 +1166,7 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			ret = cite_number_;
 		else if (prefixIs(key, "ifmultiple:")) {
 			// Return whether we have multiple authors
-			docstring const kind = operator[](from_ascii(key.substr(11)));
+			docstring const kind = operator[](subtype);
 			if (multipleAuthors(kind))
 				ret = from_ascii("x"); // any non-empty string will do
 		}
@@ -1171,14 +1174,14 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			// Special key to provide abbreviated name list,
 			// with respect to maxcitenames. Suitable for Bibliography
 			// beginnings.
-			docstring const kind = operator[](from_ascii(key.substr(11)));
+			docstring const kind = operator[](subtype);
 			ret = getAuthorList(&buf, kind, false, false, true);
 			if (ci.forceUpperCase && isLowerCase(ret[0]))
 				ret[0] = uppercase(ret[0]);
 		} else if (prefixIs(key, "fullnames:")) {
 			// Return a full name list. Suitable for Bibliography
 			// beginnings.
-			docstring const kind = operator[](from_ascii(key.substr(10)));
+			docstring const kind = operator[](subtype);
 			ret = getAuthorList(&buf, kind, true, false, true);
 			if (ci.forceUpperCase && isLowerCase(ret[0]))
 				ret[0] = uppercase(ret[0]);
@@ -1186,7 +1189,7 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			// Special key to provide abbreviated name lists,
 			// irrespective of maxcitenames. Suitable for Bibliography
 			// beginnings.
-			docstring const kind = operator[](from_ascii(key.substr(15)));
+			docstring const kind = operator[](subtype);
 			ret = getAuthorList(&buf, kind, false, true, true);
 			if (ci.forceUpperCase && isLowerCase(ret[0]))
 				ret[0] = uppercase(ret[0]);
@@ -1194,14 +1197,14 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			// Special key to provide abbreviated name list,
 			// with respect to maxcitenames. Suitable for further names inside a
 			// bibliography item // (such as "ed. by ...")
-			docstring const kind = operator[](from_ascii(key.substr(11)));
+			docstring const kind = operator[](subtype);
 			ret = getAuthorList(&buf, kind, false, false, true, false);
 			if (ci.forceUpperCase && isLowerCase(ret[0]))
 				ret[0] = uppercase(ret[0]);
 		} else if (prefixIs(key, "fullbynames:")) {
 			// Return a full name list. Suitable for further names inside a
 			// bibliography item // (such as "ed. by ...")
-			docstring const kind = operator[](from_ascii(key.substr(10)));
+			docstring const kind = operator[](subtype);
 			ret = getAuthorList(&buf, kind, true, false, true, false);
 			if (ci.forceUpperCase && isLowerCase(ret[0]))
 				ret[0] = uppercase(ret[0]);
@@ -1209,7 +1212,7 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			// Special key to provide abbreviated name lists,
 			// irrespective of maxcitenames. Suitable for further names inside a
 			// bibliography item // (such as "ed. by ...")
-			docstring const kind = operator[](from_ascii(key.substr(15)));
+			docstring const kind = operator[](subtype);
 			ret = getAuthorList(&buf, kind, false, true, true, false);
 			if (ci.forceUpperCase && isLowerCase(ret[0]))
 				ret[0] = uppercase(ret[0]);
