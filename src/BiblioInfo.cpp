@@ -1295,6 +1295,10 @@ docstring BibTeXInfo::getValueForKey(string const & oldkey, Buffer const & buf,
 			// to booktitle. Same for subtitle etc.
 			if (biblatex && prefixIs(key, "book"))
 				ret = (*xr)[key.substr(4)];
+			// likewise, author is maped onto bookauthor
+			else if (biblatex && contains(key, ":bookauthor"))
+				ret = xr->getValueForKey(subst(key, "bookauthor", "author"),
+							 buf, ci, xr_dummy, maxsize);
 			if (!ret.empty())
 				// success!
 				break;
