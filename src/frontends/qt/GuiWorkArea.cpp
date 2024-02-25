@@ -179,7 +179,11 @@ GuiWorkArea::GuiWorkArea(Buffer & buffer, GuiView & gv)
 
 double GuiWorkArea::pixelRatio() const
 {
-	return qt_scale_factor * devicePixelRatio();
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+	return devicePixelRatioF();
+#else
+	return devicePixelRatio();
+#endif
 }
 
 
@@ -1264,9 +1268,9 @@ void GuiWorkArea::Private::paintPreeditText(GuiPainter & pain)
 void GuiWorkArea::Private::resetScreen()
 {
 	if (use_backingstore_) {
-		int const pr = p->pixelRatio();
-		screen_ = QImage(pr * p->viewport()->width(),
-		                 pr * p->viewport()->height(),
+		double const pr = p->pixelRatio();
+		screen_ = QImage(int(pr * p->viewport()->width()),
+		                 int(pr * p->viewport()->height()),
 		                 QImage::Format_ARGB32_Premultiplied);
 		screen_.setDevicePixelRatio(pr);
 	}

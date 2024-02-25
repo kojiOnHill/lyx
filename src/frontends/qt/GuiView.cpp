@@ -260,7 +260,11 @@ private:
 
 	/// Current ratio between physical pixels and device-independent pixels
 	double pixelRatio() const {
-		return qt_scale_factor * devicePixelRatio();
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+		return devicePixelRatioF();
+#else
+		return devicePixelRatio();
+#endif
 	}
 
 	qreal fontSize() const {
@@ -1844,7 +1848,11 @@ void GuiView::resetCommandExecute()
 
 double GuiView::pixelRatio() const
 {
-	return qt_scale_factor * devicePixelRatio();
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+	return devicePixelRatioF();
+#else
+	return devicePixelRatio();
+#endif
 }
 
 
