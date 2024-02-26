@@ -1128,6 +1128,7 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	        make_pair("url", "uri")
 	};
 	// Relations between documents.
+	// TODO: some elements should be mutually exclusive; right now, all of them are output.
 	vector<pair<string, string>> relations = { // <bibtex, docbook biblioset relation>
 	        make_pair("journal", "journal"),
 	        make_pair("journaltitle", "journal"),
@@ -1144,9 +1145,11 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	toDocBookTag["fullnames:author"] = "SPECIFIC"; // No direct translation to DocBook: <authorgroup>.
 	toDocBookTag["publisher"] = "SPECIFIC"; // No direct translation to DocBook: <publisher>.
 	toDocBookTag["address"] = "SPECIFIC"; // No direct translation to DocBook: <publisher>.
-	toDocBookTag["editor"] = "editor";
+	toDocBookTag["editor"] = "SPECIFIC";  // No direct translation to DocBook: <editor><personname/orgname>.
+	toDocBookTag["fullbynames:editor"] = "SPECIFIC";  // No direct translation to DocBook: <editor><personname/orgname>.
 	toDocBookTag["institution"] = "SPECIFIC"; // No direct translation to DocBook: <org>.
 
+	// TODO: some elements should be mutually exclusive; right now, all of them are output.
 	toDocBookTag["title"] = "title";
 	toDocBookTag["fulltitle"] = "title";
 	toDocBookTag["quotetitle"] = "title";
@@ -1159,6 +1162,7 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	toDocBookTag["year"] = "SPECIFIC"; // No direct translation to DocBook: <pubdate>.
 	toDocBookTag["month"] = "SPECIFIC"; // No direct translation to DocBook: <pubdate>.
 
+	// TODO: some elements should be mutually exclusive; right now, all of them are output.
 	toDocBookTag["journal"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
 	toDocBookTag["journaltitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
 	toDocBookTag["fulljournaltitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
@@ -1357,6 +1361,38 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 				// be encountered.
 				authorsToDocBookAuthorGroup(getTag("fullnames:author"), xs, buffer());
 				eraseTag("fullnames:author");
+			}
+
+			// <editor>
+			// Example: http://tdg.docbook.org/tdg/5.1/editor.html
+			if (hasTag("editor") || hasTag("fullbynames:editor")) {
+				// If several editor tags are present, only output one.
+				const docstring editorName = getTag(hasTag("editor") ? "editor" : "fullbynames:editor");
+
+				// Arbitrarily decide that the editor is always a person. There is no reliable information in the input
+				// to make the distinction between a person (<personname>) and an organisation (<orgname>).
+				xs << xml::StartTag("editor");
+				xs << xml::CR();
+				xs << xml::StartTag("personname");
+				xs << editorName;
+				xs << xml::EndTag("personname");
+				xs << xml::CR();
+				xs << xml::EndTag("editor");
+				xs << xml::CR();
+
+				if (hasTag("editor") && hasTag("fullbynames:editor")) {
+					xs << XMLStream::ESCAPE_NONE <<
+							from_utf8("<!-- Several editor tags in the reference. Other editor tag: ") +
+							getTag("fullbynames:editor") + from_utf8(" -->\n");
+				}
+
+				// Erase all editor tags that might be present, even if only one is output.
+				if (hasTag("editor")) {
+					eraseTag("editor");
+				}
+				if (hasTag("fullbynames:editor")) {
+					eraseTag("fullbynames:editor");
+				}
 			}
 
 			// <abstract>
