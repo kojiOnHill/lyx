@@ -450,7 +450,7 @@ void InsetIndex::docbook(XMLStream & xs, OutputParams const & runparams) const
 	// TODO: Could handle formatting as significance="preferred"?
 	if (!command.empty()) {
 		docstring error = from_utf8("Unsupported feature: an index entry contains a | with an unsupported command, ")
-				          + command + from_utf8(". ") + from_utf8("Complete entry: \"") + latexString + from_utf8("\"");
+				          + command + from_utf8(". Complete entry: \"") + latexString + from_utf8("\"");
 		LYXERR0(error);
 		xs << XMLStream::ESCAPE_NONE << (from_utf8("<!-- Output Error: ") + error + from_utf8(" -->\n"));
 	}
