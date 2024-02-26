@@ -1220,7 +1220,7 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 				if (docbookTag == "SPECIFIC") {
 					delayedTags[match[1]] = match[2];
 				} else {
-					if (alreadyOutputDocBookTags.contains(docbookTag)) {
+					if (alreadyOutputDocBookTags.find(docbookTag) != alreadyOutputDocBookTags.end()) {
 						xs << XMLStream::ESCAPE_NONE <<
 						   from_utf8("<!-- Several similar tags in the reference for ") + from_utf8(docbookTag) +
 						   from_utf8(". New tag: ") + from_utf8(match[1]) + from_utf8(". Corresponding value: ") +
