@@ -3842,7 +3842,7 @@ docstring Tabular::xmlRow(XMLStream & xs, const row_type row, OutputParams const
 			const std::vector<std::string> styles = computeCssStylePerCell(row, c, cell);
 
 			std::string attr_str_prefix = "style='" + style.str();
-			if (!styles.empty())
+			if (!style.str().empty())
 				attr_str_prefix += "; ";
 			for (auto it = styles.begin(); it != styles.end(); ++it) {
 				attr_str_prefix += *it;
