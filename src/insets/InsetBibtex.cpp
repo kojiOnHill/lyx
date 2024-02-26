@@ -1130,7 +1130,10 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	// Relations between documents.
 	vector<pair<string, string>> relations = { // <bibtex, docbook biblioset relation>
 	        make_pair("journal", "journal"),
+	        make_pair("journaltitle", "journal"),
+	        make_pair("fulljournaltitle", "journal"),
 	        make_pair("booktitle", "book"),
+	        make_pair("fullbooktitle", "book"),
 	        make_pair("series", "series")
 	};
 	// Various things that do not fit DocBook.
@@ -1145,6 +1148,8 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	toDocBookTag["institution"] = "SPECIFIC"; // No direct translation to DocBook: <org>.
 
 	toDocBookTag["title"] = "title";
+	toDocBookTag["fulltitle"] = "title";
+	toDocBookTag["quotetitle"] = "title";
 	toDocBookTag["volume"] = "volumenum";
 	toDocBookTag["edition"] = "edition";
 	toDocBookTag["pages"] = "artpagenums";
@@ -1155,7 +1160,10 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	toDocBookTag["month"] = "SPECIFIC"; // No direct translation to DocBook: <pubdate>.
 
 	toDocBookTag["journal"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
+	toDocBookTag["journaltitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
+	toDocBookTag["fulljournaltitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
 	toDocBookTag["booktitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
+	toDocBookTag["fullbooktitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
 	toDocBookTag["series"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
 
 	for (auto const & id: biblioId)
