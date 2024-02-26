@@ -505,9 +505,9 @@ void InsetIndex::docbook(XMLStream & xs, OutputParams const & runparams) const
 			// Generate the attributes.
 			docstring id = xml::cleanID(newIndexTerms);
 			if (hasStartRange) {
-				attrs = indexType + " class=\"startofrange\" xml:id=\"" + id + "\"";
+				attrs = indexType + R"( class="startofrange" xml:id=")" + id + "\"";
 			} else {
-				attrs = " class=\"endofrange\" startref=\"" + id + "\"";
+				attrs = R"( class="endofrange" startref=")" + id + "\"";
 			}
 		}
 
