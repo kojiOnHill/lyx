@@ -1128,7 +1128,6 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	        make_pair("url", "uri")
 	};
 	// Relations between documents.
-	// TODO: some elements should be mutually exclusive; right now, all of them are output.
 	vector<pair<string, string>> relations = { // <bibtex, docbook biblioset relation>
 	        make_pair("journal", "journal"),
 	        make_pair("journaltitle", "journal"),
@@ -1149,7 +1148,6 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	toDocBookTag["fullbynames:editor"] = "SPECIFIC";  // No direct translation to DocBook: <editor><personname/orgname>.
 	toDocBookTag["institution"] = "SPECIFIC"; // No direct translation to DocBook: <org>.
 
-	// TODO: some elements should be mutually exclusive; right now, all of them are output.
 	toDocBookTag["title"] = "title";
 	toDocBookTag["fulltitle"] = "title";
 	toDocBookTag["quotetitle"] = "title";
@@ -1162,7 +1160,6 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 	toDocBookTag["year"] = "SPECIFIC"; // No direct translation to DocBook: <pubdate>.
 	toDocBookTag["month"] = "SPECIFIC"; // No direct translation to DocBook: <pubdate>.
 
-	// TODO: some elements should be mutually exclusive; right now, all of them are output.
 	toDocBookTag["journal"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
 	toDocBookTag["journaltitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
 	toDocBookTag["fulljournaltitle"] = "SPECIFIC"; // No direct translation to DocBook: <biblioset>.
@@ -1210,22 +1207,35 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 		map<string, string> delayedTags;
 
 		// Read all tags from HTML and convert those that have a 1:1 matching.
+		// Avoid outputting the same tag twice in DocBook: several bibliography tags might map to the same DocBook
+		// element, avoid outputting the same DocBook tag twice to keep a valid output. "SPECIFIC" tags are handled in
+		// a more specific way later on (among the delayed tags).
+		set<string> alreadyOutputDocBookTags;
 		while (tagIt != tagEnd) {
 			string tag = tagIt->str(); // regex_match cannot work with temporary strings.
 			++tagIt;
 
 			if (regex_match(tag, match, tagRegex)) {
-				if (toDocBookTag[match[1]] == "SPECIFIC") {
+				const string docbookTag = toDocBookTag[match[1]];
+				if (docbookTag == "SPECIFIC") {
 					delayedTags[match[1]] = match[2];
 				} else {
-					xs << xml::StartTag(toDocBookTag[match[1]]);
-					xs << from_utf8(match[2].str());
-					xs << xml::EndTag(toDocBookTag[match[1]]);
-					xs << xml::CR();
+					if (alreadyOutputDocBookTags.contains(docbookTag)) {
+						xs << XMLStream::ESCAPE_NONE <<
+						   from_utf8("<!-- Several similar tags in the reference for ") + from_utf8(docbookTag) +
+						   from_utf8(". New tag: ") + from_utf8(match[1]) + from_utf8(". Corresponding value: ") +
+						   from_utf8(match[2].str()) + from_utf8(" -->\n");
+					} else {
+						xs << xml::StartTag(docbookTag);
+						xs << from_utf8(match[2].str());
+						xs << xml::EndTag(docbookTag);
+						xs << xml::CR();
+					}
 				}
 			} else {
 				LYXERR0("The BibTeX field " << match[1].str() << " is unknown.");
-				xs << XMLStream::ESCAPE_NONE << from_utf8("<!-- Output Error: The BibTeX field " + match[1].str() + " is unknown -->\n");
+				xs << XMLStream::ESCAPE_NONE <<
+					from_utf8("<!-- Output Error: The BibTeX field " + match[1].str() + " is unknown -->\n");
 			}
 		}
 
@@ -1341,15 +1351,50 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 			// <biblioset>
 			// Example: http://tdg.docbook.org/tdg/5.1/biblioset.html
 			for (auto const & id: relations) {
+				std::string keptJournal;
+				std::string keptBook;
+
 				if (hasTag(id.first)) {
-					xs << xml::StartTag("biblioset", "relation=\"" + id.second + "\"");
-					xs << xml::CR();
-					xs << xml::StartTag("title");
-					xs << getTag(id.first);
-					xs << xml::EndTag("title");
-					xs << xml::CR();
-					xs << xml::EndTag("biblioset");
-					xs << xml::CR();
+					bool outputThisTag = true;
+
+					// Deal with duplicate entries for the same semantics.
+					if (id.first == "journal" || id.first == "journaltitle" || id.first == "fulljournaltitle") {
+						if (!keptJournal.empty()) {
+							xs << XMLStream::ESCAPE_NONE <<
+							        from_utf8("<!-- Several journal tags in the reference. Kept journal entry: ") +
+									from_utf8(keptJournal) + from_utf8(". Other journal tag: ") +
+								    from_utf8(id.first) + from_utf8(". Corresponding value: ") +
+								    getTag(id.first) + from_utf8(" -->\n");
+							outputThisTag = false;
+						} else {
+							keptJournal = id.first;
+						}
+					} else if (id.first == "booktitle" || id.first == "fullbooktitle") {
+						if (!keptBook.empty()) {
+							xs << XMLStream::ESCAPE_NONE <<
+							   from_utf8("<!-- Several book tags in the reference. Kept book entry: ") +
+							   from_utf8(keptBook) + from_utf8(". Other book tag: ") +
+							   from_utf8(id.first) + from_utf8(". Corresponding value: ") +
+							   getTag(id.first) + from_utf8(" -->\n");
+							outputThisTag = false;
+						} else {
+							keptBook = id.first;
+						}
+					}
+
+					// Output this tag only if it is not a duplicate of a previously output tag.
+					if (outputThisTag) {
+						xs << xml::StartTag("biblioset", "relation=\"" + id.second + "\"");
+						xs << xml::CR();
+						xs << xml::StartTag("title");
+						xs << getTag(id.first);
+						xs << xml::EndTag("title");
+						xs << xml::CR();
+						xs << xml::EndTag("biblioset");
+						xs << xml::CR();
+					}
+
+					// In all cases, erase this tag: it has been dealt with.
 					eraseTag(id.first);
 				}
 			}
@@ -1383,6 +1428,7 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 				if (hasTag("editor") && hasTag("fullbynames:editor")) {
 					xs << XMLStream::ESCAPE_NONE <<
 							from_utf8("<!-- Several editor tags in the reference. Other editor tag: ") +
+							from_utf8("fullbynames:editor. Corresponding value: ") +
 							getTag("fullbynames:editor") + from_utf8(" -->\n");
 				}
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This DocBook file was created by LyX 2.4.0dev
+<!-- This DocBook file was created by LyX 2.4.0~devel
   See https://www.lyx.org/ for more information -->
 <article xml:lang="en-US" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.2">
 <info>
@@ -67,30 +67,8 @@
 <m:mtable displaystyle='true'>
  <m:mtr>
   <m:mtd>
-   <m:mstyle mathvariant='normal'>
-    <m:mrow>
-     <m:mi>I</m:mi>&#0160;
-     <m:mi>a</m:mi>
-     <m:mi>m</m:mi>&#0160;
-     <m:mi>a</m:mi>&#0160;
-     <m:mi>f</m:mi>
-     <m:mi>o</m:mi>
-     <m:mi>r</m:mi>
-     <m:mi>m</m:mi>
-     <m:mi>u</m:mi>
-     <m:mi>l</m:mi>
-     <m:mi>a</m:mi>&#0160;
-     <m:mi>w</m:mi>
-     <m:mi>i</m:mi>
-     <m:mi>t</m:mi>
-     <m:mi>h</m:mi>&#0160;
-     <m:mi>a</m:mi>&#0160;
-     <m:mi>r</m:mi>
-     <m:mi>e</m:mi>
-     <m:mi>f</m:mi>
-     <m:mn>.</m:mn>
-    </m:mrow>
-   </m:mstyle>
+   <m:mtext>I&#0160;am&#0160;a&#0160;formula&#0160;with&#0160;a&#0160;ref
+   <m:mn>.</m:mn></m:mtext>
   </m:mtd>
   <m:mtd>
    <m:mtext>(1)</m:mtext>
@@ -285,8 +263,8 @@ I am no more code. </para>
 </section>
 <section>
 <title>I am the sixth section and I really like bibliographies</title>
-<para>This text has references. First reference: <biblioref endterm="big" />. Second reference: <biblioref endterm="small" />. Both at the same time: <biblioref endterm="big" />, <biblioref endterm="small" />. A book: <biblioref endterm="Gro60" />. </para>
-<para>Many things, just testing for completeness: <biblioref endterm="article" />, <biblioref endterm="book" />, <biblioref endterm="booklet" />, <biblioref endterm="conference" />, <biblioref endterm="inbook" />, <biblioref endterm="incollection" />. </para>
+<para>This text has references. First reference: <biblioref linkend="big" />. Second reference: <biblioref linkend="small" />. Both at the same time: <biblioref linkend="big" />, <biblioref linkend="small" />. A book: <biblioref linkend="Gro60" />. </para>
+<para>Many things, just testing for completeness: <biblioref linkend="article" />, <biblioref linkend="book" />, <biblioref linkend="booklet" />, <biblioref linkend="conference" />, <biblioref linkend="inbook" />, <biblioref linkend="incollection" />. </para>
 </section>
 <section>
 <title>I am the seventh section and I deal with indices</title>
