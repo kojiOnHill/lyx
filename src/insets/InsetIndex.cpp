@@ -386,7 +386,10 @@ void InsetIndex::docbook(XMLStream & xs, OutputParams const & runparams) const
 	}
 
 	// Handle ranges. Happily, in the raw LaTeX mode, (| and |) can only be at the end of the string!
-	const bool hasInsetRange = params_.range != InsetIndexParams::PageRange::None;
+	// Handle both modern ranges (params_.range) and legacy ones (with a suffix |( or |) as in pure LaTeX).
+	const bool hasInsetRange = params_.range != InsetIndexParams::PageRange::None ||
+			latexString.find(from_ascii("|(")) != lyx::docstring::npos ||
+			latexString.find(from_ascii("|)")) != lyx::docstring::npos;
 	const bool hasStartRange = params_.range == InsetIndexParams::PageRange::Start ||
 			latexString.find(from_ascii("|(")) != lyx::docstring::npos;
 	const bool hasEndRange = params_.range == InsetIndexParams::PageRange::End ||
