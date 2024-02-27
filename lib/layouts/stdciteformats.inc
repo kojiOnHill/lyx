@@ -49,6 +49,8 @@ CiteFormat default
 	!makeed {%ifmultiple:editor%[[%B_edstext%]][[%B_edtext%]]}
 	# author or editor, as fullnames, following the schemes above
 	!authoredit {%fullnames:author%[[%fullnames:author%, ]][[{%fullnames:editor%[[%fullnames:editor%, %!makeed%, ]]}]]}
+	# by author or editor, as fullnames, following the schemes above
+	!byauthoredit {%fullbynames:bookauthor%[[%fullbynames:bookauthor%, ]][[{%fullbynames:editor%[[%fullbynames:editor%, %!makeed%, ]]}]]}
 	# "vol. 1, no.
 	!volnum {%volume%[[ %B_voltext% %volume%, {%number%[[%B_numtext% %number%]]}]]}
 	!fulltitle %title%{%subtitle%[[: %subtitle%]]}
@@ -63,7 +65,7 @@ CiteFormat default
 	#
 	# Entry types. Note that final punctuation will be added later, if needed.
 	#
-	!insomething %fullnames:author%, %!quotetitle%, %B_in%{%fullbynames:editor%[[ %fullbynames:editor%, %!makeed%,]]} {!<i>!}%!fullbooktitle%{!</i>!}%!volnum%{%edition%[[ %edition%]]} (%!locpub%%year%)%!pages%{%note%[[. %note%]]}
+	!insomething %fullnames:author%, %!quotetitle%, %B_in% %!byauthoredit% {!<i>!}%!fullbooktitle%{!</i>!}%!volnum%{%edition%[[ %edition%]]} (%!locpub%%year%)%!pages%{%note%[[. %note%]]}
 
 	article %fullnames:author%, %!quotetitle%, %!emphjournal% {%volume%[[ %volume%{%number%[[, %number%]]}]]} (%year%)%!pages%{%note%[[. %note%]]}
 
@@ -72,6 +74,7 @@ CiteFormat default
 	collection %!booklike%
 	proceedings %!booklike%
 
+	inbook %!insomething%
 	incollection %!insomething%
 	inproceedings %!insomething%
 
