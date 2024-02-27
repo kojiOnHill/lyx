@@ -2965,12 +2965,12 @@ void Text::setParagraphs(Cursor const & cur, ParagraphParameters const & p)
 }
 
 
-// this really should just insert the inset and not move the cursor.
-void Text::insertInset(Cursor & cur, Inset * inset)
+// just insert the inset and not move the cursor.
+bool Text::insertInset(Cursor & cur, Inset * inset)
 {
 	LBUFERR(this == cur.text());
 	LBUFERR(inset);
-	cur.paragraph().insertInset(cur.pos(), inset, cur.current_font,
+	return cur.paragraph().insertInset(cur.pos(), inset, cur.current_font,
 		Change(cur.buffer()->params().track_changes
 		? Change::INSERTED : Change::UNCHANGED));
 }
@@ -5792,14 +5792,14 @@ void Text::dispatch(Cursor & cur, FuncRequest & cmd)
 			InsetMathMacroTemplate * inset = new InsetMathMacroTemplate(cur.buffer(),
 				from_utf8(token(s, ' ', 0)), nargs, false, type);
 			inset->setBuffer(bv->buffer());
-			insertInset(cur, inset);
-
-			// enter macro inset and select the name
-			cur.push(*inset);
-			cur.top().pos() = cur.top().lastpos();
-			cur.resetAnchor();
-			cur.selection(true);
-			cur.top().pos() = 0;
+			if (insertInset(cur, inset)) {
+				// If insertion is successful, enter macro inset and select the name
+				cur.push(*inset);
+				cur.top().pos() = cur.top().lastpos();
+				cur.resetAnchor();
+				cur.selection(true);
+				cur.top().pos() = 0;
+			}
 		}
 		break;
 
@@ -6734,10 +6734,13 @@ bool Text::getStatus(Cursor & cur, FuncRequest const & cmd,
 	case LFUN_MATH_BIGDELIM:
 	case LFUN_MATH_DISPLAY:
 	case LFUN_MATH_MODE:
-	case LFUN_MATH_MACRO:
 	case LFUN_MATH_SUBSCRIPT:
 	case LFUN_MATH_SUPERSCRIPT:
 		code = MATH_HULL_CODE;
+		break;
+
+	case LFUN_MATH_MACRO:
+		code = MATHMACRO_CODE;
 		break;
 
 	case LFUN_REGEXP_MODE:
