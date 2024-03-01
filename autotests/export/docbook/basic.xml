@@ -264,7 +264,7 @@ I am no more code. </para>
 <section>
 <title>I am the sixth section and I really like bibliographies</title>
 <para>This text has references. First reference: <biblioref linkend="big" />. Second reference: <biblioref linkend="small" />. Both at the same time: <biblioref linkend="big" />, <biblioref linkend="small" />. A book: <biblioref linkend="Gro60" />. </para>
-<para>Many things, just testing for completeness: <biblioref linkend="article" />, <biblioref linkend="book" />, <biblioref linkend="booklet" />, <biblioref linkend="conference" />, <biblioref linkend="inbook" />, <biblioref linkend="incollection" />. </para>
+<para>Many things, just testing for completeness: <biblioref linkend="article" />, <biblioref linkend="book" />, <biblioref linkend="booklet" />, <biblioref linkend="conference" />, <biblioref linkend="inbook" />, <biblioref linkend="incollection" />, <biblioref linkend="Foucault.Kritik-EN92" />. </para>
 </section>
 <section>
 <title>I am the seventh section and I deal with indices</title>
@@ -358,12 +358,17 @@ I am no more code. </para>
 </biblioentry>
 <biblioentry xml:id="inbook">
 <title>The title of the work</title>
+<volumenum>4</volumenum>
+<edition>3</edition>
 <artpagenums>201-213</artpagenums>
 <bibliomisc role="type">inbook</bibliomisc>
 <publisher>
 <publishername>The name of the publisher</publishername>
-</publisher>
+<address>The address of the publisher</address></publisher>
 <pubdate>1993</pubdate>
+<biblioset relation="book">
+<title></title>
+</biblioset>
 <authorgroup>
 <author>
 <personname>
@@ -372,6 +377,7 @@ I am no more code. </para>
 </personname>
 </author>
 </authorgroup>
+<bibliomisc role="note">An optional note</bibliomisc>
 </biblioentry>
 <biblioentry xml:id="incollection">
 <title>The title of the work</title>
@@ -398,6 +404,27 @@ I am no more code. </para>
 <personname>The editor</personname>
 </editor>
 <bibliomisc role="note">An optional note</bibliomisc>
+</biblioentry>
+<biblioentry xml:id="Foucault.Kritik-EN92">
+<title>What is Critique?</title>
+<artpagenums>41-82</artpagenums>
+<bibliomisc role="type">incollection</bibliomisc>
+<publisher>
+<publishername>Semiotext(e)</publishername>
+<address>Los Angeles</address></publisher>
+<pubdate>1997</pubdate>
+<biblioset relation="book">
+<title>The Politics of Truth</title>
+</biblioset>
+<authorgroup>
+<author>
+<personname>
+<firstname>Michel</firstname>
+<surname>Foucault</surname>
+</personname>
+</author>
+</authorgroup>
+<!-- Several author tags in the reference. Other editor tag: fullbynames:bookauthor. Corresponding value: Michel Foucault -->
 </biblioentry>
 <biblioentry xml:id="small">
 <title>A small paper</title>
