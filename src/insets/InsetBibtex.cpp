@@ -1402,29 +1402,15 @@ void InsetBibtex::docbook(XMLStream & xs, OutputParams const &) const
 
 			// <authorgroup>
 			// Example: http://tdg.docbook.org/tdg/5.1/authorgroup.html
-			if (hasTag("fullnames:author") || hasTag("fullbynames:bookauthor")) {
-				// If several author tags are present, only output one.
-				const docstring authorName = getTag(
-						hasTag("fullnames:author") ? "fullnames:author" : "fullbynames:bookauthor");
-
-				// Perform full parsing of the BibTeX string, dealing with the many corner cases that might
-				// be encountered.
-				authorsToDocBookAuthorGroup(authorName, xs, buffer());
-
-				if (hasTag("fullnames:author") && hasTag("fullbynames:bookauthor")) {
-					xs << XMLStream::ESCAPE_NONE <<
-					   from_utf8("<!-- Several author tags in the reference. Other editor tag: ") +
-					   from_utf8("fullbynames:bookauthor. Corresponding value: ") +
-					   getTag("fullbynames:bookauthor") + from_utf8(" -->\n");
-				}
-
-				// Erase all author tags that might be present, even if only one is output.
-				if (hasTag("fullnames:author")) {
-					eraseTag("fullnames:author");
-				}
-				if (hasTag("fullbynames:bookauthor")) {
-					eraseTag("fullbynames:bookauthor");
-				}
+			// Perform full parsing of the BibTeX string, dealing with the many corner cases that might
+			// be encountered.
+			if (hasTag("fullnames:author")) {
+				authorsToDocBookAuthorGroup(getTag("fullnames:author"), xs, buffer(), "author");
+				eraseTag("fullnames:author");
+			}
+			if (hasTag("fullbynames:bookauthor")) {
+				authorsToDocBookAuthorGroup(getTag("fullbynames:bookauthor"), xs, buffer(), "book");
+				eraseTag("fullbynames:bookauthor");
 			}
 
 			// <editor>

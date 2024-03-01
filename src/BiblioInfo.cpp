@@ -1748,12 +1748,18 @@ string citationStyleToString(const CitationStyle & cs, bool const latex)
 }
 
 
-void authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream & xs, Buffer const & buf)
+void authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream & xs, Buffer const & buf,
+                                 const std::string type)
 {
 	// This function closely mimics getAuthorList, but produces DocBook instead of text.
 	// It has been greatly simplified, as the complete list of authors is always produced. No separators are required,
 	// as the output has a database-like shape.
 	// constructName has also been merged within, as it becomes really simple and leads to no copy-paste.
+
+	if (! type.empty() && (type != "author" && type != "book")) {
+		LYXERR0("ERROR! Unexpected author contribution `" << type <<"'.");
+		return;
+	}
 
 	if (authorsString.empty()) {
 		return;
@@ -1772,7 +1778,10 @@ void authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream & xs
 	auto it = authors.cbegin();
 	auto en = authors.cend();
 	for (size_t i = 0; it != en; ++it, ++i) {
-		xs << xml::StartTag("author");
+		const std::string tag = (type.empty() || type == "author") ? "author" : "othercredit";
+		const std::string attr = (type == "book") ? R"(class="other" otherclass="bookauthor")" : "";
+
+		xs << xml::StartTag(tag, attr);
 		xs << xml::CR();
 		xs << xml::StartTag("personname");
 		xs << xml::CR();
@@ -1812,7 +1821,7 @@ void authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream & xs
 
 		xs << xml::EndTag("personname");
 		xs << xml::CR();
-		xs << xml::EndTag("author");
+		xs << xml::EndTag(tag);
 		xs << xml::CR();
 
 		// Could add an affiliation after <personname>, but not stored in BibTeX.
