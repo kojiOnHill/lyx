@@ -1748,7 +1748,7 @@ string citationStyleToString(const CitationStyle & cs, bool const latex)
 }
 
 
-docstring authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream & xs, Buffer const & buf)
+void authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream & xs, Buffer const & buf)
 {
 	// This function closely mimics getAuthorList, but produces DocBook instead of text.
 	// It has been greatly simplified, as the complete list of authors is always produced. No separators are required,
@@ -1756,7 +1756,7 @@ docstring authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream
 	// constructName has also been merged within, as it becomes really simple and leads to no copy-paste.
 
 	if (authorsString.empty()) {
-		return docstring();
+		return;
 	}
 
 	// Split the input list of authors into individual authors.
@@ -1776,9 +1776,10 @@ docstring authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream
 		xs << xml::CR();
 		xs << xml::StartTag("personname");
 		xs << xml::CR();
-		docstring name = *it;
+		const docstring name = *it;
 
-		// All authors go in a <personname>. If more structure is known, use it; otherwise (just "et al."), print it as such.
+		// All authors go in a <personname>. If more structure is known, use it; otherwise (just "et al."),
+		// print it as such.
 		if (name == "others") {
 			xs << buf.B_(etal);
 		} else {
@@ -1818,8 +1819,6 @@ docstring authorsToDocBookAuthorGroup(docstring const & authorsString, XMLStream
 	}
 	xs << xml::EndTag("authorgroup");
 	xs << xml::CR();
-
-	return docstring();
 }
 
 } // namespace lyx
