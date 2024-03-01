@@ -4284,9 +4284,10 @@ bool Paragraph::isHardHyphenOrApostrophe(pos_type pos) const
 bool Paragraph::needsCProtection(bool const fragile) const
 {
 	// first check the layout of the paragraph, but only in insets
+	// and not in tables
 	InsetText const * textinset = inInset().asInsetText();
 	bool const maintext = textinset
-		? textinset->text().isMainText()
+		? textinset->text().isMainText() || inInset().lyxCode() == CELL_CODE
 		: false;
 
 	if (!maintext && layout().needcprotect) {
