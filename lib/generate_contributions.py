@@ -227,10 +227,12 @@ function blanket_contrib($name, $email, $msg_title, $msg_ref, $date) {
 $email = str_replace(' () ', '@', $email);
 $email = str_replace(' ! ', '.', $email);
 
+if(!isset($output)){ $output = ''; }
+
 $output=$output. "
 
  <dt>
-  <b>[[mailto:${email} | ${name}]]</b>
+  <b>[[mailto:{$email} | {$name}]]</b>
  </dt>
  <dd>
   See the lyx-devel mailing list message
@@ -239,12 +241,12 @@ $output=$output. "
 if (isset($msg_ref) && $msg_ref != "") {
         $msg_ref = htmlspecialchars("$msg_ref");
         if (substr($msg_ref, 0, 2) == "m=") {
-                $output=$output. "[[https://marc.info/?l=lyx-devel&amp;" . ${msg_ref} . "|" . ${msg_title} . "]]";
+                $output=$output. "[[https://marc.info/?l=lyx-devel&amp;" . $msg_ref . "|" . $msg_title . "]]";
         } else {
-                $output=$output. "[[https://www.mail-archive.com/lyx-devel@lists.lyx.org/" . ${msg_ref} . ".html |" . ${msg_title} . "]]";
+                $output=$output. "[[https://www.mail-archive.com/lyx-devel@lists.lyx.org/" . $msg_ref . ".html |" . $msg_title . "]]";
         }
 } else {
-        $output=$output. "${msg_title}";
+        $output=$output. "{$msg_title}";
 }
 
 $output=$output. "&quot;
@@ -255,6 +257,8 @@ return $output;
 }
 
 function blanket_output() {
+
+if(!isset($output)){ $output = ''; }
 
 $output=$output."<p>
      The following people hereby grant permission to license their
