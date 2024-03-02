@@ -162,26 +162,30 @@ function credits_contrib($name, $email, $msg) {
 $email = str_replace(' () ', '@', $email);
 $email = str_replace(' ! ', '.', $email);
 
+if(!isset($output)){ $output = ''; }
+
 if (isset($email) && $email != "") {
         if (strncasecmp($email,"https",4) == 0)
-            $output =$output. "<dt><b>[[${email} | ${name}]]</b>";
+            $output =$output. "<dt><b>[[{$email} | {$name}]]</b>";
          else
-            $output=$output. "<dt><b>[[mailto:${email} | ${name}]]</b>";
+            $output=$output. "<dt><b>[[mailto:{$email} | {$name}]]</b>";
 } else
-        $output=$output. "<dt><b>${name}</b>";
+        $output=$output. "<dt><b>{$name}</b>";
 
 $msg = preg_replace("/\\n */", "\\n  ", ltrim($msg));
 
 $output=$output. "
  </dt>
  <dd>
-  ${msg}
+  {$msg}
  </dd>";
  
 return $output;
 }
 
 function credits_output() {
+
+if(!isset($output)){ $output = ''; }
 
 $output=$output."<p>
      If your name doesn't appear here although you've done
