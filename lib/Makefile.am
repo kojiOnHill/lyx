@@ -370,7 +370,7 @@ dist_examples_DATA = \
 articleexamplesdir = $(pkgdatadir)/examples/Articles
 dist_articleexamples_DATA = \
 	examples/Articles/Astronomy_%26_Astrophysics.lyx \
-	examples/Articles/American_Astronomical_Society_%28AASTeX_v._631%29.lyx \
+	examples/Articles/American_Astronomical_Society_%28AASTeX_v._6.3.1%29.lyx \
 	examples/Articles/American_Chemical_Society_%28ACS%29.lyx \
 	examples/Articles/American_Mathematical_Society_%28AMS%29.lyx
 
@@ -2765,7 +2765,7 @@ dist_templates_DATA = \
 
 articletemplatesdir = $(pkgdatadir)/templates/Articles
 dist_articletemplates_DATA = \
-	templates/Articles/American_Astronomical_Society_%28AASTeX_v._631%29.lyx \
+	templates/Articles/American_Astronomical_Society_%28AASTeX_v._6.3.1%29.lyx \
 	templates/Articles/American_Economic_Association_%28AEA%29.lyx \
 	templates/Articles/American_Psychological_Association_%28APA%29.lyx \
 	templates/Articles/American_Psychological_Association_%28APA%29,_v._7.lyx \
