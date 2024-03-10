@@ -630,7 +630,7 @@ bool testSymbol(MathAtom const & at, docstring const & name)
 
 bool testSymbol(MathAtom const & at, char const * const name)
 {
-	return at->asSymbolInset() && at->asSymbolInset()->name() == from_ascii(name);
+	return testSymbol(at, from_ascii(name));
 }
 
 
