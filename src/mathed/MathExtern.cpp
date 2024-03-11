@@ -295,7 +295,7 @@ bool testString(MathAtom const & at, char const * const str)
 // search end of nested sequence
 MathData::iterator endNestSearch(
 	MathData::iterator it,
-	MathData::iterator last,
+	const MathData::iterator& last,
 	TestItemFunc testOpen,
 	TestItemFunc testClose
 )
