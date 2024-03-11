@@ -292,6 +292,19 @@ bool testString(MathAtom const & at, char const * const str)
 	return testString(at, from_ascii(str));
 }
 
+
+bool testSymbol(MathAtom const & at, docstring const & name)
+{
+	return at->asSymbolInset() && at->asSymbolInset()->name() == name;
+}
+
+
+bool testSymbol(MathAtom const & at, char const * const name)
+{
+	return testSymbol(at, from_ascii(name));
+}
+
+
 // search end of nested sequence
 MathData::iterator endNestSearch(
 	MathData::iterator it,
@@ -523,12 +536,52 @@ MathAtom replaceBracketDelims(const MathData & ar)
 }
 
 
-// replace '('...')' and '['...']' sequences by a real InsetMathDelim
+bool testOpenVert(MathAtom const & at)
+{
+	return testSymbol(at, "lvert");
+}
+
+
+bool testCloseVert(MathAtom const & at)
+{
+	return testSymbol(at, "rvert");
+}
+
+
+MathAtom replaceVertDelims(const MathData & ar)
+{
+	return MathAtom(new InsetMathDelim(const_cast<Buffer *>(ar.buffer()),
+		from_ascii("lvert"), from_ascii("rvert"), ar, true));
+}
+
+
+bool testOpenAngled(MathAtom const & at)
+{
+	return testSymbol(at, "langle");
+}
+
+
+bool testCloseAngled(MathAtom const & at)
+{
+	return testSymbol(at, "rangle");
+}
+
+
+MathAtom replaceAngledDelims(const MathData & ar)
+{
+	return MathAtom(new InsetMathDelim(const_cast<Buffer *>(ar.buffer()),
+		from_ascii("langle"), from_ascii("rangle"), ar, true));
+}
+
+
+// replace '('...')', '['...']', '|'...'|', and '<'...'>' sequences by a real InsetMathDelim
 void extractDelims(MathData & ar)
 {
 	//lyxerr << "\nDelims from: " << ar << endl;
 	replaceNested(ar, testOpenParen, testCloseParen, replaceParenDelims);
 	replaceNested(ar, testOpenBracket, testCloseBracket, replaceBracketDelims);
+	replaceNested(ar, testOpenVert, testCloseVert, replaceVertDelims);
+	replaceNested(ar, testOpenAngled, testCloseAngled, replaceAngledDelims);
 	//lyxerr << "\nDelims to: " << ar << endl;
 }
 
@@ -621,18 +674,6 @@ void extractFunctions(MathData & ar, ExternalMath kind)
 //
 // search integrals
 //
-
-bool testSymbol(MathAtom const & at, docstring const & name)
-{
-	return at->asSymbolInset() && at->asSymbolInset()->name() == name;
-}
-
-
-bool testSymbol(MathAtom const & at, char const * const name)
-{
-	return testSymbol(at, from_ascii(name));
-}
-
 
 bool testIntSymbol(MathAtom const & at)
 {
