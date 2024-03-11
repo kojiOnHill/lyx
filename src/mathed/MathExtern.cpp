@@ -500,7 +500,7 @@ bool testCloseParen(MathAtom const & at)
 MathAtom replaceParenDelims(const MathData & ar)
 {
 	return MathAtom(new InsetMathDelim(const_cast<Buffer *>(ar.buffer()),
-		from_ascii("("), from_ascii(")"), ar));
+		from_ascii("("), from_ascii(")"), ar, true));
 }
 
 
@@ -519,7 +519,7 @@ bool testCloseBracket(MathAtom const & at)
 MathAtom replaceBracketDelims(const MathData & ar)
 {
 	return MathAtom(new InsetMathDelim(const_cast<Buffer *>(ar.buffer()),
-		from_ascii("["), from_ascii("]"), ar));
+		from_ascii("["), from_ascii("]"), ar, true));
 }
 
 
