@@ -1564,6 +1564,14 @@ contributors = [
                  "17 November 2016",
                  u"Module updates"),
 
+     contributor(u'Idan Pazi',
+                 "idan.kp () gmail ! com",
+                 "GPL",
+                 "Re: windows preview bug fix",
+                 "m=171024249203393",
+                 "12 March 2024",
+                 u"Windows-specific fixes"),
+
      contributor(u'Bo Peng',
                  "ben.bob () gmail ! com",
                  "GPL",
