@@ -852,7 +852,6 @@ void PreviewLoader::Impl::dumpData(odocstream & os,
 	Encoding const & enc = buffer_.params().encoding();
 
 	for (; it != end; ++it) {
-		docstring res;
 		bool uncodable_content = false;
 		// check whether the content is encodable
 		// FIXME: the preview loader should be able
@@ -864,14 +863,13 @@ void PreviewLoader::Impl::dumpData(odocstream & os,
 					<< docstring(1, n)
 					<< "' in preview snippet!");
 				uncodable_content = true;
-			} else
-				res += n;
+			}
 		}
 		// FIXME UNICODE
 		os << "\\begin{preview}\n";
 		// do not show incomplete preview
 		if (!uncodable_content)
-			os << res;
+			os << from_utf8(it->first);
 		os << "\n\\end{preview}\n\n";
 	}
 }
