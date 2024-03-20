@@ -2729,7 +2729,8 @@ docstring InsetMathHull::xhtml(XMLStream & xs, OutputParams const & op) const
 		// probably should allow for some kind of customization here
 		string const tag = (getType() == hullSimple) ? "span" : "div";
 		xs << xml::StartTag(tag, "class='math'")
-		   << latex
+		   << XMLStream::ESCAPE_AND << latex // Don't escape <> tags: latex might contain them
+		   // (typically, when there is a label).
 		   << xml::EndTag(tag)
 		   << xml::CR();
 	}
