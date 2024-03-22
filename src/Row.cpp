@@ -510,15 +510,14 @@ void Row::addMarginSpace(pos_type const pos, int const width,
 
 void Row::push_back(Row::Element const & e)
 {
-	dim_.wid += e.dim.wid + ((e.type == INSET) ? e.extra : 0);
+	dim_.wid += e.dim.wid;
 	elements_.push_back(e);
 }
 
 
 void Row::pop_back()
 {
-	Element const & e = elements_.back();
-	dim_.wid -= e.dim.wid + ((e.type == INSET) ? e.extra : 0);
+	dim_.wid -= elements_.back().dim.wid;
 	elements_.pop_back();
 }
 

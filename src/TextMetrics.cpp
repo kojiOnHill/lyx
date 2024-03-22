@@ -485,7 +485,6 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 	par.setBeginOfBody();
 	Font const bufferfont = buffer.params().getFont();
 	CoordCache::Insets & insetCache = bv_->coordCache().insets();
-	map <Inset const *, int> extrawidths;
 	for (auto const & e : par.insetList()) {
 		// FIXME Doesn't this HAVE to be non-empty?
 		// position already initialized?
@@ -522,17 +521,6 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 		MetricsInfo mi(bv_, font.fontInfo(), w, mc, e.pos == 0, tight_);
 		mi.base.outer_font = displayFont(pit, e.pos).fontInfo();
 		e.inset->metrics(mi, dim);
-		/* FIXME: This is a kind of hack. This allows InsetMathHull to
-		 * state that it needs some elbow room beyond its width, in
-		 * order to fit the numbering and/or the left margin (with
-		 * left alignment), which are outside of the inset itself.
-		 *
-		 * To this end, InsetMathHull::metrics() sets a value in
-		 * MetricsInfo::extrawidth and this value is recorded later in
-		 * the corresponding row element's `extra' field. See ticket
-		 * #12320 for details.
-		*/
-		extrawidths[e.inset] = mi.extrawidth;
 		if (!insetCache.has(e.inset) || insetCache.dim(e.inset) != dim) {
 			insetCache.add(e.inset, dim);
 			changed = true;
@@ -540,11 +528,7 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 	}
 
 	// Transform the paragraph into a single row containing all the elements.
-	Row bigrow = tokenizeParagraph(pit);
-	// Add the needed extra width to the row elements of the insets
-	for (auto & e : bigrow)
-		if (e.type == Row::INSET)
-			e.extra = extrawidths[e.inset];
+	Row const bigrow = tokenizeParagraph(pit);
 	// Split the row in several rows fitting in available width
 	pm.rows() = breakParagraph(bigrow);
 
