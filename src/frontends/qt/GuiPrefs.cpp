@@ -931,18 +931,31 @@ void PrefScreenFonts::updateScreenFontSizes(LyXRC const & rc)
 void PrefScreenFonts::selectRoman(const QString & name)
 {
 	screenRomanFE->set(QFont(name), name);
+	screenFontsChanged();
 }
 
 
 void PrefScreenFonts::selectSans(const QString & name)
 {
 	screenSansFE->set(QFont(name), name);
+	screenFontsChanged();
 }
 
 
 void PrefScreenFonts::selectTypewriter(const QString & name)
 {
 	screenTypewriterFE->set(QFont(name), name);
+	screenFontsChanged();
+}
+
+
+void PrefScreenFonts::screenFontsChanged()
+{
+	int w = max(screenRomanFE->minWidth(), screenSansFE->minWidth());
+	w = max(screenTypewriterFE->minWidth(), w);
+	screenRomanFE->setFixedWidth(w);
+	screenSansFE->setFixedWidth(w);
+	screenTypewriterFE->setFixedWidth(w);
 }
 
 
