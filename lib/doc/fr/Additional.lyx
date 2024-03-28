@@ -3420,6 +3420,13 @@ Polices
 
 \begin_layout Subsection
 Hébreu
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Hébreu"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9063,9 +9070,10 @@ nolink "false"
 
 \end_inset
 
-) and 
+)
 \family sans
-Letter (classe standard avec tailles de polices supplémentaires)
+,
+ Letter (classe standard avec tailles de polices supplémentaires)
 \family default
  (section
 \begin_inset space ~
@@ -9079,7 +9087,26 @@ nolink "false"
 
 \end_inset
 
-) .
+)
+\family sans
+ 
+\family default
+et Lettre hébreu (section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Hébreu"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
@@ -9246,7 +9273,7 @@ G-Brief (V.
 2)
 \family default
  propose une aide à l'utilisation.
- La documentation est disponible via  
+ La documentation est disponible via 
 \begin_inset CommandInset href
 LatexCommand href
 name "CTAN"
@@ -9259,60 +9286,42 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-
-\lang english
 Présentations
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Beamer
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-The document class 
+La classe de documents 
 \family sans
 Beamer
 \family default
- uses the 
+ utilise la classe \SpecialChar LaTeX
+ 
 \family typewriter
 beamer.cls
 \family default
- \SpecialChar LaTeX
- class for creating presentations.
- The file in the menu 
+ pour créer des présentations.
+ 
 \family sans
+Fichier\SpecialChar menuseparator
+Nouveau avec modèle\SpecialChar menuseparator
+Présentations\SpecialChar menuseparator
+
 \bar under
-F
-\bar default
-ile\SpecialChar menuseparator
-New
-\begin_inset space ~
-\end_inset
-
-fro
-\bar under
-m
-\bar default
-
-\begin_inset space ~
-\end_inset
-
-Template\SpecialChar menuseparator
-Presentations\SpecialChar menuseparator
 Beamer
 \family default
- or 
+\bar default
+ ou 
 \family sans
-Help\SpecialChar menuseparator
-Specific Manuals\SpecialChar menuseparator
-Beamer Presentations
+Aide\SpecialChar menuseparator
+Manuels spécifiques\SpecialChar menuseparator
+Présentations Beamer Presentations
 \family default
- offers guidance on its use.
- The documentation is available from 
+ proposent une aide à l'utilisation.
+ La documentation est disponible via 
 \begin_inset CommandInset href
 LatexCommand href
 name "CTAN"
@@ -9348,7 +9357,7 @@ Original par
 \noun on
 Allan Rae
 \noun default
-:
+;
  mis à jour par l'équipe \SpecialChar LyX
 .
 \end_layout
@@ -9358,79 +9367,24 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Cette section décrit comment utiliser \SpecialChar LyX
- pour préparer des transparents pour rétroprojecteurs.
- Il y a deux classes de document qui le permettent :
+La classe de documents
+\family sans
+ Foil\SpecialChar TeX
+
+\family default
+ utilise la classe \SpecialChar LaTeX
+ 
+\family typewriter
+foils.cls
+\family default
+\lang english
+ 
+\lang french
+pour préparer des transparents pour rétroprojecteurs.
+ Il y a deux classes de document qui le permettent:
  la classe par défaut 
 \family sans
-slides
-\family default
- et la classe 
-\family sans
-FoilTeX
-\family default
-.
- Cette section décrit la classe 
-\family sans
-FoilteX
-\end_layout
-
-\begin_layout Standard
-Redisons-le donc bien clairement :
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-Cette section concerne la classe 
-\family sans
-
-\begin_inset Quotes cld
-\end_inset
-
-FoilTeX
-\family default
-
-\begin_inset Quotes crd
-\end_inset
-
- uniquement.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Si vous voulez une documentation sur 
-\begin_inset Quotes cld
-\end_inset
-
-
-\family sans
-slides
-\begin_inset space ~
-\end_inset
-
-(default)
-\family default
-
-\begin_inset Quotes crd
-\end_inset
-
-,
- voyez la section
+Diapos (section
 \begin_inset space ~
 \end_inset
 
@@ -9438,12 +9392,31 @@ slides
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:slitex"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
+)
+\family default
+ et la classe 
+\family sans
+FoilTeX
+\family default
 .
- Si votre machine n'a pas la classe 
+ Cette section décrit la seconde.
+ La première est encore maintenue en 2023 alors que 
+\family sans
+Foil\SpecialChar TeX
+
+\family default
+ n'est plus maintenue depuis 2008.
+\end_layout
+
+\begin_layout Standard
+Si votre machine n'a pas la classe 
 \family sans
 foils
 \family default
@@ -9452,31 +9425,32 @@ foils
 FoilTeX
 \family default
 ,
- il vous faudra sûrement utiliser la classe 
-\family sans
-slides
-\family default
- par défaut,
- qui n'est pas aussi bonne.
-\end_layout
-
-\begin_layout Standard
-La classe 
-\family sans
-foils
-\family default
- est conçue pour être utilisée avec la version
-\begin_inset space ~
-\end_inset
-
-2.1 du fichier de classe \SpecialChar LaTeX
- 
-\family sans
+ il vous faudra sûrement utiliser la classe Diapos.
+ Si vous voulez installer la classe de documents 
+\family typewriter
 foils.cls
 \family default
+ ,
+ elle est disponible via 
+\begin_inset CommandInset href
+LatexCommand href
+name "CTAN"
+target "https://www.ctan.org/pkg/foiltex"
+literal "false"
+
+\end_inset
+
 .
- Celui-ci fait maintenant partie intégrante de \SpecialChar LaTeX2e
+ Vous deviez lire également le chapitre 
+\emph on
+Installer de nouvelles classes 
+\emph default
+du manuel de 
+\emph on
+Personnalisation
+\emph default
 .
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -9517,7 +9491,7 @@ document
 \end_layout
 
 \begin_layout Itemize
-Ne changez pas les options 
+ne changez pas les options 
 \family sans
 Pagination
 \family default
@@ -9539,7 +9513,7 @@ foils
 \end_layout
 
 \begin_layout Itemize
-La taille par défaut est de 20
+la taille par défaut est de 20
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -9561,7 +9535,7 @@ pt.
 \end_layout
 
 \begin_layout Itemize
-La police par défaut est 
+la police par défaut est 
 \family sans
 Sans
 \begin_inset space ~
@@ -9604,7 +9578,7 @@ ne sont pas supportées.
 \end_layout
 
 \begin_layout Itemize
-Ne vous occupez pas de 
+ne vous occupez pas de 
 \family sans
 Placement
 \begin_inset space ~
@@ -9616,13 +9590,13 @@ des
 
 flottants
 \family default
- :
+:
  l'option est de toute façon ignorée.
  Tous les flottants apparaîtront là où ils sont définis dans le texte.
 \end_layout
 
 \begin_layout Itemize
-Les réglages 
+les réglages 
 \family sans
 Mise
 \begin_inset space ~
@@ -9683,7 +9657,7 @@ centré au bas de la page.
 vide
 \family default
 \series default
- Les diapos ne présenteront ni numéro de page,
+ les diapos ne présenteront ni numéro de page,
  ni en-tête ou pied de page (sauf évidemment les notes de bas de page).
 \end_layout
 
@@ -9695,7 +9669,7 @@ vide
 ordinaire
 \family default
 \series default
- Les diapos auront un numéro de page centré en bas de la page.
+ les diapos auront un numéro de page centré en bas de la page.
  Ni en-tête,
  ni pied de page (à part les notes).
 \end_layout
@@ -9706,7 +9680,7 @@ ordinaire
 \series bold
 foilheadings
 \series default
- Le numéro apparaît en bas à droite.
+ le numéro apparaît en bas à droite.
  Les en-têtes et pieds de page seront présents.
  C'est le choix par défaut.
 \end_layout
@@ -9717,7 +9691,7 @@ foilheadings
 \series bold
 sophistiqué
 \series default
- Vous donne accès au paquetage 
+ vous donne accès au paquetage 
 \family sans
 fancyheadings
 \family default
@@ -9767,7 +9741,7 @@ document
 \series bold
 35mmSlide
 \series default
- Règle le format de page à 7,33
+ règle le format de page à 7,33
 \begin_inset space ~
 \end_inset
 
@@ -9790,7 +9764,7 @@ mm,
 \series bold
 headrule
 \series default
- Trace une ligne horizontale le long de la page,
+ trace une ligne horizontale le long de la page,
  au-dessous de l'en-tête,
  sur toutes les pages sauf celle de titre.
 \end_layout
@@ -9801,7 +9775,7 @@ headrule
 \series bold
 footrule
 \series default
- Trace une ligne horizontale le long de la page,
+ trace une ligne horizontale le long de la page,
  au-dessus du pied de page,
  sur toutes les pages sauf celle de titre.
 \end_layout
@@ -9812,7 +9786,7 @@ footrule
 \series bold
 dvips
 \series default
- Cette option indique à 
+ indique à 
 \family sans
 Foil\SpecialChar TeX
 
@@ -9832,7 +9806,7 @@ foils
 \series bold
 landscape
 \series default
- Change simplement la taille des pages au format paysage,
+ change simplement la taille des pages au format paysage,
  mais sans effectuer de rotation.
  Si vous utilisez cette option,
  vous aurez besoin d'un programme externe pour effectuer une rotation de chaque page,
@@ -9855,7 +9829,7 @@ En-tête_Diapo_Tourné
 \series bold
 leqno
 \series default
- Numéros des équations à gauche.
+ numérote les équations à gauche.
 \end_layout
 
 \begin_layout Labeling
@@ -9864,7 +9838,7 @@ leqno
 \series bold
 fleqn
 \series default
- Équations alignées à gauche.
+ aligne les équations à gauche.
 \end_layout
 
 \begin_layout Subsubsection
@@ -9906,7 +9880,7 @@ ListePuces
 \begin_layout Itemize
 
 \family sans
-Énumeration
+Énumération
 \end_layout
 
 \begin_layout Itemize
@@ -9995,7 +9969,7 @@ Adresse_À_Droite
 
 \begin_layout Standard
 En gros,
- il s'agit de tous les environnements,
+ il s'agit de tous les environnements principaux,
  mis à part ceux de section.
  En effet,
  dans un diaporama,
@@ -10273,20 +10247,11 @@ Création de diapos
 Cette section est une rapide introduction aux différents environnements qui permettent de construire un ensemble de diapos.
  Si vous voulez un exemple,
  ouvrez 
-\family typewriter
-Foils.lyx
-\family default
- qui se trouve dans le répertoire des 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-exemples
-\end_layout
-
-\end_inset
-
-.
+\family sans
+Fichier\SpecialChar menuseparator
+Ouvrir un exemple\SpecialChar menuseparator
+Présentations\SpecialChar menuseparator
+Foils.
 \end_layout
 
 \begin_layout Paragraph
@@ -10557,7 +10522,7 @@ Restriction
 \family default
  servent à définir le texte en pied de page à gauche.
  La première vous permet d'insérer un logo sur vos diapos.
- Vous aurez par défaut comme logo 
+ Vous aurez implicitement comme logo 
 \begin_inset Quotes cld
 \end_inset
 
@@ -10765,7 +10730,7 @@ ces variables :
 \backslash
 abovefloatskip
 \family default
- Séparation entre le texte et le haut du flottant ;
+ séparation entre le texte et le haut du flottant ;
 \end_layout
 
 \begin_layout Labeling
@@ -10776,7 +10741,7 @@ abovefloatskip
 \backslash
 abovecaptionskip
 \family default
- Séparation entre le flottant et sa légende ;
+ séparation entre le flottant et sa légende;
 \end_layout
 
 \begin_layout Labeling
@@ -10787,7 +10752,7 @@ abovecaptionskip
 \backslash
 belowcaptionskip
 \family default
- Séparation entre la légende et le texte qui la suit ;
+ séparation entre la légende et le texte qui la suit;
 \end_layout
 
 \begin_layout Labeling
@@ -10798,7 +10763,7 @@ belowcaptionskip
 \backslash
 captionwidth
 \family default
- Vous pouvez rendre les légendes plus étroites que le texte alentour en réglant cette valeur.
+ vous permet de rendre les légendes plus étroites que le texte alentour.
  Le mieux est sûrement de la définir en fonction de 
 \family typewriter
 
@@ -10822,11 +10787,11 @@ Il y a aussi plusieurs variables de longueur relatives à la page de titre.
 \backslash
 abovetitleskip
 \family default
- Séparation entre les en-têtes et le titre (environnement 
+ séparation entre les en-têtes et le titre (environnement 
 \family sans
 Titre
 \family default
-) ;
+);
 \end_layout
 
 \begin_layout Labeling
@@ -10845,7 +10810,7 @@ Titre
 \family sans
 Auteur
 \family default
- ;
+;
 \end_layout
 
 \begin_layout Labeling
@@ -10860,7 +10825,7 @@ authorauthorskip
 \family sans
 Auteur
 \family default
- ;
+;
  
 \end_layout
 
@@ -10872,7 +10837,7 @@ Auteur
 \backslash
 authordateskip
 \family default
- entre l'auteur et la date ;
+ entre l'auteur et la date;
 \end_layout
 
 \begin_layout Labeling
@@ -11005,33 +10970,29 @@ FoilTeX
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Powerdot
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-The document class 
+La classe de documents 
 \family sans
 Powerdot
 \family default
- uses the 
+ utilise la classe \SpecialChar LaTeX
+ 
 \family typewriter
 powerdot.cls
 \family default
- \SpecialChar LaTeX
- class for creating presentations.
+ pour créer des présentations.
  
 \family sans
-File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
-Presentations\SpecialChar menuseparator
+Fichier\SpecialChar menuseparator
+Ouvrir un exemple\SpecialChar menuseparator
+Présentations\SpecialChar menuseparator
 Powerdot
 \family default
- offers guidance on its use.
- The documentation is available from 
+ propose une aide à l'utilisation.
+ La documentation est disponible via 
 \begin_inset CommandInset href
 LatexCommand href
 name "CTAN"
@@ -11044,40 +11005,35 @@ literal "false"
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Seminar"
 
 \end_inset
 
-
-\family sans
 Seminar
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-The document class 
+La classe de documents 
 \family sans
 Seminar
 \family default
- uses the 
+ utilise la classe \SpecialChar LaTeX
+ 
 \family typewriter
 seminar.cls
 \family default
- document class for creating presentations.
+ pour créer des présentations.
  
 \family sans
-File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
-Presentations\SpecialChar menuseparator
+Fichier\SpecialChar menuseparator
+Ouvrir un exemple\SpecialChar menuseparator
+Présentations\SpecialChar menuseparator
 Seminar
 \family default
- offers guidance on its use.
- The documentation is available from 
+ propose une aide à l'utilisation.
+ La documentation est disponible via 
 \begin_inset CommandInset href
 LatexCommand href
 name "CTAN"
@@ -11108,9 +11064,11 @@ name "sec:slitex"
 \begin_layout Standard
 par 
 \noun on
-John Weiss
+John Weiss;
+ 
 \noun default
-.
+mise à jour par l'équipe \SpecialChar LyX
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -11121,90 +11079,17 @@ Introduction
 Cette section décrit comment utiliser \SpecialChar LyX
  pour préparer des transparents pour rétroprojecteurs.
  Il y a deux classes de document qui le permettent :
- la classe par défaut 
+ la classe
 \family sans
-slides
+ Diapos
 \family default
  et la classe 
 \family sans
 FoilteX
 \family default
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Il y en a d'autres,
- comme 
-\family sans
-Beamer
-\family default
-,
- mais elle ne sont pas décrites dans ce document (NdT).
-\end_layout
-
-\end_inset
-
 .
  Cette section décrit la première.
-\end_layout
-
-\begin_layout Standard
-Je le redis,
- clairement et distinctement,
- qu'il n'y ait pas de malentendu :
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-Cette section décrit 
-\emph on
-uniquement
-\emph default
- la classe 
-\begin_inset Quotes cld
-\end_inset
-
-
-\family sans
-slides
-\begin_inset space ~
-\end_inset
-
-(default)
-\begin_inset Quotes crd
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Si vous cherchez une documentation sur 
-\begin_inset Quotes cld
-\end_inset
-
-
-\family sans
-slides
-\begin_inset space ~
-\end_inset
-
-(Foil\SpecialChar TeX
-)
-\family default
-
-\begin_inset Quotes crd
-\end_inset
-
+ Si vous cherchez la documentation de Foil\SpecialChar TeX
 ,
  voyez la section
 \begin_inset space ~
@@ -11214,84 +11099,19 @@ slides
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:foiltex"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
 .
- La classe 
-\family sans
-foils
-\family default
- (pour 
+ En 2023,
+ Dipos reste maintenue alors que la maintenance de 
 \family sans
 Foil\SpecialChar TeX
-
-\family default
-,
- vous l'aurez compris) est en fait un peu meilleure que la classe par défaut 
-\family sans
-slides
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-...
- enfin,
- c'est ce que m'ont dit et répété ses défenseurs.
- Ne l'ayant jamais utilisée,
- je n'ai aucune idée de la validité de cette affirmation.
-\end_layout
-
-\end_inset
-
-,
-
-\family default
- dont parle cette section.
-\end_layout
-
-\begin_layout Standard
-Cette classe est l'évolution en \SpecialChar LaTeX2e
- du vieux package S
-\noun on
-li
-\noun default
-T
-\noun on
-e
-\noun default
-X.
- Toutes les distributions de \SpecialChar LaTeX2e
- comprennent cette classe (qu'à partir de maintenant j'appellerais simplement 
-\begin_inset Quotes cld
-\end_inset
-
-
-\family sans
-slides
-\begin_inset Quotes crd
-\end_inset
-
-
-\family default
-),
- donc vous devez logiquement l'avoir.
- Comme je l'ai déjà dit,
- il existe d'autres classes qui produisent aussi des transparents pour rétroprojecteurs et font du meilleur boulot,
- comme 
-\family sans
-foils
-\family default
-.
- Cependant,
- il y a des choses que 
-\family sans
-slides
-\family default
- fait et que les autres ne font pas,
- comme générer des sur-couches.
- Continuez la lecture pour en savoir plus !
+ s'est arrêtée en 2008.
 \end_layout
 
 \begin_layout Subsubsection
@@ -11314,11 +11134,7 @@ Avant tout,
 
 
 \family sans
-slides
-\begin_inset space ~
-\end_inset
-
-(default)
+Diapos
 \begin_inset Quotes crd
 \end_inset
 
@@ -11338,7 +11154,7 @@ Paramètres
 \end_layout
 
 \begin_layout Itemize
-Ne vous fatiguez pas à changer les options 
+ne vous fatiguez pas à changer les options 
 \family sans
 Pagination
 \family default
@@ -11355,11 +11171,11 @@ Paramètres
  de toute façon,
  elles ne sont pas supportées par la classe 
 \family sans
-slides.
+Diapos.
 \end_layout
 
 \begin_layout Itemize
-L'option 
+l'option 
 \family sans
 Mise
 \begin_inset space ~
@@ -11410,11 +11226,7 @@ vide
 
 \end_deeper
 \begin_layout Itemize
-La classe 
-\family sans
-slides
-\family default
- a une option supplémentaire :
+La classe Diapos a une option supplémentaire :
  
 \family typewriter
 clock
@@ -11482,23 +11294,7 @@ nolink "false"
 
 \end_deeper
 \begin_layout Standard
-Vous pouvez aussi utiliser le fichier modèle 
-\family typewriter
-
-\begin_inset Quotes cld
-\end_inset
-
-slides.lyx
-\begin_inset Quotes crd
-\end_inset
-
-
-\family default
- pour mettre en place automatiquement un document de la classe 
-\family sans
-slides
-\family default
- (avec 
+Vous pouvez aussi utiliser le fichier modèle pour mettre en place automatiquement un document de la classe Diapos (avec 
 \family sans
 Fichier\SpecialChar menuseparator
 Nouveau
@@ -11509,7 +11305,9 @@ avec
 \begin_inset space ~
 \end_inset
 
-modèle
+modèle\SpecialChar menuseparator
+Présentations\SpecialChar menuseparator
+Diapos
 \family default
  pour créer votre document).
  Le fichier modèle contient aussi quelques exemples d'environnements de paragraphe spéciaux utilisés par cette classe.
@@ -11525,11 +11323,7 @@ Environnements supportés
 \end_layout
 
 \begin_layout Standard
-La première chose que vous allez remarquer en commençant un nouveau document 
-\family sans
-slides
-\family default
- est la taille et le type de police :
+La première chose que vous allez remarquer en commençant un nouveau document Diapos est la taille et le type de police :
  il est équivalent à la taille 
 \family sans
 Grand
@@ -11568,11 +11362,7 @@ indice visuel
 La deuxième chose qui frappe est le changement du menu des environnements (tout à gauche de la barre d'outils).
  La plupart des environnements de paragraphe que vous avez l'habitude d'y voir sont absents.
  Il y en a aussi cinq nouveaux.
- C'est parce que la classe 
-\family sans
-slides
-\family default
- elle-même ne supporte que certains environnements de paragraphe :
+ C'est parce que la classe Diapos elle-même ne supporte que certains environnements de paragraphe :
 \end_layout
 
 \begin_layout Itemize
@@ -11639,11 +11429,7 @@ Légende
 \begin_layout Standard
 Tous les autres environnements standard,
  comme les en-têtes de section,
- ne servent pas dans la classe 
-\family sans
-slides
-\family default
-.
+ ne servent pas dans la classe Diapos.
 \end_layout
 
 \begin_layout Standard
@@ -11877,7 +11663,11 @@ Texte_Visible
 \end_layout
 
 \begin_layout Standard
-Bien qu'il ne soit pas obligatoire de mettre du texte après ces marqueurs,
+Bien qu'il ne soit pas 
+\emph on
+obligatoire
+\emph default
+ de mettre du texte après ces marqueurs,
  vous pouvez le faire.
  Ça peut être une brève description du contenu de la 
 \family sans
@@ -11891,100 +11681,6 @@ Diapo
 Entrée
 \family default
  comme vous le feriez normalement.
-\end_layout
-
-\begin_layout Standard
-Si,
- par contre,
- vous ne souhaitez pas entrer de texte descriptif,
- vous allez rencontrer une autre subtilité de \SpecialChar LyX
-.
- \SpecialChar LyX
-,
- comme la nature,
- a horreur du vide,
- et ne vous laissera pas entamer un nouvel environnement de paragraphe si vous n'avez rien mis dans le précédent.
- Vous ferez donc ainsi :
-\end_layout
-
-\begin_layout Itemize
-Commencez à entrer le texte qui 
-\emph on
-suivra
-\emph default
- le nouveau paragraphe 
-\family sans
-Diapo
-\family default
-,
- 
-\family sans
-Surcouche
-\family default
-,
- 
-\family sans
-Note
-\family default
-,
- 
-\family sans
-Texte_Invisible
-\family default
- ou 
-\family sans
-Texte_Visible
-\family default
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Placez-vous maintenant au début de ce paragraphe.
- 
-\end_layout
-
-\begin_layout Itemize
-Tapez ensuite 
-\family sans
-Entrée
-\family default
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Changez enfin ce nouveau paragraphe vide en un 
-\family sans
-Diapo
-\family default
-,
- 
-\family sans
-Surcouche
-\family default
-,
- 
-\family sans
-Note
-\family default
-,
- 
-\family sans
-Texte_Invisible
-\family default
- ou 
-\family sans
-Texte_Visible
-\family default
-.
- 
-\end_layout
-
-\begin_layout Standard
-Espérons qu'une future version de \SpecialChar LyX
- résoudra cette bizarrerie\SpecialChar ldots
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -12014,7 +11710,7 @@ Si vous espérez apprendre dans cette section comment faire une présentation or
  Naturellement,
  je vais vous décrire en quoi la classe 
 \family sans
-slides
+Diapos
 \family default
  pourra vous aider à préparer les supports de la présentation.
  En revanche,
@@ -12324,7 +12020,7 @@ Diapo
 Surcouche
 \family default
  paraissent n'en former plus qu'une !
- Vous pouvez considérérer une 
+ Vous pouvez considérer une 
 \family sans
 Surcouche
 \family default
@@ -12342,11 +12038,7 @@ Diapo
 \family default
 .
  En fait,
- la classe 
-\family sans
-slides
-\family default
- le laisse voir :
+ la classe Diapos le laisse voir^:
  le marqueur qui débute un environnement 
 \family sans
 Surcouche
@@ -12610,7 +12302,7 @@ C'est bon,
 \begin_layout Standard
 Il reste un problème avec la façon dont j'ai conçu la classe 
 \family sans
-slides
+Diapos
 \family default
  de \SpecialChar LyX
  :
@@ -12735,11 +12427,7 @@ parent
 
 .
  Ici aussi,
- la classe 
-\family sans
-slides
-\family default
- de \SpecialChar LyX
+ la classe Diapos de \SpecialChar LyX
  fournit des indices visuels.
  Le marqueur d'une 
 \family sans
@@ -12820,7 +12508,7 @@ parent
 ,
  etc.
  accolé.
- Vous pouvez avoir plusieures 
+ Vous pouvez avoir plusieurs 
 \family sans
 Notes
 \family default
@@ -12865,11 +12553,7 @@ Diapo
  Dans ce dernier cas,
  vous serez peut-être intéressé par les marqueurs temporels.
  Actuellement,
- la classe 
-\family sans
-slides
-\family default
- de \SpecialChar LyX
+ la classe Diapos de \SpecialChar LyX
  ne supporte pas d'origine les marqueurs temporels,
  qui sont une fonction 
 \noun on
@@ -13057,7 +12741,9 @@ Surcouches
 \family typewriter
 
 \backslash
-onlynotes{notes}
+onlynotes{
+\backslash
+notes}
 \family default
 
 \begin_inset Quotes crd
@@ -13176,30 +12862,11 @@ onlynotes{}
 \end_layout
 
 \begin_layout Subsubsection
-Le fichier modèle pour la classe 
-\family sans
-slides
+Le fichier modèle pour la classe Diapos
 \end_layout
 
 \begin_layout Standard
-J'ai aussi créé un fichier modèle,
- 
-\begin_inset Quotes cld
-\end_inset
-
-
-\family typewriter
-slides.lyx
-\family default
-
-\begin_inset Quotes crd
-\end_inset
-
- avec la classe 
-\family sans
-slides
-\family default
-.
+J'ai aussi créé un fichier modèle avec la classe Diapos.
  Pour l'utiliser,
  créez votre document avec 
 \family sans
@@ -13212,10 +12879,12 @@ avec
 \begin_inset space ~
 \end_inset
 
-modèle
+modèle\SpecialChar menuseparator
+Présentations\SpecialChar menuseparator
+Diapos
 \family default
 .
- Votre fichier de présentation \SpecialChar LyX
+ Votre nouveau fichier de présentation \SpecialChar LyX
  contiendra un exemple du triplet 
 \family sans
 Diapo – Surcouche – Note
@@ -13351,21 +13020,8 @@ seminar
 \noun toggle
  (présent sur certaines distributions \SpecialChar TeX
 ).
- Ce dernier n'est pas encore supporté par \SpecialChar LyX
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Si vous voulez vous y mettre...
-\end_layout
-
-\end_inset
-
-.
 
 \noun default
- Je ne connais rien à ces classes.
  Essayez-les pour voir quelles alternatives elles représentent.
 \end_layout
 
