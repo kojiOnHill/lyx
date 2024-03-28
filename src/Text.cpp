@@ -5720,11 +5720,26 @@ void Text::dispatch(Cursor & cur, FuncRequest & cmd)
 	}
 
 	case LFUN_NOMENCL_PRINT:
-	case LFUN_NEWPAGE_INSERT:
 		// do nothing fancy
 		doInsertInset(cur, this, cmd, false, false);
 		cur.posForward();
 		break;
+
+	case LFUN_NEWPAGE_INSERT: {
+		// When we are in a heading, put the page break in a standard
+		// paragraph before the heading (if cur.pos() == 0) or after
+		// (if cur.pos() == cur.lastpos())
+		if (cur.text()->getTocLevel(cur.pit()) != Layout::NOT_IN_TOC) {
+			lyx::dispatch(FuncRequest(LFUN_PARAGRAPH_BREAK));
+			DocumentClass const & tc = bv->buffer().params().documentClass();
+			lyx::dispatch(FuncRequest(LFUN_LAYOUT, from_ascii("\"") + tc.plainLayout().name()
+						  + from_ascii("\" ignoreautonests")));
+		}
+		// do nothing fancy
+		doInsertInset(cur, this, cmd, false, false);
+		cur.posForward();
+		break;
+	}
 
 	case LFUN_SEPARATOR_INSERT: {
 		doInsertInset(cur, this, cmd, false, false);
@@ -6956,9 +6971,11 @@ bool Text::getStatus(Cursor & cur, FuncRequest const & cmd,
 	}
 
 	case LFUN_NEWPAGE_INSERT:
-		// not allowed in description items
+		// not allowed in description items and in the midst of sections
 		code = NEWPAGE_CODE;
-		enable = !inDescriptionItem(cur);
+		enable = !inDescriptionItem(cur)
+			&& (cur.text()->getTocLevel(cur.pit()) == Layout::NOT_IN_TOC
+			    || cur.pos() == 0 || cur.pos() == cur.lastpos());
 		break;
 
 	case LFUN_LANGUAGE:
