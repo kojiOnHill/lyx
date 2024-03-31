@@ -281,27 +281,6 @@ bool searchAllowed(docstring const & str)
 	return true;
 }
 
-void setSelection(BufferView * bv, DocIterator const & from, DocIterator const & to)
-{
-	DocIterator end = to;
-
-	if (from.pit() != end.pit()) {
-		// there are multiple paragraphs in selection
-		Cursor & bvcur = bv->cursor();
-		bvcur.setCursor(from);
-		bvcur.clearSelection();
-		bvcur.selection(true);
-		bvcur.setCursor(end);
-		bvcur.selection(true);
-	} else {
-		// FIXME LFUN
-		// If we used a LFUN, dispatch would do all of this for us
-		int const size = end.pos() - from.pos();
-		bv->putSelectionAt(from, size, false);
-	}
-	bv->processUpdateFlags(Update::Force | Update::FitCursor);
-}
-
 } // namespace
 
 
@@ -408,7 +387,7 @@ bool findOne(BufferView * bv, docstring const & searchstr,
 		// restore original selection
 		if (had_selection) {
 			bv->cursor().resetAnchor();
-			setSelection(bv, startcur, endcur);
+			bv->setSelection(startcur, endcur);
 		}
 		return false;
 	}
@@ -485,7 +464,7 @@ int replaceAll(BufferView * bv,
 	if (had_selection) {
 		endcur.fixIfBroken();
 		bv->cursor().resetAnchor();
-		setSelection(bv, startcur, endcur);
+		bv->setSelection(startcur, endcur);
 	}
 
 	return num;

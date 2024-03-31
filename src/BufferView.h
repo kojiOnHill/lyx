@@ -302,6 +302,9 @@ public:
 	 */
 	void putSelectionAt(DocIterator const & cur,
 		int length, bool backwards);
+	/// set a selection between \p from and \p to
+	void setSelection(DocIterator const & from,
+			 DocIterator const & to);
 
 	/// selects the item at cursor if its paragraph is empty.
 	bool selectIfEmpty(DocIterator & cur);

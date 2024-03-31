@@ -2993,6 +2993,25 @@ void BufferView::putSelectionAt(DocIterator const & cur,
 }
 
 
+void BufferView::setSelection(DocIterator const & from,
+			      DocIterator const & to)
+{
+	if (from.pit() != to.pit()) {
+		// there are multiple paragraphs in selection
+		cursor().setCursor(from);
+		cursor().clearSelection();
+		cursor().selection(true);
+		cursor().setCursor(to);
+		cursor().selection(true);
+	} else {
+		// only single paragraph
+		int const size = to.pos() - from.pos();
+		putSelectionAt(from, size, false);
+	}
+	processUpdateFlags(Update::Force | Update::FitCursor);
+}
+
+
 bool BufferView::selectIfEmpty(DocIterator & cur)
 {
 	if ((cur.inTexted() && !cur.paragraph().empty())
