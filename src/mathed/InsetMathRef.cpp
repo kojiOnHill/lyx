@@ -164,6 +164,10 @@ bool InsetMathRef::getStatus(Cursor & cur, FuncRequest const & cmd,
 	switch (cmd.action()) {
 	// we handle these
 	case LFUN_INSET_MODIFY:
+		if (cmd.getArg(0) == "changetype")
+			status.setOnOff(from_ascii(cmd.getArg(1)) == commandname());
+		status.setEnabled(true);
+		return true;
 	case LFUN_INSET_DIALOG_UPDATE:
 	case LFUN_INSET_SETTINGS:
 	case LFUN_MOUSE_RELEASE:
