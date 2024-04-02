@@ -569,7 +569,7 @@ docstring InsetCommandParams::prepareCommand(OutputParams const & runparams,
 }
 
 
-docstring InsetCommandParams::getCommand(OutputParams const & runparams, bool starred) const
+docstring InsetCommandParams::getCommand(OutputParams const & runparams, bool starred, bool unhandled) const
 {
 	docstring s = '\\' + from_ascii(cmdName_);
 	if (starred)
@@ -579,20 +579,23 @@ docstring InsetCommandParams::getCommand(OutputParams const & runparams, bool st
 	ParamInfo::const_iterator end = info_.end();
 	for (; it != end; ++it) {
 		std::string const & name = it->name();
+		ParamInfo::ParamHandling handling = unhandled ?
+					ParamInfo::HANDLING_NONE
+				      : it->handling();
 		switch (it->type()) {
 		case ParamInfo::LYX_INTERNAL:
 			break;
 
 		case ParamInfo::LATEX_REQUIRED: {
 			docstring const data =
-				prepareCommand(runparams, (*this)[name], it->handling());
+				prepareCommand(runparams, (*this)[name], handling);
 			s += '{' + data + '}';
 			noparam = false;
 			break;
 		}
 		case ParamInfo::LATEX_OPTIONAL: {
 			docstring data =
-				prepareCommand(runparams, (*this)[name], it->handling());
+				prepareCommand(runparams, (*this)[name], handling);
 			if (!data.empty()) {
 				s += '[' + protectArgument(data) + ']';
 				noparam = false;
