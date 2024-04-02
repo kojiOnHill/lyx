@@ -3470,7 +3470,9 @@ void LyXAction::init()
  * \li Params: <LEVEL>: 'inner' for (i.e., secondary, usually single) quotes, otherwise
  *                       outer (i.e., primary, usually double) quotes will be used.\n
  *             <SIDE>:  'opening' for opening quotes, 'closing' for closing quotes,
- *                       otherwise the side will be guessed from the context.\n
+ *                       otherwise the side will be guessed from the context. Use 'auto'
+ *                       to force this default. (You will need to give this argument if
+ *                       you also want to give <STYLE>.)\n
  *             <STYLE>: 'british' for `British' quote style (with ``inner quotation'')\n
  *                      'cjk' for Chinese/Japanese/Korean corner bracket quotation marks\n
  *                      'cjk-angle' for Chinese/Japanese/Korean angle bracket quotation marks\n
