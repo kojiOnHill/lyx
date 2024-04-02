@@ -416,7 +416,7 @@ Menuset
 		Item "Ellipsis|i" "specialchar-insert dots"
 		Item "End of Sentence|E" "specialchar-insert end-of-sentence"
 		Item "Plain Double Quotation Mark|Q" "quote-insert outer auto plain"
-		Item "Plain Single Quotation Mark|Q" "quote-insert inner auto plain"
+		Item "Plain Single Quotation Mark|S" "quote-insert inner auto plain"
 		Item "Inner Quotation Mark|n" "quote-insert inner"
 		Item "Non-Breaking Hyphen|y" "specialchar-insert nobreakdash"
 		Item "Breakable Slash|a" "specialchar-insert slash"
