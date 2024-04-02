@@ -342,6 +342,8 @@ public:
 		const;
 	///
 	bool hasFunc(FuncRequest const &) const;
+	/// The real size of the menu considering hidden entries
+	int realSize() const;
 	/// Add the menu item unconditionally
 	void add(MenuItem const & item) { items_.push_back(item); }
 	/// Checks the associated FuncRequest status before adding the
@@ -727,6 +729,23 @@ bool MenuDefinition::hasFunc(FuncRequest const & func) const
 }
 
 
+int MenuDefinition::realSize() const
+{
+	int res = 0;
+	for (auto const & it : *this) {
+		if (it.kind() == MenuItem::Submenu)
+			++res;
+		else if (it.kind() == MenuItem::Command) {
+			FuncStatus status = lyx::getStatus(*it.func());
+			// count only items that are actually displayed
+			if (!status.unknown() && (status.enabled() || !it.optional()))
+				++res;
+		}
+	}
+	return res;
+}
+
+
 void MenuDefinition::catSub(docstring const & name)
 {
 	add(MenuItem(MenuItem::Submenu,
@@ -867,13 +886,13 @@ void MenuDefinition::expandSpellingSuggestions(BufferView const * bv)
 				if (i > 0)
 					add(MenuItem(MenuItem::Separator));
 				docstring const arg = wl.word() + " " + from_ascii(wl.lang()->lang());
-				add(MenuItem(MenuItem::Command, qt_("Add to personal dictionary|n"),
+				add(MenuItem(MenuItem::Command, qt_("Add to personal dictionary|r"),
 						FuncRequest(LFUN_SPELLING_ADD, arg)));
 				add(MenuItem(MenuItem::Command, qt_("Ignore this occurrence|g"),
 						FuncRequest(LFUN_FONT_NO_SPELLCHECK, arg)));
-				add(MenuItem(MenuItem::Command, qt_("Ignore all for this session|I"),
+				add(MenuItem(MenuItem::Command, qt_("Ignore all for this session|l"),
 						FuncRequest(LFUN_SPELLING_IGNORE, arg)));
-				add(MenuItem(MenuItem::Command, qt_("Ignore all in this document|d"),
+				add(MenuItem(MenuItem::Command, qt_("Ignore all in this document|u"),
 						FuncRequest(LFUN_SPELLING_ADD_LOCAL, arg)));
 			}
 		}
@@ -918,7 +937,7 @@ void MenuDefinition::expandLanguageSelector(Buffer const * buf)
 		buf->masterBuffer()->getLanguages();
 
 	if (languages_buffer.size() < 2) {
-		add(MenuItem(MenuItem::Command, qt_("Switch Language...|L"),
+		add(MenuItem(MenuItem::Command, qt_("Switch Language...|w"),
 			     FuncRequest(LFUN_DIALOG_SHOW, "character")));
 		return;
 	}
@@ -2707,6 +2726,9 @@ void Menus::updateMenu(Menu * qmenu)
 
 	docstring identifier = qstring_to_ucs4(qmenu->d->name);
 	MenuDefinition fromLyxMenu(qmenu->d->name);
+	BufferView * bv = 0;
+	if (qmenu->d->view)
+		bv = qmenu->d->view->currentBufferView();
 	while (!identifier.empty()) {
 		docstring menu_name;
 		identifier = split(identifier, menu_name, ';');
@@ -2718,10 +2740,14 @@ void Menus::updateMenu(Menu * qmenu)
 		}
 
 		MenuDefinition cat_menu = d->getMenu(toqstr(menu_name));
-		//FIXME: 50 is a wild guess. We should take into account here
-		//the expansion of menu items, disabled optional items etc.
+		// We take into account here the expansion of menu items,
+		// disabled optional items etc.
+		MenuDefinition to_menu;
+		d->expand(fromLyxMenu, to_menu, bv);
+		MenuDefinition to_cat_menu;
+		d->expand(cat_menu, to_cat_menu, bv);
 		bool const in_sub_menu = !fromLyxMenu.empty()
-			&& fromLyxMenu.size() + cat_menu.size() > 50 ;
+			&& to_menu.realSize() + to_cat_menu.realSize() > 50;
 		if (in_sub_menu)
 			fromLyxMenu.catSub(menu_name);
 		else
@@ -2734,9 +2760,6 @@ void Menus::updateMenu(Menu * qmenu)
 		return;
 	}
 
-	BufferView * bv = 0;
-	if (qmenu->d->view)
-		bv = qmenu->d->view->currentBufferView();
 	d->expand(fromLyxMenu, *qmenu->d->top_level_menu, bv);
 	qmenu->d->populate(qmenu, *qmenu->d->top_level_menu);
 }

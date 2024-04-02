@@ -234,10 +234,10 @@ Menuset
 	Menu "context-note"
 		Item "LyX Note|N" "inset-modify note Note Note"
 		Item "Comment|m" "inset-modify note Note Comment"
-		Item "Greyed Out|G" "inset-modify note Note Greyedout"
+		Item "Greyed Out|y" "inset-modify note Note Greyedout"
 		Separator
 		Item "Open All Notes|A" "inset-forall Note inset-toggle open"
-		Item "Close All Notes|l" "inset-forall Note inset-toggle close"
+		Item "Close All Notes|o" "inset-forall Note inset-toggle close"
 	End
 
 #
@@ -383,7 +383,7 @@ Menuset
 		Item "Jump Back to Saved Bookmark|B" "bookmark-goto 0"
 		OptItem "Forward Search|F" "forward-search"
 		Separator
-		Item "Move Paragraph Up|o" "paragraph-move-up"
+		Item "Move Paragraph Up|h" "paragraph-move-up"
 		Item "Move Paragraph Down|v" "paragraph-move-down"
 		Separator
 		EnvironmentSeparatorsContext
