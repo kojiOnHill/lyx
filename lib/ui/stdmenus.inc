@@ -117,7 +117,7 @@ Menuset
 		Item "Find & Replace (Quick)...|F" "dialog-show findreplace"
 		Item "Find & Replace (Advanced)..." "dialog-show findreplaceadv"
 		Separator
-		Item "Move Paragraph Up|o" "paragraph-move-up"
+		Item "Move Paragraph Up|h" "paragraph-move-up"
 		Item "Move Paragraph Down|v" "paragraph-move-down"
 		Separator
 		Item "Paragraph Settings...|P" "layout-paragraph"
@@ -545,7 +545,7 @@ Menuset
 	Menu "insert_note"
 		Item "LyX Note|N" "note-insert Note"
 		Item "Comment|C" "note-insert Comment"
-		Item "Greyed Out|G" "note-insert Greyedout"
+		Item "Greyed Out|y" "note-insert Greyedout"
 	End
 
 	Menu "insert_branches"
