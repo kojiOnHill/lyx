@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-04-02 09:51+0200\n"
-"PO-Revision-Date: 2024-04-02 09:29+0000\n"
+"POT-Creation-Date: 2024-04-03 12:43+0200\n"
+"PO-Revision-Date: 2024-04-03 10:57+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -20362,8 +20362,8 @@ msgstr "Zápis LyXu|y"
 msgid "Comment|m"
 msgstr "Komentár|m"
 
-#: lib/ui/stdcontext.inc:237 lib/ui/stdmenus.inc:547
-msgid "Greyed Out|G"
+#: lib/ui/stdcontext.inc:237 lib/ui/stdmenus.inc:548
+msgid "Greyed Out|y"
 msgstr "Zosivelé|s"
 
 #: lib/ui/stdcontext.inc:239
@@ -20621,7 +20621,7 @@ msgid "End Editing Externally"
 msgstr "Externú úpravu dokončiť"
 
 #: lib/ui/stdcontext.inc:381
-msgid "Split Inset|t"
+msgid "Split Inset|i"
 msgstr "Rozdeliť vložku| "
 
 #: lib/ui/stdcontext.inc:383
@@ -20633,7 +20633,7 @@ msgid "Forward Search|F"
 msgstr "Dopredu hľadať|a"
 
 #: lib/ui/stdcontext.inc:386 lib/ui/stdmenus.inc:120
-msgid "Move Paragraph Up|o"
+msgid "Move Paragraph Up|h"
 msgstr "Presunúť odstavec nahor|h"
 
 #: lib/ui/stdcontext.inc:387 lib/ui/stdmenus.inc:121
@@ -20654,7 +20654,7 @@ msgstr "Presunúť sekciu nadol|r"
 
 #: lib/ui/stdcontext.inc:394 lib/ui/stdcontext.inc:713
 msgid "Move Section Up|U"
-msgstr "Presunúť sekciu nahor|r"
+msgstr "Presunúť sekciu nahor|P"
 
 #: lib/ui/stdcontext.inc:396
 msgid "Insert Regular Expression"
@@ -20671,6 +20671,10 @@ msgstr "Odmietnuť zmenu|m"
 #: lib/ui/stdcontext.inc:401 lib/ui/stdmenus.inc:124
 msgid "Text Properties|x"
 msgstr "Vlastnosti textu|x"
+
+#: lib/ui/stdcontext.inc:402
+msgid "Custom Text Styles|y"
+msgstr "Vlastné štýly textu|š"
 
 #: lib/ui/stdcontext.inc:402 lib/ui/stdmenus.inc:125
 msgid "Custom Text Styles|S"
@@ -20938,7 +20942,7 @@ msgid "Custom Page Formatting...|u"
 msgstr "Vlastné formátovanie Strán…|V"
 
 #: lib/ui/stdcontext.inc:651
-msgid "Insert Subentry|b"
+msgid "Insert Subentry|n"
 msgstr "Vložiť pod-záznam|d"
 
 #: lib/ui/stdcontext.inc:652
@@ -20946,7 +20950,7 @@ msgid "Insert Sortkey|k"
 msgstr "Vložiť triediaci kľúč|k"
 
 #: lib/ui/stdcontext.inc:653
-msgid "Insert See Reference|e"
+msgid "Insert See Reference|c"
 msgstr "Vložiť \"Viď\" referenciu|V"
 
 #: lib/ui/stdcontext.inc:654
@@ -35904,21 +35908,21 @@ msgstr "Žiadna skupina"
 msgid "More Spelling Suggestions"
 msgstr "Viacej pravopisných návrhov"
 
-#: src/frontends/qt/Menus.cpp:870
-msgid "Add to personal dictionary|n"
+#: src/frontends/qt/Menus.cpp:889
+msgid "Add to personal dictionary|r"
 msgstr "Pridať do osobného slovníka|b"
 
-#: src/frontends/qt/Menus.cpp:872
-msgid "Ignore this occurrence|g"
+#: src/frontends/qt/Menus.cpp:891
+msgid "Ignore this occurrence|o"
 msgstr "Ignorovať tento výskyt|g"
 
-#: src/frontends/qt/Menus.cpp:874
-msgid "Ignore all for this session|I"
+#: src/frontends/qt/Menus.cpp:893
+msgid "Ignore all for this session|t"
 msgstr "Ignorovať všetky počas tohto celého sedenia|I"
 
-#: src/frontends/qt/Menus.cpp:876
-msgid "Ignore all in this document|d"
-msgstr "Ignorovať všetky v tomto dokumente|d"
+#: src/frontends/qt/Menus.cpp:895
+msgid "Ignore all in this document|u"
+msgstr "Ignorovať všetko v tomto dokumente|d"
 
 #: src/frontends/qt/Menus.cpp:884
 msgid "Remove from personal dictionary|r"
@@ -35928,8 +35932,8 @@ msgstr "Vyhodiť z osobného slovníka|y"
 msgid "Remove from document dictionary|r"
 msgstr "Vyhodiť zo slovníka pre dokument|u"
 
-#: src/frontends/qt/Menus.cpp:921
-msgid "Switch Language...|L"
+#: src/frontends/qt/Menus.cpp:940
+msgid "Switch Language...|w"
 msgstr "Prepnúť jazyk…|ť"
 
 #: src/frontends/qt/Menus.cpp:935
@@ -44196,3 +44200,33 @@ msgstr "Neznámy používateľ"
 
 #~ msgid "Plain Quotation Mark|Q"
 #~ msgstr "Prosté úvodzovky|P"
+
+#~ msgid "Greyed Out|G"
+#~ msgstr "Zosivelé|s"
+
+#~ msgid "Split Inset|t"
+#~ msgstr "Rozdeliť vložku| "
+
+#~ msgid "Move Paragraph Up|o"
+#~ msgstr "Presunúť odstavec nahor|h"
+
+#~ msgid "Insert Subentry|b"
+#~ msgstr "Vložiť pod-záznam|d"
+
+#~ msgid "Insert See Reference|e"
+#~ msgstr "Vložiť \"Viď\" referenciu|V"
+
+#~ msgid "Add to personal dictionary|n"
+#~ msgstr "Pridať do osobného slovníka|b"
+
+#~ msgid "Ignore this occurrence|g"
+#~ msgstr "Ignorovať tento výskyt|g"
+
+#~ msgid "Ignore all for this session|I"
+#~ msgstr "Ignorovať všetky počas tohto celého sedenia|I"
+
+#~ msgid "Ignore all in this document|d"
+#~ msgstr "Ignorovať všetky v tomto dokumente|d"
+
+#~ msgid "Switch Language...|L"
+#~ msgstr "Prepnúť jazyk…|ť"
