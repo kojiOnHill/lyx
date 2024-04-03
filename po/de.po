@@ -95,8 +95,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-04-02 09:12+0200\n"
-"PO-Revision-Date: 2024-04-02 09:14+0200\n"
+"POT-Creation-Date: 2024-04-03 09:16+0200\n"
+"PO-Revision-Date: 2024-04-03 09:18+0200\n"
 "Last-Translator: Juergen Spitzmueller <spitz@lyx.org>\n"
 "Language-Team: German <lyx-docs@lists.lyx.org>\n"
 "Language: de\n"
@@ -1112,7 +1112,7 @@ msgstr "S&prache:"
 #: lib/layouts/europasscv.layout:483 lib/layouts/europecv.layout:322
 #: lib/layouts/europecv.layout:328 lib/layouts/moderncv.layout:581
 #: src/frontends/qt/GuiDocument.cpp:1831 src/frontends/qt/GuiPrefs.cpp:2324
-#: src/frontends/qt/Menus.cpp:936
+#: src/frontends/qt/Menus.cpp:955
 msgid "Language"
 msgstr "Sprache"
 
@@ -1741,25 +1741,25 @@ msgid "Case &sensitive"
 msgstr "&Groß-/Kleinschreibung beachten"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:205
-#: src/frontends/qt/FindAndReplace.cpp:716
+#: src/frontends/qt/FindAndReplace.cpp:719
 msgid "Find next occurrence (Enter, backwards: Shift+Enter)"
 msgstr ""
 "Suche nächsten Treffer (Eingabetaste; rückwärts: Umschalt+Eingabetaste)"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:208
-#: src/frontends/qt/ui/SearchUi.ui:190 src/frontends/qt/FindAndReplace.cpp:715
+#: src/frontends/qt/ui/SearchUi.ui:190 src/frontends/qt/FindAndReplace.cpp:718
 msgid "Find &>"
 msgstr "Suchen &>"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:221
-#: src/frontends/qt/FindAndReplace.cpp:718
+#: src/frontends/qt/FindAndReplace.cpp:721
 msgid "Replace and find next occurrence (Enter, backwards: Shift+Enter)"
 msgstr ""
 "Ersetze und suche nächsten Treffer (Eingabetaste; rückwärts: "
 "Umschalt+Eingabetaste)"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:224
-#: src/frontends/qt/FindAndReplace.cpp:717
+#: src/frontends/qt/FindAndReplace.cpp:720
 msgid "Rep&lace >"
 msgstr "Erse&tzen >"
 
@@ -5568,7 +5568,7 @@ msgstr "Ohne Hyperlink "
 msgid "Find previous occurrence (Shift+Enter)"
 msgstr "Vorhergehender Treffer (Umschalt+Eingabe)"
 
-#: src/frontends/qt/ui/SearchUi.ui:55 src/frontends/qt/FindAndReplace.cpp:710
+#: src/frontends/qt/ui/SearchUi.ui:55 src/frontends/qt/FindAndReplace.cpp:713
 msgid "&< Find"
 msgstr "&< Suchen"
 
@@ -7617,8 +7617,8 @@ msgstr "Zusammenfassung"
 msgid "Summary ##"
 msgstr "Zusammenfassung ##"
 
-#: lib/layouts/AEA.layout:356 src/frontends/qt/Menus.cpp:1804
-#: src/frontends/qt/Menus.cpp:1819
+#: lib/layouts/AEA.layout:356 src/frontends/qt/Menus.cpp:1823
+#: src/frontends/qt/Menus.cpp:1838
 msgid "Caption"
 msgstr "Legende"
 
@@ -20646,7 +20646,7 @@ msgid "Comment|m"
 msgstr "Kommentar|K"
 
 #: lib/ui/stdcontext.inc:237 lib/ui/stdmenus.inc:548
-msgid "Greyed Out|G"
+msgid "Greyed Out|y"
 msgstr "Grauschrift|G"
 
 #: lib/ui/stdcontext.inc:239
@@ -20898,8 +20898,8 @@ msgid "End Editing Externally"
 msgstr "Externe Bearbeitung beenden"
 
 #: lib/ui/stdcontext.inc:381
-msgid "Split Inset|t"
-msgstr "Einfügung spalten|f"
+msgid "Split Inset|i"
+msgstr "Einfügung spalten|ü"
 
 #: lib/ui/stdcontext.inc:383
 msgid "Jump Back to Saved Bookmark|B"
@@ -20910,7 +20910,7 @@ msgid "Forward Search|F"
 msgstr "Vorwärtssuche|V"
 
 #: lib/ui/stdcontext.inc:386 lib/ui/stdmenus.inc:120
-msgid "Move Paragraph Up|o"
+msgid "Move Paragraph Up|h"
 msgstr "Absatz nach oben verschieben|o"
 
 #: lib/ui/stdcontext.inc:387 lib/ui/stdmenus.inc:121
@@ -20949,9 +20949,9 @@ msgstr "Änderung ablehnen|b"
 msgid "Text Properties|x"
 msgstr "Texteigenschaften|x"
 
-#: lib/ui/stdcontext.inc:402 lib/ui/stdmenus.inc:125
-msgid "Custom Text Styles|S"
-msgstr "Spezifische Textstile|T"
+#: lib/ui/stdcontext.inc:402
+msgid "Custom Text Styles|y"
+msgstr "Spezifische Textstile|f"
 
 #: lib/ui/stdcontext.inc:403 lib/ui/stdmenus.inc:123
 msgid "Paragraph Settings...|P"
@@ -21215,7 +21215,7 @@ msgid "Custom Page Formatting...|u"
 msgstr "Benutzerdefinierter Seitenverweis...|u"
 
 #: lib/ui/stdcontext.inc:651
-msgid "Insert Subentry|b"
+msgid "Insert Subentry|n"
 msgstr "Untereintrag einfügen|n"
 
 #: lib/ui/stdcontext.inc:652
@@ -21223,8 +21223,8 @@ msgid "Insert Sortkey|k"
 msgstr "Sortierschlüssel einfügen|r"
 
 #: lib/ui/stdcontext.inc:653
-msgid "Insert See Reference|e"
-msgstr "\"Siehe\"-Verweis einfügen|S"
+msgid "Insert See Reference|c"
+msgstr "\"Siehe\"-Verweis einfügen|w"
 
 #: lib/ui/stdcontext.inc:654
 msgid "Insert See also Reference|a"
@@ -21505,6 +21505,10 @@ msgstr "Suchen & Ersetzen (einfach)...|S"
 #: lib/ui/stdmenus.inc:118
 msgid "Find & Replace (Advanced)..."
 msgstr "Suchen & Ersetzen (erweitert)..."
+
+#: lib/ui/stdmenus.inc:125
+msgid "Custom Text Styles|S"
+msgstr "Spezifische Textstile|T"
 
 #: lib/ui/stdmenus.inc:126
 msgid "Manage Counter Values..."
@@ -27893,16 +27897,16 @@ msgid "External Material"
 msgstr "Externes Material"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-Figure"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Feynman-Diagramme"
 
 #: lib/examples/Articles:0
 msgid "Instant Preview"
 msgstr "Eingebettete Vorschau"
+
+#: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Auflistungszeichen"
 
 #: lib/examples/Articles:0
 msgid "Minted File Listing"
@@ -27913,8 +27917,8 @@ msgid "Minted Listings"
 msgstr "Minted-Programmlistings"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Auflistungszeichen"
+msgid "XY-Figure"
+msgstr "XY-Figure"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
@@ -27957,6 +27961,10 @@ msgid "Serial Letter 3"
 msgstr "Serienbrief 3"
 
 #: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Noweb-Fehlerbericht"
+
+#: lib/examples/Articles:0
 msgid "Hazard and Precautionary Statements"
 msgstr "H- und P-Sätze"
 
@@ -27972,13 +27980,13 @@ msgstr "Mehrsprachige Legenden"
 msgid "Noweb2LyX"
 msgstr "Noweb2LyX"
 
-#: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Noweb-Fehlerbericht"
-
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1825
 msgid "Modules"
 msgstr "Module"
+
+#: lib/examples/Articles:0
+msgid "Beamer (Complex)"
+msgstr "Beamer (komplex)"
 
 #: lib/examples/Articles:0
 msgid "Foils"
@@ -27989,20 +27997,12 @@ msgid "Foils Landslide"
 msgstr "Foils (Querformat)"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (komplex)"
-
-#: lib/examples/Articles:0
 msgid "Welcome"
 msgstr "Willkommen"
 
 #: lib/examples/Articles:0
 msgid "Writing Korean with CJK-ko"
 msgstr "Koreanisch schreiben mit CJK-ko"
-
-#: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Springers globale Vorlage für Zeitschriften (V. 3)"
 
 #: lib/examples/Articles:0
 msgid "Mathematical Monthly"
@@ -28019,6 +28019,10 @@ msgstr "IEEE Transactions Conference"
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Springers globale Vorlage für Zeitschriften (V. 3)"
 
 #: lib/examples/Articles:0
 msgid "00 Main File"
@@ -32258,20 +32262,20 @@ msgstr "Nichts zum suchen"
 msgid "No open document(s) in which to search"
 msgstr "Keine Dokumente geöffnet, in denen gesucht werden kann"
 
-#: src/frontends/qt/FindAndReplace.cpp:661
+#: src/frontends/qt/FindAndReplace.cpp:664
 msgid "Advanced Find and Replace"
 msgstr "Erweitertes Suchen und Ersetzen"
 
-#: src/frontends/qt/FindAndReplace.cpp:711
+#: src/frontends/qt/FindAndReplace.cpp:714
 msgid "Find previous occurrence (Shift+Enter, forwards: Enter)"
 msgstr ""
 "Suche vorhergehenden Treffer (Umschalt+Eingabetaste; vorwärts: Eingabetaste)"
 
-#: src/frontends/qt/FindAndReplace.cpp:712
+#: src/frontends/qt/FindAndReplace.cpp:715
 msgid "< Rep&lace"
 msgstr "< Erse&tzen"
 
-#: src/frontends/qt/FindAndReplace.cpp:713
+#: src/frontends/qt/FindAndReplace.cpp:716
 msgid "Replace and find previous occurrence (Shift+Enter, forwards: Enter)"
 msgstr ""
 "Ersetze und suche vorhergehenden Treffer (Umschalt+Eingabetaste; vorwärts: "
@@ -35658,10 +35662,10 @@ msgstr ""
 "Schieber, Strg-+/- oder Umschalt-Mausrad."
 
 #: src/frontends/qt/GuiView.cpp:733 src/frontends/qt/GuiView.cpp:844
-#: src/frontends/qt/GuiView.cpp:1031 src/frontends/qt/Menus.cpp:1843
-#: src/frontends/qt/Menus.cpp:1847 src/frontends/qt/Menus.cpp:1851
-#: src/frontends/qt/Menus.cpp:1855 src/frontends/qt/Menus.cpp:1859
-#: src/frontends/qt/Menus.cpp:1863
+#: src/frontends/qt/GuiView.cpp:1031 src/frontends/qt/Menus.cpp:1862
+#: src/frontends/qt/Menus.cpp:1866 src/frontends/qt/Menus.cpp:1870
+#: src/frontends/qt/Menus.cpp:1874 src/frontends/qt/Menus.cpp:1878
+#: src/frontends/qt/Menus.cpp:1882
 msgid "[[ZOOM]]%1$d%"
 msgstr "%1$d%"
 
@@ -36382,269 +36386,269 @@ msgstr "Geben Sie Zeichen zum Filtern der Absatzformatliste ein."
 msgid "%1$s (unknown)"
 msgstr "%1$s (unbekannt)"
 
-#: src/frontends/qt/Menus.cpp:733
+#: src/frontends/qt/Menus.cpp:752
 msgid "More...|M"
 msgstr "Mehr...|M"
 
-#: src/frontends/qt/Menus.cpp:815
+#: src/frontends/qt/Menus.cpp:834
 msgid "No Group"
 msgstr "Keine Gruppe"
 
-#: src/frontends/qt/Menus.cpp:845 src/frontends/qt/Menus.cpp:846
+#: src/frontends/qt/Menus.cpp:864 src/frontends/qt/Menus.cpp:865
 msgid "More Spelling Suggestions"
 msgstr "Weitere Rechtschreibvorschläge"
 
-#: src/frontends/qt/Menus.cpp:870
-msgid "Add to personal dictionary|n"
-msgstr "Zum persönlichen Wörterbuch hinzufügen|Z"
+#: src/frontends/qt/Menus.cpp:889
+msgid "Add to personal dictionary|r"
+msgstr "Zum persönlichen Wörterbuch hinzufügen|ö"
 
-#: src/frontends/qt/Menus.cpp:872
-msgid "Ignore this occurrence|g"
+#: src/frontends/qt/Menus.cpp:891
+msgid "Ignore this occurrence|o"
 msgstr "An dieser Stelle ignorieren|g"
 
-#: src/frontends/qt/Menus.cpp:874
-msgid "Ignore all for this session|I"
+#: src/frontends/qt/Menus.cpp:893
+msgid "Ignore all for this session|t"
 msgstr "Während dieser Sitzung ignorieren|i"
 
-#: src/frontends/qt/Menus.cpp:876
-msgid "Ignore all in this document|d"
+#: src/frontends/qt/Menus.cpp:895
+msgid "Ignore all in this document|u"
 msgstr "In diesem Dokument ignorieren|D"
 
-#: src/frontends/qt/Menus.cpp:884
+#: src/frontends/qt/Menus.cpp:903
 msgid "Remove from personal dictionary|r"
 msgstr "Entfernen aus persönlichem Wörterbuch|E"
 
-#: src/frontends/qt/Menus.cpp:891
+#: src/frontends/qt/Menus.cpp:910
 msgid "Remove from document dictionary|r"
 msgstr "Entfernen aus Dokument-Wörterbuch|E"
 
-#: src/frontends/qt/Menus.cpp:921
-msgid "Switch Language...|L"
+#: src/frontends/qt/Menus.cpp:940
+msgid "Switch Language...|w"
 msgstr "Sprache wechseln...|p"
 
-#: src/frontends/qt/Menus.cpp:935
+#: src/frontends/qt/Menus.cpp:954
 msgid "Language|L"
 msgstr "Sprache|p"
 
-#: src/frontends/qt/Menus.cpp:937
+#: src/frontends/qt/Menus.cpp:956
 msgid "More Languages ...|M"
 msgstr "Weitere Sprachen ...|W"
 
-#: src/frontends/qt/Menus.cpp:1007 src/frontends/qt/Menus.cpp:1008
+#: src/frontends/qt/Menus.cpp:1026 src/frontends/qt/Menus.cpp:1027
 msgid "Hidden|H"
 msgstr "Versteckt|V"
 
-#: src/frontends/qt/Menus.cpp:1012
+#: src/frontends/qt/Menus.cpp:1031
 msgid "(No Documents Open)"
 msgstr "(Keine Dokumente geöffnet)"
 
-#: src/frontends/qt/Menus.cpp:1078
+#: src/frontends/qt/Menus.cpp:1097
 msgid "(No Bookmarks Saved Yet)"
 msgstr "(Noch keine Lesezeichen gespeichert)"
 
-#: src/frontends/qt/Menus.cpp:1118
+#: src/frontends/qt/Menus.cpp:1137
 msgid "View (Other Formats)|F"
 msgstr "Andere Formate ansehen|F"
 
-#: src/frontends/qt/Menus.cpp:1119
+#: src/frontends/qt/Menus.cpp:1138
 msgid "Update (Other Formats)|p"
 msgstr "Andere Formate aktualisieren|n"
 
-#: src/frontends/qt/Menus.cpp:1149
+#: src/frontends/qt/Menus.cpp:1168
 #, c-format
 msgid "View [%1$s]|V"
 msgstr "Ansehen [%1$s]|s"
 
-#: src/frontends/qt/Menus.cpp:1150
+#: src/frontends/qt/Menus.cpp:1169
 #, c-format
 msgid "Update [%1$s]|U"
 msgstr "Aktualisieren [%1$s]|u"
 
-#: src/frontends/qt/Menus.cpp:1266
+#: src/frontends/qt/Menus.cpp:1285
 msgid "(No Custom Insets Defined)"
 msgstr "(Keine spezifischen Einfügungen definiert!)"
 
-#: src/frontends/qt/Menus.cpp:1353
+#: src/frontends/qt/Menus.cpp:1372
 msgid "(No Document Open)"
 msgstr "(Kein Dokument geöffnet)"
 
-#: src/frontends/qt/Menus.cpp:1362
+#: src/frontends/qt/Menus.cpp:1381
 msgid "Master Document"
 msgstr "Hauptdokument"
 
-#: src/frontends/qt/Menus.cpp:1385
+#: src/frontends/qt/Menus.cpp:1404
 msgid "Other Lists"
 msgstr "Andere Verzeichnisse"
 
-#: src/frontends/qt/Menus.cpp:1399
+#: src/frontends/qt/Menus.cpp:1418
 msgid "(Empty Table of Contents)"
 msgstr "(Leeres Inhaltsverzeichnis)"
 
-#: src/frontends/qt/Menus.cpp:1408
+#: src/frontends/qt/Menus.cpp:1427
 msgid "Open Outliner..."
 msgstr "Dokumentgliederung öffnen..."
 
-#: src/frontends/qt/Menus.cpp:1443
+#: src/frontends/qt/Menus.cpp:1462
 msgid "[[Toolbar]]On|O"
 msgstr "An|A"
 
-#: src/frontends/qt/Menus.cpp:1445
+#: src/frontends/qt/Menus.cpp:1464
 msgid "[[Toolbar]]Off|f"
 msgstr "Aus|u"
 
-#: src/frontends/qt/Menus.cpp:1447
+#: src/frontends/qt/Menus.cpp:1466
 msgid "[[Toolbar]]Automatic|A"
 msgstr "Automatisch|o"
 
-#: src/frontends/qt/Menus.cpp:1459
+#: src/frontends/qt/Menus.cpp:1478
 msgid "Other Toolbars"
 msgstr "Andere Werkzeugleisten"
 
-#: src/frontends/qt/Menus.cpp:1522
+#: src/frontends/qt/Menus.cpp:1541
 msgid "Master Documents"
 msgstr "Hauptdokumente"
 
-#: src/frontends/qt/Menus.cpp:1538
+#: src/frontends/qt/Menus.cpp:1557
 msgid "Index List|I"
 msgstr "Stichwortverzeichnis|S"
 
-#: src/frontends/qt/Menus.cpp:1543
+#: src/frontends/qt/Menus.cpp:1562
 msgid "Index Entry|d"
 msgstr "Stichwort|h"
 
-#: src/frontends/qt/Menus.cpp:1558
+#: src/frontends/qt/Menus.cpp:1577
 #, c-format
 msgid "Index: %1$s"
 msgstr "Index: %1$s"
 
-#: src/frontends/qt/Menus.cpp:1563 src/frontends/qt/Menus.cpp:1592
+#: src/frontends/qt/Menus.cpp:1582 src/frontends/qt/Menus.cpp:1611
 #, c-format
 msgid "Index Entry (%1$s)"
 msgstr "Indexeintrag (%1$s)"
 
-#: src/frontends/qt/Menus.cpp:1609
+#: src/frontends/qt/Menus.cpp:1628
 msgid "No Citation in Scope!"
 msgstr "Keine Literaturverweis in Reichweite!"
 
-#: src/frontends/qt/Menus.cpp:1623 src/insets/InsetCitation.cpp:327
+#: src/frontends/qt/Menus.cpp:1642 src/insets/InsetCitation.cpp:327
 #: src/insets/InsetCitation.cpp:457
 msgid "No citations selected!"
 msgstr "Keine Literaturverweise ausgewählt!"
 
-#: src/frontends/qt/Menus.cpp:1672
+#: src/frontends/qt/Menus.cpp:1691
 msgid "All authors|h"
 msgstr "Alle Autoren|u"
 
-#: src/frontends/qt/Menus.cpp:1703
+#: src/frontends/qt/Menus.cpp:1722
 msgid "Force upper case|u"
 msgstr "Großschreibung erzwingen|G"
 
-#: src/frontends/qt/Menus.cpp:1717
+#: src/frontends/qt/Menus.cpp:1736
 msgid "No Text Field in Scope!"
 msgstr "Kein Textfeld in Reichweite!"
 
-#: src/frontends/qt/Menus.cpp:1736
+#: src/frontends/qt/Menus.cpp:1755
 msgid "Custom..."
 msgstr "Benutzerdefiniert..."
 
-#: src/frontends/qt/Menus.cpp:1812
+#: src/frontends/qt/Menus.cpp:1831
 #, c-format
 msgid "Caption (%1$s)"
 msgstr "Legende (%1$s)"
 
-#: src/frontends/qt/Menus.cpp:1832
+#: src/frontends/qt/Menus.cpp:1851
 msgid "Reset to Default (%1$d%)|R"
 msgstr "Auf Voreinstellungen (%1$d%) zurücksetzen|V"
 
 # , c-format
-#: src/frontends/qt/Menus.cpp:1835
+#: src/frontends/qt/Menus.cpp:1854
 msgid "Zoom In|I"
 msgstr "Größer|G"
 
-#: src/frontends/qt/Menus.cpp:1837
+#: src/frontends/qt/Menus.cpp:1856
 msgid "Zoom Out|O"
 msgstr "Kleiner|K"
 
-#: src/frontends/qt/Menus.cpp:1879
+#: src/frontends/qt/Menus.cpp:1898
 msgid "No Quote in Scope!"
 msgstr "Kein Anführungszeichen in Reichweite!"
 
-#: src/frontends/qt/Menus.cpp:1911 src/frontends/qt/Menus.cpp:1915
-#: src/frontends/qt/Menus.cpp:1919 src/frontends/qt/Menus.cpp:1923
+#: src/frontends/qt/Menus.cpp:1930 src/frontends/qt/Menus.cpp:1934
+#: src/frontends/qt/Menus.cpp:1938 src/frontends/qt/Menus.cpp:1942
 #, c-format
 msgid "%1$s (dynamic)"
 msgstr "%1$s (dynamisch)"
 
-#: src/frontends/qt/Menus.cpp:1957
+#: src/frontends/qt/Menus.cpp:1976
 #, c-format
 msgid "Use dynamic quotes (%1$s)|d"
 msgstr "Dynamische Anführungszeichen (%1$s) verwenden|y"
 
-#: src/frontends/qt/Menus.cpp:1963
+#: src/frontends/qt/Menus.cpp:1982
 msgid "dynamic[[Quotes]]"
 msgstr "dynamisch"
 
-#: src/frontends/qt/Menus.cpp:1963 src/frontends/qt/Menus.cpp:1973
+#: src/frontends/qt/Menus.cpp:1982 src/frontends/qt/Menus.cpp:1992
 msgid "static[[Quotes]]"
 msgstr "statisch"
 
-#: src/frontends/qt/Menus.cpp:1965
+#: src/frontends/qt/Menus.cpp:1984
 #, c-format
 msgid "Reset to document default (%1$s, %2$s)|o"
 msgstr "Auf Dokumentvoreinstellungen zurücksetzen (%1$s, %2$s)|o"
 
-#: src/frontends/qt/Menus.cpp:1972
+#: src/frontends/qt/Menus.cpp:1991
 #, c-format
 msgid "Reset to language default (%1$s, %2$s)|l"
 msgstr "Auf Sprachvoreinstellung zurücksetzen (%1$s, %2$s)|S"
 
-#: src/frontends/qt/Menus.cpp:1974
+#: src/frontends/qt/Menus.cpp:1993
 #, c-format
 msgid "Reset to language default (%1$s)|l"
 msgstr "Auf Sprachvoreinstellung zurücksetzen (%1$s)|S"
 
-#: src/frontends/qt/Menus.cpp:1982
+#: src/frontends/qt/Menus.cpp:2001
 msgid "Change Style|y"
 msgstr "Stil ändern|t"
 
-#: src/frontends/qt/Menus.cpp:2023
+#: src/frontends/qt/Menus.cpp:2042
 #, c-format
 msgid "Insert Separated %1$s Above"
 msgstr "Separierte Umgebung (%1$s) oberhalb einfügen"
 
-#: src/frontends/qt/Menus.cpp:2025
+#: src/frontends/qt/Menus.cpp:2044
 #, c-format
 msgid "Separated %1$s Above"
 msgstr "Separierte Umgebung (%1$s) oberhalb"
 
-#: src/frontends/qt/Menus.cpp:2031 src/frontends/qt/Menus.cpp:2044
-#: src/frontends/qt/Menus.cpp:2061
+#: src/frontends/qt/Menus.cpp:2050 src/frontends/qt/Menus.cpp:2063
+#: src/frontends/qt/Menus.cpp:2080
 #, c-format
 msgid "Insert Separated %1$s Below"
 msgstr "Separierte Umgebung (%1$s) unterhalb einfügen"
 
-#: src/frontends/qt/Menus.cpp:2033 src/frontends/qt/Menus.cpp:2046
-#: src/frontends/qt/Menus.cpp:2067
+#: src/frontends/qt/Menus.cpp:2052 src/frontends/qt/Menus.cpp:2065
+#: src/frontends/qt/Menus.cpp:2086
 #, c-format
 msgid "Separated %1$s Below"
 msgstr "Separierte Umgebung (%1$s) unterhalb"
 
-#: src/frontends/qt/Menus.cpp:2059
+#: src/frontends/qt/Menus.cpp:2078
 #, c-format
 msgid "Insert Separated Outer %1$s Below"
 msgstr "Separierte äußere Umgebung (%1$s) unterhalb einfügen"
 
-#: src/frontends/qt/Menus.cpp:2065
+#: src/frontends/qt/Menus.cpp:2084
 #, c-format
 msgid "Separated Outer %1$s Below"
 msgstr "Separierte äußere Umgebung (%1$s) unterhalb"
 
-#: src/frontends/qt/Menus.cpp:2383
+#: src/frontends/qt/Menus.cpp:2402
 #, c-format
 msgid "Export [%1$s]|E"
 msgstr "Exportiere in das Standardformat [%1$s]|E"
 
-#: src/frontends/qt/Menus.cpp:2733
+#: src/frontends/qt/Menus.cpp:2759
 msgid "No Action Defined!"
 msgstr "Keine Aktion definiert!"
 
