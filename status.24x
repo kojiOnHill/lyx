@@ -1,0 +1,87 @@
+-*- text -*-
+
+This file describes what has been done in the preparation of LyX 2.4.1.
+All comments are welcome.
+
+We try to group things by topic and in decreasing order of importance.
+Please feel free to re-arrange if that seems like a good idea.
+
+
+What's new
+==========
+
+** Updates:
+***********
+
+* DOCUMENT INPUT/OUTPUT
+
+
+
+
+* MISCELLANEOUS
+
+
+
+* TEX2LYX IMPROVEMENTS
+
+
+
+* USER INTERFACE
+
+- Add plain single quote to menu (bug 13025).
+
+- In context menus, more items are now shown on top level.
+
+
+* DOCUMENTATION AND LOCALIZATION
+
+- Clarify quote-insert LFUN.
+
+
+* BUILD/INSTALLATION
+
+- Fix cmake build with qt6 (macos), which did not include
+  "plugins".
+
+
+** Bug fixes:
+*************
+
+* DOCUMENT INPUT/OUTPUT
+
+
+
+* USER INTERFACE
+
+
+
+* INTERNALS
+
+
+
+* DOCUMENTATION AND LOCALIZATION
+
+
+* LYX2LYX
+
+
+
+* TEX2LYX
+
+
+
+* LYXHTML
+
+
+
+* ADVANCED FIND AND REPLACE
+
+- Handle neg-spaces like normal space if searching without format.
+
+- No paragraph indentation in search and replace windows (bug 11555).
+
+
+* BUILD/INSTALLATION
+
+- Cmake build: Handle deprecated cmake versions.
+
