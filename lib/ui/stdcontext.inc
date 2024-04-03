@@ -237,7 +237,7 @@ Menuset
 		Item "Greyed Out|y" "inset-modify note Note Greyedout"
 		Separator
 		Item "Open All Notes|A" "inset-forall Note inset-toggle open"
-		Item "Close All Notes|o" "inset-forall Note inset-toggle close"
+		Item "Close All Notes|l" "inset-forall Note inset-toggle close"
 	End
 
 #
@@ -378,7 +378,7 @@ Menuset
 		Item "Paste" "paste"
 		Submenu "Paste Recent|e" "edit_pasterecent"
 		Separator
-		OptItem "Split Inset|t" "inset-split"
+		OptItem "Split Inset|i" "inset-split"
 		Separator
 		Item "Jump Back to Saved Bookmark|B" "bookmark-goto 0"
 		OptItem "Forward Search|F" "forward-search"
@@ -399,7 +399,7 @@ Menuset
 		OptItem "Reject Change|j" "change-reject"
 		Separator
 		Submenu "Text Properties|x" "edit_textprops"
-		OptSubmenu "Custom Text Styles|S" "edit_textstyles"
+		OptSubmenu "Custom Text Styles|y" "edit_textstyles"
 		Item "Paragraph Settings...|P" "layout-paragraph"
 		OptItem "Unify Graphics Groups|U" "graphics-unify"
 		LanguageSelector
@@ -648,9 +648,9 @@ Menuset
 	End
 	
 	Menu "context-edit-index"
-		OptItem "Insert Subentry|b" "indexmacro-insert subentry"
+		OptItem "Insert Subentry|n" "indexmacro-insert subentry"
 		OptItem "Insert Sortkey|k" "indexmacro-insert sortkey"
-		OptItem "Insert See Reference|e" "indexmacro-insert see"
+		OptItem "Insert See Reference|c" "indexmacro-insert see"
 		OptItem "Insert See also Reference|a" "indexmacro-insert seealso"
 	End
 
