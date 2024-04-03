@@ -888,9 +888,9 @@ void MenuDefinition::expandSpellingSuggestions(BufferView const * bv)
 				docstring const arg = wl.word() + " " + from_ascii(wl.lang()->lang());
 				add(MenuItem(MenuItem::Command, qt_("Add to personal dictionary|r"),
 						FuncRequest(LFUN_SPELLING_ADD, arg)));
-				add(MenuItem(MenuItem::Command, qt_("Ignore this occurrence|g"),
+				add(MenuItem(MenuItem::Command, qt_("Ignore this occurrence|o"),
 						FuncRequest(LFUN_FONT_NO_SPELLCHECK, arg)));
-				add(MenuItem(MenuItem::Command, qt_("Ignore all for this session|l"),
+				add(MenuItem(MenuItem::Command, qt_("Ignore all for this session|t"),
 						FuncRequest(LFUN_SPELLING_IGNORE, arg)));
 				add(MenuItem(MenuItem::Command, qt_("Ignore all in this document|u"),
 						FuncRequest(LFUN_SPELLING_ADD_LOCAL, arg)));
