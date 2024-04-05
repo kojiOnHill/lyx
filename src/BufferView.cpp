@@ -303,6 +303,7 @@ struct BufferView::Private
 	int stats_ref_value_w_ = 0;
 	int stats_ref_value_c_ = 0;
 	int stats_ref_value_nb_ = 0;
+	bool stats_update_trigger_ = false;
 
 };
 
@@ -2032,6 +2033,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		break;
 
 	case LFUN_STATISTICS_REFERENCE_CLAMP: {
+		d->stats_update_trigger_ = true;
 		if  (cmd.argument() == "reset") {
 			d->stats_ref_value_w_ = d->stats_ref_value_c_ = d->stats_ref_value_nb_ = 0;
 			break;
@@ -3934,6 +3936,16 @@ void BufferView::setInlineCompletion(Cursor const & cur, DocIterator const & pos
 bool BufferView::clickableInset() const
 {
 	return d->clickable_inset_;
+}
+
+
+bool BufferView::stats_update_trigger()
+{
+	if (d->stats_update_trigger_) {
+		d->stats_update_trigger_ = false;
+		return true;
+	}
+	return false;
 }
 
 } // namespace lyx

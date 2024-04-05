@@ -406,6 +406,8 @@ public:
 	int stats_ref_value_w() const;
 	int stats_ref_value_c() const;
 	int stats_ref_value_nb() const;
+	//signals need for update in gui
+	bool stats_update_trigger();
 
 private:
 	/// noncopyable
