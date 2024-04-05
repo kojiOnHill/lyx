@@ -3925,6 +3925,16 @@ void LyXAction::init()
  * \endvar
  */
 		{ LFUN_STATISTICS, "statistics", ReadOnly, System },
+/*!
+ * \var lyx::FuncCode lyx::LFUN_STATISTICS_REFERENCE_CLAMP
+ * \li Action: Count statistics relative to the current value.
+               In other words all future values will be subtracted by this value.
+ * \li Syntax: statistics-reference-clamp [reset]
+ * \li Params: reset: remove the clamp, i.e. count in the absolute numbers again
+ * \li Origin: sanda, Mar 28 2024
+ * \endvar
+ */
+		{ LFUN_STATISTICS_REFERENCE_CLAMP, "statistics-reference-clamp", ReadOnly, System },
 
 /*!
  * \var lyx::FuncCode lyx::LFUN_TABULAR_FEATURE

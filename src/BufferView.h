@@ -401,6 +401,12 @@ public:
 	/// Are we currently performing a selection with the mouse?
 	bool mouseSelecting() const;
 
+	/// Reference value for statistics (essentially subtract this from the actual value to see relative counts)
+	/// (words/chars/chars no blanks)
+	int stats_ref_value_w() const;
+	int stats_ref_value_c() const;
+	int stats_ref_value_nb() const;
+
 private:
 	/// noncopyable
 	BufferView(BufferView const &);

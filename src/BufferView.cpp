@@ -298,6 +298,12 @@ struct BufferView::Private
 	frontend::CaretGeometry caret_geometry_;
 	///
 	bool mouse_selecting_ = false;
+	/// Reference value for statistics (essentially subtract this from the actual value to see relative counts)
+	/// (words/chars/chars no blanks)
+	int stats_ref_value_w_ = 0;
+	int stats_ref_value_c_ = 0;
+	int stats_ref_value_nb_ = 0;
+
 };
 
 
@@ -1343,6 +1349,17 @@ bool BufferView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 		flag.setEnabled(cur.selection());
 		break;
 
+	case LFUN_STATISTICS_REFERENCE_CLAMP: {
+		// disable optitem reset if clamp not used
+		if  (cmd.argument() == "reset" && d->stats_ref_value_c_ == 0) {
+				flag.setEnabled(false);
+				break;
+		}
+		flag.setEnabled(true);
+		break;
+
+	}
+
 	default:
 		return false;
 	}
@@ -2014,6 +2031,24 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 	}
 		break;
 
+	case LFUN_STATISTICS_REFERENCE_CLAMP: {
+		if  (cmd.argument() == "reset") {
+			d->stats_ref_value_w_ = d->stats_ref_value_c_ = d->stats_ref_value_nb_ = 0;
+			break;
+		}
+
+		DocIterator from, to;
+		from = doc_iterator_begin(&buffer_);
+		to = doc_iterator_end(&buffer_);
+		buffer_.updateStatistics(from, to);
+
+		d->stats_ref_value_w_ = buffer_.wordCount();
+		d->stats_ref_value_c_ = buffer_.charCount(true);
+		d->stats_ref_value_nb_ = buffer_.charCount(false);
+		break;
+	}
+
+
 	case LFUN_SCREEN_UP:
 	case LFUN_SCREEN_DOWN: {
 		Point p = getPos(cur);
@@ -2620,6 +2655,24 @@ void BufferView::clearLastInset(Inset * inset) const
 bool BufferView::mouseSelecting() const
 {
 	return d->mouse_selecting_;
+}
+
+
+int BufferView::stats_ref_value_w() const
+{
+	return d->stats_ref_value_w_;
+}
+
+
+int BufferView::stats_ref_value_c() const
+{
+	return d->stats_ref_value_c_;
+}
+
+
+int BufferView::stats_ref_value_nb() const
+{
+	return d->stats_ref_value_nb_;
 }
 
 
