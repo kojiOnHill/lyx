@@ -3466,7 +3466,7 @@ void LyXAction::init()
  * \var lyx::FuncCode lyx::LFUN_QUOTE_INSERT
  * \li Action: Inserts quotes according to the type and quote-language preference.
  * \li Notion: Currently 15 different quote styles are distinguished (see params).
- * \li Syntax: quote-insert [<LEVEL>] [<SIDE>] [<STYLE>]
+ * \li Syntax: quote-insert [<LEVEL>] [<SIDE> <STYLE>]
  * \li Params: <LEVEL>: 'inner' for (i.e., secondary, usually single) quotes, otherwise
  *                       outer (i.e., primary, usually double) quotes will be used.\n
  *             <SIDE>:  'opening' for opening quotes, 'closing' for closing quotes,
