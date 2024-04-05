@@ -190,6 +190,16 @@ static void setComboxFont(QComboBox * cb, string const & family,
 }
 
 
+static void activatePrefsWindow(GuiPreferences * form_)
+{
+	if (guiApp->platformName() == "cocoa") {
+		QWidget * dialog_ = form_->asQWidget();
+		dialog_->raise();
+		dialog_->activateWindow();
+	}
+}
+
+
 /////////////////////////////////////////////////////////////////////
 //
 // PrefOutput
@@ -1783,6 +1793,7 @@ void PrefConverters::on_needauthCB_toggled(bool checked)
 	int ret = frontend::Alert::prompt(
 		_("SECURITY WARNING!"), _("Unchecking this option has the effect that potentially harmful converters would be run without asking your permission first. This is UNSAFE and NOT recommended, unless you know what you are doing. Are you sure you would like to proceed? The recommended and safe answer is NO!"),
 		0, 0, _("&No"), _("&Yes"));
+	activatePrefsWindow(form_);
 	if (ret == 1)
 		changed();
 	else
@@ -2148,6 +2159,7 @@ void PrefFileformats::on_formatED_editingFinished()
 			     _("You cannot change a format's short name "
 			       "if the format is used by a converter. "
 			       "Please remove the converter first."));
+		activatePrefsWindow(form_);
 		updateView();
 		return;
 	}
@@ -2303,6 +2315,7 @@ void PrefFileformats::on_formatRemovePB_clicked()
 		Alert::error(_("Format in use"),
 			     _("Cannot remove a Format used by a Converter. "
 					    "Remove the converter first."));
+		activatePrefsWindow(form_);
 		return;
 	}
 
@@ -2551,12 +2564,14 @@ void PrefUserInterface::applyRC(LyXRC & rc) const
 		uiStyleCO->currentIndex()).toString();
 	if (rc.ui_style != fromqstr(uistyle)) {
 		rc.ui_style = fromqstr(uistyle);
-		if (rc.ui_style == "default")
+		if (rc.ui_style == "default") {
 			// FIXME: This should work with frontend::GuiApplication::setStyle(QString())
 			//        Qt bug https://bugreports.qt.io/browse/QTBUG-58268
 			frontend::Alert::warning(_("Restart needed"),
 						 _("Resetting the user interface style to 'Default'"
 						   " requires a restart of LyX."));
+			activatePrefsWindow(form_);
+		}
 		else
 			frontend::GuiApplication::setStyle(uistyle);
 	}
@@ -3312,6 +3327,7 @@ bool PrefShortcuts::validateNewShortcut(FuncRequest const & func,
 	if (func.action() == LFUN_UNKNOWN_ACTION) {
 		Alert::error(_("Failed to create shortcut"),
 			_("Unknown or invalid LyX function"));
+		activatePrefsWindow(form_);
 		return false;
 	}
 
@@ -3321,12 +3337,14 @@ bool PrefShortcuts::validateNewShortcut(FuncRequest const & func,
 	if (lyxaction.getActionType(func.action()) == LyXAction::Hidden) {
 		Alert::error(_("Failed to create shortcut"),
 			_("This LyX function is hidden and cannot be bound."));
+		activatePrefsWindow(form_);
 		return false;
 	}
 
 	if (k.length() == 0) {
 		Alert::error(_("Failed to create shortcut"),
 			_("Invalid or empty key sequence"));
+		activatePrefsWindow(form_);
 		return false;
 	}
 
@@ -3343,6 +3361,7 @@ bool PrefShortcuts::validateNewShortcut(FuncRequest const & func,
 									   k.print(KeySequence::ForGui), new_action_string);
 		int ret = Alert::prompt(_("Redefine shortcut?"),
 					text, 0, 1, _("&Redefine"), _("&Cancel"));
+		activatePrefsWindow(form_);
 		if (ret != 0)
 			return false;
 		QString const sequence_text = toqstr(k.print(KeySequence::ForGui));
@@ -3366,6 +3385,7 @@ bool PrefShortcuts::validateNewShortcut(FuncRequest const & func,
 					       new_action_string);
 		int ret = Alert::prompt(_("Redefine shortcut?"),
 					text, 0, 1, _("&Redefine"), _("&Cancel"));
+		activatePrefsWindow(form_);
 		if (ret != 0)
 			return false;
 		QString const sequence_text = toqstr(k.print(KeySequence::ForGui));
@@ -3408,6 +3428,7 @@ void PrefShortcuts::shortcutOkPressed()
 	} else {
 		Alert::error(_("Failed to create shortcut"),
 			_("Can not insert shortcut to the list"));
+		activatePrefsWindow(form_);
 		return;
 	}
 }
@@ -3646,11 +3667,7 @@ QString GuiPreferences::browseLibFile(QString const & dir,
 	guilyxfiles_->selectItem(name);
 	guilyxfiles_->exec();
 	
-	if (frontend::guiApp->platformName() == "cocoa") {
-		QWidget * dialog_ = asQWidget();
-		dialog_->raise();
-		dialog_->activateWindow();
-	}
+	activatePrefsWindow(this);
 
 	QString const result = uifile_;
 
