@@ -555,6 +555,8 @@ public:
 	bool already_in_selection_ = false;
 	/// Maximum size of "short" selection for which we can update with faster timer_rate
 	int const max_sel_chars = 5000;
+	/// equivalent time_to_update = 0; but better to see it the code
+	bool stats_update_trigger_ = false;
 
 };
 
@@ -1454,6 +1456,12 @@ void GuiView::showStats()
 		return;
 	}
 
+	// UI toggle, buffer change, etc
+	if (bv->stats_update_trigger() || d.stats_update_trigger_) {
+		d.stats_update_trigger_ = false;
+		d.time_to_update = 0;
+	}
+
 	Cursor const & cur = bv->cursor();
 
 	// we start new selection and need faster update
@@ -1587,6 +1595,7 @@ void GuiView::onBufferViewChanged()
 			     && zoom_slider_->value() < zoom_slider_->maximum());
 	zoom_out_->setEnabled(currentBufferView()
 			      && zoom_slider_->value() > zoom_slider_->minimum());
+	d.stats_update_trigger_ = true;
 }
 
 
@@ -5162,6 +5171,7 @@ bool GuiView::lfunUiToggle(string const & ui_component)
 	} else
 		return false;
 	stat_counts_->setVisible(statsEnabled());
+	d.stats_update_trigger_ = true;
 	return true;
 }
 
