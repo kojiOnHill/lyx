@@ -774,6 +774,8 @@ Menuset
 		Item "Word Count|W" "ui-toggle statistics-w"
 		Item "Character Count|C" "ui-toggle statistics-cb"
 		Item "Character Count (No Blanks)|h" "ui-toggle statistics-c"
+		Item "Start Statistics Relative to Current Count|R" "statistics-reference-clamp"
+		OptItem "Reset to Absolute Statistics Count|A" "statistics-reference-clamp reset"
 	End
 
 End

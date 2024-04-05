@@ -1481,7 +1481,7 @@ void GuiView::showStats()
 
 	QStringList stats;
 	if (word_count_enabled_) {
-		int const words = buf->wordCount();
+		int const words = buf->wordCount() - bv->stats_ref_value_w();
 		if (words == 1)
 			stats << toqstr(bformat(_("%1$d Word"), words));
 		else
@@ -1489,13 +1489,14 @@ void GuiView::showStats()
 	}
 	int const chars_with_blanks = buf->charCount(true);
 	if (char_count_enabled_) {
+		int const chars_with_blanks_disp = chars_with_blanks - bv->stats_ref_value_c();
 		if (chars_with_blanks == 1)
-			stats << toqstr(bformat(_("%1$d Character"), chars_with_blanks));
+			stats << toqstr(bformat(_("%1$d Character"), chars_with_blanks_disp));
 		else
-			stats << toqstr(bformat(_("%1$d Characters"), chars_with_blanks));
+			stats << toqstr(bformat(_("%1$d Characters"), chars_with_blanks_disp));
 	}
 	if (char_nb_count_enabled_) {
-		int const chars = buf->charCount(false);
+		int const chars = buf->charCount(false) - bv->stats_ref_value_nb();
 		if (chars == 1)
 			stats << toqstr(bformat(_("%1$d Character (no Blanks)"), chars));
 		else
