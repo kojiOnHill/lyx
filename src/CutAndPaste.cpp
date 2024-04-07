@@ -989,6 +989,8 @@ void cutSelectionHelper(Cursor & cur, CutStack & cuts, bool realcut, bool putcli
 
 		if (begpit != endpit)
 			cur.screenUpdateFlags(Update::Force | Update::FitCursor);
+		else
+			cur.screenUpdateFlags(Update::SinglePar | Update::FitCursor);
 
 		tie(endpit, endpos) =
 			eraseSelectionHelper(bp, text->paragraphs(), begpit, endpit,
