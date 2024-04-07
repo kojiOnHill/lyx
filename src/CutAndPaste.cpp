@@ -475,6 +475,8 @@ pasteSelectionHelper(DocIterator const & cur, ParagraphList const & parlist,
 	}
 	insertion.swap(in.paragraphs());
 
+	// We need to do this here, after the inset handling above,
+	// as acceptChanges() and rejectChanges() might access inset buffers.
 	tmpbuf = insertion.begin();
 	for (; tmpbuf != insertion.end(); ++tmpbuf) {
 		if (lyxrc.ct_markup_copied) {
