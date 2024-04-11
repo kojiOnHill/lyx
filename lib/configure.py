@@ -157,8 +157,8 @@ def copy_tree(src, dst, preserve_symlinks=False, level=0):
             link_dest = os.readlink(src_name)
             os.symlink(link_dest, dst_name)
             outputs.append(dst_name)
-        elif level == 0 and name == 'cache':
-            logger.info("Skip cache %s", src_name)
+        elif level == 0 and name in [ 'cache', 'configure.log', 'chkconfig.ltx' ]:
+            logger.info("Skip copy of %s", src_name)
         elif os.path.isdir(src_name):
             outputs.extend(
                 copy_tree(src_name, dst_name, preserve_symlinks, level=(level + 1)))
