@@ -4217,24 +4217,24 @@ void GuiDocument::paramsToDialog()
 
 	// LaTeX input encoding: set after the fonts (see below)
 
-    // If the class provides babel or polyglossia, do not allow
-    // to change that
+	// If the class provides babel or polyglossia, do not allow
+	// to change that
 	bool const extern_babel =
 		documentClass().provides("babel");
-    bool const extern_polyglossia =
+	bool const extern_polyglossia =
 		documentClass().provides("polyglossia");
 
 	int p = -1;
 	if (extern_babel)
-	    p = langModule->languagePackageCO->findData(toqstr("babel"));
+		p = langModule->languagePackageCO->findData(toqstr("babel"));
 	else if (extern_polyglossia)
-	    p = langModule->languagePackageCO->findData(toqstr("polyglossia"));
+		p = langModule->languagePackageCO->findData(toqstr("polyglossia"));
 	else
-	    p = langModule->languagePackageCO->findData(toqstr(bp_.lang_package));
+		p = langModule->languagePackageCO->findData(toqstr(bp_.lang_package));
 
 	if (p == -1) {
 		langModule->languagePackageCO->setCurrentIndex(
-			  langModule->languagePackageCO->findData("custom"));
+			langModule->languagePackageCO->findData("custom"));
 		langModule->languagePackageLE->setText(toqstr(bp_.lang_package));
 	} else {
 		langModule->languagePackageCO->setCurrentIndex(p);
