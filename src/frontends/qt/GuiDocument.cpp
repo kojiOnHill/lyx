@@ -4217,7 +4217,21 @@ void GuiDocument::paramsToDialog()
 
 	// LaTeX input encoding: set after the fonts (see below)
 
-	int p = langModule->languagePackageCO->findData(toqstr(bp_.lang_package));
+    // If the class provides babel or polyglossia, do not allow
+    // to change that
+	bool const extern_babel =
+		documentClass().provides("babel");
+    bool const extern_polyglossia =
+		documentClass().provides("polyglossia");
+
+	int p = -1;
+	if (extern_babel)
+	    p = langModule->languagePackageCO->findData(toqstr("babel"));
+	else if (extern_polyglossia)
+	    p = langModule->languagePackageCO->findData(toqstr("polyglossia"));
+	else
+	    p = langModule->languagePackageCO->findData(toqstr(bp_.lang_package));
+
 	if (p == -1) {
 		langModule->languagePackageCO->setCurrentIndex(
 			  langModule->languagePackageCO->findData("custom"));
@@ -4226,6 +4240,7 @@ void GuiDocument::paramsToDialog()
 		langModule->languagePackageCO->setCurrentIndex(p);
 		langModule->languagePackageLE->clear();
 	}
+	langModule->languagePackageCO->setEnabled(!extern_babel && !extern_polyglossia);
 
 	//color
 	if (bp_.isfontcolor) {
