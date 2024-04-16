@@ -5562,6 +5562,9 @@ Buffer::ReadStatus Buffer::reload()
 	Buffer const * oldparent = d->parent();
 	d->setParent(nullptr);
 	ReadStatus const status = loadLyXFile();
+	// The inset members in cursors held by buffer views are now wrong.
+	workAreaManager().sanitizeCursors();
+	setBusy(false);
 	if (status == ReadSuccess) {
 		updateBuffer();
 		changed(true);
