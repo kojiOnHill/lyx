@@ -13286,7 +13286,9 @@ Linguistics
 This module provides specific environments useful for linguistics (numbered examples,
  glosses,
  semantic markup,
- OT tableau floats).
+ OT tableau floats,
+ Discourse Representation Structures,
+ phonetic symbols).
  You can obtain information about this module in 
 \family sans
 \bar under
@@ -13385,7 +13387,7 @@ FiXme Notes
 
 \begin_layout Standard
 This module provides “FiXme” (marginal) annotations for document revision purposes.
- A list of annotations can be produced by using the “List of FIXMEs” paragraph style.
+ A list of annotations can be produced by using the “List of FIXMEs” in the outline panel.
  The annotations are customizable via the LaTeX preamble.
  See the 
 \family typewriter
@@ -13403,18 +13405,23 @@ literal "false"
 .
 \end_layout
 
-\begin_layout Paragraph
-Note:
-\end_layout
-
 \begin_layout Standard
-by default,
+
+\series bold
+Note
+\series default
+:
+ by default,
  the notes are only displayed in “draft” mode (if the option “draft” has been inserted in 
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
 Document Class\SpecialChar menuseparator
-Class Options\SpecialChar menuseparator
+Class
+\begin_inset space ~
+\end_inset
+
+Options\SpecialChar menuseparator
 Custom
 \family default
 ).
@@ -13430,7 +13437,11 @@ fxsetup{draft}
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
 \SpecialChar LaTeX
- Preamble
+
+\begin_inset space ~
+\end_inset
+
+Preamble
 \family default
 .
 \end_layout
@@ -13444,15 +13455,31 @@ This module provides various kinds of annotations for PDF output.
  See 
 \family sans
 Help\SpecialChar menuseparator
-Specific Manuals\SpecialChar menuseparator
-PDF comments 
+Specific
+\begin_inset space ~
+\end_inset
+
+Manuals\SpecialChar menuseparator
+PDF
+\begin_inset space ~
+\end_inset
+
+comments 
 \family default
 and
 \family sans
  File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-PDF Comments
+PDF
+\begin_inset space ~
+\end_inset
+
+Comments
 \family default
 .
 \end_layout
@@ -13478,15 +13505,31 @@ literal "false"
  
 \family sans
 Help\SpecialChar menuseparator
-Specific Manuals\SpecialChar menuseparator
-PDF forms 
+Specific
+\begin_inset space ~
+\end_inset
+
+Manuals\SpecialChar menuseparator
+PDF
+\begin_inset space ~
+\end_inset
+
+forms 
 \family default
 and
 \family sans
  File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-PDF Form
+PDF
+\begin_inset space ~
+\end_inset
+
+Form
 \family default
 .
 \end_layout
@@ -13534,7 +13577,11 @@ final
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
 Document Class\SpecialChar menuseparator
-Class Options\SpecialChar menuseparator
+Class
+\begin_inset space ~
+\end_inset
+
+Options\SpecialChar menuseparator
 Custom
 \family default
 ) suppresses the output of TODO notes.
@@ -13594,16 +13641,32 @@ tcolorbox
  See 
 \family sans
 Help\SpecialChar menuseparator
-Specific Manuals\SpecialChar menuseparator
+Specific
+\begin_inset space ~
+\end_inset
+
+Manuals\SpecialChar menuseparator
 Colored boxes
 \family default
 ,
  
 \family sans
 File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Fancy Color Boxes
+Fancy
+\begin_inset space ~
+\end_inset
+
+Color
+\begin_inset space ~
+\end_inset
+
+Boxes
 \family default
  and the 
 \begin_inset CommandInset href
@@ -14020,7 +14083,11 @@ Width)
  inset to 
 \family sans
 Insert\SpecialChar menuseparator
-Custom Inset
+Custom
+\begin_inset space ~
+\end_inset
+
+Inset
 \family default
  using the 
 \family typewriter
@@ -14118,12 +14185,13 @@ fixltx2e
 .
 \end_layout
 
-\begin_layout Paragraph
-Note:
-\end_layout
-
 \begin_layout Standard
-recent \SpecialChar LaTeX
+
+\series bold
+Note
+\series default
+:
+ recent \SpecialChar LaTeX
  kernels (as of 2015/01/01) include the functionality of 
 \family sans
 fixltx2e
@@ -14246,15 +14314,31 @@ Language
  See 
 \family sans
 File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Multilingual Captions
+Multilingual
+\begin_inset space ~
+\end_inset
+
+Captions
 \family default
  and 
 \family sans
 Help\SpecialChar menuseparator
-Specific Manuals\SpecialChar menuseparator
-Multilingual Captions
+Specific
+\begin_inset space ~
+\end_inset
+
+Manuals\SpecialChar menuseparator
+Multilingual
+\begin_inset space ~
+\end_inset
+
+Captions
 \family default
  further information on its use.
 \end_layout
@@ -14343,7 +14427,11 @@ endnotes
  Use 
 \family sans
 Insert\SpecialChar menuseparator
-Custom Inset\SpecialChar menuseparator
+Custom
+\begin_inset space ~
+\end_inset
+
+Inset\SpecialChar menuseparator
 Endnote
 \family default
  to insert an endnote and 
@@ -14356,7 +14444,11 @@ Endnotes
  See also 
 \family sans
 Help\SpecialChar menuseparator
-Embedded Objects
+Embedded
+\begin_inset space ~
+\end_inset
+
+Objects
 \family default
 ,
  section 
@@ -14389,7 +14481,11 @@ Endnotes
  See also 
 \family sans
 Help\SpecialChar menuseparator
-Embedded Objects
+Embedded
+\begin_inset space ~
+\end_inset
+
+Objects
 \family default
 ,
  section 
@@ -14427,7 +14523,11 @@ Endnotes
  See also 
 \family sans
 Help\SpecialChar menuseparator
-Embedded Objects
+Embedded
+\begin_inset space ~
+\end_inset
+
+Objects
 \family default
 ,
  section 
@@ -14461,11 +14561,19 @@ Chess
 \family default
  where you will find 
 \family sans
-Game 1
+Game
+\begin_inset space ~
+\end_inset
+
+1
 \family default
  and 
 \family sans
-Game 2
+Game
+\begin_inset space ~
+\end_inset
+
+2
 \family default
  and the 
 \begin_inset CommandInset href
@@ -14506,7 +14614,11 @@ Lilypond
 File\SpecialChar menuseparator
 Open Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Lilypond Book
+Lilypond
+\begin_inset space ~
+\end_inset
+
+Book
 \family default
 .
  It cannot be used if the modules 
@@ -14559,11 +14671,11 @@ The default numbering of numbered lists can be changed by adding an optional arg
 I
 \bar default
 nsert\SpecialChar menuseparator
+Enumerate
+\begin_inset space ~
+\end_inset
 
-\bar under
-S
-\bar default
-hort Title
+Options
 \family default
 ) to the first item of each level in the list.
  There you add the command
@@ -15344,7 +15456,6 @@ changes the description label font,
 \family sans
 style=definitio
 \family default
-\series bold
 n
 \end_layout
 
@@ -15473,13 +15584,25 @@ paralist
 File\SpecialChar menuseparator
 Open Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Paragraph Lists (paralist)
+Paragraph
+\begin_inset space ~
+\end_inset
+
+List
+\begin_inset space ~
+\end_inset
+
+ (paralist)
 \family default
 ,
  
 \family sans
 Help\SpecialChar menuseparator
-Specific Manuals\SpecialChar menuseparator
+Specific
+\begin_inset space ~
+\end_inset
+
+Manuals\SpecialChar menuseparator
 Paralist
 \family default
  and the 
@@ -15530,7 +15653,11 @@ nolink "false"
  
 \family sans
 File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
 Noweb
 \family default
@@ -15538,14 +15665,26 @@ Noweb
  
 \family sans
 File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Noweb Listerrors
+Noweb
+\begin_inset space ~
+\end_inset
+
+Listerrors
 \family default
  and 
 \family sans
 File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
 Noweb2\SpecialChar LyX
 
@@ -15591,8 +15730,10 @@ install.packages(“knitr”)
 .
 \end_layout
 
-\begin_layout Paragraph
-Note
+\begin_layout Standard
+
+\series bold
+Note:
 \end_layout
 
 \begin_layout Itemize
@@ -15639,16 +15780,28 @@ Sweave
 See 
 \family sans
 Help\SpecialChar menuseparator
-Specific Manuals\SpecialChar menuseparator
+Specific
+\begin_inset space ~
+\end_inset
+
+Manuals\SpecialChar menuseparator
 Knitr
 \family default
 ,
  
 \family sans
 File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Rnw (knitr)
+Rnw
+\begin_inset space ~
+\end_inset
+
+(knitr)
 \family default
  and section
 \begin_inset space ~
@@ -15718,7 +15871,11 @@ Sweave,
  
 \family sans
 File\SpecialChar menuseparator
-Open Example\SpecialChar menuseparator
+Open
+\begin_inset space ~
+\end_inset
+
+Example\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
 Sweave
 \family default
