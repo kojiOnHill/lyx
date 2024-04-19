@@ -8991,7 +8991,7 @@ Modern CV
 moderncv.cls
 \family default
 .
- Elle pêrmet la création de CV personnalisables.
+ Elle permet la création de CV personnalisables.
  
 \family sans
 Fichier\SpecialChar menuseparator
@@ -9313,16 +9313,21 @@ beamer.cls
 Fichier\SpecialChar menuseparator
 Nouveau avec modèle\SpecialChar menuseparator
 Présentations\SpecialChar menuseparator
-
-\bar under
 Beamer
 \family default
-\bar default
  ou 
 \family sans
 Aide\SpecialChar menuseparator
-Manuels spécifiques\SpecialChar menuseparator
-Présentations Beamer Presentations
+Manuels
+\begin_inset space ~
+\end_inset
+
+spécifiques\SpecialChar menuseparator
+Présentations
+\begin_inset space ~
+\end_inset
+
+Beamer
 \family default
  proposent une aide à l'utilisation.
  La documentation est disponible via 
@@ -10184,7 +10189,7 @@ Restriction
 \begin_layout Itemize
 
 \family sans
-Pied_Droite
+Pied_Droit
 \family default
  (Right_Footer)
 \end_layout
@@ -11112,7 +11117,7 @@ nolink "false"
 
 .
  En 2023,
- Dipos reste maintenue alors que la maintenance de 
+ Diapos reste maintenue alors que la maintenance de 
 \family sans
 Foil\SpecialChar TeX
  s'est arrêtée en 2008.
@@ -11206,7 +11211,7 @@ Paramètres
 \family sans
 ordinaire
 \family default
- Le rendu final contient des numéros de page dans le coin inférieur droit.
+ le rendu final contient des numéros de page dans le coin inférieur droit;
 \end_layout
 
 \begin_layout Description
@@ -11214,9 +11219,9 @@ ordinaire
 \family sans
 en-têtes
 \family default
- Comme ordinaire,
+ comme ordinaire,
  mais imprime aussi tous les marqueurs temporels que vous aurez placés.
- C'est le choix implicite.
+ C'est le choix implicite;
 \end_layout
 
 \begin_layout Description
@@ -11224,7 +11229,7 @@ en-têtes
 \family sans
 vide
 \family default
- Le rendu final ne contient pas de numéros de page,
+ le rendu final ne contient pas de numéros de page,
  de marqueurs temporels ni de marqueurs d'alignement.
 \end_layout
 
@@ -13848,8 +13853,6 @@ INSERT – insérez un plan rapproché
 \end_layout
 
 \begin_layout Chapter
-
-\lang english
 Modules
 \end_layout
 
@@ -13915,9 +13918,7 @@ personnalisables
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-LinguistiqueLinguistics
+Linguistique
 \end_layout
 
 \begin_layout Standard
@@ -13958,7 +13959,7 @@ Braille
 \end_layout
 
 \begin_layout Standard
-The module permet l'écriture du Braille.
+Ce module permet l'écriture du Braille.
  Il requiert le paquetage \SpecialChar LaTeX
  
 \family typewriter
@@ -14087,7 +14088,7 @@ Préambule \SpecialChar LaTeX
 \end_layout
 
 \begin_layout Subsection
-PDF Comments
+Commentaires PDF
 \end_layout
 
 \begin_layout Standard
@@ -14095,21 +14096,41 @@ Ce module fournit diverses sortes d'annotations pour l'impression PDF.
  Voir 
 \family sans
 Aide\SpecialChar menuseparator
-Manuels spécifiques\SpecialChar menuseparator
-Commentaires PDF 
+Manuels
+\begin_inset space ~
+\end_inset
+
+spécifiques\SpecialChar menuseparator
+Commentaires
+\begin_inset space ~
+\end_inset
+
+PDF 
 \family default
 et 
 \family sans
 Fichier\SpecialChar menuseparator
-Ouvrir un exemple\SpecialChar menuseparator
+Ouvrir
+\begin_inset space ~
+\end_inset
+
+un
+\begin_inset space ~
+\end_inset
+
+exemple\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Commentaires PDF
+Commentaires
+\begin_inset space ~
+\end_inset
+
+PDF
 \family default
 .
 \end_layout
 
 \begin_layout Subsection
-PDF Form
+Formulaires PDF
 \end_layout
 
 \begin_layout Standard
@@ -14128,14 +14149,30 @@ literal "false"
 \family sans
 Aide\SpecialChar menuseparator
 Manuels spécifiques\SpecialChar menuseparator
-Formulaires PDF 
+Formulaires
+\begin_inset space ~
+\end_inset
+
+PDF 
 \family default
 et 
 \family sans
 Fichier\SpecialChar menuseparator
-Ouvrir un exemple\SpecialChar menuseparator
+Ouvrir
+\begin_inset space ~
+\end_inset
+
+un
+\begin_inset space ~
+\end_inset
+
+exemple\SpecialChar menuseparator
 Modules\SpecialChar menuseparator
-Formulaires PDF.
+Formulaires
+\begin_inset space ~
+\end_inset
+
+PDF.
 \end_layout
 
 \begin_layout Subsection
@@ -14579,7 +14616,7 @@ Facteur-V
  pour ajouter un multiplicateur vertical.
  Si ce multiplicateur est omis,
  le facteur horizontal est utilisé.
- Insérer des facteurs différents crée un dsitorsion comme ici:
+ Insérer des facteurs différents crée un distorsion comme ici:
  
 \end_layout
 
@@ -18471,7 +18508,7 @@ today
 L'épaisseur de la barre horizontale dessinée au dessous de l'en-tête et au dessus du pied de page peut elle aussi être modifiée.
  Si vous n'en voulez pas,
  mettez sa largeur à 0.
- Implicitelent,
+ Implicitement,
  la barre d'en-tête a une épaisseur de 0,4
 \begin_inset space ~
 \end_inset
@@ -19142,7 +19179,6 @@ Vous pouvez également utiliser une en-tête de section en tant que préface si 
 \begin_layout Standard
 
 \series bold
-\lang english
 
 \backslash
 subsection{subsection title}
@@ -19352,22 +19388,17 @@ Espacements environnants
 L’espacement avant et après un bloc de colonnes multiples peut être réglé via la longueur
 \family sans
  
-\lang english
-
 \backslash
 multicolsep
 \family default
 .
- 
-\lang french
-Par exemple la commande en code \SpecialChar TeX
+ Par exemple la commande en code \SpecialChar TeX
 
 \end_layout
 
 \begin_layout LyX-Code
 
 \family sans
-\lang english
 
 \backslash
 setlength{
@@ -21033,7 +21064,15 @@ Jpgfdraw
 \family sans
 TeX/LaTeX\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
-Set Normal Size
+Set
+\begin_inset space ~
+\end_inset
+
+Normal
+\begin_inset space ~
+\end_inset
+
+Size
 \family default
  et sélectionner la taille de police utilisée dans le document.
  Par exemple,
