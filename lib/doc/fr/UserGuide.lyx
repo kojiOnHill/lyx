@@ -1001,7 +1001,7 @@ nolink "false"
 \end_inset
 
 ).
- Vous pouvez également ajouter vos propres modèles à cette liste en engesgistrant un fichier \SpecialChar LyX
+ Vous pouvez également ajouter vos propres modèles à cette liste en enregistrant un fichier \SpecialChar LyX
  via 
 \family sans
 Fichier\SpecialChar menuseparator
@@ -1953,7 +1953,7 @@ F3
 \family default
 (ou
 \family sans
- Maj+Entréee
+ Maj+Entrée
 \family default
  ou le raccourci 
 \family sans
@@ -3881,7 +3881,7 @@ Il y a aussi quelques classes non standard,
  En voici quelques-unes,
  la liste complète avec des explications détaillées se trouve au chapitre 
 \emph on
-Classes Spéciales de Documents
+Classes de Documents
 \emph default
  dans le manuel 
 \emph on
@@ -3894,18 +3894,6 @@ Options avancées
 A&A articles de publications dans le style et le format utilisés par 
 \lang english
 Astronomy & Astrophysics;
-\end_layout
-
-\begin_layout Description
-ACS articles de publications dans le style et le format utilisés par l'
-\lang english
-American Chemistry Society;
-\end_layout
-
-\begin_layout Description
-AGU articles de publications dans le style et le format utilisés par l'
-\lang english
-American Geophysical Union;
 \end_layout
 
 \begin_layout Description
@@ -3960,7 +3948,7 @@ vitae classe utile pour écrire un curriculum vitæ;
 \end_layout
 
 \begin_layout Description
-Elsarticle disposition pour les revues publiées par le groupe Elsevier;
+Elsevier disposition pour les revues publiées par le groupe Elsevier;
 \end_layout
 
 \begin_layout Description
@@ -3973,20 +3961,6 @@ Hollywood utilisé pour taper des scripts pour l'industrie cinématographique de
 ,
  mais une nouvelle qui est distribuée avec \SpecialChar LyX
 ;
-\end_layout
-
-\begin_layout Description
-IEEEtran disposition pour les journaux publiés par l'IEEE (
-\lang english
-Institute of Electrical and Electronics Engineers);
-\end_layout
-
-\begin_layout Description
-IOP disposition pour les journaux publiés par l'IOP (Institute of Physics);
-\end_layout
-
-\begin_layout Description
-Kluwer disposition pour les revues publiées par le groupe Kluwer.
 \end_layout
 
 \begin_layout Description
@@ -4029,18 +4003,6 @@ Slides sert à faire des transparents pour des présentations;
 \end_layout
 
 \begin_layout Description
-SPIE
-\begin_inset space ~
-\end_inset
-
-Proceedings disposition pour les journaux publiés par SPIE (
-\lang english
-The International Society for Optical Engineering
-\lang french
-);
-\end_layout
-
-\begin_layout Description
 Springer disposition pour les revues publiés par le groupe Springer.
 \end_layout
 
@@ -4057,7 +4019,7 @@ avancées
 ,
  chapitre 
 \emph on
-Classes de document spéciales
+Classes de document
 \emph default
 .
  Ici,
@@ -4073,7 +4035,15 @@ Vous remarquerez probablement que de nombreuses classes énumérées par le menu
 \family sans
  Document\SpecialChar menuseparator
 Paramètres\SpecialChar menuseparator
-Classes de document
+Classes
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+document
 \begin_inset Index idx
 range none
 pageformat default
@@ -4115,13 +4085,7 @@ Indisponibles
 Tout va bien.
  \SpecialChar LyX
  inclut beaucoup plus de classes que vous n'utiliserez jamais,
- et certaines d'entre elles,
- comme 
-\family sans
-IOP
-\family default
-,
- sont très spécialisées.
+ et certaines d'entre elles sont très spécialisées.
  \SpecialChar LyX
  essaie de reconnaître des documents aussi variés que possible,
  et il inclut une centaine de fichiers de format,
@@ -4182,8 +4146,7 @@ Bien que \SpecialChar LyX
  et nombreux sont ceux qui l'ont fait.
  Le chapitre 
 \emph on
-Installer de nouvelles classes de document,
- formats et modèles
+Installer de nouvelles classes
 \emph default
  du manuel de 
 \emph on
@@ -16156,7 +16119,7 @@ L'option
 \family sans
 Active les fonctionnalités micro-typographiques
 \family default
- active les fonctionnalités micro-typographiques via the paquetage \SpecialChar LaTeX
+ active les fonctionnalités micro-typographiques via le paquetage \SpecialChar LaTeX
  
 \series bold
 microtype
@@ -16199,7 +16162,7 @@ status collapsed
 \begin_layout Plain Layout
 Ou des macros \SpecialChar LaTeX
 ,
- si lme caractère littéral n'est pas connu dans l'encodage d'enrée de \SpecialChar LaTeX
+ si le caractère littéral n'est pas connu dans l'encodage d'enrée de \SpecialChar LaTeX
 .
 \end_layout
 
@@ -16999,7 +16962,7 @@ Style de texte personnalisé
 
 \begin_layout Standard
 Pour les besoins de la démonstration,
- nois avons chargé dans le présent document la module optionnel
+ nous avons chargé dans le présent document la module optionnel
 \family sans
  Balisage logique
 \family default
@@ -19997,7 +19960,7 @@ signe moins
 \end_layout
 
 \begin_layout Standard
-Voir aussi l'entrée Wikipedia conscrée aux 
+Voir aussi l'entrée Wikipédia consacrée aux 
 \begin_inset CommandInset href
 LatexCommand href
 name "tirets"
@@ -20362,9 +20325,9 @@ tirets ligaturés
 à chasse fixe
 \family default
 );
- les tirets saisis consécutivement sont fusionnés en caractères immédiatement après la saisie (sauf si la police courant est à chasse fixe)
+ les tirets saisis consécutivement sont fusionnés en caractères immédiatement après la saisie (sauf si la police courante est à chasse fixe)
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Ce comportement a été modifié lorsque 
@@ -20383,7 +20346,7 @@ lyx –help
 \begin_inset Quotes crd
 \end_inset
 
- en dans les sorties PDF,
+  dans les sorties PDF,
  Postscript,
  et DVI.
  Une conséquence imprévue de ces changements fut que tous les tirets étaient convertis en tirets insécables.
@@ -22285,7 +22248,7 @@ Extérieur
 \begin_inset space ~
 \end_inset
 
-and
+et
 \begin_inset space ~
 \end_inset
 
@@ -22323,7 +22286,7 @@ ces intérieurs
 
 
 \family default
- (usuels en Israel)
+ (usuels en Israël)
 \end_layout
 
 \begin_layout Standard
@@ -27430,7 +27393,7 @@ Légendes
 \begin_layout Standard
 Il est recommandé d'insérer les flottants comme des paragraphes séparés pour éviter des erreurs avec \SpecialChar LaTeX
 ,
- quand le texte qui entoure le flottant est formatté de façon particulière.
+ quand le texte qui entoure le flottant est formaté de façon particulière.
 \end_layout
 
 \begin_layout Subsection
@@ -27492,7 +27455,7 @@ arg   "float-insert figure"
 \end_inset
 
  de la barre d'outils.
- L'image a été insérée en positionnant le curseur au(-dessus de la légende et en utilisant le menu 
+ L'image a été insérée en positionnant le curseur au dessus de la légende et en utilisant le menu 
 \family sans
 Insertion\SpecialChar menuseparator
 Graphique/image
@@ -30192,7 +30155,7 @@ Insertion
  crochets et accolades associées) peuvent être saisies via les raccourcis clavier.
  Par exemple,
  pour insérer une paire de parenthèses flexibles,
- sélectionner la structure à parenthéser et saisir 
+ sélectionner la structure à mettre entre parenthèses et saisir 
 \begin_inset Info
 type  "shortcut"
 arg   "math-delim ( )"
@@ -30624,7 +30587,7 @@ Référence à des formules
 Pour numéroter une formule,
  placez le curseur dedans et utilisez le menu 
 \family sans
-Editer\SpecialChar menuseparator
+Édition\SpecialChar menuseparator
 Math\SpecialChar menuseparator
 Numéroter
 \begin_inset space ~
@@ -30674,7 +30637,7 @@ arg   "math-number-toggle"
 Les formules multi-lignes peuvent être numérotées lignes par ligne:
  utiliser le menu 
 \family sans
-Editer\SpecialChar menuseparator
+Édition\SpecialChar menuseparator
 Math\SpecialChar menuseparator
 Numéroter
 \begin_inset space ~
@@ -33126,7 +33089,11 @@ Vous pouvez modifier globalement la mise en forme en insérant dans
 \family sans
 Document\SpecialChar menuseparator
 Paramètres\SpecialChar menuseparator
-PréambuleLaTeX
+Préambule
+\begin_inset space ~
+\end_inset
+
+LaTeX
 \family default
 :
 \end_layout
@@ -33199,7 +33166,7 @@ Les URL seront césurées sur certains caractères,
 \end_layout
 
 \begin_layout Standard
-Elels ne seront pas coupées implicitement sur un tiret,
+Elles ne seront pas coupées implicitement sur un tiret,
  mais vous pouvez changer ce comportement en ajoutant les tirets à 
 \family sans
 Document\SpecialChar menuseparator
@@ -34590,7 +34557,7 @@ Depuis sa création,
  quelques alternatives ont été développées pour lever certaines de ces limitations.
  \SpecialChar LyX
  inclut nativement quelques unes d'entre elles et vous permet de sélectionner un processeur particulier.
- Vous pouvez ke faire d'une manière générale via 
+ Vous pouvez le faire d'une manière générale via 
 \family sans
 Outils\SpecialChar menuseparator
 Préférences\SpecialChar menuseparator
@@ -34700,7 +34667,7 @@ biblatex
 \begin_layout Standard
 Implicitement (avec le 
 \family sans
-Proceseur
+Processeur
 \family default
  choisi dans 
 \family sans
@@ -34978,7 +34945,7 @@ Basic
 \end_inset
 
 (BibTeX) sélectionne l'approche implicite par Bib\SpecialChar TeX
- sans aucun paquetage additionnel (citations numériques simpoles);
+ sans aucun paquetage additionnel (citations numériques simples);
 \end_layout
 
 \begin_layout Description
@@ -35182,7 +35149,7 @@ Quelle que soit la sélection entre auteur-année et auteur-numéro,
  Citation
 \family default
 .
- Quelques sélections fournissent d'autres options comme celle de mettre ene majuscules un préfixe de nom comme 
+ Quelques sélections fournissent d'autres options comme celle de mettre en majuscules un préfixe de nom comme 
 \begin_inset Quotes cld
 \end_inset
 
@@ -35382,7 +35349,7 @@ name "subsec:Opening-cited-documents"
 
 \end_inset
 
-Opening cited documents from within \SpecialChar LyX
+Ouvrir les documents cités depuis \SpecialChar LyX
 
 \end_layout
 
@@ -35531,7 +35498,7 @@ Parcourir le disque pour les fichiers cités
  dans 
 \family sans
 Outils\SpecialChar menuseparator
-Préferences\SpecialChar ldots
+Préférences\SpecialChar ldots
 \SpecialChar menuseparator
 Saisie\SpecialChar menuseparator
 Contr
@@ -35621,7 +35588,7 @@ Conséquences sur la sécurité
 \end_layout
 
 \begin_layout Standard
-Notez que n'importe quel document (principalment le fichier 
+Notez que n'importe quel document (principalement le fichier 
 \begin_inset Flex Code
 status collapsed
 
@@ -35631,7 +35598,7 @@ status collapsed
 
 \end_inset
 
- dans ce cas) provenant d'un tiers peut contenir des liens mal intentionnés ou des URL mal formés et nous vous suggérons de ne pas utiliser cette fonctionnalité pour d'autres documents que ceux que vosu avez créés vous-même.
+ dans ce cas) provenant d'un tiers peut contenir des liens mal intentionnés ou des URL mal formés et nous vous suggérons de ne pas utiliser cette fonctionnalité pour d'autres documents que ceux que vous avez créés vous-même.
 \end_layout
 
 \begin_layout Standard
@@ -36227,7 +36194,7 @@ Notez qu'en \SpecialChar LaTeX
 
 .
  Ceci fonctionne aussi en \SpecialChar LyX
-à condition que vous vous assuriez que le caractère n'est pas mis en forme.
+ à condition que vous vous assuriez que le caractère n'est pas mis en forme.
  Pour cette raison,
  un vrai caractère @ doit être saisi d'une façon particulière,
  voir la section
@@ -36338,8 +36305,8 @@ Personnalisée
 \family default
 .
  Dans ce dernier cas,
- vous popuvez saisir une macro \SpecialChar LaTeX
- valide sans la barre injvers initiale,
+ vous pouvez saisir une macro \SpecialChar LaTeX
+ valide sans la barre inverse initiale,
  e.g.
  une macro personnelle comme 
 \family typewriter
@@ -36843,7 +36810,7 @@ Ensuite,
 \family default
 .
  Cette action explorera tout le document (uniquement le document isolé,
- pas le doument maître ou les sous-documents) et insérera une copie de cet index après chaque occurrence du mot précédant l'insert.
+ pas le document maître ou les sous-documents) et insérera une copie de cet index après chaque occurrence du mot précédant l'insert.
  Notez que la casse n'a pas d'importance,
  mais que les seuls mots entiers sous la même forme grammaticale sont concernés (ainsi si 
 \emph on
@@ -36911,14 +36878,14 @@ xindy
  \SpecialChar LyX
  l'utilise implicitement
 \lang english
- (la variante 
+ 
+\lang french
+(la variante 
 \family sans
 texindy
 \family default
 ,
- pour autant que ça importe)
-\lang french
-,
+ pour autant que ça importe),
  sinon il utilise le programme 
 \family sans
 makeindex
@@ -39118,7 +39085,7 @@ Utiliser le support pour hyperref
  Support
 \family default
 \lang french
- (si le paquetage est déjà chragé par la classe de votre document,
+ (si le paquetage est déjà chargé par la classe de votre document,
  ou par un autre paquetage,
  la case à cocher est remplacée par
 \family sans
@@ -39128,10 +39095,10 @@ Utiliser le support pour hyperref
 Personnaliser les options hyperref
 \family default
 ).
- Parmi d'autes choses,
+ Parmi d’auges choses,
  toutes les références croisées seront transformées en liens dans les sorties DVI et PDF.
  Cela signifie que le lecteur de votre document pourra cliquer sur un élément de la table de matières ou sur une référence pour voir la partie du document référencée.
- De plus vous pourrez saisir le smétadonnées PDF (comme l'e titre et l'auteur) du document) ou fixer comment le ,lecteur PDF doit ouvrir le document.
+ De plus vous pourrez saisir les métadonnées PDF (comme l'e titre et l'auteur) du document) ou fixer comment le ,lecteur PDF doit ouvrir le document.
 \end_layout
 
 \begin_layout Standard
@@ -41177,7 +41144,7 @@ Objets insérés
 \begin_inset Preview
 
 \begin_layout Standard
-Ceci est un texte encadré 
+Ceci est un 
 \begin_inset ERT
 status collapsed
 
@@ -41210,7 +41177,7 @@ backgroundcolor "none"
 status collapsed
 
 \begin_layout Plain Layout
-with rotated
+texte tourné
 \end_layout
 
 \end_inset
@@ -41228,7 +41195,7 @@ status collapsed
 
  et une formule 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -41742,7 +41709,7 @@ emplacer
 \end_layout
 
 \begin_layout Standard
-Vous pouvez remplacer des éléments fonctionnelelment mis en forme à la place des éléments en accord du document.
+Vous pouvez remplacer des éléments fonctionnellement mis en forme à la place des éléments en accord du document.
  Des scénarios typiques peuvent être les suivants (parmi de nombreux autres):
 \end_layout
 
@@ -41859,7 +41826,7 @@ Il existe une recherche fondée sur les expressions régulières (regexp)
 status collapsed
 
 \begin_layout Plain Layout
-Une bonne explication de ce que sont les expressions régulières se trouve dans cet article Wikipedia:
+Une bonne explication de ce que sont les expressions régulières se trouve dans cet article Wikipédia:
  
 \begin_inset CommandInset href
 LatexCommand href
@@ -42746,7 +42713,7 @@ user
  Avec Windows,
  vous pouvez choisir au moment de l'installation de \SpecialChar LyX
  quels dictionnaires installer,
- qui se trouveraont de facto à la bonne place.
+ qui se trouveront de facto à la bonne place.
 \end_layout
 
 \begin_layout Standard
@@ -44221,7 +44188,8 @@ DocBook
 DraftDVI format DVI natif de \SpecialChar LaTeX
 .
  Ce format n'est pas approprié si vous avez des caractères spéciaux ou des espaces dans le chemins d'accès ou les noms de fichiers dans votre document.
- Lyx utilise ce format de manière interne lors du pré-traitement de l'exportation DVI;
+ \SpecialChar LyX
+ utilise ce format de manière interne lors du pré-traitement de l'exportation DVI;
 \end_layout
 
 \begin_layout Description
@@ -45072,7 +45040,7 @@ Propriétés du texte
 \end_layout
 
 \begin_layout Standard
-Ce sous-menu propose pluisieurs façons de personnaliser l'apparence des passages de texte.
+Ce sous-menu propose plusieurs façons de personnaliser l'apparence des passages de texte.
  Vous pouvez
 \end_layout
 
@@ -46535,10 +46503,10 @@ Nom
 \begin_inset space ~
 \end_inset
 
-d'utilisateur insère le nom d'utilsateur tel qu'il est définit dans 
+d'utilisateur insère le nom d’utilisateur tel qu'il est définit dans 
 \family sans
 Outils\SpecialChar menuseparator
-Préferences\SpecialChar menuseparator
+Préférences\SpecialChar menuseparator
 Identit
 \family default
 é;
@@ -46556,7 +46524,7 @@ de
 l'utilisateur insère l'adresse email de l'utilisateur telle qu'elle est définie dans 
 \family sans
 Outils\SpecialChar menuseparator
-Préferences\SpecialChar menuseparator
+Préférences\SpecialChar menuseparator
 Identit
 \family default
 é;
@@ -46564,7 +46532,7 @@ Identit
 
 \begin_layout Description
 Autre\SpecialChar ldots
- ouvre une fenêtre interactive qui vous permet de définir d'autres formats pour les trois types de dates ci-desssu et d'insérer une série d'autres informations.
+ ouvre une fenêtre interactive qui vous permet de définir d'autres formats pour les trois types de dates ci-dessus et d'insérer une série d'autres informations.
 \end_layout
 
 \begin_layout Subsection
@@ -49345,7 +49313,6 @@ Inserts personnalisables
 \begin_layout Plain Layout
 
 \family sans
-\lang english
 Insertion\SpecialChar menuseparator
 Inserts personnalisables
 \end_layout
@@ -51579,7 +51546,7 @@ Baltique
 
 8859-13) pour l'estonien,
  le letton,
- et le lithuanien,
+ et le lituanien,
  c'est un sur-ensemble de l'encodage ISO-8859-4;
 \end_layout
 
@@ -51594,7 +51561,7 @@ Baltique
 
 8859-4) (latin 4) pour l'estonien,
  le letton,
- et le lithuanien,
+ et le lituanien,
  c'est un sous-ensemble de l'encodage ISO-8859-13;
  
 \end_layout
@@ -54121,9 +54088,9 @@ La syntaxe des fichiers
  
 \family default
 .inc est simple.
- Les éléments 
+ Les éléments
 \family sans
-The Menubar
+ Menubar
 \family default
 ,
  
@@ -56646,7 +56613,7 @@ droite
 \end_inset
 
 gauche:
- vous pouvez ici définir comment le mouvement du curseur (avec les flèches) se comporte quand vus écrivez de droite à gaucge=he (e.g;
+ vous pouvez ici définir comment le mouvement du curseur (avec les flèches) se comporte quand vus écrivez de droite à gauche=he (e.g;
  arabe,
  hébreu ou farsi).
  
