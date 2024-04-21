@@ -363,7 +363,7 @@ msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2024-04-21 11:22+0200\n"
-"PO-Revision-Date: 2024-04-19 11:22+0200\n"
+"PO-Revision-Date: 2024-04-21 17:18+0200\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
 "Language: fr\n"
@@ -2896,8 +2896,8 @@ msgstr "&Nouvel index :"
 msgid ""
 "Enter the name of the desired index (e.g. \"Index of Names\") and hit \"Add\""
 msgstr ""
-"Saisir le nom de l'index désiré (e. g. « Index des noms ») et appuyez sur "
-"« Add »"
+"Saisir le nom de l'index désiré (e. g. « Index des noms ») et appuyez sur « "
+"Add »"
 
 #: src/frontends/qt/ui/IndicesUi.ui:131
 msgid "Add a new index to the list"
@@ -4060,8 +4060,8 @@ msgstr "Format papier"
 #: src/frontends/qt/ui/PageLayoutUi.ui:45
 msgid "Choose a particular paper size, or set your own with \"Custom\""
 msgstr ""
-"Choisir une taille de papier spécifique, ou préciser la vôtre avec "
-"« réglable »"
+"Choisir une taille de papier spécifique, ou préciser la vôtre avec « "
+"réglable »"
 
 #: src/frontends/qt/ui/PageLayoutUi.ui:126
 msgid "&Orientation:"
@@ -13265,12 +13265,12 @@ msgstr ""
 "document. Une liste des annotations peut être produite en utilisant le style "
 "de paragraphe « Liste de FIXMEs ». Les annotations peuvent être paramétrées "
 "via le préambule LaTeX, voir la documentation de FiXme pour les détails. "
-"Nota : implicitement, les annotations ne sont affichées qu'en mode "
-"« brouillon » (si l'option « draft » a été ajoutée dans Document > "
-"Paramètres > Classe de document > Options de classe > Réglable). Pour les "
-"afficher dans tous les cas, ajouter \\\\fxsetup{draft} dans   Documents > "
-"Paramètres > Préambule. Noter également qu'il faut la version 4 ou "
-"supérieure du paquetage FiXme pour certaines fonctionnalités."
+"Nota : implicitement, les annotations ne sont affichées qu'en mode « "
+"brouillon » (si l'option « draft » a été ajoutée dans Document > Paramètres "
+"> Classe de document > Options de classe > Réglable). Pour les afficher dans "
+"tous les cas, ajouter \\\\fxsetup{draft} dans   Documents > Paramètres > "
+"Préambule. Noter également qu'il faut la version 4 ou supérieure du "
+"paquetage FiXme pour certaines fonctionnalités."
 
 #: lib/layouts/fixme.module:18 lib/layouts/fixme.module:56
 msgid "Fixme"
@@ -18450,8 +18450,8 @@ msgid ""
 "the table number, as in 'Table 2.1'."
 msgstr ""
 "Réinitialiser la numérotation des tableaux au début de chaque section et "
-"ajouter le numéro de section au numéro de tableau, comme dans « Tableau "
-"2.1 »."
+"ajouter le numéro de section au numéro de tableau, comme dans « Tableau 2.1 "
+"»."
 
 #: lib/layouts/tarticle.layout:3
 msgid "Japanese Article (Standard Class, vertical Writing)"
@@ -19348,10 +19348,10 @@ msgid ""
 "suppresses the output of TODO notes."
 msgstr ""
 "Fournit des inserts personnalisables pour créer des instances TODO dans un "
-"document (en utilisant le paquetage todonotes). Pour pouvoir engendrer une "
-"« Liste de TODO », le module fournit un style de paragraphe. Saisir "
-"« final » dans la liste des options de classe supprime l'affichage des notes "
-"TODO dans la sortie."
+"document (en utilisant le paquetage todonotes). Pour pouvoir engendrer une « "
+"Liste de TODO », le module fournit un style de paragraphe. Saisir « final » "
+"dans la liste des options de classe supprime l'affichage des notes TODO dans "
+"la sortie."
 
 #: lib/layouts/todonotes.module:15 lib/layouts/todonotes.module:120
 msgid "TODO"
@@ -28962,8 +28962,8 @@ msgstr "Pas d'information pour exporter au format %1$s."
 #, c-format
 msgid "Hint: use non-TeX fonts or set input encoding to '%1$s'"
 msgstr ""
-"Astuce : utiliser les polices non-TeX ou positionner l'encodage d'entrée à "
-"« %1$s »"
+"Astuce : utiliser les polices non-TeX ou positionner l'encodage d'entrée à « "
+"%1$s »"
 
 #: src/Buffer.cpp:4524
 msgid "Couldn't export file"
@@ -30460,8 +30460,8 @@ msgstr "Format introuvable"
 #, c-format
 msgid "Flex inset %1$s is undefined after reloading `%2$s' layout."
 msgstr ""
-"L'insert flexible %1$s n'est pas défini après rechargement du format "
-"« %2$s »."
+"L'insert flexible %1$s n'est pas défini après rechargement du format « %2$s "
+"»."
 
 #: src/CutAndPaste.cpp:901
 #, c-format
@@ -30469,8 +30469,8 @@ msgid ""
 "Flex inset %1$s is undefined because of conversion from `%2$s' layout to "
 "`%3$s'."
 msgstr ""
-"L'insert flexible %1$s n'est pas défini du fait de la conversion du format "
-"« %2$s » vers « %3$s »."
+"L'insert flexible %1$s n'est pas défini du fait de la conversion du format « "
+"%2$s » vers « %3$s »."
 
 # à revoir
 # Fait JPC
@@ -30771,17 +30771,18 @@ msgstr ""
 
 #: src/LaTeXPackages.cpp:89
 msgid "Invalid package list format!"
-msgstr ""
+msgstr "Format de la liste des paquetages invalide !"
 
 #: src/LaTeXPackages.cpp:90
 msgid ""
 "The format of your LaTeX packages list is wrong. Please file a bug report."
 msgstr ""
+"Le format de votre liste des paquetages LaTeX est incorrect. Merci de poster "
+"un rapport de bogue."
 
 #: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
-#, fuzzy
 msgid "Outdated configuration script detected!"
-msgstr "Lecture du fichier de configuration impossible"
+msgstr "Script de configuration périmé détecté !"
 
 #: src/LaTeXPackages.cpp:99
 msgid ""
@@ -30789,6 +30790,11 @@ msgid ""
 "The script has been renamed to 'chkconfig.ltx.bak'.\n"
 "If you did not copy the script there by purpose, you can safely delete it."
 msgstr ""
+"Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
+"répertoire utilisateur.\n"
+"Ce script a été renommé « chkconfig.ltx.bak ».\n"
+"Si vous n'aviez pas copié le script exprès, vous pouvez l'effacer en toute "
+"sécurité."
 
 #: src/LaTeXPackages.cpp:105
 #, c-format
@@ -30797,6 +30803,10 @@ msgid ""
 "(%1$s).\n"
 "Please delete or update this file!"
 msgstr ""
+"Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
+"répertoire utilisateur.\n"
+"(%1$s).\n"
+"Merci de supprimer ou de mettre à jour ce fichier !"
 
 #: src/LyX.cpp:136
 msgid "Could not read configuration file"
@@ -31071,8 +31081,8 @@ msgstr ""
 "                     où fmt est le format d'importation choisi\n"
 "                     et fichier.xxx le fichier à importer.\n"
 "\t-f [--force-overwrite] ceci\n"
-"                  où « ceci » est soit « all », soit « main », soit "
-"« none »,\n"
+"                  où « ceci » est soit « all », soit « main », soit « none "
+"»,\n"
 "                  spécifiant si tous les fichiers, seulement le fichier "
 "principal,\n"
 "                  ou aucun fichier (respectivement) seront écrasés pendant \n"
@@ -31342,8 +31352,8 @@ msgid ""
 "\"makeindex.sh -m $$lang\"."
 msgstr ""
 "Définir les options de makeindex (voir man makeindex) ou sélectionner un "
-"autre compilateur. Par ex., avec xindy / make-rules, la commande serait "
-"« makeindex.sh -m $$lang »."
+"autre compilateur. Par ex., avec xindy / make-rules, la commande serait « "
+"makeindex.sh -m $$lang »."
 
 #: src/LyXRC.cpp:3249
 msgid "Define the options of the index program for PLaTeX (Japanese LaTeX)."
@@ -31413,8 +31423,8 @@ msgid ""
 "The LaTeX command for loading the language package. E.g. "
 "\"\\usepackage{babel}\", \"\\usepackage{omega}\"."
 msgstr ""
-"Commande LaTeX pour charger le paquetage linguistique. Par exemple "
-"« \\usepackage{babel} », « \\usepackage{omega} »."
+"Commande LaTeX pour charger le paquetage linguistique. Par exemple « "
+"\\usepackage{babel} », « \\usepackage{omega} »."
 
 #: src/LyXRC.cpp:3298
 msgid ""
@@ -31612,8 +31622,8 @@ msgid ""
 "This starts the lyxserver. The pipes get an additional extension \".in\" and "
 "\".out\". Only for advanced users."
 msgstr ""
-"Démarrer le serveur LyX. Les tubes reçoivent le suffixe supplémentaire « ."
-"in » et « .out ». Réservé aux utilisateurs expérimentés."
+"Démarrer le serveur LyX. Les tubes reçoivent le suffixe supplémentaire « .in "
+"» et « .out ». Réservé aux utilisateurs expérimentés."
 
 #: src/LyXRC.cpp:3448
 msgid "De-select if you don't want the startup banner."
@@ -32934,9 +32944,8 @@ msgid ""
 "Pass content of the `Author', `Year' and `All Authors' fields literally to "
 "LaTeX. Check this if you want to enter LaTeX code."
 msgstr ""
-"Transmet littéralement le contenu des champs « Auteur » , « Année » et "
-"« Tous les auteurs » à LaTeX. À cocher si vous souhaitez saisir du code "
-"LaTeX."
+"Transmet littéralement le contenu des champs « Auteur » , « Année » et « "
+"Tous les auteurs » à LaTeX. À cocher si vous souhaitez saisir du code LaTeX."
 
 #: src/frontends/qt/GuiBibitem.h:36
 msgid "Bibliography Item Settings"
@@ -34696,8 +34705,8 @@ msgid ""
 "output will be 'Yes' (package available) or 'No' (package unavailable)."
 msgstr ""
 "Saisir le nom d'un paquetage LaTeX comme « hyperref » (le suffixe est "
-"facultatif). La réponse sera « Oui » (paquetage disponible)  ou « Non » "
-"(paquetage manquant)."
+"facultatif). La réponse sera « Oui » (paquetage disponible)  ou « Non "
+"» (paquetage manquant)."
 
 #: src/frontends/qt/GuiInfo.cpp:195
 msgid ""
