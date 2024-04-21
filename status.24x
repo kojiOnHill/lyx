@@ -35,6 +35,9 @@ What's new
 - Allow relative statistics values in statusbar, improve update times for
   some UI and buffer operations.
 
+- The performance of LyX with large insets on slower computers has
+  been improved a lot (bug 12297).
+
 
 * DOCUMENTATION AND LOCALIZATION
 
@@ -63,7 +66,11 @@ What's new
 - Fix wrong position of conversion windows of the input method (bugs 11723,
   13054).
 
-- Speed up mouse movement when there is no selection (part of bug 13050).
+- Speed up mouse movement when there is no selection (part of bug
+  13050).
+
+- Fix incorrect scrolling when using outline to jump to a paragraph
+  (bug 10425).
 
 
 * INTERNALS
