@@ -30108,17 +30108,16 @@ msgstr ""
 
 #: src/LaTeXPackages.cpp:89
 msgid "Invalid package list format!"
-msgstr ""
+msgstr "Chybný formát seznamu balíčků!"
 
 #: src/LaTeXPackages.cpp:90
 msgid ""
 "The format of your LaTeX packages list is wrong. Please file a bug report."
-msgstr ""
+msgstr "Formát seznamu vašich LaTeX-ových balíčků je chybný. Pošlete nám prosím chybový výpis."
 
 #: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
-#, fuzzy
 msgid "Outdated configuration script detected!"
-msgstr "Nelze přečíst konfigurační soubor"
+msgstr "Nalezen zastaralý konfigurační skript!"
 
 #: src/LaTeXPackages.cpp:99
 msgid ""
@@ -30126,6 +30125,9 @@ msgid ""
 "The script has been renamed to 'chkconfig.ltx.bak'.\n"
 "If you did not copy the script there by purpose, you can safely delete it."
 msgstr ""
+"Byl detekován zastaralý konfigurační skript 'chkconfig.ltx' ve vašem uživatelském adresáři.\n"
+"Tento skript byl přejmenován na 'chkconfig.ltx.bak'.\n"
+"Pokud jste původní konfigurační skript nezkopírovali do uživatelského adresáře záměrně, můžete ho bez obav smazat."
 
 #: src/LaTeXPackages.cpp:105
 #, c-format
@@ -30134,6 +30136,9 @@ msgid ""
 "(%1$s).\n"
 "Please delete or update this file!"
 msgstr ""
+"Byl detekován zastaralý konfigurační skript 'chkconfig.ltx' ve vašem uživatelském adresáři.\n"
+"(%1$s).\n"
+"Je potřeba ho aktualizovat anebo smazat."
 
 #: src/LyX.cpp:136
 msgid "Could not read configuration file"
