@@ -96,14 +96,14 @@ msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2024-04-21 11:22+0200\n"
-"PO-Revision-Date: 2024-03-05 15:57+0100\n"
+"PO-Revision-Date: 2024-04-21 11:25+0200\n"
 "Last-Translator: Juergen Spitzmueller <spitz@lyx.org>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <lyx-docs@lists.lyx.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 18.12.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: src/frontends/qt/ui/AboutUi.ui:27
@@ -30467,17 +30467,18 @@ msgstr ""
 
 #: src/LaTeXPackages.cpp:89
 msgid "Invalid package list format!"
-msgstr ""
+msgstr "Ungültiges Paketlisten-Format!"
 
 #: src/LaTeXPackages.cpp:90
 msgid ""
 "The format of your LaTeX packages list is wrong. Please file a bug report."
 msgstr ""
+"Das Format Ihrer LaTeX-Paket-Liste is inkorrekt. Bitte reichen Sie einen"
+" Bugreport ein!"
 
 #: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
-#, fuzzy
 msgid "Outdated configuration script detected!"
-msgstr "Die Konfigurationsdatei konnte nicht gelesen werden"
+msgstr "Veraltete Konfigurationsdatei entdeckt!"
 
 #: src/LaTeXPackages.cpp:99
 msgid ""
@@ -30485,6 +30486,11 @@ msgid ""
 "The script has been renamed to 'chkconfig.ltx.bak'.\n"
 "If you did not copy the script there by purpose, you can safely delete it."
 msgstr ""
+"Wir haben eine veraltete Version der Datei 'chkconfig.ltx' in Ihrem"
+" Benutzerverzeichnis gefunden.\n"
+"Die Datei wurde nun umbenannt in 'chkconfig.ltx.bak'.\n"
+"Wenn Sie die Datei nicht absichtlich hierher kopiert haben, können Sie sie"
+" bedenkenlos löschen."
 
 #: src/LaTeXPackages.cpp:105
 #, c-format
@@ -30493,6 +30499,10 @@ msgid ""
 "(%1$s).\n"
 "Please delete or update this file!"
 msgstr ""
+"Wir haben eine veraltete Version der Datei 'chkconfig.ltx' in Ihrem"
+" Benutzerverzeichnis gefunden\n"
+"(%1$s).\n"
+"Bitte aktualisieren oder löschen Sie diese Datei!"
 
 #: src/LyX.cpp:136
 msgid "Could not read configuration file"
@@ -43747,3 +43757,4 @@ msgstr "Unbekannter Benutzer"
 
 #~ msgid " (auto)"
 #~ msgstr " (automatisch)"
+
