@@ -43,6 +43,7 @@ graphicboxes
 varwidth
 enotez
 customHeadersFooters
+theorems-named
 \end_modules
 \maintain_unincluded_children no
 \language french
@@ -458,13 +459,27 @@ Importation de la dernière mise à jour de 2.3 dans 2.4 (JPC):
 
 \begin_layout Plain Layout
 Mise à jour pour 2.4.0 (JPC) :
- 05/06/2021 (JPC)
+ 05/06/2021
 \end_layout
 
 \begin_layout Plain Layout
 Suite à une restructuration complète du manuel,
- retranscription de ces modifications avant revue de la traduction pour 2.4.0 :
- 05/03/2024 (JPC)
+ retranscription de ces modifications avant revue de la traduction pour 2.4.0 (JPC):
+ 05/03/2024
+\end_layout
+
+\begin_layout Plain Layout
+Mise à jour finale pour 2.4.0 (JPC):
+ 22/04/2024,
+ 
+\nospellcheck on
+CVS
+\nospellcheck default
+/
+\nospellcheck on
+SVN
+\nospellcheck default
+ restent non traduits
 \end_layout
 
 \end_inset
@@ -16895,70 +16910,96 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
-
-\lang english
 Maths
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-AMS Theorems
+Théorèmes AMS
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-This modules defines theorem environments and the proof environment using the extended AMS machinery.
- Both numbered and unnumbered types are provided.
- By default,
- the theorems are numbered consecutively throughout the document.
- This can be changed by loading one of the 
+Ces modules définissent les environnements de théorème et de preuve en utilisant le mécanismes AMS.
+ Les types numérotés et non numérotés sont fournis.
+ Implicitement,
+ les théorèmes sont numérotés consécutivement à travers tout le document.
+ Ceci peut être modifié en chargeant l'un des modules
 \family sans
-AMS Theorems (Numbered by \SpecialChar ldots
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\begin_inset space ~
+\end_inset
+
+(numérotés
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+\SpecialChar ldots
 )
 \family default
- modules.
- It cannot be used if the modules 
+.
+ Ils ne peuvent pas être utilisés si les modules
 \family sans
-Standard Theorems
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
 \family default
- or 
+ ou 
 \family sans
-Standard Theorems (Unnumbered)
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(non
+\begin_inset space ~
+\end_inset
+
+numérotés)
 \family default
- have been loaded.
+ ont été chargés.
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-AMS Theorems (Extended)
+Théorèmes AMS (étendu)
 \end_layout
 
 \begin_layout Standard
+Ce module définit quelques environnements de théorème supplémentaires pour une utilisation avec le module 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
 
-\lang english
-This module defines some additional theorem environments for use with the 
-\family sans
-AMS Theorems
+AMS
 \family default
- package (which must be loaded).
- It includes 
+ (qui doit être chargé).
+ Il inclut 
 \family sans
-Criterion
+Critère
 \family default
 ,
  
 \family sans
 Algorithm
 \family default
-,
+e,
  
 \family sans
 Axiom
 \family default
-,
+e,
  
 \family sans
 Condition
@@ -16976,7 +17017,7 @@ Notation
 ,
  
 \family sans
-Summary
+Résumé
 \family default
 ,
  
@@ -16986,55 +17027,75 @@ Conclusion
 ,
  
 \family sans
-Fact
+Fa
+\family default
+it,
+ 
+\family sans
+Hypothèse
 \family default
 ,
  
 \family sans
-Assumption
+Cas
 \family default
-,
- 
-\family sans
-Case
-\family default
- and 
+ et 
 \family sans
 Question
 \family default
- in both numbered and unnumbered forms.
+ à la fois sous forme numérotée et non numérotée.
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-AMS Theorems (Extended,
- Numbered by Type within Chapters)
+Théorèmes AMS (étendu,
+ numérotation par type et par chapitre)
 \end_layout
 
 \begin_layout Standard
+Ce module définit quelques environnements de théorème supplémentaires pour une utilisation avec le module 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
 
-\lang english
-This module defines some additional theorem environments for use with the 
-\family sans
-AMS Theorems (Numbered by Type within Chapters)
+AMS (numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type
+\begin_inset space ~
+\end_inset
+
+et
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+chapitre)
 \family default
- module (which must be loaded).
- It includes 
+ (qui doit être chargé).
+ Il inclut 
 \family sans
-Criterion
+Critère
 \family default
 ,
  
 \family sans
 Algorithm
 \family default
-,
+e,
  
 \family sans
 Axiom
 \family default
-,
+e,
  
 \family sans
 Condition
@@ -17052,7 +17113,7 @@ Notation
 ,
  
 \family sans
-Summary
+Résumé
 \family default
 ,
  
@@ -17062,81 +17123,91 @@ Conclusion
 ,
  
 \family sans
-Assumption
+Hypothèse
 \family default
- and 
-\family sans
-Case
-\family default
- in both numbered and unnumbered forms.
+,
  
+\family sans
+Cas
+\family default
+ et 
+\family sans
+Question
+\family default
+ à la fois sous forme numérotée et non numérotée.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-Unlike the 
+A l'inverse du module 
 \family sans
-AMS Theorems (Extended)
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\begin_inset space ~
+\end_inset
+
+(étendu)
 \family default
- module,
- the different theorem types provided here each have a separate counter,
- restarted with each new chapter (e.g.,
+,
+ les différents types de théorème fournis ont chacun leur compteur,
+ qui redémarre à chaque chapitre (e.g.,
  
 \emph on
-Criterion 1.1
+Critère 1.1
 \emph default
 ,
  
 \emph on
-Criterion 1.2
+Critère 1.2
 \emph default
 ,
  
 \emph on
-Axiom 1.1
+Axiome 1.1
 \emph default
 ,
  
 \emph on
-Assumption 1.1
+Hypothèse 1.1
 \emph default
 ,
  
 \emph on
-Criterion 2.1
+Critère 2.1
 \emph default
 ,
  
 \emph on
-Criterion 2.2
+Critère 2.2
 \emph default
 ,
 
 \emph on
- Axiom 2.1
+ Axiome 2.1
 \emph default
 ,
  \SpecialChar ldots
 ,
- as opposed to 
+ contrairement à 
 \emph on
-Criterion 1
+Critère 1
 \emph default
 ,
  
 \emph on
-Criterion 2
+Critère 2
 \emph default
 ,
  
 \emph on
-Axiom 3
+Axiome 3
 \emph default
 ,
  
 \emph on
-Assumption 4
+Hypothèse 4
 \emph default
 ,
  \SpecialChar ldots
@@ -17144,35 +17215,43 @@ Assumption 4
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-AMS Theorems (Extended,
- Numbered by Type)
+Théorèmes AMS (étendu,
+ numérotation par type)
 \end_layout
 
 \begin_layout Standard
+Ce module définit quelques environnements de théorème supplémentaires pour une utilisation avec le module 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
 
-\lang english
-This module defines some additional theorem environments for use with the 
-\family sans
-AMS Theorems (Numbered by Type)
+AMS (numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type)
 \family default
- package (which must be loaded).
- It includes 
+ (qui doit être chargé).
+ Il inclut 
 \family sans
-Criterion
+Critère
 \family default
 ,
  
 \family sans
 Algorithm
 \family default
-,
+e,
  
 \family sans
 Axiom
 \family default
-,
+e,
  
 \family sans
 Condition
@@ -17190,80 +17269,86 @@ Notation
 ,
  
 \family sans
-Summary
+Résumé
 \family default
 ,
-  
+ 
 \family sans
 Conclusion
 \family default
 ,
  
 \family sans
-Assumption
+Hypothèse
 \family default
- and 
+ et 
 \family sans
-Case
+Cas
 \family default
- in both numbered and unnumbered forms.
+ la fois sous forme numérotée et non numérotée.
  
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-Unlike the 
+A l'inverse du module 
 \family sans
-AMS Theorems (Extended)
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\begin_inset space ~
+\end_inset
+
+(étendu)
 \family default
- module,
- the different theorem types provided here each have a separate counter (e.g.,
- 
+,
+ les différents types de théorème fournis ont chacun leur compteur (e.g.
+
 \emph on
-Criterion 1
+ Critère 1
 \emph default
 ,
  
 \emph on
-Criterion 2
+Critère 2
 \emph default
 ,
  
 \emph on
-Axiom 1
+Axiome 1
 \emph default
 ,
  
 \emph on
-Assumption 1
+Hypothèse 1
 \emph default
 ,
  
 \emph on
-Criterion 3
+Critère 3
 \emph default
 ,
  \SpecialChar ldots
 ,
- as opposed to 
+ contrairement à 
 \emph on
-Criterion 1
+Critère 1
 \emph default
 ,
  
 \emph on
-Criterion 2
+Critère 2
 \emph default
 ,
  
 \emph on
-Axiom 3
+Axiome 3
 \emph default
 ,
  
 \emph on
-Assumption 4
+Hypothèse 4
 \emph default
 ,
  \SpecialChar ldots
@@ -17271,41 +17356,38 @@ Assumption 4
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-AMS Theorems (Numbered by Type within Chapters) 
+Théorèmes AMS (numérotation par type et par chapitre)
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-This module defines theorem environments and the proof environment using the extended AMS machinery.
- Both numbered and unnumbered types are provided.
- 
+Ce module définit les environnements de théorème et de preuve en utilisant le mécanismes AMS.
+ Les types numérotés et non numérotés sont fournis.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-Unlike the 
+A l'inverse du module 
 \family sans
-AMS Theorems
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
 \family default
- module,
- the different theorem types provided here each have a separate counter (e.g.,
+,
+ les différents types de théorème fournis ont chacun leur compteur (e.g.,
  
 \emph on
-Theorem 1.1
+Théorème 1.1
 \emph default
 ,
  
 \emph on
-Theorem 1.2
+Théorème 1.2
 \emph default
 ,
  
 \emph on
-Lemma 1.1
+Lemme 1.1
 \emph default
 ,
  
@@ -17315,29 +17397,29 @@ Proposition 1.1
 ,
  
 \emph on
-Theorem 1.3
+Théorème 1.3
 \emph default
 ,
  
 \emph on
-Lemma 1.2
+Lemme 1.2
 \emph default
 ,
  \SpecialChar ldots
 ,
- as opposed to 
+ 
 \emph on
-Theorem 1
+contrairement à Théorème 1
 \emph default
 ,
  
 \emph on
-Theorem 2
+Théorème 2
 \emph default
 ,
  
 \emph on
-Lemma 3
+Lemme 3
 \emph default
 ,
  
@@ -17347,15 +17429,15 @@ Proposition 4
 ,
  \SpecialChar ldots
 ).
- The numbering restarts for each chapter:
+ La numérotation redémarre à chaque chapitre:
  
 \emph on
-Theorem 1.1
+Théorème 1.1
 \emph default
 ,
  
 \emph on
-Theorem 2.1
+Théorème 2.1
 \emph default
 ,
  \SpecialChar ldots
@@ -17363,59 +17445,93 @@ Theorem 2.1
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-It cannot be used if the modules 
+Il ne peut pas être utilisé si les modules 
 \family sans
-AMS Theorems
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
 \family default
 ,
  
 \family sans
-Standard Theorems
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
 \family default
 ,
 
 \family sans
- Standard Theorems (Numbered by Type)
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotés par type)
 \family default
  or
 \family sans
- Standard Theorems (Unnumbered)
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(non
+\begin_inset space ~
+\end_inset
+
+numérotés)
 \family default
- have been loaded.
+ ont été chargés
+\family sans
+.
+
+\family default
+ 
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-AMS Theorems (Numbered by Type)
+Théorèmes AMS (numérotation par type)
 \end_layout
 
 \begin_layout Standard
+Ce module définit les environnements de théorème et de preuve en utilisant le mécanismes AMS.
+ Les types numérotés et non numérotés sont fournis.
+\end_layout
 
-\lang english
-This module defines theorem environments and the proof environment using the extended AMS machinery.
- Both numbered and unnumbered types are provided.
- Unlike the 
+\begin_layout Standard
+A l'inverse du module 
 \family sans
-AMS Theorems
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
 \family default
- module,
- the different theorem types provided here each have a separate counter (e.g.,
+,
+ les différents types de théorème fournis ont chacun leur compteur (e.g.
  
 \emph on
-Theorem 1
+Théorème 1
 \emph default
 ,
  
 \emph on
-Theorem 2
+Théorème 2
 \emph default
 ,
  
 \emph on
-Lemma 1
+Lemme 1
 \emph default
 ,
  
@@ -17425,29 +17541,29 @@ Proposition 1
 ,
  
 \emph on
-Theorem 3
+Théorème 3
 \emph default
 ,
  
 \emph on
-Lemma 2
+Lemme 2
 \emph default
 ,
  \SpecialChar ldots
 ,
- as opposed to 
+ contrairement à 
 \emph on
-Theorem 1
+Théorème 1
 \emph default
 ,
  
 \emph on
-Theorem 2
+Théorème 2
 \emph default
 ,
  
 \emph on
-Lemma 3
+Lemme 3
 \emph default
 ,
  
@@ -17457,48 +17573,73 @@ Proposition 4
 ,
  \SpecialChar ldots
 ).
- The numbering’s scope is the whole document.
- For chapter- and section-wide numbering,
- use one of the ‘within Sections’/‘within Chapters’ modules,
- respectively.
- 
+ La numérotation s'étend sur tout le document.
+ Pour une numérotation par chapitre ou par section,
+ voyez les modules appropriés.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-It cannot be used if the modules 
+Il ne peut pas être utilisé si les modules 
 \family sans
-AMS Theorems
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
 \family default
 ,
  
 \family sans
-Standard Theorems
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
 \family default
 ,
 
 \family sans
- Standard Theorems (Numbered by Type)
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotés par type)
 \family default
  or
 \family sans
- Standard Theorems (Unnumbered)
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(non
+\begin_inset space ~
+\end_inset
+
+numérotés)
 \family default
- have been loaded.
+ ont été chargés
+\family sans
+.
+
+\family default
+ 
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-Number Equations by Section
+Numéroter les équations par section
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-This module resets the equation number at section start and prepends the section number to the equation number,
- as in 
+Ce module remet la numérotation des équations à zéro au début de chaque section et pré-ajoute le numéro de section au numéro d'équation,
+ comme dans 
 \emph on
 (2.1)
 \emph default
@@ -17507,534 +17648,815 @@ This module resets the equation number at section start and prepends the section
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-Standard Theorems
+Théorèmes standard
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-This module defines some theorem environments for use with non-AMS classes.
- By default,
- the theorems are numbered consecutively throughout the document.
- This can be changed by loading one of the 
+Ce module définit quelques environnements de théorème supplémentaires pour une utilisation avec des classes non-AMS.
+ Implicitement,
+ les théorèmes sont numérotés consécutivement à travers tout le document.
+ t.
+ Ceci peut être modifié en chargeant l'un des modules
 \family sans
-Standard Theorems (Numbered by \SpecialChar ldots
-)
-\family default
- modules.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-It cannot be used if the modules 
-\family sans
-AMS Theorems
-\family default
- or
-\family sans
- Standard Theorems (Unnumbered)
-\family default
- have been loaded.
- 
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Standard Theorems (Nameable)
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module facilitates the use of named theorems.
- The name of the theorem can be inserted via 
-\family sans
-Insert\SpecialChar menuseparator
-Additional Theorem Text
-\family default
-.
- 
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Standard Theorems (Numbered by Chapter)
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module numbers theorems and the like by chapter (i.e.,
- the counter is reset at each chapter start).
- Use this module only with document classes that provide a chapter environment.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-One of the modules 
-\family sans
-AMS Theorems
-\family default
- or 
-\family sans
-Standard Theorems
-\family default
- must be loaded.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-It cannot be used if the module
-\family sans
- Standard Theorems (Numbered by Section)
-\family default
- has been loaded.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Standard Theorems (Numbered by Section)
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module numbers theorems and the like by section (i.e.,
- the counter is reset at each section start).
- One of the modules 
-\family sans
-AMS Theorems
-\family default
- or 
-\family sans
-Standard Theorems
-\family default
- must be loaded.
- It cannot be used if the module
-\family sans
- Standard Theorems (Numbered by Chapter)
-\family default
- has been loaded.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Standard Theorems (Numbered by Type within Chapters) 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module defines some theorem environments for use with non-AMS classes.
- Unlike the
-\family sans
- AMS Theorems
-\family default
- and 
-\family sans
-Standard Theorems
-\family default
- modules,
- the different theorem types provided here each have a separate counter (e.g.,
- 
-\emph on
-Theorem 1
-\emph default
-,
- 
-\emph on
-Theorem 2
-\emph default
-,
- 
-\emph on
-Lemma 1
-\emph default
-,
- 
-\emph on
-Proposition 1
-\emph default
-,
- 
-\emph on
-Theorem 3
-\emph default
-,
- 
-\emph on
-Lemma 2
-\emph default
-,
- \SpecialChar ldots
-,
- as opposed to 
-\emph on
-Theorem 1
-\emph default
-,
- 
-\emph on
-Theorem 2
-\emph default
-,
- 
-\emph on
-Lemma 3
-\emph default
-,
- 
-\emph on
-Proposition 4
-\emph default
-,
- \SpecialChar ldots
-).
- The numbering is reset at each chapter start.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-One of the modules 
-\family sans
-AMS Theorems (Numbered by Type)
-\family default
- or 
-\family sans
-Standard Theorems (Numbered by Type)
-\family default
- must be loaded.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-It cannot be used if any of the modules
-\family sans
- AMS Theorems
-\family default
-,
- 
-\family sans
-Standard Theorems
-\family default
-,
- 
-\family sans
-Standard Theorems (Unnumbered)
-\family default
-,
-
-\family sans
- Standard Theorems (Numbered by Sections)
-\family default
- or 
-\family sans
-Standard Theorems (Numbered by Type within Sections)
-\family default
- have been loaded.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Standard Theorems (Numbered by Type within Sections) 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module defines some theorem environments for use with non-AMS classes.
- Unlike the
-\family sans
- AMS Theorems
-\family default
- and 
-\family sans
-Standard Theorems
-\family default
- modules,
- the different theorem types provided here each have a separate counter (e.g.,
- 
-\emph on
-Theorem 1
-\emph default
-,
- 
-\emph on
-Theorem 2
-\emph default
-,
- 
-\emph on
-Lemma 1
-\emph default
-,
- 
-\emph on
-Proposition 1
-\emph default
-,
- 
-\emph on
-Theorem 3
-\emph default
-,
- 
-\emph on
-Lemma 2
-\emph default
-,
- \SpecialChar ldots
-,
- as opposed to 
-\emph on
-Theorem 1
-\emph default
-,
- 
-\emph on
-Theorem 2
-\emph default
-,
- 
-\emph on
-Lemma 3
-\emph default
-,
- 
-\emph on
-Proposition 4
-\emph default
-,
- \SpecialChar ldots
-).
- The numbering is reset at each section start.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-One of the modules 
-\family sans
-AMS Theorems (Numbered by Type)
-\family default
- or 
-\family sans
-Standard Theorems (Numbered by Type)
-\family default
- must be loaded.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-It cannot be used if any of the modules
-\family sans
- AMS Theorems
-\family default
-,
- 
-\family sans
-Standard Theorems
-\family default
-,
- 
-\family sans
-Standard Theorems (Unnumbered)
-\family default
-,
-
-\family sans
- Standard Theorems (Numbered by Chapters)
-\family default
- or 
-\family sans
-Standard Theorems (Numbered by Type within Chapters)
-\family default
- have been loaded.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Standard Theorems (Numbered by Type)
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module defines some theorem environments for use with non-AMS classes.
- Unlike the 
-\family sans
-AMS Theorems
-\family default
- and 
-\family sans
-Standard Theorems
-\family default
- modules,
- the different theorem types provided here each have a separate counter (e.g.,
- 
-\emph on
-Theorem 1
-\emph default
-,
- 
-\emph on
-Theorem 2
-\emph default
-,
- 
-\emph on
-Lemma 1
-\emph default
-,
- 
-\emph on
-Proposition 1
-\emph default
-,
- 
-\emph on
-Theorem 3
-\emph default
-,
- 
-\emph on
-Lemma 2
-\emph default
-,
- \SpecialChar ldots
-,
- as opposed to 
-\emph on
-Theorem 1
-\emph default
-,
- 
-\emph on
-Theorem 2
-\emph default
-,
- 
-\emph on
-Lemma 3
-\emph default
-,
- 
-\emph on
-Proposition 4
-\emph default
-,
- \SpecialChar ldots
-).
- The numbering’s scope is the whole document.
- For chapter- and section-wide numbering,
- use one of the “within Chapters”/“within Sections” modules,
- respectively.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-It cannot be used if any of the modules
-\family sans
- AMS Theorems
-\family default
-,
- 
-\family sans
-Standard Theorems
-\family default
-,
- 
-\family sans
-Standard Theorems (Unnumbered)
-\family default
- or
-\family sans
- AMS Theorems (Numbered by Type)
-\family default
- have been loaded.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Standard Theorems (Unnumbered)
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module defines only unnumbered theorem environments and the proof environment,
- using the extended AMS machinery.
- It cannot be used if either of the modules
-\family sans
- AMS Theorems
-\family default
- or
-\family sans
- Standard Theorems
-\family default
- have been loaded.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Subequations
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-This module provides a straightforward way to segregate subequations in LyX.
- See 
-\family sans
-Help\SpecialChar menuseparator
-Math\SpecialChar menuseparator
-Subnumbering
-\family default
-.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{fancy}
-\end_layout
-
+ Théorèmes
+\begin_inset space ~
 \end_inset
 
+standard
+\begin_inset space ~
+\end_inset
 
+(numérotés
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+\SpecialChar ldots
+)
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Il ne peut pas être utilisé si les modules
+\family sans
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+ ou 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(non
+\begin_inset space ~
+\end_inset
+
+numérotés)
+\family default
+ ont été chargés.
+\end_layout
+
+\begin_layout Subsection
+Théorèmes standard (nommables)
+\end_layout
+
+\begin_layout Standard
+Ce module facilite l'utilisation de théorèmes nommés.
+ Le nom du théorème peut être saisi via 
+\family sans
+Insertion\SpecialChar menuseparator
+Texte de théorème complémentaire
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Théorèmes standard (numérotés par chapitre)
+\end_layout
+
+\begin_layout Standard
+Ce module numérote les théorèmes et assimilés par chapitre (i.e.
+ le compteur est remis à zéro au début de chaque chapitre).
+ N'utiliser ce module qu'avec des classes de document comportant l'environnement chapitre.
+\end_layout
+
+\begin_layout Standard
+L'un des modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+ ou 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+ doit être chargé.
+ 
+\end_layout
+
+\begin_layout Standard
+Il ne peut pas être utilisé si le module
+\family sans
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+section)
+\family default
+ a été chargé.
+\end_layout
+
+\begin_layout Subsection
+
+\family sans
+Théorèmes standard (numérotation par section)
+\end_layout
+
+\begin_layout Standard
+Ce module numérote les théorèmes et assimilés par section (i.e.
+ le compteur est remis à zéro au début de chaque section).
+ 
+\end_layout
+
+\begin_layout Standard
+L'un des modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+ ou 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+ doit être chargé.
+ 
+\end_layout
+
+\begin_layout Standard
+Il ne peut pas être utilisé si le module
+\family sans
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+chapitre)
+\family default
+ a été chargé.
+\end_layout
+
+\begin_layout Subsection
+Théorèmes standard (numérotation par type et par chapitre)
+\end_layout
+
+\begin_layout Standard
+Ce module définit quelques environnements de théorème supplémentaires pour une utilisation avec des classes non-AMS.
+ Contrairement aux modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+ et 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+,
+ les différents types de théorèmes ont un compteur séparé (e.g.
+ 
+\emph on
+Théorème 1
+\emph default
+,
+ 
+\emph on
+Théorème 2
+\emph default
+,
+ 
+\emph on
+Lemme 1
+\emph default
+,
+ 
+\emph on
+Proposition 1
+\emph default
+,
+ 
+\emph on
+Théorème 3
+\emph default
+,
+ 
+\emph on
+Lemme 2
+\emph default
+,
+ \SpecialChar ldots
+,
+ contrairement à 
+\emph on
+Théorème 1
+\emph default
+,
+ 
+\emph on
+Théorème 2
+\emph default
+,
+ 
+\emph on
+Lemme 3
+\emph default
+,
+ 
+\emph on
+Proposition 4
+\emph default
+,
+ \SpecialChar ldots
+).
+ La numérotation redémarre à chaque début de chapitre.
+\end_layout
+
+\begin_layout Standard
+L'un des modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type)
+\family default
+ or 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type)
+\family default
+ doit être chargé.
+ 
+\end_layout
+
+\begin_layout Standard
+Il ne peut être utilisé si l'un quelconque des modules
+\family sans
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS,
+
+\family default
+ 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+,
+ 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(non
+\begin_inset space ~
+\end_inset
+
+numérotés),
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+section)
+\family default
+ ou 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type
+\begin_inset space ~
+\end_inset
+
+et
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+section)
+\family default
+ ont été chargés.
+\end_layout
+
+\begin_layout Subsection
+
+\family sans
+Théorèmes standard (numérotation par type et par section)
+\family default
+ 
+\end_layout
+
+\begin_layout Standard
+Ce module définit quelques environnements de théorème supplémentaires pour une utilisation avec des classes non-AMS.
+ Contrairement aux modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+ et 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+,
+ les différents types de théorèmes ont un compteur séparé (e.g.
+ 
+\emph on
+Théorème 1
+\emph default
+,
+ 
+\emph on
+Théorème 2
+\emph default
+,
+ 
+\emph on
+Lemme 1
+\emph default
+,
+ 
+\emph on
+Proposition 1
+\emph default
+,
+ 
+\emph on
+Théorème 3
+\emph default
+,
+ 
+\emph on
+Lemme 2
+\emph default
+,
+ \SpecialChar ldots
+,
+ contrairement à 
+\emph on
+Théorème 1
+\emph default
+,
+ 
+\emph on
+Théorème 2
+\emph default
+,
+ 
+\emph on
+Lemme 3
+\emph default
+,
+ 
+\emph on
+Proposition 4
+\emph default
+,
+ \SpecialChar ldots
+).
+ La numérotation redémarre à chaque début de section.
+\end_layout
+
+\begin_layout Standard
+L'un des modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type)
+\family default
+ or 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type)
+\family default
+ doit être chargé.
+ 
+\end_layout
+
+\begin_layout Standard
+Il ne peut être utilisé si l'un quelconque des modules
+\family sans
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS,
+
+\family default
+ 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+,
+ 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(non
+\begin_inset space ~
+\end_inset
+
+numérotés),
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+chapitre)
+\family default
+ ou 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotation
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+type
+\begin_inset space ~
+\end_inset
+
+et
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+chapitre)
+\family default
+ ont été chargés.
+\end_layout
+
+\begin_layout Subsection
+Théorèmes standard (numérotation par type)
+\end_layout
+
+\begin_layout Standard
+Ce module définit quelques environnements de théorème supplémentaires pour une utilisation avec des classes non-AMS.
+ Contrairement aux modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+ et 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+,
+ les différents types de théorèmes ont un compteur séparé (e.g.
+ 
+\emph on
+Théorème 1
+\emph default
+,
+ 
+\emph on
+Théorème 2
+\emph default
+,
+ 
+\emph on
+Lemme 1
+\emph default
+,
+ 
+\emph on
+Proposition 1
+\emph default
+,
+ 
+\emph on
+Théorème 3
+\emph default
+,
+ 
+\emph on
+Lemme 2
+\emph default
+,
+ \SpecialChar ldots
+,
+ contrairement à 
+\emph on
+Théorème 1
+\emph default
+,
+ 
+\emph on
+Théorème 2
+\emph default
+,
+ 
+\emph on
+Lemme 3
+\emph default
+,
+ 
+\emph on
+Proposition 4
+\emph default
+,
+ \SpecialChar ldots
+).
+ La numérotation s'étend sur la totalité du document.
+ Pour une numérotation par chapitre ou par section,
+ voyez les modules appropriés.
+\end_layout
+
+\begin_layout Standard
+Il ne peut pas être utilisé si les modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+,
+ 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\family default
+,
+
+\family sans
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(numérotés par type)
+\family default
+ or
+\family sans
+ Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard
+\begin_inset space ~
+\end_inset
+
+(non
+\begin_inset space ~
+\end_inset
+
+numérotés)
+\family default
+ ont été chargés
+\family sans
+.
+
+\family default
+ 
+\end_layout
+
+\begin_layout Subsection
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard (non numérotés)
+\end_layout
+
+\begin_layout Standard
+Ce module ne définit que les environnements de théorème et de preuve non numérotés en utilisant le mécanismes AMS.
+ Il ne peut pas être utilisé si l'un des modules 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+AMS
+\family default
+ ou 
+\family sans
+Théorèmes
+\begin_inset space ~
+\end_inset
+
+standard 
+\family default
+a été chargé.
+\end_layout
+
+\begin_layout Subsection
+Sous-équations
+\end_layout
+
+\begin_layout Standard
+Ce module fournit une méthode simple pour séparer les sous-équations en \SpecialChar LyX
+.
+ Voir 
+\family sans
+Aide\SpecialChar menuseparator
+Maths\SpecialChar menuseparator
+Numérotation
+\begin_inset space ~
+\end_inset
+
+des
+\begin_inset space ~
+\end_inset
+
+formules\SpecialChar menuseparator
+Sous-équations
+\family default
+.
+ 
 \end_layout
 
 \begin_layout Section
@@ -21290,47 +21712,32 @@ shapepar
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-Hanging Paragraphs
+Paragraphes en renfoncement
 \end_layout
 
 \begin_layout Hanging
-
-\lang english
-This module adds the 
-\family sans
-Hanging
-\family default
- paragraph style,
- that is,
- one where all but the first line of the paragraph is indented.
- This may not appear in your \SpecialChar LyX
- document but will appear in the final output.
+CE module ajoute un style pour les pragraphes en renfoncement,
+ c'est-à-dire quand toutes les lignes sauf la première sont identées.
+ Ceci peut ne pas apparaître dans la fenêtre \SpecialChar LyX
+ de votre document mais apparaîtra dans la version imprimée.
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Initials"
 
 \end_inset
 
-Initials (Drop Caps)
+Initiales (lettrines)
 \end_layout
 
 \begin_layout Initial
-
-\lang english
 \begin_inset Argument 2
 status open
 
 \begin_layout Plain Layout
-
-\lang english
-T
+C
 \end_layout
 
 \end_inset
@@ -21340,105 +21747,124 @@ T
 status open
 
 \begin_layout Plain Layout
-
-\lang english
-his
+e
 \end_layout
 
 \end_inset
 
- module adds a drop capitals paragraph style 
+ module ajoute un style de paragraphe 
 \family sans
-Initials
+Lettrine
 \family default
- for paragraph environments which you can use wherever you want to have drop capitals.
- You then have three more items in the 
+ que vous pouvez utiliser là où vous en avez besoin.
+ Vous avez alors trois nouvelles entrées dans le menu
 \family sans
-Insert
+ Insertion
 \family default
- menu:
+:
 \end_layout
 
 \begin_layout Itemize
 
 \family sans
-\lang english
-Initial
+Lettrine 
 \family default
- which creates an inset for the drop capital
+qui crée un insert pour la capitale initiale;
 \end_layout
 
 \begin_layout Itemize
 
 \family sans
-\lang english
-Rest of initial
+Résidu
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+lettrine 
 \family default
- which creates an inset for the rest of the word
+qui crée un insert pour le reste du mot;
 \end_layout
 
 \begin_layout Itemize
 
 \family sans
-\lang english
 Options
 \family default
- which allow you configure the formatting of the drop capital.
+ qui vous permet de configurer la mise en page de la capitale initiale.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-To customize the appearance of the style,
- see 
+Pour personnaliser cette dernière,
+ voir 
 \family sans
-Help\SpecialChar menuseparator
-Embedded Objects\SpecialChar menuseparator
-Objects Surrounded by Text\SpecialChar menuseparator
-Initials
+Aide\SpecialChar menuseparator
+Objets
+\begin_inset space ~
+\end_inset
+
+insérés\SpecialChar menuseparator
+Objets
+\begin_inset space ~
+\end_inset
+
+entourés
+\begin_inset space ~
+\end_inset
+
+par
+\begin_inset space ~
+\end_inset
+
+du
+\begin_inset space ~
+\end_inset
+
+texte\SpecialChar menuseparator
+Lettrines
 \family default
 .
 \end_layout
 
 \begin_layout Section
-
-\lang english
-Text Markup
+Balisage du texte
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-Hyphenatable Text Markup (Soul)
+Balisage du texte césurable (soul)
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-This modul defines text styles to highlight,
- space-out,
- strike-through,
- underline and capitalize/small-cap text by means of the 
-\family sans
+Ce module définit des styles de texte pour mettre en évidence,
+ espacer,
+ barrer,
+ souligner et mettre en petites capitales du texte en utilisant le paquetage 
+\family typewriter
 soul
+\family sans
+.
+
 \family default
- package.
  
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-As opposed to the markup provided by the Text Properties dialog,
- words marked-up with 
+Contrairement au balisage fourni par le bouton 
+\family sans
+Propriétés du texte
+\family default
+,
+ les mots balisés avec 
 \family sans
 soul
 \family default
- are hyphenated.
- See the 
+ sont propices à la césure.
+ Voir la 
 \begin_inset CommandInset href
 LatexCommand href
-name "soul documentation"
+name "documentation soul"
 target "http://mirrors.ctan.org/macros/generic/soul/soul.pdf"
 literal "false"
 
@@ -21448,15 +21874,11 @@ literal "false"
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-Logical Markup
+Balisage logique
 \end_layout
 
 \begin_layout Standard
-
-\lang english
-This module defines some character styles for logical markup:
+Ce module définit quelques styles de caractères pour le balisage logique:
  
 \noun on
 
@@ -21464,10 +21886,7 @@ This module defines some character styles for logical markup:
 status collapsed
 
 \begin_layout Plain Layout
-
-\noun on
-\lang english
-noun
+Nom propre
 \end_layout
 
 \end_inset
@@ -21482,10 +21901,7 @@ noun
 status collapsed
 
 \begin_layout Plain Layout
-
-\emph on
-\lang english
-emph
+en évidence
 \end_layout
 
 \end_inset
@@ -21498,47 +21914,43 @@ emph
 status collapsed
 
 \begin_layout Plain Layout
-
-\lang english
-strong
+fort
 \end_layout
 
 \end_inset
 
 ,
- and 
+ et 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
-
-\lang english
 code
 \end_layout
 
 \end_inset
 
- which are accessed via the 
+ qui sont accessible via le menu 
 \family sans
 \bar under
-E
+Édition
 \bar default
-dit\SpecialChar menuseparator
-Custom
+\SpecialChar menuseparator
+Style
 \begin_inset space ~
 \end_inset
 
-Text
+de
 \begin_inset space ~
 \end_inset
 
+texte
+\begin_inset space ~
+\end_inset
 
-\bar under
-S
-\bar default
-tyles
+personnalisé
 \family default
- menu.
+.
 \end_layout
 
 \begin_layout Chapter
