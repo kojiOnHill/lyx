@@ -1598,7 +1598,7 @@ void InsetMathGrid::doDispatch(Cursor & cur, FuncRequest & cmd)
 			else {
 				for (unsigned int l = 0; l < grid.rowinfo_[0].lines; ++l) {
 					 cur.cell().insert(0,
-						MathAtom(new InsetMathUnknown(from_ascii("\\hline"))));
+						MathAtom(new InsetMathUnknown(buffer_, from_ascii("\\hline"))));
 					 cur.pos()++;
 				}
 			}
@@ -1624,7 +1624,7 @@ void InsetMathGrid::doDispatch(Cursor & cur, FuncRequest & cmd)
 					for (unsigned int l = 0; l < grid.rowinfo_[r].lines; ++l) {
 						idx_type i = index(r + startrow, 0);
 						cell(i).insert(0,
-							MathAtom(new InsetMathUnknown(from_ascii("\\hline"))));
+							MathAtom(new InsetMathUnknown(buffer_, from_ascii("\\hline"))));
 					}
 				}
 				// append columns for the left over horizontal cells
@@ -1649,7 +1649,7 @@ void InsetMathGrid::doDispatch(Cursor & cur, FuncRequest & cmd)
 				else {
 					for (unsigned int l = 0; l < grid.rowinfo_[r].lines; ++l) {
 						cell(i).insert(0,
-							MathAtom(new InsetMathUnknown(from_ascii("\\hline"))));
+							MathAtom(new InsetMathUnknown(buffer_, from_ascii("\\hline"))));
 					}
 				}
 			}

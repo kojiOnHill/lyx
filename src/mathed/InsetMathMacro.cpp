@@ -59,10 +59,12 @@ class InsetArgumentProxy : public InsetMath {
 public:
 	///
 	InsetArgumentProxy(InsetMathMacro * mathMacro, size_t idx)
-		: mathMacro_(mathMacro), idx_(idx), def_(&mathMacro->buffer()) {}
+		: InsetMath(&mathMacro->buffer()), mathMacro_(mathMacro), idx_(idx),
+		  def_(&mathMacro->buffer()) {}
 	///
 	InsetArgumentProxy(InsetMathMacro * mathMacro, size_t idx, docstring const & def)
-		: mathMacro_(mathMacro), idx_(idx), def_(&mathMacro->buffer())
+		: InsetMath(&mathMacro->buffer()), mathMacro_(mathMacro), idx_(idx),
+		  def_(&mathMacro->buffer())
 	{
 			asArray(def, def_);
 	}

@@ -1793,7 +1793,7 @@ void InsetMathHull::doExtern(Cursor & cur, FuncRequest & func)
 	}
 
 	MathData eq(buffer_);
-	eq.push_back(MathAtom(new InsetMathChar('=')));
+	eq.push_back(MathAtom(new InsetMathChar(buffer_, '=')));
 
 	// go to first item in line
 	cur.idx() -= cur.idx() % ncols();
