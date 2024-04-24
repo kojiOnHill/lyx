@@ -191,7 +191,7 @@ void extractStrings(MathData & ar)
 		if (!ar[i]->asCharInset())
 			continue;
 		docstring s = charSequence(ar.begin() + i, ar.end());
-		ar[i] = MathAtom(new InsetMathString(s));
+		ar[i] = MathAtom(new InsetMathString(ar.buffer(), s));
 		ar.erase(i + 1, i + s.size());
 	}
 	//lyxerr << "\nStrings to: " << ar << endl;
@@ -486,7 +486,7 @@ void extractNumbers(MathData & ar)
 
 		docstring s = digitSequence(ar.begin() + i, ar.end());
 
-		ar[i] = MathAtom(new InsetMathNumber(s));
+		ar[i] = MathAtom(new InsetMathNumber(ar.buffer(), s));
 		ar.erase(i + 1, i + s.size());
 	}
 	//lyxerr << "\nNumbers to: " << ar << endl;

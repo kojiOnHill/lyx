@@ -77,14 +77,14 @@ int const defaultSpace = 4;
 
 } // namespace
 
-InsetMathSpace::InsetMathSpace()
-	: space_(defaultSpace)
+InsetMathSpace::InsetMathSpace(Buffer * buf)
+	: InsetMath(buf), space_(defaultSpace)
 {
 }
 
 
-InsetMathSpace::InsetMathSpace(string const & name, string const & length)
-	: space_(defaultSpace)
+InsetMathSpace::InsetMathSpace(Buffer * buf, string const & name, string const & length)
+	: InsetMath(buf), space_(defaultSpace)
 {
 	for (int i = 0; i < nSpace; ++i)
 		if (space_info[i].name == name) {
@@ -101,8 +101,8 @@ InsetMathSpace::InsetMathSpace(string const & name, string const & length)
 }
 
 
-InsetMathSpace::InsetMathSpace(Length const & length, bool const prot)
-	: space_(defaultSpace), length_(length)
+InsetMathSpace::InsetMathSpace(Buffer * buf, Length const & length, bool const prot)
+	: InsetMath(buf), space_(defaultSpace), length_(length)
 {
 	for (int i = 0; i < nSpace; ++i)
 		if ((prot && space_info[i].name == "hspace*")

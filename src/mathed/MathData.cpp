@@ -645,7 +645,7 @@ void MathData::detachMacroParameters(DocIterator * cur, const size_type macroPos
 		    && !(arg[0]->asMacro() && arg[0]->asMacro()->arity() > 0))
 			insert(p, arg[0]);
 		else
-			insert(p, MathAtom(new InsetMathBrace(arg)));
+			insert(p, MathAtom(new InsetMathBrace(buffer_, arg)));
 
 		// cursor in macro?
 		if (curMacroSlice == -1)
@@ -711,7 +711,7 @@ void MathData::attachMacroParameters(Cursor * cur,
 		if (scriptInset->nuc().empty()) {
 			MathData ar(buffer_);
 			scriptInset->nuc().push_back(
-					MathAtom(new InsetMathBrace(ar)));
+					MathAtom(new InsetMathBrace(buffer_, ar)));
 		}
 		// put macro into a script inset
 		scriptInset->nuc()[0] = operator[](macroPos);
