@@ -403,6 +403,14 @@ InsetMathMacroTemplate::InsetMathMacroTemplate(Buffer * buf)
 
 
 InsetMathMacroTemplate::InsetMathMacroTemplate(Buffer * buf, docstring const & name, int numargs,
+	int optionals, MacroType type)
+	: InsetMathMacroTemplate(buf, name, numargs, optionals, type,
+		vector<MathData>(), MathData(buf), MathData(buf))
+{
+}
+
+
+InsetMathMacroTemplate::InsetMathMacroTemplate(Buffer * buf, docstring const & name, int numargs,
 	int optionals, MacroType type, vector<MathData> const & optionalValues,
 	MathData const & def, MathData const & display)
 	: InsetMathNest(buf, optionals + 3), look_(buf), numargs_(numargs),
@@ -417,7 +425,7 @@ InsetMathMacroTemplate::InsetMathMacroTemplate(Buffer * buf, docstring const & n
 			<< numargs_ << endl;
 
 	asArray(name, cell(0));
-	optionalValues_.resize(9);
+	optionalValues_.resize(9, MathData(buffer_));
 	for (int i = 0; i < optionals_; ++i)
 		cell(optIdx(i)) = optionalValues_[i];
 	cell(defIdx()) = def;
@@ -516,7 +524,7 @@ void InsetMathMacroTemplate::createLook(int args) const
 			look_.push_back(MathAtom(new InsetMathBrace(arg)));
 	}
 	for (; i < argsInLook_; ++i) {
-		MathData arg;
+		MathData arg(buffer_);
 		arg.push_back(MathAtom(new InsetMathMacroArgument(i + 1)));
 		look_.push_back(MathAtom(new InsetColoredCell(buffer_,
 			Color_mathmacronewarg,

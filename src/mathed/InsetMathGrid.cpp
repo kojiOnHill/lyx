@@ -835,7 +835,7 @@ void InsetMathGrid::addCol(col_type newcol)
 {
 	const col_type nc = ncols();
 	const row_type nr = nrows();
-	cells_type new_cells((nc + 1) * nr);
+	cells_type new_cells((nc + 1) * nr, MathData(buffer_));
 	vector<CellInfo> new_cellinfo((nc + 1) * nr);
 
 	for (row_type row = 0; row < nr; ++row)

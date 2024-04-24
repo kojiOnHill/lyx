@@ -597,7 +597,7 @@ void MathData::detachMacroParameters(DocIterator * cur, const size_type macroPos
 		}
 
 		// Otherwise we don't drop an empty optional, put it back normally
-		MathData optarg;
+		MathData optarg(buffer_);
 		asArray(from_ascii("[]"), optarg);
 		MathData & arg = detachedArgs[j];
 
@@ -711,7 +711,7 @@ void MathData::attachMacroParameters(Cursor * cur,
 		// In the math parser we remove empty braces in the base
 		// of a script inset, but we have to restore them here.
 		if (scriptInset->nuc().empty()) {
-			MathData ar;
+			MathData ar(buffer_);
 			scriptInset->nuc().push_back(
 					MathAtom(new InsetMathBrace(ar)));
 		}
@@ -831,7 +831,7 @@ void MathData::collectOptionalParameters(Cursor * cur,
 
 	// fill up empty optional parameters
 	while (params.size() < numOptionalParams)
-		params.push_back(MathData());
+		params.push_back(MathData(buffer_));
 }
 
 
@@ -891,7 +891,7 @@ void MathData::collectParameters(Cursor * cur,
 			}
 		} else {
 			// the simplest case: plain inset
-			MathData array;
+			MathData array(buffer_);
 			array.insert(0, cell);
 			params.push_back(array);
 		}
