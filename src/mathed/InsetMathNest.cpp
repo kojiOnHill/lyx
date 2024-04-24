@@ -84,7 +84,7 @@ using cap::selClearOrDel;
 
 
 InsetMathNest::InsetMathNest(Buffer * buf, idx_type nargs)
-	: InsetMath(buf), cells_(nargs), lock_(false)
+	: InsetMath(buf), cells_(nargs, MathData(buffer_)), lock_(false)
 {
 	// FIXME This should not really be necessary, but when we are
 	// initializing the table of global macros, we create macros
@@ -321,7 +321,7 @@ bool InsetMathNest::isActive() const
 
 MathData InsetMathNest::glue() const
 {
-	MathData ar;
+	MathData ar(buffer_);
 	for (size_t i = 0; i < nargs(); ++i)
 		ar.append(cell(i));
 	return ar;
@@ -715,7 +715,7 @@ void InsetMathNest::handleFont2(Cursor & cur, docstring const & arg)
 		cur.mathForward(false);
 		cur.setSelection();
 		cutSelection(cur, false);
-		MathData ar;
+		MathData ar(buffer_);
 		if (!sel1.empty()) {
 			mathed_parse_cell(ar, beg + sel1 + end);
 			cur.insert(ar);
@@ -1565,7 +1565,7 @@ void InsetMathNest::doDispatch(Cursor & cur, FuncRequest & cmd)
 	}
 
 	case LFUN_INSET_INSERT: {
-		MathData ar;
+		MathData ar(buffer_);
 		if (createInsetMath_fromDialogStr(cmd.argument(), ar)) {
 			cur.recordUndoSelection();
 			cur.insert(ar);
@@ -1942,7 +1942,7 @@ void InsetMathNest::lfunMousePress(Cursor & cur, FuncRequest & cmd)
 			cmd = FuncRequest(LFUN_PASTE, "0");
 			doDispatch(bv.cursor(), cmd);
 		} else {
-			MathData ar;
+			MathData ar(buffer_);
 			asArray(theSelection().get(), ar);
 			bv.cursor().insert(ar);
 		}

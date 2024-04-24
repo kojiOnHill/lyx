@@ -728,7 +728,7 @@ bool Parser::parse(MathAtom & at)
 			lyxerr << "unusual contents found: " << ar << endl;
 		at = MathAtom(new InsetMathPar(buffer_, ar));
 		//if (at->nargs() > 0)
-		//	at.nucleus()->cell(0) = ar;
+		//	at.nucleus()->cell(0) = ar(buffer_);
 		//else
 		//	lyxerr << "unusual contents found: " << ar << endl;
 		success_ = false;
@@ -850,7 +850,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 		if (flags & FLAG_OPTION) {
 			if (t.cat() == catOther && t.character() == '[') {
-				MathData ar;
+				MathData ar(buf);
 				parse(ar, FLAG_BRACK_LAST, mode);
 				cell->append(ar);
 			} else {
@@ -942,7 +942,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			cell->push_back(MathAtom(new InsetMathSpace(string(1, t.character()), "")));
 
 		else if (t.cat() == catBegin) {
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_BRACE_LAST, mode);
 			// do not create a BraceInset if they were written by LyX
 			// this helps to keep the annoyance of  "a choose b"  to a minimum
@@ -1069,12 +1069,12 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			nargs /= 2;
 
 			// read definition
-			MathData def;
+			MathData def(buf);
 			parse(def, FLAG_ITEM, InsetMath::UNDECIDED_MODE);
 
 			// is a version for display attached?
 			skipSpaces();
-			MathData display;
+			MathData display(buf);
 			if (nextToken().cat() == catBegin)
 				parse(display, FLAG_ITEM, InsetMath::MATH_MODE);
 
@@ -1112,17 +1112,17 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			vector<MathData> optionalValues;
 			while (nextToken().character() == '[') {
 				getToken();
-				optionalValues.push_back(MathData());
+				optionalValues.push_back(MathData(buf));
 				parse(optionalValues[optionals], FLAG_BRACK_LAST, mode);
 				++optionals;
 			}
 
-			MathData def;
+			MathData def(buf);
 			parse(def, FLAG_ITEM, InsetMath::UNDECIDED_MODE);
 
 			// is a version for display attached?
 			skipSpaces();
-			MathData display;
+			MathData display(buf);
 			if (nextToken().cat() == catBegin)
 				parse(display, FLAG_ITEM, InsetMath::MATH_MODE);
 
@@ -1186,11 +1186,11 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 						// get value
 						int optNum = max(size_t(n), optionalValues.size());
-						optionalValues.resize(optNum);
+						optionalValues.resize(optNum, MathData(buf));
 						optionalValues[n - 1].clear();
 						while (nextToken().character() != ']'
 						       && nextToken().character() != ',') {
-							MathData data;
+							MathData data(buf);
 							parse(data, FLAG_ITEM, InsetMath::UNDECIDED_MODE);
 							optionalValues[n - 1].append(data);
 						}
@@ -1206,7 +1206,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 						// value?
 						skipSpaces();
-						MathData value;
+						MathData value(buf);
 						if (nextToken().character() == '=') {
 							getToken();
 							while (nextToken().character() != ']'
@@ -1238,12 +1238,12 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			}
 
 			// get definition
-			MathData def;
+			MathData def(buf);
 			parse(def, FLAG_ITEM, InsetMath::UNDECIDED_MODE);
 
 			// is a version for display attached?
 			skipSpaces();
-			MathData display;
+			MathData display(buf);
 			if (nextToken().cat() == catBegin)
 				parse(display, FLAG_ITEM, InsetMath::MATH_MODE);
 
@@ -1367,7 +1367,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			// if the columns are specified numerically,
 			// extract column count and insert dummy cells,
 			// otherwise parse it as an user macro
-			MathData count;
+			MathData count(buf);
 			parse(count, FLAG_ITEM, mode);
 			int cols = 0;
 			// limit arbitrarily to 100 columns
@@ -1388,7 +1388,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 					InsetMathGrid::CELL_BEGIN_OF_MULTICOLUMN;
 
 				// read special alignment
-				MathData align;
+				MathData align(buf);
 				parse(align, FLAG_ITEM, mode);
 				grid.cellinfo(first).align = asString(align);
 
@@ -1423,7 +1423,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 		}
 
 		else if (t.cs() == "sqrt") {
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_OPTION, mode);
 			if (!ar.empty()) {
 				cell->push_back(MathAtom(new InsetMathRoot(buf)));
@@ -1434,7 +1434,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 		}
 
 		else if (t.cs() == "cancelto") {
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_ITEM, mode);
 				cell->push_back(MathAtom(new InsetMathCancelto(buf)));
 				cell->back().nucleus()->cell(1) = ar;
@@ -1443,7 +1443,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 		else if (t.cs() == "unit") {
 			// Allowed formats \unit[val]{unit}
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_OPTION, mode);
 			if (!ar.empty()) {
 				cell->push_back(MathAtom(new InsetMathFrac(buf, InsetMathFrac::UNIT)));
@@ -1457,7 +1457,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 		else if (t.cs() == "unitfrac") {
 			// Here allowed formats are \unitfrac[val]{num}{denom}
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_OPTION, mode);
 			if (!ar.empty()) {
 				cell->push_back(MathAtom(new InsetMathFrac(buf, InsetMathFrac::UNITFRAC, 3)));
@@ -1489,7 +1489,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 		else if (t.cs() == "sideset") {
 			// Here allowed formats are \sideset{_{bl}^{tl}}{_{br}^{tr}}{operator}
-			MathData ar[2];
+			MathData ar[2]= { MathData(buf), MathData(buf) };
 			InsetMathScript * script[2] = {0, 0};
 			for (int i = 0; i < 2; ++i) {
 				parse(ar[i], FLAG_ITEM, mode);
@@ -1517,7 +1517,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 		else if (t.cs() == "stackrel") {
 			// Here allowed formats are \stackrel[subscript]{superscript}{operator}
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_OPTION, mode);
 			cell->push_back(MathAtom(new InsetMathStackrel(buf, !ar.empty())));
 			if (!ar.empty())
@@ -1566,7 +1566,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			// can't handle \|
 			// FIXME: fix this in InsetMathDelim itself!
 			docstring const l = tl.cs() == "|" ? from_ascii("Vert") : tl.asString();
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_RIGHT, mode);
 			if (!good())
 				break;
@@ -1790,7 +1790,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 		else if (t.cs() == "label") {
 			// FIXME: This is swallowed in inline formulas
 			docstring label = parse_verbatim_item();
-			MathData ar;
+			MathData ar(buf);
 			asArray(label, ar);
 			if (grid.asHullInset()) {
 				grid.asHullInset()->label(cellrow, label);
@@ -1892,7 +1892,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 				// Since the Length class cannot use length variables
 				// we must not create an InsetMathSpace.
 				cell->push_back(MathAtom(new InsetMathMacro(buf, name)));
-				MathData ar;
+				MathData ar(buf);
 				mathed_parse_cell(ar, '{' + arg + '}', mode_);
 				cell->append(ar);
 			}
@@ -1911,10 +1911,10 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 				} else {
 					docstring const arg = parse_verbatim_item();
 					cell->push_back(MathAtom(new InsetMathMacro(buf, t.cs())));
-					MathData ar;
+					MathData ar(buf);
 					mathed_parse_cell(ar, '[' + opt + ']', mode_);
 					cell->append(ar);
-					ar = MathData();
+					ar = MathData(buf);
 					mathed_parse_cell(ar, '{' + arg + '}', mode_);
 					cell->append(ar);
 				}
@@ -1927,7 +1927,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 
 #if 0
 		else if (t.cs() == "infer") {
-			MathData ar;
+			MathData ar(buf);
 			parse(ar, FLAG_OPTION, mode);
 			cell->push_back(createInsetMath(t.cs(), buf));
 			parse2(cell->back(), FLAG_ITEM, mode, false);
