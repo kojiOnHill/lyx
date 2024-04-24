@@ -185,6 +185,8 @@ varwidth
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize 12
 \spacing single
 \use_hyperref true
@@ -222,7 +224,7 @@ varwidth
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 0
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -2347,7 +2349,7 @@ immédiate
 \family default
  de la fenêtre de dialogue,
  chaque modification d'un champ de la fenêtre est appliquée directement.
- Si vous déplacez le curseur vers une autre celule du tableau,
+ Si vous déplacez le curseur vers une autre cellule du tableau,
  la fenêtre s'adapte avec les valeurs des paramètres de la nouvelle cellule.
  Si vous modifiez les valeurs des longueurs qui se trouvent dans la fenêtre de dialogue,
  vous devez appuyer sur 
@@ -16372,7 +16374,7 @@ L'option
 \backslash
 cmidrule
 \series default
- n'est pas actuellment reconnue par \SpecialChar LyX
+ n'est pas actuellement reconnue par \SpecialChar LyX
 ,
  pas plus que les paramètres de 
 \emph on
@@ -16380,15 +16382,15 @@ rognage
 \emph default
 .
  Si vous en avez besoin,
- vous pouvez insérer manuellment une commande
+ vous pouvez insérer manuellement une commande
 \series bold
  
 \backslash
 cmidrule
 \series default
  avec les réglages appropriés en tant que code \SpecialChar TeX
- comme première saisie dans la première cellute d'une ligne.
- Cette ligne est ensuite tracée dan sle résultat imprimable au-dessus de la ligne courante.
+ comme première saisie dans la première cellule d'une ligne.
+ Cette ligne est ensuite tracée dans le résultat imprimable au-dessus de la ligne courante.
  Le tableau
 \begin_inset space ~
 \end_inset
@@ -22894,7 +22896,7 @@ Si vous utilisez des polices de taille plus grande que la taille normale,
 strut
 \series default
  en code \SpecialChar TeX
- au debut d'une ligne du tableau.
+ au début d'une ligne du tableau.
  Le tableau
 \begin_inset space ~
 \end_inset
@@ -28039,11 +28041,11 @@ literal "true"
 
 Les options 
 \family sans
-Plural
+Pluriel
 \family default
  et 
 \family sans
-Capitalized
+Majuscules
 \family default
  ne sont disponibles que si vous utilisez le paquetage \SpecialChar LaTeX
  
@@ -28053,7 +28055,7 @@ refstyle
 .
  
 \family sans
-Plural
+Pluriel
 \family default
  met le nom au pluriel,
  e.
@@ -28075,7 +28077,7 @@ tableaux
 ;
  
 \family sans
-Capitalized
+Majuscules
 \family default
  met une capitale au nom,
  e.
@@ -28142,12 +28144,16 @@ nolink "false"
 \begin_inset Newline newline
 \end_inset
 
-Ceci perlmet d'utiliser l'étiquette en code TeX.
+Ceci permet d'utiliser l'étiquette en code TeX.
  L'option 
 \family sans
-No Prefix
+Sans
+\begin_inset space ~
+\end_inset
+
+préfixe
 \family default
- enelève le préfixe du nom de l'étiquette:
+ enlève le préfixe du nom de l'étiquette:
  
 \begin_inset CommandInset ref
 LatexCommand labelonly
@@ -28798,7 +28804,15 @@ Les réglages pour les flottants peuvent être définis en deux endroits avec \S
 Document\SpecialChar menuseparator
 Paramètres\SpecialChar ldots
 \SpecialChar menuseparator
-Paramètres de flottant
+Paramètres
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+flottant
 \family default
 ,
  vous pouvez positionner quelques options utilisées implicitement par tous les flottants du document (placement dans la page et alignement des contenus),
@@ -28814,15 +28828,23 @@ Paramètres\SpecialChar ldots
 \family default
  une fenêtre de dialogue s'ouvre dans laquelle vous pouvez,
  maintenant seulement pour le flottant concerné,
- modifier le placement global et les options d'aligenement,
+ modifier le placement global et les options d’alignement,
  et préciser d'autres options qui ne sont disponibles que pour des flottants individuels.
- Toutes ce soptions,
+ Toutes ces options,
  que ce soit pour 
 \family sans
 Document\SpecialChar menuseparator
 Paramètres\SpecialChar ldots
 \SpecialChar menuseparator
-Paramètres de flottant
+Paramètres
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+flottant
 \family default
  ou localement pour 
 \family sans
@@ -28873,7 +28895,15 @@ Aussi bien dans
 Document\SpecialChar menuseparator
 Paramètres\SpecialChar ldots
 \SpecialChar menuseparator
-Paramètres de flottant
+Paramètres
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+flottant
 \family default
  que dans 
 \family sans
@@ -28888,7 +28918,15 @@ Paramètres\SpecialChar ldots
 (Document\SpecialChar menuseparator
 Paramètres\SpecialChar ldots
 \SpecialChar menuseparator
-Paramètres de flottant
+Paramètres
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+flottant
 \family default
 ),
  soit pour un flottant particulier
@@ -28899,13 +28937,37 @@ Paramètres de flottant
 \family default
  Ceci est possible avec
 \family sans
- Paramètres de placement
+ Paramètres
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+placement
 \family default
 .
  Implicitement,
  ces paramètres sont réglés à 
 \family sans
-Paramètres implicites de la classe
+Paramètres
+\begin_inset space ~
+\end_inset
+
+implicites
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+la
+\begin_inset space ~
+\end_inset
+
+classe
 \family default
  (signifiant que l'algorithme implicite de placement de la classe du document est utilisé) ou 
 \family sans
@@ -28928,8 +28990,19 @@ Paramètres de flottant
  Si vous voulez la changer,
  sélectionnez
 \family sans
- Paramètres de placement:
- Réglable.
+ Paramètres
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+placement:
+\begin_inset space ~
+\end_inset
+
+Réglable.
 
 \family default
  Ceci vous permet de sélectionner une ou plusieurs options parmi:
@@ -29668,7 +29741,7 @@ figuresright
 
 \begin_layout Standard
 Faire référence à un flottant pivoté se fait de la même manière que pour un flottant normal,
- la mise en forme de la légende est aussi identique :
+ la mise en forme de la légende est aussi identique:
  Le tableau
 \begin_inset space ~
 \end_inset
@@ -30405,7 +30478,7 @@ nolink "false"
 \begin_inset space \thinspace{}
 \end_inset
 
-column% et l'alignement de la boîte à 
+colonne% et l'alignement de la boîte à 
 \family sans
 Bas
 \family default
@@ -33046,17 +33119,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:cap-beside-tab-wider"
 
 \end_inset
 
-This is a caption is wider than the one in
-\lang french
- tableau
+Ceci est une légende plus large que celle du tableau
 \begin_inset space ~
 \end_inset
 
@@ -33390,15 +33459,7 @@ De la même façon que la table des matières fait la liste des sections du docu
  Vous pouvez les insérer en utilisant le menu 
 \family sans
 Insertion\SpecialChar menuseparator
-Listes
-\begin_inset space ~
-\end_inset
-
-&
-\begin_inset space ~
-\end_inset
-
-TdM
+Listes/Matières/Références
 \family default
 .
 \end_layout
@@ -33681,7 +33742,7 @@ Note
  Pour retransformer une note en texte,
  appuyez sur la touche 
 \family sans
-backspace
+RetourArrière
 \family default
  quand le curseur est au tout début de la note ou appuyez sur la touche 
 \family sans
@@ -33826,7 +33887,7 @@ Page
  Pour retransformer une note de bas de page en texte,
  appuyez sur la touche 
 \family sans
-Backspace
+RetourArrière
 \family default
  quand le curseur est au tout début de la note ou appuyez sur la touche 
 \family sans
@@ -34941,7 +35002,39 @@ Notes de fin
  Pour utiliser des notes de fin à la place des notes de bas de page dans votre document,
  charger le module 
 \family sans
-Note de bas de page en fin de document
+Note
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+bas
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+page
+\begin_inset space ~
+\end_inset
+
+en
+\begin_inset space ~
+\end_inset
+
+fin
+\begin_inset space ~
+\end_inset
+
+de
+\begin_inset space ~
+\end_inset
+
+document
 \family default
  à partir de 
 \family sans
@@ -35920,7 +36013,7 @@ Attention!
 \end_inset
 
  écrit en souligné,
- sans-sérif et en gras,
+ sans empattement et en gras,
  ajoutez ce qui suit dans le préambule de votre document :
 \end_layout
 
@@ -37968,7 +38061,7 @@ definecolor{shadecolor}{rgb}{1,0,0}
 \end_layout
 
 \begin_layout Standard
-Les largeurs et culeurs ainsi modifiées restent valables pour toutes les boîtes qui suivent la commandes qui les a changées.
+Les largeurs et couleurs ainsi modifiées restent valables pour toutes les boîtes qui suivent la commandes qui les a changées.
 \end_layout
 
 \begin_layout Section
@@ -39073,7 +39166,7 @@ backgroundcolor "yellow"
 status open
 
 \begin_layout Plain Layout
-Box with teal frame color and yellow background color
+Boîte avec un cadre bleu-vert et un fond jaune
 \end_layout
 
 \end_inset
@@ -41747,7 +41840,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Les objets fixes enrobés sont utilisés pour laisser le texte s'écouler autour d'eux et leur position est déterminée par le nombre de lignes de texte situées audessus d'eux.
+Les objets fixes enrobés sont utilisés pour laisser le texte s'écouler autour d'eux et leur position est déterminée par le nombre de lignes de texte situées au-dessus d'eux.
  Contrairement aux flottants d'enrobage,
  on ne peut pas avoir de légende numérotée.
 \end_layout
@@ -41987,7 +42080,15 @@ lettrine
 
 \end_inset
 
- doit être installé et vous devez utiliser le module Initiales (
+ doit être installé et vous devez utiliser le module 
+\family sans
+Initiales
+\begin_inset space ~
+\end_inset
+
+(lettrines)
+\family default
+ (
 \begin_inset space ~
 \end_inset
 
@@ -42005,7 +42106,7 @@ Modules
  Pour insérer une lettrine,
  utilisez le style 
 \family sans
-Initial
+Lettrine
 \family default
 .
  Les paramètres sont insérés avec le menu 
@@ -42015,38 +42116,30 @@ Insertion
 .
  Le paramètre obligatoire 
 \family sans
-\lang english
-Initial
+Lettrine
 \family default
-\lang french
  contient la/les lettre(s) qui sert d'initiale,
  le paramètre 
 \family sans
-\lang english
-Rest
+Résidu
 \begin_inset space ~
 \end_inset
 
-of
+de
 \begin_inset space ~
 \end_inset
 
-Initial
+lettrine
 \family default
+\lang english
  
 \lang french
-contient
-\lang english
- the rest of the word or text of the initial letter(s)
-\lang french
-.
+contient le reste du mot ou du texte.
  Le paramètre 
 \family sans
-\lang english
 Options
 \family default
-\lang french
- contient paramètres pour modifier la lettrine.
+ contient les paramètres pour modifier la lettrine.
  Pour plus d'informations sur les paramètres possibles,
  voyez la documentation du paquetage 
 \series bold
@@ -42063,7 +42156,7 @@ literal "true"
 
 .
  Le style lui-même contient le texte qui doit entourer la lettrine.
- Le style habituel est par conséquent que le mot dont la première lettre est l'initiale soit en 
+ Le style habituel met par conséquent le mot dont la première lettre est l'initiale en 
 \shape smallcaps
 petites capitales
 \shape default
@@ -42978,7 +43071,7 @@ literal "false"
 \series default
 .
  Pour plus d'information sur la gestion étendue de LilyPond,
- jetez un oeil au fichier \SpecialChar LyX
+ jetez un œil au fichier \SpecialChar LyX
  d'exemple 
 \emph on
 lilypond.lyx
@@ -43618,7 +43711,7 @@ literal "true"
 \begin_layout Standard
 Voici un sous-document
 \emph on
-input
+ input
 \emph default
  comme \SpecialChar LaTeX
  source:
@@ -44408,15 +44501,7 @@ nolink "false"
  Une liste des listings qui contient tous les listings légendés peut être créée par le menu 
 \family sans
 Insertion\SpecialChar menuseparator
-Listes
-\begin_inset space ~
-\end_inset
-
-&
-\begin_inset space ~
-\end_inset
-
-TdM\SpecialChar menuseparator
+Listes/Matières/Références\SpecialChar menuseparator
 Liste des listings
 \family default
 .
