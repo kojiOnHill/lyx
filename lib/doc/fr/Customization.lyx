@@ -284,6 +284,12 @@ Mise à jour pour 2.4.0,
  dernière révision avant publication
 \end_layout
 
+\begin_layout Plain Layout
+Mise à jour pour 2.4.0,
+ 25 avril 2024 (JPC) ,
+ dernier contrôle
+\end_layout
+
 \end_inset
 
 
@@ -3298,8 +3304,8 @@ lyx.pot
 
  n'existe pas,
  il peut être recréé avec la commande 
-\begin_inset Flex Noun
-status collapsed
+\begin_inset Flex Strong
+status open
 
 \begin_layout Plain Layout
 make lyx.pot
@@ -4373,7 +4379,7 @@ name "sec:clavier"
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 En révisant ce document en mars 2008,
@@ -5202,7 +5208,7 @@ Touches mortes
 Il y a une autre façon d'ajouter le support pour des caractères internationaux par l'intermédiaire des touches mortes.
  Une touche morte marche en combinaison avec une lettre pour produire un caractère accentué.
  Ici,
- nous allons expliquer comment créer une touche morte vraiment simple pour montrer comment elles marchent.
+ nous allons expliquer comment créer une touche morte vraiment simple pour montrer comment elles fonctionnent.
 \end_layout
 
 \begin_layout Standard
@@ -8837,7 +8843,7 @@ Format
 \end_inset
 
 .
- Le numéro de format du présent fichier est le numéro 81.
+ Le numéro de format du présent fichier est le numéro 620.
  mais chaque version de \SpecialChar LyX
  peut lire les fichiers de format d'une version plus ancienne,
  comme elle peut lire les documents crées avec une version plus ancienne.
@@ -11941,7 +11947,7 @@ La description d'un style de paragraphe ressemble à ceci
 status collapsed
 
 \begin_layout Plain Layout
-qui peut servir soit à définir un nouvel format soit à en modifier un déjà existant.
+qui peut servir soit à définir un nouveau format soit à en modifier un déjà existant.
 \end_layout
 
 \end_inset
@@ -12115,7 +12121,7 @@ AutoNests
 \end_inset
 
  inclut une liste de formats (séparés par une virgule) devant être englobés dans et après le format courant.
- N'a de sens que pour des formats englobables comme des environnements.
+ N'a de sens que pour des formats susceptibles d'englobement comme des environnements.
  Doit être terminé par 
 \begin_inset Quotes cld
 \end_inset
@@ -13886,7 +13892,7 @@ Itemize
 \end_inset
 
  produit des symboles pour les différents niveaux.
- The bullet types displayed can be set via 
+ Les types de puces affichés peuvent être définis via 
 \begin_inset Flex Noun
 status collapsed
 
@@ -16660,9 +16666,9 @@ layouttranslations
  doit inclure ces directives s'il y a lieu.
  Notez bien que les traductions des styles de paragraphe ne changeront jamais avec les publications de maintenance des versions de \SpecialChar LyX
  (e.g.
- de la version 2.1.x à la version 2.1.y).
+ de la version 2.4.x à la version 2.4.y).
  Il est cependant très probable qu'à l'occasion d'une publication majeure (e.g.
- de 2.0.x à 2.1.0),
+ de 2.3.x à 2.4.0),
  de nouvelles traductions ou corrections soient introduites 
 \end_layout
 
@@ -16715,20 +16721,7 @@ Input stdfloats.inc
 status collapsed
 
 \begin_layout Plain Layout
-N'oubliez pas de jeter aussi un 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-oe{}
-\end_layout
-
-\end_inset
-
-il sur les compteurs dans la section suivante.
+N'oubliez pas de jeter aussi un œil sur les compteurs dans la section suivante.
 \end_layout
 
 \end_inset
@@ -17956,7 +17949,7 @@ InsetLayout
  les boîtes,
  les tables,
  les algorithmes,
- les URL et les captions,
+ les URL et les légendes,
  aussi bien que de définir des inserts flexibles.
 \end_layout
 
@@ -21443,8 +21436,6 @@ vrai
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Arguments
 \begin_inset CommandInset label
 LatexCommand label
@@ -30281,7 +30272,7 @@ LyXDir/lib/xtemplates/
 
 \end_inset
 
- directory.
+.
  Chaque cadre est défini dans un fichier spécifique
 \family typewriter
 
@@ -31856,7 +31847,7 @@ Transform
 
 \end_inset
 
- and 
+ et 
 \begin_inset Flex Code
 status collapsed
 
