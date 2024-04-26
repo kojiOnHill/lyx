@@ -347,6 +347,20 @@ JPC
 )
 \end_layout
 
+\begin_layout Plain Layout
+Avril 2021 :
+ revue pour 2.4 (
+\nospellcheck on
+JPC
+\nospellcheck default
+)
+\end_layout
+
+\begin_layout Plain Layout
+26 février 2024 :
+ dernière revue avant 2.4.0 (JPC)
+\end_layout
+
 \end_inset
 
 
@@ -795,7 +809,8 @@ Seules les formules en ligne sont autorisées dans les tableaux.
 La visibilité de la barre d'outils mathématique se règle avec le menu 
 \family sans
 Affichage\SpecialChar menuseparator
-Barres d'outils
+Barres d'outils\SpecialChar menuseparator
+Math
 \family default
 .
  Trois options sont proposées:
@@ -4504,7 +4519,11 @@ F
 \begin_layout Plain Layout
 
 \backslash
-Lambda^
+Lambda
+\begin_inset space ~
+\end_inset
+
+^
 \begin_inset space \textvisiblespace{}
 \end_inset
 
@@ -7001,7 +7020,7 @@ arraystretch
 
 \begin_layout Standard
 Pour insérer une petite matrice dans une ligne de texte,
- on eut également utiliser la commande 
+ on peut également utiliser la commande 
 \series bold
 
 \backslash
@@ -16230,6 +16249,10 @@ C=D
 </row>
 </lyxtabular>
 
+\end_inset
+
+
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -29492,7 +29515,7 @@ La fonction modulo est un peu spéciale,
 \end_layout
 
 \begin_layout Standard
-Les variantes pour une formule hors ligne
+Les variantes pour une formule en ligne
 \begin_inset space ~
 \end_inset
 
@@ -29670,7 +29693,7 @@ b
 \begin_inset VSpace defskip
 \end_inset
 
-Dans une formule en ligne,
+Dans une formule hors ligne,
  il y a plus d'espace inséré avant les noms de fonction,
  sauf 
 \series bold
@@ -34503,18 +34526,7 @@ N
 \family default
 ).
  Le numéro de la formule est affiché dans \SpecialChar LyX
- après la formule sous la forme d'un dièse entre parenthèse
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-En anglais le dièse est le symbole du numéro (NdT).
-\end_layout
-
-\end_inset
-
-.
- Le dièse est remplacé dans la sortie finale par le numéro de la formule entre parenthèses.
+ après la formule sous la forme d'un numéro entre parenthèses.
 \end_layout
 
 \begin_layout Standard
