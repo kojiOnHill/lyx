@@ -1017,7 +1017,7 @@ void BufferView::showCursor(DocIterator const & dit, ScrollType how,
 	bool update)
 {
 	if (scrollToCursor(dit, how) && update)
-		processUpdateFlags(Update::Force);
+		processUpdateFlags(Update::ForceDraw);
 }
 
 
