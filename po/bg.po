@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.3.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-04-21 11:22+0200\n"
+"POT-Creation-Date: 2024-05-10 13:11-0400\n"
 "PO-Revision-Date: 2019-04-23 13:49+0300\n"
 "Last-Translator: V. Jeliazkov <vveesskkoo@google.com>\n"
 "Language-Team: Bulgarian <lyx-docs@lists.lyx.org>\n"
@@ -11908,8 +11908,8 @@ msgstr "опции за разположение на колони"
 #: lib/layouts/beamer.layout:728
 msgid "Column placement options (t, T, c, b)"
 msgstr ""
-"Опции за разположение на колони за подравняване - низ от „t“ (горе), „T“ "
-"(?), „c“ (център), „b“ (долу)"
+"Опции за разположение на колони за подравняване - низ от „t“ (горе), "
+"„T“ (?), „c“ (център), „b“ (долу)"
 
 #: lib/layouts/beamer.layout:745
 msgid "ColumnsCenterAligned"
@@ -14365,11 +14365,11 @@ msgid ""
 "References > Endnotes) where you want the endnotes to appear."
 msgstr ""
 "Добавка за бележки в края в допълнение към бележки под линия. Използва се "
-"пакетът „enotez“, който е по-мощен и конфигурируем от пакета „endnotes“ "
-"(модула „Бележки в края (основен)“), но изисква по-нова инсталация на LaTeX "
-"(с LaTeX 3). Необходимо е да добавите списък с бележки в края (Вмъкване-"
-">Списък, съдържание, препратки->Бележки в края) на мястото, където искате да "
-"се появят."
+"пакетът „enotez“, който е по-мощен и конфигурируем от пакета "
+"„endnotes“ (модула „Бележки в края (основен)“), но изисква по-нова "
+"инсталация на LaTeX (с LaTeX 3). Необходимо е да добавите списък с бележки в "
+"края (Вмъкване->Списък, съдържание, препратки->Бележки в края) на мястото, "
+"където искате да се появят."
 
 #: lib/layouts/entcs.layout:3
 msgid "Electronic Notes in Theor. Comp. Sc. (ENTCS)"
@@ -32682,12 +32682,6 @@ msgstr "Gnuplot"
 msgid "External Material"
 msgstr "Материал външен формат"
 
-# src/ext_l10n.h:244
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "XY-Figure"
-msgstr "Изображение"
-
 #: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Файнман диаграми"
@@ -32696,6 +32690,12 @@ msgstr "Файнман диаграми"
 #, fuzzy
 msgid "Instant Preview"
 msgstr "Непосредствен прадварителен преглед"
+
+# src/LyXAction.C:251
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Itemize Bullets"
+msgstr "Изброяване с водещи знаци"
 
 # src/mathed/math_panel.C:128
 #: lib/examples/Articles:0
@@ -32709,11 +32709,11 @@ msgstr "&В реда"
 msgid "Minted Listings"
 msgstr "Фигура"
 
-# src/LyXAction.C:251
+# src/ext_l10n.h:244
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Itemize Bullets"
-msgstr "Изброяване с водещи знаци"
+msgid "XY-Figure"
+msgstr "Изображение"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
@@ -32803,6 +32803,12 @@ msgstr ""
 msgid "Modules"
 msgstr "Модули"
 
+# src/ext_l10n.h:136
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Beamer (Complex)"
+msgstr "Бележка(N)|N"
+
 # src/frontends/kde/dlg/printdlgdata.C:246
 #: lib/examples/Articles:0
 msgid "Foils"
@@ -32814,12 +32820,6 @@ msgstr "Обтекаеми профили"
 msgid "Foils Landslide"
 msgstr "пейзаж"
 
-# src/ext_l10n.h:136
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Beamer (Complex)"
-msgstr "Бележка(N)|N"
-
 # src/minibuffer.C:46 src/minibuffer.C:244
 #: lib/examples/Articles:0
 #, fuzzy
@@ -32829,16 +32829,6 @@ msgstr "Добре дошли в LyX!"
 #: lib/examples/Articles:0
 msgid "Writing Korean with CJK-ko"
 msgstr ""
-
-#: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr ""
-
-# src/mathed/math_panel.C:134
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Mathematical Monthly"
-msgstr "Матрица"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -32856,6 +32846,16 @@ msgstr "Преход"
 #, fuzzy
 msgid "IEEE Transactions Journal"
 msgstr "Преход"
+
+# src/mathed/math_panel.C:134
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Mathematical Monthly"
+msgstr "Матрица"
+
+#: lib/examples/Articles:0
+msgid "Springers Global Journal Template (V. 3)"
+msgstr ""
 
 # src/lyxfunc.C:1105 src/lyxfunc.C:2550
 #: lib/examples/Articles:0
@@ -38857,8 +38857,8 @@ msgstr "всички налични модули"
 msgid "Input listings parameters below. Enter ? for a list of parameters."
 msgstr ""
 "Въведете параметри за форматиране на текст. Напишете „?“ за извеждане на "
-"пълния списък с възможните параметри. Повече параметри се разделят с „,“ "
-"(запетая)."
+"пълния списък с възможните параметри. Повече параметри се разделят с "
+"„,“ (запетая)."
 
 # src/exporter.C:89
 #: src/frontends/qt/GuiDocument.cpp:1823

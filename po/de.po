@@ -95,7 +95,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-04-21 11:22+0200\n"
+"POT-Creation-Date: 2024-05-10 13:11-0400\n"
 "PO-Revision-Date: 2024-04-21 11:25+0200\n"
 "Last-Translator: Juergen Spitzmueller <spitz@lyx.org>\n"
 "Language-Team: German <lyx-docs@lists.lyx.org>\n"
@@ -15691,8 +15691,8 @@ msgstr "Telefontyp"
 #: lib/layouts/moderncv.layout:190
 msgid "can be fixed, mobile or fax"
 msgstr ""
-"Mögliche Werte: 'fixed' (Festnetz = Voreinstellung), 'mobile' (Mobil), 'fax' "
-"(Fax)"
+"Mögliche Werte: 'fixed' (Festnetz = Voreinstellung), 'mobile' (Mobil), "
+"'fax' (Fax)"
 
 #: lib/layouts/moderncv.layout:242
 msgid "Social"
@@ -27889,16 +27889,16 @@ msgid "External Material"
 msgstr "Externes Material"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-Figure"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Feynman-Diagramme"
 
 #: lib/examples/Articles:0
 msgid "Instant Preview"
 msgstr "Eingebettete Vorschau"
+
+#: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Auflistungszeichen"
 
 #: lib/examples/Articles:0
 msgid "Minted File Listing"
@@ -27909,8 +27909,8 @@ msgid "Minted Listings"
 msgstr "Minted-Programmlistings"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Auflistungszeichen"
+msgid "XY-Figure"
+msgstr "XY-Figure"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
@@ -27977,6 +27977,10 @@ msgid "Modules"
 msgstr "Module"
 
 #: lib/examples/Articles:0
+msgid "Beamer (Complex)"
+msgstr "Beamer (komplex)"
+
+#: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
 
@@ -27985,24 +27989,12 @@ msgid "Foils Landslide"
 msgstr "Foils (Querformat)"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (komplex)"
-
-#: lib/examples/Articles:0
 msgid "Welcome"
 msgstr "Willkommen"
 
 #: lib/examples/Articles:0
 msgid "Writing Korean with CJK-ko"
 msgstr "Koreanisch schreiben mit CJK-ko"
-
-#: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Springers globale Vorlage für Zeitschriften (V. 3)"
-
-#: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "Hebrew Article (KOMA-Script)"
@@ -28015,6 +28007,14 @@ msgstr "IEEE Transactions Conference"
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Springers globale Vorlage für Zeitschriften (V. 3)"
 
 #: lib/examples/Articles:0
 msgid "00 Main File"
@@ -30473,8 +30473,8 @@ msgstr "Ungültiges Paketlisten-Format!"
 msgid ""
 "The format of your LaTeX packages list is wrong. Please file a bug report."
 msgstr ""
-"Das Format Ihrer LaTeX-Paket-Liste is inkorrekt. Bitte reichen Sie einen"
-" Bugreport ein!"
+"Das Format Ihrer LaTeX-Paket-Liste is inkorrekt. Bitte reichen Sie einen "
+"Bugreport ein!"
 
 #: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
 msgid "Outdated configuration script detected!"
@@ -30486,11 +30486,11 @@ msgid ""
 "The script has been renamed to 'chkconfig.ltx.bak'.\n"
 "If you did not copy the script there by purpose, you can safely delete it."
 msgstr ""
-"Wir haben eine veraltete Version der Datei 'chkconfig.ltx' in Ihrem"
-" Benutzerverzeichnis gefunden.\n"
+"Wir haben eine veraltete Version der Datei 'chkconfig.ltx' in Ihrem "
+"Benutzerverzeichnis gefunden.\n"
 "Die Datei wurde nun umbenannt in 'chkconfig.ltx.bak'.\n"
-"Wenn Sie die Datei nicht absichtlich hierher kopiert haben, können Sie sie"
-" bedenkenlos löschen."
+"Wenn Sie die Datei nicht absichtlich hierher kopiert haben, können Sie sie "
+"bedenkenlos löschen."
 
 #: src/LaTeXPackages.cpp:105
 #, c-format
@@ -30499,8 +30499,8 @@ msgid ""
 "(%1$s).\n"
 "Please delete or update this file!"
 msgstr ""
-"Wir haben eine veraltete Version der Datei 'chkconfig.ltx' in Ihrem"
-" Benutzerverzeichnis gefunden\n"
+"Wir haben eine veraltete Version der Datei 'chkconfig.ltx' in Ihrem "
+"Benutzerverzeichnis gefunden\n"
 "(%1$s).\n"
 "Bitte aktualisieren oder löschen Sie diese Datei!"
 
@@ -43757,4 +43757,3 @@ msgstr "Unbekannter Benutzer"
 
 #~ msgid " (auto)"
 #~ msgstr " (automatisch)"
-

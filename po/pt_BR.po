@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR 2.4.0\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-04-21 11:22+0200\n"
+"POT-Creation-Date: 2024-05-10 13:11-0400\n"
 "PO-Revision-Date: 2024-04-12 10:35-0300\n"
 "Last-Translator: Georger Araújo <georger underscore br at yahoo dot com dot "
 "br>\n"
@@ -2332,8 +2332,8 @@ msgid ""
 "Link to the web or any other target with an \"authority\" component (i."
 "e., :// in the URI)"
 msgstr ""
-"Vincular à web ou a qualquer outro alvo com um componente \"autoridade\" "
-"(isto é, :// no URI)"
+"Vincular à web ou a qualquer outro alvo com um componente "
+"\"autoridade\" (isto é, :// no URI)"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:136
 msgid "&Web"
@@ -4893,8 +4893,8 @@ msgstr ""
 "expandidos com base na pasta de trabalho (PT). Para todos os caminho exceto "
 "o \"prefixo TEXINPUTS\" a PT é a pasta a partir da qual você inicia o LyX, e "
 "por isso pode mudar de uma sessão do LyX para outra. Para o caminho "
-"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \".\" "
-"(sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
+"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \"."
+"\" (sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
 
 #: src/frontends/qt/ui/PrefPathsUi.ui:36
 msgid "&PATH prefix:"
@@ -27729,16 +27729,16 @@ msgid "External Material"
 msgstr "Material Externo"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "Figura-XY"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Diagramas de Feynman"
 
 #: lib/examples/Articles:0
 msgid "Instant Preview"
 msgstr "Previsualização Instantânea"
+
+#: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Itemizar Marcadores"
 
 #: lib/examples/Articles:0
 msgid "Minted File Listing"
@@ -27749,8 +27749,8 @@ msgid "Minted Listings"
 msgstr "Listagens Minted"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Itemizar Marcadores"
+msgid "XY-Figure"
+msgstr "Figura-XY"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
@@ -27817,6 +27817,10 @@ msgid "Modules"
 msgstr "Módulos"
 
 #: lib/examples/Articles:0
+msgid "Beamer (Complex)"
+msgstr "Beamer (Complexo)"
+
+#: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
 
@@ -27825,24 +27829,12 @@ msgid "Foils Landslide"
 msgstr "Landslide Foils"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (Complexo)"
-
-#: lib/examples/Articles:0
 msgid "Welcome"
 msgstr "Bem-vindo"
 
 #: lib/examples/Articles:0
 msgid "Writing Korean with CJK-ko"
 msgstr "Escrevendo em Coreano com CJK-ko"
-
-#: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Modelo Springers Global Journal (V. 3)"
-
-#: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "Hebrew Article (KOMA-Script)"
@@ -27855,6 +27847,14 @@ msgstr "IEEE Transactions Conference"
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Modelo Springers Global Journal (V. 3)"
 
 #: lib/examples/Articles:0
 msgid "00 Main File"
@@ -30435,9 +30435,9 @@ msgstr ""
 "Sinal SIGSEGV recebido!\n"
 "Desculpe, você achou um erro no LyX, esperamos que você não tenha perdido "
 "nenhum dado.\n"
-"Por favor, leia as instruções para relato de bugs em 'Ajuda->Introdução' "
-"(Help->Introduction) e envie um relatório sobre o bug, se necessário. "
-"Obrigado!\n"
+"Por favor, leia as instruções para relato de bugs em 'Ajuda-"
+">Introdução' (Help->Introduction) e envie um relatório sobre o bug, se "
+"necessário. Obrigado!\n"
 "Tchau."
 
 #: src/LyX.cpp:723

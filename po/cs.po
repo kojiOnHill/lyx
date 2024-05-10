@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lyx 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-04-21 11:22+0200\n"
+"POT-Creation-Date: 2024-05-10 13:11-0400\n"
 "PO-Revision-Date: 2023-11-08 01:09-0800\n"
 "Last-Translator: Pavel Sanda <sanda@lyx.org>\n"
 "Language-Team: Czech <LL@li.org>\n"
@@ -27575,16 +27575,16 @@ msgid "External Material"
 msgstr "Externí materiál"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-Figure"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Feynmanovy diagramy"
 
 #: lib/examples/Articles:0
 msgid "Instant Preview"
 msgstr "Funkce okamžitého náhledu"
+
+#: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Odrážky položek"
 
 #: lib/examples/Articles:0
 msgid "Minted File Listing"
@@ -27595,8 +27595,8 @@ msgid "Minted Listings"
 msgstr "Zdrojový kód (minted)"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Odrážky položek"
+msgid "XY-Figure"
+msgstr "XY-Figure"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
@@ -27663,6 +27663,10 @@ msgid "Modules"
 msgstr "Moduly"
 
 #: lib/examples/Articles:0
+msgid "Beamer (Complex)"
+msgstr "Beamer (Complex)"
+
+#: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
 
@@ -27671,24 +27675,12 @@ msgid "Foils Landslide"
 msgstr "Foils Landslide"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (Complex)"
-
-#: lib/examples/Articles:0
 msgid "Welcome"
 msgstr "Uvítání"
 
 #: lib/examples/Articles:0
 msgid "Writing Korean with CJK-ko"
 msgstr "Psaní korejštiny pomocí CJK-ko"
-
-#: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Springers Global Journal Template (V. 3)"
-
-#: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "Hebrew Article (KOMA-Script)"
@@ -27701,6 +27693,14 @@ msgstr "IEEE Transactions Conference"
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Springers Global Journal Template (V. 3)"
 
 #: lib/examples/Articles:0
 msgid "00 Main File"
@@ -30113,7 +30113,9 @@ msgstr "Chybný formát seznamu balíčků!"
 #: src/LaTeXPackages.cpp:90
 msgid ""
 "The format of your LaTeX packages list is wrong. Please file a bug report."
-msgstr "Formát seznamu vašich LaTeX-ových balíčků je chybný. Pošlete nám prosím chybový výpis."
+msgstr ""
+"Formát seznamu vašich LaTeX-ových balíčků je chybný. Pošlete nám prosím "
+"chybový výpis."
 
 #: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
 msgid "Outdated configuration script detected!"
@@ -30125,9 +30127,11 @@ msgid ""
 "The script has been renamed to 'chkconfig.ltx.bak'.\n"
 "If you did not copy the script there by purpose, you can safely delete it."
 msgstr ""
-"Byl detekován zastaralý konfigurační skript 'chkconfig.ltx' ve vašem uživatelském adresáři.\n"
+"Byl detekován zastaralý konfigurační skript 'chkconfig.ltx' ve vašem "
+"uživatelském adresáři.\n"
 "Tento skript byl přejmenován na 'chkconfig.ltx.bak'.\n"
-"Pokud jste původní konfigurační skript nezkopírovali do uživatelského adresáře záměrně, můžete ho bez obav smazat."
+"Pokud jste původní konfigurační skript nezkopírovali do uživatelského "
+"adresáře záměrně, můžete ho bez obav smazat."
 
 #: src/LaTeXPackages.cpp:105
 #, c-format
@@ -30136,7 +30140,8 @@ msgid ""
 "(%1$s).\n"
 "Please delete or update this file!"
 msgstr ""
-"Byl detekován zastaralý konfigurační skript 'chkconfig.ltx' ve vašem uživatelském adresáři.\n"
+"Byl detekován zastaralý konfigurační skript 'chkconfig.ltx' ve vašem "
+"uživatelském adresáři.\n"
 "(%1$s).\n"
 "Je potřeba ho aktualizovat anebo smazat."
 

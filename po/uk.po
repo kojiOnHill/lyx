@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-04-21 11:22+0200\n"
+"POT-Creation-Date: 2024-05-10 13:11-0400\n"
 "PO-Revision-Date: 2024-02-11 20:36+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -18193,12 +18193,12 @@ msgid ""
 "chapter- and section-wide numbering, use one of the 'within "
 "Sections'/'within Chapters' modules, respectively."
 msgstr ""
-"Надає змогу користуватися середовищами «theorem» (теорема) та «proof» "
-"(доведення) з використанням алгоритмів класів AMS. Підтримуються нумеровані "
-"та ненумеровані типи. На відміну від звичайного модуля теорем AMS, "
-"передбачено окрему нумерацію для кожного з типів теорем (наприклад, теорема "
-"1, теорема 2, лема 1, твердження 1, теорема 3, лема 2…, а не теорема 1, "
-"теорема 2, лема 3, твердження 4…). Нумерація є наскрізною для цілого "
+"Надає змогу користуватися середовищами «theorem» (теорема) та "
+"«proof» (доведення) з використанням алгоритмів класів AMS. Підтримуються "
+"нумеровані та ненумеровані типи. На відміну від звичайного модуля теорем "
+"AMS, передбачено окрему нумерацію для кожного з типів теорем (наприклад, "
+"теорема 1, теорема 2, лема 1, твердження 1, теорема 3, лема 2…, а не теорема "
+"1, теорема 2, лема 3, твердження 4…). Нумерація є наскрізною для цілого "
 "документа. Щоб отримати окрему нумерацію у межах глави або розділу, "
 "скористайтеся одним з модулів «у межах розділів»/«у межах глав», відповідно."
 
@@ -18216,12 +18216,12 @@ msgid ""
 "theorem 2, lemma 3, proposition 4, ...). The numbering restarts for each "
 "chapter: theorem 1.1, theorem 2.1, ..."
 msgstr ""
-"Надає змогу користуватися середовищами «theorem» (теорема) та «proof» "
-"(доведення) з використанням алгоритмів класів AMS. Підтримуються нумеровані "
-"та ненумеровані типи. На відміну від звичайного модуля теорем AMS, "
-"передбачено окрему нумерацію для кожного з типів теорем (наприклад, теорема "
-"1.1, теорема 1.2, лема 1.1, твердження 1.1, теорема 1.3, лема 1.2…, а не "
-"теорема 1, теорема 2, лема 3, твердження 4…). Нумерація починається з "
+"Надає змогу користуватися середовищами «theorem» (теорема) та "
+"«proof» (доведення) з використанням алгоритмів класів AMS. Підтримуються "
+"нумеровані та ненумеровані типи. На відміну від звичайного модуля теорем "
+"AMS, передбачено окрему нумерацію для кожного з типів теорем (наприклад, "
+"теорема 1.1, теорема 1.2, лема 1.1, твердження 1.1, теорема 1.3, лема 1.2…, "
+"а не теорема 1, теорема 2, лема 3, твердження 4…). Нумерація починається з "
 "початку у кожній главі: теорема 1.1, теорема 2.1…"
 
 #: lib/layouts/theorems-ams-extended-bytype.module:2
@@ -27730,16 +27730,16 @@ msgid "External Material"
 msgstr "зовнішній об'єкт"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-рисунок"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Діаграми Фейнмана"
 
 #: lib/examples/Articles:0
 msgid "Instant Preview"
 msgstr "Швидкий перегляд"
+
+#: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Маркери пунктів"
 
 #: lib/examples/Articles:0
 msgid "Minted File Listing"
@@ -27750,8 +27750,8 @@ msgid "Minted Listings"
 msgstr "Списки Minted"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Маркери пунктів"
+msgid "XY-Figure"
+msgstr "XY-рисунок"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
@@ -27818,6 +27818,10 @@ msgid "Modules"
 msgstr "Модулі"
 
 #: lib/examples/Articles:0
+msgid "Beamer (Complex)"
+msgstr "Beamer (складний)"
+
+#: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Слайди"
 
@@ -27826,24 +27830,12 @@ msgid "Foils Landslide"
 msgstr "Альбомні слайди"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (складний)"
-
-#: lib/examples/Articles:0
 msgid "Welcome"
 msgstr "Вітаємо"
 
 #: lib/examples/Articles:0
 msgid "Writing Korean with CJK-ko"
 msgstr "Текст корейською з CJK-ko"
-
-#: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Загальний шаблон журналів Springer (версія 3)"
-
-#: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "Hebrew Article (KOMA-Script)"
@@ -27856,6 +27848,14 @@ msgstr "Праці конференції IEEE"
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "Журнал праць IEEE"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Загальний шаблон журналів Springer (версія 3)"
 
 #: lib/examples/Articles:0
 msgid "00 Main File"
@@ -34184,8 +34184,8 @@ msgid ""
 "output will be 'Yes' (package available) or 'No' (package unavailable)."
 msgstr ""
 "Вкажіть назву пакунка LaTeX, наприклад «hyperref» (суфікс назви є "
-"необов'язковим). Результатом буде «Так» (пакунок доступний) або «Ні» "
-"(пакунок недоступний)."
+"необов'язковим). Результатом буде «Так» (пакунок доступний) або "
+"«Ні» (пакунок недоступний)."
 
 #: src/frontends/qt/GuiInfo.cpp:195
 msgid ""
@@ -34740,9 +34740,9 @@ msgid ""
 msgstr ""
 "Якщо позначено цей пункт, резервну копію документа буде створено у каталозі "
 "резервних копій (%1$s). Файл резервної копії матиме назву, що складається зі "
-"шляху до початкового файла, назви початкового файла і суфікса «.lyx~» "
-"(наприклад, !мій_каталог!назва_файла.lyx~). Зауважте, що такі файли типово "
-"приховано у деяких програмах для керування файлами."
+"шляху до початкового файла, назви початкового файла і суфікса «."
+"lyx~» (наприклад, !мій_каталог!назва_файла.lyx~). Зауважте, що такі файли "
+"типово приховано у деяких програмах для керування файлами."
 
 #: src/frontends/qt/GuiPrefs.cpp:2750
 msgid "Control"
