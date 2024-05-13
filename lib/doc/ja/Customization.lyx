@@ -148,6 +148,7 @@ End
 \suppress_date false
 \justification false
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \notefontcolor #0000ff
@@ -13959,6 +13960,161 @@ cprotect
 \family default
 パッケージ）を用いて保護するようにし，
 マクロ中でverbatimを使えるようにします．
+\begin_inset Note Note
+status open
+
+\begin_layout Description
+
+\lang english
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+NeedCProtect
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+-1
+\end_layout
+
+\end_inset
+
+,
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+\lang english
+0
+\end_layout
+
+\end_inset
+
+,
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+
+] Value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+
+ causes macros that contain this layout to be protected with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+
+\backslash
+cprotect
+\end_layout
+
+\end_inset
+
+ (cf.
+ package 
+\family sans
+cprotect
+\family default
+) if necessary and thus allows (some) verbatim stuff in macros.
+ With the default setting (value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+
+),
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+
+\backslash
+cprotect
+\end_layout
+
+\end_inset
+
+ is used if a nested element requires it.
+ Value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+-1
+\end_layout
+
+\end_inset
+
+ prevents any use of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+
+\backslash
+cprotect
+\end_layout
+
+\end_inset
+
+ within this layout,
+ even if required by a nested element.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
