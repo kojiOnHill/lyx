@@ -14783,6 +14783,20 @@ NeedCProtect
 status collapsed
 
 \begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+,
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 0
@@ -14804,7 +14818,24 @@ status collapsed
 
 \end_inset
 
-] protège si nécessaire les macros qui contiennent ce format avec 
+] avec la valeur 
+\lang english
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+
+
+\lang french
+ ,
+ protège si nécessaire les macros qui contiennent ce format avec 
 \begin_inset Flex Code
 status collapsed
 
@@ -14821,88 +14852,22 @@ cprotect
 \family sans
 cprotect
 \family default
-) et par suite autorise du texte verbatim dans les macros
-\begin_inset Note Note
-status open
-
-\begin_layout Description
-
-\lang english
+) et par suite autorise du texte verbatim dans les macros.
+ Avec la valeur implicite 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
-
-\lang english
-NeedCProtect
-\end_layout
-
-\end_inset
-
- [
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
--1
-\end_layout
-
-\end_inset
-
-,
-\begin_inset space \thinspace{}
-\end_inset
-
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\emph on
-\lang english
 0
 \end_layout
 
 \end_inset
 
 ,
-\begin_inset space \thinspace{}
-\end_inset
-
-
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
-
-\lang english
-1
-\end_layout
-
-\end_inset
-
-] Value 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-1
-\end_layout
-
-\end_inset
-
- causes macros that contain this layout to be protected with 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
 
 \backslash
 cprotect
@@ -14910,73 +14875,32 @@ cprotect
 
 \end_inset
 
- (cf.
- package 
-\family sans
-cprotect
-\family default
-) if necessary and thus allows (some) verbatim stuff in macros.
- With the default setting (value 
+ est utilisé si un élément imbriqué le demande.
+ La valeur 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+ empêche toute utilisation de 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
 
-\lang english
-0
+\backslash
+cprotect
 \end_layout
 
 \end_inset
 
-),
+ dans le format,
+ même si un élément imbriqué le demande.
  
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-
-\backslash
-cprotect
-\end_layout
-
-\end_inset
-
- is used if a nested element requires it.
- Value 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
--1
-\end_layout
-
-\end_inset
-
- prevents any use of 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-
-\backslash
-cprotect
-\end_layout
-
-\end_inset
-
- within this layout,
- even if required by a nested element.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
