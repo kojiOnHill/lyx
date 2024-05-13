@@ -15113,6 +15113,20 @@ NeedCProtect
 status collapsed
 
 \begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+,
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 0
@@ -15134,7 +15148,17 @@ status collapsed
 
 \end_inset
 
-] This causes macros that contain this layout to be protected with 
+] Value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+ causes macros that contain this layout to be protected with 
 \begin_inset Flex Code
 status collapsed
 
@@ -15152,6 +15176,54 @@ cprotect
 cprotect
 \family default
 ) if necessary and thus allows (some) verbatim stuff in macros.
+ With the default setting (value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+),
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+cprotect
+\end_layout
+
+\end_inset
+
+ is used if a nested element requires it.
+ Value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+ prevents any use of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+cprotect
+\end_layout
+
+\end_inset
+
+ within this layout,
+ even if required by a nested element.
 \end_layout
 
 \begin_layout Description
