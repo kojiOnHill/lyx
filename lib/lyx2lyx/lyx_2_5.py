@@ -119,7 +119,7 @@ def revert_url_escapes(document):
             k = surl
 
 def convert_url_escapes2(document):
-    """Unescape / in URLs with hyperref."""
+    """Unescape backslashes in URLs with hyperref."""
 
     i = find_token(document.header, "\\use_hyperref true", 0)
    
@@ -144,7 +144,7 @@ def convert_url_escapes2(document):
             i = bs + 1
 
 def revert_url_escapes2(document):
-    """Escape / in URLs with hyperref."""
+    """Escape backslashes in URLs with hyperref."""
 
     i = find_token(document.header, "\\use_hyperref true", 0)
    
