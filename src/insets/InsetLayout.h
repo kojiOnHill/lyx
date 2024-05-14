@@ -401,8 +401,6 @@ private:
 	///
 	docstring no_passthru_chars_;
 	///
-	docstring no_hr_passthru_chars_;
-	///
 	std::string newline_cmd_;
 	///
 	bool parbreakisnewline_ = false;
