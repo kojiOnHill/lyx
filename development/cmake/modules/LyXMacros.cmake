@@ -459,7 +459,7 @@ function(determineversionandbuildtype configfile package version dirs date build
     set(${buildtype} "development" PARENT_SCOPE)
   elseif(LYX_BUILD_TYPE MATCHES "^\(alpha|beta|rc|pre\)[0-9]*$")
     set(${buildtype} "prerelease" PARENT_SCOPE)
-  elseif(LYX_BUILD_TYPE MATCHES "^$")
+  elseif("${LYX_BUILD_TYPE}" MATCHES "^$")
     set(${buildtype} "release" PARENT_SCOPE)
   else()
     set(${buildtype} "unknown" PARENT_SCOPE)
