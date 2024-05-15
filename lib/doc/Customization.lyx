@@ -20804,6 +20804,17 @@ NeedCProtect
 status collapsed
 
 \begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 0
@@ -20825,7 +20836,17 @@ status collapsed
 
 \end_inset
 
-] This causes macros that contain this inset to be protected with 
+] Value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+ causes macros that contain this inset to be protected with 
 \begin_inset Flex Code
 status collapsed
 
@@ -20844,6 +20865,54 @@ cprotect
 \family default
 ) if necessary and thus allows (some) verbatim stuff in macros.
  Default is false.
+ With the default setting (value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+),
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+cprotect
+\end_layout
+
+\end_inset
+
+ is used if a nested element requires it.
+ Value 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+ prevents any use of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+cprotect
+\end_layout
+
+\end_inset
+
+ within this inset,
+ even if required by a nested element.
 \end_layout
 
 \begin_layout Description
@@ -31439,6 +31508,8 @@ status collapsed
 
 \change_inserted -712698321 1712389749
 $$OrigAbsName
+\change_unchanged
+
 \end_layout
 
 \end_inset
