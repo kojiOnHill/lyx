@@ -430,7 +430,7 @@ function(determineversionandbuildtype configfile package version dirs date build
       setstripped(PACKAGE_VERSION ${_PV})
       setstripped(PACKAGE_BUGREPORT ${_PBU})
       set(${package} ${PACKAGE_BASE} ${PACKAGE_VERSION} ${PACKAGE_BUGREPORT} PARENT_SCOPE)
-      if(PACKAGE_VERSION MATCHES "^\([0-9]+\)\\.\([0-9]+\)\(\\.\([0-9]+\)\(\\.\([0-9]+\)\)?\)?[-~]?\([A-Za-z]+[0-9]*\).*$")
+      if(PACKAGE_VERSION MATCHES "^\([0-9]+\)\\.\([0-9]+\)\(\\.\([0-9]+\)\(\\.\([0-9]+\)\)?\)?[-~]?\([A-Za-z]+[0-9]*\)?.*$")
         set(LYX_MAJOR_VERSION ${CMAKE_MATCH_1})
         set(LYX_MINOR_VERSION ${CMAKE_MATCH_2})
         set(LYX_RELEASE_LEVEL ${CMAKE_MATCH_4})
