@@ -220,7 +220,10 @@ void TextMetrics::updateMetrics(pit_type const anchor_pit, int const anchor_ypos
                                 int const bv_height)
 {
 	LASSERT(text_->isMainText(), return);
-	pit_type const npit = pit_type(text_->paragraphs().size());
+
+	// Forget existing positions
+	for (auto & pm_pair : par_metrics_)
+		pm_pair.second.resetPosition();
 
 	if (!contains(anchor_pit))
 		// Rebreak anchor paragraph.
@@ -246,6 +249,7 @@ void TextMetrics::updateMetrics(pit_type const anchor_pit, int const anchor_ypos
 	int y2 = anchor_ypos + anchor_pm.descent();
 	// We are now just below the anchor paragraph.
 	pit_type pit2 = anchor_pit + 1;
+	pit_type const npit = pit_type(text_->paragraphs().size());
 	for (; pit2 < npit && y2 < bv_height; ++pit2) {
 		if (!contains(pit2))
 			redoParagraph(pit2);
