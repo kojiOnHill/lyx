@@ -72,7 +72,7 @@ public:
 	/// The vertical position of the baseline of the first line of the paragraph
 	int position() const;
 	void setPosition(int position);
-	/// Set poistion to unknown
+	/// Set position to unknown
 	void resetPosition();
 	/// Return true when the position of the paragraph is known
 	bool hasPosition() const;
