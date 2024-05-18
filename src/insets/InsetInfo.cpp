@@ -1589,9 +1589,6 @@ void xhtmlShortcutInfo(XMLStream & xs, const InsetInfoParams & params) {
 		} else {
 			xs << c;
 		}
-
-		if (i > 0 && i + 1 < sequence.length())
-			xs << from_ascii("+");
 	}
 
 	xml::closeTag(xs, "bdo", "inline");
