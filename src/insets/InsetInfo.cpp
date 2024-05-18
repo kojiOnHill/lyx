@@ -1563,7 +1563,7 @@ void xhtmlShortcutInfo(XMLStream & xs, const InsetInfoParams & params) {
 		sequence = theTopLevelKeymap().printBindings(func, KeySequence::ForGui);
 		seq_untranslated = theTopLevelKeymap().printBindings(func, KeySequence::ForGui, true);
 	}
-	// No other possible case.
+	// No other possible case (`return` at the beginning of the function otherwise).
 
 	Language const * tryguilang = languages.getFromCode(Messages::guiLanguage());
 	// Some info insets use the language of the GUI (if available)
