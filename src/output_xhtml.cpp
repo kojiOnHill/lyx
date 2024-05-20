@@ -422,7 +422,7 @@ ParagraphList::const_iterator makeEnvironment(Buffer const & buf,
 		// (We also do not deal with 'resume' counters, though I'm not sure that can
 		// be done at all in HTML.)
 
-		// Code adapated from Buffer::Impl::setLabel
+		// Code adapted from Buffer::Impl::setLabel
 		bool const isenum = bstyle.labeltype == LABEL_ENUMERATE;
 		docstring enumcounter = bstyle.counter.empty() ?
 					( isenum ? from_ascii("enum") : from_ascii("lyxitem") ) :
