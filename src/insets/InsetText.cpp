@@ -1209,11 +1209,12 @@ void InsetText::iterateForToc(DocIterator const & cdit, bool output_active,
 			dit.pos() = elem.pos;
 			bool const being_output = doing_output &&
 				!par.lookupChange(elem.pos).deleted();
-				// && buffer().params.output_changes;
-			elem.inset->addToToc(dit, being_output, utype, backend);
-			if (InsetArgument const * x = elem.inset->asInsetArgument())
-				if (x->isTocCaption())
-					arginset = x;
+			if (being_output) {
+				elem.inset->addToToc(dit, being_output, utype, backend);
+				if (InsetArgument const * x = elem.inset->asInsetArgument())
+					if (x->isTocCaption())
+						arginset = x;
+			}
 		}
 
 		// End custom AddToToc in paragraph layouts
