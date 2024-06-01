@@ -4491,6 +4491,10 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 						&GuiViewPrivate::compileAndDestroy,
 						&Buffer::doExport,
 						nullptr, cmd.allowAsync(), true);
+			// If fresh start had been required, reset to false here
+			// otherwise this would be done on each subsequent call
+			if (doc_buffer)
+				doc_buffer->requireFreshStart(false);
 			break;
 		}
 		case LFUN_BUFFER_VIEW: {
@@ -4500,6 +4504,10 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 						&GuiViewPrivate::previewAndDestroy,
 						nullptr,
 						&Buffer::preview, cmd.allowAsync());
+			// If fresh start had been required, reset to false here
+			// otherwise this would be done on each subsequent call
+			if (doc_buffer)
+				doc_buffer->requireFreshStart(false);
 			break;
 		}
 		case LFUN_MASTER_BUFFER_UPDATE: {
@@ -4509,6 +4517,10 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 						&GuiViewPrivate::compileAndDestroy,
 						&Buffer::doExport,
 						nullptr, cmd.allowAsync(), true);
+			// If fresh start had been required, reset to false here
+			// otherwise this would be done on each subsequent call
+			if (doc_buffer && doc_buffer->masterBuffer())
+				doc_buffer->masterBuffer()->requireFreshStart(false);
 			break;
 		}
 		case LFUN_MASTER_BUFFER_VIEW: {
@@ -4517,6 +4529,10 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 						docstring(),
 						&GuiViewPrivate::previewAndDestroy,
 						nullptr, &Buffer::preview, cmd.allowAsync());
+			// If fresh start had been required, reset to false here
+			// otherwise this would be done on each subsequent call
+			if (doc_buffer && doc_buffer->masterBuffer())
+				doc_buffer->masterBuffer()->requireFreshStart(false);
 			break;
 		}
 		case LFUN_EXPORT_CANCEL: {
