@@ -4114,7 +4114,7 @@ string MatchStringAdv::convertLF2Space(docstring const &s, bool ignore_format) c
 static string showPos(DocIterator const & cur)
 {
 	stringstream a;
-	a << "[idx(" << cur.idx() << "),pit(" << cur.pit() << "),pos(" << cur.pos() << "),depth(" << cur.depth() << ")]";
+       	a << "[idx(" << cur.idx() << "),pit(" << cur.pit() << "),pos(" << cur.pos() << "),depth(" << cur.depth() << ")]";
 	return(a.str());
 }
 

@@ -1463,18 +1463,23 @@ void write(MathData const & dat, TeXMathStream & wi)
 void writeString(docstring const & s, TeXMathStream & os)
 {
 	if (!os.latex()) {
-		os << (os.asciiOnly() ? escape(s) : s);
+		os << s;
 		return;
 	}
-	else if (os.output() == TeXMathStream::wsSearchAdv) {
-		os << s;
+
+	docstring str = s;
+	if (os.asciiOnly())
+		str = escape(s);
+
+	if (os.output() == TeXMathStream::wsSearchAdv) {
+		os << str;
 		return;
 	}
 
 	if (os.lockedMode()) {
 		bool space;
 		docstring cmd;
-		for (char_type c : s) {
+		for (char_type c : str) {
 			try {
 				Encodings::latexMathChar(c, true, os.encoding(), cmd, space);
 				os << cmd;
@@ -1512,7 +1517,7 @@ void writeString(docstring const & s, TeXMathStream & os)
 	// We will take care of matching braces.
 	os.pendingBrace(false);
 
-	for (char_type const c : s) {
+	for (char_type const c : str) {
 		bool mathmode = in_forced_mode ? os.textMode() : !os.textMode();
 		docstring command(1, c);
 		try {

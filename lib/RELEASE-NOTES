@@ -35,7 +35,7 @@
 * Continuous spellcheck is now on by default, but only if the user does not have
   an existing preferences file. In that case, the old setting is preserved.
 
-* Document (or selection statistics) is now shown in status bar and can be
+* Document (or selection) statistics is now shown in status bar and can be
   disabled by the context menu.
 
 * The actual enabled state of the synchronize TeX output option of the document
@@ -44,11 +44,11 @@
 * When using the document compare function, there is now an option to display the
   differences using a special "Document Compare" author.
 
-* InsetRef now supports starred commands. The starred commands stop hyperref from
-  creating a link (and are only available when hyperref is used). There is a 
-  checkbox "No Hyperlink" for this purpose.
+* The cross reference inset now supports starred commands. The starred commands 
+  stop hyperref from creating a link (and are only available when hyperref is used).
+  There is a checkbox "No Hyperlink" for this purpose.
 
-* Alt-Escape can be used to 'float' and redock widgets like the table of contents
+* Alt-Escape can be used to 'float' and redock widgets such as the table of contents
   or source view.
 
 * Edit > Paste operation now preserves newlines in text by default.
@@ -109,10 +109,15 @@
     be found when processing your documents. 
   Package maintainers of distributions (e.g. openSUSE or Debian derivates)
   where ghostscript conversions of ImageMagick are banned can simply 
-  add dependencies for poppler-utils and libtiff-tools to workaround
+  add dependencies for poppler-utils and libtiff-tools to work around
   the problem.
 
-* LyX now supports hebrew and hungarian quotation styles.
+* LyX now supports Hebrew and Hungarian quotation styles.
+
+* cprotect.sty is now generally needed and should be required as 
+  a dependency for installation.
+  
+
 
 !!!The following pref variables were added in 2.4:
 
@@ -138,6 +143,7 @@
 
 !!!The following pref variables were changed in 2.4:
 
+* none.
 
 
 !!!The following pref variables are obsoleted in 2.4:
@@ -251,6 +257,7 @@
 
 * date-insert: obsoleted by info-insert date.
 
+
 !!!The following LyX function has been added and then removed in 2.4 development cycle.
 
 * bidi: used as a first solution to provide icons that change
@@ -281,6 +288,7 @@
 
 !!!The following preferences files have been removed from the tarball in 2.4:
 
+* none.
 
 
 !!!The following metadata files have been added to the tarball in 2.4:
@@ -299,6 +307,7 @@
 * The dependency on pplatex/dvipost was dropped.
 
 * The dependency on sgmltools was dropped, see DocBook 5 section.
+
 
 !!! Dependencies to generate ePub files:
 
@@ -327,8 +336,11 @@
 
 !!Known issues in version 2.4.0
 
-* Compiling LyX 2.4 on MacOS with Qt6 makes currently LyX unresponsive to 
-  Control-Command keyboard shortcuts (bug #12641).
+* Various versions of Qt6 (> 6.2) have problems with key events handling on MacOS.
+  In LyX, this results in Control-Command keyboard shortcuts not working if
+  LyX is compiled against such a version for MacOS (see bug #12641).
+  This is a Qt bug (QTBUG-123848) which will be fixed in Qt 6.8.0 and 6.7.1.
+  The fix might also be backported to Qt 6.5.6 and 6.2.13.
 
 * Gnome environments defaulting to Wayland + mutter compositor might be missing
   proper window decorations. This is a generic problem which can be for Qt-based
@@ -367,6 +379,7 @@
   the conversion, or add the name of the inset, inset and the argument, 
   or layout and argument to the appropriate list, or dictionary in  
   the function "convert_hebrew_parentheses(document)" in lyx_2_4.py.
+
 
 !! If upgrading from a LyX version before 2.3.0
 

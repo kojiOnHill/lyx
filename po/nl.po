@@ -126,7 +126,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-02-12 11:10-0500\n"
+"POT-Creation-Date: 2024-05-25 17:50-0400\n"
 "PO-Revision-Date: 2024-01-05 13:13+0100\n"
 "Last-Translator: Kees Zeelenberg <kzstatis@gmail.com>\n"
 "Language-Team: \n"
@@ -271,8 +271,8 @@ msgstr "&Variant:"
 msgid "Provides available cite style variants."
 msgstr "Toont beschikbare varianten voor de verwijzingenstijl."
 
-#: src/frontends/qt/ui/BiblioUi.ui:118 src/frontends/qt/GuiPrefs.cpp:610
-#: src/frontends/qt/GuiPrefs.cpp:739
+#: src/frontends/qt/ui/BiblioUi.ui:118 src/frontends/qt/GuiPrefs.cpp:620
+#: src/frontends/qt/GuiPrefs.cpp:749
 msgid "Opt&ions:"
 msgstr "Opt&ies:"
 
@@ -386,8 +386,8 @@ msgid "Select a processor"
 msgstr "Kies een verwerker"
 
 #: src/frontends/qt/ui/BiblioUi.ui:424 src/frontends/qt/ui/PrefLatexUi.ui:106
-#: src/frontends/qt/ui/PrefLatexUi.ui:208 src/frontends/qt/GuiPrefs.cpp:635
-#: src/frontends/qt/GuiPrefs.cpp:766
+#: src/frontends/qt/ui/PrefLatexUi.ui:208 src/frontends/qt/GuiPrefs.cpp:645
+#: src/frontends/qt/GuiPrefs.cpp:776
 msgid "Op&tions:"
 msgstr "Op&ties:"
 
@@ -510,8 +510,8 @@ msgid "Add L&ocal..."
 msgstr "L&okaal toevoegen..."
 
 #: src/frontends/qt/ui/BibtexUi.ui:314 lib/layouts/beamer.layout:534
-#: lib/layouts/beamer.layout:563 lib/layouts/beamer.layout:574
-#: lib/layouts/beamer.layout:602 lib/layouts/beamer.layout:705
+#: lib/layouts/beamer.layout:564 lib/layouts/beamer.layout:575
+#: lib/layouts/beamer.layout:604 lib/layouts/beamer.layout:707
 #: lib/layouts/chessboard.module:31 lib/layouts/chessboard.module:61
 #: lib/layouts/chessboard.module:139 lib/layouts/fixme.module:68
 #: lib/layouts/fixme.module:103 lib/layouts/fixme.module:146
@@ -588,7 +588,7 @@ msgstr "&Hoogte:"
 
 #: src/frontends/qt/ui/BoxUi.ui:61 src/frontends/qt/ui/ExternalUi.ui:514
 #: src/frontends/qt/ui/LineUi.ui:58 src/frontends/qt/ui/PageLayoutUi.ui:100
-#: src/frontends/qt/ui/TabularUi.ui:367
+#: src/frontends/qt/ui/TabularUi.ui:351
 msgid "&Width:"
 msgstr "B&reedte:"
 
@@ -601,12 +601,12 @@ msgid "Inner box type"
 msgstr "Type binnenste blok"
 
 #: src/frontends/qt/ui/BoxUi.ui:91 src/frontends/qt/ui/HSpaceUi.ui:27
-#: src/frontends/qt/ui/ListingsUi.ui:105 src/frontends/qt/ui/TabularUi.ui:1200
-#: src/frontends/qt/ui/TabularUi.ui:1219 src/frontends/qt/ui/TabularUi.ui:1267
+#: src/frontends/qt/ui/ListingsUi.ui:105 src/frontends/qt/ui/TabularUi.ui:1184
+#: src/frontends/qt/ui/TabularUi.ui:1203 src/frontends/qt/ui/TabularUi.ui:1251
 #: src/frontends/qt/GuiBox.cpp:398 src/frontends/qt/GuiBox.cpp:608
 #: src/frontends/qt/GuiDocument.cpp:122 src/frontends/qt/GuiGraphics.cpp:597
 #: src/frontends/qt/GuiIndex.cpp:41 src/frontends/qt/GuiMathMatrix.cpp:33
-#: src/frontends/qt/GuiPrefs.cpp:2204 src/frontends/qt/GuiPrefs.cpp:2229
+#: src/frontends/qt/GuiPrefs.cpp:2229 src/frontends/qt/GuiPrefs.cpp:2254
 msgid "None"
 msgstr "Geen"
 
@@ -666,20 +666,20 @@ msgid "&Box:"
 msgstr "&Blok:"
 
 #: src/frontends/qt/ui/BoxUi.ui:204 src/frontends/qt/ui/BoxUi.ui:234
-#: src/frontends/qt/ui/TabularUi.ui:213 src/frontends/qt/ui/TabularUi.ui:404
+#: src/frontends/qt/ui/TabularUi.ui:265 src/frontends/qt/ui/TabularUi.ui:388
 #: lib/ui/stdcontext.inc:483 src/frontends/qt/GuiMathMatrix.cpp:54
 msgid "Top"
 msgstr "Boven"
 
 #: src/frontends/qt/ui/BoxUi.ui:209 src/frontends/qt/ui/BoxUi.ui:239
-#: src/frontends/qt/ui/TabularUi.ui:218 src/frontends/qt/ui/TabularUi.ui:409
+#: src/frontends/qt/ui/TabularUi.ui:270 src/frontends/qt/ui/TabularUi.ui:393
 #: lib/ui/stdcontext.inc:484 src/frontends/qt/GuiMathMatrix.cpp:55
 #: src/frontends/qt/GuiTabular.cpp:252
 msgid "Middle"
 msgstr "Centreren"
 
 #: src/frontends/qt/ui/BoxUi.ui:214 src/frontends/qt/ui/BoxUi.ui:244
-#: src/frontends/qt/ui/TabularUi.ui:223 src/frontends/qt/ui/TabularUi.ui:414
+#: src/frontends/qt/ui/TabularUi.ui:275 src/frontends/qt/ui/TabularUi.ui:398
 #: lib/layouts/g-brief2.layout:108 lib/layouts/g-brief2.layout:129
 #: lib/layouts/g-brief2.layout:149 lib/layouts/g-brief2.layout:169
 #: lib/layouts/g-brief2.layout:189 lib/layouts/g-brief2.layout:209
@@ -706,20 +706,20 @@ msgid "Stretch"
 msgstr "Vullen"
 
 #: src/frontends/qt/ui/BoxUi.ui:265 src/frontends/qt/ui/ListingsUi.ui:110
-#: src/frontends/qt/ui/TabularUi.ui:344 src/frontends/qt/ui/TabularUi.ui:1553
+#: src/frontends/qt/ui/TabularUi.ui:328 src/frontends/qt/ui/TabularUi.ui:1537
 #: src/frontends/qt/ui/WrapUi.ui:47 src/frontends/qt/GuiDocument.cpp:1604
 #: src/frontends/qt/GuiParagraph.cpp:115 src/frontends/qt/GuiTabular.cpp:1038
 msgid "Left"
 msgstr "Links"
 
-#: src/frontends/qt/ui/BoxUi.ui:270 src/frontends/qt/ui/TabularUi.ui:349
+#: src/frontends/qt/ui/BoxUi.ui:270 src/frontends/qt/ui/TabularUi.ui:333
 #: src/frontends/qt/GuiExternal.cpp:78 src/frontends/qt/GuiGraphics.cpp:73
 #: src/frontends/qt/GuiParagraph.cpp:117 src/frontends/qt/GuiTabular.cpp:1039
 msgid "Center"
 msgstr "Centreren"
 
 #: src/frontends/qt/ui/BoxUi.ui:275 src/frontends/qt/ui/ListingsUi.ui:115
-#: src/frontends/qt/ui/TabularUi.ui:354 src/frontends/qt/ui/WrapUi.ui:52
+#: src/frontends/qt/ui/TabularUi.ui:338 src/frontends/qt/ui/WrapUi.ui:52
 #: src/frontends/qt/GuiDocument.cpp:1606 src/frontends/qt/GuiParagraph.cpp:116
 #: src/frontends/qt/GuiTabular.cpp:1040
 msgid "Right"
@@ -832,7 +832,7 @@ msgid "Add a new branch to the list"
 msgstr "Voeg een nieuwe vertakking toe aan de lijst"
 
 #: src/frontends/qt/ui/BranchesUi.ui:116 src/frontends/qt/ui/CitationUi.ui:146
-#: src/frontends/qt/ui/IndicesUi.ui:134 src/CutAndPaste.cpp:479
+#: src/frontends/qt/ui/IndicesUi.ui:134 src/CutAndPaste.cpp:459
 msgid "&Add"
 msgstr "&Toevoegen"
 
@@ -884,15 +884,15 @@ msgstr "A&llemaal toevoegen"
 #: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
-#: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3332
-#: src/frontends/qt/GuiPrefs.cpp:3355 src/frontends/qt/GuiView.cpp:2908
-#: src/frontends/qt/GuiView.cpp:3071 src/frontends/qt/GuiView.cpp:3301
-#: src/frontends/qt/GuiView.cpp:3325 src/frontends/qt/GuiView.cpp:3339
-#: src/frontends/qt/GuiView.cpp:3443 src/frontends/qt/GuiView.cpp:3488
-#: src/frontends/qt/GuiView.cpp:3543 src/frontends/qt/GuiView.cpp:3777
-#: src/frontends/qt/GuiView.cpp:3791 src/frontends/qt/GuiView.cpp:3910
-#: src/frontends/qt/GuiView.cpp:3935 src/frontends/qt/GuiView.cpp:4641
-#: src/frontends/qt/GuiView.cpp:4648 src/insets/InsetBibtex.cpp:153
+#: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
+#: src/frontends/qt/GuiPrefs.cpp:3387 src/frontends/qt/GuiView.cpp:2916
+#: src/frontends/qt/GuiView.cpp:3079 src/frontends/qt/GuiView.cpp:3309
+#: src/frontends/qt/GuiView.cpp:3333 src/frontends/qt/GuiView.cpp:3347
+#: src/frontends/qt/GuiView.cpp:3451 src/frontends/qt/GuiView.cpp:3496
+#: src/frontends/qt/GuiView.cpp:3551 src/frontends/qt/GuiView.cpp:3785
+#: src/frontends/qt/GuiView.cpp:3799 src/frontends/qt/GuiView.cpp:3918
+#: src/frontends/qt/GuiView.cpp:3943 src/frontends/qt/GuiView.cpp:4649
+#: src/frontends/qt/GuiView.cpp:4656 src/insets/InsetBibtex.cpp:153
 msgid "&Cancel"
 msgstr "&Annuleren"
 
@@ -923,8 +923,8 @@ msgid "Si&ze:"
 msgstr "&Grootte:"
 
 #: src/frontends/qt/ui/BulletsUi.ui:137 src/frontends/qt/ui/ParagraphUi.ui:55
-#: src/frontends/qt/ui/TabularUi.ui:1205 src/frontends/qt/ui/TabularUi.ui:1224
-#: src/frontends/qt/ui/TabularUi.ui:1272 lib/encodings:50
+#: src/frontends/qt/ui/TabularUi.ui:1189 src/frontends/qt/ui/TabularUi.ui:1208
+#: src/frontends/qt/ui/TabularUi.ui:1256 lib/encodings:50
 #: lib/ui/stdtoolbars.inc:125 src/Font.cpp:142 src/FontInfo.cpp:638
 #: src/frontends/qt/GuiBox.cpp:174 src/frontends/qt/GuiCharacter.cpp:51
 #: src/frontends/qt/GuiCharacter.cpp:64 src/frontends/qt/GuiCharacter.cpp:85
@@ -943,8 +943,8 @@ msgstr "&Grootte:"
 #: src/frontends/qt/GuiDocument.cpp:5081 src/frontends/qt/GuiExternal.cpp:76
 #: src/frontends/qt/GuiGraphics.cpp:71 src/frontends/qt/GuiIndex.cpp:46
 #: src/frontends/qt/GuiIndices.cpp:58 src/frontends/qt/GuiListings.cpp:156
-#: src/frontends/qt/GuiListings.cpp:163 src/frontends/qt/GuiPrefs.cpp:2360
-#: src/frontends/qt/GuiPrefs.cpp:2518 src/frontends/qt/GuiPrefs.cpp:2522
+#: src/frontends/qt/GuiListings.cpp:163 src/frontends/qt/GuiPrefs.cpp:2386
+#: src/frontends/qt/GuiPrefs.cpp:2544 src/frontends/qt/GuiPrefs.cpp:2548
 #: src/frontends/qt/GuiPrintNomencl.cpp:47
 #: src/frontends/qt/GuiTabularCreate.cpp:107
 #: src/frontends/qt/GuiViewSource.cpp:351
@@ -1139,7 +1139,7 @@ msgstr "&Taal:"
 #: lib/layouts/europasscv.layout:441 lib/layouts/europasscv.layout:476
 #: lib/layouts/europasscv.layout:483 lib/layouts/europecv.layout:322
 #: lib/layouts/europecv.layout:328 lib/layouts/moderncv.layout:581
-#: src/frontends/qt/GuiDocument.cpp:1831 src/frontends/qt/GuiPrefs.cpp:2311
+#: src/frontends/qt/GuiDocument.cpp:1831 src/frontends/qt/GuiPrefs.cpp:2337
 #: src/frontends/qt/Menus.cpp:936
 msgid "Language"
 msgstr "Taal"
@@ -1513,7 +1513,7 @@ msgstr "Opties opslaan als standaard voor nieuwe documenten"
 msgid "Save as Document Defaults"
 msgstr "Opslaan als standaardopties"
 
-#: src/frontends/qt/ui/ERTUi.ui:38 src/frontends/qt/GuiPrefs.cpp:1200
+#: src/frontends/qt/ui/ERTUi.ui:38 src/frontends/qt/GuiPrefs.cpp:1223
 msgid "Display"
 msgstr "Weergave"
 
@@ -1945,7 +1945,7 @@ msgid "Center float contents"
 msgstr "Zwevende inhoud centreren"
 
 #: src/frontends/qt/ui/FloatPlacementUi.ui:117
-#: src/frontends/qt/ui/ParagraphUi.ui:124 src/frontends/qt/ui/TabularUi.ui:1560
+#: src/frontends/qt/ui/ParagraphUi.ui:124 src/frontends/qt/ui/TabularUi.ui:1544
 msgid "&Center"
 msgstr "&Centreren"
 
@@ -2611,8 +2611,8 @@ msgstr "Definieer hier een alternatieve indexverwerker en geef zijn opties op."
 msgid "Index Generation"
 msgstr "Genereren van de index"
 
-#: src/frontends/qt/ui/IndicesUi.ui:54 src/frontends/qt/GuiPrefs.cpp:585
-#: src/frontends/qt/GuiPrefs.cpp:711
+#: src/frontends/qt/ui/IndicesUi.ui:54 src/frontends/qt/GuiPrefs.cpp:595
+#: src/frontends/qt/GuiPrefs.cpp:721
 msgid "&Options:"
 msgstr "&Opties:"
 
@@ -2680,11 +2680,11 @@ msgstr ""
 "Selecteer het type informatie voor de uitvoer. Specifieer daarna de "
 "gevraagde informatie hieronder."
 
-#: src/frontends/qt/ui/InfoUi.ui:49 src/frontends/qt/GuiInfo.cpp:362
+#: src/frontends/qt/ui/InfoUi.ui:49 src/frontends/qt/GuiInfo.cpp:363
 msgid "&Fixed Date:"
 msgstr "&Vaste datum:"
 
-#: src/frontends/qt/ui/InfoUi.ui:59 src/frontends/qt/GuiInfo.cpp:361
+#: src/frontends/qt/ui/InfoUi.ui:59 src/frontends/qt/GuiInfo.cpp:362
 msgid "Here you can enter a fixed date (in ISO format: YYYY-MM-DD)"
 msgstr "Geef een vaste datum op (in ISO-formaat: YYYY-MM-DD)"
 
@@ -2958,7 +2958,7 @@ msgstr "Lette&rgrootte:"
 msgid "Choose the font size for line numbers"
 msgstr "Kies de lettergrootte voor regelnummers"
 
-#: src/frontends/qt/ui/ListingsUi.ui:190 src/frontends/qt/ui/TabularUi.ui:1116
+#: src/frontends/qt/ui/ListingsUi.ui:190 src/frontends/qt/ui/TabularUi.ui:1100
 msgid "Style"
 msgstr "Stijl"
 
@@ -3555,7 +3555,7 @@ msgstr "Afbeeldingen"
 #: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
 #: lib/layouts/egs.layout:720 lib/languages:147
 #: src/frontends/qt/GuiDocument.cpp:1661 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:519
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
 msgid "LaTeX"
 msgstr "LaTeX"
 
@@ -3847,17 +3847,17 @@ msgstr "Dubbel"
 #: src/frontends/qt/ui/ParagraphUi.ui:75
 #: src/frontends/qt/ui/PrefLanguageUi.ui:87
 #: src/frontends/qt/ui/PrefLanguageUi.ui:353
-#: src/frontends/qt/ui/TabularUi.ui:1210 src/frontends/qt/ui/TabularUi.ui:1229
-#: src/frontends/qt/ui/TabularUi.ui:1277 src/frontends/qt/ui/VSpaceUi.ui:118
+#: src/frontends/qt/ui/TabularUi.ui:1194 src/frontends/qt/ui/TabularUi.ui:1213
+#: src/frontends/qt/ui/TabularUi.ui:1261 src/frontends/qt/ui/VSpaceUi.ui:118
 #: lib/layouts/stdcustom.inc:8 src/frontends/qt/FloatPlacement.cpp:185
 #: src/frontends/qt/GuiDocument.cpp:899 src/frontends/qt/GuiDocument.cpp:905
 #: src/frontends/qt/GuiDocument.cpp:913 src/frontends/qt/GuiDocument.cpp:1026
 #: src/frontends/qt/GuiDocument.cpp:1093 src/frontends/qt/GuiDocument.cpp:1179
 #: src/frontends/qt/GuiDocument.cpp:1232 src/frontends/qt/GuiDocument.cpp:1598
 #: src/frontends/qt/GuiHSpace.cpp:57 src/frontends/qt/GuiIndex.cpp:50
-#: src/frontends/qt/GuiPrefs.cpp:693 src/frontends/qt/GuiPrefs.cpp:721
-#: src/frontends/qt/GuiPrefs.cpp:748 src/frontends/qt/GuiPrefs.cpp:2208
-#: src/frontends/qt/GuiPrefs.cpp:2233 src/frontends/qt/GuiPrintNomencl.cpp:51
+#: src/frontends/qt/GuiPrefs.cpp:703 src/frontends/qt/GuiPrefs.cpp:731
+#: src/frontends/qt/GuiPrefs.cpp:758 src/frontends/qt/GuiPrefs.cpp:2233
+#: src/frontends/qt/GuiPrefs.cpp:2258 src/frontends/qt/GuiPrintNomencl.cpp:51
 #: src/insets/InsetInfo.cpp:241 src/insets/InsetInfo.cpp:251
 #: src/insets/InsetInfo.cpp:255 src/insets/InsetInfo.cpp:264
 #: src/insets/InsetInfo.cpp:327 src/insets/InsetInfo.cpp:350
@@ -3868,7 +3868,7 @@ msgstr "Aangepast"
 msgid "&Justified"
 msgstr "&Uitvullen"
 
-#: src/frontends/qt/ui/ParagraphUi.ui:131 src/frontends/qt/ui/TabularUi.ui:1570
+#: src/frontends/qt/ui/ParagraphUi.ui:131 src/frontends/qt/ui/TabularUi.ui:1554
 msgid "Ri&ght"
 msgstr "&Rechts"
 
@@ -4027,7 +4027,7 @@ msgid "Cursor i&ndicator"
 msgstr "Cursor-i&ndicator"
 
 #: src/frontends/qt/ui/PrefCompletionUi.ui:119
-#: src/frontends/qt/GuiPrefs.cpp:200
+#: src/frontends/qt/GuiPrefs.cpp:210
 msgid "General[[settings]]"
 msgstr "Algemeen"
 
@@ -4113,8 +4113,8 @@ msgid "&Modify"
 msgstr "&Aanpassen"
 
 #: src/frontends/qt/ui/PrefConvertersUi.ui:286
-#: src/frontends/qt/ui/PrefShortcutsUi.ui:61 src/frontends/qt/GuiPrefs.cpp:3073
-#: src/frontends/qt/GuiPrefs.cpp:3159
+#: src/frontends/qt/ui/PrefShortcutsUi.ui:61 src/frontends/qt/GuiPrefs.cpp:3101
+#: src/frontends/qt/GuiPrefs.cpp:3187
 msgid "Remo&ve"
 msgstr "&Verwijderen"
 
@@ -4651,7 +4651,7 @@ msgstr "Het standaard te gebruiken (LaTeX) taalpakket selecteren"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:77
 #: src/frontends/qt/GuiDocument.cpp:1089 src/frontends/qt/GuiDocument.cpp:2905
-#: src/frontends/qt/GuiPrefs.cpp:692 src/frontends/qt/GuiPrefs.cpp:720
+#: src/frontends/qt/GuiPrefs.cpp:702 src/frontends/qt/GuiPrefs.cpp:730
 msgid "Automatic"
 msgstr "Automatisch"
 
@@ -5661,14 +5661,14 @@ msgstr "&Toetsaanslag verwijderen"
 msgid "Clear current shortcut"
 msgstr "Huidige sneltoets wissen"
 
-#: src/frontends/qt/ui/ShortcutUi.ui:79 src/frontends/qt/ui/TabularUi.ui:1106
+#: src/frontends/qt/ui/ShortcutUi.ui:79 src/frontends/qt/ui/TabularUi.ui:1090
 msgid "C&lear"
 msgstr "&Wissen"
 
 #: src/frontends/qt/ui/SpellcheckerUi.ui:20
-#: src/frontends/qt/GuiSpellchecker.cpp:274
-#: src/frontends/qt/GuiSpellchecker.cpp:281
-#: src/frontends/qt/GuiSpellchecker.cpp:588
+#: src/frontends/qt/GuiSpellchecker.cpp:272
+#: src/frontends/qt/GuiSpellchecker.cpp:279
+#: src/frontends/qt/GuiSpellchecker.cpp:563
 msgid "Spell Checker"
 msgstr "Spellingscontrole"
 
@@ -5817,7 +5817,7 @@ msgstr "Celinstellingen"
 msgid "Rotate this cell by 90 degrees"
 msgstr "Draai deze cel 90 graden"
 
-#: src/frontends/qt/ui/TabularUi.ui:121 src/frontends/qt/ui/TabularUi.ui:268
+#: src/frontends/qt/ui/TabularUi.ui:121 src/frontends/qt/ui/TabularUi.ui:227
 msgid "rotation angle"
 msgstr "rotatiehoek"
 
@@ -5837,27 +5837,27 @@ msgstr "B&reedte:"
 msgid "Verti&cal alignment:"
 msgstr "Verti&cale uitlijning:"
 
-#: src/frontends/qt/ui/TabularUi.ui:206
-msgid "Vertical alignment of the table"
-msgstr "Verticale uitlijning van de tabel"
-
-#: src/frontends/qt/ui/TabularUi.ui:252
+#: src/frontends/qt/ui/TabularUi.ui:211
 msgid "Rotate the table by 90 degrees"
 msgstr "Draai de tabel 90 graden"
 
-#: src/frontends/qt/ui/TabularUi.ui:255
+#: src/frontends/qt/ui/TabularUi.ui:214
 msgid "&Rotate"
 msgstr "D&raaien"
 
-#: src/frontends/qt/ui/TabularUi.ui:287
+#: src/frontends/qt/ui/TabularUi.ui:246
 msgid "degrees"
 msgstr "graden"
 
-#: src/frontends/qt/ui/TabularUi.ui:302
+#: src/frontends/qt/ui/TabularUi.ui:258
+msgid "Vertical alignment of the table"
+msgstr "Verticale uitlijning van de tabel"
+
+#: src/frontends/qt/ui/TabularUi.ui:286
 msgid "Column settings"
 msgstr "Kolominstellingen"
 
-#: src/frontends/qt/ui/TabularUi.ui:313
+#: src/frontends/qt/ui/TabularUi.ui:297
 msgid ""
 "<html><head/><body><p>Column width type:</p><p>* Text Length: Stretch to "
 "text width</p><p>* Variable: Adjust to match table width</p><p>* Custom: "
@@ -5867,37 +5867,37 @@ msgstr ""
 "tekstbreedte</p><p>* Variabel: laat overeenkomen met tabelbreedte</p><p>* "
 "Aangepast: vaste aangepaste breedte</p></body></html>"
 
-#: src/frontends/qt/ui/TabularUi.ui:317
+#: src/frontends/qt/ui/TabularUi.ui:301
 msgid "Text length"
 msgstr "Tekstlengte"
 
-#: src/frontends/qt/ui/TabularUi.ui:322
+#: src/frontends/qt/ui/TabularUi.ui:306
 msgid "Variable[[Width]]"
 msgstr "Variabel"
 
-#: src/frontends/qt/ui/TabularUi.ui:327
+#: src/frontends/qt/ui/TabularUi.ui:311
 msgid "Custom[[Width]]"
 msgstr "Aangepast"
 
-#: src/frontends/qt/ui/TabularUi.ui:335
+#: src/frontends/qt/ui/TabularUi.ui:319
 msgid "Horizontal alignment in column"
 msgstr "Horizontale uitlijning in kolom"
 
-#: src/frontends/qt/ui/TabularUi.ui:339 src/frontends/qt/GuiParagraph.cpp:114
+#: src/frontends/qt/ui/TabularUi.ui:323 src/frontends/qt/GuiParagraph.cpp:114
 #: src/frontends/qt/GuiTabular.cpp:1042
 msgid "Justified"
 msgstr "Uitvullen"
 
-#: src/frontends/qt/ui/TabularUi.ui:359 src/frontends/qt/GuiTabular.cpp:245
+#: src/frontends/qt/ui/TabularUi.ui:343 src/frontends/qt/GuiTabular.cpp:245
 #: src/frontends/qt/GuiTabular.cpp:1044
 msgid "At Decimal Separator"
 msgstr "Op decimaal scheidingsteken"
 
-#: src/frontends/qt/ui/TabularUi.ui:390
+#: src/frontends/qt/ui/TabularUi.ui:374
 msgid "Hori&zontal alignment:"
 msgstr "Hori&zontale uitlijning:"
 
-#: src/frontends/qt/ui/TabularUi.ui:400
+#: src/frontends/qt/ui/TabularUi.ui:384
 msgid ""
 "Specifies the vertical alignment of this cell in relation to the baseline of "
 "the row."
@@ -5905,71 +5905,71 @@ msgstr ""
 "Specifieert de verticale uitlijning van deze cel, relatief tegenover de "
 "basislijn van deze rij."
 
-#: src/frontends/qt/ui/TabularUi.ui:422
+#: src/frontends/qt/ui/TabularUi.ui:406
 msgid "&Vertical alignment in row:"
 msgstr "&Verticale uitlijning in rij:"
 
-#: src/frontends/qt/ui/TabularUi.ui:437
+#: src/frontends/qt/ui/TabularUi.ui:421
 msgid "Custom width of the column"
 msgstr "Aangepaste breedte van de kolom"
 
-#: src/frontends/qt/ui/TabularUi.ui:457
+#: src/frontends/qt/ui/TabularUi.ui:441
 msgid "&Decimal separator:"
 msgstr "&Decimaal scheidingsteken:"
 
-#: src/frontends/qt/ui/TabularUi.ui:528
+#: src/frontends/qt/ui/TabularUi.ui:512
 msgid "Merge cells of different columns"
 msgstr "Voeg cellen uit meerdere kolommen samen"
 
-#: src/frontends/qt/ui/TabularUi.ui:531
+#: src/frontends/qt/ui/TabularUi.ui:515
 msgid "Mu&lticolumn"
 msgstr "Mu&ltikolom"
 
-#: src/frontends/qt/ui/TabularUi.ui:540
+#: src/frontends/qt/ui/TabularUi.ui:524
 msgid "LaTe&X argument:"
 msgstr "LaTe&X-argument:"
 
-#: src/frontends/qt/ui/TabularUi.ui:550
+#: src/frontends/qt/ui/TabularUi.ui:534
 msgid "Custom column format (LaTeX)"
 msgstr "Aangepast kolomformaat (LaTeX)"
 
-#: src/frontends/qt/ui/TabularUi.ui:566
+#: src/frontends/qt/ui/TabularUi.ui:550
 msgid "&Borders"
 msgstr "&Randen"
 
-#: src/frontends/qt/ui/TabularUi.ui:572
+#: src/frontends/qt/ui/TabularUi.ui:556
 msgid "Set Borders"
 msgstr "Randen instellen"
 
-#: src/frontends/qt/ui/TabularUi.ui:1071
+#: src/frontends/qt/ui/TabularUi.ui:1055
 msgid "Set borders of the current (selected) cell(s)"
 msgstr "Stel randen in van de huidige (geselecteerde) cel(len)"
 
-#: src/frontends/qt/ui/TabularUi.ui:1084
+#: src/frontends/qt/ui/TabularUi.ui:1068
 msgid "All Borders"
 msgstr "Alle randen"
 
-#: src/frontends/qt/ui/TabularUi.ui:1093
+#: src/frontends/qt/ui/TabularUi.ui:1077
 msgid "Set all borders of the current (selected) cell(s)"
 msgstr "Stel alle randen in van de huidige (geselecteerde) cel(len)"
 
-#: src/frontends/qt/ui/TabularUi.ui:1096
+#: src/frontends/qt/ui/TabularUi.ui:1080
 msgid "&Set"
 msgstr "&Randen aan"
 
-#: src/frontends/qt/ui/TabularUi.ui:1103
+#: src/frontends/qt/ui/TabularUi.ui:1087
 msgid "Unset all borders of the current (selected) cell(s)"
 msgstr "Alle randen van de huidige (geselecteerde) cel(len) wissen"
 
-#: src/frontends/qt/ui/TabularUi.ui:1125
+#: src/frontends/qt/ui/TabularUi.ui:1109
 msgid "Use default (grid-like) border style"
 msgstr "Standaardstijl voor randen (roosterachtig) gebruiken"
 
-#: src/frontends/qt/ui/TabularUi.ui:1128
+#: src/frontends/qt/ui/TabularUi.ui:1112
 msgid "De&fault"
 msgstr "Stan&daard"
 
-#: src/frontends/qt/ui/TabularUi.ui:1135
+#: src/frontends/qt/ui/TabularUi.ui:1119
 msgid ""
 "If this is checked, the table will be reset to the formal default style "
 "(only top and bottom row have horizontal lines)"
@@ -5977,154 +5977,154 @@ msgstr ""
 "Als dit aangevinkt is zal de tabel opnieuw ingesteld worden op de formele "
 "standaardstijl (enkel de bovenste en onderste rijen hebben verticale lijnen)"
 
-#: src/frontends/qt/ui/TabularUi.ui:1138
+#: src/frontends/qt/ui/TabularUi.ui:1122
 msgid "Use Default &Formal Style"
 msgstr "&Formele standaardstijl gebruiken"
 
-#: src/frontends/qt/ui/TabularUi.ui:1145
+#: src/frontends/qt/ui/TabularUi.ui:1129
 msgid "Use formal (a.k.a. booktabs) border style (no vertical borders)"
 msgstr "Formele randstijl (d.w.z. boektabs) gebruiken (geen verticale randen)"
 
-#: src/frontends/qt/ui/TabularUi.ui:1148
+#: src/frontends/qt/ui/TabularUi.ui:1132
 msgid "Fo&rmal"
 msgstr "Fo&rmeel"
 
-#: src/frontends/qt/ui/TabularUi.ui:1177
+#: src/frontends/qt/ui/TabularUi.ui:1161
 msgid "Additional Space"
 msgstr "Bijkomende ruimte"
 
-#: src/frontends/qt/ui/TabularUi.ui:1183
+#: src/frontends/qt/ui/TabularUi.ui:1167
 msgid "T&op of row:"
 msgstr "B&ovenkant rij:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1243
+#: src/frontends/qt/ui/TabularUi.ui:1227
 msgid "Botto&m of row:"
 msgstr "O&nderkant rij:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1256
+#: src/frontends/qt/ui/TabularUi.ui:1240
 msgid "Bet&ween rows:"
 msgstr "T&ussen rijen:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1305
+#: src/frontends/qt/ui/TabularUi.ui:1289
 msgid "&Multi-Page Table"
 msgstr "&Multipaginatabel"
 
-#: src/frontends/qt/ui/TabularUi.ui:1311
+#: src/frontends/qt/ui/TabularUi.ui:1295
 msgid "Select for tables that span multiple pages"
 msgstr "Selecteer voor tabellen die meerdere pagina's in beslag nemen"
 
-#: src/frontends/qt/ui/TabularUi.ui:1314
+#: src/frontends/qt/ui/TabularUi.ui:1298
 msgid "&Use multi-page table"
 msgstr "Multipaginatabel gebr&uiken"
 
-#: src/frontends/qt/ui/TabularUi.ui:1324
+#: src/frontends/qt/ui/TabularUi.ui:1308
 msgid "Row settings"
 msgstr "Rij-instellingen"
 
-#: src/frontends/qt/ui/TabularUi.ui:1330
+#: src/frontends/qt/ui/TabularUi.ui:1314
 msgid "Status"
 msgstr "Status"
 
-#: src/frontends/qt/ui/TabularUi.ui:1337
+#: src/frontends/qt/ui/TabularUi.ui:1321
 msgid "Border above"
 msgstr "Rand bovenkant"
 
-#: src/frontends/qt/ui/TabularUi.ui:1344
+#: src/frontends/qt/ui/TabularUi.ui:1328
 msgid "Border below"
 msgstr "Rand onderkant"
 
-#: src/frontends/qt/ui/TabularUi.ui:1351
+#: src/frontends/qt/ui/TabularUi.ui:1335
 msgid "Contents"
 msgstr "Inhoud"
 
-#: src/frontends/qt/ui/TabularUi.ui:1358
+#: src/frontends/qt/ui/TabularUi.ui:1342
 msgid "Header:"
 msgstr "Kop:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1365
+#: src/frontends/qt/ui/TabularUi.ui:1349
 msgid "Repeat this row as header on every (except the first) page"
 msgstr "Herhaal deze rij als kopregel op elke pagina (behalve de eerste)"
 
-#: src/frontends/qt/ui/TabularUi.ui:1368 src/frontends/qt/ui/TabularUi.ui:1405
-#: src/frontends/qt/ui/TabularUi.ui:1446 src/frontends/qt/ui/TabularUi.ui:1477
-#: src/frontends/qt/ui/TabularUi.ui:1515 src/frontends/qt/GuiToolbar.cpp:677
+#: src/frontends/qt/ui/TabularUi.ui:1352 src/frontends/qt/ui/TabularUi.ui:1389
+#: src/frontends/qt/ui/TabularUi.ui:1430 src/frontends/qt/ui/TabularUi.ui:1461
+#: src/frontends/qt/ui/TabularUi.ui:1499 src/frontends/qt/GuiToolbar.cpp:677
 #: src/insets/InsetBranch.cpp:81 src/insets/InsetBranch.cpp:84
 msgid "on"
 msgstr "aan"
 
-#: src/frontends/qt/ui/TabularUi.ui:1378 src/frontends/qt/ui/TabularUi.ui:1385
-#: src/frontends/qt/ui/TabularUi.ui:1412 src/frontends/qt/ui/TabularUi.ui:1419
-#: src/frontends/qt/ui/TabularUi.ui:1453 src/frontends/qt/ui/TabularUi.ui:1460
-#: src/frontends/qt/ui/TabularUi.ui:1484 src/frontends/qt/ui/TabularUi.ui:1491
+#: src/frontends/qt/ui/TabularUi.ui:1362 src/frontends/qt/ui/TabularUi.ui:1369
+#: src/frontends/qt/ui/TabularUi.ui:1396 src/frontends/qt/ui/TabularUi.ui:1403
+#: src/frontends/qt/ui/TabularUi.ui:1437 src/frontends/qt/ui/TabularUi.ui:1444
+#: src/frontends/qt/ui/TabularUi.ui:1468 src/frontends/qt/ui/TabularUi.ui:1475
 msgid "double"
 msgstr "dubbel"
 
-#: src/frontends/qt/ui/TabularUi.ui:1392
+#: src/frontends/qt/ui/TabularUi.ui:1376
 msgid "First header:"
 msgstr "Eerste kopregel:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1399
+#: src/frontends/qt/ui/TabularUi.ui:1383
 msgid "This row is the header of the first page"
 msgstr "Deze rij is de kopregel op de eerste pagina"
 
-#: src/frontends/qt/ui/TabularUi.ui:1426
+#: src/frontends/qt/ui/TabularUi.ui:1410
 msgid "Don't output the first header"
 msgstr "Eerste kopregel niet tonen"
 
-#: src/frontends/qt/ui/TabularUi.ui:1429 src/frontends/qt/ui/TabularUi.ui:1501
+#: src/frontends/qt/ui/TabularUi.ui:1413 src/frontends/qt/ui/TabularUi.ui:1485
 msgid "is empty"
 msgstr "is leeg"
 
-#: src/frontends/qt/ui/TabularUi.ui:1436
+#: src/frontends/qt/ui/TabularUi.ui:1420
 msgid "Footer:"
 msgstr "Voettekst:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1443
+#: src/frontends/qt/ui/TabularUi.ui:1427
 msgid "Repeat this row as footer on every (except the last) page"
 msgstr ""
 "Deze rij herhalen als voettekst op elke pagina (uitgezonderd de laatste)"
 
-#: src/frontends/qt/ui/TabularUi.ui:1467
+#: src/frontends/qt/ui/TabularUi.ui:1451
 msgid "Last footer:"
 msgstr "Laatste voettekst:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1474
+#: src/frontends/qt/ui/TabularUi.ui:1458
 msgid "This row is the footer of the last page"
 msgstr "Deze rij is de voettekst op de laatste pagina"
 
-#: src/frontends/qt/ui/TabularUi.ui:1498
+#: src/frontends/qt/ui/TabularUi.ui:1482
 msgid "Don't output the last footer"
 msgstr "Laatste voettekst niet tonen"
 
-#: src/frontends/qt/ui/TabularUi.ui:1508 lib/layouts/AEA.layout:362
+#: src/frontends/qt/ui/TabularUi.ui:1492 lib/layouts/AEA.layout:362
 msgid "Caption:"
 msgstr "Bijschrift:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1525
+#: src/frontends/qt/ui/TabularUi.ui:1509
 msgid "Set a page break on the current row"
 msgstr "Pagina-einde instellen op huidige rij"
 
-#: src/frontends/qt/ui/TabularUi.ui:1528
+#: src/frontends/qt/ui/TabularUi.ui:1512
 msgid "Page &break on current row"
 msgstr "Pagina-&einde op huidige rij"
 
-#: src/frontends/qt/ui/TabularUi.ui:1541
+#: src/frontends/qt/ui/TabularUi.ui:1525
 msgid "Horizontal alignment of the multi-page table"
 msgstr "Horizontale uitlijnen van de tabel over meerde pagina's"
 
-#: src/frontends/qt/ui/TabularUi.ui:1544
+#: src/frontends/qt/ui/TabularUi.ui:1528
 msgid "Multi-page table alignment"
 msgstr "Uitlijnen van tabel op meerdere pagina's"
 
-#: src/frontends/qt/ui/TabularUi.ui:1599
+#: src/frontends/qt/ui/TabularUi.ui:1583
 msgid "Current cell:"
 msgstr "Huidige cel:"
 
-#: src/frontends/qt/ui/TabularUi.ui:1621
+#: src/frontends/qt/ui/TabularUi.ui:1605
 msgid "Current row position"
 msgstr "Huidige positie rij"
 
-#: src/frontends/qt/ui/TabularUi.ui:1643
+#: src/frontends/qt/ui/TabularUi.ui:1627
 msgid "Current column position"
 msgstr "Huidige positie kolom"
 
@@ -6426,8 +6426,8 @@ msgstr "Enkel hoofdtekst"
 msgid "Select the output format"
 msgstr "Selecteer het uitvoerformaat"
 
-#: src/frontends/qt/ui/WorkAreaUi.ui:82 src/frontends/qt/GuiView.cpp:3935
-#: src/frontends/qt/GuiView.cpp:4641
+#: src/frontends/qt/ui/WorkAreaUi.ui:82 src/frontends/qt/GuiView.cpp:3943
+#: src/frontends/qt/GuiView.cpp:4649
 msgid "&Reload"
 msgstr "&Opnieuw laden"
 
@@ -6703,10 +6703,10 @@ msgstr "American Economic Association (AEA)"
 #: lib/layouts/IEEEtran-TransMag.layout:4 lib/layouts/IEEEtran.layout:4
 #: lib/layouts/aa.layout:4 lib/layouts/aastex.layout:4
 #: lib/layouts/aastex6.layout:4 lib/layouts/aastex62.layout:4
-#: lib/layouts/achemso.layout:4 lib/layouts/acmart.layout:4
-#: lib/layouts/agums.layout:4 lib/layouts/agutex.layout:4
-#: lib/layouts/amsart.layout:4 lib/layouts/apa.layout:4
-#: lib/layouts/apa6.layout:4 lib/layouts/apa7.layout:4
+#: lib/layouts/aastex63.layout:4 lib/layouts/achemso.layout:4
+#: lib/layouts/acmart.layout:4 lib/layouts/agums.layout:4
+#: lib/layouts/agutex.layout:4 lib/layouts/amsart.layout:4
+#: lib/layouts/apa.layout:4 lib/layouts/apa6.layout:4 lib/layouts/apa7.layout:4
 #: lib/layouts/arab-article.layout:4 lib/layouts/article-beamer.layout:4
 #: lib/layouts/article.layout:4 lib/layouts/bxjsarticle.layout:4
 #: lib/layouts/chess.layout:4 lib/layouts/copernicus.layout:4
@@ -6743,23 +6743,24 @@ msgstr "Korte titel"
 #: lib/layouts/IEEEtran-CompSoc.layout:21
 #: lib/layouts/IEEEtran-CompSoc.layout:68
 #: lib/layouts/IEEEtran-TransMag.layout:22
-#: lib/layouts/IEEEtran-TransMag.layout:46 lib/layouts/IEEEtran.layout:87
-#: lib/layouts/IEEEtran.layout:141 lib/layouts/IEEEtran.layout:252
-#: lib/layouts/IEEEtran.layout:296 lib/layouts/IEEEtran.layout:370
+#: lib/layouts/IEEEtran-TransMag.layout:46 lib/layouts/IEEEtran.layout:88
+#: lib/layouts/IEEEtran.layout:142 lib/layouts/IEEEtran.layout:253
+#: lib/layouts/IEEEtran.layout:297 lib/layouts/IEEEtran.layout:371
 #: lib/layouts/InStar.module:19 lib/layouts/InStar.module:26
 #: lib/layouts/RJournal.layout:64 lib/layouts/aa.layout:74
 #: lib/layouts/aa.layout:99 lib/layouts/aa.layout:116 lib/layouts/aa.layout:146
 #: lib/layouts/aa.layout:301 lib/layouts/aa.layout:371
 #: lib/layouts/aastex.layout:173 lib/layouts/aastex.layout:196
 #: lib/layouts/aastex.layout:226 lib/layouts/aastex.layout:250
-#: lib/layouts/aastex.layout:329 lib/layouts/aastex62.layout:131
-#: lib/layouts/aastex62.layout:188 lib/layouts/aastex62.layout:204
-#: lib/layouts/achemso.layout:57 lib/layouts/achemso.layout:87
-#: lib/layouts/acm-sigs.inc:11 lib/layouts/acm-sigs.inc:34
-#: lib/layouts/acmart.layout:87 lib/layouts/acmart.layout:161
-#: lib/layouts/acmart.layout:178 lib/layouts/acmart.layout:435
-#: lib/layouts/acmart.layout:487 lib/layouts/acmart.layout:510
-#: lib/layouts/acmsiggraph-0-92.layout:78
+#: lib/layouts/aastex.layout:329 lib/layouts/aastex62.layout:138
+#: lib/layouts/aastex62.layout:195 lib/layouts/aastex62.layout:211
+#: lib/layouts/aastex63.layout:144 lib/layouts/aastex63.layout:201
+#: lib/layouts/aastex63.layout:217 lib/layouts/achemso.layout:57
+#: lib/layouts/achemso.layout:87 lib/layouts/acm-sigs.inc:11
+#: lib/layouts/acm-sigs.inc:34 lib/layouts/acmart.layout:87
+#: lib/layouts/acmart.layout:161 lib/layouts/acmart.layout:178
+#: lib/layouts/acmart.layout:435 lib/layouts/acmart.layout:487
+#: lib/layouts/acmart.layout:510 lib/layouts/acmsiggraph-0-92.layout:78
 #: lib/layouts/acmsiggraph-0-92.layout:225
 #: lib/layouts/acmsiggraph-0-92.layout:245 lib/layouts/acmsiggraph.layout:70
 #: lib/layouts/acmsiggraph.layout:182 lib/layouts/acmsiggraph.layout:201
@@ -6873,43 +6874,44 @@ msgid "JEL:"
 msgstr "JEL:"
 
 #: lib/layouts/AEA.layout:114 lib/layouts/IEEEtran-CompSoc.layout:55
-#: lib/layouts/IEEEtran-TransMag.layout:33 lib/layouts/IEEEtran.layout:319
+#: lib/layouts/IEEEtran-TransMag.layout:33 lib/layouts/IEEEtran.layout:320
 #: lib/layouts/aa.layout:367 lib/layouts/aastex.layout:323
-#: lib/layouts/aastex62.layout:140 lib/layouts/achemso.layout:199
-#: lib/layouts/acm-sigs.inc:53 lib/layouts/acmart.layout:428
-#: lib/layouts/acmsiggraph-0-92.layout:190 lib/layouts/acmsiggraph.layout:166
-#: lib/layouts/amsdefs.inc:203 lib/layouts/apax.inc:276
-#: lib/layouts/elsart.layout:58 lib/layouts/elsarticle.layout:305
-#: lib/layouts/ijmpc.layout:257 lib/layouts/ijmpc.layout:261
-#: lib/layouts/ijmpd.layout:268 lib/layouts/iopart.layout:232
-#: lib/layouts/isprs.layout:53 lib/layouts/jasatex.layout:236
-#: lib/layouts/jss.layout:90 lib/layouts/kluwer.layout:318
-#: lib/layouts/paper.layout:199 lib/layouts/revtex4-x.inc:180
-#: lib/layouts/revtex4.layout:325 lib/layouts/siamltex.layout:321
-#: lib/layouts/sigplanconf.layout:196 lib/layouts/spie.layout:42
-#: lib/layouts/svcommon.inc:526 lib/layouts/svcommon.inc:541
-#: lib/layouts/svglobal.layout:112 lib/layouts/svglobal.layout:115
-#: lib/layouts/svglobal3.layout:57 lib/layouts/svglobal3.layout:60
-#: lib/layouts/svjog.layout:116 lib/layouts/svjog.layout:119
-#: lib/layouts/svprobth.layout:145 lib/layouts/svprobth.layout:148
+#: lib/layouts/aastex62.layout:147 lib/layouts/aastex63.layout:153
+#: lib/layouts/achemso.layout:199 lib/layouts/acm-sigs.inc:53
+#: lib/layouts/acmart.layout:428 lib/layouts/acmsiggraph-0-92.layout:190
+#: lib/layouts/acmsiggraph.layout:166 lib/layouts/amsdefs.inc:203
+#: lib/layouts/apax.inc:276 lib/layouts/elsart.layout:58
+#: lib/layouts/elsarticle.layout:305 lib/layouts/ijmpc.layout:257
+#: lib/layouts/ijmpc.layout:261 lib/layouts/ijmpd.layout:268
+#: lib/layouts/iopart.layout:232 lib/layouts/isprs.layout:53
+#: lib/layouts/jasatex.layout:236 lib/layouts/jss.layout:90
+#: lib/layouts/kluwer.layout:318 lib/layouts/paper.layout:199
+#: lib/layouts/revtex4-x.inc:180 lib/layouts/revtex4.layout:325
+#: lib/layouts/siamltex.layout:321 lib/layouts/sigplanconf.layout:196
+#: lib/layouts/spie.layout:42 lib/layouts/svcommon.inc:526
+#: lib/layouts/svcommon.inc:541 lib/layouts/svglobal.layout:112
+#: lib/layouts/svglobal.layout:115 lib/layouts/svglobal3.layout:57
+#: lib/layouts/svglobal3.layout:60 lib/layouts/svjog.layout:116
+#: lib/layouts/svjog.layout:119 lib/layouts/svprobth.layout:145
+#: lib/layouts/svprobth.layout:148
 msgid "Keywords"
 msgstr "Trefwoorden"
 
-#: lib/layouts/AEA.layout:117 lib/layouts/aastex62.layout:141
-#: lib/layouts/achemso.layout:202 lib/layouts/acm-sigs.inc:56
-#: lib/layouts/acmsiggraph-0-92.layout:194 lib/layouts/acmsiggraph.layout:170
-#: lib/layouts/apax.inc:292 lib/layouts/ectaart.layout:159
-#: lib/layouts/elsarticle.layout:317 lib/layouts/ijmpd.layout:272
-#: lib/layouts/iopart.layout:243 lib/layouts/jasatex.layout:249
-#: lib/layouts/jss.layout:103 lib/layouts/kluwer.layout:325
-#: lib/layouts/paper.layout:202 lib/layouts/revtex4-x.inc:188
-#: lib/layouts/revtex4.layout:330 lib/layouts/sigplanconf.layout:199
-#: lib/layouts/spie.layout:49
+#: lib/layouts/AEA.layout:117 lib/layouts/aastex62.layout:148
+#: lib/layouts/aastex63.layout:154 lib/layouts/achemso.layout:202
+#: lib/layouts/acm-sigs.inc:56 lib/layouts/acmsiggraph-0-92.layout:194
+#: lib/layouts/acmsiggraph.layout:170 lib/layouts/apax.inc:292
+#: lib/layouts/ectaart.layout:159 lib/layouts/elsarticle.layout:317
+#: lib/layouts/ijmpd.layout:272 lib/layouts/iopart.layout:243
+#: lib/layouts/jasatex.layout:249 lib/layouts/jss.layout:103
+#: lib/layouts/kluwer.layout:325 lib/layouts/paper.layout:202
+#: lib/layouts/revtex4-x.inc:188 lib/layouts/revtex4.layout:330
+#: lib/layouts/sigplanconf.layout:199 lib/layouts/spie.layout:49
 msgid "Keywords:"
 msgstr "Trefwoorden:"
 
 #: lib/layouts/AEA.layout:124 lib/layouts/IEEEtran-CompSoc.layout:49
-#: lib/layouts/IEEEtran-TransMag.layout:27 lib/layouts/IEEEtran.layout:292
+#: lib/layouts/IEEEtran-TransMag.layout:27 lib/layouts/IEEEtran.layout:293
 #: lib/layouts/RJournal.layout:39 lib/layouts/aa.layout:332
 #: lib/layouts/aapaper.layout:102 lib/layouts/aapaper.layout:213
 #: lib/layouts/aastex.layout:276 lib/layouts/acmart.layout:505
@@ -6949,9 +6951,10 @@ msgstr "Samenvatting"
 #: lib/layouts/AEA.layout:128 lib/layouts/aa.layout:169
 #: lib/layouts/aapaper.inc:82 lib/layouts/aapaper.inc:93
 #: lib/layouts/aapaper.layout:105 lib/layouts/aastex.layout:354
-#: lib/layouts/aastex62.layout:225 lib/layouts/achemso.layout:283
-#: lib/layouts/achemso.layout:290 lib/layouts/acmart.layout:688
-#: lib/layouts/acmart.layout:692 lib/layouts/acmsiggraph-0-92.layout:346
+#: lib/layouts/aastex62.layout:232 lib/layouts/aastex63.layout:238
+#: lib/layouts/achemso.layout:283 lib/layouts/achemso.layout:290
+#: lib/layouts/acmart.layout:688 lib/layouts/acmart.layout:692
+#: lib/layouts/acmsiggraph-0-92.layout:346
 #: lib/layouts/acmsiggraph-0-92.layout:353 lib/layouts/acmsiggraph.layout:302
 #: lib/layouts/acmsiggraph.layout:309 lib/layouts/agutex.layout:193
 #: lib/layouts/apa.layout:243 lib/layouts/copernicus.layout:424
@@ -6979,16 +6982,16 @@ msgid "Figure Notes"
 msgstr "Figuuraantekeningen"
 
 #: lib/layouts/AEA.layout:147 lib/layouts/AEA.layout:358
-#: lib/layouts/IEEEtran.layout:36 lib/layouts/aa.layout:37
+#: lib/layouts/IEEEtran.layout:37 lib/layouts/aa.layout:37
 #: lib/layouts/aapaper.layout:36 lib/layouts/aastex.layout:63
 #: lib/layouts/achemso.layout:32 lib/layouts/acmart.layout:64
 #: lib/layouts/acmsiggraph-0-92.layout:44 lib/layouts/acmsiggraph.layout:36
 #: lib/layouts/agutex.layout:33 lib/layouts/amsart.layout:33
 #: lib/layouts/amsbook.layout:34 lib/layouts/apa.layout:26
 #: lib/layouts/apax.inc:22 lib/layouts/beamer.layout:67
-#: lib/layouts/beamer.layout:1225 lib/layouts/beamer.layout:1252
-#: lib/layouts/beamer.layout:1279 lib/layouts/beamer.layout:1404
-#: lib/layouts/beamer.layout:1441 lib/layouts/broadway.layout:181
+#: lib/layouts/beamer.layout:1227 lib/layouts/beamer.layout:1254
+#: lib/layouts/beamer.layout:1281 lib/layouts/beamer.layout:1406
+#: lib/layouts/beamer.layout:1443 lib/layouts/broadway.layout:181
 #: lib/layouts/cl2emult.layout:152 lib/layouts/db_stdclass.inc:17
 #: lib/layouts/dtk.layout:33 lib/layouts/egs.layout:20
 #: lib/layouts/elsart.layout:42 lib/layouts/elsarticle.layout:36
@@ -7029,7 +7032,7 @@ msgid "Text of a note in a figure"
 msgstr "Tekst van een aantekening bij een figuur"
 
 #: lib/layouts/AEA.layout:159 lib/layouts/apax.inc:240
-#: lib/layouts/beamer.layout:1453 lib/layouts/powerdot.layout:228
+#: lib/layouts/beamer.layout:1455 lib/layouts/powerdot.layout:228
 msgid "Note:"
 msgstr "Aantekening:"
 
@@ -7045,9 +7048,9 @@ msgstr "Tabelaantekening"
 msgid "Text of a note in a table"
 msgstr "Tekst van aantekening in een tabel"
 
-#: lib/layouts/AEA.layout:183 lib/layouts/IEEEtran.layout:49
+#: lib/layouts/AEA.layout:183 lib/layouts/IEEEtran.layout:50
 #: lib/layouts/acmart.layout:572 lib/layouts/acmart.layout:583
-#: lib/layouts/beamer.layout:1392 lib/layouts/elsart.layout:297
+#: lib/layouts/beamer.layout:1394 lib/layouts/elsart.layout:297
 #: lib/layouts/elsart.layout:313 lib/layouts/foils.layout:249
 #: lib/layouts/heb-article.layout:22 lib/layouts/ijmpc.layout:425
 #: lib/layouts/ijmpd.layout:432 lib/layouts/ijmpd.layout:436
@@ -7237,7 +7240,7 @@ msgid "Conjecture"
 msgstr "Vermoeden"
 
 #: lib/layouts/AEA.layout:249 lib/layouts/acmart.layout:618
-#: lib/layouts/beamer.layout:1308 lib/layouts/elsart.layout:393
+#: lib/layouts/beamer.layout:1310 lib/layouts/elsart.layout:393
 #: lib/layouts/foils.layout:282 lib/layouts/heb-article.layout:71
 #: lib/layouts/ijmpc.layout:446 lib/layouts/ijmpd.layout:463
 #: lib/layouts/ijmpd.layout:467 lib/layouts/llncs.layout:353
@@ -7285,7 +7288,7 @@ msgid "Criterion"
 msgstr "Criterium"
 
 #: lib/layouts/AEA.layout:264 lib/layouts/acmart.layout:646
-#: lib/layouts/beamer.layout:1346 lib/layouts/elsart.layout:441
+#: lib/layouts/beamer.layout:1348 lib/layouts/elsart.layout:441
 #: lib/layouts/foils.layout:296 lib/layouts/heb-article.layout:93
 #: lib/layouts/llncs.layout:367 lib/layouts/siamltex.layout:128
 #: lib/layouts/svmono.layout:34 lib/layouts/theorems-ams-bytype.inc:198
@@ -7311,7 +7314,7 @@ msgid "Definition"
 msgstr "Definitie"
 
 #: lib/layouts/AEA.layout:271 lib/layouts/acmart.layout:660
-#: lib/layouts/beamer.layout:1358 lib/layouts/elsart.layout:472
+#: lib/layouts/beamer.layout:1360 lib/layouts/elsart.layout:472
 #: lib/layouts/linguistics.module:18 lib/layouts/llncs.layout:374
 #: lib/layouts/svmono.layout:74 lib/layouts/theorems-ams-bytype.inc:228
 #: lib/layouts/theorems-ams-bytype.inc:238
@@ -7362,7 +7365,7 @@ msgid "Exercise"
 msgstr "Opgave"
 
 #: lib/layouts/AEA.layout:285 lib/layouts/acmart.layout:625
-#: lib/layouts/beamer.layout:1380 lib/layouts/elsart.layout:381
+#: lib/layouts/beamer.layout:1382 lib/layouts/elsart.layout:381
 #: lib/layouts/foils.layout:275 lib/layouts/heb-article.layout:60
 #: lib/layouts/ijmpc.layout:450 lib/layouts/ijmpd.layout:472
 #: lib/layouts/ijmpd.layout:476 lib/layouts/llncs.layout:388
@@ -7568,8 +7571,8 @@ msgstr "Samenvatting ##"
 msgid "Caption"
 msgstr "Bijschrift|c"
 
-#: lib/layouts/AEA.layout:367 lib/layouts/IEEEtran.layout:463
-#: lib/layouts/beamer.layout:1386 lib/layouts/elsart.layout:348
+#: lib/layouts/AEA.layout:367 lib/layouts/IEEEtran.layout:464
+#: lib/layouts/beamer.layout:1388 lib/layouts/elsart.layout:348
 #: lib/layouts/foils.layout:310 lib/layouts/heb-article.layout:115
 #: lib/layouts/ijmpc.layout:403 lib/layouts/ijmpd.layout:409
 #: lib/layouts/llncs.layout:408 lib/layouts/siamltex.layout:157
@@ -7616,7 +7619,7 @@ msgstr "IEEE Transactions on Magnetics"
 msgid "IEEE Transactions"
 msgstr "IEEE Transactions"
 
-#: lib/layouts/IEEEtran.layout:35 lib/layouts/aa.layout:36
+#: lib/layouts/IEEEtran.layout:36 lib/layouts/aa.layout:36
 #: lib/layouts/aapaper.layout:35 lib/layouts/aastex.layout:62
 #: lib/layouts/achemso.layout:31 lib/layouts/acmart.layout:63
 #: lib/layouts/acmsiggraph-0-92.layout:43 lib/layouts/acmsiggraph.layout:35
@@ -7648,13 +7651,13 @@ msgstr "IEEE Transactions"
 msgid "Standard"
 msgstr "Standaard"
 
-#: lib/layouts/IEEEtran.layout:83 lib/layouts/aa.layout:225
+#: lib/layouts/IEEEtran.layout:84 lib/layouts/aa.layout:225
 #: lib/layouts/aapaper.layout:78 lib/layouts/aapaper.layout:172
 #: lib/layouts/aastex.layout:137 lib/layouts/achemso.layout:54
 #: lib/layouts/acmart.layout:145 lib/layouts/acmsiggraph-0-92.layout:165
 #: lib/layouts/acmsiggraph.layout:141 lib/layouts/agutex.layout:56
 #: lib/layouts/amsdefs.inc:27 lib/layouts/apa.layout:42 lib/layouts/apax.inc:38
-#: lib/layouts/beamer.layout:1000 lib/layouts/beamerposter.layout:21
+#: lib/layouts/beamer.layout:1002 lib/layouts/beamerposter.layout:21
 #: lib/layouts/broadway.layout:194 lib/layouts/cl2emult.layout:41
 #: lib/layouts/copernicus.layout:34 lib/layouts/docbook-book.layout:18
 #: lib/layouts/docbook-chapter.layout:14 lib/layouts/docbook-section.layout:14
@@ -7679,141 +7682,142 @@ msgstr "Standaard"
 msgid "Title"
 msgstr "Titel"
 
-#: lib/layouts/IEEEtran.layout:106 lib/layouts/IEEEtran.layout:111
+#: lib/layouts/IEEEtran.layout:107 lib/layouts/IEEEtran.layout:112
 msgid "IEEE membership"
 msgstr "IEEE-lidmaatschap"
 
-#: lib/layouts/IEEEtran.layout:127 lib/layouts/revtex4-x.inc:355
+#: lib/layouts/IEEEtran.layout:128 lib/layouts/revtex4-x.inc:355
 msgid "Lowercase"
 msgstr "Kleine letters"
 
-#: lib/layouts/IEEEtran.layout:131
+#: lib/layouts/IEEEtran.layout:132
 msgid "lowercase"
 msgstr "kleine letters"
 
-#: lib/layouts/IEEEtran.layout:138 lib/layouts/aa.layout:240
+#: lib/layouts/IEEEtran.layout:139 lib/layouts/aa.layout:240
 #: lib/layouts/aapaper.layout:84 lib/layouts/aapaper.layout:186
-#: lib/layouts/aastex.layout:152 lib/layouts/aastex62.layout:153
-#: lib/layouts/achemso.layout:84 lib/layouts/acmart.layout:81
-#: lib/layouts/acmsiggraph-0-92.layout:178 lib/layouts/acmsiggraph.layout:154
-#: lib/layouts/amsdefs.inc:57 lib/layouts/apa.layout:139
-#: lib/layouts/apax.inc:80 lib/layouts/beamer.layout:1064
-#: lib/layouts/beamerposter.layout:31 lib/layouts/broadway.layout:212
-#: lib/layouts/cl2emult.layout:63 lib/layouts/copernicus.layout:61
-#: lib/layouts/ectaart.layout:131 lib/layouts/ectaart.layout:217
-#: lib/layouts/ectaart.layout:220 lib/layouts/egs.layout:374
-#: lib/layouts/elsart.layout:116 lib/layouts/elsarticle.layout:139
-#: lib/layouts/entcs.layout:51 lib/layouts/foils.layout:163
-#: lib/layouts/hollywood.layout:341 lib/layouts/ijmpc.layout:135
-#: lib/layouts/ijmpd.layout:140 lib/layouts/iopart.layout:137
-#: lib/layouts/isprs.layout:81 lib/layouts/jasatex.layout:90
-#: lib/layouts/jss.layout:50 lib/layouts/kluwer.layout:179
-#: lib/layouts/llncs.layout:189 lib/layouts/ltugboat.layout:166
-#: lib/layouts/maa-monthly.layout:63 lib/layouts/memoir.layout:271
-#: lib/layouts/paper.layout:145 lib/layouts/powerdot.layout:71
-#: lib/layouts/revtex.layout:104 lib/layouts/scrclass.inc:232
-#: lib/layouts/siamltex.layout:222 lib/layouts/sigplanconf.layout:150
-#: lib/layouts/stdtitle.inc:37 lib/layouts/svcommon.inc:371
-#: lib/layouts/svmult.layout:89 lib/layouts/svprobth.layout:93
-#: lib/layouts/tufte-book.layout:55 src/insets/InsetInfo.cpp:288
+#: lib/layouts/aastex.layout:152 lib/layouts/aastex62.layout:160
+#: lib/layouts/aastex63.layout:166 lib/layouts/achemso.layout:84
+#: lib/layouts/acmart.layout:81 lib/layouts/acmsiggraph-0-92.layout:178
+#: lib/layouts/acmsiggraph.layout:154 lib/layouts/amsdefs.inc:57
+#: lib/layouts/apa.layout:139 lib/layouts/apax.inc:80
+#: lib/layouts/beamer.layout:1066 lib/layouts/beamerposter.layout:31
+#: lib/layouts/broadway.layout:212 lib/layouts/cl2emult.layout:63
+#: lib/layouts/copernicus.layout:61 lib/layouts/ectaart.layout:131
+#: lib/layouts/ectaart.layout:217 lib/layouts/ectaart.layout:220
+#: lib/layouts/egs.layout:374 lib/layouts/elsart.layout:116
+#: lib/layouts/elsarticle.layout:139 lib/layouts/entcs.layout:51
+#: lib/layouts/foils.layout:163 lib/layouts/hollywood.layout:341
+#: lib/layouts/ijmpc.layout:135 lib/layouts/ijmpd.layout:140
+#: lib/layouts/iopart.layout:137 lib/layouts/isprs.layout:81
+#: lib/layouts/jasatex.layout:90 lib/layouts/jss.layout:50
+#: lib/layouts/kluwer.layout:179 lib/layouts/llncs.layout:189
+#: lib/layouts/ltugboat.layout:166 lib/layouts/maa-monthly.layout:63
+#: lib/layouts/memoir.layout:271 lib/layouts/paper.layout:145
+#: lib/layouts/powerdot.layout:71 lib/layouts/revtex.layout:104
+#: lib/layouts/scrclass.inc:232 lib/layouts/siamltex.layout:222
+#: lib/layouts/sigplanconf.layout:150 lib/layouts/stdtitle.inc:37
+#: lib/layouts/svcommon.inc:371 lib/layouts/svmult.layout:89
+#: lib/layouts/svprobth.layout:93 lib/layouts/tufte-book.layout:55
+#: src/insets/InsetInfo.cpp:288
 msgid "Author"
 msgstr "Auteur"
 
-#: lib/layouts/IEEEtran.layout:144 lib/layouts/beamer.layout:1077
+#: lib/layouts/IEEEtran.layout:145 lib/layouts/beamer.layout:1079
 msgid "Short Author|S"
 msgstr "Korte Auteur|K"
 
-#: lib/layouts/IEEEtran.layout:145
+#: lib/layouts/IEEEtran.layout:146
 msgid "A short version of the author name"
 msgstr "Een korte versie van de auteurnaam"
 
-#: lib/layouts/IEEEtran.layout:167
+#: lib/layouts/IEEEtran.layout:168
 msgid "Author Name"
 msgstr "Naam auteur"
 
-#: lib/layouts/IEEEtran.layout:173
+#: lib/layouts/IEEEtran.layout:174
 msgid "Author name"
 msgstr "Naam auteur"
 
-#: lib/layouts/IEEEtran.layout:185
+#: lib/layouts/IEEEtran.layout:186
 msgid "Author Affiliation"
 msgstr "Affiliatie auteur"
 
-#: lib/layouts/IEEEtran.layout:188 lib/layouts/agutex.layout:122
+#: lib/layouts/IEEEtran.layout:189 lib/layouts/agutex.layout:122
 #: lib/layouts/copernicus.layout:67
 msgid "Author affiliation"
 msgstr "Affiliatie auteur"
 
-#: lib/layouts/IEEEtran.layout:199
+#: lib/layouts/IEEEtran.layout:200
 msgid "Author Mark"
 msgstr "Verwijzing auteur"
 
-#: lib/layouts/IEEEtran.layout:204 lib/layouts/elsarticle.layout:174
+#: lib/layouts/IEEEtran.layout:205 lib/layouts/elsarticle.layout:174
 msgid "Author mark"
 msgstr "Verwijzing auteur"
 
-#: lib/layouts/IEEEtran.layout:223
+#: lib/layouts/IEEEtran.layout:224
 msgid "Special Paper Notice"
 msgstr "Speciale opmerking paper"
 
-#: lib/layouts/IEEEtran.layout:235
+#: lib/layouts/IEEEtran.layout:236
 msgid "After Title Text"
 msgstr "Tekst na titel"
 
-#: lib/layouts/IEEEtran.layout:249
+#: lib/layouts/IEEEtran.layout:250
 msgid "Page headings"
 msgstr "Paginakoppen"
 
-#: lib/layouts/IEEEtran.layout:258
+#: lib/layouts/IEEEtran.layout:259
 msgid "Left Side"
 msgstr "Linkerkant"
 
-#: lib/layouts/IEEEtran.layout:259
+#: lib/layouts/IEEEtran.layout:260
 msgid "Left side of the header line"
 msgstr "Links van de kopregel"
 
-#: lib/layouts/IEEEtran.layout:275 lib/layouts/ijmpc.layout:66
+#: lib/layouts/IEEEtran.layout:276 lib/layouts/ijmpc.layout:66
 #: lib/layouts/ijmpd.layout:71
 msgid "MarkBoth"
 msgstr "Markeer beiden"
 
-#: lib/layouts/IEEEtran.layout:280
+#: lib/layouts/IEEEtran.layout:281
 msgid "Publication ID"
 msgstr "Publicatie-ID"
 
-#: lib/layouts/IEEEtran.layout:301
+#: lib/layouts/IEEEtran.layout:302
 msgid "Abstract---"
 msgstr "Abstract---"
 
-#: lib/layouts/IEEEtran.layout:322
+#: lib/layouts/IEEEtran.layout:323
 msgid "Index Terms---"
 msgstr "Indextermen---"
 
-#: lib/layouts/IEEEtran.layout:331 lib/layouts/IEEEtran.layout:335
+#: lib/layouts/IEEEtran.layout:332 lib/layouts/IEEEtran.layout:336
 msgid "Paragraph Start"
 msgstr "Start alinea"
 
-#: lib/layouts/IEEEtran.layout:339
+#: lib/layouts/IEEEtran.layout:340
 msgid "First Char"
 msgstr "Eerste teken"
 
-#: lib/layouts/IEEEtran.layout:340
+#: lib/layouts/IEEEtran.layout:341
 msgid "First character of first word"
 msgstr "Eerst teken van eerste woord"
 
-#: lib/layouts/IEEEtran.layout:349 lib/layouts/IEEEtran.layout:359
+#: lib/layouts/IEEEtran.layout:350 lib/layouts/IEEEtran.layout:360
 msgid "Appendices"
 msgstr "Appendices"
 
-#: lib/layouts/IEEEtran.layout:353 lib/layouts/IEEEtran.layout:392
-#: lib/layouts/IEEEtran.layout:428 lib/layouts/aa.layout:173
+#: lib/layouts/IEEEtran.layout:354 lib/layouts/IEEEtran.layout:393
+#: lib/layouts/IEEEtran.layout:429 lib/layouts/aa.layout:173
 #: lib/layouts/aastex.layout:355 lib/layouts/aastex.layout:421
 #: lib/layouts/aastex.layout:454 lib/layouts/achemso.layout:286
 #: lib/layouts/acmart.layout:689 lib/layouts/acmsiggraph-0-92.layout:349
 #: lib/layouts/acmsiggraph.layout:305 lib/layouts/agutex.layout:167
 #: lib/layouts/agutex.layout:177 lib/layouts/agutex.layout:197
 #: lib/layouts/agutex.layout:223 lib/layouts/amsdefs.inc:266
-#: lib/layouts/apa.layout:244 lib/layouts/beamer.layout:1185
+#: lib/layouts/apa.layout:244 lib/layouts/beamer.layout:1187
 #: lib/layouts/copernicus.layout:437 lib/layouts/egs.layout:596
 #: lib/layouts/egs.layout:645 lib/layouts/elsarticle.layout:333
 #: lib/layouts/europasscv.layout:540 lib/layouts/europecv.layout:381
@@ -7834,42 +7838,44 @@ msgstr "Appendices"
 msgid "BackMatter"
 msgstr "Nawerk"
 
-#: lib/layouts/IEEEtran.layout:367
+#: lib/layouts/IEEEtran.layout:368
 msgid "Peer Review Title"
 msgstr "Titel peerreview"
 
-#: lib/layouts/IEEEtran.layout:372
+#: lib/layouts/IEEEtran.layout:373
 msgid "PeerReviewTitle"
 msgstr "Titel peerreview"
 
-#: lib/layouts/IEEEtran.layout:376 lib/layouts/IEEEtran.layout:379
-#: lib/layouts/aastex.layout:417 lib/layouts/aastex6.layout:99
-#: lib/layouts/aastex62.layout:110 lib/layouts/aastex62.layout:237
-#: lib/layouts/aastex62.layout:243 lib/layouts/aastex62.layout:259
-#: lib/layouts/aastex62.layout:275 lib/layouts/copernicus.layout:303
-#: lib/layouts/copernicus.layout:309 lib/layouts/copernicus.layout:321
-#: lib/layouts/copernicus.layout:333 lib/layouts/copernicus.layout:338
-#: lib/layouts/ijmpc.layout:501 lib/layouts/ijmpc.layout:503
-#: lib/layouts/ijmpd.layout:532 lib/layouts/ijmpd.layout:534
-#: lib/layouts/kluwer.layout:364 lib/layouts/kluwer.layout:377
-#: lib/examples/Articles:0 src/RowPainter.cpp:378
+#: lib/layouts/IEEEtran.layout:377 lib/layouts/IEEEtran.layout:380
+#: lib/layouts/aastex.layout:417 lib/layouts/aastex6.layout:106
+#: lib/layouts/aastex62.layout:117 lib/layouts/aastex62.layout:247
+#: lib/layouts/aastex62.layout:253 lib/layouts/aastex62.layout:269
+#: lib/layouts/aastex62.layout:285 lib/layouts/aastex63.layout:123
+#: lib/layouts/aastex63.layout:253 lib/layouts/aastex63.layout:259
+#: lib/layouts/aastex63.layout:275 lib/layouts/aastex63.layout:291
+#: lib/layouts/copernicus.layout:303 lib/layouts/copernicus.layout:309
+#: lib/layouts/copernicus.layout:321 lib/layouts/copernicus.layout:333
+#: lib/layouts/copernicus.layout:338 lib/layouts/ijmpc.layout:501
+#: lib/layouts/ijmpc.layout:503 lib/layouts/ijmpd.layout:532
+#: lib/layouts/ijmpd.layout:534 lib/layouts/kluwer.layout:364
+#: lib/layouts/kluwer.layout:377 lib/examples/Articles:0 src/RowPainter.cpp:375
 msgid "Appendix"
 msgstr "Appendix"
 
-#: lib/layouts/IEEEtran.layout:381 lib/layouts/iucr.layout:71
+#: lib/layouts/IEEEtran.layout:382 lib/layouts/iucr.layout:71
 #: lib/layouts/jss.layout:126
 msgid "Short Title"
 msgstr "Korte titel"
 
-#: lib/layouts/IEEEtran.layout:382
+#: lib/layouts/IEEEtran.layout:383
 msgid "Short title for the appendix"
 msgstr "Korte titel voor appendix"
 
-#: lib/layouts/IEEEtran.layout:388 lib/layouts/aapaper.layout:108
+#: lib/layouts/IEEEtran.layout:389 lib/layouts/aapaper.layout:108
 #: lib/layouts/aapaper.layout:234 lib/layouts/aastex.layout:450
 #: lib/layouts/aguplus.inc:172 lib/layouts/aguplus.inc:174
 #: lib/layouts/agutex.layout:219 lib/layouts/amsbook.layout:121
-#: lib/layouts/amsdefs.inc:265 lib/layouts/beamer.layout:1184
+#: lib/layouts/amsdefs.inc:265 lib/layouts/beamer.layout:1186
 #: lib/layouts/book.layout:24 lib/layouts/book.layout:26
 #: lib/layouts/cl2emult.layout:115 lib/layouts/copernicus.layout:433
 #: lib/layouts/egs.layout:644 lib/layouts/elsarticle.layout:329
@@ -7893,9 +7899,9 @@ msgstr "Korte titel voor appendix"
 msgid "Bibliography"
 msgstr "Bibliografie"
 
-#: lib/layouts/IEEEtran.layout:404 lib/layouts/aastex.layout:464
+#: lib/layouts/IEEEtran.layout:405 lib/layouts/aastex.layout:464
 #: lib/layouts/aastex.layout:485 lib/layouts/agutex.layout:235
-#: lib/layouts/amsdefs.inc:281 lib/layouts/beamer.layout:1199
+#: lib/layouts/amsdefs.inc:281 lib/layouts/beamer.layout:1201
 #: lib/layouts/cl2emult.layout:130 lib/layouts/copernicus.layout:449
 #: lib/layouts/egs.layout:660 lib/layouts/elsarticle.layout:345
 #: lib/layouts/ijmpc.layout:545 lib/layouts/ijmpd.layout:576
@@ -7910,9 +7916,9 @@ msgstr "Bibliografie"
 msgid "References"
 msgstr "Referenties"
 
-#: lib/layouts/IEEEtran.layout:413 lib/layouts/aastex.layout:474
+#: lib/layouts/IEEEtran.layout:414 lib/layouts/aastex.layout:474
 #: lib/layouts/agutex.layout:244 lib/layouts/amsdefs.inc:293
-#: lib/layouts/beamer.layout:1208 lib/layouts/cl2emult.layout:139
+#: lib/layouts/beamer.layout:1210 lib/layouts/cl2emult.layout:139
 #: lib/layouts/copernicus.layout:457 lib/layouts/egs.layout:668
 #: lib/layouts/elsarticle.layout:354 lib/layouts/ijmpc.layout:554
 #: lib/layouts/ijmpd.layout:585 lib/layouts/iopart.layout:346
@@ -7924,9 +7930,9 @@ msgstr "Referenties"
 msgid "Bib preamble"
 msgstr "Preambule bib"
 
-#: lib/layouts/IEEEtran.layout:414 lib/layouts/aastex.layout:475
+#: lib/layouts/IEEEtran.layout:415 lib/layouts/aastex.layout:475
 #: lib/layouts/agutex.layout:245 lib/layouts/amsdefs.inc:294
-#: lib/layouts/beamer.layout:1209 lib/layouts/cl2emult.layout:140
+#: lib/layouts/beamer.layout:1211 lib/layouts/cl2emult.layout:140
 #: lib/layouts/copernicus.layout:458 lib/layouts/egs.layout:669
 #: lib/layouts/elsarticle.layout:355 lib/layouts/ijmpc.layout:555
 #: lib/layouts/ijmpd.layout:586 lib/layouts/iopart.layout:347
@@ -7938,9 +7944,9 @@ msgstr "Preambule bib"
 msgid "Bibliography Preamble"
 msgstr "Preambule bibliografie"
 
-#: lib/layouts/IEEEtran.layout:415 lib/layouts/aastex.layout:476
+#: lib/layouts/IEEEtran.layout:416 lib/layouts/aastex.layout:476
 #: lib/layouts/agutex.layout:246 lib/layouts/amsdefs.inc:295
-#: lib/layouts/beamer.layout:1210 lib/layouts/cl2emult.layout:141
+#: lib/layouts/beamer.layout:1212 lib/layouts/cl2emult.layout:141
 #: lib/layouts/copernicus.layout:459 lib/layouts/egs.layout:670
 #: lib/layouts/elsarticle.layout:356 lib/layouts/ijmpc.layout:556
 #: lib/layouts/ijmpd.layout:587 lib/layouts/iopart.layout:348
@@ -7952,19 +7958,19 @@ msgstr "Preambule bibliografie"
 msgid "LaTeX code to be inserted before the first bibliography item"
 msgstr "LaTeX-code die ingevoegd wordt voor de eerste bibliografie-ingang"
 
-#: lib/layouts/IEEEtran.layout:425
+#: lib/layouts/IEEEtran.layout:426
 msgid "Biography"
 msgstr "Biografie"
 
-#: lib/layouts/IEEEtran.layout:430 lib/layouts/moderncv.layout:275
+#: lib/layouts/IEEEtran.layout:431 lib/layouts/moderncv.layout:275
 msgid "Photo"
 msgstr "Foto"
 
-#: lib/layouts/IEEEtran.layout:431
+#: lib/layouts/IEEEtran.layout:432
 msgid "Optional photo for biography"
 msgstr "Optionele foto voor biografie"
 
-#: lib/layouts/IEEEtran.layout:436 lib/layouts/IEEEtran.layout:453
+#: lib/layouts/IEEEtran.layout:437 lib/layouts/IEEEtran.layout:454
 #: lib/layouts/acmart.layout:719 lib/layouts/acmsiggraph-0-92.layout:131
 #: lib/layouts/europasscv.layout:75 lib/layouts/europecv.layout:33
 #: lib/layouts/g-brief.layout:44 lib/layouts/g-brief2.layout:44
@@ -7979,21 +7985,21 @@ msgstr "Optionele foto voor biografie"
 msgid "Name"
 msgstr "Naam"
 
-#: lib/layouts/IEEEtran.layout:437 lib/layouts/IEEEtran.layout:454
+#: lib/layouts/IEEEtran.layout:438 lib/layouts/IEEEtran.layout:455
 #: lib/layouts/sigplanconf.layout:165
 msgid "Name of the author"
 msgstr "Naam van de auteur"
 
-#: lib/layouts/IEEEtran.layout:446
+#: lib/layouts/IEEEtran.layout:447
 msgid "Biography without photo"
 msgstr "Biografie zonder foto"
 
-#: lib/layouts/IEEEtran.layout:458
+#: lib/layouts/IEEEtran.layout:459
 msgid "BiographyNoPhoto"
 msgstr "Biografie geen foto"
 
-#: lib/layouts/IEEEtran.layout:464 lib/layouts/acmart.layout:584
-#: lib/layouts/beamer.layout:1309 lib/layouts/elsart.layout:314
+#: lib/layouts/IEEEtran.layout:465 lib/layouts/acmart.layout:584
+#: lib/layouts/beamer.layout:1311 lib/layouts/elsart.layout:314
 #: lib/layouts/elsart.layout:349 lib/layouts/foils.layout:250
 #: lib/layouts/heb-article.layout:23 lib/layouts/heb-article.layout:116
 #: lib/layouts/ijmpc.layout:406 lib/layouts/ijmpd.layout:412
@@ -8007,16 +8013,16 @@ msgstr "Biografie geen foto"
 msgid "Reasoning"
 msgstr "Redenering"
 
-#: lib/layouts/IEEEtran.layout:470 lib/layouts/siamltex.layout:163
+#: lib/layouts/IEEEtran.layout:471 lib/layouts/siamltex.layout:163
 #: lib/layouts/theorems-proof.inc:21
 msgid "Alternative Proof String"
 msgstr "Tekst alternatief bewijs"
 
-#: lib/layouts/IEEEtran.layout:471 lib/layouts/siamltex.layout:164
+#: lib/layouts/IEEEtran.layout:472 lib/layouts/siamltex.layout:164
 msgid "An alternative proof string"
 msgstr "Tekst voor een alternatief bewijs"
 
-#: lib/layouts/IEEEtran.layout:483 lib/layouts/beamer.layout:1389
+#: lib/layouts/IEEEtran.layout:484 lib/layouts/beamer.layout:1391
 #: lib/layouts/foils.layout:313 lib/layouts/llncs.layout:411
 #: lib/layouts/siamltex.layout:176 lib/layouts/svcommon.inc:749
 #: lib/layouts/svmono.layout:103 lib/layouts/svmono.layout:107
@@ -8103,17 +8109,18 @@ msgstr "Adres"
 #: lib/layouts/RJournal.layout:76 lib/layouts/RJournal.layout:77
 #: lib/layouts/aa.layout:430 lib/layouts/aa.layout:434
 #: lib/layouts/aapaper.inc:48 lib/layouts/aapaper.layout:90
-#: lib/layouts/aastex.layout:221 lib/layouts/aastex62.layout:144
-#: lib/layouts/achemso.layout:103 lib/layouts/acmart.layout:175
-#: lib/layouts/amsdefs.inc:177 lib/layouts/db_stdcharstyles.inc:72
-#: lib/layouts/db_stdcharstyles.inc:73 lib/layouts/ectaart.layout:89
-#: lib/layouts/elsarticle.layout:250 lib/layouts/europasscv.layout:153
-#: lib/layouts/europecv.layout:99 lib/layouts/iopart.layout:182
-#: lib/layouts/iucr.layout:140 lib/layouts/iucr.layout:141
-#: lib/layouts/jasatex.layout:170 lib/layouts/latex8.layout:68
-#: lib/layouts/lettre.layout:52 lib/layouts/lettre.layout:447
-#: lib/layouts/llncs.layout:250 lib/layouts/moderncv.layout:217
-#: lib/layouts/svcommon.inc:779 lib/layouts/svcommon.inc:784
+#: lib/layouts/aastex.layout:221 lib/layouts/aastex62.layout:151
+#: lib/layouts/aastex63.layout:157 lib/layouts/achemso.layout:103
+#: lib/layouts/acmart.layout:175 lib/layouts/amsdefs.inc:177
+#: lib/layouts/db_stdcharstyles.inc:72 lib/layouts/db_stdcharstyles.inc:73
+#: lib/layouts/ectaart.layout:89 lib/layouts/elsarticle.layout:250
+#: lib/layouts/europasscv.layout:153 lib/layouts/europecv.layout:99
+#: lib/layouts/iopart.layout:182 lib/layouts/iucr.layout:140
+#: lib/layouts/iucr.layout:141 lib/layouts/jasatex.layout:170
+#: lib/layouts/latex8.layout:68 lib/layouts/lettre.layout:52
+#: lib/layouts/lettre.layout:447 lib/layouts/llncs.layout:250
+#: lib/layouts/moderncv.layout:217 lib/layouts/svcommon.inc:779
+#: lib/layouts/svcommon.inc:784
 msgid "Email"
 msgstr "E-mail"
 
@@ -8171,7 +8178,7 @@ msgstr "Astronomie & astrofysica"
 
 #: lib/layouts/aa.layout:69 lib/layouts/aapaper.inc:9
 #: lib/layouts/aapaper.layout:81 lib/layouts/acm-sigs.inc:10
-#: lib/layouts/acmart.layout:160 lib/layouts/beamer.layout:1037
+#: lib/layouts/acmart.layout:160 lib/layouts/beamer.layout:1039
 #: lib/layouts/beamerposter.layout:26 lib/layouts/kluwer.layout:136
 #: lib/layouts/llncs.layout:135 lib/layouts/scrclass.inc:221
 #: lib/layouts/sigplanconf.layout:138 lib/layouts/svcommon.inc:357
@@ -8261,7 +8268,7 @@ msgstr "Subsubparagraaf"
 #: lib/layouts/aa.layout:256 lib/layouts/aapaper.layout:99
 #: lib/layouts/aapaper.layout:202 lib/layouts/aastex.layout:265
 #: lib/layouts/acmart.layout:133 lib/layouts/amsdefs.inc:82
-#: lib/layouts/beamer.layout:1136 lib/layouts/beamerposter.layout:41
+#: lib/layouts/beamer.layout:1138 lib/layouts/beamerposter.layout:41
 #: lib/layouts/dinbrief.layout:218 lib/layouts/egs.layout:558
 #: lib/layouts/foils.layout:170 lib/layouts/frletter.layout:24
 #: lib/layouts/g-brief.layout:199 lib/layouts/g-brief2.layout:54
@@ -8281,7 +8288,7 @@ msgstr "Datum"
 msgid "institutemark"
 msgstr "verwijzing instituut"
 
-#: lib/layouts/aa.layout:276 lib/layouts/beamer.layout:1119
+#: lib/layouts/aa.layout:276 lib/layouts/beamer.layout:1121
 msgid "Institute Mark"
 msgstr "Verwijzing instituut"
 
@@ -8333,7 +8340,7 @@ msgstr "Resultaten van uw werk"
 msgid "Key words."
 msgstr "Trefwoorden."
 
-#: lib/layouts/aa.layout:401 lib/layouts/beamer.layout:1092
+#: lib/layouts/aa.layout:401 lib/layouts/beamer.layout:1094
 #: lib/layouts/beamerposter.layout:36 lib/layouts/cl2emult.layout:81
 #: lib/layouts/llncs.layout:231 lib/layouts/sciposter.layout:24
 #: lib/layouts/svcommon.inc:385
@@ -8419,18 +8426,19 @@ msgstr "Lijst"
 msgid "American Astronomical Society (AASTeX v. 5)"
 msgstr "American Astronomical Society (AASTeX v. 5)"
 
-#: lib/layouts/aastex.layout:169 lib/layouts/aastex62.layout:174
-#: lib/layouts/achemso.layout:112 lib/layouts/acmart.layout:209
-#: lib/layouts/aguplus.inc:65 lib/layouts/apa.layout:184
-#: lib/layouts/apax.inc:164 lib/layouts/iucr.layout:193
-#: lib/layouts/jasatex.layout:115 lib/layouts/latex8.layout:92
-#: lib/layouts/maa-monthly.layout:124 lib/layouts/moderncv.layout:446
-#: lib/layouts/revtex4-x.inc:66 lib/layouts/revtex4.layout:144
-#: lib/layouts/sigplanconf.layout:172
+#: lib/layouts/aastex.layout:169 lib/layouts/aastex62.layout:181
+#: lib/layouts/aastex63.layout:187 lib/layouts/achemso.layout:112
+#: lib/layouts/acmart.layout:209 lib/layouts/aguplus.inc:65
+#: lib/layouts/apa.layout:184 lib/layouts/apax.inc:164
+#: lib/layouts/iucr.layout:193 lib/layouts/jasatex.layout:115
+#: lib/layouts/latex8.layout:92 lib/layouts/maa-monthly.layout:124
+#: lib/layouts/moderncv.layout:446 lib/layouts/revtex4-x.inc:66
+#: lib/layouts/revtex4.layout:144 lib/layouts/sigplanconf.layout:172
 msgid "Affiliation"
 msgstr "Affiliatie"
 
-#: lib/layouts/aastex.layout:192 lib/layouts/aastex62.layout:219
+#: lib/layouts/aastex.layout:192 lib/layouts/aastex62.layout:226
+#: lib/layouts/aastex63.layout:232
 msgid "Altaffilation"
 msgstr "Alternatieve affiliatie"
 
@@ -8505,8 +8513,8 @@ msgstr "Opmerkingen aan de redacteur"
 msgid "Note to Editor:"
 msgstr "Nota aan de redacteur:"
 
-#: lib/layouts/aastex.layout:516 lib/layouts/aastex6.layout:106
-#: lib/layouts/aastex62.layout:117
+#: lib/layouts/aastex.layout:516 lib/layouts/aastex6.layout:113
+#: lib/layouts/aastex62.layout:124 lib/layouts/aastex63.layout:130
 msgid "TableRefs"
 msgstr "Tabelverwijzingen"
 
@@ -8514,8 +8522,8 @@ msgstr "Tabelverwijzingen"
 msgid "References. ---"
 msgstr "Referenties. ---"
 
-#: lib/layouts/aastex.layout:539 lib/layouts/aastex6.layout:113
-#: lib/layouts/aastex62.layout:124
+#: lib/layouts/aastex.layout:539 lib/layouts/aastex6.layout:120
+#: lib/layouts/aastex62.layout:131 lib/layouts/aastex63.layout:137
 msgid "TableComments"
 msgstr "Tabelopmerkingen"
 
@@ -8591,23 +8599,28 @@ msgstr "Splits de dataset-ID van de tekst"
 msgid "American Astronomical Society (AASTeX v. 6)"
 msgstr "American Astronomical Society (AASTeX v. 6)"
 
-#: lib/layouts/aastex6.layout:59 lib/layouts/aastex62.layout:70
+#: lib/layouts/aastex6.layout:66 lib/layouts/aastex62.layout:77
+#: lib/layouts/aastex63.layout:83
 msgid "Software"
 msgstr "Software"
 
-#: lib/layouts/aastex6.layout:66 lib/layouts/aastex62.layout:77
+#: lib/layouts/aastex6.layout:73 lib/layouts/aastex62.layout:84
+#: lib/layouts/aastex63.layout:90
 msgid "Software:"
 msgstr "Software:"
 
-#: lib/layouts/aastex6.layout:103 lib/layouts/aastex62.layout:114
+#: lib/layouts/aastex6.layout:110 lib/layouts/aastex62.layout:121
+#: lib/layouts/aastex63.layout:127
 msgid "APPENDIX"
 msgstr "APPENDIX"
 
-#: lib/layouts/aastex6.layout:107 lib/layouts/aastex62.layout:118
+#: lib/layouts/aastex6.layout:114 lib/layouts/aastex62.layout:125
+#: lib/layouts/aastex63.layout:131
 msgid "References-"
 msgstr "Referenties-"
 
-#: lib/layouts/aastex6.layout:114 lib/layouts/aastex62.layout:125
+#: lib/layouts/aastex6.layout:121 lib/layouts/aastex62.layout:132
+#: lib/layouts/aastex63.layout:138
 msgid "Note-"
 msgstr "Aantekening-"
 
@@ -8615,86 +8628,98 @@ msgstr "Aantekening-"
 msgid "American Astronomical Society (AASTeX v. 6.2)"
 msgstr "American Astronomical Society (AASTeX v. 6.2)"
 
-#: lib/layouts/aastex62.layout:130 lib/layouts/ectaart.layout:210
-#: lib/layouts/ectaart.layout:213
+#: lib/layouts/aastex62.layout:137 lib/layouts/aastex63.layout:143
+#: lib/layouts/ectaart.layout:210 lib/layouts/ectaart.layout:213
 msgid "Corresponding Author"
 msgstr "Corresponderende auteur"
 
-#: lib/layouts/aastex62.layout:136
+#: lib/layouts/aastex62.layout:143 lib/layouts/aastex63.layout:149
 msgid "Corresponding author:"
 msgstr "Correspondereden auteur:"
 
-#: lib/layouts/aastex62.layout:155 lib/layouts/copernicus.layout:65
-#: lib/layouts/egs.layout:388 lib/layouts/svmult.layout:93
+#: lib/layouts/aastex62.layout:162 lib/layouts/aastex63.layout:168
+#: lib/layouts/copernicus.layout:65 lib/layouts/egs.layout:388
+#: lib/layouts/svmult.layout:93
 msgid "Author:"
 msgstr "Auteur:"
 
-#: lib/layouts/aastex62.layout:161 lib/layouts/acmart.layout:196
-#: lib/layouts/apax.inc:641 lib/layouts/apax.inc:668
+#: lib/layouts/aastex62.layout:168 lib/layouts/aastex63.layout:174
+#: lib/layouts/acmart.layout:196 lib/layouts/apax.inc:641
+#: lib/layouts/apax.inc:668
 msgid "ORCID"
 msgstr "ORCID"
 
-#: lib/layouts/aastex62.layout:162
+#: lib/layouts/aastex62.layout:169 lib/layouts/aastex63.layout:175
 msgid "Enter the 16 digit ORCID as xxxx-xxxx-xxxx-xxxx"
 msgstr "Voer het 16-cijferige ORCID in als xxxx-xxxx-xxxx-xxxx"
 
-#: lib/layouts/aastex62.layout:177 lib/layouts/apa.layout:197
-#: lib/layouts/apax.inc:177 lib/layouts/copernicus.layout:90
-#: lib/layouts/egs.layout:415 lib/layouts/iucr.layout:197
-#: lib/layouts/jss.layout:81 lib/layouts/revtex4-x.inc:80
-#: lib/layouts/revtex4.layout:155
+#: lib/layouts/aastex62.layout:184 lib/layouts/aastex63.layout:190
+#: lib/layouts/apa.layout:197 lib/layouts/apax.inc:177
+#: lib/layouts/copernicus.layout:90 lib/layouts/egs.layout:415
+#: lib/layouts/iucr.layout:197 lib/layouts/jss.layout:81
+#: lib/layouts/revtex4-x.inc:80 lib/layouts/revtex4.layout:155
 msgid "Affiliation:"
 msgstr "Affiliatie:"
 
-#: lib/layouts/aastex62.layout:187 lib/layouts/revtex4-x.inc:167
-#: lib/layouts/revtex4.layout:209
+#: lib/layouts/aastex62.layout:194 lib/layouts/aastex63.layout:200
+#: lib/layouts/revtex4-x.inc:167 lib/layouts/revtex4.layout:209
 msgid "Collaboration"
 msgstr "Samenwerking"
 
-#: lib/layouts/aastex62.layout:194 lib/layouts/revtex4-x.inc:170
-#: lib/layouts/revtex4.layout:212
+#: lib/layouts/aastex62.layout:201 lib/layouts/aastex63.layout:207
+#: lib/layouts/revtex4-x.inc:170 lib/layouts/revtex4.layout:212
 msgid "Collaboration:"
 msgstr "Samenwerking:"
 
-#: lib/layouts/aastex62.layout:203
+#: lib/layouts/aastex62.layout:210 lib/layouts/aastex63.layout:216
 msgid "Nocollaboration"
 msgstr "Geen samenwerking"
 
-#: lib/layouts/aastex62.layout:210
+#: lib/layouts/aastex62.layout:217 lib/layouts/aastex63.layout:223
 msgid "No collaboration"
 msgstr "Geen samenwerking"
 
-#: lib/layouts/aastex62.layout:241 lib/layouts/copernicus.layout:307
+#: lib/layouts/aastex62.layout:251 lib/layouts/aastex63.layout:257
+#: lib/layouts/copernicus.layout:307
 msgid "Section Appendix"
 msgstr "Paragraaf Appendix"
 
-#: lib/layouts/aastex62.layout:245
+#: lib/layouts/aastex62.layout:255 lib/layouts/aastex63.layout:261
 msgid "\\Alph{appendix}."
 msgstr "\\Alph{appendix}."
 
-#: lib/layouts/aastex62.layout:253 lib/layouts/copernicus.layout:315
+#: lib/layouts/aastex62.layout:263 lib/layouts/aastex63.layout:269
+#: lib/layouts/copernicus.layout:315
 msgid "Subappendix"
 msgstr "Subappendix"
 
-#: lib/layouts/aastex62.layout:257 lib/layouts/copernicus.layout:319
+#: lib/layouts/aastex62.layout:267 lib/layouts/aastex63.layout:273
+#: lib/layouts/copernicus.layout:319
 msgid "Subsection Appendix"
 msgstr "Subparagraaf Appendix"
 
-#: lib/layouts/aastex62.layout:261
+#: lib/layouts/aastex62.layout:271 lib/layouts/aastex63.layout:277
 msgid "\\Alph{appendix}\\arabic{subappendix}."
 msgstr "\\Alph{appendix}\\arabic{subappendix}."
 
-#: lib/layouts/aastex62.layout:269 lib/layouts/copernicus.layout:327
+#: lib/layouts/aastex62.layout:279 lib/layouts/aastex63.layout:285
+#: lib/layouts/copernicus.layout:327
 msgid "Subsubappendix"
 msgstr "Subsubparagraafappendix"
 
-#: lib/layouts/aastex62.layout:273 lib/layouts/copernicus.layout:331
+#: lib/layouts/aastex62.layout:283 lib/layouts/aastex63.layout:289
+#: lib/layouts/copernicus.layout:331
 msgid "Subsubsection Appendix"
 msgstr "Subsubparagraafappendix"
 
-#: lib/layouts/aastex62.layout:277
+#: lib/layouts/aastex62.layout:287 lib/layouts/aastex63.layout:293
 msgid "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
 msgstr "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
+
+#: lib/layouts/aastex63.layout:3 lib/examples/Articles:0
+#, fuzzy
+msgid "American Astronomical Society (AASTeX v. 6.3.1)"
+msgstr "American Astronomical Society (AASTeX v. 6.2)"
 
 #: lib/layouts/achemso.layout:3 lib/examples/Articles:0
 msgid "American Chemical Society (ACS)"
@@ -8704,7 +8729,7 @@ msgstr "American Chemical Society (ACS)"
 #: lib/layouts/apa.layout:286 lib/layouts/apax.inc:385
 #: lib/layouts/beamer.layout:268 lib/layouts/beamer.layout:324
 #: lib/layouts/beamer.layout:389 lib/layouts/beamer.layout:453
-#: lib/layouts/beamer.layout:1014 lib/layouts/europecv.layout:201
+#: lib/layouts/beamer.layout:1016 lib/layouts/europecv.layout:201
 #: lib/layouts/iopart.layout:67 lib/layouts/jasatex.layout:75
 #: lib/layouts/memoir.layout:68 lib/layouts/revtex4-x.inc:248
 #: lib/layouts/scrclass.inc:146 lib/layouts/scrclass.inc:159
@@ -9173,7 +9198,7 @@ msgstr "Zijbalk (enkel sigchi-a)"
 msgid "Margin figure (sigchi-a only)"
 msgstr "Kantlijnfiguur (enkel sigchi-a)"
 
-#: lib/layouts/acmart.layout:550 lib/layouts/beamer.layout:1743
+#: lib/layouts/acmart.layout:550 lib/layouts/beamer.layout:1745
 #: lib/layouts/powerdot.layout:585 lib/layouts/sciposter.layout:110
 #: lib/layouts/stdfloats.inc:34 lib/layouts/tufte-book.layout:293
 msgid "List of Figures"
@@ -9183,7 +9208,7 @@ msgstr "Lijst van figuren"
 msgid "Margin table (sigchi-a only)"
 msgstr "Kantlijntabel (enkel sigchi-a)"
 
-#: lib/layouts/acmart.layout:563 lib/layouts/beamer.layout:1729
+#: lib/layouts/acmart.layout:563 lib/layouts/beamer.layout:1731
 #: lib/layouts/powerdot.layout:567 lib/layouts/sciposter.layout:125
 #: lib/layouts/stdfloats.inc:18 lib/layouts/tufte-book.layout:277
 msgid "List of Tables"
@@ -9196,7 +9221,7 @@ msgstr "Lijst van tabellen"
 msgid "Definitions & Theorems"
 msgstr "Definities en stellingen"
 
-#: lib/layouts/acmart.layout:593 lib/layouts/beamer.layout:1338
+#: lib/layouts/acmart.layout:593 lib/layouts/beamer.layout:1340
 #: lib/layouts/theorems-ams-bytype.inc:40
 #: lib/layouts/theorems-ams-chap-bytype.inc:82 lib/layouts/theorems-ams.inc:37
 #: lib/layouts/theorems-bytype.inc:35 lib/layouts/theorems-named.module:22
@@ -9204,7 +9229,7 @@ msgstr "Definities en stellingen"
 msgid "Additional Theorem Text"
 msgstr "Aanvullende stellingtekst"
 
-#: lib/layouts/acmart.layout:594 lib/layouts/beamer.layout:1339
+#: lib/layouts/acmart.layout:594 lib/layouts/beamer.layout:1341
 #: lib/layouts/theorems-ams-bytype.inc:41
 #: lib/layouts/theorems-ams-chap-bytype.inc:83 lib/layouts/theorems-ams.inc:38
 #: lib/layouts/theorems-bytype.inc:36 lib/layouts/theorems-named.module:23
@@ -9613,7 +9638,7 @@ msgstr "Plate"
 msgid "Planotable"
 msgstr "Planotabel"
 
-#: lib/layouts/aguplus.inc:211 lib/layouts/beamer.layout:1724
+#: lib/layouts/aguplus.inc:211 lib/layouts/beamer.layout:1726
 #: lib/layouts/powerdot.layout:560 lib/layouts/powerdot.layout:645
 #: lib/layouts/sciposter.layout:120 lib/layouts/stdfloats.inc:13
 #: lib/ui/stdtoolbars.inc:156 src/insets/Inset.cpp:104
@@ -9733,7 +9758,7 @@ msgstr "Opgaven hoofdstuk"
 #: lib/layouts/apa.layout:445 lib/layouts/apa.layout:487
 #: lib/layouts/apax.inc:507 lib/layouts/apax.inc:545 lib/layouts/apax.inc:587
 #: lib/layouts/beamer.layout:109 lib/layouts/beamer.layout:162
-#: lib/layouts/beamer.layout:211 lib/layouts/beamer.layout:804
+#: lib/layouts/beamer.layout:211 lib/layouts/beamer.layout:806
 #: lib/layouts/egs.layout:156 lib/layouts/egs.layout:190
 #: lib/layouts/egs.layout:232 lib/layouts/egs.layout:267
 #: lib/layouts/europasscv.layout:406 lib/layouts/foils.layout:106
@@ -9752,7 +9777,7 @@ msgstr "Lijstpreambule"
 #: lib/layouts/apa.layout:446 lib/layouts/apa.layout:488
 #: lib/layouts/apax.inc:508 lib/layouts/apax.inc:546 lib/layouts/apax.inc:588
 #: lib/layouts/beamer.layout:110 lib/layouts/beamer.layout:163
-#: lib/layouts/beamer.layout:212 lib/layouts/beamer.layout:805
+#: lib/layouts/beamer.layout:212 lib/layouts/beamer.layout:807
 #: lib/layouts/egs.layout:157 lib/layouts/egs.layout:191
 #: lib/layouts/egs.layout:233 lib/layouts/egs.layout:268
 #: lib/layouts/europasscv.layout:407 lib/layouts/foils.layout:107
@@ -9771,7 +9796,7 @@ msgstr "Lijstpreambule"
 #: lib/layouts/apa.layout:447 lib/layouts/apa.layout:489
 #: lib/layouts/apax.inc:509 lib/layouts/apax.inc:547 lib/layouts/apax.inc:589
 #: lib/layouts/beamer.layout:111 lib/layouts/beamer.layout:164
-#: lib/layouts/beamer.layout:213 lib/layouts/beamer.layout:806
+#: lib/layouts/beamer.layout:213 lib/layouts/beamer.layout:808
 #: lib/layouts/egs.layout:158 lib/layouts/egs.layout:192
 #: lib/layouts/egs.layout:234 lib/layouts/egs.layout:269
 #: lib/layouts/europasscv.layout:408 lib/layouts/foils.layout:108
@@ -10007,7 +10032,7 @@ msgstr "Vijf affiliaties"
 msgid "SixAffiliations"
 msgstr "Zes affiliaties"
 
-#: lib/layouts/apax.inc:227 lib/layouts/beamer.layout:1671
+#: lib/layouts/apax.inc:227 lib/layouts/beamer.layout:1673
 #: lib/layouts/elsart.layout:504 lib/layouts/fixme.module:108
 #: lib/layouts/iopart.layout:106 lib/layouts/jlreq-common.inc:200
 #: lib/layouts/llncs.layout:394 lib/layouts/powerdot.layout:215
@@ -10117,11 +10142,11 @@ msgstr "Presentaties"
 
 #: lib/layouts/beamer.layout:90 lib/layouts/beamer.layout:139
 #: lib/layouts/beamer.layout:200 lib/layouts/beamer.layout:519
-#: lib/layouts/beamer.layout:587 lib/layouts/beamer.layout:645
-#: lib/layouts/beamer.layout:675 lib/layouts/beamer.layout:891
-#: lib/layouts/beamer.layout:920 lib/layouts/beamer.layout:1243
-#: lib/layouts/beamer.layout:1268 lib/layouts/beamer.layout:1295
-#: lib/layouts/beamer.layout:1461
+#: lib/layouts/beamer.layout:589 lib/layouts/beamer.layout:647
+#: lib/layouts/beamer.layout:677 lib/layouts/beamer.layout:893
+#: lib/layouts/beamer.layout:922 lib/layouts/beamer.layout:1245
+#: lib/layouts/beamer.layout:1270 lib/layouts/beamer.layout:1297
+#: lib/layouts/beamer.layout:1463
 msgid "Overlay Specifications|v"
 msgstr "Specificaties voor overlap|v"
 
@@ -10131,23 +10156,23 @@ msgid "Overlay specifications for this list"
 msgstr "Specificaties voor overlap voor deze lijst"
 
 #: lib/layouts/beamer.layout:101 lib/layouts/beamer.layout:154
-#: lib/layouts/beamer.layout:221 lib/layouts/beamer.layout:814
+#: lib/layouts/beamer.layout:221 lib/layouts/beamer.layout:816
 #: lib/layouts/powerdot.layout:304 lib/layouts/powerdot.layout:369
 msgid "Item Overlay Specifications"
 msgstr "Specificaties itemoverlap"
 
 #: lib/layouts/beamer.layout:102 lib/layouts/beamer.layout:155
-#: lib/layouts/beamer.layout:222 lib/layouts/beamer.layout:644
-#: lib/layouts/beamer.layout:674 lib/layouts/beamer.layout:815
-#: lib/layouts/beamer.layout:890 lib/layouts/beamer.layout:919
-#: lib/layouts/beamer.layout:1242 lib/layouts/beamer.layout:1267
-#: lib/layouts/beamer.layout:1294 lib/layouts/beamer.layout:1460
+#: lib/layouts/beamer.layout:222 lib/layouts/beamer.layout:646
+#: lib/layouts/beamer.layout:676 lib/layouts/beamer.layout:817
+#: lib/layouts/beamer.layout:892 lib/layouts/beamer.layout:921
+#: lib/layouts/beamer.layout:1244 lib/layouts/beamer.layout:1269
+#: lib/layouts/beamer.layout:1296 lib/layouts/beamer.layout:1462
 #: lib/layouts/powerdot.layout:305 lib/layouts/powerdot.layout:370
 msgid "On Slide"
 msgstr "Op dia"
 
 #: lib/layouts/beamer.layout:103 lib/layouts/beamer.layout:156
-#: lib/layouts/beamer.layout:223 lib/layouts/beamer.layout:816
+#: lib/layouts/beamer.layout:223 lib/layouts/beamer.layout:818
 #: lib/layouts/powerdot.layout:306 lib/layouts/powerdot.layout:371
 msgid "Overlay specifications for this item"
 msgstr "Overlapspecificaties voor dit item"
@@ -10263,40 +10288,40 @@ msgstr "\\arabic{section}.\\arabic{subsection}.\\arabic{subsubsection}"
 msgid "Frame"
 msgstr "Kader"
 
-#: lib/layouts/beamer.layout:495 lib/layouts/beamer.layout:581
-#: lib/layouts/beamer.layout:628 lib/layouts/beamer.layout:659
+#: lib/layouts/beamer.layout:495 lib/layouts/beamer.layout:583
+#: lib/layouts/beamer.layout:630 lib/layouts/beamer.layout:661
 msgid "Frames"
 msgstr "Kaders"
 
-#: lib/layouts/beamer.layout:518 lib/layouts/beamer.layout:953
-#: lib/layouts/beamer.layout:1330 lib/layouts/beamer.layout:1487
-#: lib/layouts/beamer.layout:1507 lib/layouts/beamer.layout:1527
-#: lib/layouts/beamer.layout:1547 lib/layouts/beamer.layout:1567
-#: lib/layouts/beamer.layout:1588 lib/layouts/beamer.layout:1609
-#: lib/layouts/beamer.layout:1630 lib/layouts/beamer.layout:1651
-#: lib/layouts/beamer.layout:1679 lib/layouts/pdfform.module:124
+#: lib/layouts/beamer.layout:518 lib/layouts/beamer.layout:955
+#: lib/layouts/beamer.layout:1332 lib/layouts/beamer.layout:1489
+#: lib/layouts/beamer.layout:1509 lib/layouts/beamer.layout:1529
+#: lib/layouts/beamer.layout:1549 lib/layouts/beamer.layout:1569
+#: lib/layouts/beamer.layout:1590 lib/layouts/beamer.layout:1611
+#: lib/layouts/beamer.layout:1632 lib/layouts/beamer.layout:1653
+#: lib/layouts/beamer.layout:1681 lib/layouts/pdfform.module:124
 msgid "Action"
 msgstr "Actie"
 
-#: lib/layouts/beamer.layout:520 lib/layouts/beamer.layout:588
+#: lib/layouts/beamer.layout:520 lib/layouts/beamer.layout:590
 msgid "Overlay specifications for this frame"
 msgstr "Overlapspecificatie voor dit kader"
 
-#: lib/layouts/beamer.layout:526 lib/layouts/beamer.layout:594
+#: lib/layouts/beamer.layout:526 lib/layouts/beamer.layout:596
 msgid "Default Overlay Specifications"
 msgstr "Standaardoverlapspecificaties"
 
-#: lib/layouts/beamer.layout:527 lib/layouts/beamer.layout:595
+#: lib/layouts/beamer.layout:527 lib/layouts/beamer.layout:597
 msgid "Default overlay specifications within this frame"
 msgstr "Standaardoverlapspecificaties voor binnen dit kader"
 
-#: lib/layouts/beamer.layout:533 lib/layouts/beamer.layout:562
-#: lib/layouts/beamer.layout:573 lib/layouts/beamer.layout:601
+#: lib/layouts/beamer.layout:533 lib/layouts/beamer.layout:563
+#: lib/layouts/beamer.layout:574 lib/layouts/beamer.layout:603
 msgid "Frame Options"
 msgstr "Kaderopties"
 
-#: lib/layouts/beamer.layout:535 lib/layouts/beamer.layout:564
-#: lib/layouts/beamer.layout:575 lib/layouts/beamer.layout:603
+#: lib/layouts/beamer.layout:535 lib/layouts/beamer.layout:565
+#: lib/layouts/beamer.layout:576 lib/layouts/beamer.layout:605
 msgid "Frame options (see beamer manual)"
 msgstr "Kaderopties (zie beamer-handleiding)"
 
@@ -10308,345 +10333,345 @@ msgstr "Kadertitel"
 msgid "Enter the frame title here"
 msgstr "Voer de kadertitel hier in"
 
-#: lib/layouts/beamer.layout:558
+#: lib/layouts/beamer.layout:559
 msgid "PlainFrame"
 msgstr "Eenvoudig kader"
 
-#: lib/layouts/beamer.layout:560
+#: lib/layouts/beamer.layout:561
 msgid "Frame (plain)"
 msgstr "Kader (eenvoudig)"
 
-#: lib/layouts/beamer.layout:569
+#: lib/layouts/beamer.layout:570
 msgid "FragileFrame"
 msgstr "Breekbaar kader"
 
-#: lib/layouts/beamer.layout:571
+#: lib/layouts/beamer.layout:572
 msgid "Frame (fragile)"
 msgstr "Kader (breekbaar)"
 
-#: lib/layouts/beamer.layout:580
+#: lib/layouts/beamer.layout:582
 msgid "AgainFrame"
 msgstr "Opnieuwkader"
 
-#: lib/layouts/beamer.layout:586 lib/layouts/powerdot.layout:135
+#: lib/layouts/beamer.layout:588 lib/layouts/powerdot.layout:135
 #: lib/layouts/seminar.layout:111 lib/layouts/slides.layout:92
 #: src/frontends/qt/GuiDocument.cpp:134
 msgid "Slide"
 msgstr "Dia"
 
-#: lib/layouts/beamer.layout:615
+#: lib/layouts/beamer.layout:617
 msgid "Repeat frame with label"
 msgstr "Kader herhalen met label"
 
-#: lib/layouts/beamer.layout:627
+#: lib/layouts/beamer.layout:629
 msgid "FrameTitle"
 msgstr "Kadertitel"
 
-#: lib/layouts/beamer.layout:646 lib/layouts/beamer.layout:676
-#: lib/layouts/beamer.layout:892 lib/layouts/beamer.layout:921
-#: lib/layouts/beamer.layout:955 lib/layouts/beamer.layout:1244
-#: lib/layouts/beamer.layout:1269 lib/layouts/beamer.layout:1296
-#: lib/layouts/beamer.layout:1332 lib/layouts/beamer.layout:1462
-#: lib/layouts/beamer.layout:1489 lib/layouts/beamer.layout:1509
-#: lib/layouts/beamer.layout:1529 lib/layouts/beamer.layout:1549
-#: lib/layouts/beamer.layout:1569 lib/layouts/beamer.layout:1590
-#: lib/layouts/beamer.layout:1611 lib/layouts/beamer.layout:1632
-#: lib/layouts/beamer.layout:1653 lib/layouts/beamer.layout:1681
+#: lib/layouts/beamer.layout:648 lib/layouts/beamer.layout:678
+#: lib/layouts/beamer.layout:894 lib/layouts/beamer.layout:923
+#: lib/layouts/beamer.layout:957 lib/layouts/beamer.layout:1246
+#: lib/layouts/beamer.layout:1271 lib/layouts/beamer.layout:1298
+#: lib/layouts/beamer.layout:1334 lib/layouts/beamer.layout:1464
+#: lib/layouts/beamer.layout:1491 lib/layouts/beamer.layout:1511
+#: lib/layouts/beamer.layout:1531 lib/layouts/beamer.layout:1551
+#: lib/layouts/beamer.layout:1571 lib/layouts/beamer.layout:1592
+#: lib/layouts/beamer.layout:1613 lib/layouts/beamer.layout:1634
+#: lib/layouts/beamer.layout:1655 lib/layouts/beamer.layout:1683
 msgid "Specify the overlay settings (see beamer manual)"
 msgstr "Specifieer de overlapinstellingen (zie beamer-handleiding)"
 
-#: lib/layouts/beamer.layout:652
+#: lib/layouts/beamer.layout:654
 msgid "Short Frame Title|S"
 msgstr "Korte kadertitel|S"
 
-#: lib/layouts/beamer.layout:653
+#: lib/layouts/beamer.layout:655
 msgid "A short form of the frame title used in some themes"
 msgstr "Een korte versie van de kadertitel, gebruikt door sommige thema's"
 
-#: lib/layouts/beamer.layout:658
+#: lib/layouts/beamer.layout:660
 msgid "FrameSubtitle"
 msgstr "Kaderondertitel"
 
-#: lib/layouts/beamer.layout:688 lib/layouts/moderncv.layout:396
+#: lib/layouts/beamer.layout:690 lib/layouts/moderncv.layout:396
 #: lib/layouts/moderncv.layout:413
 msgid "Column"
 msgstr "Kolom"
 
-#: lib/layouts/beamer.layout:689 lib/layouts/beamer.layout:714
-#: lib/layouts/beamer.layout:715 lib/layouts/beamer.layout:725
+#: lib/layouts/beamer.layout:691 lib/layouts/beamer.layout:716
+#: lib/layouts/beamer.layout:717 lib/layouts/beamer.layout:727
 #: lib/layouts/moderncv.layout:374 lib/layouts/multicol.module:15
 msgid "Columns"
 msgstr "Kolommen"
 
-#: lib/layouts/beamer.layout:701
+#: lib/layouts/beamer.layout:703
 msgid "Start column (increase depth!), width:"
 msgstr "Beginkolom (niveau dieper!), breedte:"
 
-#: lib/layouts/beamer.layout:704 lib/layouts/powerdot.layout:511
+#: lib/layouts/beamer.layout:706 lib/layouts/powerdot.layout:511
 msgid "Column Options"
 msgstr "Kolomopties"
 
-#: lib/layouts/beamer.layout:706
+#: lib/layouts/beamer.layout:708
 msgid "Column options (see beamer manual)"
 msgstr "Kolomopties (zie beamer-handleiding)"
 
-#: lib/layouts/beamer.layout:727
+#: lib/layouts/beamer.layout:729
 msgid "Column Placement Options"
 msgstr "Plaatsopties kolommen"
 
-#: lib/layouts/beamer.layout:728
+#: lib/layouts/beamer.layout:730
 msgid "Column placement options (t, T, c, b)"
 msgstr "Plaatsopties kolommen (t, T, c, b)"
 
-#: lib/layouts/beamer.layout:745
+#: lib/layouts/beamer.layout:747
 msgid "ColumnsCenterAligned"
 msgstr "GecentreerdeKolommen"
 
-#: lib/layouts/beamer.layout:748
+#: lib/layouts/beamer.layout:750
 msgid "Columns (center aligned)"
 msgstr "Kolommen (gecentreerd)"
 
-#: lib/layouts/beamer.layout:752
+#: lib/layouts/beamer.layout:754
 msgid "ColumnsTopAligned"
 msgstr "BovenUitgelijndeKolommen"
 
-#: lib/layouts/beamer.layout:755
+#: lib/layouts/beamer.layout:757
 msgid "Columns (top aligned)"
 msgstr "Kolommen (boven uitgelijnd)"
 
-#: lib/layouts/beamer.layout:764 lib/layouts/powerdot.layout:525
+#: lib/layouts/beamer.layout:766 lib/layouts/powerdot.layout:525
 msgid "Pause"
 msgstr "Pauzeren"
 
-#: lib/layouts/beamer.layout:765 lib/layouts/beamer.layout:793
-#: lib/layouts/beamer.layout:839 lib/layouts/beamer.layout:871
-#: lib/layouts/beamer.layout:900 lib/layouts/powerdot.layout:526
+#: lib/layouts/beamer.layout:767 lib/layouts/beamer.layout:795
+#: lib/layouts/beamer.layout:841 lib/layouts/beamer.layout:873
+#: lib/layouts/beamer.layout:902 lib/layouts/powerdot.layout:526
 msgid "Overlays"
 msgstr "Overlappen"
 
-#: lib/layouts/beamer.layout:771 lib/layouts/powerdot.layout:532
+#: lib/layouts/beamer.layout:773 lib/layouts/powerdot.layout:532
 msgid "Pause number"
 msgstr "Pauzenummer"
 
-#: lib/layouts/beamer.layout:772 lib/layouts/powerdot.layout:533
+#: lib/layouts/beamer.layout:774 lib/layouts/powerdot.layout:533
 msgid "Number of slide where the context below the pause gets visible"
 msgstr "Aantal dia's waar de context onder de pauze zichtbaar wordt"
 
-#: lib/layouts/beamer.layout:783 lib/layouts/powerdot.layout:544
+#: lib/layouts/beamer.layout:785 lib/layouts/powerdot.layout:544
 msgid "_ _ _ _ _ _ _ _ _ _ _ _ _ _"
 msgstr "_ _ _ _ _ _ _ _ _ _ _ _ _ _"
 
-#: lib/layouts/beamer.layout:792 lib/layouts/beamer.layout:831
+#: lib/layouts/beamer.layout:794 lib/layouts/beamer.layout:833
 msgid "Overprint"
 msgstr "Overdruk"
 
-#: lib/layouts/beamer.layout:799
+#: lib/layouts/beamer.layout:801
 msgid "Overprint Area Width"
 msgstr "Breedte overdrukgebied"
 
-#: lib/layouts/beamer.layout:800 lib/layouts/europasscv.layout:246
+#: lib/layouts/beamer.layout:802 lib/layouts/europasscv.layout:246
 #: lib/layouts/graphicboxes.module:49 lib/layouts/moderncv.layout:401
 #: lib/layouts/sectionbox.module:22 src/frontends/qt/GuiBox.cpp:71
 msgid "Width"
 msgstr "Breedte"
 
-#: lib/layouts/beamer.layout:801
+#: lib/layouts/beamer.layout:803
 msgid "The width of the overprint area (default: text width)"
 msgstr "De breedte van het overdrukgebied (standaard: tekstbreedte)"
 
-#: lib/layouts/beamer.layout:838
+#: lib/layouts/beamer.layout:840
 msgid "OverlayArea"
 msgstr "Overlapgebied"
 
-#: lib/layouts/beamer.layout:848
+#: lib/layouts/beamer.layout:850
 msgid "Overlayarea"
 msgstr "Overlapgebied"
 
-#: lib/layouts/beamer.layout:858
+#: lib/layouts/beamer.layout:860
 msgid "Overlay Area Width"
 msgstr "Breedte overlapgebied"
 
-#: lib/layouts/beamer.layout:859
+#: lib/layouts/beamer.layout:861
 msgid "The width of the overlay area"
 msgstr "De breedte van het overlapgebied"
 
-#: lib/layouts/beamer.layout:863
+#: lib/layouts/beamer.layout:865
 msgid "Overlay Area Height"
 msgstr "Hoogte overlapgebied"
 
-#: lib/layouts/beamer.layout:864 lib/layouts/graphicboxes.module:56
+#: lib/layouts/beamer.layout:866 lib/layouts/graphicboxes.module:56
 #: lib/layouts/moderncv.layout:288 src/frontends/qt/GuiBox.cpp:70
 msgid "Height"
 msgstr "Hoogte"
 
-#: lib/layouts/beamer.layout:865
+#: lib/layouts/beamer.layout:867
 msgid "The height of the overlay area"
 msgstr "De hoogte van het overlapgebied"
 
-#: lib/layouts/beamer.layout:870 lib/layouts/beamer.layout:1579
-#: lib/layouts/beamer.layout:1581 lib/layouts/powerdot.layout:674
+#: lib/layouts/beamer.layout:872 lib/layouts/beamer.layout:1581
+#: lib/layouts/beamer.layout:1583 lib/layouts/powerdot.layout:674
 msgid "Uncover"
 msgstr "Zichtbaar maken"
 
-#: lib/layouts/beamer.layout:880
+#: lib/layouts/beamer.layout:882
 msgid "Uncovered on slides"
 msgstr "Zichtbaar maken op dia's"
 
-#: lib/layouts/beamer.layout:899 lib/layouts/beamer.layout:1558
-#: lib/layouts/beamer.layout:1560 lib/layouts/powerdot.layout:680
+#: lib/layouts/beamer.layout:901 lib/layouts/beamer.layout:1560
+#: lib/layouts/beamer.layout:1562 lib/layouts/powerdot.layout:680
 msgid "Only"
 msgstr "Enkel"
 
-#: lib/layouts/beamer.layout:909
+#: lib/layouts/beamer.layout:911
 msgid "Only on slides"
 msgstr "Enkel op dia's"
 
-#: lib/layouts/beamer.layout:933
+#: lib/layouts/beamer.layout:935
 msgid "Block"
 msgstr "Blok"
 
-#: lib/layouts/beamer.layout:934
+#: lib/layouts/beamer.layout:936
 msgid "Blocks"
 msgstr "Blokken"
 
-#: lib/layouts/beamer.layout:943
+#: lib/layouts/beamer.layout:945
 msgid "Block:"
 msgstr "Blok:"
 
-#: lib/layouts/beamer.layout:954
+#: lib/layouts/beamer.layout:956
 msgid "Action Specification|S"
 msgstr "Actiespecificatie|S"
 
-#: lib/layouts/beamer.layout:961
+#: lib/layouts/beamer.layout:963
 msgid "Block Title"
 msgstr "Bloktitel"
 
-#: lib/layouts/beamer.layout:962
+#: lib/layouts/beamer.layout:964
 msgid "Enter the block title here"
 msgstr "Voer hier de bloktitel in"
 
-#: lib/layouts/beamer.layout:977
+#: lib/layouts/beamer.layout:979
 msgid "ExampleBlock"
 msgstr "Voorbeeldblok"
 
-#: lib/layouts/beamer.layout:980
+#: lib/layouts/beamer.layout:982
 msgid "Example Block:"
 msgstr "Voorbeeldblok:"
 
-#: lib/layouts/beamer.layout:986
+#: lib/layouts/beamer.layout:988
 msgid "AlertBlock"
 msgstr "Waarschuwingsblok"
 
-#: lib/layouts/beamer.layout:989
+#: lib/layouts/beamer.layout:991
 msgid "Alert Block:"
 msgstr "Waarschuwingsblok:"
 
-#: lib/layouts/beamer.layout:1001 lib/layouts/beamer.layout:1038
-#: lib/layouts/beamer.layout:1065 lib/layouts/beamer.layout:1093
-#: lib/layouts/beamer.layout:1137 lib/layouts/beamer.layout:1160
+#: lib/layouts/beamer.layout:1003 lib/layouts/beamer.layout:1040
+#: lib/layouts/beamer.layout:1067 lib/layouts/beamer.layout:1095
+#: lib/layouts/beamer.layout:1139 lib/layouts/beamer.layout:1162
 msgid "Titling"
 msgstr "Titeling"
 
-#: lib/layouts/beamer.layout:1015
+#: lib/layouts/beamer.layout:1017
 msgid "Short title which appears in the sidebar/header"
 msgstr "Korte titel die verschijnt op de zijbalk/kopregel"
 
-#: lib/layouts/beamer.layout:1029
+#: lib/layouts/beamer.layout:1031
 msgid "Title (Plain Frame)"
 msgstr "Titel (eenvoudig kader)"
 
-#: lib/layouts/beamer.layout:1051
+#: lib/layouts/beamer.layout:1053
 msgid "Short Subtitle|S"
 msgstr "Korte ondertitel|K"
 
-#: lib/layouts/beamer.layout:1052
+#: lib/layouts/beamer.layout:1054
 msgid "Short subtitle which appears in the sidebar/header"
 msgstr "Korte ondertitel die verschijnt in de zijbalk/kopregel"
 
-#: lib/layouts/beamer.layout:1078
+#: lib/layouts/beamer.layout:1080
 msgid "Short author which appears in the sidebar/header"
 msgstr "Korte auteur die verschijnt in de zijbalk/kopregel"
 
-#: lib/layouts/beamer.layout:1105
+#: lib/layouts/beamer.layout:1107
 msgid "Short Institute|S"
 msgstr "Kort instituut|K"
 
-#: lib/layouts/beamer.layout:1106
+#: lib/layouts/beamer.layout:1108
 msgid "Short institute which appears in the sidebar/header"
 msgstr "Kort instituut dat verschijnt in de zijbalk/kopregel"
 
-#: lib/layouts/beamer.layout:1115
+#: lib/layouts/beamer.layout:1117
 msgid "InstituteMark"
 msgstr "Verwijzing instituut"
 
-#: lib/layouts/beamer.layout:1149
+#: lib/layouts/beamer.layout:1151
 msgid "Short Date|S"
 msgstr "Korte datum|K"
 
-#: lib/layouts/beamer.layout:1150
+#: lib/layouts/beamer.layout:1152
 msgid "Short date which appears in the sidebar/header"
 msgstr "Korte datum die verschijnt in de zijbalk/kopregel"
 
-#: lib/layouts/beamer.layout:1159 lib/layouts/beamerposter.layout:46
+#: lib/layouts/beamer.layout:1161 lib/layouts/beamerposter.layout:46
 msgid "TitleGraphic"
 msgstr "Titelafbeelding"
 
-#: lib/layouts/beamer.layout:1224 lib/layouts/egs.layout:105
+#: lib/layouts/beamer.layout:1226 lib/layouts/egs.layout:105
 #: lib/layouts/powerdot.layout:433 lib/layouts/stdlayouts.inc:34
 msgid "Quotation"
 msgstr "Lang citaat"
 
-#: lib/layouts/beamer.layout:1251 lib/layouts/egs.layout:124
+#: lib/layouts/beamer.layout:1253 lib/layouts/egs.layout:124
 #: lib/layouts/moderncv.layout:305 lib/layouts/powerdot.layout:455
 #: lib/layouts/stdlayouts.inc:12
 msgid "Quote"
 msgstr "Kort citaat"
 
-#: lib/layouts/beamer.layout:1276 lib/layouts/egs.layout:285
+#: lib/layouts/beamer.layout:1278 lib/layouts/egs.layout:285
 #: lib/layouts/powerdot.layout:475 lib/layouts/stdlayouts.inc:45
 msgid "Verse"
 msgstr "Vers"
 
-#: lib/layouts/beamer.layout:1318 lib/layouts/foils.layout:341
+#: lib/layouts/beamer.layout:1320 lib/layouts/foils.layout:341
 #: lib/layouts/theorems-starred.inc:84
 msgid "Corollary."
 msgstr "Gevolg."
 
-#: lib/layouts/beamer.layout:1331 lib/layouts/beamer.layout:1488
-#: lib/layouts/beamer.layout:1508 lib/layouts/beamer.layout:1528
-#: lib/layouts/beamer.layout:1548 lib/layouts/beamer.layout:1568
-#: lib/layouts/beamer.layout:1589 lib/layouts/beamer.layout:1610
-#: lib/layouts/beamer.layout:1631 lib/layouts/beamer.layout:1652
-#: lib/layouts/beamer.layout:1680
+#: lib/layouts/beamer.layout:1333 lib/layouts/beamer.layout:1490
+#: lib/layouts/beamer.layout:1510 lib/layouts/beamer.layout:1530
+#: lib/layouts/beamer.layout:1550 lib/layouts/beamer.layout:1570
+#: lib/layouts/beamer.layout:1591 lib/layouts/beamer.layout:1612
+#: lib/layouts/beamer.layout:1633 lib/layouts/beamer.layout:1654
+#: lib/layouts/beamer.layout:1682
 msgid "Action Specifications|S"
 msgstr "Actiespecificaties|S"
 
-#: lib/layouts/beamer.layout:1349 lib/layouts/foils.layout:355
+#: lib/layouts/beamer.layout:1351 lib/layouts/foils.layout:355
 #: lib/layouts/theorems-starred.inc:195
 msgid "Definition."
 msgstr "Definitie."
 
-#: lib/layouts/beamer.layout:1352
+#: lib/layouts/beamer.layout:1354
 msgid "Definitions"
 msgstr "Definities"
 
-#: lib/layouts/beamer.layout:1355
+#: lib/layouts/beamer.layout:1357
 msgid "Definitions."
 msgstr "Definities."
 
-#: lib/layouts/beamer.layout:1361 lib/layouts/theorems-starred.inc:224
+#: lib/layouts/beamer.layout:1363 lib/layouts/theorems-starred.inc:224
 msgid "Example."
 msgstr "Voorbeeld."
 
-#: lib/layouts/beamer.layout:1368
+#: lib/layouts/beamer.layout:1370
 msgid "Examples"
 msgstr "Voorbeelden"
 
-#: lib/layouts/beamer.layout:1371
+#: lib/layouts/beamer.layout:1373
 msgid "Examples."
 msgstr "Voorbeelden."
 
-#: lib/layouts/beamer.layout:1374 lib/layouts/theorems-ams-bytype.inc:175
+#: lib/layouts/beamer.layout:1376 lib/layouts/theorems-ams-bytype.inc:175
 #: lib/layouts/theorems-ams-bytype.inc:184
 #: lib/layouts/theorems-ams-bytype.inc:187
 #: lib/layouts/theorems-ams-chap-bytype.inc:237
@@ -10667,114 +10692,114 @@ msgstr "Voorbeelden."
 msgid "Fact"
 msgstr "Feit"
 
-#: lib/layouts/beamer.layout:1377 lib/layouts/theorems-starred.inc:172
+#: lib/layouts/beamer.layout:1379 lib/layouts/theorems-starred.inc:172
 msgid "Fact."
 msgstr "Feit."
 
-#: lib/layouts/beamer.layout:1383 lib/layouts/foils.layout:334
+#: lib/layouts/beamer.layout:1385 lib/layouts/foils.layout:334
 #: lib/layouts/theorems-starred.inc:106
 msgid "Lemma."
 msgstr "Lemma."
 
-#: lib/layouts/beamer.layout:1395 lib/layouts/foils.layout:327
+#: lib/layouts/beamer.layout:1397 lib/layouts/foils.layout:327
 #: lib/layouts/theorems-named.module:18 lib/layouts/theorems-starred.inc:35
 msgid "Theorem."
 msgstr "Stelling."
 
-#: lib/layouts/beamer.layout:1403 lib/layouts/egs.layout:738
+#: lib/layouts/beamer.layout:1405 lib/layouts/egs.layout:738
 #: lib/layouts/lyxmacros.inc:12
 msgid "LyX-Code"
 msgstr "LyX-code"
 
-#: lib/layouts/beamer.layout:1440
+#: lib/layouts/beamer.layout:1442
 msgid "NoteItem"
 msgstr "Opmerkingsitem"
 
-#: lib/layouts/beamer.layout:1478 lib/layouts/beamer.layout:1480
+#: lib/layouts/beamer.layout:1480 lib/layouts/beamer.layout:1482
 #: src/FontInfo.cpp:48 src/frontends/qt/GuiCharacter.cpp:138
 #: src/frontends/qt/GuiIndex.cpp:47
 msgid "Bold"
 msgstr "Vet"
 
-#: lib/layouts/beamer.layout:1498 lib/layouts/ectaart.layout:178
+#: lib/layouts/beamer.layout:1500 lib/layouts/ectaart.layout:178
 msgid "Emphasize"
 msgstr "Benadrukken"
 
-#: lib/layouts/beamer.layout:1500
+#: lib/layouts/beamer.layout:1502
 msgid "Emph."
 msgstr "Benadrukt."
 
-#: lib/layouts/beamer.layout:1518 lib/layouts/beamer.layout:1520
+#: lib/layouts/beamer.layout:1520 lib/layouts/beamer.layout:1522
 msgid "Alert"
 msgstr "Waarschuwing"
 
-#: lib/layouts/beamer.layout:1538 lib/layouts/beamer.layout:1540
+#: lib/layouts/beamer.layout:1540 lib/layouts/beamer.layout:1542
 #: lib/layouts/svcommon.inc:73 lib/layouts/svcommon.inc:100
 #: lib/layouts/svcommon.inc:107
 msgid "Structure"
 msgstr "Structuur"
 
-#: lib/layouts/beamer.layout:1600 lib/layouts/beamer.layout:1602
+#: lib/layouts/beamer.layout:1602 lib/layouts/beamer.layout:1604
 #: lib/layouts/powerdot.layout:658
 msgid "Visible"
 msgstr "Zichtbaar"
 
-#: lib/layouts/beamer.layout:1621 lib/layouts/beamer.layout:1623
+#: lib/layouts/beamer.layout:1623 lib/layouts/beamer.layout:1625
 msgid "Invisible"
 msgstr "Onzichtbaar"
 
-#: lib/layouts/beamer.layout:1642 lib/layouts/beamer.layout:1644
+#: lib/layouts/beamer.layout:1644 lib/layouts/beamer.layout:1646
 msgid "Alternative"
 msgstr "Alternatief"
 
-#: lib/layouts/beamer.layout:1660
+#: lib/layouts/beamer.layout:1662
 msgid "Default Text"
 msgstr "Standaardtekst"
 
-#: lib/layouts/beamer.layout:1661
+#: lib/layouts/beamer.layout:1663
 msgid "Enter the default text here"
 msgstr "Geef standaardtekst hier op"
 
-#: lib/layouts/beamer.layout:1669
+#: lib/layouts/beamer.layout:1671
 msgid "Beamer Note"
 msgstr "Beamernotities"
 
-#: lib/layouts/beamer.layout:1687
+#: lib/layouts/beamer.layout:1689
 msgid "Note Options"
 msgstr "Notitie-opties"
 
-#: lib/layouts/beamer.layout:1688
+#: lib/layouts/beamer.layout:1690
 msgid "Specifiy note options (see beamer manual)"
 msgstr "Specifieer opties voor notities (zie beamer-handleiding)"
 
-#: lib/layouts/beamer.layout:1693
+#: lib/layouts/beamer.layout:1695
 msgid "ArticleMode"
 msgstr "Artikelmodus"
 
-#: lib/layouts/beamer.layout:1699
+#: lib/layouts/beamer.layout:1701
 msgid "Article"
 msgstr "Artikel"
 
-#: lib/layouts/beamer.layout:1704
+#: lib/layouts/beamer.layout:1706
 msgid "PresentationMode"
 msgstr "Presentatiemodus"
 
-#: lib/layouts/beamer.layout:1710
+#: lib/layouts/beamer.layout:1712
 msgid "Presentation"
 msgstr "Presentatie"
 
-#: lib/layouts/beamer.layout:1733 lib/layouts/powerdot.layout:572
+#: lib/layouts/beamer.layout:1735 lib/layouts/powerdot.layout:572
 #: lib/layouts/sciposter.layout:130 lib/layouts/stdfloats.inc:23
 msgid "Table ##"
 msgstr "Tabel ##"
 
-#: lib/layouts/beamer.layout:1738 lib/layouts/powerdot.layout:578
+#: lib/layouts/beamer.layout:1740 lib/layouts/powerdot.layout:578
 #: lib/layouts/powerdot.layout:641 lib/layouts/sciposter.layout:105
 #: lib/layouts/stdfloats.inc:29
 msgid "Figure"
 msgstr "Figuur"
 
-#: lib/layouts/beamer.layout:1747 lib/layouts/powerdot.layout:590
+#: lib/layouts/beamer.layout:1749 lib/layouts/powerdot.layout:590
 #: lib/layouts/sciposter.layout:115 lib/layouts/stdfloats.inc:39
 msgid "Figure ##"
 msgstr "Figuur ##"
@@ -12448,7 +12473,7 @@ msgstr ""
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
 #: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:643
-#: src/mathed/InsetMathRef.cpp:372
+#: src/mathed/InsetMathRef.cpp:378
 msgid "Equation"
 msgstr "Vergelijking"
 
@@ -27666,7 +27691,7 @@ msgstr "MS Word Office Open XML|O"
 msgid "Table (CSV)"
 msgstr "Tabel (CSV)"
 
-#: lib/configure.py:872 src/frontends/qt/GuiView.cpp:1805
+#: lib/configure.py:872 src/frontends/qt/GuiView.cpp:1809
 #: src/mathed/InsetMathMacroTemplate.cpp:538
 msgid "LyX"
 msgstr "LyX"
@@ -27793,6 +27818,14 @@ msgid "External Material"
 msgstr "Extern materiaal"
 
 #: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "Feynmandiagrammen"
+
+#: lib/examples/Articles:0
+msgid "Instant Preview"
+msgstr "Onmiddellijk voorbeeld"
+
+#: lib/examples/Articles:0
 msgid "Itemize Bullets"
 msgstr "Opsommingstekens"
 
@@ -27801,24 +27834,16 @@ msgid "Minted File Listing"
 msgstr "Codebestand met minted"
 
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "XY-Pic"
-
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "Feynmandiagrammen"
+msgid "Minted Listings"
+msgstr "Codefragment met minted"
 
 #: lib/examples/Articles:0
 msgid "XY-Figure"
 msgstr "XY-Figure"
 
 #: lib/examples/Articles:0
-msgid "Minted Listings"
-msgstr "Codefragment met minted"
-
-#: lib/examples/Articles:0
-msgid "Instant Preview"
-msgstr "Onmiddellijk voorbeeld"
+msgid "XY-Pic"
+msgstr "XY-Pic"
 
 #: lib/examples/Articles:0
 msgid "Graphics and Insets"
@@ -27833,12 +27858,12 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "Japans combineren met andere talen (met CJKutf8)"
 
 #: lib/examples/Articles:0
-msgid "Writing Armenian"
-msgstr "Armeens"
-
-#: lib/examples/Articles:0
 msgid "Mixing Japanese with other Languages (with platex)"
 msgstr "Japans combineren met andere talen (met platex)"
+
+#: lib/examples/Articles:0
+msgid "Writing Armenian"
+msgstr "Armeens"
 
 #: lib/examples/Articles:0
 msgid "Language Support"
@@ -27857,6 +27882,10 @@ msgid "Serial Letter 3"
 msgstr "Brievenreeks 3"
 
 #: lib/examples/Articles:0
+msgid "Hazard and Precautionary Statements"
+msgstr "Gevaar- en waarschuwingsaanduidingen"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond-boek"
 
@@ -27865,32 +27894,28 @@ msgid "Multilingual Captions"
 msgstr "Meertalige bijschriften"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "Gevaar- en waarschuwingsaanduidingen"
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr "Noweb Listerrors"
-
-#: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1825
 msgid "Modules"
 msgstr "Modules"
 
 #: lib/examples/Articles:0
-msgid "Foils Landslide"
-msgstr "Foils Landslide"
+msgid "Beamer (Complex)"
+msgstr "Beamer (complex)"
 
 #: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (complex)"
+msgid "Foils Landslide"
+msgstr "Foils Landslide"
 
 #: lib/examples/Articles:0
 msgid "Welcome"
@@ -27901,44 +27926,56 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Writing Korean with CJK-ko"
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
-
-#: lib/examples/Articles:0
-msgid "IEEE Transactions Journal"
-msgstr "IEEE Transactions Journal"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Hebreeuws artikel (KOMA-Script)"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
 msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
+msgid "IEEE Transactions Journal"
+msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Springers Global Journal Template (V. 3)"
 
 #: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Hebreeuws artikel (KOMA-Script)"
+msgid "00 Main File"
+msgstr "00 Hoofdbestand"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Opdracht"
 
 #: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02 Voorwoord"
 
 #: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Deel"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Woordenlijst"
+msgid "03 Preface"
+msgstr "03 Woord vooraf"
 
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04 Dankbetuigingen"
 
 #: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 Lijst van bijdragers"
+
+#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06 Acroniem"
+
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Deel"
 
 #: lib/examples/Articles:0
 msgid "08 Author"
@@ -27949,28 +27986,16 @@ msgid "09 Appendix"
 msgstr "09 Appendix"
 
 #: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Woordenlijst"
+
+#: lib/examples/Articles:0
 msgid "11 References"
 msgstr "11 Referenties"
 
 #: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Lijst van bijdragers"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Opdracht"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Hoofdbestand"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Woord vooraf"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Oplossingen"
+msgid "05 Acronym"
+msgstr "05 Acroniem"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -27985,20 +28010,20 @@ msgid "08 Appendix"
 msgstr "08 Appendix"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 Acroniem"
-
-#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Woordenlijst"
 
 #: lib/examples/Articles:0
-msgid "Simple"
-msgstr "Eenvoudig"
+msgid "10 Solutions"
+msgstr "10 Oplossingen"
 
 #: lib/examples/Articles:0
 msgid "Colored"
 msgstr "Gekleurd"
+
+#: lib/examples/Articles:0
+msgid "Simple"
+msgstr "Eenvoudig"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -28021,16 +28046,16 @@ msgid "Theses"
 msgstr "Theses"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Japans rapport (standaardklasse voor LuaTeX: verticaal schrift)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Japans artikel (standaardklasse voor LuaTeX: verticaal schrift)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "Japans boek (standaardklasse voor LuaTeX: verticaal schrift)"
 
 #: lib/examples/Articles:0
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Japans artikel (standaardklasse voor LuaTeX: verticaal schrift)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Japans rapport (standaardklasse voor LuaTeX: verticaal schrift)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -28062,11 +28087,11 @@ msgstr "%1$s[[name]] (%2$s[[email]])"
 msgid "ERROR!"
 msgstr "FOUT!"
 
-#: src/BiblioInfo.cpp:1441
+#: src/BiblioInfo.cpp:1463
 msgid "No year"
 msgstr "Geen jaar"
 
-#: src/BiblioInfo.cpp:1451
+#: src/BiblioInfo.cpp:1473
 msgid "Bibliography entry not found!"
 msgstr "Niet gevonden in bibliografie!"
 
@@ -28134,7 +28159,7 @@ msgstr ""
 "\\lyxdeleted opnieuw in de LaTeX-preambule."
 
 #: src/Buffer.cpp:1093 src/BufferParams.cpp:479 src/frontends/qt/GuiLog.cpp:252
-#: src/insets/InsetIndex.cpp:1279
+#: src/insets/InsetIndex.cpp:1282
 msgid "Index"
 msgstr "Index"
 
@@ -28233,8 +28258,8 @@ msgid "Overwrite modified file?"
 msgstr "Gewijzigd bestand overschrijven?"
 
 #: src/Buffer.cpp:1483 src/Exporter.cpp:50
-#: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiView.cpp:3071
-#: src/frontends/qt/GuiView.cpp:3338 src/frontends/qt/GuiView.cpp:3443
+#: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiView.cpp:3079
+#: src/frontends/qt/GuiView.cpp:3346 src/frontends/qt/GuiView.cpp:3451
 msgid "&Overwrite"
 msgstr "&Overschrijven"
 
@@ -28480,13 +28505,13 @@ msgstr "Vertakking \"%1$s\" bestaat al."
 msgid "Error viewing the output file."
 msgstr "Fout bij het weergeven van het uitvoerbestand."
 
-#: src/Buffer.cpp:3448 src/frontends/qt/GuiView.cpp:2888
-#: src/frontends/qt/Validator.cpp:247 src/insets/ExternalSupport.cpp:394
+#: src/Buffer.cpp:3448 src/frontends/qt/GuiView.cpp:2896
+#: src/frontends/qt/Validator.cpp:247 src/insets/ExternalSupport.cpp:400
 #: src/insets/InsetGraphics.cpp:697 src/insets/InsetInclude.cpp:616
 msgid "Invalid filename"
 msgstr "Ongeldige bestandsnaam"
 
-#: src/Buffer.cpp:3449 src/insets/ExternalSupport.cpp:395
+#: src/Buffer.cpp:3449 src/insets/ExternalSupport.cpp:401
 #: src/insets/InsetGraphics.cpp:698 src/insets/InsetInclude.cpp:617
 msgid ""
 "The following filename will cause troubles when running the exported file "
@@ -28495,12 +28520,12 @@ msgstr ""
 "De volgende bestandsnaam zal waarschijnlijk problemen veroorzaken wanneer "
 "het geëxporteerde bestand door LaTeX wordt verwerkt: "
 
-#: src/Buffer.cpp:3454 src/insets/ExternalSupport.cpp:400
+#: src/Buffer.cpp:3454 src/insets/ExternalSupport.cpp:406
 #: src/insets/InsetGraphics.cpp:705 src/insets/InsetInclude.cpp:621
 msgid "Problematic filename for DVI"
 msgstr "Problematische bestandsnaam voor DVI"
 
-#: src/Buffer.cpp:3455 src/insets/ExternalSupport.cpp:401
+#: src/Buffer.cpp:3455 src/insets/ExternalSupport.cpp:407
 #: src/insets/InsetGraphics.cpp:706 src/insets/InsetInclude.cpp:622
 msgid ""
 "The following filename can cause troubles when running the exported file "
@@ -28566,7 +28591,7 @@ msgstr "Hint: gebruik niet-TeX lettertypes of zet de invoercodering op '%1$s'"
 msgid "Couldn't export file"
 msgstr "Kon bestand niet exporteren"
 
-#: src/Buffer.cpp:4592 src/frontends/qt/GuiView.cpp:3044
+#: src/Buffer.cpp:4592 src/frontends/qt/GuiView.cpp:3052
 msgid "File name error"
 msgstr "Bestandsnaamfout"
 
@@ -28583,7 +28608,7 @@ msgstr ""
 "bevat spaties, maar uw TeX-installatie laat dit niet toe. Sla het bestand op "
 "in een map wier naam geen spaties bevat."
 
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:922
+#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:926
 msgid "Document export cancelled."
 msgstr "Exporten van document geannuleerd."
 
@@ -28872,23 +28897,23 @@ msgid "greyedout inset text"
 msgstr "tekst vergrijsd invoegsel"
 
 #: src/BufferParams.cpp:1726 src/BufferParams.cpp:1880
-#: src/BufferParams.cpp:2355 src/Encoding.cpp:264 src/Paragraph.cpp:3174
+#: src/BufferParams.cpp:2355 src/Encoding.cpp:264 src/Paragraph.cpp:3176
 #: src/frontends/qt/LaTeXHighlighter.cpp:176
-#: src/insets/InsetCommandParams.cpp:508 src/insets/InsetCommandParams.cpp:516
+#: src/insets/InsetCommandParams.cpp:524 src/insets/InsetCommandParams.cpp:532
 #: src/insets/InsetGraphics.cpp:904 src/insets/InsetGraphics.cpp:912
 #: src/insets/InsetListings.cpp:298 src/insets/InsetListings.cpp:306
 #: src/insets/InsetListings.cpp:331 src/mathed/InsetMathMacro.cpp:1174
-#: src/mathed/MathExtern.cpp:1444 src/mathed/MathExtern.cpp:1518
+#: src/mathed/MathExtern.cpp:1490 src/mathed/MathExtern.cpp:1564
 msgid "LyX Warning: "
 msgstr "LyX-waarschuwing: "
 
 #: src/BufferParams.cpp:1727 src/BufferParams.cpp:1881
-#: src/BufferParams.cpp:2356 src/Encoding.cpp:265 src/Paragraph.cpp:3175
-#: src/insets/InsetCommandParams.cpp:509 src/insets/InsetCommandParams.cpp:517
+#: src/BufferParams.cpp:2356 src/Encoding.cpp:265 src/Paragraph.cpp:3177
+#: src/insets/InsetCommandParams.cpp:525 src/insets/InsetCommandParams.cpp:533
 #: src/insets/InsetGraphics.cpp:905 src/insets/InsetGraphics.cpp:913
 #: src/insets/InsetListings.cpp:299 src/insets/InsetListings.cpp:307
-#: src/mathed/InsetMathMacro.cpp:1175 src/mathed/MathExtern.cpp:1445
-#: src/mathed/MathExtern.cpp:1519
+#: src/mathed/InsetMathMacro.cpp:1175 src/mathed/MathExtern.cpp:1491
+#: src/mathed/MathExtern.cpp:1565
 msgid "uncodable character"
 msgstr "niet-codeerbaar teken"
 
@@ -29064,7 +29089,7 @@ msgid "This portion of the document is deleted."
 msgstr "Dit deel van het document werd verwijderd."
 
 #: src/BufferView.cpp:1212 src/BufferView.cpp:2396
-#: src/frontends/qt/GuiView.cpp:4502 src/frontends/qt/GuiView.cpp:4599
+#: src/frontends/qt/GuiView.cpp:4510 src/frontends/qt/GuiView.cpp:4607
 msgid "Absolute filename expected."
 msgstr "Absolute bestandsnaam wordt verwacht."
 
@@ -29160,22 +29185,22 @@ msgstr "Vertakkingsnaam"
 msgid "Branch already exists"
 msgstr "Vertakking bestaal al"
 
-#: src/BufferView.cpp:3207
+#: src/BufferView.cpp:3226
 #, c-format
 msgid "Inserting document %1$s..."
 msgstr "Document %1$s invoegen..."
 
-#: src/BufferView.cpp:3224
+#: src/BufferView.cpp:3243
 #, c-format
 msgid "Document %1$s inserted."
 msgstr "Document %1$s ingevoegd."
 
-#: src/BufferView.cpp:3226
+#: src/BufferView.cpp:3245
 #, c-format
 msgid "Could not insert document %1$s"
 msgstr "Kon document %1$s niet invoegen"
 
-#: src/BufferView.cpp:3727
+#: src/BufferView.cpp:3746
 #, c-format
 msgid ""
 "Could not read the specified document\n"
@@ -29186,11 +29211,11 @@ msgstr ""
 "%1$s\n"
 "niet lezen door de fout: %2$s"
 
-#: src/BufferView.cpp:3729
+#: src/BufferView.cpp:3748
 msgid "Could not read file"
 msgstr "Kon bestand niet lezen"
 
-#: src/BufferView.cpp:3736
+#: src/BufferView.cpp:3755
 #, c-format
 msgid ""
 "%1$s\n"
@@ -29199,17 +29224,17 @@ msgstr ""
 "%1$s\n"
 " is niet leesbaar."
 
-#: src/BufferView.cpp:3737 src/frontends/qt/qt_helpers.cpp:319
+#: src/BufferView.cpp:3756 src/frontends/qt/qt_helpers.cpp:319
 #: src/frontends/qt/qt_helpers.cpp:326 src/frontends/qt/qt_helpers.cpp:392
 #: src/output.cpp:39
 msgid "Could not open file"
 msgstr "Kon bestand niet openen"
 
-#: src/BufferView.cpp:3744
+#: src/BufferView.cpp:3763
 msgid "Reading not UTF-8 encoded file"
 msgstr "Lezen van bestand niet in UTF8"
 
-#: src/BufferView.cpp:3745
+#: src/BufferView.cpp:3764
 msgid ""
 "The file is not UTF-8 encoded.\n"
 "It will be read as local 8Bit-encoded.\n"
@@ -30018,7 +30043,7 @@ msgstr ""
 msgid "Uncodable content"
 msgstr "Niet-codeerbare inhoud"
 
-#: src/CutAndPaste.cpp:475
+#: src/CutAndPaste.cpp:455
 #, c-format
 msgid ""
 "The pasted branch \"%1$s\" is undefined.\n"
@@ -30027,31 +30052,31 @@ msgstr ""
 "De geplakte vertakking \"%1$s\" is niet gedefinieerd.\n"
 "Wilt u deze toevoegen aan de vertakkingen van dit document?"
 
-#: src/CutAndPaste.cpp:478
+#: src/CutAndPaste.cpp:458
 msgid "Unknown branch"
 msgstr "Onbekende vertakking"
 
-#: src/CutAndPaste.cpp:479
+#: src/CutAndPaste.cpp:459
 msgid "&Don't Add"
 msgstr "&Niet toevoegen"
 
-#: src/CutAndPaste.cpp:861 src/Text.cpp:455
+#: src/CutAndPaste.cpp:866 src/Text.cpp:455
 #, c-format
 msgid "Layout `%1$s' was not found."
 msgstr "Lay-out `%1$s' is niet gevonden."
 
-#: src/CutAndPaste.cpp:862 src/Text.cpp:456
+#: src/CutAndPaste.cpp:867 src/Text.cpp:456
 msgid "Layout Not Found"
 msgstr "Lay-out niet gevonden"
 
-#: src/CutAndPaste.cpp:893
+#: src/CutAndPaste.cpp:898
 #, c-format
 msgid "Flex inset %1$s is undefined after reloading `%2$s' layout."
 msgstr ""
 "Het flexibele invoegsel %1$s is niet gedefinieerd na het opnieuw laden van "
 "de lay-out `%2$s'."
 
-#: src/CutAndPaste.cpp:896
+#: src/CutAndPaste.cpp:901
 #, c-format
 msgid ""
 "Flex inset %1$s is undefined because of conversion from `%2$s' layout to "
@@ -30060,7 +30085,7 @@ msgstr ""
 "Het flexibele invoegsel %1$s is niet gedefinieerd door de conversie van lay-"
 "out van `%2$s' naar `%3$s'."
 
-#: src/CutAndPaste.cpp:901
+#: src/CutAndPaste.cpp:906
 msgid "Undefined flex inset"
 msgstr "Niet-gedefinieerde flexibel invoegsel"
 
@@ -30087,7 +30112,7 @@ msgstr "Bestand &behouden"
 msgid "Overwrite &all"
 msgstr "&Alles overschrijven"
 
-#: src/Exporter.cpp:51 src/frontends/qt/GuiView.cpp:823
+#: src/Exporter.cpp:51 src/frontends/qt/GuiView.cpp:827
 msgid "&Cancel export"
 msgstr "Export &annuleren"
 
@@ -30206,7 +30231,7 @@ msgstr "Naamwoord: %1$s, "
 msgid "Cannot view file"
 msgstr "Kan bestand niet weergeven"
 
-#: src/Format.cpp:633 src/frontends/qt/GuiView.cpp:4199
+#: src/Format.cpp:633 src/frontends/qt/GuiView.cpp:4207
 #, c-format
 msgid "File does not exist: %1$s"
 msgstr "Bestand bestaat niet: %1$s"
@@ -30356,11 +30381,40 @@ msgstr ""
 "en is niet beschikbaar op uw systeem. LyX zal het standaardlettertype "
 "gebruiken."
 
-#: src/LyX.cpp:145
+#: src/LaTeXPackages.cpp:89
+msgid "Invalid package list format!"
+msgstr ""
+
+#: src/LaTeXPackages.cpp:90
+msgid ""
+"The format of your LaTeX packages list is wrong. Please file a bug report."
+msgstr ""
+
+#: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
+#, fuzzy
+msgid "Outdated configuration script detected!"
+msgstr "Kon configuratiebestand niet lezen"
+
+#: src/LaTeXPackages.cpp:99
+msgid ""
+"We have detected an outdated script 'chkconfig.ltx' in your user directory.\n"
+"The script has been renamed to 'chkconfig.ltx.bak'.\n"
+"If you did not copy the script there by purpose, you can safely delete it."
+msgstr ""
+
+#: src/LaTeXPackages.cpp:105
+#, c-format
+msgid ""
+"We have detected an outdated script 'chkconfig.ltx' in your user directory\n"
+"(%1$s).\n"
+"Please delete or update this file!"
+msgstr ""
+
+#: src/LyX.cpp:136
 msgid "Could not read configuration file"
 msgstr "Kon configuratiebestand niet lezen"
 
-#: src/LyX.cpp:146
+#: src/LyX.cpp:137
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -30371,43 +30425,43 @@ msgstr ""
 "%1$s.\n"
 "Controleer uw installatie."
 
-#: src/LyX.cpp:399
+#: src/LyX.cpp:379
 msgid "The following files could not be loaded:"
 msgstr "De volgende bestanden konden niet geladen worden:"
 
-#: src/LyX.cpp:440
+#: src/LyX.cpp:420
 #, c-format
 msgid "%1$s does not appear like a LyX created temporary directory."
 msgstr "%1$s lijkt niet op een door LyX gemaakte tijdelijke map."
 
-#: src/LyX.cpp:442
+#: src/LyX.cpp:422
 msgid "Cannot remove temporary directory"
 msgstr "Kon tijdelijk map niet verplaatsen"
 
-#: src/LyX.cpp:446
+#: src/LyX.cpp:426
 #, c-format
 msgid "Unable to remove the temporary directory %1$s"
 msgstr "Kon tijdelijke map %1$s niet verwijderen"
 
-#: src/LyX.cpp:475
+#: src/LyX.cpp:455
 #, c-format
 msgid "Wrong command line option `%1$s'. Exiting."
 msgstr "Verkeerde optie voor commando: `%1$s'. Afsluiten."
 
-#: src/LyX.cpp:493
+#: src/LyX.cpp:473
 msgid "Missing filename for this operation."
 msgstr "Bestandsnaam ontbreekt voor deze bewerking."
 
-#: src/LyX.cpp:542
+#: src/LyX.cpp:522
 #, c-format
 msgid "LyX failed to load the following file: %1$s"
 msgstr "LyX kon volgende bestand niet laden: %1$s"
 
-#: src/LyX.cpp:590
+#: src/LyX.cpp:570
 msgid "No textclass is found"
 msgstr "Geen tekstklasse gevonden"
 
-#: src/LyX.cpp:591
+#: src/LyX.cpp:571
 msgid ""
 "LyX will only have minimal functionality because no textclasses have been "
 "found. You can either try to reconfigure LyX normally, try to reconfigure "
@@ -30418,27 +30472,27 @@ msgstr ""
 "LyX opnieuw te configureren zonder uw LaTeX-installatie te controleren ofwel "
 "verdergaan."
 
-#: src/LyX.cpp:595
+#: src/LyX.cpp:575
 msgid "&Reconfigure"
 msgstr "&Opnieuw configureren"
 
-#: src/LyX.cpp:596
+#: src/LyX.cpp:576
 msgid "&Without LaTeX"
 msgstr "&Zonder LaTeX"
 
-#: src/LyX.cpp:597 src/LyX.cpp:622 src/VCBackend.cpp:974 src/VCBackend.cpp:978
+#: src/LyX.cpp:577 src/LyX.cpp:602 src/VCBackend.cpp:974 src/VCBackend.cpp:978
 msgid "&Continue"
 msgstr "&Verdergaan"
 
-#: src/LyX.cpp:598 src/LyX.cpp:623 src/LyX.cpp:1118
+#: src/LyX.cpp:578 src/LyX.cpp:603 src/LyX.cpp:1098
 msgid "&Exit LyX"
 msgstr "LyX &afsluiten"
 
-#: src/LyX.cpp:617
+#: src/LyX.cpp:597
 msgid "No python is found"
 msgstr "Python niet gevonden"
 
-#: src/LyX.cpp:618
+#: src/LyX.cpp:598
 msgid ""
 "LyX will only have minimal functionality because no python interpreter has "
 "been found. Consider installing python with your software manager or from "
@@ -30448,7 +30502,7 @@ msgstr ""
 "is. Overweeg om Python te installeren via Programmabeheer of vanaf de "
 "website python.org."
 
-#: src/LyX.cpp:720
+#: src/LyX.cpp:700
 msgid ""
 "SIGHUP signal caught!\n"
 "Bye."
@@ -30456,7 +30510,7 @@ msgstr ""
 "SIGHUP-signaal gevangen!\n"
 "Tot ziens."
 
-#: src/LyX.cpp:724
+#: src/LyX.cpp:704
 msgid ""
 "SIGFPE signal caught!\n"
 "Bye."
@@ -30464,7 +30518,7 @@ msgstr ""
 "SIGFPE-signaal gevangen!\n"
 "Tot ziens."
 
-#: src/LyX.cpp:727
+#: src/LyX.cpp:707
 msgid ""
 "SIGSEGV signal caught!\n"
 "Sorry, you have found a bug in LyX, hope you have not lost any data.\n"
@@ -30478,19 +30532,19 @@ msgstr ""
 "Introductie' en rapporteer de bug indien nodig. Bedankt!\n"
 "Doei."
 
-#: src/LyX.cpp:743
+#: src/LyX.cpp:723
 msgid "LyX crashed!"
 msgstr "LyX is gecrasht!"
 
-#: src/LyX.cpp:777
+#: src/LyX.cpp:757
 msgid "LyX: "
 msgstr "LyX: "
 
-#: src/LyX.cpp:1046
+#: src/LyX.cpp:1026
 msgid "Could not create temporary directory"
 msgstr "Kon tijdelijke map niet maken"
 
-#: src/LyX.cpp:1047
+#: src/LyX.cpp:1027
 #, c-format
 msgid ""
 "Could not create a temporary directory in\n"
@@ -30501,11 +30555,11 @@ msgstr ""
 "\"%1$s\"\n"
 "Controleer dat deze locatie bestaat, schrijfbaar is en probeer het opnieuw."
 
-#: src/LyX.cpp:1111
+#: src/LyX.cpp:1091
 msgid "Missing user LyX directory"
 msgstr "Ontbrekende LyX-gebruikersmap"
 
-#: src/LyX.cpp:1112
+#: src/LyX.cpp:1092
 #, c-format
 msgid ""
 "You have specified a non-existent user LyX directory, %1$s.\n"
@@ -30514,20 +30568,20 @@ msgstr ""
 "U hebt een niet-bestaande LyX-gebruikersmap opgegeven: %1$s.\n"
 "Dit is nodig om uw eigen configuratie op te slaan."
 
-#: src/LyX.cpp:1117
+#: src/LyX.cpp:1097
 msgid "&Create directory"
 msgstr "&Map aanmaken"
 
-#: src/LyX.cpp:1119
+#: src/LyX.cpp:1099
 msgid "No user LyX directory. Exiting."
 msgstr "Geen LyX-gebruikersmap. Afsluiten."
 
-#: src/LyX.cpp:1123
+#: src/LyX.cpp:1103
 #, c-format
 msgid "LyX: Creating directory %1$s"
 msgstr "LyX: maken van map %1$s"
 
-#: src/LyX.cpp:1128
+#: src/LyX.cpp:1108
 msgid ""
 "Failed to create directory. Perhaps wrong -userdir command-line option?\n"
 "Exiting."
@@ -30535,16 +30589,16 @@ msgstr ""
 "Kon map niet maken. Misschien een verkeerde opdrachtregel-optie -userdir?\n"
 "Afsluiten."
 
-#: src/LyX.cpp:1201
+#: src/LyX.cpp:1181
 msgid "List of supported debug flags:"
 msgstr "Lijst van ondersteunde debugvlaggen:"
 
-#: src/LyX.cpp:1210
+#: src/LyX.cpp:1190
 #, c-format
 msgid "Bad debug value `%1$s'. Exiting."
 msgstr "Ernstige debug-waarde `%1$s'. Afsluiten."
 
-#: src/LyX.cpp:1221
+#: src/LyX.cpp:1201
 msgid ""
 "Usage: lyx [ command line switches ] [ name.lyx ... ]\n"
 "Command line switches (case sensitive):\n"
@@ -30650,51 +30704,51 @@ msgstr ""
 "\t-version  samenvatting van de versie- en compileerinformatie\n"
 "Bekijk de man-pagina van LyX voor meer details."
 
-#: src/LyX.cpp:1274 src/frontends/qt/GuiAbout.cpp:217
+#: src/LyX.cpp:1254 src/frontends/qt/GuiAbout.cpp:217
 msgid "  Git commit hash "
 msgstr "  Hash van git-commit "
 
-#: src/LyX.cpp:1285 src/support/Package.cpp:642
+#: src/LyX.cpp:1265 src/support/Package.cpp:642
 msgid "No system directory"
 msgstr "Geen systeemmap"
 
-#: src/LyX.cpp:1286
+#: src/LyX.cpp:1266
 msgid "Missing directory for -sysdir switch"
 msgstr "Ontbrekende map voor optie -sysdir"
 
-#: src/LyX.cpp:1297
+#: src/LyX.cpp:1277
 msgid "No user directory"
 msgstr "Geen gebruikersmap"
 
-#: src/LyX.cpp:1298
+#: src/LyX.cpp:1278
 msgid "Missing directory for -userdir switch"
 msgstr "Ontbrekende map voor optie -userdir"
 
-#: src/LyX.cpp:1309
+#: src/LyX.cpp:1289
 msgid "Incomplete command"
 msgstr "Incompleet commando"
 
-#: src/LyX.cpp:1310
+#: src/LyX.cpp:1290
 msgid "Missing command string after --execute switch"
 msgstr "Ontbrekend commando na optie ---execute"
 
-#: src/LyX.cpp:1321
+#: src/LyX.cpp:1301
 msgid "Missing file type [eg latex, ps...] after --export-to switch"
 msgstr "Ontbrekende bestandstype [bv. latex, ps] na optie --export-to"
 
-#: src/LyX.cpp:1326
+#: src/LyX.cpp:1306
 msgid "Missing destination filename after --export-to switch"
 msgstr "Ontbrekende doelnaam na optie --export-to"
 
-#: src/LyX.cpp:1339
+#: src/LyX.cpp:1319
 msgid "Missing file type [eg latex, ps...] after --export switch"
 msgstr "Ontbrekende bestandstype [bv. latex, ps] na optie --export"
 
-#: src/LyX.cpp:1352
+#: src/LyX.cpp:1332
 msgid "Missing file type [eg latex, ps...] after --import switch"
 msgstr "Ontbrekende bestandstype [bv. latex, ps] na optie --import"
 
-#: src/LyX.cpp:1357
+#: src/LyX.cpp:1337
 msgid "Missing filename for --import"
 msgstr "Bestandsnaam ontbreekt voor --import"
 
@@ -31265,7 +31319,7 @@ msgstr "LyX VC: log-bericht"
 msgid "(no log message)"
 msgstr "(geen logbericht)"
 
-#: src/LyXVC.cpp:252 src/frontends/qt/GuiView.cpp:4062
+#: src/LyXVC.cpp:252 src/frontends/qt/GuiView.cpp:4070
 msgid "LyX VC: Log Message"
 msgstr "LyX VC: log-bericht"
 
@@ -31286,19 +31340,19 @@ msgstr ""
 msgid "Revert to stored version of document?"
 msgstr "Terug naar opgeslagen versie van document?"
 
-#: src/LyXVC.cpp:310 src/frontends/qt/GuiView.cpp:4648
+#: src/LyXVC.cpp:310 src/frontends/qt/GuiView.cpp:4656
 msgid "&Revert"
 msgstr "&Teruggaan"
 
-#: src/Paragraph.cpp:2226
+#: src/Paragraph.cpp:2227
 msgid "Senseless with this layout!"
 msgstr "Zinloos met deze lay-out!"
 
-#: src/Paragraph.cpp:2280
+#: src/Paragraph.cpp:2281
 msgid "Alignment not permitted"
 msgstr "Uitlijnen is niet toegestaan"
 
-#: src/Paragraph.cpp:2281
+#: src/Paragraph.cpp:2282
 msgid ""
 "The new layout does not permit the alignment previously used.\n"
 "Setting to default."
@@ -31453,28 +31507,28 @@ msgstr " onbekend"
 msgid "Table Style "
 msgstr "Tabelstijl "
 
-#: src/Text.cpp:5782 src/frontends/qt/GuiApplication.cpp:1889
+#: src/Text.cpp:5797 src/frontends/qt/GuiApplication.cpp:1889
 msgid "Missing argument"
 msgstr "Ontbrekend argument"
 
-#: src/Text.cpp:5947
+#: src/Text.cpp:5963
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr "Ongeldig argument (getal is groter dan stapelgrootte)!"
 
-#: src/Text.cpp:5951
+#: src/Text.cpp:5967
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr "Ongeldig argument (moet een positief getal zijn)!"
 
-#: src/Text.cpp:5956 src/Text.cpp:5970
+#: src/Text.cpp:5972 src/Text.cpp:5986
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr "Teksteigenschappen toegepast: %1$s"
 
-#: src/Text.cpp:6129
+#: src/Text.cpp:6145
 msgid "Path to thesaurus directory not set!"
 msgstr "Pad naar thesaurus niet ingesteld!"
 
-#: src/Text.cpp:6130
+#: src/Text.cpp:6146
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -31486,7 +31540,7 @@ msgstr ""
 "Zie paragraaf 6.15.1 van de Gebruikersgids voor de set-up-\n"
 "instructies."
 
-#: src/Text.cpp:6256 src/Text.cpp:6267
+#: src/Text.cpp:6272 src/Text.cpp:6283
 msgid "Paragraph layout set"
 msgstr "Alinealay-out ingesteld"
 
@@ -31622,8 +31676,8 @@ msgstr "Fout bij lezen van verwijzingenverwerker %1$s\n"
 msgid "MISSING: "
 msgstr "ONTBREKEND: "
 
-#: src/TocBackend.cpp:273 src/insets/InsetIndex.cpp:1017
-#: src/insets/InsetIndex.cpp:1052
+#: src/TocBackend.cpp:273 src/insets/InsetIndex.cpp:1020
+#: src/insets/InsetIndex.cpp:1055
 msgid "unknown type!"
 msgstr "onbekend type!"
 
@@ -31680,7 +31734,7 @@ msgstr "Controleer of het GNU pakket RCS op uw systeem is geïnstalleerd."
 #: src/VCBackend.cpp:934 src/VCBackend.cpp:993 src/VCBackend.cpp:1052
 #: src/VCBackend.cpp:1060 src/VCBackend.cpp:1348 src/VCBackend.cpp:1450
 #: src/VCBackend.cpp:1456 src/VCBackend.cpp:1479 src/VCBackend.cpp:1964
-#: src/frontends/qt/GuiView.cpp:3978 src/frontends/qt/GuiView.cpp:4021
+#: src/frontends/qt/GuiView.cpp:3986 src/frontends/qt/GuiView.cpp:4029
 msgid "Revision control error."
 msgstr "Versiebeheerfout."
 
@@ -31878,14 +31932,14 @@ msgstr ""
 "Verdergaan?"
 
 #: src/VCBackend.cpp:1522 src/VCBackend.cpp:1526
-#: src/frontends/qt/FindAndReplace.cpp:392 src/frontends/qt/GuiPrefs.cpp:1772
+#: src/frontends/qt/FindAndReplace.cpp:392 src/frontends/qt/GuiPrefs.cpp:1795
 #: src/lyxfind.cpp:316 src/lyxfind.cpp:343 src/lyxfind.cpp:363
 #: src/lyxfind.cpp:712 src/lyxfind.cpp:740
 msgid "&Yes"
 msgstr "&Ja"
 
 #: src/VCBackend.cpp:1522 src/VCBackend.cpp:1526
-#: src/frontends/qt/FindAndReplace.cpp:392 src/frontends/qt/GuiPrefs.cpp:1772
+#: src/frontends/qt/FindAndReplace.cpp:392 src/frontends/qt/GuiPrefs.cpp:1795
 #: src/lyxfind.cpp:316 src/lyxfind.cpp:343 src/lyxfind.cpp:363
 #: src/lyxfind.cpp:712 src/lyxfind.cpp:740
 msgid "&No"
@@ -31920,7 +31974,7 @@ msgstr ""
 "Het document %1$s is al geladen en heeft niet-opgeslagen wijzigingen.\n"
 "Wilt u uw wijzigingen weigeren en de versie van de schijf opnieuw laden?"
 
-#: src/buffer_funcs.cpp:55 src/frontends/qt/GuiView.cpp:4639
+#: src/buffer_funcs.cpp:55 src/frontends/qt/GuiView.cpp:4647
 msgid "Reload saved document?"
 msgstr "Opgeslagen document opnieuw laden?"
 
@@ -32239,7 +32293,7 @@ msgstr "Over LyX"
 msgid "About %1"
 msgstr "Over %1"
 
-#: src/frontends/qt/GuiApplication.cpp:785 src/frontends/qt/GuiPrefs.cpp:3469
+#: src/frontends/qt/GuiApplication.cpp:785 src/frontends/qt/GuiPrefs.cpp:3503
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -32293,7 +32347,7 @@ msgstr "Commando uitgeschakeld"
 msgid "Bad debug value `%1$s'."
 msgstr "Ernstige debug waarde `%1$s'."
 
-#: src/frontends/qt/GuiApplication.cpp:1479 src/frontends/qt/GuiView.cpp:2372
+#: src/frontends/qt/GuiApplication.cpp:1479 src/frontends/qt/GuiView.cpp:2380
 msgid "Command not allowed without a buffer open"
 msgstr "Commando niet toegestaan zonder een open buffer"
 
@@ -32562,9 +32616,9 @@ msgstr "alle referentie-eenheden"
 #: src/frontends/qt/GuiDocument.cpp:3077 src/frontends/qt/GuiExternal.cpp:691
 #: src/frontends/qt/GuiGraphics.cpp:841 src/frontends/qt/GuiInclude.cpp:382
 #: src/frontends/qt/GuiLyXFiles.cpp:365 src/frontends/qt/GuiLyXFiles.cpp:371
-#: src/frontends/qt/GuiView.cpp:2793 src/frontends/qt/GuiView.cpp:2852
-#: src/frontends/qt/GuiView.cpp:3010 src/frontends/qt/GuiView.cpp:3144
-#: src/frontends/qt/GuiView.cpp:3264 src/frontends/qt/GuiView.cpp:3384
+#: src/frontends/qt/GuiView.cpp:2801 src/frontends/qt/GuiView.cpp:2860
+#: src/frontends/qt/GuiView.cpp:3018 src/frontends/qt/GuiView.cpp:3152
+#: src/frontends/qt/GuiView.cpp:3272 src/frontends/qt/GuiView.cpp:3392
 msgid "D&ocuments"
 msgstr "D&ocumenten"
 
@@ -32928,10 +32982,10 @@ msgstr "%1$s bestanden"
 msgid "Choose a filename to save the pasted graphic as"
 msgstr "Kies een bestandsnaam voor de geplakte afbeelding"
 
-#: src/frontends/qt/GuiClipboard.cpp:220 src/frontends/qt/GuiView.cpp:2870
-#: src/frontends/qt/GuiView.cpp:3029 src/frontends/qt/GuiView.cpp:3045
-#: src/frontends/qt/GuiView.cpp:3057 src/frontends/qt/GuiView.cpp:3074
-#: src/frontends/qt/GuiView.cpp:3159 src/frontends/qt/GuiView.cpp:4611
+#: src/frontends/qt/GuiClipboard.cpp:220 src/frontends/qt/GuiView.cpp:2878
+#: src/frontends/qt/GuiView.cpp:3037 src/frontends/qt/GuiView.cpp:3053
+#: src/frontends/qt/GuiView.cpp:3065 src/frontends/qt/GuiView.cpp:3082
+#: src/frontends/qt/GuiView.cpp:3167 src/frontends/qt/GuiView.cpp:4619
 msgid "Canceled."
 msgstr "Geannuleerd."
 
@@ -32961,8 +33015,8 @@ msgid "Select document"
 msgstr "Document selecteren"
 
 #: src/frontends/qt/GuiCompare.cpp:160 src/frontends/qt/GuiLyXFiles.cpp:364
-#: src/frontends/qt/GuiView.cpp:2797 src/frontends/qt/GuiView.cpp:2856
-#: src/frontends/qt/GuiView.cpp:3148 src/frontends/qt/GuiView.cpp:3274
+#: src/frontends/qt/GuiView.cpp:2805 src/frontends/qt/GuiView.cpp:2864
+#: src/frontends/qt/GuiView.cpp:3156 src/frontends/qt/GuiView.cpp:3282
 msgid "LyX Documents (*.lyx)"
 msgstr "LyX-documenten (*.lyx)"
 
@@ -33402,7 +33456,7 @@ msgstr "Documentklasse"
 msgid "Local Layout"
 msgstr "Lokale lay-out"
 
-#: src/frontends/qt/GuiDocument.cpp:1832 src/frontends/qt/GuiPrefs.cpp:957
+#: src/frontends/qt/GuiDocument.cpp:1832 src/frontends/qt/GuiPrefs.cpp:980
 msgid "Colors"
 msgstr "Kleuren"
 
@@ -34062,108 +34116,108 @@ msgstr "Voer een nieuwe indexnaam in"
 msgid "The index could not be renamed. Check if the new name already exists."
 msgstr "De index kon hernoemd worden. Controleer of de nieuwe naam al bestaat."
 
-#: src/frontends/qt/GuiInfo.cpp:70
+#: src/frontends/qt/GuiInfo.cpp:71
 msgid "Date (current)"
 msgstr "Datum (huidige)"
 
-#: src/frontends/qt/GuiInfo.cpp:71
+#: src/frontends/qt/GuiInfo.cpp:72
 msgid "Date (last modification of document)"
 msgstr "Datum (laatst gewijzigd)|l"
 
-#: src/frontends/qt/GuiInfo.cpp:72
+#: src/frontends/qt/GuiInfo.cpp:73
 msgid "Date (fixed)"
 msgstr "Datum (vast)"
 
-#: src/frontends/qt/GuiInfo.cpp:73
+#: src/frontends/qt/GuiInfo.cpp:74
 msgid "Time (current)"
 msgstr "Tijd (huidige)"
 
-#: src/frontends/qt/GuiInfo.cpp:74
+#: src/frontends/qt/GuiInfo.cpp:75
 msgid "Time (last modification of document)"
 msgstr "Tijd (laatst gewijzigd)|a"
 
-#: src/frontends/qt/GuiInfo.cpp:75
+#: src/frontends/qt/GuiInfo.cpp:76
 msgid "Time (fixed)"
 msgstr "Tijd (vast)"
 
-#: src/frontends/qt/GuiInfo.cpp:76
+#: src/frontends/qt/GuiInfo.cpp:77
 msgid "Document Information"
 msgstr "Documentinformatie"
 
-#: src/frontends/qt/GuiInfo.cpp:77
+#: src/frontends/qt/GuiInfo.cpp:78
 msgid "Version Control Information"
 msgstr "Versiebeheerinformatie"
 
-#: src/frontends/qt/GuiInfo.cpp:78
+#: src/frontends/qt/GuiInfo.cpp:79
 msgid "LaTeX Package Availability"
 msgstr "Beschikbaarheid LaTeX-pakketten"
 
-#: src/frontends/qt/GuiInfo.cpp:79
+#: src/frontends/qt/GuiInfo.cpp:80
 msgid "LaTeX Class Availability"
 msgstr "Beschikbaarheid LaTeX-klassen"
 
-#: src/frontends/qt/GuiInfo.cpp:80
+#: src/frontends/qt/GuiInfo.cpp:81
 msgid "Last Assigned Keyboard Shortcut"
 msgstr "Laatste toegewezen sneltoets"
 
-#: src/frontends/qt/GuiInfo.cpp:81
+#: src/frontends/qt/GuiInfo.cpp:82
 msgid "All Assigned Keyboard Shortcuts"
 msgstr "Alle toegewezen sneltoetsen"
 
-#: src/frontends/qt/GuiInfo.cpp:82
+#: src/frontends/qt/GuiInfo.cpp:83
 msgid "LyX Menu Location"
 msgstr "Menulocatie LyX"
 
-#: src/frontends/qt/GuiInfo.cpp:83
+#: src/frontends/qt/GuiInfo.cpp:84
 msgid "Localized GUI String"
 msgstr "Vertaalde GUI-tekst"
 
-#: src/frontends/qt/GuiInfo.cpp:84
+#: src/frontends/qt/GuiInfo.cpp:85
 msgid "LyX Toolbar Icon"
 msgstr "LyX-werkbalkicoon"
 
-#: src/frontends/qt/GuiInfo.cpp:85
+#: src/frontends/qt/GuiInfo.cpp:86
 msgid "LyX Preferences Entry"
 msgstr "LyX-voorkeurenitem"
 
-#: src/frontends/qt/GuiInfo.cpp:86
+#: src/frontends/qt/GuiInfo.cpp:87
 msgid "LyX Application Information"
 msgstr "LyX-applicatie-informatie"
 
-#: src/frontends/qt/GuiInfo.cpp:92 src/frontends/qt/GuiInfo.cpp:93
-#: src/frontends/qt/GuiInfo.cpp:94 src/frontends/qt/GuiInfo.cpp:95
-#: src/frontends/qt/GuiInfo.cpp:96 src/frontends/qt/GuiInfo.cpp:97
+#: src/frontends/qt/GuiInfo.cpp:93 src/frontends/qt/GuiInfo.cpp:94
+#: src/frontends/qt/GuiInfo.cpp:95 src/frontends/qt/GuiInfo.cpp:96
+#: src/frontends/qt/GuiInfo.cpp:97 src/frontends/qt/GuiInfo.cpp:98
 msgid "Custom Format"
 msgstr "Aangepast formaat"
 
-#: src/frontends/qt/GuiInfo.cpp:98 src/frontends/qt/GuiInfo.cpp:99
-#: src/frontends/qt/GuiInfo.cpp:108 src/frontends/qt/GuiInfo.cpp:109
+#: src/frontends/qt/GuiInfo.cpp:99 src/frontends/qt/GuiInfo.cpp:100
+#: src/frontends/qt/GuiInfo.cpp:109 src/frontends/qt/GuiInfo.cpp:110
 msgid "Not Applicable"
 msgstr "Niet van toepassing"
 
-#: src/frontends/qt/GuiInfo.cpp:100
+#: src/frontends/qt/GuiInfo.cpp:101
 msgid "Package Name"
 msgstr "Pakketnaam"
 
-#: src/frontends/qt/GuiInfo.cpp:101
+#: src/frontends/qt/GuiInfo.cpp:102
 msgid "Class Name"
 msgstr "Klassenaam"
 
-#: src/frontends/qt/GuiInfo.cpp:102 src/frontends/qt/GuiInfo.cpp:103
-#: src/frontends/qt/GuiInfo.cpp:104 src/frontends/qt/GuiInfo.cpp:106
+#: src/frontends/qt/GuiInfo.cpp:103 src/frontends/qt/GuiInfo.cpp:104
+#: src/frontends/qt/GuiInfo.cpp:105 src/frontends/qt/GuiInfo.cpp:107
 msgid "LyX Function"
 msgstr "LyX-functie"
 
-#: src/frontends/qt/GuiInfo.cpp:105
+#: src/frontends/qt/GuiInfo.cpp:106
 msgid "English String"
 msgstr "Engelse tekst"
 
-#: src/frontends/qt/GuiInfo.cpp:107
+#: src/frontends/qt/GuiInfo.cpp:108
 msgid "Preferences Key"
 msgstr "Voorkeurensleutel"
 
-#: src/frontends/qt/GuiInfo.cpp:115 src/frontends/qt/GuiInfo.cpp:126
-#: src/frontends/qt/GuiInfo.cpp:137
+#: src/frontends/qt/GuiInfo.cpp:116 src/frontends/qt/GuiInfo.cpp:127
+#: src/frontends/qt/GuiInfo.cpp:138
 msgid ""
 "Enter date format specification, using the following placeholders:\n"
 "* d: day as number without a leading zero\n"
@@ -34190,8 +34244,8 @@ msgstr ""
 "* yy: jaar als tweecijferig getal\n"
 "* yyyy: jaar als viercijferig getal"
 
-#: src/frontends/qt/GuiInfo.cpp:148 src/frontends/qt/GuiInfo.cpp:162
-#: src/frontends/qt/GuiInfo.cpp:176
+#: src/frontends/qt/GuiInfo.cpp:149 src/frontends/qt/GuiInfo.cpp:163
+#: src/frontends/qt/GuiInfo.cpp:177
 msgid ""
 "Enter time format specification, using the following placeholders:\n"
 "* h: the hour without a leading zero (1-12 in AM/PM)\n"
@@ -34224,12 +34278,12 @@ msgstr ""
 "* ap of a: gebruik vm/nm-weergave ('vm'/'nm')\n"
 "* t: de tijdszone (bv. CEST)"
 
-#: src/frontends/qt/GuiInfo.cpp:190 src/frontends/qt/GuiInfo.cpp:191
-#: src/frontends/qt/GuiInfo.cpp:208 src/frontends/qt/GuiInfo.cpp:209
+#: src/frontends/qt/GuiInfo.cpp:191 src/frontends/qt/GuiInfo.cpp:192
+#: src/frontends/qt/GuiInfo.cpp:209 src/frontends/qt/GuiInfo.cpp:210
 msgid "Please select a valid type above"
 msgstr "Selecteer hierboven een geldig type"
 
-#: src/frontends/qt/GuiInfo.cpp:192
+#: src/frontends/qt/GuiInfo.cpp:193
 msgid ""
 "Enter a LaTeX package name such as 'hyperref' (extension is optional). The "
 "output will be 'Yes' (package available) or 'No' (package unavailable)."
@@ -34238,7 +34292,7 @@ msgstr ""
 "optioneel). De uitvoer zal 'Ja' (pakket beschikbaar) of 'Nee' (pakket niet "
 "beschikbaar) zijn."
 
-#: src/frontends/qt/GuiInfo.cpp:194
+#: src/frontends/qt/GuiInfo.cpp:195
 msgid ""
 "Enter a LaTeX class name such as 'article' (extension is optional). The "
 "output will be 'Yes' (class available) or 'No' (class unavailable)."
@@ -34247,7 +34301,7 @@ msgstr ""
 "optioneel). De uitvoer zal 'Ja' (klasse beschikbaar) of 'Nee' (klasse niet "
 "beschikbaar) zijn."
 
-#: src/frontends/qt/GuiInfo.cpp:196
+#: src/frontends/qt/GuiInfo.cpp:197
 msgid ""
 "Enter a function name such as 'math-insert \\alpha'. Please refer to Help > "
 "LyX Functions for a comprehensive list of functions. The output is the most "
@@ -34257,7 +34311,7 @@ msgstr ""
 "LyX-functies voor een lijst van functies. De uitvoer is de recentste "
 "toegewezen sneltoets voor deze functie"
 
-#: src/frontends/qt/GuiInfo.cpp:198
+#: src/frontends/qt/GuiInfo.cpp:199
 msgid ""
 "Enter a function name such as 'math-insert \\alpha'. Please refer to Help > "
 "LyX Functions for a comprehensive list of functions. The output lists all "
@@ -34267,7 +34321,7 @@ msgstr ""
 "LyX-functies voor een lijst van functies. De uitvoer is alle mogelijke "
 "sneltoetsen voor deze functie"
 
-#: src/frontends/qt/GuiInfo.cpp:200
+#: src/frontends/qt/GuiInfo.cpp:201
 msgid ""
 "Enter a function name such as 'math-insert \\alpha'. Please refer to Help > "
 "LyX Functions for a comprehensive list of functions. The output is the path "
@@ -34277,7 +34331,7 @@ msgstr ""
 "LyX-functies voor een lijst van functies. De uitvoer is het pad naar de "
 "functie in de menu (gebruik makende van de huidige taal)."
 
-#: src/frontends/qt/GuiInfo.cpp:202
+#: src/frontends/qt/GuiInfo.cpp:203
 msgid ""
 "Enter a localizable English string from the LyX User Interface, including "
 "accelerator markup ('&' or '|') and trailing colons. The output is the "
@@ -34289,7 +34343,7 @@ msgstr ""
 "vertaalde tekst (in de huidige taal); afsluitende dubbelpunten en opmaak "
 "zijn verwijderd."
 
-#: src/frontends/qt/GuiInfo.cpp:204
+#: src/frontends/qt/GuiInfo.cpp:205
 msgid ""
 "Enter a function name such as 'math-insert \\alpha'. Please refer to Help > "
 "LyX Functions for a comprehensive list of functions. The output is the "
@@ -34299,7 +34353,7 @@ msgstr ""
 "LyX-functies voor een lijst van functies. De uitvoer is het werkbalkicoon "
 "voor deze functie (gebruik makend het huidige icoonthema)."
 
-#: src/frontends/qt/GuiInfo.cpp:206
+#: src/frontends/qt/GuiInfo.cpp:207
 msgid ""
 "Enter a LyX preferences key such as 'bind_file'. See the proposed list for "
 "available entries. The output is the current setting of this preference."
@@ -34307,19 +34361,19 @@ msgstr ""
 "Voer een LyX-voorkeursleutel in zoals 'bind_file'. Zie de voorgestelde lijst "
 "voor beschikbare sleutels. De uitvoer is de huidige waarde van de voorkeur."
 
-#: src/frontends/qt/GuiInfo.cpp:256 src/insets/InsetInclude.cpp:436
+#: src/frontends/qt/GuiInfo.cpp:257 src/insets/InsetInclude.cpp:436
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: src/frontends/qt/GuiInfo.cpp:332
+#: src/frontends/qt/GuiInfo.cpp:333
 msgid "Enter a valid value below"
 msgstr "Voer hieronder een geldige waarde in"
 
-#: src/frontends/qt/GuiInfo.cpp:365
+#: src/frontends/qt/GuiInfo.cpp:366
 msgid "Here you can enter a fixed time (in ISO format: hh:mm:ss)"
 msgstr "Hier kunt u een vaste tijd opgeven (in ISO-formaat: hh:mm:ss)"
 
-#: src/frontends/qt/GuiInfo.cpp:366
+#: src/frontends/qt/GuiInfo.cpp:367
 msgid "&Fixed Time:"
 msgstr "&Vaste datum:"
 
@@ -34452,17 +34506,17 @@ msgstr ""
 msgid "Select example file"
 msgstr "Selecteer voorbeeldbestand"
 
-#: src/frontends/qt/GuiLyXFiles.cpp:366 src/frontends/qt/GuiView.cpp:2853
-#: src/frontends/qt/GuiView.cpp:3011 src/frontends/qt/GuiView.cpp:3145
+#: src/frontends/qt/GuiLyXFiles.cpp:366 src/frontends/qt/GuiView.cpp:2861
+#: src/frontends/qt/GuiView.cpp:3019 src/frontends/qt/GuiView.cpp:3153
 msgid "&Examples"
 msgstr "&Voorbeelden"
 
-#: src/frontends/qt/GuiLyXFiles.cpp:370 src/frontends/qt/GuiView.cpp:2792
+#: src/frontends/qt/GuiLyXFiles.cpp:370 src/frontends/qt/GuiView.cpp:2800
 msgid "Select template file"
 msgstr "Selecteer sjabloonbestand"
 
-#: src/frontends/qt/GuiLyXFiles.cpp:372 src/frontends/qt/GuiView.cpp:2794
-#: src/frontends/qt/GuiView.cpp:3265
+#: src/frontends/qt/GuiLyXFiles.cpp:372 src/frontends/qt/GuiView.cpp:2802
+#: src/frontends/qt/GuiView.cpp:3273
 msgid "&Templates"
 msgstr "&Sjablonen"
 
@@ -34589,7 +34643,7 @@ msgstr ""
 "Normaal hebt u dit niet nodig, aangezien het langste label van alle items "
 "gebruikt wordt."
 
-#: src/frontends/qt/GuiParagraph.cpp:175 src/frontends/qt/GuiView.cpp:3543
+#: src/frontends/qt/GuiParagraph.cpp:175 src/frontends/qt/GuiView.cpp:3551
 msgid "&Close"
 msgstr "&Sluiten"
 
@@ -34605,92 +34659,92 @@ msgstr "Uiterlijk en gedrag"
 msgid "File Handling"
 msgstr "Bestandsgebruik"
 
-#: src/frontends/qt/GuiPrefs.cpp:297
+#: src/frontends/qt/GuiPrefs.cpp:307
 msgid "Keyboard/Mouse"
 msgstr "Toetsenbord/muis"
 
-#: src/frontends/qt/GuiPrefs.cpp:429
+#: src/frontends/qt/GuiPrefs.cpp:439
 msgid "Input Completion"
 msgstr "Invoersuggesties"
 
-#: src/frontends/qt/GuiPrefs.cpp:569 src/frontends/qt/GuiPrefs.cpp:715
+#: src/frontends/qt/GuiPrefs.cpp:579 src/frontends/qt/GuiPrefs.cpp:725
 msgid "C&ommand:"
 msgstr "Co&mmando:"
 
-#: src/frontends/qt/GuiPrefs.cpp:594 src/frontends/qt/GuiPrefs.cpp:619
-#: src/frontends/qt/GuiPrefs.cpp:743 src/frontends/qt/GuiPrefs.cpp:770
+#: src/frontends/qt/GuiPrefs.cpp:604 src/frontends/qt/GuiPrefs.cpp:629
+#: src/frontends/qt/GuiPrefs.cpp:753 src/frontends/qt/GuiPrefs.cpp:780
 msgid "Co&mmand:"
 msgstr "Co&mmando:"
 
-#: src/frontends/qt/GuiPrefs.cpp:791
+#: src/frontends/qt/GuiPrefs.cpp:801
 msgid "Screen Fonts"
 msgstr "Schermlettertypes"
 
-#: src/frontends/qt/GuiPrefs.cpp:1277
+#: src/frontends/qt/GuiPrefs.cpp:1300
 msgid "Paths"
 msgstr "Paden"
 
-#: src/frontends/qt/GuiPrefs.cpp:1364
+#: src/frontends/qt/GuiPrefs.cpp:1387
 msgid "Select directory for example files"
 msgstr "Selecteer map voor voorbeeldbestanden"
 
-#: src/frontends/qt/GuiPrefs.cpp:1373
+#: src/frontends/qt/GuiPrefs.cpp:1396
 msgid "Select a document templates directory"
 msgstr "Selecteer map voor documentsjablonen"
 
-#: src/frontends/qt/GuiPrefs.cpp:1382
+#: src/frontends/qt/GuiPrefs.cpp:1405
 msgid "Select a temporary directory"
 msgstr "Selecteer tijdelijke map"
 
-#: src/frontends/qt/GuiPrefs.cpp:1391
+#: src/frontends/qt/GuiPrefs.cpp:1414
 msgid "Select a backups directory"
 msgstr "Selecteer map voor back-ups"
 
-#: src/frontends/qt/GuiPrefs.cpp:1400
+#: src/frontends/qt/GuiPrefs.cpp:1423
 msgid "Select a document directory"
 msgstr "Selecteer documentmap"
 
-#: src/frontends/qt/GuiPrefs.cpp:1409
+#: src/frontends/qt/GuiPrefs.cpp:1432
 msgid "Set the path to the thesaurus dictionaries"
 msgstr "Selecteer map voor thesauruswoordenboeken"
 
-#: src/frontends/qt/GuiPrefs.cpp:1418
+#: src/frontends/qt/GuiPrefs.cpp:1441
 msgid "Set the path to the Hunspell dictionaries"
 msgstr "Selecteer map voor Hunspell-woordenboeken"
 
-#: src/frontends/qt/GuiPrefs.cpp:1427
+#: src/frontends/qt/GuiPrefs.cpp:1450
 msgid "Give a filename for the LyX server pipe"
 msgstr "Kies een bestandsnaam voor de LyX-serverpipe"
 
-#: src/frontends/qt/GuiPrefs.cpp:1440 src/frontends/qt/GuiSpellchecker.cpp:643
+#: src/frontends/qt/GuiPrefs.cpp:1463 src/frontends/qt/GuiSpellchecker.cpp:618
 msgid "Spellchecker"
 msgstr "Spellingscontrole"
 
-#: src/frontends/qt/GuiPrefs.cpp:1446
+#: src/frontends/qt/GuiPrefs.cpp:1469
 msgid "Native"
 msgstr "Ingebouwd"
 
-#: src/frontends/qt/GuiPrefs.cpp:1452
+#: src/frontends/qt/GuiPrefs.cpp:1475
 msgid "Aspell"
 msgstr "Aspell"
 
-#: src/frontends/qt/GuiPrefs.cpp:1455
+#: src/frontends/qt/GuiPrefs.cpp:1478
 msgid "Enchant"
 msgstr "Enchant"
 
-#: src/frontends/qt/GuiPrefs.cpp:1458
+#: src/frontends/qt/GuiPrefs.cpp:1481
 msgid "Hunspell"
 msgstr "Hunspell"
 
-#: src/frontends/qt/GuiPrefs.cpp:1531
+#: src/frontends/qt/GuiPrefs.cpp:1554
 msgid "Converters"
 msgstr "Conversieprogramma's"
 
-#: src/frontends/qt/GuiPrefs.cpp:1771
+#: src/frontends/qt/GuiPrefs.cpp:1794
 msgid "SECURITY WARNING!"
 msgstr "BEVEILIGINGSWAARSCHUWING!"
 
-#: src/frontends/qt/GuiPrefs.cpp:1771
+#: src/frontends/qt/GuiPrefs.cpp:1794
 msgid ""
 "Unchecking this option has the effect that potentially harmful converters "
 "would be run without asking your permission first. This is UNSAFE and NOT "
@@ -34702,15 +34756,15 @@ msgstr ""
 "Dit is NIET VEILIG en NIET aan te raden, tenzij u weet wat u doet. Weet u "
 "zeker dat u wilt verdergaan? De aanbevolen en veilige keuze is NEE!"
 
-#: src/frontends/qt/GuiPrefs.cpp:1891
+#: src/frontends/qt/GuiPrefs.cpp:1915
 msgid "File Formats"
 msgstr "Bestandsformaten"
 
-#: src/frontends/qt/GuiPrefs.cpp:2134 src/frontends/qt/GuiPrefs.cpp:2290
+#: src/frontends/qt/GuiPrefs.cpp:2158 src/frontends/qt/GuiPrefs.cpp:2315
 msgid "Format in use"
 msgstr "Formaat in gebruik"
 
-#: src/frontends/qt/GuiPrefs.cpp:2135
+#: src/frontends/qt/GuiPrefs.cpp:2159
 msgid ""
 "You cannot change a format's short name if the format is used by a "
 "converter. Please remove the converter first."
@@ -34719,21 +34773,21 @@ msgstr ""
 "gebruikt wordt door een conversieprogramma. Verwijder eerst het "
 "conversieprogramma."
 
-#: src/frontends/qt/GuiPrefs.cpp:2206 src/frontends/qt/GuiPrefs.cpp:2231
+#: src/frontends/qt/GuiPrefs.cpp:2231 src/frontends/qt/GuiPrefs.cpp:2256
 msgid "System Default"
 msgstr "Systeemstandaarden"
 
-#: src/frontends/qt/GuiPrefs.cpp:2291
+#: src/frontends/qt/GuiPrefs.cpp:2316
 msgid "Cannot remove a Format used by a Converter. Remove the converter first."
 msgstr ""
 "Kan een formaat gebruikt door conversieprogramma niet verwijderen. Verwijder "
 "eerst het conversieprogramma."
 
-#: src/frontends/qt/GuiPrefs.cpp:2387
+#: src/frontends/qt/GuiPrefs.cpp:2413
 msgid "LyX needs to be restarted!"
 msgstr "LyX moet opnieuw opgestart worden!"
 
-#: src/frontends/qt/GuiPrefs.cpp:2388
+#: src/frontends/qt/GuiPrefs.cpp:2414
 msgid ""
 "The change of user interface language will be fully effective only after a "
 "restart."
@@ -34741,34 +34795,34 @@ msgstr ""
 "Het wijzigen van de taal van de gebruikersinterface wordt pas van kracht na "
 "opnieuw opstarten."
 
-#: src/frontends/qt/GuiPrefs.cpp:2488
+#: src/frontends/qt/GuiPrefs.cpp:2514
 msgid "User Interface"
 msgstr "Gebruikersinterface"
 
-#: src/frontends/qt/GuiPrefs.cpp:2519
+#: src/frontends/qt/GuiPrefs.cpp:2545
 msgid "Classic"
 msgstr "Klassiek"
 
-#: src/frontends/qt/GuiPrefs.cpp:2520
+#: src/frontends/qt/GuiPrefs.cpp:2546
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: src/frontends/qt/GuiPrefs.cpp:2544
+#: src/frontends/qt/GuiPrefs.cpp:2570
 msgid "Restart needed"
 msgstr "Opnieuw starten vereist"
 
-#: src/frontends/qt/GuiPrefs.cpp:2545
+#: src/frontends/qt/GuiPrefs.cpp:2571
 msgid ""
 "Resetting the user interface style to 'Default' requires a restart of LyX."
 msgstr ""
 "Opnieuw instellen van de gebruikersinterface op 'Standaard' vereist een "
 "herstart van LyX."
 
-#: src/frontends/qt/GuiPrefs.cpp:2600
+#: src/frontends/qt/GuiPrefs.cpp:2628
 msgid "Document Handling"
 msgstr "Documentafhandeling"
 
-#: src/frontends/qt/GuiPrefs.cpp:2691
+#: src/frontends/qt/GuiPrefs.cpp:2719
 msgid ""
 "If this is checked, a backup of the document is created in the current "
 "working directory. The backup file has the same name but the suffix '.lyx~'. "
@@ -34780,7 +34834,7 @@ msgstr ""
 "deze bestanden standaard verborgen worden door sommige bestandsverkenners. "
 "Een aparte reservekopie-map kan worden opgegeven in de sectie 'Paden'."
 
-#: src/frontends/qt/GuiPrefs.cpp:2697
+#: src/frontends/qt/GuiPrefs.cpp:2725
 #, c-format
 msgid ""
 "If this is checked, a backup of the document is created in the backup "
@@ -34794,64 +34848,64 @@ msgstr ""
 "filename.lyx~). Let erop dat deze bestanden standaard verborgen worden door "
 "sommige bestandsverkenners."
 
-#: src/frontends/qt/GuiPrefs.cpp:2722
+#: src/frontends/qt/GuiPrefs.cpp:2750
 msgid "Control"
 msgstr "Beheer"
 
-#: src/frontends/qt/GuiPrefs.cpp:2833
+#: src/frontends/qt/GuiPrefs.cpp:2861
 msgid "Shortcuts"
 msgstr "Sneltoetsen"
 
-#: src/frontends/qt/GuiPrefs.cpp:2840
+#: src/frontends/qt/GuiPrefs.cpp:2868
 msgid "Function"
 msgstr "Functie"
 
-#: src/frontends/qt/GuiPrefs.cpp:2841
+#: src/frontends/qt/GuiPrefs.cpp:2869
 msgid "Shortcut"
 msgstr "Sneltoets"
 
-#: src/frontends/qt/GuiPrefs.cpp:2918
+#: src/frontends/qt/GuiPrefs.cpp:2946
 msgid "Cursor, Mouse and Editing Functions"
 msgstr "Aanwijzer, muis en bewerkingsfuncties"
 
-#: src/frontends/qt/GuiPrefs.cpp:2922
+#: src/frontends/qt/GuiPrefs.cpp:2950
 msgid "Mathematical Symbols"
 msgstr "Wiskundige symbolen"
 
-#: src/frontends/qt/GuiPrefs.cpp:2926
+#: src/frontends/qt/GuiPrefs.cpp:2954
 msgid "Document and Window"
 msgstr "Document en venster"
 
-#: src/frontends/qt/GuiPrefs.cpp:2930
+#: src/frontends/qt/GuiPrefs.cpp:2958
 msgid "Font, Layouts and Textclasses"
 msgstr "Lettertype, opmaak en tekstklassen"
 
-#: src/frontends/qt/GuiPrefs.cpp:2934
+#: src/frontends/qt/GuiPrefs.cpp:2962
 msgid "System and Miscellaneous"
 msgstr "Systeem en overige"
 
-#: src/frontends/qt/GuiPrefs.cpp:3071 src/frontends/qt/GuiPrefs.cpp:3131
+#: src/frontends/qt/GuiPrefs.cpp:3099 src/frontends/qt/GuiPrefs.cpp:3159
 msgid "Res&tore"
 msgstr "Hers&tellen"
 
-#: src/frontends/qt/GuiPrefs.cpp:3300 src/frontends/qt/GuiPrefs.cpp:3309
-#: src/frontends/qt/GuiPrefs.cpp:3315 src/frontends/qt/GuiPrefs.cpp:3396
+#: src/frontends/qt/GuiPrefs.cpp:3328 src/frontends/qt/GuiPrefs.cpp:3338
+#: src/frontends/qt/GuiPrefs.cpp:3345 src/frontends/qt/GuiPrefs.cpp:3429
 msgid "Failed to create shortcut"
 msgstr "Sneltoets maken mislukt"
 
-#: src/frontends/qt/GuiPrefs.cpp:3301
+#: src/frontends/qt/GuiPrefs.cpp:3329
 msgid "Unknown or invalid LyX function"
 msgstr "Onbekende of ongeldige LyX-functie"
 
-#: src/frontends/qt/GuiPrefs.cpp:3310
+#: src/frontends/qt/GuiPrefs.cpp:3339
 msgid "This LyX function is hidden and cannot be bound."
 msgstr "Deze LyX-functie is verborgen en kan niet verbonden worden."
 
-#: src/frontends/qt/GuiPrefs.cpp:3316
+#: src/frontends/qt/GuiPrefs.cpp:3346
 msgid "Invalid or empty key sequence"
 msgstr "Ongeldige of lege toetscombinatie"
 
-#: src/frontends/qt/GuiPrefs.cpp:3328
+#: src/frontends/qt/GuiPrefs.cpp:3359
 #, c-format
 msgid ""
 "Shortcut `%1$s' is already a prefix for other commands.\n"
@@ -34861,15 +34915,15 @@ msgstr ""
 "Bent u zeker dat u de huidige sneltoets wilt losmaken en hem verbinden aan "
 "%2$s?"
 
-#: src/frontends/qt/GuiPrefs.cpp:3331 src/frontends/qt/GuiPrefs.cpp:3354
+#: src/frontends/qt/GuiPrefs.cpp:3362 src/frontends/qt/GuiPrefs.cpp:3386
 msgid "Redefine shortcut?"
 msgstr "Sneltoets opnieuw definiëren?"
 
-#: src/frontends/qt/GuiPrefs.cpp:3332 src/frontends/qt/GuiPrefs.cpp:3355
+#: src/frontends/qt/GuiPrefs.cpp:3363 src/frontends/qt/GuiPrefs.cpp:3387
 msgid "&Redefine"
 msgstr "&Opnieuw definiëren"
 
-#: src/frontends/qt/GuiPrefs.cpp:3348
+#: src/frontends/qt/GuiPrefs.cpp:3380
 #, c-format
 msgid ""
 "Shortcut `%1$s' is already bound to %2$s.\n"
@@ -34879,11 +34933,11 @@ msgstr ""
 "Bent u zeker dat u de huidige sneltoets wilt losmaken en het verbinden aan "
 "%3$s?"
 
-#: src/frontends/qt/GuiPrefs.cpp:3397
+#: src/frontends/qt/GuiPrefs.cpp:3430
 msgid "Can not insert shortcut to the list"
 msgstr "Kan sneltoets aan de lijst toevoegen"
 
-#: src/frontends/qt/GuiPrefs.cpp:3428
+#: src/frontends/qt/GuiPrefs.cpp:3462
 msgid "Identity"
 msgstr "Identiteit"
 
@@ -35016,11 +35070,11 @@ msgstr "Bestand weergeven"
 msgid "Error -> Cannot load file!"
 msgstr "Fout -> Kan bestand niet laden!"
 
-#: src/frontends/qt/GuiSpellchecker.cpp:275
+#: src/frontends/qt/GuiSpellchecker.cpp:273
 msgid "Spell check of the selection done, did not find any errors."
 msgstr "Spellingcontrole van de selectie voltooid, geen fouten gevonden."
 
-#: src/frontends/qt/GuiSpellchecker.cpp:282
+#: src/frontends/qt/GuiSpellchecker.cpp:280
 msgid ""
 "We reached the end of the document, would you like to continue from the "
 "beginning?"
@@ -35028,7 +35082,7 @@ msgstr ""
 "We hebben het einde van het document bereikt, wilt u verdergaan vanaf het "
 "begin?"
 
-#: src/frontends/qt/GuiSpellchecker.cpp:589
+#: src/frontends/qt/GuiSpellchecker.cpp:564
 msgid "Spell checker has no dictionaries."
 msgstr "Spellingcontrole heeft geen woordenboeken."
 
@@ -35451,25 +35505,25 @@ msgstr "versie "
 msgid "unknown version"
 msgstr "onbekende versie"
 
-#: src/frontends/qt/GuiView.cpp:636
+#: src/frontends/qt/GuiView.cpp:640
 msgid "Click here to stop export/output process"
 msgstr "Klik hier om het export/uitvoer-proces te stoppen"
 
-#: src/frontends/qt/GuiView.cpp:676
+#: src/frontends/qt/GuiView.cpp:680
 msgid "Workarea zoom level. Drag, use Ctrl-+/- or Shift-Mousewheel to adjust."
 msgstr ""
 "Zoomniveau van het werkvenster. Sleep, gebruik Ctrl- +/-, of Shift-muiswiel "
 "om aan te passen."
 
-#: src/frontends/qt/GuiView.cpp:729 src/frontends/qt/GuiView.cpp:840
-#: src/frontends/qt/GuiView.cpp:1027 src/frontends/qt/Menus.cpp:1843
+#: src/frontends/qt/GuiView.cpp:733 src/frontends/qt/GuiView.cpp:844
+#: src/frontends/qt/GuiView.cpp:1031 src/frontends/qt/Menus.cpp:1843
 #: src/frontends/qt/Menus.cpp:1847 src/frontends/qt/Menus.cpp:1851
 #: src/frontends/qt/Menus.cpp:1855 src/frontends/qt/Menus.cpp:1859
 #: src/frontends/qt/Menus.cpp:1863
 msgid "[[ZOOM]]%1$d%"
 msgstr "%1$d%"
 
-#: src/frontends/qt/GuiView.cpp:745
+#: src/frontends/qt/GuiView.cpp:749
 msgid ""
 "WARNING: LaTeX is allowed to execute external commands for this document. "
 "Right click to change."
@@ -35477,152 +35531,152 @@ msgstr ""
 "WAARSCHUWING: LaTeX kan externe commando's uitvoeren voor dit document. Klik "
 "rechts om te veranderen."
 
-#: src/frontends/qt/GuiView.cpp:819
+#: src/frontends/qt/GuiView.cpp:823
 msgid "Cancel Export?"
 msgstr "Export annuleren?"
 
-#: src/frontends/qt/GuiView.cpp:820
+#: src/frontends/qt/GuiView.cpp:824
 msgid "Do you want to cancel the background export process?"
 msgstr "Wilt u het achtergrondproces voor exporteren annuleren?"
 
-#: src/frontends/qt/GuiView.cpp:823
+#: src/frontends/qt/GuiView.cpp:827
 msgid "Co&ntinue"
 msgstr "&Verdergaan"
 
-#: src/frontends/qt/GuiView.cpp:919
+#: src/frontends/qt/GuiView.cpp:923
 #, c-format
 msgid "Successful export to format: %1$s"
 msgstr "Met succes geëxporteerd naar formaat: %1$s"
 
-#: src/frontends/qt/GuiView.cpp:928
+#: src/frontends/qt/GuiView.cpp:932
 #, c-format
 msgid "Error while exporting format: %1$s"
 msgstr "Fout bij het exporteren van formaat: %1$s"
 
-#: src/frontends/qt/GuiView.cpp:931
+#: src/frontends/qt/GuiView.cpp:935
 #, c-format
 msgid "Successful preview of format: %1$s"
 msgstr "Succesvol voorbeeld van formaat: %1$s"
 
-#: src/frontends/qt/GuiView.cpp:934
+#: src/frontends/qt/GuiView.cpp:938
 #, c-format
 msgid "Error while previewing format: %1$s"
 msgstr "Fout bij voorbeeld van formaat: %1$s"
 
-#: src/frontends/qt/GuiView.cpp:937
+#: src/frontends/qt/GuiView.cpp:941
 #, c-format
 msgid "Conversion cancelled while previewing format: %1$s"
 msgstr "Omzetting geannuleerd tijdens voorbeeld van formaat: %1$s"
 
-#: src/frontends/qt/GuiView.cpp:1298
+#: src/frontends/qt/GuiView.cpp:1302
 msgid "Exit LyX"
 msgstr "LyX afsluiten"
 
-#: src/frontends/qt/GuiView.cpp:1299
+#: src/frontends/qt/GuiView.cpp:1303
 msgid "LyX could not be closed because documents are being processed by LyX."
 msgstr ""
 "LyX kon niet afgesloten worden omdat LyX documenten aan het verwerken is."
 
-#: src/frontends/qt/GuiView.cpp:1482
+#: src/frontends/qt/GuiView.cpp:1486
 #, c-format
 msgid "%1$d Word"
 msgstr "%1$d woorden"
 
-#: src/frontends/qt/GuiView.cpp:1484
+#: src/frontends/qt/GuiView.cpp:1488
 #, c-format
 msgid "%1$d Words"
 msgstr "%1$d woorden"
 
-#: src/frontends/qt/GuiView.cpp:1489
+#: src/frontends/qt/GuiView.cpp:1493
 #, c-format
 msgid "%1$d Character"
 msgstr "%1$d teken"
 
-#: src/frontends/qt/GuiView.cpp:1491
+#: src/frontends/qt/GuiView.cpp:1495
 #, c-format
 msgid "%1$d Characters"
 msgstr "%1$d tekens"
 
-#: src/frontends/qt/GuiView.cpp:1496
+#: src/frontends/qt/GuiView.cpp:1500
 #, c-format
 msgid "%1$d Character (no Blanks)"
 msgstr "%1$d teken (exclusief spaties)"
 
-#: src/frontends/qt/GuiView.cpp:1498
+#: src/frontends/qt/GuiView.cpp:1502
 #, c-format
 msgid "%1$d Characters (no Blanks)"
 msgstr "%1$d tekens (exclusief spaties)"
 
-#: src/frontends/qt/GuiView.cpp:1500
+#: src/frontends/qt/GuiView.cpp:1504
 msgid ", [[stats separator]]"
 msgstr ","
 
-#: src/frontends/qt/GuiView.cpp:1519
+#: src/frontends/qt/GuiView.cpp:1523
 #, c-format
 msgid "%1$s (modified externally)"
 msgstr "%1$s (extern gewijzigd)"
 
-#: src/frontends/qt/GuiView.cpp:1642
+#: src/frontends/qt/GuiView.cpp:1646
 msgid "Welcome to LyX!"
 msgstr "Welkom bij LyX!"
 
-#: src/frontends/qt/GuiView.cpp:2228
+#: src/frontends/qt/GuiView.cpp:2236
 msgid "Automatic save done."
 msgstr "Automatisch opgeslagen."
 
-#: src/frontends/qt/GuiView.cpp:2229
+#: src/frontends/qt/GuiView.cpp:2237
 msgid "Automatic save failed!"
 msgstr "Automatisch opslaan mislukt!"
 
-#: src/frontends/qt/GuiView.cpp:2309
+#: src/frontends/qt/GuiView.cpp:2317
 msgid "Command not allowed without any document open"
 msgstr "Commando niet toegestaan zonder geopend document"
 
-#: src/frontends/qt/GuiView.cpp:2378
+#: src/frontends/qt/GuiView.cpp:2386
 msgid "Invalid argument of master-buffer-forall"
 msgstr "Ongeldig argument van master-buffer-forall"
 
-#: src/frontends/qt/GuiView.cpp:2509
+#: src/frontends/qt/GuiView.cpp:2517
 msgid "Function toolbar-set requires two arguments!"
 msgstr "Functie toolbar-set vereist twee argumenten!"
 
-#: src/frontends/qt/GuiView.cpp:2516
+#: src/frontends/qt/GuiView.cpp:2524
 #, c-format
 msgid "Invalid argument \"%1$s\" to function toolbar-set!"
 msgstr "Ongeldig argument \"%1$s\" bij functie toolbar-set!"
 
-#: src/frontends/qt/GuiView.cpp:2532 src/frontends/qt/GuiView.cpp:2545
-#: src/frontends/qt/GuiView.cpp:2562
+#: src/frontends/qt/GuiView.cpp:2540 src/frontends/qt/GuiView.cpp:2553
+#: src/frontends/qt/GuiView.cpp:2570
 #, c-format
 msgid "Unknown toolbar \"%1$s\""
 msgstr "Onbekende werkbalk \"%1$s\""
 
-#: src/frontends/qt/GuiView.cpp:2686
+#: src/frontends/qt/GuiView.cpp:2694
 msgid "Zoom level cannot be less than %1$d%."
 msgstr "Zoomniveau kan niet minder dan %1$d% zijn."
 
-#: src/frontends/qt/GuiView.cpp:2691
+#: src/frontends/qt/GuiView.cpp:2699
 msgid "Zoom level cannot be more than %1$d%."
 msgstr "Zoomniveau kan niet minder dan %1$d% zijn."
 
-#: src/frontends/qt/GuiView.cpp:2821
+#: src/frontends/qt/GuiView.cpp:2829
 msgid "Document not loaded."
 msgstr "Document niet geladen."
 
-#: src/frontends/qt/GuiView.cpp:2851
+#: src/frontends/qt/GuiView.cpp:2859
 msgid "Select documents to open"
 msgstr "Selecteer documenten om te openen"
 
-#: src/frontends/qt/GuiView.cpp:2857
+#: src/frontends/qt/GuiView.cpp:2865
 msgid "LyX Document Backups (*.lyx~)"
 msgstr "LyX-document reservekopieën (*.lyx)"
 
-#: src/frontends/qt/GuiView.cpp:2858 src/frontends/qt/GuiView.cpp:4608
+#: src/frontends/qt/GuiView.cpp:2866 src/frontends/qt/GuiView.cpp:4616
 #: src/frontends/qt/qt_helpers.cpp:677
 msgid "All Files"
 msgstr "Alle bestanden"
 
-#: src/frontends/qt/GuiView.cpp:2889
+#: src/frontends/qt/GuiView.cpp:2897
 #, c-format
 msgid ""
 "The directory in the given path\n"
@@ -35633,7 +35687,7 @@ msgstr ""
 "%1$s\n"
 "bestaat niet."
 
-#: src/frontends/qt/GuiView.cpp:2901
+#: src/frontends/qt/GuiView.cpp:2909
 #, c-format
 msgid ""
 "File\n"
@@ -35644,48 +35698,48 @@ msgstr ""
 "%1$s\n"
 "bestaat niet. Leeg bestand aanmaken?"
 
-#: src/frontends/qt/GuiView.cpp:2905
+#: src/frontends/qt/GuiView.cpp:2913
 msgid "File does not exist"
 msgstr "Bestand bestaat niet"
 
-#: src/frontends/qt/GuiView.cpp:2907
+#: src/frontends/qt/GuiView.cpp:2915
 msgid "Create &File"
 msgstr "Maak &bestand aan"
 
-#: src/frontends/qt/GuiView.cpp:2919
+#: src/frontends/qt/GuiView.cpp:2927
 #, c-format
 msgid "Opening document %1$s..."
 msgstr "Document %1$s openen..."
 
-#: src/frontends/qt/GuiView.cpp:2924
+#: src/frontends/qt/GuiView.cpp:2932
 #, c-format
 msgid "Document %1$s opened."
 msgstr "Document %1$s geopend."
 
-#: src/frontends/qt/GuiView.cpp:2927
+#: src/frontends/qt/GuiView.cpp:2935
 msgid "Version control detected."
 msgstr "Versiecontrole gedetecteerd."
 
-#: src/frontends/qt/GuiView.cpp:2929
+#: src/frontends/qt/GuiView.cpp:2937
 #, c-format
 msgid "Could not open document %1$s"
 msgstr "Kon het document %1$s niet openen"
 
-#: src/frontends/qt/GuiView.cpp:2958
+#: src/frontends/qt/GuiView.cpp:2966
 msgid "Couldn't import file"
 msgstr "Kon het bestand niet importeren"
 
-#: src/frontends/qt/GuiView.cpp:2959
+#: src/frontends/qt/GuiView.cpp:2967
 #, c-format
 msgid "No information for importing the format %1$s."
 msgstr "Geen informatie aanwezig om het formaat %1$s te importeren."
 
-#: src/frontends/qt/GuiView.cpp:3006
+#: src/frontends/qt/GuiView.cpp:3014
 #, c-format
 msgid "Select %1$s file to import"
 msgstr "Kies %1$s bestand om te importeren"
 
-#: src/frontends/qt/GuiView.cpp:3041
+#: src/frontends/qt/GuiView.cpp:3049
 #, c-format
 msgid ""
 "The file name '%1$s' is invalid!\n"
@@ -35694,8 +35748,8 @@ msgstr ""
 "De bestandsnaam '%1$s' is ongeldig!\n"
 "Importeren annuleren."
 
-#: src/frontends/qt/GuiView.cpp:3068 src/frontends/qt/GuiView.cpp:3333
-#: src/frontends/qt/GuiView.cpp:3438
+#: src/frontends/qt/GuiView.cpp:3076 src/frontends/qt/GuiView.cpp:3341
+#: src/frontends/qt/GuiView.cpp:3446
 #, c-format
 msgid ""
 "The document %1$s already exists.\n"
@@ -35706,33 +35760,33 @@ msgstr ""
 "\n"
 "Wilt u het bestaande bestand vervangen?"
 
-#: src/frontends/qt/GuiView.cpp:3070 src/frontends/qt/GuiView.cpp:3337
-#: src/frontends/qt/GuiView.cpp:3442
+#: src/frontends/qt/GuiView.cpp:3078 src/frontends/qt/GuiView.cpp:3345
+#: src/frontends/qt/GuiView.cpp:3450
 msgid "Overwrite document?"
 msgstr "Document vervangen?"
 
-#: src/frontends/qt/GuiView.cpp:3079
+#: src/frontends/qt/GuiView.cpp:3087
 #, c-format
 msgid "Importing %1$s..."
 msgstr "%1$s importeren..."
 
-#: src/frontends/qt/GuiView.cpp:3082
+#: src/frontends/qt/GuiView.cpp:3090
 msgid "imported."
 msgstr "geïmporteerd."
 
-#: src/frontends/qt/GuiView.cpp:3084
+#: src/frontends/qt/GuiView.cpp:3092
 msgid "file not imported!"
 msgstr "bestand niet geïmporteerd!"
 
-#: src/frontends/qt/GuiView.cpp:3110
+#: src/frontends/qt/GuiView.cpp:3118
 msgid "newfile"
 msgstr "nieuwbestand"
 
-#: src/frontends/qt/GuiView.cpp:3143
+#: src/frontends/qt/GuiView.cpp:3151
 msgid "Select LyX document to insert"
 msgstr "Selecteer LyX-document om in te voegen"
 
-#: src/frontends/qt/GuiView.cpp:3190
+#: src/frontends/qt/GuiView.cpp:3198
 #, c-format
 msgid ""
 "It is suggested to save the template in a subdirectory\n"
@@ -35745,23 +35799,23 @@ msgstr ""
 "Deze submap bestaat nog niet?\n"
 "Wilt u deze maken?"
 
-#: src/frontends/qt/GuiView.cpp:3195
+#: src/frontends/qt/GuiView.cpp:3203
 msgid "Create Language Directory?"
 msgstr "Map voor taal maken?"
 
-#: src/frontends/qt/GuiView.cpp:3196 src/frontends/qt/GuiView.cpp:3227
+#: src/frontends/qt/GuiView.cpp:3204 src/frontends/qt/GuiView.cpp:3235
 msgid "&Yes, Create"
 msgstr "&Ja, aanmaken"
 
-#: src/frontends/qt/GuiView.cpp:3196 src/frontends/qt/GuiView.cpp:3227
+#: src/frontends/qt/GuiView.cpp:3204 src/frontends/qt/GuiView.cpp:3235
 msgid "&No, Save Template in Parent Directory"
 msgstr "&Nee, sla sjabloon op in de bovenliggende map"
 
-#: src/frontends/qt/GuiView.cpp:3199 src/frontends/qt/GuiView.cpp:3230
+#: src/frontends/qt/GuiView.cpp:3207 src/frontends/qt/GuiView.cpp:3238
 msgid "Subdirectory creation failed!"
 msgstr "Maken van submap mislukt!"
 
-#: src/frontends/qt/GuiView.cpp:3200 src/frontends/qt/GuiView.cpp:3231
+#: src/frontends/qt/GuiView.cpp:3208 src/frontends/qt/GuiView.cpp:3239
 msgid ""
 "Could not create subdirectory.\n"
 "The template will be saved in the parent directory."
@@ -35769,7 +35823,7 @@ msgstr ""
 "Kon geen submap maken.\n"
 "Het sjabloon wordt opgeslagen in de bovenliggende map."
 
-#: src/frontends/qt/GuiView.cpp:3221
+#: src/frontends/qt/GuiView.cpp:3229
 #, c-format
 msgid ""
 "It is suggested to save the template in a subdirectory\n"
@@ -35782,19 +35836,19 @@ msgstr ""
 "Deze submap bestaat nog niet.\n"
 "Wilt u deze aanmaken?"
 
-#: src/frontends/qt/GuiView.cpp:3226
+#: src/frontends/qt/GuiView.cpp:3234
 msgid "Create Category Directory?"
 msgstr "Submap voor categorie maken?"
 
-#: src/frontends/qt/GuiView.cpp:3261
+#: src/frontends/qt/GuiView.cpp:3269
 msgid "Choose a filename to save template as"
 msgstr "Kies een bestandsnaam om het sjabllon op te slaan"
 
-#: src/frontends/qt/GuiView.cpp:3262
+#: src/frontends/qt/GuiView.cpp:3270
 msgid "Choose a filename to save document as"
 msgstr "Kies een bestandsnaam om het document op te slaan"
 
-#: src/frontends/qt/GuiView.cpp:3296
+#: src/frontends/qt/GuiView.cpp:3304
 #, c-format
 msgid ""
 "The file\n"
@@ -35809,17 +35863,17 @@ msgstr ""
 "Sluit het voordat u probeert te overschrijven.\n"
 "Wilt u een nieuwe bestandsnaam kiezen?"
 
-#: src/frontends/qt/GuiView.cpp:3300
+#: src/frontends/qt/GuiView.cpp:3308
 msgid "Chosen File Already Open"
 msgstr "Gekozen bestand is al open"
 
-#: src/frontends/qt/GuiView.cpp:3301 src/frontends/qt/GuiView.cpp:3323
-#: src/frontends/qt/GuiView.cpp:3339 src/frontends/qt/GuiView.cpp:3443
-#: src/frontends/qt/GuiView.cpp:3488
+#: src/frontends/qt/GuiView.cpp:3309 src/frontends/qt/GuiView.cpp:3331
+#: src/frontends/qt/GuiView.cpp:3347 src/frontends/qt/GuiView.cpp:3451
+#: src/frontends/qt/GuiView.cpp:3496
 msgid "&Rename"
 msgstr "&Hernoemen"
 
-#: src/frontends/qt/GuiView.cpp:3316
+#: src/frontends/qt/GuiView.cpp:3324
 #, c-format
 msgid ""
 "The document %1$s is already registered.\n"
@@ -35830,27 +35884,27 @@ msgstr ""
 "\n"
 "Wilt u een nieuwe naam kiezen?"
 
-#: src/frontends/qt/GuiView.cpp:3321
+#: src/frontends/qt/GuiView.cpp:3329
 msgid "Rename document?"
 msgstr "Document hernoemen?"
 
-#: src/frontends/qt/GuiView.cpp:3321
+#: src/frontends/qt/GuiView.cpp:3329
 msgid "Copy document?"
 msgstr "Document kopiëren?"
 
-#: src/frontends/qt/GuiView.cpp:3323
+#: src/frontends/qt/GuiView.cpp:3331
 msgid "&Copy"
 msgstr "&Kopiëren"
 
-#: src/frontends/qt/GuiView.cpp:3383
+#: src/frontends/qt/GuiView.cpp:3391
 msgid "Choose a filename to export the document as"
 msgstr "Kies een bestandsnaam om het document te exporteren"
 
-#: src/frontends/qt/GuiView.cpp:3387
+#: src/frontends/qt/GuiView.cpp:3395
 msgid "Guess from extension (*.*)"
 msgstr "Gokken op basis van extensie (*.*)"
 
-#: src/frontends/qt/GuiView.cpp:3484
+#: src/frontends/qt/GuiView.cpp:3492
 #, c-format
 msgid ""
 "The document %1$s could not be saved.\n"
@@ -35861,15 +35915,15 @@ msgstr ""
 "\n"
 "Wilt u het document hernoemen en het opnieuw proberen?"
 
-#: src/frontends/qt/GuiView.cpp:3487
+#: src/frontends/qt/GuiView.cpp:3495
 msgid "Rename and save?"
 msgstr "Hernoemen en opslaan?"
 
-#: src/frontends/qt/GuiView.cpp:3488
+#: src/frontends/qt/GuiView.cpp:3496
 msgid "&Retry"
 msgstr "&Opnieuw proberen"
 
-#: src/frontends/qt/GuiView.cpp:3533
+#: src/frontends/qt/GuiView.cpp:3541
 #, c-format
 msgid ""
 "Last view on document %1$s is being closed.\n"
@@ -35890,23 +35944,23 @@ msgstr ""
 "Stel de opties in Extra -> Voorkeuren -> Uiterlijk en gedrag\n"
 "-> Gebruikersinterface in om deze vraag niet meer te tonen.\n"
 
-#: src/frontends/qt/GuiView.cpp:3542
+#: src/frontends/qt/GuiView.cpp:3550
 msgid "Close or hide document?"
 msgstr "Document sluiten of verbergen?"
 
-#: src/frontends/qt/GuiView.cpp:3543
+#: src/frontends/qt/GuiView.cpp:3551
 msgid "&Hide"
 msgstr "&Verbergen"
 
-#: src/frontends/qt/GuiView.cpp:3640
+#: src/frontends/qt/GuiView.cpp:3648
 msgid "Close document"
 msgstr "Document sluiten"
 
-#: src/frontends/qt/GuiView.cpp:3641
+#: src/frontends/qt/GuiView.cpp:3649
 msgid "Document could not be closed because it is being processed by LyX."
 msgstr "Document kon niet gesloten worden omdat het verwerkt wordt door LyX."
 
-#: src/frontends/qt/GuiView.cpp:3773 src/frontends/qt/GuiView.cpp:3905
+#: src/frontends/qt/GuiView.cpp:3781 src/frontends/qt/GuiView.cpp:3913
 #, c-format
 msgid ""
 "The document %1$s has not been saved yet.\n"
@@ -35917,16 +35971,16 @@ msgstr ""
 "\n"
 "Wilt u het document opslaan?"
 
-#: src/frontends/qt/GuiView.cpp:3776 src/frontends/qt/GuiView.cpp:3908
+#: src/frontends/qt/GuiView.cpp:3784 src/frontends/qt/GuiView.cpp:3916
 msgid "Save new document?"
 msgstr "Nieuw document opslaan?"
 
-#: src/frontends/qt/GuiView.cpp:3777 src/frontends/qt/GuiView.cpp:3791
-#: src/frontends/qt/GuiView.cpp:3910
+#: src/frontends/qt/GuiView.cpp:3785 src/frontends/qt/GuiView.cpp:3799
+#: src/frontends/qt/GuiView.cpp:3918
 msgid "&Save"
 msgstr "&Opslaan"
 
-#: src/frontends/qt/GuiView.cpp:3782
+#: src/frontends/qt/GuiView.cpp:3790
 #, c-format
 msgid ""
 "The document %1$s has unsaved changes.\n"
@@ -35937,7 +35991,7 @@ msgstr ""
 "\n"
 "Wilt u het document opslaan of de wijzigingen weigeren?"
 
-#: src/frontends/qt/GuiView.cpp:3785
+#: src/frontends/qt/GuiView.cpp:3793
 #, c-format
 msgid ""
 "The document %1$s has not been saved yet.\n"
@@ -35948,19 +36002,19 @@ msgstr ""
 "\n"
 "Wilt u het document opslaan of het volledig verwijderen?"
 
-#: src/frontends/qt/GuiView.cpp:3789 src/frontends/qt/GuiView.cpp:3902
+#: src/frontends/qt/GuiView.cpp:3797 src/frontends/qt/GuiView.cpp:3910
 msgid "Save changed document?"
 msgstr "Gewijzigd document opslaan?"
 
-#: src/frontends/qt/GuiView.cpp:3789
+#: src/frontends/qt/GuiView.cpp:3797
 msgid "Save document?"
 msgstr "Document opslaan?"
 
-#: src/frontends/qt/GuiView.cpp:3791
+#: src/frontends/qt/GuiView.cpp:3799
 msgid "&Discard"
 msgstr "&Niet opslaan"
 
-#: src/frontends/qt/GuiView.cpp:3899
+#: src/frontends/qt/GuiView.cpp:3907
 #, c-format
 msgid ""
 "The document %1$s has unsaved changes.\n"
@@ -35971,7 +36025,7 @@ msgstr ""
 "\n"
 "Wilt u het document opslaan?"
 
-#: src/frontends/qt/GuiView.cpp:3931
+#: src/frontends/qt/GuiView.cpp:3939
 #, c-format
 msgid ""
 "Document \n"
@@ -35983,37 +36037,37 @@ msgstr ""
 "is extern gewijzigd. Nu herladen? Alle lokale wijzigingen zullen verloren "
 "gaan."
 
-#: src/frontends/qt/GuiView.cpp:3934
+#: src/frontends/qt/GuiView.cpp:3942
 msgid "Reload externally changed document?"
 msgstr "Extern gewijzigd document opnieuw laden?"
 
-#: src/frontends/qt/GuiView.cpp:3979
+#: src/frontends/qt/GuiView.cpp:3987
 msgid "Document could not be checked in."
 msgstr "Document kon niet ingecheckt worden."
 
-#: src/frontends/qt/GuiView.cpp:4022
+#: src/frontends/qt/GuiView.cpp:4030
 msgid "Error when setting the locking property."
 msgstr "Fout bij het instellen van de locking eigenschap."
 
-#: src/frontends/qt/GuiView.cpp:4071
+#: src/frontends/qt/GuiView.cpp:4079
 msgid "Directory is not accessible."
 msgstr "Map is niet toegankelijk."
 
-#: src/frontends/qt/GuiView.cpp:4148
+#: src/frontends/qt/GuiView.cpp:4156
 #, c-format
 msgid "Opening child document %1$s..."
 msgstr "Subdocument %1$s openen..."
 
-#: src/frontends/qt/GuiView.cpp:4206
+#: src/frontends/qt/GuiView.cpp:4214
 #, c-format
 msgid "No buffer for file: %1$s."
 msgstr "Geen buffer voor bestand: %1$s."
 
-#: src/frontends/qt/GuiView.cpp:4216
+#: src/frontends/qt/GuiView.cpp:4224
 msgid "Inverse Search Failed"
 msgstr "Geïnverteerd zoeken mislukt"
 
-#: src/frontends/qt/GuiView.cpp:4217
+#: src/frontends/qt/GuiView.cpp:4225
 msgid ""
 "Invalid position requested by inverse search.\n"
 "You may need to update the viewed document."
@@ -36021,31 +36075,31 @@ msgstr ""
 "Ongeldige positie gevraagd door geïnverteerd zoeken.\n"
 "U moet mogelijk het bekeken document bijwerken."
 
-#: src/frontends/qt/GuiView.cpp:4290
+#: src/frontends/qt/GuiView.cpp:4298
 msgid "Export Error"
 msgstr "Exportfout"
 
-#: src/frontends/qt/GuiView.cpp:4291
+#: src/frontends/qt/GuiView.cpp:4299
 msgid "Error cloning the Buffer."
 msgstr "Fout bij het klonen van de buffer."
 
-#: src/frontends/qt/GuiView.cpp:4442 src/frontends/qt/GuiView.cpp:4462
+#: src/frontends/qt/GuiView.cpp:4450 src/frontends/qt/GuiView.cpp:4470
 msgid "Exporting ..."
 msgstr "Exporteren ..."
 
-#: src/frontends/qt/GuiView.cpp:4471
+#: src/frontends/qt/GuiView.cpp:4479
 msgid "Previewing ..."
 msgstr "Voorbeeld maken ..."
 
-#: src/frontends/qt/GuiView.cpp:4509
+#: src/frontends/qt/GuiView.cpp:4517
 msgid "Document not loaded"
 msgstr "Document niet geladen"
 
-#: src/frontends/qt/GuiView.cpp:4605
+#: src/frontends/qt/GuiView.cpp:4613
 msgid "Select file to insert"
 msgstr "Selecteer een bestand om in te voegen"
 
-#: src/frontends/qt/GuiView.cpp:4636
+#: src/frontends/qt/GuiView.cpp:4644
 #, c-format
 msgid ""
 "The current version will be lost. Are you sure you want to load the version "
@@ -36054,7 +36108,7 @@ msgstr ""
 "De huidige versie zal verloren gaan. Weet u zeker dat u voor document %1$s "
 "de versie vanop de schijf wilt laden?"
 
-#: src/frontends/qt/GuiView.cpp:4643
+#: src/frontends/qt/GuiView.cpp:4651
 #, c-format
 msgid ""
 "Any changes will be lost. Are you sure you want to revert to the saved "
@@ -36063,61 +36117,61 @@ msgstr ""
 "Alle wijzigingen zullen verloren gaan. Weet u zeker dat u terug wilt gaan "
 "naar de opgeslagen versie van document %1$s?"
 
-#: src/frontends/qt/GuiView.cpp:4646
+#: src/frontends/qt/GuiView.cpp:4654
 msgid "Revert to saved document?"
 msgstr "Teruggaan naar opgeslagen document?"
 
-#: src/frontends/qt/GuiView.cpp:4663
+#: src/frontends/qt/GuiView.cpp:4671
 msgid "Buffer export reset."
 msgstr "Buffer export herstel."
 
-#: src/frontends/qt/GuiView.cpp:4686
+#: src/frontends/qt/GuiView.cpp:4694
 msgid "Saving all documents..."
 msgstr "Alle documenten opslaan..."
 
-#: src/frontends/qt/GuiView.cpp:4696
+#: src/frontends/qt/GuiView.cpp:4704
 msgid "All documents saved."
 msgstr "Alle documenten opgeslagen."
 
-#: src/frontends/qt/GuiView.cpp:4735
+#: src/frontends/qt/GuiView.cpp:4743
 msgid "Developer mode is now enabled."
 msgstr "Ontwikkelaarsmodus staat nu aan."
 
-#: src/frontends/qt/GuiView.cpp:4737
+#: src/frontends/qt/GuiView.cpp:4745
 msgid "Developer mode is now disabled."
 msgstr "Ontwikkelaarsmodus staat nu uit."
 
-#: src/frontends/qt/GuiView.cpp:4769
+#: src/frontends/qt/GuiView.cpp:4777
 msgid "Toolbars unlocked."
 msgstr "Werkbalken ontgrendeld."
 
-#: src/frontends/qt/GuiView.cpp:4771
+#: src/frontends/qt/GuiView.cpp:4779
 msgid "Toolbars locked."
 msgstr "Werkbalken vergrendeld."
 
-#: src/frontends/qt/GuiView.cpp:4783
+#: src/frontends/qt/GuiView.cpp:4791
 #, c-format
 msgid "Icon size set to %1$dx%2$d."
 msgstr "Icoongrootte ingesteld op %1$dx%2$d."
 
-#: src/frontends/qt/GuiView.cpp:4872
+#: src/frontends/qt/GuiView.cpp:4880
 #, c-format
 msgid "%1$s unknown command!"
 msgstr "%1$s onbekende opdracht!"
 
-#: src/frontends/qt/GuiView.cpp:4973
+#: src/frontends/qt/GuiView.cpp:4981
 msgid "Zoom level is now %1$d% (default value: %2$d%)"
 msgstr "Zoomniveau is nu %1$d% (standaardwaarde: %2$d%)"
 
-#: src/frontends/qt/GuiView.cpp:5036
+#: src/frontends/qt/GuiView.cpp:5044
 msgid "Please, preview the document first."
 msgstr "Bekijk eerst een voorbeeld van het document."
 
-#: src/frontends/qt/GuiView.cpp:5054
+#: src/frontends/qt/GuiView.cpp:5062
 msgid "Couldn't proceed."
 msgstr "Kon niet doorgaan."
 
-#: src/frontends/qt/GuiView.cpp:5437
+#: src/frontends/qt/GuiView.cpp:5445
 msgid "Disable Shell Escape"
 msgstr "Shell escape uitschakelen"
 
@@ -36130,27 +36184,27 @@ msgstr "Voorbeeld van code"
 msgid "%1[[preview format name]] Preview"
 msgstr "Voorbeeld van %1"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1578
+#: src/frontends/qt/GuiWorkArea.cpp:1584
 msgid "Close File"
 msgstr "Bestand sluiten"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2116
+#: src/frontends/qt/GuiWorkArea.cpp:2122
 msgid "%1 (read only)"
 msgstr "%1 (alleen lezen)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2124
+#: src/frontends/qt/GuiWorkArea.cpp:2130
 msgid "%1 (modified externally)"
 msgstr "%1 (extern gewijzigd)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2147
+#: src/frontends/qt/GuiWorkArea.cpp:2153
 msgid "&Hide Tab"
 msgstr "Tabblad ver&bergen"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2153
+#: src/frontends/qt/GuiWorkArea.cpp:2159
 msgid "&Close Tab"
 msgstr "Tabblad &sluiten"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2193
+#: src/frontends/qt/GuiWorkArea.cpp:2199
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>Het bestand %1 werd gewijzigd op schijf.</b>"
 
@@ -36741,7 +36795,7 @@ msgid "active"
 msgstr "actief"
 
 #: src/insets/InsetBranch.cpp:72 src/insets/InsetBranch.cpp:74
-#: src/insets/InsetIndex.cpp:1287
+#: src/insets/InsetIndex.cpp:1290
 msgid "non-active"
 msgstr "inactief"
 
@@ -36843,11 +36897,11 @@ msgstr "Onbekende parameternaam: "
 msgid "Missing \\end_inset at this point: "
 msgstr "Ontbrekende \\end_inset op dit punt: "
 
-#: src/insets/InsetCommandParams.cpp:466
+#: src/insets/InsetCommandParams.cpp:480
 msgid "Uncodable characters"
 msgstr "Niet-codeerbare tekens"
 
-#: src/insets/InsetCommandParams.cpp:467
+#: src/insets/InsetCommandParams.cpp:481
 #, c-format
 msgid ""
 "The following characters that are used in the inset %1$s are not\n"
@@ -36858,11 +36912,11 @@ msgstr ""
 "voorgesteld worden in de huidige codering en zijn derhalve weggelaten:\n"
 "%2$s."
 
-#: src/insets/InsetCommandParams.cpp:527
+#: src/insets/InsetCommandParams.cpp:543
 msgid "Uncodable characters in inset"
 msgstr "Niet-codeerbare tekens in invoegsel"
 
-#: src/insets/InsetCommandParams.cpp:528
+#: src/insets/InsetCommandParams.cpp:544
 #, c-format
 msgid ""
 "The following characters in one of the insets are\n"
@@ -37267,7 +37321,7 @@ msgstr ""
 msgid "Index sorting failed"
 msgstr "Indexsortering mislukt"
 
-#: src/insets/InsetIndex.cpp:768
+#: src/insets/InsetIndex.cpp:771
 #, c-format
 msgid ""
 "There is an empty index subentry in the entry '%1$s'.\n"
@@ -37276,39 +37330,39 @@ msgstr ""
 "Er is een lege index-subingang in de ingang '%1$s'.\n"
 "Het zal worden genegeerd in de uitvoer."
 
-#: src/insets/InsetIndex.cpp:771
+#: src/insets/InsetIndex.cpp:774
 msgid "Empty index subentry!"
 msgstr "Lege index subingang!"
 
-#: src/insets/InsetIndex.cpp:1010
+#: src/insets/InsetIndex.cpp:1013
 msgid "Index Entry"
 msgstr "Indexingang"
 
-#: src/insets/InsetIndex.cpp:1027
+#: src/insets/InsetIndex.cpp:1030
 msgid "Pagination format:"
 msgstr "Pagina-formaat:"
 
-#: src/insets/InsetIndex.cpp:1029
+#: src/insets/InsetIndex.cpp:1032
 msgid "bold"
 msgstr "vet"
 
-#: src/insets/InsetIndex.cpp:1031
+#: src/insets/InsetIndex.cpp:1034
 msgid "italic"
 msgstr "cursief"
 
-#: src/insets/InsetIndex.cpp:1033
+#: src/insets/InsetIndex.cpp:1036
 msgid "emphasized"
 msgstr "benadrukt"
 
-#: src/insets/InsetIndex.cpp:1284
+#: src/insets/InsetIndex.cpp:1287
 msgid "Unknown index type!"
 msgstr "Onbekend indextype!"
 
-#: src/insets/InsetIndex.cpp:1285
+#: src/insets/InsetIndex.cpp:1288
 msgid "All indexes"
 msgstr "Alle indices"
 
-#: src/insets/InsetIndex.cpp:1289
+#: src/insets/InsetIndex.cpp:1292
 msgid "subindex"
 msgstr "subindex"
 
@@ -37325,15 +37379,15 @@ msgstr ""
 "Stel het sorteren van deze ingang handmatig in,\n"
 "zoals beschreven in de Gebruikersgids."
 
-#: src/insets/InsetInfo.cpp:199
+#: src/insets/InsetInfo.cpp:198
 msgid "No long date format (language unknown)!"
 msgstr "Geen formaat voor lange datum (onbekende taal)!"
 
-#: src/insets/InsetInfo.cpp:202
+#: src/insets/InsetInfo.cpp:201
 msgid "No medium date format (language unknown)!"
 msgstr "Geen formaat voor gemiddelde datum (onbekende taal)!"
 
-#: src/insets/InsetInfo.cpp:205
+#: src/insets/InsetInfo.cpp:204
 msgid "No short date format (language unknown)!"
 msgstr "Geen formaat voor korte datum (onbekende taal)!"
 
@@ -37961,7 +38015,7 @@ msgstr "Beschrijving: "
 msgid "Sorting: "
 msgstr "Sortering: "
 
-#: src/insets/InsetNote.cpp:276
+#: src/insets/InsetNote.cpp:281
 msgid "note"
 msgstr "aantekening"
 
@@ -38017,11 +38071,11 @@ msgstr "Ref"
 msgid "EqRef"
 msgstr "EqRef"
 
-#: src/insets/InsetRef.cpp:644 src/mathed/InsetMathRef.cpp:373
+#: src/insets/InsetRef.cpp:644 src/mathed/InsetMathRef.cpp:379
 msgid "Page Number"
 msgstr "Paginanummer"
 
-#: src/insets/InsetRef.cpp:645 src/mathed/InsetMathRef.cpp:374
+#: src/insets/InsetRef.cpp:645 src/mathed/InsetMathRef.cpp:380
 msgid "Textual Page Number"
 msgstr "Tekstuele paginanummer"
 
@@ -38029,7 +38083,7 @@ msgstr "Tekstuele paginanummer"
 msgid "TextPage"
 msgstr "TekstPagina"
 
-#: src/insets/InsetRef.cpp:646 src/mathed/InsetMathRef.cpp:375
+#: src/insets/InsetRef.cpp:646 src/mathed/InsetMathRef.cpp:381
 msgid "Standard+Textual Page"
 msgstr "Standaard+TekstPagina"
 
@@ -38037,7 +38091,7 @@ msgstr "Standaard+TekstPagina"
 msgid "Ref+Text"
 msgstr "Ref+Tekst"
 
-#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:377
+#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:383
 msgid "Reference to Name"
 msgstr "Referentie naar naam"
 
@@ -38053,7 +38107,7 @@ msgstr "Opgemaakt"
 msgid "Format"
 msgstr "Formaat"
 
-#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:378
+#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:384
 msgid "Label Only"
 msgstr "Enkel label"
 
@@ -38498,43 +38552,43 @@ msgstr "Bewerkingsmodus voor reguliere expressies"
 msgid "Cannot apply %1$s here."
 msgstr "Kan %1$s hier niet toepassen."
 
-#: src/mathed/InsetMathRef.cpp:371
+#: src/mathed/InsetMathRef.cpp:377
 msgid "Standard[[mathref]]"
 msgstr "Standaard"
 
-#: src/mathed/InsetMathRef.cpp:371
+#: src/mathed/InsetMathRef.cpp:377
 msgid "Ref: "
 msgstr "Verw: "
 
-#: src/mathed/InsetMathRef.cpp:372
+#: src/mathed/InsetMathRef.cpp:378
 msgid "EqRef: "
 msgstr "VglVerw: "
 
-#: src/mathed/InsetMathRef.cpp:373
+#: src/mathed/InsetMathRef.cpp:379
 msgid "Page: "
 msgstr "Pagina: "
 
-#: src/mathed/InsetMathRef.cpp:374
+#: src/mathed/InsetMathRef.cpp:380
 msgid "TextPage: "
 msgstr "TekstPagina: "
 
-#: src/mathed/InsetMathRef.cpp:375
+#: src/mathed/InsetMathRef.cpp:381
 msgid "Ref+Text: "
 msgstr "Ref+Tekst: "
 
-#: src/mathed/InsetMathRef.cpp:376
+#: src/mathed/InsetMathRef.cpp:382
 msgid "PrettyRef"
 msgstr "PrettyRef"
 
-#: src/mathed/InsetMathRef.cpp:376
+#: src/mathed/InsetMathRef.cpp:382
 msgid "FormatRef: "
 msgstr "FormatRef: "
 
-#: src/mathed/InsetMathRef.cpp:377
+#: src/mathed/InsetMathRef.cpp:383
 msgid "NameRef: "
 msgstr "NaamVerw: "
 
-#: src/mathed/InsetMathRef.cpp:378
+#: src/mathed/InsetMathRef.cpp:384
 msgid "Label Only: "
 msgstr "Enkel label: "
 
@@ -38557,11 +38611,11 @@ msgstr ""
 "Kon het opgegeven document niet openen\n"
 "%1$s."
 
-#: src/output_latex.cpp:1681
+#: src/output_latex.cpp:1687
 msgid "Error in latexParagraphs"
 msgstr "Fout in latex-alinea"
 
-#: src/output_latex.cpp:1682
+#: src/output_latex.cpp:1688
 #, c-format
 msgid ""
 "You are using at least one layout (%1$s) intended for the title, after using "

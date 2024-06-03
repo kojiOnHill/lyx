@@ -1498,10 +1498,12 @@ QVariant GuiWorkArea::inputMethodQuery(Qt::InputMethodQuery query) const
 		return QVariant(d->im_cursor_rect_);
 		break;
 	}
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
 	case Qt::ImAnchorRectangle: {
 		return QVariant(d->im_anchor_rect_);
 		break;
 	}
+#endif
 	default:
 		return QWidget::inputMethodQuery(query);
 	}
