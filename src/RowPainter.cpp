@@ -314,7 +314,7 @@ void RowPainter::paintAppendix() const
 		y += 2 * defaultRowHeight();
 
 	pi_.pain.line(1, y, 1, yo_ + row_.height(), Color_appendix);
-	pi_.pain.line(tm_.width() - 2, y, tm_.width() - 2, yo_ + row_.height(), Color_appendix);
+	pi_.pain.line(tm_.width() - 2, y, tm_.width() - 2, yo_ + row_.descent(), Color_appendix);
 }
 
 
