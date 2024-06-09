@@ -96,6 +96,9 @@ What's new
 - Put new citation after selected item rather than at end of list (bug 12940).
 
 
+- fix overflow of appendix red frame in document-bottom grey area.
+
+
 * INTERNALS
 
 - Fix case where insets do not have proper information about current buffer
@@ -106,6 +109,8 @@ What's new
 - Fix initialization of an internal value.
 
 - Fix "Unassigned buffer_" error with math references (bug 12947).
+
+- Re-allow the use of quoted argument to PackageOptions layout tag.
 
 
 * DOCUMENTATION AND LOCALIZATION
