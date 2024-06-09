@@ -68,8 +68,11 @@ What's new
 - Update acknowledgments handling in aastex63 layout 
   (cf. https://journals.aas.org/aastexguide/#acknowledgments)
 
+- Make textstyle-update LFUN work properly inside equations.
+
 - Make buffer-reset-export LFUN work properly.
 
+- Remove redundant code from preamble of double column Hebrew documents (bug 12919)
 
 * USER INTERFACE
 
@@ -82,6 +85,8 @@ What's new
   13050).
 
 - Fix incorrect scrolling when using outline to jump to a paragraph (bug 10425).
+
+- Fix preview inset with XeTeX, and with RTL languages in genral.
 
 - Respect change tracking in dash conversion mechanism (bug 13062).
 
@@ -112,6 +117,7 @@ What's new
 
 - Re-allow the use of quoted argument to PackageOptions layout tag.
 
+- Fix crash when passing unknown value to textstyle-update
 
 * DOCUMENTATION AND LOCALIZATION
 
