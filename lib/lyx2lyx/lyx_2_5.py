@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of lyx2lyx
 # Copyright (C) 2024 The LyX team
 #
@@ -31,7 +30,7 @@ from parser_tools import (find_end_of_inset, find_end_of_layout, find_token, fin
 #    find_token_backwards, find_token_exact, get_bool_value,
 #    get_containing_inset, get_containing_layout, get_option_value,
 #    get_quoted_value, is_in_inset,
-#    del_value, 
+#    del_value,
 #    find_complete_lines,
 #    find_re, find_substring,
 #    set_bool_value
@@ -83,7 +82,7 @@ def convert_url_escapes(document):
             if document.body[surl - 1] == "\\backslash":
                 del document.body[surl - 1]
             i = surl
-        
+
 
 def revert_url_escapes(document):
     """Unescape # and % in URLs with hyperref."""
@@ -121,7 +120,7 @@ def convert_url_escapes2(document):
     """Unescape backslashes in URLs with hyperref."""
 
     i = find_token(document.header, "\\use_hyperref true", 0)
-   
+
     if i == -1 and document.textclass not in ['beamer', 'scrarticle-beamer', 'beamerposter', 'article-beamer']:
         return
 
@@ -147,7 +146,7 @@ def revert_url_escapes2(document):
     """Escape backslashes in URLs with hyperref."""
 
     i = find_token(document.header, "\\use_hyperref true", 0)
-   
+
     if i == -1 and document.textclass not in ['beamer', 'scrarticle-beamer', 'beamerposter', 'article-beamer']:
         return
 

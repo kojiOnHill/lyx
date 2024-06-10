@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of lyx2lyx
 # Copyright (C) 2016 The LyX team
 #
@@ -685,13 +684,13 @@ def revert_cjkquotes(document):
             if val[1] == "l":
                 # inner opening mark
                 if cjk:
-                    replace = [u"\u300E"]
+                    replace = ["\u300E"]
                 else:
                     replace = ["\\begin_inset Formula $\\llceil$", "\\end_inset"]
             else:
                 # inner closing mark
                 if cjk:
-                    replace = [u"\u300F"]
+                    replace = ["\u300F"]
                 else:
                     replace = ["\\begin_inset Formula $\\rrfloor$", "\\end_inset"]
         else:
@@ -699,13 +698,13 @@ def revert_cjkquotes(document):
             if val[1] == "l":
                 # outer opening mark
                 if cjk:
-                    replace = [u"\u300C"]
+                    replace = ["\u300C"]
                 else:
                     replace = ["\\begin_inset Formula $\\lceil$", "\\end_inset"]
             else:
                 # outer closing mark
                 if cjk:
-                    replace = [u"\u300D"]
+                    replace = ["\u300D"]
                 else:
                     replace = ["\\begin_inset Formula $\\rfloor$", "\\end_inset"]
 
@@ -737,13 +736,13 @@ def revert_cjkquotes(document):
             if val[1] == "l":
                 # inner opening mark
                 if cjk:
-                    replace = [u"\u3008"]
+                    replace = ["\u3008"]
                 else:
                     replace = ["\\begin_inset Formula $\\langle$", "\\end_inset"]
             else:
                 # inner closing mark
                 if cjk:
-                    replace = [u"\u3009"]
+                    replace = ["\u3009"]
                 else:
                     replace = ["\\begin_inset Formula $\\rangle$", "\\end_inset"]
         else:
@@ -751,13 +750,13 @@ def revert_cjkquotes(document):
             if val[1] == "l":
                 # outer opening mark
                 if cjk:
-                    replace = [u"\u300A"]
+                    replace = ["\u300A"]
                 else:
                     replace = ["\\begin_inset Formula $\\langle\\kern -2.5pt\\langle$", "\\end_inset"]
             else:
                 # outer closing mark
                 if cjk:
-                    replace = [u"\u300B"]
+                    replace = ["\u300B"]
                 else:
                     replace = ["\\begin_inset Formula $\\rangle\\kern -2.5pt\\rangle$", "\\end_inset"]
 
@@ -1591,7 +1590,7 @@ def convert_dashligatures(document):
         # or "\threehyphens\n" as interim representation for -- an ---.)
         lines = document.body
         has_literal_dashes = has_ligature_dashes = False
-        dash_pattern = re.compile(u".*[\u2013\u2014]|\\twohyphens|\\threehyphens")
+        dash_pattern = re.compile(".*[\u2013\u2014]|\\twohyphens|\\threehyphens")
         i = j = 0
         while True:
             # skip lines without dashes:
@@ -1627,12 +1626,12 @@ def convert_dashligatures(document):
                 continue
 
             # literal dash followed by a non-white-character or no-break space:
-            if re.search(u"[\u2013\u2014]([\\S\u00A0\u202F\u2060]|$)",
+            if re.search("[\u2013\u2014]([\\S\u00A0\u202F\u2060]|$)",
                          line, flags=re.UNICODE):
                 has_literal_dashes = True
             # ligature dash followed by non-white-char or no-break space on next line:
             if (re.search(r"(\\twohyphens|\\threehyphens)", line) and
-                re.match(u"[\\S\u00A0\u202F\u2060]", lines[i+1], flags=re.UNICODE)):
+                re.match("[\\S\u00A0\u202F\u2060]", lines[i+1], flags=re.UNICODE)):
                 has_ligature_dashes = True
             if has_literal_dashes and has_ligature_dashes:
                 # TODO: insert a warning note in the document?
@@ -1661,7 +1660,7 @@ def revert_dashligatures(document):
     if use_dash_ligatures != "true" or document.backend != "latex":
         return
     i = 0
-    dash_pattern = re.compile(u".*[\u2013\u2014]")
+    dash_pattern = re.compile(".*[\u2013\u2014]")
     while True:
         # skip lines without dashes:
         i = find_re(document.body, dash_pattern, i+1)
@@ -1692,8 +1691,8 @@ def revert_dashligatures(document):
             i = end
             continue
         # TODO: skip replacement in typewriter fonts
-        line = line.replace(u'\u2013', '\\twohyphens\n')
-        line = line.replace(u'\u2014', '\\threehyphens\n')
+        line = line.replace('\u2013', '\\twohyphens\n')
+        line = line.replace('\u2014', '\\threehyphens\n')
         document.body[i:i+1] = line.split('\n')
     # redefine the dash LICRs to use ligature dashes:
     add_to_preamble(document, [r'\renewcommand{\textendash}{--}',
