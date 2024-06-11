@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-06-03 08:17+0200\n"
-"PO-Revision-Date: 2024-06-03 07:15+0000\n"
+"POT-Creation-Date: 2024-06-11 13:14+0200\n"
+"PO-Revision-Date: 2024-06-11 11:25+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -31282,6 +31282,10 @@ msgstr "Neplatný argument (musí byť nie-negatívne číslo)!"
 msgid "Text properties applied: %1$s"
 msgstr "Vlastnosti textu aplikované: %1$s"
 
+#: src/Text.cpp:5991
+msgid "Invalid argument of textstyle-update"
+msgstr "Neplatný argument aktualizácie štýlu textu 'master-buffer-forall'"
+
 #: src/Text.cpp:6129
 msgid "Path to thesaurus directory not set!"
 msgstr "Cesta ku slovníkom tezauru nie je nastavená!"
@@ -35909,6 +35913,30 @@ msgstr "Kartu &skryť"
 #: src/frontends/qt/GuiWorkArea.cpp:2153
 msgid "&Close Tab"
 msgstr "Kartu &zavrieť"
+
+#: src/frontends/qt/GuiWorkArea.cpp:2330
+msgid "Close &Other Tabs"
+msgstr "Zatvoriť všetky &iné karty"
+
+#: src/frontends/qt/GuiWorkArea.cpp:2332
+msgid "Close Tabs to the &Right"
+msgstr "Zatvoriť karty v&pravo"
+
+#: src/frontends/qt/GuiWorkArea.cpp:2334
+msgid "Close Tabs to the &Left"
+msgstr "Zatvoriť karty v&ľavo"
+
+#: src/frontends/qt/GuiWorkArea.cpp:2339
+msgid "Move Tab to &Start"
+msgstr "Presunúť kartu na z&ačiatok"
+
+#: src/frontends/qt/GuiWorkArea.cpp:2341
+msgid "Move Tab to &End"
+msgstr "Presunúť kartu na &koniec"
+
+#: src/frontends/qt/GuiWorkArea.cpp:2346
+msgid "Open Enclosing &Folder"
+msgstr "&Otvoriť uzatvárajúci adresár"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2193
 msgid "<b>The file %1 changed on disk.</b>"
