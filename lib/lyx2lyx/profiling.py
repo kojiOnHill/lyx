@@ -21,9 +21,9 @@ import imp
 lyx2lyx = imp.load_source("lyx2lyx", "lyx2lyx", open("lyx2lyx"))
 
 # Profiler used in the study
-import hotshot, hotshot.stats
+import hotshot
+import hotshot.stats
 
-import sys
 import os
 
 """

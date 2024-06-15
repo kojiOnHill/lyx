@@ -90,7 +90,6 @@ revert_language(document, lyxname, babelname="", polyglossianame=""):
 """
 
 import re
-import sys
 from parser_tools import (
     find_token,
     find_end_of_inset,
@@ -108,7 +107,7 @@ from unicode_symbols import unicode_reps
 def add_to_preamble(document, text):
     "Add text to the preamble if it is not already there."
 
-    if not type(text) is list:
+    if type(text) is not list:
         # split on \n just in case
         # it'll give us the one element list we want
         # if there's no \n, too
@@ -139,7 +138,7 @@ def add_to_preamble(document, text):
 def insert_to_preamble(document, text, index=0):
     """Insert text to the preamble at a given line"""
 
-    if not type(text) is list:
+    if type(text) is not list:
         # split on \n just in case
         # it'll give us the one element list we want
         # if there's no \n, too
@@ -460,7 +459,7 @@ def length_in_bp(length):
         return 0
     value = m.group(1)
     unit = m.group(2)
-    if not unit in scales.keys():
+    if unit not in scales.keys():
         document.warning("Unknown length unit: " + unit + ".")
         return value
     return "%g" % (float(value) * scales[unit])
@@ -736,7 +735,7 @@ def revert_language(document, lyxname, babelname="", polyglossianame=""):
         # \end_layout
 
         # Ensure correct handling of list labels
-        if parent[0] in ["Labeling", "Description"] and not " " in "\n".join(
+        if parent[0] in ["Labeling", "Description"] and " " not in "\n".join(
             document.body[parent[3] : i]
         ):
             # line `i+1` is first line of a list item,

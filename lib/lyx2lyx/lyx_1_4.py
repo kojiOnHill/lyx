@@ -35,7 +35,6 @@ from parser_tools import (
     find_re,
     find_tokens_backwards,
 )
-from sys import stdin
 
 from lyx_0_12 import update_latexaccents
 

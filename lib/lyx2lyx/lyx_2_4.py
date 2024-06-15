@@ -144,10 +144,10 @@ class fontmapping:
     def getfontname(self, pkg, options):
         options.sort()
         pkgkey = createkey(pkg, options)
-        if not pkgkey in self.pkg2fontmap:
+        if pkgkey not in self.pkg2fontmap:
             return None
         fontname = self.pkg2fontmap[pkgkey]
-        if not fontname in self.font2pkgmap:
+        if fontname not in self.font2pkgmap:
             document.error("Something is wrong in pkgname+options <-> fontname mapping")
             return None
         if pkgkey == self.font2pkgmap[fontname].pkgkey:
@@ -359,7 +359,7 @@ def convert_fonts(document, fm, osfoption="osf"):
             del options[o]
             continue
 
-        if not pkg in fm.pkginmap:
+        if pkg not in fm.pkginmap:
             continue
         # determine fontname
         fn = None
@@ -456,11 +456,11 @@ def revert_fonts(document, fm, fontmap, OnlyWithXOpts=False, WithXOpts=False):
         val = get_value(document.header, ft, i)
         words = val.split(" ")  # ! splits also values like '"DejaVu Sans"'
         font = words[0].strip('"')  # TeX font name has no whitespace
-        if not font in fm.font2pkgmap:
+        if font not in fm.font2pkgmap:
             continue
         fontinfo = fm.font2pkgmap[font]
         val = fontinfo.package
-        if not val in fontmap:
+        if val not in fontmap:
             fontmap[val] = []
         x = -1
         if OnlyWithXOpts or WithXOpts:
@@ -795,7 +795,7 @@ def revert_xcharter(document):
 def revert_lscape(document):
     """Reverts the landscape environment (Landscape module) to TeX-code"""
 
-    if not "landscape" in document.get_module_list():
+    if "landscape" not in document.get_module_list():
         return
 
     i = 0
@@ -1171,7 +1171,7 @@ def revert_bibencoding(document):
             h = find_token(document.header, "\\biblio_options", 0)
             if h != -1:
                 biblio_options = get_value(document.header, "\\biblio_options", h)
-                if not "bibencoding" in biblio_options:
+                if "bibencoding" not in biblio_options:
                     document.header[h] += ",bibencoding=%s" % encodings[encoding]
             else:
                 bs = find_token(document.header, "\\biblatex_bibstyle", 0)
@@ -2666,7 +2666,7 @@ def convert_linggloss(document):
 
 def revert_linggloss(document):
     "Revert to old ling gloss definitions"
-    if not "linguistics" in document.get_module_list():
+    if "linguistics" not in document.get_module_list():
         return
     document.del_local_layout(gloss_inset_def)
     document.del_local_layout(glosss_inset_def)
@@ -2806,7 +2806,7 @@ def revert_linggloss(document):
 def revert_subexarg(document):
     "Revert linguistic subexamples with argument to ERT"
 
-    if not "linguistics" in document.get_module_list():
+    if "linguistics" not in document.get_module_list():
         return
 
     cov_req = False
@@ -2886,7 +2886,7 @@ def revert_subexarg(document):
 def revert_drs(document):
     "Revert DRS insets (linguistics) to ERT"
 
-    if not "linguistics" in document.get_module_list():
+    if "linguistics" not in document.get_module_list():
         return
 
     cov_req = False
@@ -3678,7 +3678,7 @@ def revert_texfontopts(document):
         # We need to use this regex since split() does not handle quote protection
         romanfont = re.findall(r'[^"\s]\S*|".+?"', document.header[i])
         roman = romanfont[1].strip('"')
-        if not roman in rmfonts:
+        if roman not in rmfonts:
             return
         romanfont[1] = '"default"'
         document.header[i] = " ".join(romanfont)
@@ -4047,7 +4047,7 @@ def revert_dupqualicites(document):
     else:
         engine = get_value(document.header, "\\cite_engine", i)
 
-    if not engine in ["biblatex", "biblatex-natbib"]:
+    if engine not in ["biblatex", "biblatex-natbib"]:
         return
 
     # Citation insets that support qualified lists, with their LaTeX code
@@ -4082,7 +4082,7 @@ def revert_dupqualicites(document):
             continue
 
         cmd = get_value(document.body, "LatexCommand", k)
-        if not cmd in list(ql_citations.keys()):
+        if cmd not in list(ql_citations.keys()):
             i = j + 1
             continue
 
@@ -4256,8 +4256,8 @@ def revert_theendnotes(document):
     "Reverts native support of \\theendnotes to TeX-code"
 
     if (
-        not "endnotes" in document.get_module_list()
-        and not "foottoend" in document.get_module_list()
+        "endnotes" not in document.get_module_list()
+        and "foottoend" not in document.get_module_list()
     ):
         return
 
@@ -4278,8 +4278,8 @@ def revert_enotez(document):
     "Reverts native support of enotez package to TeX-code"
 
     if (
-        not "enotez" in document.get_module_list()
-        and not "foottoenotez" in document.get_module_list()
+        "enotez" not in document.get_module_list()
+        and "foottoenotez" not in document.get_module_list()
     ):
         return
 
@@ -4490,7 +4490,7 @@ def convert_totalheight(document):
 def convert_changebars(document):
     "Converts the changebars module to native solution"
 
-    if not "changebars" in document.get_module_list():
+    if "changebars" not in document.get_module_list():
         return
 
     i = find_token(document.header, "\\output_changes", 0)
@@ -6085,7 +6085,7 @@ def convert_cov_options(document):
 def revert_linggloss2(document):
     "Revert gloss with new args to ERT"
 
-    if not "linguistics" in document.get_module_list():
+    if "linguistics" not in document.get_module_list():
         return
 
     cov_req = False
@@ -6304,7 +6304,7 @@ def revert_linggloss2(document):
 def revert_exarg2(document):
     "Revert linguistic examples with new arguments to ERT"
 
-    if not "linguistics" in document.get_module_list():
+    if "linguistics" not in document.get_module_list():
         return
 
     cov_req = False

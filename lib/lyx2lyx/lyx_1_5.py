@@ -20,7 +20,8 @@
 
 import re
 import unicodedata
-import sys, os
+import sys
+import os
 
 from parser_tools import (
     find_re,
@@ -128,7 +129,7 @@ def convert_font_settings(document):
     if font_scheme == "":
         document.warning("Malformed LyX document: Empty `\\fontscheme'.")
         font_scheme = "default"
-    if not font_scheme in list(roman_fonts.keys()):
+    if font_scheme not in list(roman_fonts.keys()):
         document.warning("Malformed LyX document: Unknown `\\fontscheme' `%s'." % font_scheme)
         font_scheme = "default"
     document.header[i : i + 1] = [
@@ -1902,7 +1903,7 @@ def revert_listings_inset(document):
         if i == -1:
             break
         else:
-            if not "\\usepackage{listings}" in document.preamble:
+            if "\\usepackage{listings}" not in document.preamble:
                 document.preamble.append("\\usepackage{listings}")
         j = find_end_of_inset(document.body, i + 1)
         if j == -1:
@@ -2040,7 +2041,7 @@ def revert_include_listings(document):
         if i == -1:
             break
         else:
-            if not "\\usepackage{listings}" in document.preamble:
+            if "\\usepackage{listings}" not in document.preamble:
                 document.preamble.append("\\usepackage{listings}")
         j = find_end_of_inset(document.body, i + 1)
         if j == -1:

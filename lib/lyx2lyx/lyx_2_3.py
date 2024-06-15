@@ -26,14 +26,12 @@ from parser_tools import (
     del_value,
     del_complete_lines,
     find_complete_lines,
-    find_end_of,
     find_end_of_layout,
     find_end_of_inset,
     find_re,
     find_substring,
     find_token,
     find_token_backwards,
-    find_across_lines,
     get_containing_inset,
     get_containing_layout,
     get_bool_value,
@@ -154,7 +152,7 @@ def revert_ibranches(document):
             continue
         if inverted:
             branch = document.body[i][20:].strip()
-            if not branch in antibranches:
+            if branch not in antibranches:
                 antibranch = "Anti-" + branch
                 while antibranch in antibranches:
                     antibranch = "x" + antibranch
@@ -1425,7 +1423,7 @@ def convert_literalparam(document):
         if i == -1:
             break
         inset = document.body[i][pos:].strip()
-        if not inset in command_insets:
+        if inset not in command_insets:
             i += 1
             continue
         j = find_end_of_inset(document.body, i)
