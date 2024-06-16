@@ -1579,9 +1579,9 @@ void GuiView::on_currentWorkAreaChanged(GuiWorkArea * wa)
 	connectBufferView(wa->bufferView());
 	connectBuffer(wa->bufferView().buffer());
 	d.current_work_area_ = wa;
-    // The below specifies that the input method item transformation will
-    // not reset
-    wa->setFocus(Qt::OtherFocusReason);
+	// The below specifies that the input method item transformation will
+	// not reset
+	wa->setFocus(Qt::OtherFocusReason);
 	QObject::connect(wa, SIGNAL(titleChanged(GuiWorkArea *)),
 	                 this, SLOT(updateWindowTitle(GuiWorkArea *)));
 	QObject::connect(wa, SIGNAL(busy(bool)),
