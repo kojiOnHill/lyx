@@ -1219,8 +1219,8 @@ void GuiView::setFocus()
 
 void GuiView::setFocus(Qt::FocusReason reason)
 {
-    LYXERR(Debug::DEBUG, "GuiView::setFocus()" << this << " reason = " << reason);
-    QMainWindow::setFocus(reason);
+	LYXERR(Debug::DEBUG, "GuiView::setFocus()" << this << " reason = " << reason);
+	QMainWindow::setFocus(reason);
 }
 
 
@@ -4864,7 +4864,7 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 
 		case LFUN_DIALOG_HIDE: {
 			guiApp->hideDialogs(to_utf8(cmd.argument()), nullptr);
-            setFocus(Qt::PopupFocusReason);
+			setFocus(Qt::PopupFocusReason);
 			break;
 		}
 
