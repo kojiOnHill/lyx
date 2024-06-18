@@ -19,9 +19,6 @@
 
 import re
 
-# Uncomment only what you need to import, please.
-
-from parser_tools import find_end_of_inset, find_token, find_re, get_value
 #    count_pars_in_inset, del_complete_lines, del_token, find_end_of,
 #    find_end_of_layout,
 #    find_token_backwards, find_token_exact, get_bool_value,
@@ -32,8 +29,11 @@ from parser_tools import find_end_of_inset, find_token, find_re, get_value
 #    find_re, find_substring,
 #    set_bool_value
 #    find_tokens, check_token
-
 from lyx2lyx_tools import add_to_preamble, latex_length
+
+# Uncomment only what you need to import, please.
+from parser_tools import find_end_of_inset, find_re, find_token, get_value
+
 #  put_cmd_in_ert, insert_to_preamble, lyx2latex,
 #  revert_language, revert_flex_inset, str2bool,
 #  revert_font_attrs,
