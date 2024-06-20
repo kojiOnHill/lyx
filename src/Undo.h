@@ -140,12 +140,18 @@ class UndoGroupHelper {
 public:
 	// Begin a new undo group for buffer \c buf.
 	UndoGroupHelper(Buffer * buf);
+	// Begin an undo group for the buffer of \c cur with the the
+	// `before' cursor set to \c cur.
+	UndoGroupHelper(CursorData & cur);
 	// End all active undo groups.
 	~UndoGroupHelper();
 
 	// Begin if needed an undo group for buffer \c buf.
 	void resetBuffer(Buffer * buf);
 
+	// Begin if needed an undo group for the buffer of \c cur with the
+	// the `before' cursor set to \c cur.
+	void resetBuffer(CursorData & cur);
 private:
 	class Impl;
 	Impl * const d;

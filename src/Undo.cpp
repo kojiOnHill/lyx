@@ -704,6 +704,12 @@ UndoGroupHelper::UndoGroupHelper(Buffer * buf) : d(new UndoGroupHelper::Impl)
 }
 
 
+UndoGroupHelper::UndoGroupHelper(CursorData & cur) : d(new UndoGroupHelper::Impl)
+{
+	resetBuffer(cur);
+}
+
+
 UndoGroupHelper::~UndoGroupHelper()
 {
 	for (Buffer * buf : d->buffers_)
@@ -712,11 +718,21 @@ UndoGroupHelper::~UndoGroupHelper()
 	delete d;
 }
 
+
 void UndoGroupHelper::resetBuffer(Buffer * buf)
 {
 	if (buf && d->buffers_.count(buf) == 0) {
 		d->buffers_.insert(buf);
 		buf->undo().beginUndoGroup();
+	}
+}
+
+
+void UndoGroupHelper::resetBuffer(CursorData & cur)
+{
+	if (!cur.empty() && d->buffers_.count(cur.buffer()) == 0) {
+		d->buffers_.insert(cur.buffer());
+		cur.buffer()->undo().beginUndoGroup(cur);
 	}
 }
 
