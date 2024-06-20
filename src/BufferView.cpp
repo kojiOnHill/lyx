@@ -1686,6 +1686,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		break;
 
 	case LFUN_ALL_CHANGES_ACCEPT: {
+		UndoGroupHelper helper(cur);
 		// select complete document
 		cur.reset();
 		cur.selHandle(true);
@@ -1705,6 +1706,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 	}
 
 	case LFUN_ALL_CHANGES_REJECT: {
+		UndoGroupHelper helper(cur);
 		// select complete document
 		cur.reset();
 		cur.selHandle(true);
