@@ -647,7 +647,7 @@ void CursorData::recordUndoInset(Inset const * inset) const
 
 void CursorData::recordUndoFullBuffer() const
 {
-	buffer()->undo().recordUndoFullBuffer(*this);
+	buffer()->undo().recordUndoFullBuffer();
 }
 
 

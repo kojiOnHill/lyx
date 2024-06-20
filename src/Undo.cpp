@@ -672,16 +672,23 @@ void Undo::recordUndoBufferParams(CursorData const & cur)
 }
 
 
-void Undo::recordUndoFullBuffer(CursorData const & cur)
+void Undo::recordUndoBufferParams()
+{
+	d->recordUndoBufferParams(CursorData());
+}
+
+
+void Undo::recordUndoFullBuffer()
 {
 	// This one may happen outside of the main undo group, so we
 	// put it in its own subgroup to avoid complaints.
 	beginUndoGroup();
 	d->recordUndo(ATOMIC_UNDO, doc_iterator_begin(&d->buffer_),
-		      0, d->buffer_.paragraphs().size() - 1, cur);
-	d->recordUndoBufferParams(cur);
+	              0, d->buffer_.paragraphs().size() - 1, CursorData());
+	d->recordUndoBufferParams(CursorData());
 	endUndoGroup();
 }
+
 
 /// UndoGroupHelper class stuff
 

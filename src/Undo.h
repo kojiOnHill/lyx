@@ -116,11 +116,13 @@ public:
 	/// prepare undo for the inset containing the cursor
 	void recordUndoInset(CursorData const & cur, Inset const * inset);
 
-	/// Convenience: record undo for buffer parameters
-	void recordUndoBufferParams(CursorData const & cur);
+	/// Prepare undo for the whole buffer (but not the buffer parameters)
+	void recordUndoFullBuffer();
 
-	/// Convenience: prepare undo for the whole buffer
-	void recordUndoFullBuffer(CursorData const & cur);
+	/// Record undo for buffer parameters, with or without pre-undo
+	/// cursor
+	void recordUndoBufferParams(CursorData const & cur);
+	void recordUndoBufferParams();
 
 private:
 	struct Private;
