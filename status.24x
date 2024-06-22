@@ -67,6 +67,8 @@ What's new
 
 - Fix some cases where beamer breaks with the new cprotect mechanism.
 
+- Fix case where new cprotect mechanism breaks with caption.
+
 - Update acknowledgments handling in aastex63 layout 
   (cf. https://journals.aas.org/aastexguide/#acknowledgments)
 
@@ -75,6 +77,7 @@ What's new
 - Make buffer-reset-export LFUN work properly.
 
 - Remove redundant code from preamble of double column Hebrew documents (bug 12919)
+
 
 * USER INTERFACE
 
@@ -102,7 +105,6 @@ What's new
 
 - Put new citation after selected item rather than at end of list (bug 12940).
 
-
 - fix overflow of appendix red frame in document-bottom grey area.
 
 
@@ -120,6 +122,7 @@ What's new
 - Re-allow the use of quoted argument to PackageOptions layout tag.
 
 - Fix crash when passing unknown value to textstyle-update
+
 
 * DOCUMENTATION AND LOCALIZATION
 
