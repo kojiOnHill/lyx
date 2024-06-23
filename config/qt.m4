@@ -435,7 +435,6 @@ qtHaveModule(concurrent)	{QT += concurrent} else {MISSING += concurrent}
 qtHaveModule(gui)		{QT += gui} else {MISSING += gui}
 qtHaveModule(gui-private)	{QT += gui-private} else {MISSING += gui-private}
 qtHaveModule(svg)		{QT += svg} else {MISSING += svg}
-qtHaveModule(svgwidgets)	{QT += svgwidgets} else {MISSING += svgwidgets}
 qtHaveModule(xml)       	{QT += xml} else {MISSING += xml}
 qtHaveModule(widgets)		{QT += widgets} else {MISSING += widgets}
 EOF2
