@@ -1950,12 +1950,15 @@ void TabWorkArea::on_currentTabChanged(int i)
 	if (i == -1)
 		return;
 	GuiWorkArea * wa = workArea(i);
+	// is it really a different work area?
+	bool real_change = wa == currentWorkArea();
 	LASSERT(wa, return);
 	wa->setUpdatesEnabled(true);
 	wa->scheduleRedraw(true);
 	wa->setFocus();
 	///
-	currentWorkAreaChanged(wa);
+	if (real_change)
+		currentWorkAreaChanged(wa);
 
 	LYXERR(Debug::GUI, "currentTabChanged " << i
 		<< " File: " << wa->bufferView().buffer().absFileName());
