@@ -1950,14 +1950,13 @@ void TabWorkArea::on_currentTabChanged(int i)
 	if (i == -1)
 		return;
 	GuiWorkArea * wa = workArea(i);
-	// is it really a different work area?
-	bool real_change = wa == currentWorkArea();
 	LASSERT(wa, return);
 	wa->setUpdatesEnabled(true);
 	wa->scheduleRedraw(true);
 	wa->setFocus();
-	///
-	if (real_change)
+	// if the work area did change,
+	// inform the view and dialogs
+	if (wa == currentWorkArea())
 		currentWorkAreaChanged(wa);
 
 	LYXERR(Debug::GUI, "currentTabChanged " << i
