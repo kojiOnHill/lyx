@@ -1926,6 +1926,12 @@ GuiWorkArea const * GuiView::currentWorkArea() const
 }
 
 
+TabWorkArea * GuiView::currentTabWorkArea() const
+{
+	return d.currentTabWorkArea();
+}
+
+
 GuiWorkArea * GuiView::currentWorkArea()
 {
 	return d.current_work_area_;
