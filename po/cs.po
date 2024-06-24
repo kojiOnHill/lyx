@@ -20338,7 +20338,6 @@ msgid "Comment|m"
 msgstr "Komentář|K"
 
 #: lib/ui/stdcontext.inc:237 lib/ui/stdmenus.inc:548
-#, fuzzy
 msgid "Greyed Out|y"
 msgstr "Zašedlé|Z"
 
@@ -20593,7 +20592,6 @@ msgid "End Editing Externally"
 msgstr "Konec externí editace"
 
 #: lib/ui/stdcontext.inc:381
-#, fuzzy
 msgid "Split Inset|i"
 msgstr "Rozdělit vložku|v"
 
@@ -20606,7 +20604,6 @@ msgid "Forward Search|F"
 msgstr "Dopředné hledání|h"
 
 #: lib/ui/stdcontext.inc:386 lib/ui/stdmenus.inc:120
-#, fuzzy
 msgid "Move Paragraph Up|h"
 msgstr "Přesunout odstavec nahoru|r"
 
@@ -20647,7 +20644,6 @@ msgid "Text Properties|x"
 msgstr "Vlastnosti textu|x"
 
 #: lib/ui/stdcontext.inc:402
-#, fuzzy
 msgid "Custom Text Styles|y"
 msgstr "Vlastní styl textu|t"
 
@@ -20913,7 +20909,6 @@ msgid "Custom Page Formatting...|u"
 msgstr "Vlastní formátování stránky...|y"
 
 #: lib/ui/stdcontext.inc:651
-#, fuzzy
 msgid "Insert Subentry|n"
 msgstr "Vložit podheslo|p"
 
@@ -20922,7 +20917,6 @@ msgid "Insert Sortkey|k"
 msgstr "Vložit klíč ke třídění|t"
 
 #: lib/ui/stdcontext.inc:653
-#, fuzzy
 msgid "Insert See Reference|c"
 msgstr "Vložit Viz reference|V"
 
@@ -21020,11 +21014,11 @@ msgstr "Počet znaků (bez mezer)|b"
 
 #: lib/ui/stdcontext.inc:777
 msgid "Start Statistics Relative to Current Count|R"
-msgstr ""
+msgstr "Začít počítat relativně vůči současnému stavu|r"
 
 #: lib/ui/stdcontext.inc:778
 msgid "Reset to Absolute Statistics Count|A"
-msgstr ""
+msgstr "Začít počítat v absolutní hodnotě|a"
 
 #: lib/ui/stdmenus.inc:30
 msgid "File|F"
@@ -21732,14 +21726,12 @@ msgid "End of Sentence|E"
 msgstr "Konec věty|K"
 
 #: lib/ui/stdmenus.inc:418
-#, fuzzy
 msgid "Plain Double Quotation Mark|Q"
-msgstr "Uvozovky|U"
+msgstr "Dvojité uvozovky|D"
 
 #: lib/ui/stdmenus.inc:419
-#, fuzzy
 msgid "Plain Single Quotation Mark|S"
-msgstr "Uvozovky|U"
+msgstr "Jednoduché uvozovky|U"
 
 #: lib/ui/stdmenus.inc:420
 msgid "Inner Quotation Mark|n"
@@ -31253,9 +31245,8 @@ msgid "Text properties applied: %1$s"
 msgstr "Použité vlastnosti textu: %1$s"
 
 #: src/Text.cpp:5991
-#, fuzzy
 msgid "Invalid argument of textstyle-update"
-msgstr "Chybný argument pro funkci master-buffer-forall"
+msgstr "Chybný argument pro funkci textstyle-update"
 
 #: src/Text.cpp:6148
 msgid "Path to thesaurus directory not set!"
@@ -31831,22 +31822,22 @@ msgid "Manuals"
 msgstr "Manuály"
 
 #: src/frontends/qt/FindAndReplace.cpp:301
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The end was reached while searching forward.\n"
 "Continue searching from the beginning? (Scope:%1$s)"
 msgstr ""
-"%1$s: bylo dosaženo konce dokumentu při vyhledávání.\n"
-"Pokračovat ve vyhledávání od počátku dokumentu?"
+"Bylo dosaženo konce dokumentu při vyhledávání.\n"
+"Pokračovat ve vyhledávání od počátku dokumentu? (Rozsah:%1$s)"
 
 #: src/frontends/qt/FindAndReplace.cpp:304
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The beginning was reached while searching backward.\n"
 "Continue searching from the end? (Scope:%1$s)"
 msgstr ""
-"%1$s: bylo dosaženo začátku dokumentu při zpětném vyhledávání.\n"
-"Pokračovat ve vyhledávání od konce dokumentu?"
+"Bylo dosaženo začátku dokumentu při zpětném vyhledávání.\n"
+"Pokračovat ve vyhledávání od konce dokumentu? (Rozsah:%1$s)"
 
 #: src/frontends/qt/FindAndReplace.cpp:327
 msgid "Advanced search in progress (press ESC to cancel) . . ."
@@ -35890,29 +35881,28 @@ msgid "&Close Tab"
 msgstr "&Zavřít panel"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2330
-#, fuzzy
 msgid "Close &Other Tabs"
-msgstr "&Zavřít panel"
+msgstr "Zavřít &ostatní panely"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2332
 msgid "Close Tabs to the &Right"
-msgstr ""
+msgstr "Zavřít panely na&pravo"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2334
 msgid "Close Tabs to the &Left"
-msgstr ""
+msgstr "Zavřít panely na&levo"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2339
 msgid "Move Tab to &Start"
-msgstr ""
+msgstr "Přesunout panel na z&ačátek"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2341
 msgid "Move Tab to &End"
-msgstr ""
+msgstr "Přesunout panel na &konec"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2346
 msgid "Open Enclosing &Folder"
-msgstr ""
+msgstr "Otevřít adresář &editovaného dokumentu"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2391
 msgid "<b>The file %1 changed on disk.</b>"
@@ -35957,22 +35947,18 @@ msgid "More Spelling Suggestions"
 msgstr "Více pravopisných návrhů"
 
 #: src/frontends/qt/Menus.cpp:889
-#, fuzzy
 msgid "Add to personal dictionary|r"
 msgstr "Přidat k vlastnímu slovníku|d"
 
 #: src/frontends/qt/Menus.cpp:891
-#, fuzzy
 msgid "Ignore this occurrence|o"
 msgstr "Ignorovat tento výskyt|e"
 
 #: src/frontends/qt/Menus.cpp:893
-#, fuzzy
 msgid "Ignore all for this session|t"
-msgstr "Ignorovat toto slovo po celý běh"
+msgstr "Ignorovat toto slovo po celý běh|b"
 
 #: src/frontends/qt/Menus.cpp:895
-#, fuzzy
 msgid "Ignore all in this document|u"
 msgstr "Ignorovat vždy pro tento dokument|I"
 
@@ -35985,9 +35971,8 @@ msgid "Remove from document dictionary|r"
 msgstr "Smazat ze slovníku dokumnetu|d"
 
 #: src/frontends/qt/Menus.cpp:940
-#, fuzzy
 msgid "Switch Language...|w"
-msgstr "Přepnout jazyk|k"
+msgstr "Přepnout jazyk...|k"
 
 #: src/frontends/qt/Menus.cpp:954
 msgid "Language|L"
