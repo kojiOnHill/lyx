@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR 2.4.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-06-24 22:55+0200\n"
+"POT-Creation-Date: 2024-06-23 12:19-0400\n"
 "PO-Revision-Date: 2024-06-24 17:25-0300\n"
 "Last-Translator: Georger Araújo <georger underscore br at yahoo dot com dot "
 "br>\n"
@@ -1653,8 +1653,8 @@ msgstr "Localizar &>"
 #: src/frontends/qt/FindAndReplace.cpp:721
 msgid "Replace and find next occurrence (Enter, backwards: Shift+Enter)"
 msgstr ""
-"Substituir e localizar próxima ocorrência (Enter, em sentido inverso: Shift"
-"+Enter)"
+"Substituir e localizar próxima ocorrência (Enter, em sentido inverso: "
+"Shift+Enter)"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:224
 #: src/frontends/qt/FindAndReplace.cpp:720
@@ -2332,8 +2332,8 @@ msgid ""
 "Link to the web or any other target with an \"authority\" component (i."
 "e., :// in the URI)"
 msgstr ""
-"Vincular à web ou a qualquer outro alvo com um componente \"autoridade"
-"\" (isto é, :// no URI)"
+"Vincular à web ou a qualquer outro alvo com um componente \"autoridade\" "
+"(isto é, :// no URI)"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:136
 msgid "&Web"
@@ -4893,8 +4893,8 @@ msgstr ""
 "expandidos com base na pasta de trabalho (PT). Para todos os caminho exceto "
 "o \"prefixo TEXINPUTS\" a PT é a pasta a partir da qual você inicia o LyX, e "
 "por isso pode mudar de uma sessão do LyX para outra. Para o caminho "
-"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \"."
-"\" (sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
+"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \".\" "
+"(sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
 
 #: src/frontends/qt/ui/PrefPathsUi.ui:36
 msgid "&PATH prefix:"
@@ -27745,6 +27745,22 @@ msgid "External Material"
 msgstr "Material Externo"
 
 #: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Itemizar Marcadores"
+
+#: lib/examples/Articles:0
+msgid "Minted File Listing"
+msgstr "Listagem de Arquivo Minted"
+
+#: lib/examples/Articles:0
+msgid "XY-Pic"
+msgstr "XY-Pic"
+
+#: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "Diagramas de Feynman"
+
+#: lib/examples/Articles:0
 msgid "XY-Figure"
 msgstr "Figura-XY"
 
@@ -27757,32 +27773,16 @@ msgid "Instant Preview"
 msgstr "Previsualização Instantânea"
 
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "XY-Pic"
-
-#: lib/examples/Articles:0
-msgid "Minted File Listing"
-msgstr "Listagem de Arquivo Minted"
-
-#: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Itemizar Marcadores"
-
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "Diagramas de Feynman"
-
-#: lib/examples/Articles:0
 msgid "Graphics and Insets"
 msgstr "Gráficos e Insets"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with CJKutf8)"
-msgstr "Misturando Japonês com outros Idiomas (com CJKutf8)"
-
-#: lib/examples/Articles:0
 msgid "Localization Test (for Developers)"
 msgstr "Teste de Localização (para Desenvolvedores)"
+
+#: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with CJKutf8)"
+msgstr "Misturando Japonês com outros Idiomas (com CJKutf8)"
 
 #: lib/examples/Articles:0
 msgid "Writing Armenian"
@@ -27797,16 +27797,16 @@ msgid "Language Support"
 msgstr "Suporte a Idiomas"
 
 #: lib/examples/Articles:0
-msgid "Serial Letter 3"
-msgstr "Carta Serial 3"
-
-#: lib/examples/Articles:0
 msgid "Serial Letter 1"
 msgstr "Carta Serial 1"
 
 #: lib/examples/Articles:0
 msgid "Serial Letter 2"
 msgstr "Carta Serial 2"
+
+#: lib/examples/Articles:0
+msgid "Serial Letter 3"
+msgstr "Carta Serial 3"
 
 #: lib/examples/Articles:0
 msgid "LilyPond Book"
@@ -27821,12 +27821,12 @@ msgid "Hazard and Precautionary Statements"
 msgstr "Declarações de Risco e Preventivas"
 
 #: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
-
-#: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr "Noweb Listerrors"
+
+#: lib/examples/Articles:0
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
 msgid "Modules"
@@ -27857,32 +27857,44 @@ msgid "Mathematical Monthly"
 msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Modelo Springers Global Journal (V. 3)"
+msgid "IEEE Transactions Journal"
+msgstr "IEEE Transactions Journal"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
 msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
-msgid "IEEE Transactions Journal"
-msgstr "IEEE Transactions Journal"
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Modelo Springers Global Journal (V. 3)"
 
 #: lib/examples/Articles:0
 msgid "Hebrew Article (KOMA-Script)"
 msgstr "Artigo em Hebraico (KOMA-Script)"
 
 #: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Arquivo Principal"
-
-#: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02 Preâmbulo"
 
 #: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Parte"
+
+#: lib/examples/Articles:0
 msgid "10 Glossary"
 msgstr "10 Glossário"
+
+#: lib/examples/Articles:0
+msgid "04 Acknowledgements"
+msgstr "04 Agradecimentos"
+
+#: lib/examples/Articles:0
+msgid "06 Acronym"
+msgstr "06 Acrônimo"
+
+#: lib/examples/Articles:0
+msgid "08 Author"
+msgstr "08 Autor"
 
 #: lib/examples/Articles:0
 msgid "09 Appendix"
@@ -27893,44 +27905,28 @@ msgid "11 References"
 msgstr "11 Referências"
 
 #: lib/examples/Articles:0
-msgid "04 Acknowledgements"
-msgstr "04 Agradecimentos"
-
-#: lib/examples/Articles:0
-msgid "08 Author"
-msgstr "08 Autor"
-
-#: lib/examples/Articles:0
-msgid "06 Acronym"
-msgstr "06 Acrônimo"
+msgid "05 Contributor List"
+msgstr "05 Lista de Colaboradores"
 
 #: lib/examples/Articles:0
 msgid "01 Dedication"
 msgstr "01 Dedicatória"
 
 #: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 Arquivo Principal"
+
+#: lib/examples/Articles:0
 msgid "03 Preface"
 msgstr "03 Prefácio"
 
 #: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Parte"
-
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Lista de Colaboradores"
-
-#: lib/examples/Articles:0
-msgid "09 Glossary"
-msgstr "09 Glossário"
+msgid "10 Solutions"
+msgstr "10 Soluções"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
 msgstr "06 Parte"
-
-#: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 Acrônimo"
 
 #: lib/examples/Articles:0
 msgid "07 Chapter"
@@ -27941,8 +27937,12 @@ msgid "08 Appendix"
 msgstr "08 Apêndice"
 
 #: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Soluções"
+msgid "05 Acronym"
+msgstr "05 Acrônimo"
+
+#: lib/examples/Articles:0
+msgid "09 Glossary"
+msgstr "09 Glossário"
 
 #: lib/examples/Articles:0
 msgid "Simple"
@@ -27953,16 +27953,16 @@ msgid "Colored"
 msgstr "Colorido"
 
 #: lib/examples/Articles:0
-msgid "Main File"
-msgstr "Arquivo Principal"
-
-#: lib/examples/Articles:0
 msgid "Chapter 1"
 msgstr "Capítulo 1"
 
 #: lib/examples/Articles:0
 msgid "Chapter 2"
 msgstr "Capítulo 2"
+
+#: lib/examples/Articles:0
+msgid "Main File"
+msgstr "Arquivo Principal"
 
 #: lib/examples/Articles:0
 msgid "PhD Thesis"
@@ -30003,8 +30003,8 @@ msgstr "Flex inset %1$s está indefinido após recarregar o layout `%2$s'."
 #: src/CutAndPaste.cpp:901
 #, c-format
 msgid ""
-"Flex inset %1$s is undefined because of conversion from `%2$s' layout to `"
-"%3$s'."
+"Flex inset %1$s is undefined because of conversion from `%2$s' layout to "
+"`%3$s'."
 msgstr ""
 "Flex inset %1$s está indefinido por causa da conversão do layout de `%2$s' "
 "para `%3$s'."
@@ -30304,6 +30304,44 @@ msgstr ""
 "Pacote LaTeX `%1$s' exigido pela fonte `%2$s'\n"
 "ausente. O LyX usará a fonte padrão em seu lugar."
 
+#: src/LaTeXPackages.cpp:89
+msgid "Invalid package list format!"
+msgstr "Formato de lista de pacotes inválido!"
+
+#: src/LaTeXPackages.cpp:90
+msgid ""
+"The format of your LaTeX packages list is wrong. Please file a bug report."
+msgstr ""
+"O formato da sua lista de pacotes LaTeX está errado. Por favor abra um "
+"relato de bug."
+
+#: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
+msgid "Outdated configuration script detected!"
+msgstr "Script de configuração desatualizado detectado!"
+
+#: src/LaTeXPackages.cpp:99
+msgid ""
+"We have detected an outdated script 'chkconfig.ltx' in your user directory.\n"
+"The script has been renamed to 'chkconfig.ltx.bak'.\n"
+"If you did not copy the script there by purpose, you can safely delete it."
+msgstr ""
+"Nós detectamos um script 'chkconfig.ltx' desatualizado no seu diretório de "
+"usuário.\n"
+"O script foi renomeado para 'chkconfig.ltx.bak'.\n"
+"Se você não copiou o script para lá de propósito, pode excluí-lo sem risco."
+
+#: src/LaTeXPackages.cpp:105
+#, c-format
+msgid ""
+"We have detected an outdated script 'chkconfig.ltx' in your user directory\n"
+"(%1$s).\n"
+"Please delete or update this file!"
+msgstr ""
+"Nós detectamos um script 'chkconfig.ltx' desatualizado no seu diretório de "
+"usuário\n"
+"(%1$s).\n"
+"Por favor exclua ou atualize esse arquivo!"
+
 #: src/LyX.cpp:136
 msgid "Could not read configuration file"
 msgstr "Não foi possível ler o arquivo de configuração"
@@ -30422,9 +30460,8 @@ msgstr ""
 "Sinal SIGSEGV capturado!\n"
 "Desculpe, você achou um erro no LyX, esperamos que você não tenha perdido "
 "nenhum dado.\n"
-"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda-"
-">Introdução' (Help->Introduction) e envie um relato de bug, se necessário. "
-"Obrigado!\n"
+"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda->Introdução' "
+"(Help->Introduction) e envie um relato de bug, se necessário. Obrigado!\n"
 "Até logo."
 
 #: src/LyX.cpp:723
@@ -31103,8 +31140,8 @@ msgid ""
 "This starts the lyxserver. The pipes get an additional extension \".in\" and "
 "\".out\". Only for advanced users."
 msgstr ""
-"Inicia o lyxserver. Os pipes recebem uma extensão adicional \".in\" e \".out"
-"\". Somente para usuários avançados."
+"Inicia o lyxserver. Os pipes recebem uma extensão adicional \".in\" e \"."
+"out\". Somente para usuários avançados."
 
 #: src/LyXRC.cpp:3448
 msgid "De-select if you don't want the startup banner."
@@ -38939,42 +38976,6 @@ msgstr ""
 msgid "Unknown user"
 msgstr "Usuário desconhecido"
 
-#~ msgid "Invalid package list format!"
-#~ msgstr "Formato de lista de pacotes inválido!"
-
-#~ msgid ""
-#~ "The format of your LaTeX packages list is wrong. Please file a bug report."
-#~ msgstr ""
-#~ "O formato da sua lista de pacotes LaTeX está errado. Por favor abra um "
-#~ "relato de bug."
-
-#~ msgid "Outdated configuration script detected!"
-#~ msgstr "Script de configuração desatualizado detectado!"
-
-#~ msgid ""
-#~ "We have detected an outdated script 'chkconfig.ltx' in your user "
-#~ "directory.\n"
-#~ "The script has been renamed to 'chkconfig.ltx.bak'.\n"
-#~ "If you did not copy the script there by purpose, you can safely delete it."
-#~ msgstr ""
-#~ "Nós detectamos um script 'chkconfig.ltx' desatualizado no seu diretório "
-#~ "de usuário.\n"
-#~ "O script foi renomeado para 'chkconfig.ltx.bak'.\n"
-#~ "Se você não copiou o script para lá de propósito, pode excluí-lo sem "
-#~ "risco."
-
-#, c-format
-#~ msgid ""
-#~ "We have detected an outdated script 'chkconfig.ltx' in your user "
-#~ "directory\n"
-#~ "(%1$s).\n"
-#~ "Please delete or update this file!"
-#~ msgstr ""
-#~ "Nós detectamos um script 'chkconfig.ltx' desatualizado no seu diretório "
-#~ "de usuário\n"
-#~ "(%1$s).\n"
-#~ "Por favor exclua ou atualize esse arquivo!"
-
 #~ msgid "Library directory"
 #~ msgstr "Pasta de biblioteca"
 
@@ -40246,8 +40247,8 @@ msgstr "Usuário desconhecido"
 #~ "sensitive option is checked)"
 #~ msgstr ""
 #~ "Ordenar etiquetas em ordem alfabética (sem diferenciar maiúsculas de "
-#~ "minúsculas, exceto quando a opção \"Diferenciar maiúsculas de minúsculas"
-#~ "\" estiver marcada)"
+#~ "minúsculas, exceto quando a opção \"Diferenciar maiúsculas de "
+#~ "minúsculas\" estiver marcada)"
 
 #~ msgid "&Sort"
 #~ msgstr "&Ordenar"
@@ -40628,8 +40629,8 @@ msgstr "Usuário desconhecido"
 
 #~ msgid "Extension of printer program output file. Usually \".ps\"."
 #~ msgstr ""
-#~ "Extensão do arquivo de saída do programa de impressão. Normalmente \".ps"
-#~ "\"."
+#~ "Extensão do arquivo de saída do programa de impressão. Normalmente \"."
+#~ "ps\"."
 
 #~ msgid "The option to print only odd pages."
 #~ msgstr "A opção para imprimir apenas páginas ímpares."
