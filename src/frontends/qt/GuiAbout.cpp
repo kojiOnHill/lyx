@@ -244,12 +244,6 @@ static QString dirUser()
 }
 
 
-static QString dirTemp()
-{
-	return toqstr(makeDisplayPath(package().temp_dir().absFileName()));
-}
-
-
 static QString version(bool const plain = false)
 {
 	QString loc_release_date;
@@ -327,12 +321,6 @@ void GuiAbout::on_showDirUserPB_clicked()
 }
 
 
-void GuiAbout::on_showDirTempPB_clicked()
-{
-	showDirectory(package().temp_dir());
-}
-
-
 void GuiAbout::on_versionCopyPB_clicked()
 {
 	qApp->clipboard()->setText(version(true));
@@ -362,8 +350,6 @@ GuiAbout::GuiAbout(GuiView & lv)
 	d->ui.iconSW->setFixedSize(iconsize, iconsize);
 	d->ui.dirLibraryLA->setText(dirLibrary());
 	d->ui.dirLibraryLA->adjustSize();
-	d->ui.dirTempLA->setText(dirTemp());
-	d->ui.dirTempLA->adjustSize();
 	d->ui.dirUserLA->setText(dirUser());
 	d->ui.dirUserLA->adjustSize();
 	d->ui.buildinfoTB->setText(buildinfo());
