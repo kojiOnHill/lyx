@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties false
-\origin /systemlyxdir/doc/ja/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % DO NOT ALTER THIS PREAMBLE!!!
@@ -235,24 +235,6 @@ literal "false"
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-本文書を修正する際には，
-変更追跡機能を使用してください．これによって，
-
-\end_layout
-
-\begin_layout Plain Layout
-\SpecialChar LyX
-翻訳者陣が変更点を認識しやすくなり，
-メンテナが最新の状態を維持することが容易になります．
-\end_layout
 
 \end_inset
 
@@ -29073,7 +29055,9 @@ $$AbsPath
 
 \end_inset
 
- 絶対ファイルパス
+ 絶対ファイルパス．\SpecialChar LyX
+でコンパイルする際には，
+これは一時ディレクトリ中のファイルへのパスです．
 \end_layout
 
 \begin_layout Description
@@ -29191,6 +29175,19 @@ $$FName
 
 のパス部分（\SpecialChar LyX
 文書への絶対パス名か相対パス名）
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+$$OrigAbsName
+\end_layout
+
+\end_inset
+
+ （一時ディレクトリではなく）元のディレクトリへの絶対パス付きファイル名
 \end_layout
 
 \begin_layout Description

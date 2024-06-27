@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties false
-\origin /systemlyxdir/doc/ja/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % DO NOT ALTER THIS PREAMBLE!!!
@@ -10958,12 +10958,14 @@ Space
 \end_layout
 
 \begin_layout Verbatim
+
 これは原文儘(verbatim)環境です．
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
+
 この下の2行は空白行です．
 \end_layout
 
@@ -10976,6 +10978,7 @@ Space
 \end_layout
 
 \begin_layout Verbatim
+
 右記の各文字を始め，
 ほぼすべての文字が使えます．例：
 "%&$§#~'`
@@ -11009,6 +11012,7 @@ Space
 \end_layout
 
 \begin_layout Verbatim*
+
 This is Verbatim*.
 \end_layout
 
@@ -47479,7 +47483,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Description
-通常の引用符 
+通常の二重引用符 
 \family sans
 \series bold
 文書\SpecialChar menuseparator
@@ -47503,15 +47507,16 @@ nolink "false"
 \end_layout
 
 \begin_layout Description
+通常の一重引用符 どのような引用形式が選択されているかに関わらず，
+引用符「'」を挿入する．
+\end_layout
+
+\begin_layout Description
 内側の引用符 
 \family sans
 \series bold
 文書\SpecialChar menuseparator
 設定
-\begin_inset space \thinspace{}
-\end_inset
-
-
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -47524,11 +47529,7 @@ nolink "false"
 \end_inset
 
 ダイアログで選択した様式で，
-引用符「
-\begin_inset Quotes ers
-\end_inset
-
-」を挿入する．
+内側の引用符（通常は一重引用符）を挿入する．
 \end_layout
 
 \begin_layout Description
@@ -61044,7 +61045,7 @@ bibname
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "../biblio/LyXDocs"
+bibfiles "../../../../コンピューター/LyX開発/doc/biblio/LyXDocs"
 options "alpha"
 encoding "default"
 
