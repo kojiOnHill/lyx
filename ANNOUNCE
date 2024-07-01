@@ -1,47 +1,152 @@
-Public release of LyX version 2.4.0
+Public release of LyX version 2.4.1
 ===================================
 
-We are proud to announce the release of the new LyX 2.4 series.
+We are proud to announce the release LyX 2.4.1, the first maintenance
+release in the 2.4.x series.
 
-After long 6 years of development the 2.4 series has a rich set
-of new features compared to the current stable series.
-An overview of the new features can be found here:
+We have fixed a number of bugs in this version. Most of these are minor, 
+but there was one crash when deleting rows or columns from a table that has
+been fixed. There have also been some improvements to tab management. See 
+the complete list of updates and improvements below for more.
 
-  https://wiki.lyx.org/LyX/NewInLyX24
-
-As this release ships with new features, we strongly recommend that packagers
-of LyX on various platforms and distributions read RELEASE-NOTES in order to
-get the new dependencies right.
-
-You can download LyX 2.4.0 from https://www.lyx.org/Download
-
-We hope you will enjoy the result!
-
-If a file from an earlier version of LyX is opened *and saved* with
-any version of 2.4.x, then the original file will automatically be
-backed up. The backup file will be found in the backup directory, if one
-is set under Tools> Preferences> Paths, or else in the same folder as
-the original file, if no backup directory is set. The filename of the
-backup file will be:
-    ORIGNAME-lyxformat-NUM.lyx~
-where NUM is the LyX format number of the original file. In the case of
-2.3.x file, this will be 544, but in the case of older files it will be
-different.
-
-The file RELEASE-NOTES also lists some known issues and problems compared
-to the current stable releases (LyX 2.3.x).
-
-As with any major release, this one comes with a lot of new features but
-also some bugs. If you think you have found a bug in LyX 2.4.0, either
-email the LyX developers' mailing list (lyx-devel at lists.lyx.org),
-or open a bug report at https://www.lyx.org/trac/wiki/BugTrackerHome .
-Please specify if the behavior you are reporting is different from behavior
-in a previous LyX version.
+You can download LyX 2.4.1 from https://www.lyx.org/Download.
 
 If you have trouble using LyX or have a question, consult the
 documentation that comes with LyX (under Help) and the LyX wiki, which you
 will find at https://wiki.lyx.org/. You can also send email to the LyX users'
-list (lyx-users at lists.lyx.org).
+list (lyx-users at lists.lyx.org). Bugs can be reported on our bug tracker
+(https://www.lyx.org/trac/) or by writing the developers' list (lyx-devel at
+lists.lyx.org).
 
 The LyX team.
 https://www.lyx.org
+
+This file describes what has been done in the preparation of LyX 2.4.1.
+All comments are welcome.
+
+
+What's new
+==========
+
+** Updates:
+***********
+
+* USER INTERFACE
+
+- Add plain single quote to menu (bug 13025).
+
+- In context menus, more items are now shown on top level.
+
+- Show full inset context-menu when clicking on text part of collapsible
+  (bug 10370).
+
+- Allow relative statistics values in statusbar, improve update times for
+  some UI and buffer operations.
+
+- The performance of LyX with large insets on slower computers has
+  been improved a lot (bug 12297).
+
+- Fix crash with variable column width tables.
+
+- Add bindings for 'paste, join lines'.
+
+- middle-button pasting (in Linux) now preserves middle-button pasting
+  (as does Edit > Paste since 2.4.0).
+
+
+* DOCUMENTATION AND LOCALIZATION
+
+- Clarify quote-insert LFUN.
+
+- Updates to Chinese (simplified), Czech, French, German, Hebrew, 
+  Brazilian Portuguese, Slovokian, and Ukranian translations.
+
+
+* BUILD/INSTALLATION
+
+- Fix cmake build with qt6 (macos), which did not include
+  "plugins".
+
+
+** Bug fixes:
+*************
+
+* DOCUMENT INPUT/OUTPUT
+
+- Set cursor font after pasting to PassThru (e.g., ERT) inset (bug 12592).
+
+- The g-brief and g-brief2 letter classes load babel internally. LyX now
+  is aware of that.
+
+- Fix some cases where beamer breaks with the new cprotect mechanism.
+
+- Fix case where new cprotect mechanism breaks with caption.
+
+- Update acknowledgments handling in aastex63 layout 
+  (cf. https://journals.aas.org/aastexguide/#acknowledgments)
+
+- Make textstyle-update LFUN work properly inside equations.
+
+- Make buffer-reset-export LFUN work properly.
+
+- Remove redundant code from preamble of double column Hebrew 
+  documents (bug 12919)
+
+
+* USER INTERFACE
+
+- Fix crash when deleting rows or columns from table.
+
+- Fix wrong position of conversion windows of the input method (bugs 11723,
+  13054).
+
+- Speed up mouse movement when there is no selection (part of bug
+  13050).
+
+- Fix incorrect scrolling when using outline to jump to a paragraph 
+  (bug 10425).
+
+- Fix preview inset with XeTeX, and with RTL languages in general.
+
+- Respect change tracking in dash conversion mechanism (bug 13062).
+
+- The outliner option "Only output items" now works properly (bug 12981).
+
+- Show values of cross-references in tooltips (bug 8856).
+
+- Toolbars are now locked by default for new profiles (bug 11796).
+
+- Allow "longest label" to be empty (bug 11934).
+
+- Put new citation after selected item rather than at end of list 
+  (bug 12940).
+
+- Fix overflow of appendix red frame in document-bottom grey area.
+
+
+* INTERNALS
+
+- Fix case where insets do not have proper information about current buffer
+  (bug 12682).
+
+- Handle deprecated Qt enum value.
+
+- Fix initialization of an internal value.
+
+- Fix "Unassigned buffer_" error with math references (bug 12947).
+
+- Re-allow the use of quoted argument to PackageOptions layout tag.
+
+- Fix crash when passing unknown value to textstyle-update
+
+
+* ADVANCED FIND AND REPLACE
+
+- Handle neg-spaces like normal space if searching without format.
+
+- No paragraph indentation in search and replace windows (bug 11555).
+
+
+* BUILD/INSTALLATION
+
+- Cmake build: Handle deprecated cmake versions.
