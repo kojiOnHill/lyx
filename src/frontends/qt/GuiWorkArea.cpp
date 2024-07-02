@@ -588,7 +588,7 @@ void GuiWorkArea::Private::updateScrollbar()
 void GuiWorkArea::scrollTo(int value)
 {
 	stopBlinkingCaret();
-	d->buffer_view_->scrollDocView(value, true);
+	d->buffer_view_->scrollDocView(value);
 
 	if (lyxrc.cursor_follows_scrollbar) {
 		d->buffer_view_->setCursorFromScrollbar();
@@ -961,9 +961,9 @@ void GuiWorkArea::generateSyntheticMouseEvent()
 	// Scroll
 	if (step <= 2 * wh) {
 		d->buffer_view_->scroll(up ? -step : step);
-		d->buffer_view_->updateMetrics();
+		d->buffer_view_->processUpdateFlags(Update::ForceDraw);
 	} else {
-		d->buffer_view_->scrollDocView(value + (up ? -step : step), false);
+		d->buffer_view_->scrollDocView(value + (up ? -step : step));
 	}
 
 	// In which paragraph do we have to set the cursor ?
