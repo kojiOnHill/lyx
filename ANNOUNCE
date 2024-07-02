@@ -73,7 +73,7 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- Set cursor font after pasting to PassThru (e.g., ERT) inset (bug 12592).
+-Do not check for diverging input encoding if the files use XeTeX/LuaTeX
 
 - The g-brief and g-brief2 letter classes load babel internally. LyX now
   is aware of that.
@@ -96,6 +96,8 @@ What's new
 * USER INTERFACE
 
 - Fix crash when deleting rows or columns from table.
+
+- Set cursor font after pasting to PassThru (e.g., ERT) inset (bug 12592).
 
 - Do not ask about unapplied changes if dialog has been closed.
 
