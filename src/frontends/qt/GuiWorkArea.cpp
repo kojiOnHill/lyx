@@ -1997,7 +1997,7 @@ bool TabWorkArea::closeTabsToRight()
 }
 
 
-bool TabWorkArea::openEnclosingFolder()
+bool TabWorkArea::openEnclosingDirectory()
 {
 
 	if (clicked_tab_ == -1)
@@ -2358,7 +2358,7 @@ void TabWorkArea::showContextMenu(const QPoint & pos)
 
 	popup.addSeparator();
 
-	popup.addAction(qt_("Open Enclosing &Folder"), this, SLOT(openEnclosingFolder()));
+	popup.addAction(qt_("Open Enclosing &Directory"), this, SLOT(openEnclosingDirectory()));
 
 	popup.exec(tabBar()->mapToGlobal(pos));
 
