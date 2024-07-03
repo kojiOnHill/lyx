@@ -379,6 +379,10 @@ AC_DEFUN([QT6_QMAKE_CONFIG],
 [
 	dnl Use first suitable qmake in PATH
 	AC_CHECK_PROGS([QT_QMAKE], [qmake-qt6 qmake6], [qmake], $PATH)
+	case ${host} in
+	*mingw*) ;;
+	*) QT_QMAKE="env LC_ALL=C.UTF-8 $QT_QMAKE" ;;
+	esac
 	AC_MSG_CHECKING([for Qt6])
 	qtver=`$QT_QMAKE -v | grep -o "Qt version ."`
 	if test "$qtver" = "Qt version 6"; then
