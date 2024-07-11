@@ -181,7 +181,7 @@ CiteFormat default
 	!nextfullcite {%next%[[%!sep% %bibentry%%!nextfullcite%]]}
 
 	# "Author et al." (if > 3 authors) or "??" (variant in parentheses)
-	!abbrvpciteauthor {%abbrvciteauthor%[[{%ifstyle:apa%[[%abbrvciteauthor&%]][[%abbrvciteauthor%]]}]][[??]]}
+	!abbrvpciteauthor {%abbrvciteauthor%[[{%ifstyle:apa,apa6%[[%abbrvciteauthor&%]][[%abbrvciteauthor%]]}]][[??]]}
 	# "Author et al." (if > 3 authors) or "??"
 	!abbrvciteauthor {%abbrvciteauthor%[[%abbrvciteauthor%]][[??]]}
 	# "Author et al." (always) or "??"
