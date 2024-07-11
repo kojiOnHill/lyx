@@ -180,6 +180,8 @@ CiteFormat default
 	# "...; NextKey..."
 	!nextfullcite {%next%[[%!sep% %bibentry%%!nextfullcite%]]}
 
+	# "Author et al." (if > 3 authors) or "??" (variant in parentheses)
+	!abbrvpciteauthor {%abbrvciteauthor%[[{%ifstyle:apa%[[%abbrvciteauthor&%]][[%abbrvciteauthor%]]}]][[??]]}
 	# "Author et al." (if > 3 authors) or "??"
 	!abbrvciteauthor {%abbrvciteauthor%[[%abbrvciteauthor%]][[??]]}
 	# "Author et al." (always) or "??"
@@ -240,14 +242,19 @@ CiteFormat authoryear
 	!open (
 	!sep ;
 	!close )
+	!aysep {%ifstyle:apa%[[,]]}
 
 	# "cf. Author et. al Year..."
-	!makecite %!ctextbefore%%!startlink%%!abbrvciteauthor% %!year%%!endlink%%!ctextafter%%!nextcite%
+	!makecite %!ctextbefore%%!startlink%%!abbrvciteauthor%%!aysep% %!year%%!endlink%%!ctextafter%%!nextcite%
+	# "cf. Author et. al Year..."
+	!makepcite %!ctextbefore%%!startlink%%!abbrvpciteauthor%%!aysep% %!year%%!endlink%%!ctextafter%%!nextpcite%
 	# Author et al. (cf. Year...
 	!maketextcite {%ifqualified%[[%!textbefore%]]}%!startlink%%!abbrvciteauthor%%!endlink% %!open%{%ifqualified%[[%!ctextbefore%]][[%!textbefore%]]}%!year%%!ctextafter%%!nexttextcite%
 
 	# "...; Nextauthor Year..."
 	!nextcite {%next%[[%!sep% %!makecite%]]}
+	# "...; Nextauthor Year..."
+	!nextpcite {%next%[[%!sep% %!makepcite%]]}
 	# "...); Nextauthor (Year..."
 	!nexttextcite {%next%[[%!close%%!smartsep%%!startlink%%!abbrvciteauthor%%!endlink% %!open%%!ctextbefore%%!year%%!ctextafter%%!nexttextcite%]]}
 
@@ -269,7 +276,7 @@ CiteFormat authoryear
 	# "cf. Author A (Year),[ and] Author B (Year, p. xx)"
 	citet %!maketextcite%%!textafter%%!close%
 	# "(cf. Author A Year; Author B Year, p. xx)"
-	citep %!open%%!textbefore%%!makecite%%!textafter%%!close%
+	citep %!open%%!textbefore%%!makepcite%%!textafter%%!close%
 	# This prints year or title, if year is missing
 	citeyear %!textbefore%%!startlink%%!shyeartitle%%!endlink%%!nextshyeartitle%%!textafter%
 	# "(cf. Year; Nextyear, p. xx)"
@@ -277,7 +284,7 @@ CiteFormat authoryear
 	# "Footnote: cf. Author A Year; Author B Year, p. xx."
 	footcite {%dialog%[[%_footnote%]][[%_foot%]]}: %!textbefore%%!makecite%%!textafter%.
 	# "Auto: (cf. Author A Year; Author B Year, p. xx)"
-	autocite {%dialog%[[%_autocite%]][[%_auto%]]}: %!open%%!textbefore%%!makecite%%!textafter%%!close%
+	autocite {%dialog%[[%_autocite%]][[%_auto%]]}: %!open%%!textbefore%%!makepcite%%!textafter%%!close%
 End
 
 CiteFormat numerical
