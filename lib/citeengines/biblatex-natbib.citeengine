@@ -33,7 +33,8 @@ MaxCiteNames 3
 # The syntax of the cite command definitions below is:
 # style@LyXName|alias*<!_stardesc!_stardesctooltip>[][]=latexcmd
 # 
-# * style:    (Optional) citestyle to which this command is specific.
+# * style:    A (comma-separated) list of citestyles to which
+#             this command is specific.
 # * LyXName:  The LyX name as output in the LyX file. For
 #             portability reasons, we try to use the same
 #             name for same-formatted commands in the
@@ -44,7 +45,7 @@ MaxCiteNames 3
 #             This is a bit like "ObsoletedBy" in the layouts.
 # * latexcmd: The actual LaTeX command that is output.
 #
-# Alias and latexcmd are optional. If no latexcmd is given, the
+# Style, alias and latexcmd are optional. If no latexcmd is given, the
 # LyXName will be output to LaTeX.
 #
 # Note further:
@@ -81,6 +82,7 @@ MaxCiteNames 3
 CiteEngine authoryear
 	Citet|textcite*[][]
 	Citep|parencite*[][]
+	apa,apa6@nptextcite$[][]
 	Citealt|cite*[][]
 	Citealp*[][]
 	Citeauthor*[][]
@@ -299,6 +301,11 @@ CiteFormat authoryear
 
 	# Fallback style: "Author A (cf. Year),[ and] Author B (Year, p. xx)"
 	cite %!makecitet%%!textafter%%!close%
+	
+	# Style-specifics
+	# 1. APA
+	# "cf. Author A Year; Author B Year, p. xx"
+	nptextcite %!textbefore%%!makepcite%%!textafter%
 End
 
 CiteFormat numerical
