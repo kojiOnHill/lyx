@@ -259,7 +259,7 @@ CiteFormat authoryear
 	# "cf. Author et. al Year..."
 	!makecite %!ctextbefore%%!startlink%%!abbrvciteauthor%%!aysep% %!makeyear%%!endlink%%!ctextafter%%!nextcite%
 	# "cf. Author et. al Year..."
-	!makepcite %!ctextbefore%%!startlink%%!abbrvpciteauthor%%!aysep% %!year%%!endlink%%!ctextafter%%!nextpcite%
+	!makepcite %!ctextbefore%%!startlink%%!abbrvpciteauthor%%!aysep% %!makeyear%%!endlink%%!ctextafter%%!nextpcite%
 	# "Author et al. (cf. Year..."
 	!makecitet %!startlink%%!makeauthor%%!endlink% %!open%%!textbefore%%!makeyear%%!nextcitet%
 	# "cf. Author et al. Year..."
