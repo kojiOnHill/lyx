@@ -1603,7 +1603,15 @@ BiblioInfo::CiteStringMap const BiblioInfo::getCiteStrings(
 	string style;
 	CiteStringMap csm(styles.size());
 	for (size_t i = 0; i != csm.size(); ++i) {
-		if (!styles[i].style.empty() && styles[i].style != buf.masterParams().biblatex_citestyle)
+		bool ours = false;
+		// exclude variants that are not supported in the current style
+		for (string const & s: styles[i].styles) {
+			if (s == buf.masterParams().biblatex_citestyle) {
+				ours = true;
+				break;
+			}
+		}
+		if (!styles[i].styles.empty() && !ours)
 			continue;
 		style = styles[i].name;
 		csm[i] = make_pair(from_ascii(style), getLabel(keys, buf, style, ci));
