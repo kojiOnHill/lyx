@@ -3755,10 +3755,17 @@ bool BufferParams::fullAuthorList() const
 
 string BufferParams::getCiteAlias(string const & s) const
 {
-	vector<string> commands =
-		documentClass().citeCommands(citeEngineType());
+	bool realcmd = false;
+	vector<CitationStyle> const styles = citeStyles();
+	for (size_t i = 0; i != styles.size(); ++i) {
+		// only include variants that are supported in the current style
+		if (styles[i].name == s && isActiveBiblatexCiteStyle(styles[i])) {
+			realcmd = true;
+			break;
+		}
+	}
 	// If it is a real command, don't treat it as an alias
-	if (find(commands.begin(), commands.end(), s) != commands.end())
+	if (realcmd)
 		return string();
 	map<string,string> aliases = documentClass().citeCommandAliases();
 	if (aliases.find(s) != aliases.end())
