@@ -3789,6 +3789,33 @@ vector<CitationStyle> BufferParams::citeStyles() const
 }
 
 
+bool BufferParams::isActiveBiblatexCiteStyle(CitationStyle const & cs) const
+{
+	if (!useBiblatex())
+		return false;
+
+	if (cs.styles.empty() && cs.nostyles.empty())
+		// no restrictions
+		return true;
+
+	// exclude variants that are excluded in the current style
+	for (string const & s: cs.nostyles) {
+		if (s == biblatex_citestyle)
+			// explicitly excluded style
+			return false;
+	}
+	if (cs.styles.empty())
+		// not excluded
+		return true;
+
+	// only include variants that are supported in the current style
+	for (string const & s: cs.styles) {
+		if (s == biblatex_citestyle)
+			return true;
+	}
+	return false;
+}
+
 string const BufferParams::getBibtexCommand(string const cmd, bool const warn) const
 {
 	// split from options

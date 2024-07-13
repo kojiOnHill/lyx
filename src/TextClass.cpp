@@ -1224,7 +1224,12 @@ bool TextClass::readCiteEngine(Lexer & lexrc, ReadType rt, bool const add)
 		// split off style prefix if there
 		if (contains(lyx_cmd, '@')) {
 			lyx_cmd = split(lyx_cmd, style, '@');
-			cs.styles = getVectorFromString(style);
+			// a '!' prefix indicates nostyle
+			if (prefixIs(style, "!")) {
+				style = style.substr(1);
+				cs.nostyles = getVectorFromString(style);
+			} else
+				cs.styles = getVectorFromString(style);
 		}
 		char fchar = lyx_cmd[0];
 		if (isUpperCase(fchar)) {
