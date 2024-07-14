@@ -3799,7 +3799,8 @@ vector<CitationStyle> BufferParams::citeStyles() const
 bool BufferParams::isActiveBiblatexCiteStyle(CitationStyle const & cs) const
 {
 	if (!useBiblatex())
-		return false;
+		// outside biblatex, all cite styles are active
+		return true;
 
 	if (cs.styles.empty() && cs.nostyles.empty())
 		// no restrictions
