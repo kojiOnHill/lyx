@@ -49,6 +49,8 @@ What's new
 
 * USER INTERFACE
 
+- Fix crash when attempting to search in selection that contains only math.
+
 - Fix bug where the dialog asking for saving unapplied changes on buffer change
   popped up twice, or sometimes not at all (bug 12954).
 
@@ -87,3 +89,4 @@ What's new
 * BUILD/INSTALLATION
 
 - Fix 'make install' target for autotools builds with autoconf >= 2.72.
+
