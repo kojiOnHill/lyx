@@ -381,6 +381,20 @@
   or layout and argument to the appropriate list, or dictionary in  
   the function "convert_hebrew_parentheses(document)" in lyx_2_4.py.
 
+* Hyperlink inset, which is set to the type "file" now exports as
+  file: target in href in xHTML export, not the web link as in 2.3.
+  This will break export of the old documents containing this type of
+  hyperlink as the web browser will not be able to locate the referenced
+  file anymore.
+
+  Possible way how to detect affected files in your directory (on linux systems):
+  find -type f -name "*.lyx"|xargs grep -E '^type..file:'
+
+  For fixing you need to either manually change the hyperlink inset from "File"
+  to "Web" type inside LyX, or simply delete the lines
+  type "file:"
+  inside .lyx file in your favorite plain text editor.
+
 
 !! If upgrading from a LyX version before 2.3.0
 
