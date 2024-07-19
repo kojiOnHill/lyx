@@ -289,7 +289,7 @@ TeXMathStream & operator<<(TeXMathStream & ws, unsigned int i)
 
 
 MathMLStream::MathMLStream(odocstream & os, std::string const & xmlns)
-	: os_(os), tab_(0), line_(0), in_text_(false), xmlns_(xmlns)
+	: os_(os), xmlns_(xmlns)
 {
 	if (in_text_)
 		font_math_style_ = TEXT_STYLE;
@@ -338,23 +338,30 @@ MathMLStream & operator<<(MathMLStream & ms, MathData const & ar)
 }
 
 
-MathMLStream & operator<<(MathMLStream & ms, char const * s)
+MathMLStream & operator<<(MathMLStream & ms, docstring const & s)
 {
 	ms.os() << s;
 	return ms;
 }
 
 
+MathMLStream & operator<<(MathMLStream & ms, char const * s)
+{
+	ms << from_utf8(s);
+	return ms;
+}
+
+
 MathMLStream & operator<<(MathMLStream & ms, char c)
 {
-	ms.os() << c;
+	ms << docstring(1,c);
 	return ms;
 }
 
 
 MathMLStream & operator<<(MathMLStream & ms, char_type c)
 {
-	ms.os().put(c);
+	ms << docstring(1,c);
 	return ms;
 }
 
@@ -406,13 +413,6 @@ MathMLStream & operator<<(MathMLStream & ms, CTag const & t)
     if (!t.attr_.empty())
         ms.os() << " " << from_utf8(t.attr_);
     ms.os() << "/>";
-	return ms;
-}
-
-
-MathMLStream & operator<<(MathMLStream & ms, docstring const & s)
-{
-	ms.os() << s;
 	return ms;
 }
 
