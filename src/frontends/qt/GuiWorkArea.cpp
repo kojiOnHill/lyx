@@ -1892,8 +1892,6 @@ GuiWorkArea * TabWorkArea::addWorkArea(Buffer & buffer, GuiView & view)
 	if (currentWorkArea())
 		currentWorkArea()->queryInputItemTransform();
 
-	view.setBusy(false);
-
 	return wa;
 }
 
