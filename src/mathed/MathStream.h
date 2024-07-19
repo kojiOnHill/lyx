@@ -9,8 +9,8 @@
  * Full author contact details are available in file CREDITS.
  */
 
-#ifndef MATH_MATHMLSTREAM_H
-#define MATH_MATHMLSTREAM_H
+#ifndef MATH_MATHSTREAM_H
+#define MATH_MATHSTREAM_H
 
 #include "InsetMath.h"
 #include "FontInfo.h"
@@ -382,12 +382,8 @@ public:
 	void cr();
 	///
 	odocstream & os() { return os_; }
-	///
-	int line() const { return line_; }
-	///
+	/// Indentation when nesting tags
 	int & tab() { return tab_; }
-	///
-	friend MathMLStream & operator<<(MathMLStream &, char const *);
 	///
 	void defer(docstring const &);
 	///
@@ -412,11 +408,9 @@ private:
 	///
 	odocstream & os_;
 	///
-	int tab_;
+	int tab_ = 0;
 	///
-	int line_;
-	///
-	bool in_text_;
+	bool in_text_ = false;
 	///
 	odocstringstream deferred_;
 	///
