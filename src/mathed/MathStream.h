@@ -380,8 +380,6 @@ public:
 	explicit MathMLStream(odocstream & os, std::string const & xmlns = "");
 	///
 	void cr();
-	///
-	odocstream & os() { return os_; }
 	/// Indentation when nesting tags
 	int & tab() { return tab_; }
 	///
@@ -391,7 +389,7 @@ public:
 	///
 	docstring deferred() const;
 	///
-	bool inText() const { return in_text_; }
+	bool inText() const { return text_level_ != nlevel; }
 	///
 	std::string xmlns() const { return xmlns_; }
 	/// Returns the tag name prefixed by the name space if needed.
@@ -403,14 +401,21 @@ public:
 	/// Sets the current math style in the stream.
 	void setFontMathStyle(const MathStyle style) { font_math_style_ = style; }
 private:
-	///
-	void setTextMode(bool t) { in_text_ = t; }
+	/// Check whether it makes sense to start a <mtext>
+	void beforeText();
+	///Check whether there is a <mtext> to close here
+	void beforeTag();
 	///
 	odocstream & os_;
 	///
 	int tab_ = 0;
 	///
-	bool in_text_ = false;
+	int nesting_level_ = 0;
+	static const int nlevel = -1000;
+	///
+	int text_level_ = nlevel;
+	///
+	bool in_mtext_ = false;
 	///
 	odocstringstream deferred_;
 	///
@@ -419,6 +424,14 @@ private:
 	MathStyle font_math_style_;
 	///
 	friend class SetMode;
+	friend MathMLStream & operator<<(MathMLStream &, MathAtom const &);
+	friend MathMLStream & operator<<(MathMLStream &, MathData const &);
+	friend MathMLStream & operator<<(MathMLStream &, docstring const &);
+	friend MathMLStream & operator<<(MathMLStream &, MTag const &);
+	friend MathMLStream & operator<<(MathMLStream &, MTagInline const &);
+	friend MathMLStream & operator<<(MathMLStream &, ETag const &);
+	friend MathMLStream & operator<<(MathMLStream &, ETagInline const &);
+	friend MathMLStream & operator<<(MathMLStream &, CTag const &);
 };
 
 ///
@@ -456,7 +469,7 @@ private:
 	///
 	MathMLStream & ms_;
 	///
-	bool was_text_;
+	bool old_text_level_;
 };
 
 

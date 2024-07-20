@@ -59,69 +59,19 @@ void InsetMathBox::normalize(NormalStream & os) const
 
 
 namespace {
-void splitAndWrapInMText(MathMLStream & ms, MathData const & cell,
-						 const std::string & attributes)
+// Generate the MathML, making sure that anything that is outside of
+// any tag is wrapped in <mtext></mtext> tags, then wrap the whole thing in an
+// <mrow></mrow> tag with attributes
+void mathmlizeHelper(MathMLStream & ms, MathData const & cell, const std::string & attributes)
 {
-	// First, generate the inset into a string of its own.
-	docstring inset_contents;
-	{
-		odocstringstream ostmp;
-		MathMLStream mstmp(ostmp, ms.xmlns());
-
-		SetMode textmode(mstmp, true);
-		mstmp << cell;
-
-		inset_contents = ostmp.str();
-	}
-
-	// No tags are allowed within <m:mtext>: split the string if there are tags.
-	std::vector<docstring> parts;
-	while (true) {
-		std::size_t angle_pos = inset_contents.find('<');
-		if (angle_pos == docstring::npos)
-			break;
-
-		// String structure:
-		// - prefix: pure text, no tag
-		// - tag to split: something like <m:mn>1</m:mn> or more complicated
-		//   (like nested tags), with or without name space
-		// - rest to be taken care of in the next iteration
-
-		// Push the part before the tag.
-		parts.emplace_back(inset_contents.substr(0, angle_pos));
-		inset_contents = inset_contents.substr(angle_pos);
-		// Now, inset_contents starts with the tag to isolate, so that
-		//     inset_contents[0] == '<'
-
-		// Push the tag, up to its end. Process: find the tag name (either
-		// before > or the first attribute of the tag), then the matching end
-		// tag, then proceed with pushing.
-		const std::size_t tag_name_end =
-				std::min(inset_contents.find(' ', 1), inset_contents.find('>', 1));
-		const std::size_t tag_name_length = tag_name_end - 1;
-		const docstring tag_name = inset_contents.substr(1, tag_name_length);
-
-		const std::size_t end_tag_start =
-				inset_contents.find(tag_name, tag_name_end + 1);
-		const std::size_t end_tag = inset_contents.find('>', end_tag_start);
-
-		parts.emplace_back(inset_contents.substr(0, end_tag + 1));
-		inset_contents = inset_contents.substr(end_tag + 1);
-	}
-	parts.emplace_back(inset_contents);
-
-	// Finally, output the complete inset: escape the test in <m:mtext>, leave
-	// the other tags untouched.
 	ms << MTag("mrow", attributes);
-	for (std::size_t i = 0; i < parts.size(); i += 2) {
-		ms << MTag("mtext")
-		   << parts[i]
-		   << ETag("mtext");
-		if (parts.size() > i + 1)
-			ms << parts[i + 1];
+	{
+		SetMode textmode(ms, true);
+		ms << cell;
 	}
 	ms << ETag("mrow");
 }
+
 }
 
 
@@ -131,7 +81,7 @@ void InsetMathBox::mathmlize(MathMLStream & ms) const
 	// Need to do something special for tags here.
 	// Probably will have to involve deferring them, which
 	// means returning something from this routine.
-	splitAndWrapInMText(ms, cell(0), "class='mathbox'");
+	mathmlizeHelper(ms, cell(0), "class='mathbox'");
 }
 
 
@@ -230,7 +180,7 @@ void InsetMathFBox::normalize(NormalStream & os) const
 
 void InsetMathFBox::mathmlize(MathMLStream & ms) const
 {
-	splitAndWrapInMText(ms, cell(0), "class='fbox'");
+	mathmlizeHelper(ms, cell(0), "class='fbox'");
 }
 
 
@@ -373,7 +323,7 @@ void InsetMathMakebox::mathmlize(MathMLStream & ms) const
 {
 	// FIXME We could do something with the other arguments.
 	std::string const cssclass = framebox_ ? "framebox" : "makebox";
-	splitAndWrapInMText(ms, cell(2), "class='" + cssclass + "'");
+	mathmlizeHelper(ms, cell(2), "class='" + cssclass + "'");
 }
 
 
@@ -452,7 +402,7 @@ void InsetMathBoxed::infoize(odocstream & os) const
 
 void InsetMathBoxed::mathmlize(MathMLStream & ms) const
 {
-	splitAndWrapInMText(ms, cell(0), "class='boxed'");
+	mathmlizeHelper(ms, cell(0), "class='boxed'");
 }
 
 
