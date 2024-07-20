@@ -627,8 +627,8 @@ docstring Encodings::convertLaTeXCommands(docstring const & str)
 	while (!val.empty()) {
 		char_type const ch = val[0];
 
-		// if we're scanning math, we output everything until we
-		// find an unescaped $, at which point we break out.
+		// if we're scanning math, we collect everything until we
+		// find an unescaped $, and then try to convert this piecewise.
 		if (scanning_math) {
 			if (escaped)
 				escaped = false;
