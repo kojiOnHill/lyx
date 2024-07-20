@@ -254,6 +254,11 @@ public:
 	///
 	Undo undo_;
 
+	/// This is increased every time the buffer or one of its relatives is marked dirty
+	int id_ = 0;
+	/// The buffer id at last updateMacros invokation
+	int update_macros_id_ = -1;
+
 	/// A cache for the bibfiles (including bibfiles of loaded child
 	/// documents), needed for appropriate update of natbib labels.
 	mutable docstring_list bibfiles_cache_;
@@ -787,6 +792,20 @@ Undo & Buffer::undo()
 Undo const & Buffer::undo() const
 {
 	return d->undo_;
+}
+
+
+int Buffer::id() const
+{
+	return d->id_;
+}
+
+
+void Buffer::updateId()
+{
+	++d->id_;
+	for(Buffer * b : allRelatives())
+		++(b->d->id_);
 }
 
 
@@ -3305,6 +3324,9 @@ void Buffer::markDirty()
 
 	for (auto & depit : d->dep_clean)
 		depit.second = false;
+
+	// Update the buffer and its relatives' ids.
+	updateId();
 }
 
 
@@ -3898,6 +3920,11 @@ void Buffer::updateMacros() const
 {
 	if (d->macro_lock)
 		return;
+
+	// early exit if the buffer has not changed since last time
+	if (d->update_macros_id_ == d->id_)
+		return;
+	d->update_macros_id_ = d->id_;
 
 	LYXERR(Debug::MACROS, "updateMacro of " << d->filename.onlyFileName());
 
