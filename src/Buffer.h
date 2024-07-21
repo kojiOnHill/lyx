@@ -51,6 +51,7 @@ class otexstream;
 class ParagraphList;
 class ParIterator;
 class ParConstIterator;
+class Statistics;
 class TeXErrors;
 class TexRow;
 class TocBackend;
@@ -784,15 +785,8 @@ public:
 	std::string includedFilePath(std::string const & name,
 				std::string const & ext = empty_string()) const;
 
-	/// compute statistics between \p from and \p to
-	/// \p from initial position
-	/// \p to points to the end position
-	/// \p skipNoOutput if notes etc. should be ignored
-	void updateStatistics(DocIterator & from, DocIterator & to,
-						  bool skipNoOutput = true) const;
-	/// statistics accessor functions
-	int wordCount() const;
-	int charCount(bool with_blanks) const;
+	/// Count of words, characters and blanks
+	Statistics & statistics();
 
 	///
 	bool areChangesPresent() const;

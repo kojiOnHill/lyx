@@ -56,7 +56,7 @@
 #include "PDFOptions.h"
 #include "Session.h"
 #include "SpellChecker.h"
-#include "xml.h"
+#include "Statistics.h"
 #include "texstream.h"
 #include "TexRow.h"
 #include "Text.h"
@@ -66,6 +66,7 @@
 #include "VCBackend.h"
 #include "version.h"
 #include "WordLangTuple.h"
+#include "xml.h"
 
 #include "insets/InsetBranch.h"
 #include "insets/InsetInclude.h"
@@ -357,10 +358,8 @@ public:
 	///
 	mutable bool need_update;
 
-private:
-	int word_count_;
-	int char_count_;
-	int blank_count_;
+	///
+	Statistics statistics_;
 
 public:
 	/// This is here to force the test to be done whenever parent_buffer
@@ -393,22 +392,6 @@ public:
 		parent_buffer = pb;
 		if (!cloned_buffer_ && parent_buffer)
 			parent_buffer->invalidateBibinfoCache();
-	}
-
-	/// compute statistics
-	/// \p from initial position
-	/// \p to points to the end position
-	void updateStatistics(DocIterator & from, DocIterator & to,
-			      bool skipNoOutput = true);
-	/// statistics accessor functions
-	int wordCount() const
-	{
-		return word_count_;
-	}
-	int charCount(bool with_blanks) const
-	{
-		return char_count_
-		+ (with_blanks ? blank_count_ : 0);
 	}
 
 	// Make sure the file monitor monitors the good file.
@@ -462,8 +445,7 @@ Buffer::Impl::Impl(Buffer * owner, FileName const & file, bool readonly_,
 	  have_bibitems_(false), lyx_clean(true), bak_clean(true), unnamed(false),
 	  internal_buffer(false), read_only(readonly_), file_fully_loaded(false),
 	  need_format_backup(false), ignore_parent(false), macro_lock(false),
-	  externally_modified_(false), bibinfo_cache_valid_(false),
-	  need_update(false), word_count_(0), char_count_(0), blank_count_(0)
+	  externally_modified_(false), bibinfo_cache_valid_(false), need_update(false)
 {
 	refreshFileMonitor();
 	if (!cloned_buffer_) {
@@ -5464,83 +5446,9 @@ void Buffer::requestSpellcheck()
 }
 
 
-void Buffer::Impl::updateStatistics(DocIterator & from, DocIterator & to, bool skipNoOutput)
+Statistics & Buffer::statistics()
 {
-	bool inword = false;
-	word_count_ = 0;
-	char_count_ = 0;
-	blank_count_ = 0;
-
-	for (DocIterator dit = from ; dit != to && !dit.atEnd(); ) {
-		if (!dit.inTexted()) {
-			dit.forwardPos();
-			continue;
-		}
-
-		Paragraph const & par = dit.paragraph();
-		pos_type const pos = dit.pos();
-
-		// Copied and adapted from isWordSeparator() in Paragraph
-		if (pos == dit.lastpos()) {
-			inword = false;
-		} else {
-			Inset const * ins = par.getInset(pos);
-			if (ins && skipNoOutput && !ins->producesOutput()) {
-				// skip this inset
-				++dit.top().pos();
-				// stop if end of range was skipped
-				if (!to.atEnd() && dit >= to)
-					break;
-				continue;
-			} else if (!par.isDeleted(pos)) {
-				if (par.isWordSeparator(pos))
-					inword = false;
-				else if (!inword) {
-					++word_count_;
-					inword = true;
-				}
-				if (ins && ins->isLetter()) {
-					odocstringstream os;
-					ins->toString(os);
-					char_count_ += os.str().length();
-				}
-				else if (ins && ins->isSpace())
-					++blank_count_;
-				else if (ins) {
-					pair<int, int> words = ins->isWords();
-					char_count_ += words.first;
-					word_count_ += words.second;
-					inword = false;
-				}
-				else {
-					char_type const c = par.getChar(pos);
-					if (isPrintableNonspace(c))
-						++char_count_;
-					else if (isSpace(c))
-						++blank_count_;
-				}
-			}
-		}
-		dit.forwardPos();
-	}
-}
-
-
-void Buffer::updateStatistics(DocIterator & from, DocIterator & to, bool skipNoOutput) const
-{
-	d->updateStatistics(from, to, skipNoOutput);
-}
-
-
-int Buffer::wordCount() const
-{
-	return d->wordCount();
-}
-
-
-int Buffer::charCount(bool with_blanks) const
-{
-	return d->charCount(with_blanks);
+	return d->statistics_;
 }
 
 
