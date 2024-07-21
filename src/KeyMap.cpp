@@ -568,11 +568,11 @@ void KeyMap::listBindings(BindingList & list,
 		// a LFUN_COMMAND_PREFIX
 		if (it->prefixes) {
 			KeySequence seq = prefix;
-			seq.addkey(it->code, it->mod.first);
+			seq.addkey(it->code, it->mod.first, it->mod.second);
 			it->prefixes->listBindings(list, seq, tag);
 		} else {
 			KeySequence seq = prefix;
-			seq.addkey(it->code, it->mod.first);
+			seq.addkey(it->code, it->mod.first, it->mod.second);
 			list.push_back(Binding(it->func, seq, tag));
 		}
 	}
