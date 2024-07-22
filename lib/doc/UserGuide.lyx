@@ -9611,14 +9611,12 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim
-
 This is Verbatim.
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
-
 The following 2 lines are empty:
 \end_layout
 
@@ -9631,7 +9629,6 @@ The following 2 lines are empty:
 \end_layout
 
 \begin_layout Verbatim
-
 Almost everything is allowed in Verbatim:"%&$§#~'`
 \backslash
 }][{|
@@ -9655,7 +9652,6 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim*
-
 This is Verbatim*.
 \end_layout
 
@@ -36616,7 +36612,7 @@ should appear in nomenclature entries containing \SpecialChar TeX
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "%@, %|, %!, %\""
-description "The quote sign in TeX code is output by writing ' %\"{}%\"{} '."
+description "Special characters in nomenclature context which need to be escaped by `\\%'"
 literal "true"
 
 \end_inset
@@ -36662,7 +36658,7 @@ a
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "a"
-description "dummy entry for the character \"a\""
+description "dummy entry for the character ``a''"
 literal "false"
 
 \end_inset
