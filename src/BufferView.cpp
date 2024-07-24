@@ -2048,7 +2048,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		Statistics & stats = buffer_.statistics();
 		stats.update(cur);
 		d->stats_ref_value_w_ = stats.word_count;
-		d->stats_ref_value_c_ = stats.char_count; + stats.blank_count;
+		d->stats_ref_value_c_ = stats.char_count + stats.blank_count;
 		d->stats_ref_value_nb_ = stats.char_count;
 		break;
 	}
