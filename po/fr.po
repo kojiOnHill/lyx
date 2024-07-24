@@ -362,8 +362,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-07-08 11:23+0200\n"
-"PO-Revision-Date: 2024-07-08 11:29+0200\n"
+"POT-Creation-Date: 2024-07-22 18:48+0200\n"
+"PO-Revision-Date: 2024-07-24 16:23+0200\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
 "Language: fr\n"
@@ -911,7 +911,7 @@ msgstr "En haut"
 #: src/frontends/qt/ui/BoxUi.ui:209 src/frontends/qt/ui/BoxUi.ui:239
 #: src/frontends/qt/ui/TabularUi.ui:270 src/frontends/qt/ui/TabularUi.ui:393
 #: lib/ui/stdcontext.inc:484 src/frontends/qt/GuiMathMatrix.cpp:55
-#: src/frontends/qt/GuiTabular.cpp:252
+#: src/frontends/qt/GuiTabular.cpp:258
 msgid "Middle"
 msgstr "Au milieu"
 
@@ -945,20 +945,20 @@ msgstr "Élongation"
 #: src/frontends/qt/ui/BoxUi.ui:265 src/frontends/qt/ui/ListingsUi.ui:110
 #: src/frontends/qt/ui/TabularUi.ui:328 src/frontends/qt/ui/TabularUi.ui:1537
 #: src/frontends/qt/ui/WrapUi.ui:47 src/frontends/qt/GuiDocument.cpp:1605
-#: src/frontends/qt/GuiParagraph.cpp:115 src/frontends/qt/GuiTabular.cpp:1038
+#: src/frontends/qt/GuiParagraph.cpp:115 src/frontends/qt/GuiTabular.cpp:1044
 msgid "Left"
 msgstr "À gauche"
 
 #: src/frontends/qt/ui/BoxUi.ui:270 src/frontends/qt/ui/TabularUi.ui:333
 #: src/frontends/qt/GuiExternal.cpp:78 src/frontends/qt/GuiGraphics.cpp:73
-#: src/frontends/qt/GuiParagraph.cpp:117 src/frontends/qt/GuiTabular.cpp:1039
+#: src/frontends/qt/GuiParagraph.cpp:117 src/frontends/qt/GuiTabular.cpp:1045
 msgid "Center"
 msgstr "Centré"
 
 #: src/frontends/qt/ui/BoxUi.ui:275 src/frontends/qt/ui/ListingsUi.ui:115
 #: src/frontends/qt/ui/TabularUi.ui:338 src/frontends/qt/ui/WrapUi.ui:52
 #: src/frontends/qt/GuiDocument.cpp:1607 src/frontends/qt/GuiParagraph.cpp:116
-#: src/frontends/qt/GuiTabular.cpp:1040
+#: src/frontends/qt/GuiTabular.cpp:1046
 msgid "Right"
 msgstr "À droite"
 
@@ -5711,7 +5711,7 @@ msgid "&Clear automatically"
 msgstr "&Nettoyer automatiquement"
 
 #: src/frontends/qt/ui/RefUi.ui:33 lib/layouts/pdfform.module:90
-#: src/insets/InsetRef.cpp:651
+#: src/insets/InsetRef.cpp:652
 msgid "Label"
 msgstr "Étiquette"
 
@@ -6207,12 +6207,12 @@ msgid "Horizontal alignment in column"
 msgstr "Alignement horizontal dans la colonne"
 
 #: src/frontends/qt/ui/TabularUi.ui:323 src/frontends/qt/GuiParagraph.cpp:114
-#: src/frontends/qt/GuiTabular.cpp:1042
+#: src/frontends/qt/GuiTabular.cpp:1048
 msgid "Justified"
 msgstr "Justifié"
 
-#: src/frontends/qt/ui/TabularUi.ui:343 src/frontends/qt/GuiTabular.cpp:245
-#: src/frontends/qt/GuiTabular.cpp:1044
+#: src/frontends/qt/ui/TabularUi.ui:343 src/frontends/qt/GuiTabular.cpp:251
+#: src/frontends/qt/GuiTabular.cpp:1050
 msgid "At Decimal Separator"
 msgstr "Au séparateur décimal"
 
@@ -7972,7 +7972,7 @@ msgstr "Transactions IEEE"
 #: lib/layouts/slides.layout:61 lib/layouts/stdclass.inc:28
 #: lib/layouts/stdinsets.inc:713 lib/layouts/stdletter.inc:12
 #: lib/layouts/svcommon.inc:26 lib/layouts/tufte-book.layout:35
-#: src/insets/InsetRef.cpp:644
+#: src/insets/InsetRef.cpp:645
 msgid "Standard"
 msgstr "Standard"
 
@@ -12818,7 +12818,7 @@ msgstr ""
 "ajouter le numéro de section au numéro d'équation, comme dans « (2.1) »."
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:645
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:646
 #: src/mathed/InsetMathRef.cpp:378
 msgid "Equation"
 msgstr "Équation"
@@ -13132,7 +13132,7 @@ msgid "Size the photo is resized to"
 msgstr "Changement de taille de la photo"
 
 #: lib/layouts/europecv.layout:185 src/frontends/qt/GuiDocument.cpp:135
-#: src/insets/InsetRef.cpp:646
+#: src/insets/InsetRef.cpp:647
 msgid "Page"
 msgstr "Page"
 
@@ -20732,7 +20732,7 @@ msgid "Cut"
 msgstr "Couper"
 
 #: lib/ui/stdcontext.inc:62 lib/ui/stdcontext.inc:377 lib/ui/stdmenus.inc:109
-#: lib/ui/stdtoolbars.inc:90 src/BufferView.cpp:2454
+#: lib/ui/stdtoolbars.inc:90 src/BufferView.cpp:2455
 msgid "Copy"
 msgstr "Copier"
 
@@ -22822,11 +22822,11 @@ msgstr "Correction orthographique"
 msgid "Spellcheck continuously"
 msgstr "Correction orthographique à la volée"
 
-#: lib/ui/stdtoolbars.inc:87 src/BufferView.cpp:1518
+#: lib/ui/stdtoolbars.inc:87 src/BufferView.cpp:1519
 msgid "Undo"
 msgstr "Annuler"
 
-#: lib/ui/stdtoolbars.inc:88 src/BufferView.cpp:1539
+#: lib/ui/stdtoolbars.inc:88 src/BufferView.cpp:1540
 msgid "Redo"
 msgstr "Refaire"
 
@@ -29418,7 +29418,7 @@ msgstr ""
 "sera utilisée. LyX ne pourra pas produire\n"
 "un résultat imprimable correct."
 
-#: src/BufferParams.cpp:2706 src/BufferView.cpp:1470 src/BufferView.cpp:1502
+#: src/BufferParams.cpp:2706 src/BufferView.cpp:1471 src/BufferView.cpp:1503
 msgid "Could not load class"
 msgstr "Chargement de la classe impossible"
 
@@ -29470,100 +29470,100 @@ msgstr ""
 msgid "No more insets"
 msgstr "Pas d'autre insert"
 
-#: src/BufferView.cpp:917
+#: src/BufferView.cpp:919
 msgid "Save bookmark"
 msgstr "Enregistrer le signet"
 
-#: src/BufferView.cpp:1171
+#: src/BufferView.cpp:1172
 msgid "Document is read-only"
 msgstr "Document en lecture seule"
 
-#: src/BufferView.cpp:1173
+#: src/BufferView.cpp:1174
 msgid "Document has been modified externally"
 msgstr "Le document a été modifié par une application externe"
 
-#: src/BufferView.cpp:1182
+#: src/BufferView.cpp:1183
 msgid "This portion of the document is deleted."
 msgstr "Cette portion du document est supprimée."
 
-#: src/BufferView.cpp:1225 src/BufferView.cpp:2439
+#: src/BufferView.cpp:1226 src/BufferView.cpp:2440
 #: src/frontends/qt/GuiView.cpp:4552 src/frontends/qt/GuiView.cpp:4649
 msgid "Absolute filename expected."
 msgstr "Chemin absolu requis."
 
-#: src/BufferView.cpp:1468 src/BufferView.cpp:1500
+#: src/BufferView.cpp:1469 src/BufferView.cpp:1501
 #, c-format
 msgid "The document class `%1$s' could not be loaded."
 msgstr "La classe de document « %1$s » n'a pas pu être chargée."
 
-#: src/BufferView.cpp:1526
+#: src/BufferView.cpp:1527
 msgid "No further undo information"
 msgstr "Pas d'information pour Annuler"
 
-#: src/BufferView.cpp:1547
+#: src/BufferView.cpp:1548
 msgid "No further redo information"
 msgstr "Pas d'information pour Refaire"
 
-#: src/BufferView.cpp:1739 src/BufferView.cpp:1754 src/BufferView.cpp:1787
+#: src/BufferView.cpp:1740 src/BufferView.cpp:1755 src/BufferView.cpp:1788
 msgid "Search string not found!"
 msgstr "Chaîne de caractères introuvable !"
 
-#: src/BufferView.cpp:1886
+#: src/BufferView.cpp:1887
 msgid "Mark off"
 msgstr "Marque désactivée"
 
-#: src/BufferView.cpp:1892
+#: src/BufferView.cpp:1893
 msgid "Mark on"
 msgstr "Marque activée"
 
-#: src/BufferView.cpp:1899
+#: src/BufferView.cpp:1900
 msgid "Mark removed"
 msgstr "Marque enlevée"
 
-#: src/BufferView.cpp:1902
+#: src/BufferView.cpp:1903
 msgid "Mark set"
 msgstr "Marque posée"
 
-#: src/BufferView.cpp:2012
+#: src/BufferView.cpp:2013
 msgid "Statistics for the selection:"
 msgstr "Statistiques pour la sélection :"
 
-#: src/BufferView.cpp:2014
+#: src/BufferView.cpp:2015
 msgid "Statistics for the document:"
 msgstr "Statistiques pour le document :"
 
-#: src/BufferView.cpp:2017
+#: src/BufferView.cpp:2018
 #, c-format
 msgid "%1$d words"
 msgstr "%1$d mots"
 
-#: src/BufferView.cpp:2019
+#: src/BufferView.cpp:2020
 msgid "One word"
 msgstr "Un mot"
 
-#: src/BufferView.cpp:2022
+#: src/BufferView.cpp:2023
 #, c-format
 msgid "%1$d characters"
 msgstr "%1$d caractères"
 
-#: src/BufferView.cpp:2024
+#: src/BufferView.cpp:2025
 msgid "One character"
 msgstr "Un caractère"
 
-#: src/BufferView.cpp:2027
+#: src/BufferView.cpp:2028
 #, c-format
 msgid "%1$d characters (no blanks)"
 msgstr "%1$d caractères (espaces exclues)"
 
-#: src/BufferView.cpp:2029
+#: src/BufferView.cpp:2030
 msgid "One character (no blanks)"
 msgstr "Un caractère (espaces exclues)"
 
-#: src/BufferView.cpp:2031
+#: src/BufferView.cpp:2032
 msgid "Statistics"
 msgstr "Statistiques"
 
-#: src/BufferView.cpp:2275
+#: src/BufferView.cpp:2276
 #, c-format
 msgid ""
 "`inset-forall' interrupted because number of actions is larger than %1$d"
@@ -29571,35 +29571,35 @@ msgstr ""
 "Interruption de « inset-forall » du fait d'un nombre d'actions supérieur à "
 "%1$d"
 
-#: src/BufferView.cpp:2277
+#: src/BufferView.cpp:2278
 #, c-format
 msgid "Applied \"%1$s\" to %2$d insets"
 msgstr "\"%1$s\" appliqué à %2$d inserts"
 
-#: src/BufferView.cpp:2285
+#: src/BufferView.cpp:2286
 msgid "Branch name"
 msgstr "Nom de la branche"
 
-#: src/BufferView.cpp:2292 src/frontends/qt/GuiBranches.cpp:225
+#: src/BufferView.cpp:2293 src/frontends/qt/GuiBranches.cpp:225
 msgid "Branch already exists"
 msgstr "La branche existe déjà"
 
-#: src/BufferView.cpp:3285
+#: src/BufferView.cpp:3294
 #, c-format
 msgid "Inserting document %1$s..."
 msgstr "Insertion du document %1$s..."
 
-#: src/BufferView.cpp:3302
+#: src/BufferView.cpp:3311
 #, c-format
 msgid "Document %1$s inserted."
 msgstr "Document %1$s inséré."
 
-#: src/BufferView.cpp:3304
+#: src/BufferView.cpp:3313
 #, c-format
 msgid "Could not insert document %1$s"
 msgstr "Impossible d'insérer le document %1$s"
 
-#: src/BufferView.cpp:3813
+#: src/BufferView.cpp:3822
 #, c-format
 msgid ""
 "Could not read the specified document\n"
@@ -29610,11 +29610,11 @@ msgstr ""
 "%1$s\n"
 "à cause de l'erreur : %2$s"
 
-#: src/BufferView.cpp:3815
+#: src/BufferView.cpp:3824
 msgid "Could not read file"
 msgstr "Lecture du fichier impossible"
 
-#: src/BufferView.cpp:3822
+#: src/BufferView.cpp:3831
 #, c-format
 msgid ""
 "%1$s\n"
@@ -29623,17 +29623,17 @@ msgstr ""
 "%1$s\n"
 "est illisible."
 
-#: src/BufferView.cpp:3823 src/frontends/qt/qt_helpers.cpp:319
+#: src/BufferView.cpp:3832 src/frontends/qt/qt_helpers.cpp:319
 #: src/frontends/qt/qt_helpers.cpp:326 src/frontends/qt/qt_helpers.cpp:392
 #: src/output.cpp:39
 msgid "Could not open file"
 msgstr "Ouverture du fichier impossible"
 
-#: src/BufferView.cpp:3830
+#: src/BufferView.cpp:3839
 msgid "Reading not UTF-8 encoded file"
 msgstr "Lecture d'un fichier non encodé en UTF-8"
 
-#: src/BufferView.cpp:3831
+#: src/BufferView.cpp:3840
 msgid ""
 "The file is not UTF-8 encoded.\n"
 "It will be read as local 8Bit-encoded.\n"
@@ -31894,40 +31894,40 @@ msgstr "&Non, abandonner l'action"
 msgid "Layout "
 msgstr "Environnement "
 
-#: src/Text.cpp:5011 src/Text.cpp:5592
+#: src/Text.cpp:5011 src/Text.cpp:5590
 msgid " not known"
 msgstr " inconnu"
 
-#: src/Text.cpp:5591
+#: src/Text.cpp:5589
 msgid "Table Style "
 msgstr "Style de tableau "
 
-#: src/Text.cpp:5800 src/frontends/qt/GuiApplication.cpp:1889
+#: src/Text.cpp:5798 src/frontends/qt/GuiApplication.cpp:1889
 msgid "Missing argument"
 msgstr "Paramètre manquant"
 
-#: src/Text.cpp:5966
+#: src/Text.cpp:5964
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr "Argument invalide (le nombre est supérieur à la taille de la pile) !"
 
-#: src/Text.cpp:5970
+#: src/Text.cpp:5968
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr "Argument invalide (nombre non négatif obligatoire)"
 
-#: src/Text.cpp:5975 src/Text.cpp:5989
+#: src/Text.cpp:5973 src/Text.cpp:5987
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr "Propriétés du texte appliquées : %1$s"
 
-#: src/Text.cpp:5991
+#: src/Text.cpp:5989
 msgid "Invalid argument of textstyle-update"
 msgstr "Argument invalide pour textstyle-update"
 
-#: src/Text.cpp:6148
+#: src/Text.cpp:6146
 msgid "Path to thesaurus directory not set!"
 msgstr "Chemin d'accès au répertoire du thésaurus non précisé !"
 
-#: src/Text.cpp:6149
+#: src/Text.cpp:6147
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -31939,7 +31939,7 @@ msgstr ""
 "Se référer au Guide de l'utilisateur, section 6.15.1, pour\n"
 "les instructions de réglage."
 
-#: src/Text.cpp:6275 src/Text.cpp:6286
+#: src/Text.cpp:6273 src/Text.cpp:6284
 msgid "Paragraph layout set"
 msgstr "Style du paragraphe redéfini"
 
@@ -36591,47 +36591,47 @@ msgstr "%1, aperçu"
 msgid "Close File"
 msgstr "Fermer le fichier"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2309
+#: src/frontends/qt/GuiWorkArea.cpp:2307
 msgid "%1 (read only)"
 msgstr "%1 (en lecture seule)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2317
+#: src/frontends/qt/GuiWorkArea.cpp:2315
 msgid "%1 (modified externally)"
 msgstr "%1 (modifié par une application externe)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2337
 msgid "&Hide Tab"
 msgstr "&Cacher l'onglet"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2344
+#: src/frontends/qt/GuiWorkArea.cpp:2342
 msgid "&Close Tab"
 msgstr "&Fermer l'onglet"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2346
 msgid "Close &Other Tabs"
 msgstr "Fermer les &autres onglets"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2348
 msgid "Close Tabs to the &Right"
 msgstr "Fermer les onglets depuis la &droite"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2352
+#: src/frontends/qt/GuiWorkArea.cpp:2350
 msgid "Close Tabs to the &Left"
 msgstr "Fermer les onglets depuis la &gauche"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2355
 msgid "Move Tab to &Start"
 msgstr "Déplacer l'onglet au &début"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2359
+#: src/frontends/qt/GuiWorkArea.cpp:2357
 msgid "Move Tab to &End"
 msgstr "Déplacer l'onglet à la f&in"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2364
+#: src/frontends/qt/GuiWorkArea.cpp:2362
 msgid "Open Enclosing &Directory"
 msgstr "Ouvrir le &répertoire contenant"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2409
+#: src/frontends/qt/GuiWorkArea.cpp:2407
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>Le fichier %1 a changé sur le disque.</b>"
 
@@ -37296,7 +37296,7 @@ msgstr "Aucune bibliographie définie !"
 msgid "+ %1$d more entries."
 msgstr "+ %1$d entrées supplémentaires."
 
-#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:553
+#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:554
 msgid "BROKEN: "
 msgstr "CASSÉ : "
 
@@ -38500,51 +38500,55 @@ msgstr "%1$stexte"
 msgid "text%1$s"
 msgstr "texte%1$s"
 
-#: src/insets/InsetRef.cpp:644
+#: src/insets/InsetRef.cpp:403
+msgid "elsewhere"
+msgstr "ailleurs"
+
+#: src/insets/InsetRef.cpp:645
 msgid "Ref"
 msgstr "Ref"
 
-#: src/insets/InsetRef.cpp:645
+#: src/insets/InsetRef.cpp:646
 msgid "EqRef"
 msgstr "RéfÉq"
 
-#: src/insets/InsetRef.cpp:646 src/mathed/InsetMathRef.cpp:379
+#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:379
 msgid "Page Number"
 msgstr "Numéro de page"
 
-#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:380
+#: src/insets/InsetRef.cpp:648 src/mathed/InsetMathRef.cpp:380
 msgid "Textual Page Number"
 msgstr "N° de page du texte"
 
-#: src/insets/InsetRef.cpp:647
+#: src/insets/InsetRef.cpp:648
 msgid "TextPage"
 msgstr "PageTexte"
 
-#: src/insets/InsetRef.cpp:648 src/mathed/InsetMathRef.cpp:381
+#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:381
 msgid "Standard+Textual Page"
 msgstr "Standard + N° de page du texte"
 
-#: src/insets/InsetRef.cpp:648
+#: src/insets/InsetRef.cpp:649
 msgid "Ref+Text"
 msgstr "Réf+Texte"
 
-#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:383
+#: src/insets/InsetRef.cpp:650 src/mathed/InsetMathRef.cpp:383
 msgid "Reference to Name"
 msgstr "Référence au nom"
 
-#: src/insets/InsetRef.cpp:649
+#: src/insets/InsetRef.cpp:650
 msgid "NameRef"
 msgstr "RefNom"
 
-#: src/insets/InsetRef.cpp:650
+#: src/insets/InsetRef.cpp:651
 msgid "Formatted"
 msgstr "Mis en page"
 
-#: src/insets/InsetRef.cpp:650
+#: src/insets/InsetRef.cpp:651
 msgid "Format"
 msgstr "Format"
 
-#: src/insets/InsetRef.cpp:651 src/mathed/InsetMathRef.cpp:384
+#: src/insets/InsetRef.cpp:652 src/mathed/InsetMathRef.cpp:384
 msgid "Label Only"
 msgstr "Étiquette uniquement"
 
