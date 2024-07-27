@@ -413,6 +413,7 @@ BufferParams::BufferParams()
 	use_bibtopic = false;
 	multibib = string();
 	use_indices = false;
+	use_memindex = false;
 	save_transient_properties = true;
 	track_changes = false;
 	output_changes = false;
