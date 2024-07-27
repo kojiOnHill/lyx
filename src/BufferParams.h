@@ -247,6 +247,8 @@ public:
 	/// use custom margins
 	bool use_geometry;
 	///
+	mutable std::string set_geometry;
+	///
 	std::string paperwidth;
 	///
 	std::string paperheight;
