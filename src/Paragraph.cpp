@@ -3337,7 +3337,7 @@ string Paragraph::getID(Buffer const &, OutputParams const &)
 }
 
 
-string Paragraph::getLabel() const
+string Paragraph::getLabelForXRef() const
 {
 	for (pos_type i = 0; i < size(); ++i) {
 		if (Inset const * inset = getInset(i)) {
