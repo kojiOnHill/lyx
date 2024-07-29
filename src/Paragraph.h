@@ -201,7 +201,7 @@ public:
 	/// Get the id of the paragraph, useful for DocBook
 	std::string getID(Buffer const & buf, OutputParams const & runparams) const;
 
-	/// Return the string of a´the (first) \label (cross-referencing target)
+	/// Return the string of the (first) \label (cross-referencing target)
 	/// in this paragraph, or an empty string
 	std::string getLabelForXRef() const;
 
