@@ -1294,7 +1294,7 @@ bool BufferView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 
 	case LFUN_REFERENCE_TO_PARAGRAPH: {
 		int const id = convert<int>(cmd.getArg(0));
-		flag.setEnabled(id > 0);
+		flag.setEnabled(id >= 0);
 		break;
 	}
 
@@ -1659,13 +1659,18 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 
 	case LFUN_REFERENCE_TO_PARAGRAPH: {
 		int const id = convert<int>(cmd.getArg(0));
-		if (id < 1)
+		if (id < 0)
 			break;
 		string const type = cmd.getArg(1);
 		int i = 0;
 		for (Buffer * b = &buffer_; i == 0 || b != &buffer_;
 			b = theBufferList().next(b)) {
 			DocIterator const dit = b->getParFromID(id);
+			if (dit.empty()) {
+				LYXERR(Debug::INFO, "No matching paragraph found! [" << id << "].");
+				++i;
+				continue;
+			}
 			string const label = dit.innerParagraph().getLabelForXRef();
 			if (!label.empty()) {
 				// if the paragraph has a label, we refer to this
@@ -1680,7 +1685,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 				// we do not want to open the dialog, hence we
 				// do not employ LFUN_LABEL_INSERT
 				InsetCommandParams p(LABEL_CODE);
-				docstring const label = cur.getPossibleLabel();
+				docstring const label = dit.getPossibleLabel();
 				p["name"] = label;
 				string const data = InsetCommand::params2string(p);
 				lyx::dispatch(FuncRequest(LFUN_INSET_INSERT, data));
