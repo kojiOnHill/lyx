@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-07-08 11:03+0200\n"
-"PO-Revision-Date: 2024-07-08 09:47+0000\n"
+"POT-Creation-Date: 2024-08-02 09:01+0200\n"
+"PO-Revision-Date: 2024-08-02 07:02+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -82,16 +82,16 @@ msgstr "Kľúč literatúry"
 msgid "Ke&y:"
 msgstr "Kľú&č:"
 
-#: src/frontends/qt/ui/BibitemUi.ui:52 src/frontends/qt/ui/BibitemUi.ui:76
-#: src/frontends/qt/GuiBibitem.cpp:91
+#: src/frontends/qt/GuiBibitem.cpp:91 src/frontends/qt/ui/BibitemUi.ui:52
+#: src/frontends/qt/ui/BibitemUi.ui:76
 msgid "The label as it appears in the document"
-msgstr "Značka ako sa zobrazí v dokumente"
+msgstr "Štítok ako sa zobrazí v dokumente"
 
+#: src/frontends/qt/GuiBibitem.cpp:87 src/frontends/qt/GuiBibitem.cpp:89
 #: src/frontends/qt/ui/BibitemUi.ui:55 src/frontends/qt/ui/IncludeUi.ui:183
-#: src/frontends/qt/ui/LabelUi.ui:36 src/frontends/qt/GuiBibitem.cpp:87
-#: src/frontends/qt/GuiBibitem.cpp:89
+#: src/frontends/qt/ui/LabelUi.ui:36
 msgid "&Label:"
-msgstr "&Návestie:"
+msgstr "&Štítok:"
 
 #: src/frontends/qt/ui/BibitemUi.ui:83
 msgid "&Year:"
@@ -1114,9 +1114,9 @@ msgstr "Formátovanie"
 msgid "Citation st&yle:"
 msgstr "Štýl &citácie:"
 
-#: src/frontends/qt/ui/CitationUi.ui:299 src/frontends/qt/GuiCitation.cpp:294
+#: src/frontends/qt/GuiCitation.cpp:294 src/frontends/qt/ui/CitationUi.ui:299
 msgid "Text befo&re:"
-msgstr "&Text pred:"
+msgstr "Text p&red:"
 
 #: src/frontends/qt/ui/CitationUi.ui:319
 msgid "Citation style to use, if different styles are provided"
@@ -1130,9 +1130,9 @@ msgstr ""
 "Text predchádzajúci referencie (napr., \"por.\"), keď to aktuálny štýl "
 "citácie podporuje."
 
-#: src/frontends/qt/ui/CitationUi.ui:335 src/frontends/qt/GuiCitation.cpp:300
+#: src/frontends/qt/GuiCitation.cpp:300 src/frontends/qt/ui/CitationUi.ui:335
 msgid "&Text after:"
-msgstr "Te&xt za:"
+msgstr "&Text po:"
 
 #: src/frontends/qt/ui/CitationUi.ui:345 src/frontends/qt/GuiCitation.cpp:304
 msgid ""
@@ -2656,7 +2656,7 @@ msgid ""
 "output, e.g., as \"Theorem 1\" rather than just as the label."
 msgstr ""
 "Pokúsi sa zobraziť formátovanú krížovú referenciu tak, ako by sa objavila vo "
-"výstupe, napr. ako \"Veta 1\" a nie len ako značka."
+"výstupe, napr. ako \"Veta 1\" a nie len ako štítok."
 
 #: src/frontends/qt/ui/LaTeXUi.ui:214
 msgid "Format cross-references in the &work area"
@@ -3378,7 +3378,7 @@ msgid ""
 "out of moving arguments such as sections and captions. This prevents LaTeX "
 "errors that can happen in such cases. It is recommended to keep this on."
 msgstr ""
-"Vysunúť lámavé prvky ako návestie a indexové záznamy z pohyblivých "
+"Vysunúť lámavé prvky ako sú štítky a indexové záznamy z pohyblivých "
 "argumentov (napr. pre sekcie alebo popisy). Zamedzuje niektorým chybám "
 "LaTeXu v takých pádoch. Lepšie nechať to zaškrtnuté."
 
@@ -3745,16 +3745,16 @@ msgstr "Š&tandardné zarovnanie odstavca"
 
 #: src/frontends/qt/ui/ParagraphUi.ui:154
 msgid "Label Width"
-msgstr "Šírka návestia"
+msgstr "Šírka štítku"
 
 #: src/frontends/qt/ui/ParagraphUi.ui:178
 #: src/frontends/qt/ui/ParagraphUi.ui:191
 msgid "This text defines the width of the paragraph label"
-msgstr "Tento text definuje šírku návestia v odstavci"
+msgstr "Tento text definuje šírku štítku odstavca"
 
 #: src/frontends/qt/ui/ParagraphUi.ui:181
 msgid "Lo&ngest label"
-msgstr "Na&jdlhšie návestie"
+msgstr "Na&jdlhší štítok"
 
 #: src/frontends/qt/ui/ParagraphUi.ui:201
 msgid "&Do not indent paragraph"
@@ -5142,7 +5142,7 @@ msgstr "Nastavenia nomenklatúry"
 #: src/frontends/qt/ui/PrintNomenclUi.ui:19
 #: src/frontends/qt/ui/PrintNomenclUi.ui:32
 msgid "Define hanging indentation/label length for the nomenclature list."
-msgstr "Definovať odsadenie/dĺžku návestia pre zoznam nomenklatúry."
+msgstr "Definovať odsadenie/dĺžku štítku pre zoznam nomenklatúry."
 
 #: src/frontends/qt/ui/PrintNomenclUi.ui:22
 msgid "&List Indentation:"
@@ -5238,10 +5238,9 @@ msgstr "Pred pokračovaním kompilácie LaTeX-om okno automaticky vyčistiť"
 msgid "&Clear automatically"
 msgstr "Vyčis&tiť automaticky"
 
-#: src/frontends/qt/ui/RefUi.ui:33 lib/layouts/pdfform.module:90
-#: src/insets/InsetRef.cpp:651
+#: src/insets/InsetRef.cpp:652 src/frontends/qt/ui/RefUi.ui:33
 msgid "Label"
-msgstr "Značka"
+msgstr "Štítok"
 
 #: src/frontends/qt/ui/RefUi.ui:38
 msgid "Reference counter value"
@@ -5253,7 +5252,7 @@ msgstr "&V:"
 
 #: src/frontends/qt/ui/RefUi.ui:100
 msgid "The (sub-)document from which the available labels are displayed"
-msgstr "Ten (pod-)dokument z ktorého sa dostupné heslá majú zobraziť"
+msgstr "Ten (pod-)dokument z ktorého sa dostupné štítky majú zobraziť"
 
 #: src/frontends/qt/ui/RefUi.ui:134
 msgid "So&rt:"
@@ -5261,11 +5260,11 @@ msgstr "Po&radie:"
 
 #: src/frontends/qt/ui/RefUi.ui:144
 msgid "Sorting of the list of available labels"
-msgstr "Triedenie listiny dostupných hesiel"
+msgstr "Triedenie listiny dostupných štítkov"
 
 #: src/frontends/qt/ui/RefUi.ui:151
 msgid "Group the list of available labels by prefix (e.g. \"sec:\")"
-msgstr "Zoskupiť zoznam dostupných hesiel podľa prefixu (napr. \"sec:\")"
+msgstr "Zoskupiť zoznam dostupných štítkov podľa prefixu (napr. \"sec:\")"
 
 #: src/frontends/qt/ui/RefUi.ui:154
 msgid "Grou&p"
@@ -5273,23 +5272,23 @@ msgstr "Zo&skupiť"
 
 #: src/frontends/qt/ui/RefUi.ui:176
 msgid "Available &Labels:"
-msgstr "Dostupné &heslá:"
+msgstr "Dostupné &štítky:"
 
 #: src/frontends/qt/ui/RefUi.ui:188
 msgid "Sele&cted Label:"
-msgstr "V&ybrané heslo:"
+msgstr "V&ybraný štítok:"
 
 #: src/frontends/qt/ui/RefUi.ui:201
 msgid "Select a label from the list above or enter a label manually"
-msgstr "Vyberte si heslo z listiny hore alebo vložte heslo manuálne"
+msgstr "Vyberte štítok z listiny hore alebo vložte štítok manuálne"
 
-#: src/frontends/qt/ui/RefUi.ui:214 src/frontends/qt/GuiRef.cpp:403
+#: src/frontends/qt/GuiRef.cpp:403 src/frontends/qt/ui/RefUi.ui:214
 msgid "Jump to the selected label"
-msgstr "Skočiť na vybrané heslo"
+msgstr "Prejsť na vybratý štítok"
 
-#: src/frontends/qt/ui/RefUi.ui:217 src/frontends/qt/GuiRef.cpp:402
+#: src/frontends/qt/GuiRef.cpp:402 src/frontends/qt/ui/RefUi.ui:217
 msgid "&Go to Label"
-msgstr "Pre&jsť na heslo"
+msgstr "Pre&jsť na štítok"
 
 #: src/frontends/qt/ui/RefUi.ui:228
 msgid "Reference For&mat:"
@@ -5327,9 +5326,9 @@ msgstr "Formátovaná referencia"
 msgid "Textual reference"
 msgstr "Textová referencia"
 
-#: src/frontends/qt/ui/RefUi.ui:286 src/frontends/qt/GuiRef.cpp:324
+#: src/frontends/qt/GuiRef.cpp:324 src/frontends/qt/ui/RefUi.ui:286
 msgid "Label only"
-msgstr "Len heslo"
+msgstr "Len štítok"
 
 #: src/frontends/qt/ui/RefUi.ui:324
 msgid ""
@@ -5353,11 +5352,11 @@ msgstr ""
 
 #: src/frontends/qt/ui/RefUi.ui:337
 msgid "Capitalized"
-msgstr "Veľké písmená"
+msgstr "Prvé veľké"
 
 #: src/frontends/qt/ui/RefUi.ui:344
 msgid "Do not output part of label before \":\""
-msgstr "Neukazovať časť hesla ktorá je pred \":\""
+msgstr "Neukazovať časť štítka pred \":\""
 
 #: src/frontends/qt/ui/RefUi.ui:347 lib/ui/stdcontext.inc:126
 msgid "No Prefix"
@@ -6199,17 +6198,17 @@ msgstr "&Chrániť:"
 msgid "Default skip"
 msgstr "Štandardné riadkovanie"
 
-#: src/frontends/qt/ui/VSpaceUi.ui:88 src/VSpace.cpp:193
+#: src/VSpace.cpp:193 src/frontends/qt/ui/VSpaceUi.ui:88
 msgid "Small skip"
-msgstr "Malá"
+msgstr "Malý"
 
-#: src/frontends/qt/ui/VSpaceUi.ui:93 src/VSpace.cpp:196
+#: src/VSpace.cpp:196 src/frontends/qt/ui/VSpaceUi.ui:93
 msgid "Medium skip"
-msgstr "Stredná"
+msgstr "Stredný"
 
-#: src/frontends/qt/ui/VSpaceUi.ui:98 src/VSpace.cpp:199
+#: src/VSpace.cpp:199 src/frontends/qt/ui/VSpaceUi.ui:98
 msgid "Big skip"
-msgstr "Veľká"
+msgstr "Veľký"
 
 #: src/frontends/qt/ui/VSpaceUi.ui:103 src/VSpace.cpp:202
 #: src/frontends/qt/GuiDocument.cpp:901
@@ -6399,12 +6398,12 @@ msgstr "Päta"
 #: lib/citeengines/biblatex.citeengine:135
 #: lib/citeengines/jurabib.citeengine:125
 msgid "bibliography entry"
-msgstr "zápis do bibliografie"
+msgstr "záznam bibliografie"
 
 #: lib/citeengines/biblatex-natbib.citeengine:146
 #: lib/citeengines/biblatex.citeengine:136 lib/layouts/tufte-book.layout:30
 msgid "Full bibliography entry."
-msgstr "Plný zápis bibliografie."
+msgstr "Plný záznam bibliografie."
 
 #: lib/citeengines/biblatex-natbib.citeengine:147
 #: lib/citeengines/biblatex.citeengine:137
@@ -6414,7 +6413,7 @@ msgstr "Automaticky citovať"
 #: lib/citeengines/biblatex-natbib.citeengine:150
 #: lib/citeengines/biblatex.citeengine:142
 msgid "F&orce full title[[Possible substitute to All aut&hors]]"
-msgstr "Vnútiť plný titul"
+msgstr "Vnútiť &plný titul"
 
 #: lib/citeengines/biblatex-natbib.citeengine:151
 #: lib/citeengines/biblatex.citeengine:143
@@ -6474,7 +6473,7 @@ msgstr ""
 
 #: lib/citeengines/biblatex.citeengine:140
 msgid "S&horten author list[[Possible substitute to All aut&hors]]"
-msgstr "Skrátiť súpis autorov"
+msgstr "S&krátiť súpis autorov"
 
 #: lib/citeengines/biblatex.citeengine:141
 msgid "Force a short author list (using et al.)"
@@ -6496,7 +6495,7 @@ msgstr ""
 
 #: lib/citeengines/jurabib.citeengine:126
 msgid "Bibliography entry."
-msgstr "Zápis do bibliografie."
+msgstr "Záznam bibliografie."
 
 #: lib/citeengines/jurabib.citeengine:127
 msgid "before"
@@ -10021,11 +10020,11 @@ msgstr "Mini šablóna pre túto listinu (viďte enumitem manuál)"
 
 #: lib/layouts/beamer.layout:207
 msgid "Longest label|s"
-msgstr "Najdlhšie návestie|v"
+msgstr "Najdlhší štítok|d"
 
 #: lib/layouts/beamer.layout:208
 msgid "The longest label in this list (to determine the indendation width)"
-msgstr "Najdlhšie návestie v tejto listine (na určenie šírky odsadenia)"
+msgstr "Najdlhší štítok v tejto listine (na určenie šírky odsadenia)"
 
 #: lib/layouts/beamer.layout:255 lib/layouts/beamer.layout:298
 #: lib/layouts/beamer.layout:363 lib/layouts/beamer.layout:427
@@ -10191,7 +10190,7 @@ msgstr "Fólia"
 
 #: lib/layouts/beamer.layout:617
 msgid "Repeat frame with label"
-msgstr "Opakovať rám s návestím"
+msgstr "Opakovať rám so štítkom"
 
 #: lib/layouts/beamer.layout:629
 msgid "FrameTitle"
@@ -12079,11 +12078,11 @@ msgstr "Titulná poznámka pod čiarou"
 
 #: lib/layouts/elsarticle.layout:114
 msgid "Footnote Label"
-msgstr "Poznámka pod čiarou: Návestie"
+msgstr "Poznámka pod čiarou: Štítok"
 
 #: lib/layouts/elsarticle.layout:115
 msgid "Label you refer to in the title"
-msgstr "Návestie na ktoré sa v titule vzťahujete"
+msgstr "Štítok na ktorý sa v titule vzťahujete"
 
 #: lib/layouts/elsarticle.layout:124 lib/layouts/revtex4-x.inc:238
 msgid "Title footnote:"
@@ -12091,11 +12090,11 @@ msgstr "Titulná poznámka pod čiarou:"
 
 #: lib/layouts/elsarticle.layout:145
 msgid "Author Label"
-msgstr "Návestie autora"
+msgstr "Štítok autora"
 
 #: lib/layouts/elsarticle.layout:146
 msgid "Label you will reference in the address"
-msgstr "Návestie na ktoré sa v adrese chcete vzťahovať"
+msgstr "Štítok na ktorý sa v adrese chcete vzťahovať"
 
 #: lib/layouts/elsarticle.layout:169
 msgid "Authormark"
@@ -12111,11 +12110,11 @@ msgstr "Autor poznámky pod čiarou:"
 
 #: lib/layouts/elsarticle.layout:198
 msgid "Author Footnote Label"
-msgstr "Autor návestia poznámky pod čiarou"
+msgstr "Štítok poznámky pod čiarou autora"
 
 #: lib/layouts/elsarticle.layout:199
 msgid "Label you refer to for an author"
-msgstr "Návestie pre autora na ktoré sa vzťahujete"
+msgstr "Štítok, ktorý odkazuje na autora"
 
 #: lib/layouts/elsarticle.layout:204
 msgid "CorAuthormark"
@@ -12135,11 +12134,11 @@ msgstr "Korešpondujúci autor text:"
 
 #: lib/layouts/elsarticle.layout:229
 msgid "Address Label"
-msgstr "Návestie adresy"
+msgstr "Štítok s adresou"
 
 #: lib/layouts/elsarticle.layout:230
 msgid "Label of the author you refer to"
-msgstr "Návestie autora na ktorého sa vzťahujete"
+msgstr "Štítok autora, na ktorého sa odvolávate"
 
 #: lib/layouts/elsarticle.layout:256
 msgid "Internet"
@@ -14107,7 +14106,7 @@ msgstr "Rensuji*"
 
 #: lib/layouts/japanese-vertical.inc:28
 msgid "Rensuji with no Skip Adjustment|n"
-msgstr "Rensuji bez upravenia medzier"
+msgstr "Rensuji bez upravenia medzier|b"
 
 #: lib/layouts/japanese-vertical.inc:29
 msgid "Rensuji (no skip adj.)"
@@ -14755,7 +14754,7 @@ msgstr "Preklad"
 
 #: lib/layouts/linguistics.module:247 lib/layouts/linguistics.module:318
 msgid "Gloss Translation"
-msgstr "Preklad glosy|k"
+msgstr "Preklad glosy"
 
 #: lib/layouts/linguistics.module:248
 msgid "Add a free translation for the gloss"
@@ -15536,7 +15535,7 @@ msgstr "Mesto alebo krajina"
 
 #: lib/layouts/moderncv.layout:463
 msgid "Optional"
-msgstr "Ľubovoľné"
+msgstr "Voliteľné"
 
 #: lib/layouts/moderncv.layout:464
 msgid "Grade or other info"
@@ -15824,8 +15823,8 @@ msgstr ""
 "Balík paralist poskytuje niekoľké nové listinové prostredia. Položkové a "
 "číslované listiny môžu byť vysádzané vnútri odstavcov, ako odstavce a aj v "
 "kompaktnej verzii. Väčšina prostredí má voliteľné argumenty na formátovanie "
-"návestia. Dodatočne, LaTeX-ové prostredia itemize a enumerate sú rozšírené "
-"na použitie obdobného voliteľného argumentu. Pre detaily viďte Paralist v "
+"štítkov. Dodatočne, LaTeX-ové prostredia itemize a enumerate sú rozšírené na "
+"použitie obdobného voliteľného argumentu. Pre detaily viďte Paralist v "
 "Špecifické manuály."
 
 #: lib/layouts/paralist.module:32 lib/layouts/paralist.module:39
@@ -16174,9 +16173,13 @@ msgstr "Začiarkovacie políčko"
 msgid "ChoiceMenu"
 msgstr "Výber menu"
 
+#: lib/layouts/pdfform.module:90
+msgid "Label[[Form]]"
+msgstr "Označenie"
+
 #: lib/layouts/pdfform.module:93
 msgid "Insert the label here"
-msgstr "Vložte sem návestie"
+msgstr "Vložte sem štítok"
 
 #: lib/layouts/pdfform.module:97 lib/layouts/pdfform.module:100
 msgid "PushButton"
@@ -17084,7 +17087,7 @@ msgstr ""
 
 #: lib/layouts/shapepar.module:27
 msgid "CD label"
-msgstr "CD návestie"
+msgstr "CD štítok"
 
 #: lib/layouts/shapepar.module:31
 msgid "ShapedParagraphs"
@@ -17568,7 +17571,7 @@ msgstr "Argument"
 
 #: lib/layouts/stdinsets.inc:740
 msgid "unlabelled"
-msgstr "beznávestné"
+msgstr "neoznačené"
 
 #: lib/layouts/stdinsets.inc:747
 msgid "Preview"
@@ -17733,11 +17736,11 @@ msgstr "Alternatívne meno"
 
 #: lib/layouts/svcommon.inc:695
 msgid "Longest Description Label"
-msgstr "Najdlhšie návestie opisu"
+msgstr "Najdlhší popisný štítok"
 
 #: lib/layouts/svcommon.inc:696
 msgid "Longest description label"
-msgstr "Najdlhšie návestie opisu"
+msgstr "Najdlhší popisný štítok"
 
 #: lib/layouts/svcommon.inc:709
 msgid "Petit"
@@ -18753,11 +18756,11 @@ msgstr "# [číslo problému(Prob)]"
 
 #: lib/layouts/theorems-without-preamble.inc:378
 msgid "Label of Problem"
-msgstr "Návestie problému"
+msgstr "Štítok problému"
 
 #: lib/layouts/theorems-without-preamble.inc:379
 msgid "Label of the corresponding problem"
-msgstr "Návestie korešpondujúce problému"
+msgstr "Štítok korešpondujúci problému"
 
 #: lib/layouts/theorems-without-preamble.inc:392
 msgid "Exercise ##"
@@ -18869,7 +18872,7 @@ msgstr "poznámka na okraji (číslovaná)"
 
 #: lib/layouts/tufte-book.layout:29
 msgid "bibl. entry"
-msgstr "bibl. zápis"
+msgstr "bibl. záznam"
 
 #: lib/layouts/tufte-book.layout:184
 msgid "Marginnote"
@@ -20157,7 +20160,7 @@ msgstr "Očísliť tento riadok|O"
 
 #: lib/ui/stdcontext.inc:58
 msgid "Equation Label|L"
-msgstr "Návestie rovnice|s"
+msgstr "Štítok rovnice|Š"
 
 #: lib/ui/stdcontext.inc:59
 msgid "Copy as Reference|R"
@@ -20194,7 +20197,7 @@ msgstr "Rozdeliť bunku|d"
 
 #: lib/ui/stdcontext.inc:69
 msgid "Rows & Columns| "
-msgstr "Riadky & stĺpce| "
+msgstr "Riadky a stĺpce| "
 
 #: lib/ui/stdcontext.inc:70
 msgid "Add Line Above|o"
@@ -20250,7 +20253,7 @@ msgstr "Ďalšia krížová referencia|o"
 
 #: lib/ui/stdcontext.inc:93 lib/ui/stdcontext.inc:113
 msgid "Go to Label|G"
-msgstr "Prejsť na heslo|P"
+msgstr "Prejsť na štítok|P"
 
 #: lib/ui/stdcontext.inc:95 lib/ui/stdcontext.inc:115
 msgid "<Reference>|R"
@@ -20282,7 +20285,7 @@ msgstr "Textová referencia|x"
 
 #: lib/ui/stdcontext.inc:102 lib/ui/stdcontext.inc:122
 msgid "Label Only|L"
-msgstr "Len heslo|L"
+msgstr "Len štítok|L"
 
 #: lib/ui/stdcontext.inc:104 lib/ui/stdcontext.inc:129
 #: lib/ui/stdcontext.inc:141 lib/ui/stdcontext.inc:151
@@ -20340,7 +20343,7 @@ msgstr "Rozpustiť vložku|ž"
 
 #: lib/ui/stdcontext.inc:184 lib/ui/stdcontext.inc:200
 msgid "Show Label|L"
-msgstr "Zobraz návestie|Z"
+msgstr "Zobraziť štítok|Z"
 
 #: lib/ui/stdcontext.inc:211 lib/ui/stdmenus.inc:529
 msgid "Frameless|l"
@@ -20432,7 +20435,7 @@ msgstr "Nerozbitná tučná medzera (5/18 em)|t"
 
 #: lib/ui/stdcontext.inc:271
 msgid "Non-Breaking Negative Thin Space (-1/6 em)|N"
-msgstr "Nerozbitná záporná úzka medzera (−1/6 em)|z"
+msgstr "Nerozbitná záporná úzka medzera (-1/6 em)|z"
 
 #: lib/ui/stdcontext.inc:272
 msgid "Non-Breaking Negative Medium Space (-2/9 em)|v"
@@ -21715,7 +21718,7 @@ msgstr "Krížová referencia…|a"
 
 #: lib/ui/stdmenus.inc:392
 msgid "Label...|L"
-msgstr "Referenčná značka…|z"
+msgstr "Štítok…|Š"
 
 #: lib/ui/stdmenus.inc:395
 msgid "Index Properties"
@@ -21839,7 +21842,7 @@ msgstr "Meno súboru (Bez prípony)|e"
 
 #: lib/ui/stdmenus.inc:439
 msgid "Version Control Revision|V"
-msgstr "Správa verzií: Revízia|R"
+msgstr "Revízia Správy Verzií|R"
 
 #: lib/ui/stdmenus.inc:440
 msgid "User Name|U"
@@ -22071,7 +22074,7 @@ msgstr "Ďalšia krížová referencia|r"
 
 #: lib/ui/stdmenus.inc:609
 msgid "Go to Label|L"
-msgstr "Prejsť na heslo|j"
+msgstr "Prejsť na štítok|j"
 
 #: lib/ui/stdmenus.inc:616
 msgid "Save Bookmark 1|S"
@@ -22391,7 +22394,7 @@ msgstr "Vložiť plávajúcu tabuľku"
 
 #: lib/ui/stdtoolbars.inc:136
 msgid "Insert label"
-msgstr "Vložiť návestie"
+msgstr "Vložiť štítok"
 
 #: lib/ui/stdtoolbars.inc:137
 msgid "Insert cross-reference"
@@ -22863,12 +22866,12 @@ msgstr "Aktualizovať iné formáty"
 #: lib/ui/stdtoolbars.inc:304 lib/ui/stdtoolbars.inc:310
 #: lib/ui/stdtoolbars.inc:316 lib/ui/stdtoolbars.inc:322
 msgid "[[Toolbar]]&On"
-msgstr "Zapnúť"
+msgstr "&Zapnúť"
 
 #: lib/ui/stdtoolbars.inc:305 lib/ui/stdtoolbars.inc:311
 #: lib/ui/stdtoolbars.inc:317 lib/ui/stdtoolbars.inc:323
 msgid "[[Toolbar]]O&ff"
-msgstr "Vypnúť"
+msgstr "&Vypnúť"
 
 #: lib/ui/stdtoolbars.inc:306 lib/ui/stdtoolbars.inc:312
 #: lib/ui/stdtoolbars.inc:318 lib/ui/stdtoolbars.inc:324
@@ -25537,7 +25540,7 @@ msgstr "moo"
 
 #: lib/ui/stdtoolbars.inc:1116
 msgid "merge"
-msgstr "merge"
+msgstr "zlúčiť"
 
 #: lib/ui/stdtoolbars.inc:1117
 msgid "invneg"
@@ -29216,15 +29219,15 @@ msgstr "LaTeX: text"
 
 #: src/Color.cpp:270
 msgid "Text label 1"
-msgstr "Označenie textu 1"
+msgstr "Textový štítok 1"
 
 #: src/Color.cpp:271
 msgid "Text label 2"
-msgstr "Označenie textu 2"
+msgstr "Textový štítok 2"
 
 #: src/Color.cpp:272
 msgid "Text label 3"
-msgstr "Označenie textu 3"
+msgstr "Textový štítok 3"
 
 #: src/Color.cpp:273
 msgid "inline completion"
@@ -29240,7 +29243,7 @@ msgstr "náhľad: útržok"
 
 #: src/Color.cpp:278
 msgid "note label"
-msgstr "poznámka: návestie"
+msgstr "poznámka: štítok"
 
 #: src/Color.cpp:279
 msgid "note background"
@@ -29248,7 +29251,7 @@ msgstr "poznámka: pozadie"
 
 #: src/Color.cpp:280
 msgid "comment label"
-msgstr "komentár: návestie"
+msgstr "komentár: štítok"
 
 #: src/Color.cpp:281
 msgid "comment background"
@@ -29256,7 +29259,7 @@ msgstr "komentár: pozadie"
 
 #: src/Color.cpp:282
 msgid "greyedout inset label"
-msgstr "zosivelá vložka: návestie"
+msgstr "zosivelá vložka: štítok"
 
 #: src/Color.cpp:284
 msgid "greyedout inset background"
@@ -29276,23 +29279,23 @@ msgstr "výpisy: pozadie"
 
 #: src/Color.cpp:288
 msgid "branch label"
-msgstr "vetva: návestie"
+msgstr "vetva: štítok"
 
 #: src/Color.cpp:289
 msgid "footnote label"
-msgstr "poznámka pod čiarou: návestie"
+msgstr "poznámka pod čiarou: štítok"
 
 #: src/Color.cpp:290
 msgid "index label"
-msgstr "heslo registra: návestie"
+msgstr "heslo registra: štítok"
 
 #: src/Color.cpp:291
 msgid "margin note label"
-msgstr "okrajová poznámka: návestie"
+msgstr "okrajová poznámka: štítok"
 
 #: src/Color.cpp:292
 msgid "URL label"
-msgstr "URL: návestie"
+msgstr "URL: štítok"
 
 #: src/Color.cpp:293
 msgid "URL text"
@@ -29376,7 +29379,7 @@ msgstr "mat. makro zdvihnuté: pozadie"
 
 #: src/Color.cpp:314
 msgid "math macro label"
-msgstr "mat. makro: návestie"
+msgstr "mat. makro: štítok"
 
 #: src/Color.cpp:315
 msgid "math macro frame"
@@ -29408,7 +29411,7 @@ msgstr "vložka: pozadie"
 
 #: src/Color.cpp:322
 msgid "inset label"
-msgstr "vložka: návestie"
+msgstr "vložka: štítok"
 
 #: src/Color.cpp:323
 msgid "inset frame"
@@ -29622,7 +29625,7 @@ msgstr "&Nespustiť"
 
 #: src/Converter.cpp:382
 msgid "A&llow"
-msgstr "Povoliť"
+msgstr "&Povoliť"
 
 #: src/Converter.cpp:382
 msgid "&Run"
@@ -31733,7 +31736,7 @@ msgstr "Nezabudnite zapísať blokovaciu vlastnosť do repozitára."
 
 #: src/VSpace.cpp:215
 msgid "protected"
-msgstr "chránená"
+msgstr "chránený"
 
 #: src/buffer_funcs.cpp:53
 #, c-format
@@ -32626,11 +32629,11 @@ msgstr ""
 
 #: src/frontends/qt/GuiCitation.cpp:284
 msgid "General text befo&re:"
-msgstr "Všeobecný text pred:"
+msgstr "Všeobecný text p&red:"
 
 #: src/frontends/qt/GuiCitation.cpp:285 src/frontends/qt/GuiCitation.cpp:289
 msgid "General &text after:"
-msgstr "Všeobecný text po:"
+msgstr "Všeobecný &text po:"
 
 #: src/frontends/qt/GuiCitation.cpp:286
 msgid ""
@@ -33872,7 +33875,7 @@ msgstr "Dátum (aktuálny)"
 
 #: src/frontends/qt/GuiInfo.cpp:72
 msgid "Date (last modification of document)"
-msgstr "Dátum (Poslednej modifikácie dokumentu)|m"
+msgstr "Dátum (Poslednej modifikácie dokumentu)"
 
 #: src/frontends/qt/GuiInfo.cpp:73
 msgid "Date (fixed)"
@@ -33884,7 +33887,7 @@ msgstr "Čas (aktuálny)"
 
 #: src/frontends/qt/GuiInfo.cpp:75
 msgid "Time (last modification of document)"
-msgstr "Čas (Poslednej modifikácie dokumentu)|o"
+msgstr "Čas (Poslednej modifikácie dokumentu)"
 
 #: src/frontends/qt/GuiInfo.cpp:76
 msgid "Time (fixed)"
@@ -34145,7 +34148,7 @@ msgstr "Príkaz-"
 
 #: src/frontends/qt/GuiLabel.h:35
 msgid "Label Settings"
-msgstr "Nastavenia návestia"
+msgstr "Nastavenia štítku"
 
 #: src/frontends/qt/GuiLine.h:34
 msgid "Line Settings"
@@ -34382,8 +34385,8 @@ msgid ""
 " Normally, you won't need to set this, since the largest label width of all "
 "the items is used."
 msgstr ""
-"Ako popísané v užívateľskej príručke, šírka tohto textu určuje šírku "
-"návestia v prostrediach typu Listina a Opis.\n"
+"Ako popísané v užívateľskej príručke, šírka tohto textu určuje šírku štítku "
+"v prostrediach typu Listina a Opis.\n"
 "\n"
 "Toto obvykle netreba nastavovať, lebo je štandardne vybraná najdlhším "
 "návestím všetkých použitých položiek."
@@ -34414,7 +34417,7 @@ msgstr "Doplňovanie"
 
 #: src/frontends/qt/GuiPrefs.cpp:579 src/frontends/qt/GuiPrefs.cpp:725
 msgid "C&ommand:"
-msgstr "Príkaz:"
+msgstr "&Príkaz:"
 
 #: src/frontends/qt/GuiPrefs.cpp:604 src/frontends/qt/GuiPrefs.cpp:629
 #: src/frontends/qt/GuiPrefs.cpp:753 src/frontends/qt/GuiPrefs.cpp:780
@@ -34723,11 +34726,11 @@ msgstr "Krížová referencia"
 
 #: src/frontends/qt/GuiRef.cpp:61
 msgid "All available labels"
-msgstr "Všetky dostupné heslá"
+msgstr "Všetky dostupné štítky"
 
 #: src/frontends/qt/GuiRef.cpp:62
 msgid "Enter string to filter the list of available labels"
-msgstr "Zadajte reťazec na výber z listiny dostupných hesiel"
+msgstr "Zadajte reťazec na výber z listiny dostupných štítkov"
 
 #: src/frontends/qt/GuiRef.cpp:69
 msgid "By Occurrence"
@@ -34743,7 +34746,7 @@ msgstr "Abecedne (Rozlišujúc veľké a malé písmená)"
 
 #: src/frontends/qt/GuiRef.cpp:74
 msgid "Update the label list"
-msgstr "Aktualizovať prehľad značiek"
+msgstr "Aktualizovať prehľad štítkov"
 
 #: src/frontends/qt/GuiRef.cpp:395
 msgid "&Go Back"
@@ -36330,7 +36333,7 @@ msgstr "Vyberte súbor, ktorý sa má otvoriť:"
 
 #: src/frontends/qt/qt_helpers.cpp:355
 msgid "&Trust this document and do not ask me again!"
-msgstr "Dôverujte tomuto dokumentu a viac sa na to nepýtajte!"
+msgstr "&Dôverujte tomuto dokumentu a viac sa na to nepýtajte!"
 
 #: src/frontends/qt/qt_helpers.cpp:356
 msgid ""
@@ -36388,7 +36391,7 @@ msgstr "Skript `%1$s' zlyhal."
 
 #: src/insets/Inset.cpp:92
 msgid "Bibliography Entry"
-msgstr "Zápis do bibliografie"
+msgstr "Záznam bibliografie"
 
 #: src/insets/Inset.cpp:98
 msgid "Float"
@@ -37100,7 +37103,7 @@ msgstr "tučný"
 
 #: src/insets/InsetIndex.cpp:1034
 msgid "italic"
-msgstr "kurzívny (italic)"
+msgstr "kurzíva (italic)"
 
 #: src/insets/InsetIndex.cpp:1036
 msgid "emphasized"
@@ -37414,7 +37417,7 @@ msgstr "%1$s neznámy"
 
 #: src/insets/InsetLabel.cpp:73
 msgid "Label names must be unique!"
-msgstr "Mená značiek musia byť unikátne!"
+msgstr "Názvy štítkov musia byť unikátne!"
 
 #: src/insets/InsetLabel.cpp:74
 #, c-format
@@ -37422,8 +37425,8 @@ msgid ""
 "The label %1$s already exists,\n"
 "it will be changed to %2$s."
 msgstr ""
-"Značka %1$s už existuje,\n"
-"bude premenované na %2$s."
+"Štítok %1$s už existuje,\n"
+"zmení sa na %2$s."
 
 #: src/insets/InsetLabel.cpp:181
 msgid "DUPLICATE: "
@@ -37623,8 +37626,8 @@ msgid ""
 "(when using the child document dialog) or menu Insert->Label (when defining "
 "a listing inset)"
 msgstr ""
-"Tento parameter by tu nemal byť zadaný. Použite prosím políčko popisku (v "
-"dialógu pre dokument potomka) alebo cez menu Vložiť -> Návestie (pri "
+"Tento parameter by tu nemal byť zadaný. Použite prosím políčko štítka (v "
+"dialógu pre dokument potomka) alebo cez menu Vložiť -> Štítok… (pri "
 "definícii výpisu zdrojového kódu)"
 
 #: src/insets/InsetListingsParams.cpp:690
@@ -37811,6 +37814,10 @@ msgstr "%1$stext"
 msgid "text%1$s"
 msgstr "text%1$s"
 
+#: src/insets/InsetRef.cpp:403
+msgid "elsewhere"
+msgstr "inde"
+
 #: src/insets/InsetRef.cpp:644
 msgid "Ref"
 msgstr "Ref"
@@ -37855,9 +37862,9 @@ msgstr "Formátované"
 msgid "Format"
 msgstr "Formát"
 
-#: src/insets/InsetRef.cpp:651 src/mathed/InsetMathRef.cpp:384
+#: src/insets/InsetRef.cpp:652 src/mathed/InsetMathRef.cpp:384
 msgid "Label Only"
-msgstr "Len heslo"
+msgstr "Len štítok"
 
 #: src/insets/InsetScript.cpp:337
 msgid "subscript"
@@ -38334,7 +38341,7 @@ msgstr "Meno ref: "
 
 #: src/mathed/InsetMathRef.cpp:384
 msgid "Label Only: "
-msgstr "Len heslo: "
+msgstr "Len štítok: "
 
 #: src/mathed/InsetMathSize.cpp:108 src/mathed/InsetMathTextsize.cpp:93
 #, c-format
@@ -40702,9 +40709,6 @@ msgstr "Neznámy používateľ"
 
 #~ msgid "List of Changes"
 #~ msgstr "Zoznam Zmien"
-
-#~ msgid "elsewhere"
-#~ msgstr "inde"
 
 #~ msgid "BeginFrame"
 #~ msgstr "ZačiatokRámu"
