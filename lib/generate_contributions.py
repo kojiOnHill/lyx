@@ -1172,6 +1172,14 @@ contributors = [
                  "8 December 2011",
                  u"Dutch translation, icon fixes"),
 
+     contributor(u"Tomasz Kołodziejski",
+                 "tkolodziejski () gmail ! com",
+                 "Re: Updated polish translation",
+                 "license statement",
+                 "m=172280079927432",
+                 "4 August 2024",
+                 "Polish translation"),
+
      contributor(u"Kostantino",
                  "ciclope10 () alice ! it",
                  "GPL",
