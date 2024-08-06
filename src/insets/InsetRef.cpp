@@ -573,13 +573,12 @@ void InsetRef::addToToc(DocIterator const & cpit, bool output_active,
 
 		// Code for display of formatted references
 		bool const use_formatted_ref = buffer().params().use_formatted_ref;
-		if (use_formatted_ref) {
-			string const & cmd = getCmdName();
-			docstring const & ref = getParam("reference");
-			if (cmd != "pageref" && cmd != "vpageref" && cmd != "vref" &&
-					cmd != "labelonly")
-				screen_label_ = displayString(ref, cmd);
-		}
+		docstring & target = use_formatted_ref ? screen_label_ : tooltip_;
+		string const & cmd = getCmdName();
+		docstring const & ref = getParam("reference");
+		if (cmd != "pageref" && cmd != "vpageref" && cmd != "vref" &&
+				cmd != "labelonly")
+			target = displayString(ref, cmd);
 		return;
 	}
 	// It seems that this reference does not point to any valid label.
