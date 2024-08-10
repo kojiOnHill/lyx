@@ -362,8 +362,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-07-22 18:48+0200\n"
-"PO-Revision-Date: 2024-07-24 16:23+0200\n"
+"POT-Creation-Date: 2024-08-10 18:06+0200\n"
+"PO-Revision-Date: 2024-08-10 18:08+0200\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
 "Language: fr\n"
@@ -3815,6 +3815,7 @@ msgid "MathML"
 msgstr "MathML"
 
 #: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
+#: lib/configure.py:853
 msgid "HTML"
 msgstr "HTML"
 
@@ -5710,8 +5711,7 @@ msgstr ""
 msgid "&Clear automatically"
 msgstr "&Nettoyer automatiquement"
 
-#: src/frontends/qt/ui/RefUi.ui:33 lib/layouts/pdfform.module:90
-#: src/insets/InsetRef.cpp:652
+#: src/frontends/qt/ui/RefUi.ui:33 src/insets/InsetRef.cpp:651
 msgid "Label"
 msgstr "Étiquette"
 
@@ -7972,7 +7972,7 @@ msgstr "Transactions IEEE"
 #: lib/layouts/slides.layout:61 lib/layouts/stdclass.inc:28
 #: lib/layouts/stdinsets.inc:713 lib/layouts/stdletter.inc:12
 #: lib/layouts/svcommon.inc:26 lib/layouts/tufte-book.layout:35
-#: src/insets/InsetRef.cpp:645
+#: src/insets/InsetRef.cpp:644
 msgid "Standard"
 msgstr "Standard"
 
@@ -12818,7 +12818,7 @@ msgstr ""
 "ajouter le numéro de section au numéro d'équation, comme dans « (2.1) »."
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:646
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:645
 #: src/mathed/InsetMathRef.cpp:378
 msgid "Equation"
 msgstr "Équation"
@@ -13132,7 +13132,7 @@ msgid "Size the photo is resized to"
 msgstr "Changement de taille de la photo"
 
 #: lib/layouts/europecv.layout:185 src/frontends/qt/GuiDocument.cpp:135
-#: src/insets/InsetRef.cpp:647
+#: src/insets/InsetRef.cpp:646
 msgid "Page"
 msgstr "Page"
 
@@ -16716,6 +16716,10 @@ msgstr "CaseÀCocher"
 #: lib/layouts/pdfform.module:85 lib/layouts/pdfform.module:88
 msgid "ChoiceMenu"
 msgstr "Menu"
+
+#: lib/layouts/pdfform.module:90
+msgid "Label[[Form]]"
+msgstr "Légende"
 
 #: lib/layouts/pdfform.module:93
 msgid "Insert the label here"
@@ -20945,7 +20949,7 @@ msgstr "Note LyX|N"
 msgid "Comment|m"
 msgstr "Commentaire|C"
 
-#: lib/ui/stdcontext.inc:237 lib/ui/stdmenus.inc:548
+#: lib/ui/stdcontext.inc:237
 msgid "Greyed Out|y"
 msgstr "Grisée|G"
 
@@ -22545,6 +22549,10 @@ msgstr "Clé de tri|C"
 #: lib/ui/stdmenus.inc:547
 msgid "Comment|C"
 msgstr "Commentaire|C"
+
+#: lib/ui/stdmenus.inc:548
+msgid "Greyed Out|G"
+msgstr "Grisée|G"
 
 #: lib/ui/stdmenus.inc:554
 msgid "Insert New Branch...|I"
@@ -27699,12 +27707,8 @@ msgid "An Xfig figure.\n"
 msgstr "Une figure Xfig.\n"
 
 #: lib/configure.py:726
-msgid "tgo"
-msgstr "tgo"
-
-#: lib/configure.py:726
-msgid "tgo|Tgif"
-msgstr "tgo|Tgif"
+msgid "Tgif"
+msgstr "Tgif"
 
 #: lib/configure.py:729
 msgid "FIG"
@@ -27715,12 +27719,8 @@ msgid "DIA"
 msgstr "DIA"
 
 #: lib/configure.py:735
-msgid "sxd"
-msgstr "sxd"
-
-#: lib/configure.py:735
-msgid "sxd|OpenDocument"
-msgstr "sxd|OpenDocument"
+msgid "OpenDocument drawing"
+msgstr "Dessin OpenDocument"
 
 #: lib/configure.py:738
 msgid "Grace"
@@ -27746,13 +27746,9 @@ msgstr "BMP"
 msgid "GIF"
 msgstr "GIF"
 
-#: lib/configure.py:750
-msgid "jpeg"
-msgstr "jpeg"
-
-#: lib/configure.py:750
-msgid "jpeg|JPEG"
-msgstr "jpeg|JPEG"
+#: lib/configure.py:750 src/frontends/qt/GuiClipboard.cpp:182
+msgid "JPEG"
+msgstr "JPEG"
 
 #: lib/configure.py:751
 msgid "PBM"
@@ -28027,13 +28023,9 @@ msgstr "DVI (LuaTeX)|V"
 msgid "DraftDVI"
 msgstr "BrouillonDVI"
 
-#: lib/configure.py:853 lib/configure.py:890
-msgid "htm"
-msgstr "htm"
-
-#: lib/configure.py:853 lib/configure.py:890
-msgid "htm|HTML"
-msgstr "htm|HTML"
+#: lib/configure.py:853
+msgid "HTML|H"
+msgstr "HTML|H"
 
 #: lib/configure.py:856
 msgid "Noteedit"
@@ -28133,24 +28125,16 @@ msgid "LyX Preview"
 msgstr "Aperçu"
 
 #: lib/configure.py:885
-msgid "pdf_tex"
-msgstr "pdf_tex"
-
-#: lib/configure.py:885
-msgid "pdf_tex|PDFTEX"
-msgstr "pdf_tex|PDFTEX"
+msgid "PDFTEX"
+msgstr "PDFTEX"
 
 #: lib/configure.py:886
 msgid "Program"
 msgstr "Listing de code source"
 
 #: lib/configure.py:887
-msgid "ps_tex"
-msgstr "ps_tex"
-
-#: lib/configure.py:887
-msgid "ps_tex|PSTEX"
-msgstr "ps_tex|PSTEX"
+msgid "PSTEX"
+msgstr "PSTEX"
 
 #: lib/configure.py:888 src/frontends/qt/GuiClipboard.cpp:178
 msgid "Windows Metafile"
@@ -28160,17 +28144,17 @@ msgstr "Métafichier Windows"
 msgid "Enhanced Metafile"
 msgstr "Métafichier amélioré"
 
+#: lib/configure.py:890
+msgid "HTML (MS Word)"
+msgstr "HTML (MS Word)"
+
 #: lib/configure.py:1009
 msgid "LyXBlogger"
 msgstr "LyxBlogger"
 
-#: lib/configure.py:1291
-msgid "gnuplot"
-msgstr "gnuplot"
-
-#: lib/configure.py:1291
-msgid "gnuplot|Gnuplot"
-msgstr "gnuplot|Gnuplot"
+#: lib/configure.py:1291 lib/examples/Articles:0
+msgid "Gnuplot"
+msgstr "Gnuplot"
 
 #: lib/configure.py:1398
 msgid "LyX Archive (zip)"
@@ -28195,10 +28179,6 @@ msgstr "Exemple (lyxifié)"
 #: lib/examples/Articles:0
 msgid "Example (raw)"
 msgstr "Exemple (brut)"
-
-#: lib/examples/Articles:0
-msgid "Gnuplot"
-msgstr "Gnuplot"
 
 #: lib/examples/Articles:0 src/TocBackend.cpp:302
 #: src/frontends/qt/GuiExternal.cpp:86
@@ -29295,7 +29275,7 @@ msgid "greyedout inset text"
 msgstr "texte d'insert grisé"
 
 #: src/BufferParams.cpp:1727 src/BufferParams.cpp:1881
-#: src/BufferParams.cpp:2356 src/Encoding.cpp:264 src/Paragraph.cpp:3177
+#: src/BufferParams.cpp:2362 src/Encoding.cpp:264 src/Paragraph.cpp:3177
 #: src/frontends/qt/LaTeXHighlighter.cpp:176
 #: src/insets/InsetCommandParams.cpp:524 src/insets/InsetCommandParams.cpp:532
 #: src/insets/InsetGraphics.cpp:904 src/insets/InsetGraphics.cpp:912
@@ -29306,7 +29286,7 @@ msgid "LyX Warning: "
 msgstr "Avertissement LyX : "
 
 #: src/BufferParams.cpp:1728 src/BufferParams.cpp:1882
-#: src/BufferParams.cpp:2357 src/Encoding.cpp:265 src/Paragraph.cpp:3178
+#: src/BufferParams.cpp:2363 src/Encoding.cpp:265 src/Paragraph.cpp:3178
 #: src/insets/InsetCommandParams.cpp:525 src/insets/InsetCommandParams.cpp:533
 #: src/insets/InsetGraphics.cpp:905 src/insets/InsetGraphics.cpp:913
 #: src/insets/InsetListings.cpp:299 src/insets/InsetListings.cpp:307
@@ -29361,11 +29341,11 @@ msgstr ""
 "Choisir un encodage approprié (par exemple utf8)\n"
 "ou modifier les options de classe."
 
-#: src/BufferParams.cpp:2370
+#: src/BufferParams.cpp:2376
 msgid "Uncodable character in user preamble"
 msgstr "Caractère incodable dans le préambule utilisateur"
 
-#: src/BufferParams.cpp:2372
+#: src/BufferParams.cpp:2378
 #, c-format
 msgid ""
 "The user preamble of your document contains glyphs that are unknown in the "
@@ -29384,7 +29364,7 @@ msgstr ""
 "Choisir un encodage approprié (par exemple utf8)\n"
 "ou modifier l'orthographe du nom d'auteur."
 
-#: src/BufferParams.cpp:2687
+#: src/BufferParams.cpp:2693
 #, c-format
 msgid ""
 "The layout file:\n"
@@ -29399,11 +29379,11 @@ msgstr ""
 "sera utilisée. LyX ne pourra pas produire\n"
 "un résultat imprimable correct."
 
-#: src/BufferParams.cpp:2693
+#: src/BufferParams.cpp:2699
 msgid "Document class not found"
 msgstr "Classe de document introuvable"
 
-#: src/BufferParams.cpp:2700
+#: src/BufferParams.cpp:2706
 #, c-format
 msgid ""
 "Due to some error in it, the layout file:\n"
@@ -29418,23 +29398,23 @@ msgstr ""
 "sera utilisée. LyX ne pourra pas produire\n"
 "un résultat imprimable correct."
 
-#: src/BufferParams.cpp:2706 src/BufferView.cpp:1471 src/BufferView.cpp:1503
+#: src/BufferParams.cpp:2712 src/BufferView.cpp:1471 src/BufferView.cpp:1503
 msgid "Could not load class"
 msgstr "Chargement de la classe impossible"
 
-#: src/BufferParams.cpp:2751
+#: src/BufferParams.cpp:2757
 msgid "Error reading internal layout information"
 msgstr "Erreur de lecture du format interne"
 
-#: src/BufferParams.cpp:2752 src/TextClass.cpp:1961 src/TextClass.cpp:1994
+#: src/BufferParams.cpp:2758 src/TextClass.cpp:1961 src/TextClass.cpp:1994
 msgid "Read Error"
 msgstr "Erreur de lecture"
 
-#: src/BufferParams.cpp:3804
+#: src/BufferParams.cpp:3810
 msgid "No bibliography processor found!"
 msgstr "Aucun processeur bibliographique n'a été trouvé !"
 
-#: src/BufferParams.cpp:3806
+#: src/BufferParams.cpp:3812
 #, c-format
 msgid ""
 "The bibliography processor requested by this document (%1$s) is not "
@@ -29447,11 +29427,11 @@ msgstr ""
 "bibliographie ni références ne seront créées.\n"
 "Merci de réparer votre installation !"
 
-#: src/BufferParams.cpp:3814
+#: src/BufferParams.cpp:3820
 msgid "Requested bibliography processor not found!"
 msgstr "Processeur bibliographique requis introuvable !"
 
-#: src/BufferParams.cpp:3816
+#: src/BufferParams.cpp:3822
 #, c-format
 msgid ""
 "The bibliography processor requested by this document (%1$s) is not "
@@ -30715,7 +30695,7 @@ msgstr ""
 "%1$s\n"
 "introuvable. Retour au fichier implicite."
 
-#: src/KeySequence.cpp:179
+#: src/KeySequence.cpp:190
 msgid "   options: "
 msgstr "   options : "
 
@@ -31805,7 +31785,7 @@ msgstr "[Suivi des Modifications] "
 msgid "Changed by %1$s[[author]] on %2$s[[date]]. "
 msgstr "Modifié par %1$s[[auteur]] le %2$s[[date]]. "
 
-#: src/Text.cpp:2172 src/mathed/InsetMathFont.cpp:238
+#: src/Text.cpp:2172 src/mathed/InsetMathFont.cpp:236
 #: src/mathed/InsetMathFontOld.cpp:111
 #, c-format
 msgid "Font: %1$s"
@@ -33357,10 +33337,6 @@ msgstr "Texte après"
 #: src/frontends/qt/GuiClipboard.cpp:179
 msgid "LinkBack PDF"
 msgstr "LinkBack PDF"
-
-#: src/frontends/qt/GuiClipboard.cpp:182
-msgid "JPEG"
-msgstr "JPEG"
 
 #: src/frontends/qt/GuiClipboard.cpp:191
 msgid "pasted"
@@ -36587,51 +36563,51 @@ msgstr "Aperçu de code"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1, aperçu"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1660
+#: src/frontends/qt/GuiWorkArea.cpp:1662
 msgid "Close File"
 msgstr "Fermer le fichier"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2307
+#: src/frontends/qt/GuiWorkArea.cpp:2309
 msgid "%1 (read only)"
 msgstr "%1 (en lecture seule)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2315
+#: src/frontends/qt/GuiWorkArea.cpp:2317
 msgid "%1 (modified externally)"
 msgstr "%1 (modifié par une application externe)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2337
+#: src/frontends/qt/GuiWorkArea.cpp:2339
 msgid "&Hide Tab"
 msgstr "&Cacher l'onglet"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2342
+#: src/frontends/qt/GuiWorkArea.cpp:2344
 msgid "&Close Tab"
 msgstr "&Fermer l'onglet"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2346
+#: src/frontends/qt/GuiWorkArea.cpp:2348
 msgid "Close &Other Tabs"
 msgstr "Fermer les &autres onglets"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2350
 msgid "Close Tabs to the &Right"
 msgstr "Fermer les onglets depuis la &droite"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2352
 msgid "Close Tabs to the &Left"
 msgstr "Fermer les onglets depuis la &gauche"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2355
+#: src/frontends/qt/GuiWorkArea.cpp:2357
 msgid "Move Tab to &Start"
 msgstr "Déplacer l'onglet au &début"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2359
 msgid "Move Tab to &End"
 msgstr "Déplacer l'onglet à la f&in"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2362
+#: src/frontends/qt/GuiWorkArea.cpp:2364
 msgid "Open Enclosing &Directory"
 msgstr "Ouvrir le &répertoire contenant"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2407
+#: src/frontends/qt/GuiWorkArea.cpp:2409
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>Le fichier %1 a changé sur le disque.</b>"
 
@@ -37296,7 +37272,8 @@ msgstr "Aucune bibliographie définie !"
 msgid "+ %1$d more entries."
 msgstr "+ %1$d entrées supplémentaires."
 
-#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:554
+#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:551
+#: src/insets/InsetRef.cpp:663
 msgid "BROKEN: "
 msgstr "CASSÉ : "
 
@@ -38504,51 +38481,51 @@ msgstr "texte%1$s"
 msgid "elsewhere"
 msgstr "ailleurs"
 
-#: src/insets/InsetRef.cpp:645
+#: src/insets/InsetRef.cpp:644
 msgid "Ref"
 msgstr "Ref"
 
-#: src/insets/InsetRef.cpp:646
+#: src/insets/InsetRef.cpp:645
 msgid "EqRef"
 msgstr "RéfÉq"
 
-#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:379
+#: src/insets/InsetRef.cpp:646 src/mathed/InsetMathRef.cpp:379
 msgid "Page Number"
 msgstr "Numéro de page"
 
-#: src/insets/InsetRef.cpp:648 src/mathed/InsetMathRef.cpp:380
+#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:380
 msgid "Textual Page Number"
 msgstr "N° de page du texte"
 
-#: src/insets/InsetRef.cpp:648
+#: src/insets/InsetRef.cpp:647
 msgid "TextPage"
 msgstr "PageTexte"
 
-#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:381
+#: src/insets/InsetRef.cpp:648 src/mathed/InsetMathRef.cpp:381
 msgid "Standard+Textual Page"
 msgstr "Standard + N° de page du texte"
 
-#: src/insets/InsetRef.cpp:649
+#: src/insets/InsetRef.cpp:648
 msgid "Ref+Text"
 msgstr "Réf+Texte"
 
-#: src/insets/InsetRef.cpp:650 src/mathed/InsetMathRef.cpp:383
+#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:383
 msgid "Reference to Name"
 msgstr "Référence au nom"
 
-#: src/insets/InsetRef.cpp:650
+#: src/insets/InsetRef.cpp:649
 msgid "NameRef"
 msgstr "RefNom"
 
-#: src/insets/InsetRef.cpp:651
+#: src/insets/InsetRef.cpp:650
 msgid "Formatted"
 msgstr "Mis en page"
 
-#: src/insets/InsetRef.cpp:651
+#: src/insets/InsetRef.cpp:650
 msgid "Format"
 msgstr "Format"
 
-#: src/insets/InsetRef.cpp:652 src/mathed/InsetMathRef.cpp:384
+#: src/insets/InsetRef.cpp:651 src/mathed/InsetMathRef.cpp:384
 msgid "Label Only"
 msgstr "Étiquette uniquement"
 
@@ -38856,7 +38833,7 @@ msgstr "Chaîne de caractères reconnue."
 msgid "Can't add vertical grid lines in '%1$s'"
 msgstr "Ne peut pas ajouter de lignes de grille verticales dans « %1$s »"
 
-#: src/mathed/InsetMathBox.cpp:163
+#: src/mathed/InsetMathBox.cpp:113
 #, c-format
 msgid "Box: %1$s"
 msgstr "Boîte : %1$s"
@@ -39455,6 +39432,42 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Utilisateur inconnu"
+
+#~ msgid "tgo"
+#~ msgstr "tgo"
+
+#~ msgid "sxd"
+#~ msgstr "sxd"
+
+#~ msgid "sxd|OpenDocument"
+#~ msgstr "sxd|OpenDocument"
+
+#~ msgid "jpeg"
+#~ msgstr "jpeg"
+
+#~ msgid "jpeg|JPEG"
+#~ msgstr "jpeg|JPEG"
+
+#~ msgid "htm"
+#~ msgstr "htm"
+
+#~ msgid "htm|HTML"
+#~ msgstr "htm|HTML"
+
+#~ msgid "pdf_tex"
+#~ msgstr "pdf_tex"
+
+#~ msgid "ps_tex"
+#~ msgstr "ps_tex"
+
+#~ msgid "ps_tex|PSTEX"
+#~ msgstr "ps_tex|PSTEX"
+
+#~ msgid "gnuplot"
+#~ msgstr "gnuplot"
+
+#~ msgid "gnuplot|Gnuplot"
+#~ msgstr "gnuplot|Gnuplot"
 
 #~ msgid "Invalid package list format!"
 #~ msgstr "Format de la liste des paquetages invalide !"
@@ -40838,9 +40851,6 @@ msgstr "Utilisateur inconnu"
 
 #~ msgid "date command"
 #~ msgstr "commande 'date'"
-
-#~ msgid "PSTEX"
-#~ msgstr "PSTEX"
 
 #~ msgid "frame of button"
 #~ msgstr "bordure de bouton d'insert"
