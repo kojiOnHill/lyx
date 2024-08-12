@@ -76,8 +76,6 @@ static ParamInfo const & findInfo(InsetCode code, string const & cmdName)
 		return InsetLabel::findInfo(cmdName);
 	case LINE_CODE:
 		return InsetLine::findInfo(cmdName);
-	case NOMENCL_CODE:
-		return InsetNomencl::findInfo(cmdName);
 	case NOMENCL_PRINT_CODE:
 		return InsetPrintNomencl::findInfo(cmdName);
 	case REF_CODE:
@@ -216,8 +214,6 @@ string InsetCommandParams::getDefaultCmd(InsetCode code)
 			return InsetLabel::defaultCommand();
 		case LINE_CODE:
 			return InsetLine::defaultCommand();
-		case NOMENCL_CODE:
-			return InsetNomencl::defaultCommand();
 		case NOMENCL_PRINT_CODE:
 			return InsetPrintNomencl::defaultCommand();
 		case REF_CODE:
@@ -255,8 +251,6 @@ bool InsetCommandParams::isCompatibleCommand(InsetCode code, string const & s)
 			return InsetLabel::isCompatibleCommand(s);
 		case LINE_CODE:
 			return InsetLine::isCompatibleCommand(s);
-		case NOMENCL_CODE:
-			return InsetNomencl::isCompatibleCommand(s);
 		case NOMENCL_PRINT_CODE:
 			return InsetPrintNomencl::isCompatibleCommand(s);
 		case REF_CODE:

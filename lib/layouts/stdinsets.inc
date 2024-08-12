@@ -453,6 +453,37 @@ InsetLayout IndexMacro:subentry
 	LabelString           "Subentry"
 End
 
+InsetLayout Nomenclature
+	LabelString           Nom
+	LatexType             command
+	LatexName             nomenclature
+	Decoration            classic
+	Font
+	  Size                Small
+	EndFont
+	LabelFont
+	  Color               nomlabel
+	  Size                Small
+	EndFont
+	MultiPar              false
+	CustomPars            false
+	ForcePlain            true
+	ContentAsLabel        true
+	AddToToc              nomencl
+	Argument 1
+		LabelString   "Sort as"
+		Tooltip       "Sort this entry as specified in the inset"
+	EndArgument
+	Argument post:1
+		LabelString   "Description"
+		Tooltip       "Description of the entry"
+		AutoInsert    1
+		Mandatory     1
+		EscapeChars   %!@|
+	EndArgument
+	EscapeChars           %!@|
+End
+
 InsetLayout Box
 	InheritFont           false
 	LabelFont
