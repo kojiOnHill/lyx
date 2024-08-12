@@ -550,9 +550,11 @@ docstring InsetCommandParams::prepareCommand(OutputParams const & runparams,
 	// INDEX_ESCAPE is independent of the others
 	if (handling & ParamInfo::HANDLING_INDEX_ESCAPE) {
 		// Now escape special commands
-		static docstring const quote = from_ascii("\"");
+		// We only use this for nomencl, which has the
+		// escape char '%'
+		static docstring const esc_char = from_ascii("%");
 		int const nchars_escape = 4;
-		static char_type const chars_escape[nchars_escape] = { '"', '@', '|', '!' };
+		static char_type const chars_escape[nchars_escape] = { '@', '|', '!' };
 
 		if (!result.empty()) {
 			// The characters in chars_name[] need to be changed to a command when
@@ -561,7 +563,7 @@ docstring InsetCommandParams::prepareCommand(OutputParams const & runparams,
 				for (size_t i = 0, pos;
 					(pos = result.find(chars_escape[k], i)) != string::npos;
 					i = pos + 2)
-						result.replace(pos, 1, quote + chars_escape[k]);
+						result.replace(pos, 1, esc_char + chars_escape[k]);
 		}
 	}
 
