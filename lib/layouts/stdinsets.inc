@@ -4,7 +4,7 @@
 #
 # Detailed format description is available in the customization manual
 
-Format 106
+Format 107
 
 Provides stdinsets 1
 
@@ -720,8 +720,8 @@ InsetLayout Caption:Standard
 		LabelString   "Short Title|S"
 		Tooltip       "The caption as it appears in the list of figures/tables"
 		InsertCotext  1
-        DocBookTag    titleabbrev
-        DocBookArgumentAfterMainTag  true
+		DocBookTag    titleabbrev
+		DocBookArgumentAfterMainTag  true
 	EndArgument
 	HTMLStyle
 		div.float-caption {
