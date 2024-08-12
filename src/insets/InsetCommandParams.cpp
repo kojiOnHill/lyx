@@ -440,8 +440,7 @@ docstring InsetCommandParams::prepareCommand(OutputParams const & runparams,
 		result = command;
 		ltrimmed = true;
 	}
-	if (handling & ParamInfo::HANDLING_LATEXIFY
-	    || handling & ParamInfo::HANDLING_INDEX_ESCAPE)
+	if (handling & ParamInfo::HANDLING_LATEXIFY)
 		if ((*this)["literal"] == "true")
 			handling = ParamInfo::HANDLING_NONE;
 
@@ -538,23 +537,6 @@ docstring InsetCommandParams::prepareCommand(OutputParams const & runparams,
 					  "not representable in the current encoding and have been omitted: %1$s.\n"
 					  "Unchecking 'Literal' in the respective inset dialog might help."),
 				uncodable));
-		}
-	}
-	// INDEX_ESCAPE is independent of the others
-	if (handling & ParamInfo::HANDLING_INDEX_ESCAPE) {
-		// Now escape special commands
-		static docstring const quote = from_ascii("\"");
-		int const nchars_escape = 4;
-		static char_type const chars_escape[nchars_escape] = { '"', '@', '|', '!' };
-
-		if (!result.empty()) {
-			// The characters in chars_name[] need to be changed to a command when
-			// they are LaTeXified.
-			for (int k = 0; k < nchars_escape; k++)
-				for (size_t i = 0, pos;
-					(pos = result.find(chars_escape[k], i)) != string::npos;
-					i = pos + 2)
-						result.replace(pos, 1, quote + chars_escape[k]);
 		}
 	}
 
