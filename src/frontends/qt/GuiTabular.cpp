@@ -1278,7 +1278,7 @@ bool GuiTabular::checkWidgets(bool readonly) const
 
 bool GuiTabular::funcEnabled(Tabular::Feature f) const
 {
-	FuncRequest r(LFUN_INSET_MODIFY, "tabular for-dialog" + featureAsString(f));
+	FuncRequest r(LFUN_INSET_MODIFY, "tabular for-dialog " + featureAsString(f));
 	return getStatus(r).enabled();
 }
 
