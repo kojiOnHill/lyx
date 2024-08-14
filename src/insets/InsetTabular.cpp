@@ -5370,7 +5370,7 @@ void InsetTabular::doDispatch(Cursor & cur, FuncRequest & cmd)
 
 	case LFUN_INSET_MODIFY:
 		// we come from the dialog
-		if (cmd.getArg(0) == "tabular")
+		if (cmd.getArg(0) == "tabular" && cmd.getArg(1) != "for-dialog")
 			tabularFeatures(cur, cmd.getLongArg(1));
 		else
 			cur.undispatched();
