@@ -267,7 +267,8 @@ void GuiTabular::enableWidgets() const
 	bool const enable_valign =
 		!multirowCB->isChecked()
 		&& !widgetsToLength(columnWidthED, columnWidthUnitLC).empty()
-		&& specialAlignmentED->text().isEmpty();
+		&& specialAlignmentED->text().isEmpty()
+		&& funcEnabled(Tabular::VALIGN_BOTTOM);
 	vAlignCO->setEnabled(enable_valign);
 	vAlignLA->setEnabled(enable_valign);
 

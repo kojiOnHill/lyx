@@ -94,6 +94,10 @@ What's new
 
 - Display values of cross-references in tooltips for forward references.
 
+- Disable vertical alignment in tables with variable width columns (tabularx
+  and xltable), as this is not supported by the packages. Also fix the
+  disabling mechanism in the table dialog.
+
 
 * INTERNALS
 
