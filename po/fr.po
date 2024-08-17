@@ -362,7 +362,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-10 18:06+0200\n"
+"POT-Creation-Date: 2024-08-17 19:38-0400\n"
 "PO-Revision-Date: 2024-08-10 18:08+0200\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
@@ -396,32 +396,42 @@ msgstr "Répertoire utilisateur"
 msgid "Open user directory in file browser"
 msgstr "Ouvrir le répertoire utilisateur dans le navigateur de fichiers"
 
-#: src/frontends/qt/ui/AboutUi.ui:225
+#: src/frontends/qt/ui/AboutUi.ui:225 src/frontends/qt/ui/AboutUi.ui:272
 msgid "[[do]]O&pen"
 msgstr "O&uvrir"
 
-#: src/frontends/qt/ui/AboutUi.ui:241
+#: src/frontends/qt/ui/AboutUi.ui:238
+#, fuzzy
+msgid "Temporary directory"
+msgstr "Répertoire tem&poraire :"
+
+#: src/frontends/qt/ui/AboutUi.ui:269
+#, fuzzy
+msgid "Open temporary directory in file browser"
+msgstr "Ouvrir le répertoire de la bibliothèque dans le navigateur de fichiers"
+
+#: src/frontends/qt/ui/AboutUi.ui:288
 msgid "Credits"
 msgstr "Crédits"
 
-#: src/frontends/qt/ui/AboutUi.ui:266 lib/layouts/apa.layout:236
+#: src/frontends/qt/ui/AboutUi.ui:313 lib/layouts/apa.layout:236
 #: lib/layouts/apax.inc:343
 msgid "Copyright"
 msgstr "Copyright"
 
-#: src/frontends/qt/ui/AboutUi.ui:291
+#: src/frontends/qt/ui/AboutUi.ui:338
 msgid "Build Info"
 msgstr "Informations sur la compilation"
 
-#: src/frontends/qt/ui/AboutUi.ui:316
+#: src/frontends/qt/ui/AboutUi.ui:363
 msgid "Release Notes"
 msgstr "Notes de version"
 
-#: src/frontends/qt/ui/AboutUi.ui:361
+#: src/frontends/qt/ui/AboutUi.ui:408
 msgid "Copy version information to clipboard"
 msgstr "Copier les informations de version dans le presse-papiers"
 
-#: src/frontends/qt/ui/AboutUi.ui:364
+#: src/frontends/qt/ui/AboutUi.ui:411
 msgid "Copy &Version Info"
 msgstr "Copie et information de &version"
 
@@ -945,20 +955,20 @@ msgstr "Élongation"
 #: src/frontends/qt/ui/BoxUi.ui:265 src/frontends/qt/ui/ListingsUi.ui:110
 #: src/frontends/qt/ui/TabularUi.ui:328 src/frontends/qt/ui/TabularUi.ui:1537
 #: src/frontends/qt/ui/WrapUi.ui:47 src/frontends/qt/GuiDocument.cpp:1605
-#: src/frontends/qt/GuiParagraph.cpp:115 src/frontends/qt/GuiTabular.cpp:1044
+#: src/frontends/qt/GuiParagraph.cpp:115 src/frontends/qt/GuiTabular.cpp:1045
 msgid "Left"
 msgstr "À gauche"
 
 #: src/frontends/qt/ui/BoxUi.ui:270 src/frontends/qt/ui/TabularUi.ui:333
 #: src/frontends/qt/GuiExternal.cpp:78 src/frontends/qt/GuiGraphics.cpp:73
-#: src/frontends/qt/GuiParagraph.cpp:117 src/frontends/qt/GuiTabular.cpp:1045
+#: src/frontends/qt/GuiParagraph.cpp:117 src/frontends/qt/GuiTabular.cpp:1046
 msgid "Center"
 msgstr "Centré"
 
 #: src/frontends/qt/ui/BoxUi.ui:275 src/frontends/qt/ui/ListingsUi.ui:115
 #: src/frontends/qt/ui/TabularUi.ui:338 src/frontends/qt/ui/WrapUi.ui:52
 #: src/frontends/qt/GuiDocument.cpp:1607 src/frontends/qt/GuiParagraph.cpp:116
-#: src/frontends/qt/GuiTabular.cpp:1046
+#: src/frontends/qt/GuiTabular.cpp:1047
 msgid "Right"
 msgstr "À droite"
 
@@ -2896,8 +2906,8 @@ msgstr "&Nouvel index :"
 msgid ""
 "Enter the name of the desired index (e.g. \"Index of Names\") and hit \"Add\""
 msgstr ""
-"Saisir le nom de l'index désiré (e. g. « Index des noms ») et appuyez sur « "
-"Add »"
+"Saisir le nom de l'index désiré (e. g. « Index des noms ») et appuyez sur "
+"« Add »"
 
 #: src/frontends/qt/ui/IndicesUi.ui:131
 msgid "Add a new index to the list"
@@ -4061,8 +4071,8 @@ msgstr "Format papier"
 #: src/frontends/qt/ui/PageLayoutUi.ui:45
 msgid "Choose a particular paper size, or set your own with \"Custom\""
 msgstr ""
-"Choisir une taille de papier spécifique, ou préciser la vôtre avec « "
-"réglable »"
+"Choisir une taille de papier spécifique, ou préciser la vôtre avec "
+"« réglable »"
 
 #: src/frontends/qt/ui/PageLayoutUi.ui:126
 msgid "&Orientation:"
@@ -6207,12 +6217,12 @@ msgid "Horizontal alignment in column"
 msgstr "Alignement horizontal dans la colonne"
 
 #: src/frontends/qt/ui/TabularUi.ui:323 src/frontends/qt/GuiParagraph.cpp:114
-#: src/frontends/qt/GuiTabular.cpp:1048
+#: src/frontends/qt/GuiTabular.cpp:1049
 msgid "Justified"
 msgstr "Justifié"
 
 #: src/frontends/qt/ui/TabularUi.ui:343 src/frontends/qt/GuiTabular.cpp:251
-#: src/frontends/qt/GuiTabular.cpp:1050
+#: src/frontends/qt/GuiTabular.cpp:1051
 msgid "At Decimal Separator"
 msgstr "Au séparateur décimal"
 
@@ -13265,12 +13275,12 @@ msgstr ""
 "document. Une liste des annotations peut être produite en utilisant le style "
 "de paragraphe « Liste de FIXMEs ». Les annotations peuvent être paramétrées "
 "via le préambule LaTeX, voir la documentation de FiXme pour les détails. "
-"Nota : implicitement, les annotations ne sont affichées qu'en mode « "
-"brouillon » (si l'option « draft » a été ajoutée dans Document > Paramètres "
-"> Classe de document > Options de classe > Réglable). Pour les afficher dans "
-"tous les cas, ajouter \\\\fxsetup{draft} dans   Documents > Paramètres > "
-"Préambule. Noter également qu'il faut la version 4 ou supérieure du "
-"paquetage FiXme pour certaines fonctionnalités."
+"Nota : implicitement, les annotations ne sont affichées qu'en mode "
+"« brouillon » (si l'option « draft » a été ajoutée dans Document > "
+"Paramètres > Classe de document > Options de classe > Réglable). Pour les "
+"afficher dans tous les cas, ajouter \\\\fxsetup{draft} dans   Documents > "
+"Paramètres > Préambule. Noter également qu'il faut la version 4 ou "
+"supérieure du paquetage FiXme pour certaines fonctionnalités."
 
 #: lib/layouts/fixme.module:18 lib/layouts/fixme.module:56
 msgid "Fixme"
@@ -18454,8 +18464,8 @@ msgid ""
 "the table number, as in 'Table 2.1'."
 msgstr ""
 "Réinitialiser la numérotation des tableaux au début de chaque section et "
-"ajouter le numéro de section au numéro de tableau, comme dans « Tableau 2.1 "
-"»."
+"ajouter le numéro de section au numéro de tableau, comme dans « Tableau "
+"2.1 »."
 
 #: lib/layouts/tarticle.layout:3
 msgid "Japanese Article (Standard Class, vertical Writing)"
@@ -19352,10 +19362,10 @@ msgid ""
 "suppresses the output of TODO notes."
 msgstr ""
 "Fournit des inserts personnalisables pour créer des instances TODO dans un "
-"document (en utilisant le paquetage todonotes). Pour pouvoir engendrer une « "
-"Liste de TODO », le module fournit un style de paragraphe. Saisir « final » "
-"dans la liste des options de classe supprime l'affichage des notes TODO dans "
-"la sortie."
+"document (en utilisant le paquetage todonotes). Pour pouvoir engendrer une "
+"« Liste de TODO », le module fournit un style de paragraphe. Saisir "
+"« final » dans la liste des options de classe supprime l'affichage des notes "
+"TODO dans la sortie."
 
 #: lib/layouts/todonotes.module:15 lib/layouts/todonotes.module:120
 msgid "TODO"
@@ -28165,12 +28175,12 @@ msgid "LyX Archive (tar.gz)"
 msgstr "Archive LyX (tar.gz)"
 
 #: lib/examples/Articles:0
-msgid "Game 2"
-msgstr "Partie 2"
-
-#: lib/examples/Articles:0
 msgid "Game 1"
 msgstr "Partie 1"
+
+#: lib/examples/Articles:0
+msgid "Game 2"
+msgstr "Partie 2"
 
 #: lib/examples/Articles:0
 msgid "Example (LyXified)"
@@ -28186,24 +28196,24 @@ msgid "External Material"
 msgstr "Objet externe"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "Figure XY"
+msgid "Itemize Bullets"
+msgstr "Liste à puces"
+
+#: lib/examples/Articles:0
+msgid "Minted File Listing"
+msgstr "Fichier de listing minted"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
 msgstr "XY-Pic"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Liste à puces"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Diagrammes de Feynman"
 
 #: lib/examples/Articles:0
-msgid "Minted File Listing"
-msgstr "Fichier de listing minted"
+msgid "XY-Figure"
+msgstr "Figure XY"
 
 #: lib/examples/Articles:0
 msgid "Minted Listings"
@@ -28222,16 +28232,16 @@ msgid "Localization Test (for Developers)"
 msgstr "Test de localisation (pour les développeurs)"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "Mélange du japonais avec d'autres langues (platex)"
+msgid "Mixing Japanese with other Languages (with CJKutf8)"
+msgstr "Mélange du japonais avec d'autres langues (avec CJKutf8)"
 
 #: lib/examples/Articles:0
 msgid "Writing Armenian"
 msgstr "Écrire de l'Arménien"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with CJKutf8)"
-msgstr "Mélange du japonais avec d'autres langues (avec CJKutf8)"
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "Mélange du japonais avec d'autres langues (platex)"
 
 #: lib/examples/Articles:0
 msgid "Language Support"
@@ -28250,36 +28260,36 @@ msgid "Serial Letter 3"
 msgstr "Lettre en nombre 3"
 
 #: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Liste d'erreurs Noweb"
-
-#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "Livre LilyPond"
 
 #: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
+msgid "Multilingual Captions"
+msgstr "Légendes multilingues"
 
 #: lib/examples/Articles:0
 msgid "Hazard and Precautionary Statements"
 msgstr "Chimie : mentions de danger et conseils de prudence"
 
 #: lib/examples/Articles:0
-msgid "Multilingual Captions"
-msgstr "Légendes multilingues"
+msgid "Noweb Listerrors"
+msgstr "Liste d'erreurs Noweb"
+
+#: lib/examples/Articles:0
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
 msgid "Modules"
 msgstr "Modules"
 
 #: lib/examples/Articles:0
-msgid "Foils"
-msgstr "Foils"
-
-#: lib/examples/Articles:0
 msgid "Foils Landslide"
 msgstr "Foils paysage"
+
+#: lib/examples/Articles:0
+msgid "Foils"
+msgstr "Foils"
 
 #: lib/examples/Articles:0
 msgid "Beamer (Complex)"
@@ -28294,16 +28304,12 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Écriture du coréen avec CJK-ko"
 
 #: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Article hébreu (KOMA-Script)"
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
-
-#: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
@@ -28312,6 +28318,62 @@ msgstr "IEEE Transactions Conference"
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Modèle revue Springer Global (V. 3)"
+
+#: lib/examples/Articles:0
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Article hébreu (KOMA-Script)"
+
+#: lib/examples/Articles:0
+msgid "02 Foreword"
+msgstr "02 Préambule"
+
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Partie"
+
+#: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Glossaire"
+
+#: lib/examples/Articles:0
+msgid "04 Acknowledgements"
+msgstr "04 Remerciements"
+
+#: lib/examples/Articles:0
+msgid "06 Acronym"
+msgstr "06 Acronyme"
+
+#: lib/examples/Articles:0
+msgid "08 Author"
+msgstr "08 Auteur"
+
+#: lib/examples/Articles:0
+msgid "09 Appendix"
+msgstr "09 Annexe"
+
+#: lib/examples/Articles:0
+msgid "11 References"
+msgstr "11 Références"
+
+#: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 Liste des collaborateurs"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Dédicace"
+
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 Fichier principal"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03 Préface"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10 Solutions"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -28330,60 +28392,8 @@ msgid "05 Acronym"
 msgstr "05 Acronyme"
 
 #: lib/examples/Articles:0
-msgid "04 Acknowledgements"
-msgstr "04 Remerciements"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Fichier principal"
-
-#: lib/examples/Articles:0
-msgid "11 References"
-msgstr "11 Références"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Préface"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Solutions"
-
-#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Glossaire"
-
-#: lib/examples/Articles:0
-msgid "02 Foreword"
-msgstr "02 Préambule"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Dédicace"
-
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Liste des collaborateurs"
-
-#: lib/examples/Articles:0
-msgid "08 Author"
-msgstr "08 Auteur"
-
-#: lib/examples/Articles:0
-msgid "06 Acronym"
-msgstr "06 Acronyme"
-
-#: lib/examples/Articles:0
-msgid "09 Appendix"
-msgstr "09 Annexe"
-
-#: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Partie"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Glossaire"
 
 #: lib/examples/Articles:0
 msgid "Simple"
@@ -28394,16 +28404,16 @@ msgid "Colored"
 msgstr "En couleurs"
 
 #: lib/examples/Articles:0
+msgid "Chapter 1"
+msgstr "Chapitre 1"
+
+#: lib/examples/Articles:0
 msgid "Chapter 2"
 msgstr "Chapitre 2"
 
 #: lib/examples/Articles:0
 msgid "Main File"
 msgstr "Fichier principal"
-
-#: lib/examples/Articles:0
-msgid "Chapter 1"
-msgstr "Chapitre 1"
 
 #: lib/examples/Articles:0
 msgid "PhD Thesis"
@@ -28414,12 +28424,12 @@ msgid "Theses"
 msgstr "Thèses"
 
 #: lib/examples/Articles:0
-msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Livre japonais  (classe standard pour LuaTeX%2C écriture verticale)"
-
-#: lib/examples/Articles:0
 msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "Rapport japonais  (classe standard pour LuaTeX%2C écriture verticale)"
+
+#: lib/examples/Articles:0
+msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Livre japonais  (classe standard pour LuaTeX%2C écriture verticale)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
@@ -28958,8 +28968,8 @@ msgstr "Pas d'information pour exporter au format %1$s."
 #, c-format
 msgid "Hint: use non-TeX fonts or set input encoding to '%1$s'"
 msgstr ""
-"Astuce : utiliser les polices non-TeX ou positionner l'encodage d'entrée à « "
-"%1$s »"
+"Astuce : utiliser les polices non-TeX ou positionner l'encodage d'entrée à "
+"« %1$s »"
 
 #: src/Buffer.cpp:4524
 msgid "Couldn't export file"
@@ -30456,8 +30466,8 @@ msgstr "Format introuvable"
 #, c-format
 msgid "Flex inset %1$s is undefined after reloading `%2$s' layout."
 msgstr ""
-"L'insert flexible %1$s n'est pas défini après rechargement du format « %2$s "
-"»."
+"L'insert flexible %1$s n'est pas défini après rechargement du format "
+"« %2$s »."
 
 #: src/CutAndPaste.cpp:901
 #, c-format
@@ -30465,8 +30475,8 @@ msgid ""
 "Flex inset %1$s is undefined because of conversion from `%2$s' layout to "
 "`%3$s'."
 msgstr ""
-"L'insert flexible %1$s n'est pas défini du fait de la conversion du format « "
-"%2$s » vers « %3$s »."
+"L'insert flexible %1$s n'est pas défini du fait de la conversion du format "
+"« %2$s » vers « %3$s »."
 
 # à revoir
 # Fait JPC
@@ -30765,6 +30775,45 @@ msgstr ""
 "Le paquetage LaTeX « %1$s », nécessaire pour utiliser la police  « %2$s »,\n"
 "n'est pas installé sur votre système. LyX reviendra à la police implicite."
 
+#: src/LaTeXPackages.cpp:89
+msgid "Invalid package list format!"
+msgstr "Format de la liste des paquetages invalide !"
+
+#: src/LaTeXPackages.cpp:90
+msgid ""
+"The format of your LaTeX packages list is wrong. Please file a bug report."
+msgstr ""
+"Le format de votre liste des paquetages LaTeX est incorrect. Merci de poster "
+"un rapport de bogue."
+
+#: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
+msgid "Outdated configuration script detected!"
+msgstr "Script de configuration périmé détecté !"
+
+#: src/LaTeXPackages.cpp:99
+msgid ""
+"We have detected an outdated script 'chkconfig.ltx' in your user directory.\n"
+"The script has been renamed to 'chkconfig.ltx.bak'.\n"
+"If you did not copy the script there by purpose, you can safely delete it."
+msgstr ""
+"Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
+"répertoire utilisateur.\n"
+"Ce script a été renommé « chkconfig.ltx.bak ».\n"
+"Si vous n'aviez pas copié le script exprès, vous pouvez l'effacer en toute "
+"sécurité."
+
+#: src/LaTeXPackages.cpp:105
+#, c-format
+msgid ""
+"We have detected an outdated script 'chkconfig.ltx' in your user directory\n"
+"(%1$s).\n"
+"Please delete or update this file!"
+msgstr ""
+"Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
+"répertoire utilisateur.\n"
+"(%1$s).\n"
+"Merci de supprimer ou de mettre à jour ce fichier !"
+
 #: src/LyX.cpp:136
 msgid "Could not read configuration file"
 msgstr "Lecture du fichier de configuration impossible"
@@ -31038,8 +31087,8 @@ msgstr ""
 "                     où fmt est le format d'importation choisi\n"
 "                     et fichier.xxx le fichier à importer.\n"
 "\t-f [--force-overwrite] ceci\n"
-"                  où « ceci » est soit « all », soit « main », soit « none "
-"»,\n"
+"                  où « ceci » est soit « all », soit « main », soit "
+"« none »,\n"
 "                  spécifiant si tous les fichiers, seulement le fichier "
 "principal,\n"
 "                  ou aucun fichier (respectivement) seront écrasés pendant \n"
@@ -31309,8 +31358,8 @@ msgid ""
 "\"makeindex.sh -m $$lang\"."
 msgstr ""
 "Définir les options de makeindex (voir man makeindex) ou sélectionner un "
-"autre compilateur. Par ex., avec xindy / make-rules, la commande serait « "
-"makeindex.sh -m $$lang »."
+"autre compilateur. Par ex., avec xindy / make-rules, la commande serait "
+"« makeindex.sh -m $$lang »."
 
 #: src/LyXRC.cpp:3249
 msgid "Define the options of the index program for PLaTeX (Japanese LaTeX)."
@@ -31380,8 +31429,8 @@ msgid ""
 "The LaTeX command for loading the language package. E.g. "
 "\"\\usepackage{babel}\", \"\\usepackage{omega}\"."
 msgstr ""
-"Commande LaTeX pour charger le paquetage linguistique. Par exemple « "
-"\\usepackage{babel} », « \\usepackage{omega} »."
+"Commande LaTeX pour charger le paquetage linguistique. Par exemple "
+"« \\usepackage{babel} », « \\usepackage{omega} »."
 
 #: src/LyXRC.cpp:3298
 msgid ""
@@ -31579,8 +31628,8 @@ msgid ""
 "This starts the lyxserver. The pipes get an additional extension \".in\" and "
 "\".out\". Only for advanced users."
 msgstr ""
-"Démarrer le serveur LyX. Les tubes reçoivent le suffixe supplémentaire « .in "
-"» et « .out ». Réservé aux utilisateurs expérimentés."
+"Démarrer le serveur LyX. Les tubes reçoivent le suffixe supplémentaire « ."
+"in » et « .out ». Réservé aux utilisateurs expérimentés."
 
 #: src/LyXRC.cpp:3448
 msgid "De-select if you don't want the startup banner."
@@ -32618,11 +32667,11 @@ msgstr ""
 "cas, écrivez à la Free Software Foundation, Inc., 675 Mass Ave, Cambridge, "
 "MA 02139, USA."
 
-#: src/frontends/qt/GuiAbout.cpp:256
+#: src/frontends/qt/GuiAbout.cpp:262
 msgid "not released yet"
 msgstr "pas encore publié"
 
-#: src/frontends/qt/GuiAbout.cpp:261
+#: src/frontends/qt/GuiAbout.cpp:267
 #, c-format
 msgid ""
 "Version %1$s\n"
@@ -32631,31 +32680,31 @@ msgstr ""
 "Version %1$s\n"
 "(%2$s)"
 
-#: src/frontends/qt/GuiAbout.cpp:269
+#: src/frontends/qt/GuiAbout.cpp:275
 msgid "Built from git commit hash "
 msgstr "Construction à partir de l'empreinte de validation Git "
 
-#: src/frontends/qt/GuiAbout.cpp:282
+#: src/frontends/qt/GuiAbout.cpp:288
 #, c-format
 msgid "Qt Version (run-time): %1$s on platform %2$s"
 msgstr "Version Qt (à l'exécution) : %1$s sur la plate-forme  %2$s"
 
-#: src/frontends/qt/GuiAbout.cpp:287
+#: src/frontends/qt/GuiAbout.cpp:293
 #, c-format
 msgid "Qt Version (compile-time): %1$s"
 msgstr "Version Qt (à la compilation): %1$s"
 
-#: src/frontends/qt/GuiAbout.cpp:293
+#: src/frontends/qt/GuiAbout.cpp:299
 #, c-format
 msgid "OS Version (run-time): %1$s"
 msgstr "Version OS (à la compilation) : %1$s"
 
-#: src/frontends/qt/GuiAbout.cpp:300
+#: src/frontends/qt/GuiAbout.cpp:306
 #, c-format
 msgid "Python detected: %1$s"
 msgstr "Python détecté : %1$s"
 
-#: src/frontends/qt/GuiAbout.cpp:331
+#: src/frontends/qt/GuiAbout.cpp:343
 msgid "About LyX"
 msgstr "À propos de LyX"
 
@@ -32905,8 +32954,9 @@ msgid ""
 "Pass content of the `Author', `Year' and `All Authors' fields literally to "
 "LaTeX. Check this if you want to enter LaTeX code."
 msgstr ""
-"Transmet littéralement le contenu des champs « Auteur » , « Année » et « "
-"Tous les auteurs » à LaTeX. À cocher si vous souhaitez saisir du code LaTeX."
+"Transmet littéralement le contenu des champs « Auteur » , « Année » et "
+"« Tous les auteurs » à LaTeX. À cocher si vous souhaitez saisir du code "
+"LaTeX."
 
 #: src/frontends/qt/GuiBibitem.h:36
 msgid "Bibliography Item Settings"
@@ -34662,8 +34712,8 @@ msgid ""
 "output will be 'Yes' (package available) or 'No' (package unavailable)."
 msgstr ""
 "Saisir le nom d'un paquetage LaTeX comme « hyperref » (le suffixe est "
-"facultatif). La réponse sera « Oui » (paquetage disponible)  ou « Non "
-"» (paquetage manquant)."
+"facultatif). La réponse sera « Oui » (paquetage disponible)  ou « Non » "
+"(paquetage manquant)."
 
 #: src/frontends/qt/GuiInfo.cpp:195
 msgid ""
@@ -38639,15 +38689,15 @@ msgstr ""
 "L'information de suivi de modifications pour les lignes/colonnes de tableau "
 "est incomplète. Elle sera ignorée."
 
-#: src/insets/InsetTabular.cpp:5745
+#: src/insets/InsetTabular.cpp:5746
 msgid "Column movement not supported with multi-columns."
 msgstr "Déplacement de colonne non implanté pour les colonnes multiples."
 
-#: src/insets/InsetTabular.cpp:5763
+#: src/insets/InsetTabular.cpp:5764
 msgid "Row movement not supported with multi-rows."
 msgstr "Déplacement de ligne non implanté pour les lignes multiples."
 
-#: src/insets/InsetTabular.cpp:6284
+#: src/insets/InsetTabular.cpp:6287
 msgid "Selection size should match clipboard content."
 msgstr ""
 "La taille de la sélection doit correspondre au contenu du presse-papier."
@@ -39469,42 +39519,6 @@ msgstr "Utilisateur inconnu"
 #~ msgid "gnuplot|Gnuplot"
 #~ msgstr "gnuplot|Gnuplot"
 
-#~ msgid "Invalid package list format!"
-#~ msgstr "Format de la liste des paquetages invalide !"
-
-#~ msgid ""
-#~ "The format of your LaTeX packages list is wrong. Please file a bug report."
-#~ msgstr ""
-#~ "Le format de votre liste des paquetages LaTeX est incorrect. Merci de "
-#~ "poster un rapport de bogue."
-
-#~ msgid "Outdated configuration script detected!"
-#~ msgstr "Script de configuration périmé détecté !"
-
-#~ msgid ""
-#~ "We have detected an outdated script 'chkconfig.ltx' in your user "
-#~ "directory.\n"
-#~ "The script has been renamed to 'chkconfig.ltx.bak'.\n"
-#~ "If you did not copy the script there by purpose, you can safely delete it."
-#~ msgstr ""
-#~ "Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
-#~ "répertoire utilisateur.\n"
-#~ "Ce script a été renommé « chkconfig.ltx.bak ».\n"
-#~ "Si vous n'aviez pas copié le script exprès, vous pouvez l'effacer en "
-#~ "toute sécurité."
-
-#, c-format
-#~ msgid ""
-#~ "We have detected an outdated script 'chkconfig.ltx' in your user "
-#~ "directory\n"
-#~ "(%1$s).\n"
-#~ "Please delete or update this file!"
-#~ msgstr ""
-#~ "Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
-#~ "répertoire utilisateur.\n"
-#~ "(%1$s).\n"
-#~ "Merci de supprimer ou de mettre à jour ce fichier !"
-
 #~ msgid "Lan&guage:"
 #~ msgstr "Lan&gue :"
 
@@ -39513,10 +39527,6 @@ msgstr "Utilisateur inconnu"
 
 #~ msgid "Library directory"
 #~ msgstr "Répertoire des bibliothèques"
-
-#~ msgid "Open library directory in file browser"
-#~ msgstr ""
-#~ "Ouvrir le répertoire de la bibliothèque dans le navigateur de fichiers"
 
 #~ msgid "Enter text"
 #~ msgstr "Saisir un texte"

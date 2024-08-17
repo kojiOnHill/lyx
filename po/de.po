@@ -95,7 +95,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-07 09:08+0200\n"
+"POT-Creation-Date: 2024-08-17 19:38-0400\n"
 "PO-Revision-Date: 2024-08-07 09:10+0200\n"
 "Last-Translator: Juergen Spitzmueller <spitz@lyx.org>\n"
 "Language-Team: German <lyx-docs@lists.lyx.org>\n"
@@ -130,32 +130,42 @@ msgstr "Benutzerverzeichnis"
 msgid "Open user directory in file browser"
 msgstr "Benutzerverzeichnis im Dateimanager öffnen"
 
-#: src/frontends/qt/ui/AboutUi.ui:225
+#: src/frontends/qt/ui/AboutUi.ui:225 src/frontends/qt/ui/AboutUi.ui:272
 msgid "[[do]]O&pen"
 msgstr "Öff&nen"
 
-#: src/frontends/qt/ui/AboutUi.ui:241
+#: src/frontends/qt/ui/AboutUi.ui:238
+#, fuzzy
+msgid "Temporary directory"
+msgstr "&Temporäres Verzeichnis:"
+
+#: src/frontends/qt/ui/AboutUi.ui:269
+#, fuzzy
+msgid "Open temporary directory in file browser"
+msgstr "Systemverzeichnis im Dateimanager öffnen"
+
+#: src/frontends/qt/ui/AboutUi.ui:288
 msgid "Credits"
 msgstr "Mitwirkende"
 
-#: src/frontends/qt/ui/AboutUi.ui:266 lib/layouts/apa.layout:236
+#: src/frontends/qt/ui/AboutUi.ui:313 lib/layouts/apa.layout:236
 #: lib/layouts/apax.inc:343
 msgid "Copyright"
 msgstr "Urheberrecht"
 
-#: src/frontends/qt/ui/AboutUi.ui:291
+#: src/frontends/qt/ui/AboutUi.ui:338
 msgid "Build Info"
 msgstr "Erstellung"
 
-#: src/frontends/qt/ui/AboutUi.ui:316
+#: src/frontends/qt/ui/AboutUi.ui:363
 msgid "Release Notes"
 msgstr "Versionshinweise"
 
-#: src/frontends/qt/ui/AboutUi.ui:361
+#: src/frontends/qt/ui/AboutUi.ui:408
 msgid "Copy version information to clipboard"
 msgstr "Versionsinformationen in die Zwischenablage kopieren"
 
-#: src/frontends/qt/ui/AboutUi.ui:364
+#: src/frontends/qt/ui/AboutUi.ui:411
 msgid "Copy &Version Info"
 msgstr "&Versionsinformationen kopieren"
 
@@ -676,20 +686,20 @@ msgstr "Dehnen"
 #: src/frontends/qt/ui/BoxUi.ui:265 src/frontends/qt/ui/ListingsUi.ui:110
 #: src/frontends/qt/ui/TabularUi.ui:328 src/frontends/qt/ui/TabularUi.ui:1537
 #: src/frontends/qt/ui/WrapUi.ui:47 src/frontends/qt/GuiDocument.cpp:1605
-#: src/frontends/qt/GuiParagraph.cpp:115 src/frontends/qt/GuiTabular.cpp:1044
+#: src/frontends/qt/GuiParagraph.cpp:115 src/frontends/qt/GuiTabular.cpp:1045
 msgid "Left"
 msgstr "Links"
 
 #: src/frontends/qt/ui/BoxUi.ui:270 src/frontends/qt/ui/TabularUi.ui:333
 #: src/frontends/qt/GuiExternal.cpp:78 src/frontends/qt/GuiGraphics.cpp:73
-#: src/frontends/qt/GuiParagraph.cpp:117 src/frontends/qt/GuiTabular.cpp:1045
+#: src/frontends/qt/GuiParagraph.cpp:117 src/frontends/qt/GuiTabular.cpp:1046
 msgid "Center"
 msgstr "Zentriert"
 
 #: src/frontends/qt/ui/BoxUi.ui:275 src/frontends/qt/ui/ListingsUi.ui:115
 #: src/frontends/qt/ui/TabularUi.ui:338 src/frontends/qt/ui/WrapUi.ui:52
 #: src/frontends/qt/GuiDocument.cpp:1607 src/frontends/qt/GuiParagraph.cpp:116
-#: src/frontends/qt/GuiTabular.cpp:1046
+#: src/frontends/qt/GuiTabular.cpp:1047
 msgid "Right"
 msgstr "Rechts"
 
@@ -5927,12 +5937,12 @@ msgid "Horizontal alignment in column"
 msgstr "Horizontale Ausrichtung in der Spalte"
 
 #: src/frontends/qt/ui/TabularUi.ui:323 src/frontends/qt/GuiParagraph.cpp:114
-#: src/frontends/qt/GuiTabular.cpp:1048
+#: src/frontends/qt/GuiTabular.cpp:1049
 msgid "Justified"
 msgstr "Blocksatz"
 
 #: src/frontends/qt/ui/TabularUi.ui:343 src/frontends/qt/GuiTabular.cpp:251
-#: src/frontends/qt/GuiTabular.cpp:1050
+#: src/frontends/qt/GuiTabular.cpp:1051
 msgid "At Decimal Separator"
 msgstr "Am Dezimaltrenner"
 
@@ -27885,32 +27895,32 @@ msgid "External Material"
 msgstr "Externes Material"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-Figure"
-
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "Feynman-Diagramme"
-
-#: lib/examples/Articles:0
-msgid "Instant Preview"
-msgstr "Eingebettete Vorschau"
+msgid "Itemize Bullets"
+msgstr "Auflistungszeichen"
 
 #: lib/examples/Articles:0
 msgid "Minted File Listing"
 msgstr "Minted-Programmlistings (Dateien)"
 
 #: lib/examples/Articles:0
+msgid "XY-Pic"
+msgstr "XY-Pic"
+
+#: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "Feynman-Diagramme"
+
+#: lib/examples/Articles:0
+msgid "XY-Figure"
+msgstr "XY-Figure"
+
+#: lib/examples/Articles:0
 msgid "Minted Listings"
 msgstr "Minted-Programmlistings"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Auflistungszeichen"
-
-#: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "XY-Pic"
+msgid "Instant Preview"
+msgstr "Eingebettete Vorschau"
 
 #: lib/examples/Articles:0
 msgid "Graphics and Insets"
@@ -27925,12 +27935,12 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "Japanisch mit anderen Sprachen kombinieren (mit CJKutf8)"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "Japanisch mit anderen Sprachen kombinieren (mit platex)"
-
-#: lib/examples/Articles:0
 msgid "Writing Armenian"
 msgstr "Armenisch schreiben"
+
+#: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "Japanisch mit anderen Sprachen kombinieren (mit platex)"
 
 #: lib/examples/Articles:0
 msgid "Language Support"
@@ -27949,10 +27959,6 @@ msgid "Serial Letter 3"
 msgstr "Serienbrief 3"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "H- und P-Sätze"
-
-#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond-Buch"
 
@@ -27961,24 +27967,28 @@ msgid "Multilingual Captions"
 msgstr "Mehrsprachige Legenden"
 
 #: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
+msgid "Hazard and Precautionary Statements"
+msgstr "H- und P-Sätze"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr "Noweb-Fehlerbericht"
+
+#: lib/examples/Articles:0
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
 msgid "Modules"
 msgstr "Module"
 
 #: lib/examples/Articles:0
-msgid "Foils"
-msgstr "Foils"
-
-#: lib/examples/Articles:0
 msgid "Foils Landslide"
 msgstr "Foils (Querformat)"
+
+#: lib/examples/Articles:0
+msgid "Foils"
+msgstr "Foils"
 
 #: lib/examples/Articles:0
 msgid "Beamer (Complex)"
@@ -27993,56 +28003,44 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Koreanisch schreiben mit CJK-ko"
 
 #: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Springers globale Vorlage für Zeitschriften (V. 3)"
-
-#: lib/examples/Articles:0
 msgid "Mathematical Monthly"
 msgstr "Mathematical Monthly"
-
-#: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Hebräischer Aufsatz (KOMA-Script)"
-
-#: lib/examples/Articles:0
-msgid "IEEE Transactions Conference"
-msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
 
 #: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Hauptdatei"
+msgid "IEEE Transactions Conference"
+msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Widmung"
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Springers globale Vorlage für Zeitschriften (V. 3)"
+
+#: lib/examples/Articles:0
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Hebräischer Aufsatz (KOMA-Script)"
 
 #: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02 Vorwort"
 
 #: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Vorwort"
+msgid "07 Part"
+msgstr "07 Teil"
+
+#: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Glossar"
 
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04 Danksagungen"
 
 #: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Liste der Mitwirkenden"
-
-#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06 Akronyme"
-
-#: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Teil"
 
 #: lib/examples/Articles:0
 msgid "08 Author"
@@ -28053,16 +28051,28 @@ msgid "09 Appendix"
 msgstr "09 Anhang"
 
 #: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Glossar"
-
-#: lib/examples/Articles:0
 msgid "11 References"
 msgstr "11 Literaturverzeichnis"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 Akronyme"
+msgid "05 Contributor List"
+msgstr "05 Liste der Mitwirkenden"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Widmung"
+
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 Hauptdatei"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03 Vorwort"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10 Lösungen"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -28077,20 +28087,20 @@ msgid "08 Appendix"
 msgstr "08 Anhang"
 
 #: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr "05 Akronyme"
+
+#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Glossar"
 
 #: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Lösungen"
+msgid "Simple"
+msgstr "Schlicht"
 
 #: lib/examples/Articles:0
 msgid "Colored"
 msgstr "Farbig"
-
-#: lib/examples/Articles:0
-msgid "Simple"
-msgstr "Schlicht"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -28113,9 +28123,9 @@ msgid "Theses"
 msgstr "Qualifikationsschriften"
 
 #: lib/examples/Articles:0
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr ""
-"Japanischer Aufsatz (Standardklasse für LuaTeX%2C vertikale Schreibrichtung)"
+"Japanisches Buch (Standardklasse für LuaTeX%2C vertikale Schreibrichtung)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
@@ -28123,9 +28133,9 @@ msgstr ""
 "Japanisches Buch (Standardklasse für LuaTeX%2C vertikale Schreibrichtung)"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr ""
-"Japanisches Buch (Standardklasse für LuaTeX%2C vertikale Schreibrichtung)"
+"Japanischer Aufsatz (Standardklasse für LuaTeX%2C vertikale Schreibrichtung)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -32398,11 +32408,11 @@ msgstr ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, "
 "USA."
 
-#: src/frontends/qt/GuiAbout.cpp:256
+#: src/frontends/qt/GuiAbout.cpp:262
 msgid "not released yet"
 msgstr "noch nicht veröffentlicht"
 
-#: src/frontends/qt/GuiAbout.cpp:261
+#: src/frontends/qt/GuiAbout.cpp:267
 #, c-format
 msgid ""
 "Version %1$s\n"
@@ -32411,31 +32421,31 @@ msgstr ""
 "Version %1$s\n"
 "(%2$s)"
 
-#: src/frontends/qt/GuiAbout.cpp:269
+#: src/frontends/qt/GuiAbout.cpp:275
 msgid "Built from git commit hash "
 msgstr "Erstellt aus Git-Revision "
 
-#: src/frontends/qt/GuiAbout.cpp:282
+#: src/frontends/qt/GuiAbout.cpp:288
 #, c-format
 msgid "Qt Version (run-time): %1$s on platform %2$s"
 msgstr "Qt-Version (Laufzeit): %1$s (Plattform: %2$s)"
 
-#: src/frontends/qt/GuiAbout.cpp:287
+#: src/frontends/qt/GuiAbout.cpp:293
 #, c-format
 msgid "Qt Version (compile-time): %1$s"
 msgstr "Qt-Version (bei Erstellung): %1$s"
 
-#: src/frontends/qt/GuiAbout.cpp:293
+#: src/frontends/qt/GuiAbout.cpp:299
 #, c-format
 msgid "OS Version (run-time): %1$s"
 msgstr "OS-Version (bei Erstellung): %1$s"
 
-#: src/frontends/qt/GuiAbout.cpp:300
+#: src/frontends/qt/GuiAbout.cpp:306
 #, c-format
 msgid "Python detected: %1$s"
 msgstr "Python-Aufruf: %1$s"
 
-#: src/frontends/qt/GuiAbout.cpp:331
+#: src/frontends/qt/GuiAbout.cpp:343
 msgid "About LyX"
 msgstr "Über LyX"
 
@@ -38442,15 +38452,15 @@ msgstr ""
 "Die Informationen für die Änderungen von Tabellenzeilen- oder -spalten sind "
 "unvollständig. Sie werden ignoriert."
 
-#: src/insets/InsetTabular.cpp:5745
+#: src/insets/InsetTabular.cpp:5746
 msgid "Column movement not supported with multi-columns."
 msgstr "Verschieben von Spalten mit Mehrfachspalten leider nicht möglich."
 
-#: src/insets/InsetTabular.cpp:5763
+#: src/insets/InsetTabular.cpp:5764
 msgid "Row movement not supported with multi-rows."
 msgstr "Verschieben von Zeilen mit Mehrfachzeilen leider nicht möglich."
 
-#: src/insets/InsetTabular.cpp:6284
+#: src/insets/InsetTabular.cpp:6287
 msgid "Selection size should match clipboard content."
 msgstr ""
 "Die Anzahl der ausgewählten Zellen stimmt nicht mit dem Inhalt der "
@@ -39286,9 +39296,6 @@ msgstr "Unbekannter Benutzer"
 
 #~ msgid "Library directory"
 #~ msgstr "Systemverzeichnis"
-
-#~ msgid "Open library directory in file browser"
-#~ msgstr "Systemverzeichnis im Dateimanager öffnen"
 
 #~ msgid "Enter text"
 #~ msgstr "Text eingeben"
@@ -43807,4 +43814,3 @@ msgstr "Unbekannter Benutzer"
 
 #~ msgid " (auto)"
 #~ msgstr " (automatisch)"
-
