@@ -661,8 +661,6 @@ def convert_index_sc(document):
                 line = document.body[k]
                 chunks = line.split(ec)
                 repl = []
-                if line[0] == ec:
-                    repl = put_cmd_in_ert(ec)
                 chunks_len = len(chunks)-1
                 for ch in chunks[:-1]:
                     repl += [ch]
