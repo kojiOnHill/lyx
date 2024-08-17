@@ -653,7 +653,8 @@ def convert_index_sc(document):
                 k = find_substring(document.body, ec, k, j)
                 if k == -1:
                     break
-                if get_containing_inset(document.body, k)[0] == "ERT":
+                inInset = get_containing_inset(document.body, k)
+                if inInset and inInset[0] == "ERT":
                     k += 1
                     continue
                     
@@ -696,7 +697,8 @@ def revert_index_sc(document):
                 k = find_substring(document.body, ec, k, j)
                 if k == -1:
                     break
-                if get_containing_inset(document.body, k)[0] == "ERT":
+                inInset = get_containing_inset(document.body, k)
+                if inInset and inInset[0] == "ERT":
                     k += 1
                     continue
                     
