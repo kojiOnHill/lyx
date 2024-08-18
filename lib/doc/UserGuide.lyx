@@ -9611,12 +9611,14 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim
+
 This is Verbatim.
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
+
 The following 2 lines are empty:
 \end_layout
 
@@ -9629,6 +9631,7 @@ The following 2 lines are empty:
 \end_layout
 
 \begin_layout Verbatim
+
 Almost everything is allowed in Verbatim:"%&$§#~'`
 \backslash
 }][{|
@@ -9652,6 +9655,7 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim*
+
 This is Verbatim*.
 \end_layout
 
@@ -52602,19 +52606,6 @@ Additional
 Features
 \emph default
  manual.
- 
-\family sans
-Math
-\begin_inset space ~
-\end_inset
-
-image
-\begin_inset space ~
-\end_inset
-
-scaling
-\family default
- is used for the size of equations in the output.
 \end_layout
 
 \begin_layout Description
@@ -52641,7 +52632,40 @@ Additional Features
 \end_layout
 
 \begin_layout Description
-.
+
+\family sans
+Scaling
+\begin_inset space ~
+\end_inset
+
+of
+\begin_inset space ~
+\end_inset
+
+generated
+\begin_inset space ~
+\end_inset
+
+images
+\family default
+ is the scaling factor used for images that are generated to represent some \SpecialChar LaTeX
+ constructs (e.
+\begin_inset space \thinspace{}
+\end_inset
+
+g.,
+ math,
+ linguistics structure trees) in non-\SpecialChar LaTeX
+ output (XHTML,
+ DocBook) graphically.
+ The factor multiplies with 72
+\begin_inset space \thinspace{}
+\end_inset
+
+dpi.
+ The higher the value,
+ thus,
+ the better the image quality (and the bigger the file size).
 \end_layout
 
 \begin_layout Description
