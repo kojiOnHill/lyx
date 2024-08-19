@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lyx-japanese\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-17 19:38-0400\n"
-"PO-Revision-Date: 2024-06-26 12:05+0900\n"
+"POT-Creation-Date: 2024-08-19 09:16+0900\n"
+"PO-Revision-Date: 2024-08-19 10:52+0900\n"
 "Last-Translator: Koji Yokota <yokota@lyx.org>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -54,14 +54,12 @@ msgid "[[do]]O&pen"
 msgstr "開く(&P)"
 
 #: src/frontends/qt/ui/AboutUi.ui:238
-#, fuzzy
 msgid "Temporary directory"
-msgstr "一時ディレクトリ(&T)："
+msgstr "一時ディレクトリ"
 
 #: src/frontends/qt/ui/AboutUi.ui:269
-#, fuzzy
 msgid "Open temporary directory in file browser"
-msgstr "システム ディレクトリをファイル ブラウザで開く"
+msgstr "一時ディレクトリをファイル ブラウザで開く"
 
 #: src/frontends/qt/ui/AboutUi.ui:288
 msgid "Credits"
@@ -16130,7 +16128,7 @@ msgstr "選択メニュー"
 
 #: lib/layouts/pdfform.module:90
 msgid "Label[[Form]]"
-msgstr ""
+msgstr "ラベル"
 
 #: lib/layouts/pdfform.module:93
 msgid "Insert the label here"
@@ -21915,9 +21913,8 @@ msgid "Comment|C"
 msgstr "コメント(C)|C"
 
 #: lib/ui/stdmenus.inc:548
-#, fuzzy
 msgid "Greyed Out|G"
-msgstr "淡色表示(Y)|Y"
+msgstr "淡色表示(G)|G"
 
 #: lib/ui/stdmenus.inc:554
 msgid "Insert New Branch...|I"
@@ -27071,9 +27068,8 @@ msgid "An Xfig figure.\n"
 msgstr "Xfigの図です．\n"
 
 #: lib/configure.py:726
-#, fuzzy
 msgid "Tgif"
-msgstr "tgo|Tgif"
+msgstr "Tgif"
 
 #: lib/configure.py:729
 msgid "FIG"
@@ -27084,9 +27080,8 @@ msgid "DIA"
 msgstr "DIA"
 
 #: lib/configure.py:735
-#, fuzzy
 msgid "OpenDocument drawing"
-msgstr "OpenDocument (Pandoc)"
+msgstr "OpenDocument drawing"
 
 #: lib/configure.py:738
 msgid "Grace"
@@ -27390,9 +27385,8 @@ msgid "DraftDVI"
 msgstr "DraftDVI"
 
 #: lib/configure.py:853
-#, fuzzy
 msgid "HTML|H"
-msgstr "HTML"
+msgstr "HTML|H"
 
 #: lib/configure.py:856
 msgid "Noteedit"
@@ -27492,9 +27486,8 @@ msgid "LyX Preview"
 msgstr "LyXプレビュー"
 
 #: lib/configure.py:885
-#, fuzzy
 msgid "PDFTEX"
-msgstr "pdf_tex|PDFTEX"
+msgstr "PDFTEX"
 
 #: lib/configure.py:886
 msgid "Program"
@@ -27502,7 +27495,7 @@ msgstr "プログラム"
 
 #: lib/configure.py:887
 msgid "PSTEX"
-msgstr ""
+msgstr "PSTEX"
 
 #: lib/configure.py:888 src/frontends/qt/GuiClipboard.cpp:178
 msgid "Windows Metafile"
@@ -27513,9 +27506,8 @@ msgid "Enhanced Metafile"
 msgstr "拡張メタファイル"
 
 #: lib/configure.py:890
-#, fuzzy
 msgid "HTML (MS Word)"
-msgstr "MS Word"
+msgstr "HTML (MS Word)"
 
 #: lib/configure.py:1009
 msgid "LyXBlogger"
@@ -27534,12 +27526,12 @@ msgid "LyX Archive (tar.gz)"
 msgstr "LyX書庫(tar.gz)"
 
 #: lib/examples/Articles:0
-msgid "Game 1"
-msgstr "ゲーム１"
-
-#: lib/examples/Articles:0
 msgid "Game 2"
 msgstr "ゲーム２"
+
+#: lib/examples/Articles:0
+msgid "Game 1"
+msgstr "ゲーム１"
 
 #: lib/examples/Articles:0
 msgid "Example (LyXified)"
@@ -27559,32 +27551,40 @@ msgid "Itemize Bullets"
 msgstr "箇条書きのブリット"
 
 #: lib/examples/Articles:0
-msgid "Minted File Listing"
-msgstr "Mintedプログラムリストファイル"
-
-#: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "XY-Pic"
-
-#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "ファインマン図"
-
-#: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-Figure"
-
-#: lib/examples/Articles:0
-msgid "Minted Listings"
-msgstr "Mintedプログラムリスト"
 
 #: lib/examples/Articles:0
 msgid "Instant Preview"
 msgstr "自動プレビュー"
 
 #: lib/examples/Articles:0
+msgid "Minted Listings"
+msgstr "Mintedプログラムリスト"
+
+#: lib/examples/Articles:0
+msgid "Minted File Listing"
+msgstr "Mintedプログラムリストファイル"
+
+#: lib/examples/Articles:0
+msgid "XY-Figure"
+msgstr "XY-Figure"
+
+#: lib/examples/Articles:0
+msgid "XY-Pic"
+msgstr "XY-Pic"
+
+#: lib/examples/Articles:0
 msgid "Graphics and Insets"
 msgstr "グラフィックと差込枠"
+
+#: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "日本語と他言語の混成(platexを使用)"
+
+#: lib/examples/Articles:0
+msgid "Writing Armenian"
+msgstr "アルメニア語の執筆"
 
 #: lib/examples/Articles:0
 msgid "Localization Test (for Developers)"
@@ -27595,20 +27595,8 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "日本語と他言語の混成(CJKutf8を使用)"
 
 #: lib/examples/Articles:0
-msgid "Writing Armenian"
-msgstr "アルメニア語の執筆"
-
-#: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "日本語と他言語の混成(platexを使用)"
-
-#: lib/examples/Articles:0
 msgid "Language Support"
 msgstr "言語サポート"
-
-#: lib/examples/Articles:0
-msgid "Serial Letter 1"
-msgstr "定期郵便１"
 
 #: lib/examples/Articles:0
 msgid "Serial Letter 2"
@@ -27619,8 +27607,16 @@ msgid "Serial Letter 3"
 msgstr "定期郵便３"
 
 #: lib/examples/Articles:0
+msgid "Serial Letter 1"
+msgstr "定期郵便１"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond Book"
+
+#: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Noweb Listerrors"
 
 #: lib/examples/Articles:0
 msgid "Multilingual Captions"
@@ -27629,10 +27625,6 @@ msgstr "多言語キャプション"
 #: lib/examples/Articles:0
 msgid "Hazard and Precautionary Statements"
 msgstr "危険有害性情報・注意書き"
-
-#: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Noweb Listerrors"
 
 #: lib/examples/Articles:0
 msgid "Noweb2LyX"
@@ -27663,16 +27655,12 @@ msgid "Writing Korean with CJK-ko"
 msgstr "韓国語の執筆(CJK-koを使用)"
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
-
-#: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
 
 #: lib/examples/Articles:0
-msgid "IEEE Transactions Conference"
-msgstr "IEEE Transactions Conference"
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
@@ -27683,24 +27671,68 @@ msgid "Hebrew Article (KOMA-Script)"
 msgstr "ヘブライ語Article (KOMA-Script)"
 
 #: lib/examples/Articles:0
+msgid "IEEE Transactions Conference"
+msgstr "IEEE Transactions Conference"
+
+#: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02巻頭言"
 
 #: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07部"
+msgid "01 Dedication"
+msgstr "01献呈"
 
 #: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10用語集"
+msgid "06 Part"
+msgstr "06部"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03序文"
+
+#: lib/examples/Articles:0
+msgid "07 Chapter"
+msgstr "07章"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10解"
+
+#: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr "05頭字語"
+
+#: lib/examples/Articles:0
+msgid "11 References"
+msgstr "11書誌情報"
 
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04謝辞"
 
 #: lib/examples/Articles:0
+msgid "09 Glossary"
+msgstr "09用語集"
+
+#: lib/examples/Articles:0
+msgid "08 Appendix"
+msgstr "08付録"
+
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00主幹ファイル"
+
+#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06頭字語"
+
+#: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05寄稿者一覧"
+
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07部"
 
 #: lib/examples/Articles:0
 msgid "08 Author"
@@ -27711,56 +27743,16 @@ msgid "09 Appendix"
 msgstr "09付録"
 
 #: lib/examples/Articles:0
-msgid "11 References"
-msgstr "11書誌情報"
-
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05寄稿者一覧"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01献呈"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00主幹ファイル"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03序文"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10解"
-
-#: lib/examples/Articles:0
-msgid "06 Part"
-msgstr "06部"
-
-#: lib/examples/Articles:0
-msgid "07 Chapter"
-msgstr "07章"
-
-#: lib/examples/Articles:0
-msgid "08 Appendix"
-msgstr "08付録"
-
-#: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05頭字語"
-
-#: lib/examples/Articles:0
-msgid "09 Glossary"
-msgstr "09用語集"
-
-#: lib/examples/Articles:0
-msgid "Simple"
-msgstr "シンプル"
+msgid "10 Glossary"
+msgstr "10用語集"
 
 #: lib/examples/Articles:0
 msgid "Colored"
 msgstr "カラー"
+
+#: lib/examples/Articles:0
+msgid "Simple"
+msgstr "シンプル"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -27783,16 +27775,16 @@ msgid "Theses"
 msgstr "学位論文"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日本語Report (LuaTeX用標準クラス：縦書き)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日本語Article (LuaTeX用標準クラス：縦書き)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "日本語Book (LuaTeX用標準クラス：縦書き)"
 
 #: lib/examples/Articles:0
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日本語Article (LuaTeX用標準クラス：縦書き)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日本語Report (LuaTeX用標準クラス：縦書き)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -35883,9 +35875,8 @@ msgid "Move Tab to &End"
 msgstr "タブを末端に移動する(&E)"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2364
-#, fuzzy
 msgid "Open Enclosing &Directory"
-msgstr "内包しているフォルダを開く(&F)"
+msgstr "内包しているディレクトリを開く(&D)"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2409
 msgid "<b>The file %1 changed on disk.</b>"
@@ -37742,7 +37733,7 @@ msgstr "テキスト%1$s"
 
 #: src/insets/InsetRef.cpp:403
 msgid "elsewhere"
-msgstr ""
+msgstr "別の箇所"
 
 #: src/insets/InsetRef.cpp:644
 msgid "Ref"
