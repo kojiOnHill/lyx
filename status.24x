@@ -46,6 +46,10 @@ What's new
 
 - Improve document output pane (bug 12902).
 
+- Fix regression which marks document modified in case of external
+  modification. Only file deletion will trigger the modification
+  flag now (see bug 12819).
+
 
 * DOCUMENTATION AND LOCALIZATION
 
