@@ -362,8 +362,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-17 19:38-0400\n"
-"PO-Revision-Date: 2024-08-10 18:08+0200\n"
+"POT-Creation-Date: 2024-08-19 10:00+0200\n"
+"PO-Revision-Date: 2024-08-19 10:04+0200\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
 "Language: fr\n"
@@ -401,14 +401,12 @@ msgid "[[do]]O&pen"
 msgstr "O&uvrir"
 
 #: src/frontends/qt/ui/AboutUi.ui:238
-#, fuzzy
 msgid "Temporary directory"
-msgstr "Répertoire tem&poraire :"
+msgstr "Répertoire temporaire"
 
 #: src/frontends/qt/ui/AboutUi.ui:269
-#, fuzzy
 msgid "Open temporary directory in file browser"
-msgstr "Ouvrir le répertoire de la bibliothèque dans le navigateur de fichiers"
+msgstr "Ouvrir le répertoire temporaire dans le navigateur de fichiers"
 
 #: src/frontends/qt/ui/AboutUi.ui:288
 msgid "Credits"
@@ -1053,7 +1051,7 @@ msgid "Remove the selected branch"
 msgstr "Enlever la branche sélectionnée"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Remove"
 msgstr "&Enlever"
 
@@ -1127,7 +1125,7 @@ msgid "Add A&ll"
 msgstr "Ajouter &tout"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -2906,8 +2904,8 @@ msgstr "&Nouvel index :"
 msgid ""
 "Enter the name of the desired index (e.g. \"Index of Names\") and hit \"Add\""
 msgstr ""
-"Saisir le nom de l'index désiré (e. g. « Index des noms ») et appuyez sur "
-"« Add »"
+"Saisir le nom de l'index désiré (e. g. « Index des noms ») et appuyez sur « "
+"Add »"
 
 #: src/frontends/qt/ui/IndicesUi.ui:131
 msgid "Add a new index to the list"
@@ -3758,150 +3756,11 @@ msgstr "Dans la &table des matières"
 msgid "&Numbering"
 msgstr "&Numérotation"
 
-#: src/frontends/qt/ui/OutputUi.ui:37
-msgid "&LaTeX"
-msgstr "&LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:43
-msgid "LaTeX Output Options"
-msgstr "Options d'exportation LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:51
-msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
-msgstr ""
-"Activer la recherche directe/inversée entre l'éditeur et la sortie (e. g. "
-"SyncTeX)"
-
-#: src/frontends/qt/ui/OutputUi.ui:54
-msgid "S&ynchronize with output"
-msgstr "S&ynchroniser avec le résultat imprimable"
-
-#: src/frontends/qt/ui/OutputUi.ui:85
-msgid "C&ustom macro:"
-msgstr "Macro pers&onnalisée :"
-
-#: src/frontends/qt/ui/OutputUi.ui:95
-msgid "Custom LaTeX preamble macro"
-msgstr "Macro du préambule LaTeX personnalisée"
-
-#: src/frontends/qt/ui/OutputUi.ui:122
-msgid ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
-msgstr ""
-"Si cette case est cochée, les éléments fragiles comme les étiquettes et les "
-"entrées d'index sont déplacées hors des arguments mobiles comme les titres "
-"de section et les légendes. Ceci évite des erreurs LaTeX qui peuvent "
-"survenir dans de telles situations. Il est recommandé de garder la case "
-"cochée."
-
-#: src/frontends/qt/ui/OutputUi.ui:125
-msgid "Put fra&gile content out of moving arguments"
-msgstr "Mettre les éléments fragiles hors des arguments mobiles"
-
-#: src/frontends/qt/ui/OutputUi.ui:149
-msgid "&XHTML"
-msgstr "&HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:155
-msgid "XHTML Output Options"
-msgstr "Options export XHTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:164
-msgid "Write CSS to file"
-msgstr "Copier la feuille de style CSS dans un fichier"
-
-#: src/frontends/qt/ui/OutputUi.ui:176
-msgid "Scaling factor for images used for math output."
-msgstr "Facteur d'échelle des images créées pour l'impression des maths."
-
-#: src/frontends/qt/ui/OutputUi.ui:200 src/frontends/qt/ui/OutputUi.ui:397
-msgid "Format to use for math output."
-msgstr "Format à utiliser dans l'impression des maths."
-
-#: src/frontends/qt/ui/OutputUi.ui:204
-msgid "MathML"
-msgstr "MathML"
-
-#: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
-#: lib/configure.py:853
-msgid "HTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:214
-msgid "Images"
-msgstr "Images"
-
-#: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
-#: lib/layouts/egs.layout:720 lib/languages:147
-#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
-msgid "LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:232
-msgid "Math &image scaling:"
-msgstr "Mise à l'échelle des &images mathématiques :"
-
-#: src/frontends/qt/ui/OutputUi.ui:255
-msgid "Whether to comply strictly with XHTML 1.1."
-msgstr "Se conformer strictement ou non à XHTML 1.1."
-
-#: src/frontends/qt/ui/OutputUi.ui:258
-msgid "&Strict XHTML 1.1"
-msgstr "XHTML 1.1 &strict"
-
-#: src/frontends/qt/ui/OutputUi.ui:270
-msgid "&Math output:"
-msgstr "Traduction des &maths :"
-
-#: src/frontends/qt/ui/OutputUi.ui:297
-msgid "&DocBook"
-msgstr "&DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:303
-msgid "DocBook Output Options"
-msgstr "Option d'exportation DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:323
-msgid ""
-"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
-"code> prefix, the MathML tags will be output like <code>m:math</code>."
-msgstr ""
-"Préfixe d'espace de nommage à utiliser dans les formules MathML. par "
-"exemple, avec le préfixe  <code>m</code>, les balises MathML émises seront "
-"du type <code>m:math</code>."
-
-#: src/frontends/qt/ui/OutputUi.ui:327
-msgid "No prefix (namespace defined inline for each tag)"
-msgstr "Sans préfixe (espace de nommage défini en ligne pour chaque balise)"
-
-#: src/frontends/qt/ui/OutputUi.ui:332
-msgid "m (default)"
-msgstr "m (implicite)"
-
-#: src/frontends/qt/ui/OutputUi.ui:337
-msgid "mml"
-msgstr "mml"
-
-#: src/frontends/qt/ui/OutputUi.ui:376
-msgid "&Table output:"
-msgstr "Exportation de &tableau :"
-
-#: src/frontends/qt/ui/OutputUi.ui:406
-msgid "CALS"
-msgstr "CALS"
-
-#: src/frontends/qt/ui/OutputUi.ui:419
-msgid "&MathML namespace prefix:"
-msgstr "&Préfixe d'espace de nommage MathML :"
-
-#: src/frontends/qt/ui/OutputUi.ui:449
+#: src/frontends/qt/ui/OutputUi.ui:28
 msgid "LyX Format"
 msgstr "Format LyX"
 
-#: src/frontends/qt/ui/OutputUi.ui:461
+#: src/frontends/qt/ui/OutputUi.ui:40
 msgid ""
 "Save all parameters in the LyX file, including ones that are frequently "
 "switched or that are specific to the user (such as the output of the tracked "
@@ -3914,24 +3773,160 @@ msgstr ""
 "Désactiver cette option convient mieux pour l'utilisationcollaborative ou "
 "celle du contrôle de version."
 
-#: src/frontends/qt/ui/OutputUi.ui:464
+#: src/frontends/qt/ui/OutputUi.ui:43
 msgid "Save &transient properties"
 msgstr "Enregistrer les propriétés &temporaires"
 
-#: src/frontends/qt/ui/OutputUi.ui:474
+#: src/frontends/qt/ui/OutputUi.ui:59
 msgid "Output Format"
 msgstr "Format du résultat"
 
-#: src/frontends/qt/ui/OutputUi.ui:515 src/frontends/qt/ui/OutputUi.ui:528
+#: src/frontends/qt/ui/OutputUi.ui:100 src/frontends/qt/ui/OutputUi.ui:113
 msgid "Specify the default output format (for view/update)"
 msgstr ""
 "Spécifier le format implicite du résultat (pour visionner/mettre à jour)"
 
-#: src/frontends/qt/ui/OutputUi.ui:518
+#: src/frontends/qt/ui/OutputUi.ui:103
 msgid "De&fault output format:"
 msgstr "&Format implicite du résultat :"
 
-#: src/frontends/qt/ui/OutputUi.ui:553
+#: src/frontends/qt/ui/OutputUi.ui:144
+msgid "Output Options"
+msgstr "Options d'exportation"
+
+#: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
+msgid ""
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
+msgstr ""
+"Facteur d'échelle pour les images engendrées par certaines instructions "
+"LaTeX (par exemple, les formules mathématiques) dans les exportations hors "
+"LaTeX."
+
+#: src/frontends/qt/ui/OutputUi.ui:160
+msgid "Scaling of generated &images:"
+msgstr "Mise à l'échelle des &images créées :"
+
+#: src/frontends/qt/ui/OutputUi.ui:219
+msgid "&LaTeX"
+msgstr "&LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:225
+msgid ""
+"If this is checked, fragile items such as labels and index entries are moved "
+"out of moving arguments such as sections and captions. This prevents LaTeX "
+"errors that can happen in such cases. It is recommended to keep this on."
+msgstr ""
+"Si cette case est cochée, les éléments fragiles comme les étiquettes et les "
+"entrées d'index sont déplacées hors des arguments mobiles comme les titres "
+"de section et les légendes. Ceci évite des erreurs LaTeX qui peuvent "
+"survenir dans de telles situations. Il est recommandé de garder la case "
+"cochée."
+
+#: src/frontends/qt/ui/OutputUi.ui:228
+msgid "Put fra&gile content out of moving arguments"
+msgstr "Mettre les éléments fragiles hors des arguments mobiles"
+
+#: src/frontends/qt/ui/OutputUi.ui:237
+msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
+msgstr ""
+"Activer la recherche directe/inversée entre l'éditeur et la sortie (e. g. "
+"SyncTeX)"
+
+#: src/frontends/qt/ui/OutputUi.ui:240
+msgid "S&ynchronize with output"
+msgstr "S&ynchroniser avec le résultat imprimable"
+
+#: src/frontends/qt/ui/OutputUi.ui:271
+msgid "C&ustom macro:"
+msgstr "Macro pers&onnalisée :"
+
+#: src/frontends/qt/ui/OutputUi.ui:281
+msgid "Custom LaTeX preamble macro"
+msgstr "Macro du préambule LaTeX personnalisée"
+
+#: src/frontends/qt/ui/OutputUi.ui:309
+msgid "&XHTML"
+msgstr "&HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:317
+msgid "Whether to comply strictly with XHTML 1.1."
+msgstr "Se conformer strictement ou non à XHTML 1.1."
+
+#: src/frontends/qt/ui/OutputUi.ui:320
+msgid "&Strict XHTML 1.1"
+msgstr "XHTML 1.1 &strict"
+
+#: src/frontends/qt/ui/OutputUi.ui:327
+msgid "Write CSS to file"
+msgstr "Copier la feuille de style CSS dans un fichier"
+
+#: src/frontends/qt/ui/OutputUi.ui:356
+msgid "&Math output:"
+msgstr "Traduction des &maths :"
+
+#: src/frontends/qt/ui/OutputUi.ui:371 src/frontends/qt/ui/OutputUi.ui:448
+msgid "Format to use for math output."
+msgstr "Format à utiliser dans l'impression des maths."
+
+#: src/frontends/qt/ui/OutputUi.ui:375
+msgid "MathML"
+msgstr "MathML"
+
+#: src/frontends/qt/ui/OutputUi.ui:380 src/frontends/qt/ui/OutputUi.ui:452
+#: lib/configure.py:853
+msgid "HTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:385
+msgid "Images"
+msgstr "Images"
+
+#: src/frontends/qt/ui/OutputUi.ui:390 lib/layouts/aapaper.layout:63
+#: lib/layouts/egs.layout:720 lib/languages:147
+#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
+msgid "LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:414
+msgid "&DocBook"
+msgstr "&DocBook"
+
+#: src/frontends/qt/ui/OutputUi.ui:427
+msgid "&Table output:"
+msgstr "Exportation de &tableau :"
+
+#: src/frontends/qt/ui/OutputUi.ui:457
+msgid "CALS"
+msgstr "CALS"
+
+#: src/frontends/qt/ui/OutputUi.ui:487
+msgid "&MathML namespace prefix:"
+msgstr "&Préfixe d'espace de nommage MathML :"
+
+#: src/frontends/qt/ui/OutputUi.ui:508
+msgid ""
+"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
+"code> prefix, the MathML tags will be output like <code>m:math</code>."
+msgstr ""
+"Préfixe d'espace de nommage à utiliser dans les formules MathML. par "
+"exemple, avec le préfixe  <code>m</code>, les balises MathML émises seront "
+"du type <code>m:math</code>."
+
+#: src/frontends/qt/ui/OutputUi.ui:512
+msgid "No prefix (namespace defined inline for each tag)"
+msgstr "Sans préfixe (espace de nommage défini en ligne pour chaque balise)"
+
+#: src/frontends/qt/ui/OutputUi.ui:517
+msgid "m (default)"
+msgstr "m (implicite)"
+
+#: src/frontends/qt/ui/OutputUi.ui:522
+msgid "mml"
+msgstr "mml"
+
+#: src/frontends/qt/ui/OutputUi.ui:552
 msgid ""
 "Runs the LaTeX backend with the -shell-escape option (Warning: use only when "
 "really necessary)"
@@ -3939,7 +3934,7 @@ msgstr ""
 "Appeler le traitement LaTeX avec l'option -shell-escape (attention : "
 "n'utiliser qu'en cas de nécessité)"
 
-#: src/frontends/qt/ui/OutputUi.ui:556
+#: src/frontends/qt/ui/OutputUi.ui:555
 msgid "&Allow running external programs"
 msgstr "&Permettre l'exécution de programmes externes"
 
@@ -4071,8 +4066,8 @@ msgstr "Format papier"
 #: src/frontends/qt/ui/PageLayoutUi.ui:45
 msgid "Choose a particular paper size, or set your own with \"Custom\""
 msgstr ""
-"Choisir une taille de papier spécifique, ou préciser la vôtre avec "
-"« réglable »"
+"Choisir une taille de papier spécifique, ou préciser la vôtre avec « "
+"réglable »"
 
 #: src/frontends/qt/ui/PageLayoutUi.ui:126
 msgid "&Orientation:"
@@ -13275,12 +13270,12 @@ msgstr ""
 "document. Une liste des annotations peut être produite en utilisant le style "
 "de paragraphe « Liste de FIXMEs ». Les annotations peuvent être paramétrées "
 "via le préambule LaTeX, voir la documentation de FiXme pour les détails. "
-"Nota : implicitement, les annotations ne sont affichées qu'en mode "
-"« brouillon » (si l'option « draft » a été ajoutée dans Document > "
-"Paramètres > Classe de document > Options de classe > Réglable). Pour les "
-"afficher dans tous les cas, ajouter \\\\fxsetup{draft} dans   Documents > "
-"Paramètres > Préambule. Noter également qu'il faut la version 4 ou "
-"supérieure du paquetage FiXme pour certaines fonctionnalités."
+"Nota : implicitement, les annotations ne sont affichées qu'en mode « "
+"brouillon » (si l'option « draft » a été ajoutée dans Document > Paramètres "
+"> Classe de document > Options de classe > Réglable). Pour les afficher dans "
+"tous les cas, ajouter \\\\fxsetup{draft} dans   Documents > Paramètres > "
+"Préambule. Noter également qu'il faut la version 4 ou supérieure du "
+"paquetage FiXme pour certaines fonctionnalités."
 
 #: lib/layouts/fixme.module:18 lib/layouts/fixme.module:56
 msgid "Fixme"
@@ -18464,8 +18459,8 @@ msgid ""
 "the table number, as in 'Table 2.1'."
 msgstr ""
 "Réinitialiser la numérotation des tableaux au début de chaque section et "
-"ajouter le numéro de section au numéro de tableau, comme dans « Tableau "
-"2.1 »."
+"ajouter le numéro de section au numéro de tableau, comme dans « Tableau 2.1 "
+"»."
 
 #: lib/layouts/tarticle.layout:3
 msgid "Japanese Article (Standard Class, vertical Writing)"
@@ -19362,10 +19357,10 @@ msgid ""
 "suppresses the output of TODO notes."
 msgstr ""
 "Fournit des inserts personnalisables pour créer des instances TODO dans un "
-"document (en utilisant le paquetage todonotes). Pour pouvoir engendrer une "
-"« Liste de TODO », le module fournit un style de paragraphe. Saisir "
-"« final » dans la liste des options de classe supprime l'affichage des notes "
-"TODO dans la sortie."
+"document (en utilisant le paquetage todonotes). Pour pouvoir engendrer une « "
+"Liste de TODO », le module fournit un style de paragraphe. Saisir « final » "
+"dans la liste des options de classe supprime l'affichage des notes TODO dans "
+"la sortie."
 
 #: lib/layouts/todonotes.module:15 lib/layouts/todonotes.module:120
 msgid "TODO"
@@ -28175,12 +28170,12 @@ msgid "LyX Archive (tar.gz)"
 msgstr "Archive LyX (tar.gz)"
 
 #: lib/examples/Articles:0
-msgid "Game 1"
-msgstr "Partie 1"
-
-#: lib/examples/Articles:0
 msgid "Game 2"
 msgstr "Partie 2"
+
+#: lib/examples/Articles:0
+msgid "Game 1"
+msgstr "Partie 1"
 
 #: lib/examples/Articles:0
 msgid "Example (LyXified)"
@@ -28196,24 +28191,24 @@ msgid "External Material"
 msgstr "Objet externe"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "Liste à puces"
-
-#: lib/examples/Articles:0
-msgid "Minted File Listing"
-msgstr "Fichier de listing minted"
+msgid "XY-Figure"
+msgstr "Figure XY"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
 msgstr "XY-Pic"
 
 #: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "Liste à puces"
+
+#: lib/examples/Articles:0
 msgid "Feynman Diagrams"
 msgstr "Diagrammes de Feynman"
 
 #: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "Figure XY"
+msgid "Minted File Listing"
+msgstr "Fichier de listing minted"
 
 #: lib/examples/Articles:0
 msgid "Minted Listings"
@@ -28232,16 +28227,16 @@ msgid "Localization Test (for Developers)"
 msgstr "Test de localisation (pour les développeurs)"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with CJKutf8)"
-msgstr "Mélange du japonais avec d'autres langues (avec CJKutf8)"
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "Mélange du japonais avec d'autres langues (platex)"
 
 #: lib/examples/Articles:0
 msgid "Writing Armenian"
 msgstr "Écrire de l'Arménien"
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "Mélange du japonais avec d'autres langues (platex)"
+msgid "Mixing Japanese with other Languages (with CJKutf8)"
+msgstr "Mélange du japonais avec d'autres langues (avec CJKutf8)"
 
 #: lib/examples/Articles:0
 msgid "Language Support"
@@ -28260,36 +28255,36 @@ msgid "Serial Letter 3"
 msgstr "Lettre en nombre 3"
 
 #: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Liste d'erreurs Noweb"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "Livre LilyPond"
 
 #: lib/examples/Articles:0
-msgid "Multilingual Captions"
-msgstr "Légendes multilingues"
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0
 msgid "Hazard and Precautionary Statements"
 msgstr "Chimie : mentions de danger et conseils de prudence"
 
 #: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Liste d'erreurs Noweb"
-
-#: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
+msgid "Multilingual Captions"
+msgstr "Légendes multilingues"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
 msgid "Modules"
 msgstr "Modules"
 
 #: lib/examples/Articles:0
-msgid "Foils Landslide"
-msgstr "Foils paysage"
-
-#: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
+
+#: lib/examples/Articles:0
+msgid "Foils Landslide"
+msgstr "Foils paysage"
 
 #: lib/examples/Articles:0
 msgid "Beamer (Complex)"
@@ -28304,12 +28299,16 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Écriture du coréen avec CJK-ko"
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Article hébreu (KOMA-Script)"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
@@ -28318,62 +28317,6 @@ msgstr "IEEE Transactions Conference"
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Modèle revue Springer Global (V. 3)"
-
-#: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Article hébreu (KOMA-Script)"
-
-#: lib/examples/Articles:0
-msgid "02 Foreword"
-msgstr "02 Préambule"
-
-#: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Partie"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Glossaire"
-
-#: lib/examples/Articles:0
-msgid "04 Acknowledgements"
-msgstr "04 Remerciements"
-
-#: lib/examples/Articles:0
-msgid "06 Acronym"
-msgstr "06 Acronyme"
-
-#: lib/examples/Articles:0
-msgid "08 Author"
-msgstr "08 Auteur"
-
-#: lib/examples/Articles:0
-msgid "09 Appendix"
-msgstr "09 Annexe"
-
-#: lib/examples/Articles:0
-msgid "11 References"
-msgstr "11 Références"
-
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Liste des collaborateurs"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Dédicace"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Fichier principal"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Préface"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Solutions"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -28392,8 +28335,60 @@ msgid "05 Acronym"
 msgstr "05 Acronyme"
 
 #: lib/examples/Articles:0
+msgid "04 Acknowledgements"
+msgstr "04 Remerciements"
+
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 Fichier principal"
+
+#: lib/examples/Articles:0
+msgid "11 References"
+msgstr "11 Références"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03 Préface"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10 Solutions"
+
+#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Glossaire"
+
+#: lib/examples/Articles:0
+msgid "02 Foreword"
+msgstr "02 Préambule"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Dédicace"
+
+#: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 Liste des collaborateurs"
+
+#: lib/examples/Articles:0
+msgid "08 Author"
+msgstr "08 Auteur"
+
+#: lib/examples/Articles:0
+msgid "06 Acronym"
+msgstr "06 Acronyme"
+
+#: lib/examples/Articles:0
+msgid "09 Appendix"
+msgstr "09 Annexe"
+
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Partie"
+
+#: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Glossaire"
 
 #: lib/examples/Articles:0
 msgid "Simple"
@@ -28404,16 +28399,16 @@ msgid "Colored"
 msgstr "En couleurs"
 
 #: lib/examples/Articles:0
-msgid "Chapter 1"
-msgstr "Chapitre 1"
-
-#: lib/examples/Articles:0
 msgid "Chapter 2"
 msgstr "Chapitre 2"
 
 #: lib/examples/Articles:0
 msgid "Main File"
 msgstr "Fichier principal"
+
+#: lib/examples/Articles:0
+msgid "Chapter 1"
+msgstr "Chapitre 1"
 
 #: lib/examples/Articles:0
 msgid "PhD Thesis"
@@ -28424,12 +28419,12 @@ msgid "Theses"
 msgstr "Thèses"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Rapport japonais  (classe standard pour LuaTeX%2C écriture verticale)"
-
-#: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "Livre japonais  (classe standard pour LuaTeX%2C écriture verticale)"
+
+#: lib/examples/Articles:0
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Rapport japonais  (classe standard pour LuaTeX%2C écriture verticale)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
@@ -28613,7 +28608,7 @@ msgstr ""
 "%1$s vient d'une version plus récente de LyX, et le script lyx2lyx n'a pas "
 "réussi à le convertir."
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4805 src/Buffer.cpp:4914
+#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
 msgid "File is read-only"
 msgstr "Fichier en lecture seule"
 
@@ -28968,8 +28963,8 @@ msgstr "Pas d'information pour exporter au format %1$s."
 #, c-format
 msgid "Hint: use non-TeX fonts or set input encoding to '%1$s'"
 msgstr ""
-"Astuce : utiliser les polices non-TeX ou positionner l'encodage d'entrée à "
-"« %1$s »"
+"Astuce : utiliser les polices non-TeX ou positionner l'encodage d'entrée à « "
+"%1$s »"
 
 #: src/Buffer.cpp:4524
 msgid "Couldn't export file"
@@ -28993,21 +28988,21 @@ msgstr ""
 "devriez enregistrer le fichier dans un répertoire dont le chemin d'accès ne "
 "contient pas d'espaces."
 
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "Export du document annulé."
 
-#: src/Buffer.cpp:4715
+#: src/Buffer.cpp:4716
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "Document exporté en tant que %1$s vers le fichier `%2$s'"
 
-#: src/Buffer.cpp:4722
+#: src/Buffer.cpp:4723
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "Document exporté en tant que %1$s"
 
-#: src/Buffer.cpp:4791
+#: src/Buffer.cpp:4792
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -29018,23 +29013,23 @@ msgstr ""
 "\n"
 "Voulez-vous récupérer la sauvegarde d'urgence ?"
 
-#: src/Buffer.cpp:4794
+#: src/Buffer.cpp:4795
 msgid "Load emergency save?"
 msgstr "Charger la sauvegarde d'urgence ?"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Recover"
 msgstr "&Récupérer"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Load Original"
 msgstr "&Charger l'original"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Only show difference"
 msgstr "N'afficher &que les différences"
 
-#: src/Buffer.cpp:4806
+#: src/Buffer.cpp:4807
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -29044,15 +29039,15 @@ msgstr ""
 "original %1$s est en lecture seule. Il faudra sauvegarder le document sous "
 "un autre nom."
 
-#: src/Buffer.cpp:4813
+#: src/Buffer.cpp:4814
 msgid "Document was successfully recovered."
 msgstr "Le document a été récupéré correctement."
 
-#: src/Buffer.cpp:4815
+#: src/Buffer.cpp:4816
 msgid "Document was NOT successfully recovered."
 msgstr "Le document n'a PAS été récupéré avec succès."
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4817
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -29061,31 +29056,31 @@ msgstr ""
 "Supprimer la sauvegarde d'urgence maintenant ?\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4820 src/Buffer.cpp:4832
+#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
 msgid "Delete emergency file?"
 msgstr "Supprimer la sauvegarde d'urgence ?"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Keep"
 msgstr "&Conserver"
 
-#: src/Buffer.cpp:4825
+#: src/Buffer.cpp:4826
 msgid "Emergency file deleted"
 msgstr "Sauvegarde d'urgence supprimée"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4827
 msgid "Do not forget to save your file now!"
 msgstr "N'oubliez pas d'enregistrer votre fichier maintenant !"
 
-#: src/Buffer.cpp:4833
+#: src/Buffer.cpp:4834
 msgid "Remove emergency file now?"
 msgstr "Supprimer la sauvegarde d'urgence maintenant ?"
 
-#: src/Buffer.cpp:4856
+#: src/Buffer.cpp:4857
 msgid "Can't rename emergency file!"
 msgstr "Impossible de renommer la sauvegarde d'urgence !"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4858
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
@@ -29095,11 +29090,11 @@ msgstr ""
 "faire manuellement. Sinon, il vous sera redemandé lors du prochain "
 "chargement de votre fichier, et pourrait écraser votre travail."
 
-#: src/Buffer.cpp:4862
+#: src/Buffer.cpp:4863
 msgid "Emergency File Renamed"
 msgstr "Renommage de la sauvegarde d'urgence"
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4864
 #, c-format
 msgid ""
 "Emergency file renamed as:\n"
@@ -29108,7 +29103,7 @@ msgstr ""
 "Sauvegarde d'urgence renommée comme :\n"
 " %1$s"
 
-#: src/Buffer.cpp:4902
+#: src/Buffer.cpp:4903
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -29119,19 +29114,19 @@ msgstr ""
 "\n"
 "Voulez-vous charger la sauvegarde automatique ?"
 
-#: src/Buffer.cpp:4904
+#: src/Buffer.cpp:4905
 msgid "Load backup?"
 msgstr "Charger la sauvegarde automatique ?"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "&Load backup"
 msgstr "&Charger la sauvegarde"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "Load &original"
 msgstr "Charger l'&original"
 
-#: src/Buffer.cpp:4915
+#: src/Buffer.cpp:4916
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -29141,25 +29136,25 @@ msgstr ""
 "original %1$s est en lecture seule. Il faudra sauvegarder le document sous "
 "un autre nom."
 
-#: src/Buffer.cpp:5300
+#: src/Buffer.cpp:5301
 msgid "Senseless!!! "
 msgstr "Inapproprié !!! "
 
-#: src/Buffer.cpp:5578
+#: src/Buffer.cpp:5579
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "Document %1$s rechargé."
 
-#: src/Buffer.cpp:5581
+#: src/Buffer.cpp:5582
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "Impossible de recharger le document %1$s."
 
-#: src/Buffer.cpp:5742
+#: src/Buffer.cpp:5743
 msgid "File deleted from disk"
 msgstr "Fichier effacé sur le disque"
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5744
 #, c-format
 msgid ""
 "The file\n"
@@ -30112,7 +30107,7 @@ msgstr "couleur héritée"
 msgid "ignore"
 msgstr "couleur ignorée"
 
-#: src/Converter.cpp:318
+#: src/Converter.cpp:321
 #, c-format
 msgid ""
 "<p>The following LaTeX backend has been configured to allow execution of "
@@ -30127,11 +30122,11 @@ msgstr ""
 "fonctionnalité proposée par LyX, permettant d'autoriser ce privilège pour "
 "les seuls documents qui en ont besoin.</p>"
 
-#: src/Converter.cpp:327
+#: src/Converter.cpp:330
 msgid "Security Warning"
 msgstr "Avertissement de sécurité"
 
-#: src/Converter.cpp:342
+#: src/Converter.cpp:345
 #, c-format
 msgid ""
 "<p>The following LaTeX backend has been requested to allow execution of "
@@ -30145,7 +30140,7 @@ msgstr ""
 "compris des commandes dangereuses, si instruites dans ce but par un document "
 "LyX malicieux.</p>"
 
-#: src/Converter.cpp:349
+#: src/Converter.cpp:352
 #, c-format
 msgid ""
 "<p>The requested operation requires the use of a converter from %2$s to %3$s:"
@@ -30159,11 +30154,11 @@ msgstr ""
 "commandes dangereuses, si instruites dans ce but par un document LyX "
 "malicieux.</p>"
 
-#: src/Converter.cpp:359
+#: src/Converter.cpp:362
 msgid "An external converter is disabled for security reasons"
 msgstr "Un convertisseur externe est désactivé pour des raisons de sécurité"
 
-#: src/Converter.cpp:361
+#: src/Converter.cpp:364
 msgid ""
 "<p><b>Your current preference settings forbid its execution.</b></p><p>(To "
 "change this setting, go to <i>Preferences &#x25b9; File Handling &#x25b9; "
@@ -30175,15 +30170,15 @@ msgstr ""
 "&#x25b9; Convertisseurs</i> et décochez <i>Sécurité &#x25b9; Interdire "
 "l’utilisation des convertisseurs needauth</i>.)"
 
-#: src/Converter.cpp:370
+#: src/Converter.cpp:373
 msgid "A LaTeX backend requires your authorization"
 msgstr "Un traitement LaTeX requiert votre autorisation"
 
-#: src/Converter.cpp:371
+#: src/Converter.cpp:374
 msgid "An external converter requires your authorization"
 msgstr "Un convertisseur extérieur requiert votre autorisation"
 
-#: src/Converter.cpp:374
+#: src/Converter.cpp:377
 msgid ""
 "<p>Should LaTeX backends be allowed to run external programs?</p><p><b>Allow "
 "them only if you trust the origin/sender of the LyX document!</b></p>"
@@ -30192,7 +30187,7 @@ msgstr ""
 "externes ?</p><p><b>Autoriser uniquement si vous avez confiance dans "
 "l'origine ou l’émetteur du document LyX !</b></p>"
 
-#: src/Converter.cpp:377
+#: src/Converter.cpp:380
 msgid ""
 "<p>Would you like to run this converter?</p><p><b>Only run if you trust the "
 "origin/sender of the LyX document!</b></p>"
@@ -30200,35 +30195,35 @@ msgstr ""
 "<p>Voulez-vous exécuter ce convertisseur ?</p><p><b>Exécuter uniquement si "
 "vous avez confiance dans l'origine ou l’émetteur du document LyX !</b></p>"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not allow"
 msgstr "&Ne pas autoriser"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not run"
 msgstr "&Ne pas exécuter"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "A&llow"
 msgstr "&Autoriser"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "&Run"
 msgstr "&Exécuter"
 
-#: src/Converter.cpp:384
+#: src/Converter.cpp:387
 msgid "&Always allow for this document"
 msgstr "&Toujours autoriser pour ce document"
 
-#: src/Converter.cpp:385
+#: src/Converter.cpp:388
 msgid "&Always run for this document"
 msgstr "Toujours ex&écuter pour ce document"
 
-#: src/Converter.cpp:455 src/Converter.cpp:712 src/Converter.cpp:741
+#: src/Converter.cpp:459 src/Converter.cpp:732 src/Converter.cpp:761
 msgid "Converter killed"
 msgstr "Convertisseur interrompu"
 
-#: src/Converter.cpp:456 src/Converter.cpp:713 src/Converter.cpp:742
+#: src/Converter.cpp:460 src/Converter.cpp:733 src/Converter.cpp:762
 #, c-format
 msgid ""
 "The following converter was killed by the user.\n"
@@ -30237,12 +30232,12 @@ msgstr ""
 "Le convertisseur suivant a été interrompu par l'utilisateur.\n"
 " %1$s\n"
 
-#: src/Converter.cpp:475 src/Converter.cpp:770 src/Converter.cpp:793
-#: src/Converter.cpp:835
+#: src/Converter.cpp:479 src/Converter.cpp:790 src/Converter.cpp:813
+#: src/Converter.cpp:855
 msgid "Cannot convert file"
 msgstr "Conversion du fichier impossible"
 
-#: src/Converter.cpp:476
+#: src/Converter.cpp:480
 #, c-format
 msgid ""
 "No information for converting %1$s format files to %2$s.\n"
@@ -30252,11 +30247,11 @@ msgstr ""
 "du format %1$s vers le format %2$s.\n"
 "Définissez un convertisseur dans les préférences."
 
-#: src/Converter.cpp:581 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
 msgid "Pygments driver command not found!"
 msgstr "Commande d'activation de pygments introuvable !"
 
-#: src/Converter.cpp:582 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -30278,15 +30273,15 @@ msgstr ""
 "\n"
 "où « pilote » est le nom du pilote."
 
-#: src/Converter.cpp:688 src/Format.cpp:708 src/Format.cpp:778
+#: src/Converter.cpp:708 src/Format.cpp:708 src/Format.cpp:778
 msgid "Executing command: "
 msgstr "Exécution de la commande : "
 
-#: src/Converter.cpp:753
+#: src/Converter.cpp:773
 msgid "Process Killed"
 msgstr "Processus interrompu"
 
-#: src/Converter.cpp:754
+#: src/Converter.cpp:774
 #, c-format
 msgid ""
 "The conversion process was killed while running:\n"
@@ -30295,11 +30290,11 @@ msgstr ""
 "Le processus de conversion a été interrompu lors de l'exécution :\n"
 "%1$s"
 
-#: src/Converter.cpp:759
+#: src/Converter.cpp:779
 msgid "Process Timed Out"
 msgstr "Délai d'exécution du processus expiré"
 
-#: src/Converter.cpp:760
+#: src/Converter.cpp:780
 #, c-format
 msgid ""
 "The conversion process:\n"
@@ -30310,15 +30305,15 @@ msgstr ""
 "%1$s\n"
 "a expiré avant la fin."
 
-#: src/Converter.cpp:765
+#: src/Converter.cpp:785
 msgid "Build errors"
 msgstr "Erreurs de compilation"
 
-#: src/Converter.cpp:766
+#: src/Converter.cpp:786
 msgid "There were errors during the build process."
 msgstr "Il y a eu des erreurs pendant la compilation."
 
-#: src/Converter.cpp:771
+#: src/Converter.cpp:791
 #, c-format
 msgid ""
 "An error occurred while running:\n"
@@ -30327,38 +30322,38 @@ msgstr ""
 "Une erreur s'est produite lors de l'exécution :\n"
 "%1$s"
 
-#: src/Converter.cpp:794
+#: src/Converter.cpp:814
 #, c-format
 msgid "Could not move a temporary directory from %1$s to %2$s."
 msgstr "Impossible de déplacer un répertoire temporaire de %1$s à %2$s."
 
-#: src/Converter.cpp:837
+#: src/Converter.cpp:857
 #, c-format
 msgid "Could not copy a temporary file from %1$s to %2$s."
 msgstr "Impossible de copier un fichier temporaire de %1$s vers %2$s."
 
-#: src/Converter.cpp:838
+#: src/Converter.cpp:858
 #, c-format
 msgid "Could not move a temporary file from %1$s to %2$s."
 msgstr "Impossible de déplacer un fichier temporaire de %1$s à %2$s."
 
-#: src/Converter.cpp:878
+#: src/Converter.cpp:898
 msgid "Running LaTeX..."
 msgstr "Exécution de LaTeX..."
 
-#: src/Converter.cpp:895
+#: src/Converter.cpp:915
 msgid "Export canceled"
 msgstr "Exportation annulée"
 
-#: src/Converter.cpp:896
+#: src/Converter.cpp:916
 msgid "The export process was terminated by the user."
 msgstr "Le processus d'exportation a été interrompu par l'utilisateur."
 
-#: src/Converter.cpp:906
+#: src/Converter.cpp:926
 msgid "Undefined reference"
 msgstr "Référence indéfinie"
 
-#: src/Converter.cpp:907
+#: src/Converter.cpp:927
 msgid ""
 "Undefined references or citations were found during the build.\n"
 "Please check the warnings in the LaTeX log (Document > LaTeX Log)."
@@ -30368,7 +30363,7 @@ msgstr ""
 "Veuillez vérifier les avertissements dans le journal LaTeX (Document > "
 "Fichier journal)."
 
-#: src/Converter.cpp:919
+#: src/Converter.cpp:939
 #, c-format
 msgid ""
 "LaTeX did not run successfully. Additionally, LyX could not locate the LaTeX "
@@ -30377,11 +30372,11 @@ msgstr ""
 "LaTeX ne s'est pas exécuté correctement. En plus, LyX n'a pas pu trouver le "
 "fichier journal LaTeX %1$s."
 
-#: src/Converter.cpp:922 src/Converter.cpp:929
+#: src/Converter.cpp:942 src/Converter.cpp:949
 msgid "LaTeX failed"
 msgstr "Échec de LaTeX"
 
-#: src/Converter.cpp:925
+#: src/Converter.cpp:945
 #, c-format
 msgid ""
 "The external program\n"
@@ -30394,11 +30389,11 @@ msgstr ""
 "s'est terminé avec une erreur. Il est recommandé de corriger l'origine de "
 "l'erreur du programme externe (vérifier les journaux). "
 
-#: src/Converter.cpp:931
+#: src/Converter.cpp:951
 msgid "Output is empty"
 msgstr "La sortie est vide"
 
-#: src/Converter.cpp:932
+#: src/Converter.cpp:952
 msgid "No output file was generated."
 msgstr "Aucun fichier imprimable créé."
 
@@ -30466,8 +30461,8 @@ msgstr "Format introuvable"
 #, c-format
 msgid "Flex inset %1$s is undefined after reloading `%2$s' layout."
 msgstr ""
-"L'insert flexible %1$s n'est pas défini après rechargement du format "
-"« %2$s »."
+"L'insert flexible %1$s n'est pas défini après rechargement du format « %2$s "
+"»."
 
 #: src/CutAndPaste.cpp:901
 #, c-format
@@ -30475,8 +30470,8 @@ msgid ""
 "Flex inset %1$s is undefined because of conversion from `%2$s' layout to "
 "`%3$s'."
 msgstr ""
-"L'insert flexible %1$s n'est pas défini du fait de la conversion du format "
-"« %2$s » vers « %3$s »."
+"L'insert flexible %1$s n'est pas défini du fait de la conversion du format « "
+"%2$s » vers « %3$s »."
 
 # à revoir
 # Fait JPC
@@ -30775,45 +30770,6 @@ msgstr ""
 "Le paquetage LaTeX « %1$s », nécessaire pour utiliser la police  « %2$s »,\n"
 "n'est pas installé sur votre système. LyX reviendra à la police implicite."
 
-#: src/LaTeXPackages.cpp:89
-msgid "Invalid package list format!"
-msgstr "Format de la liste des paquetages invalide !"
-
-#: src/LaTeXPackages.cpp:90
-msgid ""
-"The format of your LaTeX packages list is wrong. Please file a bug report."
-msgstr ""
-"Le format de votre liste des paquetages LaTeX est incorrect. Merci de poster "
-"un rapport de bogue."
-
-#: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
-msgid "Outdated configuration script detected!"
-msgstr "Script de configuration périmé détecté !"
-
-#: src/LaTeXPackages.cpp:99
-msgid ""
-"We have detected an outdated script 'chkconfig.ltx' in your user directory.\n"
-"The script has been renamed to 'chkconfig.ltx.bak'.\n"
-"If you did not copy the script there by purpose, you can safely delete it."
-msgstr ""
-"Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
-"répertoire utilisateur.\n"
-"Ce script a été renommé « chkconfig.ltx.bak ».\n"
-"Si vous n'aviez pas copié le script exprès, vous pouvez l'effacer en toute "
-"sécurité."
-
-#: src/LaTeXPackages.cpp:105
-#, c-format
-msgid ""
-"We have detected an outdated script 'chkconfig.ltx' in your user directory\n"
-"(%1$s).\n"
-"Please delete or update this file!"
-msgstr ""
-"Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
-"répertoire utilisateur.\n"
-"(%1$s).\n"
-"Merci de supprimer ou de mettre à jour ce fichier !"
-
 #: src/LyX.cpp:136
 msgid "Could not read configuration file"
 msgstr "Lecture du fichier de configuration impossible"
@@ -31087,8 +31043,8 @@ msgstr ""
 "                     où fmt est le format d'importation choisi\n"
 "                     et fichier.xxx le fichier à importer.\n"
 "\t-f [--force-overwrite] ceci\n"
-"                  où « ceci » est soit « all », soit « main », soit "
-"« none »,\n"
+"                  où « ceci » est soit « all », soit « main », soit « none "
+"»,\n"
 "                  spécifiant si tous les fichiers, seulement le fichier "
 "principal,\n"
 "                  ou aucun fichier (respectivement) seront écrasés pendant \n"
@@ -31358,8 +31314,8 @@ msgid ""
 "\"makeindex.sh -m $$lang\"."
 msgstr ""
 "Définir les options de makeindex (voir man makeindex) ou sélectionner un "
-"autre compilateur. Par ex., avec xindy / make-rules, la commande serait "
-"« makeindex.sh -m $$lang »."
+"autre compilateur. Par ex., avec xindy / make-rules, la commande serait « "
+"makeindex.sh -m $$lang »."
 
 #: src/LyXRC.cpp:3249
 msgid "Define the options of the index program for PLaTeX (Japanese LaTeX)."
@@ -31429,8 +31385,8 @@ msgid ""
 "The LaTeX command for loading the language package. E.g. "
 "\"\\usepackage{babel}\", \"\\usepackage{omega}\"."
 msgstr ""
-"Commande LaTeX pour charger le paquetage linguistique. Par exemple "
-"« \\usepackage{babel} », « \\usepackage{omega} »."
+"Commande LaTeX pour charger le paquetage linguistique. Par exemple « "
+"\\usepackage{babel} », « \\usepackage{omega} »."
 
 #: src/LyXRC.cpp:3298
 msgid ""
@@ -31628,8 +31584,8 @@ msgid ""
 "This starts the lyxserver. The pipes get an additional extension \".in\" and "
 "\".out\". Only for advanced users."
 msgstr ""
-"Démarrer le serveur LyX. Les tubes reçoivent le suffixe supplémentaire « ."
-"in » et « .out ». Réservé aux utilisateurs expérimentés."
+"Démarrer le serveur LyX. Les tubes reçoivent le suffixe supplémentaire « .in "
+"» et « .out ». Réservé aux utilisateurs expérimentés."
 
 #: src/LyXRC.cpp:3448
 msgid "De-select if you don't want the startup banner."
@@ -32954,9 +32910,8 @@ msgid ""
 "Pass content of the `Author', `Year' and `All Authors' fields literally to "
 "LaTeX. Check this if you want to enter LaTeX code."
 msgstr ""
-"Transmet littéralement le contenu des champs « Auteur » , « Année » et "
-"« Tous les auteurs » à LaTeX. À cocher si vous souhaitez saisir du code "
-"LaTeX."
+"Transmet littéralement le contenu des champs « Auteur » , « Année » et « "
+"Tous les auteurs » à LaTeX. À cocher si vous souhaitez saisir du code LaTeX."
 
 #: src/frontends/qt/GuiBibitem.h:36
 msgid "Bibliography Item Settings"
@@ -34712,8 +34667,8 @@ msgid ""
 "output will be 'Yes' (package available) or 'No' (package unavailable)."
 msgstr ""
 "Saisir le nom d'un paquetage LaTeX comme « hyperref » (le suffixe est "
-"facultatif). La réponse sera « Oui » (paquetage disponible)  ou « Non » "
-"(paquetage manquant)."
+"facultatif). La réponse sera « Oui » (paquetage disponible)  ou « Non "
+"» (paquetage manquant)."
 
 #: src/frontends/qt/GuiInfo.cpp:195
 msgid ""
@@ -39482,6 +39437,54 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Utilisateur inconnu"
+
+#~ msgid "XHTML Output Options"
+#~ msgstr "Options export XHTML"
+
+#~ msgid "Scaling factor for images used for math output."
+#~ msgstr "Facteur d'échelle des images créées pour l'impression des maths."
+
+#~ msgid "Math &image scaling:"
+#~ msgstr "Mise à l'échelle des &images mathématiques :"
+
+#~ msgid "DocBook Output Options"
+#~ msgstr "Option d'exportation DocBook"
+
+#~ msgid "Invalid package list format!"
+#~ msgstr "Format de la liste des paquetages invalide !"
+
+#~ msgid ""
+#~ "The format of your LaTeX packages list is wrong. Please file a bug report."
+#~ msgstr ""
+#~ "Le format de votre liste des paquetages LaTeX est incorrect. Merci de "
+#~ "poster un rapport de bogue."
+
+#~ msgid "Outdated configuration script detected!"
+#~ msgstr "Script de configuration périmé détecté !"
+
+#~ msgid ""
+#~ "We have detected an outdated script 'chkconfig.ltx' in your user "
+#~ "directory.\n"
+#~ "The script has been renamed to 'chkconfig.ltx.bak'.\n"
+#~ "If you did not copy the script there by purpose, you can safely delete it."
+#~ msgstr ""
+#~ "Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
+#~ "répertoire utilisateur.\n"
+#~ "Ce script a été renommé « chkconfig.ltx.bak ».\n"
+#~ "Si vous n'aviez pas copié le script exprès, vous pouvez l'effacer en "
+#~ "toute sécurité."
+
+#, c-format
+#~ msgid ""
+#~ "We have detected an outdated script 'chkconfig.ltx' in your user "
+#~ "directory\n"
+#~ "(%1$s).\n"
+#~ "Please delete or update this file!"
+#~ msgstr ""
+#~ "Nous avons détecté un script « chkconfig.ltx » » périmé dans votre "
+#~ "répertoire utilisateur.\n"
+#~ "(%1$s).\n"
+#~ "Merci de supprimer ou de mettre à jour ce fichier !"
 
 #~ msgid "tgo"
 #~ msgstr "tgo"
