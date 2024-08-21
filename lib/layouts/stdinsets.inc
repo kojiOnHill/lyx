@@ -495,7 +495,7 @@ InsetLayout Nomenclature:nomentbl
 	  Mandatory           1
 	EndArgument
 	Argument post:3
-	  LabelString         "Note"
+	  LabelString         "Note[[nomencl]]"
 	  Tooltip             "Nomenclature note"
 	  AutoInsert          1
 	  Mandatory           1
