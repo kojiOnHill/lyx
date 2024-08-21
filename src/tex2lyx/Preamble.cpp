@@ -1786,10 +1786,13 @@ void Preamble::handle_package(Parser &p, string const & name,
 			h_use_nomentbl = true;
 			options.erase(it);
 		}
-		if (!options.empty())
-			// Fixme: add PackageOptions to local layout
-			warning_message("Ignoring options '" + join(options, ",")
-					+ "' of package " + name + '.');
+		// Add the package options to the global document options
+		if (!options.empty()) {
+			if (h_options.empty())
+				h_options = join(options, ",");
+			else
+				h_options += ',' + join(options, ",");
+		}
 	}
 
 	else if (name == "geometry")
