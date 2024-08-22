@@ -9646,12 +9646,14 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim
+
 This is Verbatim.
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
+
 The following 2 lines are empty:
 \end_layout
 
@@ -9664,6 +9666,7 @@ The following 2 lines are empty:
 \end_layout
 
 \begin_layout Verbatim
+
 Almost everything is allowed in Verbatim:"%&$§#~'`
 \backslash
 }][{|
@@ -9687,6 +9690,7 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim*
+
 This is Verbatim*.
 \end_layout
 
@@ -37518,12 +37522,44 @@ subgroups
  
 \change_deleted -712698321 1724303777
 Inserts the nomenclature in the Table of Contents
-\change_inserted -712698321 1724305020
+\change_inserted -712698321 1724309742
 uses predefined subgroups (Latin Letters,
  Greek Letters,
  Superscripts,
  Subscripts) to structure the nomenclature list.
- Please refer to the 
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\change_inserted -712698321 1724311045
+Entries are assigned to a subgroup via the 
+\family sans
+Sort
+\begin_inset space ~
+\end_inset
+
+as
+\family default
+ sub-inset.
+ If you use subgroups,
+ the first letter of the sort string indicates the subgroup (a:
+ Latin letters,
+ g:
+ Greek letters,
+ x:
+ Superscripts,
+ z:
+ Subscripts),
+ the following the sorting within the group.
+ A is used by default if no sorting has been manually specified.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1724309722
+Please refer to the 
 \series bold
 nomencl
 \series default
@@ -37542,6 +37578,7 @@ literal "true"
 
 \end_layout
 
+\end_deeper
 \begin_layout Description
 
 \change_inserted -712698321 1724303903

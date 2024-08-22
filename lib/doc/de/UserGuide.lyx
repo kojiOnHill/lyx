@@ -9302,10 +9302,12 @@ Unformatiert
 \end_layout
 
 \begin_layout Verbatim
+
 Dies ist Unformatiert.
 \end_layout
 
 \begin_layout Verbatim
+
 Die folgenden 2 Zeilen sind leer:
 \end_layout
 
@@ -9318,6 +9320,7 @@ Die folgenden 2 Zeilen sind leer:
 \end_layout
 
 \begin_layout Verbatim
+
 Fast alles ist in Unformatiert erlaubt:"%&$§#~'`
 \backslash
 }][{|
@@ -9343,6 +9346,7 @@ Unformatiert
 \end_layout
 
 \begin_layout Verbatim*
+
 Dies ist Unformatiert*.
 \end_layout
 
@@ -36200,12 +36204,36 @@ Standard-Untergruppen
 \begin_inset space ~
 \end_inset
 
-verwenden verwendet vordefinierte Untergruppen (lateinische Buchstaben,
- griechische Buchstaben,
+verwenden verwendet vordefinierte Untergruppen (Lateinische Buchstaben,
+ Griechische Buchstaben,
  Hochgestellt,
  Tiefgestellt),
  um das Nomenklaturverzeichnis zu strukturieren.
- Wenn Sie eine andere Strukturierung brauchen,
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Einträge werden den Untergruppen über die Untereinfügung 
+\family sans
+Sortieren als
+\family default
+ zugewiesen.
+ Wenn Sie Untergruppen verwenden,
+ markiert der erste Buchstabe des Sortierschlüssels die Untergruppe (a:
+ Lateinische Buchstaben,
+ g:
+ Griechische Buchstaben,
+ x:
+ Hochgestellt,
+ z:
+ Tiefgestellt),
+ alles Folgende die Sortierung innerhalb der Gruppe.
+ A wird verwendet falls keine Sortierung manuell spezifiziert wird.
+\end_layout
+
+\begin_layout Standard
+Wenn Sie eine andere Strukturierung brauchen,
  konsultieren Sie bitte die 
 \series bold
 nomencl
@@ -36221,6 +36249,7 @@ literal "true"
 .
 \end_layout
 
+\end_deeper
 \begin_layout Description
 Andere
 \begin_inset space ~
