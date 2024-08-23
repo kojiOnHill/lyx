@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-17 19:38-0400\n"
+"POT-Creation-Date: 2024-08-22 21:06-0400\n"
 "PO-Revision-Date: 2024-06-27 23:12+0800\n"
 "Last-Translator: Jiaxu Zi <3119932298@qq.com>\n"
 "Language-Team: 简体中文 <lyx-docs@lists.lyx.org>\n"
@@ -700,7 +700,7 @@ msgid "Remove the selected branch"
 msgstr "删除选中分支"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Remove"
 msgstr "删除(&R)"
 
@@ -774,7 +774,7 @@ msgid "Add A&ll"
 msgstr "添加所有(&L)"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -3287,144 +3287,11 @@ msgstr "加入目录(&L)"
 msgid "&Numbering"
 msgstr "编号(&N)"
 
-#: src/frontends/qt/ui/OutputUi.ui:37
-msgid "&LaTeX"
-msgstr "&LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:43
-msgid "LaTeX Output Options"
-msgstr "LaTeX 输出选项"
-
-#: src/frontends/qt/ui/OutputUi.ui:51
-msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
-msgstr "启用编辑器与输出间的正向/反向搜索支持 (如 SyncTeX)"
-
-#: src/frontends/qt/ui/OutputUi.ui:54
-msgid "S&ynchronize with output"
-msgstr "与输出同步(&Y)"
-
-#: src/frontends/qt/ui/OutputUi.ui:85
-msgid "C&ustom macro:"
-msgstr "自定义宏(&U):"
-
-#: src/frontends/qt/ui/OutputUi.ui:95
-msgid "Custom LaTeX preamble macro"
-msgstr "自定义 LaTeX 导言区宏"
-
-#: src/frontends/qt/ui/OutputUi.ui:122
-msgid ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
-msgstr ""
-"如果选中此选项，将移动标签和索引条目等易碎项目，使其脱离章节和标题等移动参"
-"数。这样可以防止在这种情况下可能出现的LaTeX错误。建议保持此选项开启。"
-
-#: src/frontends/qt/ui/OutputUi.ui:125
-msgid "Put fra&gile content out of moving arguments"
-msgstr "将脆弱的内容从参数中移除"
-
-#: src/frontends/qt/ui/OutputUi.ui:149
-msgid "&XHTML"
-msgstr "&XHTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:155
-msgid "XHTML Output Options"
-msgstr "XHTML 输出选项"
-
-#: src/frontends/qt/ui/OutputUi.ui:164
-msgid "Write CSS to file"
-msgstr "导出 CSS 为文件"
-
-#: src/frontends/qt/ui/OutputUi.ui:176
-msgid "Scaling factor for images used for math output."
-msgstr "数学输出中图像的缩放因子。"
-
-#: src/frontends/qt/ui/OutputUi.ui:200 src/frontends/qt/ui/OutputUi.ui:397
-msgid "Format to use for math output."
-msgstr "数学输出的格式。"
-
-#: src/frontends/qt/ui/OutputUi.ui:204
-msgid "MathML"
-msgstr "MathML"
-
-#: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
-#: lib/configure.py:853
-msgid "HTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:214
-msgid "Images"
-msgstr "图像"
-
-#: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
-#: lib/layouts/egs.layout:720 lib/languages:147
-#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
-msgid "LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:232
-msgid "Math &image scaling:"
-msgstr "数学图像缩放(&I):"
-
-#: src/frontends/qt/ui/OutputUi.ui:255
-msgid "Whether to comply strictly with XHTML 1.1."
-msgstr "选择是否严格遵循 XHTML 1.1 规范。"
-
-#: src/frontends/qt/ui/OutputUi.ui:258
-msgid "&Strict XHTML 1.1"
-msgstr "严格 XHTML 1.1"
-
-#: src/frontends/qt/ui/OutputUi.ui:270
-msgid "&Math output:"
-msgstr "数学输出(&M)"
-
-#: src/frontends/qt/ui/OutputUi.ui:297
-msgid "&DocBook"
-msgstr "&DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:303
-msgid "DocBook Output Options"
-msgstr "DocBook 输出选项"
-
-#: src/frontends/qt/ui/OutputUi.ui:323
-msgid ""
-"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
-"code> prefix, the MathML tags will be output like <code>m:math</code>."
-msgstr ""
-"用于MathML公式所使用的命名空间前缀。例如，使用<code>m</code>前缀时，MathML标"
-"签将输出为<code>m:math</code>的形式。"
-
-#: src/frontends/qt/ui/OutputUi.ui:327
-msgid "No prefix (namespace defined inline for each tag)"
-msgstr "无前缀（每个标签内联定义命名空间）"
-
-#: src/frontends/qt/ui/OutputUi.ui:332
-msgid "m (default)"
-msgstr "m (默认)"
-
-#: src/frontends/qt/ui/OutputUi.ui:337
-msgid "mml"
-msgstr "mml"
-
-#: src/frontends/qt/ui/OutputUi.ui:376
-msgid "&Table output:"
-msgstr "表格输出(&T)"
-
-#: src/frontends/qt/ui/OutputUi.ui:406
-msgid "CALS"
-msgstr "CALS"
-
-#: src/frontends/qt/ui/OutputUi.ui:419
-msgid "&MathML namespace prefix:"
-msgstr "MathML命名前缀："
-
-#: src/frontends/qt/ui/OutputUi.ui:449
+#: src/frontends/qt/ui/OutputUi.ui:28
 msgid "LyX Format"
 msgstr "LyX 格式"
 
-#: src/frontends/qt/ui/OutputUi.ui:461
+#: src/frontends/qt/ui/OutputUi.ui:40
 msgid ""
 "Save all parameters in the LyX file, including ones that are frequently "
 "switched or that are specific to the user (such as the output of the tracked "
@@ -3434,29 +3301,157 @@ msgstr ""
 "所有参数都将保存到 LyX 文件中，包括经常更换或特定于用户的参数 (如追踪修正的输"
 "出形式或文档路径)。若您在多人协作环境下或使用版本控制系统，最好禁用此选项。"
 
-#: src/frontends/qt/ui/OutputUi.ui:464
+#: src/frontends/qt/ui/OutputUi.ui:43
 msgid "Save &transient properties"
 msgstr "保存所有参数(&T)"
 
-#: src/frontends/qt/ui/OutputUi.ui:474
+#: src/frontends/qt/ui/OutputUi.ui:59
 msgid "Output Format"
 msgstr "输出格式"
 
-#: src/frontends/qt/ui/OutputUi.ui:515 src/frontends/qt/ui/OutputUi.ui:528
+#: src/frontends/qt/ui/OutputUi.ui:100 src/frontends/qt/ui/OutputUi.ui:113
 msgid "Specify the default output format (for view/update)"
 msgstr "为预览和更新指定默认输出格式"
 
-#: src/frontends/qt/ui/OutputUi.ui:518
+#: src/frontends/qt/ui/OutputUi.ui:103
 msgid "De&fault output format:"
 msgstr "默认输出格式(&F):"
 
-#: src/frontends/qt/ui/OutputUi.ui:553
+#: src/frontends/qt/ui/OutputUi.ui:144
+#, fuzzy
+msgid "Output Options"
+msgstr "LaTeX 输出选项"
+
+#: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
+msgid ""
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:160
+msgid "Scaling of generated &images:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:219
+msgid "&LaTeX"
+msgstr "&LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:225
+msgid ""
+"If this is checked, fragile items such as labels and index entries are moved "
+"out of moving arguments such as sections and captions. This prevents LaTeX "
+"errors that can happen in such cases. It is recommended to keep this on."
+msgstr ""
+"如果选中此选项，将移动标签和索引条目等易碎项目，使其脱离章节和标题等移动参"
+"数。这样可以防止在这种情况下可能出现的LaTeX错误。建议保持此选项开启。"
+
+#: src/frontends/qt/ui/OutputUi.ui:228
+msgid "Put fra&gile content out of moving arguments"
+msgstr "将脆弱的内容从参数中移除"
+
+#: src/frontends/qt/ui/OutputUi.ui:237
+msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
+msgstr "启用编辑器与输出间的正向/反向搜索支持 (如 SyncTeX)"
+
+#: src/frontends/qt/ui/OutputUi.ui:240
+msgid "S&ynchronize with output"
+msgstr "与输出同步(&Y)"
+
+#: src/frontends/qt/ui/OutputUi.ui:271
+msgid "C&ustom macro:"
+msgstr "自定义宏(&U):"
+
+#: src/frontends/qt/ui/OutputUi.ui:281
+msgid "Custom LaTeX preamble macro"
+msgstr "自定义 LaTeX 导言区宏"
+
+#: src/frontends/qt/ui/OutputUi.ui:309
+msgid "&XHTML"
+msgstr "&XHTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:317
+msgid "Whether to comply strictly with XHTML 1.1."
+msgstr "选择是否严格遵循 XHTML 1.1 规范。"
+
+#: src/frontends/qt/ui/OutputUi.ui:320
+msgid "&Strict XHTML 1.1"
+msgstr "严格 XHTML 1.1"
+
+#: src/frontends/qt/ui/OutputUi.ui:327
+msgid "Write CSS to file"
+msgstr "导出 CSS 为文件"
+
+#: src/frontends/qt/ui/OutputUi.ui:356
+msgid "&Math output:"
+msgstr "数学输出(&M)"
+
+#: src/frontends/qt/ui/OutputUi.ui:371 src/frontends/qt/ui/OutputUi.ui:448
+msgid "Format to use for math output."
+msgstr "数学输出的格式。"
+
+#: src/frontends/qt/ui/OutputUi.ui:375
+msgid "MathML"
+msgstr "MathML"
+
+#: src/frontends/qt/ui/OutputUi.ui:380 src/frontends/qt/ui/OutputUi.ui:452
+#: lib/configure.py:853
+msgid "HTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:385
+msgid "Images"
+msgstr "图像"
+
+#: src/frontends/qt/ui/OutputUi.ui:390 lib/layouts/aapaper.layout:63
+#: lib/layouts/egs.layout:720 lib/languages:147
+#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
+msgid "LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:414
+msgid "&DocBook"
+msgstr "&DocBook"
+
+#: src/frontends/qt/ui/OutputUi.ui:427
+msgid "&Table output:"
+msgstr "表格输出(&T)"
+
+#: src/frontends/qt/ui/OutputUi.ui:457
+msgid "CALS"
+msgstr "CALS"
+
+#: src/frontends/qt/ui/OutputUi.ui:487
+msgid "&MathML namespace prefix:"
+msgstr "MathML命名前缀："
+
+#: src/frontends/qt/ui/OutputUi.ui:508
+msgid ""
+"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
+"code> prefix, the MathML tags will be output like <code>m:math</code>."
+msgstr ""
+"用于MathML公式所使用的命名空间前缀。例如，使用<code>m</code>前缀时，MathML标"
+"签将输出为<code>m:math</code>的形式。"
+
+#: src/frontends/qt/ui/OutputUi.ui:512
+msgid "No prefix (namespace defined inline for each tag)"
+msgstr "无前缀（每个标签内联定义命名空间）"
+
+#: src/frontends/qt/ui/OutputUi.ui:517
+msgid "m (default)"
+msgstr "m (默认)"
+
+#: src/frontends/qt/ui/OutputUi.ui:522
+msgid "mml"
+msgstr "mml"
+
+#: src/frontends/qt/ui/OutputUi.ui:552
 msgid ""
 "Runs the LaTeX backend with the -shell-escape option (Warning: use only when "
 "really necessary)"
 msgstr "使用 -shell-escape 选项运行 LaTeX 后端 (警告：必要时才使用！)"
 
-#: src/frontends/qt/ui/OutputUi.ui:556
+#: src/frontends/qt/ui/OutputUi.ui:555
 msgid "&Allow running external programs"
 msgstr "允许运行外部程序(&A)"
 
@@ -27837,7 +27832,7 @@ msgid ""
 "it."
 msgstr "%1$s 来自较新版本的 LyX,，但 lyx2lyx 脚本无法转换。"
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4805 src/Buffer.cpp:4914
+#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
 msgid "File is read-only"
 msgstr "文件只读"
 
@@ -28189,21 +28184,21 @@ msgid ""
 "save the file to a directory whose name does not contain spaces."
 msgstr ""
 
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "文档导出已取消。"
 
-#: src/Buffer.cpp:4715
+#: src/Buffer.cpp:4716
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "文档 %1$s 导出为 `%2$s'"
 
-#: src/Buffer.cpp:4722
+#: src/Buffer.cpp:4723
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "文档导出为 %1$s"
 
-#: src/Buffer.cpp:4791
+#: src/Buffer.cpp:4792
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -28214,23 +28209,23 @@ msgstr ""
 "\n"
 "使用此紧急版本吧?"
 
-#: src/Buffer.cpp:4794
+#: src/Buffer.cpp:4795
 msgid "Load emergency save?"
 msgstr "读入紧急保存的版本吗？"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Recover"
 msgstr "恢复(&R)"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Load Original"
 msgstr "读取原版本(&L)"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Only show difference"
 msgstr "仅显示差异(&O)"
 
-#: src/Buffer.cpp:4806
+#: src/Buffer.cpp:4807
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -28239,15 +28234,15 @@ msgstr ""
 "已加载紧急备份文件。但原始文件“%1$s”是只读的。请保证将该文件另存为不同的文"
 "件。"
 
-#: src/Buffer.cpp:4813
+#: src/Buffer.cpp:4814
 msgid "Document was successfully recovered."
 msgstr "文档已被成功修复。"
 
-#: src/Buffer.cpp:4815
+#: src/Buffer.cpp:4816
 msgid "Document was NOT successfully recovered."
 msgstr "文档 未 被成功修复。"
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4817
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -28256,31 +28251,31 @@ msgstr ""
 "现在删除紧急保存的文件吗？\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4820 src/Buffer.cpp:4832
+#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
 msgid "Delete emergency file?"
 msgstr "删除紧急保存的文件吗？"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Keep"
 msgstr "保留(&K)"
 
-#: src/Buffer.cpp:4825
+#: src/Buffer.cpp:4826
 msgid "Emergency file deleted"
 msgstr "紧急保存的文件已删除"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4827
 msgid "Do not forget to save your file now!"
 msgstr "别忘了现在保存你的文件！"
 
-#: src/Buffer.cpp:4833
+#: src/Buffer.cpp:4834
 msgid "Remove emergency file now?"
 msgstr "现在删除紧急保存的文件吗？"
 
-#: src/Buffer.cpp:4856
+#: src/Buffer.cpp:4857
 msgid "Can't rename emergency file!"
 msgstr "无法重命名紧急文件！"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4858
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
@@ -28289,11 +28284,11 @@ msgstr ""
 "LyX未能重命名应急文件。您应手动进行重命名。否则，您下次尝试加载此文件时将再次"
 "被询问，并可能会覆盖您自己的工作。"
 
-#: src/Buffer.cpp:4862
+#: src/Buffer.cpp:4863
 msgid "Emergency File Renamed"
 msgstr "紧急文件已重命名"
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4864
 #, c-format
 msgid ""
 "Emergency file renamed as:\n"
@@ -28302,7 +28297,7 @@ msgstr ""
 "紧急文件重命名为：\n"
 "%1$s"
 
-#: src/Buffer.cpp:4902
+#: src/Buffer.cpp:4903
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -28313,19 +28308,19 @@ msgstr ""
 "\n"
 "读取备份版本?"
 
-#: src/Buffer.cpp:4904
+#: src/Buffer.cpp:4905
 msgid "Load backup?"
 msgstr "读取备份版本?"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "&Load backup"
 msgstr "读取备份(&L)"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "Load &original"
 msgstr "读取原版本(&O)"
 
-#: src/Buffer.cpp:4915
+#: src/Buffer.cpp:4916
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -28333,25 +28328,25 @@ msgid ""
 msgstr ""
 "已加载备份文件。但原始文件“%1$s”是只读的。请保证将该文件另存为不同的文件。"
 
-#: src/Buffer.cpp:5300
+#: src/Buffer.cpp:5301
 msgid "Senseless!!! "
 msgstr "无意义!!! "
 
-#: src/Buffer.cpp:5578
+#: src/Buffer.cpp:5579
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "文档 %1$s 已重新加载。"
 
-#: src/Buffer.cpp:5581
+#: src/Buffer.cpp:5582
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "无法重新加载文档 %1$s。"
 
-#: src/Buffer.cpp:5742
+#: src/Buffer.cpp:5743
 msgid "File deleted from disk"
 msgstr "从磁盘删除的文件"
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5744
 #, c-format
 msgid ""
 "The file\n"
@@ -29264,7 +29259,7 @@ msgstr "继承"
 msgid "ignore"
 msgstr "忽略"
 
-#: src/Converter.cpp:318
+#: src/Converter.cpp:321
 #, fuzzy, c-format
 msgid ""
 "<p>The following LaTeX backend has been configured to allow execution of "
@@ -29277,11 +29272,11 @@ msgstr ""
 "tt></p></center><p>这是很危险的。请务必考虑使用 LyX 的外部文件支持，以保证只"
 "有需要执行外部程序的文档才能执行。</p>"
 
-#: src/Converter.cpp:327
+#: src/Converter.cpp:330
 msgid "Security Warning"
 msgstr "安全警告"
 
-#: src/Converter.cpp:342
+#: src/Converter.cpp:345
 #, fuzzy, c-format
 msgid ""
 "<p>The following LaTeX backend has been requested to allow execution of "
@@ -29293,7 +29288,7 @@ msgstr ""
 "center><p>外部程序可以在您的机器上任意运行，恶意代码也不例外，只要它被包含在"
 "精心设计的 LyX 文档里即可。</p>"
 
-#: src/Converter.cpp:349
+#: src/Converter.cpp:352
 #, fuzzy, c-format
 msgid ""
 "<p>The requested operation requires the use of a converter from %2$s to %3$s:"
@@ -29305,11 +29300,11 @@ msgstr ""
 "p></blockquote><p>外部程序可以在您的机器上任意运行，恶意代码也不例外，只要它"
 "被包含在精心设计的 LyX 文档里即可。</p>"
 
-#: src/Converter.cpp:359
+#: src/Converter.cpp:362
 msgid "An external converter is disabled for security reasons"
 msgstr "外部转换器因安全原因被禁用"
 
-#: src/Converter.cpp:361
+#: src/Converter.cpp:364
 msgid ""
 "<p><b>Your current preference settings forbid its execution.</b></p><p>(To "
 "change this setting, go to <i>Preferences &#x25b9; File Handling &#x25b9; "
@@ -29320,15 +29315,15 @@ msgstr ""
 "首选项 &#x25b9; 文件处理 &#x25b9; 转换器</i> 并取消选中： <i>安全 &#x25b9; 禁"
 "止使用需要验证的转换器</i>。)"
 
-#: src/Converter.cpp:370
+#: src/Converter.cpp:373
 msgid "A LaTeX backend requires your authorization"
 msgstr "一个 LaTeX 后端需要您许可"
 
-#: src/Converter.cpp:371
+#: src/Converter.cpp:374
 msgid "An external converter requires your authorization"
 msgstr "一个外部转换器需要您许可"
 
-#: src/Converter.cpp:374
+#: src/Converter.cpp:377
 msgid ""
 "<p>Should LaTeX backends be allowed to run external programs?</p><p><b>Allow "
 "them only if you trust the origin/sender of the LyX document!</b></p>"
@@ -29336,7 +29331,7 @@ msgstr ""
 "<p>您要允许 LaTeX 后端执行外部程序吗？</p><p><b>只有当您信任该 LyX 文档的作者"
 "或发送该文档的人时才能允许！</b></p>"
 
-#: src/Converter.cpp:377
+#: src/Converter.cpp:380
 msgid ""
 "<p>Would you like to run this converter?</p><p><b>Only run if you trust the "
 "origin/sender of the LyX document!</b></p>"
@@ -29344,35 +29339,35 @@ msgstr ""
 "<p>您要运行此转换器吗？</p><p><b>只有当您信任该 LyX 文档的作者或发送该文档的"
 "人时才能运行！</b></p>"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not allow"
 msgstr "不允许(&N)"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not run"
 msgstr "不运行(&N)"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "A&llow"
 msgstr "允许(&A)"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "&Run"
 msgstr "运行(&R)"
 
-#: src/Converter.cpp:384
+#: src/Converter.cpp:387
 msgid "&Always allow for this document"
 msgstr "对该文档总是允许(&A)"
 
-#: src/Converter.cpp:385
+#: src/Converter.cpp:388
 msgid "&Always run for this document"
 msgstr "对该文档总是运行(&A)"
 
-#: src/Converter.cpp:455 src/Converter.cpp:712 src/Converter.cpp:741
+#: src/Converter.cpp:459 src/Converter.cpp:732 src/Converter.cpp:761
 msgid "Converter killed"
 msgstr "转换已终止"
 
-#: src/Converter.cpp:456 src/Converter.cpp:713 src/Converter.cpp:742
+#: src/Converter.cpp:460 src/Converter.cpp:733 src/Converter.cpp:762
 #, c-format
 msgid ""
 "The following converter was killed by the user.\n"
@@ -29381,12 +29376,12 @@ msgstr ""
 "以下转换器被用户终止。\n"
 " %1$s\n"
 
-#: src/Converter.cpp:475 src/Converter.cpp:770 src/Converter.cpp:793
-#: src/Converter.cpp:835
+#: src/Converter.cpp:479 src/Converter.cpp:790 src/Converter.cpp:813
+#: src/Converter.cpp:855
 msgid "Cannot convert file"
 msgstr "无法转换文件"
 
-#: src/Converter.cpp:476
+#: src/Converter.cpp:480
 #, c-format
 msgid ""
 "No information for converting %1$s format files to %2$s.\n"
@@ -29395,11 +29390,11 @@ msgstr ""
 "从 %1$s 转换到 %2$s 的信息不足。\n"
 "请在首选项中定义转换器。"
 
-#: src/Converter.cpp:581 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
 msgid "Pygments driver command not found!"
 msgstr "Pygments 驱动命令未找到！"
 
-#: src/Converter.cpp:582 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -29420,15 +29415,15 @@ msgstr ""
 "\n"
 "并将“driver”替换为您的驱动程序命令名称。"
 
-#: src/Converter.cpp:688 src/Format.cpp:708 src/Format.cpp:778
+#: src/Converter.cpp:708 src/Format.cpp:708 src/Format.cpp:778
 msgid "Executing command: "
 msgstr "执行命令: "
 
-#: src/Converter.cpp:753
+#: src/Converter.cpp:773
 msgid "Process Killed"
 msgstr "进程已终止"
 
-#: src/Converter.cpp:754
+#: src/Converter.cpp:774
 #, c-format
 msgid ""
 "The conversion process was killed while running:\n"
@@ -29437,11 +29432,11 @@ msgstr ""
 "转换进程在运行时被终止：\n"
 "%1$s"
 
-#: src/Converter.cpp:759
+#: src/Converter.cpp:779
 msgid "Process Timed Out"
 msgstr "进程超时"
 
-#: src/Converter.cpp:760
+#: src/Converter.cpp:780
 #, c-format
 msgid ""
 "The conversion process:\n"
@@ -29452,15 +29447,15 @@ msgstr ""
 "%1$s\n"
 "在完成之前超时。"
 
-#: src/Converter.cpp:765
+#: src/Converter.cpp:785
 msgid "Build errors"
 msgstr "编译出错"
 
-#: src/Converter.cpp:766
+#: src/Converter.cpp:786
 msgid "There were errors during the build process."
 msgstr "编译过程出错."
 
-#: src/Converter.cpp:771
+#: src/Converter.cpp:791
 #, c-format
 msgid ""
 "An error occurred while running:\n"
@@ -29469,38 +29464,38 @@ msgstr ""
 "执行此程序时出错：\n"
 "%1$s"
 
-#: src/Converter.cpp:794
+#: src/Converter.cpp:814
 #, c-format
 msgid "Could not move a temporary directory from %1$s to %2$s."
 msgstr "无法移动临时目录 %1$s 至 %2$s."
 
-#: src/Converter.cpp:837
+#: src/Converter.cpp:857
 #, c-format
 msgid "Could not copy a temporary file from %1$s to %2$s."
 msgstr "无法复制临时文件从 %1$s 到 %2$s."
 
-#: src/Converter.cpp:838
+#: src/Converter.cpp:858
 #, c-format
 msgid "Could not move a temporary file from %1$s to %2$s."
 msgstr "无法移动临时文件从 %1$s 到 %2$s."
 
-#: src/Converter.cpp:878
+#: src/Converter.cpp:898
 msgid "Running LaTeX..."
 msgstr "运行 LaTeX..."
 
-#: src/Converter.cpp:895
+#: src/Converter.cpp:915
 msgid "Export canceled"
 msgstr "导出已取消"
 
-#: src/Converter.cpp:896
+#: src/Converter.cpp:916
 msgid "The export process was terminated by the user."
 msgstr "导出过程已被用户终止。"
 
-#: src/Converter.cpp:906
+#: src/Converter.cpp:926
 msgid "Undefined reference"
 msgstr "未定义的引用"
 
-#: src/Converter.cpp:907
+#: src/Converter.cpp:927
 msgid ""
 "Undefined references or citations were found during the build.\n"
 "Please check the warnings in the LaTeX log (Document > LaTeX Log)."
@@ -29508,18 +29503,18 @@ msgstr ""
 "在生成过程中发现了未定义的引用或引文。\n"
 "请检查LaTeX日志中的警告（文档>LaTeX日志）。"
 
-#: src/Converter.cpp:919
+#: src/Converter.cpp:939
 #, c-format
 msgid ""
 "LaTeX did not run successfully. Additionally, LyX could not locate the LaTeX "
 "log %1$s."
 msgstr "LaTeX 运行出错并且 LyX 无法获取 LaTeX 日志 %1$s."
 
-#: src/Converter.cpp:922 src/Converter.cpp:929
+#: src/Converter.cpp:942 src/Converter.cpp:949
 msgid "LaTeX failed"
 msgstr "LaTeX 出错"
 
-#: src/Converter.cpp:925
+#: src/Converter.cpp:945
 #, c-format
 msgid ""
 "The external program\n"
@@ -29531,11 +29526,11 @@ msgstr ""
 "%1$s\n"
 "报错并终止。建议您改正外部程序的错误 (详情见日志)。"
 
-#: src/Converter.cpp:931
+#: src/Converter.cpp:951
 msgid "Output is empty"
 msgstr "空白输出"
 
-#: src/Converter.cpp:932
+#: src/Converter.cpp:952
 msgid "No output file was generated."
 msgstr "未输出文件。"
 
@@ -35428,53 +35423,53 @@ msgstr "代码预览"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1 预览"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1662
+#: src/frontends/qt/GuiWorkArea.cpp:1684
 msgid "Close File"
 msgstr "关闭文件"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2309
+#: src/frontends/qt/GuiWorkArea.cpp:2331
 msgid "%1 (read only)"
 msgstr "%1 (只读)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2317
+#: src/frontends/qt/GuiWorkArea.cpp:2339
 msgid "%1 (modified externally)"
 msgstr "%1 (已在外部修改)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2361
 msgid "&Hide Tab"
 msgstr "隐藏选项卡(&H)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2344
+#: src/frontends/qt/GuiWorkArea.cpp:2366
 msgid "&Close Tab"
 msgstr "关闭选项卡(&C)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2370
 #, fuzzy
 msgid "Close &Other Tabs"
 msgstr "关闭选项卡(&C)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2372
 msgid "Close Tabs to the &Right"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2352
+#: src/frontends/qt/GuiWorkArea.cpp:2374
 msgid "Close Tabs to the &Left"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2379
 msgid "Move Tab to &Start"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2359
+#: src/frontends/qt/GuiWorkArea.cpp:2381
 msgid "Move Tab to &End"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2364
+#: src/frontends/qt/GuiWorkArea.cpp:2386
 #, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "打开工作目录(&O)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2409
+#: src/frontends/qt/GuiWorkArea.cpp:2431
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>文件 %1 在磁盘上被改变。</b>"
 
@@ -38242,6 +38237,18 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "未知用户"
+
+#~ msgid "XHTML Output Options"
+#~ msgstr "XHTML 输出选项"
+
+#~ msgid "Scaling factor for images used for math output."
+#~ msgstr "数学输出中图像的缩放因子。"
+
+#~ msgid "Math &image scaling:"
+#~ msgstr "数学图像缩放(&I):"
+
+#~ msgid "DocBook Output Options"
+#~ msgstr "DocBook 输出选项"
 
 #~ msgid "Delete"
 #~ msgstr "删除"

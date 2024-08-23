@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-17 19:38-0400\n"
+"POT-Creation-Date: 2024-08-22 21:06-0400\n"
 "PO-Revision-Date: 2020-12-17 06:04+0700\n"
 "Last-Translator: Waluyo Adi Siswanto <was.uthm@gmail.com>\n"
 "Language-Team: Indonesian <was.uthm@gmail.com>\n"
@@ -695,7 +695,7 @@ msgid "Remove the selected branch"
 msgstr "Hapus cabang yang sudah dipilih"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Remove"
 msgstr "&Hapus"
 
@@ -770,7 +770,7 @@ msgid "Add A&ll"
 msgstr "Tambahkan &Semua"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -3379,151 +3379,11 @@ msgstr "Penomoran dalam Daftar Isi"
 msgid "&Numbering"
 msgstr "Pe&nomoran"
 
-#: src/frontends/qt/ui/OutputUi.ui:37
-#, fuzzy
-msgid "&LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:43
-msgid "LaTeX Output Options"
-msgstr "Opsi Keluaran LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:51
-msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
-msgstr ""
-"Mengkatifkan pencarian maju/mundur antara penyunting dan keluaran (misal, "
-"SyncTeX)"
-
-#: src/frontends/qt/ui/OutputUi.ui:54
-msgid "S&ynchronize with output"
-msgstr "S&inkronisasi dengan outout"
-
-#: src/frontends/qt/ui/OutputUi.ui:85
-msgid "C&ustom macro:"
-msgstr "Makro At&ur Sendiri:"
-
-#: src/frontends/qt/ui/OutputUi.ui:95
-msgid "Custom LaTeX preamble macro"
-msgstr "Suaian makro LaTeX preamble"
-
-#: src/frontends/qt/ui/OutputUi.ui:122
-msgid ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
-msgstr ""
-"Jika ini dipilih, butir rapuh seperti label dan entri indeks dihilangkan "
-"dari argumen bergerak seperti subbab dan keterangan. Ini mencegah kesalahan "
-"LaTeX yang dapat terjadi dalam kasus seperti itu. Disarankan untuk tetap "
-"menggunakan ini."
-
-#: src/frontends/qt/ui/OutputUi.ui:125
-msgid "Put fra&gile content out of moving arguments"
-msgstr "Keluarkan isi rapuh dari argumen bergerak"
-
-#: src/frontends/qt/ui/OutputUi.ui:149
-#, fuzzy
-msgid "&XHTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:155
-msgid "XHTML Output Options"
-msgstr "Opsi Keluaran XHTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:164
-msgid "Write CSS to file"
-msgstr "MEnulis CSS ke berkas"
-
-#: src/frontends/qt/ui/OutputUi.ui:176
-msgid "Scaling factor for images used for math output."
-msgstr "Faktor skala gambar yang digunakan untuk hasil rumus matematika."
-
-#: src/frontends/qt/ui/OutputUi.ui:200 src/frontends/qt/ui/OutputUi.ui:397
-msgid "Format to use for math output."
-msgstr "Format yang digunakan untuk hasil rumus matematika."
-
-#: src/frontends/qt/ui/OutputUi.ui:204
-msgid "MathML"
-msgstr "MathML"
-
-#: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
-#: lib/configure.py:853
-msgid "HTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:214
-msgid "Images"
-msgstr "Gambar"
-
-#: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
-#: lib/layouts/egs.layout:720 lib/languages:147
-#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
-msgid "LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:232
-msgid "Math &image scaling:"
-msgstr "Skala Gambar dan Rumus:"
-
-#: src/frontends/qt/ui/OutputUi.ui:255
-msgid "Whether to comply strictly with XHTML 1.1."
-msgstr "Harus sesuai sepenuhnya dengan XHTML 1.1."
-
-#: src/frontends/qt/ui/OutputUi.ui:258
-msgid "&Strict XHTML 1.1"
-msgstr "&Harus XHTML 1.1"
-
-#: src/frontends/qt/ui/OutputUi.ui:270
-msgid "&Math output:"
-msgstr "Keluaran &Matematika:"
-
-#: src/frontends/qt/ui/OutputUi.ui:297
-#, fuzzy
-msgid "&DocBook"
-msgstr "DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:303
-msgid "DocBook Output Options"
-msgstr "Opsi Keluaran DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:323
-msgid ""
-"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
-"code> prefix, the MathML tags will be output like <code>m:math</code>."
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:327
-msgid "No prefix (namespace defined inline for each tag)"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:332
-#, fuzzy
-msgid "m (default)"
-msgstr "Tepi luar (bawaan)"
-
-#: src/frontends/qt/ui/OutputUi.ui:337
-#, fuzzy
-msgid "mml"
-msgstr "mm"
-
-#: src/frontends/qt/ui/OutputUi.ui:376
-msgid "&Table output:"
-msgstr "Keluaran ta&bel:"
-
-#: src/frontends/qt/ui/OutputUi.ui:406
-msgid "CALS"
-msgstr "CALS"
-
-#: src/frontends/qt/ui/OutputUi.ui:419
-msgid "&MathML namespace prefix:"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:449
+#: src/frontends/qt/ui/OutputUi.ui:28
 msgid "LyX Format"
 msgstr "Format LyX"
 
-#: src/frontends/qt/ui/OutputUi.ui:461
+#: src/frontends/qt/ui/OutputUi.ui:40
 msgid ""
 "Save all parameters in the LyX file, including ones that are frequently "
 "switched or that are specific to the user (such as the output of the tracked "
@@ -3535,23 +3395,158 @@ msgstr ""
 "terlacak, atau direktori dokumen). Menonaktifkan pilihan ini bisa lebih baik "
 "dalam pengaturan kolaboratif dengan sistem kontrol versi."
 
-#: src/frontends/qt/ui/OutputUi.ui:464
+#: src/frontends/qt/ui/OutputUi.ui:43
 msgid "Save &transient properties"
 msgstr "Simpan properti transien"
 
-#: src/frontends/qt/ui/OutputUi.ui:474
+#: src/frontends/qt/ui/OutputUi.ui:59
 msgid "Output Format"
 msgstr "Format Hasil"
 
-#: src/frontends/qt/ui/OutputUi.ui:515 src/frontends/qt/ui/OutputUi.ui:528
+#: src/frontends/qt/ui/OutputUi.ui:100 src/frontends/qt/ui/OutputUi.ui:113
 msgid "Specify the default output format (for view/update)"
 msgstr "Nyatakan format keluaran bawaan (untuk melihat hasil/memperbarui)"
 
-#: src/frontends/qt/ui/OutputUi.ui:518
+#: src/frontends/qt/ui/OutputUi.ui:103
 msgid "De&fault output format:"
 msgstr "Bawaan format keluaran:"
 
-#: src/frontends/qt/ui/OutputUi.ui:553
+#: src/frontends/qt/ui/OutputUi.ui:144
+#, fuzzy
+msgid "Output Options"
+msgstr "Opsi Keluaran LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
+msgid ""
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:160
+msgid "Scaling of generated &images:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:219
+#, fuzzy
+msgid "&LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:225
+msgid ""
+"If this is checked, fragile items such as labels and index entries are moved "
+"out of moving arguments such as sections and captions. This prevents LaTeX "
+"errors that can happen in such cases. It is recommended to keep this on."
+msgstr ""
+"Jika ini dipilih, butir rapuh seperti label dan entri indeks dihilangkan "
+"dari argumen bergerak seperti subbab dan keterangan. Ini mencegah kesalahan "
+"LaTeX yang dapat terjadi dalam kasus seperti itu. Disarankan untuk tetap "
+"menggunakan ini."
+
+#: src/frontends/qt/ui/OutputUi.ui:228
+msgid "Put fra&gile content out of moving arguments"
+msgstr "Keluarkan isi rapuh dari argumen bergerak"
+
+#: src/frontends/qt/ui/OutputUi.ui:237
+msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
+msgstr ""
+"Mengkatifkan pencarian maju/mundur antara penyunting dan keluaran (misal, "
+"SyncTeX)"
+
+#: src/frontends/qt/ui/OutputUi.ui:240
+msgid "S&ynchronize with output"
+msgstr "S&inkronisasi dengan outout"
+
+#: src/frontends/qt/ui/OutputUi.ui:271
+msgid "C&ustom macro:"
+msgstr "Makro At&ur Sendiri:"
+
+#: src/frontends/qt/ui/OutputUi.ui:281
+msgid "Custom LaTeX preamble macro"
+msgstr "Suaian makro LaTeX preamble"
+
+#: src/frontends/qt/ui/OutputUi.ui:309
+#, fuzzy
+msgid "&XHTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:317
+msgid "Whether to comply strictly with XHTML 1.1."
+msgstr "Harus sesuai sepenuhnya dengan XHTML 1.1."
+
+#: src/frontends/qt/ui/OutputUi.ui:320
+msgid "&Strict XHTML 1.1"
+msgstr "&Harus XHTML 1.1"
+
+#: src/frontends/qt/ui/OutputUi.ui:327
+msgid "Write CSS to file"
+msgstr "MEnulis CSS ke berkas"
+
+#: src/frontends/qt/ui/OutputUi.ui:356
+msgid "&Math output:"
+msgstr "Keluaran &Matematika:"
+
+#: src/frontends/qt/ui/OutputUi.ui:371 src/frontends/qt/ui/OutputUi.ui:448
+msgid "Format to use for math output."
+msgstr "Format yang digunakan untuk hasil rumus matematika."
+
+#: src/frontends/qt/ui/OutputUi.ui:375
+msgid "MathML"
+msgstr "MathML"
+
+#: src/frontends/qt/ui/OutputUi.ui:380 src/frontends/qt/ui/OutputUi.ui:452
+#: lib/configure.py:853
+msgid "HTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:385
+msgid "Images"
+msgstr "Gambar"
+
+#: src/frontends/qt/ui/OutputUi.ui:390 lib/layouts/aapaper.layout:63
+#: lib/layouts/egs.layout:720 lib/languages:147
+#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
+msgid "LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:414
+#, fuzzy
+msgid "&DocBook"
+msgstr "DocBook"
+
+#: src/frontends/qt/ui/OutputUi.ui:427
+msgid "&Table output:"
+msgstr "Keluaran ta&bel:"
+
+#: src/frontends/qt/ui/OutputUi.ui:457
+msgid "CALS"
+msgstr "CALS"
+
+#: src/frontends/qt/ui/OutputUi.ui:487
+msgid "&MathML namespace prefix:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:508
+msgid ""
+"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
+"code> prefix, the MathML tags will be output like <code>m:math</code>."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:512
+msgid "No prefix (namespace defined inline for each tag)"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:517
+#, fuzzy
+msgid "m (default)"
+msgstr "Tepi luar (bawaan)"
+
+#: src/frontends/qt/ui/OutputUi.ui:522
+#, fuzzy
+msgid "mml"
+msgstr "mm"
+
+#: src/frontends/qt/ui/OutputUi.ui:552
 msgid ""
 "Runs the LaTeX backend with the -shell-escape option (Warning: use only when "
 "really necessary)"
@@ -3559,7 +3554,7 @@ msgstr ""
 "Menjalankan LaTeX dengan pilihan -shell-escape (Peringatan: gunakan hanya "
 "jika benar-benar diperlukan)"
 
-#: src/frontends/qt/ui/OutputUi.ui:556
+#: src/frontends/qt/ui/OutputUi.ui:555
 msgid "&Allow running external programs"
 msgstr "Mengijinkan menjalankan program eksternal"
 
@@ -28305,7 +28300,7 @@ msgid ""
 msgstr ""
 "%1$s dari versi LyX yang lebih baru, skrip lyx2lyx gagal untuk mengkonversi."
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4805 src/Buffer.cpp:4914
+#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
 msgid "File is read-only"
 msgstr "Dokumen hanya boleh dibaca"
 
@@ -28675,21 +28670,21 @@ msgstr ""
 "berisi spasi, tetapi instalasi TeX anda tidak memperbolehkannya. Anda harus "
 "menyimpan berkas ke direktori yang namanya tidak ada spasi."
 
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "Ekspor dokumen dihentikan."
 
-#: src/Buffer.cpp:4715
+#: src/Buffer.cpp:4716
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "Dokumen yang diekspor dengan nama %1$s menjadi `%2$s'"
 
-#: src/Buffer.cpp:4722
+#: src/Buffer.cpp:4723
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "Dokumen diekspor dengan nama %1$s"
 
-#: src/Buffer.cpp:4791
+#: src/Buffer.cpp:4792
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -28700,24 +28695,24 @@ msgstr ""
 "\n"
 "Apakah akan memanggil kembali penyimpanan darurat?"
 
-#: src/Buffer.cpp:4794
+#: src/Buffer.cpp:4795
 msgid "Load emergency save?"
 msgstr "Apakah akan memuat penyimpanan darurat?"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Recover"
 msgstr "&Panggil Ulang"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Load Original"
 msgstr "&Muat Aslinya"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 #, fuzzy
 msgid "&Only show difference"
 msgstr "perbedaan"
 
-#: src/Buffer.cpp:4806
+#: src/Buffer.cpp:4807
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -28726,15 +28721,15 @@ msgstr ""
 "Berkas darurat berhasil dimuat, tetapi berkas asli %1$s ditandai hanya bisa "
 "dibaca. Pastikan simpan dokumen dengan nama berbeda."
 
-#: src/Buffer.cpp:4813
+#: src/Buffer.cpp:4814
 msgid "Document was successfully recovered."
 msgstr "Dokumen berhasil diselamatkan."
 
-#: src/Buffer.cpp:4815
+#: src/Buffer.cpp:4816
 msgid "Document was NOT successfully recovered."
 msgstr "Dokumen TIDAK berhasil diselamatkan."
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4817
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -28743,31 +28738,31 @@ msgstr ""
 "Akan menghapus berkas darurat sekarang?\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4820 src/Buffer.cpp:4832
+#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
 msgid "Delete emergency file?"
 msgstr "Hapus berkas darurat?"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Keep"
 msgstr "Tetap"
 
-#: src/Buffer.cpp:4825
+#: src/Buffer.cpp:4826
 msgid "Emergency file deleted"
 msgstr "Berkas darurat sudah dihapus"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4827
 msgid "Do not forget to save your file now!"
 msgstr "Jangan lupa menyimpan berkas sekarang juga!"
 
-#: src/Buffer.cpp:4833
+#: src/Buffer.cpp:4834
 msgid "Remove emergency file now?"
 msgstr "Akan menghapus berkas darurat?"
 
-#: src/Buffer.cpp:4856
+#: src/Buffer.cpp:4857
 msgid "Can't rename emergency file!"
 msgstr "Tidak bisa merubah nama berkas darurat!"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4858
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
@@ -28777,12 +28772,12 @@ msgstr ""
 "manual. Jika tidak, anda akan ditanya tentang hal itu lagi setiap kali anda "
 "mencoba memuat berkas ini, dan dapat menindih pekerjaan anda sendiri."
 
-#: src/Buffer.cpp:4862
+#: src/Buffer.cpp:4863
 #, fuzzy
 msgid "Emergency File Renamed"
 msgstr "Ganti nama berkas darurat"
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4864
 #, c-format
 msgid ""
 "Emergency file renamed as:\n"
@@ -28791,7 +28786,7 @@ msgstr ""
 "Berkas darurat diganti nama menjadi:\n"
 " %1$s"
 
-#: src/Buffer.cpp:4902
+#: src/Buffer.cpp:4903
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -28802,19 +28797,19 @@ msgstr ""
 "\n"
 "Akan memuat backup?"
 
-#: src/Buffer.cpp:4904
+#: src/Buffer.cpp:4905
 msgid "Load backup?"
 msgstr "Memuat backup?"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "&Load backup"
 msgstr "&Muat backup"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "Load &original"
 msgstr "Muat &Aslinya"
 
-#: src/Buffer.cpp:4915
+#: src/Buffer.cpp:4916
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -28823,25 +28818,25 @@ msgstr ""
 "Berkas cadangan berhasil dimuat, tetapi berkas asli %1$s hanya bisa dibaca. "
 "Pastikan simpan dokumen dengan nama berbeda."
 
-#: src/Buffer.cpp:5300
+#: src/Buffer.cpp:5301
 msgid "Senseless!!! "
 msgstr "TidakDiijinkan!!! "
 
-#: src/Buffer.cpp:5578
+#: src/Buffer.cpp:5579
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "Dokumen %1$s dimuat ulang."
 
-#: src/Buffer.cpp:5581
+#: src/Buffer.cpp:5582
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "Tidak bisa memuat ulang dokumen %1$s."
 
-#: src/Buffer.cpp:5742
+#: src/Buffer.cpp:5743
 msgid "File deleted from disk"
 msgstr ""
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5744
 #, c-format
 msgid ""
 "The file\n"
@@ -29794,7 +29789,7 @@ msgstr "inherit"
 msgid "ignore"
 msgstr "lewati"
 
-#: src/Converter.cpp:318
+#: src/Converter.cpp:321
 #, fuzzy, c-format
 msgid ""
 "<p>The following LaTeX backend has been configured to allow execution of "
@@ -29810,11 +29805,11 @@ msgstr ""
 "mengizinkan hak istimewa ini hanya untuk dokumen yang benar-benar "
 "membutuhkannya.<p>"
 
-#: src/Converter.cpp:327
+#: src/Converter.cpp:330
 msgid "Security Warning"
 msgstr "Peringatan Keamanan"
 
-#: src/Converter.cpp:342
+#: src/Converter.cpp:345
 #, fuzzy, c-format
 msgid ""
 "<p>The following LaTeX backend has been requested to allow execution of "
@@ -29828,7 +29823,7 @@ msgstr ""
 "Anda, termasuk yang membahayakan, jika diinstruksikan untuk melakukannya "
 "dalam dokumen LyX yang dapat merusakkan.</p>"
 
-#: src/Converter.cpp:349
+#: src/Converter.cpp:352
 #, fuzzy, c-format
 msgid ""
 "<p>The requested operation requires the use of a converter from %2$s to %3$s:"
@@ -29842,11 +29837,11 @@ msgstr ""
 "merusak, jika diinstruksikan oleh dokumen LyX yang berisi kode yang bisa "
 "merusak.</p>"
 
-#: src/Converter.cpp:359
+#: src/Converter.cpp:362
 msgid "An external converter is disabled for security reasons"
 msgstr "Konverter eksternal dinonaktifkan karena alasan keamanan"
 
-#: src/Converter.cpp:361
+#: src/Converter.cpp:364
 msgid ""
 "<p><b>Your current preference settings forbid its execution.</b></p><p>(To "
 "change this setting, go to <i>Preferences &#x25b9; File Handling &#x25b9; "
@@ -29858,15 +29853,15 @@ msgstr ""
 "▹ Konverter</i> dan hilangkan centang <i>Konverter ▹ Melarang konverter "
 "needauth</i>.)"
 
-#: src/Converter.cpp:370
+#: src/Converter.cpp:373
 msgid "A LaTeX backend requires your authorization"
 msgstr "Dukungan belakang LaTeX memerlukan otorisasi anda"
 
-#: src/Converter.cpp:371
+#: src/Converter.cpp:374
 msgid "An external converter requires your authorization"
 msgstr "Konverter eksternal memerlukan otorisasi anda"
 
-#: src/Converter.cpp:374
+#: src/Converter.cpp:377
 msgid ""
 "<p>Should LaTeX backends be allowed to run external programs?</p><p><b>Allow "
 "them only if you trust the origin/sender of the LyX document!</b></p>"
@@ -29875,7 +29870,7 @@ msgstr ""
 "eksternal?</p><p><b>Ijinkan program itu hanya jika anda mempercayai asal/"
 "pengirim dokumen LyX!</b></p>"
 
-#: src/Converter.cpp:377
+#: src/Converter.cpp:380
 msgid ""
 "<p>Would you like to run this converter?</p><p><b>Only run if you trust the "
 "origin/sender of the LyX document!</b></p>"
@@ -29883,35 +29878,35 @@ msgstr ""
 "<p>Apakah anda ingin menjalankan konverter ini?</p><p><b>Hanya jalankan jika "
 "anda mempercayai asal/pengirim dokumen LyX!</b></p>"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not allow"
 msgstr "Tid&ak diijinkan"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not run"
 msgstr "Jangan &jalankan"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "A&llow"
 msgstr "I&jinkan"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "&Run"
 msgstr "&Jalankan"
 
-#: src/Converter.cpp:384
+#: src/Converter.cpp:387
 msgid "&Always allow for this document"
 msgstr "&Selalu mengijikan untuk dokumen ini"
 
-#: src/Converter.cpp:385
+#: src/Converter.cpp:388
 msgid "&Always run for this document"
 msgstr "&Selalu jalankan dokumen ini"
 
-#: src/Converter.cpp:455 src/Converter.cpp:712 src/Converter.cpp:741
+#: src/Converter.cpp:459 src/Converter.cpp:732 src/Converter.cpp:761
 msgid "Converter killed"
 msgstr "Pengkonversi dimatikan"
 
-#: src/Converter.cpp:456 src/Converter.cpp:713 src/Converter.cpp:742
+#: src/Converter.cpp:460 src/Converter.cpp:733 src/Converter.cpp:762
 #, c-format
 msgid ""
 "The following converter was killed by the user.\n"
@@ -29920,12 +29915,12 @@ msgstr ""
 "Konverter berikut dihentikan oleh pengguna.\n"
 " %1$s\n"
 
-#: src/Converter.cpp:475 src/Converter.cpp:770 src/Converter.cpp:793
-#: src/Converter.cpp:835
+#: src/Converter.cpp:479 src/Converter.cpp:790 src/Converter.cpp:813
+#: src/Converter.cpp:855
 msgid "Cannot convert file"
 msgstr "Tidak bisa mengkonversi berkas"
 
-#: src/Converter.cpp:476
+#: src/Converter.cpp:480
 #, c-format
 msgid ""
 "No information for converting %1$s format files to %2$s.\n"
@@ -29934,11 +29929,11 @@ msgstr ""
 "Tidak ada informasi untuk mengkonversi berkas %1$s ke %2$s.\n"
 "Definisikan pengkonversi yang diinginkan melalui preferensi."
 
-#: src/Converter.cpp:581 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
 msgid "Pygments driver command not found!"
 msgstr "Perintah pemandu pygmen tidak ditemukan!"
 
-#: src/Converter.cpp:582 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -29960,15 +29955,15 @@ msgstr ""
 "\n"
 "di mana 'driver' adalah nama perintah pemandu."
 
-#: src/Converter.cpp:688 src/Format.cpp:708 src/Format.cpp:778
+#: src/Converter.cpp:708 src/Format.cpp:708 src/Format.cpp:778
 msgid "Executing command: "
 msgstr "Perintah Menjalankan: "
 
-#: src/Converter.cpp:753
+#: src/Converter.cpp:773
 msgid "Process Killed"
 msgstr "Proses Dihentikan"
 
-#: src/Converter.cpp:754
+#: src/Converter.cpp:774
 #, c-format
 msgid ""
 "The conversion process was killed while running:\n"
@@ -29977,11 +29972,11 @@ msgstr ""
 "Proses konversi dibatalkan ketika menjalankan:\n"
 "%1$s"
 
-#: src/Converter.cpp:759
+#: src/Converter.cpp:779
 msgid "Process Timed Out"
 msgstr "Proses Habis Waktu"
 
-#: src/Converter.cpp:760
+#: src/Converter.cpp:780
 #, c-format
 msgid ""
 "The conversion process:\n"
@@ -29992,15 +29987,15 @@ msgstr ""
 "%1$s\n"
 "waktu habis sebelum selesai."
 
-#: src/Converter.cpp:765
+#: src/Converter.cpp:785
 msgid "Build errors"
 msgstr "Kesalahan Build"
 
-#: src/Converter.cpp:766
+#: src/Converter.cpp:786
 msgid "There were errors during the build process."
 msgstr "Ada beberapa kesalahan ketika prosess build."
 
-#: src/Converter.cpp:771
+#: src/Converter.cpp:791
 #, c-format
 msgid ""
 "An error occurred while running:\n"
@@ -30009,38 +30004,38 @@ msgstr ""
 "Ada kesalahan ketika menjalankan:\n"
 "%1$s"
 
-#: src/Converter.cpp:794
+#: src/Converter.cpp:814
 #, c-format
 msgid "Could not move a temporary directory from %1$s to %2$s."
 msgstr "Tidak bisa memindah direktori sementara dari  %1$s ke %2$s."
 
-#: src/Converter.cpp:837
+#: src/Converter.cpp:857
 #, c-format
 msgid "Could not copy a temporary file from %1$s to %2$s."
 msgstr "Tidak dapat menyalin berkas sementara dari  %1$s ke %2$s."
 
-#: src/Converter.cpp:838
+#: src/Converter.cpp:858
 #, c-format
 msgid "Could not move a temporary file from %1$s to %2$s."
 msgstr "Tidak dapat memindah berkas sementara dari  %1$s ke %2$s."
 
-#: src/Converter.cpp:878
+#: src/Converter.cpp:898
 msgid "Running LaTeX..."
 msgstr "Menjalankan LaTeX..."
 
-#: src/Converter.cpp:895
+#: src/Converter.cpp:915
 msgid "Export canceled"
 msgstr "Eksport dibatalkan"
 
-#: src/Converter.cpp:896
+#: src/Converter.cpp:916
 msgid "The export process was terminated by the user."
 msgstr "Proses ekspor dihentikan oleh pengguna."
 
-#: src/Converter.cpp:906
+#: src/Converter.cpp:926
 msgid "Undefined reference"
 msgstr "Referensi tidak terdefinisi"
 
-#: src/Converter.cpp:907
+#: src/Converter.cpp:927
 msgid ""
 "Undefined references or citations were found during the build.\n"
 "Please check the warnings in the LaTeX log (Document > LaTeX Log)."
@@ -30049,7 +30044,7 @@ msgstr ""
 "membangun.\n"
 "Silakan periksa peringatan di log LaTeX (Dokumen > Log LaTeX)."
 
-#: src/Converter.cpp:919
+#: src/Converter.cpp:939
 #, c-format
 msgid ""
 "LaTeX did not run successfully. Additionally, LyX could not locate the LaTeX "
@@ -30058,11 +30053,11 @@ msgstr ""
 "LaTeX tidak berhasil dijalankan. Selain itu, LyX tidak bisa bisa menemukan "
 "LaTeX log %1$s."
 
-#: src/Converter.cpp:922 src/Converter.cpp:929
+#: src/Converter.cpp:942 src/Converter.cpp:949
 msgid "LaTeX failed"
 msgstr "LaTeX gagal"
 
-#: src/Converter.cpp:925
+#: src/Converter.cpp:945
 #, c-format
 msgid ""
 "The external program\n"
@@ -30075,11 +30070,11 @@ msgstr ""
 "selesai dengan kesalahan. Disarankan anda memperbaiki penyebab kesalahan "
 "program eksternal (periksa log). "
 
-#: src/Converter.cpp:931
+#: src/Converter.cpp:951
 msgid "Output is empty"
 msgstr "Output kosong"
 
-#: src/Converter.cpp:932
+#: src/Converter.cpp:952
 msgid "No output file was generated."
 msgstr "Tidak ada berkas keluaran yang dibuat."
 
@@ -36269,55 +36264,55 @@ msgstr "Pratampilan Kode"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1[[pra tampilan format nama]] Pra tampilan"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1662
+#: src/frontends/qt/GuiWorkArea.cpp:1684
 msgid "Close File"
 msgstr "Tutup Berkas"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2309
+#: src/frontends/qt/GuiWorkArea.cpp:2331
 msgid "%1 (read only)"
 msgstr "%1 (hanya baca)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2317
+#: src/frontends/qt/GuiWorkArea.cpp:2339
 msgid "%1 (modified externally)"
 msgstr "%1 (dimodifikasi eksternal)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2361
 #, fuzzy
 msgid "&Hide Tab"
 msgstr "Sembunyikan Tab"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2344
+#: src/frontends/qt/GuiWorkArea.cpp:2366
 #, fuzzy
 msgid "&Close Tab"
 msgstr "Tutup Tab"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2370
 #, fuzzy
 msgid "Close &Other Tabs"
 msgstr "Tutup Tab"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2372
 msgid "Close Tabs to the &Right"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2352
+#: src/frontends/qt/GuiWorkArea.cpp:2374
 msgid "Close Tabs to the &Left"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2379
 msgid "Move Tab to &Start"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2359
+#: src/frontends/qt/GuiWorkArea.cpp:2381
 msgid "Move Tab to &End"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2364
+#: src/frontends/qt/GuiWorkArea.cpp:2386
 #, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "Buka &Isi Direktori"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2409
+#: src/frontends/qt/GuiWorkArea.cpp:2431
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>Berkas %1 diubah di cakra.</b>"
 
@@ -39157,6 +39152,18 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Pemakai tidak dikenal"
+
+#~ msgid "XHTML Output Options"
+#~ msgstr "Opsi Keluaran XHTML"
+
+#~ msgid "Scaling factor for images used for math output."
+#~ msgstr "Faktor skala gambar yang digunakan untuk hasil rumus matematika."
+
+#~ msgid "Math &image scaling:"
+#~ msgstr "Skala Gambar dan Rumus:"
+
+#~ msgid "DocBook Output Options"
+#~ msgstr "Opsi Keluaran DocBook"
 
 #~ msgid "tgo"
 #~ msgstr "tgo"

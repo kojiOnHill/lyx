@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lyx-japanese\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-19 09:16+0900\n"
+"POT-Creation-Date: 2024-08-22 21:06-0400\n"
 "PO-Revision-Date: 2024-08-19 10:52+0900\n"
 "Last-Translator: Koji Yokota <yokota@lyx.org>\n"
 "Language-Team: Japanese\n"
@@ -697,7 +697,7 @@ msgid "Remove the selected branch"
 msgstr "選択した派生枝を削除"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Remove"
 msgstr "削除(&R)"
 
@@ -771,7 +771,7 @@ msgid "Add A&ll"
 msgstr "すべて追加(&L)"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -3344,145 +3344,11 @@ msgstr "目次に載せる(&L)"
 msgid "&Numbering"
 msgstr "連番を振る(&N)"
 
-#: src/frontends/qt/ui/OutputUi.ui:37
-msgid "&LaTeX"
-msgstr "&LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:43
-msgid "LaTeX Output Options"
-msgstr "LaTeX出力オプション"
-
-#: src/frontends/qt/ui/OutputUi.ui:51
-msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
-msgstr "エディタと出力の間での出力先検索・原文検索を有効にする(例：SyncTeX)"
-
-#: src/frontends/qt/ui/OutputUi.ui:54
-msgid "S&ynchronize with output"
-msgstr "出力と同期(&Y)"
-
-#: src/frontends/qt/ui/OutputUi.ui:85
-msgid "C&ustom macro:"
-msgstr "調整用マクロ(&U)："
-
-#: src/frontends/qt/ui/OutputUi.ui:95
-msgid "Custom LaTeX preamble macro"
-msgstr "調整用のLaTeXプリアンブルマクロ"
-
-#: src/frontends/qt/ui/OutputUi.ui:122
-msgid ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
-msgstr ""
-"これが有効になっていると，ラベルや索引項目のような脆弱な要素は，節やキャプ"
-"キョンのような転載引数(moving arguments)の外に出されます．これによって，脆弱"
-"な要素が引き起こすLaTeXエラーを回避することができます．"
-
-#: src/frontends/qt/ui/OutputUi.ui:125
-msgid "Put fra&gile content out of moving arguments"
-msgstr "脆弱な要素を転載引数の外に出す(&G)"
-
-#: src/frontends/qt/ui/OutputUi.ui:149
-msgid "&XHTML"
-msgstr "&XHTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:155
-msgid "XHTML Output Options"
-msgstr "XHTML出力オプション"
-
-#: src/frontends/qt/ui/OutputUi.ui:164
-msgid "Write CSS to file"
-msgstr "CSSをファイルに書き出す"
-
-#: src/frontends/qt/ui/OutputUi.ui:176
-msgid "Scaling factor for images used for math output."
-msgstr "数式出力に使用する画像の伸縮係数．"
-
-#: src/frontends/qt/ui/OutputUi.ui:200 src/frontends/qt/ui/OutputUi.ui:397
-msgid "Format to use for math output."
-msgstr "数式の出力に使用する形式．"
-
-#: src/frontends/qt/ui/OutputUi.ui:204
-msgid "MathML"
-msgstr "MathML"
-
-#: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
-#: lib/configure.py:853
-msgid "HTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:214
-msgid "Images"
-msgstr "画像"
-
-#: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
-#: lib/layouts/egs.layout:720 lib/languages:147
-#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
-msgid "LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:232
-msgid "Math &image scaling:"
-msgstr "数式画像の伸縮(&I)："
-
-#: src/frontends/qt/ui/OutputUi.ui:255
-msgid "Whether to comply strictly with XHTML 1.1."
-msgstr "XHTML 1.1に厳密に従うか否か．"
-
-#: src/frontends/qt/ui/OutputUi.ui:258
-msgid "&Strict XHTML 1.1"
-msgstr "厳密型XHTML 1.1(&S)"
-
-#: src/frontends/qt/ui/OutputUi.ui:270
-msgid "&Math output:"
-msgstr "数式出力(&M)："
-
-#: src/frontends/qt/ui/OutputUi.ui:297
-msgid "&DocBook"
-msgstr "&DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:303
-msgid "DocBook Output Options"
-msgstr "DocBook出力オプション"
-
-#: src/frontends/qt/ui/OutputUi.ui:323
-msgid ""
-"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
-"code> prefix, the MathML tags will be output like <code>m:math</code>."
-msgstr ""
-"MathML数式で使うための名前空間の前置詞．例えば，前置詞<code>m</code>を使う"
-"と，MathMLタグは<code>m:math</code>のように追加されます．"
-
-#: src/frontends/qt/ui/OutputUi.ui:327
-msgid "No prefix (namespace defined inline for each tag)"
-msgstr "前置詞なし(各タグに対して名前空間はインラインで定義)"
-
-#: src/frontends/qt/ui/OutputUi.ui:332
-msgid "m (default)"
-msgstr "外側(既定値)"
-
-#: src/frontends/qt/ui/OutputUi.ui:337
-msgid "mml"
-msgstr "mml"
-
-#: src/frontends/qt/ui/OutputUi.ui:376
-msgid "&Table output:"
-msgstr "表出力(&T)："
-
-#: src/frontends/qt/ui/OutputUi.ui:406
-msgid "CALS"
-msgstr "CALS"
-
-#: src/frontends/qt/ui/OutputUi.ui:419
-msgid "&MathML namespace prefix:"
-msgstr "&MathML名前空間の前置詞: "
-
-#: src/frontends/qt/ui/OutputUi.ui:449
+#: src/frontends/qt/ui/OutputUi.ui:28
 msgid "LyX Format"
 msgstr "LyX形式"
 
-#: src/frontends/qt/ui/OutputUi.ui:461
+#: src/frontends/qt/ui/OutputUi.ui:40
 msgid ""
 "Save all parameters in the LyX file, including ones that are frequently "
 "switched or that are specific to the user (such as the output of the tracked "
@@ -3494,23 +3360,152 @@ msgstr ""
 "下やバージョン管理システム下においては，このオプションを無効にした方が便利で"
 "しょう．"
 
-#: src/frontends/qt/ui/OutputUi.ui:464
+#: src/frontends/qt/ui/OutputUi.ui:43
 msgid "Save &transient properties"
 msgstr "一時特性を保存(&T)"
 
-#: src/frontends/qt/ui/OutputUi.ui:474
+#: src/frontends/qt/ui/OutputUi.ui:59
 msgid "Output Format"
 msgstr "出力形式"
 
-#: src/frontends/qt/ui/OutputUi.ui:515 src/frontends/qt/ui/OutputUi.ui:528
+#: src/frontends/qt/ui/OutputUi.ui:100 src/frontends/qt/ui/OutputUi.ui:113
 msgid "Specify the default output format (for view/update)"
 msgstr "既定の用紙寸法を指定してください(表示・更新用)"
 
-#: src/frontends/qt/ui/OutputUi.ui:518
+#: src/frontends/qt/ui/OutputUi.ui:103
 msgid "De&fault output format:"
 msgstr "既定出力形式(&F)："
 
-#: src/frontends/qt/ui/OutputUi.ui:553
+#: src/frontends/qt/ui/OutputUi.ui:144
+#, fuzzy
+msgid "Output Options"
+msgstr "LaTeX出力オプション"
+
+#: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
+msgid ""
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:160
+msgid "Scaling of generated &images:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:219
+msgid "&LaTeX"
+msgstr "&LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:225
+msgid ""
+"If this is checked, fragile items such as labels and index entries are moved "
+"out of moving arguments such as sections and captions. This prevents LaTeX "
+"errors that can happen in such cases. It is recommended to keep this on."
+msgstr ""
+"これが有効になっていると，ラベルや索引項目のような脆弱な要素は，節やキャプ"
+"キョンのような転載引数(moving arguments)の外に出されます．これによって，脆弱"
+"な要素が引き起こすLaTeXエラーを回避することができます．"
+
+#: src/frontends/qt/ui/OutputUi.ui:228
+msgid "Put fra&gile content out of moving arguments"
+msgstr "脆弱な要素を転載引数の外に出す(&G)"
+
+#: src/frontends/qt/ui/OutputUi.ui:237
+msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
+msgstr "エディタと出力の間での出力先検索・原文検索を有効にする(例：SyncTeX)"
+
+#: src/frontends/qt/ui/OutputUi.ui:240
+msgid "S&ynchronize with output"
+msgstr "出力と同期(&Y)"
+
+#: src/frontends/qt/ui/OutputUi.ui:271
+msgid "C&ustom macro:"
+msgstr "調整用マクロ(&U)："
+
+#: src/frontends/qt/ui/OutputUi.ui:281
+msgid "Custom LaTeX preamble macro"
+msgstr "調整用のLaTeXプリアンブルマクロ"
+
+#: src/frontends/qt/ui/OutputUi.ui:309
+msgid "&XHTML"
+msgstr "&XHTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:317
+msgid "Whether to comply strictly with XHTML 1.1."
+msgstr "XHTML 1.1に厳密に従うか否か．"
+
+#: src/frontends/qt/ui/OutputUi.ui:320
+msgid "&Strict XHTML 1.1"
+msgstr "厳密型XHTML 1.1(&S)"
+
+#: src/frontends/qt/ui/OutputUi.ui:327
+msgid "Write CSS to file"
+msgstr "CSSをファイルに書き出す"
+
+#: src/frontends/qt/ui/OutputUi.ui:356
+msgid "&Math output:"
+msgstr "数式出力(&M)："
+
+#: src/frontends/qt/ui/OutputUi.ui:371 src/frontends/qt/ui/OutputUi.ui:448
+msgid "Format to use for math output."
+msgstr "数式の出力に使用する形式．"
+
+#: src/frontends/qt/ui/OutputUi.ui:375
+msgid "MathML"
+msgstr "MathML"
+
+#: src/frontends/qt/ui/OutputUi.ui:380 src/frontends/qt/ui/OutputUi.ui:452
+#: lib/configure.py:853
+msgid "HTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:385
+msgid "Images"
+msgstr "画像"
+
+#: src/frontends/qt/ui/OutputUi.ui:390 lib/layouts/aapaper.layout:63
+#: lib/layouts/egs.layout:720 lib/languages:147
+#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
+msgid "LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:414
+msgid "&DocBook"
+msgstr "&DocBook"
+
+#: src/frontends/qt/ui/OutputUi.ui:427
+msgid "&Table output:"
+msgstr "表出力(&T)："
+
+#: src/frontends/qt/ui/OutputUi.ui:457
+msgid "CALS"
+msgstr "CALS"
+
+#: src/frontends/qt/ui/OutputUi.ui:487
+msgid "&MathML namespace prefix:"
+msgstr "&MathML名前空間の前置詞: "
+
+#: src/frontends/qt/ui/OutputUi.ui:508
+msgid ""
+"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
+"code> prefix, the MathML tags will be output like <code>m:math</code>."
+msgstr ""
+"MathML数式で使うための名前空間の前置詞．例えば，前置詞<code>m</code>を使う"
+"と，MathMLタグは<code>m:math</code>のように追加されます．"
+
+#: src/frontends/qt/ui/OutputUi.ui:512
+msgid "No prefix (namespace defined inline for each tag)"
+msgstr "前置詞なし(各タグに対して名前空間はインラインで定義)"
+
+#: src/frontends/qt/ui/OutputUi.ui:517
+msgid "m (default)"
+msgstr "外側(既定値)"
+
+#: src/frontends/qt/ui/OutputUi.ui:522
+msgid "mml"
+msgstr "mml"
+
+#: src/frontends/qt/ui/OutputUi.ui:552
 msgid ""
 "Runs the LaTeX backend with the -shell-escape option (Warning: use only when "
 "really necessary)"
@@ -3518,7 +3513,7 @@ msgstr ""
 "LaTeXバックエンドに-shell-escapeオプションをつけて実行(警告：本当に必要な時の"
 "み使用してください)"
 
-#: src/frontends/qt/ui/OutputUi.ui:556
+#: src/frontends/qt/ui/OutputUi.ui:555
 msgid "&Allow running external programs"
 msgstr "外部プログラムの実行を許可(&A)"
 
@@ -27526,12 +27521,12 @@ msgid "LyX Archive (tar.gz)"
 msgstr "LyX書庫(tar.gz)"
 
 #: lib/examples/Articles:0
-msgid "Game 2"
-msgstr "ゲーム２"
-
-#: lib/examples/Articles:0
 msgid "Game 1"
 msgstr "ゲーム１"
+
+#: lib/examples/Articles:0
+msgid "Game 2"
+msgstr "ゲーム２"
 
 #: lib/examples/Articles:0
 msgid "Example (LyXified)"
@@ -27551,40 +27546,32 @@ msgid "Itemize Bullets"
 msgstr "箇条書きのブリット"
 
 #: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "ファインマン図"
-
-#: lib/examples/Articles:0
-msgid "Instant Preview"
-msgstr "自動プレビュー"
-
-#: lib/examples/Articles:0
-msgid "Minted Listings"
-msgstr "Mintedプログラムリスト"
-
-#: lib/examples/Articles:0
 msgid "Minted File Listing"
 msgstr "Mintedプログラムリストファイル"
-
-#: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-Figure"
 
 #: lib/examples/Articles:0
 msgid "XY-Pic"
 msgstr "XY-Pic"
 
 #: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "ファインマン図"
+
+#: lib/examples/Articles:0
+msgid "XY-Figure"
+msgstr "XY-Figure"
+
+#: lib/examples/Articles:0
+msgid "Minted Listings"
+msgstr "Mintedプログラムリスト"
+
+#: lib/examples/Articles:0
+msgid "Instant Preview"
+msgstr "自動プレビュー"
+
+#: lib/examples/Articles:0
 msgid "Graphics and Insets"
 msgstr "グラフィックと差込枠"
-
-#: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "日本語と他言語の混成(platexを使用)"
-
-#: lib/examples/Articles:0
-msgid "Writing Armenian"
-msgstr "アルメニア語の執筆"
 
 #: lib/examples/Articles:0
 msgid "Localization Test (for Developers)"
@@ -27595,8 +27582,20 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "日本語と他言語の混成(CJKutf8を使用)"
 
 #: lib/examples/Articles:0
+msgid "Writing Armenian"
+msgstr "アルメニア語の執筆"
+
+#: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "日本語と他言語の混成(platexを使用)"
+
+#: lib/examples/Articles:0
 msgid "Language Support"
 msgstr "言語サポート"
+
+#: lib/examples/Articles:0
+msgid "Serial Letter 1"
+msgstr "定期郵便１"
 
 #: lib/examples/Articles:0
 msgid "Serial Letter 2"
@@ -27607,16 +27606,8 @@ msgid "Serial Letter 3"
 msgstr "定期郵便３"
 
 #: lib/examples/Articles:0
-msgid "Serial Letter 1"
-msgstr "定期郵便１"
-
-#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond Book"
-
-#: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Noweb Listerrors"
 
 #: lib/examples/Articles:0
 msgid "Multilingual Captions"
@@ -27625,6 +27616,10 @@ msgstr "多言語キャプション"
 #: lib/examples/Articles:0
 msgid "Hazard and Precautionary Statements"
 msgstr "危険有害性情報・注意書き"
+
+#: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Noweb Listerrors"
 
 #: lib/examples/Articles:0
 msgid "Noweb2LyX"
@@ -27655,12 +27650,16 @@ msgid "Writing Korean with CJK-ko"
 msgstr "韓国語の執筆(CJK-koを使用)"
 
 #: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
+msgid "IEEE Transactions Conference"
+msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
@@ -27671,68 +27670,24 @@ msgid "Hebrew Article (KOMA-Script)"
 msgstr "ヘブライ語Article (KOMA-Script)"
 
 #: lib/examples/Articles:0
-msgid "IEEE Transactions Conference"
-msgstr "IEEE Transactions Conference"
-
-#: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02巻頭言"
 
 #: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01献呈"
+msgid "07 Part"
+msgstr "07部"
 
 #: lib/examples/Articles:0
-msgid "06 Part"
-msgstr "06部"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03序文"
-
-#: lib/examples/Articles:0
-msgid "07 Chapter"
-msgstr "07章"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10解"
-
-#: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05頭字語"
-
-#: lib/examples/Articles:0
-msgid "11 References"
-msgstr "11書誌情報"
+msgid "10 Glossary"
+msgstr "10用語集"
 
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04謝辞"
 
 #: lib/examples/Articles:0
-msgid "09 Glossary"
-msgstr "09用語集"
-
-#: lib/examples/Articles:0
-msgid "08 Appendix"
-msgstr "08付録"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00主幹ファイル"
-
-#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06頭字語"
-
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05寄稿者一覧"
-
-#: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07部"
 
 #: lib/examples/Articles:0
 msgid "08 Author"
@@ -27743,16 +27698,56 @@ msgid "09 Appendix"
 msgstr "09付録"
 
 #: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10用語集"
+msgid "11 References"
+msgstr "11書誌情報"
 
 #: lib/examples/Articles:0
-msgid "Colored"
-msgstr "カラー"
+msgid "05 Contributor List"
+msgstr "05寄稿者一覧"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01献呈"
+
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00主幹ファイル"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03序文"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10解"
+
+#: lib/examples/Articles:0
+msgid "06 Part"
+msgstr "06部"
+
+#: lib/examples/Articles:0
+msgid "07 Chapter"
+msgstr "07章"
+
+#: lib/examples/Articles:0
+msgid "08 Appendix"
+msgstr "08付録"
+
+#: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr "05頭字語"
+
+#: lib/examples/Articles:0
+msgid "09 Glossary"
+msgstr "09用語集"
 
 #: lib/examples/Articles:0
 msgid "Simple"
 msgstr "シンプル"
+
+#: lib/examples/Articles:0
+msgid "Colored"
+msgstr "カラー"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -27775,16 +27770,16 @@ msgid "Theses"
 msgstr "学位論文"
 
 #: lib/examples/Articles:0
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日本語Article (LuaTeX用標準クラス：縦書き)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日本語Report (LuaTeX用標準クラス：縦書き)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "日本語Book (LuaTeX用標準クラス：縦書き)"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日本語Report (LuaTeX用標準クラス：縦書き)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日本語Article (LuaTeX用標準クラス：縦書き)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -27960,7 +27955,7 @@ msgid ""
 msgstr ""
 "%1$s は新版のLyXファイルなので，スクリプトlyx2lyxが変換に失敗しました．"
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4805 src/Buffer.cpp:4914
+#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
 msgid "File is read-only"
 msgstr "ファイルが読込専用です"
 
@@ -28334,21 +28329,21 @@ msgstr ""
 "へのディレクトリパスには空白が含まれていますが，お使いのTeX頒布はこれを許容し"
 "ません．ファイルを空白が含まれていないディレクトリに保存してください．"
 
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "文書の書き出しは取り消されました．"
 
-#: src/Buffer.cpp:4715
+#: src/Buffer.cpp:4716
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "文書は%1$sとしてファイル「%2$s」に書き出されました．"
 
-#: src/Buffer.cpp:4722
+#: src/Buffer.cpp:4723
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "文書は%1$sとして書き出されました"
 
-#: src/Buffer.cpp:4791
+#: src/Buffer.cpp:4792
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -28359,23 +28354,23 @@ msgstr ""
 "\n"
 "緊急保存ファイルから復旧しますか？"
 
-#: src/Buffer.cpp:4794
+#: src/Buffer.cpp:4795
 msgid "Load emergency save?"
 msgstr "緊急保存ファイルを読みこみますか？"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Recover"
 msgstr "復旧(&R)"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Load Original"
 msgstr "オリジナルを読み込む(&L)"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Only show difference"
 msgstr "差異のみ表示(&O)"
 
-#: src/Buffer.cpp:4806
+#: src/Buffer.cpp:4807
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -28385,15 +28380,15 @@ msgstr ""
 "込み専用に設定されています．この文書を別のファイルにかならず保存してくださ"
 "い．"
 
-#: src/Buffer.cpp:4813
+#: src/Buffer.cpp:4814
 msgid "Document was successfully recovered."
 msgstr "文書を無事に復旧しました．"
 
-#: src/Buffer.cpp:4815
+#: src/Buffer.cpp:4816
 msgid "Document was NOT successfully recovered."
 msgstr "文書を無事に復旧することができませんでした．"
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4817
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -28402,31 +28397,31 @@ msgstr ""
 "緊急保存ファイルを直ちに削除しますか？\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4820 src/Buffer.cpp:4832
+#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
 msgid "Delete emergency file?"
 msgstr "緊急保存ファイルを削除しますか？"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Keep"
 msgstr "保持(&K)"
 
-#: src/Buffer.cpp:4825
+#: src/Buffer.cpp:4826
 msgid "Emergency file deleted"
 msgstr "緊急保存ファイルを削除しました"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4827
 msgid "Do not forget to save your file now!"
 msgstr "すぐにファイルを保存するようにしてください！"
 
-#: src/Buffer.cpp:4833
+#: src/Buffer.cpp:4834
 msgid "Remove emergency file now?"
 msgstr "緊急保存ファイルを読みこみますか？"
 
-#: src/Buffer.cpp:4856
+#: src/Buffer.cpp:4857
 msgid "Can't rename emergency file!"
 msgstr "緊急保存ファイルを改名することができません！"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4858
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
@@ -28436,11 +28431,11 @@ msgstr ""
 "行ってください．あるいは，次回このファイルを読み込もうとしたときに，もう一度"
 "同じことを訊かれますので，その時に上書きすることもできます．"
 
-#: src/Buffer.cpp:4862
+#: src/Buffer.cpp:4863
 msgid "Emergency File Renamed"
 msgstr "緊急保存ファイルが改名されました"
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4864
 #, c-format
 msgid ""
 "Emergency file renamed as:\n"
@@ -28449,7 +28444,7 @@ msgstr ""
 "緊急保存ファイルは\n"
 "%1$sに名称変更されました．"
 
-#: src/Buffer.cpp:4902
+#: src/Buffer.cpp:4903
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -28460,19 +28455,19 @@ msgstr ""
 "\n"
 "代わりにバックアップファイルを読み込みますか？"
 
-#: src/Buffer.cpp:4904
+#: src/Buffer.cpp:4905
 msgid "Load backup?"
 msgstr "バックアップを読み込みますか？"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "&Load backup"
 msgstr "バックアップを読み込む(&L)"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "Load &original"
 msgstr "オリジナルを読み込む(&O)"
 
-#: src/Buffer.cpp:4915
+#: src/Buffer.cpp:4916
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -28482,25 +28477,25 @@ msgstr ""
 "読み込み専用に設定されています．文書を別のファイルにかならず保存してくださ"
 "い．"
 
-#: src/Buffer.cpp:5300
+#: src/Buffer.cpp:5301
 msgid "Senseless!!! "
 msgstr "意味を成しません！！！ "
 
-#: src/Buffer.cpp:5578
+#: src/Buffer.cpp:5579
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "文書%1$sを再読み込みしました．"
 
-#: src/Buffer.cpp:5581
+#: src/Buffer.cpp:5582
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "文書%1$sの再読み込みができません．"
 
-#: src/Buffer.cpp:5742
+#: src/Buffer.cpp:5743
 msgid "File deleted from disk"
 msgstr "ファイルがディスクから削除されました"
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5744
 #, c-format
 msgid ""
 "The file\n"
@@ -29440,7 +29435,7 @@ msgstr "引き継ぐ"
 msgid "ignore"
 msgstr "無視"
 
-#: src/Converter.cpp:318
+#: src/Converter.cpp:321
 #, c-format
 msgid ""
 "<p>The following LaTeX backend has been configured to allow execution of "
@@ -29454,11 +29449,11 @@ msgstr ""
 "設定です．LyXは，これを本当に必要とする文書のみにこの特権の許可することをサ"
 "ポートしていますので，代わりにこの機能を使用してください．</p>"
 
-#: src/Converter.cpp:327
+#: src/Converter.cpp:330
 msgid "Security Warning"
 msgstr "セキュリティ上の警告"
 
-#: src/Converter.cpp:342
+#: src/Converter.cpp:345
 #, c-format
 msgid ""
 "<p>The following LaTeX backend has been requested to allow execution of "
@@ -29471,7 +29466,7 @@ msgstr ""
 "を持って構成されたLyX文書で実行することを指示された場合，お使いのシステム上の"
 "任意のコマンドを，危険なものも含めて，実行することができます．</p>"
 
-#: src/Converter.cpp:349
+#: src/Converter.cpp:352
 #, c-format
 msgid ""
 "<p>The requested operation requires the use of a converter from %2$s to %3$s:"
@@ -29484,11 +29479,11 @@ msgstr ""
 "を持って構成されたLyX文書から実行を指示された場合，お使いのシステム上の任意の"
 "コマンドを，危険なコマンドも含めて，実行することができます．</p>"
 
-#: src/Converter.cpp:359
+#: src/Converter.cpp:362
 msgid "An external converter is disabled for security reasons"
 msgstr "外部変換子は，セキュリティ上の理由で無効にされています"
 
-#: src/Converter.cpp:361
+#: src/Converter.cpp:364
 msgid ""
 "<p><b>Your current preference settings forbid its execution.</b></p><p>(To "
 "change this setting, go to <i>Preferences &#x25b9; File Handling &#x25b9; "
@@ -29499,15 +29494,15 @@ msgstr ""
 "るには，<b>設定→ファイル処理→変換子</b>を開いて，<b>セキュリティ→needauth変換"
 "子の使用を禁止する</b>のチェックを外してください．)</p>"
 
-#: src/Converter.cpp:370
+#: src/Converter.cpp:373
 msgid "A LaTeX backend requires your authorization"
 msgstr "LaTeXバックエンドがあなたの認証を必要としています"
 
-#: src/Converter.cpp:371
+#: src/Converter.cpp:374
 msgid "An external converter requires your authorization"
 msgstr "外部変換子があなたの認証を必要としています"
 
-#: src/Converter.cpp:374
+#: src/Converter.cpp:377
 msgid ""
 "<p>Should LaTeX backends be allowed to run external programs?</p><p><b>Allow "
 "them only if you trust the origin/sender of the LyX document!</b></p>"
@@ -29515,7 +29510,7 @@ msgstr ""
 "<p>LaTeXバックエンドに外部プログラムの実行を許可しますか？</p><p><b>LyX文書の"
 "作成者/送付元を信用できる場合以外は許可しないでください！</b></p>"
 
-#: src/Converter.cpp:377
+#: src/Converter.cpp:380
 msgid ""
 "<p>Would you like to run this converter?</p><p><b>Only run if you trust the "
 "origin/sender of the LyX document!</b></p>"
@@ -29523,35 +29518,35 @@ msgstr ""
 "<p>この変換子を実行しますか？</p><p><b>LyX文書の作成者/送付元を信用できる場合"
 "以外は実行しないでください！</b></p>"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not allow"
 msgstr "許可しない(&N)"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not run"
 msgstr "実行しない(&N)"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "A&llow"
 msgstr "許可する(&L)"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "&Run"
 msgstr "実行する(&R)"
 
-#: src/Converter.cpp:384
+#: src/Converter.cpp:387
 msgid "&Always allow for this document"
 msgstr "この文書では常に許可する(&A)"
 
-#: src/Converter.cpp:385
+#: src/Converter.cpp:388
 msgid "&Always run for this document"
 msgstr "この文書では常に実行する(&A)"
 
-#: src/Converter.cpp:455 src/Converter.cpp:712 src/Converter.cpp:741
+#: src/Converter.cpp:459 src/Converter.cpp:732 src/Converter.cpp:761
 msgid "Converter killed"
 msgstr "変換子は停止されました"
 
-#: src/Converter.cpp:456 src/Converter.cpp:713 src/Converter.cpp:742
+#: src/Converter.cpp:460 src/Converter.cpp:733 src/Converter.cpp:762
 #, c-format
 msgid ""
 "The following converter was killed by the user.\n"
@@ -29560,12 +29555,12 @@ msgstr ""
 "下記の変換子はユーザーによって停止されました．\n"
 "%1$s\n"
 
-#: src/Converter.cpp:475 src/Converter.cpp:770 src/Converter.cpp:793
-#: src/Converter.cpp:835
+#: src/Converter.cpp:479 src/Converter.cpp:790 src/Converter.cpp:813
+#: src/Converter.cpp:855
 msgid "Cannot convert file"
 msgstr "ファイルを変換することができません"
 
-#: src/Converter.cpp:476
+#: src/Converter.cpp:480
 #, c-format
 msgid ""
 "No information for converting %1$s format files to %2$s.\n"
@@ -29574,11 +29569,11 @@ msgstr ""
 "%1$s形式のファイルから%2$s形式に変換するための情報がありません．\n"
 "設定で変換子を指定してください．"
 
-#: src/Converter.cpp:581 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
 msgid "Pygments driver command not found!"
 msgstr "Pygmentsドライバコマンドが見つかりませんでした！"
 
-#: src/Converter.cpp:582 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -29600,15 +29595,15 @@ msgstr ""
 "\n"
 "ここで「driver」にはドライバコマンド名を入れてください．"
 
-#: src/Converter.cpp:688 src/Format.cpp:708 src/Format.cpp:778
+#: src/Converter.cpp:708 src/Format.cpp:708 src/Format.cpp:778
 msgid "Executing command: "
 msgstr "以下のコマンドを実行します："
 
-#: src/Converter.cpp:753
+#: src/Converter.cpp:773
 msgid "Process Killed"
 msgstr "プロセスは停止されました"
 
-#: src/Converter.cpp:754
+#: src/Converter.cpp:774
 #, c-format
 msgid ""
 "The conversion process was killed while running:\n"
@@ -29617,11 +29612,11 @@ msgstr ""
 "%1$s\n"
 "の実行中に変換プロセスが停止されました"
 
-#: src/Converter.cpp:759
+#: src/Converter.cpp:779
 msgid "Process Timed Out"
 msgstr "プロセス時間切れ"
 
-#: src/Converter.cpp:760
+#: src/Converter.cpp:780
 #, c-format
 msgid ""
 "The conversion process:\n"
@@ -29632,15 +29627,15 @@ msgstr ""
 "%1$s\n"
 "は完了前に時間切れとなりました．"
 
-#: src/Converter.cpp:765
+#: src/Converter.cpp:785
 msgid "Build errors"
 msgstr "ビルドエラー"
 
-#: src/Converter.cpp:766
+#: src/Converter.cpp:786
 msgid "There were errors during the build process."
 msgstr "ビルド処理中にエラーがありました．"
 
-#: src/Converter.cpp:771
+#: src/Converter.cpp:791
 #, c-format
 msgid ""
 "An error occurred while running:\n"
@@ -29649,38 +29644,38 @@ msgstr ""
 "%1$s\n"
 "の実行中にエラーが発生しました"
 
-#: src/Converter.cpp:794
+#: src/Converter.cpp:814
 #, c-format
 msgid "Could not move a temporary directory from %1$s to %2$s."
 msgstr "作業ディレクトリを%1$sから%2$sに移動できませんでした．"
 
-#: src/Converter.cpp:837
+#: src/Converter.cpp:857
 #, c-format
 msgid "Could not copy a temporary file from %1$s to %2$s."
 msgstr "作業ファイルを%1$sから%2$s にコピーできませんでした．"
 
-#: src/Converter.cpp:838
+#: src/Converter.cpp:858
 #, c-format
 msgid "Could not move a temporary file from %1$s to %2$s."
 msgstr "作業ファイルを%1$s から %2$s に移動できませんでした．"
 
-#: src/Converter.cpp:878
+#: src/Converter.cpp:898
 msgid "Running LaTeX..."
 msgstr "LaTeXを実行中です..."
 
-#: src/Converter.cpp:895
+#: src/Converter.cpp:915
 msgid "Export canceled"
 msgstr "書き出しは取り消されました"
 
-#: src/Converter.cpp:896
+#: src/Converter.cpp:916
 msgid "The export process was terminated by the user."
 msgstr "書き出し処理はユーザーによって停止されました．"
 
-#: src/Converter.cpp:906
+#: src/Converter.cpp:926
 msgid "Undefined reference"
 msgstr "未定義の参照"
 
-#: src/Converter.cpp:907
+#: src/Converter.cpp:927
 msgid ""
 "Undefined references or citations were found during the build.\n"
 "Please check the warnings in the LaTeX log (Document > LaTeX Log)."
@@ -29688,7 +29683,7 @@ msgstr ""
 "ビルド中に定義されていない参照あるいは引用が検出されました．\n"
 "LaTeXログ中の警告を確認してください(文書→LaTeXログ)．"
 
-#: src/Converter.cpp:919
+#: src/Converter.cpp:939
 #, c-format
 msgid ""
 "LaTeX did not run successfully. Additionally, LyX could not locate the LaTeX "
@@ -29697,11 +29692,11 @@ msgstr ""
 "LaTeXはうまく実行できませんでした．さらにLyXはLaTeXのログ%1$sを見つけ出せませ"
 "んでした．"
 
-#: src/Converter.cpp:922 src/Converter.cpp:929
+#: src/Converter.cpp:942 src/Converter.cpp:949
 msgid "LaTeX failed"
 msgstr "LaTeXが失敗しました"
 
-#: src/Converter.cpp:925
+#: src/Converter.cpp:945
 #, c-format
 msgid ""
 "The external program\n"
@@ -29714,11 +29709,11 @@ msgstr ""
 "がエラーを出して終了しました．外部プログラムのエラーの原因を取り除いてくださ"
 "い(ログをご覧ください)．"
 
-#: src/Converter.cpp:931
+#: src/Converter.cpp:951
 msgid "Output is empty"
 msgstr "出力が空です"
 
-#: src/Converter.cpp:932
+#: src/Converter.cpp:952
 msgid "No output file was generated."
 msgstr "出力ファイルは生成されませんでした．"
 
@@ -35834,51 +35829,51 @@ msgstr "コードプレビュー"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1プレビュー"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1662
+#: src/frontends/qt/GuiWorkArea.cpp:1684
 msgid "Close File"
 msgstr "ファイルを閉じる"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2309
+#: src/frontends/qt/GuiWorkArea.cpp:2331
 msgid "%1 (read only)"
 msgstr "%1 (読み込み専用)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2317
+#: src/frontends/qt/GuiWorkArea.cpp:2339
 msgid "%1 (modified externally)"
 msgstr "%1 (外部から変更)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2361
 msgid "&Hide Tab"
 msgstr "タブを非表示にする(&H)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2344
+#: src/frontends/qt/GuiWorkArea.cpp:2366
 msgid "&Close Tab"
 msgstr "タブを閉じる(&C)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2370
 msgid "Close &Other Tabs"
 msgstr "他のタブを閉じる(&O)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2372
 msgid "Close Tabs to the &Right"
 msgstr "右側のタブを閉じる(&R)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2352
+#: src/frontends/qt/GuiWorkArea.cpp:2374
 msgid "Close Tabs to the &Left"
 msgstr "左側のタブを閉じる(&L)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2379
 msgid "Move Tab to &Start"
 msgstr "タブを先頭に移動する(&S)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2359
+#: src/frontends/qt/GuiWorkArea.cpp:2381
 msgid "Move Tab to &End"
 msgstr "タブを末端に移動する(&E)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2364
+#: src/frontends/qt/GuiWorkArea.cpp:2386
 msgid "Open Enclosing &Directory"
 msgstr "内包しているディレクトリを開く(&D)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2409
+#: src/frontends/qt/GuiWorkArea.cpp:2431
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>ディスク上のファイル %1 は変更されています．</b>"
 
@@ -38677,6 +38672,18 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "未知のユーザー"
+
+#~ msgid "XHTML Output Options"
+#~ msgstr "XHTML出力オプション"
+
+#~ msgid "Scaling factor for images used for math output."
+#~ msgstr "数式出力に使用する画像の伸縮係数．"
+
+#~ msgid "Math &image scaling:"
+#~ msgstr "数式画像の伸縮(&I)："
+
+#~ msgid "DocBook Output Options"
+#~ msgstr "DocBook出力オプション"
 
 #~ msgid "tgo"
 #~ msgstr "tgo"

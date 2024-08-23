@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.3\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-17 19:38-0400\n"
+"POT-Creation-Date: 2024-08-22 21:06-0400\n"
 "PO-Revision-Date: 2023-08-21 06:04+0200\n"
 "Last-Translator: Daniel <d3vf4n@tutanota.com>\n"
 "Language-Team: Spanish <lyx-docs@lists.lyx.org>\n"
@@ -711,7 +711,7 @@ msgid "Remove the selected branch"
 msgstr "Quitar la rama seleccionada"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Remove"
 msgstr "&Quitar"
 
@@ -786,7 +786,7 @@ msgid "Add A&ll"
 msgstr "Añadir &todo"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -3405,150 +3405,11 @@ msgstr "&Listar en el índice general"
 msgid "&Numbering"
 msgstr "&Numeración"
 
-#: src/frontends/qt/ui/OutputUi.ui:37
-#, fuzzy
-msgid "&LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:43
-#, fuzzy
-msgid "LaTeX Output Options"
-msgstr "Opciones de salida XHTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:51
-msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
-msgstr ""
-"Habilitar búsqueda directa/inversa entre editor y salida (p.e., SyncTeX)"
-
-#: src/frontends/qt/ui/OutputUi.ui:54
-msgid "S&ynchronize with output"
-msgstr "S&incronizar con salida"
-
-#: src/frontends/qt/ui/OutputUi.ui:85
-msgid "C&ustom macro:"
-msgstr "&Macro personalizada:"
-
-#: src/frontends/qt/ui/OutputUi.ui:95
-msgid "Custom LaTeX preamble macro"
-msgstr "Macro de preámbulo LaTeX personalizado"
-
-#: src/frontends/qt/ui/OutputUi.ui:122
-msgid ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:125
-msgid "Put fra&gile content out of moving arguments"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:149
-#, fuzzy
-msgid "&XHTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:155
-msgid "XHTML Output Options"
-msgstr "Opciones de salida XHTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:164
-#, fuzzy
-msgid "Write CSS to file"
-msgstr "Escribir CSS en un archivo"
-
-#: src/frontends/qt/ui/OutputUi.ui:176
-msgid "Scaling factor for images used for math output."
-msgstr "Factor de escala para imágenes de las ecuaciones."
-
-#: src/frontends/qt/ui/OutputUi.ui:200 src/frontends/qt/ui/OutputUi.ui:397
-msgid "Format to use for math output."
-msgstr "Formato a usar para matemáticas."
-
-#: src/frontends/qt/ui/OutputUi.ui:204
-msgid "MathML"
-msgstr "MathML"
-
-#: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
-#: lib/configure.py:853
-msgid "HTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:214
-msgid "Images"
-msgstr "Imágenes"
-
-#: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
-#: lib/layouts/egs.layout:720 lib/languages:147
-#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
-msgid "LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:232
-msgid "Math &image scaling:"
-msgstr "&Escala de imágenes de ecuaciones:"
-
-#: src/frontends/qt/ui/OutputUi.ui:255
-msgid "Whether to comply strictly with XHTML 1.1."
-msgstr "Si cumplir estrictamente con XHTML 1.1."
-
-#: src/frontends/qt/ui/OutputUi.ui:258
-msgid "&Strict XHTML 1.1"
-msgstr "X&HTML 1.1 estricto"
-
-#: src/frontends/qt/ui/OutputUi.ui:270
-msgid "&Math output:"
-msgstr "&Salida de ecuaciones:"
-
-#: src/frontends/qt/ui/OutputUi.ui:297
-#, fuzzy
-msgid "&DocBook"
-msgstr "DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:303
-#, fuzzy
-msgid "DocBook Output Options"
-msgstr "Opciones de salida XHTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:323
-msgid ""
-"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
-"code> prefix, the MathML tags will be output like <code>m:math</code>."
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:327
-msgid "No prefix (namespace defined inline for each tag)"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:332
-#, fuzzy
-msgid "m (default)"
-msgstr "Exterior (predeterminado)"
-
-#: src/frontends/qt/ui/OutputUi.ui:337
-#, fuzzy
-msgid "mml"
-msgstr "mm"
-
-#: src/frontends/qt/ui/OutputUi.ui:376
-#, fuzzy
-msgid "&Table output:"
-msgstr "&Salida de ecuaciones:"
-
-#: src/frontends/qt/ui/OutputUi.ui:406
-msgid "CALS"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:419
-msgid "&MathML namespace prefix:"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:449
+#: src/frontends/qt/ui/OutputUi.ui:28
 msgid "LyX Format"
 msgstr "LyX Formato"
 
-#: src/frontends/qt/ui/OutputUi.ui:461
+#: src/frontends/qt/ui/OutputUi.ui:40
 msgid ""
 "Save all parameters in the LyX file, including ones that are frequently "
 "switched or that are specific to the user (such as the output of the tracked "
@@ -3556,29 +3417,161 @@ msgid ""
 "in collaborative settings and with version control systems."
 msgstr ""
 
-#: src/frontends/qt/ui/OutputUi.ui:464
+#: src/frontends/qt/ui/OutputUi.ui:43
 msgid "Save &transient properties"
 msgstr ""
 
-#: src/frontends/qt/ui/OutputUi.ui:474
+#: src/frontends/qt/ui/OutputUi.ui:59
 msgid "Output Format"
 msgstr "Formato de salida"
 
-#: src/frontends/qt/ui/OutputUi.ui:515 src/frontends/qt/ui/OutputUi.ui:528
+#: src/frontends/qt/ui/OutputUi.ui:100 src/frontends/qt/ui/OutputUi.ui:113
 msgid "Specify the default output format (for view/update)"
 msgstr "Especificar el formato de salida predeterminado (para ver/actualizar)"
 
-#: src/frontends/qt/ui/OutputUi.ui:518
+#: src/frontends/qt/ui/OutputUi.ui:103
 msgid "De&fault output format:"
 msgstr "For&mato de salida predeterminado:"
 
-#: src/frontends/qt/ui/OutputUi.ui:553
+#: src/frontends/qt/ui/OutputUi.ui:144
+#, fuzzy
+msgid "Output Options"
+msgstr "Opciones de salida XHTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
+msgid ""
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:160
+msgid "Scaling of generated &images:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:219
+#, fuzzy
+msgid "&LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:225
+msgid ""
+"If this is checked, fragile items such as labels and index entries are moved "
+"out of moving arguments such as sections and captions. This prevents LaTeX "
+"errors that can happen in such cases. It is recommended to keep this on."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:228
+msgid "Put fra&gile content out of moving arguments"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:237
+msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
+msgstr ""
+"Habilitar búsqueda directa/inversa entre editor y salida (p.e., SyncTeX)"
+
+#: src/frontends/qt/ui/OutputUi.ui:240
+msgid "S&ynchronize with output"
+msgstr "S&incronizar con salida"
+
+#: src/frontends/qt/ui/OutputUi.ui:271
+msgid "C&ustom macro:"
+msgstr "&Macro personalizada:"
+
+#: src/frontends/qt/ui/OutputUi.ui:281
+msgid "Custom LaTeX preamble macro"
+msgstr "Macro de preámbulo LaTeX personalizado"
+
+#: src/frontends/qt/ui/OutputUi.ui:309
+#, fuzzy
+msgid "&XHTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:317
+msgid "Whether to comply strictly with XHTML 1.1."
+msgstr "Si cumplir estrictamente con XHTML 1.1."
+
+#: src/frontends/qt/ui/OutputUi.ui:320
+msgid "&Strict XHTML 1.1"
+msgstr "X&HTML 1.1 estricto"
+
+#: src/frontends/qt/ui/OutputUi.ui:327
+#, fuzzy
+msgid "Write CSS to file"
+msgstr "Escribir CSS en un archivo"
+
+#: src/frontends/qt/ui/OutputUi.ui:356
+msgid "&Math output:"
+msgstr "&Salida de ecuaciones:"
+
+#: src/frontends/qt/ui/OutputUi.ui:371 src/frontends/qt/ui/OutputUi.ui:448
+msgid "Format to use for math output."
+msgstr "Formato a usar para matemáticas."
+
+#: src/frontends/qt/ui/OutputUi.ui:375
+msgid "MathML"
+msgstr "MathML"
+
+#: src/frontends/qt/ui/OutputUi.ui:380 src/frontends/qt/ui/OutputUi.ui:452
+#: lib/configure.py:853
+msgid "HTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:385
+msgid "Images"
+msgstr "Imágenes"
+
+#: src/frontends/qt/ui/OutputUi.ui:390 lib/layouts/aapaper.layout:63
+#: lib/layouts/egs.layout:720 lib/languages:147
+#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
+msgid "LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:414
+#, fuzzy
+msgid "&DocBook"
+msgstr "DocBook"
+
+#: src/frontends/qt/ui/OutputUi.ui:427
+#, fuzzy
+msgid "&Table output:"
+msgstr "&Salida de ecuaciones:"
+
+#: src/frontends/qt/ui/OutputUi.ui:457
+msgid "CALS"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:487
+msgid "&MathML namespace prefix:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:508
+msgid ""
+"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
+"code> prefix, the MathML tags will be output like <code>m:math</code>."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:512
+msgid "No prefix (namespace defined inline for each tag)"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:517
+#, fuzzy
+msgid "m (default)"
+msgstr "Exterior (predeterminado)"
+
+#: src/frontends/qt/ui/OutputUi.ui:522
+#, fuzzy
+msgid "mml"
+msgstr "mm"
+
+#: src/frontends/qt/ui/OutputUi.ui:552
 msgid ""
 "Runs the LaTeX backend with the -shell-escape option (Warning: use only when "
 "really necessary)"
 msgstr ""
 
-#: src/frontends/qt/ui/OutputUi.ui:556
+#: src/frontends/qt/ui/OutputUi.ui:555
 #, fuzzy
 msgid "&Allow running external programs"
 msgstr "Error ejecutando comandos externos."
@@ -28691,7 +28684,7 @@ msgid ""
 msgstr ""
 "%1$s es de una versión nueva de LyX y el guión lyx2lyx falló al convertirlo."
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4805 src/Buffer.cpp:4914
+#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
 msgid "File is read-only"
 msgstr "El archivo es de solo lectura"
 
@@ -29056,21 +29049,21 @@ msgid ""
 "save the file to a directory whose name does not contain spaces."
 msgstr ""
 
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "Exportación del documento cancelada."
 
-#: src/Buffer.cpp:4715
+#: src/Buffer.cpp:4716
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "Documento exportado como %1$s al archivo `%2$s'"
 
-#: src/Buffer.cpp:4722
+#: src/Buffer.cpp:4723
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "Documento exportado como %1$s"
 
-#: src/Buffer.cpp:4791
+#: src/Buffer.cpp:4792
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -29081,24 +29074,24 @@ msgstr ""
 "\n"
 "¿Recuperar el guardado de emergencia?"
 
-#: src/Buffer.cpp:4794
+#: src/Buffer.cpp:4795
 msgid "Load emergency save?"
 msgstr "¿Cargar guardado de emergencia?"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Recover"
 msgstr "&Recuperar"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Load Original"
 msgstr "&Cargar original"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 #, fuzzy
 msgid "&Only show difference"
 msgstr "diferencias"
 
-#: src/Buffer.cpp:4806
+#: src/Buffer.cpp:4807
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -29108,15 +29101,15 @@ msgstr ""
 "marcado como solo lectura. Asegúrate de guardar el documento como un archivo "
 "distinto."
 
-#: src/Buffer.cpp:4813
+#: src/Buffer.cpp:4814
 msgid "Document was successfully recovered."
 msgstr "El documento se ha recuperado con éxito."
 
-#: src/Buffer.cpp:4815
+#: src/Buffer.cpp:4816
 msgid "Document was NOT successfully recovered."
 msgstr "El documento NO se ha recuperado con éxito."
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4817
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -29125,51 +29118,51 @@ msgstr ""
 "¿Eliminar ahora el archivo de emergencia?\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4820 src/Buffer.cpp:4832
+#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
 msgid "Delete emergency file?"
 msgstr "¿Eliminar el archivo de emergencia?"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Keep"
 msgstr "&Mantener"
 
-#: src/Buffer.cpp:4825
+#: src/Buffer.cpp:4826
 msgid "Emergency file deleted"
 msgstr "Archivo de emergencia borrado"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4827
 msgid "Do not forget to save your file now!"
 msgstr "¡No olvides guardar ahora el archivo!"
 
-#: src/Buffer.cpp:4833
+#: src/Buffer.cpp:4834
 msgid "Remove emergency file now?"
 msgstr "¿Eliminar ahora el archivo de emergencia?"
 
-#: src/Buffer.cpp:4856
+#: src/Buffer.cpp:4857
 #, fuzzy
 msgid "Can't rename emergency file!"
 msgstr "¿Eliminar el archivo de emergencia?"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4858
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
 "this file, and may over-write your own work."
 msgstr ""
 
-#: src/Buffer.cpp:4862
+#: src/Buffer.cpp:4863
 #, fuzzy
 msgid "Emergency File Renamed"
 msgstr "Archivo de emergencia borrado"
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4864
 #, fuzzy, c-format
 msgid ""
 "Emergency file renamed as:\n"
 " %1$s"
 msgstr "Archivo de emergencia borrado"
 
-#: src/Buffer.cpp:4902
+#: src/Buffer.cpp:4903
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -29180,19 +29173,19 @@ msgstr ""
 "\n"
 "¿Cargar la copia de seguridad en su lugar?"
 
-#: src/Buffer.cpp:4904
+#: src/Buffer.cpp:4905
 msgid "Load backup?"
 msgstr "¿Cargar copia de seguridad?"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "&Load backup"
 msgstr "Cargar copia de &seguridad"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "Load &original"
 msgstr "Cargar &original"
 
-#: src/Buffer.cpp:4915
+#: src/Buffer.cpp:4916
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -29202,25 +29195,25 @@ msgstr ""
 "marcado como solo lectura. No olvides guardar el documento como un archivo "
 "distinto."
 
-#: src/Buffer.cpp:5300
+#: src/Buffer.cpp:5301
 msgid "Senseless!!! "
 msgstr "¡Sin sentido! "
 
-#: src/Buffer.cpp:5578
+#: src/Buffer.cpp:5579
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "Documento %1$s abierto."
 
-#: src/Buffer.cpp:5581
+#: src/Buffer.cpp:5582
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "No se pudo recargar el documento %1$s."
 
-#: src/Buffer.cpp:5742
+#: src/Buffer.cpp:5743
 msgid "File deleted from disk"
 msgstr ""
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5744
 #, c-format
 msgid ""
 "The file\n"
@@ -30180,7 +30173,7 @@ msgstr "heredar"
 msgid "ignore"
 msgstr "ignorar"
 
-#: src/Converter.cpp:318
+#: src/Converter.cpp:321
 #, c-format
 msgid ""
 "<p>The following LaTeX backend has been configured to allow execution of "
@@ -30190,12 +30183,12 @@ msgid ""
 "instead.</p>"
 msgstr ""
 
-#: src/Converter.cpp:327
+#: src/Converter.cpp:330
 #, fuzzy
 msgid "Security Warning"
 msgstr "A&viso siguiente"
 
-#: src/Converter.cpp:342
+#: src/Converter.cpp:345
 #, c-format
 msgid ""
 "<p>The following LaTeX backend has been requested to allow execution of "
@@ -30204,7 +30197,7 @@ msgid ""
 "instructed to do so by a maliciously crafted LyX document.</p>"
 msgstr ""
 
-#: src/Converter.cpp:349
+#: src/Converter.cpp:352
 #, c-format
 msgid ""
 "<p>The requested operation requires the use of a converter from %2$s to %3$s:"
@@ -30213,11 +30206,11 @@ msgid ""
 "to do so by a maliciously crafted LyX document.</p>"
 msgstr ""
 
-#: src/Converter.cpp:359
+#: src/Converter.cpp:362
 msgid "An external converter is disabled for security reasons"
 msgstr ""
 
-#: src/Converter.cpp:361
+#: src/Converter.cpp:364
 msgid ""
 "<p><b>Your current preference settings forbid its execution.</b></p><p>(To "
 "change this setting, go to <i>Preferences &#x25b9; File Handling &#x25b9; "
@@ -30225,72 +30218,72 @@ msgid ""
 "i>.)"
 msgstr ""
 
-#: src/Converter.cpp:370
+#: src/Converter.cpp:373
 msgid "A LaTeX backend requires your authorization"
 msgstr ""
 
-#: src/Converter.cpp:371
+#: src/Converter.cpp:374
 msgid "An external converter requires your authorization"
 msgstr ""
 
-#: src/Converter.cpp:374
+#: src/Converter.cpp:377
 msgid ""
 "<p>Should LaTeX backends be allowed to run external programs?</p><p><b>Allow "
 "them only if you trust the origin/sender of the LyX document!</b></p>"
 msgstr ""
 
-#: src/Converter.cpp:377
+#: src/Converter.cpp:380
 msgid ""
 "<p>Would you like to run this converter?</p><p><b>Only run if you trust the "
 "origin/sender of the LyX document!</b></p>"
 msgstr ""
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 #, fuzzy
 msgid "Do &not allow"
 msgstr "No cargar"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 #, fuzzy
 msgid "Do &not run"
 msgstr "No cargar"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 #, fuzzy
 msgid "A&llow"
 msgstr "amarillo"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "&Run"
 msgstr ""
 
-#: src/Converter.cpp:384
+#: src/Converter.cpp:387
 #, fuzzy
 msgid "&Always allow for this document"
 msgstr "¿Cerrar u ocultar documento?"
 
-#: src/Converter.cpp:385
+#: src/Converter.cpp:388
 msgid "&Always run for this document"
 msgstr ""
 
-#: src/Converter.cpp:455 src/Converter.cpp:712 src/Converter.cpp:741
+#: src/Converter.cpp:459 src/Converter.cpp:732 src/Converter.cpp:761
 #, fuzzy
 msgid "Converter killed"
 msgstr "Caché del convertidor"
 
-#: src/Converter.cpp:456 src/Converter.cpp:713 src/Converter.cpp:742
+#: src/Converter.cpp:460 src/Converter.cpp:733 src/Converter.cpp:762
 #, c-format
 msgid ""
 "The following converter was killed by the user.\n"
 " %1$s\n"
 msgstr ""
 
-#: src/Converter.cpp:475 src/Converter.cpp:770 src/Converter.cpp:793
-#: src/Converter.cpp:835
+#: src/Converter.cpp:479 src/Converter.cpp:790 src/Converter.cpp:813
+#: src/Converter.cpp:855
 msgid "Cannot convert file"
 msgstr "No se puede convertir archivo"
 
-#: src/Converter.cpp:476
+#: src/Converter.cpp:480
 #, c-format
 msgid ""
 "No information for converting %1$s format files to %2$s.\n"
@@ -30299,11 +30292,11 @@ msgstr ""
 "Sin información para convertir los archivos de formato %1$s a %2$s.\n"
 "Defina un convertidor en las preferencias."
 
-#: src/Converter.cpp:581 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
 msgid "Pygments driver command not found!"
 msgstr ""
 
-#: src/Converter.cpp:582 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -30316,16 +30309,16 @@ msgid ""
 "where 'driver' is name of the driver command."
 msgstr ""
 
-#: src/Converter.cpp:688 src/Format.cpp:708 src/Format.cpp:778
+#: src/Converter.cpp:708 src/Format.cpp:708 src/Format.cpp:778
 msgid "Executing command: "
 msgstr "Ejecutando comando: "
 
-#: src/Converter.cpp:753
+#: src/Converter.cpp:773
 #, fuzzy
 msgid "Process Killed"
 msgstr "Continuar"
 
-#: src/Converter.cpp:754
+#: src/Converter.cpp:774
 #, fuzzy, c-format
 msgid ""
 "The conversion process was killed while running:\n"
@@ -30334,11 +30327,11 @@ msgstr ""
 "Se ha producido un error al ejecutar:\n"
 "%1$s"
 
-#: src/Converter.cpp:759
+#: src/Converter.cpp:779
 msgid "Process Timed Out"
 msgstr ""
 
-#: src/Converter.cpp:760
+#: src/Converter.cpp:780
 #, c-format
 msgid ""
 "The conversion process:\n"
@@ -30346,15 +30339,15 @@ msgid ""
 "timed out before completing."
 msgstr ""
 
-#: src/Converter.cpp:765
+#: src/Converter.cpp:785
 msgid "Build errors"
 msgstr "Errores de construcción"
 
-#: src/Converter.cpp:766
+#: src/Converter.cpp:786
 msgid "There were errors during the build process."
 msgstr "Hubo errores durante el proceso de construcción."
 
-#: src/Converter.cpp:771
+#: src/Converter.cpp:791
 #, c-format
 msgid ""
 "An error occurred while running:\n"
@@ -30363,46 +30356,46 @@ msgstr ""
 "Se ha producido un error al ejecutar:\n"
 "%1$s"
 
-#: src/Converter.cpp:794
+#: src/Converter.cpp:814
 #, c-format
 msgid "Could not move a temporary directory from %1$s to %2$s."
 msgstr "No se pudo mover a un directorio temporal de %1$s a %2$s."
 
-#: src/Converter.cpp:837
+#: src/Converter.cpp:857
 #, c-format
 msgid "Could not copy a temporary file from %1$s to %2$s."
 msgstr "No se pudo copiar un archivo temporal de %1$s a %2$s."
 
-#: src/Converter.cpp:838
+#: src/Converter.cpp:858
 #, c-format
 msgid "Could not move a temporary file from %1$s to %2$s."
 msgstr "No se pudo mover un archivo temporal de %1$s a %2$s."
 
-#: src/Converter.cpp:878
+#: src/Converter.cpp:898
 msgid "Running LaTeX..."
 msgstr "Ejecutando LaTeX..."
 
-#: src/Converter.cpp:895
+#: src/Converter.cpp:915
 #, fuzzy
 msgid "Export canceled"
 msgstr "Fallo al exportar"
 
-#: src/Converter.cpp:896
+#: src/Converter.cpp:916
 msgid "The export process was terminated by the user."
 msgstr ""
 
-#: src/Converter.cpp:906
+#: src/Converter.cpp:926
 #, fuzzy
 msgid "Undefined reference"
 msgstr "Ramas no de&finidas"
 
-#: src/Converter.cpp:907
+#: src/Converter.cpp:927
 msgid ""
 "Undefined references or citations were found during the build.\n"
 "Please check the warnings in the LaTeX log (Document > LaTeX Log)."
 msgstr ""
 
-#: src/Converter.cpp:919
+#: src/Converter.cpp:939
 #, c-format
 msgid ""
 "LaTeX did not run successfully. Additionally, LyX could not locate the LaTeX "
@@ -30411,11 +30404,11 @@ msgstr ""
 "LaTeX no se ejecutó con éxito. Además, LyX no pudo localizar el registro de "
 "LaTeX %1$s."
 
-#: src/Converter.cpp:922 src/Converter.cpp:929
+#: src/Converter.cpp:942 src/Converter.cpp:949
 msgid "LaTeX failed"
 msgstr "LaTeX falló"
 
-#: src/Converter.cpp:925
+#: src/Converter.cpp:945
 #, c-format
 msgid ""
 "The external program\n"
@@ -30428,11 +30421,11 @@ msgstr ""
 "ha finalizado con error. Se recomienda arreglar la causa del mismo "
 "(comprueba los registros). "
 
-#: src/Converter.cpp:931
+#: src/Converter.cpp:951
 msgid "Output is empty"
 msgstr "La salida está vacía"
 
-#: src/Converter.cpp:932
+#: src/Converter.cpp:952
 msgid "No output file was generated."
 msgstr "No se ha generado archivo de salida."
 
@@ -36599,56 +36592,56 @@ msgstr "Vista previa"
 msgid "%1[[preview format name]] Preview"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:1662
+#: src/frontends/qt/GuiWorkArea.cpp:1684
 msgid "Close File"
 msgstr "Cerrar archivo"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2309
+#: src/frontends/qt/GuiWorkArea.cpp:2331
 msgid "%1 (read only)"
 msgstr "%1  (solo lectura)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2317
+#: src/frontends/qt/GuiWorkArea.cpp:2339
 #, fuzzy
 msgid "%1 (modified externally)"
 msgstr "Editar el archivo externamente"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2361
 #, fuzzy
 msgid "&Hide Tab"
 msgstr "Ocultar pestaña"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2344
+#: src/frontends/qt/GuiWorkArea.cpp:2366
 #, fuzzy
 msgid "&Close Tab"
 msgstr "Cerrar pestaña"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2370
 #, fuzzy
 msgid "Close &Other Tabs"
 msgstr "Cerrar pestaña"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2372
 msgid "Close Tabs to the &Right"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2352
+#: src/frontends/qt/GuiWorkArea.cpp:2374
 msgid "Close Tabs to the &Left"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2379
 msgid "Move Tab to &Start"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2359
+#: src/frontends/qt/GuiWorkArea.cpp:2381
 msgid "Move Tab to &End"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2364
+#: src/frontends/qt/GuiWorkArea.cpp:2386
 #, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "Abrir &directorio"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2409
+#: src/frontends/qt/GuiWorkArea.cpp:2431
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr ""
 
@@ -39534,6 +39527,19 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Usuario desconocido"
+
+#~ msgid "XHTML Output Options"
+#~ msgstr "Opciones de salida XHTML"
+
+#~ msgid "Scaling factor for images used for math output."
+#~ msgstr "Factor de escala para imágenes de las ecuaciones."
+
+#~ msgid "Math &image scaling:"
+#~ msgstr "&Escala de imágenes de ecuaciones:"
+
+#, fuzzy
+#~ msgid "DocBook Output Options"
+#~ msgstr "Opciones de salida XHTML"
 
 #~ msgid "tgo"
 #~ msgstr "tgo"

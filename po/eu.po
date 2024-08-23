@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lyx_2.0.0_eu\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-17 19:38-0400\n"
+"POT-Creation-Date: 2024-08-22 21:06-0400\n"
 "PO-Revision-Date: 2018-02-17 18:34+0100\n"
 "Last-Translator: Inaki Larranaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
@@ -711,7 +711,7 @@ msgid "Remove the selected branch"
 msgstr "Kendu hautatutako adarra"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Remove"
 msgstr "&Kendu"
 
@@ -787,7 +787,7 @@ msgid "Add A&ll"
 msgstr "Gehitu &denak"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -3434,151 +3434,11 @@ msgstr "&Zerrendatu Gaien aurkibidean"
 msgid "&Numbering"
 msgstr "&Zenbaketa"
 
-#: src/frontends/qt/ui/OutputUi.ui:37
-#, fuzzy
-msgid "&LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:43
-#, fuzzy
-msgid "LaTeX Output Options"
-msgstr "XHTML irteeraren aukerak"
-
-#: src/frontends/qt/ui/OutputUi.ui:51
-msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
-msgstr ""
-"Gaitu editore eta irteeraren arteko aurreranzko/atzeranzko bilaketa (adib. "
-"SyncTeX)"
-
-#: src/frontends/qt/ui/OutputUi.ui:54
-msgid "S&ynchronize with output"
-msgstr "&Sinkronizatu irteerarekin"
-
-#: src/frontends/qt/ui/OutputUi.ui:85
-msgid "C&ustom macro:"
-msgstr "&Pertsonalizatu makroa:"
-
-#: src/frontends/qt/ui/OutputUi.ui:95
-msgid "Custom LaTeX preamble macro"
-msgstr "Pertsonalizatu LaTeX-en atarikoko makroa"
-
-#: src/frontends/qt/ui/OutputUi.ui:122
-msgid ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:125
-msgid "Put fra&gile content out of moving arguments"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:149
-#, fuzzy
-msgid "&XHTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:155
-msgid "XHTML Output Options"
-msgstr "XHTML irteeraren aukerak"
-
-#: src/frontends/qt/ui/OutputUi.ui:164
-#, fuzzy
-msgid "Write CSS to file"
-msgstr "Idatzi CSS fitxategira"
-
-#: src/frontends/qt/ui/OutputUi.ui:176
-msgid "Scaling factor for images used for math output."
-msgstr "Irudiak eskalatzeko faktorea matematikaren irteeran erabiltzeko."
-
-#: src/frontends/qt/ui/OutputUi.ui:200 src/frontends/qt/ui/OutputUi.ui:397
-msgid "Format to use for math output."
-msgstr "Formatua matematikaren irteeran erabiltzeko."
-
-#: src/frontends/qt/ui/OutputUi.ui:204
-msgid "MathML"
-msgstr "MathML"
-
-#: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
-#: lib/configure.py:853
-msgid "HTML"
-msgstr "HTML"
-
-#: src/frontends/qt/ui/OutputUi.ui:214
-msgid "Images"
-msgstr "Irudiak"
-
-#: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
-#: lib/layouts/egs.layout:720 lib/languages:147
-#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
-msgid "LaTeX"
-msgstr "LaTeX"
-
-#: src/frontends/qt/ui/OutputUi.ui:232
-msgid "Math &image scaling:"
-msgstr "Matematikako &irudien eskala:"
-
-#: src/frontends/qt/ui/OutputUi.ui:255
-msgid "Whether to comply strictly with XHTML 1.1."
-msgstr "Zorroztasunez XHTML 1.1-ekin beteko duen edo ez."
-
-#: src/frontends/qt/ui/OutputUi.ui:258
-msgid "&Strict XHTML 1.1"
-msgstr "XHTML 1.1 &zorrotza"
-
-#: src/frontends/qt/ui/OutputUi.ui:270
-msgid "&Math output:"
-msgstr "&Matematikaren irteera:"
-
-#: src/frontends/qt/ui/OutputUi.ui:297
-#, fuzzy
-msgid "&DocBook"
-msgstr "DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:303
-#, fuzzy
-msgid "DocBook Output Options"
-msgstr "XHTML irteeraren aukerak"
-
-#: src/frontends/qt/ui/OutputUi.ui:323
-msgid ""
-"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
-"code> prefix, the MathML tags will be output like <code>m:math</code>."
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:327
-msgid "No prefix (namespace defined inline for each tag)"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:332
-#, fuzzy
-msgid "m (default)"
-msgstr "Kanpoan (lehenetsia)"
-
-#: src/frontends/qt/ui/OutputUi.ui:337
-#, fuzzy
-msgid "mml"
-msgstr "mm"
-
-#: src/frontends/qt/ui/OutputUi.ui:376
-#, fuzzy
-msgid "&Table output:"
-msgstr "&Matematikaren irteera:"
-
-#: src/frontends/qt/ui/OutputUi.ui:406
-msgid "CALS"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:419
-msgid "&MathML namespace prefix:"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:449
+#: src/frontends/qt/ui/OutputUi.ui:28
 msgid "LyX Format"
 msgstr "LyX-en &formatua:"
 
-#: src/frontends/qt/ui/OutputUi.ui:461
+#: src/frontends/qt/ui/OutputUi.ui:40
 msgid ""
 "Save all parameters in the LyX file, including ones that are frequently "
 "switched or that are specific to the user (such as the output of the tracked "
@@ -3590,23 +3450,156 @@ msgstr ""
 "edo dokumentuaren direktorioaren bide-izena bezala). Aukera hau desgaitzean "
 "hobeto moldatzen da auzo-laneko ezarpenetan eta bertsio-kontrol sistemetan."
 
-#: src/frontends/qt/ui/OutputUi.ui:464
+#: src/frontends/qt/ui/OutputUi.ui:43
 msgid "Save &transient properties"
 msgstr "Gorde &behin-behineko propietateak"
 
-#: src/frontends/qt/ui/OutputUi.ui:474
+#: src/frontends/qt/ui/OutputUi.ui:59
 msgid "Output Format"
 msgstr "Irteerako formatua"
 
-#: src/frontends/qt/ui/OutputUi.ui:515 src/frontends/qt/ui/OutputUi.ui:528
+#: src/frontends/qt/ui/OutputUi.ui:100 src/frontends/qt/ui/OutputUi.ui:113
 msgid "Specify the default output format (for view/update)"
 msgstr "Zehaztu irteerako formatu lehenetsia (ikusi/eguneratu menuentzako)."
 
-#: src/frontends/qt/ui/OutputUi.ui:518
+#: src/frontends/qt/ui/OutputUi.ui:103
 msgid "De&fault output format:"
 msgstr "Irteerako formatu &lehenetsia:"
 
-#: src/frontends/qt/ui/OutputUi.ui:553
+#: src/frontends/qt/ui/OutputUi.ui:144
+#, fuzzy
+msgid "Output Options"
+msgstr "XHTML irteeraren aukerak"
+
+#: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
+msgid ""
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:160
+msgid "Scaling of generated &images:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:219
+#, fuzzy
+msgid "&LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:225
+msgid ""
+"If this is checked, fragile items such as labels and index entries are moved "
+"out of moving arguments such as sections and captions. This prevents LaTeX "
+"errors that can happen in such cases. It is recommended to keep this on."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:228
+msgid "Put fra&gile content out of moving arguments"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:237
+msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
+msgstr ""
+"Gaitu editore eta irteeraren arteko aurreranzko/atzeranzko bilaketa (adib. "
+"SyncTeX)"
+
+#: src/frontends/qt/ui/OutputUi.ui:240
+msgid "S&ynchronize with output"
+msgstr "&Sinkronizatu irteerarekin"
+
+#: src/frontends/qt/ui/OutputUi.ui:271
+msgid "C&ustom macro:"
+msgstr "&Pertsonalizatu makroa:"
+
+#: src/frontends/qt/ui/OutputUi.ui:281
+msgid "Custom LaTeX preamble macro"
+msgstr "Pertsonalizatu LaTeX-en atarikoko makroa"
+
+#: src/frontends/qt/ui/OutputUi.ui:309
+#, fuzzy
+msgid "&XHTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:317
+msgid "Whether to comply strictly with XHTML 1.1."
+msgstr "Zorroztasunez XHTML 1.1-ekin beteko duen edo ez."
+
+#: src/frontends/qt/ui/OutputUi.ui:320
+msgid "&Strict XHTML 1.1"
+msgstr "XHTML 1.1 &zorrotza"
+
+#: src/frontends/qt/ui/OutputUi.ui:327
+#, fuzzy
+msgid "Write CSS to file"
+msgstr "Idatzi CSS fitxategira"
+
+#: src/frontends/qt/ui/OutputUi.ui:356
+msgid "&Math output:"
+msgstr "&Matematikaren irteera:"
+
+#: src/frontends/qt/ui/OutputUi.ui:371 src/frontends/qt/ui/OutputUi.ui:448
+msgid "Format to use for math output."
+msgstr "Formatua matematikaren irteeran erabiltzeko."
+
+#: src/frontends/qt/ui/OutputUi.ui:375
+msgid "MathML"
+msgstr "MathML"
+
+#: src/frontends/qt/ui/OutputUi.ui:380 src/frontends/qt/ui/OutputUi.ui:452
+#: lib/configure.py:853
+msgid "HTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:385
+msgid "Images"
+msgstr "Irudiak"
+
+#: src/frontends/qt/ui/OutputUi.ui:390 lib/layouts/aapaper.layout:63
+#: lib/layouts/egs.layout:720 lib/languages:147
+#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
+msgid "LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:414
+#, fuzzy
+msgid "&DocBook"
+msgstr "DocBook"
+
+#: src/frontends/qt/ui/OutputUi.ui:427
+#, fuzzy
+msgid "&Table output:"
+msgstr "&Matematikaren irteera:"
+
+#: src/frontends/qt/ui/OutputUi.ui:457
+msgid "CALS"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:487
+msgid "&MathML namespace prefix:"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:508
+msgid ""
+"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
+"code> prefix, the MathML tags will be output like <code>m:math</code>."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:512
+msgid "No prefix (namespace defined inline for each tag)"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:517
+#, fuzzy
+msgid "m (default)"
+msgstr "Kanpoan (lehenetsia)"
+
+#: src/frontends/qt/ui/OutputUi.ui:522
+#, fuzzy
+msgid "mml"
+msgstr "mm"
+
+#: src/frontends/qt/ui/OutputUi.ui:552
 msgid ""
 "Runs the LaTeX backend with the -shell-escape option (Warning: use only when "
 "really necessary)"
@@ -3614,7 +3607,7 @@ msgstr ""
 "Exekutatu LaTeX motorra  '-shell-escape' aukerarekin (abisua: benetan "
 "beharrezkoa denean soilik erabili)"
 
-#: src/frontends/qt/ui/OutputUi.ui:556
+#: src/frontends/qt/ui/OutputUi.ui:555
 msgid "&Allow running external programs"
 msgstr "&Baimendu kanpoko programak exekutatzea"
 
@@ -28745,7 +28738,7 @@ msgstr ""
 "%1$s LyX-en berriagokoa da, eta lyx2lyx script-ak huts egin du hau "
 "bihurtzean."
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4805 src/Buffer.cpp:4914
+#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
 msgid "File is read-only"
 msgstr "Fitxategia irakurtzeko soilik da"
 
@@ -29117,21 +29110,21 @@ msgid ""
 "save the file to a directory whose name does not contain spaces."
 msgstr ""
 
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "Dokumentua esportatzea bertan behera utzi da."
 
-#: src/Buffer.cpp:4715
+#: src/Buffer.cpp:4716
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "Dokumentua %1$s gisa esportatuta '%2$s' fitxategira"
 
-#: src/Buffer.cpp:4722
+#: src/Buffer.cpp:4723
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "Dokumentua %1$s gisa esportatuta"
 
-#: src/Buffer.cpp:4791
+#: src/Buffer.cpp:4792
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -29142,24 +29135,24 @@ msgstr ""
 "\n"
 "Larrialdian gordetakoa berreskuratu?"
 
-#: src/Buffer.cpp:4794
+#: src/Buffer.cpp:4795
 msgid "Load emergency save?"
 msgstr "Kargatu larrialdian gordetakoa?"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Recover"
 msgstr "&Berreskuratu"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Load Original"
 msgstr "&Kargatu jatorrizkoa"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 #, fuzzy
 msgid "&Only show difference"
 msgstr "desberdintasunak"
 
-#: src/Buffer.cpp:4806
+#: src/Buffer.cpp:4807
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -29169,15 +29162,15 @@ msgstr ""
 "irakurtzeko soilik gisa markatuta dago. Ziurtatu zaitez dokumentua beste "
 "fitxategi batean gordetzeaz."
 
-#: src/Buffer.cpp:4813
+#: src/Buffer.cpp:4814
 msgid "Document was successfully recovered."
 msgstr "Dokumentua ongi berreskuratu da."
 
-#: src/Buffer.cpp:4815
+#: src/Buffer.cpp:4816
 msgid "Document was NOT successfully recovered."
 msgstr "Dokumentua EZ da ongi berreskuratu."
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4817
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -29186,51 +29179,51 @@ msgstr ""
 "Kendu larrialdiko fitxategia orain?\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4820 src/Buffer.cpp:4832
+#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
 msgid "Delete emergency file?"
 msgstr "Ezabatu larrialdiko fitxategia?"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Keep"
 msgstr "&Mantendu"
 
-#: src/Buffer.cpp:4825
+#: src/Buffer.cpp:4826
 msgid "Emergency file deleted"
 msgstr "Larrialdiko fitxategia ezabatuta"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4827
 msgid "Do not forget to save your file now!"
 msgstr "Ez zaitez ahaztu zure fitxategia orain gordetzeaz."
 
-#: src/Buffer.cpp:4833
+#: src/Buffer.cpp:4834
 msgid "Remove emergency file now?"
 msgstr "Kendu larrialdiko fitxategia orain?"
 
-#: src/Buffer.cpp:4856
+#: src/Buffer.cpp:4857
 #, fuzzy
 msgid "Can't rename emergency file!"
 msgstr "Ezabatu larrialdiko fitxategia?"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4858
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
 "this file, and may over-write your own work."
 msgstr ""
 
-#: src/Buffer.cpp:4862
+#: src/Buffer.cpp:4863
 #, fuzzy
 msgid "Emergency File Renamed"
 msgstr "Larrialdiko fitxategia ezabatuta"
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4864
 #, fuzzy, c-format
 msgid ""
 "Emergency file renamed as:\n"
 " %1$s"
 msgstr "Larrialdiko fitxategia ezabatuta"
 
-#: src/Buffer.cpp:4902
+#: src/Buffer.cpp:4903
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -29241,19 +29234,19 @@ msgstr ""
 "\n"
 "Kargatu babeskopia horren ordez?"
 
-#: src/Buffer.cpp:4904
+#: src/Buffer.cpp:4905
 msgid "Load backup?"
 msgstr "Kargatu babeskopia?"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "&Load backup"
 msgstr "&Kargatu babeskopia"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "Load &original"
 msgstr "Kargatu &jatorrizkoa"
 
-#: src/Buffer.cpp:4915
+#: src/Buffer.cpp:4916
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -29263,25 +29256,25 @@ msgstr ""
 "irakurtzeko soilik gisa markatuta dago. Ziurtatu zaitez dokumentua beste "
 "fitxategi batean gordetzeaz."
 
-#: src/Buffer.cpp:5300
+#: src/Buffer.cpp:5301
 msgid "Senseless!!! "
 msgstr "Zentzugabea. "
 
-#: src/Buffer.cpp:5578
+#: src/Buffer.cpp:5579
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "%1$s dokumentua kargatuta."
 
-#: src/Buffer.cpp:5581
+#: src/Buffer.cpp:5582
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "Ezin izan da %1$s dokumentua birkargatu."
 
-#: src/Buffer.cpp:5742
+#: src/Buffer.cpp:5743
 msgid "File deleted from disk"
 msgstr ""
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5744
 #, c-format
 msgid ""
 "The file\n"
@@ -30238,7 +30231,7 @@ msgstr "heredatua"
 msgid "ignore"
 msgstr "ez ikusi egin"
 
-#: src/Converter.cpp:318
+#: src/Converter.cpp:321
 #, fuzzy, c-format
 msgid ""
 "<p>The following LaTeX backend has been configured to allow execution of "
@@ -30253,11 +30246,11 @@ msgstr ""
 "euskarria erabili beharko zenuke, pribilegio hau benetan behar duen "
 "dokumentuei soilik baimentzeko.</p>"
 
-#: src/Converter.cpp:327
+#: src/Converter.cpp:330
 msgid "Security Warning"
 msgstr "Segurtasun abisua"
 
-#: src/Converter.cpp:342
+#: src/Converter.cpp:345
 #, fuzzy, c-format
 msgid ""
 "<p>The following LaTeX backend has been requested to allow execution of "
@@ -30271,7 +30264,7 @@ msgstr ""
 "arriskutsuak ere bai, batiz bat horrela egiteko instrukzioak LyX dokumentu "
 "batean maltzurki txertatutakoak.</p>"
 
-#: src/Converter.cpp:349
+#: src/Converter.cpp:352
 #, fuzzy, c-format
 msgid ""
 "<p>The requested operation requires the use of a converter from %2$s to %3$s:"
@@ -30285,12 +30278,12 @@ msgstr ""
 "horrela egiteko instrukzioak LyX dokumentu batean maltzurki txertatutakoak.</"
 "p>"
 
-#: src/Converter.cpp:359
+#: src/Converter.cpp:362
 msgid "An external converter is disabled for security reasons"
 msgstr ""
 "Segurtasuneko arrazoiak direla eta, kanpoko bihurtzaile bat desgaitu egin da"
 
-#: src/Converter.cpp:361
+#: src/Converter.cpp:364
 msgid ""
 "<p><b>Your current preference settings forbid its execution.</b></p><p>(To "
 "change this setting, go to <i>Preferences &#x25b9; File Handling &#x25b9; "
@@ -30302,15 +30295,15 @@ msgstr ""
 "&#x25b9; Bihurtzaileak</i> eta desgaitu  <i>Segurtasuna &#x25b9; Debekatu "
 "bihurtzaileak autentifikazio beharra</i>.)"
 
-#: src/Converter.cpp:370
+#: src/Converter.cpp:373
 msgid "A LaTeX backend requires your authorization"
 msgstr "LaTeX motor batek zure autentifikazioa eskatzen du"
 
-#: src/Converter.cpp:371
+#: src/Converter.cpp:374
 msgid "An external converter requires your authorization"
 msgstr "Kanpoko bihurtzaile batek zure autentifikazioa behar du"
 
-#: src/Converter.cpp:374
+#: src/Converter.cpp:377
 msgid ""
 "<p>Should LaTeX backends be allowed to run external programs?</p><p><b>Allow "
 "them only if you trust the origin/sender of the LyX document!</b></p>"
@@ -30319,7 +30312,7 @@ msgstr ""
 "p><p><b>Baimendu soilik LyX dokumentuaren jatorriaz/bidaltzaileazfidatzen "
 "bazara!</b></p>"
 
-#: src/Converter.cpp:377
+#: src/Converter.cpp:380
 msgid ""
 "<p>Would you like to run this converter?</p><p><b>Only run if you trust the "
 "origin/sender of the LyX document!</b></p>"
@@ -30327,48 +30320,48 @@ msgstr ""
 "<p>Bihurtzaile hau exekutatzea nahi duzu?</p><p><b>Baimendu soilik LyX "
 "dokumentuaren jatorriaz/bidaltzaileaz fidatzen bazara!</b></p>"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not allow"
 msgstr "&Ez baimendu"
 
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not run"
 msgstr "&Ez exekutatu"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "A&llow"
 msgstr "&Baimendu"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "&Run"
 msgstr "E&xekutatu"
 
-#: src/Converter.cpp:384
+#: src/Converter.cpp:387
 msgid "&Always allow for this document"
 msgstr "Baimendu &beti dokumentu honentzako"
 
-#: src/Converter.cpp:385
+#: src/Converter.cpp:388
 msgid "&Always run for this document"
 msgstr "Exekutatu &beti dokumentu honentzako"
 
-#: src/Converter.cpp:455 src/Converter.cpp:712 src/Converter.cpp:741
+#: src/Converter.cpp:459 src/Converter.cpp:732 src/Converter.cpp:761
 #, fuzzy
 msgid "Converter killed"
 msgstr "Bihurtzailearen fitxategi cache-a"
 
-#: src/Converter.cpp:456 src/Converter.cpp:713 src/Converter.cpp:742
+#: src/Converter.cpp:460 src/Converter.cpp:733 src/Converter.cpp:762
 #, c-format
 msgid ""
 "The following converter was killed by the user.\n"
 " %1$s\n"
 msgstr ""
 
-#: src/Converter.cpp:475 src/Converter.cpp:770 src/Converter.cpp:793
-#: src/Converter.cpp:835
+#: src/Converter.cpp:479 src/Converter.cpp:790 src/Converter.cpp:813
+#: src/Converter.cpp:855
 msgid "Cannot convert file"
 msgstr "Ezin da fitxategia bihurtu"
 
-#: src/Converter.cpp:476
+#: src/Converter.cpp:480
 #, c-format
 msgid ""
 "No information for converting %1$s format files to %2$s.\n"
@@ -30377,11 +30370,11 @@ msgstr ""
 "Ez dago informaziorik %1$s fitxategi-formatuak %2$s-ra bihurtzeko.\n"
 "Definitu bihurtzailea hobespenetan."
 
-#: src/Converter.cpp:581 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
 msgid "Pygments driver command not found!"
 msgstr "Ez da Pygments kontrolatzailearen komandoa aurkitu."
 
-#: src/Converter.cpp:582 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -30403,16 +30396,16 @@ msgstr ""
 "\n"
 "non 'komandoa' kontrolatzailearen komandoaren izena den."
 
-#: src/Converter.cpp:688 src/Format.cpp:708 src/Format.cpp:778
+#: src/Converter.cpp:708 src/Format.cpp:708 src/Format.cpp:778
 msgid "Executing command: "
 msgstr "Komandoa exekutatzen: "
 
-#: src/Converter.cpp:753
+#: src/Converter.cpp:773
 #, fuzzy
 msgid "Process Killed"
 msgstr "&Jarraitu"
 
-#: src/Converter.cpp:754
+#: src/Converter.cpp:774
 #, fuzzy, c-format
 msgid ""
 "The conversion process was killed while running:\n"
@@ -30421,11 +30414,11 @@ msgstr ""
 "Errorea gertatu da hau exekutatzean:\n"
 "%1$s"
 
-#: src/Converter.cpp:759
+#: src/Converter.cpp:779
 msgid "Process Timed Out"
 msgstr ""
 
-#: src/Converter.cpp:760
+#: src/Converter.cpp:780
 #, c-format
 msgid ""
 "The conversion process:\n"
@@ -30433,15 +30426,15 @@ msgid ""
 "timed out before completing."
 msgstr ""
 
-#: src/Converter.cpp:765
+#: src/Converter.cpp:785
 msgid "Build errors"
 msgstr "Eraikitze-erroreak"
 
-#: src/Converter.cpp:766
+#: src/Converter.cpp:786
 msgid "There were errors during the build process."
 msgstr "Erroreak gertatu dira eraikitze prozesuan."
 
-#: src/Converter.cpp:771
+#: src/Converter.cpp:791
 #, c-format
 msgid ""
 "An error occurred while running:\n"
@@ -30450,46 +30443,46 @@ msgstr ""
 "Errorea gertatu da hau exekutatzean:\n"
 "%1$s"
 
-#: src/Converter.cpp:794
+#: src/Converter.cpp:814
 #, c-format
 msgid "Could not move a temporary directory from %1$s to %2$s."
 msgstr "Ezin izan da aldi baterako direktorioa lekuz aldatu: %1$s --> %2$s."
 
-#: src/Converter.cpp:837
+#: src/Converter.cpp:857
 #, c-format
 msgid "Could not copy a temporary file from %1$s to %2$s."
 msgstr "Ezin izan da aldi baterako fitxategia kopiatu: %1$s --> %2$s."
 
-#: src/Converter.cpp:838
+#: src/Converter.cpp:858
 #, c-format
 msgid "Could not move a temporary file from %1$s to %2$s."
 msgstr "Ezin izan da aldi-baterako fitxategia lekuz aldatu: %1$s --> %2$s."
 
-#: src/Converter.cpp:878
+#: src/Converter.cpp:898
 msgid "Running LaTeX..."
 msgstr "LaTeX exekutatzen..."
 
-#: src/Converter.cpp:895
+#: src/Converter.cpp:915
 #, fuzzy
 msgid "Export canceled"
 msgstr "Huts egin du esportatzean"
 
-#: src/Converter.cpp:896
+#: src/Converter.cpp:916
 msgid "The export process was terminated by the user."
 msgstr ""
 
-#: src/Converter.cpp:906
+#: src/Converter.cpp:926
 #, fuzzy
 msgid "Undefined reference"
 msgstr "Definitu &gabeko adarrak"
 
-#: src/Converter.cpp:907
+#: src/Converter.cpp:927
 msgid ""
 "Undefined references or citations were found during the build.\n"
 "Please check the warnings in the LaTeX log (Document > LaTeX Log)."
 msgstr ""
 
-#: src/Converter.cpp:919
+#: src/Converter.cpp:939
 #, c-format
 msgid ""
 "LaTeX did not run successfully. Additionally, LyX could not locate the LaTeX "
@@ -30498,11 +30491,11 @@ msgstr ""
 "LaTeX ez da ongi exekutatu. Gainera, LyX-ek ezin izan du LaTeX-en %1$s "
 "egunkaria aurkitu."
 
-#: src/Converter.cpp:922 src/Converter.cpp:929
+#: src/Converter.cpp:942 src/Converter.cpp:949
 msgid "LaTeX failed"
 msgstr "LaTeX-ek huts egin du"
 
-#: src/Converter.cpp:925
+#: src/Converter.cpp:945
 #, c-format
 msgid ""
 "The external program\n"
@@ -30515,11 +30508,11 @@ msgstr ""
 "errore batekin amaitu da. Gomendagarria da errorea sortzen duen arazoa "
 "konpontzea (begiratu egunkariak)."
 
-#: src/Converter.cpp:931
+#: src/Converter.cpp:951
 msgid "Output is empty"
 msgstr "Irteera hutsa dago"
 
-#: src/Converter.cpp:932
+#: src/Converter.cpp:952
 msgid "No output file was generated."
 msgstr "Ez da irteerako fitxategia sortu."
 
@@ -36715,55 +36708,55 @@ msgstr "Kodearen aurrebista"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1 aurrebista"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1662
+#: src/frontends/qt/GuiWorkArea.cpp:1684
 msgid "Close File"
 msgstr "Itxi fitxategia"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2309
+#: src/frontends/qt/GuiWorkArea.cpp:2331
 msgid "%1 (read only)"
 msgstr "%1 (irakurtzeko soilik)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2317
+#: src/frontends/qt/GuiWorkArea.cpp:2339
 msgid "%1 (modified externally)"
 msgstr "%1 (kanpoan eraldatua)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2361
 #, fuzzy
 msgid "&Hide Tab"
 msgstr "Ezkutatu fitxa"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2344
+#: src/frontends/qt/GuiWorkArea.cpp:2366
 #, fuzzy
 msgid "&Close Tab"
 msgstr "Itxi fitxa"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2370
 #, fuzzy
 msgid "Close &Other Tabs"
 msgstr "Itxi fitxa"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2372
 msgid "Close Tabs to the &Right"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2352
+#: src/frontends/qt/GuiWorkArea.cpp:2374
 msgid "Close Tabs to the &Left"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2379
 msgid "Move Tab to &Start"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2359
+#: src/frontends/qt/GuiWorkArea.cpp:2381
 msgid "Move Tab to &End"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2364
+#: src/frontends/qt/GuiWorkArea.cpp:2386
 #, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "&Ireki daukan direktorioa:"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2409
+#: src/frontends/qt/GuiWorkArea.cpp:2431
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>%1 fitxategia diskoan aldatu egin da.</b>"
 
@@ -39666,6 +39659,19 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Erabiltzaile ezezaguna"
+
+#~ msgid "XHTML Output Options"
+#~ msgstr "XHTML irteeraren aukerak"
+
+#~ msgid "Scaling factor for images used for math output."
+#~ msgstr "Irudiak eskalatzeko faktorea matematikaren irteeran erabiltzeko."
+
+#~ msgid "Math &image scaling:"
+#~ msgstr "Matematikako &irudien eskala:"
+
+#, fuzzy
+#~ msgid "DocBook Output Options"
+#~ msgstr "XHTML irteeraren aukerak"
 
 # Fitxategiaren luzapena edo formatua dela dirudi
 #~ msgid "tgo"

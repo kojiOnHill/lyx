@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.3.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-17 19:38-0400\n"
+"POT-Creation-Date: 2024-08-22 21:06-0400\n"
 "PO-Revision-Date: 2019-04-23 13:49+0300\n"
 "Last-Translator: V. Jeliazkov <vveesskkoo@google.com>\n"
 "Language-Team: Bulgarian <lyx-docs@lists.lyx.org>\n"
@@ -827,7 +827,7 @@ msgstr "Изтриване на избраното разклонение."
 
 # src/frontends/kde/dlg/paradlgdata.C:82
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Remove"
 msgstr "&Премахване"
 
@@ -918,7 +918,7 @@ msgstr "Добавяне на всички"
 # src/frontends/kde/dlg/tabcreatedlgdata.C:60 src/frontends/kde/indexdlg.C:65
 # src/frontends/kde/refdlg.C:92 src/frontends/kde/urldlg.C:58
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4795 src/Buffer.cpp:4905 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -3937,168 +3937,12 @@ msgstr "Показване в съдържанието"
 msgid "&Numbering"
 msgstr "&Номериране"
 
-# src/ext_l10n.h:265
-#: src/frontends/qt/ui/OutputUi.ui:37
-#, fuzzy
-msgid "&LaTeX"
-msgstr "LaTeX"
-
-# src/frontends/xforms/form_preferences.C:926
-#: src/frontends/qt/ui/OutputUi.ui:43
-msgid "LaTeX Output Options"
-msgstr "Опции на LaTeX за крайния файл"
-
-#: src/frontends/qt/ui/OutputUi.ui:51
-msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
-msgstr ""
-"Позволява търсене напред и назад между LyX-редактора и изходния резултат "
-"(напр. от SyncTeX)"
-
-#: src/frontends/qt/ui/OutputUi.ui:54
-msgid "S&ynchronize with output"
-msgstr "&Синхронизиране с изхода"
-
-# src/ext_l10n.h:215
-#: src/frontends/qt/ui/OutputUi.ui:85
-msgid "C&ustom macro:"
-msgstr "&Вмъкване на LaTeX команда:"
-
-# src/lyx_cb.C:675
-#: src/frontends/qt/ui/OutputUi.ui:95
-msgid "Custom LaTeX preamble macro"
-msgstr "Избиране на LaTeX команда за вмъкване в заглавната част"
-
-#: src/frontends/qt/ui/OutputUi.ui:122
-msgid ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:125
-msgid "Put fra&gile content out of moving arguments"
-msgstr ""
-
-#: src/frontends/qt/ui/OutputUi.ui:149
-#, fuzzy
-msgid "&XHTML"
-msgstr "HTML"
-
-# src/frontends/xforms/form_preferences.C:926
-#: src/frontends/qt/ui/OutputUi.ui:155
-msgid "XHTML Output Options"
-msgstr "Опции при извеждане на XHTML"
-
-# src/frontends/kde/dlg/printdlgdata.C:88
-# src/frontends/xforms/form_print.C:138
-#: src/frontends/qt/ui/OutputUi.ui:164
-msgid "Write CSS to file"
-msgstr "Записване на CSS във файл"
-
-#: src/frontends/qt/ui/OutputUi.ui:176
-msgid "Scaling factor for images used for math output."
-msgstr ""
-"Коефицент за мащаба на изображението, в резултат от обработката на "
-"математическите символи"
-
-#: src/frontends/qt/ui/OutputUi.ui:200 src/frontends/qt/ui/OutputUi.ui:397
-msgid "Format to use for math output."
-msgstr ""
-"Избиране на изходен формат за резултата от обработката на математическите "
-"символи"
-
-# src/frontends/xforms/form_document.C:587
-#: src/frontends/qt/ui/OutputUi.ui:204
-msgid "MathML"
-msgstr "МаthML"
-
-#: src/frontends/qt/ui/OutputUi.ui:209 src/frontends/qt/ui/OutputUi.ui:401
-#: lib/configure.py:853
-msgid "HTML"
-msgstr "HTML"
-
-# src/frontends/kde/dlg/printdlgdata.C:42
-#: src/frontends/qt/ui/OutputUi.ui:214
-msgid "Images"
-msgstr "Изображения"
-
-# src/ext_l10n.h:265
-#: src/frontends/qt/ui/OutputUi.ui:219 lib/layouts/aapaper.layout:63
-#: lib/layouts/egs.layout:720 lib/languages:147
-#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
-#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
-msgid "LaTeX"
-msgstr "LaTeX"
-
-# src/mathed/math_panel.C:128
-#: src/frontends/qt/ui/OutputUi.ui:232
-msgid "Math &image scaling:"
-msgstr "Мащаб на математ. изображение:"
-
-#: src/frontends/qt/ui/OutputUi.ui:255
-msgid "Whether to comply strictly with XHTML 1.1."
-msgstr "Спазвана стриктен XHTML 1.1 стандарт"
-
-#: src/frontends/qt/ui/OutputUi.ui:258
-msgid "&Strict XHTML 1.1"
-msgstr "&Стриктен XHTML 1.1"
-
-# src/frontends/xforms/FormPreferences.C:232
-#: src/frontends/qt/ui/OutputUi.ui:270
-msgid "&Math output:"
-msgstr "&Математически изходен резултат:"
-
-#: src/frontends/qt/ui/OutputUi.ui:297
-#, fuzzy
-msgid "&DocBook"
-msgstr "DocBook"
-
-# src/frontends/xforms/form_preferences.C:926
-#: src/frontends/qt/ui/OutputUi.ui:303
-msgid "DocBook Output Options"
-msgstr "Опции при извеждане на DocBook"
-
-#: src/frontends/qt/ui/OutputUi.ui:323
-msgid ""
-"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
-"code> prefix, the MathML tags will be output like <code>m:math</code>."
-msgstr ""
-"Именовано пространство за използване във формулите на MathML. Например с "
-"префикс <code>m</code> елементите на MathML ще се изведат като <code>m:math</"
-"code>."
-
-#: src/frontends/qt/ui/OutputUi.ui:327
-msgid "No prefix (namespace defined inline for each tag)"
-msgstr "Без префикс - именното пространство се дефинира за всеки елемент"
-
-# src/ext_l10n.h:133
-#: src/frontends/qt/ui/OutputUi.ui:332
-msgid "m (default)"
-msgstr "m (по подразбиране)"
-
-#: src/frontends/qt/ui/OutputUi.ui:337
-msgid "mml"
-msgstr "mml"
-
-# src/frontends/xforms/FormPreferences.C:232
-#: src/frontends/qt/ui/OutputUi.ui:376
-msgid "&Table output:"
-msgstr "Формат за &таблици:"
-
-#: src/frontends/qt/ui/OutputUi.ui:406
-msgid "CALS"
-msgstr "CALS"
-
-#: src/frontends/qt/ui/OutputUi.ui:419
-msgid "&MathML namespace prefix:"
-msgstr "&Именовано пространство в MathML:"
-
 # src/frontends/xforms/FormPreferences.C:252
-#: src/frontends/qt/ui/OutputUi.ui:449
+#: src/frontends/qt/ui/OutputUi.ui:28
 msgid "LyX Format"
 msgstr "LyX формат"
 
-#: src/frontends/qt/ui/OutputUi.ui:461
+#: src/frontends/qt/ui/OutputUi.ui:40
 msgid ""
 "Save all parameters in the LyX file, including ones that are frequently "
 "switched or that are specific to the user (such as the output of the tracked "
@@ -4111,28 +3955,174 @@ msgstr ""
 "помага при съвместна работа върху един файл и при работа със ситема за "
 "управление на версиите."
 
-#: src/frontends/qt/ui/OutputUi.ui:464
+#: src/frontends/qt/ui/OutputUi.ui:43
 msgid "Save &transient properties"
 msgstr "Запазване на преходните настройки"
 
 # src/frontends/kde/tocdlg.C:57
-#: src/frontends/qt/ui/OutputUi.ui:474
+#: src/frontends/qt/ui/OutputUi.ui:59
 msgid "Output Format"
 msgstr "Изходен формат"
 
 # src/lyxrc.C:1838
-#: src/frontends/qt/ui/OutputUi.ui:515 src/frontends/qt/ui/OutputUi.ui:528
+#: src/frontends/qt/ui/OutputUi.ui:100 src/frontends/qt/ui/OutputUi.ui:113
 msgid "Specify the default output format (for view/update)"
 msgstr ""
 "Изберете изходния формат по подразбиране за предварителен преглед и "
 "актуализация."
 
 # src/frontends/xforms/form_preferences.C:221
-#: src/frontends/qt/ui/OutputUi.ui:518
+#: src/frontends/qt/ui/OutputUi.ui:103
 msgid "De&fault output format:"
 msgstr "&Изходен формат по подразбиране:"
 
-#: src/frontends/qt/ui/OutputUi.ui:553
+# src/frontends/xforms/form_preferences.C:926
+#: src/frontends/qt/ui/OutputUi.ui:144
+#, fuzzy
+msgid "Output Options"
+msgstr "Опции на LaTeX за крайния файл"
+
+#: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
+msgid ""
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:160
+msgid "Scaling of generated &images:"
+msgstr ""
+
+# src/ext_l10n.h:265
+#: src/frontends/qt/ui/OutputUi.ui:219
+#, fuzzy
+msgid "&LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:225
+msgid ""
+"If this is checked, fragile items such as labels and index entries are moved "
+"out of moving arguments such as sections and captions. This prevents LaTeX "
+"errors that can happen in such cases. It is recommended to keep this on."
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:228
+msgid "Put fra&gile content out of moving arguments"
+msgstr ""
+
+#: src/frontends/qt/ui/OutputUi.ui:237
+msgid "Enable forward/reverse search between editor and output (e.g., SyncTeX)"
+msgstr ""
+"Позволява търсене напред и назад между LyX-редактора и изходния резултат "
+"(напр. от SyncTeX)"
+
+#: src/frontends/qt/ui/OutputUi.ui:240
+msgid "S&ynchronize with output"
+msgstr "&Синхронизиране с изхода"
+
+# src/ext_l10n.h:215
+#: src/frontends/qt/ui/OutputUi.ui:271
+msgid "C&ustom macro:"
+msgstr "&Вмъкване на LaTeX команда:"
+
+# src/lyx_cb.C:675
+#: src/frontends/qt/ui/OutputUi.ui:281
+msgid "Custom LaTeX preamble macro"
+msgstr "Избиране на LaTeX команда за вмъкване в заглавната част"
+
+#: src/frontends/qt/ui/OutputUi.ui:309
+#, fuzzy
+msgid "&XHTML"
+msgstr "HTML"
+
+#: src/frontends/qt/ui/OutputUi.ui:317
+msgid "Whether to comply strictly with XHTML 1.1."
+msgstr "Спазвана стриктен XHTML 1.1 стандарт"
+
+#: src/frontends/qt/ui/OutputUi.ui:320
+msgid "&Strict XHTML 1.1"
+msgstr "&Стриктен XHTML 1.1"
+
+# src/frontends/kde/dlg/printdlgdata.C:88
+# src/frontends/xforms/form_print.C:138
+#: src/frontends/qt/ui/OutputUi.ui:327
+msgid "Write CSS to file"
+msgstr "Записване на CSS във файл"
+
+# src/frontends/xforms/FormPreferences.C:232
+#: src/frontends/qt/ui/OutputUi.ui:356
+msgid "&Math output:"
+msgstr "&Математически изходен резултат:"
+
+#: src/frontends/qt/ui/OutputUi.ui:371 src/frontends/qt/ui/OutputUi.ui:448
+msgid "Format to use for math output."
+msgstr ""
+"Избиране на изходен формат за резултата от обработката на математическите "
+"символи"
+
+# src/frontends/xforms/form_document.C:587
+#: src/frontends/qt/ui/OutputUi.ui:375
+msgid "MathML"
+msgstr "МаthML"
+
+#: src/frontends/qt/ui/OutputUi.ui:380 src/frontends/qt/ui/OutputUi.ui:452
+#: lib/configure.py:853
+msgid "HTML"
+msgstr "HTML"
+
+# src/frontends/kde/dlg/printdlgdata.C:42
+#: src/frontends/qt/ui/OutputUi.ui:385
+msgid "Images"
+msgstr "Изображения"
+
+# src/ext_l10n.h:265
+#: src/frontends/qt/ui/OutputUi.ui:390 lib/layouts/aapaper.layout:63
+#: lib/layouts/egs.layout:720 lib/languages:147
+#: src/frontends/qt/GuiDocument.cpp:1662 src/frontends/qt/GuiErrorList.cpp:50
+#: src/frontends/qt/GuiLog.cpp:241 src/frontends/qt/GuiPrefs.cpp:529
+msgid "LaTeX"
+msgstr "LaTeX"
+
+#: src/frontends/qt/ui/OutputUi.ui:414
+#, fuzzy
+msgid "&DocBook"
+msgstr "DocBook"
+
+# src/frontends/xforms/FormPreferences.C:232
+#: src/frontends/qt/ui/OutputUi.ui:427
+msgid "&Table output:"
+msgstr "Формат за &таблици:"
+
+#: src/frontends/qt/ui/OutputUi.ui:457
+msgid "CALS"
+msgstr "CALS"
+
+#: src/frontends/qt/ui/OutputUi.ui:487
+msgid "&MathML namespace prefix:"
+msgstr "&Именовано пространство в MathML:"
+
+#: src/frontends/qt/ui/OutputUi.ui:508
+msgid ""
+"Namespace prefix to use for MathML formulae. For instance, with the <code>m</"
+"code> prefix, the MathML tags will be output like <code>m:math</code>."
+msgstr ""
+"Именовано пространство за използване във формулите на MathML. Например с "
+"префикс <code>m</code> елементите на MathML ще се изведат като <code>m:math</"
+"code>."
+
+#: src/frontends/qt/ui/OutputUi.ui:512
+msgid "No prefix (namespace defined inline for each tag)"
+msgstr "Без префикс - именното пространство се дефинира за всеки елемент"
+
+# src/ext_l10n.h:133
+#: src/frontends/qt/ui/OutputUi.ui:517
+msgid "m (default)"
+msgstr "m (по подразбиране)"
+
+#: src/frontends/qt/ui/OutputUi.ui:522
+msgid "mml"
+msgstr "mml"
+
+#: src/frontends/qt/ui/OutputUi.ui:552
 msgid ""
 "Runs the LaTeX backend with the -shell-escape option (Warning: use only when "
 "really necessary)"
@@ -4141,7 +4131,7 @@ msgstr ""
 "Внимание: използвайте само при необходимост поради риск за сигурността - "
 "изпълнение на произволни команди скрити в LaTeX скрипт."
 
-#: src/frontends/qt/ui/OutputUi.ui:556
+#: src/frontends/qt/ui/OutputUi.ui:555
 msgid "&Allow running external programs"
 msgstr "Рарешава се стартиране на &външни програми от LaTeX скрипт"
 
@@ -33211,7 +33201,7 @@ msgstr ""
 "преобразува."
 
 # src/lyxfunc.C:342
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4805 src/Buffer.cpp:4914
+#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
 msgid "File is read-only"
 msgstr "Файла е само за четене"
 
@@ -33613,25 +33603,25 @@ msgid ""
 msgstr ""
 
 # src/exporter.C:89
-#: src/Buffer.cpp:4682 src/Buffer.cpp:4712 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
 #, fuzzy
 msgid "Document export cancelled."
 msgstr "Документът ще бъде експортиран във формат "
 
 # src/exporter.C:89
-#: src/Buffer.cpp:4715
+#: src/Buffer.cpp:4716
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "Документът е експортиран като „%1$s“ във файл „%2$s“."
 
 # src/exporter.C:89
-#: src/Buffer.cpp:4722
+#: src/Buffer.cpp:4723
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "Документът e експортиран като „%1$s“."
 
 # src/bufferlist.C:356
-#: src/Buffer.cpp:4791
+#: src/Buffer.cpp:4792
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -33643,42 +33633,42 @@ msgstr ""
 "Желаете ли да възстановите документа от аварийното копие?"
 
 # заглавие на диалог
-#: src/Buffer.cpp:4794
+#: src/Buffer.cpp:4795
 msgid "Load emergency save?"
 msgstr "Възстановяване на документ"
 
 # src/frontends/kde/dlg/paradlgdata.C:82
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Recover"
 msgstr "Зареждане на &аварийното копие"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 msgid "&Load Original"
 msgstr "Зареждане на &първоначалния файл"
 
 # src/ext_l10n.h:329
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4796
 #, fuzzy
 msgid "&Only show difference"
 msgstr "Препратки"
 
-#: src/Buffer.cpp:4806
+#: src/Buffer.cpp:4807
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
 "marked read-only. Please make sure to save the document as a different file."
 msgstr ""
 
-#: src/Buffer.cpp:4813
+#: src/Buffer.cpp:4814
 msgid "Document was successfully recovered."
 msgstr "Документа беше успешно възстановен."
 
-#: src/Buffer.cpp:4815
+#: src/Buffer.cpp:4816
 msgid "Document was NOT successfully recovered."
 msgstr "Документа НЕ беше успешно възстановен."
 
 # src/LyXAction.C:185
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4817
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -33689,36 +33679,36 @@ msgstr ""
 
 # заглавие на диалог
 # src/LyXAction.C:185
-#: src/Buffer.cpp:4820 src/Buffer.cpp:4832
+#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
 msgid "Delete emergency file?"
 msgstr "Изтриване на авариен файл"
 
 # src/ext_l10n.h:191
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4834
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
 msgid "&Keep"
 msgstr "&Запазване"
 
 # заглавие на диалог
-#: src/Buffer.cpp:4825
+#: src/Buffer.cpp:4826
 msgid "Emergency file deleted"
 msgstr "Откриване на наличен авариен файл"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4827
 msgid "Do not forget to save your file now!"
 msgstr "Не забравяйте да запазите вашия файл!"
 
-#: src/Buffer.cpp:4833
+#: src/Buffer.cpp:4834
 msgid "Remove emergency file now?"
 msgstr "Да се премахне ли аварийния файл?"
 
 # заглавие на диалог
 # src/LyXAction.C:185
-#: src/Buffer.cpp:4856
+#: src/Buffer.cpp:4857
 #, fuzzy
 msgid "Can't rename emergency file!"
 msgstr "Изтриване на авариен файл"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4858
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
@@ -33726,20 +33716,20 @@ msgid ""
 msgstr ""
 
 # заглавие на диалог
-#: src/Buffer.cpp:4862
+#: src/Buffer.cpp:4863
 #, fuzzy
 msgid "Emergency File Renamed"
 msgstr "Откриване на наличен авариен файл"
 
 # заглавие на диалог
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4864
 #, fuzzy, c-format
 msgid ""
 "Emergency file renamed as:\n"
 " %1$s"
 msgstr "Откриване на наличен авариен файл"
 
-#: src/Buffer.cpp:4902
+#: src/Buffer.cpp:4903
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -33751,20 +33741,20 @@ msgstr ""
 "Желаете ли да се зареди резервното копие?"
 
 # src/frontends/gnome/FormRef.C:49 src/frontends/xforms/FormRef.C:214
-#: src/Buffer.cpp:4904
+#: src/Buffer.cpp:4905
 msgid "Load backup?"
 msgstr "Да се зареди ли резервното копие?"
 
 # src/frontends/kde/FormRef.C:103
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "&Load backup"
 msgstr "Зареждане на резервното &копие"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4906
 msgid "Load &original"
 msgstr "Зареждане на &работния файл"
 
-#: src/Buffer.cpp:4915
+#: src/Buffer.cpp:4916
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -33774,27 +33764,27 @@ msgstr ""
 "отбелязан само за четене. Уверете се, че запазвате документа под друто име. "
 
 # src/ext_l10n.h:163
-#: src/Buffer.cpp:5300
+#: src/Buffer.cpp:5301
 msgid "Senseless!!! "
 msgstr "Объркване!!!"
 
 # src/MenuBackend.C:263
-#: src/Buffer.cpp:5578
+#: src/Buffer.cpp:5579
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "Документът „%1$s“ е презареден!"
 
 # src/lyxfunc.C:3185
-#: src/Buffer.cpp:5581
+#: src/Buffer.cpp:5582
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "Документът „%1$s“ не може да се презареди."
 
-#: src/Buffer.cpp:5742
+#: src/Buffer.cpp:5743
 msgid "File deleted from disk"
 msgstr ""
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5744
 #, c-format
 msgid ""
 "The file\n"
@@ -34853,7 +34843,7 @@ msgstr "наследяване"
 msgid "ignore"
 msgstr "игнориране"
 
-#: src/Converter.cpp:318
+#: src/Converter.cpp:321
 #, c-format
 msgid ""
 "<p>The following LaTeX backend has been configured to allow execution of "
@@ -34864,11 +34854,11 @@ msgid ""
 msgstr ""
 
 # src/lyx_gui.C:347
-#: src/Converter.cpp:327
+#: src/Converter.cpp:330
 msgid "Security Warning"
 msgstr "Предупреждение за сигурността"
 
-#: src/Converter.cpp:342
+#: src/Converter.cpp:345
 #, fuzzy, c-format
 msgid ""
 "<p>The following LaTeX backend has been requested to allow execution of "
@@ -34881,7 +34871,7 @@ msgstr ""
 "подаде зловредно написан LyX документ тази външна програма може да извърши "
 "произволни, включително и опасни, операции във вашата операционна система."
 
-#: src/Converter.cpp:349
+#: src/Converter.cpp:352
 #, fuzzy, c-format
 msgid ""
 "<p>The requested operation requires the use of a converter from %2$s to %3$s:"
@@ -34894,11 +34884,11 @@ msgstr ""
 "подаде зловредно написан LyX документ тази външна програма може да извърши "
 "произволни, включително и опасни, операции във вашата операционна система."
 
-#: src/Converter.cpp:359
+#: src/Converter.cpp:362
 msgid "An external converter is disabled for security reasons"
 msgstr "Външна конвертираща програма е изключена от съображения за сигурност"
 
-#: src/Converter.cpp:361
+#: src/Converter.cpp:364
 msgid ""
 "<p><b>Your current preference settings forbid its execution.</b></p><p>(To "
 "change this setting, go to <i>Preferences &#x25b9; File Handling &#x25b9; "
@@ -34910,21 +34900,21 @@ msgstr ""
 "<Работа с файлове &#x25b9; Конвертиране &#x25b9; </i> и в полето "
 "<i>Сигурност</i> премахнете <i>Забрани конвертори с „needauth“</i></p>"
 
-#: src/Converter.cpp:370
+#: src/Converter.cpp:373
 msgid "A LaTeX backend requires your authorization"
 msgstr ""
 
-#: src/Converter.cpp:371
+#: src/Converter.cpp:374
 msgid "An external converter requires your authorization"
 msgstr "Външна програма изисква вашето позволение"
 
-#: src/Converter.cpp:374
+#: src/Converter.cpp:377
 msgid ""
 "<p>Should LaTeX backends be allowed to run external programs?</p><p><b>Allow "
 "them only if you trust the origin/sender of the LyX document!</b></p>"
 msgstr ""
 
-#: src/Converter.cpp:377
+#: src/Converter.cpp:380
 msgid ""
 "<p>Would you like to run this converter?</p><p><b>Only run if you trust the "
 "origin/sender of the LyX document!</b></p>"
@@ -34933,44 +34923,44 @@ msgstr ""
 "знаете произхода документа."
 
 # src/lyx_cb.C:263
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 #, fuzzy
 msgid "Do &not allow"
 msgstr "Не се зарежда"
 
 # src/lyx_cb.C:263
-#: src/Converter.cpp:381
+#: src/Converter.cpp:384
 msgid "Do &not run"
 msgstr "Забраняване"
 
 # src/LColor.C:60
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 #, fuzzy
 msgid "A&llow"
 msgstr "жълт"
 
-#: src/Converter.cpp:382
+#: src/Converter.cpp:385
 msgid "&Run"
 msgstr "Позволяване"
 
 # src/LyXAction.C:141
-#: src/Converter.cpp:384
+#: src/Converter.cpp:387
 msgid "&Always allow for this document"
 msgstr "Позволяване винаги само за този документ"
 
 # src/LyXAction.C:141
-#: src/Converter.cpp:385
+#: src/Converter.cpp:388
 #, fuzzy
 msgid "&Always run for this document"
 msgstr "Нов документ"
 
 # src/ext_l10n.h:93
-#: src/Converter.cpp:455 src/Converter.cpp:712 src/Converter.cpp:741
+#: src/Converter.cpp:459 src/Converter.cpp:732 src/Converter.cpp:761
 #, fuzzy
 msgid "Converter killed"
 msgstr "Файлов кеш за конвертора"
 
-#: src/Converter.cpp:456 src/Converter.cpp:713 src/Converter.cpp:742
+#: src/Converter.cpp:460 src/Converter.cpp:733 src/Converter.cpp:762
 #, c-format
 msgid ""
 "The following converter was killed by the user.\n"
@@ -34980,23 +34970,23 @@ msgstr ""
 " %1$s\n"
 
 # src/converter.C:552 src/converter.C:645
-#: src/Converter.cpp:475 src/Converter.cpp:770 src/Converter.cpp:793
-#: src/Converter.cpp:835
+#: src/Converter.cpp:479 src/Converter.cpp:790 src/Converter.cpp:813
+#: src/Converter.cpp:855
 msgid "Cannot convert file"
 msgstr "Неуспех при преобразуване на файл"
 
-#: src/Converter.cpp:476
+#: src/Converter.cpp:480
 #, c-format
 msgid ""
 "No information for converting %1$s format files to %2$s.\n"
 "Define a converter in the preferences."
 msgstr ""
 
-#: src/Converter.cpp:581 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
 msgid "Pygments driver command not found!"
 msgstr ""
 
-#: src/Converter.cpp:582 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -35010,26 +35000,26 @@ msgid ""
 msgstr ""
 
 # src/converter.C:188 src/converter.C:618
-#: src/Converter.cpp:688 src/Format.cpp:708 src/Format.cpp:778
+#: src/Converter.cpp:708 src/Format.cpp:708 src/Format.cpp:778
 msgid "Executing command: "
 msgstr "Изпълняване на команда:"
 
-#: src/Converter.cpp:753
+#: src/Converter.cpp:773
 msgid "Process Killed"
 msgstr "Прекъснат процес"
 
-#: src/Converter.cpp:754
+#: src/Converter.cpp:774
 #, c-format
 msgid ""
 "The conversion process was killed while running:\n"
 "%1$s"
 msgstr ""
 
-#: src/Converter.cpp:759
+#: src/Converter.cpp:779
 msgid "Process Timed Out"
 msgstr "Просрочено време на процес"
 
-#: src/Converter.cpp:760
+#: src/Converter.cpp:780
 #, c-format
 msgid ""
 "The conversion process:\n"
@@ -35038,17 +35028,17 @@ msgid ""
 msgstr ""
 
 # src/ext_l10n.h:131
-#: src/Converter.cpp:765
+#: src/Converter.cpp:785
 msgid "Build errors"
 msgstr "Грешки при компилация"
 
 # src/converter.C:642
-#: src/Converter.cpp:766
+#: src/Converter.cpp:786
 msgid "There were errors during the build process."
 msgstr "Имаше грешки по време на компилирането."
 
 # src/lyx_main.C:605
-#: src/Converter.cpp:771
+#: src/Converter.cpp:791
 #, c-format
 msgid ""
 "An error occurred while running:\n"
@@ -35056,50 +35046,50 @@ msgid ""
 msgstr ""
 
 # src/support/filetools.C:453
-#: src/Converter.cpp:794
+#: src/Converter.cpp:814
 #, c-format
 msgid "Could not move a temporary directory from %1$s to %2$s."
 msgstr "Не може да се премести временната директория от %1$s на %2$s."
 
 # src/support/filetools.C:453
-#: src/Converter.cpp:837
+#: src/Converter.cpp:857
 #, fuzzy, c-format
 msgid "Could not copy a temporary file from %1$s to %2$s."
 msgstr "Грешка! Не мога да създам временна директория: "
 
 # src/support/filetools.C:453
-#: src/Converter.cpp:838
+#: src/Converter.cpp:858
 #, fuzzy, c-format
 msgid "Could not move a temporary file from %1$s to %2$s."
 msgstr "Грешка! Не мога да създам временна директория: "
 
 # src/converter.C:816
-#: src/Converter.cpp:878
+#: src/Converter.cpp:898
 msgid "Running LaTeX..."
 msgstr "Стратирам LaTeX..."
 
 # src/exporter.C:89
-#: src/Converter.cpp:895
+#: src/Converter.cpp:915
 #, fuzzy
 msgid "Export canceled"
 msgstr "Документът ще бъде експортиран във формат "
 
-#: src/Converter.cpp:896
+#: src/Converter.cpp:916
 msgid "The export process was terminated by the user."
 msgstr ""
 
 # src/form1.C:33
-#: src/Converter.cpp:906
+#: src/Converter.cpp:926
 msgid "Undefined reference"
 msgstr "Неопределена препратка"
 
-#: src/Converter.cpp:907
+#: src/Converter.cpp:927
 msgid ""
 "Undefined references or citations were found during the build.\n"
 "Please check the warnings in the LaTeX log (Document > LaTeX Log)."
 msgstr ""
 
-#: src/Converter.cpp:919
+#: src/Converter.cpp:939
 #, c-format
 msgid ""
 "LaTeX did not run successfully. Additionally, LyX could not locate the LaTeX "
@@ -35107,12 +35097,12 @@ msgid ""
 msgstr ""
 
 # src/ext_l10n.h:133
-#: src/Converter.cpp:922 src/Converter.cpp:929
+#: src/Converter.cpp:942 src/Converter.cpp:949
 #, fuzzy
 msgid "LaTeX failed"
 msgstr "LaTeX Протокол(L)|L"
 
-#: src/Converter.cpp:925
+#: src/Converter.cpp:945
 #, c-format
 msgid ""
 "The external program\n"
@@ -35124,11 +35114,11 @@ msgstr ""
 # "Външната програма\n"
 # ""
 # src/frontends/kde/tocdlg.C:57
-#: src/Converter.cpp:931
+#: src/Converter.cpp:951
 msgid "Output is empty"
 msgstr "Няма изходящи данни"
 
-#: src/Converter.cpp:932
+#: src/Converter.cpp:952
 msgid "No output file was generated."
 msgstr "Не беше съставен изходен файл."
 
@@ -41968,23 +41958,23 @@ msgstr "%1[[preview format name]]"
 # src/frontends/xforms/FormBase.h:152 src/frontends/xforms/FormInset.h:30
 # src/frontends/xforms/FormInset.h:54 src/layout_forms.C:52 src/log_form.C:21
 # src/lyxvc.C:263 src/mathed/math_forms.C:177
-#: src/frontends/qt/GuiWorkArea.cpp:1662
+#: src/frontends/qt/GuiWorkArea.cpp:1684
 #, fuzzy
 msgid "Close File"
 msgstr "Затвори"
 
 # src/LyXView.C:372
-#: src/frontends/qt/GuiWorkArea.cpp:2309
+#: src/frontends/qt/GuiWorkArea.cpp:2331
 msgid "%1 (read only)"
 msgstr "%1 (само за четене)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2317
+#: src/frontends/qt/GuiWorkArea.cpp:2339
 msgid "%1 (modified externally)"
 msgstr "%1 (променен от външна програма)"
 
 # src/frontends/xforms/form_graphics.C:61
 # src/frontends/xforms/form_graphics.C:82 src/lyxfont.C:411
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2361
 #, fuzzy
 msgid "&Hide Tab"
 msgstr "Стандартно"
@@ -41994,7 +41984,7 @@ msgstr "Стандартно"
 # src/frontends/xforms/FormBase.h:152 src/frontends/xforms/FormInset.h:30
 # src/frontends/xforms/FormInset.h:54 src/layout_forms.C:52 src/log_form.C:21
 # src/lyxvc.C:263 src/mathed/math_forms.C:177
-#: src/frontends/qt/GuiWorkArea.cpp:2344
+#: src/frontends/qt/GuiWorkArea.cpp:2366
 #, fuzzy
 msgid "&Close Tab"
 msgstr "Затвори"
@@ -42004,34 +41994,34 @@ msgstr "Затвори"
 # src/frontends/xforms/FormBase.h:152 src/frontends/xforms/FormInset.h:30
 # src/frontends/xforms/FormInset.h:54 src/layout_forms.C:52 src/log_form.C:21
 # src/lyxvc.C:263 src/mathed/math_forms.C:177
-#: src/frontends/qt/GuiWorkArea.cpp:2348
+#: src/frontends/qt/GuiWorkArea.cpp:2370
 #, fuzzy
 msgid "Close &Other Tabs"
 msgstr "Затвори"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2350
+#: src/frontends/qt/GuiWorkArea.cpp:2372
 msgid "Close Tabs to the &Right"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2352
+#: src/frontends/qt/GuiWorkArea.cpp:2374
 msgid "Close Tabs to the &Left"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2357
+#: src/frontends/qt/GuiWorkArea.cpp:2379
 msgid "Move Tab to &Start"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2359
+#: src/frontends/qt/GuiWorkArea.cpp:2381
 msgid "Move Tab to &End"
 msgstr ""
 
 # src/lyx_main.C:575
-#: src/frontends/qt/GuiWorkArea.cpp:2364
+#: src/frontends/qt/GuiWorkArea.cpp:2386
 #, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "&Отваряне на директорията с журнала"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2409
+#: src/frontends/qt/GuiWorkArea.cpp:2431
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>Файлът %1 беше променен на диска.</b>"
 
@@ -45218,6 +45208,23 @@ msgstr ""
 #, fuzzy
 msgid "Unknown user"
 msgstr "Непознато действие"
+
+# src/frontends/xforms/form_preferences.C:926
+#~ msgid "XHTML Output Options"
+#~ msgstr "Опции при извеждане на XHTML"
+
+#~ msgid "Scaling factor for images used for math output."
+#~ msgstr ""
+#~ "Коефицент за мащаба на изображението, в резултат от обработката на "
+#~ "математическите символи"
+
+# src/mathed/math_panel.C:128
+#~ msgid "Math &image scaling:"
+#~ msgstr "Мащаб на математ. изображение:"
+
+# src/frontends/xforms/form_preferences.C:926
+#~ msgid "DocBook Output Options"
+#~ msgstr "Опции при извеждане на DocBook"
 
 # src/frontends/kde/dlg/paraextradlgdata.C:142
 #~ msgid "tgo"
