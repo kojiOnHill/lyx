@@ -871,7 +871,7 @@ string BufferParams::readToken(Lexer & lex, string const & token,
 		lex >> lang;
 		lex.eatLine();
 		string const opts = lex.getString();
-		lang_options_babel_[lang] = opts;
+		lang_options_babel_[lang] = trim(opts, "\"");
 	} else if (token == "\\language_options_polyglossia") {
 		string lang;
 		lex >> lang;
@@ -1370,12 +1370,14 @@ void BufferParams::writeFile(ostream & os, Buffer const * buf) const
 	// then the text parameters
 	if (language != ignore_language)
 		os << "\\language " << language->lang() << '\n';
-	for (auto const & s : lang_options_babel_)
-		os << "\\language_options_babel " << s.first << " " << s.second << '\n';
+	for (auto const & s : lang_options_babel_) {
+		if (!s.second.empty())
+			os << "\\language_options_babel " << s.first << " \"" << s.second << "\"\n";
+	}
 	for (auto const & s : lang_options_polyglossia_) {
 		Language const * l = languages.getLanguage(s.first);
 		if (l && l->polyglossiaOpts() != s.second)
-			// polyglossia options can be empty, so we enquote them
+			// polyglossia options can be empty
 			os << "\\language_options_polyglossia " << s.first << " \"" << s.second << "\"\n";
 	}
 	os << "\\language_package " << lang_package
