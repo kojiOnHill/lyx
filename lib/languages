@@ -8,6 +8,7 @@
 #	GuiName            "<Gui Name>"
 #	HasGuiSupport      <true|false>
 #	BabelName          <babelname>
+#       BabelOptFormat     <format of option specification>
 #	PolyglossiaName    <polyglossianame>
 #	PolyglossiaOpts    "<language-specific options>"
 #	XindyName          <xindyname>
@@ -128,6 +129,10 @@
 #   be de-activated in some contexts (such as - or =).
 # * XindyName holds the value to the (te)xindy -L option. We only give it
 #   if a corresponding language module exists.
+# * BabelOptFormat specifies how the language-specific options shall be
+#   passed with babel (which differs between languages).
+#   Default is \languageattribute{$lang$}{$opts$}
+#   The special value "modifier" indicates to use babel modifiers.
 #
 ##########################################################################
 
@@ -706,6 +711,7 @@ Language french
 	GuiName          "French"
 	HasGuiSupport    true
 	BabelName        french
+	BabelOptFormat   \frenchsetup{$opts§}
 	ActiveChars      ;!?:
 	PolyglossiaName  french
 	XindyName        french
@@ -1038,6 +1044,7 @@ End
 Language latin
 	GuiName          "Latin"
 	BabelName        latin
+	BabelOptFormat   modifier
 	PolyglossiaName  latin
 	XindyName        latin
 	ActiveChars      ^=
@@ -1111,6 +1118,7 @@ Language magyar
 	GuiName          "Hungarian"
 	HasGuiSupport    true
 	BabelName        magyar
+	BabelOptFormat   \magyarOptions{$opts§}
 	PolyglossiaName  magyar
 	XindyName        hungarian
 	QuoteStyle       hungarian
@@ -1420,6 +1428,7 @@ Language spanish
 	GuiName          "Spanish"
 	HasGuiSupport    true
 	BabelName        spanish
+	BabelOptFormat   modifier
 	PolyglossiaName  spanish
 	XindyName        spanish-modern
 	QuoteStyle       french

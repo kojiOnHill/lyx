@@ -1008,11 +1008,15 @@ GuiDocument::GuiDocument(GuiView & lv)
 		this, SLOT(change_adaptor()));
 	connect(langModule->languagePackageCO, SIGNAL(activated(int)),
 		this, SLOT(change_adaptor()));
+	connect(langModule->languagePackageCO, SIGNAL(activated(int)),
+		this, SLOT(updateLanguageOptions()));
 	connect(langModule->languagePackageLE, SIGNAL(textChanged(QString)),
 		this, SLOT(change_adaptor()));
 	connect(langModule->languagePackageCO, SIGNAL(currentIndexChanged(int)),
 		this, SLOT(languagePackageChanged(int)));
 	connect(langModule->dynamicQuotesCB, SIGNAL(clicked()),
+		this, SLOT(change_adaptor()));
+	connect(langModule->languageOptionsTW, SIGNAL(itemChanged(QTreeWidgetItem*, int)),
 		this, SLOT(change_adaptor()));
 
 	langModule->languagePackageLE->setValidator(new NoNewLineValidator(
@@ -1074,12 +1078,10 @@ GuiDocument::GuiDocument(GuiView & lv)
 		else
 			encodingmap.insert(qt_(encvar.guiName()), toqstr(encvar.name()));
 	}
-	for (auto const & i : encodingmap_utf8.keys()) {
+	for (auto const & i : encodingmap_utf8.keys())
 		langModule->unicodeEncodingCO->addItem(i, encodingmap_utf8.value(i));
-	}
-	for (auto const & i : encodingmap.keys()) {
+	for (auto const & i : encodingmap.keys())
 		langModule->customEncodingCO->addItem(i, encodingmap.value(i));
-	}
 	// equalise the width of encoding selectors
 	langModule->autoEncodingCO->setMinimumSize(
 		langModule->unicodeEncodingCO->minimumSizeHint());
@@ -1096,7 +1098,7 @@ GuiDocument::GuiDocument(GuiView & lv)
 		qt_("Custom"), toqstr("custom"));
 	langModule->languagePackageCO->addItem(
 		qt_("None[[language package]]"), toqstr("none"));
-
+	langModule->languageOptionsTW->setItemDelegateForColumn(0, new NoEditDelegate(this));
 
 	// fonts
 	fontModule = new FontModule(this);
@@ -1190,6 +1192,8 @@ GuiDocument::GuiDocument(GuiView & lv)
 			qt_("Use OpenType and TrueType fonts directly (requires XeTeX or LuaTeX)\n"
 			    "You need to install the package \"fontspec\" to use this feature"));
 
+	// this requires font to be set
+	updateLanguageOptions();
 
 	// page layout
 	pageLayoutModule = new UiWidget<Ui::PageLayoutUi>(this);
@@ -2623,6 +2627,7 @@ void GuiDocument::osFontsChanged(bool nontexfonts)
 		fontModule->fontencLE->setEnabled(false);
 	else
 		fontencChanged(fontModule->fontencCO->currentIndex());
+	updateLanguageOptions();
 }
 
 
@@ -2835,6 +2840,36 @@ void GuiDocument::updateTexFonts()
 			ttfonts_.insert(toqstr(guiname), toqstr(it->first));
 		else if (family == "math")
 			mathfonts_.insert(toqstr(guiname), toqstr(it->first));
+	}
+}
+
+
+void GuiDocument::updateLanguageOptions()
+{
+	langModule->languageOptionsTW->clear();
+	QString const langpack = langModule->languagePackageCO->itemData(
+				langModule->languagePackageCO->currentIndex()).toString();
+	if (langpack == "custom")
+		return;
+
+	bool const extern_babel =
+		documentClass().provides("babel");
+	bool const extern_polyglossia =
+		documentClass().provides("polyglossia");
+
+	bool const use_polyglossia = extern_polyglossia
+			|| (langpack != "babel" && !extern_babel
+			    && fontModule->osFontsCB->isChecked());
+	for (auto const & l : buffer().getLanguages()) {
+		QTreeWidgetItem * twi = new QTreeWidgetItem();
+		twi->setData(0, Qt::DisplayRole, qt_(l->display()));
+		twi->setData(0, Qt::UserRole, toqstr(l->lang()));
+		twi->setFlags(twi->flags() | Qt::ItemIsEditable);
+		if (use_polyglossia)
+			twi->setData(1, Qt::EditRole, toqstr(buffer().params().polyglossiaLangOptions(l->lang())));
+		else
+			twi->setData(1, Qt::EditRole, toqstr(buffer().params().babelLangOptions(l->lang())));
+		langModule->languageOptionsTW->addTopLevelItem(twi);
 	}
 }
 
@@ -3764,6 +3799,25 @@ void GuiDocument::applyView()
 	else
 		bp_.lang_package = fromqstr(pack);
 
+	bool const extern_babel =
+		documentClass().provides("babel");
+	bool const extern_polyglossia =
+		documentClass().provides("polyglossia");
+
+	bool const use_polyglossia = extern_polyglossia
+			|| (bp_.lang_package != "babel" && !extern_babel
+			    && fontModule->osFontsCB->isChecked());
+
+	QList<QTreeWidgetItem *> langopts = langModule->languageOptionsTW->findItems("*", Qt::MatchWildcard);
+	for (int i = 0; i < langopts.size(); ++i) {
+		if (use_polyglossia)
+			bp_.setPolyglossiaLangOptions(fromqstr(langopts.at(i)->data(0, Qt::UserRole).toString()),
+						      fromqstr(langopts.at(i)->data(1, Qt::EditRole).toString()));
+		else
+			bp_.setBabelLangOptions(fromqstr(langopts.at(i)->data(0, Qt::UserRole).toString()),
+						fromqstr(langopts.at(i)->data(1, Qt::EditRole).toString()));
+	}
+
 	//color
 	bp_.backgroundcolor = set_backgroundcolor;
 	bp_.isbackgroundcolor = is_backgroundcolor;
@@ -4311,7 +4365,7 @@ void GuiDocument::paramsToDialog()
 	if (extern_babel)
 		p = langModule->languagePackageCO->findData(toqstr("babel"));
 	else if (extern_polyglossia)
-		p = langModule->languagePackageCO->findData(toqstr("polyglossia"));
+		p = langModule->languagePackageCO->findData(toqstr("auto"));
 	else
 		p = langModule->languagePackageCO->findData(toqstr(bp_.lang_package));
 
@@ -4324,6 +4378,8 @@ void GuiDocument::paramsToDialog()
 		langModule->languagePackageLE->clear();
 	}
 	langModule->languagePackageCO->setEnabled(!extern_babel && !extern_polyglossia);
+
+	updateLanguageOptions();
 
 	//color
 	if (bp_.isfontcolor) {

@@ -866,6 +866,18 @@ string BufferParams::readToken(Lexer & lex, string const & token,
 	} else if (token == "\\language_package") {
 		lex.eatLine();
 		lang_package = lex.getString();
+	} else if (token == "\\language_options_babel") {
+		string lang;
+		lex >> lang;
+		lex.eatLine();
+		string const opts = lex.getString();
+		lang_options_babel_[lang] = opts;
+	} else if (token == "\\language_options_polyglossia") {
+		string lang;
+		lex >> lang;
+		lex.eatLine();
+		string const opts = lex.getString();
+		lang_options_polyglossia_[lang] = trim(opts, "\"");
 	} else if (token == "\\inputencoding") {
 		lex >> inputenc;
 	} else if (token == "\\graphics") {
@@ -1358,6 +1370,14 @@ void BufferParams::writeFile(ostream & os, Buffer const * buf) const
 	// then the text parameters
 	if (language != ignore_language)
 		os << "\\language " << language->lang() << '\n';
+	for (auto const & s : lang_options_babel_)
+		os << "\\language_options_babel " << s.first << " " << s.second << '\n';
+	for (auto const & s : lang_options_polyglossia_) {
+		Language const * l = languages.getLanguage(s.first);
+		if (l && l->polyglossiaOpts() != s.second)
+			// polyglossia options can be empty, so we enquote them
+			os << "\\language_options_polyglossia " << s.first << " \"" << s.second << "\"\n";
+	}
 	os << "\\language_package " << lang_package
 	   << "\n\\inputencoding " << inputenc
 	   << "\n\\fontencoding " << fontenc
@@ -2281,8 +2301,8 @@ bool BufferParams::writeLaTeX(otexstream & os, LaTeXFeatures & features,
 		|| features.isRequired("japanese"))) {
 			os << features.getBabelPresettings();
 			// FIXME UNICODE
-			os << from_utf8(babelCall(language_options.str(),
-									  !lyxrc.language_global_options)) + '\n';
+			os << from_utf8(babelCall(features, language_options.str(),
+						  !lyxrc.language_global_options)) + '\n';
 			os << features.getBabelPostsettings();
 	}
 
@@ -2492,7 +2512,7 @@ bool BufferParams::writeLaTeX(otexstream & os, LaTeXFeatures & features,
 	    && !features.isRequired("japanese")) {
 		os << features.getBabelPresettings();
 		// FIXME UNICODE
-		os << from_utf8(babelCall(language_options.str(),
+		os << from_utf8(babelCall(features, language_options.str(),
 		                          !lyxrc.language_global_options)) + '\n';
 		os << features.getBabelPostsettings();
 	}
@@ -2564,8 +2584,8 @@ bool BufferParams::writeLaTeX(otexstream & os, LaTeXFeatures & features,
 		os << "\\usepackage{polyglossia}\n";
 		// set the main language
 		os << "\\setdefaultlanguage";
-		if (!language->polyglossiaOpts().empty())
-			os << "[" << from_ascii(language->polyglossiaOpts()) << "]";
+		if (!polyglossiaLangOptions(language->lang()).empty())
+			os << "[" << from_ascii(polyglossiaLangOptions(language->lang())) << "]";
 		os << "{" << from_ascii(language->polyglossia()) << "}\n";
 		// now setup the other languages
 		set<string> const polylangs =
@@ -3465,16 +3485,41 @@ vector<string> const BufferParams::font_encodings() const
 }
 
 
-string BufferParams::babelCall(string const & lang_opts, bool const langoptions) const
+string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
+			       bool const langoptions) const
 {
 	// suppress the babel call if there is no BabelName defined
 	// for the document language in the lib/languages file and if no
 	// other languages are used (lang_opts is then empty)
 	if (lang_opts.empty())
 		return string();
+	// get language options with modifiers
+	bool have_mods = false;
+	vector<string> blangs;
+	for (auto const & l : features.getLanguages()) {
+		if (l->babel().empty())
+			continue;
+		string blang = l->babel();
+		if (l->babelOptFormat() == "modifier") {
+			vector<string> opts = getVectorFromString(babelLangOptions(l->lang()));
+			bool have_one = false;
+			for (string const & s : opts) {
+				have_mods = true;
+				if (langoptions || have_one)
+					blang += "." + s;
+				else {
+					blang = "modifiers." + blang + "=" + s;
+					have_one = true;
+				}
+			}
+		}
+		blangs.push_back(blang);
+	}
+	if (have_mods)
+		lang_opts = getStringFromVector(blangs);
 	// The prefs may require the languages to
 	// be submitted to babel itself (not the class).
-	if (langoptions)
+	if (langoptions || have_mods)
 		return "\\usepackage[" + lang_opts + "]{babel}";
 	return "\\usepackage{babel}";
 }
@@ -3981,6 +4026,24 @@ string const BufferParams::bibFileEncoding(string const & file) const
 	if (bib_encodings.find(file) == bib_encodings.end())
 		return string();
 	return bib_encodings.find(file)->second;
+}
+
+
+string const BufferParams::babelLangOptions(string const & lang) const
+{
+	if (lang_options_babel_.find(lang) == lang_options_babel_.end())
+		return string();
+	return lang_options_babel_.find(lang)->second;
+}
+
+
+string const BufferParams::polyglossiaLangOptions(string const & lang) const
+{
+	if (lang_options_polyglossia_.find(lang) == lang_options_polyglossia_.end()) {
+		Language const * l = languages.getLanguage(lang);
+		return l ? l->polyglossiaOpts() : string();
+	}
+	return lang_options_polyglossia_.find(lang)->second;
 }
 
 
