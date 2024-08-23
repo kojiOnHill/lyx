@@ -2564,6 +2564,8 @@ void GuiDocument::languageChanged(int i)
 
 	// set appropriate quotation mark style
 	updateQuoteStyles(true);
+
+	updateLanguageOptions();
 }
 
 
@@ -2860,7 +2862,13 @@ void GuiDocument::updateLanguageOptions()
 	bool const use_polyglossia = extern_polyglossia
 			|| (langpack != "babel" && !extern_babel
 			    && fontModule->osFontsCB->isChecked());
-	for (auto const & l : buffer().getLanguages()) {
+	std::set<Language const *> langs = buffer().getLanguages();
+	// We might have a non-yet applied document language
+	QString const langname = langModule->languageCO->itemData(
+		langModule->languageCO->currentIndex()).toString();
+	Language const * newlang = lyx::languages.getLanguage(fromqstr(langname));
+	langs.insert(newlang);
+	for (auto const & l : langs) {
 		QTreeWidgetItem * twi = new QTreeWidgetItem();
 		twi->setData(0, Qt::DisplayRole, qt_(l->display()));
 		twi->setData(0, Qt::UserRole, toqstr(l->lang()));

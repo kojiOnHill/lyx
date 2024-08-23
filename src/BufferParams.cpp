@@ -3498,10 +3498,13 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 	// get language options with modifiers
 	bool have_mods = false;
 	vector<string> blangs;
-	for (auto const & l : features.getLanguages()) {
-		if (l->babel().empty())
-			continue;
+	std::set<Language const *> langs = features.getLanguages();
+	// add main language
+	langs.insert(language);
+	for (auto const & l : langs) {
 		string blang = l->babel();
+		if (blang.empty())
+			continue;
 		if (l->babelOptFormat() == "modifier") {
 			vector<string> opts = getVectorFromString(babelLangOptions(l->lang()));
 			bool have_one = false;
