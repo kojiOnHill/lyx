@@ -370,6 +370,7 @@ Language bahasa
 	HasGuiSupport    true
 	BabelName        bahasa
 	PolyglossiaName  malay
+	PolyglossiaOpts  "variant=indonesian"
 	QuoteStyle       english
 	Encoding         iso8859-15
 	FontEncoding	 ASCII
@@ -540,6 +541,7 @@ Language chinese-simplified
 	HasGuiSupport    true
 # TODO
 #	PolyglossiaName  chinese
+#	PolyglossiaOpts  "variant=simplified"
 	Encoding         euc-cn
 	QuoteStyle       english
 	WordWrap         false
@@ -728,6 +730,7 @@ Language french
 	BabelOptFormat   \frenchsetup{$opts§}
 	ActiveChars      ;!?:
 	PolyglossiaName  french
+	PolyglossiaOpts  "variant=french"
 	XindyName        french
 	QuoteStyle       french
 	Encoding         iso8859-15
@@ -943,6 +946,7 @@ Language irish
 	GuiName          "Irish"
 	BabelName        irish
 	PolyglossiaName  gaelic
+	PolyglossiaOpts  "variant=irish"
 	QuoteStyle       english
 	Encoding         iso8859-15
 	FontEncoding	 T1|OT1
@@ -1054,6 +1058,8 @@ Language kurmanji
 	LangCode         kmr
 End
 
+# TODO: kurdish, variant=sorani
+
 # not supported by babel
 Language lao
 	GuiName          "Lao"
@@ -1071,6 +1077,7 @@ Language latin
 	BabelName        latin
 	BabelOptFormat   modifier
 	PolyglossiaName  latin
+	PolyglossiaOpts  "variant=modern"
 	XindyName        latin
 	ActiveChars      ^=
 	Encoding         iso8859-15
@@ -1252,6 +1259,7 @@ Language nynorsk
 	HasGuiSupport    true
 	BabelName        nynorsk
 	PolyglossiaName  norwegian
+	PolyglossiaOpts  "variant=nynorsk"
 	XindyName        norwegian
 	QuoteStyle       swiss
 	Encoding         iso8859-15
@@ -1320,6 +1328,7 @@ Language portuguese
 	HasGuiSupport    true
 	BabelName        portuges
 	PolyglossiaName  portuguese
+	PolyglossiaOpts  "variant=portuguese"
 	XindyName        portuguese
 	QuoteStyle       french
 	Encoding         iso8859-15
@@ -1476,6 +1485,7 @@ Language spanish
 	BabelOpts        "noquoting, nodecimaldot"
 	BabelOptFormat   modifier
 	PolyglossiaName  spanish
+	PolyglossiaOpts  "variant=spanish"
 	XindyName        spanish-modern
 	QuoteStyle       french
 	Encoding         iso8859-15
@@ -1640,6 +1650,7 @@ Language uppersorbian
 	GuiName          "Upper Sorbian"
 	BabelName        uppersorbian
 	PolyglossiaName  sorbian
+	PolyglossiaOpts  "variant=upper"
 	XindyName        upper-sorbian
 	QuoteStyle       german
 	Encoding         iso8859-2
