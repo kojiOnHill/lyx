@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-22 21:06-0400\n"
-"PO-Revision-Date: 2024-06-27 23:12+0800\n"
+"POT-Creation-Date: 2024-08-24 19:48+0200\n"
+"PO-Revision-Date: 2024-08-24 09:25+0800\n"
 "Last-Translator: Jiaxu Zi <3119932298@qq.com>\n"
 "Language-Team: 简体中文 <lyx-docs@lists.lyx.org>\n"
 "Language: zh_CN\n"
@@ -65,14 +65,12 @@ msgid "[[do]]O&pen"
 msgstr "[[do]]打开(&P)"
 
 #: src/frontends/qt/ui/AboutUi.ui:238
-#, fuzzy
 msgid "Temporary directory"
-msgstr "临时目录(&T):"
+msgstr "临时目录(&T)"
 
 #: src/frontends/qt/ui/AboutUi.ui:269
-#, fuzzy
 msgid "Open temporary directory in file browser"
-msgstr "在文件浏览器中打开系统目录"
+msgstr "在文件浏览器中打开临时目录"
 
 #: src/frontends/qt/ui/AboutUi.ui:288
 msgid "Credits"
@@ -3068,7 +3066,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/MasterChildUi.ui:67
 msgid "Do &not maintain (fast)"
-msgstr ""
+msgstr "不保持（快速）"
 
 #: src/frontends/qt/ui/MasterChildUi.ui:74
 msgid ""
@@ -3086,7 +3084,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/MasterChildUi.ui:77
 msgid "Maintain mostl&y (medium)"
-msgstr ""
+msgstr "基本保持（中等）"
 
 #: src/frontends/qt/ui/MasterChildUi.ui:84
 msgid ""
@@ -3099,7 +3097,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/MasterChildUi.ui:87
 msgid "Strictly &maintain (slow)"
-msgstr ""
+msgstr "严格保持（慢速）"
 
 #: src/frontends/qt/ui/MathMatrixUi.ui:53
 msgid "Horizontal alignment per column (l,c,r)"
@@ -4453,22 +4451,20 @@ msgid "Set languages &globally"
 msgstr "设置全局语言"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:151
-#, fuzzy
 msgid ""
 "If checked, the document language is explicitly set by a language switch "
 "command"
-msgstr "选定后，不能用语言切换命令显式指定某处之后的文本使用特定语言"
+msgstr "如果选中，则通过语言切换命令显式设置文档语言"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:154
 msgid "Set document language e&xplicitly"
 msgstr "明确设置文档语言"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:161
-#, fuzzy
 msgid ""
 "If checked, the document language is explicitly closed by a language switch "
 "command"
-msgstr "选定后，不能用语言切换命令显式指定某处之前的文本使用特定语言"
+msgstr "如果选中，则通过语言切换命令显式关闭文档语言"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:164
 msgid "&Unset document language explicitly"
@@ -4479,11 +4475,10 @@ msgid "Editor Settings"
 msgstr "编辑器设置"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:189
-#, fuzzy
 msgid ""
 "Check to highlight additional languages (to the document language) visually "
 "in the work area"
-msgstr "选定后高亮显示工作区的外国语言"
+msgstr "选定后高亮显示工作区的其他语言"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:192
 msgid "&Mark additional languages"
@@ -6279,13 +6274,13 @@ msgstr ", [[separate author names in citation, except for last name]]"
 #: lib/citeengines/biblatex.citeengine:147
 #: lib/citeengines/natbib.citeengine:126 lib/layouts/stdciteformats.inc:30
 msgid ", and [[separate name of last author in citation]]"
-msgstr ""
+msgstr "，以及 [[separate name of last author in citation]]"
 
 #: lib/citeengines/biblatex-natbib.citeengine:156
 #: lib/citeengines/biblatex.citeengine:148
 #: lib/citeengines/natbib.citeengine:127 lib/layouts/stdciteformats.inc:31
 msgid " and [[separate two authors in citation]]"
-msgstr ""
+msgstr " 和 [[separate two authors in citation]]"
 
 #: lib/citeengines/biblatex-natbib.citeengine:303
 #: lib/citeengines/biblatex.citeengine:289
@@ -8136,11 +8131,11 @@ msgstr "与"
 
 #: lib/layouts/aastex.layout:301
 msgid "altaffilmark"
-msgstr ""
+msgstr "隶属机构标识"
 
 #: lib/layouts/aastex.layout:305
 msgid "altaffiliation mark"
-msgstr ""
+msgstr "隶属机构标识"
 
 #: lib/layouts/aastex.layout:336
 msgid "Subject headings:"
@@ -8386,9 +8381,8 @@ msgid "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
 msgstr "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
 
 #: lib/layouts/aastex63.layout:3 lib/examples/Articles:0
-#, fuzzy
 msgid "American Astronomical Society (AASTeX v. 6.3.1)"
-msgstr "美国天文学会 (AASTeX 第 6.2 版)"
+msgstr "美国天文学会 (AASTeX 第 6.3.1 版)"
 
 #: lib/layouts/achemso.layout:3 lib/examples/Articles:0
 msgid "American Chemical Society (ACS)"
@@ -9344,7 +9338,6 @@ msgid "Author affiliation:"
 msgstr "所属单位:"
 
 #: lib/layouts/algorithm2e.module:2
-#, fuzzy
 msgid "Algorithm2e Float"
 msgstr "Algorithm2e"
 
@@ -10974,11 +10967,11 @@ msgstr "通讯地址："
 
 #: lib/layouts/copernicus.layout:195
 msgid "Pubdiscuss"
-msgstr ""
+msgstr "公开讨论"
 
 #: lib/layouts/copernicus.layout:201
 msgid "Pubdiscuss:"
-msgstr ""
+msgstr "公开讨论:"
 
 #: lib/layouts/copernicus.layout:221
 msgid "Published"
@@ -13724,7 +13717,7 @@ msgstr "审阅"
 
 #: lib/layouts/iopart.layout:94
 msgid "Topical"
-msgstr ""
+msgstr "专题"
 
 #: lib/layouts/iopart.layout:112
 msgid "Paper"
@@ -14375,14 +14368,13 @@ msgid "Linguistics"
 msgstr "语言学"
 
 #: lib/layouts/linguistics.module:8
-#, fuzzy
 msgid ""
 "Defines some special environments useful for linguistics (numbered examples, "
 "glosses, semantic markup, tableau floats). See Help > Specific Manuals > "
 "Linguistics."
 msgstr ""
 "定义适用于语言学的专用环境 (如编号范例、词汇表, 语义标记, tableau floats "
-"等)。示例请参考 linguistics.lyx。"
+"等)。示例请参考“帮助”>“特定功能手册”>“语言学”。"
 
 #: lib/layouts/linguistics.module:20 lib/layouts/linguistics.module:21
 msgid "(\\arabic{example})"
@@ -14488,25 +14480,23 @@ msgstr "导言区子示例"
 
 #: lib/layouts/linguistics.module:181
 msgid "Example Postamble"
-msgstr "Example Postamble"
+msgstr "序言示例"
 
 #: lib/layouts/linguistics.module:184
 msgid "Ex. Postamble"
-msgstr ""
+msgstr "序言示例"
 
 #: lib/layouts/linguistics.module:187
-#, fuzzy
 msgid "Subexample Postamble"
 msgstr "子例"
 
 #: lib/layouts/linguistics.module:190
-#, fuzzy
 msgid "Subex. Postamble"
 msgstr "子例"
 
 #: lib/layouts/linguistics.module:202
 msgid "Interlinear Gloss (2 Lines)"
-msgstr ""
+msgstr "行间文字 (2 行)"
 
 #: lib/layouts/linguistics.module:204
 msgid "Gloss"
@@ -14567,7 +14557,6 @@ msgid "Interlinear Gloss (3 Lines)"
 msgstr ""
 
 #: lib/layouts/linguistics.module:260
-#, fuzzy
 msgid "Tri-Gloss"
 msgstr "三行语句注解"
 
@@ -14604,12 +14593,10 @@ msgid "Interlinear Gloss (Line 2)|2"
 msgstr ""
 
 #: lib/layouts/linguistics.module:304
-#, fuzzy
 msgid "Add the second inter-linear gloss line here"
 msgstr "在此输入选项"
 
 #: lib/layouts/linguistics.module:311
-#, fuzzy
 msgid "Gloss Comment (2)"
 msgstr "关闭文档"
 
@@ -14650,9 +14637,8 @@ msgid "Referents"
 msgstr "引用"
 
 #: lib/layouts/linguistics.module:393 lib/layouts/linguistics.module:540
-#, fuzzy
 msgid "DRS Referents"
-msgstr "引用"
+msgstr "DRS引用"
 
 #: lib/layouts/linguistics.module:394 lib/layouts/linguistics.module:541
 msgid "Add the DRS referents (universe) here"
@@ -15483,14 +15469,13 @@ msgid "Multiple Columns"
 msgstr "多栏"
 
 #: lib/layouts/multicol.module:8
-#, fuzzy
 msgid ""
 "Adds a custom inset whose content is set with multiple columns (2 by "
 "default). See the Additional manual, section Modules > Page Layout > "
 "Multiple Columns, for a detailed description."
 msgstr ""
-"设置一个内嵌项，其内容分为多栏 (默认两栏)。请参阅“其他功能”手册的“Multiple "
-"Text Columns” (未翻译) 获得多栏文本的详细介绍。"
+"添加自定义嵌入，其内容设置为多栏（默认为 2 栏）。详细说明请参阅附加手册模块 "
+"> 页面布局 > 多栏一节。"
 
 #: lib/layouts/multicol.module:20
 msgid "Number of Columns"
@@ -15533,7 +15518,7 @@ msgstr "波兰语报告 (MW 套件)"
 
 #: lib/layouts/natbibapa.module:2
 msgid "APA Style with Natbib"
-msgstr ""
+msgstr "使用 Natbib 的 APA 样式"
 
 #: lib/layouts/natbibapa.module:10
 msgid ""
@@ -15574,7 +15559,6 @@ msgid "Section ##"
 msgstr "节 ##"
 
 #: lib/layouts/numreport.inc:46
-#, fuzzy
 msgid "footnote \\arabic{footnote}"
 msgstr "\\arabic{footnote}"
 
@@ -15717,14 +15701,13 @@ msgid "PDF Comments"
 msgstr "PDF 注释"
 
 #: lib/layouts/pdfcomment.module:8
-#, fuzzy
 msgid ""
 "Provides various kinds of annotations for the PDF output. The module uses "
 "the pdfcomment package. Please consult Help > Specific Manuals > PDF "
 "comments and the package documentation for details."
 msgstr ""
-"为输出的 PDF 定义各种注释。该模块需要 pdfcomment 包。详情参见示例文件 PDF-"
-"comment.lyx 和 pdfcomment 文档。"
+"为 PDF 输出定义各种注释。该模块使用 pdfcomment 软件包。详情请查阅帮助 > 具体"
+"手册 > PDF 注释和软件包文档。"
 
 #: lib/layouts/pdfcomment.module:20
 msgid "Define Avatar"
@@ -15924,14 +15907,13 @@ msgid "PDF Form"
 msgstr "PDF 表单"
 
 #: lib/layouts/pdfform.module:8
-#, fuzzy
 msgid ""
 "Provides fields and buttons for PDF forms. The module uses the LaTeX package "
 "hyperref. Please consult Help > Specific Manuals > PDF forms and the "
 "documentation of hyperref for details."
 msgstr ""
-"提供 PDF 表单所需的字段及按钮。该模块需要使用 hyperref 包。详情请参考示例文"
-"件 PDF-form.lyx 和 hyperref 的文档。"
+"为 PDF 表单提供字段和按钮。该模块使用 LaTeX 软件包 hyperref。详情请查阅帮助 "
+"> 特定手册 > PDF 表单和 hyperref 文档。"
 
 #: lib/layouts/pdfform.module:16 lib/layouts/pdfform.module:27
 msgid "Begin PDF Form"
@@ -16206,7 +16188,7 @@ msgstr "参考文献项目"
 
 #: lib/layouts/powerdot.layout:656
 msgid "Onslide"
-msgstr "Onslide"
+msgstr ""
 
 #: lib/layouts/powerdot.layout:662
 msgid "On Slides"
@@ -16410,14 +16392,13 @@ msgid "Chemistry: Risk and Safety Statements (Obsolete)"
 msgstr "化学：风险和安全声明（已作废）"
 
 #: lib/layouts/rsphrase.module:8
-#, fuzzy
 msgid ""
 "Provides two insets and one environment to typeset numbers and phrases of "
 "chemical risk and safety statements. Now obsoleted and officially replaced "
 "by GHS Hazard-Precautionary statement system in the EU."
 msgstr ""
-"提供两种内嵌项及一种环境，为化学风险与安全建议语排版。排版内容包括编号和语句"
-"内容。详情请参阅 LyX 示例文件目录的 R-S-statements.lyx。"
+"提供两个插页和一个环境，用于排版化学品风险和安全声明的数字和短语。现已过时，"
+"在欧盟被 GHS 危险-防范说明系统正式取代。"
 
 #: lib/layouts/rsphrase.module:12 lib/layouts/rsphrase.module:17
 msgid "R-S number"
@@ -16562,7 +16543,6 @@ msgid "Addsec*"
 msgstr "增加 节*"
 
 #: lib/layouts/scrclass.inc:193
-#, fuzzy
 msgid "Minisec"
 msgstr "Minisec"
 
@@ -16878,14 +16858,13 @@ msgid "Custom Paragraph Shapes"
 msgstr "自定义段落形状"
 
 #: lib/layouts/shapepar.module:8
-#, fuzzy
 msgid ""
 "Provides several paragraph shapes as well as commands to define custom "
 "shapes. For a description see LyX's Additional features manual, section "
 "Modules > Paragraph Styles > Custom Paragraph Shapes."
 msgstr ""
-"提供多种段落形状及自定义形状的命令。详细描述请参阅 LyX 帮助文档 Additional "
-"Features 的 Non-standard Paragraph Shapes 一节。"
+"提供多种段落形状以及定义自定义形状的命令。有关说明，请参阅 LyX 附加功能手册，"
+"模块 > 段落样式 > 自定义段落形状部分。"
 
 #: lib/layouts/shapepar.module:27
 msgid "CD label"
@@ -17033,19 +17012,19 @@ msgstr "版权信息:"
 
 #: lib/layouts/sigplanconf.layout:113
 msgid "TitleBanner"
-msgstr ""
+msgstr "标题横幅"
 
 #: lib/layouts/sigplanconf.layout:116
 msgid "Title banner:"
-msgstr ""
+msgstr "标题横幅:"
 
 #: lib/layouts/sigplanconf.layout:120
 msgid "PreprintFooter"
-msgstr ""
+msgstr "预印页脚"
 
 #: lib/layouts/sigplanconf.layout:123
 msgid "Preprint footer:"
-msgstr ""
+msgstr "预印页脚:"
 
 #: lib/layouts/sigplanconf.layout:130
 msgid "Digital Object Identifier:"
@@ -17109,7 +17088,7 @@ msgstr "<以下文本可见>"
 
 #: lib/layouts/soul.module:2
 msgid "Hyphenatable Text Markup (Soul)"
-msgstr ""
+msgstr "连字符文本标记（Soul）"
 
 #: lib/layouts/soul.module:9
 msgid ""
@@ -17150,14 +17129,12 @@ msgid "hl"
 msgstr ""
 
 #: lib/layouts/soul.module:59
-#, fuzzy
 msgid "Capitalize"
 msgstr "大写"
 
 #: lib/layouts/soul.module:61
-#, fuzzy
 msgid "caps"
-msgstr "allcaps"
+msgstr ""
 
 #: lib/layouts/soul.module:71
 #, fuzzy
@@ -17177,12 +17154,10 @@ msgid "highlight"
 msgstr "高亮"
 
 #: lib/layouts/soul.module:87
-#, fuzzy
 msgid "capitalise"
 msgstr "大写"
 
 #: lib/layouts/soul.module:91
-#, fuzzy
 msgid "Capitalise"
 msgstr "大写"
 
@@ -17208,11 +17183,11 @@ msgstr "未定义"
 
 #: lib/layouts/stdciteformats.inc:22
 msgid "pp."
-msgstr "pp."
+msgstr ""
 
 #: lib/layouts/stdciteformats.inc:23
 msgid "ed."
-msgstr "ed."
+msgstr ""
 
 #: lib/layouts/stdciteformats.inc:24
 msgid "eds."
@@ -17224,7 +17199,7 @@ msgstr "卷."
 
 #: lib/layouts/stdciteformats.inc:26
 msgid "no."
-msgstr "no."
+msgstr ""
 
 #: lib/layouts/stdciteformats.inc:27
 msgid "in"
@@ -17354,13 +17329,12 @@ msgid "Idx"
 msgstr "索引"
 
 #: lib/layouts/stdinsets.inc:427 src/insets/InsetIndexMacro.cpp:63
-#, fuzzy
 msgid "See"
-msgstr "场"
+msgstr "参见"
 
 #: lib/layouts/stdinsets.inc:443 src/insets/InsetIndexMacro.cpp:64
 msgid "See also"
-msgstr ""
+msgstr "另见"
 
 #: lib/layouts/stdinsets.inc:448 src/insets/InsetIndexMacro.cpp:66
 msgid "Sort as"
@@ -17682,14 +17656,13 @@ msgid "Sweave"
 msgstr "Sweave"
 
 #: lib/layouts/sweave.module:7
-#, fuzzy
 msgid ""
 "Allows to use the statistical language S/R as a literate programming tool "
 "via the Sweave() function. For more info see Help > Specific Manuals > "
 "Sweave."
 msgstr ""
-"通过 Sweave() 函数，使用 S/R 语言作为文字化编程工具。详情请参考示例文件 "
-"sweave.lyx。"
+"通过 Sweave() 函数，使用 S/R 语言作为文字化编程工具。更多信息，请参见帮助 > "
+"具体手册 > Sweave。"
 
 #: lib/layouts/sweave.module:77 lib/layouts/sweave.module:78
 msgid "Sweave Input File"
@@ -17706,14 +17679,12 @@ msgid ""
 msgstr "在表格编号前加上节号，如第二节第一个表格为 2.1。"
 
 #: lib/layouts/tarticle.layout:3
-#, fuzzy
 msgid "Japanese Article (Standard Class, vertical Writing)"
-msgstr "日文文档 (标准类竖排)"
+msgstr "日文文章 (标准类，竖排)"
 
 #: lib/layouts/tbook.layout:3
-#, fuzzy
 msgid "Japanese Book (Standard Class, vertical Writing)"
-msgstr "日文书刊 (标准类竖排)"
+msgstr "日文书刊 (标准类，竖排)"
 
 #: lib/layouts/tcolorbox.module:2 lib/examples/Articles:0
 msgid "Fancy Colored Boxes"
@@ -17881,9 +17852,8 @@ msgid "Exercise \\theexercise."
 msgstr "练习\\theexercise."
 
 #: lib/layouts/theorems-ams-bytype.module:2
-#, fuzzy
 msgid "AMS Theorems (Numbered by Type)"
-msgstr "定理 (按类型编号)"
+msgstr "AMS 定理（按类型编号）"
 
 #: lib/layouts/theorems-ams-bytype.module:12
 msgid ""
@@ -17902,9 +17872,8 @@ msgstr ""
 "号。若需要将范围限制在某章或某节，请使用带有“章内/节内”的模块。"
 
 #: lib/layouts/theorems-ams-chap-bytype.module:2
-#, fuzzy
 msgid "AMS Theorems (Numbered by Type within Chapters)"
-msgstr "定理 (每章按类型编号)"
+msgstr "AMS定理 (每章按类型编号)"
 
 #: lib/layouts/theorems-ams-chap-bytype.module:12
 msgid ""
@@ -17922,12 +17891,10 @@ msgstr ""
 "引理 2、命题 3……)。"
 
 #: lib/layouts/theorems-ams-extended-bytype.module:2
-#, fuzzy
 msgid "AMS Theorems (Extended, Numbered by Type)"
-msgstr "定理 (AMS 扩展，按类型编号)"
+msgstr "AMS定理 (扩展，按类型编号)"
 
 #: lib/layouts/theorems-ams-extended-bytype.module:13
-#, fuzzy
 msgid ""
 "Defines some additional theorem environments for use with the AMS theorems "
 "packages. Includes Criterion, Algorithm, Axiom, Condition, Note, Notation, "
@@ -17937,10 +17904,12 @@ msgid ""
 "criterion 2, axiom 1, assumption 1, criterion 3, ..., as opposed to "
 "criterion 1, criterion 2, axiom 3, assumption 4, ...)."
 msgstr ""
-"除了 AMS 定理包之外，定义更多定理环境。包括：准则、算法、公理、条件、注记、记"
-"号、摘要、致谢、结论、假设、情形。提供编号及不编号的方式。与原版 AMS 定理模块"
-"不同，此处将定理及类似内容按类型分别编号 (如公理 1、公理 2、算法 1、准则 1、"
-"公理 3、准则 2……而非公理 1、准则 2、条件 3……)。"
+"定义了与 AMS 定理包一起使用的一些附加定理环境。包括标准（Criterion）、算法"
+"（Algorithm）、公理（Axiom）、条件（Condition）、注记（Note）、记号"
+"（Notation）、摘要（Summary）、结论（Conclusion）、假设（Assumption）和情形"
+"（Case），有编号和无编号两种形式。与普通的 AMS-Extended 模块相反，这里提供的"
+"不同定理类型各有一个单独的计数器（例如，准则 1、准则 2、公理 1、假设 1、准则 "
+"3......，而不是准则 1、准则 2、公理 3、假设 4......）。"
 
 #: lib/layouts/theorems-ams-extended-bytype.module:43
 #: lib/layouts/theorems-ams-extended-chap-bytype.module:77
@@ -18122,12 +18091,10 @@ msgid "Question."
 msgstr "问题."
 
 #: lib/layouts/theorems-ams-extended-chap-bytype.module:2
-#, fuzzy
 msgid "AMS Theorems (Extended, Numbered by Type within Chapters)"
-msgstr "定理 (AMS 扩展，按类型和章编号)"
+msgstr "AMS定理 (AMS 扩展，按类型和章编号)"
 
 #: lib/layouts/theorems-ams-extended-chap-bytype.module:13
-#, fuzzy
 msgid ""
 "Defines some additional theorem environments for use with the AMS theorems "
 "packages. Includes Criterion, Algorithm, Axiom, Condition, Note, Notation, "
@@ -18138,27 +18105,27 @@ msgid ""
 "#criterion 2.1, criterion 2.2, axiom 2.1..., as opposed to criterion 1, "
 "criterion 2, axiom 3, assumption 4...)"
 msgstr ""
-"除了 AMS 定理包之外，定义更多定理环境。包括：准则、算法、公理、条件、注记、记"
-"号、摘要、致谢、结论、假设、情形。提供编号及不编号的方式。与原版 AMS 定理模块"
-"不同，此处将定理及类似内容按类型分别编号，并加上章号 (如准则 1.1、准则 1.2、"
-"公理 1.1、假设 1.1、准则 2.1、准则 2.2、公理 2.1……而非准则 1、公理 2、假设 "
-"3……)。"
+"定义了与 AMS 定理包一起使用的一些附加定理环境。包括标准（Criterion）、算法"
+"（Algorithm）、公理（Axiom）、条件（Condition）、注记（Note）、记号"
+"（Notation）、摘要（Summary）、结论（Conclusion）、假设（Assumption）和情形"
+"（Case），有编号和无编号两种形式。与普通的 AMS-Extended 模块相反，这里提供的"
+"不同定理类型各有一个单独的计数器，在每一章中重新开始计数（例如，准则 1.1、准"
+"则 1.2、公理 1.1、假设 1.1、#准则 2.1、准则 2.2、公理 2.1......，而不是准则 "
+"1、准则 2、公理 3、假设 4......）。"
 
 #: lib/layouts/theorems-ams-extended.module:2
-#, fuzzy
 msgid "AMS Theorems (Extended)"
-msgstr "定理 (AMS 扩展)"
+msgstr "AMS定理 (扩展)"
 
 #: lib/layouts/theorems-ams-extended.module:10
-#, fuzzy
 msgid ""
 "Defines some additional theorem environments for use with the AMS theorems "
 "packages. Includes Criterion, Algorithm, Axiom, Condition, Note, Notation, "
 "Summary, Conclusion, Fact, Assumption, Case, and Question, in both numbered "
 "and non-numbered forms."
 msgstr ""
-"除了 AMS 定理包之外，定义更多定理环境。包括：准则、算法、公理、条件、注记、记"
-"号、摘要、致谢、结论、假设、情形。提供编号及不编号的方式。"
+"定义了与 AMS 定理包一起使用的一些附加定理环境。包括：准则、算法、公理、条件、"
+"注记、记号、摘要、致谢、结论、假设、情形。提供编号及不编号的方式。"
 
 #: lib/layouts/theorems-ams-extended.module:39
 msgid "Criterion \\thetheorem."
@@ -18235,9 +18202,8 @@ msgstr ""
 "定理及类似类型均按顺序统一编号。"
 
 #: lib/layouts/theorems-bytype.module:2
-#, fuzzy
 msgid "Standard Theorems (Numbered by Type)"
-msgstr "定理 (按类型编号)"
+msgstr "标准定理 (按类型编号)"
 
 #: lib/layouts/theorems-bytype.module:11
 msgid ""
@@ -18259,9 +18225,8 @@ msgid "Case (Level 1)"
 msgstr ""
 
 #: lib/layouts/theorems-case.inc:13
-#, fuzzy
 msgid "Case \\arabic{casei}"
-msgstr "情形\\arabic{casei}."
+msgstr "情形\\arabic{casei}"
 
 #: lib/layouts/theorems-case.inc:14
 msgid "Case \\arabic{casei}."
@@ -18276,9 +18241,8 @@ msgid "Case \\roman{caseii}."
 msgstr "情形\\roman{caseii}."
 
 #: lib/layouts/theorems-case.inc:20
-#, fuzzy
 msgid "Case \\roman{caseii}"
-msgstr "情形\\roman{caseii}."
+msgstr "情形\\roman{caseii}"
 
 #: lib/layouts/theorems-case.inc:23
 msgid "Case (Level 3)"
@@ -18289,27 +18253,24 @@ msgid "Case \\alph{caseiii}."
 msgstr "情形\\alph{caseiii}."
 
 #: lib/layouts/theorems-case.inc:26
-#, fuzzy
 msgid "Case \\alph{caseiii}"
-msgstr "情形\\alph{caseiii}."
+msgstr "情形\\alph{caseiii}"
 
 #: lib/layouts/theorems-case.inc:29
 msgid "Case (Level 4)"
 msgstr ""
 
 #: lib/layouts/theorems-case.inc:31
-#, fuzzy
 msgid "Case \\arabic{caseiv}"
-msgstr "情形\\arabic{caseiv}."
+msgstr "情形\\arabic{caseiv}"
 
 #: lib/layouts/theorems-case.inc:32
 msgid "Case \\arabic{caseiv}."
 msgstr "情形\\arabic{caseiv}."
 
 #: lib/layouts/theorems-chap-bytype.module:2
-#, fuzzy
 msgid "Standard Theorems (Numbered by Type within Chapters)"
-msgstr "定理 (每章按类型编号)"
+msgstr "标准定理 (每章按类型编号)"
 
 #: lib/layouts/theorems-chap-bytype.module:10
 msgid ""
@@ -18324,9 +18285,8 @@ msgstr ""
 "3、引理 2……而非定理 1、引理 2、命题 3……)。编号在每章开头都会从 1 开始。"
 
 #: lib/layouts/theorems-chap.module:2
-#, fuzzy
 msgid "Standard Theorems (Numbered by Chapter)"
-msgstr "定理 (按章编号)"
+msgstr "标准定理 (按章编号)"
 
 #: lib/layouts/theorems-chap.module:8
 msgid ""
@@ -18352,32 +18312,26 @@ msgid "Solution \\arabic{theorem}"
 msgstr "命题\\arabic{theorem}"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:16
-#, fuzzy
 msgid "Axiom \\arabic{theorem}"
 msgstr "声明\\arabic{theorem}"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:20
-#, fuzzy
 msgid "Condition \\arabic{theorem}"
 msgstr "准则\\arabic{theorem}"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:28
-#, fuzzy
 msgid "Notation \\arabic{theorem}"
 msgstr "注\\arabic{theorem}"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:32
-#, fuzzy
 msgid "Summary \\arabic{theorem}"
 msgstr "引理\\arabic{theorem}"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:36
-#, fuzzy
 msgid "Conclusion \\arabic{theorem}"
 msgstr "声明\\arabic{theorem}"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:40
-#, fuzzy
 msgid "Assumption \\arabic{theorem}"
 msgstr "命题\\arabic{theorem}"
 
@@ -18744,7 +18698,6 @@ msgid "Variable-width Minipages"
 msgstr "可变宽度迷你页"
 
 #: lib/layouts/varwidth.module:14
-#, fuzzy
 msgid ""
 "Adds a 'Minipage (Var. Width)' inset using the varwidth LaTeX package. The "
 "varwidth package provides a variable-width minipage, whose resulting width "
@@ -20178,7 +20131,6 @@ msgid "Comment|m"
 msgstr "评论(m)|m"
 
 #: lib/ui/stdcontext.inc:237
-#, fuzzy
 msgid "Greyed Out|y"
 msgstr "灰色输出(G)|G"
 
@@ -20431,7 +20383,6 @@ msgid "End Editing Externally"
 msgstr "结束外部编辑"
 
 #: lib/ui/stdcontext.inc:381
-#, fuzzy
 msgid "Split Inset|i"
 msgstr "拆分插入|t"
 
@@ -20444,7 +20395,6 @@ msgid "Forward Search|F"
 msgstr "正向搜索(F)|F"
 
 #: lib/ui/stdcontext.inc:386 lib/ui/stdmenus.inc:120
-#, fuzzy
 msgid "Move Paragraph Up|h"
 msgstr "段落上移(O)|O"
 
@@ -20485,7 +20435,6 @@ msgid "Text Properties|x"
 msgstr "文本属性|x"
 
 #: lib/ui/stdcontext.inc:402
-#, fuzzy
 msgid "Custom Text Styles|y"
 msgstr "自定义文本样式|S"
 
@@ -20587,7 +20536,6 @@ msgid "Right|R"
 msgstr "右(R)|R"
 
 #: lib/ui/stdcontext.inc:474
-#, fuzzy
 msgid "Reset Formal Defaults|F"
 msgstr "重置为默认值"
 
@@ -20732,17 +20680,14 @@ msgid "End Page Range|E"
 msgstr "结束页(E)|E"
 
 #: lib/ui/stdcontext.inc:643
-#, fuzzy
 msgid "No Page Formatting|N"
 msgstr "取消页面格式(N)|N"
 
 #: lib/ui/stdcontext.inc:644
-#, fuzzy
 msgid "Bold Page Formatting|B"
 msgstr "格式(O)|O"
 
 #: lib/ui/stdcontext.inc:645
-#, fuzzy
 msgid "Italic Page Formatting|I"
 msgstr "格式(O)|O"
 
@@ -20751,12 +20696,10 @@ msgid "Emphasized Page Formatting|z"
 msgstr "加强页面格式|z"
 
 #: lib/ui/stdcontext.inc:647
-#, fuzzy
 msgid "Custom Page Formatting...|u"
 msgstr "输出格式"
 
 #: lib/ui/stdcontext.inc:651
-#, fuzzy
 msgid "Insert Subentry|n"
 msgstr "插入索引项"
 
@@ -20765,12 +20708,10 @@ msgid "Insert Sortkey|k"
 msgstr "插入评论"
 
 #: lib/ui/stdcontext.inc:653
-#, fuzzy
 msgid "Insert See Reference|c"
 msgstr "网址参考"
 
 #: lib/ui/stdcontext.inc:654
-#, fuzzy
 msgid "Insert See also Reference|a"
 msgstr "网址参考"
 
@@ -23056,9 +22997,8 @@ msgid "Blackboard\t\\mathbb"
 msgstr "空心体\t\\mathbb"
 
 #: lib/ui/stdtoolbars.inc:453
-#, fuzzy
 msgid "Double stroke\t\\mathds"
-msgstr "双项:"
+msgstr "双项"
 
 #: lib/ui/stdtoolbars.inc:454
 msgid "Fraktur\t\\mathfrak"
@@ -26935,9 +26875,8 @@ msgid "An Xfig figure.\n"
 msgstr "Xfig 图。\n"
 
 #: lib/configure.py:726
-#, fuzzy
 msgid "Tgif"
-msgstr "tgo|Tgif"
+msgstr ""
 
 #: lib/configure.py:729
 msgid "FIG"
@@ -26948,9 +26887,8 @@ msgid "DIA"
 msgstr "DIA"
 
 #: lib/configure.py:735
-#, fuzzy
 msgid "OpenDocument drawing"
-msgstr "OpenDocument (Pandoc)"
+msgstr ""
 
 #: lib/configure.py:738
 msgid "Grace"
@@ -27418,23 +27356,6 @@ msgid "External Material"
 msgstr "外部素材"
 
 #: lib/examples/Articles:0
-msgid "Itemize Bullets"
-msgstr "符号列表"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Minted File Listing"
-msgstr "行内程序列表(&I)"
-
-#: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "XY-图"
-
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "费曼图"
-
-#: lib/examples/Articles:0
 msgid "XY-Figure"
 msgstr "XY-图"
 
@@ -27448,16 +27369,33 @@ msgid "Instant Preview"
 msgstr "即时预览"
 
 #: lib/examples/Articles:0
+msgid "XY-Pic"
+msgstr "XY-图"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Minted File Listing"
+msgstr "行内程序列表(&I)"
+
+#: lib/examples/Articles:0
+msgid "Itemize Bullets"
+msgstr "符号列表"
+
+#: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "费曼图"
+
+#: lib/examples/Articles:0
 msgid "Graphics and Insets"
 msgstr "图形和插页"
 
 #: lib/examples/Articles:0
-msgid "Localization Test (for Developers)"
-msgstr "本地化测试（针对开发人员）"
-
-#: lib/examples/Articles:0
 msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "将日语与其他语言混合使用（用CJKutf8）"
+
+#: lib/examples/Articles:0
+msgid "Localization Test (for Developers)"
+msgstr "本地化测试（针对开发人员）"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -27474,17 +27412,17 @@ msgstr "语言支持"
 
 #: lib/examples/Articles:0
 #, fuzzy
+msgid "Serial Letter 3"
+msgstr "希伯来语信件"
+
+#: lib/examples/Articles:0
+#, fuzzy
 msgid "Serial Letter 1"
 msgstr "希伯来语信件"
 
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Serial Letter 2"
-msgstr "希伯来语信件"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Serial Letter 3"
 msgstr "希伯来语信件"
 
 #: lib/examples/Articles:0
@@ -27500,12 +27438,12 @@ msgid "Hazard and Precautionary Statements"
 msgstr "危害与预警警示语"
 
 #: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Noweb Listerrors"
-
-#: lib/examples/Articles:0
 msgid "Noweb2LyX"
 msgstr "Noweb2LyX"
+
+#: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Noweb Listerrors"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
 msgid "Modules"
@@ -27536,44 +27474,32 @@ msgid "Mathematical Monthly"
 msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
-msgid "IEEE Transactions Journal"
-msgstr "IEEE Transactions Journal"
+msgid "Springers Global Journal Template (V. 3)"
+msgstr "Springers Global Journal 模板 (第 3 版)"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
 msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
-msgid "Springers Global Journal Template (V. 3)"
-msgstr "Springers Global Journal 模板 (第 3 版)"
+msgid "IEEE Transactions Journal"
+msgstr "IEEE Transactions Journal"
 
 #: lib/examples/Articles:0
 msgid "Hebrew Article (KOMA-Script)"
 msgstr "Hebrew Article (KOMA-Script)"
 
 #: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 主文件"
+
+#: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02 前言"
 
 #: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 部"
-
-#: lib/examples/Articles:0
 msgid "10 Glossary"
 msgstr "10 术语表"
-
-#: lib/examples/Articles:0
-msgid "04 Acknowledgements"
-msgstr "04 致谢"
-
-#: lib/examples/Articles:0
-msgid "06 Acronym"
-msgstr "06 缩略语"
-
-#: lib/examples/Articles:0
-msgid "08 Author"
-msgstr "08 作者"
 
 #: lib/examples/Articles:0
 msgid "09 Appendix"
@@ -27584,28 +27510,44 @@ msgid "11 References"
 msgstr "11 引用"
 
 #: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 贡献者列表"
+msgid "04 Acknowledgements"
+msgstr "04 致谢"
+
+#: lib/examples/Articles:0
+msgid "08 Author"
+msgstr "08 作者"
+
+#: lib/examples/Articles:0
+msgid "06 Acronym"
+msgstr "06 缩略语"
 
 #: lib/examples/Articles:0
 msgid "01 Dedication"
 msgstr "01 献辞"
 
 #: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 主文件"
-
-#: lib/examples/Articles:0
 msgid "03 Preface"
 msgstr "03 序言"
 
 #: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 解答"
+msgid "07 Part"
+msgstr "07 部"
+
+#: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 贡献者列表"
+
+#: lib/examples/Articles:0
+msgid "09 Glossary"
+msgstr "09 术语表"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
 msgstr "06 部"
+
+#: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr "05 缩略语"
 
 #: lib/examples/Articles:0
 msgid "07 Chapter"
@@ -27616,12 +27558,8 @@ msgid "08 Appendix"
 msgstr "08 附录"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 缩略语"
-
-#: lib/examples/Articles:0
-msgid "09 Glossary"
-msgstr "09 术语表"
+msgid "10 Solutions"
+msgstr "10 解答"
 
 #: lib/examples/Articles:0
 msgid "Simple"
@@ -27632,16 +27570,16 @@ msgid "Colored"
 msgstr "有色的"
 
 #: lib/examples/Articles:0
+msgid "Main File"
+msgstr "主文档"
+
+#: lib/examples/Articles:0
 msgid "Chapter 1"
 msgstr "第1章"
 
 #: lib/examples/Articles:0
 msgid "Chapter 2"
 msgstr "第2章"
-
-#: lib/examples/Articles:0
-msgid "Main File"
-msgstr "主文档"
 
 #: lib/examples/Articles:0
 msgid "PhD Thesis"
