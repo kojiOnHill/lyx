@@ -8,6 +8,7 @@
 #	GuiName            "<Gui Name>"
 #	HasGuiSupport      <true|false>
 #	BabelName          <babelname>
+#	BabelOpts          "<language-specific options>"
 #       BabelOptFormat     <format of option specification>
 #	PolyglossiaName    <polyglossianame>
 #	PolyglossiaOpts    "<language-specific options>"
@@ -129,6 +130,8 @@
 #   be de-activated in some contexts (such as - or =).
 # * XindyName holds the value to the (te)xindy -L option. We only give it
 #   if a corresponding language module exists.
+# * BabelOpts are comma separated, no matter how they shall be represented
+#   in the output.
 # * BabelOptFormat specifies how the language-specific options shall be
 #   passed with babel (which differs between languages).
 #   You can use the placeholders $lang$ and $opts$ (as in
@@ -218,10 +221,8 @@ End
 Language ancientgreek
 	GuiName          "Greek (ancient)"
 	BabelName        greek
+	BabelOpts        "ancient"
 	BabelOptFormat   modifier
-	PostBabelPreamble
-	\languageattribute{greek}{ancient}
-	EndPostBabelPreamble
 	PolyglossiaName  greek
 	PolyglossiaOpts  "variant=ancient"
 	XindyName        greek
@@ -670,6 +671,7 @@ End
 Language estonian
 	GuiName          "Estonian"
 	BabelName        estonian
+	BabelOpts        notilde
 	BabelOptFormat   modifier
 	PolyglossiaName  estonian
 	XindyName        estonian
@@ -678,9 +680,6 @@ Language estonian
 	FontEncoding	 T1|OT1
 	DateFormats      "d MMMM yyyy|d MMM yyyy|dd.MM.yyyy"
 	LangCode         et_EE
-	PostBabelPreamble
-	\addto\extrasestonian{\bbl@deactivate{~}}
-	EndPostBabelPreamble
 End
 
 # the preamble definitions are only used due to bugs in the
@@ -1450,6 +1449,7 @@ Language spanish
 	GuiName          "Spanish"
 	HasGuiSupport    true
 	BabelName        spanish
+	BabelOpts        "noquoting, nodecimaldot"
 	BabelOptFormat   modifier
 	PolyglossiaName  spanish
 	XindyName        spanish-modern
@@ -1458,27 +1458,23 @@ Language spanish
 	FontEncoding	 T1|OT1
 	DateFormats      "d 'de' MMMM 'de' yyyy|d MMM yyyy|dd/MM/yyyy"
 	LangCode         es_ES
-	PostBabelPreamble
-	\addto\shorthandsspanish{\spanishdeactivate{~<>}}
-	\deactivatequoting
-	EndPostBabelPreamble
 End
 
 # there are no spanish shorthands in polyglossia
 Language spanish-mexico
 	GuiName          "Spanish (Mexico)"
 	BabelName        spanish
+# mexico implies nodecimaldot
+	BabelOpts        "mexico, noquoting"
+	BabelOptFormat   modifier
 	PolyglossiaName  spanish
+	PolyglossiaOpts  "variant=mexican"
 	XindyName        spanish-modern
 	QuoteStyle       french
 	Encoding         iso8859-15
 	FontEncoding	 T1|OT1
 	DateFormats      "d 'de' MMMM 'de' yyyy|d MMM yyyy|dd/MM/yyyy"
 	LangCode         es_MX
-	PostBabelPreamble
-	\addto\shorthandsspanish{\spanishdeactivate{~<>.}}
-	\deactivatequoting
-	EndPostBabelPreamble
 End
 
 Language swedish
