@@ -369,7 +369,7 @@ Language bahasa
 	GuiName          "Indonesian"
 	HasGuiSupport    true
 	BabelName        bahasa
-	PolyglossiaName  bahasai
+	PolyglossiaName  malay
 	QuoteStyle       english
 	Encoding         iso8859-15
 	FontEncoding	 ASCII
@@ -380,7 +380,8 @@ End
 Language bahasam
 	GuiName          "Malay"
 	BabelName        bahasam
-	PolyglossiaName  bahasam
+	PolyglossiaName  malay
+	PolyglossiaOpts  "variant=malaysian"
 	QuoteStyle       english
 	Encoding         iso8859-15
 	DateFormats      "dd MMMM yyyy|d MMM yyyy|dd/MM/yyyy"
@@ -443,7 +444,8 @@ Language brazilian
 	GuiName          "Portuguese (Brazil)"
 	HasGuiSupport    true
 	BabelName        brazil
-	PolyglossiaName  brazil
+	PolyglossiaName  portuguese
+	PolyglossiaOpts  "variant=brazilian"
 	XindyName        portuguese
 	QuoteStyle       english
 	Encoding         iso8859-15
@@ -536,6 +538,8 @@ End
 Language chinese-simplified
 	GuiName          "Chinese (simplified)"
 	HasGuiSupport    true
+# TODO
+#	PolyglossiaName  chinese
 	Encoding         euc-cn
 	QuoteStyle       english
 	WordWrap         false
@@ -548,6 +552,9 @@ End
 Language chinese-traditional
 	GuiName         "Chinese (traditional)"
 	HasGuiSupport    true
+# TODO
+#	PolyglossiaName  chinese
+#	PolyglossiaOpts  "variant=traditional"
 	QuoteStyle       cjk
 	Encoding         utf8-cjk
 	WordWrap         false
@@ -687,7 +694,7 @@ End
 Language farsi
 	GuiName          "Farsi"
 	BabelName        farsi
-	PolyglossiaName  farsi
+	PolyglossiaName  persian
 	XindyName        persian
 	Encoding         utf8
 	FontEncoding     LAE,LFE
@@ -733,7 +740,7 @@ Language friulan
 	GuiName          "Friulian"
 	HasGuiSupport    true
 	BabelName        friulan
-	PolyglossiaName  friulan
+	PolyglossiaName  friulian
 	QuoteStyle       french
 	Encoding         iso8859-15
 	FontEncoding	 T1|OT1
@@ -935,7 +942,7 @@ End
 Language irish
 	GuiName          "Irish"
 	BabelName        irish
-	PolyglossiaName  irish
+	PolyglossiaName  gaelic
 	QuoteStyle       english
 	Encoding         iso8859-15
 	FontEncoding	 T1|OT1
@@ -963,6 +970,8 @@ Language japanese
 	HasGuiSupport    true
 	BabelName        japanese
 	BabelOptFormat   \languageattribute{$lang$}{$opts$}
+# TODO
+#	PolyglossiaName  japanese
 	Encoding         jis-platex
 	WordWrap         false
 	LangCode         ja_JP
@@ -1037,8 +1046,8 @@ Language kurmanji
 	BabelName        kurmanji
 	BabelOptFormat   \languageattribute{$lang$}{$opts$}
 	PolyglossiaName  kurdish
-	XindyName        kurdish-bedirxan
 	PolyglossiaOpts  "variant=kurmanji"
+	XindyName        kurdish-bedirxan
 	Encoding         utf8
 	FontEncoding	 T1|OT1
 	DateFormats      "d. MMMM yyyy|d. M. yyyy|yyyy-MM-dd"
@@ -1054,7 +1063,7 @@ Language lao
 	LangCode         lo_LA
 End
 
-# There is no country code for Latin because it is a dead language.
+# There is no country code for Latin.
 # We therefore the name of its hunspell dictionary.
 # FIXME DateFormats
 Language latin
@@ -1068,6 +1077,8 @@ Language latin
 	FontEncoding	 T1|OT1
 	LangCode         la_LA
 End
+
+# TODO: support Latin varieties (classic, medieval, eccelesiastic)
 
 # latvian must be loaded locally with babel options,
 # not globally via class options
@@ -1122,7 +1133,8 @@ End
 Language lowersorbian
 	GuiName          "Lower Sorbian"
 	BabelName        lowersorbian
-	PolyglossiaName  lsorbian
+	PolyglossiaName  sorbian
+	PolyglossiaOpts  "variant=lower"
 	XindyName        lower-sorbian
 	QuoteStyle       german
 	Encoding         iso8859-2
@@ -1136,7 +1148,7 @@ Language magyar
 	HasGuiSupport    true
 	BabelName        magyar
 	BabelOptFormat   \magyarOptions{$opts§}
-	PolyglossiaName  magyar
+	PolyglossiaName  hungarian
 	XindyName        hungarian
 	QuoteStyle       hungarian
 	Encoding         iso8859-2
@@ -1204,19 +1216,7 @@ Language newzealand
 	LangCode         en_NZ
 End
 
-Language norsk
-	GuiName          "Norwegian (Bokmaal)"
-	HasGuiSupport    true
-	BabelName        norsk
-	PolyglossiaName  norsk
-	XindyName        norwegian
-	QuoteStyle       swiss
-	Encoding         iso8859-15
-	FontEncoding	 T1|OT1
-	DateFormats      "d. MMMM yyyy|d. MMM yyyy|dd./MM./yyyy"
-	LangCode         nb_NO
-End
-
+# TODO:
 # supported by polyglossia but not LyX:
 # Language nko
 # 	GuiName		 "N’Ko"
@@ -1233,11 +1233,25 @@ End
 # 	LangCode	 nqo
 # End
 
+Language norsk
+	GuiName          "Norwegian (Bokmaal)"
+	HasGuiSupport    true
+	BabelName        norsk
+	PolyglossiaName  norwegian
+	PolyglossiaOpts  "variant=bokmal"
+	XindyName        norwegian
+	QuoteStyle       swiss
+	Encoding         iso8859-15
+	FontEncoding	 T1|OT1
+	DateFormats      "d. MMMM yyyy|d. MMM yyyy|dd./MM./yyyy"
+	LangCode         nb_NO
+End
+
 Language nynorsk
 	GuiName          "Norwegian (Nynorsk)"
 	HasGuiSupport    true
 	BabelName        nynorsk
-	PolyglossiaName  nynorsk
+	PolyglossiaName  norwegian
 	XindyName        norwegian
 	QuoteStyle       swiss
 	Encoding         iso8859-15
@@ -1256,7 +1270,8 @@ Language occitan
 	LangCode         oc_FR
 End
 
-# Currently not supported (file format change!)
+# TODO: odia (polyglossia)
+
 # Russian orthography from the Petrine orthographic reforms of
 # 1708 to the 1917 orthographic reform
 Language oldrussian
@@ -1298,7 +1313,7 @@ Language portuguese
 	GuiName          "Portuguese"
 	HasGuiSupport    true
 	BabelName        portuges
-	PolyglossiaName  portuges
+	PolyglossiaName  portuguese
 	XindyName        portuguese
 	QuoteStyle       french
 	Encoding         iso8859-15
@@ -1306,6 +1321,8 @@ Language portuguese
 	DateFormats      "d 'de' MMMM 'de' yyyy|d 'de' MMM 'de' yyyy|yyyy/MM/dd"
 	LangCode         pt_PT
 End
+
+# TODO: punjabi (polyglossia)
 
 Language romanian
 	GuiName          "Romanian"
@@ -1352,7 +1369,7 @@ End
 Language samin
 	GuiName          "North Sami"
 	BabelName        samin
-	PolyglossiaName  samin
+	PolyglossiaName  sami
 	Encoding         iso8859-15
 	FontEncoding	 T1|OT1
 	DateFormats      "MMMM d. 'b'. yyyy|MMM d. 'b'. yyyy|d.M.yyyy"
@@ -1373,7 +1390,8 @@ End
 Language scottish
 	GuiName          "Scottish"
 	BabelName        scottish
-	PolyglossiaName  scottish
+	PolyglossiaName  gaelic
+	PolyglossiaOpts  "variant=scottish"
 	QuoteStyle       english
 	Encoding         iso8859-15
 	FontEncoding	 T1|OT1
@@ -1392,7 +1410,7 @@ Language serbian
 	BabelName        serbianc
 	BabelOptFormat   modifier
 	PolyglossiaName  serbian
-	PolyglossiaOpts  "script=Cyrillic"
+	PolyglossiaOpts  "script=cyrillic"
 	XindyName        serbian
 	# Note: script option is uppercase, even if the polyglossia
 	#       manual states otherwise.
@@ -1409,7 +1427,7 @@ Language serbian-latin
 	BabelName        serbian
 	BabelOptFormat   modifier
 	PolyglossiaName  serbian
-	PolyglossiaOpts  "script=Latin"
+	PolyglossiaOpts  "script=latin"
 	XindyName        croatian
 	QuoteStyle       polish
 	Encoding         iso8859-2
@@ -1615,7 +1633,7 @@ End
 Language uppersorbian
 	GuiName          "Upper Sorbian"
 	BabelName        uppersorbian
-	PolyglossiaName  usorbian
+	PolyglossiaName  sorbian
 	XindyName        upper-sorbian
 	QuoteStyle       german
 	Encoding         iso8859-2
@@ -1633,6 +1651,8 @@ Language urdu
 	RTL              true
 	LangCode         ur_PK
 End
+
+# TODO: uyghur (polyglossia)
 
 Language vietnamese
 	GuiName          "Vietnamese"
