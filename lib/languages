@@ -563,7 +563,7 @@ Language chinese-traditional
 	Requires         CJK
 End
 
-# supported by polyglossia but not LyX:
+# not supported by babel
 Language churchslavonic
 	GuiName         "Church Slavonic"
  	PolyglossiaName  churchslavonic
@@ -1064,7 +1064,7 @@ Language lao
 End
 
 # There is no country code for Latin.
-# We therefore the name of its hunspell dictionary.
+# We therefore use the name of its hunspell dictionary.
 # FIXME DateFormats
 Language latin
 	GuiName          "Latin"
@@ -1262,12 +1262,14 @@ End
 
 # not supported by babel
 Language occitan
-	GuiName          "Occitan"
-	PolyglossiaName  occitan
-	QuoteStyle       french
-	Encoding         utf8
-	DateFormats      "d MMMM yyyy|d MMM yyyy|dd/MM/yyyy"
-	LangCode         oc_FR
+	GuiName         "Occitan"
+# TODO
+#	BabelName	occitan
+	PolyglossiaName occitan
+	QuoteStyle      french
+	Encoding        utf8
+	DateFormats     "d MMMM yyyy|d MMM yyyy|dd/MM/yyyy"
+	LangCode        oc_FR
 End
 
 # TODO: odia (polyglossia)
@@ -1276,6 +1278,10 @@ End
 # 1708 to the 1917 orthographic reform
 Language oldrussian
 	GuiName          "Russian (Petrine orthography)"
+# TODO
+#	BabelName	 russian
+#	BabelOpts	 ancient
+#	BabelOptFormat	 modifier
 	PolyglossiaName  russian
 	PolyglossiaOpts  "spelling=old"
 	XindyName        russian
@@ -1353,7 +1359,7 @@ Language russian
 	GuiName          "Russian"
 	HasGuiSupport    true
 	BabelName        russian
-	BabelOptFormat   \languageattribute{$lang$}{$opts$}
+	BabelOptFormat   modifier
 	PolyglossiaName  russian
 	PolyglossiaOpts  "spelling=modern"
 	XindyName        russian
