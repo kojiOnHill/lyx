@@ -3504,6 +3504,7 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 	// add main language
 	langs.insert(language);
 	ostringstream os;
+	string force_provide;
 	for (auto const & l : langs) {
 		string blang = l->babel();
 		bool use_opt = langoptions;
@@ -3523,7 +3524,8 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 				use_opt = true;
 			}
 		}
-		if (l->useBabelProvide() == 1 || (l->useBabelProvide() == 2 && useNonTeXFonts)) {
+		int const bp = l->useBabelProvide();
+		if (bp == 1) {
 			os << "\n\\babelprovide[import";
 			if (l == language)
 				os << ", main";
@@ -3532,11 +3534,28 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 			os << "]{" << blang << "}";
 			have_mods = true;
 		}
-		else if (use_opt)
+		if (bp == 2 && useNonTeXFonts) {
+			// here we need to tell babel to use the ini
+			// even though an *.ldf exists
+			if (l == language)
+				force_provide = force_provide.empty()
+						? "provide=*"
+						: "provide*=*";
+			else
+				force_provide = "provide+=*";
+			have_mods = true;
+		}
+		if (bp != 1 && use_opt)
 			blangs.push_back(blang);
 	}
-	if (have_mods)
+	if (have_mods) {
 		lang_opts = getStringFromVector(blangs);
+		if (!force_provide.empty()) {
+			if (!lang_opts.empty())
+				lang_opts += ", ";
+			lang_opts += force_provide;
+		}
+	}
 	// The prefs may require the languages to
 	// be submitted to babel itself (not the class).
 	if ((langoptions || have_mods) && !lang_opts.empty())
