@@ -224,9 +224,8 @@ End
 # We introduce it with LyX 2.2 to give the support time to settle.
 Language ancientgreek
 	GuiName          "Greek (ancient)"
-	BabelName        greek
-	BabelOpts        "ancient"
-	BabelOptFormat   modifier
+	BabelName        ancientgreek
+	BabelProvide     1
 	PolyglossiaName  greek
 	PolyglossiaOpts  "variant=ancient"
 	XindyName        greek
@@ -1501,10 +1500,8 @@ End
 # there are no spanish shorthands in polyglossia
 Language spanish-mexico
 	GuiName          "Spanish (Mexico)"
-	BabelName        spanish
-# mexico implies nodecimaldot
-	BabelOpts        "mexico, noquoting"
-	BabelOptFormat   modifier
+	BabelName        mexican
+	BabelProvide     1
 	PolyglossiaName  spanish
 	PolyglossiaOpts  "variant=mexican"
 	XindyName        spanish-modern
