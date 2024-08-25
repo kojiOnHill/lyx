@@ -3069,10 +3069,7 @@ bool BufferParams::useBidiPackage(OutputParams const & rp) const
 		// or package options
 		|| (rp.use_babel
 		    && LaTeXFeatures::isAvailableAtLeastFrom("babel", 2019, 4, 3)
-		    && (hasPackageOption("babel", "bidi-r")
-			|| hasPackageOption("babel", "bidi-l")
-			|| contains(options, "bidi-r")
-			|| contains(options, "bidi-l")))
+		    && useNonTeXFonts)
 		)
 		&& rp.flavor == Flavor::XeTeX;
 }
@@ -3555,6 +3552,18 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 				lang_opts += ", ";
 			lang_opts += force_provide;
 		}
+	}
+	if (useNonTeXFonts && features.hasRTLLanguage()) {
+		if (!lang_opts.empty())
+			lang_opts += ", ";
+		if (features.runparams().flavor == Flavor::XeTeX) {
+			// main language RTL?
+			if (language->rightToLeft())
+				lang_opts += "bidi=bidi-r";
+			else
+				lang_opts += "bidi=bidi-l";
+		} else
+			lang_opts += "bidi=basic";
 	}
 	// The prefs may require the languages to
 	// be submitted to babel itself (not the class).
