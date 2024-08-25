@@ -3539,7 +3539,7 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 		lang_opts = getStringFromVector(blangs);
 	// The prefs may require the languages to
 	// be submitted to babel itself (not the class).
-	if (langoptions || have_mods)
+	if ((langoptions || have_mods) && !lang_opts.empty())
 		return "\\usepackage[" + lang_opts + "]{babel}" + os.str();
 	return "\\usepackage{babel}" + os.str();
 }
