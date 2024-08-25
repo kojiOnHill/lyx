@@ -3502,6 +3502,7 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 	langs.insert(language);
 	ostringstream os;
 	string force_provide;
+	bool have_main_forceprovide = false;
 	for (auto const & l : langs) {
 		string blang = l->babel();
 		bool use_opt = langoptions;
@@ -3534,12 +3535,15 @@ string BufferParams::babelCall(LaTeXFeatures const & features, string lang_opts,
 		if (bp == 2 && useNonTeXFonts) {
 			// here we need to tell babel to use the ini
 			// even though an *.ldf exists
-			if (l == language)
+			if (l == language) {
 				force_provide = force_provide.empty()
 						? "provide=*"
 						: "provide*=*";
-			else
-				force_provide = "provide+=*";
+				have_main_forceprovide = true;
+			} else
+				force_provide = have_main_forceprovide
+						? "provide*=*"
+						: "provide+=*";
 			have_mods = true;
 		}
 		if (bp != 1 && use_opt)

@@ -133,7 +133,8 @@
 #   if a corresponding language module exists.
 # * BabelProvide determines if and when a language should be loaded from
 #   babel *.ini files with babel. Possible values:
-#   0 (= never, default), 1 (always), 2 (with Unicode engines/non-TeX fonts)
+#   0 (= never, default), 1 (always), 2 (with Unicode engines/non-TeX fonts).
+#   The latter advises babel to ignore existing *.ldf files.
 # * BabelOpts are comma separated, no matter how they shall be represented
 #   in the output.
 # * BabelOptFormat specifies how the language-specific options shall be
