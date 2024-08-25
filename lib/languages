@@ -8,6 +8,7 @@
 #	GuiName            "<Gui Name>"
 #	HasGuiSupport      <true|false>
 #	BabelName          <babelname>
+#	BabelProvide       <0|1|2>
 #	BabelOpts          "<language-specific options>"
 #       BabelOptFormat     <format of option specification>
 #	PolyglossiaName    <polyglossianame>
@@ -130,6 +131,9 @@
 #   be de-activated in some contexts (such as - or =).
 # * XindyName holds the value to the (te)xindy -L option. We only give it
 #   if a corresponding language module exists.
+# * BabelProvide determines if and when a language should be loaded from
+#   babel *.ini files with babel. Possible values:
+#   0 (= never, default), 1 (always), 2 (with Unicode engines/non-TeX fonts)
 # * BabelOpts are comma separated, no matter how they shall be represented
 #   in the output.
 # * BabelOptFormat specifies how the language-specific options shall be
