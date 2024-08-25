@@ -72,7 +72,7 @@ What's new
 
 - When exporting to MathML, the argument of the \boxed{} macro is now
   correctly treated as math.
-  
+
 - Properly escape special characters (!, @, |) in nomenclature output.
 
 - Handle linguistic structure trees in ePub and PDF (DocBook) output (bug 12372).
@@ -119,6 +119,9 @@ What's new
 - Fix possible crash in undo code after inserting note inset over a
   multi-paragraph selection.
 
+- Fix a Python script, used to preview math expressions, that used a
+  module that is removed in Python 3.13.
+
 
 * DOCUMENTATION AND LOCALIZATION
 
@@ -144,4 +147,3 @@ What's new
 * BUILD/INSTALLATION
 
 - Fix 'make install' target for autotools builds with autoconf >= 2.72.
-
