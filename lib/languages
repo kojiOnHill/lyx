@@ -242,7 +242,7 @@ End
 # FIXME: dummy babel language for arabic_arabtex to be able
 # to switch the language the way of the ArabTeX-package
 Language arabic_arabtex
-	GuiName          "Arabic (ArabTeX)"
+	GuiName          "Arabic (ArabTeX, only with TeX fonts)"
 	HasGuiSupport    true
 	BabelName        arabtex
 	QuoteStyle       french
@@ -254,7 +254,7 @@ End
 
 # polyglossia uses "Arabic" for the lang environment
 Language arabic_arabi
-	GuiName          "Arabic (Arabi)"
+	GuiName          "Arabic (Arabi or non-TeX fonts)"
 	BabelName        arabic
 	BabelProvide     2
 	PolyglossiaName  arabic
@@ -988,7 +988,7 @@ End
 
 # uses CJK package
 Language japanese-cjk
-	GuiName         "Japanese (CJK)"
+	GuiName         "Japanese (CJK, only with TeX fonts)"
 	Encoding        euc-jp
 	DateFormats     "yyyy年M月d日|yyyy/MM/dd|yy/MM/dd"
 	WordWrap        false
