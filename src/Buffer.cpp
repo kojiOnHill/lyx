@@ -5585,6 +5585,7 @@ Buffer::ReadStatus Buffer::reload()
 	removePreviews();
 	updatePreviews();
 	errors("Parse");
+	changed(true);
 	return status;
 }
 
