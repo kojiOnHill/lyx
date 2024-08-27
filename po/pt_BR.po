@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: pt_BR 2.4.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2024-08-22 21:06-0400\n"
-"PO-Revision-Date: 2024-06-24 17:25-0300\n"
+"PO-Revision-Date: 2024-08-27 09:36-0300\n"
 "Last-Translator: Georger Araújo <georger underscore br at yahoo dot com dot "
 "br>\n"
 "Language-Team: Brazilian Portuguese <georger underscore br at yahoo dot com "
@@ -54,14 +54,12 @@ msgid "[[do]]O&pen"
 msgstr "[[do]]&Abrir"
 
 #: src/frontends/qt/ui/AboutUi.ui:238
-#, fuzzy
 msgid "Temporary directory"
-msgstr "Pasta &temporária:"
+msgstr "Pasta temporária"
 
 #: src/frontends/qt/ui/AboutUi.ui:269
-#, fuzzy
 msgid "Open temporary directory in file browser"
-msgstr "Abrir pasta de biblioteca no explorador de arquivos"
+msgstr "Abrir pasta temporária no explorador de arquivos"
 
 #: src/frontends/qt/ui/AboutUi.ui:288
 msgid "Credits"
@@ -2342,8 +2340,8 @@ msgid ""
 "Link to the web or any other target with an \"authority\" component (i."
 "e., :// in the URI)"
 msgstr ""
-"Vincular à web ou a qualquer outro alvo com um componente \"autoridade\" "
-"(isto é, :// no URI)"
+"Vincular à web ou a qualquer outro alvo com um componente "
+"\"autoridade\" (isto é, :// no URI)"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:136
 msgid "&Web"
@@ -3418,19 +3416,20 @@ msgid "De&fault output format:"
 msgstr "&Formato padrão de saída:"
 
 #: src/frontends/qt/ui/OutputUi.ui:144
-#, fuzzy
 msgid "Output Options"
-msgstr "Opções de Saída LaTeX"
+msgstr "Opções de Saída"
 
 #: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
 msgid ""
 "Scaling factor for images that are generated for some LaTeX constructs (e."
 "g., math formulae) in non-LaTeX output."
 msgstr ""
+"Fator de escala para imagens que são geradas para algumas construções LaTeX "
+"(p. ex. fórmulas matemáticas) em saída não-LaTeX."
 
 #: src/frontends/qt/ui/OutputUi.ui:160
 msgid "Scaling of generated &images:"
-msgstr ""
+msgstr "Escala de &imagens geradas:"
 
 #: src/frontends/qt/ui/OutputUi.ui:219
 msgid "&LaTeX"
@@ -4897,8 +4896,8 @@ msgstr ""
 "expandidos com base na pasta de trabalho (PT). Para todos os caminho exceto "
 "o \"prefixo TEXINPUTS\" a PT é a pasta a partir da qual você inicia o LyX, e "
 "por isso pode mudar de uma sessão do LyX para outra. Para o caminho "
-"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \".\" "
-"(sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
+"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \"."
+"\" (sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
 
 #: src/frontends/qt/ui/PrefPathsUi.ui:36
 msgid "&PATH prefix:"
@@ -16266,7 +16265,7 @@ msgstr "MenuDeOpções"
 
 #: lib/layouts/pdfform.module:90
 msgid "Label[[Form]]"
-msgstr ""
+msgstr "Etiqueta[[Form]]"
 
 #: lib/layouts/pdfform.module:93
 msgid "Insert the label here"
@@ -22087,7 +22086,6 @@ msgid "Comment|C"
 msgstr "Comentário|C"
 
 #: lib/ui/stdmenus.inc:548
-#, fuzzy
 msgid "Greyed Out|G"
 msgstr "Esmaecida"
 
@@ -27250,9 +27248,8 @@ msgid "An Xfig figure.\n"
 msgstr "Uma figura Xfig.\n"
 
 #: lib/configure.py:726
-#, fuzzy
 msgid "Tgif"
-msgstr "tgo|Tgif"
+msgstr "Tgif"
 
 #: lib/configure.py:729
 msgid "FIG"
@@ -27263,9 +27260,8 @@ msgid "DIA"
 msgstr "DIA"
 
 #: lib/configure.py:735
-#, fuzzy
 msgid "OpenDocument drawing"
-msgstr "OpenDocument (Pandoc)"
+msgstr "Desenho OpenDocument"
 
 #: lib/configure.py:738
 msgid "Grace"
@@ -27670,9 +27666,8 @@ msgid "LyX Preview"
 msgstr "Previsualização LyX"
 
 #: lib/configure.py:885
-#, fuzzy
 msgid "PDFTEX"
-msgstr "pdf_tex|PDFTEX"
+msgstr "PDFTEX"
 
 #: lib/configure.py:886
 msgid "Program"
@@ -30447,8 +30442,9 @@ msgstr ""
 "Sinal SIGSEGV capturado!\n"
 "Desculpe, você achou um erro no LyX, esperamos que você não tenha perdido "
 "nenhum dado.\n"
-"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda->Introdução' "
-"(Help->Introduction) e envie um relato de bug, se necessário. Obrigado!\n"
+"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda-"
+">Introdução' (Help->Introduction) e envie um relato de bug, se necessário. "
+"Obrigado!\n"
 "Até logo."
 
 #: src/LyX.cpp:723
@@ -36144,7 +36140,6 @@ msgid "Move Tab to &End"
 msgstr "Mover Aba para o Fim"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2386
-#, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "Abrir Pasta que Contém"
 
@@ -38011,7 +38006,7 @@ msgstr "texto%1$s"
 
 #: src/insets/InsetRef.cpp:403
 msgid "elsewhere"
-msgstr ""
+msgstr "em outro lugar"
 
 #: src/insets/InsetRef.cpp:644
 msgid "Ref"
@@ -38214,7 +38209,7 @@ msgstr "Carregado em memória. Gerando pixmap..."
 
 #: src/insets/RenderGraphic.cpp:101
 msgid "Scaling etc..."
-msgstr "Redimensionando e etc..."
+msgstr "Escala e etc..."
 
 #: src/insets/RenderGraphic.cpp:104
 msgid "Ready to display"
