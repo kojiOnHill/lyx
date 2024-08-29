@@ -121,7 +121,7 @@
 #include <QThreadPool>
 #include <QWidget>
 
-#if defined(QPA_XCB)
+#ifdef HAVE_XCB_XCB_H
 #include <xcb/xcb.h>
 #ifdef HAVE_QT5_X11_EXTRAS
 #include <QtX11Extras/QX11Info>
@@ -1157,10 +1157,14 @@ GuiApplication::GuiApplication(int & argc, char ** argv)
 	// Install Qt native translator for GUI elements.
 	installTranslator(&d->qt_trans_);
 
-#ifdef QPA_XCB
-	// Enable reception of XCB events.
-	installNativeEventFilter(this);
+	if (platformName() == "xcb") {
+#if defined(HAVE_XCB_XCB_H) && defined(HAVE_LIBXCB)
+		// Enable reception of XCB events.
+		installNativeEventFilter(this);
+#else
+		LYXERR0("Warning: X11 support is incomplete in this LyX binary.");
 #endif
+	}
 
 	// FIXME: quitOnLastWindowClosed is true by default. We should have a
 	// lyxrc setting for this in order to let the application stay resident.
@@ -1181,13 +1185,13 @@ GuiApplication::GuiApplication(int & argc, char ** argv)
 			this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
 #endif
 
-#if defined(QPA_XCB)
-	// doubleClickInterval() is 400 ms on X11 which is just too long.
-	// On Windows and Mac OS X, the operating system's value is used.
-	// On Microsoft Windows, calling this function sets the double
-	// click interval for all applications. So we don't!
-	QApplication::setDoubleClickInterval(300);
-#endif
+	if (platformName() == "xcb") {
+		// doubleClickInterval() is 400 ms on X11 which is just too long.
+		// On Windows and Mac OS X, the operating system's value is used.
+		// On Microsoft Windows, calling this function sets the double
+		// click interval for all applications. So we don't!
+		QApplication::setDoubleClickInterval(300);
+	}
 
 	connect(this, SIGNAL(lastWindowClosed()), this, SLOT(onLastWindowClosed()));
 
@@ -3477,7 +3481,7 @@ bool GuiApplication::longOperationStarted() {
 //
 // X11 specific stuff goes here...
 
-#if defined(QPA_XCB)
+#if defined(HAVE_XCB_XCB_H) && defined(HAVE_LIBXCB)
 bool GuiApplication::nativeEventFilter(const QByteArray & eventType,
 				       void * message, QINTPTR *)
 {
