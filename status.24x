@@ -121,7 +121,10 @@ What's new
   and xltable), as this is not supported by the packages. Also fix the
   disabling mechanism in the table dialog.
 
-- Fix display of integral limits on Windows (bug 13087)
+- Fix display of integral limits on Windows (bug 13087).
+
+- Fix crash when deleting tabs in a selection (with S-BackTab) in a
+  text-only inset (ERT, Listings...).
 
 
 * INTERNALS
