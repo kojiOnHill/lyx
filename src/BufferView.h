@@ -218,17 +218,17 @@ public:
 	/// Ensure the passed cursor \p dit is visible.
 	/// This method will automatically scroll and update the BufferView
 	/// (metrics+drawing) if needed.
-	/// \param how Use this scroll strategy
+	/// \param how: where the cursor should appear (visible/top/center)
 	void showCursor(DocIterator const & dit, ScrollType how);
 	/// Scroll to the cursor.
-	/// \param how Use this scroll strategy
+	/// This only updates the anchor vertical position, but does not
+	/// recompute metrics nor trigger a screen refresh.
+	/// \param how: where the cursor should appear (visible/top/center)
 	/// \return true if screen was scrolled
 	bool scrollToCursor(DocIterator const & dit, ScrollType how);
-	/// scroll down document by the given number of pixels.
-	int scrollDown(int pixels);
-	/// scroll up document by the given number of pixels.
-	int scrollUp(int pixels);
-	/// scroll document by the given number of pixels.
+	/// scroll the view by the given number of pixels. This only
+	/// updates the anchor vertical position, but does not recompute
+	/// metrics nor trigger a screen refresh.
 	int scroll(int pixels);
 	/// Scroll the view by a number of pixels.
 	void scrollDocView(int pixels);

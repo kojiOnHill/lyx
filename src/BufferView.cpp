@@ -2168,18 +2168,24 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			scroll_step = d->scrollbarParameters_.single_step;
 		else if (scroll_type == "page")
 			scroll_step = d->scrollbarParameters_.page_step;
-		else
-			return;
-		string const scroll_quantity = cmd.getArg(1);
-		if (scroll_quantity == "up")
-			scrollUp(scroll_step);
-		else if (scroll_quantity == "down")
-			scrollDown(scroll_step);
 		else {
-			int const scroll_value = convert<int>(scroll_quantity);
-			if (scroll_value)
-				scroll(scroll_step * scroll_value);
+			dispatched = false;
+			return;
 		}
+
+		string const scroll_quantity = cmd.getArg(1);
+
+		if (scroll_quantity == "up")
+			scroll(-scroll_step);
+		else if (scroll_quantity == "down")
+			scroll(scroll_step);
+		else if (isStrInt(scroll_quantity))
+			scroll(scroll_step * convert<int>(scroll_quantity));
+		else {
+			dispatched = false;
+			return;
+		}
+
 		dr.screenUpdate(Update::ForceDraw);
 		dr.forceBufferUpdate();
 		break;
@@ -2856,20 +2862,6 @@ int BufferView::scroll(int pixels)
 {
 	d->anchor_ypos_ -= pixels;
 	return -pixels;
-}
-
-
-int BufferView::scrollDown(int pixels)
-{
-	d->anchor_ypos_ -= pixels;
-	return -pixels;
-}
-
-
-int BufferView::scrollUp(int pixels)
-{
-	d->anchor_ypos_ += pixels;
-	return pixels;
 }
 
 
