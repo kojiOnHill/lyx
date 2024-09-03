@@ -2848,34 +2848,13 @@ int BufferView::minVisiblePart()
 
 int BufferView::scroll(int pixels)
 {
-	if (pixels > 0)
-		return scrollDown(pixels);
-	if (pixels < 0)
-		return scrollUp(-pixels);
-	return 0;
+	d->anchor_ypos_ -= pixels;
+	return -pixels;
 }
 
 
 int BufferView::scrollDown(int pixels)
 {
-	Text * text = &buffer_.text();
-	TextMetrics & tm = d->text_metrics_[text];
-	int const ymax = height_ + pixels;
-	while (true) {
-		pair<pit_type, ParagraphMetrics const *> last = tm.last();
-		int bottom_pos = last.second->bottom();
-		if (lyxrc.scroll_below_document)
-			bottom_pos += height_ - minVisiblePart();
-		if (last.first + 1 == int(text->paragraphs().size())) {
-			if (bottom_pos <= height_)
-				return 0;
-			pixels = min(pixels, bottom_pos - height_);
-			break;
-		}
-		if (bottom_pos > ymax)
-			break;
-		tm.newParMetricsDown();
-	}
 	d->anchor_ypos_ -= pixels;
 	return -pixels;
 }
@@ -2883,22 +2862,6 @@ int BufferView::scrollDown(int pixels)
 
 int BufferView::scrollUp(int pixels)
 {
-	Text * text = &buffer_.text();
-	TextMetrics & tm = d->text_metrics_[text];
-	int ymin = - pixels;
-	while (true) {
-		pair<pit_type, ParagraphMetrics const *> first = tm.first();
-		int top_pos = first.second->top();
-		if (first.first == 0) {
-			if (top_pos >= 0)
-				return 0;
-			pixels = min(pixels, - top_pos);
-			break;
-		}
-		if (top_pos < ymin)
-			break;
-		tm.newParMetricsUp();
-	}
 	d->anchor_ypos_ += pixels;
 	return pixels;
 }
