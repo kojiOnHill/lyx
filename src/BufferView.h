@@ -229,7 +229,7 @@ public:
 	/// scroll the view by the given number of pixels. This only
 	/// updates the anchor vertical position, but does not recompute
 	/// metrics nor trigger a screen refresh.
-	int scroll(int pixels);
+	void scroll(int pixels);
 	/// Scroll the view by a number of pixels.
 	void scrollDocView(int pixels);
 	/// Set the cursor position based on the scrollbar one.
@@ -418,15 +418,15 @@ private:
 	/// Update current paragraph metrics.
 	/// \return true if no further update is needed.
 	bool singleParUpdate();
-	/** Helper for the public updateMetrics() and for processUpdateFlags()
-	 * * When \c force is true, get rid of all paragraph metrics and
-         rebuild them anew.
-	 * * When it is false, keep the paragraphs that are still visible in
-	 *   WorkArea and rebuild the missing ones.
-	 *
-	 * This does also set the anchor paragraph and its position correctly
+	/** Helper for the public updateMetrics() and for processUpdateFlags().
+	 * This does also set the anchor paragraph and its position correctly.
+	 * \param force when true, get rid of all paragraph metrics and
+	 *    rebuild them anew. Otherwise keep the paragraphs that are
+	 *    still visible in work area and rebuild the missing ones.
+	 * \return the correction needed (same sign as anchor vertical
+	 * position change) when hitting top or bottom constraints.
 	*/
-	void updateMetrics(bool force);
+	int updateMetrics(bool force);
 
 	// Set the row on which the cursor lives.
 	void setCurrentRowSlice(CursorSlice const & rowSlice);

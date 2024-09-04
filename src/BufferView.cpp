@@ -2128,6 +2128,8 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 	case LFUN_SCREEN_UP:
 	case LFUN_SCREEN_DOWN: {
 		Point p = getPos(cur);
+		// replace x by the cursor target
+		p.x = cur.targetX();
 		// This code has been commented out to enable to scroll down a
 		// document, even if there are large insets in it (see bug #5465).
 		/*if (p.y < 0 || p.y > height_) {
@@ -2135,29 +2137,28 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			showCursor();
 			p = getPos(cur);
 		}*/
-		int const scrolled = scroll(act == LFUN_SCREEN_UP
-			? -height_ : height_);
-		if (act == LFUN_SCREEN_UP && scrolled > -height_)
-			p = Point(0, 0);
-		if (act == LFUN_SCREEN_DOWN && scrolled < height_)
-			p = Point(width_, height_);
+		scroll(act == LFUN_SCREEN_UP ? -height_ : height_);
+		// update metrics
+		int const correction = updateMetrics(false);
+		if (act == LFUN_SCREEN_UP && correction < 0)
+			p = Point(lyxrc.mac_like_cursor_movement ? 0 : p.x, 0);
+		if (act == LFUN_SCREEN_DOWN && correction > 0)
+			p = Point(lyxrc.mac_like_cursor_movement ? width_ : p.x, height_);
 		bool const in_texted = cur.inTexted();
 		cur.setCursor(doc_iterator_begin(cur.buffer()));
 		cur.selHandle(false);
-		// Force an immediate computation of metrics because we need it below
-		if (scrolled)
-			processUpdateFlags(Update::Force);
 
 		d->text_metrics_[&buffer_.text()].editXY(cur, p.x, p.y,
-			true, act == LFUN_SCREEN_UP);
+			false, act == LFUN_SCREEN_UP);
 		//FIXME: what to do with cur.x_target()?
 		bool update = in_texted && cur.bv().checkDepm(cur, old);
 		cur.finishUndo();
 
-		if (update || cur.mark())
+		if (update) {
 			dr.screenUpdate(Update::Force | Update::FitCursor);
-		if (update)
 			dr.forceBufferUpdate();
+		} else
+			dr.screenUpdate(Update::ForceDraw | Update::FitCursor);
 		break;
 	}
 
@@ -2858,10 +2859,9 @@ int BufferView::minVisiblePart()
 }
 
 
-int BufferView::scroll(int pixels)
+void BufferView::scroll(int pixels)
 {
 	d->anchor_ypos_ -= pixels;
-	return -pixels;
 }
 
 
@@ -3220,10 +3220,10 @@ void BufferView::updateMetrics()
 }
 
 
-void BufferView::updateMetrics(bool force)
+int BufferView::updateMetrics(bool force)
 {
 	if (!ready())
-		return;
+		return 0;
 
 	//LYXERR0("updateMetrics " << _v_(force));
 
@@ -3256,6 +3256,7 @@ void BufferView::updateMetrics(bool force)
 	tm.updateMetrics(d->anchor_pit_, d->anchor_ypos_, height_);
 
 	// Check that the end of the document is not too high
+	int const old_ypos = d->anchor_ypos_;
 	int const min_visible = lyxrc.scroll_below_document ? minVisiblePart() : height_;
 	if (tm.last().first == lastpit && tm.last().second->hasPosition()
 	     && tm.last().second->bottom() < min_visible) {
@@ -3271,6 +3272,9 @@ void BufferView::updateMetrics(bool force)
 		LYXERR(Debug::SCROLLING, "Too low, adjusting anchor ypos to " << d->anchor_ypos_);
 		tm.updateMetrics(d->anchor_pit_, d->anchor_ypos_, height_);
 	}
+
+	// The global adjustment that have been made above
+	int const correction = d->anchor_ypos_ - old_ypos;
 
 	/* FIXME: do we want that? It avoids potential issues with old
 	 * paragraphs that should have been recomputed but have not, at
@@ -3307,6 +3311,7 @@ void BufferView::updateMetrics(bool force)
 		LYXERR(Debug::WORKAREA, "BufferView::updateMetrics");
 		d->coord_cache_.dump();
 	}
+	return correction;
 }
 
 
