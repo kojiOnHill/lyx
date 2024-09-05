@@ -1015,9 +1015,9 @@ void BufferView::recenter()
 }
 
 
-void BufferView::showCursor()
+void BufferView::showCursor(ScrollType how)
 {
-	showCursor(d->cursor_, SCROLL_VISIBLE);
+	showCursor(d->cursor_, how);
 }
 
 
@@ -1038,6 +1038,10 @@ bool BufferView::scrollToCursor(DocIterator const & dit, ScrollType how)
 		LYXERR(Debug::SCROLLING, "Centering cursor in workarea");
 	else if (how == SCROLL_TOP)
 		LYXERR(Debug::SCROLLING, "Setting cursor to top of workarea");
+	else if (how == SCROLL_BOTTOM)
+		LYXERR(Debug::SCROLLING, "Setting cursor to bottom of workarea");
+	else if (how == SCROLL_TOGGLE)
+		LYXERR(Debug::SCROLLING, "Alternate cursor position between center, top and bottom");
 	else
 		LYXERR(Debug::SCROLLING, "Making sure cursor is visible in workarea");
 
@@ -1115,6 +1119,7 @@ bool BufferView::scrollToCursor(DocIterator const & dit, ScrollType how)
 	int const ypos_center = height_/2 - row_dim.height() / 2 + row_dim.ascent() - offset;
 	int const ypos_top = (offset > height_) ? height_ - offset - defaultRowHeight()
 	                                        : defaultRowHeight() * 2;
+	int const ypos_bottom = height_ - offset - defaultRowHeight();
 
 	// Select the right one.
 	d->anchor_pit_ = bot_pit;
@@ -1125,7 +1130,24 @@ bool BufferView::scrollToCursor(DocIterator const & dit, ScrollType how)
 	case SCROLL_TOP:
 	case SCROLL_VISIBLE:
 		d->anchor_ypos_ = ypos_top;
-		// more to come: BOTTOM, TOGGLE
+		break;
+	case SCROLL_BOTTOM:
+		d->anchor_ypos_ = ypos_bottom;
+		break;
+	case SCROLL_TOGGLE: {
+		ParagraphMetrics const & bot_pm = tm.parMetrics(bot_pit);
+		if (!bot_pm.hasPosition()) {
+			d->anchor_ypos_ = ypos_center;
+			break;
+		}
+		int const ypos = bot_pm.position();
+		if (ypos == ypos_center)
+			d->anchor_ypos_ = ypos_top;
+		else if (ypos == ypos_top)
+			d->anchor_ypos_ = ypos_bottom;
+		else
+			d->anchor_ypos_ = ypos_center;
+	}
 	}
 
 	return d->anchor_ypos_ != old_ypos || d->anchor_pit_ != old_pit;
@@ -1657,7 +1679,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 					success = setCursorFromEntries({id, pos},
 					                               {id_end, pos_end});
 				}
-				if (success && scrollToCursor(d->cursor_, SCROLL_TOP))
+				if (success && scrollToCursor(d->cursor_, SCROLL_TOGGLE))
 						dr.screenUpdate(Update::Force);
 			} else {
 				// Switch to other buffer view and resend cmd
@@ -2164,6 +2186,27 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 
 	case LFUN_SCROLL: {
 		string const scroll_type = cmd.getArg(0);
+		if (scroll_type == "caret") {
+			string const where = cmd.getArg(1);
+			ScrollType how;
+			if (where == "top")
+				how = SCROLL_TOP;
+			else if (where == "center")
+				how = SCROLL_CENTER;
+			else if (where == "bottom")
+				how = SCROLL_BOTTOM;
+			else if (where == "toggle")
+				how = SCROLL_TOGGLE;
+			else if (where == "visible")
+				how = SCROLL_VISIBLE;
+			else {
+				dispatched = false;
+				break;
+			}
+			showCursor(how);
+			break;
+		}
+
 		int scroll_step = 0;
 		if (scroll_type == "line")
 			scroll_step = d->scrollbarParameters_.single_step;
@@ -2171,7 +2214,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			scroll_step = d->scrollbarParameters_.page_step;
 		else {
 			dispatched = false;
-			return;
+			break;
 		}
 
 		string const scroll_quantity = cmd.getArg(1);
@@ -2184,7 +2227,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			scroll(scroll_step * convert<int>(scroll_quantity));
 		else {
 			dispatched = false;
-			return;
+			break;
 		}
 
 		dr.screenUpdate(Update::ForceDraw);
