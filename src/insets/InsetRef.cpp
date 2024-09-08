@@ -288,7 +288,12 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 		os << fcmd;
 		if (use_refstyle && use_plural)
 			os << "[s]";
-		os << '{' << label << '}';
+		if (contains(label, ' '))
+			// refstyle bug: labels with blanks need to be grouped
+			// otherwise the blanks will be gobbled
+			os << "{{" << label << "}}";
+		else
+			os << '{' << label << '}';
 	}
 	else if (cmd == "labelonly") {
 		docstring const & ref = getParam("reference");
