@@ -287,7 +287,7 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 			getFormattedCmd(data, label, prefix, use_refstyle, use_caps);
 		os << fcmd;
 		if (use_refstyle && use_plural)
-		    os << "[s]";
+			os << "[s]";
 		os << '{' << label << '}';
 	}
 	else if (cmd == "labelonly") {
@@ -298,7 +298,7 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 			docstring prefix;
 			docstring suffix = split(ref, prefix, ':');
 			if (suffix.empty()) {
-		    LYXERR0("Label `" << ref << "' contains no `:' separator.");
+				LYXERR0("Label `" << ref << "' contains no `:' separator.");
 				os << ref;
 			} else {
 				os << suffix;
