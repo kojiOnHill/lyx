@@ -36,15 +36,4 @@ void lyxbreaker(void const * data, const char * hint, int size)
 }
 
 
-template<class T>
-void CoordCache<T>::check(T const * thing, char const * hint) const
-{
-	typename cache_type::const_iterator it = data_.find(thing);
-
-	if (it == data_.end() || it->second.pos.x == -10000)
-		__coverity_panic__();
-}
-
-
-
 }
