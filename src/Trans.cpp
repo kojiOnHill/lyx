@@ -451,7 +451,7 @@ docstring const TransInitState::normalkey(char_type c)
 }
 
 
-docstring const TransInitState::deadkey(char_type c, KmodInfo d)
+docstring const TransInitState::deadkey(char_type c, KmodInfo const & d)
 {
 	deadkey_ = c;
 	deadkey_info_ = d;
@@ -488,7 +488,7 @@ docstring const TransDeadkeyState::normalkey(char_type c)
 }
 
 
-docstring const TransDeadkeyState::deadkey(char_type c, KmodInfo d)
+docstring const TransDeadkeyState::deadkey(char_type c, KmodInfo const & d)
 {
 	docstring res;
 
@@ -548,7 +548,7 @@ docstring const TransCombinedState::normalkey(char_type c)
 }
 
 
-docstring const TransCombinedState::deadkey(char_type c, KmodInfo d)
+docstring const TransCombinedState::deadkey(char_type c, KmodInfo const & d)
 {
 	// Third key in a row. Output the first one and
 	// reenter with shifted deadkeys
