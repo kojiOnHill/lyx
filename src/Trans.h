@@ -112,6 +112,9 @@ public:
 	///
 	KmodInfo() : accent(TEX_NOACCENT) {}
 	///
+	KmodInfo(docstring const & d, tex_accent a, KmodException const & e)
+		: data(d), accent(a), exception_list(e) {}
+	///
 	docstring data;
 	///
 	tex_accent accent;
