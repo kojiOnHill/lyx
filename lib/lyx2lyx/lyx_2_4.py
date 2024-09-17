@@ -2564,24 +2564,31 @@ def revert_babelfont(document):
     # set preamble stuff
     pretext = ['%% This document must be processed with xelatex or lualatex!']
     pretext.append('\\AtBeginDocument{%')
+    have_appends = False
     if roman != "default":
         pretext.append('\\babelfont{rm}[Mapping=tex-text]{' + roman + '}')
+        have_appends = True
     if sans != "default":
         sf = '\\babelfont{sf}['
         if sf_scale != 100.0:
             sf += 'Scale=' + str(sf_scale / 100.0) + ','
         sf += 'Mapping=tex-text]{' + sans + '}'
         pretext.append(sf)
+        have_appends = True
     if typew != "default":
         tw = '\\babelfont{tt}'
         if tt_scale != 100.0:
             tw += '[Scale=' + str(tt_scale / 100.0) + ']'
         tw += '{' + typew + '}'
         pretext.append(tw)
+        have_appends = True
     if osf:
         pretext.append('\\defaultfontfeatures{Numbers=OldStyle}')
-    pretext.append('}')
-    insert_to_preamble(document, pretext)
+        have_appends = True
+
+    if have_appends:
+        pretext.append('}')
+        insert_to_preamble(document, pretext)
 
 
 def revert_minionpro(document):
