@@ -48,12 +48,6 @@ What's new
 
 - Improve document output pane (bug 12902).
 
-- Fix regression which marks document modified in case of external
-  modification. Only file deletion will trigger the modification
-  flag now (see bug 12819).
-
-- fix crash when using Save As... with previews enabled (bug 13091).
-
 - Speedup interactive use by avoiding expensive math macros bookkeeping
   when possible.
 
@@ -95,36 +89,45 @@ What's new
 
 * USER INTERFACE
 
-- Fix crash when attempting to search in selection that contains only math.
+- Fix regression which marks document modified in case of external
+  modification. Only file deletion will trigger the modification
+  flag now (see bug 12819).
 
-- fix crash when copying some math formulas or exporting them to
+- Fix crash when using Save As... with previews enabled (bug 13091).
+
+- Fix crash when attempting to search in selection that contains
+  only math.
+
+- Fix crash when copying some math formulas or exporting them to
   DocBook (bug 13069).
 
 - Fix potential crashes when scrolling documents.
 
-- Fix bug where the dialog asking for saving unapplied changes on buffer change
-  popped up twice, or sometimes not at all (bug 12954).
+- Fix bug where the dialog asking for saving unapplied changes
+  on buffer change popped up twice, or sometimes not at all (bug
+  12954).
 
-- Improve performance when selecting text on less powerful systems (bug 13050).
+- Improve performance when selecting text on less powerful systems
+  (bug 13050).
 
 - Fix performance problems with references with (very) many authors.
 
-- Fix problem that key bindings that include optional modifier keys could not
-  be un- or re-bound (bug 12973)
+- Fix problem that key bindings that include optional modifier keys
+  could not be un- or re-bound (bug 12973)
 
-- Enable OK/Apply button in tabular dialog when "Additional Space" combo has
-  been set to different value.
+- Enable OK/Apply button in tabular dialog when "Additional Space" combo
+  has been set to different value.
 
 - Fix ghost image on Windows with system colors (bug 13084).
 
-- Restore old display of cross-references in the outliner. The change led to
-  odd behavior on filtering.
+- Restore old display of cross-references in the outliner. The change
+  led to odd behavior on filtering.
 
 - Display values of cross-references in tooltips for forward references.
 
-- Disable vertical alignment in tables with variable width columns (tabularx
-  and xltable), as this is not supported by the packages. Also fix the
-  disabling mechanism in the table dialog.
+- Disable vertical alignment in tables with variable width columns
+  (tabularx and xltable), as this is not supported by the packages.
+  Also fix the disabling mechanism in the table dialog.
 
 - Fix display of integral limits on Windows (bug 13087).
 

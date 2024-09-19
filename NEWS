@@ -1,3 +1,38 @@
+What's new in version 2.4.2?
+----------------------------
+
+This is almost entirely a bug-fixing release, with no significant new
+features. However, some crashes have been fixed, and we have made some
+significant improvements to display speed, which will be especially
+noticeable on older or slower systems.
+
+There has been a change (as of 2.4.0) in how the option to use vertical
+space between paragraphs is handled. Previously, LyX simply modified
+\parskip and \parindent, but this caused various problems (see bug
+#4796). Now, we use the parskip package. As a result, however, and
+to ensure there are no changes to old documents, when LyX files from
+2.3.x and earlier are converted to the new format, if they were set to
+use vertical space between paragraphs, the lyx2lyx conversion routine
+adds
+  % Added by lyx2lyx
+  \setlength{\parskip}{\smallskipamount}
+  \setlength{\parindent}{0pt}
+to the preamble and, within LyX itself, resets the text layout to use
+indentation (so we do not issue the new code for vertical spacing). The
+net effect is that PDFs generated with LaTeX (etc) look right, but in
+LyX itself indentation is used.
+
+This will happen with any document created with 2.3.x or older. It can
+also happen with documents created from templates created with 2.3.x
+or older, and even with new documents, if you had previously set them to
+use, by default, vertical space. Templates are just LyX files saved in
+the templates/ folder, and the 'defaults' are simply saved in a
+template file, defaults.lyx. Hence, if you want the new behavior, or
+just want the LyX document to look `right', then you will need to make
+two changes to the document or template: Remove what lyx2lyx added, and
+then set Paragraph Separation to Vertical Space.
+
+
 What's new in version 2.4.1?
 ----------------------------
 

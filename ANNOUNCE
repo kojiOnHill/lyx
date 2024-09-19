@@ -4,7 +4,10 @@ Public release of LyX version 2.4.2
 We are proud to announce the release LyX 2.4.2, the second maintenance
 release in the 2.4.x series.
 
-
+This is almost entirely a bug-fixing release, with no significant new
+features. However, some crashes have been fixed, and we have made some
+significant improvements to display speed, which will be especially
+noticeable on older or slower systems.
 
 There has been a change (as of 2.4.0) in how the option to use vertical
 space between paragraphs is handled. Previously, LyX simply modified 
@@ -35,11 +38,11 @@ then set Paragraph Separation to Vertical Space.
 You can download LyX 2.4.2 from https://www.lyx.org/Download.
 
 If you have trouble using LyX or have a question, consult the
-documentation that comes with LyX (under Help) and the LyX wiki, which you
-will find at https://wiki.lyx.org/. You can also send email to the LyX users'
-list (lyx-users at lists.lyx.org). Bugs can be reported on our bug tracker
-(https://www.lyx.org/trac/) or by writing the developers' list (lyx-devel at
-lists.lyx.org).
+documentation that comes with LyX (under Help) and the LyX wiki, which
+you will find at https://wiki.lyx.org/. You can also send email to
+the LyX users' list (lyx-users at lists.lyx.org). Bugs can be reported
+on our bug tracker (https://www.lyx.org/trac/) or by writing the
+developers' list (lyx-devel at lists.lyx.org).
 
 The LyX team.
 https://www.lyx.org
@@ -54,41 +57,59 @@ What's new
 ** Updates:
 ***********
 
+* DOCUMENT INPUT/OUTPUT
+
+- There was undocumented change how hyperlink insets are exported to
+  xHTML format compared to LyX 2.3.x (type "File" is no more exported
+  as http(s) link). We added details to the RELEASE-NOTES file.
+
+- Load graphics after geometry, so page size is set properly (bug
+  10970).
+
+- Recognize .plt as a GnuPlot extension (bug 11148).
+
+- Restore obvious "G" shortcut for Greyed Out notes.
+
+
+* MISCELLANEOUS
+
+- Update format of lyxrc.dist templates
+
+- Update templates to use native vertical space method.
+
+
 * USER INTERFACE
 
-- Add plain single quote to menu (bug 13025).
+- Show font info in status line again.
 
-- In context menus, more items are now shown on top level.
+- Make scrolling smoother when using selection.
 
-- Show full inset context-menu when clicking on text part of collapsible
-  (bug 10370).
+- Show the temporary directory in About LyX dialog.
 
-- Allow relative statistics values in statusbar, improve update times for
-  some UI and buffer operations.
+- Improve document output pane (bug 12902).
 
-- The performance of LyX with large insets on slower computers has
-  been improved a lot (bug 12297).
+- Speedup interactive use by avoiding expensive math macros bookkeeping
+  when possible.
 
-- Fix crash with variable column width tables.
+- Make -geometry command-line option work on all platforms.
 
-- Add bindings for 'paste, join lines'.
+- Fix macOS bug, where XQuartz application would be launched for no
+  reason (bug #13086).
 
-- middle-button pasting (in Linux) now preserves middle-button pasting
-  (as does Edit > Paste since 2.4.0).
+- Fix problem with collapsing of outliner (bug 13098).
 
 
 * DOCUMENTATION AND LOCALIZATION
 
-- Clarify quote-insert LFUN.
-
-- Updates to Chinese (simplified), Czech, French, German, Hebrew, 
-  Brazilian Portuguese, Slovokian, and Ukranian translations.
+- Update Brazilian Portuguese, Simplified Chinese, Czech, French,
+  German, Italian, Polish and Slovak localizations of the user
+  interface.
 
 
 * BUILD/INSTALLATION
 
-- Fix cmake build with qt6 (macos), which did not include
-  "plugins".
+- Avoid bogus warnings when configuring for Qt6.
+
 
 
 ** Bug fixes:
@@ -96,86 +117,84 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
--Do not check for diverging input encoding if the files use XeTeX/LuaTeX
+- When exporting to MathML, the argument of the \boxed{} macro is now
+  correctly treated as math.
 
-- The g-brief and g-brief2 letter classes load babel internally. LyX now
-  is aware of that.
+- Properly escape special characters (!, @, |) in nomenclature output.
 
-- Fix some cases where beamer breaks with the new cprotect mechanism.
+- Handle linguistic structure trees in ePub and PDF (DocBook) output (bug 12372).
 
-- Fix case where new cprotect mechanism breaks with caption.
-
-- Update acknowledgments handling in aastex63 layout 
-  (cf. https://journals.aas.org/aastexguide/#acknowledgments)
-
-- Make textstyle-update LFUN work properly inside equations.
-
-- Make buffer-reset-export LFUN work properly.
-
-- Remove redundant code from preamble of double column Hebrew 
-  documents (bug 12919)
+- Improve the way spaces are handled in labels when refstyle is used.
 
 
 * USER INTERFACE
 
-- Fix crash when deleting rows or columns from table.
+- Fix regression which marks document modified in case of external
+  modification. Only file deletion will trigger the modification
+  flag now (see bug 12819).
 
-- Avoid crash when InsetBibitem::updateCommand shows a dialog.
+- Fix crash when using Save As... with previews enabled (bug 13091).
 
-- Set cursor font after pasting to PassThru (e.g., ERT) inset (bug 12592).
+- Fix crash when attempting to search in selection that contains
+  only math.
 
-- Do not ask about unapplied changes if dialog has been closed.
+- Fix crash when copying some math formulas or exporting them to
+  DocBook (bug 13069).
 
-- Fix wrong position of conversion windows of the input method (bugs 11723,
-  13054).
+- Fix potential crashes when scrolling documents.
 
-- Speed up mouse movement when there is no selection (part of bug
-  13050).
+- Fix bug where the dialog asking for saving unapplied changes
+  on buffer change popped up twice, or sometimes not at all (bug
+  12954).
 
-- Fix incorrect scrolling when using outline to jump to a paragraph 
-  (bug 10425).
+- Improve performance when selecting text on less powerful systems
+  (bug 13050).
 
-- Fix preview inset with XeTeX, and with RTL languages in general.
+- Fix performance problems with references with (very) many authors.
 
-- Respect change tracking in dash conversion mechanism (bug 13062).
+- Fix problem that key bindings that include optional modifier keys
+  could not be un- or re-bound (bug 12973)
 
-- The outliner option "Only output items" now works properly (bug 12981).
+- Enable OK/Apply button in tabular dialog when "Additional Space" combo
+  has been set to different value.
 
-- Show values of cross-references in tooltips (bug 8856).
+- Fix ghost image on Windows with system colors (bug 13084).
 
-- Toolbars are now locked by default for new profiles (bug 11796).
+- Restore old display of cross-references in the outliner. The change
+  led to odd behavior on filtering.
 
-- Allow "longest label" to be empty (bug 11934).
+- Display values of cross-references in tooltips for forward references.
 
-- Put new citation after selected item rather than at end of list 
-  (bug 12940).
+- Disable vertical alignment in tables with variable width columns
+  (tabularx and xltable), as this is not supported by the packages.
+  Also fix the disabling mechanism in the table dialog.
 
-- Fix overflow of appendix red frame in document-bottom grey area.
+- Fix display of integral limits on Windows (bug 13087).
+
+- Fix crash when deleting tabs in a selection (with S-BackTab) in a
+  text-only inset (ERT, Listings...).
+
+- Fix display glitches when applying some operations to a selection.
 
 
 * INTERNALS
 
-- Fix case where insets do not have proper information about current buffer
-  (bug 12682).
+- Fix possible crash in undo code after inserting note inset over a
+  multi-paragraph selection.
 
-- Handle deprecated Qt enum value.
+- Fix a Python script, used to preview math expressions, that used a
+  module that is removed in Python 3.13.
 
-- Fix initialization of an internal value.
+- Fix case where debug information may report all numbers as hexadecimal.
 
-- Fix "Unassigned buffer_" error with math references (bug 12947).
-
-- Re-allow the use of quoted argument to PackageOptions layout tag.
-
-- Fix crash when passing unknown value to textstyle-update
+- Make sure that lyxclient name is initialized properly.
 
 
-* ADVANCED FIND AND REPLACE
+* TEX2LYX
 
-- Handle neg-spaces like normal space if searching without format.
-
-- No paragraph indentation in search and replace windows (bug 11555).
+- Fix import of nomenclature entries which contain '%' or '"' characters.
 
 
 * BUILD/INSTALLATION
 
-- Cmake build: Handle deprecated cmake versions.
+- Fix 'make install' target for autotools builds with autoconf >= 2.72.
