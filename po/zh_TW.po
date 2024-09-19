@@ -107,7 +107,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lyx 2.1.0\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-22 21:06-0400\n"
+"POT-Creation-Date: 2024-09-19 11:06-0400\n"
 "PO-Revision-Date: 2014-04-11 19:41+0800\n"
 "Last-Translator: Mingyi Wu <mingi.wu@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -832,7 +832,7 @@ msgid "Remove the selected branch"
 msgstr "移除已選取的分支"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
+#: src/Buffer.cpp:4848 src/Buffer.cpp:4861
 msgid "&Remove"
 msgstr "移除(&R)"
 
@@ -906,8 +906,8 @@ msgstr "加入所有未知的分支到清單."
 msgid "Add A&ll"
 msgstr "全部加入(&l)"
 
-#: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1501
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4932 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -5404,7 +5404,7 @@ msgstr "進行 LaTeX 編譯前, 自動地清空視窗"
 msgid "&Clear automatically"
 msgstr "自動清除(&C)"
 
-#: src/frontends/qt/ui/RefUi.ui:33 src/insets/InsetRef.cpp:651
+#: src/frontends/qt/ui/RefUi.ui:33 src/insets/InsetRef.cpp:656
 #, fuzzy
 msgid "Label"
 msgstr "標籤(&L):"
@@ -7689,7 +7689,7 @@ msgstr "IEEE 會議"
 #: lib/layouts/slides.layout:61 lib/layouts/stdclass.inc:28
 #: lib/layouts/stdinsets.inc:713 lib/layouts/stdletter.inc:12
 #: lib/layouts/svcommon.inc:26 lib/layouts/tufte-book.layout:35
-#: src/insets/InsetRef.cpp:644
+#: src/insets/InsetRef.cpp:649
 msgid "Standard"
 msgstr "標準"
 
@@ -12652,7 +12652,7 @@ msgstr ""
 "在 節 的起始處, 重設方程式的計數器, 使得方程式的編號包含節編號. 例: '(2.1)'."
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:645
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:650
 #: src/mathed/InsetMathRef.cpp:378
 msgid "Equation"
 msgstr "方程式"
@@ -12982,7 +12982,7 @@ msgid "Size the photo is resized to"
 msgstr "照片縮放後的尺寸"
 
 #: lib/layouts/europecv.layout:185 src/frontends/qt/GuiDocument.cpp:135
-#: src/insets/InsetRef.cpp:646
+#: src/insets/InsetRef.cpp:651
 msgid "Page"
 msgstr "頁"
 
@@ -20945,7 +20945,7 @@ msgid "Copy as Reference|R"
 msgstr "複製成參考(R)|R"
 
 #: lib/ui/stdcontext.inc:61 lib/ui/stdcontext.inc:376 lib/ui/stdmenus.inc:108
-#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4976 src/mathed/InsetMathNest.cpp:870
+#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4975 src/mathed/InsetMathNest.cpp:870
 msgid "Cut"
 msgstr "剪下"
 
@@ -20955,7 +20955,7 @@ msgid "Copy"
 msgstr "複製"
 
 #: lib/ui/stdcontext.inc:63 lib/ui/stdcontext.inc:378 lib/ui/stdmenus.inc:110
-#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4921
+#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4920
 #: src/frontends/qt/GuiToolbar.cpp:464 src/mathed/InsetMathGrid.cpp:1566
 #: src/mathed/InsetMathNest.cpp:839
 msgid "Paste"
@@ -28565,6 +28565,16 @@ msgstr "外部材料"
 
 #: lib/examples/Articles:0
 #, fuzzy
+msgid "Feynman Diagrams"
+msgstr "費曼(Feynman)圖|F"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Instant Preview"
+msgstr "即時預覽(&P):"
+
+#: lib/examples/Articles:0
+#, fuzzy
 msgid "Itemize Bullets"
 msgstr "符號列舉"
 
@@ -28574,13 +28584,9 @@ msgid "Minted File Listing"
 msgstr "行內 程式碼列表(&i)"
 
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr ""
-
-#: lib/examples/Articles:0
 #, fuzzy
-msgid "Feynman Diagrams"
-msgstr "費曼(Feynman)圖|F"
+msgid "Minted Listings"
+msgstr "程式碼列表 清單"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28588,14 +28594,8 @@ msgid "XY-Figure"
 msgstr "圖"
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Minted Listings"
-msgstr "程式碼列表 清單"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Instant Preview"
-msgstr "即時預覽(&P):"
+msgid "XY-Pic"
+msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28613,13 +28613,13 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "Multilingual Captions(多語的標題)|C"
 
 #: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr ""
+
+#: lib/examples/Articles:0
 #, fuzzy
 msgid "Writing Armenian"
 msgstr "亞美尼亞語"
-
-#: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28642,6 +28642,11 @@ msgid "Serial Letter 3"
 msgstr "Hebrew Letter"
 
 #: lib/examples/Articles:0
+#, fuzzy
+msgid "Hazard and Precautionary Statements"
+msgstr "風險與安全建議標準詞"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond 書"
 
@@ -28651,17 +28656,12 @@ msgstr "多語的標題"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Hazard and Precautionary Statements"
-msgstr "風險與安全建議標準詞"
+msgid "Noweb2LyX"
+msgstr "Noweb"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr ""
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Noweb2LyX"
-msgstr "Noweb"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
 msgid "Modules"
@@ -28669,8 +28669,8 @@ msgstr "模組"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Foils Landslide"
-msgstr "LandscapeSlide 橫印投影片"
+msgid "Beamer (Complex)"
+msgstr "Beamer 註記"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28679,8 +28679,8 @@ msgstr "FoilTeX"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Beamer (Complex)"
-msgstr "Beamer 註記"
+msgid "Foils Landslide"
+msgstr "LandscapeSlide 橫印投影片"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28693,13 +28693,8 @@ msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Mathematical Monthly"
-msgstr "數學符號"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "IEEE Transactions Journal"
-msgstr "IEEE 會議"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Beamer Article (KOMA-Script)"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28708,13 +28703,28 @@ msgstr "IEEE Transactions Computer Society"
 
 #: lib/examples/Articles:0
 #, fuzzy
+msgid "IEEE Transactions Journal"
+msgstr "IEEE 會議"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Mathematical Monthly"
+msgstr "數學符號"
+
+#: lib/examples/Articles:0
+#, fuzzy
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Springer SV Global (V. 3)"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Beamer Article (KOMA-Script)"
+msgid "00 Main File"
+msgstr "缺少檔案"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "01 Dedication"
+msgstr "Dedication 題辭"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28723,12 +28733,8 @@ msgstr "Foreword 前言"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "07 Part"
-msgstr "Part 部"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr ""
+msgid "03 Preface"
+msgstr "Preface 序"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28736,8 +28742,18 @@ msgid "04 Acknowledgements"
 msgstr "Acknowledgements 致謝"
 
 #: lib/examples/Articles:0
+#, fuzzy
+msgid "05 Contributor List"
+msgstr "Contributor List 貢獻者清單"
+
+#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr ""
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "07 Part"
+msgstr "Part 部"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28750,34 +28766,17 @@ msgid "09 Appendix"
 msgstr "Appendix 附錄"
 
 #: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr ""
+
+#: lib/examples/Articles:0
 #, fuzzy
 msgid "11 References"
 msgstr "References 參考"
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "05 Contributor List"
-msgstr "Contributor List 貢獻者清單"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "01 Dedication"
-msgstr "Dedication 題辭"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "00 Main File"
-msgstr "缺少檔案"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "03 Preface"
-msgstr "Preface 序"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "10 Solutions"
-msgstr "解法"
+msgid "05 Acronym"
+msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28795,22 +28794,23 @@ msgid "08 Appendix"
 msgstr "Appendix 附錄"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr ""
-
-#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Simple"
-msgstr "Simple CV"
+msgid "10 Solutions"
+msgstr "解法"
 
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Colored"
 msgstr "顏色"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Simple"
+msgstr "Simple CV"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28838,8 +28838,8 @@ msgstr "同義詞"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Japanese Book (直書)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Japanese Article (直書)"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -28848,8 +28848,8 @@ msgstr "Japanese Book (直書)"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Japanese Article (直書)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Japanese Book (直書)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 #, fuzzy
@@ -28893,56 +28893,56 @@ msgstr "沒有年份"
 msgid "Bibliography entry not found!"
 msgstr "找不到參考書目項目!"
 
-#: src/Buffer.cpp:447
+#: src/Buffer.cpp:452
 msgid "Disk Error: "
 msgstr "磁碟錯誤: "
 
-#: src/Buffer.cpp:448
+#: src/Buffer.cpp:453
 #, c-format
 msgid ""
 "LyX could not create the temporary directory '%1$s' (Disk is full maybe?)"
 msgstr "LyX 無法建立暫時的目錄 '%1$s' (或許是磁碟滿了?)"
 
-#: src/Buffer.cpp:577
+#: src/Buffer.cpp:582
 msgid "LyX attempted to close a document that had unsaved changes!\n"
 msgstr "LyX 試圖關閉一個有變更但尚未儲存的文件檔\n"
 
-#: src/Buffer.cpp:581 src/Buffer.cpp:1691
+#: src/Buffer.cpp:586 src/Buffer.cpp:1709
 #, fuzzy
 msgid "Save failed! Document is lost."
 msgstr "儲存失敗! 倒霉. 失去文件了."
 
-#: src/Buffer.cpp:583
+#: src/Buffer.cpp:588
 msgid "Attempting to close changed document!"
 msgstr "試圖關閉已變更的文件"
 
-#: src/Buffer.cpp:592
+#: src/Buffer.cpp:597
 #, c-format
 msgid "Could not remove the temporary directory %1$s"
 msgstr "無法移除暫存目錄 %1$s"
 
-#: src/Buffer.cpp:1006 src/Text.cpp:616
+#: src/Buffer.cpp:1024 src/Text.cpp:616
 #, c-format
 msgid "Unknown token: %1$s %2$s\n"
 msgstr "不明的符記: %1$s %2$s\n"
 
-#: src/Buffer.cpp:1010 src/Buffer.cpp:1016 src/Buffer.cpp:1040
+#: src/Buffer.cpp:1028 src/Buffer.cpp:1034 src/Buffer.cpp:1058
 msgid "Document header error"
 msgstr "文件頁首錯誤"
 
-#: src/Buffer.cpp:1015
+#: src/Buffer.cpp:1033
 msgid "\\begin_header is missing"
 msgstr "\\begin_header 遺失"
 
-#: src/Buffer.cpp:1039
+#: src/Buffer.cpp:1057
 msgid "\\begin_document is missing"
 msgstr "\\begin_document 遺失"
 
-#: src/Buffer.cpp:1050 src/Buffer.cpp:3104
+#: src/Buffer.cpp:1068 src/Buffer.cpp:3122
 msgid "Changes not shown in LaTeX output"
 msgstr "在 LaTeX 輸出中不顯示變更"
 
-#: src/Buffer.cpp:1051 src/Buffer.cpp:3105
+#: src/Buffer.cpp:1069 src/Buffer.cpp:3123
 #, fuzzy
 msgid ""
 "Changes will not be highlighted in LaTeX output, because xcolor and ulem are "
@@ -28954,105 +28954,105 @@ msgstr ""
 "未安裝. \n"
 "請安裝這兩個套件, 或者在 LaTeX 前文中重新定義 \\lyxadded 和 \\lyxdeleted."
 
-#: src/Buffer.cpp:1093 src/BufferParams.cpp:479 src/frontends/qt/GuiLog.cpp:252
+#: src/Buffer.cpp:1111 src/BufferParams.cpp:479 src/frontends/qt/GuiLog.cpp:252
 #: src/insets/InsetIndex.cpp:1282
 msgid "Index"
 msgstr "索引"
 
-#: src/Buffer.cpp:1217
+#: src/Buffer.cpp:1235
 msgid "File Not Found"
 msgstr "找不到檔案"
 
-#: src/Buffer.cpp:1218
+#: src/Buffer.cpp:1236
 #, c-format
 msgid "Unable to open file `%1$s'."
 msgstr "無法開啟「%1$s」."
 
-#: src/Buffer.cpp:1246 src/Buffer.cpp:1320
+#: src/Buffer.cpp:1264 src/Buffer.cpp:1338
 msgid "Document format failure"
 msgstr "文件格式錯誤"
 
-#: src/Buffer.cpp:1247
+#: src/Buffer.cpp:1265
 #, c-format
 msgid "%1$s ended unexpectedly, which means that it is probably corrupted."
 msgstr "%1$s 未如預期地結束, 這表示它大概已經損毀了."
 
-#: src/Buffer.cpp:1321
+#: src/Buffer.cpp:1339
 #, c-format
 msgid "%1$s is not a readable LyX document."
 msgstr "%1$s 並非 LyX 可讀的文件."
 
-#: src/Buffer.cpp:1348
+#: src/Buffer.cpp:1366
 msgid "Conversion failed"
 msgstr "轉換失敗"
 
-#: src/Buffer.cpp:1349
+#: src/Buffer.cpp:1367
 #, c-format
 msgid ""
 "%1$s is from a different version of LyX, but a temporary file for converting "
 "it could not be created."
 msgstr "%1$s 是從不同版本的 LyX 而來, 但是無法建立用於轉換它的暫存檔."
 
-#: src/Buffer.cpp:1359
+#: src/Buffer.cpp:1377
 msgid "Conversion script not found"
 msgstr "找不到轉換命令稿"
 
-#: src/Buffer.cpp:1360
+#: src/Buffer.cpp:1378
 #, c-format
 msgid ""
 "%1$s is from a different version of LyX, but the conversion script lyx2lyx "
 "could not be found."
 msgstr "%1$s 是來自不同版本的 LyX, 但是無法找到轉換命令稿 lyx2lyx."
 
-#: src/Buffer.cpp:1383 src/Buffer.cpp:1390
+#: src/Buffer.cpp:1401 src/Buffer.cpp:1408
 msgid "Conversion script failed"
 msgstr "轉換命令稿失敗"
 
-#: src/Buffer.cpp:1384
+#: src/Buffer.cpp:1402
 #, c-format
 msgid ""
 "%1$s is from an older version of LyX and the lyx2lyx script failed to "
 "convert it."
 msgstr "%1$s 是來自舊版的 LyX, 而且 lyx2lyx 命令稿無法轉換它."
 
-#: src/Buffer.cpp:1391
+#: src/Buffer.cpp:1409
 #, c-format
 msgid ""
 "%1$s is from a newer version of LyX and the lyx2lyx script failed to convert "
 "it."
 msgstr "%1$s 是來自新版的 LyX, 而且 lyx2lyx 命令稿無法轉換它."
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
+#: src/Buffer.cpp:1488 src/Buffer.cpp:4832 src/Buffer.cpp:4941
 msgid "File is read-only"
 msgstr "檔案為唯讀檔"
 
-#: src/Buffer.cpp:1471
+#: src/Buffer.cpp:1489
 #, c-format
 msgid "The file %1$s cannot be written because it is marked as read-only."
 msgstr "檔案 %1$s 無法寫入, 因為它標記為唯讀檔."
 
-#: src/Buffer.cpp:1480
+#: src/Buffer.cpp:1498
 #, c-format
 msgid ""
 "Document %1$s has been externally modified. Are you sure you want to "
 "overwrite this file?"
 msgstr "文件 %1$s 已經由外部修改過. 您確定要覆寫該檔案嗎?"
 
-#: src/Buffer.cpp:1482
+#: src/Buffer.cpp:1500
 msgid "Overwrite modified file?"
 msgstr "覆寫已修改檔案?"
 
-#: src/Buffer.cpp:1483 src/Exporter.cpp:50
+#: src/Buffer.cpp:1501 src/Exporter.cpp:50
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiView.cpp:3105
 #: src/frontends/qt/GuiView.cpp:3372 src/frontends/qt/GuiView.cpp:3477
 msgid "&Overwrite"
 msgstr "覆寫(&O)"
 
-#: src/Buffer.cpp:1548
+#: src/Buffer.cpp:1566
 msgid "Backup failure"
 msgstr "備份失敗"
 
-#: src/Buffer.cpp:1549
+#: src/Buffer.cpp:1567
 #, c-format
 msgid ""
 "Cannot create backup file %1$s.\n"
@@ -29061,12 +29061,12 @@ msgstr ""
 "無法建立備份檔案 %1$s. \n"
 "請檢查目錄是否存在並且為可寫."
 
-#: src/Buffer.cpp:1584 src/Buffer.cpp:1595
+#: src/Buffer.cpp:1602 src/Buffer.cpp:1613
 #, fuzzy
 msgid "Write failure"
 msgstr "chktex 失敗"
 
-#: src/Buffer.cpp:1585
+#: src/Buffer.cpp:1603
 #, c-format
 msgid ""
 "The file has successfully been saved as:\n"
@@ -29077,7 +29077,7 @@ msgid ""
 "  %3$s"
 msgstr ""
 
-#: src/Buffer.cpp:1596
+#: src/Buffer.cpp:1614
 #, c-format
 msgid ""
 "Cannot move saved file to:\n"
@@ -29086,42 +29086,42 @@ msgid ""
 "  %2$s."
 msgstr ""
 
-#: src/Buffer.cpp:1612
+#: src/Buffer.cpp:1630
 #, c-format
 msgid "Saving document %1$s..."
 msgstr "正在儲存文件 %1$s..."
 
-#: src/Buffer.cpp:1627
+#: src/Buffer.cpp:1645
 msgid " could not write file!"
 msgstr "無法寫入檔案!"
 
-#: src/Buffer.cpp:1635
+#: src/Buffer.cpp:1653
 msgid " done."
 msgstr " 完成."
 
-#: src/Buffer.cpp:1650
+#: src/Buffer.cpp:1668
 #, c-format
 msgid "LyX: Attempting to save document %1$s\n"
 msgstr "LyX: 試圖儲存文件 %1$s\n"
 
-#: src/Buffer.cpp:1660 src/Buffer.cpp:1673 src/Buffer.cpp:1687
+#: src/Buffer.cpp:1678 src/Buffer.cpp:1691 src/Buffer.cpp:1705
 #, c-format
 msgid "Saved to %1$s. Phew.\n"
 msgstr "儲存到 %1$s. 呼!\n"
 
-#: src/Buffer.cpp:1663
+#: src/Buffer.cpp:1681
 msgid "Save failed! Trying again...\n"
 msgstr "儲存失敗! 再試一次...\n"
 
-#: src/Buffer.cpp:1677
+#: src/Buffer.cpp:1695
 msgid "Save failed! Trying yet again...\n"
 msgstr "儲存失敗! 並再試一次...\n"
 
-#: src/Buffer.cpp:1773
+#: src/Buffer.cpp:1791
 msgid "Iconv software exception Detected"
 msgstr "Iconv 程式偵測到例外狀況"
 
-#: src/Buffer.cpp:1774
+#: src/Buffer.cpp:1792
 #, c-format
 msgid ""
 "Please verify that the `iconv' support software is properly installed and "
@@ -29129,12 +29129,12 @@ msgid ""
 "Document>Settings>Language."
 msgstr ""
 
-#: src/Buffer.cpp:1806
+#: src/Buffer.cpp:1824
 #, fuzzy, c-format
 msgid "Uncodable character '%1$s' (code point %2$s)"
 msgstr "無法找到 LaTeX 命令字元 '%1$s' (code point %2$s)"
 
-#: src/Buffer.cpp:1809
+#: src/Buffer.cpp:1827
 #, fuzzy
 msgid ""
 "Some characters of your document are not representable in specific verbatim "
@@ -29144,12 +29144,12 @@ msgstr ""
 "您的文件中某些字元, 可能無法以所選編碼來表現. \n"
 "變更文件編碼為 utf8 可能會有幫助."
 
-#: src/Buffer.cpp:1814
+#: src/Buffer.cpp:1832
 #, c-format
 msgid "Could not find LaTeX command for character '%1$s' (code point %2$s)"
 msgstr "無法找到 LaTeX 命令字元 '%1$s' (code point %2$s)"
 
-#: src/Buffer.cpp:1817
+#: src/Buffer.cpp:1835
 msgid ""
 "Some characters of your document are probably not representable in the "
 "chosen encoding.\n"
@@ -29158,19 +29158,19 @@ msgstr ""
 "您的文件中某些字元, 可能無法以所選編碼來表現. \n"
 "變更文件編碼為 utf8 可能會有幫助."
 
-#: src/Buffer.cpp:1825
+#: src/Buffer.cpp:1843
 msgid "iconv conversion failed"
 msgstr "iconv 轉換失敗"
 
-#: src/Buffer.cpp:1830
+#: src/Buffer.cpp:1848
 msgid "conversion failed"
 msgstr "轉換失敗"
 
-#: src/Buffer.cpp:1942 src/insets/InsetGraphics.cpp:923
+#: src/Buffer.cpp:1960 src/insets/InsetGraphics.cpp:923
 msgid "Uncodable character in file path"
 msgstr "檔案路徑中有無法解析的字元"
 
-#: src/Buffer.cpp:1944
+#: src/Buffer.cpp:1962
 #, c-format
 msgid ""
 "The path of your document\n"
@@ -29192,32 +29192,32 @@ msgstr ""
 "為了防止出錯, 請選擇適當的文件編碼 (例如 utf8)\n"
 "或變更文件的路徑名稱."
 
-#: src/Buffer.cpp:2035
+#: src/Buffer.cpp:2053
 #, c-format
 msgid "The languages %1$s are only supported by Babel."
 msgstr ""
 
-#: src/Buffer.cpp:2036
+#: src/Buffer.cpp:2054
 #, c-format
 msgid "The language %1$s is only supported by Babel."
 msgstr ""
 
-#: src/Buffer.cpp:2046
+#: src/Buffer.cpp:2064
 #, c-format
 msgid "The languages %1$s are only supported by Polyglossia."
 msgstr ""
 
-#: src/Buffer.cpp:2047
+#: src/Buffer.cpp:2065
 #, c-format
 msgid "The language %1$s is only supported by Polyglossia."
 msgstr ""
 
-#: src/Buffer.cpp:2053
+#: src/Buffer.cpp:2071
 #, fuzzy
 msgid "Incompatible Languages!"
 msgstr "不適當的命令名稱."
 
-#: src/Buffer.cpp:2055
+#: src/Buffer.cpp:2073
 #, c-format
 msgid ""
 "You cannot use the following languages together in one LaTeX document "
@@ -29225,72 +29225,72 @@ msgid ""
 "%1$s%2$s"
 msgstr ""
 
-#: src/Buffer.cpp:2367
+#: src/Buffer.cpp:2385
 msgid "Running chktex..."
 msgstr "chktex 執行中..."
 
-#: src/Buffer.cpp:2386
+#: src/Buffer.cpp:2404
 msgid "chktex failure"
 msgstr "chktex 失敗"
 
-#: src/Buffer.cpp:2387
+#: src/Buffer.cpp:2405
 msgid "Could not run chktex successfully."
 msgstr "無法成功運行 chktex."
 
-#: src/Buffer.cpp:2782
+#: src/Buffer.cpp:2800
 #, c-format
 msgid "Don't know how to export to format: %1$s"
 msgstr "不知如何匯出格式: %1$s"
 
-#: src/Buffer.cpp:2861
+#: src/Buffer.cpp:2879
 msgid "Branch state changes in master document"
 msgstr "主文件改變了分支的狀態"
 
-#: src/Buffer.cpp:2862
+#: src/Buffer.cpp:2880
 #, c-format
 msgid ""
 "The state of the branch '%1$s' was changed in the master file. Please make "
 "sure to save the master."
 msgstr "主文件中已改變了分支 '%1$s' 的狀態.請確認儲存了主文件."
 
-#: src/Buffer.cpp:2931
+#: src/Buffer.cpp:2949
 #, c-format
 msgid "Error exporting to format: %1$s."
 msgstr "匯出格式: %1$s 發生錯誤."
 
-#: src/Buffer.cpp:2940
+#: src/Buffer.cpp:2958
 msgid "Error generating literate programming code."
 msgstr "產生 文學(literate)程式碼 時發生錯誤."
 
-#: src/Buffer.cpp:3029
+#: src/Buffer.cpp:3047
 #, c-format
 msgid "Branch \"%1$s\" already exists."
 msgstr "分支 \"%1$s\" 已存在."
 
-#: src/Buffer.cpp:3086
+#: src/Buffer.cpp:3104
 #, fuzzy
 msgid "Error viewing the output file."
 msgstr "複製緩衝區時發生錯誤."
 
-#: src/Buffer.cpp:3448 src/frontends/qt/GuiView.cpp:2922
+#: src/Buffer.cpp:3469 src/frontends/qt/GuiView.cpp:2922
 #: src/frontends/qt/Validator.cpp:247 src/insets/ExternalSupport.cpp:400
 #: src/insets/InsetGraphics.cpp:697 src/insets/InsetInclude.cpp:616
 msgid "Invalid filename"
 msgstr "無效檔名"
 
-#: src/Buffer.cpp:3449 src/insets/ExternalSupport.cpp:401
+#: src/Buffer.cpp:3470 src/insets/ExternalSupport.cpp:401
 #: src/insets/InsetGraphics.cpp:698 src/insets/InsetInclude.cpp:617
 msgid ""
 "The following filename will cause troubles when running the exported file "
 "through LaTeX: "
 msgstr "透過 LaTeX 執行匯出檔案時, 下列檔名似乎會造成麻煩: "
 
-#: src/Buffer.cpp:3454 src/insets/ExternalSupport.cpp:406
+#: src/Buffer.cpp:3475 src/insets/ExternalSupport.cpp:406
 #: src/insets/InsetGraphics.cpp:705 src/insets/InsetInclude.cpp:621
 msgid "Problematic filename for DVI"
 msgstr "對 DVI 有問題的檔案名"
 
-#: src/Buffer.cpp:3455 src/insets/ExternalSupport.cpp:407
+#: src/Buffer.cpp:3476 src/insets/ExternalSupport.cpp:407
 #: src/insets/InsetGraphics.cpp:706 src/insets/InsetInclude.cpp:622
 msgid ""
 "The following filename can cause troubles when running the exported file "
@@ -29298,11 +29298,11 @@ msgid ""
 msgstr ""
 "透過 LaTeX 執行匯出檔案並且開啟執行結果 DVI 時, 下列檔名似乎會造成麻煩: "
 
-#: src/Buffer.cpp:3494 src/insets/InsetBibtex.cpp:353
+#: src/Buffer.cpp:3515 src/insets/InsetBibtex.cpp:353
 msgid "Export Warning!"
 msgstr "匯出警告!"
 
-#: src/Buffer.cpp:3495
+#: src/Buffer.cpp:3516
 msgid ""
 "There are spaces in the paths to your BibTeX databases.\n"
 "BibTeX will be unable to find them."
@@ -29310,55 +29310,55 @@ msgstr ""
 "在到您的 BibTeX 資料庫路徑中有些空格. \n"
 "BibTeX 將無法找到它們."
 
-#: src/Buffer.cpp:4166
+#: src/Buffer.cpp:4192
 #, c-format
 msgid "Preview source code for paragraph %1$d"
 msgstr "預覽段落 %1$d 原始碼"
 
-#: src/Buffer.cpp:4171
+#: src/Buffer.cpp:4197
 #, c-format
 msgid "Preview source code from paragraph %1$s to %2$s"
 msgstr "預覽從段落 %1$s 到 %2$s 的原始碼"
 
-#: src/Buffer.cpp:4227
+#: src/Buffer.cpp:4253
 msgid "Preview source code"
 msgstr "預覽原始碼"
 
-#: src/Buffer.cpp:4229
+#: src/Buffer.cpp:4255
 msgid "Preview preamble"
 msgstr "預覽前文"
 
-#: src/Buffer.cpp:4231
+#: src/Buffer.cpp:4257
 msgid "Preview body"
 msgstr "預覽內文"
 
-#: src/Buffer.cpp:4247
+#: src/Buffer.cpp:4273
 msgid "Plain text does not have a preamble."
 msgstr "純文字沒有前文."
 
-#: src/Buffer.cpp:4391
+#: src/Buffer.cpp:4417
 msgid "Autosaving current document..."
 msgstr "自動儲存目前文件..."
 
-#: src/Buffer.cpp:4518
+#: src/Buffer.cpp:4544
 #, c-format
 msgid "No information for exporting the format %1$s."
 msgstr "沒有資訊用於匯出格式 %1$s."
 
-#: src/Buffer.cpp:4522
+#: src/Buffer.cpp:4548
 #, c-format
 msgid "Hint: use non-TeX fonts or set input encoding to '%1$s'"
 msgstr ""
 
-#: src/Buffer.cpp:4524
+#: src/Buffer.cpp:4550
 msgid "Couldn't export file"
 msgstr "無法匯出檔案"
 
-#: src/Buffer.cpp:4592 src/frontends/qt/GuiView.cpp:3078
+#: src/Buffer.cpp:4618 src/frontends/qt/GuiView.cpp:3078
 msgid "File name error"
 msgstr "檔案名稱錯誤"
 
-#: src/Buffer.cpp:4593
+#: src/Buffer.cpp:4619
 #, c-format
 msgid ""
 "The directory path to the document\n"
@@ -29367,21 +29367,21 @@ msgid ""
 "save the file to a directory whose name does not contain spaces."
 msgstr ""
 
-#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4709 src/Buffer.cpp:4739 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "文件匯出取消."
 
-#: src/Buffer.cpp:4716
+#: src/Buffer.cpp:4742
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "文件匯出為 %1$s 到檔案「%2$s」"
 
-#: src/Buffer.cpp:4723
+#: src/Buffer.cpp:4749
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "文件匯出為 %1$s"
 
-#: src/Buffer.cpp:4792
+#: src/Buffer.cpp:4818
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -29392,24 +29392,24 @@ msgstr ""
 "\n"
 "回復緊急儲存?"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4821
 msgid "Load emergency save?"
 msgstr "載入緊急儲存?"
 
-#: src/Buffer.cpp:4796
+#: src/Buffer.cpp:4822
 msgid "&Recover"
 msgstr "回復(&R)"
 
-#: src/Buffer.cpp:4796
+#: src/Buffer.cpp:4822
 msgid "&Load Original"
 msgstr "載入原始檔(&L)"
 
-#: src/Buffer.cpp:4796
+#: src/Buffer.cpp:4822
 #, fuzzy
 msgid "&Only show difference"
 msgstr "差異"
 
-#: src/Buffer.cpp:4807
+#: src/Buffer.cpp:4833
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -29418,15 +29418,15 @@ msgstr ""
 "已經成功地載入緊急檔, 且原始檔案 %1$s 已標示為 唯讀檔. 請確保此檔案儲存為另外"
 "一個不同的檔案."
 
-#: src/Buffer.cpp:4814
+#: src/Buffer.cpp:4840
 msgid "Document was successfully recovered."
 msgstr "文件回復成功."
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4842
 msgid "Document was NOT successfully recovered."
 msgstr "文件「沒有」回復成功."
 
-#: src/Buffer.cpp:4817
+#: src/Buffer.cpp:4843
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -29435,51 +29435,51 @@ msgstr ""
 "現在移除緊急檔?\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
+#: src/Buffer.cpp:4847 src/Buffer.cpp:4859
 msgid "Delete emergency file?"
 msgstr "刪除緊急檔?"
 
-#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
+#: src/Buffer.cpp:4848 src/Buffer.cpp:4861
 msgid "&Keep"
 msgstr "保留(&K)"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4852
 msgid "Emergency file deleted"
 msgstr "緊急檔已刪除"
 
-#: src/Buffer.cpp:4827
+#: src/Buffer.cpp:4853
 msgid "Do not forget to save your file now!"
 msgstr "現在別忘了儲存您的檔案"
 
-#: src/Buffer.cpp:4834
+#: src/Buffer.cpp:4860
 msgid "Remove emergency file now?"
 msgstr "現在移除緊急檔?"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4883
 #, fuzzy
 msgid "Can't rename emergency file!"
 msgstr "刪除緊急檔?"
 
-#: src/Buffer.cpp:4858
+#: src/Buffer.cpp:4884
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
 "this file, and may over-write your own work."
 msgstr ""
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4889
 #, fuzzy
 msgid "Emergency File Renamed"
 msgstr "緊急檔已刪除"
 
-#: src/Buffer.cpp:4864
+#: src/Buffer.cpp:4890
 #, fuzzy, c-format
 msgid ""
 "Emergency file renamed as:\n"
 " %1$s"
 msgstr "緊急檔已刪除"
 
-#: src/Buffer.cpp:4903
+#: src/Buffer.cpp:4929
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -29490,19 +29490,19 @@ msgstr ""
 "\n"
 "載入備份做為替代?"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4931
 msgid "Load backup?"
 msgstr "載入備份?"
 
-#: src/Buffer.cpp:4906
+#: src/Buffer.cpp:4932
 msgid "&Load backup"
 msgstr "載入備份(&L)"
 
-#: src/Buffer.cpp:4906
+#: src/Buffer.cpp:4932
 msgid "Load &original"
 msgstr "載入原始檔(&o)"
 
-#: src/Buffer.cpp:4916
+#: src/Buffer.cpp:4942
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -29511,25 +29511,25 @@ msgstr ""
 "已經成功地載入備份檔, 且原始檔案 %1$s 已標示為 唯讀檔. 請確保此檔案儲存為另外"
 "一個不同的檔案."
 
-#: src/Buffer.cpp:5301
+#: src/Buffer.cpp:5327
 msgid "Senseless!!! "
 msgstr "無意義!!! "
 
-#: src/Buffer.cpp:5579
+#: src/Buffer.cpp:5605
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "文件 %1$s 已重新載入."
 
-#: src/Buffer.cpp:5582
+#: src/Buffer.cpp:5608
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "無法讀取文件 %1$s."
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5770
 msgid "File deleted from disk"
 msgstr ""
 
-#: src/Buffer.cpp:5744
+#: src/Buffer.cpp:5771
 #, c-format
 msgid ""
 "The file\n"
@@ -31122,11 +31122,11 @@ msgid ""
 "Please delete or update this file!"
 msgstr ""
 
-#: src/LyX.cpp:136
+#: src/LyX.cpp:134
 msgid "Could not read configuration file"
 msgstr "無法讀取組態檔案"
 
-#: src/LyX.cpp:137
+#: src/LyX.cpp:135
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -31137,43 +31137,43 @@ msgstr ""
 "%1$s. \n"
 "請檢查您的安裝."
 
-#: src/LyX.cpp:379
+#: src/LyX.cpp:377
 msgid "The following files could not be loaded:"
 msgstr "無法載入下列檔案:"
 
-#: src/LyX.cpp:420
+#: src/LyX.cpp:418
 #, c-format
 msgid "%1$s does not appear like a LyX created temporary directory."
 msgstr "%1$s 不像是 LyX 建立的暫存目錄."
 
-#: src/LyX.cpp:422
+#: src/LyX.cpp:420
 msgid "Cannot remove temporary directory"
 msgstr "無法移除暫存目錄"
 
-#: src/LyX.cpp:426
+#: src/LyX.cpp:424
 #, c-format
 msgid "Unable to remove the temporary directory %1$s"
 msgstr "無法移除暫存目錄 %1$s"
 
-#: src/LyX.cpp:455
+#: src/LyX.cpp:453
 #, c-format
 msgid "Wrong command line option `%1$s'. Exiting."
 msgstr "錯誤命令列選項「%1$s」. 正在離開."
 
-#: src/LyX.cpp:473
+#: src/LyX.cpp:471
 msgid "Missing filename for this operation."
 msgstr "缺少檔名."
 
-#: src/LyX.cpp:522
+#: src/LyX.cpp:520
 #, c-format
 msgid "LyX failed to load the following file: %1$s"
 msgstr "LyX 無法載入此檔案: %1$s"
 
-#: src/LyX.cpp:570
+#: src/LyX.cpp:568
 msgid "No textclass is found"
 msgstr "找不到文字類別"
 
-#: src/LyX.cpp:571
+#: src/LyX.cpp:569
 msgid ""
 "LyX will only have minimal functionality because no textclasses have been "
 "found. You can either try to reconfigure LyX normally, try to reconfigure "
@@ -31182,28 +31182,28 @@ msgstr ""
 "LyX 將只有最基本的功能, 因為找不到文件類別. 您可以:重新配置 LyX (會檢查 "
 "LaTeX 的安裝); 或重新配置 LyX 但不檢查 LaTeX 的安裝; 或是繼續使用."
 
-#: src/LyX.cpp:575
+#: src/LyX.cpp:573
 msgid "&Reconfigure"
 msgstr "重新配置(&R)"
 
-#: src/LyX.cpp:576
+#: src/LyX.cpp:574
 msgid "&Without LaTeX"
 msgstr "不檢查 LaTeX(&W)"
 
-#: src/LyX.cpp:577 src/LyX.cpp:602 src/VCBackend.cpp:974 src/VCBackend.cpp:978
+#: src/LyX.cpp:575 src/LyX.cpp:600 src/VCBackend.cpp:974 src/VCBackend.cpp:978
 msgid "&Continue"
 msgstr "繼續(&C)"
 
-#: src/LyX.cpp:578 src/LyX.cpp:603 src/LyX.cpp:1098
+#: src/LyX.cpp:576 src/LyX.cpp:601 src/LyX.cpp:1096
 msgid "&Exit LyX"
 msgstr "離開 LyX(&E)"
 
-#: src/LyX.cpp:597
+#: src/LyX.cpp:595
 #, fuzzy
 msgid "No python is found"
 msgstr "找不到文字類別"
 
-#: src/LyX.cpp:598
+#: src/LyX.cpp:596
 #, fuzzy
 msgid ""
 "LyX will only have minimal functionality because no python interpreter has "
@@ -31213,7 +31213,7 @@ msgstr ""
 "LyX 將只有最基本的功能, 因為找不到文件類別. 您可以:重新配置 LyX (會檢查 "
 "LaTeX 的安裝); 或重新配置 LyX 但不檢查 LaTeX 的安裝; 或是繼續使用."
 
-#: src/LyX.cpp:700
+#: src/LyX.cpp:698
 msgid ""
 "SIGHUP signal caught!\n"
 "Bye."
@@ -31221,7 +31221,7 @@ msgstr ""
 "捕獲 SIGHUP 信號!\n"
 "再見."
 
-#: src/LyX.cpp:704
+#: src/LyX.cpp:702
 msgid ""
 "SIGFPE signal caught!\n"
 "Bye."
@@ -31229,7 +31229,7 @@ msgstr ""
 "捕獲 SIGFPE 信號!\n"
 "再見."
 
-#: src/LyX.cpp:707
+#: src/LyX.cpp:705
 msgid ""
 "SIGSEGV signal caught!\n"
 "Sorry, you have found a bug in LyX, hope you have not lost any data.\n"
@@ -31243,19 +31243,19 @@ msgstr ""
 "給我們, 謝謝!\n"
 "再見."
 
-#: src/LyX.cpp:723
+#: src/LyX.cpp:721
 msgid "LyX crashed!"
 msgstr "LyX 故障!"
 
-#: src/LyX.cpp:757
+#: src/LyX.cpp:755
 msgid "LyX: "
 msgstr "LyX: "
 
-#: src/LyX.cpp:1026
+#: src/LyX.cpp:1024
 msgid "Could not create temporary directory"
 msgstr "無法建立暫存目錄"
 
-#: src/LyX.cpp:1027
+#: src/LyX.cpp:1025
 #, c-format
 msgid ""
 "Could not create a temporary directory in\n"
@@ -31266,11 +31266,11 @@ msgstr ""
 "「%1$s」\n"
 "請確定此路徑存在以及可寫入, 並再次嘗試."
 
-#: src/LyX.cpp:1091
+#: src/LyX.cpp:1089
 msgid "Missing user LyX directory"
 msgstr "缺少使用者 LyX 目錄"
 
-#: src/LyX.cpp:1092
+#: src/LyX.cpp:1090
 #, c-format
 msgid ""
 "You have specified a non-existent user LyX directory, %1$s.\n"
@@ -31279,36 +31279,36 @@ msgstr ""
 "您已指定不存在的使用者 LyX 目錄, %1$s. \n"
 "為了保持您自己的配置而需要它."
 
-#: src/LyX.cpp:1097
+#: src/LyX.cpp:1095
 msgid "&Create directory"
 msgstr "建立目錄(&C)"
 
-#: src/LyX.cpp:1099
+#: src/LyX.cpp:1097
 msgid "No user LyX directory. Exiting."
 msgstr "無使用者 LyX 目錄. 離開中."
 
-#: src/LyX.cpp:1103
+#: src/LyX.cpp:1101
 #, c-format
 msgid "LyX: Creating directory %1$s"
 msgstr "LyX: 建立目錄 %1$s"
 
-#: src/LyX.cpp:1108
+#: src/LyX.cpp:1106
 #, fuzzy
 msgid ""
 "Failed to create directory. Perhaps wrong -userdir command-line option?\n"
 "Exiting."
 msgstr "建立目錄時失敗. 離開中."
 
-#: src/LyX.cpp:1181
+#: src/LyX.cpp:1179
 msgid "List of supported debug flags:"
 msgstr "支援的除錯旗標清單:"
 
-#: src/LyX.cpp:1190
+#: src/LyX.cpp:1188
 #, c-format
 msgid "Bad debug value `%1$s'. Exiting."
 msgstr ""
 
-#: src/LyX.cpp:1201
+#: src/LyX.cpp:1199
 #, fuzzy
 msgid ""
 "Usage: lyx [ command line switches ] [ name.lyx ... ]\n"
@@ -31398,51 +31398,51 @@ msgstr ""
 "\t-version  概述版本和組建資訊\n"
 "查看 LyX 線上手冊 (man lyx) 以獲得更多細節."
 
-#: src/LyX.cpp:1254 src/frontends/qt/GuiAbout.cpp:217
+#: src/LyX.cpp:1252 src/frontends/qt/GuiAbout.cpp:217
 msgid "  Git commit hash "
 msgstr ""
 
-#: src/LyX.cpp:1265 src/support/Package.cpp:642
+#: src/LyX.cpp:1263 src/support/Package.cpp:642
 msgid "No system directory"
 msgstr "無系統目錄"
 
-#: src/LyX.cpp:1266
+#: src/LyX.cpp:1264
 msgid "Missing directory for -sysdir switch"
 msgstr "缺少用於 -sysdir 選項的目錄"
 
-#: src/LyX.cpp:1277
+#: src/LyX.cpp:1275
 msgid "No user directory"
 msgstr "無使用者目錄"
 
-#: src/LyX.cpp:1278
+#: src/LyX.cpp:1276
 msgid "Missing directory for -userdir switch"
 msgstr "缺少用於 -userdir 選項的目錄"
 
-#: src/LyX.cpp:1289
+#: src/LyX.cpp:1287
 msgid "Incomplete command"
 msgstr "不完整的命令"
 
-#: src/LyX.cpp:1290
+#: src/LyX.cpp:1288
 msgid "Missing command string after --execute switch"
 msgstr "--execute 選項之後缺少命令字串"
 
-#: src/LyX.cpp:1301
+#: src/LyX.cpp:1299
 msgid "Missing file type [eg latex, ps...] after --export-to switch"
 msgstr "在 --export-to 之後缺少檔案類型 [例如 latex, ps...]"
 
-#: src/LyX.cpp:1306
+#: src/LyX.cpp:1304
 msgid "Missing destination filename after --export-to switch"
 msgstr "在 --export-to 之後缺少 目的檔名"
 
-#: src/LyX.cpp:1319
+#: src/LyX.cpp:1317
 msgid "Missing file type [eg latex, ps...] after --export switch"
 msgstr "--export 選項之後缺少檔案類型 [例如 latex、ps...]"
 
-#: src/LyX.cpp:1332
+#: src/LyX.cpp:1330
 msgid "Missing file type [eg latex, ps...] after --import switch"
 msgstr "--import 選項之後缺少檔案類型 [例如 latex、ps...]"
 
-#: src/LyX.cpp:1337
+#: src/LyX.cpp:1335
 msgid "Missing filename for --import"
 msgstr "缺少用於 --import 的檔名"
 
@@ -32110,46 +32110,46 @@ msgstr ""
 msgid "&No, quit operation"
 msgstr ""
 
-#: src/Text.cpp:5010
+#: src/Text.cpp:5009
 msgid "Layout "
 msgstr "布局 "
 
-#: src/Text.cpp:5011 src/Text.cpp:5590
+#: src/Text.cpp:5010 src/Text.cpp:5589
 msgid " not known"
 msgstr " 未知"
 
-#: src/Text.cpp:5589
+#: src/Text.cpp:5588
 #, fuzzy
 msgid "Table Style "
 msgstr "Table Note"
 
-#: src/Text.cpp:5798 src/frontends/qt/GuiApplication.cpp:1889
+#: src/Text.cpp:5797 src/frontends/qt/GuiApplication.cpp:1879
 msgid "Missing argument"
 msgstr "缺少引數"
 
-#: src/Text.cpp:5964
+#: src/Text.cpp:5963
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr ""
 
-#: src/Text.cpp:5968
+#: src/Text.cpp:5967
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr ""
 
-#: src/Text.cpp:5973 src/Text.cpp:5987
+#: src/Text.cpp:5972 src/Text.cpp:5986
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr ""
 
-#: src/Text.cpp:5989
+#: src/Text.cpp:5988
 msgid "Invalid argument of textstyle-update"
 msgstr ""
 
-#: src/Text.cpp:6146
+#: src/Text.cpp:6145
 #, fuzzy
 msgid "Path to thesaurus directory not set!"
 msgstr "設定同義詞字典的路徑"
 
-#: src/Text.cpp:6147
+#: src/Text.cpp:6146
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -32157,7 +32157,7 @@ msgid ""
 "instructions."
 msgstr ""
 
-#: src/Text.cpp:6273 src/Text.cpp:6284
+#: src/Text.cpp:6272 src/Text.cpp:6283
 msgid "Paragraph layout set"
 msgstr "段落版面配置設定"
 
@@ -32667,7 +32667,7 @@ msgid "This tab contains invalid input. Please fix!"
 msgstr ""
 
 #: src/frontends/qt/ButtonController.cpp:267
-#: src/frontends/qt/GuiApplication.cpp:2007 src/frontends/qt/GuiCompare.cpp:196
+#: src/frontends/qt/GuiApplication.cpp:1997 src/frontends/qt/GuiCompare.cpp:196
 #: src/frontends/qt/GuiSymbols.cpp:346
 msgid "Cancel"
 msgstr "取消"
@@ -32897,92 +32897,92 @@ msgstr ""
 msgid "About LyX"
 msgstr "關於 LyX"
 
-#: src/frontends/qt/GuiApplication.cpp:784
+#: src/frontends/qt/GuiApplication.cpp:770
 msgid "About %1"
 msgstr "關於 %1"
 
-#: src/frontends/qt/GuiApplication.cpp:785 src/frontends/qt/GuiPrefs.cpp:3503
+#: src/frontends/qt/GuiApplication.cpp:771 src/frontends/qt/GuiPrefs.cpp:3503
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: src/frontends/qt/GuiApplication.cpp:786
+#: src/frontends/qt/GuiApplication.cpp:772
 msgid "Reconfigure"
 msgstr "重新配置"
 
-#: src/frontends/qt/GuiApplication.cpp:787
+#: src/frontends/qt/GuiApplication.cpp:773
 #, fuzzy
 msgid "Restore Defaults"
 msgstr "恢復成預設的顏色"
 
-#: src/frontends/qt/GuiApplication.cpp:788
+#: src/frontends/qt/GuiApplication.cpp:774
 msgid "Quit %1"
 msgstr "離開 %1"
 
-#: src/frontends/qt/GuiApplication.cpp:789 src/frontends/qt/GuiInclude.cpp:320
+#: src/frontends/qt/GuiApplication.cpp:775 src/frontends/qt/GuiInclude.cpp:320
 #: src/frontends/qt/GuiInclude.cpp:330 src/frontends/qt/GuiInclude.cpp:335
 msgid "&OK"
 msgstr "確定(&O)"
 
-#: src/frontends/qt/GuiApplication.cpp:791
+#: src/frontends/qt/GuiApplication.cpp:777
 #, fuzzy
 msgid "Apply"
 msgstr "套用(&A)"
 
-#: src/frontends/qt/GuiApplication.cpp:792
+#: src/frontends/qt/GuiApplication.cpp:778
 msgid "Reset"
 msgstr "重置"
 
-#: src/frontends/qt/GuiApplication.cpp:793
+#: src/frontends/qt/GuiApplication.cpp:779
 #, fuzzy
 msgid "Open"
 msgstr "Opening 開頭"
 
-#: src/frontends/qt/GuiApplication.cpp:1286
+#: src/frontends/qt/GuiApplication.cpp:1276
 msgid "Nothing to do"
 msgstr "無事可做"
 
-#: src/frontends/qt/GuiApplication.cpp:1292
+#: src/frontends/qt/GuiApplication.cpp:1282
 msgid "Unknown action"
 msgstr "不明的動作"
 
-#: src/frontends/qt/GuiApplication.cpp:1336
+#: src/frontends/qt/GuiApplication.cpp:1326
 msgid "Command not handled"
 msgstr "命令無法處理"
 
-#: src/frontends/qt/GuiApplication.cpp:1342
+#: src/frontends/qt/GuiApplication.cpp:1332
 msgid "Command disabled"
 msgstr "命令停用"
 
-#: src/frontends/qt/GuiApplication.cpp:1450
+#: src/frontends/qt/GuiApplication.cpp:1440
 #, c-format
 msgid "Bad debug value `%1$s'."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1479 src/frontends/qt/GuiView.cpp:2406
+#: src/frontends/qt/GuiApplication.cpp:1469 src/frontends/qt/GuiView.cpp:2406
 msgid "Command not allowed without a buffer open"
 msgstr "無已開啟的緩衝區, 命令不允許"
 
-#: src/frontends/qt/GuiApplication.cpp:1486
+#: src/frontends/qt/GuiApplication.cpp:1476
 msgid "the <LFUN-COMMAND> argument of buffer-forall is not valid"
 msgstr "buffer-forall 的 <LFUN-COMMAND> 參數是無效的"
 
-#: src/frontends/qt/GuiApplication.cpp:1563
+#: src/frontends/qt/GuiApplication.cpp:1553
 msgid "Wrong focus!"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1697
+#: src/frontends/qt/GuiApplication.cpp:1687
 msgid "Running configure..."
 msgstr "配置執行中..."
 
-#: src/frontends/qt/GuiApplication.cpp:1707
+#: src/frontends/qt/GuiApplication.cpp:1697
 msgid "Reloading configuration..."
 msgstr "重新載入配置..."
 
-#: src/frontends/qt/GuiApplication.cpp:1717
+#: src/frontends/qt/GuiApplication.cpp:1707
 msgid "System reconfiguration failed"
 msgstr "系統重新配置失敗"
 
-#: src/frontends/qt/GuiApplication.cpp:1718
+#: src/frontends/qt/GuiApplication.cpp:1708
 msgid ""
 "The system reconfiguration has failed.\n"
 "Default textclass is used but LyX may\n"
@@ -32993,11 +32993,11 @@ msgstr ""
 "已使用預設的文字類別, 但 LyX 可能無法正常工作\n"
 "如果需要, 請重新配置系統."
 
-#: src/frontends/qt/GuiApplication.cpp:1723
+#: src/frontends/qt/GuiApplication.cpp:1713
 msgid "System reconfigured"
 msgstr "系統重新配置"
 
-#: src/frontends/qt/GuiApplication.cpp:1724
+#: src/frontends/qt/GuiApplication.cpp:1714
 msgid ""
 "The system has been reconfigured.\n"
 "You need to restart LyX to make use of any\n"
@@ -33007,58 +33007,58 @@ msgstr ""
 "您需要重新啟動 LyX 以利用任何\n"
 "更新的文件類別."
 
-#: src/frontends/qt/GuiApplication.cpp:1805
+#: src/frontends/qt/GuiApplication.cpp:1795
 msgid "Exiting."
 msgstr "離開中."
 
-#: src/frontends/qt/GuiApplication.cpp:1901
+#: src/frontends/qt/GuiApplication.cpp:1891
 #, c-format
 msgid "Opening help file %1$s..."
 msgstr "開啟說明檔案 %1$s..."
 
-#: src/frontends/qt/GuiApplication.cpp:1915
+#: src/frontends/qt/GuiApplication.cpp:1905
 msgid "Wrong argument. Must be 'examples' or 'templates'."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1929
+#: src/frontends/qt/GuiApplication.cpp:1919
 #, fuzzy
 msgid "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 msgstr "語法: set-color <lyx_name> <x11_name>"
 
-#: src/frontends/qt/GuiApplication.cpp:1949
+#: src/frontends/qt/GuiApplication.cpp:1939
 #, c-format
 msgid "Set-color \"%1$s\" failed - color is undefined or may not be redefined"
 msgstr "Set-color「%1$s」失敗 - 顏色未定義或是不可重新定義"
 
-#: src/frontends/qt/GuiApplication.cpp:2054
+#: src/frontends/qt/GuiApplication.cpp:2044
 #, fuzzy, c-format
 msgid "Cannot iterate more than %1$d times"
 msgstr "無法移除標準索引"
 
-#: src/frontends/qt/GuiApplication.cpp:2154
+#: src/frontends/qt/GuiApplication.cpp:2144
 #, c-format
 msgid "Applied \"%1$s\" to %2$d buffer(s)"
 msgstr "已套用「%1$s」到 %2$d 緩衝區"
 
-#: src/frontends/qt/GuiApplication.cpp:2240
+#: src/frontends/qt/GuiApplication.cpp:2230
 #, c-format
 msgid "Document defaults saved in %1$s"
 msgstr "文件預設儲存在 %1$s 中"
 
-#: src/frontends/qt/GuiApplication.cpp:2244
+#: src/frontends/qt/GuiApplication.cpp:2234
 msgid "Unable to save document defaults"
 msgstr "無法儲存文件預設值"
 
-#: src/frontends/qt/GuiApplication.cpp:2478
-#: src/frontends/qt/GuiApplication.cpp:2493
+#: src/frontends/qt/GuiApplication.cpp:2468
+#: src/frontends/qt/GuiApplication.cpp:2483
 msgid "Unknown function."
 msgstr "不明的函數."
 
-#: src/frontends/qt/GuiApplication.cpp:3025
+#: src/frontends/qt/GuiApplication.cpp:3015
 msgid "The current document was closed."
 msgstr "目前文件已關閉."
 
-#: src/frontends/qt/GuiApplication.cpp:3035
+#: src/frontends/qt/GuiApplication.cpp:3025
 msgid ""
 "LyX has caught an exception, it will now attempt to save all unsaved "
 "documents and exit.\n"
@@ -33069,23 +33069,23 @@ msgstr ""
 "\n"
 "異常: "
 
-#: src/frontends/qt/GuiApplication.cpp:3039
-#: src/frontends/qt/GuiApplication.cpp:3045
+#: src/frontends/qt/GuiApplication.cpp:3029
+#: src/frontends/qt/GuiApplication.cpp:3035
 msgid "Software exception Detected"
 msgstr "偵測到軟體產生異常"
 
-#: src/frontends/qt/GuiApplication.cpp:3043
+#: src/frontends/qt/GuiApplication.cpp:3033
 msgid ""
 "LyX has caught some really weird exception, it will now attempt to save all "
 "unsaved documents and exit."
 msgstr "LyX 捕獲到一些奇怪的異常狀況, 即將儲存所有文件並且關閉程式."
 
-#: src/frontends/qt/GuiApplication.cpp:3349
-#: src/frontends/qt/GuiApplication.cpp:3361
+#: src/frontends/qt/GuiApplication.cpp:3339
+#: src/frontends/qt/GuiApplication.cpp:3351
 msgid "Could not find UI definition file"
 msgstr "無法讀取 UI 組態檔案"
 
-#: src/frontends/qt/GuiApplication.cpp:3350
+#: src/frontends/qt/GuiApplication.cpp:3340
 #, c-format
 msgid ""
 "Error while reading the included file\n"
@@ -33096,11 +33096,11 @@ msgstr ""
 "%1$s. \n"
 "請檢查您的安裝."
 
-#: src/frontends/qt/GuiApplication.cpp:3356
+#: src/frontends/qt/GuiApplication.cpp:3346
 msgid "Could not find default UI file"
 msgstr "無法讀取預設的 UI 組態檔案"
 
-#: src/frontends/qt/GuiApplication.cpp:3357
+#: src/frontends/qt/GuiApplication.cpp:3347
 msgid ""
 "LyX could not find the default UI file!\n"
 "Please check your installation."
@@ -33109,7 +33109,7 @@ msgstr ""
 "%1$s. \n"
 "請檢查您的安裝."
 
-#: src/frontends/qt/GuiApplication.cpp:3362
+#: src/frontends/qt/GuiApplication.cpp:3352
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -37514,8 +37514,8 @@ msgstr "無定義的參考文獻!"
 msgid "+ %1$d more entries."
 msgstr ""
 
-#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:551
-#: src/insets/InsetRef.cpp:663
+#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:556
+#: src/insets/InsetRef.cpp:668
 msgid "BROKEN: "
 msgstr "斷鍊: "
 
@@ -38745,61 +38745,61 @@ msgstr "文字"
 msgid "text%1$s"
 msgstr "文字"
 
-#: src/insets/InsetRef.cpp:403
+#: src/insets/InsetRef.cpp:408
 msgid "elsewhere"
 msgstr ""
 
-#: src/insets/InsetRef.cpp:644
+#: src/insets/InsetRef.cpp:649
 #, fuzzy
 msgid "Ref"
 msgstr "Re"
 
-#: src/insets/InsetRef.cpp:645
+#: src/insets/InsetRef.cpp:650
 #, fuzzy
 msgid "EqRef"
 msgstr "參照方程: "
 
-#: src/insets/InsetRef.cpp:646 src/mathed/InsetMathRef.cpp:379
+#: src/insets/InsetRef.cpp:651 src/mathed/InsetMathRef.cpp:379
 msgid "Page Number"
 msgstr "頁碼"
 
-#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:380
+#: src/insets/InsetRef.cpp:652 src/mathed/InsetMathRef.cpp:380
 msgid "Textual Page Number"
 msgstr "文字化的頁碼"
 
-#: src/insets/InsetRef.cpp:647
+#: src/insets/InsetRef.cpp:652
 #, fuzzy
 msgid "TextPage"
 msgstr "文字頁: "
 
-#: src/insets/InsetRef.cpp:648 src/mathed/InsetMathRef.cpp:381
+#: src/insets/InsetRef.cpp:653 src/mathed/InsetMathRef.cpp:381
 msgid "Standard+Textual Page"
 msgstr "標準+文字 頁面"
 
-#: src/insets/InsetRef.cpp:648
+#: src/insets/InsetRef.cpp:653
 #, fuzzy
 msgid "Ref+Text"
 msgstr "參照+文字: "
 
-#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:383
+#: src/insets/InsetRef.cpp:654 src/mathed/InsetMathRef.cpp:383
 msgid "Reference to Name"
 msgstr "參考到名稱"
 
-#: src/insets/InsetRef.cpp:649
+#: src/insets/InsetRef.cpp:654
 #, fuzzy
 msgid "NameRef"
 msgstr "參考名稱:"
 
-#: src/insets/InsetRef.cpp:650
+#: src/insets/InsetRef.cpp:655
 msgid "Formatted"
 msgstr "格式化的"
 
-#: src/insets/InsetRef.cpp:650
+#: src/insets/InsetRef.cpp:655
 #, fuzzy
 msgid "Format"
 msgstr "格式(&F):"
 
-#: src/insets/InsetRef.cpp:651 src/mathed/InsetMathRef.cpp:384
+#: src/insets/InsetRef.cpp:656 src/mathed/InsetMathRef.cpp:384
 #, fuzzy
 msgid "Label Only"
 msgstr "只有前文"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-08-22 21:06-0400\n"
+"POT-Creation-Date: 2024-09-19 11:06-0400\n"
 "PO-Revision-Date: 2024-02-12 18:54+0100\n"
 "Last-Translator: Yuriy Skalko <yuriy.skalko@gmail.com>\n"
 "Language-Team: Russian <lyx-docs@lists.lyx.org>\n"
@@ -692,7 +692,7 @@ msgid "Remove the selected branch"
 msgstr "Удалить выбранную ветку"
 
 #: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
+#: src/Buffer.cpp:4848 src/Buffer.cpp:4861
 msgid "&Remove"
 msgstr "&Удалить"
 
@@ -765,8 +765,8 @@ msgstr "Добавить все неизвестные ветки к списк�
 msgid "Add A&ll"
 msgstr "Добавить всё"
 
-#: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1483
-#: src/Buffer.cpp:4796 src/Buffer.cpp:4906 src/LyXVC.cpp:114 src/LyXVC.cpp:310
+#: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1501
+#: src/Buffer.cpp:4822 src/Buffer.cpp:4932 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
@@ -5273,7 +5273,7 @@ msgstr "Автоматическая очистка окна перед нача
 msgid "&Clear automatically"
 msgstr "Очищать автоматически"
 
-#: src/frontends/qt/ui/RefUi.ui:33 src/insets/InsetRef.cpp:651
+#: src/frontends/qt/ui/RefUi.ui:33 src/insets/InsetRef.cpp:656
 msgid "Label"
 msgstr "Метка"
 
@@ -7519,7 +7519,7 @@ msgstr "IEEE Transactions"
 #: lib/layouts/slides.layout:61 lib/layouts/stdclass.inc:28
 #: lib/layouts/stdinsets.inc:713 lib/layouts/stdletter.inc:12
 #: lib/layouts/svcommon.inc:26 lib/layouts/tufte-book.layout:35
-#: src/insets/InsetRef.cpp:644
+#: src/insets/InsetRef.cpp:649
 msgid "Standard"
 msgstr "Обычный текст"
 
@@ -12341,7 +12341,7 @@ msgstr ""
 "формулы, например '(2.1)'."
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:30
-#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:645
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:650
 #: src/mathed/InsetMathRef.cpp:378
 msgid "Equation"
 msgstr "Формула"
@@ -12653,7 +12653,7 @@ msgid "Size the photo is resized to"
 msgstr "Размер для фотографии"
 
 #: lib/layouts/europecv.layout:185 src/frontends/qt/GuiDocument.cpp:135
-#: src/insets/InsetRef.cpp:646
+#: src/insets/InsetRef.cpp:651
 msgid "Page"
 msgstr "Страница"
 
@@ -20213,7 +20213,7 @@ msgid "Copy as Reference|R"
 msgstr "Копировать как ссылку|К"
 
 #: lib/ui/stdcontext.inc:61 lib/ui/stdcontext.inc:376 lib/ui/stdmenus.inc:108
-#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4976 src/mathed/InsetMathNest.cpp:870
+#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4975 src/mathed/InsetMathNest.cpp:870
 msgid "Cut"
 msgstr "Вырезать"
 
@@ -20223,7 +20223,7 @@ msgid "Copy"
 msgstr "Копировать"
 
 #: lib/ui/stdcontext.inc:63 lib/ui/stdcontext.inc:378 lib/ui/stdmenus.inc:110
-#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4921
+#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4920
 #: src/frontends/qt/GuiToolbar.cpp:464 src/mathed/InsetMathGrid.cpp:1566
 #: src/mathed/InsetMathNest.cpp:839
 msgid "Paste"
@@ -27676,6 +27676,14 @@ msgid "External Material"
 msgstr "Внешний материал"
 
 #: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "Диаграммы Фейнмана"
+
+#: lib/examples/Articles:0
+msgid "Instant Preview"
+msgstr "Мгновенный предпросмотр"
+
+#: lib/examples/Articles:0
 msgid "Itemize Bullets"
 msgstr "Маркеры в списках"
 
@@ -27684,24 +27692,16 @@ msgid "Minted File Listing"
 msgstr "Листинг Minted из файла"
 
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "Диаграмма XY-Pic"
-
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "Диаграммы Фейнмана"
+msgid "Minted Listings"
+msgstr "Листинги Minted"
 
 #: lib/examples/Articles:0
 msgid "XY-Figure"
 msgstr "Диаграмма XY-Figure"
 
 #: lib/examples/Articles:0
-msgid "Minted Listings"
-msgstr "Листинги Minted"
-
-#: lib/examples/Articles:0
-msgid "Instant Preview"
-msgstr "Мгновенный предпросмотр"
+msgid "XY-Pic"
+msgstr "Диаграмма XY-Pic"
 
 #: lib/examples/Articles:0
 msgid "Graphics and Insets"
@@ -27716,12 +27716,12 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "Многоязычная вёрстка японского с другими языками (с CJKutf8)"
 
 #: lib/examples/Articles:0
-msgid "Writing Armenian"
-msgstr "Армянская письменность"
-
-#: lib/examples/Articles:0
 msgid "Mixing Japanese with other Languages (with platex)"
 msgstr "Многоязычная вёрстка японского с другими языками (с platex)"
+
+#: lib/examples/Articles:0
+msgid "Writing Armenian"
+msgstr "Армянская письменность"
 
 #: lib/examples/Articles:0
 msgid "Language Support"
@@ -27740,6 +27740,10 @@ msgid "Serial Letter 3"
 msgstr "Serial Letter 3"
 
 #: lib/examples/Articles:0
+msgid "Hazard and Precautionary Statements"
+msgstr "Опасности и меры предосторожности"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "Книга LilyPond"
 
@@ -27748,32 +27752,28 @@ msgid "Multilingual Captions"
 msgstr "Многоязычные подписи"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "Опасности и меры предосторожности"
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr "Noweb Listerrors"
-
-#: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
 msgid "Modules"
 msgstr "Модули"
 
 #: lib/examples/Articles:0
-msgid "Foils Landslide"
-msgstr "Foils Landslide"
+msgid "Beamer (Complex)"
+msgstr "Beamer (сложная)"
 
 #: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (сложная)"
+msgid "Foils Landslide"
+msgstr "Foils Landslide"
 
 #: lib/examples/Articles:0
 msgid "Welcome"
@@ -27784,44 +27784,56 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Корейская письменность с CJK-ko"
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
-
-#: lib/examples/Articles:0
-msgid "IEEE Transactions Journal"
-msgstr "IEEE Transactions Journal"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Hebrew Article (KOMA-Script)"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
 msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
+msgid "IEEE Transactions Journal"
+msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Springers Global Journal Template (V. 3)"
 
 #: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Hebrew Article (KOMA-Script)"
+msgid "00 Main File"
+msgstr "00 Основной файл"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Посвящение"
 
 #: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02 Предисловие"
 
 #: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Часть"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Словарь терминов"
+msgid "03 Preface"
+msgstr "03 Введение"
 
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04 Благодарности"
 
 #: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 Список участников"
+
+#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06 Список сокращений"
+
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Часть"
 
 #: lib/examples/Articles:0
 msgid "08 Author"
@@ -27832,28 +27844,16 @@ msgid "09 Appendix"
 msgstr "09 Приложения"
 
 #: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Словарь терминов"
+
+#: lib/examples/Articles:0
 msgid "11 References"
 msgstr "11 Список литературы"
 
 #: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Список участников"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Посвящение"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Основной файл"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Введение"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Решения"
+msgid "05 Acronym"
+msgstr "05 Список сокращений"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -27868,20 +27868,20 @@ msgid "08 Appendix"
 msgstr "08 Приложения"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 Список сокращений"
-
-#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Словарь терминов"
 
 #: lib/examples/Articles:0
-msgid "Simple"
-msgstr "Простой"
+msgid "10 Solutions"
+msgstr "10 Решения"
 
 #: lib/examples/Articles:0
 msgid "Colored"
 msgstr "Цветной"
+
+#: lib/examples/Articles:0
+msgid "Simple"
+msgstr "Простой"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -27904,16 +27904,16 @@ msgid "Theses"
 msgstr "Диссертации"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 
 #: lib/examples/Articles:0
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -27953,11 +27953,11 @@ msgstr "Нет года"
 msgid "Bibliography entry not found!"
 msgstr "Источник не найден!"
 
-#: src/Buffer.cpp:447
+#: src/Buffer.cpp:452
 msgid "Disk Error: "
 msgstr "Ошибка диска: "
 
-#: src/Buffer.cpp:448
+#: src/Buffer.cpp:453
 #, c-format
 msgid ""
 "LyX could not create the temporary directory '%1$s' (Disk is full maybe?)"
@@ -27965,46 +27965,46 @@ msgstr ""
 "LyX не смог создать временный каталог '%1$s' (Может закончилось место на "
 "диске?)"
 
-#: src/Buffer.cpp:577
+#: src/Buffer.cpp:582
 msgid "LyX attempted to close a document that had unsaved changes!\n"
 msgstr ""
 "LyX пытается закрыть документ который содержит несохранённые изменения!\n"
 
-#: src/Buffer.cpp:581 src/Buffer.cpp:1691
+#: src/Buffer.cpp:586 src/Buffer.cpp:1709
 msgid "Save failed! Document is lost."
 msgstr "Сохранить не удалось! Мужайтесь, документ потерян."
 
-#: src/Buffer.cpp:583
+#: src/Buffer.cpp:588
 msgid "Attempting to close changed document!"
 msgstr "Попытка закрыть изменённый документ!"
 
-#: src/Buffer.cpp:592
+#: src/Buffer.cpp:597
 #, c-format
 msgid "Could not remove the temporary directory %1$s"
 msgstr "Невозможно удалить временный каталог %1$s"
 
-#: src/Buffer.cpp:1006 src/Text.cpp:616
+#: src/Buffer.cpp:1024 src/Text.cpp:616
 #, c-format
 msgid "Unknown token: %1$s %2$s\n"
 msgstr "Неизвестный токен: %1$s %2$s\n"
 
-#: src/Buffer.cpp:1010 src/Buffer.cpp:1016 src/Buffer.cpp:1040
+#: src/Buffer.cpp:1028 src/Buffer.cpp:1034 src/Buffer.cpp:1058
 msgid "Document header error"
 msgstr "Ошибка в заголовке документа"
 
-#: src/Buffer.cpp:1015
+#: src/Buffer.cpp:1033
 msgid "\\begin_header is missing"
 msgstr "\\begin_header отсутствует"
 
-#: src/Buffer.cpp:1039
+#: src/Buffer.cpp:1057
 msgid "\\begin_document is missing"
 msgstr "\\begin_document отсутствует"
 
-#: src/Buffer.cpp:1050 src/Buffer.cpp:3104
+#: src/Buffer.cpp:1068 src/Buffer.cpp:3122
 msgid "Changes not shown in LaTeX output"
 msgstr "Изменения не показаны в выводе LaTeX"
 
-#: src/Buffer.cpp:1051 src/Buffer.cpp:3105
+#: src/Buffer.cpp:1069 src/Buffer.cpp:3123
 msgid ""
 "Changes will not be highlighted in LaTeX output, because xcolor and ulem are "
 "not installed.\n"
@@ -28016,39 +28016,39 @@ msgstr ""
 "Пожалуйста установите эти пакеты или переопределите \\lyxadded и "
 "\\lyxdeleted в преамбуле LaTeX."
 
-#: src/Buffer.cpp:1093 src/BufferParams.cpp:479 src/frontends/qt/GuiLog.cpp:252
+#: src/Buffer.cpp:1111 src/BufferParams.cpp:479 src/frontends/qt/GuiLog.cpp:252
 #: src/insets/InsetIndex.cpp:1282
 msgid "Index"
 msgstr "Предметный указатель"
 
-#: src/Buffer.cpp:1217
+#: src/Buffer.cpp:1235
 msgid "File Not Found"
 msgstr "Файл не найден"
 
-#: src/Buffer.cpp:1218
+#: src/Buffer.cpp:1236
 #, c-format
 msgid "Unable to open file `%1$s'."
 msgstr "Невозможно открыть файл `%1$s'."
 
-#: src/Buffer.cpp:1246 src/Buffer.cpp:1320
+#: src/Buffer.cpp:1264 src/Buffer.cpp:1338
 msgid "Document format failure"
 msgstr "Ошибка формата документа"
 
-#: src/Buffer.cpp:1247
+#: src/Buffer.cpp:1265
 #, c-format
 msgid "%1$s ended unexpectedly, which means that it is probably corrupted."
 msgstr "Файл %1$s неожиданно закончился, скорее всего он повреждён."
 
-#: src/Buffer.cpp:1321
+#: src/Buffer.cpp:1339
 #, c-format
 msgid "%1$s is not a readable LyX document."
 msgstr "%1$s нечитаемый документ LyX."
 
-#: src/Buffer.cpp:1348
+#: src/Buffer.cpp:1366
 msgid "Conversion failed"
 msgstr "Конвертирование не выполнено"
 
-#: src/Buffer.cpp:1349
+#: src/Buffer.cpp:1367
 #, c-format
 msgid ""
 "%1$s is from a different version of LyX, but a temporary file for converting "
@@ -28057,11 +28057,11 @@ msgstr ""
 "%1$s создан другой версией LyX, невозможно создать временный файл при "
 "конвертировании."
 
-#: src/Buffer.cpp:1359
+#: src/Buffer.cpp:1377
 msgid "Conversion script not found"
 msgstr "Сценарий для конвертирования не найден"
 
-#: src/Buffer.cpp:1360
+#: src/Buffer.cpp:1378
 #, c-format
 msgid ""
 "%1$s is from a different version of LyX, but the conversion script lyx2lyx "
@@ -28070,11 +28070,11 @@ msgstr ""
 "%1$s создан другой версией LyX, сценарий для конвертирования lyx2lyx не "
 "найден."
 
-#: src/Buffer.cpp:1383 src/Buffer.cpp:1390
+#: src/Buffer.cpp:1401 src/Buffer.cpp:1408
 msgid "Conversion script failed"
 msgstr "Ошибка сценария преобразования"
 
-#: src/Buffer.cpp:1384
+#: src/Buffer.cpp:1402
 #, c-format
 msgid ""
 "%1$s is from an older version of LyX and the lyx2lyx script failed to "
@@ -28083,7 +28083,7 @@ msgstr ""
 "Файл %1$s создан в старой версии LyX. Сценарий lyx2lyx не смог преобразовать "
 "его."
 
-#: src/Buffer.cpp:1391
+#: src/Buffer.cpp:1409
 #, c-format
 msgid ""
 "%1$s is from a newer version of LyX and the lyx2lyx script failed to convert "
@@ -28092,18 +28092,18 @@ msgstr ""
 "Файл %1$s создан в более новой версии LyX. Сценарий lyx2lyx не смог "
 "преобразовать его."
 
-#: src/Buffer.cpp:1470 src/Buffer.cpp:4806 src/Buffer.cpp:4915
+#: src/Buffer.cpp:1488 src/Buffer.cpp:4832 src/Buffer.cpp:4941
 msgid "File is read-only"
 msgstr "Документ доступен только для чтения"
 
-#: src/Buffer.cpp:1471
+#: src/Buffer.cpp:1489
 #, c-format
 msgid "The file %1$s cannot be written because it is marked as read-only."
 msgstr ""
 "Файл %1$s нельзя записать, так как он помечен как доступный только для "
 "чтения."
 
-#: src/Buffer.cpp:1480
+#: src/Buffer.cpp:1498
 #, c-format
 msgid ""
 "Document %1$s has been externally modified. Are you sure you want to "
@@ -28111,21 +28111,21 @@ msgid ""
 msgstr ""
 "Документ %1$s изменён извне. Вы уверены, что хотите перезаписать этот файл?"
 
-#: src/Buffer.cpp:1482
+#: src/Buffer.cpp:1500
 msgid "Overwrite modified file?"
 msgstr "Перезаписать изменённый файл?"
 
-#: src/Buffer.cpp:1483 src/Exporter.cpp:50
+#: src/Buffer.cpp:1501 src/Exporter.cpp:50
 #: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiView.cpp:3105
 #: src/frontends/qt/GuiView.cpp:3372 src/frontends/qt/GuiView.cpp:3477
 msgid "&Overwrite"
 msgstr "&Перезаписать"
 
-#: src/Buffer.cpp:1548
+#: src/Buffer.cpp:1566
 msgid "Backup failure"
 msgstr "Ошибка создания резервного файла"
 
-#: src/Buffer.cpp:1549
+#: src/Buffer.cpp:1567
 #, c-format
 msgid ""
 "Cannot create backup file %1$s.\n"
@@ -28134,11 +28134,11 @@ msgstr ""
 "Не удаётся создать резервный файл %1$s.\n"
 "Пожалуйста, проверьте существует ли директория и доступна ли она для записи."
 
-#: src/Buffer.cpp:1584 src/Buffer.cpp:1595
+#: src/Buffer.cpp:1602 src/Buffer.cpp:1613
 msgid "Write failure"
 msgstr "Ошибка записи"
 
-#: src/Buffer.cpp:1585
+#: src/Buffer.cpp:1603
 #, c-format
 msgid ""
 "The file has successfully been saved as:\n"
@@ -28155,7 +28155,7 @@ msgstr ""
 "Ваш оригинальный файл скопирован сюда:\n"
 "  %3$s"
 
-#: src/Buffer.cpp:1596
+#: src/Buffer.cpp:1614
 #, c-format
 msgid ""
 "Cannot move saved file to:\n"
@@ -28168,42 +28168,42 @@ msgstr ""
 "Но файл успешно сохранён как:\n"
 "  %2$s."
 
-#: src/Buffer.cpp:1612
+#: src/Buffer.cpp:1630
 #, c-format
 msgid "Saving document %1$s..."
 msgstr "Сохранение документа %1$s..."
 
-#: src/Buffer.cpp:1627
+#: src/Buffer.cpp:1645
 msgid " could not write file!"
 msgstr " не удалось записать файл!"
 
-#: src/Buffer.cpp:1635
+#: src/Buffer.cpp:1653
 msgid " done."
 msgstr " завершено."
 
-#: src/Buffer.cpp:1650
+#: src/Buffer.cpp:1668
 #, c-format
 msgid "LyX: Attempting to save document %1$s\n"
 msgstr "LyX: Попытка сохранить документ  %1$s\n"
 
-#: src/Buffer.cpp:1660 src/Buffer.cpp:1673 src/Buffer.cpp:1687
+#: src/Buffer.cpp:1678 src/Buffer.cpp:1691 src/Buffer.cpp:1705
 #, c-format
 msgid "Saved to %1$s. Phew.\n"
 msgstr "Сохранён как %1$s. Хух.\n"
 
-#: src/Buffer.cpp:1663
+#: src/Buffer.cpp:1681
 msgid "Save failed! Trying again...\n"
 msgstr "Сохранить не удалось! Ещё одна попытка...\n"
 
-#: src/Buffer.cpp:1677
+#: src/Buffer.cpp:1695
 msgid "Save failed! Trying yet again...\n"
 msgstr "Сохранить не удалось! И ещё раз...\n"
 
-#: src/Buffer.cpp:1773
+#: src/Buffer.cpp:1791
 msgid "Iconv software exception Detected"
 msgstr "Обнаружено исключение программы iconv"
 
-#: src/Buffer.cpp:1774
+#: src/Buffer.cpp:1792
 #, c-format
 msgid ""
 "Please verify that the `iconv' support software is properly installed and "
@@ -28214,12 +28214,12 @@ msgstr ""
 "поддерживает выбранную кодировку (%1$s), или измените кодировку в "
 "Документ>Настройки>Язык."
 
-#: src/Buffer.cpp:1806
+#: src/Buffer.cpp:1824
 #, c-format
 msgid "Uncodable character '%1$s' (code point %2$s)"
 msgstr "Некодируемый символ '%1$s' (code point %2$s)"
 
-#: src/Buffer.cpp:1809
+#: src/Buffer.cpp:1827
 msgid ""
 "Some characters of your document are not representable in specific verbatim "
 "contexts.\n"
@@ -28229,12 +28229,12 @@ msgstr ""
 "определённых дословных контекстах.\n"
 "Может помочь смена кодировки документа на utf8."
 
-#: src/Buffer.cpp:1814
+#: src/Buffer.cpp:1832
 #, c-format
 msgid "Could not find LaTeX command for character '%1$s' (code point %2$s)"
 msgstr "Не удалось найти команду LaTeX для символа '%1$s' (code point %2$s)"
 
-#: src/Buffer.cpp:1817
+#: src/Buffer.cpp:1835
 msgid ""
 "Some characters of your document are probably not representable in the "
 "chosen encoding.\n"
@@ -28244,19 +28244,19 @@ msgstr ""
 "выбранной кодировке.\n"
 "Может помочь смена кодировки документа на utf8."
 
-#: src/Buffer.cpp:1825
+#: src/Buffer.cpp:1843
 msgid "iconv conversion failed"
 msgstr "не удалось преобразование с iconv"
 
-#: src/Buffer.cpp:1830
+#: src/Buffer.cpp:1848
 msgid "conversion failed"
 msgstr "не удалось преобразовать"
 
-#: src/Buffer.cpp:1942 src/insets/InsetGraphics.cpp:923
+#: src/Buffer.cpp:1960 src/insets/InsetGraphics.cpp:923
 msgid "Uncodable character in file path"
 msgstr "Некодируемый символ в пути файла"
 
-#: src/Buffer.cpp:1944
+#: src/Buffer.cpp:1962
 #, c-format
 msgid ""
 "The path of your document\n"
@@ -28278,31 +28278,31 @@ msgstr ""
 "Выберите соответствующую кодировку (такую как utf8)\n"
 "или измените путь."
 
-#: src/Buffer.cpp:2035
+#: src/Buffer.cpp:2053
 #, c-format
 msgid "The languages %1$s are only supported by Babel."
 msgstr "Языки %1$s поддерживаются только Babel."
 
-#: src/Buffer.cpp:2036
+#: src/Buffer.cpp:2054
 #, c-format
 msgid "The language %1$s is only supported by Babel."
 msgstr "Язык %1$s поддерживается только Babel."
 
-#: src/Buffer.cpp:2046
+#: src/Buffer.cpp:2064
 #, c-format
 msgid "The languages %1$s are only supported by Polyglossia."
 msgstr "Языки %1$s поддерживаются только Polyglossia."
 
-#: src/Buffer.cpp:2047
+#: src/Buffer.cpp:2065
 #, c-format
 msgid "The language %1$s is only supported by Polyglossia."
 msgstr "Язык %1$s поддерживается только Polyglossia."
 
-#: src/Buffer.cpp:2053
+#: src/Buffer.cpp:2071
 msgid "Incompatible Languages!"
 msgstr "Несовместимые языки!"
 
-#: src/Buffer.cpp:2055
+#: src/Buffer.cpp:2073
 #, c-format
 msgid ""
 "You cannot use the following languages together in one LaTeX document "
@@ -28313,28 +28313,28 @@ msgstr ""
 "так как для них требуются конфликтующие языковые пакеты:\n"
 "%1$s%2$s"
 
-#: src/Buffer.cpp:2367
+#: src/Buffer.cpp:2385
 msgid "Running chktex..."
 msgstr "Запуск chktex..."
 
-#: src/Buffer.cpp:2386
+#: src/Buffer.cpp:2404
 msgid "chktex failure"
 msgstr "ошибка chktex"
 
-#: src/Buffer.cpp:2387
+#: src/Buffer.cpp:2405
 msgid "Could not run chktex successfully."
 msgstr "Невозможно успешно запустить chktex."
 
-#: src/Buffer.cpp:2782
+#: src/Buffer.cpp:2800
 #, c-format
 msgid "Don't know how to export to format: %1$s"
 msgstr "Нет информации для экспортирования формата %1$s"
 
-#: src/Buffer.cpp:2861
+#: src/Buffer.cpp:2879
 msgid "Branch state changes in master document"
 msgstr "Состояние ветки меняется в главном документе"
 
-#: src/Buffer.cpp:2862
+#: src/Buffer.cpp:2880
 #, c-format
 msgid ""
 "The state of the branch '%1$s' was changed in the master file. Please make "
@@ -28343,31 +28343,31 @@ msgstr ""
 "Состояние ветки '%1$s' было изменено в главном документе. Пожалуйста, "
 "сохраните его."
 
-#: src/Buffer.cpp:2931
+#: src/Buffer.cpp:2949
 #, c-format
 msgid "Error exporting to format: %1$s."
 msgstr "Ошибка при экспортировании в формат %1$s."
 
-#: src/Buffer.cpp:2940
+#: src/Buffer.cpp:2958
 msgid "Error generating literate programming code."
 msgstr "Ошибка при генерации кода грамотного программирования."
 
-#: src/Buffer.cpp:3029
+#: src/Buffer.cpp:3047
 #, c-format
 msgid "Branch \"%1$s\" already exists."
 msgstr "Ветка \"%1$s\" уже существует."
 
-#: src/Buffer.cpp:3086
+#: src/Buffer.cpp:3104
 msgid "Error viewing the output file."
 msgstr "Ошибка при просмотре выходного файла."
 
-#: src/Buffer.cpp:3448 src/frontends/qt/GuiView.cpp:2922
+#: src/Buffer.cpp:3469 src/frontends/qt/GuiView.cpp:2922
 #: src/frontends/qt/Validator.cpp:247 src/insets/ExternalSupport.cpp:400
 #: src/insets/InsetGraphics.cpp:697 src/insets/InsetInclude.cpp:616
 msgid "Invalid filename"
 msgstr "Неправильное имя файла"
 
-#: src/Buffer.cpp:3449 src/insets/ExternalSupport.cpp:401
+#: src/Buffer.cpp:3470 src/insets/ExternalSupport.cpp:401
 #: src/insets/InsetGraphics.cpp:698 src/insets/InsetInclude.cpp:617
 msgid ""
 "The following filename will cause troubles when running the exported file "
@@ -28376,12 +28376,12 @@ msgstr ""
 "Следующее имя файла вызовет проблемы при запуске экспортированного файла в "
 "LaTeX: "
 
-#: src/Buffer.cpp:3454 src/insets/ExternalSupport.cpp:406
+#: src/Buffer.cpp:3475 src/insets/ExternalSupport.cpp:406
 #: src/insets/InsetGraphics.cpp:705 src/insets/InsetInclude.cpp:621
 msgid "Problematic filename for DVI"
 msgstr "Проблемное имя файла для DVI"
 
-#: src/Buffer.cpp:3455 src/insets/ExternalSupport.cpp:407
+#: src/Buffer.cpp:3476 src/insets/ExternalSupport.cpp:407
 #: src/insets/InsetGraphics.cpp:706 src/insets/InsetInclude.cpp:622
 msgid ""
 "The following filename can cause troubles when running the exported file "
@@ -28390,11 +28390,11 @@ msgstr ""
 "Следующее имя файла может вызвать проблемы при запуске экспортированного "
 "файла в LaTeX: "
 
-#: src/Buffer.cpp:3494 src/insets/InsetBibtex.cpp:353
+#: src/Buffer.cpp:3515 src/insets/InsetBibtex.cpp:353
 msgid "Export Warning!"
 msgstr "Предупреждение экспорта!"
 
-#: src/Buffer.cpp:3495
+#: src/Buffer.cpp:3516
 msgid ""
 "There are spaces in the paths to your BibTeX databases.\n"
 "BibTeX will be unable to find them."
@@ -28402,57 +28402,57 @@ msgstr ""
 "В пути к базам данных BibTeX есть пробелы.\n"
 "BibTeX не сможет найти их."
 
-#: src/Buffer.cpp:4166
+#: src/Buffer.cpp:4192
 #, c-format
 msgid "Preview source code for paragraph %1$d"
 msgstr "Просмотр исходного кода для абзаца %1$d"
 
-#: src/Buffer.cpp:4171
+#: src/Buffer.cpp:4197
 #, c-format
 msgid "Preview source code from paragraph %1$s to %2$s"
 msgstr "Просмотр исходного кода абзацев %1$s-%2$s"
 
-#: src/Buffer.cpp:4227
+#: src/Buffer.cpp:4253
 msgid "Preview source code"
 msgstr "Просмотр исходного кода"
 
-#: src/Buffer.cpp:4229
+#: src/Buffer.cpp:4255
 msgid "Preview preamble"
 msgstr "Просмотр преамбулы"
 
-#: src/Buffer.cpp:4231
+#: src/Buffer.cpp:4257
 msgid "Preview body"
 msgstr "Просмотр текста документа"
 
-#: src/Buffer.cpp:4247
+#: src/Buffer.cpp:4273
 msgid "Plain text does not have a preamble."
 msgstr "Простой текст не имеет преамбулы."
 
-#: src/Buffer.cpp:4391
+#: src/Buffer.cpp:4417
 msgid "Autosaving current document..."
 msgstr "Автосохранение текущего документа..."
 
-#: src/Buffer.cpp:4518
+#: src/Buffer.cpp:4544
 #, c-format
 msgid "No information for exporting the format %1$s."
 msgstr "Нет информации для экспортирования формата %1$s."
 
-#: src/Buffer.cpp:4522
+#: src/Buffer.cpp:4548
 #, c-format
 msgid "Hint: use non-TeX fonts or set input encoding to '%1$s'"
 msgstr ""
 "Подсказка: используйте системные шрифты или установите входную кодировку "
 "'%1$s'"
 
-#: src/Buffer.cpp:4524
+#: src/Buffer.cpp:4550
 msgid "Couldn't export file"
 msgstr "Невозможно экспортировать файл"
 
-#: src/Buffer.cpp:4592 src/frontends/qt/GuiView.cpp:3078
+#: src/Buffer.cpp:4618 src/frontends/qt/GuiView.cpp:3078
 msgid "File name error"
 msgstr "Ошибка в названии файла"
 
-#: src/Buffer.cpp:4593
+#: src/Buffer.cpp:4619
 #, c-format
 msgid ""
 "The directory path to the document\n"
@@ -28465,21 +28465,21 @@ msgstr ""
 "содержит пробелы, но ваш установленный TeX не разрешает их. Сохраните файл в "
 "каталог с именем без пробелов."
 
-#: src/Buffer.cpp:4683 src/Buffer.cpp:4713 src/frontends/qt/GuiView.cpp:928
+#: src/Buffer.cpp:4709 src/Buffer.cpp:4739 src/frontends/qt/GuiView.cpp:928
 msgid "Document export cancelled."
 msgstr "Экспорт документа отменён."
 
-#: src/Buffer.cpp:4716
+#: src/Buffer.cpp:4742
 #, c-format
 msgid "Document exported as %1$s to file `%2$s'"
 msgstr "Документ экспортирован из %1$s в файл `%2$s'"
 
-#: src/Buffer.cpp:4723
+#: src/Buffer.cpp:4749
 #, c-format
 msgid "Document exported as %1$s"
 msgstr "Документ экспортирован как %1$s"
 
-#: src/Buffer.cpp:4792
+#: src/Buffer.cpp:4818
 #, c-format
 msgid ""
 "An emergency save of the document %1$s exists.\n"
@@ -28490,23 +28490,23 @@ msgstr ""
 "\n"
 "Восстановить аварийную копию?"
 
-#: src/Buffer.cpp:4795
+#: src/Buffer.cpp:4821
 msgid "Load emergency save?"
 msgstr "Загрузить аварийную копию?"
 
-#: src/Buffer.cpp:4796
+#: src/Buffer.cpp:4822
 msgid "&Recover"
 msgstr "&Восстановить"
 
-#: src/Buffer.cpp:4796
+#: src/Buffer.cpp:4822
 msgid "&Load Original"
 msgstr "Загрузить &исходный"
 
-#: src/Buffer.cpp:4796
+#: src/Buffer.cpp:4822
 msgid "&Only show difference"
 msgstr "Показывать только различия"
 
-#: src/Buffer.cpp:4807
+#: src/Buffer.cpp:4833
 #, c-format
 msgid ""
 "An emergency file is successfully loaded, but the original file %1$s is "
@@ -28515,15 +28515,15 @@ msgstr ""
 "Аварийный файл успешно загружен, но исходный файл %1$s помечен только для "
 "чтения. Пожалуйста, не забудьте сохранить документ в другой файл."
 
-#: src/Buffer.cpp:4814
+#: src/Buffer.cpp:4840
 msgid "Document was successfully recovered."
 msgstr "Документ был успешно восстановлен."
 
-#: src/Buffer.cpp:4816
+#: src/Buffer.cpp:4842
 msgid "Document was NOT successfully recovered."
 msgstr "Документ НЕ был успешно восстановлен."
 
-#: src/Buffer.cpp:4817
+#: src/Buffer.cpp:4843
 #, c-format
 msgid ""
 "Remove emergency file now?\n"
@@ -28532,31 +28532,31 @@ msgstr ""
 "Удалить аварийный файл?\n"
 "(%1$s)"
 
-#: src/Buffer.cpp:4821 src/Buffer.cpp:4833
+#: src/Buffer.cpp:4847 src/Buffer.cpp:4859
 msgid "Delete emergency file?"
 msgstr "Удалить аварийный файл?"
 
-#: src/Buffer.cpp:4822 src/Buffer.cpp:4835
+#: src/Buffer.cpp:4848 src/Buffer.cpp:4861
 msgid "&Keep"
 msgstr "Хранить"
 
-#: src/Buffer.cpp:4826
+#: src/Buffer.cpp:4852
 msgid "Emergency file deleted"
 msgstr "Аварийный файл удалён"
 
-#: src/Buffer.cpp:4827
+#: src/Buffer.cpp:4853
 msgid "Do not forget to save your file now!"
 msgstr "Не забудьте сохранить ваш файл прямо сейчас!"
 
-#: src/Buffer.cpp:4834
+#: src/Buffer.cpp:4860
 msgid "Remove emergency file now?"
 msgstr "Удалить аварийный файл?"
 
-#: src/Buffer.cpp:4857
+#: src/Buffer.cpp:4883
 msgid "Can't rename emergency file!"
 msgstr "Невозможно переименовать аварийный файл!"
 
-#: src/Buffer.cpp:4858
+#: src/Buffer.cpp:4884
 msgid ""
 "LyX was unable to rename the emergency file. You should do so manually. "
 "Otherwise, you will be asked about it again the next time you try to load "
@@ -28566,11 +28566,11 @@ msgstr ""
 "Иначе вас снова спросят об этом при следующей попытке загрузить этот файл и "
 "это может перезаписать вашу собственную работу."
 
-#: src/Buffer.cpp:4863
+#: src/Buffer.cpp:4889
 msgid "Emergency File Renamed"
 msgstr "Аварийный файл переименован"
 
-#: src/Buffer.cpp:4864
+#: src/Buffer.cpp:4890
 #, c-format
 msgid ""
 "Emergency file renamed as:\n"
@@ -28579,7 +28579,7 @@ msgstr ""
 "Аварийный файл переименован в:\n"
 " %1$s"
 
-#: src/Buffer.cpp:4903
+#: src/Buffer.cpp:4929
 #, c-format
 msgid ""
 "The backup of the document %1$s is newer.\n"
@@ -28590,19 +28590,19 @@ msgstr ""
 "\n"
 "Загрузить резервную копию вместо текущей?"
 
-#: src/Buffer.cpp:4905
+#: src/Buffer.cpp:4931
 msgid "Load backup?"
 msgstr "Загрузить резервную копию?"
 
-#: src/Buffer.cpp:4906
+#: src/Buffer.cpp:4932
 msgid "&Load backup"
 msgstr "Загрузить &резервную копию"
 
-#: src/Buffer.cpp:4906
+#: src/Buffer.cpp:4932
 msgid "Load &original"
 msgstr "Загрузить &первоначальную"
 
-#: src/Buffer.cpp:4916
+#: src/Buffer.cpp:4942
 #, c-format
 msgid ""
 "A backup file is successfully loaded, but the original file %1$s is marked "
@@ -28611,25 +28611,25 @@ msgstr ""
 "Резервная копия успешно загружена, но первоначальный файл %1$s доступен "
 "только для чтения. Пожалуйста сохраните документ в другой файл."
 
-#: src/Buffer.cpp:5301
+#: src/Buffer.cpp:5327
 msgid "Senseless!!! "
 msgstr "Бессмысленно!!! "
 
-#: src/Buffer.cpp:5579
+#: src/Buffer.cpp:5605
 #, c-format
 msgid "Document %1$s reloaded."
 msgstr "Документ %1$s перезагружен."
 
-#: src/Buffer.cpp:5582
+#: src/Buffer.cpp:5608
 #, c-format
 msgid "Could not reload document %1$s."
 msgstr "Не удалось перезагрузить документ %1$s."
 
-#: src/Buffer.cpp:5743
+#: src/Buffer.cpp:5770
 msgid "File deleted from disk"
 msgstr "Файл удалён с диска"
 
-#: src/Buffer.cpp:5744
+#: src/Buffer.cpp:5771
 #, c-format
 msgid ""
 "The file\n"
@@ -30251,11 +30251,11 @@ msgid ""
 "Please delete or update this file!"
 msgstr ""
 
-#: src/LyX.cpp:136
+#: src/LyX.cpp:134
 msgid "Could not read configuration file"
 msgstr "Не удаётся прочитать файл конфигурации"
 
-#: src/LyX.cpp:137
+#: src/LyX.cpp:135
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -30266,43 +30266,43 @@ msgstr ""
 "%1$s.\n"
 "Проверьте вашу установку."
 
-#: src/LyX.cpp:379
+#: src/LyX.cpp:377
 msgid "The following files could not be loaded:"
 msgstr "Следующие файлы не загружаются:"
 
-#: src/LyX.cpp:420
+#: src/LyX.cpp:418
 #, c-format
 msgid "%1$s does not appear like a LyX created temporary directory."
 msgstr "Невозможно создать временный каталог %1$s."
 
-#: src/LyX.cpp:422
+#: src/LyX.cpp:420
 msgid "Cannot remove temporary directory"
 msgstr "Невозможно удалить временный каталог"
 
-#: src/LyX.cpp:426
+#: src/LyX.cpp:424
 #, c-format
 msgid "Unable to remove the temporary directory %1$s"
 msgstr "Невозможно удалить временный каталог %1$s"
 
-#: src/LyX.cpp:455
+#: src/LyX.cpp:453
 #, c-format
 msgid "Wrong command line option `%1$s'. Exiting."
 msgstr "Неверный параметр командной строки `%1$s'. Выходим."
 
-#: src/LyX.cpp:473
+#: src/LyX.cpp:471
 msgid "Missing filename for this operation."
 msgstr "Не указано имя файла для этой операции."
 
-#: src/LyX.cpp:522
+#: src/LyX.cpp:520
 #, c-format
 msgid "LyX failed to load the following file: %1$s"
 msgstr "LyX не смог загрузить файл: %1$s"
 
-#: src/LyX.cpp:570
+#: src/LyX.cpp:568
 msgid "No textclass is found"
 msgstr "Не найден класс документа"
 
-#: src/LyX.cpp:571
+#: src/LyX.cpp:569
 msgid ""
 "LyX will only have minimal functionality because no textclasses have been "
 "found. You can either try to reconfigure LyX normally, try to reconfigure "
@@ -30311,27 +30311,27 @@ msgstr ""
 "LyX будет предоставлять только минимальную функциональность, потому что не "
 "найдены классы документа. Вы можете обновить конфигурацию LyX или продолжить."
 
-#: src/LyX.cpp:575
+#: src/LyX.cpp:573
 msgid "&Reconfigure"
 msgstr "Обновить &конфигурацию"
 
-#: src/LyX.cpp:576
+#: src/LyX.cpp:574
 msgid "&Without LaTeX"
 msgstr "Без LaTeX"
 
-#: src/LyX.cpp:577 src/LyX.cpp:602 src/VCBackend.cpp:974 src/VCBackend.cpp:978
+#: src/LyX.cpp:575 src/LyX.cpp:600 src/VCBackend.cpp:974 src/VCBackend.cpp:978
 msgid "&Continue"
 msgstr "Продолжить"
 
-#: src/LyX.cpp:578 src/LyX.cpp:603 src/LyX.cpp:1098
+#: src/LyX.cpp:576 src/LyX.cpp:601 src/LyX.cpp:1096
 msgid "&Exit LyX"
 msgstr "Выйти из LyX'а"
 
-#: src/LyX.cpp:597
+#: src/LyX.cpp:595
 msgid "No python is found"
 msgstr "Не найдена программа python"
 
-#: src/LyX.cpp:598
+#: src/LyX.cpp:596
 msgid ""
 "LyX will only have minimal functionality because no python interpreter has "
 "been found. Consider installing python with your software manager or from "
@@ -30341,7 +30341,7 @@ msgstr ""
 "найден Python. Рассмотрите возможность установки Python с помощью менеджера "
 "пакетов или с сайта python.org."
 
-#: src/LyX.cpp:700
+#: src/LyX.cpp:698
 msgid ""
 "SIGHUP signal caught!\n"
 "Bye."
@@ -30349,7 +30349,7 @@ msgstr ""
 "Обнаружен сигнал SIGHUP!\n"
 "Пока."
 
-#: src/LyX.cpp:704
+#: src/LyX.cpp:702
 msgid ""
 "SIGFPE signal caught!\n"
 "Bye."
@@ -30357,7 +30357,7 @@ msgstr ""
 "Обнаружен сигнал SIGFPE!\n"
 "Пока."
 
-#: src/LyX.cpp:707
+#: src/LyX.cpp:705
 msgid ""
 "SIGSEGV signal caught!\n"
 "Sorry, you have found a bug in LyX, hope you have not lost any data.\n"
@@ -30373,19 +30373,19 @@ msgstr ""
 "Спасибо!\n"
 "Пока."
 
-#: src/LyX.cpp:723
+#: src/LyX.cpp:721
 msgid "LyX crashed!"
 msgstr "Сбой LyX!"
 
-#: src/LyX.cpp:757
+#: src/LyX.cpp:755
 msgid "LyX: "
 msgstr "LyX: "
 
-#: src/LyX.cpp:1026
+#: src/LyX.cpp:1024
 msgid "Could not create temporary directory"
 msgstr "Невозможно создать временный каталог"
 
-#: src/LyX.cpp:1027
+#: src/LyX.cpp:1025
 #, c-format
 msgid ""
 "Could not create a temporary directory in\n"
@@ -30397,11 +30397,11 @@ msgstr ""
 " Проверьте, что этот путь существует,\n"
 "доступен для записи и попробуйте ещё раз."
 
-#: src/LyX.cpp:1091
+#: src/LyX.cpp:1089
 msgid "Missing user LyX directory"
 msgstr "Отсутствует каталог пользователя LyX"
 
-#: src/LyX.cpp:1092
+#: src/LyX.cpp:1090
 #, c-format
 msgid ""
 "You have specified a non-existent user LyX directory, %1$s.\n"
@@ -30410,20 +30410,20 @@ msgstr ""
 "Вы указали несуществующий каталог LyX, %1$s.\n"
 "Он необходим для хранения ваших настроек."
 
-#: src/LyX.cpp:1097
+#: src/LyX.cpp:1095
 msgid "&Create directory"
 msgstr "Создать каталог"
 
-#: src/LyX.cpp:1099
+#: src/LyX.cpp:1097
 msgid "No user LyX directory. Exiting."
 msgstr "Нет каталога пользователя LyX. Завершение работы."
 
-#: src/LyX.cpp:1103
+#: src/LyX.cpp:1101
 #, c-format
 msgid "LyX: Creating directory %1$s"
 msgstr "LyX: Создаётся каталог  %1$s"
 
-#: src/LyX.cpp:1108
+#: src/LyX.cpp:1106
 msgid ""
 "Failed to create directory. Perhaps wrong -userdir command-line option?\n"
 "Exiting."
@@ -30431,16 +30431,16 @@ msgstr ""
 "Ошибка при создании каталога. Возможно неверный параметр -userdir?\n"
 "Завершение работы."
 
-#: src/LyX.cpp:1181
+#: src/LyX.cpp:1179
 msgid "List of supported debug flags:"
 msgstr "Список поддерживаемых флагов отладки:"
 
-#: src/LyX.cpp:1190
+#: src/LyX.cpp:1188
 #, c-format
 msgid "Bad debug value `%1$s'. Exiting."
 msgstr "Недопустимое отладочное значение `%1$s'. Выходим."
 
-#: src/LyX.cpp:1201
+#: src/LyX.cpp:1199
 msgid ""
 "Usage: lyx [ command line switches ] [ name.lyx ... ]\n"
 "Command line switches (case sensitive):\n"
@@ -30532,52 +30532,52 @@ msgstr ""
 "\t-version  сведения о версии и сборке.\n"
 "Более подробное описание можно найти в документации (man page)."
 
-#: src/LyX.cpp:1254 src/frontends/qt/GuiAbout.cpp:217
+#: src/LyX.cpp:1252 src/frontends/qt/GuiAbout.cpp:217
 msgid "  Git commit hash "
 msgstr "  Хэш коммита Git "
 
-#: src/LyX.cpp:1265 src/support/Package.cpp:642
+#: src/LyX.cpp:1263 src/support/Package.cpp:642
 msgid "No system directory"
 msgstr "Нет системного каталога"
 
-#: src/LyX.cpp:1266
+#: src/LyX.cpp:1264
 msgid "Missing directory for -sysdir switch"
 msgstr "Отсутствует каталог для ключа -sysdir"
 
-#: src/LyX.cpp:1277
+#: src/LyX.cpp:1275
 msgid "No user directory"
 msgstr "Нет пользовательского каталога"
 
-#: src/LyX.cpp:1278
+#: src/LyX.cpp:1276
 msgid "Missing directory for -userdir switch"
 msgstr "Отсутствует каталог для ключа -userdir"
 
-#: src/LyX.cpp:1289
+#: src/LyX.cpp:1287
 msgid "Incomplete command"
 msgstr "Незавершённая команда"
 
-#: src/LyX.cpp:1290
+#: src/LyX.cpp:1288
 msgid "Missing command string after --execute switch"
 msgstr "Отсутствует команда после ключа --execute"
 
-#: src/LyX.cpp:1301
+#: src/LyX.cpp:1299
 msgid "Missing file type [eg latex, ps...] after --export-to switch"
 msgstr ""
 "Отсутствует тип файла [например, latex, ps, ...] после ключа --export-to"
 
-#: src/LyX.cpp:1306
+#: src/LyX.cpp:1304
 msgid "Missing destination filename after --export-to switch"
 msgstr "Отсутствует имя файла после ключа --export-to"
 
-#: src/LyX.cpp:1319
+#: src/LyX.cpp:1317
 msgid "Missing file type [eg latex, ps...] after --export switch"
 msgstr "Отсутствует тип файла [например, latex, ps, ...] после ключа --export"
 
-#: src/LyX.cpp:1332
+#: src/LyX.cpp:1330
 msgid "Missing file type [eg latex, ps...] after --import switch"
 msgstr "Отсутствует тип файла [например, latex, ps, ...] после ключа --import"
 
-#: src/LyX.cpp:1337
+#: src/LyX.cpp:1335
 msgid "Missing filename for --import"
 msgstr "Не указано имя файла для --import"
 
@@ -31324,45 +31324,45 @@ msgstr "&Да, всё равно продолжить"
 msgid "&No, quit operation"
 msgstr "&Нет, завершить операцию"
 
-#: src/Text.cpp:5010
+#: src/Text.cpp:5009
 msgid "Layout "
 msgstr "Макет "
 
-#: src/Text.cpp:5011 src/Text.cpp:5590
+#: src/Text.cpp:5010 src/Text.cpp:5589
 msgid " not known"
 msgstr " неизвестен"
 
-#: src/Text.cpp:5589
+#: src/Text.cpp:5588
 msgid "Table Style "
 msgstr "Стиль таблиц "
 
-#: src/Text.cpp:5798 src/frontends/qt/GuiApplication.cpp:1889
+#: src/Text.cpp:5797 src/frontends/qt/GuiApplication.cpp:1879
 msgid "Missing argument"
 msgstr "Отсутствует аргумент"
 
-#: src/Text.cpp:5964
+#: src/Text.cpp:5963
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr "Недопустимый параметр (число превышает размер стека)!"
 
-#: src/Text.cpp:5968
+#: src/Text.cpp:5967
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr "Недопустимый параметр (введите положительное число)!"
 
-#: src/Text.cpp:5973 src/Text.cpp:5987
+#: src/Text.cpp:5972 src/Text.cpp:5986
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr "Применены свойства текста: %1$s"
 
-#: src/Text.cpp:5989
+#: src/Text.cpp:5988
 #, fuzzy
 msgid "Invalid argument of textstyle-update"
 msgstr "Недопустимый аргумент для master-buffer-forall"
 
-#: src/Text.cpp:6146
+#: src/Text.cpp:6145
 msgid "Path to thesaurus directory not set!"
 msgstr "Каталог для словарей тезауруса не задан!"
 
-#: src/Text.cpp:6147
+#: src/Text.cpp:6146
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -31374,7 +31374,7 @@ msgstr ""
 "Пожалуйста, обратитесь к разделу 6.16.1 Руководства пользователя за\n"
 "инструкциями по настройке."
 
-#: src/Text.cpp:6273 src/Text.cpp:6284
+#: src/Text.cpp:6272 src/Text.cpp:6283
 msgid "Paragraph layout set"
 msgstr "Установлено размещение абзаца"
 
@@ -31883,7 +31883,7 @@ msgid "This tab contains invalid input. Please fix!"
 msgstr "Эта вкладка содержит недопустимый ввод. Пожалуйста, исправьте!"
 
 #: src/frontends/qt/ButtonController.cpp:267
-#: src/frontends/qt/GuiApplication.cpp:2007 src/frontends/qt/GuiCompare.cpp:196
+#: src/frontends/qt/GuiApplication.cpp:1997 src/frontends/qt/GuiCompare.cpp:196
 #: src/frontends/qt/GuiSymbols.cpp:346
 msgid "Cancel"
 msgstr "Отмена"
@@ -32113,89 +32113,89 @@ msgstr "Версия Python: %1$s"
 msgid "About LyX"
 msgstr "О программе LyX"
 
-#: src/frontends/qt/GuiApplication.cpp:784
+#: src/frontends/qt/GuiApplication.cpp:770
 msgid "About %1"
 msgstr "О %1"
 
-#: src/frontends/qt/GuiApplication.cpp:785 src/frontends/qt/GuiPrefs.cpp:3503
+#: src/frontends/qt/GuiApplication.cpp:771 src/frontends/qt/GuiPrefs.cpp:3503
 msgid "Preferences"
 msgstr "Настройки"
 
-#: src/frontends/qt/GuiApplication.cpp:786
+#: src/frontends/qt/GuiApplication.cpp:772
 msgid "Reconfigure"
 msgstr "Обновить конфигурацию"
 
-#: src/frontends/qt/GuiApplication.cpp:787
+#: src/frontends/qt/GuiApplication.cpp:773
 msgid "Restore Defaults"
 msgstr "Восстановить значения по умолчанию"
 
-#: src/frontends/qt/GuiApplication.cpp:788
+#: src/frontends/qt/GuiApplication.cpp:774
 msgid "Quit %1"
 msgstr "Выйти из %1"
 
-#: src/frontends/qt/GuiApplication.cpp:789 src/frontends/qt/GuiInclude.cpp:320
+#: src/frontends/qt/GuiApplication.cpp:775 src/frontends/qt/GuiInclude.cpp:320
 #: src/frontends/qt/GuiInclude.cpp:330 src/frontends/qt/GuiInclude.cpp:335
 msgid "&OK"
 msgstr "&OK"
 
-#: src/frontends/qt/GuiApplication.cpp:791
+#: src/frontends/qt/GuiApplication.cpp:777
 msgid "Apply"
 msgstr "Применить"
 
-#: src/frontends/qt/GuiApplication.cpp:792
+#: src/frontends/qt/GuiApplication.cpp:778
 msgid "Reset"
 msgstr "Сбросить"
 
-#: src/frontends/qt/GuiApplication.cpp:793
+#: src/frontends/qt/GuiApplication.cpp:779
 msgid "Open"
 msgstr "Открыть"
 
-#: src/frontends/qt/GuiApplication.cpp:1286
+#: src/frontends/qt/GuiApplication.cpp:1276
 msgid "Nothing to do"
 msgstr "Выполнять нечего"
 
-#: src/frontends/qt/GuiApplication.cpp:1292
+#: src/frontends/qt/GuiApplication.cpp:1282
 msgid "Unknown action"
 msgstr "Неизвестная команда"
 
-#: src/frontends/qt/GuiApplication.cpp:1336
+#: src/frontends/qt/GuiApplication.cpp:1326
 msgid "Command not handled"
 msgstr "Команда не обрабатывается"
 
-#: src/frontends/qt/GuiApplication.cpp:1342
+#: src/frontends/qt/GuiApplication.cpp:1332
 msgid "Command disabled"
 msgstr "Команда отключена"
 
-#: src/frontends/qt/GuiApplication.cpp:1450
+#: src/frontends/qt/GuiApplication.cpp:1440
 #, c-format
 msgid "Bad debug value `%1$s'."
 msgstr "Недопустимое отладочное значение `%1$s'."
 
-#: src/frontends/qt/GuiApplication.cpp:1479 src/frontends/qt/GuiView.cpp:2406
+#: src/frontends/qt/GuiApplication.cpp:1469 src/frontends/qt/GuiView.cpp:2406
 msgid "Command not allowed without a buffer open"
 msgstr "Команда недопустима без открытых документов"
 
-#: src/frontends/qt/GuiApplication.cpp:1486
+#: src/frontends/qt/GuiApplication.cpp:1476
 msgid "the <LFUN-COMMAND> argument of buffer-forall is not valid"
 msgstr "аргумент <LFUN-COMMAND> команды buffer-forall не верен"
 
-#: src/frontends/qt/GuiApplication.cpp:1563
+#: src/frontends/qt/GuiApplication.cpp:1553
 msgid "Wrong focus!"
 msgstr "Неверный фокус!"
 
-#: src/frontends/qt/GuiApplication.cpp:1697
+#: src/frontends/qt/GuiApplication.cpp:1687
 msgid "Running configure..."
 msgstr "Выполняется конфигурирование..."
 
-#: src/frontends/qt/GuiApplication.cpp:1707
+#: src/frontends/qt/GuiApplication.cpp:1697
 msgid "Reloading configuration..."
 msgstr "Перезагружается конфигурация..."
 
-#: src/frontends/qt/GuiApplication.cpp:1717
+#: src/frontends/qt/GuiApplication.cpp:1707
 msgid "System reconfiguration failed"
 msgstr "Сбой обновления конфигурации системы"
 
-#: src/frontends/qt/GuiApplication.cpp:1718
+#: src/frontends/qt/GuiApplication.cpp:1708
 msgid ""
 "The system reconfiguration has failed.\n"
 "Default textclass is used but LyX may\n"
@@ -32206,11 +32206,11 @@ msgstr ""
 "Используется класс документа по умолчанию, но LyX может работать\n"
 "неправильно. При необходимости обновите конфигурацию ещё раз."
 
-#: src/frontends/qt/GuiApplication.cpp:1723
+#: src/frontends/qt/GuiApplication.cpp:1713
 msgid "System reconfigured"
 msgstr "В системе была обновлена конфигурация"
 
-#: src/frontends/qt/GuiApplication.cpp:1724
+#: src/frontends/qt/GuiApplication.cpp:1714
 msgid ""
 "The system has been reconfigured.\n"
 "You need to restart LyX to make use of any\n"
@@ -32220,59 +32220,59 @@ msgstr ""
 "Необходимо перезапустить LyX, чтобы использовать обновлённые классы "
 "документов."
 
-#: src/frontends/qt/GuiApplication.cpp:1805
+#: src/frontends/qt/GuiApplication.cpp:1795
 msgid "Exiting."
 msgstr "Выхожу."
 
-#: src/frontends/qt/GuiApplication.cpp:1901
+#: src/frontends/qt/GuiApplication.cpp:1891
 #, c-format
 msgid "Opening help file %1$s..."
 msgstr "Открываем файл помощи %1$s..."
 
-#: src/frontends/qt/GuiApplication.cpp:1915
+#: src/frontends/qt/GuiApplication.cpp:1905
 msgid "Wrong argument. Must be 'examples' or 'templates'."
 msgstr "Неверный аргумент. Допустимы только 'examples' или 'templates'."
 
-#: src/frontends/qt/GuiApplication.cpp:1929
+#: src/frontends/qt/GuiApplication.cpp:1919
 msgid "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 msgstr "Синтаксис: set-color <lyx_name> <x11_name> <x11_darkname>"
 
-#: src/frontends/qt/GuiApplication.cpp:1949
+#: src/frontends/qt/GuiApplication.cpp:1939
 #, c-format
 msgid "Set-color \"%1$s\" failed - color is undefined or may not be redefined"
 msgstr ""
 "Установка цвета не удалась \"%1$s\" - цвет не определён или не может быть "
 "переопределён"
 
-#: src/frontends/qt/GuiApplication.cpp:2054
+#: src/frontends/qt/GuiApplication.cpp:2044
 #, c-format
 msgid "Cannot iterate more than %1$d times"
 msgstr "Невозможно итерировать более, чем %1$d раз"
 
-#: src/frontends/qt/GuiApplication.cpp:2154
+#: src/frontends/qt/GuiApplication.cpp:2144
 #, c-format
 msgid "Applied \"%1$s\" to %2$d buffer(s)"
 msgstr "Применено \"%1$s\" к %2$d буферу(ам)"
 
-#: src/frontends/qt/GuiApplication.cpp:2240
+#: src/frontends/qt/GuiApplication.cpp:2230
 #, c-format
 msgid "Document defaults saved in %1$s"
 msgstr "Настройки документа по умолчанию сохранены в %1$s"
 
-#: src/frontends/qt/GuiApplication.cpp:2244
+#: src/frontends/qt/GuiApplication.cpp:2234
 msgid "Unable to save document defaults"
 msgstr "Невозможно сохранить как документ по умолчанию"
 
-#: src/frontends/qt/GuiApplication.cpp:2478
-#: src/frontends/qt/GuiApplication.cpp:2493
+#: src/frontends/qt/GuiApplication.cpp:2468
+#: src/frontends/qt/GuiApplication.cpp:2483
 msgid "Unknown function."
 msgstr "Неизвестная функция."
 
-#: src/frontends/qt/GuiApplication.cpp:3025
+#: src/frontends/qt/GuiApplication.cpp:3015
 msgid "The current document was closed."
 msgstr "Текущий документ был закрыт."
 
-#: src/frontends/qt/GuiApplication.cpp:3035
+#: src/frontends/qt/GuiApplication.cpp:3025
 msgid ""
 "LyX has caught an exception, it will now attempt to save all unsaved "
 "documents and exit.\n"
@@ -32284,12 +32284,12 @@ msgstr ""
 "\n"
 "Ошибка: "
 
-#: src/frontends/qt/GuiApplication.cpp:3039
-#: src/frontends/qt/GuiApplication.cpp:3045
+#: src/frontends/qt/GuiApplication.cpp:3029
+#: src/frontends/qt/GuiApplication.cpp:3035
 msgid "Software exception Detected"
 msgstr "Обнаружена ошибка в программе"
 
-#: src/frontends/qt/GuiApplication.cpp:3043
+#: src/frontends/qt/GuiApplication.cpp:3033
 msgid ""
 "LyX has caught some really weird exception, it will now attempt to save all "
 "unsaved documents and exit."
@@ -32297,12 +32297,12 @@ msgstr ""
 "LyX получил сообщение о серьёзной ошибке, сейчас он попытается сохранить все "
 "документы и выйти."
 
-#: src/frontends/qt/GuiApplication.cpp:3349
-#: src/frontends/qt/GuiApplication.cpp:3361
+#: src/frontends/qt/GuiApplication.cpp:3339
+#: src/frontends/qt/GuiApplication.cpp:3351
 msgid "Could not find UI definition file"
 msgstr "Не удалось найти файл определения UI"
 
-#: src/frontends/qt/GuiApplication.cpp:3350
+#: src/frontends/qt/GuiApplication.cpp:3340
 #, c-format
 msgid ""
 "Error while reading the included file\n"
@@ -32313,11 +32313,11 @@ msgstr ""
 "%1$s.\n"
 "Проверьте вашу установку."
 
-#: src/frontends/qt/GuiApplication.cpp:3356
+#: src/frontends/qt/GuiApplication.cpp:3346
 msgid "Could not find default UI file"
 msgstr "На удалось найти файл UI по умолчанию"
 
-#: src/frontends/qt/GuiApplication.cpp:3357
+#: src/frontends/qt/GuiApplication.cpp:3347
 msgid ""
 "LyX could not find the default UI file!\n"
 "Please check your installation."
@@ -32325,7 +32325,7 @@ msgstr ""
 "LyX не смог найти файл UI по умолчанию!\n"
 "Проверьте вашу установку."
 
-#: src/frontends/qt/GuiApplication.cpp:3362
+#: src/frontends/qt/GuiApplication.cpp:3352
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -36693,8 +36693,8 @@ msgstr "Не определена библиография!"
 msgid "+ %1$d more entries."
 msgstr "+ %1$d пунктов."
 
-#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:551
-#: src/insets/InsetRef.cpp:663
+#: src/insets/InsetCitation.cpp:582 src/insets/InsetRef.cpp:556
+#: src/insets/InsetRef.cpp:668
 msgid "BROKEN: "
 msgstr "НАРУШЕНО: "
 
@@ -37884,55 +37884,55 @@ msgstr "%1$sтекст"
 msgid "text%1$s"
 msgstr "текст%1$s"
 
-#: src/insets/InsetRef.cpp:403
+#: src/insets/InsetRef.cpp:408
 msgid "elsewhere"
 msgstr ""
 
-#: src/insets/InsetRef.cpp:644
+#: src/insets/InsetRef.cpp:649
 msgid "Ref"
 msgstr "Ссылка"
 
-#: src/insets/InsetRef.cpp:645
+#: src/insets/InsetRef.cpp:650
 msgid "EqRef"
 msgstr "Формула"
 
-#: src/insets/InsetRef.cpp:646 src/mathed/InsetMathRef.cpp:379
+#: src/insets/InsetRef.cpp:651 src/mathed/InsetMathRef.cpp:379
 msgid "Page Number"
 msgstr "Номер страницы"
 
-#: src/insets/InsetRef.cpp:647 src/mathed/InsetMathRef.cpp:380
+#: src/insets/InsetRef.cpp:652 src/mathed/InsetMathRef.cpp:380
 msgid "Textual Page Number"
 msgstr "Текстовый номер страницы"
 
-#: src/insets/InsetRef.cpp:647
+#: src/insets/InsetRef.cpp:652
 msgid "TextPage"
 msgstr "Текст стр."
 
-#: src/insets/InsetRef.cpp:648 src/mathed/InsetMathRef.cpp:381
+#: src/insets/InsetRef.cpp:653 src/mathed/InsetMathRef.cpp:381
 msgid "Standard+Textual Page"
 msgstr "Ссылка+Текстовый номер страницы"
 
-#: src/insets/InsetRef.cpp:648
+#: src/insets/InsetRef.cpp:653
 msgid "Ref+Text"
 msgstr "Ссылка+Текст"
 
-#: src/insets/InsetRef.cpp:649 src/mathed/InsetMathRef.cpp:383
+#: src/insets/InsetRef.cpp:654 src/mathed/InsetMathRef.cpp:383
 msgid "Reference to Name"
 msgstr "Ссылка на название"
 
-#: src/insets/InsetRef.cpp:649
+#: src/insets/InsetRef.cpp:654
 msgid "NameRef"
 msgstr "Название"
 
-#: src/insets/InsetRef.cpp:650
+#: src/insets/InsetRef.cpp:655
 msgid "Formatted"
 msgstr "Форматированная"
 
-#: src/insets/InsetRef.cpp:650
+#: src/insets/InsetRef.cpp:655
 msgid "Format"
 msgstr "Формат"
 
-#: src/insets/InsetRef.cpp:651 src/mathed/InsetMathRef.cpp:384
+#: src/insets/InsetRef.cpp:656 src/mathed/InsetMathRef.cpp:384
 msgid "Label Only"
 msgstr "Только метка"
 
