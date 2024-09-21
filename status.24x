@@ -1,6 +1,6 @@
 -*- text -*-
 
-This file describes what has been done in the preparation of LyX 2.4.2.
+This file describes what has been done in the preparation of LyX 2.4.3.
 All comments are welcome.
 
 We try to group things by topic and in decreasing order of importance.
@@ -15,23 +15,10 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- There was undocumented change how hyperlink insets are exported to
-  xHTML format compared to LyX 2.3.x (type "File" is no more exported
-  as http(s) link). We added details to the RELEASE-NOTES file.
-
-- Load graphics after geometry, so page size is set properly (bug
-  10970).
-
-- Recognize .plt as a GnuPlot extension (bug 11148).
-
-- Restore obvious "G" shortcut for Greyed Out notes.
 
 
 * MISCELLANEOUS
 
-- Update format of lyxrc.dist templates
-
-- Update templates to use native vertical space method.
 
 
 * TEX2LYX IMPROVEMENTS
@@ -40,35 +27,14 @@ What's new
 
 * USER INTERFACE
 
-- Show font info in status line again.
-
-- Make scrolling smoother when using selection.
-
-- Show the temporary directory in About LyX dialog.
-
-- Improve document output pane (bug 12902).
-
-- Speedup interactive use by avoiding expensive math macros bookkeeping
-  when possible.
-
-- Make -geometry command-line option work on all platforms.
-
-- Fix macOS bug, where XQuartz application would be launched for no
-  reason (bug #13086).
-
-- Fix problem with collapsing of outliner (bug 13098).
 
 
 * DOCUMENTATION AND LOCALIZATION
 
-- Update Brazilian Portuguese, Simplified Chinese, Czech, French, 
-  German, Italian, Polish and Slovak localizations of the user 
-  interface.
 
 
 * BUILD/INSTALLATION
 
-- Avoid bogus warnings when configuring for Qt6.
 
 
 
@@ -77,76 +43,14 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- When exporting to MathML, the argument of the \boxed{} macro is now
-  correctly treated as math.
-
-- Properly escape special characters (!, @, |) in nomenclature output.
-
-- Handle linguistic structure trees in ePub and PDF (DocBook) output (bug 12372).
-
-- Improve the way spaces are handled in labels when refstyle is used.
 
 
 * USER INTERFACE
 
-- Fix regression which marks document modified in case of external
-  modification. Only file deletion will trigger the modification
-  flag now (see bug 12819).
 
-- Fix crash when using Save As... with previews enabled (bug 13091).
-
-- Fix crash when attempting to search in selection that contains
-  only math.
-
-- Fix crash when copying some math formulas or exporting them to
-  DocBook (bug 13069).
-
-- Fix potential crashes when scrolling documents.
-
-- Fix bug where the dialog asking for saving unapplied changes
-  on buffer change popped up twice, or sometimes not at all (bug
-  12954).
-
-- Improve performance when selecting text on less powerful systems
-  (bug 13050).
-
-- Fix performance problems with references with (very) many authors.
-
-- Fix problem that key bindings that include optional modifier keys
-  could not be un- or re-bound (bug 12973)
-
-- Enable OK/Apply button in tabular dialog when "Additional Space" combo
-  has been set to different value.
-
-- Fix ghost image on Windows with system colors (bug 13084).
-
-- Restore old display of cross-references in the outliner. The change
-  led to odd behavior on filtering.
-
-- Display values of cross-references in tooltips for forward references.
-
-- Disable vertical alignment in tables with variable width columns
-  (tabularx and xltable), as this is not supported by the packages.
-  Also fix the disabling mechanism in the table dialog.
-
-- Fix display of integral limits on Windows (bug 13087).
-
-- Fix crash when deleting tabs in a selection (with S-BackTab) in a
-  text-only inset (ERT, Listings...).
-
-- Fix display glitches when applying some operations to a selection.
 
 * INTERNALS
 
-- Fix possible crash in undo code after inserting note inset over a
-  multi-paragraph selection.
-
-- Fix a Python script, used to preview math expressions, that used a
-  module that is removed in Python 3.13.
-
-- Fix case where debug information may report all numbers as hexadecimal.
-
-- Make sure that lyxclient name is initialized properly.
 
 
 * DOCUMENTATION AND LOCALIZATION
@@ -159,7 +63,6 @@ What's new
 
 * TEX2LYX
 
-- Fix import of nomenclature entries which contain '%' or '"' characters.
 
 
 * LYXHTML
@@ -172,4 +75,3 @@ What's new
 
 * BUILD/INSTALLATION
 
-- Fix 'make install' target for autotools builds with autoconf >= 2.72.
