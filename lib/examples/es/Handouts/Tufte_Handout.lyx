@@ -5,7 +5,7 @@
 \save_transient_properties true
 \origin /systemlyxdir/examples/es/Handouts/
 \textclass tufte-handout
-\use_default_options true
+\use_default_options false
 \maintain_unincluded_children no
 \language spanish
 \language_package default
@@ -30,6 +30,8 @@
 \output_sync 0
 \bibtex_command bibtex
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -45,7 +47,7 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
+\cite_engine natbib
 \cite_engine_type default
 \biblio_style plain
 \use_bibtopic false
@@ -54,6 +56,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
 \index Índice
