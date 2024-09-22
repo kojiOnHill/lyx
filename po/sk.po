@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-09-18 09:39+0200\n"
-"PO-Revision-Date: 2024-09-21 19:58+0000\n"
+"POT-Creation-Date: 2024-09-22 11:38+0200\n"
+"PO-Revision-Date: 2024-09-22 11:32+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -313,7 +313,7 @@ msgstr "&Pridať lokálnu…"
 
 #: src/frontends/qt/ui/BibtexUi.ui:91
 msgid "Transfer an absolute local path to a relative one or vice versa"
-msgstr ""
+msgstr "Preniesť absolútnu lokálnu cestu na relatívnu alebo naopak"
 
 #: src/frontends/qt/ui/BibtexUi.ui:91
 msgid "Inherit bibliography databases from the master document"
@@ -20929,6 +20929,11 @@ msgstr "Pridať neznámu vetvu|P"
 msgid "Insert Reference at Cursor Position|I"
 msgstr "Vložiť referenciu na pozícii kurzoru|V"
 
+#: lib/ui/stdcontext.inc:588 lib/ui/stdcontext.inc:597
+#: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:743
+msgid "Insert Cross-Reference to this Item|C"
+msgstr "Vložiť krížovú referenciu na túto položku|k"
+
 #: lib/ui/stdcontext.inc:625
 msgid "Insert Copy at Cursor Position|I"
 msgstr "Vložiť kópiu k pozícii kurzoru|V"
@@ -32322,11 +32327,11 @@ msgstr "Kódovanie dokumentu"
 
 #: src/frontends/qt/GuiBibtex.cpp:365 src/frontends/qt/ui/BibtexUi.ui:94
 msgid "&Make Relative"
-msgstr ""
+msgstr "&Vytvoriť relatívne"
 
 #: src/frontends/qt/GuiBibtex.cpp:369
 msgid "&Make Absolute"
-msgstr ""
+msgstr "&Vytvoriť absolútne"
 
 #: src/frontends/qt/GuiBibtex.cpp:312
 msgid "Database"
