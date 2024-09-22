@@ -4434,6 +4434,27 @@ Syntax redo
 \end_layout
 
 \begin_layout Subsection*
+reference-insert
+\end_layout
+
+\begin_layout Description
+Action Inserts a cross-reference into the document.
+\end_layout
+
+\begin_layout Description
+Notion Optional <TYPE> can be used to set the type of reference
+\end_layout
+
+\begin_layout Description
+Syntax reference-insert <LABEL> [<TYPE>]
+\end_layout
+
+\begin_layout Description
+Origin spitz,
+ 28 Jul 2024
+\end_layout
+
+\begin_layout Subsection*
 reference-next
 \end_layout
 
@@ -4448,6 +4469,45 @@ Syntax reference-next
 \begin_layout Description
 Origin Dekel,
  14 Jan 2001
+\end_layout
+
+\begin_layout Subsection*
+reference-to-paragraph
+\end_layout
+
+\begin_layout Description
+Action Inserts a cross-reference to the paragraph with a given ID
+\end_layout
+
+\begin_layout Description
+Notion The function checks of the paragraph already has a label.
+ If so,
+ it uses that.
+ Otherwise it inserts a label and uses this.
+\end_layout
+
+\begin_layout Description
+Syntax reference-to-paragraph <PAR_ID> [<TYPE>]
+\end_layout
+
+\begin_layout Description
+Params <PAR_IDs>:
+ paragraph ids,
+ might be a comma-separated list
+\begin_inset Newline newline
+\end_inset
+
+if it is in a nested inset
+\begin_inset Newline newline
+\end_inset
+
+<TYPE>:
+ cross-references type
+\end_layout
+
+\begin_layout Description
+Origin spitz,
+ 28 Jul 2024
 \end_layout
 
 \begin_layout Subsection*
@@ -4657,8 +4717,12 @@ Action Pastes the internal selection text in permanent selection.
 \end_layout
 
 \begin_layout Description
-Notion Created in order to have middle mouse button pasting correct (bound to command-alternatives selection-paste ;
- primary-selection-paste paragraph).
+Notion Created in order to have middle mouse button pasting correct.
+ The middle button is bound to "command-alternatives selection-paste ;
+ primary-selection-paste".
+ selection-paste makes sure that if something is highlighted in LyX window it gets into selection buffer and pasted.
+ If nothing is highlighted,
+ then primary-selection-paste covers the cases of pasting from selection buffer from another apps (or from LyX once the highlight is gone).
 \end_layout
 
 \begin_layout Description
