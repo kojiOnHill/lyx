@@ -157,8 +157,6 @@ logicalmkup
 \html_be_strict true
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -712698321 "Jürgen Spitzmüller"
-\author -584632292 "Richard Kimberly Heck"
 \end_header
 
 \begin_body
@@ -1838,7 +1836,6 @@ test
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Itemize
@@ -1879,7 +1876,6 @@ starlet
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Itemize
@@ -8273,7 +8269,6 @@ To resume an enumeration,
 Enumerate-Resume
 \family default
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -9446,10 +9441,6 @@ Here is an example:
 \end_layout
 
 \begin_layout LyX-Code
- 
-\end_layout
-
-\begin_layout LyX-Code
 int main(void)
 \end_layout
 
@@ -9612,14 +9603,12 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim
-
 This is Verbatim.
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
-
 The following 2 lines are empty:
 \end_layout
 
@@ -9632,7 +9621,6 @@ The following 2 lines are empty:
 \end_layout
 
 \begin_layout Verbatim
-
 Almost everything is allowed in Verbatim:"%&$§#~'`
 \backslash
 }][{|
@@ -9656,7 +9644,6 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim*
-
 This is Verbatim*.
 \end_layout
 
@@ -13297,7 +13284,7 @@ status open
 
 \begin_layout Plain Layout
 Mr.
- Edge 
+ Edge
 \end_layout
 
 \end_inset
@@ -13312,7 +13299,7 @@ status open
 
 \begin_layout Plain Layout
 Mr.
- Edge 
+ Edge
 \end_layout
 
 \end_inset
@@ -15325,7 +15312,6 @@ microtype
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -17470,7 +17456,6 @@ arg   "textstyle-apply"
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -30994,30 +30979,16 @@ name "sec:Cross-References"
 \begin_layout Standard
 One of \SpecialChar LyX
 's strengths is cross-references.
- You can reference every
-\change_inserted -712698321 1723183496
-thing in the document that has a counter
-\change_unchanged
- 
-\change_inserted -712698321 1723183501
-(e.
+ You can reference everything in the document that has a counter (e.
 \begin_inset space \thinspace{}
 \end_inset
 
 g.,
- 
-\change_unchanged
-section,
+ section,
  float,
  footnote,
  formula,
- and list
-\change_inserted -712698321 1723183507
-)
-\change_deleted -712698321 1723183511
- in the document
-\change_unchanged
-.
+ and list).
  To reference a document part,
  you have to insert a label into it.
  The label is used as an anchor and a name for the reference.
@@ -31153,13 +31124,9 @@ enu:Second-item
 
 .
  At the position of the cross-reference box the item number will appear in the output.
-\change_inserted -712698321 1723183607
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1723185545
 For section headings,
  footnotes,
  table and figure floats,
@@ -31189,43 +31156,16 @@ Insert Cross-Reference to this Item
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -712698321 1723184542
-A
-\change_inserted -712698321 1723184543
-Other
-\change_deleted -712698321 1723184013
-s an
-\change_unchanged
- alternative
-\change_inserted -712698321 1723184545
-s
-\change_unchanged
- to 
+Other alternatives to 
 \family sans
 Insert\SpecialChar menuseparator
 Cross-Reference
-\change_inserted -712698321 1723184603
-
 \family default
  which work for all item types (but require a label to exist already) are the following:
-\change_deleted -712698321 1723184051
-,
- you can
-\change_inserted -712698321 1723184553
-
 \end_layout
 
 \begin_layout Itemize
-
-\change_deleted -712698321 1723184557
- 
-\change_inserted -712698321 1723184638
-R
-\change_deleted -712698321 1723184638
-r
-\change_unchanged
-ight-click on a label and in the popup menu select 
+Right-click on a label and in the popup menu select 
 \family sans
 Copy as Reference
 \family default
@@ -31242,13 +31182,9 @@ arg   "paste"
 \end_inset
 
 ).
-\change_inserted -712698321 1723184640
-
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted -712698321 1723184714
 In the outliner,
  section 
 \family sans
@@ -31263,24 +31199,8 @@ Insert Reference at Cursor Position
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -712698321 1723184132
 Whatever approach you take,
- 
-\change_deleted -712698321 1723184093
-H
-\change_inserted -712698321 1723184094
-h
-\change_unchanged
-ere is 
-\change_inserted -712698321 1723184100
-how 
-\change_unchanged
-our cross-reference
-\change_inserted -712698321 1723185807
- ultimately comes out
-\change_unchanged
-:
+ here is how our cross-reference ultimately comes out:
  Item
 \begin_inset space ~
 \end_inset
@@ -34233,7 +34153,6 @@ et al.
 \end_inset
 
 ).
- 
 \end_layout
 
 \begin_layout Standard
@@ -35019,7 +34938,6 @@ nolink "false"
 \end_inset
 
  for details.
- 
 \end_layout
 
 \begin_layout Subsection
@@ -35389,7 +35307,6 @@ Bananas
 \series default
 ,
  will be listed separately.
- 
 \end_layout
 
 \begin_layout Standard
@@ -44690,8 +44607,6 @@ nolink "false"
 \end_layout
 
 \begin_layout Description
-
-\change_inserted -584632292 1712109674
 Plain
 \begin_inset space ~
 \end_inset
@@ -44700,25 +44615,11 @@ Double
 \begin_inset space ~
 \end_inset
 
-
-\change_deleted -584632292 1712109675
-Ordinary
+Quotation
 \begin_inset space ~
 \end_inset
 
-
-\change_unchanged
-Quot
-\change_inserted -584632292 1712109680
-ation
-\begin_inset space ~
-\end_inset
-
-Mark
-\change_deleted -584632292 1712109681
-e
-\change_unchanged
- Inserts this quote:
+Mark Inserts this quote:
  ",
  no matter what quote style you selected in the 
 \family sans
@@ -44730,8 +44631,6 @@ Language
 \end_layout
 
 \begin_layout Description
-
-\change_inserted -584632292 1712109701
 Plain
 \begin_inset space ~
 \end_inset
@@ -44754,39 +44653,15 @@ Mark Inserts this quote:
 \end_layout
 
 \begin_layout Description
-
-\change_deleted -584632292 1712109722
-Single
-\change_inserted -584632292 1712109720
 Inner
-\change_unchanged
-
 \begin_inset space ~
 \end_inset
 
-Quot
-\change_inserted -584632292 1712109726
-ation
+Quotation
 \begin_inset space ~
 \end_inset
 
-Mark
-\change_deleted -584632292 1712109727
-e
-\change_unchanged
- Inserts a
-\change_inserted -584632292 1712109731
-n inner
-\change_unchanged
- 
-\change_deleted -584632292 1712109733
-single 
-\change_unchanged
-quote 
-\change_inserted -584632292 1712109738
-(usually a single quote) 
-\change_unchanged
-in the quotation marks style selected in the 
+Mark Inserts an inner quote (usually a single quote) in the quotation marks style selected in the 
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
@@ -50149,7 +50024,6 @@ Encodings
  \SpecialChar LyX
  automatically selects the appropriate traditional encoding for the given language(s).If the document contains text in more than one language you thus may get more than one encoding in the \SpecialChar LaTeX
  file.
- 
 \end_layout
 
 \begin_layout Standard
@@ -55416,7 +55290,6 @@ cursor
 movement Here you can define how cursor movement (with the arrow keys) behaves when writing scripts with right-to-left direction (e.g.,
  Arabic,
  Hebrew or Farsi).
- 
 \end_layout
 
 \begin_deeper
