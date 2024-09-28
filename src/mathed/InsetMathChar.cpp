@@ -239,6 +239,12 @@ void InsetMathChar::mathmlize(MathMLStream & ms) const
 	case '<': entity = "&lt;"; break;
 	case '>': entity = "&gt;"; break;
 	case '&': entity = "&amp;"; break;
+	case '-':
+		if (ms.version() == MathMLStream::mathmlCore) {
+			// − U+2212 MINUS SIGN
+			entity = "&#x2212;";
+		}
+		break;
 	case ' ': {
 		ms << from_ascii("&#0160;");
 		return;
