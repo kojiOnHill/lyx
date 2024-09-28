@@ -236,14 +236,14 @@ void InsetMathChar::mathmlize(MathMLStream & ms) const
 {
 	std::string entity;
 	switch (char_) {
-		case '<': entity = "&lt;"; break;
-		case '>': entity = "&gt;"; break;
-		case '&': entity = "&amp;"; break;
-		case ' ': {
-			ms << from_ascii("&#0160;");
-			return;
-		}
-		default: break;
+	case '<': entity = "&lt;"; break;
+	case '>': entity = "&gt;"; break;
+	case '&': entity = "&amp;"; break;
+	case ' ': {
+		ms << from_ascii("&#0160;");
+		return;
+	}
+	default: break;
 	}
 
 	if (ms.inText()) {
