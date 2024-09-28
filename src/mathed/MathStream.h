@@ -376,8 +376,15 @@ class MathExportException : public std::exception {};
 
 class MathMLStream {
 public:
-	/// Builds a stream proxy for os; the MathML namespace is given by xmlns (supposed to be already defined elsewhere in the document).
-	explicit MathMLStream(odocstream & os, std::string const & xmlns = "");
+	///
+	enum MathMLVersion {
+		mathml3,
+		mathmlCore
+	};
+
+	/// Builds a stream proxy for os; the MathML namespace is given by xmlns
+	/// (supposed to be already defined elsewhere in the document).
+	explicit MathMLStream(odocstream & os, std::string const & xmlns = "", MathMLVersion version = mathml3);
 	///
 	void cr();
 	/// Indentation when nesting tags
@@ -403,7 +410,7 @@ public:
 private:
 	/// Check whether it makes sense to start a <mtext>
 	void beforeText();
-	///Check whether there is a <mtext> to close here
+	/// Check whether there is a <mtext> to close here
 	void beforeTag();
 	///
 	odocstream & os_;
@@ -420,6 +427,8 @@ private:
 	odocstringstream deferred_;
 	///
 	std::string xmlns_;
+	///
+	MathMLVersion version_;
 	/// The only important part of a FontInfo object.
 	MathStyle font_math_style_;
 	///
