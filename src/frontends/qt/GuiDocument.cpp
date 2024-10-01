@@ -1763,6 +1763,8 @@ GuiDocument::GuiDocument(GuiView & lv)
 	connect(pdfSupportModule->pdfborderCB, SIGNAL(toggled(bool)),
 		this, SLOT(change_adaptor()));
 	connect(pdfSupportModule->colorlinksCB, SIGNAL(toggled(bool)),
+		this, SLOT(colorlinksCB_adaptor(bool)));
+	connect(pdfSupportModule->colorlinksCB, SIGNAL(toggled(bool)),
 		this, SLOT(change_adaptor()));
 	connect(pdfSupportModule->backrefCO, SIGNAL(activated(int)),
 		this, SLOT(change_adaptor()));
@@ -3085,6 +3087,12 @@ void GuiDocument::classChanged_adaptor()
 {
 	const_cast<Buffer &>(buffer()).setLayoutPos(string());
 	classChanged();
+}
+
+
+void GuiDocument::colorlinksCB_adaptor(bool enabled)
+{
+	pdfSupportModule->pdfborderCB->setEnabled(!enabled);
 }
 
 
@@ -4731,6 +4739,10 @@ void GuiDocument::paramsToDialog()
 	pdfSupportModule->pdfborderCB->setChecked(pdf.pdfborder);
 	pdfSupportModule->pdfusetitleCB->setChecked(pdf.pdfusetitle);
 	pdfSupportModule->colorlinksCB->setChecked(pdf.colorlinks);
+
+	//hyperref considers colorlinks to be mutually exlusive to borders
+	//for workaround see manuals
+	pdfSupportModule->pdfborderCB->setEnabled(!pdf.colorlinks);
 
 	nn = findToken(backref_opts, pdf.backref);
 	if (nn >= 0)

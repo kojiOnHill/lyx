@@ -133,6 +133,7 @@ private Q_SLOTS:
 	void browseMaster();
 	void classChanged();
 	void classChanged_adaptor();
+	void colorlinksCB_adaptor(bool);
 	void languagePackageChanged(int);
 	void biblioChanged();
 	void rescanBibFiles();
