@@ -65,14 +65,11 @@ std::string const & empty_string();
 // defined in docstring.cpp
 bool operator==(docstring const &, char const *);
 
-#ifdef STD_STRING_USES_COW
-template<typename Char> class trivial_string;
-typedef trivial_string<char> trivstring;
-typedef trivial_string<char_type> trivdocstring;
-#else
+//trivstring signalizes thread-safety request; should not be needed for any
+//C++11 conformant std::basic_string, e.g. GCC >= 5.
+//Once properly tested we can ditch these two in favour of std::string/docstring.
 typedef std::string trivstring;
 typedef docstring trivdocstring;
-#endif
 
 } // namespace lyx
 

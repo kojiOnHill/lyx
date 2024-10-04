@@ -115,8 +115,6 @@ liblyxsupport_a_SOURCES = \
 	Translator.h \
 	Timeout.cpp \
 	Timeout.h \
-	trivstring.cpp \
-	trivstring.h \
 	types.h \
 	unique_ptr.h \
 	userinfo.cpp \
