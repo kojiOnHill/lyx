@@ -12,8 +12,6 @@
 #ifndef LYX_TRIVSTRING_H
 #define LYX_TRIVSTRING_H
 
-#include "support/strfwd.h"
-
 #ifdef STD_STRING_USES_COW
 #include <cstdlib>
 

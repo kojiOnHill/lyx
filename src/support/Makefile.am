@@ -106,7 +106,6 @@ liblyxsupport_a_SOURCES = \
 	signals.h \
 	socktools.cpp \
 	socktools.h \
-	strfwd.h \
 	Systemcall.cpp \
 	Systemcall.h \
 	SystemcallPrivate.h \
