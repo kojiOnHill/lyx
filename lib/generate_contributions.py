@@ -1484,6 +1484,14 @@ contributors = [
                  "14 November 2020",
                  u"Review of Manuals"),
 
+     contributor(u"Påvel Nicklasson",
+                 "pavelnicklasson () bahnhof ! se",
+                 "GPL",
+                 "License sv.po",
+                 "m=172851183203302",
+                 "9 October 2024",
+                 u"Swedish translation"),
+
      contributor(u"Dirk Niggemann",
                  "dabn100 () cam ! ac ! uk",
                  "",
