@@ -1652,7 +1652,6 @@ void Text::deleteWordBackward(Cursor & cur, bool const force)
 }
 
 
-// Kill to end of line.
 void Text::changeCase(Cursor & cur, TextCase action, bool partial)
 {
 	LBUFERR(this == cur.text());
