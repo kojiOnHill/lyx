@@ -4946,6 +4946,10 @@ void Text::dispatch(Cursor & cur, FuncRequest & cmd)
 		changeCase(cur, text_capitalization, cmd.getArg(0) == "partial");
 		break;
 
+	case LFUN_WORD_TOGGLECASE:
+		changeCase(cur, text_togglecase, cmd.getArg(0) == "partial");
+		break;
+
 	case LFUN_CHARS_TRANSPOSE:
 		charsTranspose(cur);
 		break;
@@ -7159,6 +7163,7 @@ bool Text::getStatus(Cursor & cur, FuncRequest const & cmd,
 	case LFUN_WORD_UPCASE:
 	case LFUN_WORD_LOWCASE:
 	case LFUN_WORD_CAPITALIZE:
+	case LFUN_WORD_TOGGLECASE:
 	case LFUN_CHARS_TRANSPOSE:
 	case LFUN_SERVER_GET_XY:
 	case LFUN_SERVER_SET_XY:
