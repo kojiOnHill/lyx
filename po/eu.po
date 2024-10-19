@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: lyx_2.4.3_eu\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2024-10-12 22:00+0200\n"
-"PO-Revision-Date: 2024-09-25 19:55+0200\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"PO-Revision-Date: 2024-10-19 14:43+0200\n"
+"Last-Translator: dooteo <dooteo@zundan.com>\n"
 "Language-Team: Basque <>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -49,14 +49,12 @@ msgid "[[do]]O&pen"
 msgstr "I&reki"
 
 #: src/frontends/qt/ui/AboutUi.ui:238
-#, fuzzy
 msgid "Temporary directory"
-msgstr "&Aldi baterako direktorioa:"
+msgstr "Aldi baterako direktorioa"
 
 #: src/frontends/qt/ui/AboutUi.ui:269
-#, fuzzy
 msgid "Open temporary directory in file browser"
-msgstr "Ireki sistemako direktorioa fitxategi-arakatzailean"
+msgstr "Ireki aldi baterako direktorioa fitxategi-arakatzailean"
 
 #: src/frontends/qt/ui/AboutUi.ui:288
 msgid "Credits"
@@ -313,11 +311,11 @@ msgstr "Gehitu &tokikoa..."
 
 #: src/frontends/qt/ui/BibtexUi.ui:91
 msgid "Transfer an absolute local path to a relative one or vice versa"
-msgstr ""
+msgstr "Bihurtu bide-izen lokal absolutu bat erlatibora edo alderantziz"
 
 #: src/frontends/qt/ui/BibtexUi.ui:94 src/frontends/qt/GuiBibtex.cpp:429
 msgid "&Make Relative"
-msgstr ""
+msgstr "&Egin erlatiboa"
 
 #: src/frontends/qt/ui/BibtexUi.ui:101
 msgid "Inherit bibliography databases from the master document"
@@ -3416,19 +3414,20 @@ msgid "De&fault output format:"
 msgstr "Irteerako formatu &lehenetsia:"
 
 #: src/frontends/qt/ui/OutputUi.ui:144
-#, fuzzy
 msgid "Output Options"
-msgstr "LaTeX irteeraren aukerak"
+msgstr "Irteeraren aukerak"
 
 #: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
 msgid ""
 "Scaling factor for images that are generated for some LaTeX constructs (e."
 "g., math formulae) in non-LaTeX output."
 msgstr ""
+"Irudien eskalatze-faktore LaTeX eraikin batzuentzako sortzen da "
+"(adib. matematikako ekuazioa) ez-LaTeX irteerarako."
 
 #: src/frontends/qt/ui/OutputUi.ui:160
 msgid "Scaling of generated &images:"
-msgstr ""
+msgstr "Sortutako &irudien eskala:"
 
 #: src/frontends/qt/ui/OutputUi.ui:219
 msgid "&LaTeX"
@@ -3623,7 +3622,7 @@ msgstr "Markorik &ez esteken inguruan"
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:285
 msgid "Mutually exclusive with frames around links, see manual."
-msgstr ""
+msgstr "Elkar bazterkorrak markoekin esteka inguruan, ikusi eskuliburua."
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:288
 msgid "C&olor links"
@@ -8627,10 +8626,10 @@ msgid "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
 msgstr "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
 
 #: lib/layouts/aastex63.layout:3 lib/examples/Articles:0
-#, fuzzy
 msgid "American Astronomical Society (AASTeX v. 6.3.1)"
 msgstr ""
-"Amerikar Elkarte Astronomikoa (American Astronomical Society - AASTeX v. 6.2)"
+"Amerikar Elkarte Astronomikoa (American Astronomical Society - AASTeX v."
+" 6.3,1)"
 
 #: lib/layouts/achemso.layout:3 lib/examples/Articles:0
 msgid "American Chemical Society (ACS)"
@@ -15786,7 +15785,7 @@ msgstr "Eranskinak:"
 
 #: lib/layouts/multicol.module:2 lib/layouts/multicol.module:12
 msgid "Multiple Columns"
-msgstr "Zutabe anitza"
+msgstr "Zutabe anitz"
 
 #: lib/layouts/multicol.module:8
 msgid ""
@@ -16291,7 +16290,7 @@ msgstr "AukeraMenua"
 
 #: lib/layouts/pdfform.module:90
 msgid "Label[[Form]]"
-msgstr ""
+msgstr "Etiketa"
 
 #: lib/layouts/pdfform.module:93
 msgid "Insert the label here"
@@ -20524,7 +20523,6 @@ msgid "Comment|m"
 msgstr "Iruzkina|I"
 
 #: lib/ui/stdcontext.inc:237
-#, fuzzy
 msgid "Greyed Out|y"
 msgstr "Grisa|G"
 
@@ -20777,7 +20775,6 @@ msgid "End Editing Externally"
 msgstr "Amaitu kanpoan editatzea"
 
 #: lib/ui/stdcontext.inc:381
-#, fuzzy
 msgid "Split Inset|i"
 msgstr "Zatitu txertakuntza|Z"
 
@@ -20790,7 +20787,6 @@ msgid "Forward Search|F"
 msgstr "Aurrerantz bilatu|u"
 
 #: lib/ui/stdcontext.inc:386 lib/ui/stdmenus.inc:120
-#, fuzzy
 msgid "Move Paragraph Up|h"
 msgstr "Eraman paragrafoa gora|g"
 
@@ -20831,7 +20827,6 @@ msgid "Text Properties|x"
 msgstr "Testuaren propietateak|T"
 
 #: lib/ui/stdcontext.inc:402
-#, fuzzy
 msgid "Custom Text Styles|y"
 msgstr "Pertsonalizatu testu-estiloak|s"
 
@@ -21058,9 +21053,8 @@ msgstr "Txertatu erreferentzia kurtsorearen posizioan|T"
 
 #: lib/ui/stdcontext.inc:588 lib/ui/stdcontext.inc:597
 #: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:743
-#, fuzzy
 msgid "Insert Cross-Reference to this Item|C"
-msgstr "Txertatu erreferentzia gurutzatua"
+msgstr "Txertatu elementu honen erreferentzia gurutzatua|g"
 
 #: lib/ui/stdcontext.inc:638
 msgid "Insert Copy at Cursor Position|I"
@@ -21103,7 +21097,6 @@ msgid "Custom Page Formatting...|u"
 msgstr "Orri-formatua: pertsonalizatua...|p"
 
 #: lib/ui/stdcontext.inc:664
-#, fuzzy
 msgid "Insert Subentry|n"
 msgstr "Txertatu azpi-sarrera|p"
 
@@ -21112,7 +21105,6 @@ msgid "Insert Sortkey|k"
 msgstr "Txertatu Ordena-gakoa|O"
 
 #: lib/ui/stdcontext.inc:666
-#, fuzzy
 msgid "Insert See Reference|c"
 msgstr "Txertatu Ikusi erreferentzia|e"
 
@@ -21210,11 +21202,11 @@ msgstr "Karaktere kopurua (zuriunerik gabe)|a"
 
 #: lib/ui/stdcontext.inc:804
 msgid "Start Statistics Relative to Current Count|R"
-msgstr ""
+msgstr "Hasi uneko zenbatzailearen estatistika erlatiboa|r"
 
 #: lib/ui/stdcontext.inc:805
 msgid "Reset to Absolute Statistics Count|A"
-msgstr ""
+msgstr "Berrezarri estatistika absolutuaren zenbatzailea|a"
 
 #: lib/ui/stdmenus.inc:30
 msgid "File|F"
@@ -21923,14 +21915,12 @@ msgid "End of Sentence|E"
 msgstr "Esaldi-amaiera|A"
 
 #: lib/ui/stdmenus.inc:418
-#, fuzzy
 msgid "Plain Double Quotation Mark|Q"
-msgstr "Komatxo arrunta|K"
+msgstr "Komatxo bikoitz soilaren marka|i"
 
 #: lib/ui/stdmenus.inc:419
-#, fuzzy
 msgid "Plain Single Quotation Mark|S"
-msgstr "Komatxo arrunta|K"
+msgstr "Komatxo bakar soilaren marka|a"
 
 #: lib/ui/stdmenus.inc:420
 msgid "Inner Quotation Mark|n"
@@ -27303,9 +27293,8 @@ msgid "An Xfig figure.\n"
 msgstr "Xfig irudia.\n"
 
 #: lib/configure.py:726
-#, fuzzy
 msgid "Tgif"
-msgstr "tgo|Tgif"
+msgstr "Tgif"
 
 #: lib/configure.py:729
 msgid "FIG"
@@ -27316,9 +27305,8 @@ msgid "DIA"
 msgstr "DIA"
 
 #: lib/configure.py:735
-#, fuzzy
 msgid "OpenDocument drawing"
-msgstr "OpenDocument (Pandoc)"
+msgstr "OpenDocument marrazketa"
 
 #: lib/configure.py:738
 msgid "Grace"
@@ -27723,9 +27711,8 @@ msgid "LyX Preview"
 msgstr "LyX aurrebista"
 
 #: lib/configure.py:885
-#, fuzzy
 msgid "PDFTEX"
-msgstr "pdf_tex|PDFTEX"
+msgstr "PDFTEX"
 
 #: lib/configure.py:886
 msgid "Program"
@@ -30348,17 +30335,18 @@ msgstr ""
 
 #: src/LaTeXPackages.cpp:89
 msgid "Invalid package list format!"
-msgstr ""
+msgstr "Baliogabeko pakete-zerrendaren formatua!"
 
 #: src/LaTeXPackages.cpp:90
 msgid ""
 "The format of your LaTeX packages list is wrong. Please file a bug report."
 msgstr ""
+"LaTeX paketeen zerrendak okerreko formatua du. Mesedez, eman akats honen"
+" berri."
 
 #: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
-#, fuzzy
 msgid "Outdated configuration script detected!"
-msgstr "Ezin izan da konfigurazioko fitxategia irakurri"
+msgstr "Konfigurazio-script zaharkitua atzeman da!"
 
 #: src/LaTeXPackages.cpp:99
 msgid ""
@@ -30366,6 +30354,10 @@ msgid ""
 "The script has been renamed to 'chkconfig.ltx.bak'.\n"
 "If you did not copy the script there by purpose, you can safely delete it."
 msgstr ""
+"Zaharkitutako 'chkconfig.ltx' script bat aurkitu da zure"
+" erabiltzaile-direktorioan.\n"
+"Script-a 'chkconfig.ltx.bak' izenera aldatu da.\n"
+"Script-a hor nahita ez baduzu kopiatu, lasai ezaba dezakezu."
 
 #: src/LaTeXPackages.cpp:105
 #, c-format
@@ -30374,6 +30366,10 @@ msgid ""
 "(%1$s).\n"
 "Please delete or update this file!"
 msgstr ""
+"Zaharkitutako 'chkconfig.ltx' script bat aurkitu da zure"
+" erabiltzaile-direktorioan.\n"
+"(%1$s)\n"
+"Mesedez, ezabatu edo eguneratu fitxategi hori!"
 
 #: src/LyX.cpp:134
 msgid "Could not read configuration file"
@@ -31486,9 +31482,8 @@ msgid "Text properties applied: %1$s"
 msgstr "Testu-propietateak aplikatuta: %1$s"
 
 #: src/Text.cpp:6001
-#, fuzzy
 msgid "Invalid argument of textstyle-update"
-msgstr "Baliogabeko argumentua 'master-buffer-forall' komandoan"
+msgstr "Baliogabeko argumentua 'textstyle-update' komandoan"
 
 #: src/Text.cpp:6158
 msgid "Path to thesaurus directory not set!"
@@ -32067,22 +32062,22 @@ msgid "Manuals"
 msgstr "Eskuliburuak"
 
 #: src/frontends/qt/FindAndReplace.cpp:301
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The end was reached while searching forward.\n"
 "Continue searching from the beginning? (Scope:%1$s)"
 msgstr ""
-"%1$s: amaierara iritsi da aurrerantz bilatzean.\n"
-"Hasieratik jarraitzea nahi duzu?"
+"Amaierara iritsi da aurrerantz bilatzean.\n"
+"Hasieratik jarraitzea nahi duzu? (esparrua: %1$s)"
 
 #: src/frontends/qt/FindAndReplace.cpp:304
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The beginning was reached while searching backward.\n"
 "Continue searching from the end? (Scope:%1$s)"
 msgstr ""
-"%1$s: hasierara iritsi da atzerantz bilatzean.\n"
-"Amaieratik jarraitzea nahi duzu?"
+"Hasierara iritsi da atzerantz bilatzean.\n"
+"Amaieratik jarraitzea nahi duzu? (esparrua: %1$s)"
 
 #: src/frontends/qt/FindAndReplace.cpp:327
 msgid "Advanced search in progress (press ESC to cancel) . . ."
@@ -32529,7 +32524,7 @@ msgstr "Dokumentuaren kodeketa"
 
 #: src/frontends/qt/GuiBibtex.cpp:433
 msgid "&Make Absolute"
-msgstr ""
+msgstr "&Egin absolutua"
 
 #: src/frontends/qt/GuiBibtex.cpp:453
 msgid "General Encoding"
@@ -36168,30 +36163,28 @@ msgid "&Close Tab"
 msgstr "&Itxi fitxa"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2448
-#, fuzzy
 msgid "Close &Other Tabs"
-msgstr "&Itxi fitxa"
+msgstr "Itxi &beste fitxak"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2450
 msgid "Close Tabs to the &Right"
-msgstr ""
+msgstr "Itxi e&skuineko fitxak"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2452
 msgid "Close Tabs to the &Left"
-msgstr ""
+msgstr "Itxi e&zkerreko fitxak"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2457
 msgid "Move Tab to &Start"
-msgstr ""
+msgstr "Eraman fitxa &hasierara"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2459
 msgid "Move Tab to &End"
-msgstr ""
+msgstr "Eraman fitxa &amaierara"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2464
-#, fuzzy
 msgid "Open Enclosing &Directory"
-msgstr "&Ireki daukan direktorioa"
+msgstr "&Ireki eranskinen direktorioa"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2509
 msgid "<b>The file %1 changed on disk.</b>"
@@ -36236,22 +36229,18 @@ msgid "More Spelling Suggestions"
 msgstr "Iradokizun ortografiko gehiago"
 
 #: src/frontends/qt/Menus.cpp:889
-#, fuzzy
 msgid "Add to personal dictionary|r"
 msgstr "Gehitu hiztegi pertsonalari|G"
 
 #: src/frontends/qt/Menus.cpp:891
-#, fuzzy
 msgid "Ignore this occurrence|o"
-msgstr "Ez ikusi egin agerpen honi|g"
+msgstr "Ez ikusi egin agerpen honi|h"
 
 #: src/frontends/qt/Menus.cpp:893
-#, fuzzy
 msgid "Ignore all for this session|t"
 msgstr "Ez ikusi egin denak saio honetan|s"
 
 #: src/frontends/qt/Menus.cpp:895
-#, fuzzy
 msgid "Ignore all in this document|u"
 msgstr "Ez ikusi egin denak dokumentu honetan|d"
 
@@ -36264,9 +36253,8 @@ msgid "Remove from document dictionary|r"
 msgstr "Kendu dokumentuaren hiztegitik|k"
 
 #: src/frontends/qt/Menus.cpp:940
-#, fuzzy
 msgid "Switch Language...|w"
-msgstr "Aldatu hizkuntza|h"
+msgstr "Aldatu hizkuntza...|h"
 
 #: src/frontends/qt/Menus.cpp:954
 msgid "Language|L"
