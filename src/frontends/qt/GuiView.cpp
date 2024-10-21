@@ -1481,8 +1481,7 @@ void GuiView::showStats()
 	// Don't attempt to calculate stats if
 	// the buffer is busy as this might crash (#12935)
 	Statistics & statistics = buf->statistics();
-	if (!busy() && !bv->busy()
-	     && (word_count_enabled_ || char_count_enabled_ || char_nb_count_enabled_))
+	if (!busy() && !bv->busy())
 		statistics.update(cur);
 
 	QStringList stats;
