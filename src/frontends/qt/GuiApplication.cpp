@@ -106,9 +106,7 @@
 #include <QObject>
 #include <QPainter>
 #include <QPixmap>
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
 #include <QRandomGenerator>
-#endif
 #include <QScreen>
 #include <QSessionManager>
 #include <QSettings>
@@ -128,32 +126,30 @@
 #endif
 #endif
 
-#if (QT_VERSION >= 0x050400)
 #if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
-#if (QT_VERSION >= 0x060000)
-#if (QT_VERSION >= 0x060500)
-#include <QtGui/QWindowsMimeConverter>
-#define QWINDOWSMIME QWindowsMimeConverter
-#define QVARIANTTYPE QMetaType
-#else
-#include <QtGui/private/qguiapplication_p.h>
-#include <QtGui/private/qwindowsmime_p.h>
-#include <QtGui/qpa/qplatformintegration.h>
-#define QWINDOWSMIME QWindowsMime
-#define QVARIANTTYPE QMetaType
+#  if (QT_VERSION >= 0x060000)
+#    if (QT_VERSION >= 0x060500)
+#      include <QtGui/QWindowsMimeConverter>
+#      define QWINDOWSMIME QWindowsMimeConverter
+#      define QVARIANTTYPE QMetaType
+#    else
+#      include <QtGui/private/qguiapplication_p.h>
+#      include <QtGui/private/qwindowsmime_p.h>
+#      include <QtGui/qpa/qplatformintegration.h>
+#      define QWINDOWSMIME QWindowsMime
+#      define QVARIANTTYPE QMetaType
 using QWindowsMime = QNativeInterface::Private::QWindowsMime;
 using QWindowsApplication = QNativeInterface::Private::QWindowsApplication;
-#endif
-#else
-#include <QWinMime>
-#define QWINDOWSMIME QWinMime
-#define QVARIANTTYPE QVariant::Type
-#endif
-#ifdef Q_CC_GNU
-#include <wtypes.h>
-#endif
-#include <objidl.h>
-#endif
+#    endif
+#  else
+#    include <QWinMime>
+#    define QWINDOWSMIME QWinMime
+#    define QVARIANTTYPE QVariant::Type
+#  endif
+#  ifdef Q_CC_GNU
+#    include <wtypes.h>
+#  endif
+#  include <objidl.h>
 #endif
 
 #if defined(Q_OS_MAC) && (QT_VERSION < 0x060000)
@@ -195,12 +191,10 @@ frontend::Application * createApplication(int & argc, char * argv[])
 // Setup high DPI handling. This is a bit complicated, but will be default in Qt6.
 // macOS does it by itself.
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0) && !defined(Q_OS_MAC)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     // Attribute Qt::AA_EnableHighDpiScaling must be set before QCoreApplication is created
     if (getEnv("QT_ENABLE_HIGHDPI_SCALING").empty()
 		&& getEnv("QT_AUTO_SCREEN_SCALE_FACTOR").empty())
         QApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
-#endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     // HighDPI scale factor policy must be set before QGuiApplication is created
@@ -851,7 +845,6 @@ public:
 ////////////////////////////////////////////////////////////////////////
 // Windows specific stuff goes here...
 
-#if (QT_VERSION >= 0x050400)
 #if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
 // QWindowsMimeMetafile can only be compiled on Windows.
 
@@ -950,7 +943,6 @@ public:
 };
 
 #endif
-#endif
 
 
 /// Allows to check whether ESC was pressed during a long operation
@@ -1014,7 +1006,6 @@ struct GuiApplication::Private
 	Private(): language_model_(nullptr), meta_fake_bit(NoModifier),
 		global_menubar_(nullptr), last_state_(Qt::ApplicationInactive)
 	{
-	#if (QT_VERSION >= 0x050400)
 	#if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
 		/// WMF Mime handler for Windows clipboard.
 		wmf_mime_ = new QWindowsMimeMetafile;
@@ -1022,7 +1013,6 @@ struct GuiApplication::Private
 		win_app_ = dynamic_cast<QWindowsApplication *>
 			(QGuiApplicationPrivate::platformIntegration());
 		win_app_->registerMime(wmf_mime_);
-	#endif
 	#endif
 	#endif
 		initKeySequences(&theTopLevelKeymap());
@@ -1108,13 +1098,11 @@ struct GuiApplication::Private
 	QMacPasteboardMimeGraphics mac_pasteboard_mime_;
 #endif
 
-#if (QT_VERSION >= 0x050400)
 #if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
 	/// WMF Mime handler for Windows clipboard.
 	QWindowsMimeMetafile * wmf_mime_;
 #if (QT_VERSION >= 0x060000 && QT_VERSION < 0x060500)
 	QWindowsApplication * win_app_;
-#endif
 #endif
 #endif
 
@@ -1146,15 +1134,8 @@ GuiApplication::GuiApplication(int & argc, char ** argv)
 	QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
-#if QT_VERSION >= 0x050700
 	setDesktopFileName(lyx_package);
-#endif
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
 	QRandomGenerator(QDateTime::currentDateTime().toSecsSinceEpoch());
-#else
-	qsrand(QDateTime::currentDateTime().toTime_t());
-#endif
 
 	// Install LyX translator for missing Qt translations
 	installTranslator(&d->gui_trans_);
