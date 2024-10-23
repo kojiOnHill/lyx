@@ -127,8 +127,8 @@
 #endif
 
 #if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
-#  if (QT_VERSION >= 0x060000)
-#    if (QT_VERSION >= 0x060500)
+#  if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#    if (QT_VERSION >= QT_VERSION_CHECK(6, 5, 0))
 #      include <QtGui/QWindowsMimeConverter>
 #      define QWINDOWSMIME QWindowsMimeConverter
 #      define QVARIANTTYPE QMetaType
@@ -152,7 +152,7 @@ using QWindowsApplication = QNativeInterface::Private::QWindowsApplication;
 #  include <objidl.h>
 #endif
 
-#if defined(Q_OS_MAC) && (QT_VERSION < 0x060000)
+#if defined(Q_OS_MAC) && (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 #include <QMacPasteboardMime>
 #endif // Q_OS_MAC
 
@@ -785,7 +785,7 @@ public:
 //
 ////////////////////////////////////////////////////////////////////////
 
-#if defined(Q_OS_MAC) && (QT_VERSION < 0x060000)
+#if defined(Q_OS_MAC) && (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 // QMacPasteboardMimeGraphics can only be compiled on Mac.
 
 class QMacPasteboardMimeGraphics : public QMacPasteboardMime
@@ -1009,7 +1009,7 @@ struct GuiApplication::Private
 	#if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
 		/// WMF Mime handler for Windows clipboard.
 		wmf_mime_ = new QWindowsMimeMetafile;
-	#if (QT_VERSION >= 0x060000 && QT_VERSION < 0x060500)
+	#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0) && QT_VERSION < QT_VERSION_CHECK(6, 5, 0))
 		win_app_ = dynamic_cast<QWindowsApplication *>
 			(QGuiApplicationPrivate::platformIntegration());
 		win_app_->registerMime(wmf_mime_);
@@ -1018,7 +1018,7 @@ struct GuiApplication::Private
 		initKeySequences(&theTopLevelKeymap());
 	}
 
-	#if (QT_VERSION >= 0x060000 && QT_VERSION < 0x060500)
+	#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0) && QT_VERSION < QT_VERSION_CHECK(6, 5, 0))
 	#if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
 	~Private()
 	{
@@ -1093,7 +1093,7 @@ struct GuiApplication::Private
 	/// Holds previous application state on Mac
 	Qt::ApplicationState last_state_;
 
-#if defined(Q_OS_MAC) && (QT_VERSION < 0x060000)
+#if defined(Q_OS_MAC) && (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 	/// Linkback mime handler for MacOSX.
 	QMacPasteboardMimeGraphics mac_pasteboard_mime_;
 #endif
@@ -1101,7 +1101,7 @@ struct GuiApplication::Private
 #if defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN)
 	/// WMF Mime handler for Windows clipboard.
 	QWindowsMimeMetafile * wmf_mime_;
-#if (QT_VERSION >= 0x060000 && QT_VERSION < 0x060500)
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0) && QT_VERSION < QT_VERSION_CHECK(6, 5, 0))
 	QWindowsApplication * win_app_;
 #endif
 #endif
@@ -1130,7 +1130,7 @@ GuiApplication::GuiApplication(int & argc, char ** argv)
 	QCoreApplication::setOrganizationName(app_name);
 	QCoreApplication::setOrganizationDomain("lyx.org");
 	QCoreApplication::setApplicationName(lyx_package);
-#if QT_VERSION < 0x060000
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
@@ -2817,7 +2817,7 @@ void GuiApplication::execBatchCommands()
 
 #ifdef Q_OS_MAC
 	setAttribute(Qt::AA_MacDontSwapCtrlAndMeta,lyxrc.mac_dontswap_ctrl_meta);
-#  if QT_VERSION < 0x060000
+#  if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	setAttribute(Qt::AA_UseHighDpiPixmaps,true);
 #  endif
 	// Create the global default menubar which is shown for the dialogs

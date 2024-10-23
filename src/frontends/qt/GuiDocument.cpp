@@ -2896,7 +2896,7 @@ void GuiDocument::updateFontlist()
 		fontModule->fontsMathCO->addItem(qt_("Class Default (TeX Fonts)"), QString("auto"));
 		fontModule->fontsMathCO->addItem(unimath, QString("default"));
 
-#if QT_VERSION >= 0x060000
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 		const QStringList families(QFontDatabase::families());
 #else
 		QFontDatabase fontdb;
