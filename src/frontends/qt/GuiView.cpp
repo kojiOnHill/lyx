@@ -1523,7 +1523,7 @@ void GuiView::updateWindowTitle(GuiWorkArea * wa)
 	}
 	title += from_ascii(" - LyX");
 	setWindowTitle(toqstr(title));
-	// Sets the path for the window: this is used by OSX to
+	// Sets the path for the window: this is used by macOS to
 	// allow a context click on the title bar showing a menu
 	// with the path up to the file
 	setWindowFilePath(toqstr(buf.absFileName()));
@@ -1788,7 +1788,7 @@ bool GuiView::event(QEvent * e)
 	}
 #else
 	// Pre 6.8: OS-dependent
-	// 1. Mac OS X
+	// 1. macOS
 	// Limit to Q_OS_MAC as this unnecessarily would also
 	// trigger on Linux with grave performance issues
 #ifdef Q_OS_MAC
