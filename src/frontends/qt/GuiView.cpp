@@ -122,8 +122,6 @@
 #define EXPORT_in_THREAD 1
 
 
-#include "support/bind.h"
-
 #include <sstream>
 
 #ifdef HAVE_SYS_TIME_H
@@ -142,6 +140,8 @@ namespace lyx {
 using support::addExtension;
 using support::changeExtension;
 using support::removeExtension;
+using std::bind;
+using std::placeholders::_1;
 
 namespace frontend {
 
