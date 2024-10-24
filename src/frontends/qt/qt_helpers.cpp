@@ -34,6 +34,7 @@
 #include <QComboBox>
 #include <QDesktopServices>
 #include <QDir>
+#include <QHeaderView>
 #include <QInputDialog>
 #include <QLineEdit>
 #include <QMessageBox>

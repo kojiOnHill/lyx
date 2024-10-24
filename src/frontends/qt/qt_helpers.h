@@ -21,12 +21,13 @@
 
 #include <list>
 
-#include <QHeaderView>
+#include <QString>
 
 class QComboBox;
 class QLineEdit;
 class QString;
 class QWidget;
+class QAbstractItemView;
 
 namespace lyx {
 
