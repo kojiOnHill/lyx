@@ -12,6 +12,7 @@
 
 #include <config.h>
 
+#include <QString>
 #include "qt_helpers.h"
 
 #include "Buffer.h"

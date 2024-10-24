@@ -21,8 +21,6 @@
 
 #include <list>
 
-#include <QString>
-
 class QComboBox;
 class QLineEdit;
 class QString;
