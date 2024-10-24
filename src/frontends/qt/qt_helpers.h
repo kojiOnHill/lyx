@@ -13,7 +13,6 @@
 #ifndef QTHELPERS_H
 #define QTHELPERS_H
 
-#include "Buffer.h"
 #include "ColorSet.h"
 #include "support/Length.h"
 #include "support/qstring_helpers.h"
@@ -30,6 +29,8 @@ class QString;
 class QWidget;
 
 namespace lyx {
+
+class Buffer;
 
 namespace support { class FileName; }
 

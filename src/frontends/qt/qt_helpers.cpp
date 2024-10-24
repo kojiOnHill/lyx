@@ -14,6 +14,7 @@
 
 #include "qt_helpers.h"
 
+#include "Buffer.h"
 #include "Format.h"
 #include "LengthCombo.h"
 #include "LyXRC.h"
