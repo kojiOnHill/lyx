@@ -104,28 +104,41 @@ public:
 
 	std::string toHTMLSpanClass() const
 	{
-		// See the existing classes in InsetMathFont::validate. In particular,
-		// there is no double-struck style!
+		std::string span_class;
 		switch (family_) {
-		case MATH_MONOSPACE_FAMILY:
-			return "monospace";
-		case MATH_FRAKTUR_FAMILY:
-			return "fraktur";
-		case MATH_SCRIPT_FAMILY:
-			return "script";
-		case MATH_SMALL_CAPS:
-			return "noun";
-		case MATH_SANS_FAMILY:
-			return "sans";
-		case MATH_NORMAL_FAMILY:
-			if (series_ == MATH_MEDIUM_SERIES) {
-				return shape_ == MATH_UP_SHAPE ? "normal" : "italic";
-			}
-			return "bold";
-		case MATH_DOUBLE_STRUCK_FAMILY:
-			// No support for double-struck font in CSS.
-			return "";
+			case MATH_NORMAL_FAMILY:
+				break;
+			case MATH_FRAKTUR_FAMILY:
+				span_class = "fraktur";
+				break;
+			case MATH_SANS_FAMILY:
+				span_class = "sans";
+				break;
+			case MATH_MONOSPACE_FAMILY:
+				span_class = "monospace";
+				break;
+			case MATH_DOUBLE_STRUCK_FAMILY:
+				// This style does not exist in HTML and cannot be implemented in CSS.
+				break;
+			case MATH_SCRIPT_FAMILY:
+				span_class = "script";
+				break;
+			case MATH_SMALL_CAPS:
+				span_class = "noun";
+				break;
 		}
+
+		if (series_ == MATH_BOLD_SERIES) {
+			if (!span_class.empty()) span_class += "-";
+			span_class += "bold";
+		}
+
+		if (shape_ == MATH_ITALIC_SHAPE) {
+			if (!span_class.empty()) span_class += "-";
+			span_class += "italic";
+		}
+
+		return span_class;
 	}
 
 private:
@@ -282,13 +295,29 @@ void InsetMathFont::validate(LaTeXFeatures & features) const
 	} else if (features.runparams().math_flavor == OutputParams::MathAsHTML) {
 		features.addCSSSnippet(
 			"span.normal{font: normal normal normal inherit serif;}\n"
-			"span.fraktur{font: normal normal normal inherit cursive;}\n"
 			"span.bold{font: normal normal bold inherit serif;}\n"
-			"span.script{font: normal normal normal inherit cursive;}\n"
 			"span.italic{font: italic normal normal inherit serif;}\n"
+			"span.bold-italic{font: italic normal bold inherit serif;}\n"
+			"span.fraktur{font: normal normal normal inherit cursive;}\n"
+			"span.fraktur-bold{font: normal normal bold inherit cursive;}\n"
+			"span.fraktur-italic{font: italic normal normal inherit cursive;}\n"
+			"span.fraktur-bold-italic{font: italic normal bold inherit cursive;}\n"
+			"span.script{font: normal normal normal inherit cursive;}\n"
+			"span.script-bold{font: normal normal bold inherit cursive;}\n"
+			"span.script-italic{font: italic normal normal inherit cursive;}\n"
+			"span.script-bold-italic{font: italic normal bold inherit cursive;}\n"
 			"span.sans{font: normal normal normal inherit sans-serif;}\n"
+			"span.sans-bold{font: normal normal normal inherit bold-serif;}\n"
+			"span.sans-italic{font: italic normal normal inherit sans-serif;}\n"
+			"span.sans-bold-italic{font: italic normal normal inherit bold-serif;}\n"
 			"span.monospace{font: normal normal normal inherit monospace;}\n"
-			"span.noun{font: normal small-caps normal inherit normal;}");
+			"span.monospace-bold{font: normal normal bold inherit monospace;}\n"
+			"span.monospace-italic{font: italic normal normal inherit monospace;}\n"
+			"span.monospace-bold-italic{font: italic normal bold inherit monospace;}\n"
+			"span.noun{font: normal small-caps normal inherit normal;}\n"
+			"span.noun-bold{font: normal small-caps bold inherit normal;}\n"
+			"span.noun-italic{font: italic small-caps normal inherit normal;}\n"
+			"span.noun-bold-italic{font: italic small-caps bold inherit normal;}");
 	}
 }
 
