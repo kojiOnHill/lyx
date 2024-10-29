@@ -299,35 +299,11 @@ void InsetMathFont::htmlize(HtmlStream & os) const
 	// FIXME These are not quite right, because they do not nest
 	// correctly. A proper fix would presumably involve tracking
 	// the fonts already in effect.
-	std::string variant;
-	docstring const & tag = key_->name;
-	if (tag == "mathnormal" || tag == "mathrm"
-	    || tag == "text" || tag == "textnormal"
-	    || tag == "textrm" || tag == "textup"
-	    || tag == "textmd")
-		variant = "normal";
-	else if (tag == "frak" || tag == "mathfrak")
-		variant = "fraktur";
-	else if (tag == "mathbf" || tag == "textbf")
-		variant = "bold";
-	else if (tag == "mathbb" || tag == "mathbbm"
-	         || tag == "mathds")
-		variant = "double-struck";
-	else if (tag == "mathcal")
-		variant = "script";
-	else if (tag == "mathit" || tag == "textsl"
-	         || tag == "emph" || tag == "textit")
-		variant = "italic";
-	else if (tag == "mathsf" || tag == "textsf")
-		variant = "sans";
-	else if (tag == "mathtt" || tag == "texttt")
-		variant = "monospace";
-	else if (tag == "textipa" || tag == "textsc" || tag == "noun")
-		variant = "noun";
+	const MathFontInfo font = MathFontInfo::fromMacro(key_->name);
+	const std::string span_class = font.toHTMLSpanClass();
 
-	docstring const beg = (tag.size() < 4) ? from_ascii("") : tag.substr(0, 4);
-	if (!variant.empty()) {
-		os << MTag("span", "class='" + variant + "'")
+	if (!span_class.empty()) {
+		os << MTag("span", "class='" + span_class + "'")
 		   << cell(0)
 		   << ETag("span");
 	} else
@@ -341,29 +317,10 @@ void InsetMathFont::mathmlize(MathMLStream & ms) const
 	// FIXME These are not quite right, because they do not nest
 	// correctly. A proper fix would presumably involve tracking
 	// the fonts already in effect.
-	std::string variant;
-	docstring const & tag = key_->name;
-	if (tag == "mathnormal" || tag == "mathrm")
-		variant = "normal";
-	else if (tag == "frak" || tag == "mathfrak")
-		variant = "fraktur";
-	else if (tag == "mathbf" || tag == "textbf")
-		variant = "bold";
-	else if (tag == "mathbb" || tag == "mathbbm" || tag == "mathds")
-		variant = "double-struck";
-	else if (tag == "mathcal")
-		variant = "script";
-	else if (tag == "mathit" || tag == "textsl" || tag == "emph" ||
-			tag == "textit")
-		variant = "italic";
-	else if (tag == "mathsf" || tag == "textsf")
-		variant = "sans-serif";
-	else if (tag == "mathtt" || tag == "texttt")
-		variant = "monospace";
-	// no support at present for textipa, textsc, noun
+	const MathFontInfo font = MathFontInfo::fromMacro(key_->name);
+	const std::string variant = font.toMathMLMathVariant(ms.version());
 
-	if (tag == "text" || tag == "textnormal" || tag == "textrm" ||
-			tag == "textup" || tag == "textmd") {
+	if (font.shape() == MathFontInfo::MATH_UP_SHAPE) {
 		SetMode textmode(ms, true);
 		ms << cell(0);
 	} else if (!variant.empty()) {
