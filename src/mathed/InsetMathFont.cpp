@@ -28,6 +28,151 @@ using namespace lyx::support;
 
 namespace lyx {
 
+namespace {
+// Similar to FontInfo and its related enums, but specifically for the math
+// mode.
+//
+// All types have enumerations, like FontEnums.h, even though there are
+// sometimes only two cases: this design ensures some future-proofness and
+// ensures that you cannot inadvertently swap two values.
+class MathFontInfo {
+public:
+	enum MathFontFamily {
+		MATH_NORMAL_FAMILY = 0, // Default value in MathML.
+		MATH_FRAKTUR_FAMILY,
+		MATH_SANS_FAMILY,
+		MATH_MONOSPACE_FAMILY,
+		MATH_DOUBLE_STRUCK_FAMILY,
+		MATH_SCRIPT_FAMILY,
+		MATH_SMALL_CAPS // Not natively supported in any version of MathML.
+	};
+
+	enum MathFontSeries {
+		MATH_MEDIUM_SERIES = 0, // Default value in MathML. // Default value in MathML.
+		MATH_BOLD_SERIES
+	};
+
+	enum MathFontShape {
+		MATH_UP_SHAPE = 0,
+		MATH_ITALIC_SHAPE // Default value in MathML mi, not outside.
+	};
+
+	MathFontInfo() :
+		family_(MATH_NORMAL_FAMILY), series_(MATH_MEDIUM_SERIES), shape_(MATH_UP_SHAPE) {}
+	MathFontInfo(const MathFontFamily family, const MathFontSeries series, const MathFontShape shape) :
+		family_(family), series_(series), shape_(shape) {}
+
+	static MathFontInfo fromMacro(const docstring& tag)
+	{
+		MathFontInfo font;
+		if (tag == "mathnormal" || tag == "mathrm"
+				|| tag == "text" || tag == "textnormal"
+				|| tag == "textrm" || tag == "textup"
+				|| tag == "textmd")
+			font.shape_ = MATH_UP_SHAPE;
+		else if (tag == "frak" || tag == "mathfrak")
+			font.family_ = MATH_FRAKTUR_FAMILY;
+		else if (tag == "mathbf" || tag == "textbf")
+			font.series_ = MATH_BOLD_SERIES;
+		else if (tag == "mathbb" || tag == "mathbbm"
+				 || tag == "mathds")
+			font.family_ = MATH_DOUBLE_STRUCK_FAMILY;
+		else if (tag == "mathcal")
+			font.family_ = MATH_SCRIPT_FAMILY;
+		else if (tag == "mathit" || tag == "textsl"
+				 || tag == "emph" || tag == "textit")
+			font.shape_ = MATH_ITALIC_SHAPE;
+		else if (tag == "mathsf" || tag == "textsf")
+			font.family_ = MATH_SANS_FAMILY;
+		else if (tag == "mathtt" || tag == "texttt")
+			font.family_ = MATH_MONOSPACE_FAMILY;
+		else if (tag == "textipa" || tag == "textsc" || tag == "noun")
+			font.family_ = MATH_SMALL_CAPS;
+
+		return font;
+	}
+
+	MathFontFamily family() const { return family_; }
+	MathFontSeries series() const { return series_; }
+	MathFontShape shape() const { return shape_; }
+
+	std::string toMathMLMathVariant(MathMLStream::MathMLVersion mathml_version) const
+	{
+		return mathml_version == MathMLStream::MathMLVersion::mathml3 ?
+			toMathVariantForMathML3() : toMathVariantForMathMLCore();
+	}
+
+	std::string toHTMLSpanClass() const
+	{
+		// See the existing classes in InsetMathFont::validate. In particular,
+		// there is no double-struck style!
+		switch (family_) {
+		case MATH_MONOSPACE_FAMILY:
+			return "monospace";
+		case MATH_FRAKTUR_FAMILY:
+			return "fraktur";
+		case MATH_SCRIPT_FAMILY:
+			return "script";
+		case MATH_SMALL_CAPS:
+			return "noun";
+		case MATH_SANS_FAMILY:
+			return "sans";
+		case MATH_NORMAL_FAMILY:
+			if (series_ == MATH_MEDIUM_SERIES) {
+				return shape_ == MATH_UP_SHAPE ? "normal" : "italic";
+			}
+			return "bold";
+		case MATH_DOUBLE_STRUCK_FAMILY:
+			// No support for double-struck font in CSS.
+			return "";
+		}
+	}
+
+private:
+	MathFontFamily family_;
+	MathFontSeries series_;
+	MathFontShape shape_;
+
+	std::string toMathVariantForMathML3() const
+	{
+		// mathvariant is the way MathML 3 encodes fonts.
+		// Not all combinations are supported. Official list:
+		// https://www.w3.org/TR/MathML3/chapter3.html#presm.commatt
+		// "initial", "tailed", "looped", and "stretched" are not implemented,
+		// as they are only useful for Arabic characters (for which LyX has no
+		// support right now).
+		switch (family_) {
+		case MATH_MONOSPACE_FAMILY:
+			return "monospace";
+		case MATH_DOUBLE_STRUCK_FAMILY:
+			return "double-struck";
+		case MATH_FRAKTUR_FAMILY:
+			return series_ == MATH_BOLD_SERIES ? "bold-fraktur" : "fraktur";
+		case MATH_SCRIPT_FAMILY:
+			return series_ == MATH_BOLD_SERIES ? "bold-script" : "script";
+		case MATH_SANS_FAMILY:
+			if (series_ == MATH_MEDIUM_SERIES) {
+				return shape_ == MATH_UP_SHAPE ? "sans-serif" : "sans-serif-italic";
+			}
+			return shape_ == MATH_UP_SHAPE ? "bold-sans-serif" : "sans-serif-bold-italic";
+		case MATH_NORMAL_FAMILY:
+			if (series_ == MATH_MEDIUM_SERIES) {
+				return shape_ == MATH_UP_SHAPE ? "normal" : "italic";
+			}
+			return shape_ == MATH_UP_SHAPE ? "bold" : "bold-italic";
+		case MATH_SMALL_CAPS:
+			// No valid value...
+				return "";
+		}
+	}
+
+	std::string toMathVariantForMathMLCore() const
+	{
+		return shape_ == MATH_UP_SHAPE ? "normal" : "";
+	}
+};
+}
+
 InsetMathFont::InsetMathFont(Buffer * buf, latexkeys const * key)
 	: InsetMathNest(buf, 1), key_(key)
 {}
