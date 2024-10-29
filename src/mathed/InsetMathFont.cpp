@@ -178,6 +178,7 @@ void InsetMathFont::htmlize(HtmlStream & os) const
 	else if (tag == "mathtt" || tag == "texttt")
 		variant = "monospace";
 	else if (tag == "textipa" || tag == "textsc" || tag == "noun")
+		// TODO: MathML doesn't seem to support small caps!
 		variant = "noun";
 
 	docstring const beg = (tag.size() < 4) ? from_ascii("") : tag.substr(0, 4);
