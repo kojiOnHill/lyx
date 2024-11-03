@@ -35,6 +35,164 @@ namespace lyx {
 //////////////////////////////////////////////////////////////////////
 
 
+MathFontInfo MathFontInfo::mergeWith(const MathFontInfo& other)
+{
+	MathFontInfo old = *this;
+
+	if (other.family_ != family_ && other.family_ != MATH_INHERIT_FAMILY) {
+		family_ = other.family_;
+	}
+	if (other.series_ != series_ && other.series_ != MATH_INHERIT_SERIES) {
+		series_ = other.series_;
+	}
+	if (other.shape_ != shape_ && other.shape_ != MATH_INHERIT_SHAPE) {
+		shape_ = other.shape_;
+	}
+
+	return old;
+}
+
+
+void MathFontInfo::replaceBy(const MathFontInfo& other)
+{
+	*this = other;
+}
+
+
+MathFontInfo MathFontInfo::fromMacro(const docstring& tag)
+{
+	MathFontInfo font;
+	if (tag == "mathnormal" || tag == "mathrm"
+			|| tag == "text" || tag == "textnormal"
+			|| tag == "textrm" || tag == "textup"
+			|| tag == "textmd")
+		font.shape_ = MATH_UP_SHAPE;
+	else if (tag == "frak" || tag == "mathfrak")
+		font.family_ = MATH_FRAKTUR_FAMILY;
+	else if (tag == "mathbf" || tag == "textbf")
+		font.series_ = MATH_BOLD_SERIES;
+	else if (tag == "mathbb" || tag == "mathbbm"
+			 || tag == "mathds")
+		font.family_ = MATH_DOUBLE_STRUCK_FAMILY;
+	else if (tag == "mathcal")
+		font.family_ = MATH_SCRIPT_FAMILY;
+	else if (tag == "mathit" || tag == "textsl"
+			 || tag == "emph" || tag == "textit")
+		font.shape_ = MATH_ITALIC_SHAPE;
+	else if (tag == "mathsf" || tag == "textsf")
+		font.family_ = MATH_SANS_FAMILY;
+	else if (tag == "mathtt" || tag == "texttt")
+		font.family_ = MATH_MONOSPACE_FAMILY;
+	else if (tag == "textipa" || tag == "textsc" || tag == "noun")
+		font.family_ = MATH_SMALL_CAPS;
+	// Otherwise, the tag is not recognised, use the default font.
+
+	return font;
+}
+
+
+std::string MathFontInfo::toMathMLMathVariant(MathMLVersion mathml_version) const
+{
+	return mathml_version == MathMLVersion::mathml3 ?
+		toMathVariantForMathML3() : toMathVariantForMathMLCore();
+}
+
+
+std::string MathFontInfo::toMathVariantForMathML3() const
+{
+	// mathvariant is the way MathML 3 encodes fonts.
+	// Not all combinations are supported. Official list:
+	// https://www.w3.org/TR/MathML3/chapter3.html#presm.commatt
+	// "initial", "tailed", "looped", and "stretched" are not implemented,
+	// as they are only useful for Arabic characters (for which LyX has no
+	// support right now).
+	switch (family_) {
+	case MATH_MONOSPACE_FAMILY:
+		return "monospace";
+	case MATH_DOUBLE_STRUCK_FAMILY:
+		return "double-struck";
+	case MATH_FRAKTUR_FAMILY:
+		return series_ == MATH_BOLD_SERIES ? "bold-fraktur" : "fraktur";
+	case MATH_SCRIPT_FAMILY:
+		return series_ == MATH_BOLD_SERIES ? "bold-script" : "script";
+	case MATH_SANS_FAMILY:
+		if (series_ == MATH_BOLD_SERIES) {
+			return shape_ == MATH_UP_SHAPE ? "bold-sans-serif" : "sans-serif-bold-italic";
+		}
+		return shape_ == MATH_UP_SHAPE ? "sans-serif" : "sans-serif-italic";
+	case MATH_NORMAL_FAMILY:
+	case MATH_INHERIT_FAMILY: // Only consider the other two attributes.
+		if (series_ == MATH_BOLD_SERIES) {
+			return shape_ == MATH_UP_SHAPE ? "bold" : "bold-italic";
+		}
+		return shape_ == MATH_UP_SHAPE ? "normal" : "italic";
+	case MATH_SMALL_CAPS:
+		// No valid value to return.
+		return "";
+	}
+
+	// Better safe than sorry.
+	LYXERR(Debug::MATHED,
+		"Unexpected case in MathFontInfo::toMathVariantForMathML3: family_ = " << family_
+			<< ", series = " << series_ << ", shape = " << shape_);
+	return "";
+}
+
+
+std::string MathFontInfo::toMathVariantForMathMLCore() const
+{
+	return shape_ == MATH_UP_SHAPE ? "normal" : "";
+}
+
+
+std::string MathFontInfo::toHTMLSpanClass() const
+{
+	std::string span_class;
+	switch (family_) {
+	case MATH_INHERIT_FAMILY:
+	case MATH_NORMAL_FAMILY:
+		break;
+	case MATH_FRAKTUR_FAMILY:
+		span_class = "fraktur";
+		break;
+	case MATH_SANS_FAMILY:
+		span_class = "sans";
+		break;
+	case MATH_MONOSPACE_FAMILY:
+		span_class = "monospace";
+		break;
+	case MATH_DOUBLE_STRUCK_FAMILY:
+		// This style does not exist in HTML and cannot be implemented in CSS.
+		break;
+	case MATH_SCRIPT_FAMILY:
+		span_class = "script";
+		break;
+	case MATH_SMALL_CAPS:
+		span_class = "noun";
+		break;
+	}
+	// Explicitly match the cases with an empty output. This ensures that we catch at runtime
+	// invalid values for the enum while keeping compile-time warnings.
+	if (span_class.empty() && (family_ == MATH_INHERIT_FAMILY || family_ == MATH_NORMAL_FAMILY || family_ == MATH_DOUBLE_STRUCK_FAMILY)) {
+		LYXERR(Debug::MATHED,
+			"Unexpected case in MathFontInfo::toHTMLSpanClass: family_ = " << family_
+				<< ", series = " << series_ << ", shape = " << shape_);
+	}
+
+	if (series_ == MATH_BOLD_SERIES) {
+		if (!span_class.empty()) span_class += "-";
+		span_class += "bold";
+	}
+
+	if (shape_ == MATH_ITALIC_SHAPE) {
+		if (!span_class.empty()) span_class += "-";
+		span_class += "italic";
+	}
+
+	return span_class;
+}
+
+
 NormalStream & operator<<(NormalStream & ns, MathAtom const & at)
 {
 	at->normalize(ns);

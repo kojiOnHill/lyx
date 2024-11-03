@@ -33,6 +33,72 @@ enum class MathMLVersion : int {
 	mathmlCore
 };
 
+// Similar to FontInfo and its related enums, but specifically for the math
+// mode.
+//
+// All types have enumerations, like FontEnums.h, even though there are
+// sometimes only two cases: this design ensures some future-proofness and
+// ensures that you cannot inadvertently swap two values.
+class MathFontInfo {
+public:
+	enum MathFontFamily {
+		MATH_INHERIT_FAMILY = 0,
+		MATH_NORMAL_FAMILY, // Default value in MathML.
+		MATH_FRAKTUR_FAMILY,
+		MATH_SANS_FAMILY,
+		MATH_MONOSPACE_FAMILY,
+		MATH_DOUBLE_STRUCK_FAMILY,
+		MATH_SCRIPT_FAMILY,
+		MATH_SMALL_CAPS // Not natively supported in any version of MathML.
+	};
+
+	enum MathFontSeries {
+		MATH_INHERIT_SERIES = 0,
+		MATH_MEDIUM_SERIES, // Default value in MathML. // Default value in MathML.
+		MATH_BOLD_SERIES
+	};
+
+	enum MathFontShape {
+		MATH_INHERIT_SHAPE = 0,
+		MATH_UP_SHAPE,
+		MATH_ITALIC_SHAPE // Default value in MathML mi, not outside.
+	};
+
+	MathFontInfo() :
+		family_(MATH_INHERIT_FAMILY), series_(MATH_INHERIT_SERIES), shape_(MATH_INHERIT_SHAPE) {}
+	MathFontInfo(const MathFontFamily family, const MathFontSeries series, const MathFontShape shape) :
+		family_(family), series_(series), shape_(shape) {}
+
+	/// Merges this font with another one, replacing all fields in this font
+    /// by the ones in the argument if they are not "inherit".
+	MathFontInfo mergeWith(const MathFontInfo& other);
+	/// Replaces this font by the given one.
+	void replaceBy(const MathFontInfo& other);
+	/// Parses a LaTeX font macro into a MathFontInfo object (builder method).
+	static MathFontInfo fromMacro(const docstring& tag);
+
+	MathFontFamily family() const { return family_; }
+	MathFontSeries series() const { return series_; }
+	MathFontShape shape() const { return shape_; }
+
+	/// Transforms this font into the mathvariant attribute for MathML.
+	/// For MathML 3, all fonts are output as mathvariants; for MathML Core,
+	/// almost all fonts are supposed to be output as characters.
+	std::string toMathMLMathVariant(MathMLVersion mathml_version) const;
+	/// Transforms this font into a class attribute for the HTML span tag.
+	std::string toHTMLSpanClass() const;
+
+private:
+	MathFontFamily family_;
+	MathFontSeries series_;
+	MathFontShape shape_;
+
+	/// Transforms this font into the mathvariant attribute for MathML 3.
+	std::string toMathVariantForMathML3() const;
+	/// Transforms this font into the mathvariant attribute for MathML Core.
+	std::string toMathVariantForMathMLCore() const;
+};
+
 //
 // LaTeX/LyX
 //
@@ -409,6 +475,8 @@ public:
 	const MathStyle & getFontMathStyle() const { return font_math_style_; }
 	/// Sets the current math style in the stream.
 	void setFontMathStyle(const MathStyle style) { font_math_style_ = style; }
+	/// Gets a mutable reference to the stream's current font.
+	MathFontInfo& fontInfo() { return current_font_; }
 private:
 	/// Check whether it makes sense to start a <mtext>
 	void beforeText();
@@ -433,6 +501,8 @@ private:
 	MathMLVersion version_;
 	/// The only important part of a FontInfo object.
 	MathStyle font_math_style_;
+	/// Current font (which might be nested).
+	MathFontInfo current_font_;
 	///
 	friend class SetMode;
 	friend MathMLStream & operator<<(MathMLStream &, MathAtom const &);
@@ -506,6 +576,8 @@ public:
 	docstring deferred() const;
 	///
 	bool inText() const { return in_text_; }
+	/// Gets a mutable reference to the stream's current font.
+	MathFontInfo& fontInfo() { return current_font_; }
 private:
 	///
 	void setTextMode(bool t) { in_text_ = t; }
@@ -519,6 +591,8 @@ private:
 	bool in_text_;
 	///
 	odocstringstream deferred_;
+	/// Current font (which might be nested).
+	MathFontInfo current_font_;
 	///
 	friend class SetHTMLMode;
 };
