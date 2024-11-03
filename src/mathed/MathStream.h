@@ -27,6 +27,12 @@ class Encoding;
 class MathAtom;
 class MathData;
 
+///
+enum class MathMLVersion : int {
+	mathml3,
+	mathmlCore
+};
+
 //
 // LaTeX/LyX
 //
@@ -375,15 +381,10 @@ class MathExportException : public std::exception {};
 
 class MathMLStream {
 public:
-	///
-	enum MathMLVersion {
-		mathml3,
-		mathmlCore
-	};
-
 	/// Builds a stream proxy for os; the MathML namespace is given by xmlns
 	/// (supposed to be already defined elsewhere in the document).
-	explicit MathMLStream(odocstream & os, std::string const & xmlns = "", MathMLVersion version = mathml3);
+	explicit MathMLStream(odocstream & os, std::string const & xmlns = "",
+	                      MathMLVersion version = MathMLVersion::mathml3);
 	///
 	void cr();
 	/// Indentation when nesting tags
