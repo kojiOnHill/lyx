@@ -1045,7 +1045,7 @@ def revert_mathml_version(document):
             break
 
         # remove XHTML header if using the new value, leave alone otherwise.
-        if "4" in document.header:
+        if "4" in document.header[i]:
             document.header[i] = "\\html_math_output 0"
 
     while True:
