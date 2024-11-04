@@ -262,7 +262,7 @@ void InsetMathChar::mathmlize(MathMLStream & ms) const
 
 	if (ms.inText()) {
 		if (entity.empty())
-			ms << char_;
+			ms << StartRespectFont() << char_ << StopRespectFont();
 		else
 			ms << from_ascii(entity);
 		return;
@@ -279,7 +279,7 @@ void InsetMathChar::mathmlize(MathMLStream & ms) const
 		(isAlphaASCII(char_) || Encodings::isMathAlpha(char_))
 			? "mi" : "mo";
 	ms << MTagInline(type, std::string(type) == "mo" ? "stretchy='false'" : "")
-	   << char_type(char_)
+	   << StartRespectFont() << char_type(char_) << StopRespectFont()
 	   << ETagInline(type);
 }
 

@@ -88,6 +88,32 @@ public:
 	/// Transforms this font into a class attribute for the HTML span tag.
 	std::string toHTMLSpanClass() const;
 
+	/// Converts the character into the closest Unicode character that encodes
+	/// this font. If there is only a partial mapping, parts of the mapping are
+    /// applied. For instance, take the character C and a bold-italic font.
+    /// - If there is a bold-italic mapping for this character, it is returned.
+    /// - If there is only a bold mapping for this character, a bold character
+    ///   is returned. This font encoding is the closest one to the font.
+    /// - If there are two mappings (one bold, one italic), one of them is
+    ///   returned (arbitrary choice between the two).
+    /// - If there are no mappings, the original character is returned.
+    /// The mappings are defined in the global variable theMathVariantList.
+    ///
+    /// The character is supposed to be a single Latin letter (a-z, A-Z) or
+    /// digit (0-9) or the entity encoding a Greek character (0x3b1-0x3c9
+	/// for lower case, 0x3b1-0x3c9 for upper case), exactly like the
+    /// `unicode_alphanum_variants` file.
+	///
+	/// If in_text, the default shape is up. If not in_text, the default shape
+	/// is italic. This behaviour matches that of MathMLStream::in_text_.
+	[[nodiscard]]
+	docstring convertCharacterToUnicodeWithFont(const docstring & c, bool in_text) const;
+	/// Converts the character into the closest Unicode character that encodes
+	/// this font as an entity if the character is not ASCII.
+	/// Also see convertCharacterToUnicodeWithFont.
+	[[nodiscard]]
+	docstring convertCharacterToUnicodeEntityWithFont(const docstring & c, bool in_text) const;
+
 private:
 	MathFontFamily family_;
 	MathFontSeries series_;
@@ -438,6 +464,14 @@ public:
 };
 
 
+/// Signalling elements for font handling. They do not output anything per se,
+/// they alter the state of the stream to either start or stop respecting
+/// fonts (i.e. output Unicode entities encoding the font, such as
+/// "Mathematical Italic Small A" &#1d44e;).
+struct StartRespectFont{};
+struct StopRespectFont{};
+
+
 /// Throw MathExportException to signal that the attempt to export
 /// some math in the current format did not succeed. E.g., we can't
 /// export xymatrix as MathML, so that will throw, and we'll fall back
@@ -503,6 +537,8 @@ private:
 	MathStyle font_math_style_;
 	/// Current font (which might be nested).
 	MathFontInfo current_font_;
+	/// whether the output shall respect the current font
+	bool respect_font_ = false;
 	///
 	friend class SetMode;
 	friend MathMLStream & operator<<(MathMLStream &, MathAtom const &);
@@ -513,6 +549,8 @@ private:
 	friend MathMLStream & operator<<(MathMLStream &, ETag const &);
 	friend MathMLStream & operator<<(MathMLStream &, ETagInline const &);
 	friend MathMLStream & operator<<(MathMLStream &, CTag const &);
+	friend MathMLStream & operator<<(MathMLStream &, StartRespectFont);
+	friend MathMLStream & operator<<(MathMLStream &, StopRespectFont);
 };
 
 ///
@@ -537,6 +575,10 @@ MathMLStream & operator<<(MathMLStream &, ETag const &);
 MathMLStream & operator<<(MathMLStream &, ETagInline const &);
 ///
 MathMLStream & operator<<(MathMLStream &, CTag const &);
+/// Starts respecting fonts until meeting StopRespectFont.
+MathMLStream & operator<<(MathMLStream &, StartRespectFont);
+/// Stops respecting fonts.
+MathMLStream & operator<<(MathMLStream &, StopRespectFont);
 
 
 /// A simpler version of ModeSpecifier, for MathML
