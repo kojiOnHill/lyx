@@ -60,8 +60,13 @@ class DocBookToEpub:
 
         # Precompute paths that will be used later.
         self.output_dir = tempfile.mkdtemp().replace('\\', '/')
-        self.package_opf = self.output_dir + '/OEBPS/package.opf'  # Does not exist yet,
+        self.package_opf = self.output_dir + '/OEBPS/package.opf'
         print('Temporary output directory: %s' % self.output_dir)
+
+        os.mkdir(self.output_dir + '/OEBPS')
+        os.mkdir(self.output_dir + '/OEBPS/images')
+        os.mkdir(self.output_dir + '/META-INF')
+        print('Created the folder structure')
 
         if self.xslt_path is None:
             self.xslt = self.script_folder + 'docbook/epub3/chunk.xsl'
