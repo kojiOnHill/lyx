@@ -49,14 +49,14 @@ class DocBookToEpub:
         self.script_folder = os.path.dirname(self.own_path) + '/../'
 
         print('Generating ePub with the following parameters:')
-        print(self.own_path)
-        print(self.java_path)
-        print(self.saxon_path)
-        print(self.xsltproc_path)
-        print(self.xslt_path)
-        print(self.input)
-        print(self.input_path)
-        print(self.output)
+        print('    own_path: %s' % self.own_path)
+        print('    java_path: %s' % self.java_path)
+        print('    saxon_path: %s' % self.saxon_path)
+        print('    xsltproc_path: %s' % self.xsltproc_path)
+        print('    xslt_path: %s' % self.xslt_path)
+        print('    input: %s' % self.input)
+        print('    input_path: %s' % self.input_path)
+        print('    output: %s' % self.output)
 
         # Precompute paths that will be used later.
         self.output_dir = tempfile.mkdtemp().replace('\\', '/')
