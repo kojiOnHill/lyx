@@ -1147,7 +1147,9 @@ void cleanupRow(Row & row, bool at_end)
 	if (!at_end && !row.flushed())
 		row.back().rtrim();
 	// boundary exists when there was no space at the end of row
-	row.end_boundary(!at_end && row.back().endpos == row.endpos());
+	row.end_boundary(!at_end
+	                 && row.back().endpos == row.endpos()
+	                 && !(row.back().row_flags & NoEndBoundary));
 	// make sure that the RTL elements are in reverse ordering
 	row.reverseRTL();
 }
@@ -1248,6 +1250,13 @@ RowList TextMetrics::breakParagraph(Row const & bigrow) const
 		// Is there an end-of-paragraph change?
 		if (bigrow.needsChangeBar())
 			rows.back().needsChangeBar(true);
+	}
+
+	// Set start_boundary to be equal to the previous row's end boundary
+	bool sb = false;
+	for (auto & row : rows) {
+		row.start_boundary(sb);
+		sb = row.end_boundary();
 	}
 
 	return rows;

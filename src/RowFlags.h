@@ -53,6 +53,8 @@ enum RowFlags {
 	// (default is center)
 	AlignLeft = 1 << 11,
 	AlignRight = 1 << 12,
+	// Forbid boundary after this element
+	NoEndBoundary = 1 << 13,
 	// A display element breaks row at both ends
 	Display = FlushBefore | BreakBefore | BreakAfter,
 	// Flags that concern breaking after element
