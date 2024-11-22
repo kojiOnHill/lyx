@@ -706,7 +706,8 @@ LyXAlignment TextMetrics::getAlign(Paragraph const & par, Row const & row) const
 
 	// Display-style insets should always be on a centered row
 	if (Inset const * inset = par.getInset(row.pos())) {
-		if (inset->rowFlags() & Display) {
+		// If we are in empty row, alignment of inset does not apply (it is in next row)
+		if (!row.empty() && inset->rowFlags() & Display) {
 			if (inset->rowFlags() & AlignLeft)
 				align = LYX_ALIGN_LEFT;
 			else if (inset->rowFlags() & AlignRight)
@@ -1155,7 +1156,7 @@ void cleanupRow(Row & row, bool at_end)
 // Implement the priorities described in RowFlags.h.
 bool needsRowBreak(int f1, int f2)
 {
-	if (f1 & AlwaysBreakAfter /*|| f2 & AlwaysBreakBefore*/)
+	if (f1 & AlwaysBreakAfter || f2 & AlwaysBreakBefore)
 		return true;
 	if (f1 & NoBreakAfter || f2 & NoBreakBefore)
 		return false;
@@ -1183,13 +1184,21 @@ RowList TextMetrics::breakParagraph(Row const & bigrow) const
 		bool const row_empty = rows.empty() || rows.back().empty();
 		// The row flags of previous element, if there is one.
 		// Otherwise we use NoBreakAfter to avoid an empty row before
-		// e.g. a displayed equation.
+		// e.g. a displayed inset.
 		int const f1 = row_empty ? NoBreakAfter : rows.back().back().row_flags;
 		// The row flags of next element, if there is one.
 		// Otherwise we use NoBreakBefore (see above), unless the
 		// paragraph has an end label (for which an empty row is OK).
 		int const f2 = (fcit == end) ? (end_label ? Inline : NoBreakBefore)
 		                             : fcit->row_flags;
+		if (rows.empty() && needsRowBreak(f1, f2)) {
+			// Create an empty row before element
+			rows.push_back(newRow(*this, bigrow.pit(), 0, is_rtl));
+			Row & newrow = rows.back();
+			cleanupRow(newrow, false);
+			newrow.end_boundary(true);
+			newrow.left_margin = leftMargin(newrow.pit(), 0, true);
+		}
 		if (rows.empty() || needsRowBreak(f1, f2)) {
 			if (!rows.empty()) {
 				// Flush row as requested by row flags
@@ -1468,14 +1477,15 @@ pos_type TextMetrics::getPosNearX(Row const & row, int & x,
 			boundary = true;
 	}
 
+	if (row.empty())
+		boundary = row.end_boundary();
 	/** This tests for the case where the cursor is set at the end
 	 * of a row which has been broken due something else than a
 	 * separator (a display inset or a forced breaking of the
 	 * row). We know that there is a separator when the end of the
 	 * row is larger than the end of its last element.
 	 */
-	if (!row.empty() && pos == row.back().endpos
-	    && row.back().endpos == row.endpos()) {
+	else if (pos == row.back().endpos && row.back().endpos == row.endpos()) {
 		Inset const * inset = row.back().inset;
 		if (inset && (inset->lyxCode() == NEWLINE_CODE
 		              || inset->lyxCode() == SEPARATOR_CODE))
@@ -1838,7 +1848,7 @@ int TextMetrics::leftMargin(pit_type pit) const
 }
 
 
-int TextMetrics::leftMargin(pit_type const pit, pos_type const pos) const
+int TextMetrics::leftMargin(pit_type const pit, pos_type const pos, bool ignore_contents) const
 {
 	ParagraphList const & pars = text_->paragraphs();
 
@@ -1998,7 +2008,8 @@ int TextMetrics::leftMargin(pit_type const pit, pos_type const pos) const
 	    // in some insets, paragraphs are never indented
 	    && !text_->inset().neverIndent()
 	    // display style insets do not need indentation
-	    && !(!par.empty()
+	    && !(!ignore_contents
+	         && !par.empty()
 	         && par.isInset(0)
 	         && par.getInset(0)->rowFlags() & Display)
 	    && (!(tclass.isDefaultLayout(par.layout())
