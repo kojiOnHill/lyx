@@ -973,7 +973,7 @@ void GuiWorkArea::generateSyntheticMouseEvent()
 	Text * text = cur.text();
 	if (!text)
 		return;
-	TextMetrics const & tm = d->buffer_view_->textMetrics(text);
+	TextMetrics & tm = d->buffer_view_->textMetrics(text);
 
 	// FIXME: use TextMetrics::setCursorFromCoordinates.
 	// Quit gracefully if there are no metrics, since otherwise next
@@ -982,33 +982,8 @@ void GuiWorkArea::generateSyntheticMouseEvent()
 	if (tm.empty())
 		return;
 
-	pair<pit_type, const ParagraphMetrics *> pp = up ? tm.first() : tm.last();
-	ParagraphMetrics const & pm = *pp.second;
-	pit_type const pit = pp.first;
-
-	if (pm.rows().empty())
-		return;
-
-	// Find the row at which we set the cursor.
-	RowList::const_iterator rit = pm.rows().begin();
-	RowList::const_iterator rlast = pm.rows().end();
-	int yy = pm.top();
-	for (--rlast; rit != rlast; ++rit) {
-		int h = rit->height();
-		if ((up && yy + h > 0)
-			  || (!up && yy + h > wh - defaultRowHeight()))
-			break;
-		yy += h;
-	}
-
-	// Find the position of the cursor
-	int x = d->synthetic_mouse_event_.cmd.x();
-	auto [pos, bound] = tm.getPosNearX(*rit, x);
-
-	// Set the cursor
-	cur.pit() = pit;
-	cur.pos() = pos;
-	cur.boundary(bound);
+	const int y = up ? 0 : wh - defaultRowHeight();
+	tm.setCursorFromCoordinates(cur, d->synthetic_mouse_event_.cmd.x(), y);
 
 	d->buffer_view_->buffer().changed(false);
 }
