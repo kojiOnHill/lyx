@@ -975,6 +975,7 @@ void GuiWorkArea::generateSyntheticMouseEvent()
 		return;
 	TextMetrics const & tm = d->buffer_view_->textMetrics(text);
 
+	// FIXME: use TextMetrics::setCursorFromCoordinates.
 	// Quit gracefully if there are no metrics, since otherwise next
 	// line would crash (bug #10324).
 	// This situation seems related to a (not yet understood) timing problem.
@@ -1001,9 +1002,8 @@ void GuiWorkArea::generateSyntheticMouseEvent()
 	}
 
 	// Find the position of the cursor
-	bool bound;
 	int x = d->synthetic_mouse_event_.cmd.x();
-	pos_type const pos = tm.getPosNearX(*rit, x, bound);
+	auto [pos, bound] = tm.getPosNearX(*rit, x);
 
 	// Set the cursor
 	cur.pit() = pit;
