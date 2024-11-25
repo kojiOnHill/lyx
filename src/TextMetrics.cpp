@@ -1454,21 +1454,6 @@ pair<pos_type, bool> TextMetrics::getPosNearX(Row const & row, int & x) const
 }
 
 
-// FIXME: only InsetTabular uses this. Remove?
-pos_type TextMetrics::x2pos(pit_type pit, int row, int x) const
-{
-	// We play safe and use parMetrics(pit) to make sure the
-	// ParagraphMetrics will be redone and OK to use if needed.
-	// Otherwise we would use an empty ParagraphMetrics in
-	// upDownInText() while in selection mode.
-	ParagraphMetrics const & pm = parMetrics(pit);
-
-	LBUFERR(row < int(pm.rows().size()));
-	Row const & r = pm.rows()[row];
-	return getPosNearX(r, x).first;
-}
-
-
 // y is screen coordinate
 pit_type TextMetrics::getPitNearY(int y)
 {

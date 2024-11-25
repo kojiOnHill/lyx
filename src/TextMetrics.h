@@ -191,12 +191,6 @@ public:
 	/// of this column. This takes in account horizontal cursor row scrolling.
 	std::pair<pos_type, bool> getPosNearX(Row const & row, int & x) const;
 
-	/// returns pos in given par at given x coord.
-	pos_type x2pos(pit_type pit, int row, int x) const;
-
-	// FIXME: is there a need for this?
-	//int pos2x(pit_type pit, pos_type pos) const;
-
 	/// returns the row near the specified y-coordinate in a given paragraph
 	/// (relative to the screen). If assert_in_view is true, it is made sure
 	/// that the row is on screen completely; this might change the given pit.
