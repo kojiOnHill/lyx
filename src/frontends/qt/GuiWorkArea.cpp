@@ -975,7 +975,6 @@ void GuiWorkArea::generateSyntheticMouseEvent()
 		return;
 	TextMetrics & tm = d->buffer_view_->textMetrics(text);
 
-	// FIXME: use TextMetrics::setCursorFromCoordinates.
 	// Quit gracefully if there are no metrics, since otherwise next
 	// line would crash (bug #10324).
 	// This situation seems related to a (not yet understood) timing problem.
