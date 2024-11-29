@@ -2551,6 +2551,8 @@ void Cursor::checkBufferStructure()
 void Cursor::moveToClosestEdge(int const x, bool const edit)
 {
 	if (Inset const * inset = nextInset()) {
+		// This is only used in mathed.
+		LATTEST(inset->asInsetMath());
 		// stay in front of insets for which we want to open the dialog
 		// (e.g. InsetMathSpace).
 		if (edit && (inset->hasSettings() || !inset->contextMenuName().empty()))
