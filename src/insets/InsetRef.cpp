@@ -674,7 +674,9 @@ void InsetRef::updateStatistics(Statistics & stats) const
 {
 	docstring const & ref = getParam("reference");
 	string const & cmd = params().getCmdName();
-	docstring const refstring = displayString(ref, cmd);
+	// best we can do here
+	string const & lang = buffer().params().language->lang();
+	docstring const refstring = displayString(ref, cmd, lang);
 	stats.update(refstring);
 }
 
