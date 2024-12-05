@@ -79,6 +79,8 @@ public:
 				  UpdateType utype, TocBackend & backend) const override;
 	///
 	bool forceLTR(OutputParams const &) const override;
+	///
+	std::pair<int, int> isWords() const override;
 	//@}
 
 	/// \name Static public methods obligated for InsetCommand derived classes

@@ -5496,7 +5496,7 @@ void Buffer::Impl::updateStatistics(DocIterator & from, DocIterator & to, bool s
 	char_count_ = 0;
 	blank_count_ = 0;
 
-	for (DocIterator dit = from ; dit != to && !dit.atEnd(); ) {
+	for (DocIterator dit = from; dit != to && !dit.atEnd(); ) {
 		if (!dit.inTexted()) {
 			dit.forwardPos();
 			continue;

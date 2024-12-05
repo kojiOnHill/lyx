@@ -668,4 +668,15 @@ docstring InsetRef::getTOCString() const
 	return (broken_ ? _("BROKEN: ") : docstring()) + toc_string_;
 }
 
+pair<int, int> InsetRef::isWords() const
+{
+	docstring const & ref = getParam("reference");
+	string const & cmd = params().getCmdName();
+	// best we can do here
+	string const & lang = buffer().params().language->lang();
+	docstring const refstring = displayString(ref, cmd, lang);
+	return pair<int, int>(refstring.size(), wordCount(refstring));
+}
+
+
 } // namespace lyx
