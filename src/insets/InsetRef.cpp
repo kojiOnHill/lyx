@@ -24,6 +24,7 @@
 #include "Paragraph.h"
 #include "ParIterator.h"
 #include "PDFOptions.h"
+#include "Statistics.h"
 #include "xml.h"
 #include "texstream.h"
 #include "TocBackend.h"
@@ -668,5 +669,14 @@ docstring InsetRef::getTOCString() const
 		broken_ = active_;
 	return (broken_ ? _("BROKEN: ") : docstring()) + toc_string_;
 }
+
+void InsetRef::updateStatistics(Statistics & stats) const
+{
+	docstring const & ref = getParam("reference");
+	string const & cmd = params().getCmdName();
+	docstring const refstring = displayString(ref, cmd);
+	stats.update(refstring);
+}
+
 
 } // namespace lyx
