@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.3.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-09-19 11:06-0400\n"
+"POT-Creation-Date: 2024-12-08 12:19-0500\n"
 "PO-Revision-Date: 2019-04-23 13:49+0300\n"
 "Last-Translator: V. Jeliazkov <vveesskkoo@google.com>\n"
 "Language-Team: Bulgarian <lyx-docs@lists.lyx.org>\n"
@@ -22,72 +22,72 @@ msgid "Version"
 msgstr "Версия"
 
 # src/lyxfunc.C:1132
-#: src/frontends/qt/ui/AboutUi.ui:141
+#: src/frontends/qt/ui/AboutUi.ui:125
 #, fuzzy
 msgid "System directory"
 msgstr "Липсва системна директория"
 
-#: src/frontends/qt/ui/AboutUi.ui:153
+#: src/frontends/qt/ui/AboutUi.ui:137
 #, fuzzy
 msgid "Open system directory in file browser"
 msgstr "Отваряне на директорията с файлов мениджър"
 
-#: src/frontends/qt/ui/AboutUi.ui:156
+#: src/frontends/qt/ui/AboutUi.ui:140
 msgid "[[do]]&Open"
 msgstr "&Отваряне"
 
 # src/lyxfunc.C:1132
-#: src/frontends/qt/ui/AboutUi.ui:191
+#: src/frontends/qt/ui/AboutUi.ui:175
 msgid "User directory"
 msgstr "Директория на потребителя"
 
-#: src/frontends/qt/ui/AboutUi.ui:222
+#: src/frontends/qt/ui/AboutUi.ui:206
 msgid "Open user directory in file browser"
 msgstr "Отваряне на директорията с файлов мениджър"
 
 # src/LyXAction.C:144
-#: src/frontends/qt/ui/AboutUi.ui:225 src/frontends/qt/ui/AboutUi.ui:272
+#: src/frontends/qt/ui/AboutUi.ui:209 src/frontends/qt/ui/AboutUi.ui:256
 msgid "[[do]]O&pen"
 msgstr "О&тваряне"
 
 # src/lyxfunc.C:1132
-#: src/frontends/qt/ui/AboutUi.ui:238
+#: src/frontends/qt/ui/AboutUi.ui:222
 #, fuzzy
 msgid "Temporary directory"
 msgstr "&Временни файлове:"
 
-#: src/frontends/qt/ui/AboutUi.ui:269
+#: src/frontends/qt/ui/AboutUi.ui:253
 #, fuzzy
 msgid "Open temporary directory in file browser"
 msgstr "Отваряне на директорията с библиотеките"
 
 # src/credits.C:72
-#: src/frontends/qt/ui/AboutUi.ui:288
+#: src/frontends/qt/ui/AboutUi.ui:301
 msgid "Credits"
 msgstr "Заслуги"
 
 # src/ext_l10n.h:209
-#: src/frontends/qt/ui/AboutUi.ui:313 lib/layouts/apa.layout:236
+#: src/frontends/qt/ui/AboutUi.ui:326 lib/layouts/apa.layout:236
 #: lib/layouts/apax.inc:343
 msgid "Copyright"
 msgstr "Авторски права"
 
 # src/ext_l10n.h:131
-#: src/frontends/qt/ui/AboutUi.ui:338
+#: src/frontends/qt/ui/AboutUi.ui:351
 msgid "Build Info"
 msgstr "Компилиране"
 
 # src/LColor.C:97
-#: src/frontends/qt/ui/AboutUi.ui:363
+#: src/frontends/qt/ui/AboutUi.ui:376
 msgid "Release Notes"
 msgstr "Бележки към изданието"
 
-#: src/frontends/qt/ui/AboutUi.ui:408
+#: src/frontends/qt/ui/AboutUi.ui:421
 msgid "Copy version information to clipboard"
 msgstr "Копиране на информацията за версията в буфера"
 
 # src/LyXAction.C:303
-#: src/frontends/qt/ui/AboutUi.ui:411
+#: src/frontends/qt/ui/AboutUi.ui:424
 msgid "Copy &Version Info"
 msgstr "Копиране на версията"
 
@@ -361,78 +361,86 @@ msgstr "Добавяне на BibTeX файлова база данни от л�
 msgid "Add &Local..."
 msgstr "&Добавяне на локална"
 
-# src/LyXAction.C:400
 #: src/frontends/qt/ui/BibtexUi.ui:91
+msgid "Transfer an absolute local path to a relative one or vice versa"
+msgstr ""
+
+#: src/frontends/qt/ui/BibtexUi.ui:94 src/frontends/qt/GuiBibtex.cpp:433
+msgid "&Make Relative"
+msgstr ""
+
+# src/LyXAction.C:400
+#: src/frontends/qt/ui/BibtexUi.ui:101
 #, fuzzy
 msgid "Inherit bibliography databases from the master document"
 msgstr ""
 "Добавянe на библиографията (лит. списък) към съдържанието на документа."
 
-#: src/frontends/qt/ui/BibtexUi.ui:94
+#: src/frontends/qt/ui/BibtexUi.ui:104
 msgid "&Inherit from Master"
 msgstr ""
 
-#: src/frontends/qt/ui/BibtexUi.ui:101
+#: src/frontends/qt/ui/BibtexUi.ui:111
 msgid "Remove the selected database"
 msgstr "Премахване на избраната база данни."
 
 # src/frontends/xforms/form_preferences.C:600
 # src/frontends/xforms/form_preferences.C:687
-#: src/frontends/qt/ui/BibtexUi.ui:104 src/frontends/qt/ui/CitationUi.ui:159
+#: src/frontends/qt/ui/BibtexUi.ui:114 src/frontends/qt/ui/CitationUi.ui:159
 msgid "&Delete"
 msgstr "&Премахване"
 
 # src/frontends/gnome/FormCitation.C:560
-#: src/frontends/qt/ui/BibtexUi.ui:117
+#: src/frontends/qt/ui/BibtexUi.ui:127
 msgid "Move the selected database up (Ctrl-Up)"
 msgstr "Преместване избраната база дании нагоре (Ctrl-горна стрелка)"
 
 # src/frontends/kde/refdlg.C:81 src/frontends/kde/tocdlg.C:43
-#: src/frontends/qt/ui/BibtexUi.ui:120 src/frontends/qt/ui/CitationUi.ui:191
+#: src/frontends/qt/ui/BibtexUi.ui:130 src/frontends/qt/ui/CitationUi.ui:191
 #: src/frontends/qt/ui/ModulesUi.ui:140
 msgid "&Up"
 msgstr "Преместване на&горе"
 
 # src/frontends/gnome/FormCitation.C:560
-#: src/frontends/qt/ui/BibtexUi.ui:140
+#: src/frontends/qt/ui/BibtexUi.ui:150
 msgid "Move the selected database down (Ctrl-Down)"
 msgstr "Преместване на избраната база дании надолу (Ctrl-долна стрелка)"
 
 # src/ext_l10n.h:398
-#: src/frontends/qt/ui/BibtexUi.ui:143 src/frontends/qt/ui/CitationUi.ui:214
+#: src/frontends/qt/ui/BibtexUi.ui:153 src/frontends/qt/ui/CitationUi.ui:214
 #: src/frontends/qt/ui/ModulesUi.ui:147
 msgid "Do&wn"
 msgstr "Преместване на&долу"
 
 # src/ext_l10n.h:94
-#: src/frontends/qt/ui/BibtexUi.ui:170
+#: src/frontends/qt/ui/BibtexUi.ui:180
 msgid "Edit selected database externally"
 msgstr "Редактиране на базата данни с външна програма"
 
 # src/MenuBackend.C:444 src/ext_l10n.h:2 src/ext_l10n.h:5
-#: src/frontends/qt/ui/BibtexUi.ui:173
+#: src/frontends/qt/ui/BibtexUi.ui:183
 msgid "&Edit..."
 msgstr "&Редактиране"
 
 # src/frontends/xforms/form_preferences.C:600
 # src/frontends/xforms/form_preferences.C:687
-#: src/frontends/qt/ui/BibtexUi.ui:201
+#: src/frontends/qt/ui/BibtexUi.ui:211
 msgid "Sele&cted:"
 msgstr "&Използвани:"
 
 # src/frontends/kde/dlg/printdlgdata.C:246
-#: src/frontends/qt/ui/BibtexUi.ui:218 src/frontends/qt/ui/CitationUi.ui:27
+#: src/frontends/qt/ui/BibtexUi.ui:228 src/frontends/qt/ui/CitationUi.ui:27
 #: src/frontends/qt/ui/ModulesUi.ui:76 src/frontends/qt/ui/RefUi.ui:53
 #: src/frontends/qt/ui/TocUi.ui:345
 msgid "&Filter:"
 msgstr "&Филтър:"
 
 # src/frontends/xforms/form_preferences.C:132
-#: src/frontends/qt/ui/BibtexUi.ui:248 src/frontends/qt/GuiBibtex.cpp:326
+#: src/frontends/qt/ui/BibtexUi.ui:258 src/frontends/qt/GuiBibtex.cpp:509
 msgid "E&ncoding:"
 msgstr "&Кодиране:"
 
-#: src/frontends/qt/ui/BibtexUi.ui:258 src/frontends/qt/GuiBibtex.cpp:327
+#: src/frontends/qt/ui/BibtexUi.ui:268 src/frontends/qt/GuiBibtex.cpp:510
 msgid ""
 "If your bibliography databases use a different encoding than the LyX "
 "document, specify it here"
@@ -441,31 +449,31 @@ msgstr ""
 "документа го посочете тук."
 
 # src/LyXAction.C:393
-#: src/frontends/qt/ui/BibtexUi.ui:270
+#: src/frontends/qt/ui/BibtexUi.ui:280
 msgid "The BibTeX style"
 msgstr "Стила за цитиране на BibTeX"
 
 # src/insets/insetbib.C:340
-#: src/frontends/qt/ui/BibtexUi.ui:273
+#: src/frontends/qt/ui/BibtexUi.ui:283
 msgid "St&yle"
 msgstr "Стил на цитирането"
 
 # src/lyxfunc.C:3128
-#: src/frontends/qt/ui/BibtexUi.ui:285
+#: src/frontends/qt/ui/BibtexUi.ui:295
 msgid "Choose a style file"
 msgstr "Изберете файла определящ стила библиографското цитиране на BibTeX"
 
 # src/support/filetools.C:453
-#: src/frontends/qt/ui/BibtexUi.ui:298
+#: src/frontends/qt/ui/BibtexUi.ui:308
 msgid "Select a style file from your local directory"
 msgstr "Избиране на файл със стилове на BibTeX от локална директория"
 
-#: src/frontends/qt/ui/BibtexUi.ui:301
+#: src/frontends/qt/ui/BibtexUi.ui:311
 msgid "Add L&ocal..."
 msgstr "Добавяне на друг"
 
 # src/form1.C:129 src/sp_form.C:58
-#: src/frontends/qt/ui/BibtexUi.ui:314 lib/layouts/beamer.layout:534
+#: src/frontends/qt/ui/BibtexUi.ui:324 lib/layouts/beamer.layout:534
 #: lib/layouts/beamer.layout:564 lib/layouts/beamer.layout:575
 #: lib/layouts/beamer.layout:604 lib/layouts/beamer.layout:707
 #: lib/layouts/chessboard.module:31 lib/layouts/chessboard.module:61
@@ -479,51 +487,51 @@ msgid "Options"
 msgstr "опции"
 
 # src/LyXAction.C:400
-#: src/frontends/qt/ui/BibtexUi.ui:331 src/frontends/qt/ui/BibtexUi.ui:344
+#: src/frontends/qt/ui/BibtexUi.ui:341 src/frontends/qt/ui/BibtexUi.ui:354
 msgid "This bibliography section contains..."
 msgstr "Този библиографски раздел съдържа..."
 
 # src/frontends/xforms/FormPreferences.C:226
 # src/frontends/xforms/FormPreferences.C:255
-#: src/frontends/qt/ui/BibtexUi.ui:334
+#: src/frontends/qt/ui/BibtexUi.ui:344
 msgid "&Content:"
 msgstr "&Съдържание:"
 
 # src/frontends/kde/refdlg.C:30
-#: src/frontends/qt/ui/BibtexUi.ui:348 src/frontends/qt/GuiBibtex.cpp:395
+#: src/frontends/qt/ui/BibtexUi.ui:358 src/frontends/qt/GuiBibtex.cpp:559
 #: src/insets/InsetBibtex.cpp:222 src/insets/InsetBibtex.cpp:240
 msgid "all cited references"
 msgstr "всички цитирани препратки"
 
 # src/frontends/kde/refdlg.C:30
-#: src/frontends/qt/ui/BibtexUi.ui:353 src/frontends/qt/GuiBibtex.cpp:397
+#: src/frontends/qt/ui/BibtexUi.ui:363 src/frontends/qt/GuiBibtex.cpp:561
 #: src/insets/InsetBibtex.cpp:220
 msgid "all uncited references"
 msgstr "всички нецитирани препратки"
 
 # src/frontends/kde/refdlg.C:30
-#: src/frontends/qt/ui/BibtexUi.ui:358 src/frontends/qt/GuiBibtex.cpp:398
+#: src/frontends/qt/ui/BibtexUi.ui:368 src/frontends/qt/GuiBibtex.cpp:562
 #: src/insets/InsetBibtex.cpp:218 src/insets/InsetBibtex.cpp:238
 msgid "all references"
 msgstr "всички препратки"
 
 # src/LyXAction.C:400
-#: src/frontends/qt/ui/BibtexUi.ui:366
+#: src/frontends/qt/ui/BibtexUi.ui:376
 msgid "Add bibliography to the table of contents"
 msgstr ""
 "Добавянe на библиографията (лит. списък) към съдържанието на документа."
 
 # src/insets/insetbib.C:219
-#: src/frontends/qt/ui/BibtexUi.ui:369
+#: src/frontends/qt/ui/BibtexUi.ui:379
 msgid "Add bibliography to &TOC"
 msgstr "Добавяне на лит. списък към съдържанието"
 
 # src/ext_l10n.h:215
-#: src/frontends/qt/ui/BibtexUi.ui:393
+#: src/frontends/qt/ui/BibtexUi.ui:403
 msgid "Custo&m:"
 msgstr "От потребителя:"
 
-#: src/frontends/qt/ui/BibtexUi.ui:403
+#: src/frontends/qt/ui/BibtexUi.ui:413
 msgid ""
 "Options to the biblatex bibliography command. See the biblatex manual for "
 "details."
@@ -531,12 +539,12 @@ msgstr ""
 "Опции за командата на BibLaTeX. Погледнете документацията на BibLaTeX за "
 "повече информация."
 
-#: src/frontends/qt/ui/BibtexUi.ui:432
+#: src/frontends/qt/ui/BibtexUi.ui:442
 msgid "Scan for new databases and styles"
 msgstr "Претърсване за новодобавени файлови бази данни и стилове"
 
 # src/form1.C:249
-#: src/frontends/qt/ui/BibtexUi.ui:435 src/frontends/qt/ui/TexinfoUi.ui:144
+#: src/frontends/qt/ui/BibtexUi.ui:445 src/frontends/qt/ui/TexinfoUi.ui:144
 msgid "&Rescan"
 msgstr "&Повторно претърсване"
 
@@ -920,7 +928,7 @@ msgstr "Добавяне на всички"
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1501
 #: src/Buffer.cpp:4822 src/Buffer.cpp:4932 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
-#: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
+#: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3028
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
 #: src/frontends/qt/GuiPrefs.cpp:3387 src/frontends/qt/GuiView.cpp:2942
 #: src/frontends/qt/GuiView.cpp:3105 src/frontends/qt/GuiView.cpp:3335
@@ -945,7 +953,7 @@ msgstr "&Неопределени разклонения:"
 
 # src/insets/insetbib.C:69 src/insets/insetbib.C:70 src/insets/insetbib.C:210
 # src/insets/insetbib.C:211
-#: src/frontends/qt/ui/BulletsUi.ui:17 src/frontends/qt/ui/PDFSupportUi.ui:406
+#: src/frontends/qt/ui/BulletsUi.ui:17 src/frontends/qt/ui/PDFSupportUi.ui:409
 msgid "&Level:"
 msgstr "&Ниво:"
 
@@ -980,18 +988,18 @@ msgstr "&Размер:"
 #: src/frontends/qt/GuiDocument.cpp:1088 src/frontends/qt/GuiDocument.cpp:1173
 #: src/frontends/qt/GuiDocument.cpp:1219 src/frontends/qt/GuiDocument.cpp:1232
 #: src/frontends/qt/GuiDocument.cpp:1480 src/frontends/qt/GuiDocument.cpp:1598
-#: src/frontends/qt/GuiDocument.cpp:1606 src/frontends/qt/GuiDocument.cpp:2747
-#: src/frontends/qt/GuiDocument.cpp:2834 src/frontends/qt/GuiDocument.cpp:2837
-#: src/frontends/qt/GuiDocument.cpp:2840 src/frontends/qt/GuiDocument.cpp:2872
-#: src/frontends/qt/GuiDocument.cpp:2883 src/frontends/qt/GuiDocument.cpp:2894
-#: src/frontends/qt/GuiDocument.cpp:2981 src/frontends/qt/GuiDocument.cpp:3590
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiExternal.cpp:76
+#: src/frontends/qt/GuiDocument.cpp:1606 src/frontends/qt/GuiDocument.cpp:2749
+#: src/frontends/qt/GuiDocument.cpp:2836 src/frontends/qt/GuiDocument.cpp:2839
+#: src/frontends/qt/GuiDocument.cpp:2842 src/frontends/qt/GuiDocument.cpp:2874
+#: src/frontends/qt/GuiDocument.cpp:2885 src/frontends/qt/GuiDocument.cpp:2896
+#: src/frontends/qt/GuiDocument.cpp:2983 src/frontends/qt/GuiDocument.cpp:3596
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiExternal.cpp:76
 #: src/frontends/qt/GuiGraphics.cpp:71 src/frontends/qt/GuiIndex.cpp:46
 #: src/frontends/qt/GuiIndices.cpp:58 src/frontends/qt/GuiListings.cpp:156
 #: src/frontends/qt/GuiListings.cpp:163 src/frontends/qt/GuiPrefs.cpp:2386
 #: src/frontends/qt/GuiPrefs.cpp:2544 src/frontends/qt/GuiPrefs.cpp:2548
 #: src/frontends/qt/GuiPrintNomencl.cpp:47
-#: src/frontends/qt/GuiTabularCreate.cpp:107
+#: src/frontends/qt/GuiTabularCreate.cpp:105
 #: src/frontends/qt/GuiViewSource.cpp:351
 msgid "Default"
 msgstr "по подразбиране"
@@ -1217,7 +1225,7 @@ msgstr "&Език:"
 #: lib/layouts/europasscv.layout:441 lib/layouts/europasscv.layout:476
 #: lib/layouts/europasscv.layout:483 lib/layouts/europecv.layout:322
 #: lib/layouts/europecv.layout:328 lib/layouts/moderncv.layout:581
-#: src/frontends/qt/GuiDocument.cpp:1832 src/frontends/qt/GuiPrefs.cpp:2337
+#: src/frontends/qt/GuiDocument.cpp:1834 src/frontends/qt/GuiPrefs.cpp:2337
 #: src/frontends/qt/Menus.cpp:955
 msgid "Language"
 msgstr "eзик"
@@ -2141,6 +2149,14 @@ msgid "Alignment of Contents"
 msgstr "Подравняване на съдържанието"
 
 #: src/frontends/qt/ui/FloatPlacementUi.ui:94
+msgid "Right-align float contents"
+msgstr "Дясно подравняване на съдържанието"
+
+#: src/frontends/qt/ui/FloatPlacementUi.ui:97
+msgid "&Right"
+msgstr "&отдясно"
+
+#: src/frontends/qt/ui/FloatPlacementUi.ui:104
 msgid ""
 "Use the document's default alignment for floats, as specified in Document "
 "Settings."
@@ -2149,97 +2165,89 @@ msgstr ""
 "документ както е посочино в настройките на документа"
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/ui/FloatPlacementUi.ui:97
+#: src/frontends/qt/ui/FloatPlacementUi.ui:107
 msgid "D&ocument Default"
 msgstr "по подразбиране за документа"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:104
-msgid "Left-align float contents"
-msgstr "Ляво подравняване на съдържанието"
-
-# src/frontends/kde/dlg/parageneraldlgdata.C:120
-#: src/frontends/qt/ui/FloatPlacementUi.ui:107
-#: src/frontends/qt/ui/ParagraphUi.ui:117
-msgid "&Left"
-msgstr "от&ляво"
-
 #: src/frontends/qt/ui/FloatPlacementUi.ui:114
-msgid "Center float contents"
-msgstr "Центриране на съдържанието"
-
-# src/frontends/kde/dlg/parageneraldlgdata.C:107
-#: src/frontends/qt/ui/FloatPlacementUi.ui:117
-#: src/frontends/qt/ui/ParagraphUi.ui:124 src/frontends/qt/ui/TabularUi.ui:1544
-msgid "&Center"
-msgstr "център"
-
-#: src/frontends/qt/ui/FloatPlacementUi.ui:124
-msgid "Right-align float contents"
-msgstr "Дясно подравняване на съдържанието"
-
-#: src/frontends/qt/ui/FloatPlacementUi.ui:127
-msgid "&Right"
-msgstr "&отдясно"
-
-#: src/frontends/qt/ui/FloatPlacementUi.ui:134
 msgid "Use the class' default alignment for floats, whatever it is."
 msgstr ""
 "Използване на подравнянане по подразбиране за плаващи обекти от този клас "
 "(каквото и да е то)"
 
 # src/frontends/xforms/form_preferences.C:999
-#: src/frontends/qt/ui/FloatPlacementUi.ui:137
+#: src/frontends/qt/ui/FloatPlacementUi.ui:117
 msgid "Class &Default"
 msgstr "по подразбиране за класа"
 
+#: src/frontends/qt/ui/FloatPlacementUi.ui:124
+msgid "Center float contents"
+msgstr "Центриране на съдържанието"
+
+# src/frontends/kde/dlg/parageneraldlgdata.C:107
+#: src/frontends/qt/ui/FloatPlacementUi.ui:127
+#: src/frontends/qt/ui/ParagraphUi.ui:124 src/frontends/qt/ui/TabularUi.ui:1544
+msgid "&Center"
+msgstr "център"
+
+#: src/frontends/qt/ui/FloatPlacementUi.ui:134
+msgid "Left-align float contents"
+msgstr "Ляво подравняване на съдържанието"
+
+# src/frontends/kde/dlg/parageneraldlgdata.C:120
+#: src/frontends/qt/ui/FloatPlacementUi.ui:137
+#: src/frontends/qt/ui/ParagraphUi.ui:117
+msgid "&Left"
+msgstr "от&ляво"
+
 # src/frontends/xforms/form_preferences.C:926
-#: src/frontends/qt/ui/FloatPlacementUi.ui:147
+#: src/frontends/qt/ui/FloatPlacementUi.ui:160
 msgid "Further Options"
 msgstr "Други опции"
 
 # src/frontends/xforms/form_tabular.C:248
-#: src/frontends/qt/ui/FloatPlacementUi.ui:156
+#: src/frontends/qt/ui/FloatPlacementUi.ui:169
 msgid "&Span columns"
 msgstr "Обхваща колоните"
 
 # src/frontends/xforms/form_tabular.C:119
 # src/frontends/xforms/form_tabular.C:383
-#: src/frontends/qt/ui/FloatPlacementUi.ui:163
+#: src/frontends/qt/ui/FloatPlacementUi.ui:176
 msgid "Rotate side&ways"
 msgstr "Завъртане странично (90°)"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:173
+#: src/frontends/qt/ui/FloatPlacementUi.ui:186
 msgid "Position on Page"
 msgstr "Разположение на страницата"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:184
+#: src/frontends/qt/ui/FloatPlacementUi.ui:197
 msgid "Place&ment Settings:"
 msgstr "Настройки на разположението"
 
 # src/layout_forms.C:61
-#: src/frontends/qt/ui/FloatPlacementUi.ui:199
+#: src/frontends/qt/ui/FloatPlacementUi.ui:212
 msgid "&Top of page"
 msgstr "В &горната част"
 
 # src/frontends/xforms/form_paragraph.C:244
-#: src/frontends/qt/ui/FloatPlacementUi.ui:206
+#: src/frontends/qt/ui/FloatPlacementUi.ui:219
 msgid "&Bottom of page"
 msgstr "В &долната част"
 
 # src/frontends/xforms/form_document.C:247
-#: src/frontends/qt/ui/FloatPlacementUi.ui:213
+#: src/frontends/qt/ui/FloatPlacementUi.ui:226
 msgid "&Page of floats"
 msgstr "&Страница с плаващи обекти"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:220
+#: src/frontends/qt/ui/FloatPlacementUi.ui:233
 msgid "&Here if possible"
 msgstr "&На място ако е възможно"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:227
+#: src/frontends/qt/ui/FloatPlacementUi.ui:240
 msgid "Here de&finitely"
 msgstr "На място задължително"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:234
+#: src/frontends/qt/ui/FloatPlacementUi.ui:247
 msgid "&Ignore LaTeX rules"
 msgstr "&Пренебрегване правилата на LaTeX"
 
@@ -4207,62 +4215,66 @@ msgstr "&Пренасяне на връзките на нов ред"
 msgid "No &frames around links"
 msgstr "&Без рамки около връзките"
 
-# src/frontends/xforms/FormPreferences.C:244
 #: src/frontends/qt/ui/PDFSupportUi.ui:285
+msgid "Mutually exclusive with frames around links, see manual."
+msgstr ""
+
+# src/frontends/xforms/FormPreferences.C:244
+#: src/frontends/qt/ui/PDFSupportUi.ui:288
 msgid "C&olor links"
 msgstr "&Цветни връзки"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:292
+#: src/frontends/qt/ui/PDFSupportUi.ui:295
 msgid "Bibliographical backreferences"
 msgstr "Поставяне на обратни указатели в литературния списък"
 
 # src/frontends/xforms/FormPreferences.C:68
-#: src/frontends/qt/ui/PDFSupportUi.ui:295
+#: src/frontends/qt/ui/PDFSupportUi.ui:298
 msgid "B&ackreferences:"
 msgstr "&Обратни указатели:"
 
 # src/frontends/xforms/form_paragraph.C:244
-#: src/frontends/qt/ui/PDFSupportUi.ui:324
+#: src/frontends/qt/ui/PDFSupportUi.ui:327
 msgid "&Bookmarks"
 msgstr "&Показалци"
 
 # src/frontends/xforms/form_paragraph.C:244
-#: src/frontends/qt/ui/PDFSupportUi.ui:345
+#: src/frontends/qt/ui/PDFSupportUi.ui:348
 msgid "G&enerate bookmarks (toc)"
 msgstr "&Създаване на показалци в съдържанието"
 
 # src/lyxfont.C:415
-#: src/frontends/qt/ui/PDFSupportUi.ui:375
+#: src/frontends/qt/ui/PDFSupportUi.ui:378
 msgid "&Numbered bookmarks"
 msgstr "&Номерирани показалци"
 
 # src/frontends/xforms/form_paragraph.C:244
-#: src/frontends/qt/ui/PDFSupportUi.ui:382
+#: src/frontends/qt/ui/PDFSupportUi.ui:385
 msgid "&Open bookmark tree"
 msgstr "&Отваряне на дървото с показалци"
 
 # src/frontends/kde/printdlg.C:31
-#: src/frontends/qt/ui/PDFSupportUi.ui:416
+#: src/frontends/qt/ui/PDFSupportUi.ui:419
 msgid "Number of levels"
 msgstr "Брой нива"
 
 # src/frontends/xforms/form_preferences.C:926
-#: src/frontends/qt/ui/PDFSupportUi.ui:455
+#: src/frontends/qt/ui/PDFSupportUi.ui:458
 msgid "Additional O&ptions"
 msgstr "&Допълнителни опции"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:461
+#: src/frontends/qt/ui/PDFSupportUi.ui:464
 msgid ""
 "Additional hyperref options (comma-separated) to be passed via \\hypersetup."
 msgstr ""
 "Допълнителни опции за хипервръзките, разделени със запетая и предавани чрез "
 "\\hypersetup."
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:464
+#: src/frontends/qt/ui/PDFSupportUi.ui:467
 msgid "Hyperse&tup"
 msgstr "Настройка на хипервръзките"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:487
+#: src/frontends/qt/ui/PDFSupportUi.ui:490
 msgid ""
 "Document metadata and PDF settings (as specified in LaTeX 06/2022 and later)"
 msgstr ""
@@ -4270,7 +4282,7 @@ msgstr ""
 "следващи версии"
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/ui/PDFSupportUi.ui:490
+#: src/frontends/qt/ui/PDFSupportUi.ui:493
 msgid "Document &Metadata"
 msgstr "&Метаданни за документа"
 
@@ -4304,7 +4316,7 @@ msgstr "Пей&заж"
 #: src/frontends/qt/ui/PageLayoutUi.ui:162
 #: lib/layouts/customHeadersFooters.module:3 lib/layouts/landscape.module:3
 #: lib/layouts/multicol.module:3 src/frontends/qt/GuiDocument.cpp:1226
-#: src/frontends/qt/GuiDocument.cpp:1229 src/frontends/qt/GuiDocument.cpp:1830
+#: src/frontends/qt/GuiDocument.cpp:1229 src/frontends/qt/GuiDocument.cpp:1832
 msgid "Page Layout"
 msgstr "Страници"
 
@@ -4332,7 +4344,7 @@ msgid "Line &spacing"
 msgstr "&Разстояние между редовете"
 
 # src/bufferview_funcs.C:280
-#: src/frontends/qt/ui/ParagraphUi.ui:60 src/Text.cpp:2186
+#: src/frontends/qt/ui/ParagraphUi.ui:60 src/Text.cpp:2187
 #: src/frontends/qt/GuiDocument.cpp:908
 msgid "Single"
 msgstr "eдинично"
@@ -4342,7 +4354,7 @@ msgid "1.5"
 msgstr "1.5"
 
 # src/bufferview_funcs.C:286
-#: src/frontends/qt/ui/ParagraphUi.ui:70 src/Text.cpp:2192
+#: src/frontends/qt/ui/ParagraphUi.ui:70 src/Text.cpp:2193
 #: src/frontends/qt/GuiDocument.cpp:912
 msgid "Double"
 msgstr "двойно"
@@ -5271,7 +5283,7 @@ msgstr "Изберете какъв езиков пакет от LaTeX да се
 
 # src/ext_l10n.h:175
 #: src/frontends/qt/ui/PrefLanguageUi.ui:77
-#: src/frontends/qt/GuiDocument.cpp:1090 src/frontends/qt/GuiDocument.cpp:2905
+#: src/frontends/qt/GuiDocument.cpp:1090 src/frontends/qt/GuiDocument.cpp:2907
 #: src/frontends/qt/GuiPrefs.cpp:702 src/frontends/qt/GuiPrefs.cpp:730
 msgid "Automatic"
 msgstr "по подразбиране"
@@ -6043,7 +6055,7 @@ msgstr ""
 
 # src/frontends/xforms/FormPreferences.C:232
 #: src/frontends/qt/ui/ProgressViewUi.ui:93
-#: src/frontends/qt/GuiDocument.cpp:1844 src/frontends/qt/GuiPrefs.cpp:95
+#: src/frontends/qt/GuiDocument.cpp:1846 src/frontends/qt/GuiPrefs.cpp:95
 msgid "Output"
 msgstr "Краен документ"
 
@@ -7202,7 +7214,7 @@ msgstr ""
 "разклонения, изтрити промени и др."
 
 # src/exporter.C:91
-#: src/frontends/qt/ui/TocUi.ui:317 src/frontends/qt/TocWidget.cpp:99
+#: src/frontends/qt/ui/TocUi.ui:317 src/frontends/qt/TocWidget.cpp:100
 msgid "All items"
 msgstr "всички елементи"
 
@@ -8915,7 +8927,7 @@ msgstr "Кратко заглавие на приложението"
 #: lib/layouts/stdstruct.inc:59 lib/layouts/svcommon.inc:658
 #: lib/layouts/tufte-book.layout:299 lib/layouts/tufte-book.layout:301
 #: lib/layouts/tufte-handout.layout:78 lib/examples/Articles:0
-#: src/frontends/qt/GuiDocument.cpp:1836 src/insets/InsetBibtex.cpp:963
+#: src/frontends/qt/GuiDocument.cpp:1838 src/insets/InsetBibtex.cpp:963
 msgid "Bibliography"
 msgstr "Литература"
 
@@ -9510,7 +9522,7 @@ msgstr "Предишна принадлежност"
 
 # src/mathed/formula.C:929
 #: lib/layouts/aastex.layout:201 lib/layouts/agutex.layout:132
-#: src/mathed/InsetMathHull.cpp:1903 src/mathed/InsetMathHull.cpp:1912
+#: src/mathed/InsetMathHull.cpp:1912 src/mathed/InsetMathHull.cpp:1921
 msgid "Number"
 msgstr "Номер"
 
@@ -9529,9 +9541,9 @@ msgid "And"
 msgstr "И"
 
 # src/ext_l10n.h:170
-#: lib/layouts/aastex.layout:256 src/frontends/qt/GuiDocument.cpp:3326
-#: src/frontends/qt/GuiDocument.cpp:3338 src/frontends/qt/GuiDocument.cpp:3467
-#: src/frontends/qt/GuiDocument.cpp:3486
+#: lib/layouts/aastex.layout:256 src/frontends/qt/GuiDocument.cpp:3334
+#: src/frontends/qt/GuiDocument.cpp:3346 src/frontends/qt/GuiDocument.cpp:3475
+#: src/frontends/qt/GuiDocument.cpp:3494
 msgid "and"
 msgstr "и"
 
@@ -12302,8 +12314,9 @@ msgid "Alert"
 msgstr "Блок"
 
 #: lib/layouts/beamer.layout:1540 lib/layouts/beamer.layout:1542
-#: lib/layouts/svcommon.inc:73 lib/layouts/svcommon.inc:100
-#: lib/layouts/svcommon.inc:107
+#: lib/layouts/jlreq-book.layout:25 lib/layouts/jlreq-book.layout:52
+#: lib/layouts/jlreq-book.layout:59 lib/layouts/svcommon.inc:73
+#: lib/layouts/svcommon.inc:100 lib/layouts/svcommon.inc:107
 msgid "Structure"
 msgstr "Структура"
 
@@ -15029,8 +15042,8 @@ msgstr "Грешка на Поправка"
 
 # src/LColor.C:92
 #: lib/layouts/fixme.module:83 src/frontends/qt/GuiCompare.cpp:202
-#: src/frontends/qt/GuiDocument.cpp:3039 src/frontends/qt/GuiDocument.cpp:3113
-#: src/frontends/qt/GuiDocument.cpp:5059
+#: src/frontends/qt/GuiDocument.cpp:3041 src/frontends/qt/GuiDocument.cpp:3121
+#: src/frontends/qt/GuiDocument.cpp:5069
 msgid "Error"
 msgstr "Грешка"
 
@@ -16753,6 +16766,32 @@ msgstr "Статия на японски (JS клас)"
 #, fuzzy
 msgid "Japanese Book (JLReq Class)"
 msgstr "Книга на японски (JS клас)"
+
+# src/bufferview_funcs.C:267
+#: lib/layouts/jlreq-book.layout:24 lib/layouts/svcommon.inc:72
+msgid "Front Matter"
+msgstr "Предна част"
+
+#: lib/layouts/jlreq-book.layout:40 lib/layouts/svcommon.inc:88
+msgid "--- Front Matter ---"
+msgstr "--- Предна част  ---"
+
+# src/mathed/math_panel.C:134
+#: lib/layouts/jlreq-book.layout:50 lib/layouts/svcommon.inc:98
+msgid "Main Matter"
+msgstr "Главна част"
+
+#: lib/layouts/jlreq-book.layout:54 lib/layouts/svcommon.inc:102
+msgid "--- Main Matter ---"
+msgstr "--- Главна част ---"
+
+#: lib/layouts/jlreq-book.layout:57 lib/layouts/svcommon.inc:105
+msgid "Back Matter"
+msgstr "Задна част"
+
+#: lib/layouts/jlreq-book.layout:61 lib/layouts/svcommon.inc:109
+msgid "--- Back Matter ---"
+msgstr "--- Задна част  ---"
 
 # src/ext_l10n.h:375
 #: lib/layouts/jlreq-common.inc:13 lib/layouts/jlreq-common.inc:21
@@ -20983,7 +21022,7 @@ msgid "Notes"
 msgstr "Бележки"
 
 # src/ext_l10n.h:441
-#: lib/layouts/stdinsets.inc:14 src/frontends/qt/GuiDocument.cpp:1843
+#: lib/layouts/stdinsets.inc:14 src/frontends/qt/GuiDocument.cpp:1845
 msgid "Branches"
 msgstr "Разклонения"
 
@@ -21026,8 +21065,8 @@ msgid "List of Listings"
 msgstr "Списък на списъците"
 
 # src/frontends/xforms/FormPreferences.C:223
-#: lib/layouts/stdinsets.inc:355 src/frontends/qt/GuiDocument.cpp:1841
-#: src/frontends/qt/GuiDocument.cpp:5082
+#: lib/layouts/stdinsets.inc:355 src/frontends/qt/GuiDocument.cpp:1843
+#: src/frontends/qt/GuiDocument.cpp:5092
 msgid "Listings[[inset]]"
 msgstr "Списъци"
 
@@ -21127,32 +21166,6 @@ msgid ""
 msgstr ""
 "Осигурява лесен начин за отделяне на подуравнения в LyX. Виж математическото "
 "ръководство."
-
-# src/bufferview_funcs.C:267
-#: lib/layouts/svcommon.inc:72
-msgid "Front Matter"
-msgstr "Предна част"
-
-#: lib/layouts/svcommon.inc:88
-msgid "--- Front Matter ---"
-msgstr "--- Предна част  ---"
-
-# src/mathed/math_panel.C:134
-#: lib/layouts/svcommon.inc:98
-msgid "Main Matter"
-msgstr "Главна част"
-
-#: lib/layouts/svcommon.inc:102
-msgid "--- Main Matter ---"
-msgstr "--- Главна част ---"
-
-#: lib/layouts/svcommon.inc:105
-msgid "Back Matter"
-msgstr "Задна част"
-
-#: lib/layouts/svcommon.inc:109
-msgid "--- Back Matter ---"
-msgstr "--- Задна част  ---"
 
 #: lib/layouts/svcommon.inc:125 lib/layouts/svmult.layout:117
 msgid "PartBacktext"
@@ -23585,144 +23598,144 @@ msgstr ""
 msgid "TeX Gyre Heros"
 msgstr ""
 
-#: lib/latexfonts:1063
+#: lib/latexfonts:1063 lib/latexfonts:1071
 msgid "URW Classico (Optima)"
 msgstr ""
 
-#: lib/latexfonts:1074
+#: lib/latexfonts:1081
 msgid "Bera Mono"
 msgstr "Bera Mono"
 
 # src/frontends/xforms/form_preferences.C:111 src/lyxfont.C:42
-#: lib/latexfonts:1082
+#: lib/latexfonts:1089
 #, fuzzy
 msgid "CM Typewriter Light"
 msgstr "Машинопис"
 
-#: lib/latexfonts:1089
+#: lib/latexfonts:1096
 msgid "Computer Modern Typewriter"
 msgstr ""
 
 # src/frontends/kde/dlg/printdlgdata.C:73
 # src/frontends/xforms/form_print.C:135
-#: lib/latexfonts:1096
+#: lib/latexfonts:1103
 #, fuzzy
 msgid "Courier"
 msgstr "Копия"
 
-#: lib/latexfonts:1103
+#: lib/latexfonts:1110
 msgid "DejaVu Sans Mono"
 msgstr ""
 
-#: lib/latexfonts:1110
+#: lib/latexfonts:1117
 #, fuzzy
 msgid "Fira Mono"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1121
+#: lib/latexfonts:1128
 #, fuzzy
 msgid "IBM Plex Mono"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1129
+#: lib/latexfonts:1136
 #, fuzzy
 msgid "IBM Plex Mono (Thin)"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1138
+#: lib/latexfonts:1145
 #, fuzzy
 msgid "IBM Plex Mono (Extra Light)"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1147
+#: lib/latexfonts:1154
 #, fuzzy
 msgid "IBM Plex Mono (Light)"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1156
+#: lib/latexfonts:1163
 msgid "Source Code Pro"
 msgstr ""
 
-#: lib/latexfonts:1165 lib/latexfonts:1173
+#: lib/latexfonts:1172 lib/latexfonts:1180
 #, fuzzy
 msgid "Libertine Mono"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1180
+#: lib/latexfonts:1187
 #, fuzzy
 msgid "Libertinus Mono"
 msgstr "Bera Mono"
 
 # src/frontends/xforms/form_preferences.C:111 src/lyxfont.C:42
-#: lib/latexfonts:1188
+#: lib/latexfonts:1195
 #, fuzzy
 msgid "Latin Modern Typewriter"
 msgstr "Машинопис"
 
-#: lib/latexfonts:1195
+#: lib/latexfonts:1202
 msgid "LuxiMono"
 msgstr "LuxiMono"
 
-#: lib/latexfonts:1202
+#: lib/latexfonts:1209
 msgid "Noto Mono"
 msgstr ""
 
-#: lib/latexfonts:1211
+#: lib/latexfonts:1218
 #, fuzzy
 msgid "PT Mono"
 msgstr "Bera Mono"
 
 # src/frontends/xforms/FormError.C:26
-#: lib/latexfonts:1219
+#: lib/latexfonts:1226
 #, fuzzy
 msgid "TeX Gyre Cursor"
 msgstr "LaTeX Грешка"
 
 # src/frontends/xforms/form_preferences.C:111 src/lyxfont.C:42
-#: lib/latexfonts:1225
+#: lib/latexfonts:1232
 #, fuzzy
 msgid "TX Typewriter"
 msgstr "Машинопис"
 
 # src/frontends/xforms/form_preferences.C:105 src/lyxfont.C:42
-#: lib/latexfonts:1237
+#: lib/latexfonts:1244
 #, fuzzy
 msgid "Crimson (New TX)"
 msgstr "Roman"
 
-#: lib/latexfonts:1245
+#: lib/latexfonts:1252
 msgid "Euler VM"
 msgstr ""
 
-#: lib/latexfonts:1251
+#: lib/latexfonts:1258
 msgid "URW Garamond (New TX)"
 msgstr ""
 
 # src/frontends/xforms/FormPreferences.C:261
-#: lib/latexfonts:1259
+#: lib/latexfonts:1266
 #, fuzzy
 msgid "Iwona (Math)"
 msgstr "Пътища"
 
-#: lib/latexfonts:1272
+#: lib/latexfonts:1279
 msgid "Kurier (Math)"
 msgstr ""
 
-#: lib/latexfonts:1285
+#: lib/latexfonts:1292
 msgid "Libertine (New TX)"
 msgstr ""
 
-#: lib/latexfonts:1293
+#: lib/latexfonts:1300
 #, fuzzy
 msgid "Libertinus Math"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1300
+#: lib/latexfonts:1307
 msgid "Minion Pro (New TX)"
 msgstr ""
 
 # src/frontends/xforms/form_preferences.C:105 src/lyxfont.C:42
-#: lib/latexfonts:1309
+#: lib/latexfonts:1316
 #, fuzzy
 msgid "Times Roman (New TX)"
 msgstr "Roman"
@@ -24048,19 +24061,19 @@ msgstr "Копиране като препратка"
 
 # src/BufferView2.C:592 src/LyXAction.C:170 src/MenuBackend.C:431
 #: lib/ui/stdcontext.inc:61 lib/ui/stdcontext.inc:376 lib/ui/stdmenus.inc:108
-#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4975 src/mathed/InsetMathNest.cpp:870
+#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4976 src/mathed/InsetMathNest.cpp:870
 msgid "Cut"
 msgstr "Изрязване"
 
 # src/BufferView2.C:581 src/LyXAction.C:169 src/MenuBackend.C:432
 #: lib/ui/stdcontext.inc:62 lib/ui/stdcontext.inc:377 lib/ui/stdmenus.inc:109
-#: lib/ui/stdtoolbars.inc:90 src/BufferView.cpp:2455
+#: lib/ui/stdtoolbars.inc:90 src/BufferView.cpp:2520
 msgid "Copy"
 msgstr "Копиране"
 
 # src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
 #: lib/ui/stdcontext.inc:63 lib/ui/stdcontext.inc:378 lib/ui/stdmenus.inc:110
-#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4920
+#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4921
 #: src/frontends/qt/GuiToolbar.cpp:464 src/mathed/InsetMathGrid.cpp:1566
 #: src/mathed/InsetMathNest.cpp:839
 msgid "Paste"
@@ -24160,43 +24173,46 @@ msgid "Go to Label|G"
 msgstr "Отиване до етикет"
 
 # src/frontends/xforms/FormPreferences.C:68
-#: lib/ui/stdcontext.inc:95 lib/ui/stdcontext.inc:115
+#: lib/ui/stdcontext.inc:95 lib/ui/stdcontext.inc:115 lib/ui/stdcontext.inc:724
 #, fuzzy
 msgid "<Reference>|R"
 msgstr "Настройки"
 
 # src/frontends/xforms/FormPreferences.C:68
-#: lib/ui/stdcontext.inc:96 lib/ui/stdcontext.inc:116
+#: lib/ui/stdcontext.inc:96 lib/ui/stdcontext.inc:116 lib/ui/stdcontext.inc:725
 #, fuzzy
 msgid "(<Reference>)|e"
 msgstr "Настройки"
 
 # src/frontends/kde/paraextradlg.C:27
-#: lib/ui/stdcontext.inc:97 lib/ui/stdcontext.inc:117
+#: lib/ui/stdcontext.inc:97 lib/ui/stdcontext.inc:117 lib/ui/stdcontext.inc:726
 #, fuzzy
 msgid "<Page>|P"
 msgstr "Министраница"
 
-#: lib/ui/stdcontext.inc:98 lib/ui/stdcontext.inc:118
+#: lib/ui/stdcontext.inc:98 lib/ui/stdcontext.inc:118 lib/ui/stdcontext.inc:727
 msgid "On Page <Page>|O"
 msgstr "На страница <Page>"
 
-#: lib/ui/stdcontext.inc:99 lib/ui/stdcontext.inc:119
+#: lib/ui/stdcontext.inc:99 lib/ui/stdcontext.inc:119 lib/ui/stdcontext.inc:728
 msgid "<Reference> on Page <Page>|f"
 msgstr ""
 
 # src/frontends/kde/refdlg.C:66
 #: lib/ui/stdcontext.inc:100 lib/ui/stdcontext.inc:120
+#: lib/ui/stdcontext.inc:729
 msgid "Formatted Reference|t"
 msgstr "Форматирана препратка"
 
 # src/frontends/kde/FormRef.C:249
 #: lib/ui/stdcontext.inc:101 lib/ui/stdcontext.inc:121
+#: lib/ui/stdcontext.inc:730
 msgid "Textual Reference|x"
 msgstr "Текстова препратка"
 
 # src/frontends/xforms/FormPreferences.C:244
 #: lib/ui/stdcontext.inc:102 lib/ui/stdcontext.inc:122
+#: lib/ui/stdcontext.inc:731
 msgid "Label Only|L"
 msgstr "Само етикет"
 
@@ -24211,10 +24227,10 @@ msgstr "Само етикет"
 #: lib/ui/stdcontext.inc:525 lib/ui/stdcontext.inc:549
 #: lib/ui/stdcontext.inc:560 lib/ui/stdcontext.inc:568
 #: lib/ui/stdcontext.inc:578 lib/ui/stdcontext.inc:586
-#: lib/ui/stdcontext.inc:594 lib/ui/stdcontext.inc:602
-#: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:627
-#: lib/ui/stdcontext.inc:677 lib/ui/stdcontext.inc:685
-#: lib/ui/stdcontext.inc:733 lib/ui/stdcontext.inc:742 lib/ui/stdmenus.inc:586
+#: lib/ui/stdcontext.inc:605 lib/ui/stdcontext.inc:613
+#: lib/ui/stdcontext.inc:628 lib/ui/stdcontext.inc:640
+#: lib/ui/stdcontext.inc:690 lib/ui/stdcontext.inc:698
+#: lib/ui/stdcontext.inc:760 lib/ui/stdcontext.inc:769 lib/ui/stdmenus.inc:586
 msgid "Settings...|S"
 msgstr "Настройки|й"
 
@@ -24259,7 +24275,7 @@ msgid "Close Inset|C"
 msgstr "Затваряне на добавката"
 
 #: lib/ui/stdcontext.inc:179 lib/ui/stdcontext.inc:185
-#: lib/ui/stdcontext.inc:201 lib/ui/stdcontext.inc:693
+#: lib/ui/stdcontext.inc:201 lib/ui/stdcontext.inc:706
 msgid "Dissolve Inset|D"
 msgstr "Разтваряне на добавката"
 
@@ -24560,34 +24576,34 @@ msgid "Settings...|e"
 msgstr "Раздел"
 
 # src/insets/insetinclude.C:277 src/insets/insetinclude.C:318
-#: lib/ui/stdcontext.inc:329 lib/ui/stdcontext.inc:609
+#: lib/ui/stdcontext.inc:329 lib/ui/stdcontext.inc:622
 #, fuzzy
 msgid "Include|c"
 msgstr "Включи"
 
 # src/insets/insetinclude.C:314
-#: lib/ui/stdcontext.inc:330 lib/ui/stdcontext.inc:610
+#: lib/ui/stdcontext.inc:330 lib/ui/stdcontext.inc:623
 #, fuzzy
 msgid "Input|p"
 msgstr "Вход"
 
 # src/insets/insetinclude.C:316
-#: lib/ui/stdcontext.inc:331 lib/ui/stdcontext.inc:611
+#: lib/ui/stdcontext.inc:331 lib/ui/stdcontext.inc:624
 #, fuzzy
 msgid "Verbatim|V"
 msgstr "Неформатиран вход"
 
-#: lib/ui/stdcontext.inc:332 lib/ui/stdcontext.inc:612
+#: lib/ui/stdcontext.inc:332 lib/ui/stdcontext.inc:625
 msgid "Verbatim (marked blanks)|b"
 msgstr ""
 
 # src/ext_l10n.h:274
-#: lib/ui/stdcontext.inc:333 lib/ui/stdcontext.inc:613
+#: lib/ui/stdcontext.inc:333 lib/ui/stdcontext.inc:626
 msgid "Listing|L"
 msgstr "Списък"
 
 # src/ext_l10n.h:92
-#: lib/ui/stdcontext.inc:337 lib/ui/stdcontext.inc:617
+#: lib/ui/stdcontext.inc:337 lib/ui/stdcontext.inc:630
 msgid "Edit Included File...|E"
 msgstr "Редактиране на включен файл..."
 
@@ -24636,12 +24652,12 @@ msgid "Paragraph Break|B"
 msgstr "Прекъсване на абзац"
 
 # src/ext_l10n.h:94
-#: lib/ui/stdcontext.inc:373 lib/ui/stdcontext.inc:725
+#: lib/ui/stdcontext.inc:373 lib/ui/stdcontext.inc:752
 msgid "Edit Externally..."
 msgstr "Редактиране с друга програма...|Р"
 
 # src/ext_l10n.h:94
-#: lib/ui/stdcontext.inc:374 lib/ui/stdcontext.inc:726
+#: lib/ui/stdcontext.inc:374 lib/ui/stdcontext.inc:753
 #, fuzzy
 msgid "End Editing Externally"
 msgstr "Край на редактиране с външна програма"
@@ -24688,7 +24704,7 @@ msgid "Move Section Down|D"
 msgstr "Преместване раздела надолу"
 
 # src/LColor.C:64
-#: lib/ui/stdcontext.inc:394 lib/ui/stdcontext.inc:713
+#: lib/ui/stdcontext.inc:394 lib/ui/stdcontext.inc:738
 msgid "Move Section Up|U"
 msgstr "Преместване раздела нагоре"
 
@@ -24698,7 +24714,7 @@ msgid "Insert Regular Expression"
 msgstr "Вмъкване на регулярен израз"
 
 # src/LColor.C:75
-#: lib/ui/stdcontext.inc:398 lib/ui/stdcontext.inc:702
+#: lib/ui/stdcontext.inc:398 lib/ui/stdcontext.inc:715
 msgid "Accept Change|c"
 msgstr "Приемане на промяна|П"
 
@@ -24988,188 +25004,195 @@ msgstr "Добавяна на неопределено разклонение|р
 msgid "Insert Reference at Cursor Position|I"
 msgstr "Вмъкване на препратка в позицията на курсора|к"
 
-#: lib/ui/stdcontext.inc:625
+# src/LyXAction.C:361
+#: lib/ui/stdcontext.inc:588 lib/ui/stdcontext.inc:597
+#: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:743
+#, fuzzy
+msgid "Insert Cross-Reference to this Item|C"
+msgstr "Вмъкване на препратка"
+
+#: lib/ui/stdcontext.inc:638
 #, fuzzy
 msgid "Insert Copy at Cursor Position|I"
 msgstr "Вмъкване на препратка в позицията на курсора|к"
 
-#: lib/ui/stdcontext.inc:637
+#: lib/ui/stdcontext.inc:650
 msgid "Index All Occurrences of this Word|W"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:639
+#: lib/ui/stdcontext.inc:652
 msgid "Single Page (No Page Range)|P"
 msgstr ""
 
 # src/frontends/xforms/form_print.C:112
-#: lib/ui/stdcontext.inc:640
+#: lib/ui/stdcontext.inc:653
 #, fuzzy
 msgid "Start Page Range|t"
 msgstr "Начална страница: "
 
-#: lib/ui/stdcontext.inc:641
+#: lib/ui/stdcontext.inc:654
 #, fuzzy
 msgid "End Page Range|E"
 msgstr "На страница <Page>"
 
 # src/frontends/xforms/FormPreferences.C:252
-#: lib/ui/stdcontext.inc:643
+#: lib/ui/stdcontext.inc:656
 #, fuzzy
 msgid "No Page Formatting|N"
 msgstr "Форматиращ елемент|Ф"
 
 # src/frontends/xforms/FormPreferences.C:252
-#: lib/ui/stdcontext.inc:644
+#: lib/ui/stdcontext.inc:657
 #, fuzzy
 msgid "Bold Page Formatting|B"
 msgstr "Форматиращ елемент|Ф"
 
 # src/frontends/xforms/FormPreferences.C:252
-#: lib/ui/stdcontext.inc:645
+#: lib/ui/stdcontext.inc:658
 #, fuzzy
 msgid "Italic Page Formatting|I"
 msgstr "Форматиращ елемент|Ф"
 
-#: lib/ui/stdcontext.inc:646
+#: lib/ui/stdcontext.inc:659
 msgid "Emphasized Page Formatting|z"
 msgstr ""
 
 # src/frontends/kde/tocdlg.C:57
-#: lib/ui/stdcontext.inc:647
+#: lib/ui/stdcontext.inc:660
 #, fuzzy
 msgid "Custom Page Formatting...|u"
 msgstr "Формат от потребителя"
 
 # src/LyXAction.C:248
-#: lib/ui/stdcontext.inc:651
+#: lib/ui/stdcontext.inc:664
 #, fuzzy
 msgid "Insert Subentry|n"
 msgstr "Вмъкване на индекс"
 
 # src/LyXAction.C:354
-#: lib/ui/stdcontext.inc:652
+#: lib/ui/stdcontext.inc:665
 #, fuzzy
 msgid "Insert Sortkey|k"
 msgstr "Вмъкване на бележка"
 
 # src/LyXAction.C:361
-#: lib/ui/stdcontext.inc:653
+#: lib/ui/stdcontext.inc:666
 #, fuzzy
 msgid "Insert See Reference|c"
 msgstr "Препратка към итернет адрес"
 
 # src/LyXAction.C:361
-#: lib/ui/stdcontext.inc:654
+#: lib/ui/stdcontext.inc:667
 #, fuzzy
 msgid "Insert See also Reference|a"
 msgstr "Препратка към итернет адрес"
 
-#: lib/ui/stdcontext.inc:662 lib/ui/stdmenus.inc:541
+#: lib/ui/stdcontext.inc:675 lib/ui/stdmenus.inc:541
 msgid "See|e"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:663 lib/ui/stdmenus.inc:542
+#: lib/ui/stdcontext.inc:676 lib/ui/stdmenus.inc:542
 msgid "See also|a"
 msgstr ""
 
 # src/insets/insetfloat.C:150
-#: lib/ui/stdcontext.inc:672
+#: lib/ui/stdcontext.inc:685
 msgid "All Indexes|A"
 msgstr "Всички индекси|В"
 
-#: lib/ui/stdcontext.inc:675
+#: lib/ui/stdcontext.inc:688
 msgid "Subindex|b"
 msgstr "Подиндекс|и"
 
 # src/form1.C:249
-#: lib/ui/stdcontext.inc:703 lib/ui/stdmenus.inc:593
+#: lib/ui/stdcontext.inc:716 lib/ui/stdmenus.inc:593
 msgid "Reject Change|R"
 msgstr "Отхвърляне на избраната промяна"
 
 # src/ext_l10n.h:344
-#: lib/ui/stdcontext.inc:711
+#: lib/ui/stdcontext.inc:736
 msgid "Promote Section|P"
 msgstr "Повишаване на раздела"
 
 # src/ext_l10n.h:344
-#: lib/ui/stdcontext.inc:712
+#: lib/ui/stdcontext.inc:737
 msgid "Demote Section|D"
 msgstr "Понижаване на раздела"
 
 # src/LColor.C:64
-#: lib/ui/stdcontext.inc:714
+#: lib/ui/stdcontext.inc:739
 msgid "Move Section Down|w"
 msgstr "Преместване на раздела надолу|д"
 
 # src/LColor.C:64
-#: lib/ui/stdcontext.inc:716
+#: lib/ui/stdcontext.inc:741
 msgid "Select Section|S"
 msgstr "Избиране на раздел|р"
 
 # src/frontends/kde/dlg/printdlgdata.C:246
-#: lib/ui/stdcontext.inc:724
+#: lib/ui/stdcontext.inc:751
 msgid "Wrap by Preview|y"
 msgstr "Показване в предвар. изглед|и"
 
 # src/MenuBackend.C:414 src/ext_l10n.h:14 src/ext_l10n.h:19
-#: lib/ui/stdcontext.inc:735
+#: lib/ui/stdcontext.inc:762
 msgid "Open Target...|O"
 msgstr "Отваряне на цел...|О"
 
 # src/frontends/kde/dlg/paraextradlgdata.C:142
-#: lib/ui/stdcontext.inc:751 lib/ui/stdmenus.inc:362
+#: lib/ui/stdcontext.inc:778 lib/ui/stdmenus.inc:362
 msgid "Lock Toolbars|L"
 msgstr "Заключване на лентите"
 
-#: lib/ui/stdcontext.inc:753 lib/ui/stdmenus.inc:364
+#: lib/ui/stdcontext.inc:780 lib/ui/stdmenus.inc:364
 msgid "Small-sized Icons"
 msgstr "Малки икони"
 
-#: lib/ui/stdcontext.inc:754 lib/ui/stdmenus.inc:365
+#: lib/ui/stdcontext.inc:781 lib/ui/stdmenus.inc:365
 msgid "Normal-sized Icons"
 msgstr "Нолмални икони"
 
-#: lib/ui/stdcontext.inc:755 lib/ui/stdmenus.inc:366
+#: lib/ui/stdcontext.inc:782 lib/ui/stdmenus.inc:366
 msgid "Big-sized Icons"
 msgstr "Големи икони"
 
-#: lib/ui/stdcontext.inc:756 lib/ui/stdmenus.inc:367
+#: lib/ui/stdcontext.inc:783 lib/ui/stdmenus.inc:367
 msgid "Huge-sized Icons"
 msgstr "Огромни икони"
 
-#: lib/ui/stdcontext.inc:757 lib/ui/stdmenus.inc:368
+#: lib/ui/stdcontext.inc:784 lib/ui/stdmenus.inc:368
 msgid "Giant-sized Icons"
 msgstr "Гигантски икони"
 
 # src/insets/insetbib.C:69 src/insets/insetbib.C:70 src/insets/insetbib.C:210
 # src/insets/insetbib.C:211
-#: lib/ui/stdcontext.inc:771
+#: lib/ui/stdcontext.inc:798
 #, fuzzy
 msgid "Zoom Level|Z"
 msgstr "Показване на мащаб|П"
 
-#: lib/ui/stdcontext.inc:772
+#: lib/ui/stdcontext.inc:799
 #, fuzzy
 msgid "Zoom Slider|S"
 msgstr "Показване на плъзгач за мащаб"
 
-#: lib/ui/stdcontext.inc:774
+#: lib/ui/stdcontext.inc:801
 msgid "Word Count|W"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:775
+#: lib/ui/stdcontext.inc:802
 msgid "Character Count|C"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:776
+#: lib/ui/stdcontext.inc:803
 msgid "Character Count (No Blanks)|h"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:777
+#: lib/ui/stdcontext.inc:804
 msgid "Start Statistics Relative to Current Count|R"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:778
+#: lib/ui/stdcontext.inc:805
 msgid "Reset to Absolute Statistics Count|A"
 msgstr ""
 
@@ -26635,13 +26658,13 @@ msgid "Spellcheck continuously"
 msgstr "Постоянна проверка на правописа"
 
 # src/BufferView2.C:435 src/LyXAction.C:406
-#: lib/ui/stdtoolbars.inc:87 src/BufferView.cpp:1519
+#: lib/ui/stdtoolbars.inc:87 src/BufferView.cpp:1532
 msgid "Undo"
 msgstr "Отмяна"
 
 # подсказка
 # src/BufferView2.C:456 src/LyXAction.C:357
-#: lib/ui/stdtoolbars.inc:88 src/BufferView.cpp:1540
+#: lib/ui/stdtoolbars.inc:88 src/BufferView.cpp:1553
 msgid "Redo"
 msgstr "Повторение"
 
@@ -27114,7 +27137,7 @@ msgstr "Дроби"
 
 # src/bufferview_funcs.C:267
 #: lib/ui/stdtoolbars.inc:222 lib/ui/stdtoolbars.inc:445
-#: src/frontends/qt/GuiDocument.cpp:1828
+#: src/frontends/qt/GuiDocument.cpp:1830
 msgid "Fonts"
 msgstr "Шрифтове"
 
@@ -27134,7 +27157,7 @@ msgid "Big operators"
 msgstr "Големи оператори"
 
 #: lib/ui/stdtoolbars.inc:226 lib/ui/stdtoolbars.inc:693
-#: src/frontends/qt/GuiDocument.cpp:5372
+#: src/frontends/qt/GuiDocument.cpp:5382
 msgid "Miscellaneous"
 msgstr "Разни символи"
 
@@ -32690,15 +32713,6 @@ msgstr "Пример"
 msgid "External Material"
 msgstr "Материал външен формат"
 
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "Файнман диаграми"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Instant Preview"
-msgstr "Непосредствен прадварителен преглед"
-
 # src/LyXAction.C:251
 #: lib/examples/Articles:0
 #, fuzzy
@@ -32711,11 +32725,13 @@ msgstr "Изброяване с водещи знаци"
 msgid "Minted File Listing"
 msgstr "&В реда"
 
-# src/ext_l10n.h:244
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Minted Listings"
-msgstr "Фигура"
+msgid "XY-Pic"
+msgstr ""
+
+#: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "Файнман диаграми"
 
 # src/ext_l10n.h:244
 #: lib/examples/Articles:0
@@ -32723,9 +32739,16 @@ msgstr "Фигура"
 msgid "XY-Figure"
 msgstr "Изображение"
 
+# src/ext_l10n.h:244
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr ""
+#, fuzzy
+msgid "Minted Listings"
+msgstr "Фигура"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Instant Preview"
+msgstr "Непосредствен прадварителен преглед"
 
 # src/frontends/xforms/FormGraphics.C:36
 # src/frontends/xforms/FormGraphics.C:359
@@ -32746,17 +32769,17 @@ msgstr "Ротация"
 msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "допълнителни опции"
 
-# src/frontends/xforms/form_preferences.C:926
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "допълнителни опции"
-
 # src/ext_l10n.h:423
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Writing Armenian"
 msgstr "американски"
+
+# src/frontends/xforms/form_preferences.C:926
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "допълнителни опции"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -32782,10 +32805,6 @@ msgid "Serial Letter 3"
 msgstr "Държава"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr ""
-
-#: lib/examples/Articles:0
 #, fuzzy
 msgid "LilyPond Book"
 msgstr "LilyPond"
@@ -32796,37 +32815,41 @@ msgstr "LilyPond"
 msgid "Multilingual Captions"
 msgstr "допълнителни опции"
 
+#: lib/examples/Articles:0
+msgid "Hazard and Precautionary Statements"
+msgstr ""
+
+#: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr ""
+
 # src/frontends/kde/parageneraldlg.C:37 src/frontends/kde/parageneraldlg.C:44
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Noweb2LyX"
 msgstr "NoWeb"
 
-#: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr ""
-
 # src/frontends/kde/dlg/paraextradlgdata.C:155
-#: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
+#: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1828
 msgid "Modules"
 msgstr "Модули"
-
-# src/ext_l10n.h:136
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Beamer (Complex)"
-msgstr "Бележка(N)|N"
-
-# src/frontends/kde/dlg/printdlgdata.C:246
-#: lib/examples/Articles:0
-msgid "Foils"
-msgstr "Обтекаеми профили"
 
 # src/frontends/xforms/form_preferences.C:920
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Foils Landslide"
 msgstr "пейзаж"
+
+# src/frontends/kde/dlg/printdlgdata.C:246
+#: lib/examples/Articles:0
+msgid "Foils"
+msgstr "Обтекаеми профили"
+
+# src/ext_l10n.h:136
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Beamer (Complex)"
+msgstr "Бележка(N)|N"
 
 # src/minibuffer.C:46 src/minibuffer.C:244
 #: lib/examples/Articles:0
@@ -32838,16 +32861,11 @@ msgstr "Добре дошли в LyX!"
 msgid "Writing Korean with CJK-ko"
 msgstr ""
 
+# src/mathed/math_panel.C:134
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Статия за прожектор KOMA-скрипт"
-
-# src/ext_l10n.h:400
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "IEEE Transactions Conference"
-msgstr "Преход"
+msgid "Mathematical Monthly"
+msgstr "Матрица"
 
 # src/ext_l10n.h:400
 #: lib/examples/Articles:0
@@ -32855,25 +32873,20 @@ msgstr "Преход"
 msgid "IEEE Transactions Journal"
 msgstr "Преход"
 
-# src/mathed/math_panel.C:134
+# src/ext_l10n.h:400
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Mathematical Monthly"
-msgstr "Матрица"
+msgid "IEEE Transactions Conference"
+msgstr "Преход"
 
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr ""
 
-# src/lyxfunc.C:1105 src/lyxfunc.C:2550
 #: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Главен файл"
-
-# src/ext_l10n.h:219
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Посвещение"
+#, fuzzy
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Статия за прожектор KOMA-скрипт"
 
 # src/ext_l10n.h:262 src/frontends/gnome/FormIndex.C:89
 # src/frontends/xforms/form_index.C:28
@@ -32883,29 +32896,21 @@ msgstr "02 Предговор"
 
 # src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
 #: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Корица"
+msgid "07 Part"
+msgstr "07 Част"
+
+#: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Речник"
 
 # src/ext_l10n.h:202
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04 Благодарности"
 
-# src/frontends/gnome/FormToc.C:108 src/frontends/gnome/FormToc.C:185
-# src/frontends/kde/FormToc.C:177 src/frontends/kde/FormToc.C:178
-# src/frontends/kde/tocdlg.C:30 src/insets/insettoc.C:28
-#: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Списък със сътрудници"
-
 #: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06 Съкращения"
-
-# src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
-#: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Част"
 
 # src/ext_l10n.h:175
 #: lib/examples/Articles:0
@@ -32917,18 +32922,37 @@ msgstr "08 Автор"
 msgid "09 Appendix"
 msgstr "09 Приложение"
 
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Речник"
-
 # src/ext_l10n.h:329
 #: lib/examples/Articles:0
 msgid "11 References"
 msgstr "11 Препратки"
 
+# src/frontends/gnome/FormToc.C:108 src/frontends/gnome/FormToc.C:185
+# src/frontends/kde/FormToc.C:177 src/frontends/kde/FormToc.C:178
+# src/frontends/kde/tocdlg.C:30 src/insets/insettoc.C:28
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 Съкращения"
+msgid "05 Contributor List"
+msgstr "05 Списък със сътрудници"
+
+# src/ext_l10n.h:219
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Посвещение"
+
+# src/lyxfunc.C:1105 src/lyxfunc.C:2550
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 Главен файл"
+
+# src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03 Корица"
+
+# src/ext_l10n.h:357
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10 Решения"
 
 # src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
 #: lib/examples/Articles:0
@@ -32946,23 +32970,22 @@ msgid "08 Appendix"
 msgstr "08 Приложение"
 
 #: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr "05 Съкращения"
+
+#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Речник"
-
-# src/ext_l10n.h:357
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Решения"
-
-# src/frontends/xforms/FormPreferences.C:244
-#: lib/examples/Articles:0
-msgid "Colored"
-msgstr "Цветен"
 
 # src/LColor.C:91
 #: lib/examples/Articles:0
 msgid "Simple"
 msgstr "Обикновен"
+
+# src/frontends/xforms/FormPreferences.C:244
+#: lib/examples/Articles:0
+msgid "Colored"
+msgstr "Цветен"
 
 # src/ext_l10n.h:194
 #: lib/examples/Articles:0
@@ -32990,8 +33013,8 @@ msgstr "Дисертация"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Статия на японски (стандяртен клас: вертикално написана)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Книга на япоски (стандартен клас, вертикално написана)"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -33000,8 +33023,8 @@ msgstr "Книга на япоски (стандартен клас, верти�
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Книга на япоски (стандартен клас, вертикално написана)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Статия на японски (стандяртен клас: вертикално написана)"
 
 # src/LColor.C:84
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
@@ -33082,7 +33105,7 @@ msgid "Could not remove the temporary directory %1$s"
 msgstr "Неуспех при премахване на временна директория %1$s"
 
 # src/lyxfunc.C:328 src/lyxfunc.C:2996
-#: src/Buffer.cpp:1024 src/Text.cpp:616
+#: src/Buffer.cpp:1024 src/Text.cpp:617
 #, c-format
 msgid "Unknown token: %1$s %2$s\n"
 msgstr "Непознато израз: %1$s %2$s\n"
@@ -33901,13 +33924,13 @@ msgstr "Класа документи не е наличен!"
 
 # src/insets/inset.C:75
 #: src/BufferParams.cpp:1105 src/Color.cpp:283
-#: src/frontends/qt/GuiDocument.cpp:3728
+#: src/frontends/qt/GuiDocument.cpp:3734
 msgid "greyedout inset text"
 msgstr "Текст на цветна бележка"
 
 # src/lyxfunc.C:1125
 #: src/BufferParams.cpp:1727 src/BufferParams.cpp:1881
-#: src/BufferParams.cpp:2362 src/Encoding.cpp:264 src/Paragraph.cpp:3177
+#: src/BufferParams.cpp:2356 src/Encoding.cpp:264 src/Paragraph.cpp:3177
 #: src/frontends/qt/LaTeXHighlighter.cpp:176
 #: src/insets/InsetCommandParams.cpp:524 src/insets/InsetCommandParams.cpp:532
 #: src/insets/InsetGraphics.cpp:904 src/insets/InsetGraphics.cpp:912
@@ -33919,7 +33942,7 @@ msgstr "LyX Предупреждение:"
 
 # src/ext_l10n.h:78
 #: src/BufferParams.cpp:1728 src/BufferParams.cpp:1882
-#: src/BufferParams.cpp:2363 src/Encoding.cpp:265 src/Paragraph.cpp:3178
+#: src/BufferParams.cpp:2357 src/Encoding.cpp:265 src/Paragraph.cpp:3178
 #: src/insets/InsetCommandParams.cpp:525 src/insets/InsetCommandParams.cpp:533
 #: src/insets/InsetGraphics.cpp:905 src/insets/InsetGraphics.cpp:913
 #: src/insets/InsetListings.cpp:299 src/insets/InsetListings.cpp:307
@@ -33969,11 +33992,11 @@ msgid ""
 msgstr ""
 
 # src/ext_l10n.h:78
-#: src/BufferParams.cpp:2376
+#: src/BufferParams.cpp:2370
 msgid "Uncodable character in user preamble"
 msgstr "Символ, които не може да се кодира в преамбюла от потребителя"
 
-#: src/BufferParams.cpp:2378
+#: src/BufferParams.cpp:2372
 #, c-format
 msgid ""
 "The user preamble of your document contains glyphs that are unknown in the "
@@ -33985,7 +34008,7 @@ msgid ""
 "(such as utf8) or change the preamble code accordingly."
 msgstr ""
 
-#: src/BufferParams.cpp:2693
+#: src/BufferParams.cpp:2687
 #, c-format
 msgid ""
 "The layout file:\n"
@@ -33996,11 +34019,11 @@ msgid ""
 msgstr ""
 
 # src/lyx_cb.C:263
-#: src/BufferParams.cpp:2699
+#: src/BufferParams.cpp:2693
 msgid "Document class not found"
 msgstr "Не е открит клас документи"
 
-#: src/BufferParams.cpp:2706
+#: src/BufferParams.cpp:2700
 #, c-format
 msgid ""
 "Due to some error in it, the layout file:\n"
@@ -34016,26 +34039,26 @@ msgstr ""
 "правилен краен документ."
 
 # src/converter.C:552 src/converter.C:645
-#: src/BufferParams.cpp:2712 src/BufferView.cpp:1471 src/BufferView.cpp:1503
+#: src/BufferParams.cpp:2706 src/BufferView.cpp:1484 src/BufferView.cpp:1516
 msgid "Could not load class"
 msgstr "Ве може да се зареди клас."
 
 # src/debug.C:33
-#: src/BufferParams.cpp:2757
+#: src/BufferParams.cpp:2751
 msgid "Error reading internal layout information"
 msgstr "Грешка при четене на вътрешна информация за оформлението"
 
 # src/frontends/gnome/FormCitation.C:453
-#: src/BufferParams.cpp:2758 src/TextClass.cpp:1961 src/TextClass.cpp:1994
+#: src/BufferParams.cpp:2752 src/TextClass.cpp:1961 src/TextClass.cpp:1994
 msgid "Read Error"
 msgstr "Грешка при четене"
 
 # src/ext_l10n.h:186
-#: src/BufferParams.cpp:3810
+#: src/BufferParams.cpp:3804
 msgid "No bibliography processor found!"
 msgstr "Не е открита програма за библиографията!"
 
-#: src/BufferParams.cpp:3812
+#: src/BufferParams.cpp:3806
 #, c-format
 msgid ""
 "The bibliography processor requested by this document (%1$s) is not "
@@ -34049,11 +34072,11 @@ msgstr ""
 "Моля, поправете вашата инсталация!"
 
 # src/ext_l10n.h:186
-#: src/BufferParams.cpp:3820
+#: src/BufferParams.cpp:3814
 msgid "Requested bibliography processor not found!"
 msgstr "Програмата избрана за обработка на библиографията не е открита!"
 
-#: src/BufferParams.cpp:3822
+#: src/BufferParams.cpp:3816
 #, c-format
 msgid ""
 "The bibliography processor requested by this document (%1$s) is not "
@@ -34092,141 +34115,141 @@ msgstr "Документа е бил променен от външна прог
 msgid "This portion of the document is deleted."
 msgstr "Тази част от документа е изтрита."
 
-#: src/BufferView.cpp:1226 src/BufferView.cpp:2440
+#: src/BufferView.cpp:1226 src/BufferView.cpp:2505
 #: src/frontends/qt/GuiView.cpp:4552 src/frontends/qt/GuiView.cpp:4649
 msgid "Absolute filename expected."
 msgstr "Очаква се абсолютен път на файл."
 
 # src/lyx_cb.C:263
-#: src/BufferView.cpp:1469 src/BufferView.cpp:1501
+#: src/BufferView.cpp:1482 src/BufferView.cpp:1514
 #, c-format
 msgid "The document class `%1$s' could not be loaded."
 msgstr "Неуспешно зареждане на клас документи „%1$s“."
 
 # src/BufferView2.C:440
-#: src/BufferView.cpp:1527
+#: src/BufferView.cpp:1540
 msgid "No further undo information"
 msgstr "Няма нищо повече за отменяне"
 
 # src/BufferView2.C:461
-#: src/BufferView.cpp:1548
+#: src/BufferView.cpp:1561
 msgid "No further redo information"
 msgstr "Няма нищо повече за повтаряне"
 
 # src/lyxfr1.C:192 src/lyxfr1.C:239
-#: src/BufferView.cpp:1740 src/BufferView.cpp:1755 src/BufferView.cpp:1788
+#: src/BufferView.cpp:1805 src/BufferView.cpp:1820 src/BufferView.cpp:1853
 msgid "Search string not found!"
 msgstr "Търсеният низ не е намерен."
 
 # src/lyxfunc.C:1949
-#: src/BufferView.cpp:1887
+#: src/BufferView.cpp:1952
 msgid "Mark off"
 msgstr "Маркиране изкл."
 
 # src/lyxfunc.C:1962
-#: src/BufferView.cpp:1893
+#: src/BufferView.cpp:1958
 msgid "Mark on"
 msgstr "Маркиране вкл."
 
 # src/lyxfunc.C:1839
-#: src/BufferView.cpp:1900
+#: src/BufferView.cpp:1965
 msgid "Mark removed"
 msgstr "Маркиране премахнато"
 
 # src/lyxfunc.C:1844
-#: src/BufferView.cpp:1903
+#: src/BufferView.cpp:1968
 msgid "Mark set"
 msgstr "Маркиране установено"
 
-#: src/BufferView.cpp:2013
+#: src/BufferView.cpp:2078
 msgid "Statistics for the selection:"
 msgstr "Статистика на избрания текст"
 
 # src/LyXAction.C:149
-#: src/BufferView.cpp:2015
+#: src/BufferView.cpp:2080
 msgid "Statistics for the document:"
 msgstr "Статистика за документа:"
 
 # src/converter.C:783 src/converter.C:853
-#: src/BufferView.cpp:2018
+#: src/BufferView.cpp:2083
 #, c-format
 msgid "%1$d words"
 msgstr "%1$d думи"
 
 # src/ext_l10n.h:262 src/frontends/gnome/FormIndex.C:89
 # src/frontends/xforms/form_index.C:28
-#: src/BufferView.cpp:2020
+#: src/BufferView.cpp:2085
 msgid "One word"
 msgstr "Една дума"
 
 # src/ext_l10n.h:78
-#: src/BufferView.cpp:2023
+#: src/BufferView.cpp:2088
 #, fuzzy, c-format
 msgid "%1$d characters"
 msgstr "Символи, които не могат да се кодират"
 
 # src/ext_l10n.h:78
-#: src/BufferView.cpp:2025
+#: src/BufferView.cpp:2090
 #, fuzzy
 msgid "One character"
 msgstr "символ, които не може да се кодира"
 
-#: src/BufferView.cpp:2028
+#: src/BufferView.cpp:2093
 #, fuzzy, c-format
 msgid "%1$d characters (no blanks)"
 msgstr "%1$d букви (с празните символи)"
 
-#: src/BufferView.cpp:2030
+#: src/BufferView.cpp:2095
 #, fuzzy
 msgid "One character (no blanks)"
 msgstr "Един знак (включително интервали)"
 
 # заглавие на диалогов прозорец
 # src/ext_l10n.h:362
-#: src/BufferView.cpp:2032
+#: src/BufferView.cpp:2097
 msgid "Statistics"
 msgstr "Статистика"
 
-#: src/BufferView.cpp:2276
+#: src/BufferView.cpp:2341
 #, c-format
 msgid ""
 "`inset-forall' interrupted because number of actions is larger than %1$d"
 msgstr ""
 
-#: src/BufferView.cpp:2278
+#: src/BufferView.cpp:2343
 #, c-format
 msgid "Applied \"%1$s\" to %2$d insets"
 msgstr ""
 
 # src/ext_l10n.h:441
-#: src/BufferView.cpp:2286
+#: src/BufferView.cpp:2351
 msgid "Branch name"
 msgstr "име на разклонение"
 
-#: src/BufferView.cpp:2293 src/frontends/qt/GuiBranches.cpp:225
+#: src/BufferView.cpp:2358 src/frontends/qt/GuiBranches.cpp:225
 msgid "Branch already exists"
 msgstr "Разклонението вече съществува"
 
 # src/lyxfunc.C:3309
-#: src/BufferView.cpp:3294
+#: src/BufferView.cpp:3359
 #, c-format
 msgid "Inserting document %1$s..."
 msgstr "Вмъкване на документ %1$s..."
 
 # src/exporter.C:89
-#: src/BufferView.cpp:3311
+#: src/BufferView.cpp:3376
 #, c-format
 msgid "Document %1$s inserted."
 msgstr "Документът %1$s e включен."
 
 # src/lyxfunc.C:3317
-#: src/BufferView.cpp:3313
+#: src/BufferView.cpp:3378
 #, fuzzy, c-format
 msgid "Could not insert document %1$s"
 msgstr "Неуспех при вмъкването"
 
 # src/lyxfunc.C:3185
-#: src/BufferView.cpp:3822
+#: src/BufferView.cpp:3887
 #, fuzzy, c-format
 msgid ""
 "Could not read the specified document\n"
@@ -34235,13 +34258,13 @@ msgid ""
 msgstr "Неуспех при отварянето"
 
 # src/buffer.C:3331
-#: src/BufferView.cpp:3824
+#: src/BufferView.cpp:3889
 #, fuzzy
 msgid "Could not read file"
 msgstr "Недъзможна е работата с файл: "
 
 # src/frontends/xforms/FormDocument.C:437
-#: src/BufferView.cpp:3831
+#: src/BufferView.cpp:3896
 #, fuzzy, c-format
 msgid ""
 "%1$s\n"
@@ -34249,17 +34272,17 @@ msgid ""
 msgstr " абзаци не могат да бъдат конвертирани"
 
 # src/converter.C:165 src/converter.C:195
-#: src/BufferView.cpp:3832 src/frontends/qt/qt_helpers.cpp:319
+#: src/BufferView.cpp:3897 src/frontends/qt/qt_helpers.cpp:319
 #: src/frontends/qt/qt_helpers.cpp:326 src/frontends/qt/qt_helpers.cpp:392
 #: src/output.cpp:39
 msgid "Could not open file"
 msgstr "Грешка при отваряне на файл."
 
-#: src/BufferView.cpp:3839
+#: src/BufferView.cpp:3904
 msgid "Reading not UTF-8 encoded file"
 msgstr "Четене на файл с различно от UTF-8 кодиране"
 
-#: src/BufferView.cpp:3840
+#: src/BufferView.cpp:3905
 msgid ""
 "The file is not UTF-8 encoded.\n"
 "It will be read as local 8Bit-encoded.\n"
@@ -34982,11 +35005,11 @@ msgid ""
 "Define a converter in the preferences."
 msgstr ""
 
-#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2115
 msgid "Pygments driver command not found!"
 msgstr ""
 
-#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2116
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -35123,16 +35146,16 @@ msgid "No output file was generated."
 msgstr "Не беше съставен изходен файл."
 
 # src/bufferview_funcs.C:271
-#: src/Cursor.cpp:417 src/Text.cpp:2209
+#: src/Cursor.cpp:417 src/Text.cpp:2210
 msgid ", Inset: "
 msgstr ", добавка: "
 
-#: src/Cursor.cpp:418 src/Text.cpp:2211
+#: src/Cursor.cpp:418 src/Text.cpp:2212
 msgid ", Cell: "
 msgstr ", клетка: "
 
 # src/ext_l10n.h:320
-#: src/Cursor.cpp:419 src/Text.cpp:2214
+#: src/Cursor.cpp:419 src/Text.cpp:2215
 msgid ", Position: "
 msgstr ", позиция: "
 
@@ -35175,13 +35198,13 @@ msgid "&Don't Add"
 msgstr "&Не се добавя"
 
 # src/lyx_cb.C:263
-#: src/CutAndPaste.cpp:866 src/Text.cpp:455
+#: src/CutAndPaste.cpp:866 src/Text.cpp:456
 #, c-format
 msgid "Layout `%1$s' was not found."
 msgstr "Не е открито оформление за „%1$s“."
 
 # src/insets/insettext.C:1036 src/lyxfunc.C:1261
-#: src/CutAndPaste.cpp:867 src/Text.cpp:456
+#: src/CutAndPaste.cpp:867 src/Text.cpp:457
 msgid "Layout Not Found"
 msgstr "Не е открито оформление на елемент"
 
@@ -35264,19 +35287,19 @@ msgstr "Номер %1$s"
 
 # src/frontends/xforms/form_preferences.C:105 src/lyxfont.C:42
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:148
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiListings.cpp:163
 msgid "Roman"
 msgstr "Серифна"
 
 # src/frontends/xforms/form_preferences.C:108
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiListings.cpp:163
 msgid "Sans Serif"
 msgstr "Безсерифна"
 
 # src/frontends/xforms/form_preferences.C:111 src/lyxfont.C:42
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:150
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiListings.cpp:163
 msgid "Typewriter"
 msgstr "Равноширока"
 
@@ -35541,11 +35564,11 @@ msgid "Xindy error: "
 msgstr "Грешка в xindy:"
 
 # src/lyx_cb.C:263
-#: src/LaTeXFonts.cpp:238 src/LaTeXFonts.cpp:315
+#: src/LaTeXFonts.cpp:239 src/LaTeXFonts.cpp:316
 msgid "Font not available"
 msgstr "Липсващ шрифт"
 
-#: src/LaTeXFonts.cpp:239 src/LaTeXFonts.cpp:316
+#: src/LaTeXFonts.cpp:240 src/LaTeXFonts.cpp:317
 #, c-format
 msgid ""
 "The LaTeX package `%1$s' needed for the font `%2$s'\n"
@@ -36572,18 +36595,18 @@ msgid ""
 msgstr ""
 
 # src/lyxfunc.C:328 src/lyxfunc.C:2996
-#: src/Text.cpp:482
+#: src/Text.cpp:483
 #, fuzzy
 msgid "Unknown Inset"
 msgstr "Непознато действие"
 
 # src/LyXAction.C:263
-#: src/Text.cpp:598 src/insets/InsetTabular.cpp:476
+#: src/Text.cpp:599 src/insets/InsetTabular.cpp:476
 #, fuzzy
 msgid "Change tracking author index missing"
 msgstr "Смяна на език"
 
-#: src/Text.cpp:599 src/insets/InsetTabular.cpp:477
+#: src/Text.cpp:600 src/insets/InsetTabular.cpp:477
 #, c-format
 msgid ""
 "A change tracking author information for index %1$d is missing. This can "
@@ -36593,13 +36616,13 @@ msgid ""
 msgstr ""
 
 # src/lyxfunc.C:328 src/lyxfunc.C:2996
-#: src/Text.cpp:615
+#: src/Text.cpp:616
 #, fuzzy
 msgid "Unknown token"
 msgstr "Непознато действие"
 
 # src/text.C:2003
-#: src/Text.cpp:992
+#: src/Text.cpp:993
 msgid ""
 "You cannot insert a space at the beginning of a paragraph. Please read the "
 "Tutorial."
@@ -36608,162 +36631,162 @@ msgstr ""
 "ръководството."
 
 # src/text.C:2005
-#: src/Text.cpp:1001
+#: src/Text.cpp:1002
 msgid "You cannot type two spaces this way. Please read the Tutorial."
 msgstr ""
 "Не може да се въвеждат последователно два или повече интервали! Проверете "
 "ръководството!"
 
-#: src/Text.cpp:1012
+#: src/Text.cpp:1013
 msgid "Character is uncodable in this verbatim context."
 msgstr "Има знак, който не може да се кодира в дословния контекст."
 
 # src/LyXAction.C:263
-#: src/Text.cpp:2154
+#: src/Text.cpp:2155
 msgid "[Change Tracking] "
 msgstr "[Проследяване на промените]"
 
-#: src/Text.cpp:2162
+#: src/Text.cpp:2163
 #, c-format
 msgid "Changed by %1$s[[author]] on %2$s[[date]]. "
 msgstr "Промяна от %1$s на %2$s."
 
 # src/bufferview_funcs.C:267
-#: src/Text.cpp:2172 src/mathed/InsetMathFont.cpp:236
+#: src/Text.cpp:2173 src/mathed/InsetMathFont.cpp:236
 #: src/mathed/InsetMathFontOld.cpp:111
 #, c-format
 msgid "Font: %1$s"
 msgstr "Шрифт: %1$s"
 
 # src/bufferview_funcs.C:271
-#: src/Text.cpp:2177
+#: src/Text.cpp:2178
 #, c-format
 msgid ", Depth: %1$d"
 msgstr ", Дълбочина: %1$d"
 
 # src/bufferview_funcs.C:277
-#: src/Text.cpp:2183
+#: src/Text.cpp:2184
 msgid ", Spacing: "
 msgstr ", Отместване: "
 
 # src/bufferview_funcs.C:283
-#: src/Text.cpp:2189 src/frontends/qt/GuiDocument.cpp:910
+#: src/Text.cpp:2190 src/frontends/qt/GuiDocument.cpp:910
 msgid "OneHalf"
 msgstr "eдна и половина"
 
 # src/bufferview_funcs.C:289
-#: src/Text.cpp:2195
+#: src/Text.cpp:2196
 msgid "Other ("
 msgstr "Друго ("
 
 # src/insets/insetbib.C:340
-#: src/Text.cpp:2206
+#: src/Text.cpp:2207
 msgid ", Style: "
 msgstr ", Стил: "
 
 # src/ext_l10n.h:303
-#: src/Text.cpp:2212
+#: src/Text.cpp:2213
 msgid ", Paragraph: "
 msgstr ", Абзац:"
 
 # src/bufferview_funcs.C:271
-#: src/Text.cpp:2213
+#: src/Text.cpp:2214
 msgid ", Id: "
 msgstr ", ИН: "
 
-#: src/Text.cpp:2223
+#: src/Text.cpp:2224
 msgid ", Char: 0x"
 msgstr ", Символ: 0x"
 
-#: src/Text.cpp:2225
+#: src/Text.cpp:2226
 msgid ", Boundary: "
 msgstr ", Граница: "
 
 # src/LyXAction.C:190
-#: src/Text.cpp:2839
+#: src/Text.cpp:2840
 #, fuzzy
 msgid "No font change defined."
 msgstr "Към следваща грешка"
 
 # src/lyxfunc.C:2565 src/mathed/formula.C:486
-#: src/Text.cpp:3545
+#: src/Text.cpp:3546
 msgid "Math editor mode"
 msgstr "Матем. редактор"
 
-#: src/Text.cpp:3547
+#: src/Text.cpp:3548
 msgid "No valid math formula"
 msgstr "Няма валидна мат. формула"
 
-#: src/Text.cpp:3555 src/mathed/InsetMathNest.cpp:1350
+#: src/Text.cpp:3556 src/mathed/InsetMathNest.cpp:1350
 msgid "Already in regular expression mode"
 msgstr "Вече е в режим на регулярни изрази"
 
 # src/lyxfunc.C:2565 src/mathed/formula.C:486
-#: src/Text.cpp:3568
+#: src/Text.cpp:3569
 msgid "Regexp editor mode"
 msgstr "Режим на редактор за регулярни изрази"
 
-#: src/Text.cpp:3950
+#: src/Text.cpp:3951
 msgid "Action flattens document structure"
 msgstr ""
 
-#: src/Text.cpp:3951
+#: src/Text.cpp:3952
 msgid ""
 "This action will cause some headings that have been on different level "
 "before to be on the same level since there is no more lower or higher "
 "heading level. Continue still?"
 msgstr ""
 
-#: src/Text.cpp:3956
+#: src/Text.cpp:3957
 msgid "&Yes, continue nonetheless"
 msgstr ""
 
-#: src/Text.cpp:3957
+#: src/Text.cpp:3958
 msgid "&No, quit operation"
 msgstr ""
 
 # src/insets/insettext.C:1036 src/lyxfunc.C:1260
-#: src/Text.cpp:5009
+#: src/Text.cpp:5010
 msgid "Layout "
 msgstr "Оформление "
 
 # src/insets/insettext.C:1036 src/lyxfunc.C:1261
-#: src/Text.cpp:5010 src/Text.cpp:5589
+#: src/Text.cpp:5011 src/Text.cpp:5602
 msgid " not known"
 msgstr " непознато"
 
 # src/LColor.C:97
-#: src/Text.cpp:5588
+#: src/Text.cpp:5601
 msgid "Table Style "
 msgstr "Стил на таблица"
 
 # src/lyxfunc.C:1105 src/lyxfunc.C:2550
-#: src/Text.cpp:5797 src/frontends/qt/GuiApplication.cpp:1879
+#: src/Text.cpp:5811 src/frontends/qt/GuiApplication.cpp:1886
 msgid "Missing argument"
 msgstr "Липсващ аргумент"
 
-#: src/Text.cpp:5963
+#: src/Text.cpp:5977
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr "Невалиден аргумент (броя превишава размера на стека!)"
 
-#: src/Text.cpp:5967
+#: src/Text.cpp:5981
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr "Невалиден аргумент (трябва да е неотрицателно число!)"
 
-#: src/Text.cpp:5972 src/Text.cpp:5986
+#: src/Text.cpp:5986 src/Text.cpp:6000
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr "Приложени настройки на текста: %1$s"
 
-#: src/Text.cpp:5988
+#: src/Text.cpp:6002
 msgid "Invalid argument of textstyle-update"
 msgstr ""
 
-#: src/Text.cpp:6145
+#: src/Text.cpp:6159
 msgid "Path to thesaurus directory not set!"
 msgstr "Пътя до директорията със синонимния речник не е зададен!"
 
-#: src/Text.cpp:6146
+#: src/Text.cpp:6160
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -36777,7 +36800,7 @@ msgstr ""
 
 # src/frontends/kde/FormParagraph.C:183
 # src/frontends/xforms/FormParagraph.C:148
-#: src/Text.cpp:6272 src/Text.cpp:6283
+#: src/Text.cpp:6286 src/Text.cpp:6297
 msgid "Paragraph layout set"
 msgstr "Оформяне на абзаци"
 
@@ -36958,7 +36981,7 @@ msgstr "Невалидни указатели и препратки"
 # src/frontends/xforms/FormDocument.C:273 src/insets/figinset.C:1975
 # src/insets/insetexternal.C:143 src/lyxfunc.C:3105 src/lyxfunc.C:3181
 # src/lyxfunc.C:3313
-#: src/TocBackend.cpp:299 src/frontends/qt/GuiDocument.cpp:1825
+#: src/TocBackend.cpp:299 src/frontends/qt/GuiDocument.cpp:1827
 msgid "Child Documents"
 msgstr "Поддокумент"
 
@@ -37306,7 +37329,7 @@ msgstr ""
 # src/frontends/xforms/FormBase.h:153 src/frontends/xforms/FormInset.h:31
 # src/frontends/xforms/FormInset.h:55 src/lyxfunc.C:744
 #: src/frontends/qt/ButtonController.cpp:267
-#: src/frontends/qt/GuiApplication.cpp:1997 src/frontends/qt/GuiCompare.cpp:196
+#: src/frontends/qt/GuiApplication.cpp:2004 src/frontends/qt/GuiCompare.cpp:196
 #: src/frontends/qt/GuiSymbols.cpp:346
 msgid "Cancel"
 msgstr "Отказване"
@@ -37432,8 +37455,8 @@ msgstr "Търсене и замяна на следващото съвпаде�
 
 # src/frontends/xforms/form_preferences.C:999
 #: src/frontends/qt/FloatPlacement.cpp:182
-#: src/frontends/qt/GuiDocument.cpp:1179 src/frontends/qt/GuiDocument.cpp:2906
-#: src/frontends/qt/GuiDocument.cpp:2933
+#: src/frontends/qt/GuiDocument.cpp:1179 src/frontends/qt/GuiDocument.cpp:2908
+#: src/frontends/qt/GuiDocument.cpp:2935
 msgid "Class Default"
 msgstr "по подразбиране за класа"
 
@@ -37443,7 +37466,7 @@ msgid "Document Default"
 msgstr "по подразбиране за документа"
 
 # src/form1.C:129 src/sp_form.C:58
-#: src/frontends/qt/FloatPlacement.h:38 src/frontends/qt/GuiDocument.cpp:1840
+#: src/frontends/qt/FloatPlacement.h:38 src/frontends/qt/GuiDocument.cpp:1842
 msgid "Float Settings"
 msgstr "Плаващи обекти"
 
@@ -37623,59 +37646,59 @@ msgid "Open"
 msgstr "Отваряне"
 
 # src/text2.C:456
-#: src/frontends/qt/GuiApplication.cpp:1276
+#: src/frontends/qt/GuiApplication.cpp:1283
 msgid "Nothing to do"
 msgstr "Няма нищо за правене"
 
 # src/lyxfunc.C:328 src/lyxfunc.C:2996
-#: src/frontends/qt/GuiApplication.cpp:1282
+#: src/frontends/qt/GuiApplication.cpp:1289
 msgid "Unknown action"
 msgstr "Непознато действие"
 
 # src/frontends/xforms/form_preferences.C:445
-#: src/frontends/qt/GuiApplication.cpp:1326
+#: src/frontends/qt/GuiApplication.cpp:1333
 msgid "Command not handled"
 msgstr "Командата не е обработена"
 
 # src/frontends/xforms/form_preferences.C:445
-#: src/frontends/qt/GuiApplication.cpp:1332
+#: src/frontends/qt/GuiApplication.cpp:1339
 msgid "Command disabled"
 msgstr "Командата е деактивирана"
 
-#: src/frontends/qt/GuiApplication.cpp:1440
+#: src/frontends/qt/GuiApplication.cpp:1447
 #, c-format
 msgid "Bad debug value `%1$s'."
 msgstr "Непознат код за отстраняване на грешка „%1$s“."
 
 # src/lyxfunc.C:347
-#: src/frontends/qt/GuiApplication.cpp:1469 src/frontends/qt/GuiView.cpp:2406
+#: src/frontends/qt/GuiApplication.cpp:1476 src/frontends/qt/GuiView.cpp:2406
 msgid "Command not allowed without a buffer open"
 msgstr "Командата не е позволена без отворен буфер"
 
-#: src/frontends/qt/GuiApplication.cpp:1476
+#: src/frontends/qt/GuiApplication.cpp:1483
 msgid "the <LFUN-COMMAND> argument of buffer-forall is not valid"
 msgstr "аргумента <LFUN-COMMAND> от buffer-forall не е валиден"
 
-#: src/frontends/qt/GuiApplication.cpp:1553
+#: src/frontends/qt/GuiApplication.cpp:1560
 msgid "Wrong focus!"
 msgstr "Сгрешен фокус!"
 
 # src/lyx_cb.C:977
-#: src/frontends/qt/GuiApplication.cpp:1687
+#: src/frontends/qt/GuiApplication.cpp:1694
 msgid "Running configure..."
 msgstr "Стартирам конфигуриране..."
 
 # src/lyx_cb.C:984
-#: src/frontends/qt/GuiApplication.cpp:1697
+#: src/frontends/qt/GuiApplication.cpp:1704
 msgid "Reloading configuration..."
 msgstr "Презареждам конфигурацията..."
 
 # src/lyx_cb.C:986
-#: src/frontends/qt/GuiApplication.cpp:1707
+#: src/frontends/qt/GuiApplication.cpp:1714
 msgid "System reconfiguration failed"
 msgstr "Програмата не успя да се преконфигурира"
 
-#: src/frontends/qt/GuiApplication.cpp:1708
+#: src/frontends/qt/GuiApplication.cpp:1715
 msgid ""
 "The system reconfiguration has failed.\n"
 "Default textclass is used but LyX may\n"
@@ -37689,11 +37712,11 @@ msgstr ""
 
 # заглавие на програмен диалог
 # src/lyx_cb.C:986
-#: src/frontends/qt/GuiApplication.cpp:1713
+#: src/frontends/qt/GuiApplication.cpp:1720
 msgid "System reconfigured"
 msgstr "Програмата се преконфигурира"
 
-#: src/frontends/qt/GuiApplication.cpp:1714
+#: src/frontends/qt/GuiApplication.cpp:1721
 msgid ""
 "The system has been reconfigured.\n"
 "You need to restart LyX to make use of any\n"
@@ -37704,69 +37727,69 @@ msgstr ""
 "различните видове документи."
 
 # src/ext_l10n.h:16 src/ext_l10n.h:29
-#: src/frontends/qt/GuiApplication.cpp:1795
+#: src/frontends/qt/GuiApplication.cpp:1802
 msgid "Exiting."
 msgstr "Излизане."
 
 # src/lyxfunc.C:1116
-#: src/frontends/qt/GuiApplication.cpp:1891
+#: src/frontends/qt/GuiApplication.cpp:1898
 #, c-format
 msgid "Opening help file %1$s..."
 msgstr "Отваряне на помощен файл %1$s..."
 
-#: src/frontends/qt/GuiApplication.cpp:1905
+#: src/frontends/qt/GuiApplication.cpp:1912
 msgid "Wrong argument. Must be 'examples' or 'templates'."
 msgstr "Неправилен аргумент. Трябва да е „examples“ or „templates“."
 
-#: src/frontends/qt/GuiApplication.cpp:1919
+#: src/frontends/qt/GuiApplication.cpp:1926
 msgid "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 msgstr "Синтаксис: set-color <lyx_name> <x11_name> <x11_darkname>"
 
 # src/lyxfunc.C:2920
-#: src/frontends/qt/GuiApplication.cpp:1939
+#: src/frontends/qt/GuiApplication.cpp:1946
 #, c-format
 msgid "Set-color \"%1$s\" failed - color is undefined or may not be redefined"
 msgstr ""
 "Неуспех при команда „set-color %1$s“ - цветът не е дефиниран или предефиниран"
 
 # src/support/filetools.C:453
-#: src/frontends/qt/GuiApplication.cpp:2044
+#: src/frontends/qt/GuiApplication.cpp:2051
 #, fuzzy, c-format
 msgid "Cannot iterate more than %1$d times"
 msgstr "Грешка! Не мога да създам временна директория: "
 
-#: src/frontends/qt/GuiApplication.cpp:2144
+#: src/frontends/qt/GuiApplication.cpp:2151
 #, c-format
 msgid "Applied \"%1$s\" to %2$d buffer(s)"
 msgstr ""
 
 # src/lyx_cb.C:263
-#: src/frontends/qt/GuiApplication.cpp:2230
+#: src/frontends/qt/GuiApplication.cpp:2237
 #, c-format
 msgid "Document defaults saved in %1$s"
 msgstr "Настройките на документа по подразбиране за запазени в %1$s"
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/GuiApplication.cpp:2234
+#: src/frontends/qt/GuiApplication.cpp:2241
 #, fuzzy
 msgid "Unable to save document defaults"
 msgstr "Запази оформлението като подразбиращо се(S)|S"
 
 # src/lyxfunc.C:328 src/lyxfunc.C:2996
-#: src/frontends/qt/GuiApplication.cpp:2468
-#: src/frontends/qt/GuiApplication.cpp:2483
+#: src/frontends/qt/GuiApplication.cpp:2511
+#: src/frontends/qt/GuiApplication.cpp:2526
 #, fuzzy
 msgid "Unknown function."
 msgstr "Непознато действие"
 
 # src/frontends/kde/dlg/printdlgdata.C:88
 # src/frontends/xforms/form_print.C:138
-#: src/frontends/qt/GuiApplication.cpp:3015
+#: src/frontends/qt/GuiApplication.cpp:3063
 #, fuzzy
 msgid "The current document was closed."
 msgstr "Печат на"
 
-#: src/frontends/qt/GuiApplication.cpp:3025
+#: src/frontends/qt/GuiApplication.cpp:3073
 msgid ""
 "LyX has caught an exception, it will now attempt to save all unsaved "
 "documents and exit.\n"
@@ -37774,25 +37797,25 @@ msgid ""
 "Exception: "
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:3029
-#: src/frontends/qt/GuiApplication.cpp:3035
+#: src/frontends/qt/GuiApplication.cpp:3077
+#: src/frontends/qt/GuiApplication.cpp:3083
 msgid "Software exception Detected"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:3033
+#: src/frontends/qt/GuiApplication.cpp:3081
 msgid ""
 "LyX has caught some really weird exception, it will now attempt to save all "
 "unsaved documents and exit."
 msgstr ""
 
 # src/buffer.C:3331
-#: src/frontends/qt/GuiApplication.cpp:3339
-#: src/frontends/qt/GuiApplication.cpp:3351
+#: src/frontends/qt/GuiApplication.cpp:3387
+#: src/frontends/qt/GuiApplication.cpp:3399
 #, fuzzy
 msgid "Could not find UI definition file"
 msgstr "Недъзможна е работата с файл: "
 
-#: src/frontends/qt/GuiApplication.cpp:3340
+#: src/frontends/qt/GuiApplication.cpp:3388
 #, c-format
 msgid ""
 "Error while reading the included file\n"
@@ -37804,18 +37827,18 @@ msgstr ""
 "Моля, проверете вашата инсталация."
 
 # src/buffer.C:3331
-#: src/frontends/qt/GuiApplication.cpp:3346
+#: src/frontends/qt/GuiApplication.cpp:3394
 #, fuzzy
 msgid "Could not find default UI file"
 msgstr "Недъзможна е работата с файл: "
 
-#: src/frontends/qt/GuiApplication.cpp:3347
+#: src/frontends/qt/GuiApplication.cpp:3395
 msgid ""
 "LyX could not find the default UI file!\n"
 "Please check your installation."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:3352
+#: src/frontends/qt/GuiApplication.cpp:3400
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -37857,7 +37880,7 @@ msgid "Bibliography Item Settings"
 msgstr "Настройка на библиографски елемент"
 
 # src/ext_l10n.h:186
-#: src/frontends/qt/GuiBibtex.cpp:58 src/frontends/qt/GuiBibtex.cpp:382
+#: src/frontends/qt/GuiBibtex.cpp:58 src/frontends/qt/GuiBibtex.cpp:546
 msgid "BibTeX Bibliography"
 msgstr "Литературан списък BibTeX"
 
@@ -37866,7 +37889,7 @@ msgstr "Литературан списък BibTeX"
 msgid "All avail. databases"
 msgstr "<всички възможни бази данни>"
 
-#: src/frontends/qt/GuiBibtex.cpp:114
+#: src/frontends/qt/GuiBibtex.cpp:116
 msgid ""
 "This list consists of all databases that are indexed by LaTeX and thus are "
 "found without a file path. This is usually everything in the bib/ "
@@ -37879,63 +37902,67 @@ msgstr ""
 "собствена база данни това е мястото, където да я съхранявате."
 
 # src/frontends/xforms/FormError.C:26
-#: src/frontends/qt/GuiBibtex.cpp:130 src/frontends/qt/GuiBibtex.cpp:341
+#: src/frontends/qt/GuiBibtex.cpp:133 src/frontends/qt/GuiBibtex.cpp:458
 msgid "Document Encoding"
 msgstr "същото като на документа"
 
+#: src/frontends/qt/GuiBibtex.cpp:437
+msgid "&Make Absolute"
+msgstr ""
+
+# src/debug.C:33
+#: src/frontends/qt/GuiBibtex.cpp:457
+#, fuzzy
+msgid "General Encoding"
+msgstr "обща пунктуация"
+
+#: src/frontends/qt/GuiBibtex.cpp:464
+msgid ""
+"If this bibliography database uses a different encoding than specified "
+"below, set it here"
+msgstr ""
+
 # src/insets/insetbib.C:339
-#: src/frontends/qt/GuiBibtex.cpp:312
+#: src/frontends/qt/GuiBibtex.cpp:474
 #, fuzzy
 msgid "Database"
 msgstr "База данни:"
 
 # src/debug.C:42
-#: src/frontends/qt/GuiBibtex.cpp:313
+#: src/frontends/qt/GuiBibtex.cpp:475
 #, fuzzy
 msgid "File Encoding"
 msgstr "Работа с файлове"
 
 # src/debug.C:33
-#: src/frontends/qt/GuiBibtex.cpp:320
+#: src/frontends/qt/GuiBibtex.cpp:503
 #, fuzzy
 msgid "General E&ncoding:"
 msgstr "обща пунктуация"
 
-#: src/frontends/qt/GuiBibtex.cpp:321
+#: src/frontends/qt/GuiBibtex.cpp:504
 msgid ""
 "If your bibliography databases use a different encoding than the LyX "
 "document, specify it here. If indivivual databases have different encodings, "
 "you can set it in the list above."
 msgstr ""
 
-# src/debug.C:33
-#: src/frontends/qt/GuiBibtex.cpp:340
-#, fuzzy
-msgid "General Encoding"
-msgstr "обща пунктуация"
-
-#: src/frontends/qt/GuiBibtex.cpp:347
-msgid ""
-"If this bibliography database uses a different encoding than specified "
-"below, set it here"
-msgstr ""
-
 # src/ext_l10n.h:186
-#: src/frontends/qt/GuiBibtex.cpp:380
+#: src/frontends/qt/GuiBibtex.cpp:544
 #, fuzzy
 msgid "Biblatex Bibliography"
 msgstr "Литературен списък BibTeX"
 
 # src/frontends/kde/refdlg.C:30
-#: src/frontends/qt/GuiBibtex.cpp:400 src/insets/InsetBibtex.cpp:236
+#: src/frontends/qt/GuiBibtex.cpp:564 src/insets/InsetBibtex.cpp:236
 #, fuzzy
 msgid "all reference units"
 msgstr "Достъпни препратки"
 
 # src/MenuBackend.C:446 src/ext_l10n.h:10
-#: src/frontends/qt/GuiBibtex.cpp:496 src/frontends/qt/GuiBibtex.cpp:506
+#: src/frontends/qt/GuiBibtex.cpp:662 src/frontends/qt/GuiBibtex.cpp:672
 #: src/frontends/qt/GuiCompare.cpp:166 src/frontends/qt/GuiCompare.cpp:170
-#: src/frontends/qt/GuiDocument.cpp:3077 src/frontends/qt/GuiExternal.cpp:691
+#: src/frontends/qt/GuiDocument.cpp:3079 src/frontends/qt/GuiExternal.cpp:691
 #: src/frontends/qt/GuiGraphics.cpp:841 src/frontends/qt/GuiInclude.cpp:382
 #: src/frontends/qt/GuiLyXFiles.cpp:365 src/frontends/qt/GuiLyXFiles.cpp:371
 #: src/frontends/qt/GuiView.cpp:2827 src/frontends/qt/GuiView.cpp:2886
@@ -37946,23 +37973,23 @@ msgid "D&ocuments"
 msgstr "Документ|Д"
 
 # src/insets/insetbib.C:339
-#: src/frontends/qt/GuiBibtex.cpp:498
+#: src/frontends/qt/GuiBibtex.cpp:664
 msgid "BibTeX Databases (*.bib)"
 msgstr "BibTeX база данни (*.bib)"
 
 # src/frontends/kde/citationdlg.C:35
-#: src/frontends/qt/GuiBibtex.cpp:500
+#: src/frontends/qt/GuiBibtex.cpp:666
 #, fuzzy
 msgid "Select a BibTeX database to add"
 msgstr "Достъпни клавиши"
 
 # src/insets/insetbib.C:339
-#: src/frontends/qt/GuiBibtex.cpp:508
+#: src/frontends/qt/GuiBibtex.cpp:674
 msgid "BibTeX Styles (*.bst)"
 msgstr "BibTeX стил (*.bst)"
 
 # src/LyXAction.C:393
-#: src/frontends/qt/GuiBibtex.cpp:510
+#: src/frontends/qt/GuiBibtex.cpp:676
 msgid "Select a BibTeX style"
 msgstr "Избиране на библиографски стил за BibTeX"
 
@@ -38048,7 +38075,7 @@ msgid "Filename Suffix"
 msgstr "Файлово разширение"
 
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3516 src/frontends/qt/GuiDocument.cpp:4857
+#: src/frontends/qt/GuiDocument.cpp:3524 src/frontends/qt/GuiDocument.cpp:4867
 #: src/frontends/qt/GuiProgressView.cpp:148
 #: src/frontends/qt/GuiProgressView.cpp:162
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -38057,8 +38084,8 @@ msgstr "Да"
 
 # src/lyxfont.C:407
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3515 src/frontends/qt/GuiDocument.cpp:4154
-#: src/frontends/qt/GuiDocument.cpp:4856
+#: src/frontends/qt/GuiDocument.cpp:3523 src/frontends/qt/GuiDocument.cpp:4160
+#: src/frontends/qt/GuiDocument.cpp:4866
 #: src/frontends/qt/GuiProgressView.cpp:114
 #: src/frontends/qt/GuiProgressView.cpp:147
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -38540,7 +38567,7 @@ msgstr "голямо разстояние"
 
 # src/insets/insettext.C:1036 src/lyxfunc.C:1260
 #: src/frontends/qt/GuiDocument.cpp:917 src/frontends/qt/GuiDocument.cpp:919
-#: src/frontends/qt/GuiDocument.cpp:1829
+#: src/frontends/qt/GuiDocument.cpp:1831
 msgid "Text Layout"
 msgstr "Текст"
 
@@ -38792,7 +38819,7 @@ msgstr "JIS B6"
 #: src/frontends/qt/GuiDocument.cpp:1340 src/frontends/qt/GuiDocument.cpp:1344
 #: src/frontends/qt/GuiDocument.cpp:1348 src/frontends/qt/GuiDocument.cpp:1352
 #: src/frontends/qt/GuiDocument.cpp:1356 src/frontends/qt/GuiDocument.cpp:1360
-#: src/frontends/qt/GuiDocument.cpp:1831
+#: src/frontends/qt/GuiDocument.cpp:1833
 msgid "Page Margins"
 msgstr "Полета на страницата"
 
@@ -38843,11 +38870,11 @@ msgid "The LaTeX package %1$s is never used"
 msgstr ""
 
 # src/frontends/xforms/form_preferences.C:926
-#: src/frontends/qt/GuiDocument.cpp:1604 src/frontends/qt/GuiDocument.cpp:1839
+#: src/frontends/qt/GuiDocument.cpp:1604 src/frontends/qt/GuiDocument.cpp:1841
 msgid "Math Options"
 msgstr "Математически"
 
-#: src/frontends/qt/GuiDocument.cpp:1660 src/frontends/qt/GuiDocument.cpp:3056
+#: src/frontends/qt/GuiDocument.cpp:1660 src/frontends/qt/GuiDocument.cpp:3058
 #, c-format
 msgid "%1$s [Class '%2$s']"
 msgstr "%1$s [клас '%2$s']"
@@ -38865,7 +38892,7 @@ msgstr ""
 msgid "All avail. modules"
 msgstr "всички налични модули"
 
-#: src/frontends/qt/GuiDocument.cpp:1817 src/frontends/qt/GuiDocument.cpp:2099
+#: src/frontends/qt/GuiDocument.cpp:1819 src/frontends/qt/GuiDocument.cpp:2101
 msgid "Input listings parameters below. Enter ? for a list of parameters."
 msgstr ""
 "Въведете параметри за форматиране на текст. Напишете „?“ за извеждане на "
@@ -38873,59 +38900,59 @@ msgstr ""
 "(запетая)."
 
 # src/exporter.C:89
-#: src/frontends/qt/GuiDocument.cpp:1824
+#: src/frontends/qt/GuiDocument.cpp:1826
 msgid "Document Class"
 msgstr "Класове (жанрове) документи"
 
 # src/insets/insettext.C:1036 src/lyxfunc.C:1260
-#: src/frontends/qt/GuiDocument.cpp:1827 src/frontends/qt/GuiDocument.cpp:3618
-#: src/frontends/qt/GuiDocument.cpp:5083
+#: src/frontends/qt/GuiDocument.cpp:1829 src/frontends/qt/GuiDocument.cpp:3624
+#: src/frontends/qt/GuiDocument.cpp:5093
 msgid "Local Layout"
 msgstr "Локално оформление"
 
 # src/frontends/xforms/FormPreferences.C:244
-#: src/frontends/qt/GuiDocument.cpp:1833 src/frontends/qt/GuiPrefs.cpp:980
+#: src/frontends/qt/GuiDocument.cpp:1835 src/frontends/qt/GuiPrefs.cpp:980
 msgid "Colors"
 msgstr "Цветове"
 
 # src/LyXAction.C:263
-#: src/frontends/qt/GuiDocument.cpp:1834
+#: src/frontends/qt/GuiDocument.cpp:1836
 msgid "Change Tracking"
 msgstr "Проследяване на промените"
 
 # src/mathed/formula.C:929
-#: src/frontends/qt/GuiDocument.cpp:1835
+#: src/frontends/qt/GuiDocument.cpp:1837
 msgid "Numbering & TOC"
 msgstr "Номериране и съдържание"
 
 # src/frontends/xforms/FormIndex.C:29 src/insets/insetindex.C:36
-#: src/frontends/qt/GuiDocument.cpp:1837
+#: src/frontends/qt/GuiDocument.cpp:1839
 msgid "Indexes"
 msgstr "Указатели"
 
 # src/ext_l10n.h:320
-#: src/frontends/qt/GuiDocument.cpp:1838
+#: src/frontends/qt/GuiDocument.cpp:1840
 msgid "PDF Properties"
 msgstr "PDF настройки"
 
 # src/frontends/xforms/FormDocument.C:281
-#: src/frontends/qt/GuiDocument.cpp:1842
+#: src/frontends/qt/GuiDocument.cpp:1844
 msgid "Bullets"
 msgstr "Водещи знаци"
 
 # src/lyx_cb.C:675
-#: src/frontends/qt/GuiDocument.cpp:1845 src/frontends/qt/GuiDocument.cpp:5084
+#: src/frontends/qt/GuiDocument.cpp:1847 src/frontends/qt/GuiDocument.cpp:5094
 msgid "LaTeX Preamble"
 msgstr "Заглавна част на LaTeX"
 
 # src/ext_l10n.h:31
-#: src/frontends/qt/GuiDocument.cpp:1861 src/frontends/qt/GuiDocument.cpp:1892
-#: src/frontends/qt/GuiDocument.cpp:3099 src/frontends/qt/GuiDocument.cpp:3400
-#: src/frontends/qt/GuiDocument.cpp:5048
+#: src/frontends/qt/GuiDocument.cpp:1863 src/frontends/qt/GuiDocument.cpp:1894
+#: src/frontends/qt/GuiDocument.cpp:3107 src/frontends/qt/GuiDocument.cpp:3408
+#: src/frontends/qt/GuiDocument.cpp:5058
 msgid "Unapplied changes"
 msgstr "Неприложени промени"
 
-#: src/frontends/qt/GuiDocument.cpp:1862
+#: src/frontends/qt/GuiDocument.cpp:1864
 #, fuzzy
 msgid ""
 "Some changes in the document were not yet applied.\n"
@@ -38936,18 +38963,18 @@ msgstr ""
 "Ако не ги приложите сега те ще се загубят след това действие."
 
 # src/frontends/kde/dlg/paradlgdata.C:65
-#: src/frontends/qt/GuiDocument.cpp:1864 src/frontends/qt/GuiDocument.cpp:3102
-#: src/frontends/qt/GuiDocument.cpp:3403 src/frontends/qt/GuiDocument.cpp:5051
+#: src/frontends/qt/GuiDocument.cpp:1866 src/frontends/qt/GuiDocument.cpp:3110
+#: src/frontends/qt/GuiDocument.cpp:3411 src/frontends/qt/GuiDocument.cpp:5061
 msgid "&Apply"
 msgstr "&Прилагане"
 
 # src/frontends/xforms/form_preferences.C:890
-#: src/frontends/qt/GuiDocument.cpp:1864 src/frontends/qt/GuiDocument.cpp:1895
+#: src/frontends/qt/GuiDocument.cpp:1866 src/frontends/qt/GuiDocument.cpp:1897
 #, fuzzy
 msgid "&Dismiss Changes"
 msgstr "Не, &запази промените"
 
-#: src/frontends/qt/GuiDocument.cpp:1893
+#: src/frontends/qt/GuiDocument.cpp:1895
 #, fuzzy
 msgid ""
 "Some changes in the previous document were not yet applied.\n"
@@ -38958,23 +38985,23 @@ msgstr ""
 "Ако не ги приложите сега те ще се загубят след това действие."
 
 # src/frontends/kde/FormRef.C:103
-#: src/frontends/qt/GuiDocument.cpp:1895
+#: src/frontends/qt/GuiDocument.cpp:1897
 #, fuzzy
 msgid "&Switch Back"
 msgstr "Назад"
 
 # src/frontends/xforms/form_preferences.C:391
-#: src/frontends/qt/GuiDocument.cpp:2333
+#: src/frontends/qt/GuiDocument.cpp:2335
 #, fuzzy
 msgid "Default margins"
 msgstr "&Полета по подразбиране"
 
 # src/ext_l10n.h:270
-#: src/frontends/qt/GuiDocument.cpp:2333
+#: src/frontends/qt/GuiDocument.cpp:2335
 msgid "Package defaults"
 msgstr "По подразбиране за пакета"
 
-#: src/frontends/qt/GuiDocument.cpp:2336
+#: src/frontends/qt/GuiDocument.cpp:2338
 #, fuzzy
 msgid ""
 "If no value is given, the defaults as set by the class, a package or the "
@@ -38982,7 +39009,7 @@ msgid ""
 msgstr ""
 "Ако не е зададена стойност се взимат параметрите по подразбиране от класа."
 
-#: src/frontends/qt/GuiDocument.cpp:2337
+#: src/frontends/qt/GuiDocument.cpp:2339
 msgid ""
 "If no value is given, the defaults as set by the geometry package or a "
 "package/class overriding geometry's defaults are used."
@@ -38991,56 +39018,56 @@ msgstr ""
 "за оформление или от пакета/класа за документа."
 
 # src/ext_l10n.h:270
-#: src/frontends/qt/GuiDocument.cpp:2630
+#: src/frontends/qt/GuiDocument.cpp:2632
 msgid "Direct (No inputenc)"
 msgstr "Директно (без „inputenc“)"
 
 # src/frontends/xforms/form_preferences.C:926
-#: src/frontends/qt/GuiDocument.cpp:2632
+#: src/frontends/qt/GuiDocument.cpp:2634
 msgid "Direct (XeTeX/LuaTeX)"
 msgstr "Директно (XeTeX/LuaTeX)"
 
-#: src/frontends/qt/GuiDocument.cpp:2808 src/frontends/qt/GuiDocument.cpp:4516
-#: src/frontends/qt/GuiDocument.cpp:4527 src/frontends/qt/GuiDocument.cpp:4538
-#: src/frontends/qt/GuiDocument.cpp:4550
+#: src/frontends/qt/GuiDocument.cpp:2810 src/frontends/qt/GuiDocument.cpp:4522
+#: src/frontends/qt/GuiDocument.cpp:4533 src/frontends/qt/GuiDocument.cpp:4544
+#: src/frontends/qt/GuiDocument.cpp:4556
 msgid " (not installed)"
 msgstr " (не е инсталиран)"
 
-#: src/frontends/qt/GuiDocument.cpp:2835 src/frontends/qt/GuiDocument.cpp:2838
-#: src/frontends/qt/GuiDocument.cpp:2841 src/frontends/qt/GuiDocument.cpp:2873
-#: src/frontends/qt/GuiDocument.cpp:2884 src/frontends/qt/GuiDocument.cpp:2895
+#: src/frontends/qt/GuiDocument.cpp:2837 src/frontends/qt/GuiDocument.cpp:2840
+#: src/frontends/qt/GuiDocument.cpp:2843 src/frontends/qt/GuiDocument.cpp:2875
+#: src/frontends/qt/GuiDocument.cpp:2886 src/frontends/qt/GuiDocument.cpp:2897
 msgid "Default font (as set by class)"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:2843
+#: src/frontends/qt/GuiDocument.cpp:2845
 msgid "Non-TeX Fonts Default"
 msgstr "По подразбиране без TeX шрифтове"
 
 # src/lyx_cb.C:263
-#: src/frontends/qt/GuiDocument.cpp:2845
+#: src/frontends/qt/GuiDocument.cpp:2847
 msgid " (not available)"
 msgstr " (неналичен)"
 
 # src/frontends/xforms/form_preferences.C:999
-#: src/frontends/qt/GuiDocument.cpp:2846
+#: src/frontends/qt/GuiDocument.cpp:2848
 msgid "Class Default (TeX Fonts)"
 msgstr "По подразбиране за класа (TeX шрифтове)"
 
 # src/ext_l10n.h:7
-#: src/frontends/qt/GuiDocument.cpp:3008
+#: src/frontends/qt/GuiDocument.cpp:3010
 msgid "Lay&outs"
 msgstr "Оформления"
 
 # src/ext_l10n.h:116
-#: src/frontends/qt/GuiDocument.cpp:3010
+#: src/frontends/qt/GuiDocument.cpp:3012
 msgid "LyX Layout (*.layout)"
 msgstr "LyX оформление (*.layout)"
 
-#: src/frontends/qt/GuiDocument.cpp:3012 src/frontends/qt/GuiDocument.cpp:3021
+#: src/frontends/qt/GuiDocument.cpp:3014 src/frontends/qt/GuiDocument.cpp:3023
 msgid "Local layout file"
 msgstr "Локален файл за оформление"
 
-#: src/frontends/qt/GuiDocument.cpp:3022
+#: src/frontends/qt/GuiDocument.cpp:3024
 msgid ""
 "The layout file you have selected is a local layout\n"
 "file, not one in the system or user directory.\n"
@@ -39053,32 +39080,32 @@ msgstr ""
 "с оформлението в различна директория."
 
 # src/insets/insettext.C:1036 src/lyxfunc.C:1260
-#: src/frontends/qt/GuiDocument.cpp:3026
+#: src/frontends/qt/GuiDocument.cpp:3028
 msgid "&Set Layout"
 msgstr "&Оформление"
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/GuiDocument.cpp:3040
+#: src/frontends/qt/GuiDocument.cpp:3042
 msgid "Unable to read local layout file."
 msgstr "Неуспешно четене на локален файл за оформление."
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/GuiDocument.cpp:3057
+#: src/frontends/qt/GuiDocument.cpp:3059
 msgid "This is a local layout file."
 msgstr "Това е локален файл за оформление."
 
 # src/bufferlist.C:113 src/bufferlist.C:189
-#: src/frontends/qt/GuiDocument.cpp:3071
+#: src/frontends/qt/GuiDocument.cpp:3073
 msgid "Select master document"
 msgstr "Избиране на главен документ"
 
 # src/ext_l10n.h:116
-#: src/frontends/qt/GuiDocument.cpp:3075
+#: src/frontends/qt/GuiDocument.cpp:3077
 msgid "LyX Files (*.lyx)"
 msgstr "LyX файлове (*.lyx)"
 
-#: src/frontends/qt/GuiDocument.cpp:3100 src/frontends/qt/GuiDocument.cpp:3401
-#: src/frontends/qt/GuiDocument.cpp:5049
+#: src/frontends/qt/GuiDocument.cpp:3108 src/frontends/qt/GuiDocument.cpp:3409
+#: src/frontends/qt/GuiDocument.cpp:5059
 msgid ""
 "Some changes in the dialog were not yet applied.\n"
 "If you do not apply now, they will be lost after this action."
@@ -39087,88 +39114,88 @@ msgstr ""
 "документа.\n"
 "Ако не ги приложите сега те ще се загубят след това действие."
 
-#: src/frontends/qt/GuiDocument.cpp:3102 src/frontends/qt/GuiDocument.cpp:3403
-#: src/frontends/qt/GuiDocument.cpp:5051
+#: src/frontends/qt/GuiDocument.cpp:3110 src/frontends/qt/GuiDocument.cpp:3411
+#: src/frontends/qt/GuiDocument.cpp:5061
 msgid "&Dismiss"
 msgstr "&Затваряне"
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/GuiDocument.cpp:3113 src/frontends/qt/GuiDocument.cpp:5059
+#: src/frontends/qt/GuiDocument.cpp:3121 src/frontends/qt/GuiDocument.cpp:5069
 msgid "Unable to set document class."
 msgstr "Не може да се зададе клас на документа."
 
 # src/ext_l10n.h:423
-#: src/frontends/qt/GuiDocument.cpp:3279
+#: src/frontends/qt/GuiDocument.cpp:3287
 msgid "Basic numerical"
 msgstr "Обикновен с номера"
 
 # src/ext_l10n.h:175
-#: src/frontends/qt/GuiDocument.cpp:3282
+#: src/frontends/qt/GuiDocument.cpp:3290
 msgid "Author-year"
 msgstr "автор-година"
 
 # src/ext_l10n.h:175
-#: src/frontends/qt/GuiDocument.cpp:3285
+#: src/frontends/qt/GuiDocument.cpp:3293
 msgid "Author-number"
 msgstr "автор-номер"
 
-#: src/frontends/qt/GuiDocument.cpp:3325
+#: src/frontends/qt/GuiDocument.cpp:3333
 #, c-format
 msgid "%1$s and %2$s"
 msgstr "%1$s и %2$s"
 
-#: src/frontends/qt/GuiDocument.cpp:3332
+#: src/frontends/qt/GuiDocument.cpp:3340
 #, c-format
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
 
-#: src/frontends/qt/GuiDocument.cpp:3337
+#: src/frontends/qt/GuiDocument.cpp:3345
 #, c-format
 msgid "%1$s, %2$s, and %3$s"
 msgstr "%1$s, %2$s, и %3$s"
 
-#: src/frontends/qt/GuiDocument.cpp:3351
+#: src/frontends/qt/GuiDocument.cpp:3359
 #, c-format
 msgid "%1$s (unavailable)"
 msgstr "%1$s (неналичен)"
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/GuiDocument.cpp:3453
+#: src/frontends/qt/GuiDocument.cpp:3461
 msgid "Module provided by document class."
 msgstr "Модули предоставени от класа за документи"
 
 # src/ext_l10n.h:191
-#: src/frontends/qt/GuiDocument.cpp:3461
+#: src/frontends/qt/GuiDocument.cpp:3469
 #, c-format
 msgid "<p><b>Category:</b> %1$s.</p>"
 msgstr "<p><b>Категория: </b>%1$s</p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3471
+#: src/frontends/qt/GuiDocument.cpp:3479
 #, c-format
 msgid "<p><b>Package(s) required:</b> %1$s.</p>"
 msgstr "<p><b>Необходими пакети:</b> %1$s</p>"
 
 # src/frontends/xforms/FormPreferences.C:252
-#: src/frontends/qt/GuiDocument.cpp:3477
+#: src/frontends/qt/GuiDocument.cpp:3485
 msgid "or"
 msgstr "или"
 
-#: src/frontends/qt/GuiDocument.cpp:3480
+#: src/frontends/qt/GuiDocument.cpp:3488
 #, c-format
 msgid "<p><b>Modules required:</b> %1$s.</p>"
 msgstr "<p><b>Необходими модули: </b>%1$s</p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3489
+#: src/frontends/qt/GuiDocument.cpp:3497
 #, c-format
 msgid "<p><b>Modules excluded:</b> %1$s.</p>"
 msgstr "<p><b>Изключени модули: </b>%1$s</p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3494
+#: src/frontends/qt/GuiDocument.cpp:3502
 #, c-format
 msgid "<p><b>Filename:</b> <tt>%1$s.module</tt>.</p>"
 msgstr "<p><b>Име на файл: </b><tt>%1$s.module</tt></p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3499
+#: src/frontends/qt/GuiDocument.cpp:3507
 msgid ""
 "<p><font color=red><b>WARNING: Some required packages are unavailable!</b></"
 "font></p>"
@@ -39177,79 +39204,79 @@ msgstr ""
 "</b></font></p>"
 
 # src/frontends/xforms/form_preferences.C:354
-#: src/frontends/qt/GuiDocument.cpp:4156
+#: src/frontends/qt/GuiDocument.cpp:4162
 msgid "per part"
 msgstr "за всяка част"
 
 # src/ext_l10n.h:194
-#: src/frontends/qt/GuiDocument.cpp:4158
+#: src/frontends/qt/GuiDocument.cpp:4164
 msgid "per chapter"
 msgstr "за всяка глава"
 
 # src/LColor.C:64
-#: src/frontends/qt/GuiDocument.cpp:4160
+#: src/frontends/qt/GuiDocument.cpp:4166
 msgid "per section"
 msgstr "за всеки раздел"
 
 # src/LColor.C:64
-#: src/frontends/qt/GuiDocument.cpp:4162
+#: src/frontends/qt/GuiDocument.cpp:4168
 msgid "per subsection"
 msgstr "за всяка подраздел"
 
 # src/lyxfunc.C:2761
-#: src/frontends/qt/GuiDocument.cpp:4163
+#: src/frontends/qt/GuiDocument.cpp:4169
 msgid "per child document"
 msgstr "за всеки поддокумент"
 
-#: src/frontends/qt/GuiDocument.cpp:4190
+#: src/frontends/qt/GuiDocument.cpp:4196
 #, c-format
 msgid "%1$s (not available)"
 msgstr "%1$s (липсва)"
 
 # src/LyXAction.C:190
-#: src/frontends/qt/GuiDocument.cpp:4437
+#: src/frontends/qt/GuiDocument.cpp:4443
 msgid "[No options predefined]"
 msgstr "[Няма предефинирани опции]"
 
-#: src/frontends/qt/GuiDocument.cpp:4517 src/frontends/qt/GuiDocument.cpp:4528
-#: src/frontends/qt/GuiDocument.cpp:4539
+#: src/frontends/qt/GuiDocument.cpp:4523 src/frontends/qt/GuiDocument.cpp:4534
+#: src/frontends/qt/GuiDocument.cpp:4545
 msgid "Uninstalled used fonts"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:4518 src/frontends/qt/GuiDocument.cpp:4529
-#: src/frontends/qt/GuiDocument.cpp:4540
+#: src/frontends/qt/GuiDocument.cpp:4524 src/frontends/qt/GuiDocument.cpp:4535
+#: src/frontends/qt/GuiDocument.cpp:4546
 msgid "This font is not installed and won't be used in output"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:4714
+#: src/frontends/qt/GuiDocument.cpp:4720
 msgid "C&ustomize Hyperref Options"
 msgstr "Конфигуриране на хипервръзките"
 
-#: src/frontends/qt/GuiDocument.cpp:4716
+#: src/frontends/qt/GuiDocument.cpp:4722
 msgid "&Use Hyperref Support"
 msgstr "Позволи употребата на хипервръзки"
 
 # src/frontends/xforms/FormParagraph.C:33
-#: src/frontends/qt/GuiDocument.cpp:5071
+#: src/frontends/qt/GuiDocument.cpp:5081
 msgid "Can't set layout!"
 msgstr "Неуспех при задаване на оформление!"
 
 # src/ext_l10n.h:130
-#: src/frontends/qt/GuiDocument.cpp:5072
+#: src/frontends/qt/GuiDocument.cpp:5082
 #, c-format
 msgid "Unable to set layout for ID: %1$s"
 msgstr "Неуспех при задаване на оформление за № %1$s"
 
 # src/insets/insettext.C:1036 src/lyxfunc.C:1261
-#: src/frontends/qt/GuiDocument.cpp:5151
+#: src/frontends/qt/GuiDocument.cpp:5161
 msgid "Not Found"
 msgstr "Не е намерен"
 
-#: src/frontends/qt/GuiDocument.cpp:5213
+#: src/frontends/qt/GuiDocument.cpp:5223
 msgid "Assigned master does not include this file"
 msgstr "Посочения главен документ не включва този файл!"
 
-#: src/frontends/qt/GuiDocument.cpp:5214
+#: src/frontends/qt/GuiDocument.cpp:5224
 #, c-format
 msgid ""
 "You must include this file in the document\n"
@@ -39260,12 +39287,12 @@ msgstr ""
 "„%1$s“ за да използвате настройките за главен документ"
 
 # src/converter.C:552 src/converter.C:645
-#: src/frontends/qt/GuiDocument.cpp:5218
+#: src/frontends/qt/GuiDocument.cpp:5228
 msgid "Could not load master"
 msgstr "Главния файл не можа да се зареди"
 
 # src/lyx_cb.C:263
-#: src/frontends/qt/GuiDocument.cpp:5219
+#: src/frontends/qt/GuiDocument.cpp:5229
 #, c-format
 msgid ""
 "The master document '%1$s'\n"
@@ -39274,23 +39301,23 @@ msgstr ""
 "Главния документ „%1s“\n"
 "не можe да се зареди!"
 
-#: src/frontends/qt/GuiDocument.cpp:5369
+#: src/frontends/qt/GuiDocument.cpp:5379
 msgid "%1 (missing req.)"
 msgstr "%1 (липсващи условия)"
 
-#: src/frontends/qt/GuiDocument.cpp:5381
+#: src/frontends/qt/GuiDocument.cpp:5391
 msgid "personal module"
 msgstr "личен модул"
 
-#: src/frontends/qt/GuiDocument.cpp:5381
+#: src/frontends/qt/GuiDocument.cpp:5391
 msgid "distributed module"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:5382
+#: src/frontends/qt/GuiDocument.cpp:5392
 msgid "<b>Module name:</b> <i>%1</i> (%2)"
 msgstr "<b>Име на модул:</b> <i>%1</i> (%2)"
 
-#: src/frontends/qt/GuiDocument.cpp:5388
+#: src/frontends/qt/GuiDocument.cpp:5398
 msgid "<b>Note:</b> Some requirements for this module are missing!"
 msgstr "<b>Забележка:</b> Липсват някои изисквания за този модул!"
 
@@ -41097,7 +41124,7 @@ msgid "Tabular Settings"
 msgstr "Настройки на таблица"
 
 # src/LyXAction.C:388
-#: src/frontends/qt/GuiTabularCreate.cpp:75
+#: src/frontends/qt/GuiTabularCreate.cpp:73
 msgid "Insert Table"
 msgstr "Вмъкване на таблица"
 
@@ -41958,23 +41985,23 @@ msgstr "%1[[preview format name]]"
 # src/frontends/xforms/FormBase.h:152 src/frontends/xforms/FormInset.h:30
 # src/frontends/xforms/FormInset.h:54 src/layout_forms.C:52 src/log_form.C:21
 # src/lyxvc.C:263 src/mathed/math_forms.C:177
-#: src/frontends/qt/GuiWorkArea.cpp:1684
+#: src/frontends/qt/GuiWorkArea.cpp:1762
 #, fuzzy
 msgid "Close File"
 msgstr "Затвори"
 
 # src/LyXView.C:372
-#: src/frontends/qt/GuiWorkArea.cpp:2331
+#: src/frontends/qt/GuiWorkArea.cpp:2409
 msgid "%1 (read only)"
 msgstr "%1 (само за четене)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2417
 msgid "%1 (modified externally)"
 msgstr "%1 (променен от външна програма)"
 
 # src/frontends/xforms/form_graphics.C:61
 # src/frontends/xforms/form_graphics.C:82 src/lyxfont.C:411
-#: src/frontends/qt/GuiWorkArea.cpp:2361
+#: src/frontends/qt/GuiWorkArea.cpp:2439
 #, fuzzy
 msgid "&Hide Tab"
 msgstr "Стандартно"
@@ -41984,7 +42011,7 @@ msgstr "Стандартно"
 # src/frontends/xforms/FormBase.h:152 src/frontends/xforms/FormInset.h:30
 # src/frontends/xforms/FormInset.h:54 src/layout_forms.C:52 src/log_form.C:21
 # src/lyxvc.C:263 src/mathed/math_forms.C:177
-#: src/frontends/qt/GuiWorkArea.cpp:2366
+#: src/frontends/qt/GuiWorkArea.cpp:2444
 #, fuzzy
 msgid "&Close Tab"
 msgstr "Затвори"
@@ -41994,34 +42021,34 @@ msgstr "Затвори"
 # src/frontends/xforms/FormBase.h:152 src/frontends/xforms/FormInset.h:30
 # src/frontends/xforms/FormInset.h:54 src/layout_forms.C:52 src/log_form.C:21
 # src/lyxvc.C:263 src/mathed/math_forms.C:177
-#: src/frontends/qt/GuiWorkArea.cpp:2370
+#: src/frontends/qt/GuiWorkArea.cpp:2448
 #, fuzzy
 msgid "Close &Other Tabs"
 msgstr "Затвори"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2372
+#: src/frontends/qt/GuiWorkArea.cpp:2450
 msgid "Close Tabs to the &Right"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2374
+#: src/frontends/qt/GuiWorkArea.cpp:2452
 msgid "Close Tabs to the &Left"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2379
+#: src/frontends/qt/GuiWorkArea.cpp:2457
 msgid "Move Tab to &Start"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2381
+#: src/frontends/qt/GuiWorkArea.cpp:2459
 msgid "Move Tab to &End"
 msgstr ""
 
 # src/lyx_main.C:575
-#: src/frontends/qt/GuiWorkArea.cpp:2386
+#: src/frontends/qt/GuiWorkArea.cpp:2464
 #, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "&Отваряне на директорията с журнала"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2431
+#: src/frontends/qt/GuiWorkArea.cpp:2509
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>Файлът %1 беше променен на диска.</b>"
 
@@ -44533,7 +44560,7 @@ msgid "Match found."
 msgstr "Низът не е намерен!"
 
 #: src/mathed/InsetMathAMSArray.cpp:135 src/mathed/InsetMathCases.cpp:90
-#: src/mathed/InsetMathHull.cpp:2204 src/mathed/InsetMathSplit.cpp:127
+#: src/mathed/InsetMathHull.cpp:2213 src/mathed/InsetMathSplit.cpp:127
 #: src/mathed/InsetMathSubstack.cpp:89
 #, c-format
 msgid "Can't add vertical grid lines in '%1$s'"
@@ -44598,17 +44625,17 @@ msgid "Unknown tabular feature '%1$s'"
 msgstr ""
 
 # src/frontends/kde/FormPrint.C:118
-#: src/mathed/InsetMathHull.cpp:1752
+#: src/mathed/InsetMathHull.cpp:1761
 #, c-format
 msgid "Type: %1$s"
 msgstr "Тип: %1$s"
 
 # src/ext_l10n.h:127
-#: src/mathed/InsetMathHull.cpp:1788
+#: src/mathed/InsetMathHull.cpp:1797
 msgid "Bad math environment"
 msgstr "Неподходяща математическа среда"
 
-#: src/mathed/InsetMathHull.cpp:1789
+#: src/mathed/InsetMathHull.cpp:1798
 msgid ""
 "Computation cannot be performed for AMS math environments.\n"
 "Change the math formula type and try again."
@@ -44617,17 +44644,17 @@ msgstr ""
 "Променете типа (средата) на мат. формула и пробвайте отново."
 
 # src/mathed/formula.C:929
-#: src/mathed/InsetMathHull.cpp:1903 src/mathed/InsetMathHull.cpp:1912
+#: src/mathed/InsetMathHull.cpp:1912 src/mathed/InsetMathHull.cpp:1921
 #, fuzzy
 msgid "No number"
 msgstr "Номериране"
 
-#: src/mathed/InsetMathHull.cpp:2187
+#: src/mathed/InsetMathHull.cpp:2196
 #, c-format
 msgid "Can't change number of rows in '%1$s'"
 msgstr "Не може да се промени броя на редовете в '%1$s'"
 
-#: src/mathed/InsetMathHull.cpp:2197
+#: src/mathed/InsetMathHull.cpp:2206
 #, c-format
 msgid "Can't change number of columns in '%1$s'"
 msgstr "Не може да се промени броя на колоните в '%1$s'"

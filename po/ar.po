@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.3.0\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2024-09-19 11:06-0400\n"
+"POT-Creation-Date: 2024-12-08 12:19-0500\n"
 "PO-Revision-Date: 2019-08-13 12:27+0300\n"
 "Last-Translator: Hatim Alahmadi <Dr.Hatim@hotmail.com>\n"
 "Language-Team: Hatim Alahmady <dr.hatim@hotmail.com>\n"
@@ -23,66 +23,66 @@ msgstr ""
 msgid "Version"
 msgstr "الإصدار"
 
-#: src/frontends/qt/ui/AboutUi.ui:141
+#: src/frontends/qt/ui/AboutUi.ui:125
 #, fuzzy
 msgid "System directory"
 msgstr "لا مسار للنظام"
 
-#: src/frontends/qt/ui/AboutUi.ui:153
+#: src/frontends/qt/ui/AboutUi.ui:137
 #, fuzzy
 msgid "Open system directory in file browser"
 msgstr "لا مسار للنظام"
 
-#: src/frontends/qt/ui/AboutUi.ui:156
+#: src/frontends/qt/ui/AboutUi.ui:140
 msgid "[[do]]&Open"
 msgstr ""
 
-#: src/frontends/qt/ui/AboutUi.ui:191
+#: src/frontends/qt/ui/AboutUi.ui:175
 #, fuzzy
 msgid "User directory"
 msgstr "مسار المستخدم: "
 
-#: src/frontends/qt/ui/AboutUi.ui:222
+#: src/frontends/qt/ui/AboutUi.ui:206
 msgid "Open user directory in file browser"
 msgstr ""
 
-#: src/frontends/qt/ui/AboutUi.ui:225 src/frontends/qt/ui/AboutUi.ui:272
+#: src/frontends/qt/ui/AboutUi.ui:209 src/frontends/qt/ui/AboutUi.ui:256
 #, fuzzy
 msgid "[[do]]O&pen"
 msgstr "&فتح"
 
-#: src/frontends/qt/ui/AboutUi.ui:238
+#: src/frontends/qt/ui/AboutUi.ui:222
 #, fuzzy
 msgid "Temporary directory"
 msgstr "&مسار الذاكرة المؤقتة:"
 
-#: src/frontends/qt/ui/AboutUi.ui:269
+#: src/frontends/qt/ui/AboutUi.ui:253
 #, fuzzy
 msgid "Open temporary directory in file browser"
 msgstr "لا مسار للنظام"
 
-#: src/frontends/qt/ui/AboutUi.ui:288
+#: src/frontends/qt/ui/AboutUi.ui:301
 msgid "Credits"
 msgstr "شكر"
 
-#: src/frontends/qt/ui/AboutUi.ui:313 lib/layouts/apa.layout:236
+#: src/frontends/qt/ui/AboutUi.ui:326 lib/layouts/apa.layout:236
 #: lib/layouts/apax.inc:343
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: src/frontends/qt/ui/AboutUi.ui:338
+#: src/frontends/qt/ui/AboutUi.ui:351
 msgid "Build Info"
 msgstr "معلومات البناء"
 
-#: src/frontends/qt/ui/AboutUi.ui:363
+#: src/frontends/qt/ui/AboutUi.ui:376
 msgid "Release Notes"
 msgstr "ملاحظات الجدول"
 
-#: src/frontends/qt/ui/AboutUi.ui:408
+#: src/frontends/qt/ui/AboutUi.ui:421
 msgid "Copy version information to clipboard"
 msgstr ""
 
-#: src/frontends/qt/ui/AboutUi.ui:411
+#: src/frontends/qt/ui/AboutUi.ui:424
 #, fuzzy
 msgid "Copy &Version Info"
 msgstr "إدراج معلومات الإصدار"
@@ -310,66 +310,74 @@ msgid "Add &Local..."
 msgstr "&إضافة تخطيط محلي..."
 
 #: src/frontends/qt/ui/BibtexUi.ui:91
+msgid "Transfer an absolute local path to a relative one or vice versa"
+msgstr ""
+
+#: src/frontends/qt/ui/BibtexUi.ui:94 src/frontends/qt/GuiBibtex.cpp:433
+msgid "&Make Relative"
+msgstr ""
+
+#: src/frontends/qt/ui/BibtexUi.ui:101
 #, fuzzy
 msgid "Inherit bibliography databases from the master document"
 msgstr "إضافة ثبت المراجع لجدول المحتويات"
 
-#: src/frontends/qt/ui/BibtexUi.ui:94
+#: src/frontends/qt/ui/BibtexUi.ui:104
 msgid "&Inherit from Master"
 msgstr ""
 
-#: src/frontends/qt/ui/BibtexUi.ui:101
+#: src/frontends/qt/ui/BibtexUi.ui:111
 msgid "Remove the selected database"
 msgstr "ازالة قاعدة البيانات المحددة"
 
-#: src/frontends/qt/ui/BibtexUi.ui:104 src/frontends/qt/ui/CitationUi.ui:159
+#: src/frontends/qt/ui/BibtexUi.ui:114 src/frontends/qt/ui/CitationUi.ui:159
 msgid "&Delete"
 msgstr "حذف"
 
-#: src/frontends/qt/ui/BibtexUi.ui:117
+#: src/frontends/qt/ui/BibtexUi.ui:127
 #, fuzzy
 msgid "Move the selected database up (Ctrl-Up)"
 msgstr "نقل الاستشهاد المحدد للأعلى (Ctrl-Up)"
 
-#: src/frontends/qt/ui/BibtexUi.ui:120 src/frontends/qt/ui/CitationUi.ui:191
+#: src/frontends/qt/ui/BibtexUi.ui:130 src/frontends/qt/ui/CitationUi.ui:191
 #: src/frontends/qt/ui/ModulesUi.ui:140
 msgid "&Up"
 msgstr "&اعلى"
 
-#: src/frontends/qt/ui/BibtexUi.ui:140
+#: src/frontends/qt/ui/BibtexUi.ui:150
 #, fuzzy
 msgid "Move the selected database down (Ctrl-Down)"
 msgstr "نقل الاستشهاد المحدد للأسفل (Ctrl-Down)"
 
-#: src/frontends/qt/ui/BibtexUi.ui:143 src/frontends/qt/ui/CitationUi.ui:214
+#: src/frontends/qt/ui/BibtexUi.ui:153 src/frontends/qt/ui/CitationUi.ui:214
 #: src/frontends/qt/ui/ModulesUi.ui:147
 msgid "Do&wn"
 msgstr "اسفل"
 
-#: src/frontends/qt/ui/BibtexUi.ui:170
+#: src/frontends/qt/ui/BibtexUi.ui:180
 msgid "Edit selected database externally"
 msgstr "تحرير قاعدة البيانات الخارجية المحددة"
 
-#: src/frontends/qt/ui/BibtexUi.ui:173
+#: src/frontends/qt/ui/BibtexUi.ui:183
 msgid "&Edit..."
 msgstr "&تحرير..."
 
-#: src/frontends/qt/ui/BibtexUi.ui:201
+#: src/frontends/qt/ui/BibtexUi.ui:211
 #, fuzzy
 msgid "Sele&cted:"
 msgstr "&المحدد:"
 
-#: src/frontends/qt/ui/BibtexUi.ui:218 src/frontends/qt/ui/CitationUi.ui:27
+#: src/frontends/qt/ui/BibtexUi.ui:228 src/frontends/qt/ui/CitationUi.ui:27
 #: src/frontends/qt/ui/ModulesUi.ui:76 src/frontends/qt/ui/RefUi.ui:53
 #: src/frontends/qt/ui/TocUi.ui:345
 msgid "&Filter:"
 msgstr "الم&رشح:"
 
-#: src/frontends/qt/ui/BibtexUi.ui:248 src/frontends/qt/GuiBibtex.cpp:326
+#: src/frontends/qt/ui/BibtexUi.ui:258 src/frontends/qt/GuiBibtex.cpp:509
 msgid "E&ncoding:"
 msgstr "&الترميز:"
 
-#: src/frontends/qt/ui/BibtexUi.ui:258 src/frontends/qt/GuiBibtex.cpp:327
+#: src/frontends/qt/ui/BibtexUi.ui:268 src/frontends/qt/GuiBibtex.cpp:510
 msgid ""
 "If your bibliography databases use a different encoding than the LyX "
 "document, specify it here"
@@ -377,27 +385,27 @@ msgstr ""
 "إذا كانت قواعد بيانات المراجع الخاصة بك تستخدم ترميز مختلف عن مستند ليك، فقم "
 "بتحديده هنا"
 
-#: src/frontends/qt/ui/BibtexUi.ui:270
+#: src/frontends/qt/ui/BibtexUi.ui:280
 msgid "The BibTeX style"
 msgstr "نمط BibTeX"
 
-#: src/frontends/qt/ui/BibtexUi.ui:273
+#: src/frontends/qt/ui/BibtexUi.ui:283
 msgid "St&yle"
 msgstr "الاس&لوب"
 
-#: src/frontends/qt/ui/BibtexUi.ui:285
+#: src/frontends/qt/ui/BibtexUi.ui:295
 msgid "Choose a style file"
 msgstr "اختر ملف النمط"
 
-#: src/frontends/qt/ui/BibtexUi.ui:298
+#: src/frontends/qt/ui/BibtexUi.ui:308
 msgid "Select a style file from your local directory"
 msgstr "تحديد ملف نمط من الدليل المحلي"
 
-#: src/frontends/qt/ui/BibtexUi.ui:301
+#: src/frontends/qt/ui/BibtexUi.ui:311
 msgid "Add L&ocal..."
 msgstr "&إضافة محلي..."
 
-#: src/frontends/qt/ui/BibtexUi.ui:314 lib/layouts/beamer.layout:534
+#: src/frontends/qt/ui/BibtexUi.ui:324 lib/layouts/beamer.layout:534
 #: lib/layouts/beamer.layout:564 lib/layouts/beamer.layout:575
 #: lib/layouts/beamer.layout:604 lib/layouts/beamer.layout:707
 #: lib/layouts/chessboard.module:31 lib/layouts/chessboard.module:61
@@ -410,53 +418,53 @@ msgstr "&إضافة محلي..."
 msgid "Options"
 msgstr "خيارات"
 
-#: src/frontends/qt/ui/BibtexUi.ui:331 src/frontends/qt/ui/BibtexUi.ui:344
+#: src/frontends/qt/ui/BibtexUi.ui:341 src/frontends/qt/ui/BibtexUi.ui:354
 msgid "This bibliography section contains..."
 msgstr "هذا الجزء من ثبت المراجع يحتوي..."
 
-#: src/frontends/qt/ui/BibtexUi.ui:334
+#: src/frontends/qt/ui/BibtexUi.ui:344
 msgid "&Content:"
 msgstr "المحت&وى:"
 
-#: src/frontends/qt/ui/BibtexUi.ui:348 src/frontends/qt/GuiBibtex.cpp:395
+#: src/frontends/qt/ui/BibtexUi.ui:358 src/frontends/qt/GuiBibtex.cpp:559
 #: src/insets/InsetBibtex.cpp:222 src/insets/InsetBibtex.cpp:240
 msgid "all cited references"
 msgstr "ايراد كل المراجع"
 
-#: src/frontends/qt/ui/BibtexUi.ui:353 src/frontends/qt/GuiBibtex.cpp:397
+#: src/frontends/qt/ui/BibtexUi.ui:363 src/frontends/qt/GuiBibtex.cpp:561
 #: src/insets/InsetBibtex.cpp:220
 msgid "all uncited references"
 msgstr "عدم ايراد كل المراجع"
 
-#: src/frontends/qt/ui/BibtexUi.ui:358 src/frontends/qt/GuiBibtex.cpp:398
+#: src/frontends/qt/ui/BibtexUi.ui:368 src/frontends/qt/GuiBibtex.cpp:562
 #: src/insets/InsetBibtex.cpp:218 src/insets/InsetBibtex.cpp:238
 msgid "all references"
 msgstr "كل المراجع"
 
-#: src/frontends/qt/ui/BibtexUi.ui:366
+#: src/frontends/qt/ui/BibtexUi.ui:376
 msgid "Add bibliography to the table of contents"
 msgstr "إضافة ثبت المراجع لجدول المحتويات"
 
-#: src/frontends/qt/ui/BibtexUi.ui:369
+#: src/frontends/qt/ui/BibtexUi.ui:379
 msgid "Add bibliography to &TOC"
 msgstr "&أضف ثبت المراجع إلى جدول المحتويات"
 
-#: src/frontends/qt/ui/BibtexUi.ui:393
+#: src/frontends/qt/ui/BibtexUi.ui:403
 msgid "Custo&m:"
 msgstr "&مخصص:"
 
-#: src/frontends/qt/ui/BibtexUi.ui:403
+#: src/frontends/qt/ui/BibtexUi.ui:413
 msgid ""
 "Options to the biblatex bibliography command. See the biblatex manual for "
 "details."
 msgstr ""
 "خيارات لأمر ثبت المراجع بايبتكس. راجع دليل بايبتكس للحصول على التفاصيل."
 
-#: src/frontends/qt/ui/BibtexUi.ui:432
+#: src/frontends/qt/ui/BibtexUi.ui:442
 msgid "Scan for new databases and styles"
 msgstr "ابحث عن قواعد بيانات والأساليب"
 
-#: src/frontends/qt/ui/BibtexUi.ui:435 src/frontends/qt/ui/TexinfoUi.ui:144
+#: src/frontends/qt/ui/BibtexUi.ui:445 src/frontends/qt/ui/TexinfoUi.ui:144
 msgid "&Rescan"
 msgstr "&إعادة فحص"
 
@@ -768,7 +776,7 @@ msgstr "إضافة الك&ل"
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:58 src/Buffer.cpp:1501
 #: src/Buffer.cpp:4822 src/Buffer.cpp:4932 src/LyXVC.cpp:114 src/LyXVC.cpp:310
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:226
-#: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3026
+#: src/frontends/qt/GuiClipboard.cpp:252 src/frontends/qt/GuiDocument.cpp:3028
 #: src/frontends/qt/GuiParagraph.cpp:177 src/frontends/qt/GuiPrefs.cpp:3363
 #: src/frontends/qt/GuiPrefs.cpp:3387 src/frontends/qt/GuiView.cpp:2942
 #: src/frontends/qt/GuiView.cpp:3105 src/frontends/qt/GuiView.cpp:3335
@@ -790,7 +798,7 @@ msgstr "الفروع غير المعرفة في هذا المستند."
 msgid "&Undefined Branches:"
 msgstr "الفروع غير المح&ددة:"
 
-#: src/frontends/qt/ui/BulletsUi.ui:17 src/frontends/qt/ui/PDFSupportUi.ui:406
+#: src/frontends/qt/ui/BulletsUi.ui:17 src/frontends/qt/ui/PDFSupportUi.ui:409
 msgid "&Level:"
 msgstr "&المستوى:"
 
@@ -820,18 +828,18 @@ msgstr "&الحجم:"
 #: src/frontends/qt/GuiDocument.cpp:1088 src/frontends/qt/GuiDocument.cpp:1173
 #: src/frontends/qt/GuiDocument.cpp:1219 src/frontends/qt/GuiDocument.cpp:1232
 #: src/frontends/qt/GuiDocument.cpp:1480 src/frontends/qt/GuiDocument.cpp:1598
-#: src/frontends/qt/GuiDocument.cpp:1606 src/frontends/qt/GuiDocument.cpp:2747
-#: src/frontends/qt/GuiDocument.cpp:2834 src/frontends/qt/GuiDocument.cpp:2837
-#: src/frontends/qt/GuiDocument.cpp:2840 src/frontends/qt/GuiDocument.cpp:2872
-#: src/frontends/qt/GuiDocument.cpp:2883 src/frontends/qt/GuiDocument.cpp:2894
-#: src/frontends/qt/GuiDocument.cpp:2981 src/frontends/qt/GuiDocument.cpp:3590
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiExternal.cpp:76
+#: src/frontends/qt/GuiDocument.cpp:1606 src/frontends/qt/GuiDocument.cpp:2749
+#: src/frontends/qt/GuiDocument.cpp:2836 src/frontends/qt/GuiDocument.cpp:2839
+#: src/frontends/qt/GuiDocument.cpp:2842 src/frontends/qt/GuiDocument.cpp:2874
+#: src/frontends/qt/GuiDocument.cpp:2885 src/frontends/qt/GuiDocument.cpp:2896
+#: src/frontends/qt/GuiDocument.cpp:2983 src/frontends/qt/GuiDocument.cpp:3596
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiExternal.cpp:76
 #: src/frontends/qt/GuiGraphics.cpp:71 src/frontends/qt/GuiIndex.cpp:46
 #: src/frontends/qt/GuiIndices.cpp:58 src/frontends/qt/GuiListings.cpp:156
 #: src/frontends/qt/GuiListings.cpp:163 src/frontends/qt/GuiPrefs.cpp:2386
 #: src/frontends/qt/GuiPrefs.cpp:2544 src/frontends/qt/GuiPrefs.cpp:2548
 #: src/frontends/qt/GuiPrintNomencl.cpp:47
-#: src/frontends/qt/GuiTabularCreate.cpp:107
+#: src/frontends/qt/GuiTabularCreate.cpp:105
 #: src/frontends/qt/GuiViewSource.cpp:351
 msgid "Default"
 msgstr "افتراضي"
@@ -1027,7 +1035,7 @@ msgstr "اللغة:"
 #: lib/layouts/europasscv.layout:441 lib/layouts/europasscv.layout:476
 #: lib/layouts/europasscv.layout:483 lib/layouts/europecv.layout:322
 #: lib/layouts/europecv.layout:328 lib/layouts/moderncv.layout:581
-#: src/frontends/qt/GuiDocument.cpp:1832 src/frontends/qt/GuiPrefs.cpp:2337
+#: src/frontends/qt/GuiDocument.cpp:1834 src/frontends/qt/GuiPrefs.cpp:2337
 #: src/frontends/qt/Menus.cpp:955
 msgid "Language"
 msgstr "اللغة"
@@ -1819,6 +1827,15 @@ msgid "Alignment of Contents"
 msgstr "محاذات المحتويات"
 
 #: src/frontends/qt/ui/FloatPlacementUi.ui:94
+msgid "Right-align float contents"
+msgstr "محاذاة-يمين للمحتوى العائم"
+
+#: src/frontends/qt/ui/FloatPlacementUi.ui:97
+#, fuzzy
+msgid "&Right"
+msgstr "يمين"
+
+#: src/frontends/qt/ui/FloatPlacementUi.ui:104
 msgid ""
 "Use the document's default alignment for floats, as specified in Document "
 "Settings."
@@ -1826,86 +1843,77 @@ msgstr ""
 "استخدم المحاذاة الافتراضية للمستند من للعائمات، كما هو محدد في \"إعدادات "
 "المستند\"."
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:97
+#: src/frontends/qt/ui/FloatPlacementUi.ui:107
 msgid "D&ocument Default"
 msgstr "&المستند الافتراضي"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:104
-msgid "Left-align float contents"
-msgstr "محاذاة-لليسار للمحتويات العائمة"
-
-#: src/frontends/qt/ui/FloatPlacementUi.ui:107
-#: src/frontends/qt/ui/ParagraphUi.ui:117
-msgid "&Left"
-msgstr "&يسار"
-
 #: src/frontends/qt/ui/FloatPlacementUi.ui:114
+msgid "Use the class' default alignment for floats, whatever it is."
+msgstr "استخدام الفئة 'محاذاة افتراضية للعائمات ، أيا كانت."
+
+#: src/frontends/qt/ui/FloatPlacementUi.ui:117
+msgid "Class &Default"
+msgstr "&النوع الافتراضي"
+
+#: src/frontends/qt/ui/FloatPlacementUi.ui:124
 msgid "Center float contents"
 msgstr "توسيط المحتويات العائمة"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:117
+#: src/frontends/qt/ui/FloatPlacementUi.ui:127
 #: src/frontends/qt/ui/ParagraphUi.ui:124 src/frontends/qt/ui/TabularUi.ui:1544
 msgid "&Center"
 msgstr "&توسيط"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:124
-msgid "Right-align float contents"
-msgstr "محاذاة-يمين للمحتوى العائم"
-
-#: src/frontends/qt/ui/FloatPlacementUi.ui:127
-#, fuzzy
-msgid "&Right"
-msgstr "يمين"
-
 #: src/frontends/qt/ui/FloatPlacementUi.ui:134
-msgid "Use the class' default alignment for floats, whatever it is."
-msgstr "استخدام الفئة 'محاذاة افتراضية للعائمات ، أيا كانت."
+msgid "Left-align float contents"
+msgstr "محاذاة-لليسار للمحتويات العائمة"
 
 #: src/frontends/qt/ui/FloatPlacementUi.ui:137
-msgid "Class &Default"
-msgstr "&النوع الافتراضي"
+#: src/frontends/qt/ui/ParagraphUi.ui:117
+msgid "&Left"
+msgstr "&يسار"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:147
+#: src/frontends/qt/ui/FloatPlacementUi.ui:160
 msgid "Further Options"
 msgstr "خيارات أخرى"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:156
+#: src/frontends/qt/ui/FloatPlacementUi.ui:169
 msgid "&Span columns"
 msgstr "&مدى الاعمدة"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:163
+#: src/frontends/qt/ui/FloatPlacementUi.ui:176
 msgid "Rotate side&ways"
 msgstr "&تدوير الشريحة"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:173
+#: src/frontends/qt/ui/FloatPlacementUi.ui:186
 msgid "Position on Page"
 msgstr "الموقع في الصفحة"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:184
+#: src/frontends/qt/ui/FloatPlacementUi.ui:197
 msgid "Place&ment Settings:"
 msgstr "&إعدادات الموضع:"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:199
+#: src/frontends/qt/ui/FloatPlacementUi.ui:212
 msgid "&Top of page"
 msgstr "&اعلى الصفحة"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:206
+#: src/frontends/qt/ui/FloatPlacementUi.ui:219
 msgid "&Bottom of page"
 msgstr "&اسفل الصفحة"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:213
+#: src/frontends/qt/ui/FloatPlacementUi.ui:226
 msgid "&Page of floats"
 msgstr "&صفحة تعويم"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:220
+#: src/frontends/qt/ui/FloatPlacementUi.ui:233
 msgid "&Here if possible"
 msgstr "&هنا لو امكن"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:227
+#: src/frontends/qt/ui/FloatPlacementUi.ui:240
 msgid "Here de&finitely"
 msgstr "&هنا بالتحديد"
 
-#: src/frontends/qt/ui/FloatPlacementUi.ui:234
+#: src/frontends/qt/ui/FloatPlacementUi.ui:247
 msgid "&Ignore LaTeX rules"
 msgstr "&تجاهل قوانين لتيك"
 
@@ -3565,56 +3573,60 @@ msgid "No &frames around links"
 msgstr "&بدون إطار حول الوصلات"
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:285
+msgid "Mutually exclusive with frames around links, see manual."
+msgstr ""
+
+#: src/frontends/qt/ui/PDFSupportUi.ui:288
 msgid "C&olor links"
 msgstr "&رابط اللون"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:292
+#: src/frontends/qt/ui/PDFSupportUi.ui:295
 msgid "Bibliographical backreferences"
 msgstr "المراجع المرجعية للسيرة"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:295
+#: src/frontends/qt/ui/PDFSupportUi.ui:298
 msgid "B&ackreferences:"
 msgstr "&المراجع المرجعية:"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:324
+#: src/frontends/qt/ui/PDFSupportUi.ui:327
 msgid "&Bookmarks"
 msgstr "&العلامات"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:345
+#: src/frontends/qt/ui/PDFSupportUi.ui:348
 msgid "G&enerate bookmarks (toc)"
 msgstr "إنتاج علامات (جدول المحتويات)"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:375
+#: src/frontends/qt/ui/PDFSupportUi.ui:378
 msgid "&Numbered bookmarks"
 msgstr "&ترقيم العلامات"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:382
+#: src/frontends/qt/ui/PDFSupportUi.ui:385
 msgid "&Open bookmark tree"
 msgstr "فتح& شجرة العلامات"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:416
+#: src/frontends/qt/ui/PDFSupportUi.ui:419
 msgid "Number of levels"
 msgstr "رقم المستوى"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:455
+#: src/frontends/qt/ui/PDFSupportUi.ui:458
 msgid "Additional O&ptions"
 msgstr "خيارات إ&ضافية"
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:461
+#: src/frontends/qt/ui/PDFSupportUi.ui:464
 msgid ""
 "Additional hyperref options (comma-separated) to be passed via \\hypersetup."
 msgstr ""
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:464
+#: src/frontends/qt/ui/PDFSupportUi.ui:467
 msgid "Hyperse&tup"
 msgstr ""
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:487
+#: src/frontends/qt/ui/PDFSupportUi.ui:490
 msgid ""
 "Document metadata and PDF settings (as specified in LaTeX 06/2022 and later)"
 msgstr ""
 
-#: src/frontends/qt/ui/PDFSupportUi.ui:490
+#: src/frontends/qt/ui/PDFSupportUi.ui:493
 #, fuzzy
 msgid "Document &Metadata"
 msgstr "المستند الافتراضي"
@@ -3642,7 +3654,7 @@ msgstr "&افقية"
 #: src/frontends/qt/ui/PageLayoutUi.ui:162
 #: lib/layouts/customHeadersFooters.module:3 lib/layouts/landscape.module:3
 #: lib/layouts/multicol.module:3 src/frontends/qt/GuiDocument.cpp:1226
-#: src/frontends/qt/GuiDocument.cpp:1229 src/frontends/qt/GuiDocument.cpp:1830
+#: src/frontends/qt/GuiDocument.cpp:1229 src/frontends/qt/GuiDocument.cpp:1832
 msgid "Page Layout"
 msgstr "تخطيط الصفحة"
 
@@ -3666,7 +3678,7 @@ msgstr "&مستند بوجهين"
 msgid "Line &spacing"
 msgstr "&تباعد الأسطر"
 
-#: src/frontends/qt/ui/ParagraphUi.ui:60 src/Text.cpp:2186
+#: src/frontends/qt/ui/ParagraphUi.ui:60 src/Text.cpp:2187
 #: src/frontends/qt/GuiDocument.cpp:908
 msgid "Single"
 msgstr "مفرد"
@@ -3675,7 +3687,7 @@ msgstr "مفرد"
 msgid "1.5"
 msgstr "1.5"
 
-#: src/frontends/qt/ui/ParagraphUi.ui:70 src/Text.cpp:2192
+#: src/frontends/qt/ui/ParagraphUi.ui:70 src/Text.cpp:2193
 #: src/frontends/qt/GuiDocument.cpp:912
 msgid "Double"
 msgstr "مزدوج"
@@ -4457,7 +4469,7 @@ msgid "Select which (LaTeX) language package documents should use by default"
 msgstr "اختر حزمة اللغة التي يجب أن يستخدمها ليك"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:77
-#: src/frontends/qt/GuiDocument.cpp:1090 src/frontends/qt/GuiDocument.cpp:2905
+#: src/frontends/qt/GuiDocument.cpp:1090 src/frontends/qt/GuiDocument.cpp:2907
 #: src/frontends/qt/GuiPrefs.cpp:702 src/frontends/qt/GuiPrefs.cpp:730
 msgid "Automatic"
 msgstr "آلي"
@@ -5117,7 +5129,7 @@ msgid ""
 msgstr ""
 
 #: src/frontends/qt/ui/ProgressViewUi.ui:93
-#: src/frontends/qt/GuiDocument.cpp:1844 src/frontends/qt/GuiPrefs.cpp:95
+#: src/frontends/qt/GuiDocument.cpp:1846 src/frontends/qt/GuiPrefs.cpp:95
 msgid "Output"
 msgstr "خرج"
 
@@ -6109,7 +6121,7 @@ msgid ""
 "change tracking, etc.)"
 msgstr ""
 
-#: src/frontends/qt/ui/TocUi.ui:317 src/frontends/qt/TocWidget.cpp:99
+#: src/frontends/qt/ui/TocUi.ui:317 src/frontends/qt/TocWidget.cpp:100
 #, fuzzy
 msgid "All items"
 msgstr "كل الملفات"
@@ -7668,7 +7680,7 @@ msgstr "عنوان قصير للملحق"
 #: lib/layouts/stdstruct.inc:59 lib/layouts/svcommon.inc:658
 #: lib/layouts/tufte-book.layout:299 lib/layouts/tufte-book.layout:301
 #: lib/layouts/tufte-handout.layout:78 lib/examples/Articles:0
-#: src/frontends/qt/GuiDocument.cpp:1836 src/insets/InsetBibtex.cpp:963
+#: src/frontends/qt/GuiDocument.cpp:1838 src/insets/InsetBibtex.cpp:963
 msgid "Bibliography"
 msgstr "ثبت المراجع"
 
@@ -8209,7 +8221,7 @@ msgid "Altaffilation"
 msgstr ""
 
 #: lib/layouts/aastex.layout:201 lib/layouts/agutex.layout:132
-#: src/mathed/InsetMathHull.cpp:1903 src/mathed/InsetMathHull.cpp:1912
+#: src/mathed/InsetMathHull.cpp:1912 src/mathed/InsetMathHull.cpp:1921
 msgid "Number"
 msgstr "رقم"
 
@@ -8225,9 +8237,9 @@ msgstr "الانتساب البديل:"
 msgid "And"
 msgstr "و"
 
-#: lib/layouts/aastex.layout:256 src/frontends/qt/GuiDocument.cpp:3326
-#: src/frontends/qt/GuiDocument.cpp:3338 src/frontends/qt/GuiDocument.cpp:3467
-#: src/frontends/qt/GuiDocument.cpp:3486
+#: lib/layouts/aastex.layout:256 src/frontends/qt/GuiDocument.cpp:3334
+#: src/frontends/qt/GuiDocument.cpp:3346 src/frontends/qt/GuiDocument.cpp:3475
+#: src/frontends/qt/GuiDocument.cpp:3494
 msgid "and"
 msgstr "و"
 
@@ -10502,8 +10514,9 @@ msgid "Alert"
 msgstr "تحذير"
 
 #: lib/layouts/beamer.layout:1540 lib/layouts/beamer.layout:1542
-#: lib/layouts/svcommon.inc:73 lib/layouts/svcommon.inc:100
-#: lib/layouts/svcommon.inc:107
+#: lib/layouts/jlreq-book.layout:25 lib/layouts/jlreq-book.layout:52
+#: lib/layouts/jlreq-book.layout:59 lib/layouts/svcommon.inc:73
+#: lib/layouts/svcommon.inc:100 lib/layouts/svcommon.inc:107
 msgid "Structure"
 msgstr "بنية"
 
@@ -12713,8 +12726,8 @@ msgid "Fixme Error"
 msgstr "خطأ Fixme"
 
 #: lib/layouts/fixme.module:83 src/frontends/qt/GuiCompare.cpp:202
-#: src/frontends/qt/GuiDocument.cpp:3039 src/frontends/qt/GuiDocument.cpp:3113
-#: src/frontends/qt/GuiDocument.cpp:5059
+#: src/frontends/qt/GuiDocument.cpp:3041 src/frontends/qt/GuiDocument.cpp:3121
+#: src/frontends/qt/GuiDocument.cpp:5069
 msgid "Error"
 msgstr "خطأ"
 
@@ -14105,6 +14118,30 @@ msgstr "مقال ياباني (JS Class)"
 #, fuzzy
 msgid "Japanese Book (JLReq Class)"
 msgstr "كتاب ياباني (JS)"
+
+#: lib/layouts/jlreq-book.layout:24 lib/layouts/svcommon.inc:72
+msgid "Front Matter"
+msgstr "الصفحات الاستباقية"
+
+#: lib/layouts/jlreq-book.layout:40 lib/layouts/svcommon.inc:88
+msgid "--- Front Matter ---"
+msgstr "--- مادة أمامية ---"
+
+#: lib/layouts/jlreq-book.layout:50 lib/layouts/svcommon.inc:98
+msgid "Main Matter"
+msgstr "مادة رئيسية"
+
+#: lib/layouts/jlreq-book.layout:54 lib/layouts/svcommon.inc:102
+msgid "--- Main Matter ---"
+msgstr "--- مادة أمامية ---"
+
+#: lib/layouts/jlreq-book.layout:57 lib/layouts/svcommon.inc:105
+msgid "Back Matter"
+msgstr "المادة الخلفية"
+
+#: lib/layouts/jlreq-book.layout:61 lib/layouts/svcommon.inc:109
+msgid "--- Back Matter ---"
+msgstr "--- مادة خلفية ---"
 
 #: lib/layouts/jlreq-common.inc:13 lib/layouts/jlreq-common.inc:21
 #: lib/layouts/jlreq-common.inc:29 lib/layouts/jlreq-common.inc:37
@@ -17467,7 +17504,7 @@ msgstr "تذييل"
 msgid "Notes"
 msgstr "ملاحظات"
 
-#: lib/layouts/stdinsets.inc:14 src/frontends/qt/GuiDocument.cpp:1843
+#: lib/layouts/stdinsets.inc:14 src/frontends/qt/GuiDocument.cpp:1845
 msgid "Branches"
 msgstr "فروع"
 
@@ -17502,8 +17539,8 @@ msgstr "القوائم[[List of Listings]]"
 msgid "List of Listings"
 msgstr "قائمة القوائم"
 
-#: lib/layouts/stdinsets.inc:355 src/frontends/qt/GuiDocument.cpp:1841
-#: src/frontends/qt/GuiDocument.cpp:5082
+#: lib/layouts/stdinsets.inc:355 src/frontends/qt/GuiDocument.cpp:1843
+#: src/frontends/qt/GuiDocument.cpp:5092
 msgid "Listings[[inset]]"
 msgstr "قوائم[[inset]]"
 
@@ -17584,30 +17621,6 @@ msgid ""
 "Provide a straightforward way to segregate subequations in LyX. See the Math "
 "manual."
 msgstr ""
-
-#: lib/layouts/svcommon.inc:72
-msgid "Front Matter"
-msgstr "الصفحات الاستباقية"
-
-#: lib/layouts/svcommon.inc:88
-msgid "--- Front Matter ---"
-msgstr "--- مادة أمامية ---"
-
-#: lib/layouts/svcommon.inc:98
-msgid "Main Matter"
-msgstr "مادة رئيسية"
-
-#: lib/layouts/svcommon.inc:102
-msgid "--- Main Matter ---"
-msgstr "--- مادة أمامية ---"
-
-#: lib/layouts/svcommon.inc:105
-msgid "Back Matter"
-msgstr "المادة الخلفية"
-
-#: lib/layouts/svcommon.inc:109
-msgid "--- Back Matter ---"
-msgstr "--- مادة خلفية ---"
 
 #: lib/layouts/svcommon.inc:125 lib/layouts/svmult.layout:117
 msgid "PartBacktext"
@@ -19749,121 +19762,121 @@ msgstr ""
 msgid "TeX Gyre Heros"
 msgstr ""
 
-#: lib/latexfonts:1063
+#: lib/latexfonts:1063 lib/latexfonts:1071
 msgid "URW Classico (Optima)"
 msgstr ""
 
-#: lib/latexfonts:1074
+#: lib/latexfonts:1081
 msgid "Bera Mono"
 msgstr "Bera Mono"
 
-#: lib/latexfonts:1082
+#: lib/latexfonts:1089
 msgid "CM Typewriter Light"
 msgstr ""
 
-#: lib/latexfonts:1089
+#: lib/latexfonts:1096
 msgid "Computer Modern Typewriter"
 msgstr ""
 
-#: lib/latexfonts:1096
+#: lib/latexfonts:1103
 msgid "Courier"
 msgstr ""
 
-#: lib/latexfonts:1103
+#: lib/latexfonts:1110
 msgid "DejaVu Sans Mono"
 msgstr ""
 
-#: lib/latexfonts:1110
+#: lib/latexfonts:1117
 msgid "Fira Mono"
 msgstr "Fira Mono"
 
-#: lib/latexfonts:1121
+#: lib/latexfonts:1128
 msgid "IBM Plex Mono"
 msgstr "IBM Plex Mono"
 
-#: lib/latexfonts:1129
+#: lib/latexfonts:1136
 msgid "IBM Plex Mono (Thin)"
 msgstr ""
 
-#: lib/latexfonts:1138
+#: lib/latexfonts:1145
 msgid "IBM Plex Mono (Extra Light)"
 msgstr ""
 
-#: lib/latexfonts:1147
+#: lib/latexfonts:1154
 msgid "IBM Plex Mono (Light)"
 msgstr ""
 
-#: lib/latexfonts:1156
+#: lib/latexfonts:1163
 msgid "Source Code Pro"
 msgstr ""
 
-#: lib/latexfonts:1165 lib/latexfonts:1173
+#: lib/latexfonts:1172 lib/latexfonts:1180
 msgid "Libertine Mono"
 msgstr "Libertine Mono"
 
-#: lib/latexfonts:1180
+#: lib/latexfonts:1187
 #, fuzzy
 msgid "Libertinus Mono"
 msgstr "Libertine Mono"
 
-#: lib/latexfonts:1188
+#: lib/latexfonts:1195
 msgid "Latin Modern Typewriter"
 msgstr ""
 
-#: lib/latexfonts:1195
+#: lib/latexfonts:1202
 msgid "LuxiMono"
 msgstr "LuxiMono"
 
-#: lib/latexfonts:1202
+#: lib/latexfonts:1209
 msgid "Noto Mono"
 msgstr ""
 
-#: lib/latexfonts:1211
+#: lib/latexfonts:1218
 msgid "PT Mono"
 msgstr "PT Mono"
 
-#: lib/latexfonts:1219
+#: lib/latexfonts:1226
 msgid "TeX Gyre Cursor"
 msgstr ""
 
-#: lib/latexfonts:1225
+#: lib/latexfonts:1232
 msgid "TX Typewriter"
 msgstr "TX Typewriter"
 
-#: lib/latexfonts:1237
+#: lib/latexfonts:1244
 msgid "Crimson (New TX)"
 msgstr ""
 
-#: lib/latexfonts:1245
+#: lib/latexfonts:1252
 msgid "Euler VM"
 msgstr ""
 
-#: lib/latexfonts:1251
+#: lib/latexfonts:1258
 msgid "URW Garamond (New TX)"
 msgstr ""
 
-#: lib/latexfonts:1259
+#: lib/latexfonts:1266
 msgid "Iwona (Math)"
 msgstr "Iwona (رياضيات)"
 
-#: lib/latexfonts:1272
+#: lib/latexfonts:1279
 msgid "Kurier (Math)"
 msgstr ""
 
-#: lib/latexfonts:1285
+#: lib/latexfonts:1292
 msgid "Libertine (New TX)"
 msgstr ""
 
-#: lib/latexfonts:1293
+#: lib/latexfonts:1300
 #, fuzzy
 msgid "Libertinus Math"
 msgstr "Libertine Mono"
 
-#: lib/latexfonts:1300
+#: lib/latexfonts:1307
 msgid "Minion Pro (New TX)"
 msgstr ""
 
-#: lib/latexfonts:1309
+#: lib/latexfonts:1316
 msgid "Times Roman (New TX)"
 msgstr "Times Roman (New TX)"
 
@@ -20152,17 +20165,17 @@ msgid "Copy as Reference|R"
 msgstr "نسخ كمرجع|R"
 
 #: lib/ui/stdcontext.inc:61 lib/ui/stdcontext.inc:376 lib/ui/stdmenus.inc:108
-#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4975 src/mathed/InsetMathNest.cpp:870
+#: lib/ui/stdtoolbars.inc:89 src/Text.cpp:4976 src/mathed/InsetMathNest.cpp:870
 msgid "Cut"
 msgstr "قص"
 
 #: lib/ui/stdcontext.inc:62 lib/ui/stdcontext.inc:377 lib/ui/stdmenus.inc:109
-#: lib/ui/stdtoolbars.inc:90 src/BufferView.cpp:2455
+#: lib/ui/stdtoolbars.inc:90 src/BufferView.cpp:2520
 msgid "Copy"
 msgstr "نسخ"
 
 #: lib/ui/stdcontext.inc:63 lib/ui/stdcontext.inc:378 lib/ui/stdmenus.inc:110
-#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4920
+#: lib/ui/stdtoolbars.inc:91 src/Text.cpp:4921
 #: src/frontends/qt/GuiToolbar.cpp:464 src/mathed/InsetMathGrid.cpp:1566
 #: src/mathed/InsetMathNest.cpp:839
 msgid "Paste"
@@ -20240,35 +20253,38 @@ msgstr "الاشارة المرجعية التالي|N"
 msgid "Go to Label|G"
 msgstr "اذهب للملصق|G"
 
-#: lib/ui/stdcontext.inc:95 lib/ui/stdcontext.inc:115
+#: lib/ui/stdcontext.inc:95 lib/ui/stdcontext.inc:115 lib/ui/stdcontext.inc:724
 msgid "<Reference>|R"
 msgstr "<مرجع>|R"
 
-#: lib/ui/stdcontext.inc:96 lib/ui/stdcontext.inc:116
+#: lib/ui/stdcontext.inc:96 lib/ui/stdcontext.inc:116 lib/ui/stdcontext.inc:725
 msgid "(<Reference>)|e"
 msgstr "(<مرجع>)|e"
 
-#: lib/ui/stdcontext.inc:97 lib/ui/stdcontext.inc:117
+#: lib/ui/stdcontext.inc:97 lib/ui/stdcontext.inc:117 lib/ui/stdcontext.inc:726
 msgid "<Page>|P"
 msgstr "|P<صفحة>"
 
-#: lib/ui/stdcontext.inc:98 lib/ui/stdcontext.inc:118
+#: lib/ui/stdcontext.inc:98 lib/ui/stdcontext.inc:118 lib/ui/stdcontext.inc:727
 msgid "On Page <Page>|O"
 msgstr "على صفحة <صفحة>|O"
 
-#: lib/ui/stdcontext.inc:99 lib/ui/stdcontext.inc:119
+#: lib/ui/stdcontext.inc:99 lib/ui/stdcontext.inc:119 lib/ui/stdcontext.inc:728
 msgid "<Reference> on Page <Page>|f"
 msgstr "<مرجع> على الصفحة <صفحة>|f"
 
 #: lib/ui/stdcontext.inc:100 lib/ui/stdcontext.inc:120
+#: lib/ui/stdcontext.inc:729
 msgid "Formatted Reference|t"
 msgstr "مرجع مهيئ|t"
 
 #: lib/ui/stdcontext.inc:101 lib/ui/stdcontext.inc:121
+#: lib/ui/stdcontext.inc:730
 msgid "Textual Reference|x"
 msgstr "مرجع نصي|x"
 
 #: lib/ui/stdcontext.inc:102 lib/ui/stdcontext.inc:122
+#: lib/ui/stdcontext.inc:731
 msgid "Label Only|L"
 msgstr "ملصق فقط|L"
 
@@ -20282,10 +20298,10 @@ msgstr "ملصق فقط|L"
 #: lib/ui/stdcontext.inc:525 lib/ui/stdcontext.inc:549
 #: lib/ui/stdcontext.inc:560 lib/ui/stdcontext.inc:568
 #: lib/ui/stdcontext.inc:578 lib/ui/stdcontext.inc:586
-#: lib/ui/stdcontext.inc:594 lib/ui/stdcontext.inc:602
-#: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:627
-#: lib/ui/stdcontext.inc:677 lib/ui/stdcontext.inc:685
-#: lib/ui/stdcontext.inc:733 lib/ui/stdcontext.inc:742 lib/ui/stdmenus.inc:586
+#: lib/ui/stdcontext.inc:605 lib/ui/stdcontext.inc:613
+#: lib/ui/stdcontext.inc:628 lib/ui/stdcontext.inc:640
+#: lib/ui/stdcontext.inc:690 lib/ui/stdcontext.inc:698
+#: lib/ui/stdcontext.inc:760 lib/ui/stdcontext.inc:769 lib/ui/stdmenus.inc:586
 msgid "Settings...|S"
 msgstr "إعدادات...|S"
 
@@ -20323,7 +20339,7 @@ msgid "Close Inset|C"
 msgstr "إغلاق إدراج|C"
 
 #: lib/ui/stdcontext.inc:179 lib/ui/stdcontext.inc:185
-#: lib/ui/stdcontext.inc:201 lib/ui/stdcontext.inc:693
+#: lib/ui/stdcontext.inc:201 lib/ui/stdcontext.inc:706
 msgid "Dissolve Inset|D"
 msgstr "إلغاء البرواز|D"
 
@@ -20577,27 +20593,27 @@ msgstr "مخصص|C"
 msgid "Settings...|e"
 msgstr "إعدادات...|e"
 
-#: lib/ui/stdcontext.inc:329 lib/ui/stdcontext.inc:609
+#: lib/ui/stdcontext.inc:329 lib/ui/stdcontext.inc:622
 msgid "Include|c"
 msgstr "تضمين|c"
 
-#: lib/ui/stdcontext.inc:330 lib/ui/stdcontext.inc:610
+#: lib/ui/stdcontext.inc:330 lib/ui/stdcontext.inc:623
 msgid "Input|p"
 msgstr "ادخل|p"
 
-#: lib/ui/stdcontext.inc:331 lib/ui/stdcontext.inc:611
+#: lib/ui/stdcontext.inc:331 lib/ui/stdcontext.inc:624
 msgid "Verbatim|V"
 msgstr "حرفي|V"
 
-#: lib/ui/stdcontext.inc:332 lib/ui/stdcontext.inc:612
+#: lib/ui/stdcontext.inc:332 lib/ui/stdcontext.inc:625
 msgid "Verbatim (marked blanks)|b"
 msgstr "حرفي (فراغات معلمة)|b"
 
-#: lib/ui/stdcontext.inc:333 lib/ui/stdcontext.inc:613
+#: lib/ui/stdcontext.inc:333 lib/ui/stdcontext.inc:626
 msgid "Listing|L"
 msgstr "عمل قائمة|L"
 
-#: lib/ui/stdcontext.inc:337 lib/ui/stdcontext.inc:617
+#: lib/ui/stdcontext.inc:337 lib/ui/stdcontext.inc:630
 msgid "Edit Included File...|E"
 msgstr "تحرير ملف مضمن...|E"
 
@@ -20638,11 +20654,11 @@ msgstr "فاصل بسيط|P"
 msgid "Paragraph Break|B"
 msgstr "فاصل فقرة|B"
 
-#: lib/ui/stdcontext.inc:373 lib/ui/stdcontext.inc:725
+#: lib/ui/stdcontext.inc:373 lib/ui/stdcontext.inc:752
 msgid "Edit Externally..."
 msgstr "تحرير خارجي..."
 
-#: lib/ui/stdcontext.inc:374 lib/ui/stdcontext.inc:726
+#: lib/ui/stdcontext.inc:374 lib/ui/stdcontext.inc:753
 #, fuzzy
 msgid "End Editing Externally"
 msgstr "نهاية تحرير خارجي..."
@@ -20681,7 +20697,7 @@ msgstr "إنزال قسم|m"
 msgid "Move Section Down|D"
 msgstr "نقل القسم لأسفل|D"
 
-#: lib/ui/stdcontext.inc:394 lib/ui/stdcontext.inc:713
+#: lib/ui/stdcontext.inc:394 lib/ui/stdcontext.inc:738
 msgid "Move Section Up|U"
 msgstr "نقل القسم لأعلى|U"
 
@@ -20689,7 +20705,7 @@ msgstr "نقل القسم لأعلى|U"
 msgid "Insert Regular Expression"
 msgstr "إدراج تعبير عادي"
 
-#: lib/ui/stdcontext.inc:398 lib/ui/stdcontext.inc:702
+#: lib/ui/stdcontext.inc:398 lib/ui/stdcontext.inc:715
 msgid "Accept Change|c"
 msgstr "تأكيد التغيير|c"
 
@@ -20928,168 +20944,174 @@ msgstr "إضافة فرع مجهول|w"
 msgid "Insert Reference at Cursor Position|I"
 msgstr "إدراج مرجع في مكان المؤشر|I"
 
-#: lib/ui/stdcontext.inc:625
+#: lib/ui/stdcontext.inc:588 lib/ui/stdcontext.inc:597
+#: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:743
+#, fuzzy
+msgid "Insert Cross-Reference to this Item|C"
+msgstr "إدراج اشارة مرجعية"
+
+#: lib/ui/stdcontext.inc:638
 #, fuzzy
 msgid "Insert Copy at Cursor Position|I"
 msgstr "إدراج مرجع في مكان المؤشر|I"
 
-#: lib/ui/stdcontext.inc:637
+#: lib/ui/stdcontext.inc:650
 msgid "Index All Occurrences of this Word|W"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:639
+#: lib/ui/stdcontext.inc:652
 msgid "Single Page (No Page Range)|P"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:640
+#: lib/ui/stdcontext.inc:653
 #, fuzzy
 msgid "Start Page Range|t"
 msgstr "صفحة البداية:"
 
-#: lib/ui/stdcontext.inc:641
+#: lib/ui/stdcontext.inc:654
 #, fuzzy
 msgid "End Page Range|E"
 msgstr "على صفحة <صفحة>|O"
 
-#: lib/ui/stdcontext.inc:643
+#: lib/ui/stdcontext.inc:656
 #, fuzzy
 msgid "No Page Formatting|N"
 msgstr "تهيئة|o"
 
-#: lib/ui/stdcontext.inc:644
+#: lib/ui/stdcontext.inc:657
 #, fuzzy
 msgid "Bold Page Formatting|B"
 msgstr "تهيئة|o"
 
-#: lib/ui/stdcontext.inc:645
+#: lib/ui/stdcontext.inc:658
 #, fuzzy
 msgid "Italic Page Formatting|I"
 msgstr "تهيئة|o"
 
-#: lib/ui/stdcontext.inc:646
+#: lib/ui/stdcontext.inc:659
 msgid "Emphasized Page Formatting|z"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:647
+#: lib/ui/stdcontext.inc:660
 #, fuzzy
 msgid "Custom Page Formatting...|u"
 msgstr "تنسيق مخصص"
 
-#: lib/ui/stdcontext.inc:651
+#: lib/ui/stdcontext.inc:664
 #, fuzzy
 msgid "Insert Subentry|n"
 msgstr "إدراج مدخل فهرس"
 
-#: lib/ui/stdcontext.inc:652
+#: lib/ui/stdcontext.inc:665
 #, fuzzy
 msgid "Insert Sortkey|k"
 msgstr "إدراج ملاحظة"
 
-#: lib/ui/stdcontext.inc:653
+#: lib/ui/stdcontext.inc:666
 #, fuzzy
 msgid "Insert See Reference|c"
 msgstr "مرجع موقع انترنت"
 
-#: lib/ui/stdcontext.inc:654
+#: lib/ui/stdcontext.inc:667
 #, fuzzy
 msgid "Insert See also Reference|a"
 msgstr "مرجع موقع انترنت"
 
-#: lib/ui/stdcontext.inc:662 lib/ui/stdmenus.inc:541
+#: lib/ui/stdcontext.inc:675 lib/ui/stdmenus.inc:541
 msgid "See|e"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:663 lib/ui/stdmenus.inc:542
+#: lib/ui/stdcontext.inc:676 lib/ui/stdmenus.inc:542
 msgid "See also|a"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:672
+#: lib/ui/stdcontext.inc:685
 msgid "All Indexes|A"
 msgstr "كل الفهارس|A"
 
-#: lib/ui/stdcontext.inc:675
+#: lib/ui/stdcontext.inc:688
 msgid "Subindex|b"
 msgstr "فهرس فرعي|b"
 
-#: lib/ui/stdcontext.inc:703 lib/ui/stdmenus.inc:593
+#: lib/ui/stdcontext.inc:716 lib/ui/stdmenus.inc:593
 msgid "Reject Change|R"
 msgstr "رفض التغيير|R"
 
-#: lib/ui/stdcontext.inc:711
+#: lib/ui/stdcontext.inc:736
 msgid "Promote Section|P"
 msgstr "رفع قسم|P"
 
-#: lib/ui/stdcontext.inc:712
+#: lib/ui/stdcontext.inc:737
 msgid "Demote Section|D"
 msgstr "إنزال قسم|D"
 
-#: lib/ui/stdcontext.inc:714
+#: lib/ui/stdcontext.inc:739
 msgid "Move Section Down|w"
 msgstr "نقل القسم للأسفل|w"
 
-#: lib/ui/stdcontext.inc:716
+#: lib/ui/stdcontext.inc:741
 msgid "Select Section|S"
 msgstr "تحديد قسم|S"
 
-#: lib/ui/stdcontext.inc:724
+#: lib/ui/stdcontext.inc:751
 msgid "Wrap by Preview|y"
 msgstr "مستعرض ليك|y"
 
-#: lib/ui/stdcontext.inc:735
+#: lib/ui/stdcontext.inc:762
 #, fuzzy
 msgid "Open Target...|O"
 msgstr "فتح...|O"
 
-#: lib/ui/stdcontext.inc:751 lib/ui/stdmenus.inc:362
+#: lib/ui/stdcontext.inc:778 lib/ui/stdmenus.inc:362
 msgid "Lock Toolbars|L"
 msgstr "تثبيت شريط الأدوات|L"
 
-#: lib/ui/stdcontext.inc:753 lib/ui/stdmenus.inc:364
+#: lib/ui/stdcontext.inc:780 lib/ui/stdmenus.inc:364
 msgid "Small-sized Icons"
 msgstr "رموز حجمها-صغير"
 
-#: lib/ui/stdcontext.inc:754 lib/ui/stdmenus.inc:365
+#: lib/ui/stdcontext.inc:781 lib/ui/stdmenus.inc:365
 msgid "Normal-sized Icons"
 msgstr "رموز حجمها-عادي"
 
-#: lib/ui/stdcontext.inc:755 lib/ui/stdmenus.inc:366
+#: lib/ui/stdcontext.inc:782 lib/ui/stdmenus.inc:366
 msgid "Big-sized Icons"
 msgstr "رموز حجمها-كبير"
 
-#: lib/ui/stdcontext.inc:756 lib/ui/stdmenus.inc:367
+#: lib/ui/stdcontext.inc:783 lib/ui/stdmenus.inc:367
 msgid "Huge-sized Icons"
 msgstr "رمز حجمها-عملاق"
 
-#: lib/ui/stdcontext.inc:757 lib/ui/stdmenus.inc:368
+#: lib/ui/stdcontext.inc:784 lib/ui/stdmenus.inc:368
 msgid "Giant-sized Icons"
 msgstr "رموز حجمها-ضخم"
 
-#: lib/ui/stdcontext.inc:771
+#: lib/ui/stdcontext.inc:798
 msgid "Zoom Level|Z"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:772
+#: lib/ui/stdcontext.inc:799
 msgid "Zoom Slider|S"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:774
+#: lib/ui/stdcontext.inc:801
 msgid "Word Count|W"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:775
+#: lib/ui/stdcontext.inc:802
 #, fuzzy
 msgid "Character Count|C"
 msgstr "تعيين المحارف"
 
-#: lib/ui/stdcontext.inc:776
+#: lib/ui/stdcontext.inc:803
 msgid "Character Count (No Blanks)|h"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:777
+#: lib/ui/stdcontext.inc:804
 msgid "Start Statistics Relative to Current Count|R"
 msgstr ""
 
-#: lib/ui/stdcontext.inc:778
+#: lib/ui/stdcontext.inc:805
 msgid "Reset to Absolute Statistics Count|A"
 msgstr ""
 
@@ -22304,11 +22326,11 @@ msgstr "تدقيق إملائي"
 msgid "Spellcheck continuously"
 msgstr "تدقيق إملائي مستمر"
 
-#: lib/ui/stdtoolbars.inc:87 src/BufferView.cpp:1519
+#: lib/ui/stdtoolbars.inc:87 src/BufferView.cpp:1532
 msgid "Undo"
 msgstr "تراجع"
 
-#: lib/ui/stdtoolbars.inc:88 src/BufferView.cpp:1540
+#: lib/ui/stdtoolbars.inc:88 src/BufferView.cpp:1553
 msgid "Redo"
 msgstr "تكرار"
 
@@ -22697,7 +22719,7 @@ msgid "Fractions"
 msgstr "الكسور"
 
 #: lib/ui/stdtoolbars.inc:222 lib/ui/stdtoolbars.inc:445
-#: src/frontends/qt/GuiDocument.cpp:1828
+#: src/frontends/qt/GuiDocument.cpp:1830
 msgid "Fonts"
 msgstr "الخطوط"
 
@@ -22714,7 +22736,7 @@ msgid "Big operators"
 msgstr "العمليات الكبيرة"
 
 #: lib/ui/stdtoolbars.inc:226 lib/ui/stdtoolbars.inc:693
-#: src/frontends/qt/GuiDocument.cpp:5372
+#: src/frontends/qt/GuiDocument.cpp:5382
 msgid "Miscellaneous"
 msgstr "منوعات"
 
@@ -27633,14 +27655,6 @@ msgid "External Material"
 msgstr "مادة خارجية"
 
 #: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr ""
-
-#: lib/examples/Articles:0
-msgid "Instant Preview"
-msgstr "&العرض الفوري"
-
-#: lib/examples/Articles:0
 msgid "Itemize Bullets"
 msgstr "تفصيل الرموز النقطية"
 
@@ -27650,17 +27664,25 @@ msgid "Minted File Listing"
 msgstr "قائمة القوائم"
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Minted Listings"
-msgstr "قائمة القوائم"
+msgid "XY-Pic"
+msgstr ""
+
+#: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr ""
 
 #: lib/examples/Articles:0
 msgid "XY-Figure"
 msgstr ""
 
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr ""
+#, fuzzy
+msgid "Minted Listings"
+msgstr "قائمة القوائم"
+
+#: lib/examples/Articles:0
+msgid "Instant Preview"
+msgstr "&العرض الفوري"
 
 #: lib/examples/Articles:0
 msgid "Graphics and Insets"
@@ -27676,13 +27698,13 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr ""
 
 #: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr ""
-
-#: lib/examples/Articles:0
 #, fuzzy
 msgid "Writing Armenian"
 msgstr "الارمينية"
+
+#: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr ""
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -27702,10 +27724,6 @@ msgid "Serial Letter 3"
 msgstr ""
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "المخاطر والبيانات التحذيرية"
-
-#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "كتاب LilyPond"
 
@@ -27714,29 +27732,33 @@ msgid "Multilingual Captions"
 msgstr "تعليق متعدد اللغات"
 
 #: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
+msgid "Hazard and Precautionary Statements"
+msgstr "المخاطر والبيانات التحذيرية"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr ""
 
-#: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1826
+#: lib/examples/Articles:0
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
+
+#: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1828
 msgid "Modules"
 msgstr "نماذج"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (Complex)"
+#, fuzzy
+msgid "Foils Landslide"
+msgstr "شريحة افقية"
 
 #: lib/examples/Articles:0
 msgid "Foils"
 msgstr ""
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Foils Landslide"
-msgstr "شريحة افقية"
+msgid "Beamer (Complex)"
+msgstr "Beamer (Complex)"
 
 #: lib/examples/Articles:0
 msgid "Welcome"
@@ -27747,12 +27769,7 @@ msgid "Writing Korean with CJK-ko"
 msgstr ""
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "مقال عبري"
-
-#: lib/examples/Articles:0
-msgid "IEEE Transactions Conference"
+msgid "Mathematical Monthly"
 msgstr ""
 
 #: lib/examples/Articles:0
@@ -27760,7 +27777,7 @@ msgid "IEEE Transactions Journal"
 msgstr ""
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
+msgid "IEEE Transactions Conference"
 msgstr ""
 
 #: lib/examples/Articles:0
@@ -27768,37 +27785,29 @@ msgid "Springers Global Journal Template (V. 3)"
 msgstr ""
 
 #: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 الملف الرئيسي"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 الإهداء"
+#, fuzzy
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "مقال عبري"
 
 #: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02 Foreword"
 
 #: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 مقدمة"
+msgid "07 Part"
+msgstr "07 جزء"
+
+#: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr ""
 
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04 الشكر"
 
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "05 Contributor List"
-msgstr "قائمة المساهمين"
-
-#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr ""
-
-#: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 جزء"
 
 #: lib/examples/Articles:0
 msgid "08 Author"
@@ -27809,16 +27818,29 @@ msgid "09 Appendix"
 msgstr "09 ملحق"
 
 #: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr ""
-
-#: lib/examples/Articles:0
 msgid "11 References"
 msgstr "11 مراجع"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr ""
+#, fuzzy
+msgid "05 Contributor List"
+msgstr "قائمة المساهمين"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 الإهداء"
+
+#: lib/examples/Articles:0
+msgid "00 Main File"
+msgstr "00 الملف الرئيسي"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03 مقدمة"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10 حلول"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -27833,20 +27855,20 @@ msgid "08 Appendix"
 msgstr "08 ملحق"
 
 #: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr ""
+
+#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr ""
 
 #: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 حلول"
+msgid "Simple"
+msgstr "بسيط"
 
 #: lib/examples/Articles:0
 msgid "Colored"
 msgstr "الملونة"
-
-#: lib/examples/Articles:0
-msgid "Simple"
-msgstr "بسيط"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -27870,8 +27892,8 @@ msgstr "الأطروحات"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "مقال ياباني (فئة قياسية: كتابة رأسية)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "كتاب ياباني (الطريقة التقليدية: الكتابة رأسيا)"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -27880,8 +27902,8 @@ msgstr "كتاب ياباني (الطريقة التقليدية: الكتابة
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "كتاب ياباني (الطريقة التقليدية: الكتابة رأسيا)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "مقال ياباني (فئة قياسية: كتابة رأسية)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -27949,7 +27971,7 @@ msgstr "محاولة غلق مستند تم التعديل فيه!"
 msgid "Could not remove the temporary directory %1$s"
 msgstr "لم يحذف مسار الذاكرة المؤقتة %1$s"
 
-#: src/Buffer.cpp:1024 src/Text.cpp:616
+#: src/Buffer.cpp:1024 src/Text.cpp:617
 #, c-format
 msgid "Unknown token: %1$s %2$s\n"
 msgstr "قول مجهول: %1$s %2$s\n"
@@ -28655,12 +28677,12 @@ msgid "Document class not available"
 msgstr "فئة المستند غير متاح"
 
 #: src/BufferParams.cpp:1105 src/Color.cpp:283
-#: src/frontends/qt/GuiDocument.cpp:3728
+#: src/frontends/qt/GuiDocument.cpp:3734
 msgid "greyedout inset text"
 msgstr "نص إدراج ملاحظة مظللة"
 
 #: src/BufferParams.cpp:1727 src/BufferParams.cpp:1881
-#: src/BufferParams.cpp:2362 src/Encoding.cpp:264 src/Paragraph.cpp:3177
+#: src/BufferParams.cpp:2356 src/Encoding.cpp:264 src/Paragraph.cpp:3177
 #: src/frontends/qt/LaTeXHighlighter.cpp:176
 #: src/insets/InsetCommandParams.cpp:524 src/insets/InsetCommandParams.cpp:532
 #: src/insets/InsetGraphics.cpp:904 src/insets/InsetGraphics.cpp:912
@@ -28671,7 +28693,7 @@ msgid "LyX Warning: "
 msgstr "تحذير ليك: "
 
 #: src/BufferParams.cpp:1728 src/BufferParams.cpp:1882
-#: src/BufferParams.cpp:2363 src/Encoding.cpp:265 src/Paragraph.cpp:3178
+#: src/BufferParams.cpp:2357 src/Encoding.cpp:265 src/Paragraph.cpp:3178
 #: src/insets/InsetCommandParams.cpp:525 src/insets/InsetCommandParams.cpp:533
 #: src/insets/InsetGraphics.cpp:905 src/insets/InsetGraphics.cpp:913
 #: src/insets/InsetListings.cpp:299 src/insets/InsetListings.cpp:307
@@ -28714,11 +28736,11 @@ msgid ""
 "(such as utf8) or change the class options accordingly."
 msgstr ""
 
-#: src/BufferParams.cpp:2376
+#: src/BufferParams.cpp:2370
 msgid "Uncodable character in user preamble"
 msgstr "محارف غير مرمزة في مقدمة ليك"
 
-#: src/BufferParams.cpp:2378
+#: src/BufferParams.cpp:2372
 #, c-format
 msgid ""
 "The user preamble of your document contains glyphs that are unknown in the "
@@ -28730,7 +28752,7 @@ msgid ""
 "(such as utf8) or change the preamble code accordingly."
 msgstr ""
 
-#: src/BufferParams.cpp:2693
+#: src/BufferParams.cpp:2687
 #, c-format
 msgid ""
 "The layout file:\n"
@@ -28743,11 +28765,11 @@ msgstr ""
 "النوع الافتراضي.ربما يكون ليك غير قادر على إنتاج مخرجات إلا في حالة اختيار "
 "قسم نصي صحيح من صندوق إعدادات المستند."
 
-#: src/BufferParams.cpp:2699
+#: src/BufferParams.cpp:2693
 msgid "Document class not found"
 msgstr "فئة المستند غير موجود"
 
-#: src/BufferParams.cpp:2706
+#: src/BufferParams.cpp:2700
 #, fuzzy, c-format
 msgid ""
 "Due to some error in it, the layout file:\n"
@@ -28760,24 +28782,24 @@ msgstr ""
 "النوع الافتراضي.ربما يكون LyX غير قادر على إنتاج مخرجات إلا في حالة اختيار "
 "قسم نصي صحيح من صندوق إعدادات المستند."
 
-#: src/BufferParams.cpp:2712 src/BufferView.cpp:1471 src/BufferView.cpp:1503
+#: src/BufferParams.cpp:2706 src/BufferView.cpp:1484 src/BufferView.cpp:1516
 msgid "Could not load class"
 msgstr "لم يحمل النوع"
 
-#: src/BufferParams.cpp:2757
+#: src/BufferParams.cpp:2751
 msgid "Error reading internal layout information"
 msgstr "خطأ في قراءة المعلومات الداخلية للنسق"
 
-#: src/BufferParams.cpp:2758 src/TextClass.cpp:1961 src/TextClass.cpp:1994
+#: src/BufferParams.cpp:2752 src/TextClass.cpp:1961 src/TextClass.cpp:1994
 msgid "Read Error"
 msgstr "خطأ في القراءة"
 
-#: src/BufferParams.cpp:3810
+#: src/BufferParams.cpp:3804
 #, fuzzy
 msgid "No bibliography processor found!"
 msgstr "لم يتم تعيين ثبت المراجع!"
 
-#: src/BufferParams.cpp:3812
+#: src/BufferParams.cpp:3806
 #, c-format
 msgid ""
 "The bibliography processor requested by this document (%1$s) is not "
@@ -28786,12 +28808,12 @@ msgid ""
 "Please fix your installation!"
 msgstr ""
 
-#: src/BufferParams.cpp:3820
+#: src/BufferParams.cpp:3814
 #, fuzzy
 msgid "Requested bibliography processor not found!"
 msgstr "مدخل ثبت المراجع غير موجود!"
 
-#: src/BufferParams.cpp:3822
+#: src/BufferParams.cpp:3816
 #, c-format
 msgid ""
 "The bibliography processor requested by this document (%1$s) is not "
@@ -28821,121 +28843,121 @@ msgstr ""
 msgid "This portion of the document is deleted."
 msgstr "تم حذف هذا الجزء من المستند."
 
-#: src/BufferView.cpp:1226 src/BufferView.cpp:2440
+#: src/BufferView.cpp:1226 src/BufferView.cpp:2505
 #: src/frontends/qt/GuiView.cpp:4552 src/frontends/qt/GuiView.cpp:4649
 msgid "Absolute filename expected."
 msgstr "متوقع إدراج المسار الكامل لاسم الملف."
 
-#: src/BufferView.cpp:1469 src/BufferView.cpp:1501
+#: src/BufferView.cpp:1482 src/BufferView.cpp:1514
 #, c-format
 msgid "The document class `%1$s' could not be loaded."
 msgstr "فئة المستند `%1$s' لم يتم تحميله."
 
-#: src/BufferView.cpp:1527
+#: src/BufferView.cpp:1540
 msgid "No further undo information"
 msgstr "لا تراجع عن مزيد من المعلومات"
 
-#: src/BufferView.cpp:1548
+#: src/BufferView.cpp:1561
 msgid "No further redo information"
 msgstr "لا تكرار لمزيد من المعلومات"
 
-#: src/BufferView.cpp:1740 src/BufferView.cpp:1755 src/BufferView.cpp:1788
+#: src/BufferView.cpp:1805 src/BufferView.cpp:1820 src/BufferView.cpp:1853
 #, fuzzy
 msgid "Search string not found!"
 msgstr "قيمة غير موجودة."
 
-#: src/BufferView.cpp:1887
+#: src/BufferView.cpp:1952
 msgid "Mark off"
 msgstr "إيقاف علامة"
 
-#: src/BufferView.cpp:1893
+#: src/BufferView.cpp:1958
 msgid "Mark on"
 msgstr "تفعيل علامة"
 
-#: src/BufferView.cpp:1900
+#: src/BufferView.cpp:1965
 msgid "Mark removed"
 msgstr "علامة محذوفة"
 
-#: src/BufferView.cpp:1903
+#: src/BufferView.cpp:1968
 msgid "Mark set"
 msgstr "تعيين علامة"
 
-#: src/BufferView.cpp:2013
+#: src/BufferView.cpp:2078
 msgid "Statistics for the selection:"
 msgstr "احصاءات المحدد:"
 
-#: src/BufferView.cpp:2015
+#: src/BufferView.cpp:2080
 msgid "Statistics for the document:"
 msgstr "احصاءات المستند:"
 
-#: src/BufferView.cpp:2018
+#: src/BufferView.cpp:2083
 #, c-format
 msgid "%1$d words"
 msgstr "%1$d كلمة"
 
-#: src/BufferView.cpp:2020
+#: src/BufferView.cpp:2085
 msgid "One word"
 msgstr "كلمة واحدة"
 
-#: src/BufferView.cpp:2023
+#: src/BufferView.cpp:2088
 #, fuzzy, c-format
 msgid "%1$d characters"
 msgstr "&محارف الهروب:"
 
-#: src/BufferView.cpp:2025
+#: src/BufferView.cpp:2090
 #, fuzzy
 msgid "One character"
 msgstr "محارف غير مرمزة"
 
-#: src/BufferView.cpp:2028
+#: src/BufferView.cpp:2093
 #, fuzzy, c-format
 msgid "%1$d characters (no blanks)"
 msgstr "%1$d حرفاً (تشمل المسافات)"
 
-#: src/BufferView.cpp:2030
+#: src/BufferView.cpp:2095
 #, fuzzy
 msgid "One character (no blanks)"
 msgstr "حرفاًواحد (تشمل المسافات)"
 
-#: src/BufferView.cpp:2032
+#: src/BufferView.cpp:2097
 msgid "Statistics"
 msgstr "احصاءات"
 
-#: src/BufferView.cpp:2276
+#: src/BufferView.cpp:2341
 #, c-format
 msgid ""
 "`inset-forall' interrupted because number of actions is larger than %1$d"
 msgstr ""
 
-#: src/BufferView.cpp:2278
+#: src/BufferView.cpp:2343
 #, c-format
 msgid "Applied \"%1$s\" to %2$d insets"
 msgstr ""
 
-#: src/BufferView.cpp:2286
+#: src/BufferView.cpp:2351
 msgid "Branch name"
 msgstr "اسم الفرع"
 
-#: src/BufferView.cpp:2293 src/frontends/qt/GuiBranches.cpp:225
+#: src/BufferView.cpp:2358 src/frontends/qt/GuiBranches.cpp:225
 msgid "Branch already exists"
 msgstr "فرع موجود حاليا"
 
-#: src/BufferView.cpp:3294
+#: src/BufferView.cpp:3359
 #, c-format
 msgid "Inserting document %1$s..."
 msgstr "ادراج المستند %1$s..."
 
-#: src/BufferView.cpp:3311
+#: src/BufferView.cpp:3376
 #, c-format
 msgid "Document %1$s inserted."
 msgstr "المستند %1$s ادرج."
 
-#: src/BufferView.cpp:3313
+#: src/BufferView.cpp:3378
 #, c-format
 msgid "Could not insert document %1$s"
 msgstr "لم يدرج المستند %1$s"
 
-#: src/BufferView.cpp:3822
+#: src/BufferView.cpp:3887
 #, c-format
 msgid ""
 "Could not read the specified document\n"
@@ -28946,11 +28968,11 @@ msgstr ""
 "%1$s\n"
 "بسبب الخطأ التالي:%2$s"
 
-#: src/BufferView.cpp:3824
+#: src/BufferView.cpp:3889
 msgid "Could not read file"
 msgstr "لم يُقرأ الملف"
 
-#: src/BufferView.cpp:3831
+#: src/BufferView.cpp:3896
 #, c-format
 msgid ""
 "%1$s\n"
@@ -28959,17 +28981,17 @@ msgstr ""
 "%1$s\n"
 "لا يمكن قراءته."
 
-#: src/BufferView.cpp:3832 src/frontends/qt/qt_helpers.cpp:319
+#: src/BufferView.cpp:3897 src/frontends/qt/qt_helpers.cpp:319
 #: src/frontends/qt/qt_helpers.cpp:326 src/frontends/qt/qt_helpers.cpp:392
 #: src/output.cpp:39
 msgid "Could not open file"
 msgstr "لم يتم فتح الملف"
 
-#: src/BufferView.cpp:3839
+#: src/BufferView.cpp:3904
 msgid "Reading not UTF-8 encoded file"
 msgstr "قراءة الملفات غير المرمزة بـ UTF-8"
 
-#: src/BufferView.cpp:3840
+#: src/BufferView.cpp:3905
 msgid ""
 "The file is not UTF-8 encoded.\n"
 "It will be read as local 8Bit-encoded.\n"
@@ -29579,11 +29601,11 @@ msgstr ""
 "لاتوجد معلومات لتحويل الملفات من الصيغة %1$s الى ملفات بالصيغة %2$s.\n"
 "حدد المحول من التفضيلات."
 
-#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2113
+#: src/Converter.cpp:601 src/frontends/qt/GuiDocument.cpp:2115
 msgid "Pygments driver command not found!"
 msgstr ""
 
-#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2114
+#: src/Converter.cpp:602 src/frontends/qt/GuiDocument.cpp:2116
 msgid ""
 "The driver command necessary to use the minted package\n"
 "(pygmentize) has not been found. Make sure you have\n"
@@ -29708,15 +29730,15 @@ msgstr "الخرج فارغ"
 msgid "No output file was generated."
 msgstr "لم يتم إنتاج ملف خرج."
 
-#: src/Cursor.cpp:417 src/Text.cpp:2209
+#: src/Cursor.cpp:417 src/Text.cpp:2210
 msgid ", Inset: "
 msgstr ""
 
-#: src/Cursor.cpp:418 src/Text.cpp:2211
+#: src/Cursor.cpp:418 src/Text.cpp:2212
 msgid ", Cell: "
 msgstr ", الخلية: "
 
-#: src/Cursor.cpp:419 src/Text.cpp:2214
+#: src/Cursor.cpp:419 src/Text.cpp:2215
 msgid ", Position: "
 msgstr ", الموقع: "
 
@@ -29755,12 +29777,12 @@ msgstr "فرع مجهول"
 msgid "&Don't Add"
 msgstr "عدم الإض&افة"
 
-#: src/CutAndPaste.cpp:866 src/Text.cpp:455
+#: src/CutAndPaste.cpp:866 src/Text.cpp:456
 #, c-format
 msgid "Layout `%1$s' was not found."
 msgstr "التخطيط `%1$s' غير موجود."
 
-#: src/CutAndPaste.cpp:867 src/Text.cpp:456
+#: src/CutAndPaste.cpp:867 src/Text.cpp:457
 msgid "Layout Not Found"
 msgstr "التخطيط غير موجود"
 
@@ -29827,17 +29849,17 @@ msgid "Number %1$s"
 msgstr "رقم %1$s"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:148
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiListings.cpp:163
 msgid "Roman"
 msgstr "روماني"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiListings.cpp:163
 msgid "Sans Serif"
 msgstr "Sans Serif"
 
 #: src/FontInfo.cpp:43 src/frontends/qt/GuiCharacter.cpp:150
-#: src/frontends/qt/GuiDocument.cpp:5096 src/frontends/qt/GuiListings.cpp:163
+#: src/frontends/qt/GuiDocument.cpp:5106 src/frontends/qt/GuiListings.cpp:163
 msgid "Typewriter"
 msgstr "المحرر"
 
@@ -30061,11 +30083,11 @@ msgstr "خطأ Biber:"
 msgid "Xindy error: "
 msgstr "خطأ Biber:"
 
-#: src/LaTeXFonts.cpp:238 src/LaTeXFonts.cpp:315
+#: src/LaTeXFonts.cpp:239 src/LaTeXFonts.cpp:316
 msgid "Font not available"
 msgstr "خط غير متاح"
 
-#: src/LaTeXFonts.cpp:239 src/LaTeXFonts.cpp:316
+#: src/LaTeXFonts.cpp:240 src/LaTeXFonts.cpp:317
 #, c-format
 msgid ""
 "The LaTeX package `%1$s' needed for the font `%2$s'\n"
@@ -30912,15 +30934,15 @@ msgid ""
 "Setting to default."
 msgstr ""
 
-#: src/Text.cpp:482
+#: src/Text.cpp:483
 msgid "Unknown Inset"
 msgstr "إدراج مجهول"
 
-#: src/Text.cpp:598 src/insets/InsetTabular.cpp:476
+#: src/Text.cpp:599 src/insets/InsetTabular.cpp:476
 msgid "Change tracking author index missing"
 msgstr ""
 
-#: src/Text.cpp:599 src/insets/InsetTabular.cpp:477
+#: src/Text.cpp:600 src/insets/InsetTabular.cpp:477
 #, c-format
 msgid ""
 "A change tracking author information for index %1$d is missing. This can "
@@ -30929,154 +30951,154 @@ msgid ""
 "tracked changes are merged or this user edits the file again.\n"
 msgstr ""
 
-#: src/Text.cpp:615
+#: src/Text.cpp:616
 msgid "Unknown token"
 msgstr "متحدث مجهول"
 
-#: src/Text.cpp:992
+#: src/Text.cpp:993
 msgid ""
 "You cannot insert a space at the beginning of a paragraph. Please read the "
 "Tutorial."
 msgstr "لا يمكنك إدراج مسافة في بداية فقرة. من فضلك اقرأ الدروس."
 
-#: src/Text.cpp:1001
+#: src/Text.cpp:1002
 msgid "You cannot type two spaces this way. Please read the Tutorial."
 msgstr "لايمكنك كتابة مباعدتين هكذا. من فضلك اقراء الدروس."
 
-#: src/Text.cpp:1012
+#: src/Text.cpp:1013
 msgid "Character is uncodable in this verbatim context."
 msgstr ""
 
-#: src/Text.cpp:2154
+#: src/Text.cpp:2155
 msgid "[Change Tracking] "
 msgstr "[تتبع التغيير] "
 
-#: src/Text.cpp:2162
+#: src/Text.cpp:2163
 #, c-format
 msgid "Changed by %1$s[[author]] on %2$s[[date]]. "
 msgstr ""
 
-#: src/Text.cpp:2172 src/mathed/InsetMathFont.cpp:236
+#: src/Text.cpp:2173 src/mathed/InsetMathFont.cpp:236
 #: src/mathed/InsetMathFontOld.cpp:111
 #, c-format
 msgid "Font: %1$s"
 msgstr "الخط: %1$s"
 
-#: src/Text.cpp:2177
+#: src/Text.cpp:2178
 #, c-format
 msgid ", Depth: %1$d"
 msgstr ", العمق: %1$d"
 
-#: src/Text.cpp:2183
+#: src/Text.cpp:2184
 msgid ", Spacing: "
 msgstr ", التباعد: "
 
-#: src/Text.cpp:2189 src/frontends/qt/GuiDocument.cpp:910
+#: src/Text.cpp:2190 src/frontends/qt/GuiDocument.cpp:910
 msgid "OneHalf"
 msgstr "واحد ونصف"
 
-#: src/Text.cpp:2195
+#: src/Text.cpp:2196
 msgid "Other ("
 msgstr "أخرى ("
 
-#: src/Text.cpp:2206
+#: src/Text.cpp:2207
 #, fuzzy
 msgid ", Style: "
 msgstr "نمط السيرة الذاتية:"
 
-#: src/Text.cpp:2212
+#: src/Text.cpp:2213
 msgid ", Paragraph: "
 msgstr ", الفقرة: "
 
-#: src/Text.cpp:2213
+#: src/Text.cpp:2214
 msgid ", Id: "
 msgstr ", المعرف: "
 
-#: src/Text.cpp:2223
+#: src/Text.cpp:2224
 msgid ", Char: 0x"
 msgstr ""
 
-#: src/Text.cpp:2225
+#: src/Text.cpp:2226
 msgid ", Boundary: "
 msgstr ", الحدود: "
 
-#: src/Text.cpp:2839
+#: src/Text.cpp:2840
 msgid "No font change defined."
 msgstr "لم يتم تعيين خط لتغييره."
 
-#: src/Text.cpp:3545
+#: src/Text.cpp:3546
 msgid "Math editor mode"
 msgstr "نظام تحرير الرياضيات"
 
-#: src/Text.cpp:3547
+#: src/Text.cpp:3548
 msgid "No valid math formula"
 msgstr "صيغة رياضية غير صالحة"
 
-#: src/Text.cpp:3555 src/mathed/InsetMathNest.cpp:1350
+#: src/Text.cpp:3556 src/mathed/InsetMathNest.cpp:1350
 msgid "Already in regular expression mode"
 msgstr "حاليا في نظام تعبير عادي"
 
-#: src/Text.cpp:3568
+#: src/Text.cpp:3569
 msgid "Regexp editor mode"
 msgstr "وضع تحرير Regexp"
 
-#: src/Text.cpp:3950
+#: src/Text.cpp:3951
 msgid "Action flattens document structure"
 msgstr ""
 
-#: src/Text.cpp:3951
+#: src/Text.cpp:3952
 msgid ""
 "This action will cause some headings that have been on different level "
 "before to be on the same level since there is no more lower or higher "
 "heading level. Continue still?"
 msgstr ""
 
-#: src/Text.cpp:3956
+#: src/Text.cpp:3957
 msgid "&Yes, continue nonetheless"
 msgstr ""
 
-#: src/Text.cpp:3957
+#: src/Text.cpp:3958
 msgid "&No, quit operation"
 msgstr ""
 
-#: src/Text.cpp:5009
+#: src/Text.cpp:5010
 msgid "Layout "
 msgstr "تخطيط "
 
-#: src/Text.cpp:5010 src/Text.cpp:5589
+#: src/Text.cpp:5011 src/Text.cpp:5602
 msgid " not known"
 msgstr " مجهول"
 
-#: src/Text.cpp:5588
+#: src/Text.cpp:5601
 msgid "Table Style "
 msgstr "نمط الجدول "
 
-#: src/Text.cpp:5797 src/frontends/qt/GuiApplication.cpp:1879
+#: src/Text.cpp:5811 src/frontends/qt/GuiApplication.cpp:1886
 msgid "Missing argument"
 msgstr "فقد المحاذاة"
 
-#: src/Text.cpp:5963
+#: src/Text.cpp:5977
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr ""
 
-#: src/Text.cpp:5967
+#: src/Text.cpp:5981
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr ""
 
-#: src/Text.cpp:5972 src/Text.cpp:5986
+#: src/Text.cpp:5986 src/Text.cpp:6000
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr ""
 
-#: src/Text.cpp:5988
+#: src/Text.cpp:6002
 msgid "Invalid argument of textstyle-update"
 msgstr ""
 
-#: src/Text.cpp:6145
+#: src/Text.cpp:6159
 msgid "Path to thesaurus directory not set!"
 msgstr "لم يتم تعيين مسار القواميس!"
 
-#: src/Text.cpp:6146
+#: src/Text.cpp:6160
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -31084,7 +31106,7 @@ msgid ""
 "instructions."
 msgstr ""
 
-#: src/Text.cpp:6272 src/Text.cpp:6283
+#: src/Text.cpp:6286 src/Text.cpp:6297
 msgid "Paragraph layout set"
 msgstr "تعيين نمط الفقرة"
 
@@ -31228,7 +31250,7 @@ msgstr "الملصقات والمراجع"
 msgid "Broken References and Citations"
 msgstr ""
 
-#: src/TocBackend.cpp:299 src/frontends/qt/GuiDocument.cpp:1825
+#: src/TocBackend.cpp:299 src/frontends/qt/GuiDocument.cpp:1827
 msgid "Child Documents"
 msgstr "مستند فرعي"
 
@@ -31555,7 +31577,7 @@ msgid "This tab contains invalid input. Please fix!"
 msgstr ""
 
 #: src/frontends/qt/ButtonController.cpp:267
-#: src/frontends/qt/GuiApplication.cpp:1997 src/frontends/qt/GuiCompare.cpp:196
+#: src/frontends/qt/GuiApplication.cpp:2004 src/frontends/qt/GuiCompare.cpp:196
 #: src/frontends/qt/GuiSymbols.cpp:346
 msgid "Cancel"
 msgstr "الغاء"
@@ -31655,8 +31677,8 @@ msgid "Replace and find previous occurrence (Shift+Enter, forwards: Enter)"
 msgstr "استبدال و بحث الحادث التالي [إدخال]"
 
 #: src/frontends/qt/FloatPlacement.cpp:182
-#: src/frontends/qt/GuiDocument.cpp:1179 src/frontends/qt/GuiDocument.cpp:2906
-#: src/frontends/qt/GuiDocument.cpp:2933
+#: src/frontends/qt/GuiDocument.cpp:1179 src/frontends/qt/GuiDocument.cpp:2908
+#: src/frontends/qt/GuiDocument.cpp:2935
 msgid "Class Default"
 msgstr "النوع الافتراضي"
 
@@ -31664,7 +31686,7 @@ msgstr "النوع الافتراضي"
 msgid "Document Default"
 msgstr "المستند الافتراضي"
 
-#: src/frontends/qt/FloatPlacement.h:38 src/frontends/qt/GuiDocument.cpp:1840
+#: src/frontends/qt/FloatPlacement.h:38 src/frontends/qt/GuiDocument.cpp:1842
 msgid "Float Settings"
 msgstr "إعدادات التعويم"
 
@@ -31803,52 +31825,52 @@ msgstr "اعادة ضبط"
 msgid "Open"
 msgstr "فتح"
 
-#: src/frontends/qt/GuiApplication.cpp:1276
+#: src/frontends/qt/GuiApplication.cpp:1283
 msgid "Nothing to do"
 msgstr "لا شئ لتنفيذه"
 
-#: src/frontends/qt/GuiApplication.cpp:1282
+#: src/frontends/qt/GuiApplication.cpp:1289
 msgid "Unknown action"
 msgstr "فعل مجهول"
 
-#: src/frontends/qt/GuiApplication.cpp:1326
+#: src/frontends/qt/GuiApplication.cpp:1333
 msgid "Command not handled"
 msgstr "لم تتم معالجة الأمر"
 
-#: src/frontends/qt/GuiApplication.cpp:1332
+#: src/frontends/qt/GuiApplication.cpp:1339
 msgid "Command disabled"
 msgstr "تعطيل الأمر"
 
-#: src/frontends/qt/GuiApplication.cpp:1440
+#: src/frontends/qt/GuiApplication.cpp:1447
 #, c-format
 msgid "Bad debug value `%1$s'."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1469 src/frontends/qt/GuiView.cpp:2406
+#: src/frontends/qt/GuiApplication.cpp:1476 src/frontends/qt/GuiView.cpp:2406
 msgid "Command not allowed without a buffer open"
 msgstr "الامر غير مسموح به بدون وجود بفر مفتوح"
 
-#: src/frontends/qt/GuiApplication.cpp:1476
+#: src/frontends/qt/GuiApplication.cpp:1483
 msgid "the <LFUN-COMMAND> argument of buffer-forall is not valid"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1553
+#: src/frontends/qt/GuiApplication.cpp:1560
 msgid "Wrong focus!"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1687
+#: src/frontends/qt/GuiApplication.cpp:1694
 msgid "Running configure..."
 msgstr "بدء التكوين..."
 
-#: src/frontends/qt/GuiApplication.cpp:1697
+#: src/frontends/qt/GuiApplication.cpp:1704
 msgid "Reloading configuration..."
 msgstr "إعادة ضبط الإعدادات..."
 
-#: src/frontends/qt/GuiApplication.cpp:1707
+#: src/frontends/qt/GuiApplication.cpp:1714
 msgid "System reconfiguration failed"
 msgstr "تعذر اعادة ضبط النظام"
 
-#: src/frontends/qt/GuiApplication.cpp:1708
+#: src/frontends/qt/GuiApplication.cpp:1715
 msgid ""
 "The system reconfiguration has failed.\n"
 "Default textclass is used but LyX may\n"
@@ -31860,11 +31882,11 @@ msgstr ""
 "بكفاءة.\n"
 "من فضلك أعد الضبط مرة أخرى عند الحاجة."
 
-#: src/frontends/qt/GuiApplication.cpp:1713
+#: src/frontends/qt/GuiApplication.cpp:1720
 msgid "System reconfigured"
 msgstr "تم اعادة ضبط النظام"
 
-#: src/frontends/qt/GuiApplication.cpp:1714
+#: src/frontends/qt/GuiApplication.cpp:1721
 msgid ""
 "The system has been reconfigured.\n"
 "You need to restart LyX to make use of any\n"
@@ -31874,57 +31896,57 @@ msgstr ""
 "انت بحاجة لإعادة تشغيل LyX لتتمكن من استخدام \n"
 "تحديثات أقسام فئة المستند."
 
-#: src/frontends/qt/GuiApplication.cpp:1795
+#: src/frontends/qt/GuiApplication.cpp:1802
 msgid "Exiting."
 msgstr "خروج."
 
-#: src/frontends/qt/GuiApplication.cpp:1891
+#: src/frontends/qt/GuiApplication.cpp:1898
 #, c-format
 msgid "Opening help file %1$s..."
 msgstr "فتح ملف المساعدة %1$s..."
 
-#: src/frontends/qt/GuiApplication.cpp:1905
+#: src/frontends/qt/GuiApplication.cpp:1912
 msgid "Wrong argument. Must be 'examples' or 'templates'."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1919
+#: src/frontends/qt/GuiApplication.cpp:1926
 msgid "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:1939
+#: src/frontends/qt/GuiApplication.cpp:1946
 #, c-format
 msgid "Set-color \"%1$s\" failed - color is undefined or may not be redefined"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:2044
+#: src/frontends/qt/GuiApplication.cpp:2051
 #, c-format
 msgid "Cannot iterate more than %1$d times"
 msgstr "لا يمكن تكرار أكثر من %1$d مرات"
 
-#: src/frontends/qt/GuiApplication.cpp:2144
+#: src/frontends/qt/GuiApplication.cpp:2151
 #, c-format
 msgid "Applied \"%1$s\" to %2$d buffer(s)"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:2230
+#: src/frontends/qt/GuiApplication.cpp:2237
 #, c-format
 msgid "Document defaults saved in %1$s"
 msgstr "المستند يحفظ افتراضياً في %1$s"
 
-#: src/frontends/qt/GuiApplication.cpp:2234
+#: src/frontends/qt/GuiApplication.cpp:2241
 msgid "Unable to save document defaults"
 msgstr "تعذر حفظ اعدادات المستند الأفتراضية"
 
-#: src/frontends/qt/GuiApplication.cpp:2468
-#: src/frontends/qt/GuiApplication.cpp:2483
+#: src/frontends/qt/GuiApplication.cpp:2511
+#: src/frontends/qt/GuiApplication.cpp:2526
 msgid "Unknown function."
 msgstr "دالة مجهولة."
 
-#: src/frontends/qt/GuiApplication.cpp:3015
+#: src/frontends/qt/GuiApplication.cpp:3063
 msgid "The current document was closed."
 msgstr "تم إغلاق المستند الحالي."
 
-#: src/frontends/qt/GuiApplication.cpp:3025
+#: src/frontends/qt/GuiApplication.cpp:3073
 msgid ""
 "LyX has caught an exception, it will now attempt to save all unsaved "
 "documents and exit.\n"
@@ -31932,23 +31954,23 @@ msgid ""
 "Exception: "
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:3029
-#: src/frontends/qt/GuiApplication.cpp:3035
+#: src/frontends/qt/GuiApplication.cpp:3077
+#: src/frontends/qt/GuiApplication.cpp:3083
 msgid "Software exception Detected"
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:3033
+#: src/frontends/qt/GuiApplication.cpp:3081
 msgid ""
 "LyX has caught some really weird exception, it will now attempt to save all "
 "unsaved documents and exit."
 msgstr ""
 
-#: src/frontends/qt/GuiApplication.cpp:3339
-#: src/frontends/qt/GuiApplication.cpp:3351
+#: src/frontends/qt/GuiApplication.cpp:3387
+#: src/frontends/qt/GuiApplication.cpp:3399
 msgid "Could not find UI definition file"
 msgstr "لم يتم العثور على ملف الـواجهة الافتراضي"
 
-#: src/frontends/qt/GuiApplication.cpp:3340
+#: src/frontends/qt/GuiApplication.cpp:3388
 #, c-format
 msgid ""
 "Error while reading the included file\n"
@@ -31959,11 +31981,11 @@ msgstr ""
 "%1$s\n"
 "فضلا تأكد من عملية التنصيب."
 
-#: src/frontends/qt/GuiApplication.cpp:3346
+#: src/frontends/qt/GuiApplication.cpp:3394
 msgid "Could not find default UI file"
 msgstr "غير قادر على العثور على ملف الـUI الأفتراضي"
 
-#: src/frontends/qt/GuiApplication.cpp:3347
+#: src/frontends/qt/GuiApplication.cpp:3395
 msgid ""
 "LyX could not find the default UI file!\n"
 "Please check your installation."
@@ -31971,7 +31993,7 @@ msgstr ""
 "ليك لم يعثر على ملف الواجهة الافتراضي!\n"
 "من فضلك تأكد من عملية التنصيب."
 
-#: src/frontends/qt/GuiApplication.cpp:3352
+#: src/frontends/qt/GuiApplication.cpp:3400
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
@@ -32001,7 +32023,7 @@ msgstr ""
 msgid "Bibliography Item Settings"
 msgstr "إعدادات ثبت المراجع"
 
-#: src/frontends/qt/GuiBibtex.cpp:58 src/frontends/qt/GuiBibtex.cpp:382
+#: src/frontends/qt/GuiBibtex.cpp:58 src/frontends/qt/GuiBibtex.cpp:546
 msgid "BibTeX Bibliography"
 msgstr "ثبت المراجع BibTeX"
 
@@ -32009,7 +32031,7 @@ msgstr "ثبت المراجع BibTeX"
 msgid "All avail. databases"
 msgstr "&كل قواعد البيانات المتاحة"
 
-#: src/frontends/qt/GuiBibtex.cpp:114
+#: src/frontends/qt/GuiBibtex.cpp:116
 msgid ""
 "This list consists of all databases that are indexed by LaTeX and thus are "
 "found without a file path. This is usually everything in the bib/ "
@@ -32017,50 +32039,54 @@ msgid ""
 "this is the place you should store it."
 msgstr ""
 
-#: src/frontends/qt/GuiBibtex.cpp:130 src/frontends/qt/GuiBibtex.cpp:341
+#: src/frontends/qt/GuiBibtex.cpp:133 src/frontends/qt/GuiBibtex.cpp:458
 msgid "Document Encoding"
 msgstr "ترميز المستند"
 
-#: src/frontends/qt/GuiBibtex.cpp:312
+#: src/frontends/qt/GuiBibtex.cpp:437
+msgid "&Make Absolute"
+msgstr ""
+
+#: src/frontends/qt/GuiBibtex.cpp:457
+msgid "General Encoding"
+msgstr "الترميز عام"
+
+#: src/frontends/qt/GuiBibtex.cpp:464
+msgid ""
+"If this bibliography database uses a different encoding than specified "
+"below, set it here"
+msgstr ""
+
+#: src/frontends/qt/GuiBibtex.cpp:474
 msgid "Database"
 msgstr "قاعدة البيانات"
 
-#: src/frontends/qt/GuiBibtex.cpp:313
+#: src/frontends/qt/GuiBibtex.cpp:475
 msgid "File Encoding"
 msgstr "ترميز الملف"
 
-#: src/frontends/qt/GuiBibtex.cpp:320
+#: src/frontends/qt/GuiBibtex.cpp:503
 msgid "General E&ncoding:"
 msgstr "&ترميز عام:"
 
-#: src/frontends/qt/GuiBibtex.cpp:321
+#: src/frontends/qt/GuiBibtex.cpp:504
 msgid ""
 "If your bibliography databases use a different encoding than the LyX "
 "document, specify it here. If indivivual databases have different encodings, "
 "you can set it in the list above."
 msgstr ""
 
-#: src/frontends/qt/GuiBibtex.cpp:340
-msgid "General Encoding"
-msgstr "الترميز عام"
-
-#: src/frontends/qt/GuiBibtex.cpp:347
-msgid ""
-"If this bibliography database uses a different encoding than specified "
-"below, set it here"
-msgstr ""
-
-#: src/frontends/qt/GuiBibtex.cpp:380
+#: src/frontends/qt/GuiBibtex.cpp:544
 msgid "Biblatex Bibliography"
 msgstr "ثبت المراجع Biblatex"
 
-#: src/frontends/qt/GuiBibtex.cpp:400 src/insets/InsetBibtex.cpp:236
+#: src/frontends/qt/GuiBibtex.cpp:564 src/insets/InsetBibtex.cpp:236
 msgid "all reference units"
 msgstr "وحدات كل المراجع"
 
-#: src/frontends/qt/GuiBibtex.cpp:496 src/frontends/qt/GuiBibtex.cpp:506
+#: src/frontends/qt/GuiBibtex.cpp:662 src/frontends/qt/GuiBibtex.cpp:672
 #: src/frontends/qt/GuiCompare.cpp:166 src/frontends/qt/GuiCompare.cpp:170
-#: src/frontends/qt/GuiDocument.cpp:3077 src/frontends/qt/GuiExternal.cpp:691
+#: src/frontends/qt/GuiDocument.cpp:3079 src/frontends/qt/GuiExternal.cpp:691
 #: src/frontends/qt/GuiGraphics.cpp:841 src/frontends/qt/GuiInclude.cpp:382
 #: src/frontends/qt/GuiLyXFiles.cpp:365 src/frontends/qt/GuiLyXFiles.cpp:371
 #: src/frontends/qt/GuiView.cpp:2827 src/frontends/qt/GuiView.cpp:2886
@@ -32069,19 +32095,19 @@ msgstr "وحدات كل المراجع"
 msgid "D&ocuments"
 msgstr "&المستندات"
 
-#: src/frontends/qt/GuiBibtex.cpp:498
+#: src/frontends/qt/GuiBibtex.cpp:664
 msgid "BibTeX Databases (*.bib)"
 msgstr "BibTeX قاعدة بيانات (*.bib)"
 
-#: src/frontends/qt/GuiBibtex.cpp:500
+#: src/frontends/qt/GuiBibtex.cpp:666
 msgid "Select a BibTeX database to add"
 msgstr "اختر قاعد بيانات BibTeX لإضافتها"
 
-#: src/frontends/qt/GuiBibtex.cpp:508
+#: src/frontends/qt/GuiBibtex.cpp:674
 msgid "BibTeX Styles (*.bst)"
 msgstr "BibTeX نمط (*.bst)"
 
-#: src/frontends/qt/GuiBibtex.cpp:510
+#: src/frontends/qt/GuiBibtex.cpp:676
 msgid "Select a BibTeX style"
 msgstr "اختر نمط BibTeX"
 
@@ -32157,7 +32183,7 @@ msgid "Filename Suffix"
 msgstr "لاحقة اسم الملف"
 
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3516 src/frontends/qt/GuiDocument.cpp:4857
+#: src/frontends/qt/GuiDocument.cpp:3524 src/frontends/qt/GuiDocument.cpp:4867
 #: src/frontends/qt/GuiProgressView.cpp:148
 #: src/frontends/qt/GuiProgressView.cpp:162
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -32165,8 +32191,8 @@ msgid "Yes"
 msgstr "نعم"
 
 #: src/frontends/qt/GuiBranches.cpp:135 src/frontends/qt/GuiBranches.cpp:149
-#: src/frontends/qt/GuiDocument.cpp:3515 src/frontends/qt/GuiDocument.cpp:4154
-#: src/frontends/qt/GuiDocument.cpp:4856
+#: src/frontends/qt/GuiDocument.cpp:3523 src/frontends/qt/GuiDocument.cpp:4160
+#: src/frontends/qt/GuiDocument.cpp:4866
 #: src/frontends/qt/GuiProgressView.cpp:114
 #: src/frontends/qt/GuiProgressView.cpp:147
 #: src/frontends/qt/GuiProgressView.cpp:184
@@ -32569,7 +32595,7 @@ msgid "Big Skip"
 msgstr "كبير"
 
 #: src/frontends/qt/GuiDocument.cpp:917 src/frontends/qt/GuiDocument.cpp:919
-#: src/frontends/qt/GuiDocument.cpp:1829
+#: src/frontends/qt/GuiDocument.cpp:1831
 msgid "Text Layout"
 msgstr "تخطيط النص"
 
@@ -32801,7 +32827,7 @@ msgstr "JIS B6"
 #: src/frontends/qt/GuiDocument.cpp:1340 src/frontends/qt/GuiDocument.cpp:1344
 #: src/frontends/qt/GuiDocument.cpp:1348 src/frontends/qt/GuiDocument.cpp:1352
 #: src/frontends/qt/GuiDocument.cpp:1356 src/frontends/qt/GuiDocument.cpp:1360
-#: src/frontends/qt/GuiDocument.cpp:1831
+#: src/frontends/qt/GuiDocument.cpp:1833
 msgid "Page Margins"
 msgstr "هوامش الصفحة"
 
@@ -32847,11 +32873,11 @@ msgstr "حزمة  AMS الخاصة بـلتيك غير مستخدمة"
 msgid "The LaTeX package %1$s is never used"
 msgstr "حزمة لتيك %1$s غير مستخدمة"
 
-#: src/frontends/qt/GuiDocument.cpp:1604 src/frontends/qt/GuiDocument.cpp:1839
+#: src/frontends/qt/GuiDocument.cpp:1604 src/frontends/qt/GuiDocument.cpp:1841
 msgid "Math Options"
 msgstr "خيارات الرياضيات"
 
-#: src/frontends/qt/GuiDocument.cpp:1660 src/frontends/qt/GuiDocument.cpp:3056
+#: src/frontends/qt/GuiDocument.cpp:1660 src/frontends/qt/GuiDocument.cpp:3058
 #, c-format
 msgid "%1$s [Class '%2$s']"
 msgstr "%1$s [فئة '%2$s']"
@@ -32867,55 +32893,55 @@ msgstr ""
 msgid "All avail. modules"
 msgstr "&كل النماذج المتاحة"
 
-#: src/frontends/qt/GuiDocument.cpp:1817 src/frontends/qt/GuiDocument.cpp:2099
+#: src/frontends/qt/GuiDocument.cpp:1819 src/frontends/qt/GuiDocument.cpp:2101
 msgid "Input listings parameters below. Enter ? for a list of parameters."
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:1824
+#: src/frontends/qt/GuiDocument.cpp:1826
 msgid "Document Class"
 msgstr "فئة المستند"
 
-#: src/frontends/qt/GuiDocument.cpp:1827 src/frontends/qt/GuiDocument.cpp:3618
-#: src/frontends/qt/GuiDocument.cpp:5083
+#: src/frontends/qt/GuiDocument.cpp:1829 src/frontends/qt/GuiDocument.cpp:3624
+#: src/frontends/qt/GuiDocument.cpp:5093
 msgid "Local Layout"
 msgstr "تخطيط محلي"
 
-#: src/frontends/qt/GuiDocument.cpp:1833 src/frontends/qt/GuiPrefs.cpp:980
+#: src/frontends/qt/GuiDocument.cpp:1835 src/frontends/qt/GuiPrefs.cpp:980
 msgid "Colors"
 msgstr "الالوان"
 
-#: src/frontends/qt/GuiDocument.cpp:1834
+#: src/frontends/qt/GuiDocument.cpp:1836
 #, fuzzy
 msgid "Change Tracking"
 msgstr "تتبع المسار|C"
 
-#: src/frontends/qt/GuiDocument.cpp:1835
+#: src/frontends/qt/GuiDocument.cpp:1837
 msgid "Numbering & TOC"
 msgstr "الترقيم & جدول المحتويات"
 
-#: src/frontends/qt/GuiDocument.cpp:1837
+#: src/frontends/qt/GuiDocument.cpp:1839
 msgid "Indexes"
 msgstr "فهارس"
 
-#: src/frontends/qt/GuiDocument.cpp:1838
+#: src/frontends/qt/GuiDocument.cpp:1840
 msgid "PDF Properties"
 msgstr "تفضيلات PDF"
 
-#: src/frontends/qt/GuiDocument.cpp:1842
+#: src/frontends/qt/GuiDocument.cpp:1844
 msgid "Bullets"
 msgstr "نقاط"
 
-#: src/frontends/qt/GuiDocument.cpp:1845 src/frontends/qt/GuiDocument.cpp:5084
+#: src/frontends/qt/GuiDocument.cpp:1847 src/frontends/qt/GuiDocument.cpp:5094
 msgid "LaTeX Preamble"
 msgstr "مقدمة لتيك"
 
-#: src/frontends/qt/GuiDocument.cpp:1861 src/frontends/qt/GuiDocument.cpp:1892
-#: src/frontends/qt/GuiDocument.cpp:3099 src/frontends/qt/GuiDocument.cpp:3400
-#: src/frontends/qt/GuiDocument.cpp:5048
+#: src/frontends/qt/GuiDocument.cpp:1863 src/frontends/qt/GuiDocument.cpp:1894
+#: src/frontends/qt/GuiDocument.cpp:3107 src/frontends/qt/GuiDocument.cpp:3408
+#: src/frontends/qt/GuiDocument.cpp:5058
 msgid "Unapplied changes"
 msgstr "تغييرات غير مطبقة"
 
-#: src/frontends/qt/GuiDocument.cpp:1862
+#: src/frontends/qt/GuiDocument.cpp:1864
 #, fuzzy
 msgid ""
 "Some changes in the document were not yet applied.\n"
@@ -32925,95 +32951,95 @@ msgstr ""
 "\n"
 "هل ترغب بحفظ المستند أم تجاهل التغيير؟"
 
-#: src/frontends/qt/GuiDocument.cpp:1864 src/frontends/qt/GuiDocument.cpp:3102
-#: src/frontends/qt/GuiDocument.cpp:3403 src/frontends/qt/GuiDocument.cpp:5051
+#: src/frontends/qt/GuiDocument.cpp:1866 src/frontends/qt/GuiDocument.cpp:3110
+#: src/frontends/qt/GuiDocument.cpp:3411 src/frontends/qt/GuiDocument.cpp:5061
 msgid "&Apply"
 msgstr "&تطبيق"
 
-#: src/frontends/qt/GuiDocument.cpp:1864 src/frontends/qt/GuiDocument.cpp:1895
+#: src/frontends/qt/GuiDocument.cpp:1866 src/frontends/qt/GuiDocument.cpp:1897
 #, fuzzy
 msgid "&Dismiss Changes"
 msgstr "لا, &احفظ بالتغييرات"
 
-#: src/frontends/qt/GuiDocument.cpp:1893
+#: src/frontends/qt/GuiDocument.cpp:1895
 msgid ""
 "Some changes in the previous document were not yet applied.\n"
 "Do you want to switch back in order to apply them or dismiss the changes?"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:1895
+#: src/frontends/qt/GuiDocument.cpp:1897
 #, fuzzy
 msgid "&Switch Back"
 msgstr "&عودة للخلف"
 
-#: src/frontends/qt/GuiDocument.cpp:2333
+#: src/frontends/qt/GuiDocument.cpp:2335
 #, fuzzy
 msgid "Default margins"
 msgstr "&الهامش الافتراضي"
 
-#: src/frontends/qt/GuiDocument.cpp:2333
+#: src/frontends/qt/GuiDocument.cpp:2335
 #, fuzzy
 msgid "Package defaults"
 msgstr "افتراضي لتيك"
 
-#: src/frontends/qt/GuiDocument.cpp:2336
+#: src/frontends/qt/GuiDocument.cpp:2338
 msgid ""
 "If no value is given, the defaults as set by the class, a package or the "
 "preamble are used."
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:2337
+#: src/frontends/qt/GuiDocument.cpp:2339
 msgid ""
 "If no value is given, the defaults as set by the geometry package or a "
 "package/class overriding geometry's defaults are used."
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:2630
+#: src/frontends/qt/GuiDocument.cpp:2632
 #, fuzzy
 msgid "Direct (No inputenc)"
 msgstr "اللغة الافتراضية (لا مدخلات)"
 
-#: src/frontends/qt/GuiDocument.cpp:2632
+#: src/frontends/qt/GuiDocument.cpp:2634
 msgid "Direct (XeTeX/LuaTeX)"
 msgstr "Direct (XeTeX/LuaTeX)"
 
-#: src/frontends/qt/GuiDocument.cpp:2808 src/frontends/qt/GuiDocument.cpp:4516
-#: src/frontends/qt/GuiDocument.cpp:4527 src/frontends/qt/GuiDocument.cpp:4538
-#: src/frontends/qt/GuiDocument.cpp:4550
+#: src/frontends/qt/GuiDocument.cpp:2810 src/frontends/qt/GuiDocument.cpp:4522
+#: src/frontends/qt/GuiDocument.cpp:4533 src/frontends/qt/GuiDocument.cpp:4544
+#: src/frontends/qt/GuiDocument.cpp:4556
 msgid " (not installed)"
 msgstr " (غير مثبت)"
 
-#: src/frontends/qt/GuiDocument.cpp:2835 src/frontends/qt/GuiDocument.cpp:2838
-#: src/frontends/qt/GuiDocument.cpp:2841 src/frontends/qt/GuiDocument.cpp:2873
-#: src/frontends/qt/GuiDocument.cpp:2884 src/frontends/qt/GuiDocument.cpp:2895
+#: src/frontends/qt/GuiDocument.cpp:2837 src/frontends/qt/GuiDocument.cpp:2840
+#: src/frontends/qt/GuiDocument.cpp:2843 src/frontends/qt/GuiDocument.cpp:2875
+#: src/frontends/qt/GuiDocument.cpp:2886 src/frontends/qt/GuiDocument.cpp:2897
 msgid "Default font (as set by class)"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:2843
+#: src/frontends/qt/GuiDocument.cpp:2845
 msgid "Non-TeX Fonts Default"
 msgstr "خط Non-TeX الافتراضي"
 
-#: src/frontends/qt/GuiDocument.cpp:2845
+#: src/frontends/qt/GuiDocument.cpp:2847
 msgid " (not available)"
 msgstr " (غير متاح)"
 
-#: src/frontends/qt/GuiDocument.cpp:2846
+#: src/frontends/qt/GuiDocument.cpp:2848
 msgid "Class Default (TeX Fonts)"
 msgstr "النوع الافتراضي (خطوط تيك)"
 
-#: src/frontends/qt/GuiDocument.cpp:3008
+#: src/frontends/qt/GuiDocument.cpp:3010
 msgid "Lay&outs"
 msgstr "&أنساق"
 
-#: src/frontends/qt/GuiDocument.cpp:3010
+#: src/frontends/qt/GuiDocument.cpp:3012
 msgid "LyX Layout (*.layout)"
 msgstr "تخطيط ليك (*.layout)"
 
-#: src/frontends/qt/GuiDocument.cpp:3012 src/frontends/qt/GuiDocument.cpp:3021
+#: src/frontends/qt/GuiDocument.cpp:3014 src/frontends/qt/GuiDocument.cpp:3023
 msgid "Local layout file"
 msgstr "ملف التخطيط المحلي"
 
-#: src/frontends/qt/GuiDocument.cpp:3022
+#: src/frontends/qt/GuiDocument.cpp:3024
 msgid ""
 "The layout file you have selected is a local layout\n"
 "file, not one in the system or user directory.\n"
@@ -33025,179 +33051,179 @@ msgstr ""
 " المستند الخاص بك باستخدام هذا التخطيط إذا لم تحفظ\n"
 "ملف التخطيط في مجلد المستند."
 
-#: src/frontends/qt/GuiDocument.cpp:3026
+#: src/frontends/qt/GuiDocument.cpp:3028
 msgid "&Set Layout"
 msgstr "&تعيين تخطيط"
 
-#: src/frontends/qt/GuiDocument.cpp:3040
+#: src/frontends/qt/GuiDocument.cpp:3042
 msgid "Unable to read local layout file."
 msgstr "عدم قراءة ملف التخطيط المحلي."
 
-#: src/frontends/qt/GuiDocument.cpp:3057
+#: src/frontends/qt/GuiDocument.cpp:3059
 msgid "This is a local layout file."
 msgstr "هذا ملف التخطيط المحلي."
 
-#: src/frontends/qt/GuiDocument.cpp:3071
+#: src/frontends/qt/GuiDocument.cpp:3073
 msgid "Select master document"
 msgstr "حدد المستند الرئيسي"
 
-#: src/frontends/qt/GuiDocument.cpp:3075
+#: src/frontends/qt/GuiDocument.cpp:3077
 msgid "LyX Files (*.lyx)"
 msgstr "ملفات ليك (*.lyx)"
 
-#: src/frontends/qt/GuiDocument.cpp:3100 src/frontends/qt/GuiDocument.cpp:3401
-#: src/frontends/qt/GuiDocument.cpp:5049
+#: src/frontends/qt/GuiDocument.cpp:3108 src/frontends/qt/GuiDocument.cpp:3409
+#: src/frontends/qt/GuiDocument.cpp:5059
 msgid ""
 "Some changes in the dialog were not yet applied.\n"
 "If you do not apply now, they will be lost after this action."
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:3102 src/frontends/qt/GuiDocument.cpp:3403
-#: src/frontends/qt/GuiDocument.cpp:5051
+#: src/frontends/qt/GuiDocument.cpp:3110 src/frontends/qt/GuiDocument.cpp:3411
+#: src/frontends/qt/GuiDocument.cpp:5061
 msgid "&Dismiss"
 msgstr "&رفض"
 
-#: src/frontends/qt/GuiDocument.cpp:3113 src/frontends/qt/GuiDocument.cpp:5059
+#: src/frontends/qt/GuiDocument.cpp:3121 src/frontends/qt/GuiDocument.cpp:5069
 msgid "Unable to set document class."
 msgstr "تعذر ضبط فئة المستند."
 
-#: src/frontends/qt/GuiDocument.cpp:3279
+#: src/frontends/qt/GuiDocument.cpp:3287
 msgid "Basic numerical"
 msgstr "ترقيم بسيط"
 
-#: src/frontends/qt/GuiDocument.cpp:3282
+#: src/frontends/qt/GuiDocument.cpp:3290
 msgid "Author-year"
 msgstr "مؤلف-عام"
 
-#: src/frontends/qt/GuiDocument.cpp:3285
+#: src/frontends/qt/GuiDocument.cpp:3293
 msgid "Author-number"
 msgstr "رقم-المؤلف"
 
-#: src/frontends/qt/GuiDocument.cpp:3325
+#: src/frontends/qt/GuiDocument.cpp:3333
 #, c-format
 msgid "%1$s and %2$s"
 msgstr "%1$s و %2$s"
 
-#: src/frontends/qt/GuiDocument.cpp:3332
+#: src/frontends/qt/GuiDocument.cpp:3340
 #, c-format
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
 
-#: src/frontends/qt/GuiDocument.cpp:3337
+#: src/frontends/qt/GuiDocument.cpp:3345
 #, c-format
 msgid "%1$s, %2$s, and %3$s"
 msgstr "%1$s, %2$s, و %3$s"
 
-#: src/frontends/qt/GuiDocument.cpp:3351
+#: src/frontends/qt/GuiDocument.cpp:3359
 #, c-format
 msgid "%1$s (unavailable)"
 msgstr "%1$s (غير متاح)"
 
-#: src/frontends/qt/GuiDocument.cpp:3453
+#: src/frontends/qt/GuiDocument.cpp:3461
 msgid "Module provided by document class."
 msgstr "نمذجة بواسطة فئة المستند."
 
-#: src/frontends/qt/GuiDocument.cpp:3461
+#: src/frontends/qt/GuiDocument.cpp:3469
 #, c-format
 msgid "<p><b>Category:</b> %1$s.</p>"
 msgstr "<p><b>الصنف:</b> %1$s.</p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3471
+#: src/frontends/qt/GuiDocument.cpp:3479
 #, c-format
 msgid "<p><b>Package(s) required:</b> %1$s.</p>"
 msgstr "<p><b>الحزم المطلوبة:</b> %1$s.</p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3477
+#: src/frontends/qt/GuiDocument.cpp:3485
 msgid "or"
 msgstr "أو"
 
-#: src/frontends/qt/GuiDocument.cpp:3480
+#: src/frontends/qt/GuiDocument.cpp:3488
 #, c-format
 msgid "<p><b>Modules required:</b> %1$s.</p>"
 msgstr "<p><b>النماذج المطلوبة:</b> %1$s.</p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3489
+#: src/frontends/qt/GuiDocument.cpp:3497
 #, c-format
 msgid "<p><b>Modules excluded:</b> %1$s.</p>"
 msgstr "<p><b>النماذج المستبعدة:</b> %1$s.</p>"
 
-#: src/frontends/qt/GuiDocument.cpp:3494
+#: src/frontends/qt/GuiDocument.cpp:3502
 #, c-format
 msgid "<p><b>Filename:</b> <tt>%1$s.module</tt>.</p>"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:3499
+#: src/frontends/qt/GuiDocument.cpp:3507
 msgid ""
 "<p><font color=red><b>WARNING: Some required packages are unavailable!</b></"
 "font></p>"
 msgstr ""
 "<p><font color=red><b>تحذير: بعض الحزم المطلوبة غير متوفرة!</b></font></p>"
 
-#: src/frontends/qt/GuiDocument.cpp:4156
+#: src/frontends/qt/GuiDocument.cpp:4162
 msgid "per part"
 msgstr "لكل جزء"
 
-#: src/frontends/qt/GuiDocument.cpp:4158
+#: src/frontends/qt/GuiDocument.cpp:4164
 msgid "per chapter"
 msgstr "لكل فصل"
 
-#: src/frontends/qt/GuiDocument.cpp:4160
+#: src/frontends/qt/GuiDocument.cpp:4166
 msgid "per section"
 msgstr "لكل قسم"
 
-#: src/frontends/qt/GuiDocument.cpp:4162
+#: src/frontends/qt/GuiDocument.cpp:4168
 msgid "per subsection"
 msgstr "لكل قسم فرعي"
 
-#: src/frontends/qt/GuiDocument.cpp:4163
+#: src/frontends/qt/GuiDocument.cpp:4169
 msgid "per child document"
 msgstr "لكل مستند فرعي"
 
-#: src/frontends/qt/GuiDocument.cpp:4190
+#: src/frontends/qt/GuiDocument.cpp:4196
 #, fuzzy, c-format
 msgid "%1$s (not available)"
 msgstr "%1$s (غير متاح)"
 
-#: src/frontends/qt/GuiDocument.cpp:4437
+#: src/frontends/qt/GuiDocument.cpp:4443
 msgid "[No options predefined]"
 msgstr "[لا خيار محدد]"
 
-#: src/frontends/qt/GuiDocument.cpp:4517 src/frontends/qt/GuiDocument.cpp:4528
-#: src/frontends/qt/GuiDocument.cpp:4539
+#: src/frontends/qt/GuiDocument.cpp:4523 src/frontends/qt/GuiDocument.cpp:4534
+#: src/frontends/qt/GuiDocument.cpp:4545
 msgid "Uninstalled used fonts"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:4518 src/frontends/qt/GuiDocument.cpp:4529
-#: src/frontends/qt/GuiDocument.cpp:4540
+#: src/frontends/qt/GuiDocument.cpp:4524 src/frontends/qt/GuiDocument.cpp:4535
+#: src/frontends/qt/GuiDocument.cpp:4546
 msgid "This font is not installed and won't be used in output"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:4714
+#: src/frontends/qt/GuiDocument.cpp:4720
 msgid "C&ustomize Hyperref Options"
 msgstr "خيارات الروابط المخ&صصة"
 
-#: src/frontends/qt/GuiDocument.cpp:4716
+#: src/frontends/qt/GuiDocument.cpp:4722
 msgid "&Use Hyperref Support"
 msgstr "استخدام الروابط التفاع&لية"
 
-#: src/frontends/qt/GuiDocument.cpp:5071
+#: src/frontends/qt/GuiDocument.cpp:5081
 msgid "Can't set layout!"
 msgstr "لم يتم تعيين التخطيط!"
 
-#: src/frontends/qt/GuiDocument.cpp:5072
+#: src/frontends/qt/GuiDocument.cpp:5082
 #, c-format
 msgid "Unable to set layout for ID: %1$s"
 msgstr "عدم تعيين النمط للمعرف:  %1$s"
 
-#: src/frontends/qt/GuiDocument.cpp:5151
+#: src/frontends/qt/GuiDocument.cpp:5161
 msgid "Not Found"
 msgstr "غير موجود"
 
-#: src/frontends/qt/GuiDocument.cpp:5213
+#: src/frontends/qt/GuiDocument.cpp:5223
 msgid "Assigned master does not include this file"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:5214
+#: src/frontends/qt/GuiDocument.cpp:5224
 #, c-format
 msgid ""
 "You must include this file in the document\n"
@@ -33206,35 +33232,35 @@ msgid ""
 msgstr ""
 "يجب أن تدرج هذا الملف في المستند n'%1$s'  لكي تستخدم مميزات المستند الرئيسية."
 
-#: src/frontends/qt/GuiDocument.cpp:5218
+#: src/frontends/qt/GuiDocument.cpp:5228
 msgid "Could not load master"
 msgstr "عدم تحميل الرئيسي"
 
-#: src/frontends/qt/GuiDocument.cpp:5219
+#: src/frontends/qt/GuiDocument.cpp:5229
 #, c-format
 msgid ""
 "The master document '%1$s'\n"
 "could not be loaded."
 msgstr "المستند الرئيسي %1$s لم يم تحميله."
 
-#: src/frontends/qt/GuiDocument.cpp:5369
+#: src/frontends/qt/GuiDocument.cpp:5379
 msgid "%1 (missing req.)"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:5381
+#: src/frontends/qt/GuiDocument.cpp:5391
 #, fuzzy
 msgid "personal module"
 msgstr "معلومات شخصية"
 
-#: src/frontends/qt/GuiDocument.cpp:5381
+#: src/frontends/qt/GuiDocument.cpp:5391
 msgid "distributed module"
 msgstr ""
 
-#: src/frontends/qt/GuiDocument.cpp:5382
+#: src/frontends/qt/GuiDocument.cpp:5392
 msgid "<b>Module name:</b> <i>%1</i> (%2)"
 msgstr "<b>اسم النموذج:</b> <i>%1</i> (%2)"
 
-#: src/frontends/qt/GuiDocument.cpp:5388
+#: src/frontends/qt/GuiDocument.cpp:5398
 msgid "<b>Note:</b> Some requirements for this module are missing!"
 msgstr ""
 
@@ -34764,7 +34790,7 @@ msgstr "رموز"
 msgid "Tabular Settings"
 msgstr "&إعدادات الجدول"
 
-#: src/frontends/qt/GuiTabularCreate.cpp:75
+#: src/frontends/qt/GuiTabularCreate.cpp:73
 msgid "Insert Table"
 msgstr "ادراج جدول"
 
@@ -35500,55 +35526,55 @@ msgstr "عرض  الكود"
 msgid "%1[[preview format name]] Preview"
 msgstr "%1[[preview format name]] استعراض"
 
-#: src/frontends/qt/GuiWorkArea.cpp:1684
+#: src/frontends/qt/GuiWorkArea.cpp:1762
 msgid "Close File"
 msgstr "اغلاق الملف"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2331
+#: src/frontends/qt/GuiWorkArea.cpp:2409
 msgid "%1 (read only)"
 msgstr "%1 (للقراءة فقط)"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2339
+#: src/frontends/qt/GuiWorkArea.cpp:2417
 msgid "%1 (modified externally)"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2361
+#: src/frontends/qt/GuiWorkArea.cpp:2439
 #, fuzzy
 msgid "&Hide Tab"
 msgstr "اخفاء علامة التبويب"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2366
+#: src/frontends/qt/GuiWorkArea.cpp:2444
 #, fuzzy
 msgid "&Close Tab"
 msgstr "اغلاق اللسان"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2370
+#: src/frontends/qt/GuiWorkArea.cpp:2448
 #, fuzzy
 msgid "Close &Other Tabs"
 msgstr "اغلاق اللسان"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2372
+#: src/frontends/qt/GuiWorkArea.cpp:2450
 msgid "Close Tabs to the &Right"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2374
+#: src/frontends/qt/GuiWorkArea.cpp:2452
 msgid "Close Tabs to the &Left"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2379
+#: src/frontends/qt/GuiWorkArea.cpp:2457
 msgid "Move Tab to &Start"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2381
+#: src/frontends/qt/GuiWorkArea.cpp:2459
 msgid "Move Tab to &End"
 msgstr ""
 
-#: src/frontends/qt/GuiWorkArea.cpp:2386
+#: src/frontends/qt/GuiWorkArea.cpp:2464
 #, fuzzy
 msgid "Open Enclosing &Directory"
 msgstr "&فتح مسار المحتوى"
 
-#: src/frontends/qt/GuiWorkArea.cpp:2431
+#: src/frontends/qt/GuiWorkArea.cpp:2509
 msgid "<b>The file %1 changed on disk.</b>"
 msgstr "<b>الملف %1 على القرص تغير.</b>"
 
@@ -37705,7 +37731,7 @@ msgid "Match found."
 msgstr "إيجاد التطابق."
 
 #: src/mathed/InsetMathAMSArray.cpp:135 src/mathed/InsetMathCases.cpp:90
-#: src/mathed/InsetMathHull.cpp:2204 src/mathed/InsetMathSplit.cpp:127
+#: src/mathed/InsetMathHull.cpp:2213 src/mathed/InsetMathSplit.cpp:127
 #: src/mathed/InsetMathSubstack.cpp:89
 #, c-format
 msgid "Can't add vertical grid lines in '%1$s'"
@@ -37761,31 +37787,31 @@ msgstr "لا خط رأسي لحذفه"
 msgid "Unknown tabular feature '%1$s'"
 msgstr "خاصية جدولة مجهولة '%1$s'"
 
-#: src/mathed/InsetMathHull.cpp:1752
+#: src/mathed/InsetMathHull.cpp:1761
 #, c-format
 msgid "Type: %1$s"
 msgstr "النوع: %1$s"
 
-#: src/mathed/InsetMathHull.cpp:1788
+#: src/mathed/InsetMathHull.cpp:1797
 msgid "Bad math environment"
 msgstr "إطار رياضي سئ"
 
-#: src/mathed/InsetMathHull.cpp:1789
+#: src/mathed/InsetMathHull.cpp:1798
 msgid ""
 "Computation cannot be performed for AMS math environments.\n"
 "Change the math formula type and try again."
 msgstr ""
 
-#: src/mathed/InsetMathHull.cpp:1903 src/mathed/InsetMathHull.cpp:1912
+#: src/mathed/InsetMathHull.cpp:1912 src/mathed/InsetMathHull.cpp:1921
 msgid "No number"
 msgstr "بدون رقم"
 
-#: src/mathed/InsetMathHull.cpp:2187
+#: src/mathed/InsetMathHull.cpp:2196
 #, c-format
 msgid "Can't change number of rows in '%1$s'"
 msgstr "لم يتم تغيير رقم الصف في '%1$s'"
 
-#: src/mathed/InsetMathHull.cpp:2197
+#: src/mathed/InsetMathHull.cpp:2206
 #, c-format
 msgid "Can't change number of columns in '%1$s'"
 msgstr "لم يتم تغيير رقم العمود في '%1$s'"
