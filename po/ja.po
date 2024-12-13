@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lyx-japanese\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2024-12-08 12:19-0500\n"
-"PO-Revision-Date: 2024-08-28 23:36+0900\n"
+"PO-Revision-Date: 2024-12-14 08:31+0900\n"
 "Last-Translator: Koji Yokota <yokota@lyx.org>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Crowdin-Project: lyx-japanese\n"
 "X-Crowdin-Project-ID: 488981\n"
 "X-Crowdin-Language: ja\n"
@@ -319,11 +319,11 @@ msgstr "ローカルを追加(&L)..."
 
 #: src/frontends/qt/ui/BibtexUi.ui:91
 msgid "Transfer an absolute local path to a relative one or vice versa"
-msgstr ""
+msgstr "ローカルの絶対パスと相対パスを切り替える"
 
 #: src/frontends/qt/ui/BibtexUi.ui:94 src/frontends/qt/GuiBibtex.cpp:433
 msgid "&Make Relative"
-msgstr ""
+msgstr "相対パスに変更(&M)"
 
 #: src/frontends/qt/ui/BibtexUi.ui:101
 msgid "Inherit bibliography databases from the master document"
@@ -3587,7 +3587,7 @@ msgstr "リンクの周りに枠を付けない(&F)"
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:285
 msgid "Mutually exclusive with frames around links, see manual."
-msgstr ""
+msgstr "リンクの周りの枠とどちらかしか選べません．説明書を参照のこと．"
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:288
 msgid "C&olor links"
@@ -20860,9 +20860,8 @@ msgstr "カーソル位置に参照を挿入(I)|I"
 
 #: lib/ui/stdcontext.inc:588 lib/ui/stdcontext.inc:597
 #: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:743
-#, fuzzy
 msgid "Insert Cross-Reference to this Item|C"
-msgstr "相互参照を挿入"
+msgstr "この項目への相互参照を挿入(C)|C"
 
 #: lib/ui/stdcontext.inc:638
 msgid "Insert Copy at Cursor Position|I"
@@ -32267,7 +32266,7 @@ msgstr "文書文字コード"
 
 #: src/frontends/qt/GuiBibtex.cpp:437
 msgid "&Make Absolute"
-msgstr ""
+msgstr "絶対パスに変更(&M)"
 
 #: src/frontends/qt/GuiBibtex.cpp:457
 msgid "General Encoding"
