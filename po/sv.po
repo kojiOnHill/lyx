@@ -217,7 +217,7 @@ msgstr ""
 "Project-Id-Version: LyX 2.4.3\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2024-12-08 12:19-0500\n"
-"PO-Revision-Date: 2024-10-07 12:38+0200\n"
+"PO-Revision-Date: 2024-12-26 13:39+0100\n"
 "Last-Translator: Påvel Nicklasson <pavelnicklasson@bahnhof.se>\n"
 "Language-Team: Swedish <lyx-docs@lists.lyx.org>\n"
 "Language: sv\n"
@@ -255,14 +255,12 @@ msgid "[[do]]O&pen"
 msgstr "[[do]]Ö&ppna"
 
 #: src/frontends/qt/ui/AboutUi.ui:222
-#, fuzzy
 msgid "Temporary directory"
-msgstr "&Tillfällig katalog:"
+msgstr "Tillfällig katalog"
 
 #: src/frontends/qt/ui/AboutUi.ui:253
-#, fuzzy
 msgid "Open temporary directory in file browser"
-msgstr "Öppna systemkatalogen i filhanteraren"
+msgstr "Öppna tillfällig katalog i filhanterare"
 
 #: src/frontends/qt/ui/AboutUi.ui:301
 msgid "Credits"
@@ -523,11 +521,11 @@ msgstr "&Lägg till lokal..."
 
 #: src/frontends/qt/ui/BibtexUi.ui:91
 msgid "Transfer an absolute local path to a relative one or vice versa"
-msgstr ""
+msgstr "Överför en absolut lokal sökväg till en relativ eller vice versa"
 
 #: src/frontends/qt/ui/BibtexUi.ui:94 src/frontends/qt/GuiBibtex.cpp:433
 msgid "&Make Relative"
-msgstr ""
+msgstr "&Gör relativ"
 
 #: src/frontends/qt/ui/BibtexUi.ui:101
 msgid "Inherit bibliography databases from the master document"
@@ -3604,19 +3602,20 @@ msgid "De&fault output format:"
 msgstr "Standard&format för utmatning:"
 
 #: src/frontends/qt/ui/OutputUi.ui:144
-#, fuzzy
 msgid "Output Options"
-msgstr "LaTeX-utmatningsalternativ"
+msgstr "Utmatningsalternativ"
 
 #: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
 msgid ""
 "Scaling factor for images that are generated for some LaTeX constructs (e."
 "g., math formulae) in non-LaTeX output."
 msgstr ""
+"Skalningsfaktor för bilder som genereras för vissa LaTeX-konstruktioner (t."
+"ex. matematiska formler) i icke-LaTeX-utmatning."
 
 #: src/frontends/qt/ui/OutputUi.ui:160
 msgid "Scaling of generated &images:"
-msgstr ""
+msgstr "Skalning av genererade &bilder:"
 
 #: src/frontends/qt/ui/OutputUi.ui:219
 msgid "&LaTeX"
@@ -3811,7 +3810,7 @@ msgstr "Inga ramar runt länkar"
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:285
 msgid "Mutually exclusive with frames around links, see manual."
-msgstr ""
+msgstr "Ömsesidigt uteslutande med ramar runt länkar, se manual."
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:288
 msgid "C&olor links"
@@ -16446,7 +16445,7 @@ msgstr "Valmeny"
 
 #: lib/layouts/pdfform.module:90
 msgid "Label[[Form]]"
-msgstr ""
+msgstr "Etikett[[Form]]"
 
 #: lib/layouts/pdfform.module:93
 msgid "Insert the label here"
@@ -21165,9 +21164,8 @@ msgstr "Infoga referens vid markörens position|I"
 
 #: lib/ui/stdcontext.inc:588 lib/ui/stdcontext.inc:597
 #: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:743
-#, fuzzy
 msgid "Insert Cross-Reference to this Item|C"
-msgstr "Infoga korsreferens"
+msgstr "Infoga korsreferens till denna post|C"
 
 #: lib/ui/stdcontext.inc:638
 msgid "Insert Copy at Cursor Position|I"
@@ -27391,9 +27389,8 @@ msgid "An Xfig figure.\n"
 msgstr "En Xfig-figur.\n"
 
 #: lib/configure.py:726
-#, fuzzy
 msgid "Tgif"
-msgstr "tgo|Tgif"
+msgstr "Tgif"
 
 #: lib/configure.py:729
 msgid "FIG"
@@ -27404,9 +27401,8 @@ msgid "DIA"
 msgstr "DIA"
 
 #: lib/configure.py:735
-#, fuzzy
 msgid "OpenDocument drawing"
-msgstr "OpenDocument (Pandoc)"
+msgstr "OpenDocument ritning"
 
 #: lib/configure.py:738
 msgid "Grace"
@@ -27811,9 +27807,8 @@ msgid "LyX Preview"
 msgstr "LyX-förhandsgranskning"
 
 #: lib/configure.py:885
-#, fuzzy
 msgid "PDFTEX"
-msgstr "pdf_tex|PDFTEX"
+msgstr "PDFTEX"
 
 #: lib/configure.py:886
 msgid "Program"
@@ -32588,7 +32583,7 @@ msgstr "Dokumentkodning"
 
 #: src/frontends/qt/GuiBibtex.cpp:437
 msgid "&Make Absolute"
-msgstr ""
+msgstr "&Gör absolut"
 
 #: src/frontends/qt/GuiBibtex.cpp:457
 msgid "General Encoding"
@@ -36226,9 +36221,8 @@ msgid "Move Tab to &End"
 msgstr "Flytta flik till &slutet"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2464
-#, fuzzy
 msgid "Open Enclosing &Directory"
-msgstr "Öppna omslutande &folder"
+msgstr "Öppna omslutande &katalog"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2509
 msgid "<b>The file %1 changed on disk.</b>"
