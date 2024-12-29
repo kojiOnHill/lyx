@@ -11,7 +11,8 @@
 # 		Kopieer dan de tekst van Msgid naar Msgstr. Voorbeelden:
 # 			documentklassen voor tijdschriften die in slechts één taal, b.v. Engels, publiceren
 # 			documentklassen en paketten voor één specifieke taal, b.v. Japans of Koreaans
-# 	3. Vertaal "you" altijd met "u", NIET met "jij" of "je"
+# 	3. Vertaal "you" altijd met "u", NIET met "jij" of "je". Vaak is de lijdende vorm (wordt, worden) of de
+#       gebiedende wijs (plaats; moet geplaatst worden) nog beter.
 # 	4. "Please", "sorry", en "successful(ly)" worden in vertaling gewoonlijk weggelaten, bijvoorbeeld
 # 		vertaal "please install Python" door "installeer Python" en NIET "installeer s.v.p. Python"
 # 		vertaal "The operation was successfully completed" door "De bewerking is voltooid"
@@ -35,7 +36,7 @@
 #   button               -> knop
 #   caption              -> bijschrift
 #   check                -> controleren
-#   citation             -> verwijzing / literatuurverwijzing (<=> Quotation = citaat)
+#   citation             -> verwijzing / literatuurverwijzing (LET OP: citaat = Quotation)
 #   citation style       -> verwijzingenstijl
 # 	class				 -> klasse
 #   cross-reference      -> kruisverwijzing
@@ -43,13 +44,13 @@
 #   convert(er)          -> converteren / conversieprogramma
 #   custom               -> aangepast
 #   debug                -> debug
-# 	default				 -> standaard
-# 	delete				 -> verwijderen
+#   default				 -> standaard
+#   delete				 -> verwijderen
 #   directory            -> map
 #   display              -> weergave
 #   edit                 -> bewerken
 #   extension            -> extensie
-#   extra ...            -> aanvullende
+#   extra ...            -> aanvullende ...
 #   find & replace       -> zoeken en vervangen
 #   float                -> zweven / zwevend object
 #   font                 -> lettertype
@@ -63,8 +64,8 @@
 #   key word, key phrase -> trefwoord
 #   label                -> label / benaming
 #   layout               -> formaat
-# 	margin				 -> marge / kantlijn
-# 	match				 -> overeenkomen
+#   margin				 -> marge / kantlijn
+#   match				 -> overeenkomen
 #   math                 -> wiskunde
 #   merge                -> samenvoegen
 #   miscellaneous        -> verscheidene
@@ -72,13 +73,13 @@
 #   (proper) noun        -> naamwoord / zelfstandig naamwoord / eigennaam
 #   note                 -> aantekening / aanwijzing / notitie (al naar gelang de context)
 #   option               -> optie
-# 	package				 -> pakket (LaTeX)
-# 	phantom				 -> fantoom
+#   package				 -> pakket (LaTeX)
+#   phantom				 -> fantoom
 #   pipe                 -> pipe
 #   preferences          -> voorkeuren
 #   preview              -> voorbeeld
-# 	quote, quotation	 -> citaat
-# 	reject				 -> weigeren (meestal niet: verwerpen)
+#   quote, quotation	 -> citaat
+#   reject				 -> weigeren (meestal niet: verwerpen)
 #   remove               -> verwijderen
 #   restore              -> herstellen / terugzetten
 #   retrieve             -> terughalen
@@ -90,21 +91,21 @@
 #   setting              -> instelling
 #   shortcut             -> snelkoppeling / sneltoets
 #   show                 -> tonen
-# 	skip				 -> ruimte
+#   skip				 -> ruimte
 #   slide                -> dia
 #   special              -> bijzonder / speciaal
 #   specify              -> specificeren / aangeven
 #   switch (button)      -> optie / wisselen; wisselknop
 #   tab                  -> tabblad
-# 	task bar			 -> taakbalk
+#   task bar			 -> taakbalk
 #   template             -> sjabloon
-# 	toolbar				 -> werkbalk
 #   toggle               -> omschakelen / wisselen / aan-uit
+#   toolbar				 -> werkbalk
 #   tooltip              -> tooltip (bij knop) / infotip (bij menukeuze)
 #   type                 -> type
 #   view(er)             -> zicht / beeld
 #   wrap                 -> overlappen / teruglopen
-# 	you					 -> u
+#   you					 -> u
 #
 # 	Voor vertalingen kan verder gekeken worden naar
 # 		1.	overeenkomstige termen en menu's in de Nederlandstalige versies van LibreOffice en Microsoft Office
@@ -113,8 +114,10 @@
 # 			https://learn.microsoft.com/en-us/globalization/localization/ministyleguides/mini-style-guide-dutch
 # 		4.	Van Dale, Groot Woordenboek Engels-Nederlands
 #
-# 	De spelling van woorden, hun meervoud en hun genus (woordgeslacht: de/het, mannelijk/vrouwelijk/onzijdig) kunnen worden nagezocht op
+# 	De spelling van woorden, hun meervoud en hun genus (woordgeslacht: de/het) kunnen worden nagezocht op
 # 		https://woordenlijst.org
+#   Meer details over het genus (mannelijk/vrouwelijk/onzijdig) kunnen worden nagezocht op
+#       https://www.inventio.nl/genus
 #
 # 	Wiskunde-termen en hun vertaling Engels-Nederlands worden beschreven in
 # 		1.	P. L. Brinkman, 1974, Handboek voor de Communicatie in de Wiskunde, Agon Elsevier: Amsterdam.
@@ -127,14 +130,14 @@ msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2024-12-08 12:19-0500\n"
-"PO-Revision-Date: 2024-01-05 13:13+0100\n"
+"PO-Revision-Date: 2024-12-28 16:35+0100\n"
 "Last-Translator: Kees Zeelenberg <kzstatis@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 # Previous translator: Niko Strijbol <strijbol.niko@gmail.com>, 2017, 2022.
 #: src/frontends/qt/ui/AboutUi.ui:27
@@ -166,14 +169,12 @@ msgid "[[do]]O&pen"
 msgstr "O&penen"
 
 #: src/frontends/qt/ui/AboutUi.ui:222
-#, fuzzy
 msgid "Temporary directory"
-msgstr "&Tijdelijke map:"
+msgstr "&Tijdelijke map"
 
 #: src/frontends/qt/ui/AboutUi.ui:253
-#, fuzzy
 msgid "Open temporary directory in file browser"
-msgstr "Systeemmap openen in bestandsverkenner"
+msgstr "Tijdelijke map openen in bestandsverkenner"
 
 #: src/frontends/qt/ui/AboutUi.ui:301
 msgid "Credits"
@@ -211,7 +212,7 @@ msgstr "Sle&utel:"
 #: src/frontends/qt/ui/BibitemUi.ui:52 src/frontends/qt/ui/BibitemUi.ui:76
 #: src/frontends/qt/GuiBibitem.cpp:91
 msgid "The label as it appears in the document"
-msgstr "Het label zoals het verschijnt in het document"
+msgstr "Het label zoals het in het document verschijnt"
 
 #: src/frontends/qt/ui/BibitemUi.ui:55 src/frontends/qt/ui/IncludeUi.ui:183
 #: src/frontends/qt/ui/LabelUi.ui:36 src/frontends/qt/GuiBibitem.cpp:87
@@ -246,8 +247,8 @@ msgid ""
 "Pass content of the `Label' field literally to LaTeX. Check this if you want "
 "to enter LaTeX code."
 msgstr ""
-"Geef de inhoud van het veld `Label' letterlijk door aan LaTeX. Vink aan om "
-"LaTeX-code te gebruiken."
+"De inhoud van het veld `Label' letterlijk doorgeven aan LaTeX. Aanvinken aan "
+"om LaTeX-code te gebruiken."
 
 #: src/frontends/qt/ui/BibitemUi.ui:125 src/frontends/qt/ui/CitationUi.ui:378
 #: src/frontends/qt/ui/HyperlinkUi.ui:80 src/frontends/qt/ui/IncludeUi.ui:302
@@ -270,7 +271,7 @@ msgid ""
 "Expand to get more information."
 msgstr ""
 "Een selectie van verschillenden stijlformaten (zoals natbib), die elk een "
-"specifieke citeer- en bibliografiestijl ondersteunen. Klap uit voor meer "
+"specifieke citeer- en bibliografiestijl ondersteunen. Uitklappen voor meer "
 "informatie."
 
 #: src/frontends/qt/ui/BiblioUi.ui:75 src/frontends/qt/ui/LanguageUi.ui:148
@@ -279,7 +280,7 @@ msgstr "&Variant:"
 
 #: src/frontends/qt/ui/BiblioUi.ui:94
 msgid "Provides available cite style variants."
-msgstr "Toont beschikbare varianten voor de verwijzingenstijl."
+msgstr "Beschikbare varianten voor de verwijzingenstijl tonen."
 
 #: src/frontends/qt/ui/BiblioUi.ui:118 src/frontends/qt/GuiPrefs.cpp:620
 #: src/frontends/qt/GuiPrefs.cpp:749
@@ -288,7 +289,7 @@ msgstr "Opt&ies:"
 
 #: src/frontends/qt/ui/BiblioUi.ui:134
 msgid "Here you can enter further options of the bibliography package"
-msgstr "Hier kunt u de overige opties voor het bibliografiepakket ingeven"
+msgstr "Hier de overige opties voor het bibliografiepakket ingeven"
 
 #: src/frontends/qt/ui/BiblioUi.ui:154
 msgid "Biblatex &citation style:"
@@ -296,7 +297,7 @@ msgstr "&Citatenstijl biblatex:"
 
 #: src/frontends/qt/ui/BiblioUi.ui:164
 msgid "The style that determines the layout of the citations"
-msgstr "De stijl die beslist over de lay-out van de verwijzingen"
+msgstr "De stijl die de lay-out van de verwijzingen bepaalt"
 
 #: src/frontends/qt/ui/BiblioUi.ui:180 src/frontends/qt/ui/BiblioUi.ui:241
 #: src/frontends/qt/ui/BiblioUi.ui:291
@@ -319,8 +320,8 @@ msgstr "Bibliografiestijl biblate&x:"
 msgid ""
 "The style that determines the layout of the biblatex-generated bibliography"
 msgstr ""
-"De stijl die beslist over de lay-out van de door biblatex gegenereerde "
-"bibliografie"
+"De stijl die de lay-out van de door biblatex gegenereerde bibliografie "
+"bepaalt"
 
 #: src/frontends/qt/ui/BiblioUi.ui:244 src/frontends/qt/ui/ColorUi.ui:126
 msgid "R&eset"
@@ -329,7 +330,7 @@ msgstr "B&eginwaarden"
 #: src/frontends/qt/ui/BiblioUi.ui:251
 msgid "Match biblatex bibliography with citation style"
 msgstr ""
-"Gebruik dezelfde stijl voor zowel de bibliografie als de verwijzingen van "
+"Dezelfde stijl gebruiiken voor zowel de bibliografie als de verwijzingen van "
 "biblatex"
 
 #: src/frontends/qt/ui/BiblioUi.ui:254
@@ -345,7 +346,7 @@ msgid ""
 "Here, you can define a BibTeX style that is suggested in the BibTeX dialog "
 "by default"
 msgstr ""
-"Hier kunt u een BibTeX-stijl installen die standaard gesuggereerd wordt in "
+"Hier kunt u een BibTeX-stijl instellen die standaard gesuggereerd wordt in "
 "het BibTex-dialoogvenster"
 
 #: src/frontends/qt/ui/BiblioUi.ui:294 src/frontends/qt/ui/ColorUi.ui:148
@@ -354,7 +355,7 @@ msgstr "&Beginwaarden"
 
 #: src/frontends/qt/ui/BiblioUi.ui:305
 msgid "Select this if you want to split your bibliography into sections"
-msgstr "Kies dit als u de bibliografie wilt splitsen in secties"
+msgstr "Dit kiezen om de bibliografie wilt in secties te splitsen"
 
 #: src/frontends/qt/ui/BiblioUi.ui:308
 msgid "Subdivided bibli&ography"
@@ -374,13 +375,14 @@ msgstr "&Meerdere bibliografieën:"
 
 #: src/frontends/qt/ui/BiblioUi.ui:358
 msgid "Generate a bibliography per defined unit."
-msgstr "Genereer een bibliografie per gedefinieerde eenheid."
+msgstr "Een bibliografie per gedefinieerde eenheid genereren."
 
 #: src/frontends/qt/ui/BiblioUi.ui:376
 msgid ""
 "Here you can define an alternative program to or specific options of BibTeX."
 msgstr ""
-"Hier kunt u een alternatief voor of speciale opties van BibTeX definiëren."
+"Hier kan een alternatief programma of speciale opties van BibTeX "
+"gedefinieerd worden."
 
 #: src/frontends/qt/ui/BiblioUi.ui:379 src/frontends/qt/ui/PrefLatexUi.ui:82
 msgid "Bibliography Generation"
@@ -393,7 +395,7 @@ msgstr "&Verwerker:"
 
 #: src/frontends/qt/ui/BiblioUi.ui:400 src/frontends/qt/ui/IndicesUi.ui:43
 msgid "Select a processor"
-msgstr "Kies een verwerker"
+msgstr "Een verwerker kiezen"
 
 #: src/frontends/qt/ui/BiblioUi.ui:424 src/frontends/qt/ui/PrefLatexUi.ui:106
 #: src/frontends/qt/ui/PrefLatexUi.ui:208 src/frontends/qt/GuiPrefs.cpp:645
@@ -405,7 +407,7 @@ msgstr "Op&ties:"
 msgid ""
 "Define options such as --min-crossrefs (see the documentation of BibTeX)"
 msgstr ""
-"Definieer opties zoals --min-crossrefs (zie de documentatie van BibTeX)"
+"Opties definiéren zoals --min-crossrefs (zie de documentatie van BibTeX)"
 
 #: src/frontends/qt/ui/BibtexUi.ui:23
 msgid "BibTeX database(s) to use"
@@ -421,7 +423,7 @@ msgstr "&Gevonden door LaTeX:"
 
 #: src/frontends/qt/ui/BibtexUi.ui:65
 msgid "Add the selected BibTeX database from the list on the left"
-msgstr "Voeg de geselecteerde BibTeX-bron toe aan de linker lijst"
+msgstr "De geselecteerde BibTeX-bron toevoegen aan de linker lijst"
 
 #: src/frontends/qt/ui/BibtexUi.ui:68
 msgid "&Add Selected[[bib]]"
@@ -429,7 +431,7 @@ msgstr "&Geselecteerde toevoegen"
 
 #: src/frontends/qt/ui/BibtexUi.ui:75
 msgid "Add a BibTeX database from your local directory"
-msgstr "Voeg een BibTeX-bron toe uit uw lokale map"
+msgstr "Een BibTeX-bron toevoegen uit een lokale map"
 
 #: src/frontends/qt/ui/BibtexUi.ui:78
 msgid "Add &Local..."
@@ -437,11 +439,11 @@ msgstr "&Lokaal toevoegen..."
 
 #: src/frontends/qt/ui/BibtexUi.ui:91
 msgid "Transfer an absolute local path to a relative one or vice versa"
-msgstr ""
+msgstr "Een absoluut lokaal pad omzetten naar een relatief pad, of omgekeerd"
 
 #: src/frontends/qt/ui/BibtexUi.ui:94 src/frontends/qt/GuiBibtex.cpp:433
 msgid "&Make Relative"
-msgstr ""
+msgstr "Relatief &maken"
 
 #: src/frontends/qt/ui/BibtexUi.ui:101
 msgid "Inherit bibliography databases from the master document"
@@ -504,7 +506,7 @@ msgid ""
 "If your bibliography databases use a different encoding than the LyX "
 "document, specify it here"
 msgstr ""
-"Specifieer de tekencodering van uw bibliografiebron als die verschilt van "
+"De tekencodering van de bibliografiebron specificeren als die verschilt van "
 "het LyX-document"
 
 #: src/frontends/qt/ui/BibtexUi.ui:280
@@ -521,7 +523,7 @@ msgstr "Een stijlbestand kiezen"
 
 #: src/frontends/qt/ui/BibtexUi.ui:308
 msgid "Select a style file from your local directory"
-msgstr "Kies een stijlbestand uit uw lokale map"
+msgstr "Een stijlbestand uit een lokale map kiezen"
 
 #: src/frontends/qt/ui/BibtexUi.ui:311
 msgid "Add L&ocal..."
@@ -565,7 +567,7 @@ msgstr "alle verwijzingen"
 
 #: src/frontends/qt/ui/BibtexUi.ui:376
 msgid "Add bibliography to the table of contents"
-msgstr "Voeg de bibliografie toe aan de inhoudsopgave"
+msgstr "De bibliografie toevoegen aan de inhoudsopgave"
 
 #: src/frontends/qt/ui/BibtexUi.ui:379
 msgid "Add bibliography to &TOC"
@@ -585,7 +587,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/BibtexUi.ui:442
 msgid "Scan for new databases and styles"
-msgstr "Scan om nieuwe databanken en stijlen te vinden"
+msgstr "Scannen om nieuwe databanken en stijlen te vinden"
 
 #: src/frontends/qt/ui/BibtexUi.ui:445 src/frontends/qt/ui/TexinfoUi.ui:144
 msgid "&Rescan"
@@ -640,7 +642,7 @@ msgstr "Minipage"
 
 #: src/frontends/qt/ui/BoxUi.ui:109
 msgid "Check this if the box should break across pages"
-msgstr "Vink aan als het blok gesplitst moeten worden over meerdere pagina's"
+msgstr "Aanvinken als het blok gesplitst moet worden over meerdere pagina's"
 
 #: src/frontends/qt/ui/BoxUi.ui:112
 msgid "Allow &page breaks"
@@ -797,7 +799,7 @@ msgstr "Beschikb&are vertakkingen:"
 
 #: src/frontends/qt/ui/BranchUi.ui:30
 msgid "Select your branch"
-msgstr "Kies uw vertakking"
+msgstr "Een vertakking kiezen"
 
 #: src/frontends/qt/ui/BranchUi.ui:37
 msgid "Inverted"
@@ -808,8 +810,8 @@ msgid ""
 "Append the name of this branch to the output filename, given the branch is "
 "active."
 msgstr ""
-"Voeg de naam van deze vertakking toe aan de naam van het uitvoerbestand, als "
-"de vertakking actief is."
+"De naam van deze vertakking toevoegen aan de naam van het uitvoerbestand, "
+"als de vertakking actief is."
 
 #: src/frontends/qt/ui/BranchesUi.ui:38
 msgid "Filename &Suffix"
@@ -839,7 +841,7 @@ msgstr "&Ongedefinieerde vertakkingen"
 
 #: src/frontends/qt/ui/BranchesUi.ui:100
 msgid "Toggle the selected branch"
-msgstr "Zet de geselecteerde vertakking aan of uit"
+msgstr "De geselecteerde vertakking aan- of uitzetten"
 
 #: src/frontends/qt/ui/BranchesUi.ui:103
 msgid "(&De)activate"
@@ -847,7 +849,7 @@ msgstr "(&De)activeren"
 
 #: src/frontends/qt/ui/BranchesUi.ui:113
 msgid "Add a new branch to the list"
-msgstr "Voeg een nieuwe vertakking toe aan de lijst"
+msgstr "Een nieuwe vertakking toevoegen aan de lijst"
 
 #: src/frontends/qt/ui/BranchesUi.ui:116 src/frontends/qt/ui/CitationUi.ui:146
 #: src/frontends/qt/ui/IndicesUi.ui:134 src/CutAndPaste.cpp:459
@@ -856,7 +858,7 @@ msgstr "&Toevoegen"
 
 #: src/frontends/qt/ui/BranchesUi.ui:123
 msgid "Define or change background color"
-msgstr "Definieer of verander de achtergrondkleur"
+msgstr "De achtergrondkleur definiëren of wijzigen"
 
 #: src/frontends/qt/ui/BranchesUi.ui:126 src/frontends/qt/ui/IndicesUi.ui:185
 msgid "Alter Co&lor..."
@@ -864,7 +866,7 @@ msgstr "K&leur wijzigen..."
 
 #: src/frontends/qt/ui/BranchesUi.ui:133
 msgid "Change the name of the selected branch"
-msgstr "Verander de naam van de geselecteerde vertakking"
+msgstr "De naam van de geselecteerde vertakking wijzigen"
 
 #: src/frontends/qt/ui/BranchesUi.ui:136
 msgid "Re&name..."
@@ -884,7 +886,7 @@ msgstr "Opnieuw inst&ellen"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:25
 msgid "Add the selected branches to the list."
-msgstr "Voeg de geselecteerde vertakkingen toe aan de lijst."
+msgstr "De geselecteerde vertakkingen toevoegen aan de lijst."
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:28
 msgid "&Add Selected"
@@ -892,7 +894,7 @@ msgstr "Geselecteerde &toevoegen"
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:35
 msgid "Add all unknown branches to the list."
-msgstr "Voeg alle onbekende vertakkingen toe aan de lijst."
+msgstr "Alle onbekende vertakkingen toevoegen aan de lijst."
 
 #: src/frontends/qt/ui/BranchesUnknownUi.ui:38
 msgid "Add A&ll"
@@ -1058,7 +1060,7 @@ msgstr "V&orige wijziging"
 
 #: src/frontends/qt/ui/ChangesUi.ui:78
 msgid "Go to next change"
-msgstr "Ga naar volgende wijziging"
+msgstr "Naar volgende wijziging gaan"
 
 #: src/frontends/qt/ui/ChangesUi.ui:81
 msgid "&Next change"
@@ -1164,9 +1166,7 @@ msgstr "Taal"
 
 #: src/frontends/qt/ui/CharacterUi.ui:290
 msgid "If this is selected, the marked text will not be spellchecked"
-msgstr ""
-"Als dit aangevinkt is zal de gemarkeerde tekst niet gecontroleerd worden op "
-"spelling"
+msgstr "Aanvinken om de gemarkeerde tekst niet te controleren op spelling"
 
 #: src/frontends/qt/ui/CharacterUi.ui:293
 msgid "E&xclude from Spellchecking"
@@ -1204,7 +1204,7 @@ msgstr "Wijzigingen &onmiddellijk toepassen"
 
 #: src/frontends/qt/ui/CitationUi.ui:48
 msgid "Select the fields on which the filter applies"
-msgstr "Selecteer de velden waarop de filter toegepast moet worden"
+msgstr "De velden selecteren waarop het filter toegepast moet worden"
 
 #: src/frontends/qt/ui/CitationUi.ui:61 src/frontends/qt/GuiCitation.cpp:429
 msgid "All fields"
@@ -1212,7 +1212,7 @@ msgstr "Alle velden"
 
 #: src/frontends/qt/ui/CitationUi.ui:75
 msgid "Select the entry types on which the filter applies"
-msgstr "Selecteer de types waarop de filter toegepast moet worden"
+msgstr "De types selecteren waarop het filter toegepast moet worden"
 
 #: src/frontends/qt/ui/CitationUi.ui:85 src/frontends/qt/GuiCitation.cpp:444
 msgid "All entry types"
@@ -1220,7 +1220,7 @@ msgstr "Alle types"
 
 #: src/frontends/qt/ui/CitationUi.ui:93
 msgid "Click for more filter options"
-msgstr "Klik voor meer filteropties"
+msgstr "Klikken voor meer filteropties"
 
 #: src/frontends/qt/ui/CitationUi.ui:96
 msgid "O&ptions"
@@ -1233,22 +1233,22 @@ msgstr "&Beschikbare verwijzingen:"
 #: src/frontends/qt/ui/CitationUi.ui:143
 msgid "Click or press Enter to add the selected citation to the list"
 msgstr ""
-"Klik of druk op Enter om de geselecteerde verwijzing aan de lijst toe te "
-"voegen"
+"Klikken of op Enter drukken om de geselecteerde verwijzing aan de lijst toe "
+"te voegen"
 
 #: src/frontends/qt/ui/CitationUi.ui:156
 msgid "Click or press Delete to delete the selected citation from the list"
 msgstr ""
-"Klik of druk op Delete om de geselecteerde verwijzing uit de lijst te "
+"Klikken of op Delete drukken om de geselecteerde verwijzing uit de lijst te "
 "verwijderen"
 
 #: src/frontends/qt/ui/CitationUi.ui:188
 msgid "Move the selected citation up (Ctrl-Up)"
-msgstr "Verplaats de geselecteerde verwijzing omhoog (Ctrl-Up)"
+msgstr "De geselecteerde verwijzing omhoog verplaatsen (Ctrl-Up)"
 
 #: src/frontends/qt/ui/CitationUi.ui:211
 msgid "Move the selected citation down (Ctrl-Down)"
-msgstr "Verplaats de geselecteerde verwijzing omlaag (Ctrl-Down)"
+msgstr "De geselecteerde verwijzing omlaag verplaatsen (Ctrl-Down)"
 
 #: src/frontends/qt/ui/CitationUi.ui:232
 msgid "Selected &Citations:"
@@ -1329,7 +1329,7 @@ msgstr "Lettertypekleur"
 #: src/frontends/qt/ui/ColorUi.ui:45 src/frontends/qt/ui/ColorUi.ui:107
 #: src/frontends/qt/ui/ColorUi.ui:295 src/frontends/qt/ui/ColorUi.ui:333
 msgid "Click to change the color"
-msgstr "Klik om de kleur te wijzigen"
+msgstr "Klikken om de kleur te wijzigen"
 
 #: src/frontends/qt/ui/ColorUi.ui:48
 msgid "&Change..."
@@ -1337,7 +1337,7 @@ msgstr "&Wijzigen..."
 
 #: src/frontends/qt/ui/ColorUi.ui:68
 msgid "Greyed-out notes:"
-msgstr "Grijze notities:"
+msgstr "Vergrijsde notities:"
 
 #: src/frontends/qt/ui/ColorUi.ui:91
 msgid "Main text:"
@@ -1350,7 +1350,7 @@ msgstr "&Wijzigen..."
 #: src/frontends/qt/ui/ColorUi.ui:123 src/frontends/qt/ui/ColorUi.ui:145
 #: src/frontends/qt/ui/ColorUi.ui:250 src/frontends/qt/ui/ColorUi.ui:311
 msgid "Revert the color to the default"
-msgstr "Zet de standaardkleur terug"
+msgstr "De standaardkleur terugzetten"
 
 #: src/frontends/qt/ui/ColorUi.ui:210
 msgid "Background Colors"
@@ -1398,7 +1398,7 @@ msgstr "Nieuw:"
 
 #: src/frontends/qt/ui/CompareUi.ui:57
 msgid "Select the document from which the settings should be taken"
-msgstr "Selecteer het document waarvan de opties gebruikt moeten worden"
+msgstr "Het document selecteren waarvan de opties gebruikt moeten worden"
 
 #: src/frontends/qt/ui/CompareUi.ui:60 src/frontends/qt/GuiDocument.cpp:821
 msgid "Document Settings"
@@ -1417,7 +1417,7 @@ msgid ""
 "Turns on the change tracking and showing changes in LaTeX output for the "
 "resulting document"
 msgstr ""
-"Hou wijzigingen bij en toon de wijzigingen in de LaTeX-uitvoer voor het "
+"Wijzigingen bijhouden en de wijzigingen tonen in de LaTeX-uitvoer voor het "
 "resulterende document"
 
 #: src/frontends/qt/ui/CompareUi.ui:104
@@ -1431,7 +1431,8 @@ msgstr "Oud documen&t:"
 #: src/frontends/qt/ui/CompareUi.ui:145
 msgid "Specify the original version of the document here (comparison source)"
 msgstr ""
-"Specifieer de originele versie van het document hier (bron voor vergelijking)"
+"De originele versie van het document hier specificeren (bron voor "
+"vergelijking)"
 
 #: src/frontends/qt/ui/CompareUi.ui:155 src/frontends/qt/ui/PrefUi.ui:51
 msgid "Bro&wse..."
@@ -1444,7 +1445,7 @@ msgstr "&Nieuw document:"
 #: src/frontends/qt/ui/CompareUi.ui:181
 msgid "Specify the modified version of the document here (comparison target)"
 msgstr ""
-"Specifieer de gewijzigde versie van het document hier (doel voor "
+"De gewijzigde versie van het document hier specificeren (doel voor "
 "vergelijking)"
 
 #: src/frontends/qt/ui/CompareUi.ui:191 src/frontends/qt/ui/ExternalUi.ui:89
@@ -1517,7 +1518,7 @@ msgstr "&Vervangen && omkeren"
 
 #: src/frontends/qt/ui/DocumentUi.ui:93
 msgid "Reset to the default settings for the document class"
-msgstr "Zet de standaardopties voor de documentklasse terug"
+msgstr "De standaardopties voor de documentklasse terugzetten"
 
 #: src/frontends/qt/ui/DocumentUi.ui:96
 msgid "Use Class Defaults"
@@ -1537,7 +1538,7 @@ msgstr "Weergave"
 
 #: src/frontends/qt/ui/ERTUi.ui:59
 msgid "Show ERT button only"
-msgstr "Toon enkel de ERT-knop"
+msgstr "Enkel de ERT-knop tonen"
 
 #: src/frontends/qt/ui/ERTUi.ui:62
 msgid "&Collapsed"
@@ -1545,7 +1546,7 @@ msgstr "&Ingeklapt"
 
 #: src/frontends/qt/ui/ERTUi.ui:69
 msgid "Show ERT contents"
-msgstr "Toon de ERT-inhoud"
+msgstr "De ERT-inhoud tonen"
 
 #: src/frontends/qt/ui/ERTUi.ui:72
 msgid "[[is]]O&pen"
@@ -1556,13 +1557,13 @@ msgid ""
 "Selecting an error will show the error message in the panel below and the "
 "cursor will jump to the location in the document where the error occurred."
 msgstr ""
-"Selecteer een fout om de foutboodschap te tonen in het deelvenster hieronder "
-"en de aanwijzer te laten springen naar de locatie in het document waar de "
-"fout optrad."
+"Een fout selecteren om de foutboodschap te tonen in het deelvenster "
+"hieronder en de aanwijzer te laten springen naar de locatie in het document "
+"waar de fout optrad."
 
 #: src/frontends/qt/ui/ErrorListUi.ui:51
 msgid "For more information, refer to the complete log."
-msgstr "Raadpleeg de volledige logboeken voor meer informatie."
+msgstr "De volledige logboeken raadplegen voor meer informatie."
 
 #: src/frontends/qt/ui/ErrorListUi.ui:58
 msgid "Description:"
@@ -1574,7 +1575,7 @@ msgstr "&Fouten:"
 
 #: src/frontends/qt/ui/ErrorListUi.ui:75
 msgid "Open the LaTeX Log File dialog"
-msgstr "Open het dialoogvenster met de LaTeX-logboeken"
+msgstr "Het dialoogvenster met de LaTeX-logboeken openen"
 
 #: src/frontends/qt/ui/ErrorListUi.ui:78
 msgid "View Complete &Log..."
@@ -1583,7 +1584,7 @@ msgstr "Volledige &logboeken weergeven..."
 #: src/frontends/qt/ui/ErrorListUi.ui:101
 msgid "Attempt to show the output even if there were compilation errors"
 msgstr ""
-"Probeer de uitvoer te tonen, ook al traden er fouten tijdens de compilatie"
+"De uitvoer proberen te tonen, ook al traden er fouten tijdens de compilatie"
 
 #: src/frontends/qt/ui/ErrorListUi.ui:104
 msgid "Show Output &Anyway"
@@ -1606,7 +1607,7 @@ msgstr "&Bestand:"
 
 #: src/frontends/qt/ui/ExternalUi.ui:86 src/frontends/qt/ui/IncludeUi.ui:25
 msgid "Select a file"
-msgstr "Selecteer een bestand"
+msgstr "Een bestand selecteren"
 
 #: src/frontends/qt/ui/ExternalUi.ui:96
 msgid "&Draft"
@@ -1641,8 +1642,8 @@ msgid ""
 "Enable LyX to preview this material; only if graphics previewing is not "
 "disabled at application level (see Preference dialog)."
 msgstr ""
-"LyX zal een voorbeeld tonen van dit materiaal, als dit niet uitgeschakeld is "
-"op applicatieniveau (zie het venster Voorkeuren)."
+"LyX zal een voorbeeld tonen van dit materiaal, mits dit niet uitgeschakeld "
+"is op applicatieniveau (zie het venster Voorkeuren)."
 
 #: src/frontends/qt/ui/ExternalUi.ui:243
 msgid "&Show in LyX"
@@ -1698,7 +1699,7 @@ msgstr "Breedte van afbeelding in uitvoer"
 
 #: src/frontends/qt/ui/ExternalUi.ui:527
 msgid "Maintain aspect ratio with largest dimension"
-msgstr "Verhoudingen behouden met grootste dimensie"
+msgstr "Verhoudingen met grootste dimensie behouden"
 
 #: src/frontends/qt/ui/ExternalUi.ui:530 src/frontends/qt/ui/GraphicsUi.ui:199
 msgid "&Maintain aspect ratio"
@@ -1758,15 +1759,15 @@ msgstr "Vervangen &door:"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:137
 msgid "Shift+Enter search backwards directly"
-msgstr "Shift+Enter zoek onmiddellijk achteruit"
+msgstr "Shift+Enter onmiddellijk achterwaarts zoeken"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:140
 msgid "Search &backwards"
-msgstr "&Achteruit zoeken"
+msgstr "&Achterwaarts zoeken"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:150
 msgid "Restrict search to whole words only"
-msgstr "Beperk het zoeken tot hele woorden"
+msgstr "Zoeken tot hele woorden beperken"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:153
 #: src/frontends/qt/ui/SearchUi.ui:241 src/frontends/qt/GuiSearch.cpp:98
@@ -1803,7 +1804,7 @@ msgstr "V&ervangen"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:234
 msgid "Replace all occurrences at once"
-msgstr "Vervang alle voorkomens in een keer"
+msgstr "Alle voorkomens in een keer vervangen"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:237
 #: src/frontends/qt/ui/SearchUi.ui:68
@@ -1816,7 +1817,7 @@ msgstr "Instellingen"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:279
 msgid "The scope to which the search horizon is restricted"
-msgstr "Het bereik waar tot de zoekhorizon beperkt is"
+msgstr "Het bereik waartot de zoekhorizon beperkt is"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:285
 msgid "Scope"
@@ -1856,7 +1857,7 @@ msgstr "Macro's weer&geven"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:380
 msgid "Restrict search to math environments only"
-msgstr "Beperk het zoeken tot wiskundige omgevingen"
+msgstr "Zoeken tot wiskundige omgevingen beperken"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:383
 msgid "Search onl&y in maths"
@@ -1991,7 +1992,7 @@ msgstr "Overige opties"
 
 #: src/frontends/qt/ui/FloatPlacementUi.ui:169
 msgid "&Span columns"
-msgstr "Kolommen o&verschrijden"
+msgstr "Kolommen o&verbruggen"
 
 #: src/frontends/qt/ui/FloatPlacementUi.ui:176
 msgid "Rotate side&ways"
@@ -2039,7 +2040,7 @@ msgstr "&Standaardfamilie:"
 
 #: src/frontends/qt/ui/FontUi.ui:47
 msgid "Select the default family for the document"
-msgstr "Kies de standaardfamilie voor het document"
+msgstr "De standaardfamilie voor het document kiezen"
 
 #: src/frontends/qt/ui/FontUi.ui:54
 msgid "&Base size:"
@@ -2051,7 +2052,7 @@ msgstr "LaTe&X-lettertypecodering:"
 
 #: src/frontends/qt/ui/FontUi.ui:101
 msgid "Specify the font encoding (e.g., T1)."
-msgstr "Specifieer de lettertypecodering (bv. T1)."
+msgstr "De lettertypecodering (bv. T1) specificeren"
 
 #: src/frontends/qt/ui/FontUi.ui:110
 msgid "&Roman:"
@@ -2067,7 +2068,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/FontUi.ui:142
 msgid "Use a real small caps shape, if the font provides one"
-msgstr "Gebruik echt kleinkapitaal, als het lettertype dit ondersteunt"
+msgstr "Echt kleinkapitaal, mits het lettertype dit ondersteunt"
 
 #: src/frontends/qt/ui/FontUi.ui:145
 msgid "Use true s&mall caps"
@@ -2076,7 +2077,7 @@ msgstr "Echt &kleinkapitaal gebruiken"
 #: src/frontends/qt/ui/FontUi.ui:156 src/frontends/qt/ui/FontUi.ui:264
 #: src/frontends/qt/ui/FontUi.ui:372
 msgid "Use old style instead of lining figures"
-msgstr "Gebruik uithangende cijfers voor figuren in plaats van tabelcijfers"
+msgstr "Uithangende cijfers in plaats van tabelcijfers gebruiken voor figuren"
 
 #: src/frontends/qt/ui/FontUi.ui:159
 msgid "Use &old style figures"
@@ -2104,8 +2105,8 @@ msgid ""
 "Select the Sans Serif (grotesque) typeface. To filter the list of fonts, "
 "just start typing while the list is expanded."
 msgstr ""
-"Het schreefloze lettertype met selecteren. De lijst wordt gefilterd tijdens "
-"het typen."
+"Het schreefloze lettertype selecteren. De lijst wordt gefilterd tijdens het "
+"typen."
 
 #: src/frontends/qt/ui/FontUi.ui:237
 msgid "S&cale (%):"
@@ -2114,7 +2115,7 @@ msgstr "S&chaal (%):"
 #: src/frontends/qt/ui/FontUi.ui:247
 msgid "Scale the Sans Serif font to match the base font's dimensions"
 msgstr ""
-"Schaal het schreefloze lettertype om bij het standaardlettertype aan te "
+"Het schreefloze lettertype schalen om bij het standaardlettertype aan te "
 "sluiten"
 
 #: src/frontends/qt/ui/FontUi.ui:267
@@ -2130,8 +2131,8 @@ msgid ""
 "Select the typewriter (monospaced) typeface. To filter the list of fonts, "
 "just start typing while the list is expanded."
 msgstr ""
-"Het monospace lettertype met selecteren. De lijst wordt gefilterd tijdens "
-"het typen."
+"Het monospace lettertype selecteren. De lijst wordt gefilterd tijdens het "
+"typen."
 
 #: src/frontends/qt/ui/FontUi.ui:345
 msgid "Sc&ale (%):"
@@ -2140,7 +2141,8 @@ msgstr "Sch&aal (%):"
 #: src/frontends/qt/ui/FontUi.ui:355
 msgid "Scale the Typewriter font to match the base font's dimensions"
 msgstr ""
-"Schaal het monospace-lettertype om bij het standaardlettertype aan te sluiten"
+"Het monospace-lettertype schalen om bij het standaardlettertype aan te "
+"sluiten"
 
 #: src/frontends/qt/ui/FontUi.ui:375
 msgid "Use old style &figures"
@@ -2152,7 +2154,7 @@ msgstr "&Wiskunde:"
 
 #: src/frontends/qt/ui/FontUi.ui:431
 msgid "Select the math typeface"
-msgstr "Selecteer de letterfamilie voor wiskunde"
+msgstr "De letterfamilie voor wiskunde selecteren"
 
 #: src/frontends/qt/ui/FontUi.ui:438
 msgid "C&JK:"
@@ -2160,15 +2162,15 @@ msgstr "C&JK:"
 
 #: src/frontends/qt/ui/FontUi.ui:448
 msgid "Input the font to be used for Chinese, Japanese or Korean (CJK) script"
-msgstr "Kies het lettertype voor Chinees, Japans en Koreaans (CJK)"
+msgstr "Het lettertype voor Chinees, Japans en Koreaans (CJK) kiezen"
 
 #: src/frontends/qt/ui/FontUi.ui:457
 msgid ""
 "Activate extensions such as character protrusion and font expansion via the "
 "microtype package"
 msgstr ""
-"Activeer uitbreidingen zoals hangende interpunctie en letterexpansie met het "
-"pakket microtype"
+"Uitbreidingen activeren zoals hangende interpunctie en letterexpansie met "
+"het pakket microtype"
 
 #: src/frontends/qt/ui/FontUi.ui:460
 msgid "Enable micr&o-typographic extensions"
@@ -2179,12 +2181,12 @@ msgid ""
 "Use OpenType and TrueType fonts with the fontspec package (requires XeTeX or "
 "LuaTeX)"
 msgstr ""
-"Gebruik OpenType- en TrueType-lettertypes met het pakket fontspec (vereist "
+"OpenType- en TrueType-lettertypes gebruiken met het pakket fontspec (vereist "
 "XeTeX of LuaTeX)"
 
 #: src/frontends/qt/ui/FontUi.ui:470
 msgid "&Use non-TeX fonts (via XeTeX/LuaTeX)"
-msgstr "&Gebruik niet-TeX-lettertypes (via XeTeX/LuaTeX)"
+msgstr "Niet-TeX-lettertypes &gebruiken (via XeTeX/LuaTeX)"
 
 #: src/frontends/qt/ui/FontUi.ui:477
 msgid ""
@@ -2204,7 +2206,7 @@ msgstr "&Afbeeldingen"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:72
 msgid "Select an image file"
-msgstr "Kies een afbeeldingsbestand"
+msgstr "Een afbeeldingsbestand selecteren"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:82
 msgid "Output Size"
@@ -2213,7 +2215,7 @@ msgstr "Uitvoerafmetingen"
 #: src/frontends/qt/ui/GraphicsUi.ui:163
 msgid "Sets height of graphic. Leave unchecked to set automatically."
 msgstr ""
-"Stel de hoogte van de afbeelding in. Vink niet aan om automatisch te bepalen."
+"De hoogte van de afbeelding instellen. Uitvinken om automatisch te bepalen."
 
 #: src/frontends/qt/ui/GraphicsUi.ui:166 src/frontends/qt/GuiGraphics.cpp:495
 msgid "Set &height:"
@@ -2226,8 +2228,7 @@ msgstr "Afbeelding &schalen (%):"
 #: src/frontends/qt/ui/GraphicsUi.ui:183
 msgid "Sets width of graphic. Leave unchecked to set automatically."
 msgstr ""
-"Stel de breedte van de afbeelding in. Vink niet aan om automatisch te "
-"bepalen."
+"De breedte van de afbeelding instellen. Uitvinken om automatisch te bepalen."
 
 #: src/frontends/qt/ui/GraphicsUi.ui:186 src/frontends/qt/GuiGraphics.cpp:494
 msgid "Set &width:"
@@ -2235,7 +2236,7 @@ msgstr "&Breedte:"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:196
 msgid "Scale image to maximum size not exceeding width and height"
-msgstr "Maak de afbeelding zo groot mogelijk binnen de breedte en hoogte"
+msgstr "De afbeelding zo groot mogelijk maken binnen de breedte en hoogte"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:209
 msgid "Rotate Graphics"
@@ -2243,7 +2244,7 @@ msgstr "Afbeelding draaien"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:233
 msgid "Check to change the order of rotating and scaling"
-msgstr "Vink aan om de volgorde van roteren en draaien om te wisselen"
+msgstr "Aanvinken om de volgorde van roteren en draaien om te wisselen"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:236
 msgid "Ro&tate after scaling"
@@ -2270,7 +2271,7 @@ msgid ""
 "Clip to the coordinates specified below (bounding box for DVI/PS output, "
 "viewport for PDF output)"
 msgstr ""
-"Snijd bij tot onderstaande coördinaten (begrenzingskader voor DVI/PS-"
+"Bijsnijden tot onderstaande coördinaten (begrenzingskader voor DVI/PS-"
 "uitvoer, viewport voor PDF-uitvoer)"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:350
@@ -2290,7 +2291,7 @@ msgid ""
 "Read coordinates from the file (bounding box value in case of PostScript "
 "files, graphic dimensions in case of other file types)"
 msgstr ""
-"Lees coördinaten uit het bestand (waarden voor begrenzingskader bij "
+"Coördinaten uit het bestand lezen (waarden voor begrenzingskader bij "
 "PostScript-bestanden, grafische dimensies bij andere bestandstypes)"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:517
@@ -2298,7 +2299,7 @@ msgid ""
 "Enable LyX to preview this graphics, if graphics previewing is not disabled "
 "at application level (see Preferences dialog)."
 msgstr ""
-"Toon een voorbeeld van deze afbeelding in LyX. Dit werkt alleen als "
+"Een voorbeeld tonen van deze afbeelding in LyX. Dit werkt alleen als "
 "voorbeelden aan staat in de opties (zie de Voorkeuren)."
 
 #: src/frontends/qt/ui/GraphicsUi.ui:520
@@ -2334,7 +2335,7 @@ msgstr "LaTeX-&opties:"
 #: src/frontends/qt/ui/GraphicsUi.ui:641
 msgid "Assign the graphic to a group of graphics that share the same settings"
 msgstr ""
-"Voeg de afbeelding toe aan een groep afbeeldingen met dezelfde instellingen"
+"De afbeelding toevoegen aan een groep afbeeldingen met dezelfde instellingen"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:644
 msgid "Graphics Group"
@@ -2346,7 +2347,7 @@ msgstr "Lid van &groep:"
 
 #: src/frontends/qt/ui/GraphicsUi.ui:700
 msgid "Click to define a new graphics group."
-msgstr "Klik om een nieuwe afbeeldingsgroep te maken."
+msgstr "Klikken om een nieuwe afbeeldingsgroep te maken."
 
 #: src/frontends/qt/ui/GraphicsUi.ui:703
 msgid "O&pen new group..."
@@ -2354,7 +2355,7 @@ msgstr "Nieuwe groep o&penen..."
 
 #: src/frontends/qt/ui/GraphicsUi.ui:710
 msgid "Select an existing group for the current graphics."
-msgstr "Kies een bestaande groep voor de huidige afbeelding."
+msgstr "Een bestaande groep voor de huidige afbeelding selecteren."
 
 #: src/frontends/qt/ui/GraphicsUi.ui:723
 msgid "Draft mode"
@@ -2366,7 +2367,7 @@ msgstr "&Conceptmodus"
 
 #: src/frontends/qt/ui/HSpaceUi.ui:23
 msgid "Select a fill pattern style for HFills"
-msgstr "Kies een opvulpatroon voor HFills"
+msgstr "Een opvulpatroon voor HFills selecteren"
 
 #: src/frontends/qt/ui/HSpaceUi.ui:32
 msgid "..............."
@@ -2447,16 +2448,16 @@ msgid ""
 "Pass content of the `Name' field literally to LaTeX. Check this if you want "
 "to enter LaTeX code."
 msgstr ""
-"Geef de inhoud van het veld `Naam' rechtstreeks door aan LaTeX. Vink aan om "
+"De inhoud van het veld `Naam' rechtstreeks doorgeven aan LaTeX. Aanvinken om "
 "LaTeX-code te gebruiken."
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:106
 msgid "Specify the link target"
-msgstr "Geef het doel op van de link"
+msgstr "Het doel van de koppeling specificeren"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:109
 msgid "Link type"
-msgstr "Soort link"
+msgstr "Soort koppeling"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:133
 msgid ""
@@ -2532,8 +2533,8 @@ msgid ""
 "File name to include. (You can create a new file by entering the name of one "
 "that does not yet exist.)"
 msgstr ""
-"File name to include. (You can create a new file by entering the name of one "
-"that does not yet exist.)"
+"Naam van bestand om in te sluiten. (Er wordt een nieuw bestand gecreëerd als "
+"een naam van een niet-bestaand bestand opgegeven .)"
 
 #: src/frontends/qt/ui/IncludeUi.ui:124
 msgid "Underline spaces in generated output"
@@ -2563,7 +2564,7 @@ msgstr "&Bijschrift:"
 #: src/frontends/qt/ui/ListingsSettingsUi.ui:79
 #: src/frontends/qt/ui/ListingsUi.ui:507
 msgid "Check it to enter parameters that are not recognizable by LyX"
-msgstr "Vink aan om parameters op te geven die LyX niet begrijpt"
+msgstr "Aanvinken om parameters op te geven die LyX niet begrijpt"
 
 #: src/frontends/qt/ui/IncludeUi.ui:282
 #: src/frontends/qt/ui/ListingsSettingsUi.ui:82
@@ -2580,8 +2581,8 @@ msgid ""
 "Pass content of the `Caption' field literally to LaTeX. Check this if you "
 "want to enter LaTeX code."
 msgstr ""
-"De inhoud van het veld `Bijschrift' letterlijk aan LaTeX geven. Vink aan als "
-"u LaTeX-code wilt gebruiken."
+"De inhoud van het veld `Bijschrift' letterlijk aan LaTeX doorgeven. "
+"Aanvinken om LaTeX-code te gebruiken."
 
 #: src/frontends/qt/ui/IndexUi.ui:23
 msgid "Available I&ndexes"
@@ -2589,7 +2590,7 @@ msgstr "Beschikbare i&ndices"
 
 #: src/frontends/qt/ui/IndexUi.ui:29
 msgid "Select the index this entry should be listed in."
-msgstr "Selecteer de index waarop dit moet verschijnen."
+msgstr "De index selecteren waarin dit moet worden opgenomen."
 
 #: src/frontends/qt/ui/IndexUi.ui:52
 msgid "&Pagination"
@@ -2601,7 +2602,8 @@ msgstr "Pagina-be&reik:"
 
 #: src/frontends/qt/ui/IndexUi.ui:68
 msgid "If the entry spans multiple pages, you can start or end the range here"
-msgstr "If the entry spans multiple pages, you can start or end the range here"
+msgstr ""
+"Het bereik beginnen of beëindigen als de ingang meerdere paginas overbrugt,"
 
 #: src/frontends/qt/ui/IndexUi.ui:88 src/frontends/qt/ui/PageLayoutUi.ui:29
 #: src/frontends/qt/ui/PrefFileformatsUi.ui:20
@@ -2613,12 +2615,12 @@ msgid ""
 "Customize the format of the page number here. Note that the format is not "
 "used with \"See\" and \"See also\" references."
 msgstr ""
-"Customize the format of the page number here. Note that the format is not "
-"used with \"See\" and \"See also\" references."
+"Het formaat van het paginanummer aanpassen. Het formaat wordt niet gebruikt "
+"bij verwijzingen van het type \"Zie\"- en \"Zie ook.\""
 
 #: src/frontends/qt/ui/IndexUi.ui:105
 msgid "Enter custom command here (without leading backslash)."
-msgstr "Enter custom command here (without leading backslash)."
+msgstr "Een aangepast commando opgeven (zonder de voorafgaande backslash)."
 
 #: src/frontends/qt/ui/IndicesUi.ui:19
 msgid ""
@@ -2640,7 +2642,7 @@ msgstr "Definieer programmaopties van de geselecteerde verwerker."
 
 #: src/frontends/qt/ui/IndicesUi.ui:89
 msgid "Check if you need multiple indexes (e.g., an Index of Names)"
-msgstr "Vink aan voor meerde indices (bv. een Index der Namen)"
+msgstr "Aanvinken voor meerde indices (bv. een Index van Namen)"
 
 #: src/frontends/qt/ui/IndicesUi.ui:92
 msgid "&Use multiple indexes"
@@ -2654,12 +2656,12 @@ msgstr "&Nieuw:"
 msgid ""
 "Enter the name of the desired index (e.g. \"Index of Names\") and hit \"Add\""
 msgstr ""
-"Geef de naam van de gewenste index (bv. \"Index der Namen\") en druk op "
+"De naam van de gewenste index opgeven (bv. \"Index van Namen\") en druk op "
 "\"Toevoegen\""
 
 #: src/frontends/qt/ui/IndicesUi.ui:131
 msgid "Add a new index to the list"
-msgstr "Voeg een nieuwe index toe aan de lijst"
+msgstr "Een nieuwe index toevoegen aan de lijst"
 
 #: src/frontends/qt/ui/IndicesUi.ui:143
 msgid "A&vailable Indexes:"
@@ -2684,7 +2686,7 @@ msgstr "&Hernoemen..."
 
 #: src/frontends/qt/ui/IndicesUi.ui:182
 msgid "Define or change button color"
-msgstr "Definieer of verander de kleur van de knop"
+msgstr "De kleur van de knop definiëren of wijzigen"
 
 #: src/frontends/qt/ui/InfoUi.ui:25
 msgid "Infor&mation Type:"
@@ -2695,7 +2697,7 @@ msgid ""
 "Select the type of information to be output. Then specify the requested "
 "information below."
 msgstr ""
-"Selecteer het type informatie voor de uitvoer. Specifieer daarna de "
+"Het type informatie selecteren voor de uitvoer. Specifieer daarna de "
 "gevraagde informatie hieronder."
 
 #: src/frontends/qt/ui/InfoUi.ui:49 src/frontends/qt/GuiInfo.cpp:363
@@ -2704,7 +2706,7 @@ msgstr "&Vaste datum:"
 
 #: src/frontends/qt/ui/InfoUi.ui:59 src/frontends/qt/GuiInfo.cpp:362
 msgid "Here you can enter a fixed date (in ISO format: YYYY-MM-DD)"
-msgstr "Geef een vaste datum op (in ISO-formaat: YYYY-MM-DD)"
+msgstr "Een vaste datum opgeven (in ISO-formaat: YYYY-MM-DD)"
 
 #: src/frontends/qt/ui/InfoUi.ui:70
 msgid "&Custom:"
@@ -2762,7 +2764,7 @@ msgstr "Vink aan als het huidige document ingesloten is in een hoofddocument"
 
 #: src/frontends/qt/ui/LaTeXUi.ui:127
 msgid "Select de&fault master document"
-msgstr "Kies standaardhoo&fddocument"
+msgstr "Standaardhoo&fddocument selecteren"
 
 #: src/frontends/qt/ui/LaTeXUi.ui:139
 msgid "&Master:"
@@ -2770,7 +2772,7 @@ msgstr "Hoofddocu&ment:"
 
 #: src/frontends/qt/ui/LaTeXUi.ui:156
 msgid "Enter the name of the default master document"
-msgstr "Geef de naam op van het standaardhoofddocument"
+msgstr "De naam opgeven van het standaardhoofddocument"
 
 #: src/frontends/qt/ui/LaTeXUi.ui:166
 msgid "Class Options"
@@ -2778,7 +2780,7 @@ msgstr "Klasseopties"
 
 #: src/frontends/qt/ui/LaTeXUi.ui:175
 msgid "Enable to use the options that are predefined in the layout file"
-msgstr "Gebruik de opties die vooraf gedefinieerd zijn in het lay-outbestand"
+msgstr "De opties gebruiken die vooraf gedefinieerd zijn in het lay-outbestand"
 
 #: src/frontends/qt/ui/LaTeXUi.ui:178
 msgid "&Predefined:"
@@ -2801,12 +2803,12 @@ msgid ""
 "Attempt to display formatted cross-references as they would appear in the "
 "output, e.g., as \"Theorem 1\" rather than just as the label."
 msgstr ""
-"Attempt to display formatted cross-references as they would appear in the "
-"output, e.g., as \"Theorem 1\" rather than just as the label."
+"Opgemaakte kruisverwijzingen weergeven zoals in de uitvoer, b.v. als "
+"\"Stelling 1\" in plaats van zoals het label."
 
 #: src/frontends/qt/ui/LaTeXUi.ui:214
 msgid "Format cross-references in the &work area"
-msgstr "Maak kruisverwijzingen op in het &werkvenster"
+msgstr "Kruisverwijzingen opmaken in het &werkvenster"
 
 #: src/frontends/qt/ui/LanguageUi.ui:39
 msgid "&Quote style:"
@@ -2814,7 +2816,7 @@ msgstr "&Stijl aanhalingstekens:"
 
 #: src/frontends/qt/ui/LanguageUi.ui:49
 msgid "Select the default quotation marks style"
-msgstr "Kies de standaardstijl voor aanhalingstekens"
+msgstr "De standaardstijl voor aanhalingstekens selecteren"
 
 #: src/frontends/qt/ui/LanguageUi.ui:59
 msgid ""
@@ -2822,7 +2824,7 @@ msgid ""
 "If this is not selected, the quotation marks will stick with the style they "
 "have been inserted with."
 msgstr ""
-"Voer aanhalingstekens uit die automatisch aangepast worden aan de hierboven "
+"Aanhalingstekens uitvoeren die automatisch aangepast worden aan de hierboven "
 "gekozen stijl. Als dit niet aangevinkt is, zullen de aanhalingstekens zijn "
 "zoals ze ingevoerd zijn."
 
@@ -2841,19 +2843,20 @@ msgstr "&Soort:"
 
 #: src/frontends/qt/ui/LanguageUi.ui:108
 msgid "Select encoding of the generated LaTeX source (LaTeX input encoding)."
-msgstr "Select encoding of the generated LaTeX source (LaTeX input encoding)."
+msgstr ""
+"De codering selecteren van de gegenereerde LaTeX-bron (LaTeX input-codering)."
 
 #: src/frontends/qt/ui/LanguageUi.ui:121
 msgid "Select Unicode encoding variant."
-msgstr "Selecteer de Unicode-variant."
+msgstr "De Unicode-variant selecteren."
 
 #: src/frontends/qt/ui/LanguageUi.ui:131
 msgid "Specify whether to load the 'inputenc' package."
-msgstr "Specifieer of het pakket 'inputenc' geladen moet worden."
+msgstr "Aangeven of het pakket 'inputenc' geladen moet worden."
 
 #: src/frontends/qt/ui/LanguageUi.ui:141
 msgid "Select custom encoding."
-msgstr "Selecteer aangepaste codering."
+msgstr "Aangepaste codering selecteren."
 
 #: src/frontends/qt/ui/LanguageUi.ui:178
 msgid "Language pa&ckage:"
@@ -2861,13 +2864,14 @@ msgstr "Taalpa&kket:"
 
 #: src/frontends/qt/ui/LanguageUi.ui:188
 msgid "Select which language package LyX should use"
-msgstr "Selecteer het taalpakket dat LyX moet gebruiken"
+msgstr "Het taalpakket selecteren dat LyX moet gebruiken"
 
 #: src/frontends/qt/ui/LanguageUi.ui:195
 msgid ""
 "Enter the command to load the language package (default: \\usepackage{babel})"
 msgstr ""
-"Kies het commando om het taalpakket te laden (standaard: \\usepackage{babel})"
+"Het commando selecteren om het taalpakket te laden (standaard: "
+"\\usepackage{babel})"
 
 #: src/frontends/qt/ui/LineUi.ui:22
 msgid "Of&fset:"
@@ -2891,7 +2895,7 @@ msgstr "Waarde van de lijndikte."
 
 #: src/frontends/qt/ui/ListingsSettingsUi.ui:47
 msgid "Input here the listings parameters"
-msgstr "Geen hier de parameters voor het codefragment"
+msgstr "De parameters voor het codefragment opgeven"
 
 #: src/frontends/qt/ui/ListingsSettingsUi.ui:63
 #: src/frontends/qt/ui/ListingsUi.ui:479
@@ -2900,7 +2904,7 @@ msgstr "Feedbackvenster"
 
 #: src/frontends/qt/ui/ListingsSettingsUi.ui:95
 msgid "Choose the LaTeX package for code syntax highlighting"
-msgstr "Kies het LaTeX-pakket voor syntaxiskleuring"
+msgstr "Het LaTeX-pakket voor syntaxiskleuring kiezen"
 
 #: src/frontends/qt/ui/ListingsSettingsUi.ui:98
 msgid "&Syntax Highlighting Package:"
@@ -2924,7 +2928,7 @@ msgstr "Positie"
 
 #: src/frontends/qt/ui/ListingsUi.ui:39
 msgid "Check for inline listings"
-msgstr "Vink aan om het codefragment op dezelfde regel te plaatsen"
+msgstr "Aanvinken om het codefragment op dezelfde regel te plaatsen"
 
 #: src/frontends/qt/ui/ListingsUi.ui:42
 msgid "&Inline listing"
@@ -3532,19 +3536,20 @@ msgid "De&fault output format:"
 msgstr "Standaarduitvoer&formaat:"
 
 #: src/frontends/qt/ui/OutputUi.ui:144
-#, fuzzy
 msgid "Output Options"
-msgstr "Uitvoeropties LaTeX"
+msgstr "Uitvoeropties"
 
 #: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
 msgid ""
 "Scaling factor for images that are generated for some LaTeX constructs (e."
 "g., math formulae) in non-LaTeX output."
 msgstr ""
+"Schaalfactor voor figuren die door LaTeX constructies (b.v. "
+"wiskundeformules) gegenereerd zijn in niet-LaTeX output."
 
 #: src/frontends/qt/ui/OutputUi.ui:160
 msgid "Scaling of generated &images:"
-msgstr ""
+msgstr "Schalen van gegenereerde f&iguren:"
 
 #: src/frontends/qt/ui/OutputUi.ui:219
 msgid "&LaTeX"
@@ -3556,9 +3561,9 @@ msgid ""
 "out of moving arguments such as sections and captions. This prevents LaTeX "
 "errors that can happen in such cases. It is recommended to keep this on."
 msgstr ""
-"If this is checked, fragile items such as labels and index entries are moved "
-"out of moving arguments such as sections and captions. This prevents LaTeX "
-"errors that can happen in such cases. It is recommended to keep this on."
+"Aanvinken om fragiele elementen zoals labels en indexingangen buiten "
+"bewegende argumenten zoals secties en bijschriften te plaatsen. Dit voorkomt "
+"LaTeX-fouten. Het wordt aanbevolen om dit ingeschakeld te laten."
 
 #: src/frontends/qt/ui/OutputUi.ui:228
 msgid "Put fra&gile content out of moving arguments"
@@ -3741,6 +3746,8 @@ msgstr "Geen &kaders rond snelkoppelingen"
 #: src/frontends/qt/ui/PDFSupportUi.ui:285
 msgid "Mutually exclusive with frames around links, see manual."
 msgstr ""
+"Kan niet samen met rechthoeken rond koppelingen gebruikt worden; zie de "
+"handleiding."
 
 #: src/frontends/qt/ui/PDFSupportUi.ui:288
 msgid "C&olor links"
@@ -4782,8 +4789,8 @@ msgid ""
 "Specify here how the arrow keys behave within scripts with right-to-left "
 "direction"
 msgstr ""
-"Specify here how the arrow keys behave within scripts with right-to-left "
-"direction"
+"Specificeer het gedrag van de pijltjestoetsen binnen scripts met rechts-naar-"
+"links richting"
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:229
 msgid "Right-to-left cursor movement:"
@@ -5637,7 +5644,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/SendtoUi.ui:95
 msgid "Export for&mats:"
-msgstr "Exportfor&maten:"
+msgstr "Export for&maten:"
 
 #: src/frontends/qt/ui/SendtoUi.ui:105
 msgid "Send exported file to &command:"
@@ -8668,7 +8675,7 @@ msgstr "ORCID"
 
 #: lib/layouts/aastex62.layout:169 lib/layouts/aastex63.layout:177
 msgid "Enter the 16 digit ORCID as xxxx-xxxx-xxxx-xxxx"
-msgstr "Voer het 16-cijferige ORCID in als xxxx-xxxx-xxxx-xxxx"
+msgstr "Voer de 16-cijferige ORCID in als xxxx-xxxx-xxxx-xxxx"
 
 #: lib/layouts/aastex62.layout:184 lib/layouts/aastex63.layout:192
 #: lib/layouts/apa.layout:197 lib/layouts/apax.inc:177
@@ -8734,9 +8741,8 @@ msgid "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
 msgstr "\\Alph{appendix}\\arabic{subappendix}.\\arabic{subsubappendix}."
 
 #: lib/layouts/aastex63.layout:3 lib/examples/Articles:0
-#, fuzzy
 msgid "American Astronomical Society (AASTeX v. 6.3.1)"
-msgstr "American Astronomical Society (AASTeX v. 6.2)"
+msgstr "American Astronomical Society (AASTeX v. 6.3.1)"
 
 #: lib/layouts/achemso.layout:3 lib/examples/Articles:0
 msgid "American Chemical Society (ACS)"
@@ -16398,11 +16404,11 @@ msgstr "Keuzemenu"
 
 #: lib/layouts/pdfform.module:90
 msgid "Label[[Form]]"
-msgstr ""
+msgstr "Label"
 
 #: lib/layouts/pdfform.module:93
 msgid "Insert the label here"
-msgstr "Voeg het label hier in"
+msgstr "Het label hier invoeren"
 
 #: lib/layouts/pdfform.module:97 lib/layouts/pdfform.module:100
 msgid "PushButton"
@@ -17688,9 +17694,8 @@ msgid "(\\Alph{enumiv})"
 msgstr "(\\Alph{enumiv})"
 
 #: lib/layouts/stdcounters.inc:82
-#, fuzzy
 msgid "Listing ##"
-msgstr "Codefragment"
+msgstr "Codefragment ##"
 
 #: lib/layouts/stdcounters.inc:87
 msgid "Equation ##"
@@ -20604,7 +20609,6 @@ msgid "Comment|m"
 msgstr "Opmerking|m"
 
 #: lib/ui/stdcontext.inc:237
-#, fuzzy
 msgid "Greyed Out|y"
 msgstr "Vergrijsd|g"
 
@@ -20857,7 +20861,6 @@ msgid "End Editing Externally"
 msgstr "Extern bewerken beëindigen"
 
 #: lib/ui/stdcontext.inc:381
-#, fuzzy
 msgid "Split Inset|i"
 msgstr "Invoegsel splitsen|t"
 
@@ -20870,7 +20873,6 @@ msgid "Forward Search|F"
 msgstr "Vooruit zoeken|V"
 
 #: lib/ui/stdcontext.inc:386 lib/ui/stdmenus.inc:120
-#, fuzzy
 msgid "Move Paragraph Up|h"
 msgstr "Alinea omhoog verplaatsen|l"
 
@@ -20911,7 +20913,6 @@ msgid "Text Properties|x"
 msgstr "Teksteigenschappen|k"
 
 #: lib/ui/stdcontext.inc:402
-#, fuzzy
 msgid "Custom Text Styles|y"
 msgstr "Aangepaste tekststijlen|s"
 
@@ -21138,9 +21139,8 @@ msgstr "Verwijzing toevoegen bij aanwijzer|I"
 
 #: lib/ui/stdcontext.inc:588 lib/ui/stdcontext.inc:597
 #: lib/ui/stdcontext.inc:615 lib/ui/stdcontext.inc:743
-#, fuzzy
 msgid "Insert Cross-Reference to this Item|C"
-msgstr "Kruisverwijzing invoegen"
+msgstr "Kruisverwijzing naar dit item invoegen"
 
 #: lib/ui/stdcontext.inc:638
 msgid "Insert Copy at Cursor Position|I"
@@ -21183,16 +21183,14 @@ msgid "Custom Page Formatting...|u"
 msgstr "Aangepaste pagina-opmaak|A"
 
 #: lib/ui/stdcontext.inc:664
-#, fuzzy
 msgid "Insert Subentry|n"
-msgstr "Subgegeven invoegen"
+msgstr "Subgegeven invoegen||n"
 
 #: lib/ui/stdcontext.inc:665
 msgid "Insert Sortkey|k"
 msgstr "Sorteersleutel invoegen"
 
 #: lib/ui/stdcontext.inc:666
-#, fuzzy
 msgid "Insert See Reference|c"
 msgstr "Kruisverwijzing (Zie...) invoegen|Z"
 
@@ -21290,11 +21288,11 @@ msgstr "Aantal tekens (exclusief spaties)|k"
 
 #: lib/ui/stdcontext.inc:804
 msgid "Start Statistics Relative to Current Count|R"
-msgstr ""
+msgstr "Aantallen relatief t.o.v. huidige aantal|r"
 
 #: lib/ui/stdcontext.inc:805
 msgid "Reset to Absolute Statistics Count|A"
-msgstr ""
+msgstr "Terugzetten naar absolute aantallen|a"
 
 #: lib/ui/stdmenus.inc:30
 msgid "File|F"
@@ -21454,7 +21452,7 @@ msgstr "Exporteren als...|s"
 
 #: lib/ui/stdmenus.inc:97
 msgid "More Formats & Options...|r"
-msgstr "Meer formaten en opties...|o"
+msgstr "Meer formaten en opties...|r"
 
 #: lib/ui/stdmenus.inc:105
 msgid "Undo|U"
@@ -22001,14 +21999,12 @@ msgid "End of Sentence|E"
 msgstr "Einde zin|E"
 
 #: lib/ui/stdmenus.inc:418
-#, fuzzy
 msgid "Plain Double Quotation Mark|Q"
-msgstr "Aanhalingstekens zonder opmaak|h"
+msgstr "Dubbele aanhalingstekens zonder opmaak|b"
 
 #: lib/ui/stdmenus.inc:419
-#, fuzzy
 msgid "Plain Single Quotation Mark|S"
-msgstr "Aanhalingstekens zonder opmaak|h"
+msgstr "Enkele aanhalingstekens zonder opmaak|k"
 
 #: lib/ui/stdmenus.inc:420
 msgid "Inner Quotation Mark|n"
@@ -22211,7 +22207,6 @@ msgid "Comment|C"
 msgstr "Opmerking|O"
 
 #: lib/ui/stdmenus.inc:548
-#, fuzzy
 msgid "Greyed Out|G"
 msgstr "Vergrijsd|g"
 
@@ -27371,9 +27366,8 @@ msgid "An Xfig figure.\n"
 msgstr "Een Xfig-figuur.\n"
 
 #: lib/configure.py:726
-#, fuzzy
 msgid "Tgif"
-msgstr "tgo|Tgif"
+msgstr "Tgif"
 
 #: lib/configure.py:729
 msgid "FIG"
@@ -27384,9 +27378,8 @@ msgid "DIA"
 msgstr "DIA"
 
 #: lib/configure.py:735
-#, fuzzy
 msgid "OpenDocument drawing"
-msgstr "OpenDocument (Pandoc)"
+msgstr "OpenDocument tekening"
 
 #: lib/configure.py:738
 msgid "Grace"
@@ -27791,9 +27784,8 @@ msgid "LyX Preview"
 msgstr "LyX-voorbeeld"
 
 #: lib/configure.py:885
-#, fuzzy
 msgid "PDFTEX"
-msgstr "pdf_tex|PDFTEX"
+msgstr "PDFTEX"
 
 #: lib/configure.py:886
 msgid "Program"
@@ -30418,17 +30410,17 @@ msgstr ""
 
 #: src/LaTeXPackages.cpp:89
 msgid "Invalid package list format!"
-msgstr ""
+msgstr "Ongeldig formaat voor pakketlijst!"
 
 #: src/LaTeXPackages.cpp:90
 msgid ""
 "The format of your LaTeX packages list is wrong. Please file a bug report."
 msgstr ""
+"Het formaat van de LaTeX-pakketlijst is onjuist. Vul een bugrapport in."
 
 #: src/LaTeXPackages.cpp:98 src/LaTeXPackages.cpp:104
-#, fuzzy
 msgid "Outdated configuration script detected!"
-msgstr "Kon configuratiebestand niet lezen"
+msgstr "Verouderd configuratiescript gevonden!"
 
 #: src/LaTeXPackages.cpp:99
 msgid ""
@@ -30436,6 +30428,11 @@ msgid ""
 "The script has been renamed to 'chkconfig.ltx.bak'.\n"
 "If you did not copy the script there by purpose, you can safely delete it."
 msgstr ""
+"We hebben een verouderd script 'chkconfig.ltx' in de gebruikersmap "
+"gevonden.\n"
+"Het script is hernoemd naar 'chkconfig.ltx.bak'\n"
+"Als het script daarnaar ten onrechte gekopieerd is, dan kan het veilig "
+"verwijderd worden."
 
 #: src/LaTeXPackages.cpp:105
 #, c-format
@@ -30444,6 +30441,9 @@ msgid ""
 "(%1$s).\n"
 "Please delete or update this file!"
 msgstr ""
+"We hebben een verouderd script 'chkconfig.ltx' in de gebruikersmap gevonden\n"
+"(%1$s).\n"
+"Het script moet verwijderd of bijgewerkt worden!"
 
 #: src/LyX.cpp:134
 msgid "Could not read configuration file"
@@ -31560,9 +31560,8 @@ msgid "Text properties applied: %1$s"
 msgstr "Teksteigenschappen toegepast: %1$s"
 
 #: src/Text.cpp:6002
-#, fuzzy
 msgid "Invalid argument of textstyle-update"
-msgstr "Ongeldig argument van master-buffer-forall"
+msgstr "Ongeldig argument van textstyle-update"
 
 #: src/Text.cpp:6159
 msgid "Path to thesaurus directory not set!"
@@ -32147,22 +32146,22 @@ msgid "Manuals"
 msgstr "Handleidingen"
 
 #: src/frontends/qt/FindAndReplace.cpp:301
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The end was reached while searching forward.\n"
 "Continue searching from the beginning? (Scope:%1$s)"
 msgstr ""
-"%1$s: het einde werd bereikt tijdens het voorwaarts zoeken.\n"
-"Verder zoeken vanaf het begin?"
+"Het einde werd bereikt tijdens het voorwaarts zoeken.\n"
+"Verder zoeken vanaf het begin? (Bereik:%1$s)"
 
 #: src/frontends/qt/FindAndReplace.cpp:304
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The beginning was reached while searching backward.\n"
 "Continue searching from the end? (Scope:%1$s)"
 msgstr ""
-"%1$s: het begin werd bereikt tijdens het achterwaarts zoeken.\n"
-"Verder zoeken vanaf het einde?"
+"Het begin werd bereikt tijdens het achterwaarts zoeken.\n"
+"Verder zoeken vanaf het einde? (Bereik:%1$s)"
 
 #: src/frontends/qt/FindAndReplace.cpp:327
 msgid "Advanced search in progress (press ESC to cancel) . . ."
@@ -32611,7 +32610,7 @@ msgstr "Documentcodering"
 
 #: src/frontends/qt/GuiBibtex.cpp:437
 msgid "&Make Absolute"
-msgstr ""
+msgstr "Absoluut &maken"
 
 #: src/frontends/qt/GuiBibtex.cpp:457
 msgid "General Encoding"
@@ -35128,11 +35127,11 @@ msgstr "Spellingcontrole heeft geen woordenboeken."
 
 #: src/frontends/qt/GuiSymbols.cpp:55
 msgid "Basic Latin"
-msgstr "Basislatijn"
+msgstr "Latijn basis"
 
 #: src/frontends/qt/GuiSymbols.cpp:56
 msgid "Latin-1 Supplement"
-msgstr "Latijn-1 - Toevoeging"
+msgstr "Latijn-1 - Uitgebreid"
 
 #: src/frontends/qt/GuiSymbols.cpp:57
 msgid "Latin Extended-A"
@@ -35144,7 +35143,7 @@ msgstr "Latijn Uitgebreid-B"
 
 #: src/frontends/qt/GuiSymbols.cpp:59
 msgid "IPA Extensions"
-msgstr "IPA Uitbreidingen"
+msgstr "IPA toevoegingen"
 
 #: src/frontends/qt/GuiSymbols.cpp:60
 msgid "Spacing Modifier Letters"
@@ -35184,11 +35183,11 @@ msgstr "Hangul Jamo"
 
 #: src/frontends/qt/GuiSymbols.cpp:81
 msgid "Phonetic Extensions"
-msgstr "Fonetische uitbreidingen"
+msgstr "Fonetische extensies"
 
 #: src/frontends/qt/GuiSymbols.cpp:82
 msgid "Latin Extended Additional"
-msgstr "Latijn Uitgebreid - Toevoeging"
+msgstr "Latijnse extensies - Uitgebreid"
 
 #: src/frontends/qt/GuiSymbols.cpp:83
 msgid "Greek Extended"
@@ -35204,7 +35203,7 @@ msgstr "Superscripts en subscripts"
 
 #: src/frontends/qt/GuiSymbols.cpp:86
 msgid "Currency Symbols"
-msgstr "Munteenheidsymbolen"
+msgstr "Valutasymbolen"
 
 #: src/frontends/qt/GuiSymbols.cpp:87
 msgid "Combining Diacritical Marks for Symbols"
@@ -35216,11 +35215,11 @@ msgstr "Letterachtige symbolen"
 
 #: src/frontends/qt/GuiSymbols.cpp:89
 msgid "Number Forms"
-msgstr "Getalsvormen"
+msgstr "Cijfervormen"
 
 #: src/frontends/qt/GuiSymbols.cpp:91
 msgid "Mathematical Operators"
-msgstr "Wiskundige operatoren"
+msgstr "Wiskundige symbolen"
 
 #: src/frontends/qt/GuiSymbols.cpp:92
 msgid "Miscellaneous Technical"
@@ -35236,11 +35235,11 @@ msgstr "Optische tekenherkenning"
 
 #: src/frontends/qt/GuiSymbols.cpp:95
 msgid "Enclosed Alphanumerics"
-msgstr "Omsloten alfanumerieke tekens"
+msgstr "Ingesloten letters en cijfers"
 
 #: src/frontends/qt/GuiSymbols.cpp:96
 msgid "Box Drawing"
-msgstr "Lijntjes"
+msgstr "Kadertekeningen"
 
 #: src/frontends/qt/GuiSymbols.cpp:97
 msgid "Block Elements"
@@ -35296,7 +35295,7 @@ msgstr "Compatibiliteit met CJK"
 
 #: src/frontends/qt/GuiSymbols.cpp:110
 msgid "CJK Unified Ideographs"
-msgstr "CJK eengemaakte ideogrammen"
+msgstr "CJK verenigde ideogrammen"
 
 #: src/frontends/qt/GuiSymbols.cpp:111
 msgid "Hangul Syllables"
@@ -35316,7 +35315,7 @@ msgstr "Low Surrogates"
 
 #: src/frontends/qt/GuiSymbols.cpp:115
 msgid "Private Use Area"
-msgstr "Gebied voor privaat gebruik"
+msgstr "Gebied voor privé gebruik"
 
 #: src/frontends/qt/GuiSymbols.cpp:116
 msgid "CJK Compatibility Ideographs"
@@ -35348,7 +35347,7 @@ msgstr "Arabische presentatievormen-B"
 
 #: src/frontends/qt/GuiSymbols.cpp:123
 msgid "Halfwidth and Fullwidth Forms"
-msgstr "Vormen in halve en volledige breedte"
+msgstr "Halve en volledige breedte"
 
 #: src/frontends/qt/GuiSymbols.cpp:125
 msgid "Linear B Syllabary"
@@ -35388,7 +35387,7 @@ msgstr "Deseret"
 
 #: src/frontends/qt/GuiSymbols.cpp:134
 msgid "Shavian"
-msgstr "Shavian"
+msgstr "Shaw"
 
 #: src/frontends/qt/GuiSymbols.cpp:135
 msgid "Osmanya"
@@ -35835,7 +35834,7 @@ msgid ""
 "Do you want to create it?"
 msgstr ""
 "Het is aan te raden het sjabloon op te slaan in een\n"
-"submap passend voor de documenttaal (%1$s).\n"
+"submap bedoeld voor de documenttaal (%1$s).\n"
 "Deze submap bestaat nog niet?\n"
 "Wilt u deze maken?"
 
@@ -35872,7 +35871,7 @@ msgid ""
 "Do you want to create it?"
 msgstr ""
 "Het is aan te raden het sjabloon op te slaan in een\n"
-"submap passend voor de lay-outcategorie (%1$s).\n"
+"submap bedoeld voor de lay-outcategorie (%1$s).\n"
 "Deze submap bestaat nog niet.\n"
 "Wilt u deze aanmaken?"
 
@@ -36146,7 +36145,7 @@ msgid ""
 "on disk of the document %1$s?"
 msgstr ""
 "De huidige versie zal verloren gaan. Weet u zeker dat u voor document %1$s "
-"de versie vanop de schijf wilt laden?"
+"de versie vanaf de schijf wilt laden?"
 
 #: src/frontends/qt/GuiView.cpp:4693
 #, c-format
@@ -36245,30 +36244,28 @@ msgid "&Close Tab"
 msgstr "Tabblad &sluiten"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2448
-#, fuzzy
 msgid "Close &Other Tabs"
-msgstr "Tabblad &sluiten"
+msgstr "&Overige tabbladen sluiten"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2450
 msgid "Close Tabs to the &Right"
-msgstr ""
+msgstr "Tabbladen &rechts sluiten"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2452
 msgid "Close Tabs to the &Left"
-msgstr ""
+msgstr "Tabbladen &links sluiten"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2457
 msgid "Move Tab to &Start"
-msgstr ""
+msgstr "Tabblad naar het begin verplaat&sen"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2459
 msgid "Move Tab to &End"
-msgstr ""
+msgstr "Tabblad naar het &einde verplaatsen"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2464
-#, fuzzy
 msgid "Open Enclosing &Directory"
-msgstr "&Map met logs openen"
+msgstr "Insluiten&de map openen"
 
 #: src/frontends/qt/GuiWorkArea.cpp:2509
 msgid "<b>The file %1 changed on disk.</b>"
@@ -36313,24 +36310,20 @@ msgid "More Spelling Suggestions"
 msgstr "Meer spellingsuggesties"
 
 #: src/frontends/qt/Menus.cpp:889
-#, fuzzy
 msgid "Add to personal dictionary|r"
-msgstr "Toevoegen aan persoonlijk woordenboek|n"
+msgstr "Toevoegen aan persoonlijk woordenboek|r"
 
 #: src/frontends/qt/Menus.cpp:891
-#, fuzzy
 msgid "Ignore this occurrence|o"
-msgstr "Negeer dit woord|g"
+msgstr "Dit woord negeren|o"
 
 #: src/frontends/qt/Menus.cpp:893
-#, fuzzy
 msgid "Ignore all for this session|t"
-msgstr "Negeer alle tijdens deze sessie|l"
+msgstr "Alle negeren tijdens deze sessie||t"
 
 #: src/frontends/qt/Menus.cpp:895
-#, fuzzy
 msgid "Ignore all in this document|u"
-msgstr "Negeer alle in dit &document"
+msgstr "Alle in dit document negeren|u"
 
 #: src/frontends/qt/Menus.cpp:903
 msgid "Remove from personal dictionary|r"
@@ -36341,13 +36334,12 @@ msgid "Remove from document dictionary|r"
 msgstr "Uit persoonlijk woordenboek verwijderen|r"
 
 #: src/frontends/qt/Menus.cpp:940
-#, fuzzy
 msgid "Switch Language...|w"
-msgstr "Taal omschakelen|T"
+msgstr "Taal omschakelen...|T"
 
 #: src/frontends/qt/Menus.cpp:954
 msgid "Language|L"
-msgstr "Taal|T"
+msgstr "Taal|L"
 
 #: src/frontends/qt/Menus.cpp:956
 msgid "More Languages ...|M"
@@ -36607,8 +36599,8 @@ msgid ""
 "LyX does not provide LaTeX support for file names containing any of these "
 "characters:\n"
 msgstr ""
-"LyX heeft geen LaTeX-ondersteuning voor bestandsnamen die een dezer tekens "
-"bevatten:\n"
+"LyX heeft geen LaTeX-ondersteuning voor bestandsnamen die een van deze "
+"tekens bevatten:\n"
 
 #: src/frontends/qt/qt_helpers.cpp:288
 msgid "Invalid URL"
@@ -36729,7 +36721,7 @@ msgstr "Onbekend argument"
 #: src/insets/InsetArgument.cpp:153
 msgid "Argument not known in this Layout. Will be suppressed in the output."
 msgstr ""
-"Argument niet gekend in deze lay-out. Zal weggelaten worden in de uitvoer."
+"Argument niet bekend in deze lay-out. Zal weggelaten worden in de uitvoer."
 
 #: src/insets/InsetBibitem.cpp:99
 msgid "Keys must be unique!"
@@ -37204,7 +37196,7 @@ msgstr "ONTBREKEND:"
 
 #: src/insets/InsetInclude.cpp:430
 msgid "Include (excluded)"
-msgstr "Insluiten (uigesloten)"
+msgstr "Insluiten (uitgesloten)"
 
 #: src/insets/InsetInclude.cpp:539
 #, c-format
@@ -37351,8 +37343,8 @@ msgid ""
 "Offending file:\n"
 "%1$s"
 msgstr ""
-"LyX weet niet hoe niet-LyX-bestanden moeten ingesloten worden bij het "
-"genereren van HTML. Schuldige:\n"
+"LyX weet niet hoe ingesloten niet-LyX-bestanden verwerkt moeten worden bij "
+"het genereren van HTML. Probleembestand:\n"
 "%1$s"
 
 #: src/insets/InsetInclude.cpp:1086
@@ -37363,8 +37355,8 @@ msgid ""
 "Offending file:\n"
 "%1$s"
 msgstr ""
-"LyX weet niet hoe niet-LyX-bestanden moeten ingesloten worden bij het "
-"genereren van DocBook-uitvoer. De inhoud van het bestand zal worden "
+"LyX weet niet hoe ingesloten niet-LyX-bestanden verwerkt moeten worden bij "
+"het genereren van DocBook-uitvoer. De inhoud van het bestand zal worden "
 "uitgevoerd als commentaar. Het problematische bestand:\n"
 "%1$s"
 
@@ -37400,7 +37392,7 @@ msgid ""
 "It will be ignored in the output."
 msgstr ""
 "Er is een lege index-subingang in de ingang '%1$s'.\n"
-"Het zal worden genegeerd in de uitvoer."
+"Hij zal worden genegeerd in de uitvoer."
 
 #: src/insets/InsetIndex.cpp:774
 msgid "Empty index subentry!"
@@ -37447,7 +37439,7 @@ msgid ""
 "Guide."
 msgstr ""
 "Het automatische sorteeralgoritme voor indices van LyX\n"
-"heeft problemen met de ingang  '%1$s'.\n"
+"heeft problemen met de ingang '%1$s'.\n"
 "Stel het sorteren van deze ingang handmatig in,\n"
 "zoals beschreven in de Gebruikersgids."
 
@@ -37562,7 +37554,7 @@ msgstr "De naam van dit bestand (incl. extensie)"
 
 #: src/insets/InsetInfo.cpp:555
 msgid "The name of this file (without extension)"
-msgstr "De naam van dit bestand (excl. extensie)"
+msgstr "De naam van dit bestand (zonder extensie)"
 
 #: src/insets/InsetInfo.cpp:557
 msgid "The path where this file is saved"
@@ -37792,7 +37784,7 @@ msgid ""
 "might help."
 msgstr ""
 "De volgende tekens in een van de codefragmenten kunnen niet\n"
-"voorgesteld worden in de huidige codering en zijn weggelaten:\n"
+"weergegeven worden in de huidige codering en zijn weggelaten:\n"
 "%1$s.\n"
 "Dit is door een beperking van het pakket listings, dat geen\n"
 "ondersteuning heeft voor uw codering '%2$s'.\n"
@@ -37807,7 +37799,7 @@ msgid ""
 "%1$s."
 msgstr ""
 "De volgende tekens in een van de codefragmenten kunnen niet\n"
-"voorgesteld worden in de huidige codering en zijn weggelaten:\n"
+"weergegeven worden in de huidige codering en zijn weggelaten:\n"
 "%1$s."
 
 #: src/insets/InsetListingsParams.cpp:125
@@ -37982,10 +37974,10 @@ msgid ""
 "inset, it is better using the  language combo box, unless you need to enter "
 "a language not offered there, otherwise the combo box will be disabled."
 msgstr ""
-"Voer een van de ondersteunde talen. Als u echter een codefragmentinvoegsel "
-"definieert, is het beter om de talencombobox hieronder te gebruiken, tenzij "
-"u een taal moet ingeven die er niet in staat, anders zal de combobox "
-"uitgeschakeld worden."
+"Voer een van de ondersteunde talen in. Als u echter een "
+"codefragmentinvoegsel definieert, is het beter om de talencombobox hieronder "
+"te gebruiken, tenzij u een taal moet ingeven die er niet in staat, anders "
+"zal de combobox uitgeschakeld worden."
 
 #: src/insets/InsetListingsParams.cpp:839
 msgid "File encoding used by Pygments for highlighting"
@@ -38045,7 +38037,7 @@ msgstr "Onbekende parameter voor codefragment: %1$s"
 #: src/insets/InsetListingsParams.cpp:945
 #, c-format
 msgid "Parameters starting with '%1$s': %2$s"
-msgstr "Parameters beginnende met '%1$s': %2$s"
+msgstr "Parameters beginnend met '%1$s': %2$s"
 
 #: src/insets/InsetMarginal.cpp:36
 msgid "margin"
@@ -38367,7 +38359,7 @@ msgstr "Geen afbeelding"
 
 #: src/insets/RenderPreview.cpp:106
 msgid "Preview loading"
-msgstr "Voorlbeeld laden"
+msgstr "Voorbeeld laden"
 
 #: src/insets/RenderPreview.cpp:109
 msgid "Preview ready"
@@ -38404,7 +38396,7 @@ msgid ""
 "The search string was not found within the selection.\n"
 "Continue search outside?"
 msgstr ""
-"De zoektekst is niet gevonden binnen de selectie\n"
+"De zoektekst is niet gevonden binnen de selectie.\n"
 "Buiten de selectie verder zoeken?"
 
 #: src/lyxfind.cpp:357 src/lyxfind.cpp:709
@@ -38698,7 +38690,7 @@ msgid ""
 "non-title layouts. This could lead to missing or incorrect output."
 msgstr ""
 "U gebruikt minstens een lay-out (%1$s) bedoeld voor de titel na het gebruik "
-"van lay-outs dit geen titel zijn. Dit kan leiden tot ontbrekende of foute "
+"van lay-outs die geen titel zijn. Dit kan leiden tot ontbrekende of foute "
 "uitvoer."
 
 #: src/output_plaintext.cpp:148
@@ -38726,8 +38718,8 @@ msgstr "Binair bestand van LyX niet gevonden"
 msgid ""
 "Unable to determine the path to the LyX binary from the command line %1$s"
 msgstr ""
-"Kan het pad naar het binair bestand van LyX niet vinden vanop de "
-"commandolijn %1$s"
+"Kan het pad naar het binair bestand van LyX niet vinden op de commandoregel "
+"%1$s"
 
 #: src/support/Package.cpp:643
 #, c-format
@@ -38739,7 +38731,7 @@ msgid ""
 msgstr ""
 "Kon de systeemmap niet vinden na het zoeken in\n"
 "\t%1$s\n"
-"Gebruikt de optie '-sysdir' op de commandolijn of stel de "
+"Gebruik de optie '-sysdir' op de commandoregel of stel de "
 "omgevingsvariabele\n"
 "%2$s in op de LyX-systeemmap die het bestand `chkconfig.ltx' bevat."
 
@@ -38848,7 +38840,7 @@ msgstr ""
 
 #: src/support/debug.cpp:52
 msgid "Math editor"
-msgstr "Wiskunde-editor"
+msgstr "Wiskunde-bewerker"
 
 #: src/support/debug.cpp:53
 msgid "Font handling"
@@ -38944,20 +38936,20 @@ msgstr "Mechanisme voor zoeken en vervangen, uitgebreide variant"
 
 #: src/support/debug.cpp:76
 msgid "Developers' general debug messages"
-msgstr "Algemene debugberichten voor ontwikkelaars"
+msgstr "Algemene foutopsporingsberichten voor ontwikkelaars"
 
 #: src/support/debug.cpp:77
 msgid "All debugging messages"
-msgstr "Alle debugberichten"
+msgstr "Alle foutopsporingsberichten "
 
 #: src/support/debug.cpp:78
 msgid "All debugging messages (alias to 'all')"
-msgstr "Alle debugberichten (alias voor 'all')"
+msgstr "Alle foutopsporingsberichten (alias voor 'all')"
 
 #: src/support/debug.cpp:193
 #, c-format
 msgid "Debugging `%1$s' (%2$s)"
-msgstr "Debuggen `%1$s' (%2$s)"
+msgstr "Fouten opsporen `%1$s' (%2$s)"
 
 #: src/support/lassert.cpp:61
 #, c-format
@@ -38965,7 +38957,7 @@ msgid ""
 "Assertion %1$s violated in\n"
 "file: %2$s, line: %3$s"
 msgstr ""
-"Assertion %1$s violated in\n"
+"Aan voorwaarde %1$s niet voldaan in\n"
 "bestand: %2$s, lijn: %3$s"
 
 #: src/support/lassert.cpp:71
@@ -38973,7 +38965,7 @@ msgid ""
 "It should be safe to continue, but you\n"
 "may wish to save your work and restart LyX."
 msgstr ""
-"Het zou moeten lukken om verder te doen,\n"
+"Het zou moeten lukken om verder te gaan,\n"
 "maar u wilt uw werk misschien opslaan en\n"
 "LyX opnieuw starten."
 
