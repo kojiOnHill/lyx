@@ -2210,10 +2210,10 @@ bool GuiView::nextError(string const & error_type, bool from_master, bool teston
 	for (auto const & err : el) {
 		if (TexRow::isNone(err.start) || TexRow::getDocIteratorsFromEntries(err.start, err.end, buf).first <= bv->cursor())
 			continue;
-		if (testonly)
-			return true;
-		DispatchResult dr;
-		dispatch(TexRow::goToFunc(err.start, err.end), dr);
+		if (!testonly) {
+			DispatchResult dr;
+			dispatch(TexRow::goToFunc(err.start, err.end), dr);
+		}
 		return true;
 	}
 
@@ -2717,6 +2717,7 @@ bool GuiView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 		// We guess it's from master if the single buffer list is empty
 		bool const from_master = currentBufferView()->buffer().errorList(d.last_export_format).empty();
 		enable = nextError(d.last_export_format, from_master, true);
+		break;
 	}
 
 	case LFUN_COMMAND_EXECUTE:
