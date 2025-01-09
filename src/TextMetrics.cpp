@@ -1515,8 +1515,7 @@ pit_type TextMetrics::getPitNearY(int y)
 }
 
 
-Row const & TextMetrics::getPitAndRowNearY(int & y, pit_type & pit,
-	bool assert_in_view, bool up)
+Row const & TextMetrics::getRowNearY(int & y, pit_type pit)
 {
 	ParagraphMetrics const & pm = par_metrics_[pit];
 
@@ -1529,48 +1528,21 @@ Row const & TextMetrics::getPitAndRowNearY(int & y, pit_type & pit,
 		if (yy + rit->height() > y)
 			break;
 
-	if (assert_in_view) {
-		if (!up && yy + rit->height() > y) {
-			if (rit != pm.rows().begin()) {
-				y = yy;
-				--rit;
-			} else if (pit != 0) {
-				--pit;
-				newParMetricsUp();
-				ParagraphMetrics const & pm2 = par_metrics_[pit];
-				rit = pm2.rows().end();
-				--rit;
-				y = yy;
-			}
-		} else if (up && yy != y) {
-			if (rit != rlast) {
-				y = yy + rit->height();
-				++rit;
-			} else if (pit < int(text_->paragraphs().size()) - 1) {
-				++pit;
-				newParMetricsDown();
-				ParagraphMetrics const & pm2 = par_metrics_[pit];
-				rit = pm2.rows().begin();
-				y = pm2.position();
-			}
-		}
-	}
 	return *rit;
 }
 
 
 // x,y are absolute screen coordinates
 // sets cursor recursively descending into nested editable insets
-Inset * TextMetrics::editXY(Cursor & cur, int x, int y,
-	bool assert_in_view, bool up)
+Inset * TextMetrics::editXY(Cursor & cur, int x, int y)
 {
 	if (lyxerr.debugging(Debug::WORKAREA)) {
 		LYXERR0("TextMetrics::editXY(cur, " << x << ", " << y << ")");
 		cur.bv().coordCache().dump();
 	}
-	pit_type pit = getPitNearY(y);
+	pit_type const pit = getPitNearY(y);
 	LASSERT(pit != -1, return 0);
-	Row const & row = getPitAndRowNearY(y, pit, assert_in_view, up);
+	Row const & row = getRowNearY(y, pit);
 	cur.pit() = pit;
 
 	// Do we cover an inset?

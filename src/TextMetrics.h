@@ -195,10 +195,8 @@ public:
 	std::pair<pos_type, bool> getPosNearX(Row const & row, int & x) const;
 
 	/// returns the row near the specified y-coordinate in a given paragraph
-	/// (relative to the screen). If assert_in_view is true, it is made sure
-	/// that the row is on screen completely; this might change the given pit.
-	Row const & getPitAndRowNearY(int & y, pit_type & pit,
-		bool assert_in_view, bool up);
+	/// (relative to the screen).
+	Row const & getRowNearY(int & y, pit_type pit);
 
 	/// returns the paragraph number closest to screen y-coordinate.
 	/// This method uses the BufferView CoordCache to locate the
@@ -211,18 +209,13 @@ public:
 	/**
 	\return the inset pointer if x,y is covering that inset
 	\param x,y are absolute screen coordinates.
-	\param assert_in_view if true the cursor will be set on a row
-           that is completely visible
-	\param up whether we are going up or down (only used when
-           assert_in_view is true
 	\retval inset is null if the cursor is positioned over normal
 	       text in the current Text object. Otherwise it is the inset
 	       that the cursor points to, like for Inset::editXY.
 	*/
 	/// FIXME: cleanup to use BufferView::getCoveringInset() and
 	/// setCursorFromCoordinates() instead of checkInsetHit().
-	Inset * editXY(Cursor & cur, int x, int y,
-		bool assert_in_view = false, bool up = true);
+	Inset * editXY(Cursor & cur, int x, int y);
 
 	/// sets cursor only within this Text.
 	/// x,y are screen coordinates

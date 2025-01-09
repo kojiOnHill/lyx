@@ -2161,8 +2161,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		cur.setCursor(doc_iterator_begin(cur.buffer()));
 		cur.selHandle(false);
 
-		d->text_metrics_[&buffer_.text()].editXY(cur, p.x, p.y,
-			false, act == LFUN_SCREEN_UP);
+		d->text_metrics_[&buffer_.text()].editXY(cur, p.x, p.y);
 		//FIXME: what to do with cur.x_target()?
 		bool update = in_texted && cur.bv().checkDepm(cur, old);
 		cur.finishUndo();
