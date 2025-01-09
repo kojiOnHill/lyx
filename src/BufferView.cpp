@@ -2985,13 +2985,6 @@ TextMetrics & BufferView::textMetrics(Text const * t)
 }
 
 
-ParagraphMetrics const & BufferView::parMetrics(Text const * t,
-		pit_type pit) const
-{
-	return textMetrics(t).parMetrics(pit);
-}
-
-
 int BufferView::workHeight() const
 {
 	return height_;
