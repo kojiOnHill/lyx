@@ -58,15 +58,20 @@ public:
 	///
 	void setRowChanged(pit_type pit, pos_type pos);
 
-	///
+	/// Dimension of the entire text.
 	Dimension const & dim() const { return dim_; }
+	/// Dimension of paragraph \c pit if it exists, empty dimension
+	/// otherwise.
+	Dimension const & dim(pit_type pit) const;
 	///
 	Point const & origin() const { return origin_; }
 
-	///
-	ParagraphMetrics const & parMetrics(pit_type) const;
-	///
-	ParagraphMetrics & parMetrics(pit_type);
+	/// Metrics of paragraph \c pit. If no metrics exist or if they
+	/// are empty, recompute metrics for this paragraph.
+	ParagraphMetrics & parMetrics(pit_type pit);
+	/// Identical to the non-const version
+	/// FIXME: a const method should not modify the object!
+	ParagraphMetrics const & parMetrics(pit_type pit) const;
 
 	///
 	void newParMetricsDown();
@@ -156,8 +161,6 @@ public:
 	void drawParagraph(PainterInfo & pi, pit_type pit, int x, int y) const;
 
 private:
-	///
-	ParagraphMetrics & parMetrics(pit_type, bool redo_paragraph);
 
 	/// the minimum space a manual label needs on the screen in pixels
 	int labelFill(Row const & row) const;
