@@ -1515,8 +1515,10 @@ pit_type TextMetrics::getPitNearY(int y)
 }
 
 
-Row const & TextMetrics::getRowNearY(int & y, pit_type pit)
+Row const * TextMetrics::getRowNearY(int & y)
 {
+	pit_type const pit = getPitNearY(y);
+	LASSERT(pit != -1, return nullptr);
 	ParagraphMetrics const & pm = par_metrics_[pit];
 
 	int yy = pm.top();
@@ -1528,7 +1530,7 @@ Row const & TextMetrics::getRowNearY(int & y, pit_type pit)
 		if (yy + rit->height() > y)
 			break;
 
-	return *rit;
+	return &(*rit);
 }
 
 
@@ -1536,17 +1538,16 @@ Row const & TextMetrics::getRowNearY(int & y, pit_type pit)
 // sets cursor recursively descending into nested editable insets
 Inset * TextMetrics::editXY(Cursor & cur, int x, int y)
 {
-	pit_type const pit = getPitNearY(y);
-	LASSERT(pit != -1, return 0);
-	Row const & row = getRowNearY(y, pit);
-	cur.pit() = pit;
+	Row const * row = getRowNearY(y);
+	LASSERT(row != nullptr, return nullptr);
+	cur.pit() = row->pit();
 
 	// Do we cover an inset?
-	Row::Element const * e = checkInsetHit(row, x);
+	Row::Element const * e = checkInsetHit(*row, x);
 
 	if (!e) {
 		// No inset, set position in the text
-		auto [pos, bound] = getPosNearX(row, x);
+		auto [pos, bound] = getPosNearX(*row, x);
 		cur.pos() = pos;
 		cur.boundary(bound);
 		cur.setCurrentFont();
@@ -1570,7 +1571,7 @@ Inset * TextMetrics::editXY(Cursor & cur, int x, int y)
 		// non-editable inset, set cursor after the inset if x is
 		// nearer to that position (bug 9628)
 		// No inset, set position in the text
-		auto [pos, bound] = getPosNearX(row, x);
+		auto [pos, bound] = getPosNearX(*row, x);
 		cur.pos() = pos;
 		cur.boundary(bound);
 		cur.setCurrentFont();
@@ -1587,12 +1588,10 @@ void TextMetrics::setCursorFromCoordinates(Cursor & cur, int x, int y)
 {
 	LASSERT(text_ == cur.text(), return);
 
-	pit_type const pit = getPitNearY(y);
-	LASSERT(pit != -1, return);
-
-	Row const & row = getRowNearY(y, pit);
-	auto [pos, bound] = getPosNearX(row, x);
-	text_->setCursor(cur, pit, pos, true, bound);
+	Row const * row = getRowNearY(y);
+	LASSERT(row != nullptr, return);
+	auto [pos, bound] = getPosNearX(*row, x);
+	text_->setCursor(cur, row->pit(), pos, true, bound);
 	// remember new position.
 	cur.setTargetX();
 }
@@ -1624,10 +1623,9 @@ Row::Element const * TextMetrics::checkInsetHit(Row const & row, int x) const
 //takes screen x,y coordinates
 Inset * TextMetrics::checkInsetHit(int x, int y)
 {
-	pit_type const pit = getPitNearY(y);
-	LASSERT(pit != -1, return nullptr);
-	Row const & row = getRowNearY(y, pit);
-	Row::Element const * e = checkInsetHit(row, x);
+	Row const * row = getRowNearY(y);
+	LASSERT(row != nullptr, return nullptr);
+	Row::Element const * e = checkInsetHit(*row, x);
 
 	return e ? const_cast<Inset *>(e->inset) : nullptr;
 }
