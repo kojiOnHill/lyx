@@ -1536,17 +1536,13 @@ Row const & TextMetrics::getRowNearY(int & y, pit_type pit)
 // sets cursor recursively descending into nested editable insets
 Inset * TextMetrics::editXY(Cursor & cur, int x, int y)
 {
-	if (lyxerr.debugging(Debug::WORKAREA)) {
-		LYXERR0("TextMetrics::editXY(cur, " << x << ", " << y << ")");
-		cur.bv().coordCache().dump();
-	}
 	pit_type const pit = getPitNearY(y);
 	LASSERT(pit != -1, return 0);
 	Row const & row = getRowNearY(y, pit);
 	cur.pit() = pit;
 
 	// Do we cover an inset?
-	InsetList::Element * e = checkInsetHit(pit, x, y);
+	Row::Element const * e = checkInsetHit(row, x);
 
 	if (!e) {
 		// No inset, set position in the text
@@ -1558,7 +1554,7 @@ Inset * TextMetrics::editXY(Cursor & cur, int x, int y)
 		return 0;
 	}
 
-	Inset * inset = e->inset;
+	Inset * inset = const_cast<Inset *>(e->inset);
 	//lyxerr << "inset " << inset << " hit at x: " << x << " y: " << y << endl;
 
 	// Set position in front of inset
@@ -1603,23 +1599,24 @@ void TextMetrics::setCursorFromCoordinates(Cursor & cur, int x, int y)
 
 
 //takes screen x,y coordinates
-InsetList::Element * TextMetrics::checkInsetHit(pit_type pit, int x, int y)
+Row::Element const * TextMetrics::checkInsetHit(Row const & row, int x) const
 {
-	Paragraph const & par = text_->paragraphs()[pit];
-	CoordCache::Insets const & insetCache = bv_->coordCache().getInsets();
+	int const xo = origin_.x;
+	x -= xo;
 
-	LYXERR(Debug::PAINTING, "x: " << x << " y: " << y << "  pit: " << pit);
+	// Adapt to cursor row scroll offset if applicable.
+	int const offset = bv_->horizScrollOffset(text_, row.pit(), row.pos());
+	x += offset;
 
-	for (InsetList::Element const & e : par.insetList()) {
-		LYXERR(Debug::PAINTING, "examining inset " << e.inset);
-
-		if (insetCache.covers(e.inset, x, y)) {
-			LYXERR(Debug::PAINTING, "Hit inset: " << e.inset);
-			return const_cast<InsetList::Element *>(&e);
-		}
+	int xx = row.left_margin;
+	for (auto const & e : row) {
+		if (xx > x)
+			break;
+		if (xx + e.full_width() > x)
+			return (e.type == Row::INSET) ? &e : nullptr;
+		xx += e.full_width();
 	}
 
-	LYXERR(Debug::PAINTING, "No inset hit. ");
 	return nullptr;
 }
 
@@ -1628,13 +1625,11 @@ InsetList::Element * TextMetrics::checkInsetHit(pit_type pit, int x, int y)
 Inset * TextMetrics::checkInsetHit(int x, int y)
 {
 	pit_type const pit = getPitNearY(y);
-	LASSERT(pit != -1, return 0);
-	InsetList::Element * e = checkInsetHit(pit, x, y);
+	LASSERT(pit != -1, return nullptr);
+	Row const & row = getRowNearY(y, pit);
+	Row::Element const * e = checkInsetHit(row, x);
 
-	if (!e)
-		return 0;
-
-	return e->inset;
+	return e ? const_cast<Inset *>(e->inset) : nullptr;
 }
 
 

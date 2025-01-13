@@ -184,7 +184,7 @@ private:
 	int parBottomSpacing(pit_type pit) const;
 
 	// Helper function for the other checkInsetHit method.
-	InsetList::Element * checkInsetHit(pit_type pit, int x, int y);
+	Row::Element const * checkInsetHit(Row const & row, int x) const;
 
 
 // Temporary public:
