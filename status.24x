@@ -1,6 +1,6 @@
 -*- text -*-
 
-This file describes what has been done in the preparation of LyX 2.4.3.
+This file describes what has been done in the preparation of LyX 2.4.4.
 All comments are welcome.
 
 We try to group things by topic and in decreasing order of importance.
@@ -15,8 +15,6 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- The "URW Classico (Optima)" TeX fonts are now also supported via
-  the classico LaTeX package (bug 13124).
 
 
 * MISCELLANEOUS
@@ -29,30 +27,11 @@ What's new
 
 * USER INTERFACE
 
-- It is now possible to inserts cross references to sections via
-  the outliner, even of they do not have a label yet. In the latter
-  case, a label is autonatically inserted.
 
-- Approximate word count for cross-references in document statistics.
-
-- Document PDF settings allow color links and frames around them.
-  These two settings are mutually exclusive by default and we signal
-  that within UI now. Workarounds can be found in our and hyperref manual.
-
-- Fix display of superscripts on Windows (bug 13100).
-
-- It is now possible to use inset-forall for math equations with the selector
-  "Formula" or "Formula:eqnarray", for example.
 
 
 * DOCUMENTATION AND LOCALIZATION
 
-- Major update of Swedish localization of the user interface.
-
-- Update Basque, Brazilian Portuguese, Czech, Dutch, French, German,
-  Italian, Japanese, Slovak, Swedish, and Ukranainan translations.
-
-- Include DocBook documentation in German customization manual.
 
 
 
@@ -66,50 +45,20 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- Fix size of Logical and/or characters in LaTeX output (bug 13099).
-
-- Work around bug in aa.cls in the "Astronomy & Astrophysics" template
-  and example documents.
-
-- Fix instant preview of lilypond snippets (bug 13103).
-
-- Fix LaTeX error with listings, book classes and utf8 encoding.
-
-- Fix loading order of fancyhdr (bug 13118).
-
-- Fix spacing problems in previews with math macros under specific
-  circumstances (bug 13120).
-
-- Fix tabular styles on systems with blanks in system directory path.
-
-- Fix inclusion of bibliography files in a LyX archive when the document
-  was imported from a LaTeX source (bug 13129).
 
 
 * USER INTERFACE
 
-- Allow negative offset values in Horizontal Line dialog (bug 13102).
-
-- Use proper background color with default branches and system colors.
-
-- Fix handling of (biblatex) bib file encodings in dialog (bug 13109).
-
-- Fix problem with display of heading in document float settings.
-
-- Fix some layout problems with the About LyX dialog.
-
-- Fix missing label prefixes with some AMS theorem modules (bug 13125).
+- Fix crash in batch LyX when ui_style is set (bug 13141).
 
 
 * INTERNALS
 
-- Fix some defects found by Coverity.
+
 
 
 * DOCUMENTATION AND LOCALIZATION
 
-- All URLs in the included documents have been verified, outdated
-  links have been updated.
 
 
 * LYX2LYX
@@ -130,10 +79,4 @@ What's new
 
 * BUILD/INSTALLATION
 
-- Fix (only informational) check for hyphenation patterns in 
-  (re)configuration.
-
-- Improve check for package versions in (re)configuration. Particularly,
-  configuration does not break any longer if a sub-dependency of a 
-  tested package is missing (bug 13112),
 
