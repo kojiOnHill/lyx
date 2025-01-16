@@ -512,6 +512,7 @@ enum FuncCode
 	LFUN_REFERENCE_INSERT,          // spitz, 20240728
 	// 400
 	LFUN_REFERENCE_TO_PARAGRAPH,    // spitz, 20240728
+	LFUN_ERRORS_SHOW,               // spitz, 20241231
 	LFUN_ERROR_NEXT,                // spitz, 20200101,
 	LFUN_LASTACTION                 // end of the table
 };

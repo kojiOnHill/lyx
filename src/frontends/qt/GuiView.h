@@ -174,7 +174,8 @@ public:
 	void resetAutosaveTimers() override;
 	// shows an error list
 	// if from_master is true, show master's error list
-	void errors(std::string const &, bool from_master = false) override;
+	void errors(std::string const &, bool from_master = false,
+		    int const item = -1) override;
 	void structureChanged() override;
 	void updateTocItem(std::string const &, DocIterator const &) override;
 	//@}

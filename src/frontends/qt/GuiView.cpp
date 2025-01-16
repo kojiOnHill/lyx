@@ -2168,7 +2168,7 @@ void GuiView::disconnectBufferView()
 }
 
 
-void GuiView::errors(string const & error_type, bool from_master)
+void GuiView::errors(string const & error_type, bool from_master, int const item)
 {
 	BufferView const * const bv = currentBufferView();
 	if (!bv)
@@ -2184,6 +2184,8 @@ void GuiView::errors(string const & error_type, bool from_master)
 	string err = error_type;
 	if (from_master)
 		err = "from_master|" + error_type;
+	if (item != -1)
+		err += "@" + convert<string>(item);
 	showDialog("errorlist", err);
 }
 
@@ -2701,6 +2703,12 @@ bool GuiView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 		string const name = cmd.getArg(0);
 		if (!buf)
 			enable = name == "prefs";
+		break;
+	}
+
+	case LFUN_ERRORS_SHOW: {
+		enable = buf && (!buf->errorList(d.last_export_format).empty()
+				 || !buf->masterBuffer()->errorList(d.last_export_format).empty());
 		break;
 	}
 
@@ -4957,6 +4965,13 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 				showDialog("prefs", sdata);
 			} else
 				showDialog(name, sdata);
+			break;
+		}
+
+		case LFUN_ERRORS_SHOW: {
+			// We guess it's from master if the single buffer list is empty
+			bool const from_master = bv->buffer().errorList(d.last_export_format).empty();
+			errors(d.last_export_format, from_master, nextError(d.last_export_format, from_master, false, true));
 			break;
 		}
 
