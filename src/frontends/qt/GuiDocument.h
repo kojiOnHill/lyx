@@ -312,6 +312,8 @@ private:
 	void setCustomPapersize(bool custom);
 private:
 	///
+	void closeEvent(QCloseEvent * e) override;
+	///
 	void loadModuleInfo();
 	///
 	void updateUnknownBranches();
@@ -337,6 +339,8 @@ private:
 	void checkPossibleCiteEngines();
 	///
 	void filterModules(QString const & string);
+	///
+	void checkOnClosing();
 	///
 	BufferParams bp_;
 	/// Store buffer filename for the case we switch with
