@@ -2412,7 +2412,7 @@ public:
 
 void LatexInfo::buildEntries(bool isPatternString)
 {
-	static regex const rmath("(\\\\)*(\\$|\\\\\\[|\\\\\\]|\\\\(begin|end)\\{((eqnarray|equation|flalign|gather|multline|align|x?x?alignat)\\*?\\})(\\{[0-9]+\\})?)");
+	static regex const rmath("(\\\\)*(\\$|\\\\\\[|\\\\\\]|\\\\(begin|end)\\{((eqnarray|equation|flalign|gather|multline|multiline|align|x?x?alignat)\\*?\\})(\\{[0-9]+\\})?)");
 	static regex const rkeys("(\\\\)*(\\$|\\\\\\[|\\\\\\]|\\\\((([a-zA-Z]+\\*?)(\\{([a-z]+\\*?)\\}|=[0-9]+[a-z]+)?)))");
 	static bool disableLanguageOverride = false;
 	smatch sub, submath;
