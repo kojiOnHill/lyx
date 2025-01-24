@@ -547,17 +547,30 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 			left_margin = d->rows_[caret_row.index].left_margin;
 			inset_offset = 0;
 		}
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
 		if (d->real_boundary_ && !d->im_state_.edit_mode_)
 			caret_offset[0] = qfm.horizontalAdvance(lastline_str);
 		else
 			caret_offset[0] = - d->init_point_.x + left_margin
 			        + inset_offset + qfm.horizontalAdvance(lastline_str);
+#else
+		if (d->real_boundary_ && !d->im_state_.edit_mode_)
+			caret_offset[0] = qfm.width(lastline_str);
+		else
+			caret_offset[0] = - d->init_point_.x + left_margin
+			        + inset_offset + qfm.width(lastline_str);
+#endif
 	} else {
 		int left_margin_diff = d->rows_[caret_row.index].left_margin -
 		        d->rows_[d->cur_row_idx_].left_margin;
 		// the case in which the preedit caret is in the first row of the preedit
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
 		caret_offset[0] =
 		        left_margin_diff + qfm.horizontalAdvance(str_before_caret);
+#else
+		caret_offset[0] =
+		        left_margin_diff + qfm.width(str_before_caret);
+#endif
 	}
 
 	// vertical offset only applicable to main text
@@ -1124,14 +1137,22 @@ void GuiInputMethod::setAbsolutePosition(Cursor & cur) const
 int GuiInputMethod::horizontalAdvance(docstring const & s,
                                       pos_type const char_format_index) {
 	QFontMetrics qfm(charFormat(char_format_index).font());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
 	return qfm.horizontalAdvance(toqstr(s));
+#else
+	return qfm.width(toqstr(s));
+#endif
 }
 
 int GuiInputMethod::horizontalAdvance(docstring const & s) {
 	QTextCharFormat qtcf;
 	conformToSurroundingFont(qtcf);
 	QFontMetrics qfm(qtcf.font());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
 	return qfm.horizontalAdvance(toqstr(s));
+#else
+	return qfm.width(toqstr(s));
+#endif
 }
 
 bool GuiInputMethod::canWrapAnywhere(pos_type const char_format_index) {
