@@ -770,11 +770,9 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 		Q_EMIT queryProcessed((qlonglong)d->work_area_->inputMethodHints());
 		break;
 	}
-	// Qt::ImAnchorRectangle holds the selection rectangle in preedit,
-	// which appeared in Qt 5.7.
+	// Qt::ImAnchorRectangle holds the selection rectangle in preedit.
 	// it seems this property is not yet used by most of input methods
 	// as of August 2024.
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
 	case Qt::ImAnchorRectangle: {
 		LYXERR(Debug::DEBUG, msg << " x:" << d->im_state_.anchor_rect_.x()
 		       << " y:" << d->im_state_.anchor_rect_.y()
@@ -783,7 +781,6 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 		Q_EMIT queryProcessed(d->im_state_.anchor_rect_);
 		break;
 	}
-#endif
 	default: {
 		QVariant null;
 		Q_EMIT queryProcessed(null);
