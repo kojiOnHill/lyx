@@ -1075,6 +1075,11 @@ void GuiInputMethod::setSurroundingText(const Cursor & cur) {
 	       d->im_state_.text_after_);
 
 	// notify the input method about the update
+#if QT_VERSION < QT_VERSION_CHECK(5, 12, 0)
+	// work around Qt bug
+	// see: https://code.qt.io/cgit/qt/qtbase.git/commit/?id=e759d38d
+	using ::operator|;
+#endif
 	Q_EMIT inputMethodStateChanged(Qt::ImSurroundingText |
 	                               Qt::ImTextBeforeCursor |
 	                               Qt::ImTextAfterCursor);
