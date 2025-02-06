@@ -131,7 +131,7 @@ docstring const MacroData::xmlname() const
 
 char const * MacroData::MathMLtype() const
 {
-	return sym_ ? sym_->MathMLtype() : 0;
+	return sym_ ? sym_->mathml_type() : 0;
 }
 
 
