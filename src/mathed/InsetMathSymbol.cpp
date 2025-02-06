@@ -166,7 +166,7 @@ void InsetMathSymbol::mathmlize(MathMLStream & ms) const
 	if (sym_->xmlname == "x") {
 		// unknown so far
 		ms << name();
-	} else if (strcmp(sym_->mathml_type(), "mi") == 0) {
+	} else if (sym_->mathml_type() == "mi") {
 		// If it's a character or a Greek letter (i.e. "mi"), map to a font.
 		ms << StartRespectFont() << sym_->xmlname << StopRespectFont();
 	} else {
@@ -181,8 +181,7 @@ void InsetMathSymbol::htmlize(HtmlStream & os, bool spacing) const
 {
 	// FIXME We may need to do more interesting things
 	// with MathMLtype.
-	char const * type = sym_->mathml_type();
-	bool op = (std::string(type) == "mo");
+	bool op = sym_->mathml_type() == "mo";
 
 	if (sym_->xmlname == "x")
 		// unknown so far
