@@ -33,7 +33,7 @@ public:
 	///
 	latexkeys() : hidden(false) {}
 	///
-	char const * mathml_type() const;
+	std::string mathml_type() const;
 	/// name of the macro or primitive
 	docstring name;
 	/// name of an inset that handles that macro
