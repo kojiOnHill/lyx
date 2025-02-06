@@ -127,11 +127,6 @@ void InsetERT::docbook(XMLStream & xs, OutputParams const & runparams) const
 			break;
 	}
 
-//	// Implement the special case of \and: split the current item.
-//	if (os.str() == "\\and" || os.str() == "\\and ") {
-//		auto lay = getLayout();
-//	}
-
 	// Try to recognise some commands to have a nicer DocBook output.
 	bool output_as_comment = true;
 
