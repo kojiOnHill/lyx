@@ -166,12 +166,6 @@ InsetLayout Flex:Surname
     LabelString     "Surname"
 End
 
-InsetLayout Flex:Equal_Content
-    CopyStyle       Flex:First_Name
-    LatexName       equalcont
-    LabelString     "Equal Content"
-End
-
 InsetLayout Flex:Department
     CopyStyle       Flex:First_Name
     LatexName	    orgdiv
@@ -239,7 +233,7 @@ Style BackMatter
   LabelType         Static
   LabelBottomSep    0
   LeftMargin        MMMMM
-  LabelString       "----------- Beginn Backmatter ----------"
+  LabelString       "----------- Begin Backmatter ----------"
   LabelFont 
 	Family          typewriter
 	Series          Medium
