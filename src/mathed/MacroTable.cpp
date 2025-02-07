@@ -132,7 +132,7 @@ docstring const MacroData::xmlname() const
 char const * MacroData::MathMLtype() const
 {
 	// TODO: when LyX requires C++17, move to string_view.
-	return sym_ ? sym_->mathml_type().c_str() : 0;
+	return sym_ ? sym_->mathml_type().c_str() : nullptr;
 }
 
 
