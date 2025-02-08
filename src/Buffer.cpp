@@ -5687,7 +5687,7 @@ void Buffer::Impl::fileExternallyModified(bool const exists)
 		//Essentially the same problem as in FileMonitorGuard::refresh.
 		//'exists' is not reliable marker of file removal here, e.g.
 		//file overwrite often causes short-term removal, see #12819.
-		std::this_thread::sleep_for(100ms);
+		std::this_thread::sleep_for(200ms);
 		FileName refreshf (filename.absFileName());
 		//Only double check with delay will trigger warning
 		if(refreshf.exists())
