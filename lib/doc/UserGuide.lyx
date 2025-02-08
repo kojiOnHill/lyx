@@ -9714,12 +9714,14 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim
+
 This is Verbatim.
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
+
 The following 2 lines are empty:
 \end_layout
 
@@ -9732,6 +9734,7 @@ The following 2 lines are empty:
 \end_layout
 
 \begin_layout Verbatim
+
 Almost everything is allowed in Verbatim:"%&$§#~'`
 \backslash
 }][{|
@@ -9755,6 +9758,7 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim*
+
 This is Verbatim*.
 \end_layout
 
@@ -18571,6 +18575,138 @@ Export\SpecialChar menuseparator
 LyXHTML
 \family default
 .
+\change_inserted 1075283030 1738976031
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\change_inserted 1075283030 1738976049
+DocBook
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 1075283030 1738976031
+File formats
+\begin_inset IndexMacro subentry
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1075283030 1738976038
+DocBook
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 1075283030 1738976042
+DocBook
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1075283030 1738976174
+This file type has the extension 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+.
+\family default
+xml
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It is typically not suited for direct consumption;
+ instead,
+ DocBook documents should be processed with a suitable toolchain such as the DocBook StyleSheets or DocBook xslTNG.
+ It does not itself contain images and the like but only links to them.
+ When \SpecialChar LyX
+ produces DocBook,
+ it also generates corresponding images in formats suitable for the purpose.
+ For the math output,
+ you can choose in the menu 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+Output
+\family default
+ between different formats.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1075283030 1738976181
+DocBook output remains 
+\begin_inset Quotes eld
+\end_inset
+
+under development
+\begin_inset Quotes erd
+\end_inset
+
+,
+ and not all \SpecialChar LyX
+ features are supported yet.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1075283030 1738976809
+You can export your document as an XHTML file using the menu item 
+\family sans
+File\SpecialChar menuseparator
+Export\SpecialChar menuseparator
+
+\family default
+DocBook
+\begin_inset space ~
+\end_inset
+
+5.
+ You can add raw XML in your DocBook documents using \SpecialChar TeX
+ Code (see section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:DocBook-raw"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Subsection
@@ -40044,6 +40180,84 @@ Roman{page}
 \end_inset
 
 
+\change_inserted 1075283030 1738975469
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 1075283030 1738975518
+Raw XML for DocBook output
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 1075283030 1738975497
+DocBook
+\begin_inset IndexMacro subentry
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1075283030 1738975500
+Raw XML
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:DocBook-raw"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1075283030 1738975983
+\SpecialChar TeX
+ Code boxes can also be used in conjunction with DocBook output.
+ Some common cases are natively recognised,
+ like some encodings of special characters (for instance,
+ 
+\family typewriter
+
+\backslash
+"u
+\family default
+ for ü),
+ which are then converted to valid DocBook.
+ If these boxes contain raw XML,
+ it will also be output as-is in all modes (DocBook,
+ HTML,
+ LaTeX,
+ etc.);
+ raw XML is recognised as a series of XML tags (with an equal number of 
+\family typewriter
+<
+\family default
+ and 
+\family typewriter
+>
+\family default
+).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -40058,7 +40272,7 @@ name "sec:Customized-Page-Headers"
 \begin_inset Index idx
 range none
 pageformat default
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Document
