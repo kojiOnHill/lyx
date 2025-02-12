@@ -1231,7 +1231,8 @@ bool Buffer::readString(string const & s)
 }
 
 
-Buffer::ReadStatus Buffer::readFile(FileName const & fn)
+Buffer::ReadStatus Buffer::readFile(FileName const & fn,
+				    string const ofn)
 {
 	Lexer lex;
 	if (!lex.setFile(fn)) {
@@ -1251,7 +1252,7 @@ Buffer::ReadStatus Buffer::readFile(FileName const & fn)
 		ReadStatus ret_clf = convertLyXFormat(fn, tmpFile, file_format);
 		if (ret_clf != ReadSuccess)
 			return ret_clf;
-		ret_clf = readFile(tmpFile);
+		ret_clf = readFile(tmpFile, fn.absFileName());
 		if (ret_clf == ReadSuccess) {
 			d->file_format = file_format;
 			d->need_format_backup = true;
@@ -1264,10 +1265,20 @@ Buffer::ReadStatus Buffer::readFile(FileName const & fn)
 	lyxvc().file_found_hook(d->filename);
 
 	if (readDocument(lex)) {
-		Alert::error(_("Document format failure"),
-			bformat(_("%1$s ended unexpectedly, which means"
-				" that it is probably corrupted."),
-					from_utf8(fn.absFileName())));
+		// if we have a lyx2lyx-converted document, tell user both
+		// the original file name and the converted's as the corruption
+		// might be in the latter only or in both (#13153).
+		docstring const msg = ofn.empty()
+				? bformat(_("%1$s ended unexpectedly, which means"
+					    " that it is probably corrupted."),
+					    from_utf8(fn.absFileName()))
+				: bformat(_("The converted version of %1$s to current LyX format"
+					    " ended unexpectedly, which means"
+					    " that it is probably corrupted.\n"
+					    "You can find the converted file at %2$s"
+					    " while LyX is running."),
+					  from_utf8(ofn), from_utf8(fn.absFileName()));
+		Alert::error(_("Document format failure"), msg);
 		return ReadDocumentFailure;
 	}
 
