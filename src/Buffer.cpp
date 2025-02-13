@@ -2924,7 +2924,6 @@ void Buffer::dispatch(FuncRequest const & func, DispatchResult & dr)
 		dr.dispatched(false);
 		return;
 	}
-	string const argument = to_utf8(func.argument());
 	// We'll set this back to false if need be.
 	bool dispatched = true;
 	// This handles undo groups automagically
@@ -2942,8 +2941,9 @@ void Buffer::dispatch(FuncRequest const & func, DispatchResult & dr)
 		break;
 
 	case LFUN_BUFFER_EXPORT: {
-		string const format = (argument.empty() || argument == "default") ?
-			params().getDefaultOutputFormat() : argument;
+		string const & arg = to_utf8(func.argument());
+		string const format = (arg.empty() || arg == "default") ?
+			params().getDefaultOutputFormat() : arg;
 		ExportStatus const status = doExport(format, false);
 		dr.setError(status != ExportSuccess);
 		if (status != ExportSuccess)
@@ -2962,7 +2962,7 @@ void Buffer::dispatch(FuncRequest const & func, DispatchResult & dr)
 
 	case LFUN_BUFFER_EXPORT_CUSTOM: {
 		string format_name;
-		string command = split(argument, format_name, ' ');
+		string command = split(to_utf8(func.argument()), format_name, ' ');
 		Format const * format = theFormats().getFormat(format_name);
 		if (!format) {
 			lyxerr << "Format \"" << format_name
