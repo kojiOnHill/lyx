@@ -1746,9 +1746,6 @@ void GuiApplication::validateCurrentView()
 
 void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 {
-	string const argument = to_utf8(cmd.argument());
-	FuncCode const action = cmd.action();
-
 	LYXERR(Debug::ACTION, "cmd: " << cmd);
 
 	// we have not done anything wrong yet.
@@ -1758,8 +1755,8 @@ void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 	if (!flag.enabled()) {
 		// We cannot use this function here
 		LYXERR(Debug::ACTION, "action "
-		       << lyxaction.getActionName(action)
-		       << " [" << action << "] is disabled at this location");
+		       << lyxaction.getActionName(cmd.action())
+		       << " [" << cmd.action() << "] is disabled at this location");
 		dr.setMessage(flag.message());
 		dr.setError(true);
 		dr.dispatched(false);
@@ -2047,6 +2044,7 @@ void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 	case LFUN_REPEAT: {
 		// repeat command
 		string countstr;
+		string argument = to_utf8(cmd.argument());
 		string rest = split(argument, countstr, ' ');
 		int const count = convert<int>(countstr);
 		// an arbitrary number to limit number of iterations
@@ -2066,7 +2064,7 @@ void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 
 	case LFUN_COMMAND_SEQUENCE: {
 		// argument contains ';'-terminated commands
-		string arg = argument;
+		string arg = to_utf8(cmd.argument());
 		// FIXME: this LFUN should also work without any view.
 		Buffer * buffer = (current_view_ && current_view_->documentBufferView())
 				  ? &(current_view_->documentBufferView()->buffer()) : nullptr;
@@ -2158,7 +2156,7 @@ void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 
 	case LFUN_COMMAND_ALTERNATIVES: {
 		// argument contains ';'-terminated commands
-		string arg = argument;
+		string arg = to_utf8(cmd.argument());
 		while (!arg.empty()) {
 			string first;
 			arg = split(arg, first, ';');
@@ -2175,6 +2173,7 @@ void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 
 	case LFUN_CALL: {
 		FuncRequest func;
+		string const argument = to_utf8(cmd.argument());
 		if (theTopLevelCmdDef().lock(argument, func)) {
 			func.setOrigin(cmd.origin());
 			dispatch(func);
@@ -2217,7 +2216,7 @@ void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			"templates/"), "defaults.lyx");
 		Buffer defaults(fname);
 
-		istringstream ss(argument);
+		istringstream ss(to_utf8(cmd.argument()));
 		Lexer lex;
 		lex.setStream(ss);
 
