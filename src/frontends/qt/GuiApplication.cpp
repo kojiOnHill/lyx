@@ -1829,16 +1829,15 @@ void GuiApplication::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 
 	case LFUN_BUFFER_NEW_TEMPLATE: {
 		string const file = (cmd.getArg(0) == "newfile") ? string() : cmd.getArg(0);
-		string const temp = cmd.getArg(1);
 		validateCurrentView();
 		if (!current_view_
 		   || (!lyxrc.open_buffers_in_tabs && current_view_->documentBufferView() != nullptr)) {
 			createAndShowView();
-			current_view_->newDocument(file, temp, true);
+			current_view_->newDocument(file, cmd.getArg(1), true);
 			if (!current_view_->documentBufferView())
 				current_view_->close();
 		} else {
-			current_view_->newDocument(file, temp, true);
+			current_view_->newDocument(file, cmd.getArg(1), true);
 		}
 		break;
 	}
