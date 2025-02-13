@@ -95,7 +95,7 @@ public:
 	QString browse(QString const & file, QString const & title);
 
 	/// set a color
-	void setColor(ColorCode col, QString const & hex);
+	void setColor(ColorCode col, std::pair<QString, QString> const & hex);
 
 	LyXRC & rc() { return rc_; }
 	Converters & converters() { return converters_; }
@@ -252,25 +252,48 @@ public:
 	void updateRC(LyXRC const & rc) override;
 
 private Q_SLOTS:
+	void changeLightColor(){ changeColor(false); }
+	void changeDarkColor() { changeColor(true);  }
 	void changeColor();
 	void resetColor();
 	void resetAllColor();
 	void changeSysColor();
 	void changeLyxObjectsSelection();
-	bool setColor(int const row, QColor const & new_color,
+	bool setColor(int const row, std::pair<QColor, QColor> const & new_colors,
+		      std::pair<QString, QString> const & old_colors);
+	bool setColor(int const row, bool const dark_mode, QColor const & new_color,
 		      QString const & old_color);
-	bool isDefaultColor(int const row, QString const & color);
+	bool isDefaultColor(int const row, std::pair<QString, QString> const & color);
 	void setDisabledResets();
+	void saveTheme();
+	void loadTheme(int index);
+	void changeCurrentItem(QListWidgetItem *cur = nullptr,
+	                       QListWidgetItem *prev = nullptr);
+	void pressCurrentItem(QListWidgetItem * item = nullptr);
 
 private:
 	///
-	QColor getDefaultColorByRow(int const row);
+	void changeColor(bool dark_color);
+	///
+	//QColor getDefaultColorByRow(int const row);
+	///
+	std::pair<QColor, QColor> getDefaultColorsByRow(int const row);
+	///
+	QIcon constructIcon(std::pair<QColor, QColor> const colors,
+	                    bool const selected = false);
+	///
+	QIcon updateIcon(int const row, QColor const color, bool const dark_mode,
+	                 bool const selected);
+	///
+	void updateAllIcons();
+	///
+	void initializeLoadThemeCO();
 	///
 	std::vector<ColorCode> lcolors_;
 	///
-	std::vector<QString> curcolors_;
+	std::vector<std::pair<QString, QString>> curcolors_;
 	///
-	std::vector<QString> newcolors_;
+	std::vector<std::pair<QString, QString>> newcolors_;
 };
 
 

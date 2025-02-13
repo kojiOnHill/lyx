@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>397</width>
-    <height>254</height>
+    <width>436</width>
+    <height>308</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,10 +20,20 @@
    <string/>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0">
+    <widget class="QCheckBox" name="syscolorsCB">
+     <property name="toolTip">
+      <string>Use the color scheme of your Operating System/Desktop Environment</string>
+     </property>
+     <property name="text">
+      <string>&amp;Use system colors</string>
+     </property>
+    </widget>
+   </item>
    <item row="1" column="1">
     <spacer name="horizontalSpacer">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -34,8 +44,8 @@
     </spacer>
    </item>
    <item row="0" column="0" colspan="2">
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0" rowspan="5">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0,0,0,0,0,0,0" columnstretch="0,0">
+     <item row="4" column="0" rowspan="9">
       <widget class="QListWidget" name="lyxObjectsLW">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
@@ -44,11 +54,37 @@
         </sizepolicy>
        </property>
        <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
+        <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
+     <item row="6" column="1">
+      <widget class="QPushButton" name="colorResetPB">
+       <property name="toolTip">
+        <string>Reset the selected color to its original value</string>
+       </property>
+       <property name="text">
+        <string>&amp;Restore Default</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QComboBox" name="loadThemeCO">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Load preset color theme</string>
+       </property>
+       <property name="placeholderText">
+        <string>    Load Theme</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
       <widget class="QPushButton" name="colorChangePB">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -57,37 +93,78 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Change the selected color</string>
+        <string>Change the selected light-mode color</string>
        </property>
        <property name="text">
-        <string>A&amp;lter...</string>
+        <string>Alter &amp;Light Color...</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="colorResetPB">
+     <item row="9" column="1">
+      <widget class="QPushButton" name="saveThemePB">
        <property name="toolTip">
-        <string>Reset the selected color to its original value</string>
+        <string>Save current color setting as a color theme</string>
        </property>
        <property name="text">
-        <string>Restore &amp;Default</string>
+        <string>&amp;Save Theme...</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="11" column="1">
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Light mode   Dark mode</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
       <widget class="QPushButton" name="colorResetAllPB">
        <property name="toolTip">
         <string>Reset all colors to their original value</string>
        </property>
        <property name="text">
-        <string>Restore A&amp;ll</string>
+        <string>Restore &amp;All</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <spacer>
+     <item row="5" column="1">
+      <widget class="QPushButton" name="colorDarkChangePB">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Change the selected dark-mode color</string>
+       </property>
+       <property name="text">
+        <string>Alter &amp;Dark Color...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <spacer name="verticalSpacer">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -98,16 +175,6 @@
       </spacer>
      </item>
     </layout>
-   </item>
-   <item row="1" column="0">
-    <widget class="QCheckBox" name="syscolorsCB">
-     <property name="toolTip">
-      <string>Use the color scheme of your Operating System/Desktop Environment</string>
-     </property>
-     <property name="text">
-      <string>&amp;Use system colors</string>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>

@@ -2900,6 +2900,20 @@ dist_tex_DATA = \
 # packagers may decide to install it (e.g. for MikTeX).
 dist_noinst_DATA += tex/subscript.sty
 
+themesdir = $(pkgdatadir)/themes
+dist_themes_DATA = \
+	themes/Blue_Screen.theme \
+	themes/Dark.theme \
+	themes/Default.theme \
+	themes/Green_on_Black.theme \
+	themes/Greenish_on_Black.theme \
+	themes/Minimalistic.theme \
+	themes/Monochrome.theme \
+	themes/Seti_Black.theme \
+	themes/Solarized_Dark.theme \
+	themes/Solarized_Light.theme \
+	themes/Tomorrow_Night.theme
+
 uidir = $(pkgdatadir)/ui
 dist_ui_DATA = \
 	ui/default.ui \
