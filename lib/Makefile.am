@@ -2929,6 +2929,7 @@ xtemplatesdir = $(pkgdatadir)/xtemplates
 dist_xtemplates_DATA = \
 	xtemplates/chess.xtemplate \
 	xtemplates/dia.xtemplate \
+	xtemplates/draw.io.xtemplate \
 	xtemplates/gnumeric.xtemplate \
 	xtemplates/inkscape.xtemplate \
 	xtemplates/lilypond.xtemplate \
