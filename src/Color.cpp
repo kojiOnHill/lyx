@@ -215,7 +215,7 @@ ColorSet::ColorSet()
 	char const * cyan = "#00ffff";
 	char const * darkgray = "#404040";
 	char const * gray = "#808080";
-	char const * green = "#00ff00";
+	char const * green = "#008000";
 	char const * lightgray = "#bfbfbf";
 	char const * lime = "#bfff00";
 	char const * magenta = "#ff00ff";
