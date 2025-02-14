@@ -712,6 +712,9 @@ def checkFormatEntries(dtl_tools):
     checkViewerEditor('a Dia viewer and editor', ['dia'],
         rc_entry = [r'\Format dia        dia     DIA                    "" "%%"	"%%"	"vector,zipped=native", "application/x-dia-diagram"'])
     #
+    checkViewerEditor('a draw.io viewer and editor', ['draw.io', 'draw.io.app'],
+        rc_entry = [r'\Format drawio     drawio  Draw.io                    "" "%%"	"%%"	"vector,zipped=native", "application/x-draw.io-diagram"'])
+    #
     checkViewerEditor('an OpenDocument drawing viewer and editor', ['libreoffice', 'lodraw', 'ooffice', 'oodraw', 'soffice'],
         rc_entry = [r'\Format odg        "odg, sxd" "OpenDocument drawing"   "" "%%"	"%%"	"vector,zipped=native"	"application/vnd.oasis.opendocument.graphics"'])
     #
@@ -1203,6 +1206,14 @@ def checkConverterEntries():
         addToRC(r'''\converter dia        png        "dia -e $$o -t png $$i"	""
 \converter dia        eps        "dia -e $$o -t eps $$i"	""
 \converter dia        svg        "dia -e $$o -t svg $$i"	""''')
+    #
+    checkProg('a Draw.io -> Image converter', ['draw.io', '/Applications/draw.io.app/Contents/MacOS/draw.io'],
+        rc_entry = [
+            r'''\converter drawio        pdf6        "%% -xf pdf -o $$o --crop $$i"	""
+\converter drawio        png        "%% -xf png -o $$o $$i"	""
+\converter drawio        jpg        "%% -xf jpg -o $$o $$i"	""
+\converter drawio        svg        "%% -xf svg -o $$o $$i"	""
+\converter drawio        docbook5        "%% -xf xml -o $$o $$i"	"xml"'''])
 
     #
     # Actually, this produces EPS, but with a wrong bounding box (usually A4 or letter).
