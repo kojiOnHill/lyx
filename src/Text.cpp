@@ -101,7 +101,6 @@
 #include "support/lstrings.h"
 #include "support/lyxtime.h"
 #include "support/textutils.h"
-#include "support/unique_ptr.h"
 
 #include <clocale>
 #include <regex>
