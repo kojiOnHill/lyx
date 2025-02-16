@@ -7059,9 +7059,9 @@ bool Text::getStatus(Cursor & cur, FuncRequest const & cmd,
 			enable = false;
 			// Check if we have a non-default font attribute
 			// in the selection range.
-			DocIterator const from = cur.selectionBegin();
+			DocIterator dit = cur.selectionBegin();
 			DocIterator const to = cur.selectionEnd();
-			for (DocIterator dit = from ; dit != to && !dit.atEnd(); ) {
+			for ( ; dit != to && !dit.atEnd(); ) {
 				if (!dit.inTexted()) {
 					dit.forwardPos();
 					continue;
