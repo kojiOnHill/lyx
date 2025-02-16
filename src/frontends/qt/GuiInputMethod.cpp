@@ -256,12 +256,10 @@ void GuiInputMethod::setPreeditStyle(
 	// Since Qt6 and on MacOS, the initial entry seems to deliver information
 	// about the focused segment (undocumented). We formulate the code to
 	// utilize this fact keeping fail-safe against its failure.
-
-#if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-	bool initial_tf_entry = true;
-#else
-	bool initial_tf_entry = false;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+	bool initial_tf_entry = guiApp->platformName() == "cocoa";
 #endif
+
 	// max segment position whose information we already have
 	pos_type max_start = -1;
 
