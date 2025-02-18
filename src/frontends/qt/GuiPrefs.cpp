@@ -1057,9 +1057,12 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(changeCurrentItem(QListWidgetItem*, QListWidgetItem*)));
 	connect(lyxObjectsLW, SIGNAL(itemPressed(QListWidgetItem*)),
 	        this, SLOT(pressCurrentItem(QListWidgetItem*)));
-	connect(searchStringEdit, SIGNAL(editingFinished()),
-	        this, SLOT(searchColorItem()));
-	connect(searchForwardPB, SIGNAL(clicked()), this, SLOT(searchColorItem()));
+	connect(searchStringEdit, SIGNAL(returnPressed()),
+	        this, SLOT(searchNextColorItem()));
+	connect(searchForwardPB, SIGNAL(clicked()),
+	        this, SLOT(searchNextColorItem()));
+	connect(searchBackwardPB, SIGNAL(clicked()),
+	        this, SLOT(searchPreviousColorItem()));
 }
 
 
@@ -1137,10 +1140,9 @@ QIcon PrefColors::constructIcon(std::pair<QColor, QColor> colors,
 	light_coloritem.fill(colors.first);
 	dark_coloritem.fill(colors.second);
 	if (selected)
-		spacer.fill(lyxObjectsLW->palette().highlight().color());
+		spacer.fill(lyxObjectsLW->palette().color(QPalette::Highlight));
 	else
-		spacer.fill(lyxObjectsLW->palette().base().color());
-
+		spacer.fill(lyxObjectsLW->palette().color(QPalette::Base));
 	// construc a concatenated icon
 	QPainter pnt(&joined_coloritem);
 	pnt.drawPixmap(0, 0, light_coloritem);
@@ -1151,8 +1153,8 @@ QIcon PrefColors::constructIcon(std::pair<QColor, QColor> colors,
 }
 
 
-QIcon PrefColors::updateIcon(int const row, QColor const color,
-                             bool const dark_mode, bool const selected)
+QIcon PrefColors::updateIconColor(int const row, QColor const color,
+                                  bool const dark_mode, bool const selected)
 {
 	if (dark_mode)
 		return constructIcon({QColor(newcolors_[row].first), color}, selected);
@@ -1232,7 +1234,7 @@ bool PrefColors::setColor(int const row, bool const dark_mode,
 			newcolors_[size_t(row)].first = new_color.name();
 		QListWidgetItem * lwitem = lyxObjectsLW->item(row);
 		lwitem->setIcon(
-		            updateIcon(row, new_color, dark_mode, lwitem->isSelected()));
+		      updateIconColor(row, new_color, dark_mode, lwitem->isSelected()));
 		return true;
 	}
 	return false;
@@ -1441,12 +1443,47 @@ void PrefColors::pressCurrentItem(QListWidgetItem * item)
 }
 
 
-void PrefColors::searchColorItem()
+void PrefColors::searchColorItem(bool opposite_direction)
 {
-	QList<QListWidgetItem *> found =
+	items_found_ =
 	        lyxObjectsLW->findItems(searchStringEdit->text(), Qt::MatchContains);
-	lyxObjectsLW->setCurrentItem(found.back());
+	if (opposite_direction)
+		it_ = --(items_found_.end());
+	else
+		it_ = items_found_.begin();
+	lyxObjectsLW->setCurrentItem(*it_);
 }
+
+
+void PrefColors::searchNextColorItem()
+{
+	if (items_found_.empty())
+		searchColorItem(false);
+	else {
+		if ((++it_) == items_found_.end())
+			it_ = items_found_.begin();
+		lyxObjectsLW->setCurrentItem(*it_);
+	}
+}
+
+
+void PrefColors::searchPreviousColorItem()
+{
+	if (items_found_.empty())
+		searchColorItem(true);
+	else {
+		if (--it_ == items_found_.begin())
+			it_ = --(items_found_.end());
+		lyxObjectsLW->setCurrentItem(*it_);
+	}
+}
+
+
+// void ColorListWidget::focusOutEvent(QFocusEvent* ev)
+// {
+// 	lyxObjectsLW->palette().setCurrentColorGroup(QPalette::Inactive);
+// 	ev->accept();
+// }
 
 
 /////////////////////////////////////////////////////////////////////
