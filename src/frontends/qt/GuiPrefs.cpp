@@ -1057,6 +1057,9 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(changeCurrentItem(QListWidgetItem*, QListWidgetItem*)));
 	connect(lyxObjectsLW, SIGNAL(itemPressed(QListWidgetItem*)),
 	        this, SLOT(pressCurrentItem(QListWidgetItem*)));
+	connect(searchStringEdit, SIGNAL(editingFinished()),
+	        this, SLOT(searchColorItem()));
+	connect(searchForwardPB, SIGNAL(clicked()), this, SLOT(searchColorItem()));
 }
 
 
@@ -1081,7 +1084,7 @@ void PrefColors::updateRC(LyXRC const & rc)
 		// QColor color = guiApp->colorCache().get(lcolors_[i], false);
 		std::pair<QColor, QColor> colors =
 		        guiApp->colorCache().getAll(lcolors_[i], false);
-		lyxObjectsLW->setIconSize(QSize(96, 32));
+		lyxObjectsLW->setIconSize(QSize(2*icon_width_ + spacer_width_, icon_height_));
 		lyxObjectsLW->item(int(i))->setIcon(constructIcon(colors));
 		newcolors_[i].first  = curcolors_[i].first  = colors.first.name();
 		newcolors_[i].second = curcolors_[i].second = colors.second.name();
@@ -1126,34 +1129,23 @@ void PrefColors::changeColor(bool dark_mode)
 QIcon PrefColors::constructIcon(std::pair<QColor, QColor> colors,
                                 bool const selected)
 {
-	QPixmap joined_coloritem(80, 24);
-	QPixmap light_coloritem(40, 24);
-	QPixmap dark_coloritem(40, 24);
-	//
-	// comment out a version of disconnected colors presentation in the dialog
-	//
-	// this makes some functions updating the spacer unnecessary,
-	// e.g. pressCurrentItem(), with some aesthetic costs (though subjective)
-	//
-	// on the other hand, the spacer needs more processes for focus-in or
-	// focus-out, etc.
-	//
-	// QPixmap joined_coloritem(79, 24);
-	// QPixmap light_coloritem(32, 24);
-	// QPixmap dark_coloritem(32, 24);
-	// QPixmap spacer(15, 24);
+	QPixmap joined_coloritem(2*icon_width_ + spacer_width_, icon_height_);
+	QPixmap light_coloritem(icon_width_, icon_height_);
+	QPixmap dark_coloritem(icon_width_,  icon_height_);
+	QPixmap spacer(spacer_width_, icon_height_);
+
 	light_coloritem.fill(colors.first);
 	dark_coloritem.fill(colors.second);
-	// if (selected)
-	// 	spacer.fill(lyxObjectsLW->palette().highlight().color());
-	// else
-	// 	spacer.fill(lyxObjectsLW->palette().base().color());
+	if (selected)
+		spacer.fill(lyxObjectsLW->palette().highlight().color());
+	else
+		spacer.fill(lyxObjectsLW->palette().base().color());
+
 	// construc a concatenated icon
 	QPainter pnt(&joined_coloritem);
 	pnt.drawPixmap(0, 0, light_coloritem);
-	// pnt.drawPixmap(32, 0, spacer);
-	// pnt.drawPixmap(47, 0, dark_coloritem);
-	pnt.drawPixmap(40, 0, dark_coloritem);
+	pnt.drawPixmap(icon_width_, 0, spacer);
+	pnt.drawPixmap(icon_width_ + spacer_width_, 0, dark_coloritem);
 
 	return QIcon(joined_coloritem);
 }
@@ -1446,6 +1438,14 @@ void PrefColors::pressCurrentItem(QListWidgetItem * item)
 	item->setIcon(cur_icon);
 
 	changed();
+}
+
+
+void PrefColors::searchColorItem()
+{
+	QList<QListWidgetItem *> found =
+	        lyxObjectsLW->findItems(searchStringEdit->text(), Qt::MatchContains);
+	lyxObjectsLW->setCurrentItem(found.back());
 }
 
 

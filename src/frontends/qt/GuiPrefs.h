@@ -270,12 +270,11 @@ private Q_SLOTS:
 	void changeCurrentItem(QListWidgetItem *cur = nullptr,
 	                       QListWidgetItem *prev = nullptr);
 	void pressCurrentItem(QListWidgetItem * item = nullptr);
+	void searchColorItem();
 
 private:
 	///
 	void changeColor(bool dark_color);
-	///
-	//QColor getDefaultColorByRow(int const row);
 	///
 	std::pair<QColor, QColor> getDefaultColorsByRow(int const row);
 	///
@@ -294,6 +293,10 @@ private:
 	std::vector<std::pair<QString, QString>> curcolors_;
 	///
 	std::vector<std::pair<QString, QString>> newcolors_;
+
+	int const icon_width_  = 24;
+	int const icon_height_ = 12;
+	int const spacer_width_ = 6;
 };
 
 
