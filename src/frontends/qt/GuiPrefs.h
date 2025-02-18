@@ -270,7 +270,9 @@ private Q_SLOTS:
 	void changeCurrentItem(QListWidgetItem *cur = nullptr,
 	                       QListWidgetItem *prev = nullptr);
 	void pressCurrentItem(QListWidgetItem * item = nullptr);
-	void searchColorItem();
+	void searchColorItem(bool opposite_direction = false);
+	void searchNextColorItem();
+	void searchPreviousColorItem();
 
 private:
 	///
@@ -281,8 +283,8 @@ private:
 	QIcon constructIcon(std::pair<QColor, QColor> const colors,
 	                    bool const selected = false);
 	///
-	QIcon updateIcon(int const row, QColor const color, bool const dark_mode,
-	                 bool const selected);
+	QIcon updateIconColor(int const row, QColor const color,
+	                      bool const dark_mode, bool const selected);
 	///
 	void updateAllIcons();
 	///
@@ -294,10 +296,22 @@ private:
 	///
 	std::vector<std::pair<QString, QString>> newcolors_;
 
+	QList<QListWidgetItem *> items_found_;
+	QList<QListWidgetItem *>::iterator it_;
+
 	int const icon_width_  = 24;
 	int const icon_height_ = 12;
 	int const spacer_width_ = 6;
 };
+
+
+// class ColorListWidget : public QListWidget, public PrefColors
+// {
+// 	Q_OBJECT
+// public:
+// 	ColorListWidget(){};
+// 	void focusOutEvent(QFocusEvent*) override;
+// };
 
 
 class PrefDisplay : public PrefModule, public Ui::PrefDisplayUi
