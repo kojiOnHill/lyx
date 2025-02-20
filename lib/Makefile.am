@@ -2910,8 +2910,7 @@ dist_themes_DATA = \
 	themes/Minimalistic.theme \
 	themes/Monochrome.theme \
 	themes/Seti_Black.theme \
-	themes/Solarized_Dark.theme \
-	themes/Solarized_Light.theme \
+	themes/Solarized.theme \
 	themes/Tomorrow_Night.theme
 
 uidir = $(pkgdatadir)/ui
