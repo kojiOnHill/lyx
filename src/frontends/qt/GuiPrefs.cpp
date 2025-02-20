@@ -57,6 +57,7 @@
 
 #include <QAbstractItemModel>
 #include <QCheckBox>
+#include <QFile>
 #include <QFontDatabase>
 #include <QHeaderView>
 #include <QLineEdit>
@@ -1044,6 +1045,8 @@ PrefColors::PrefColors(GuiPreferences * form)
 		this, SLOT(changeLyxObjectsSelection()));
 	connect(lyxObjectsLW, SIGNAL(itemActivated(QListWidgetItem*)),
 		this, SLOT(changeColor()));
+	connect(lyxObjectsLW, SIGNAL(focusChanged()),
+		this, SLOT(focusChanged()));
 	connect(syscolorsCB, SIGNAL(toggled(bool)),
 		this, SIGNAL(changed()));
 	connect(syscolorsCB, SIGNAL(toggled(bool)),
@@ -1052,6 +1055,8 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(saveTheme()));
 	connect(loadThemeCO, SIGNAL(currentIndexChanged(int)),
 	        this, SLOT(loadTheme(int)));
+	connect(removeThemePB, SIGNAL(clicked()),
+	        this, SLOT(removeTheme()));
 	connect(lyxObjectsLW,
 	        SIGNAL(currentItemChanged(QListWidgetItem*, QListWidgetItem*)),
 	        this, SLOT(changeCurrentItem(QListWidgetItem*, QListWidgetItem*)));
@@ -1084,7 +1089,6 @@ void PrefColors::applyRC(LyXRC & rc) const
 void PrefColors::updateRC(LyXRC const & rc)
 {
 	for (size_type i = 0; i < lcolors_.size(); ++i) {
-		// QColor color = guiApp->colorCache().get(lcolors_[i], false);
 		std::pair<QColor, QColor> colors =
 		        guiApp->colorCache().getAll(lcolors_[i], false);
 		lyxObjectsLW->setIconSize(QSize(2*icon_width_ + spacer_width_, icon_height_));
@@ -1139,10 +1143,11 @@ QIcon PrefColors::constructIcon(std::pair<QColor, QColor> colors,
 
 	light_coloritem.fill(colors.first);
 	dark_coloritem.fill(colors.second);
+	const QPalette::ColorGroup & cg = lyxObjectsLW->currentColorGroup();
 	if (selected)
-		spacer.fill(lyxObjectsLW->palette().color(QPalette::Highlight));
+		spacer.fill(lyxObjectsLW->palette().color(cg, QPalette::Highlight));
 	else
-		spacer.fill(lyxObjectsLW->palette().color(QPalette::Base));
+		spacer.fill(lyxObjectsLW->palette().color(cg, QPalette::Base));
 	// construc a concatenated icon
 	QPainter pnt(&joined_coloritem);
 	pnt.drawPixmap(0, 0, light_coloritem);
@@ -1280,7 +1285,6 @@ void PrefColors::saveTheme()
 		// Makefile cannot handle spaces in filenames directly
 		// so replace it with an underscore
 		qsizetype last_delimiter = res.second.lastIndexOf("/", -1);
-		LYXERR0("last_delimiter = " << last_delimiter);
 		file_path = res.second.left(last_delimiter);
 		file_name = res.second.right(res.second.size() - last_delimiter - 1).replace(' ', '_');
 		theme_name = fromqstr(file_name.left(file_name.lastIndexOf(".", -1)).replace('_', ' '));
@@ -1328,6 +1332,59 @@ void PrefColors::loadTheme(int index)
 	// emit signal
 	changed();
 	activatePrefsWindow(form_);
+}
+
+
+void PrefColors::removeTheme()
+{
+	const QString theme_name = loadThemeCO->currentText();
+	// if theme name is empty, urge the user to select it from the dropdown menu
+	if (theme_name.isEmpty()) {
+		QMessageBox msgBox(this);
+		msgBox.setIcon(QMessageBox::Critical);
+		msgBox.setWindowTitle(qt_("Select a user theme"));
+		msgBox.setText(qt_("Please select a user theme to remove "
+		                   "from the dropdown menu \"Load Theme\"."));
+		msgBox.setStandardButtons(QMessageBox::Ok);
+		msgBox.exec();
+		return;
+	}
+	if (theme_name.size() == 0) return;
+
+	// don't replace spaces in theme_name, only in theme_filename
+	QString theme_filename = theme_name;
+	theme_filename = theme_filename.replace(' ', '_') + ".theme";
+
+	const QString theme_path =
+	        toqstr(package().user_support().absFileName()) +
+	        "themes/" + theme_filename;
+	QFile file(theme_path);
+
+	// if file doesn't exist in a user directory, it is a system theme
+	if (!file.exists()) {
+		QMessageBox msgBox(this);
+		msgBox.setIcon(QMessageBox::Critical);
+		msgBox.setWindowTitle(qt_("Not a user theme"));
+		msgBox.setText(qt_("The selected theme is a system theme "
+		                   "and cannot be removed."));
+		msgBox.setStandardButtons(QMessageBox::Ok);
+		msgBox.exec();
+		return;
+	}
+
+	// confirmation to delete
+	QMessageBox msgBox(this);
+	msgBox.setIcon(QMessageBox::Warning);
+	msgBox.setWindowTitle(qt_("Are you sure?"));
+	msgBox.setText(qt_("Do you really want to remove the theme \"") +
+	               theme_name + qt_("\"?"));
+	msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	msgBox.setDefaultButton(QMessageBox::No);
+
+	if (msgBox.exec() == QMessageBox::Yes) {
+		file.remove();
+		initializeLoadThemeCO();
+	}
 }
 
 
@@ -1443,6 +1500,13 @@ void PrefColors::pressCurrentItem(QListWidgetItem * item)
 }
 
 
+void PrefColors::focusChanged()
+{
+	// palette is already changed to Inactive in ColorListWidget
+	pressCurrentItem(lyxObjectsLW->currentItem());
+}
+
+
 void PrefColors::searchColorItem(bool opposite_direction)
 {
 	items_found_ =
@@ -1477,13 +1541,6 @@ void PrefColors::searchPreviousColorItem()
 		lyxObjectsLW->setCurrentItem(*it_);
 	}
 }
-
-
-// void ColorListWidget::focusOutEvent(QFocusEvent* ev)
-// {
-// 	lyxObjectsLW->palette().setCurrentColorGroup(QPalette::Inactive);
-// 	ev->accept();
-// }
 
 
 /////////////////////////////////////////////////////////////////////

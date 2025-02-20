@@ -267,9 +267,12 @@ private Q_SLOTS:
 	void setDisabledResets();
 	void saveTheme();
 	void loadTheme(int index);
+	void removeTheme();
+
 	void changeCurrentItem(QListWidgetItem *cur = nullptr,
 	                       QListWidgetItem *prev = nullptr);
 	void pressCurrentItem(QListWidgetItem * item = nullptr);
+	void focusChanged();
 	void searchColorItem(bool opposite_direction = false);
 	void searchNextColorItem();
 	void searchPreviousColorItem();
