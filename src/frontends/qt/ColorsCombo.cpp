@@ -61,7 +61,6 @@ void ColorsCombo::addItemSort(QString const & item, QString const & guiname,
 			      QString const & category, QString const color)
 {
 	QString titem = guiname;
-	bool const uncategorized = category.isEmpty();
 
 	QList<QStandardItem *> row;
 	QStandardItem * gui = new QStandardItem(titem);
@@ -83,10 +82,7 @@ void ColorsCombo::addItemSort(QString const & item, QString const & guiname,
 	// find category
 	int i = 0;
 	// Sort categories alphabetically, uncategorized at the end.
-	while (i < end && model()->item(i, 2)->text() != category
-	       && ((!uncategorized && model()->item(i, 2)->text().localeAwareCompare(category) < 0
-		       && model()->item(i, 2)->text() != qt_("Uncategorized"))
-		   || (uncategorized && model()->item(i, 2)->text() != qt_("Uncategorized"))))
+	while (i < end && model()->item(i, 2)->text() != category)
 		++i;
 
 	// find row to insert the item, after the separator if it exists
