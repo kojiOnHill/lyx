@@ -440,9 +440,9 @@ bool checkModule(string const & name, bool command)
 	if (found_module.empty()) {
 		// take one of the second row
 		if (!potential_modules.empty())
-			found_module = potential_modules.front();  
+			found_module = potential_modules.front();
 	}
-		
+
 	if (!found_module.empty()) {
 		vector<string> v;
 		LayoutModuleList mods;
