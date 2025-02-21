@@ -1157,7 +1157,7 @@ int TeX2LyXApp::run()
 	easyParse();
 
 	if (argc_ <= 1)
-		error_message("Not enough arguments.");
+		error_with_message("Not enough arguments.");
 
 	try {
 		init_package(internal_path(os::utf8_argv(0)),
