@@ -38720,123 +38720,14 @@ Dies ist farbiger Text in einer farbigen,
 
 \begin_layout Standard
 Falls sie andere als die voreingestellten Farben benötigen,
- können Ihre eigenen Farben definieren,
- wie in Abschnitt
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "abs:Farbige-Tabellen"
-nolink "false"
-
-\end_inset
-
- beschrieben.
- Um selbstdefinierte Farben zu verwenden,
- muss die Box mittels TeX-Code gesetzt werden:
-\end_layout
-
-\begin_layout Standard
-Farbige Boxen ohne Rahmen werden mit dem Befehl 
-\series bold
-
-\backslash
-colorbox
-\series default
- erzeugt.
- Er hat folgendes Schema:
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-
-\backslash
-colorbox{Farbe}{Boxinhalt}
-\end_layout
-
-\begin_layout Standard
-Der Boxinhalt kann auch eine Box sein,
- und farbige Boxen können in anderen Boxen sein.
- Um zum Beispiel ein Wort auf einem dunkelgrünen Hintergrund zu drucken,
- fügen sie den \SpecialChar TeX
--Code-Befehl
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-
-\backslash
-colorbox{dunkelgruen}{
-\end_layout
-
-\begin_layout Standard
-vor dem Wort ein.
- Hinter dem Wort fügen Sie 
-\series bold
-
-\begin_inset Quotes gld
-\end_inset
-
-}
-\series default
-
-\begin_inset Quotes grd
-\end_inset
-
- als \SpecialChar TeX
--Code ein.
- Hier ist das Ergebnis:
-\end_layout
-
-\begin_layout Standard
-In dieser Zeile hat 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{dunkelgruen}{
-\end_layout
-
-\end_inset
-
-Achtung!
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- einen dunkelgrünen Hintergrund.
-\end_layout
-
-\begin_layout Standard
-Farbige Boxen mit Rahmen werden mit dem Befehl
-\series bold
- 
-\backslash
-fcolorbox
-\series default
- erzeugt.
- Er hat folgendes Schema:
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-
-\backslash
-fcolorbox{Rahmenfarbe}{Boxfarbe}{Boxinhalt}
+ können Sie in 
+\family sans
+Dokument\SpecialChar menuseparator
+Einstellungen\SpecialChar menuseparator
+Farben\SpecialChar menuseparator
+Benutzerdefinierte Farben
+\family default
+ eigene Farben definieren und verwenden.
 \end_layout
 
 \begin_layout Section

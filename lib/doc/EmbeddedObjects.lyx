@@ -38557,7 +38557,9 @@ This is colored text within a colored,
 
 \begin_layout Standard
 If you need another color than the predefined ones,
- you can define your own color as described in section
+ you
+\change_deleted -712698321 1740244776
+ can define your own color as described in section
 \begin_inset space ~
 \end_inset
 
@@ -38570,10 +38572,25 @@ nolink "false"
 \end_inset
 
 .
- To use your own color you must typeset the box by using TeX code:
+ 
+\change_inserted -712698321 1740244787
+can define your own color in 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar ldots
+\SpecialChar menuseparator
+Colors\SpecialChar menuseparator
+Custom Colors
+\family default
+ and use that.
+ 
+\change_deleted -712698321 1740244798
+To use your own color you must typeset the box by using TeX code:
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -712698321 1740244798
 Colored boxes without frame are created with the command 
 \series bold
 
@@ -38586,6 +38603,8 @@ colorbox
 
 \begin_layout Standard
 
+\change_deleted -712698321 1740244798
+
 \series bold
 
 \backslash
@@ -38593,6 +38612,8 @@ colorbox{color}{box content}
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -712698321 1740244798
 The box content can also be a box and colored boxes can also be within other boxes.
  To have e.
 \begin_inset space \thinspace{}
@@ -38608,6 +38629,8 @@ a darkgreen background for a word,
 
 \begin_layout Standard
 
+\change_deleted -712698321 1740244798
+
 \series bold
 
 \backslash
@@ -38615,6 +38638,8 @@ colorbox{darkgreen}{
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -712698321 1740244798
 before the word in \SpecialChar TeX
  Code.
  After the word insert a closing brace 
@@ -38638,6 +38663,8 @@ This is the result:
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -712698321 1740244798
 This is a line where the word 
 \begin_inset ERT
 status collapsed
@@ -38674,6 +38701,8 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted -712698321 1740244798
 Framed,
  colored boxes are created with the command 
 \series bold
@@ -38687,10 +38716,14 @@ fcolorbox
 
 \begin_layout Standard
 
+\change_deleted -712698321 1740244798
+
 \series bold
 
 \backslash
 fcolorbox{frame color}{box color}{box content}
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
