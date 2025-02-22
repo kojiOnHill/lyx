@@ -105,7 +105,7 @@ docstring GuiBibitem::dialogToParams() const
 {
 	InsetCommandParams params(insetCode());
 	QString label = labelED->text();
-	if (!yearED->isHidden())
+	if (!allAuthorsED->text().isEmpty())
 		label += "(" + yearED->text() + ")" + allAuthorsED->text();
 	params["key"] = qstring_to_ucs4(keyED->text());
 	params["label"] = qstring_to_ucs4(label);
