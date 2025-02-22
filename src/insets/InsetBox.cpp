@@ -221,9 +221,6 @@ ColorCode InsetBox::backgroundColor(PainterInfo const &) const
 		return getLayout().bgcolor();
 
 	if (params_.type == "Shaded") {
-		if (!buffer().params().isboxbgcolor)
-			return getLayout().bgcolor();
-
 		ColorCode c = lcolor.getFromLyXName("boxbgcolor@" + buffer().fileName().absFileName());
 		if (c == Color_none)
 			return getLayout().bgcolor();
@@ -824,10 +821,18 @@ void InsetBox::validate(LaTeXFeatures & features) const
 		features.require("calc");
 		features.require("fancybox");
 		break;
-	case Shaded:
-		features.require("color");
+	case Shaded: {
+		features.require("xcolor");
+		if (theLaTeXColors().isLaTeXColor(buffer().params().boxbgcolor)) {
+			LaTeXColor const lc = theLaTeXColors().getLaTeXColor(buffer().params().boxbgcolor);
+			for (auto const & r : lc.req())
+				features.require(r);
+			if (!lc.model().empty())
+				features.require("xcolor:" + lc.model());
+		}
 		features.require("framed");
 		break;
+	}
 	}
 	InsetCollapsible::validate(features);
 }
@@ -890,9 +895,9 @@ string const InsetBox::getFrameColor(bool const gui) const
 string const InsetBox::getBackgroundColor() const
 {
 	if (params_.backgroundcolor == "none")
-		return buffer().params().isbackgroundcolor
-				? "page_backgroundcolor"
-				: "white";
+		return (buffer().params().backgroundcolor == "none")
+				? "white"
+				: "page_backgroundcolor";
 	return params_.backgroundcolor;
 }
 

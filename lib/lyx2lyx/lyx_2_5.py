@@ -1650,7 +1650,7 @@ def revert_textcolor(document):
                         svg = True
                     elif color == "X11:" + m.group(1):
                         x11 = True
-                    elif color == "DVIOS:" + m.group(1):
+                    elif color == "DVIPS:" + m.group(1):
                         dvips = True
             i += 1
 
@@ -1726,6 +1726,103 @@ def revert_custom_colors(document):
         i = i + 1
 
 
+def convert_doc_colors(document):
+    "Converts background, main font, shaded box and greyedout colors to new format"
+
+    i = find_token(document.header, "\\fontcolor", 0)
+    if i != -1:
+        value = get_value(document.header, "\\fontcolor", i)
+        document.header[i] = "\\customcolor lyxfontcolor " + value[1:]
+        document.header.insert(i + 1, "\\fontcolor lyxfontcolor")
+
+    i = find_token(document.header, "\\backgroundcolor", 0)
+    if i != -1:
+        value = get_value(document.header, "\\backgroundcolor", i)
+        document.header[i] = "\\customcolor lyxbackgroundcolor " + value[1:]
+        document.header.insert(i + 1, "\\backgroundcolor lyxbackgroundcolor")
+
+    i = find_token(document.header, "\\notefontcolor", 0)
+    if i != -1:
+        value = get_value(document.header, "\\notefontcolor", i)
+        document.header[i] = "\\customcolor lyxnotefontcolor " + value[1:]
+        document.header.insert(i + 1, "\\notefontcolor lyxnotefontcolor")
+
+    i = find_token(document.header, "\\boxbgcolor", 0)
+    if i != -1:
+        value = get_value(document.header, "\\boxbgcolor", i)
+        document.header[i] = "\\customcolor lyxboxbgcolor " + value[1:]
+        document.header.insert(i + 1, "\\boxbgcolor lyxboxbgcolor")
+
+
+# helper function for revert_doc_colors
+def revert_doc_col(document, color, default_value, xcolor, x11, svg, dvips):
+    "Reverts a given document color"
+
+    i = find_token(document.header, color, 0)
+    if i == -1:
+        document.warning("Can't find %s header!" % color)
+    else:
+        value = get_value(document.header, color, i)
+        if value == default_value:
+            # default; nothing more to do
+            del document.header[i]
+            return
+        # check whether it is a color also otherwise used
+        color_used = find_token(document.body, "\\color " + value, i) != -1
+        # check whether it is a known latexcolor
+        if value in list(xcolor_names):
+            if color_used == False and value.find(":") != -1:
+                xcolor = True
+                x11 = value.find("X11:") != -1
+                svg = value.find("SVG:") != -1
+                dvips = value.find("DVIPS:") != -1
+                del document.header[i]
+        # if not it must be a custom color
+        else:
+            # find custom color definition
+            j = find_token(document.header, "\\customcolor " + value, 0)
+            if j != -1:
+                # get its value
+                ccval = get_value(document.header, "\\customcolor", j).split()
+                # and use its hex
+                document.header[i] = color + " #" + ccval[1]
+                if color_used == False:
+                    # and delete custom color definition if not otherwise used
+                    del document.header[j]
+            else:
+               # custom color not found. We can only warn
+               document.warning("%s %s not found, we will set back to default!" % (color, value))
+               del document.header[i]
+
+
+def revert_doc_colors(document):
+    "Reverts background, main font, shaded box and greyedout colors to old format or TeX code"
+
+    xcolor = False
+    x11 = False
+    svg = False
+    dvips = False
+    revert_doc_col(document, "\\fontcolor", "none", xcolor, x11, svg, dvips)
+    revert_doc_col(document, "\\backgroundcolor", "none", xcolor, x11, svg, dvips)
+    revert_doc_col(document, "\\notefontcolor", "lightgray", xcolor, x11, svg, dvips)
+    revert_doc_col(document, "\\boxbgcolor", "red", xcolor, x11, svg, dvips)
+    
+    # Preamble stuff if needed
+    if xcolor == True:
+        opts = []
+        if x11 == True:
+            opts.append("x11names")
+        if svg == True:
+            opts.append("svgnames")
+        if dvips == True:
+            opts.append("dvipsnames")
+        options = "\\SetKeys[xcolor]{" + ",".join(opts) + "}"
+        add_to_preamble(
+            document,
+            ["\\@ifundefined{rangeHsb}{\\usepackage{xcolor}}{}",
+             options]
+        )
+
 ##
 # Conversion hub
 #
@@ -1743,11 +1840,13 @@ convert = [
     [629, []],
     [630, []],
     [631, [convert_mathml_version]],
-    [632, []]
+    [632, []],
+    [633, [convert_doc_colors]]
 ]
 
 
 revert = [
+    [632, [revert_doc_colors]],
     [631, [revert_textcolor, revert_custom_colors]],
     [630, [revert_mathml_version]],
     [629, [revert_new_polyglossia_languages, revert_new_babel_languages]],
