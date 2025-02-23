@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-02-13 10:16+0100\n"
-"PO-Revision-Date: 2025-02-13 09:39+0000\n"
+"POT-Creation-Date: 2025-02-22 12:46+0100\n"
+"PO-Revision-Date: 2025-02-23 17:49+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -723,10 +723,10 @@ msgstr "(&De)aktivovať"
 msgid "Add a new branch to the list"
 msgstr "Pridajte novú vetvu do listiny"
 
-#: src/frontends/qt/ui/BranchesUi.ui:116 src/frontends/qt/ui/CitationUi.ui:146
-#: src/frontends/qt/ui/IndicesUi.ui:134 src/CutAndPaste.cpp:459
+#: src/CutAndPaste.cpp:459 src/frontends/qt/ui/BranchesUi.ui:116
+#: src/frontends/qt/ui/CitationUi.ui:146 src/frontends/qt/ui/IndicesUi.ui:134
 msgid "&Add"
-msgstr "Pr&idať"
+msgstr "&Pridať"
 
 #: src/frontends/qt/ui/BranchesUi.ui:123
 msgid "Define or change background color"
@@ -29242,7 +29242,7 @@ msgstr "svetlošedá"
 
 #: src/Color.cpp:253
 msgid "lime"
-msgstr "svetlozelená"
+msgstr "limetková"
 
 #: src/Color.cpp:254
 msgid "magenta"
@@ -29262,7 +29262,7 @@ msgstr "ružová"
 
 #: src/Color.cpp:258
 msgid "purple"
-msgstr "nachová"
+msgstr "fialová 3"
 
 #: src/Color.cpp:259
 msgid "red"
@@ -32381,6 +32381,14 @@ msgstr ""
 #: src/frontends/qt/GuiBibitem.cpp:60
 msgid "Author &Names:"
 msgstr "&Mená autorov:"
+
+#: src/frontends/qt/GuiBibitem.cpp:64
+msgid ""
+"Insert the author name(s) for the author-number reference here. If you use "
+"an abbreviated list (with `et al.'), the full list can go below."
+msgstr ""
+"Vložte sem meno autora/autorov pre referenciu na číslo autora. Keď užívate "
+"stručný zoznam (s 'a kol.'), úplný zoznam môže byť uvedený nižšie."
 
 #: src/frontends/qt/GuiBibitem.cpp:62
 msgid ""
