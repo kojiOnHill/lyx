@@ -624,6 +624,14 @@ void Preamble::setTextClass(string const & tclass, TeX2LyXDocClass & tc)
 }
 
 
+bool Preamble::isCustomColor(string const & col) const
+{
+	if (h_custom_colors.find(col) != h_custom_colors.end())
+		return true;
+	return false;
+}
+
+
 namespace {
 
 // Given is a string like "scaled=0.9" or "scale=0.9", return 0.9 * 100
@@ -3232,7 +3240,7 @@ void Preamble::parse(Parser & p, string const & forceclass,
 				} else if ((where = is_known(color2, known_textcolors))) {
 					h_fontcolor = known_coded_textcolors[where - known_textcolors];
 					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (h_custom_colors.find(color2) != h_custom_colors.end())
+				} else if (isCustomColor(color2))
 					h_fontcolor = color2;
 			} else if (color1 == "note_fontcolor") {
 				// check the case that a standard color is used
@@ -3245,7 +3253,7 @@ void Preamble::parse(Parser & p, string const & forceclass,
 				} else if ((where = is_known(color2, known_textcolors))) {
 					h_notefontcolor = known_coded_textcolors[where - known_textcolors];
 					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (h_custom_colors.find(color2) != h_custom_colors.end())
+				} else if (isCustomColor(color2))
 					h_notefontcolor = color2;
 			} else if (color1 == "page_backgroundcolor") {
 				// check the case that a standard color is used
@@ -3258,7 +3266,7 @@ void Preamble::parse(Parser & p, string const & forceclass,
 				} else if ((where = is_known(color2, known_textcolors))) {
 					h_backgroundcolor = known_coded_textcolors[where - known_textcolors];
 					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (h_custom_colors.find(color2) != h_custom_colors.end())
+				} else if (isCustomColor(color2))
 					h_backgroundcolor = color2;
 			} else if (color1 == "shadecolor") {
 				// check the case that a standard color is used
@@ -3271,7 +3279,7 @@ void Preamble::parse(Parser & p, string const & forceclass,
 				} else if ((where = is_known(color2, known_textcolors))) {
 					h_boxbgcolor = known_coded_textcolors[where - known_textcolors];
 					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (h_custom_colors.find(color2) != h_custom_colors.end())
+				} else if (isCustomColor(color2))
 					h_boxbgcolor = color2;
 			} else {
 				h_preamble << "\\colorlet{" << color1

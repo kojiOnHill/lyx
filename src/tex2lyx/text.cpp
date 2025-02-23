@@ -4473,7 +4473,7 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 					os << "\n\\color inherit\n";
 					preamble.registerAutomaticallyLoadedPackage("xcolor");
 			// custom colors
-			} else if (preamble.customColors().find(color) != preamble.customColors().end()) {
+			} else if (preamble.isCustomColor(color)) {
 				context.check_layout(os);
 				os << "\n\\color " << color << "\n";
 				parse_text_snippet(p, os, FLAG_ITEM, outer, context);
