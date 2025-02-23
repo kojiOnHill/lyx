@@ -527,7 +527,7 @@ string convert_color_value(string const & model, string const & value)
 		// we only have a single value, which is
 		// always r = g = b
 		if (!isStrDbl(value)) {
-			LYXERR0("Ignoring wrong cmy color value: " << value);
+			LYXERR0("Ignoring wrong gray color value: " << value);
 			return string();
 		}
 		ostringstream os;
@@ -541,7 +541,7 @@ string convert_color_value(string const & model, string const & value)
 	if (model == "Gray") {
 		// r = g = b = (gray / 15)
 		if (!isStrDbl(value)) {
-			LYXERR0("Ignoring wrong cmy color value: " << value);
+			LYXERR0("Ignoring wrong Gray color value: " << value);
 			return string();
 		}
 		double const gv = convert<double>(value);
@@ -611,7 +611,7 @@ string convert_color_value(string const & model, string const & value)
 		// same as hsb * 240
 		if (invals.size() != 3 || !isStrInt(invals[0]) || !isStrInt(invals[1])
 		    || !isStrInt(invals[2])) {
-			LYXERR0("Ignoring wrong hsb color value: " << value);
+			LYXERR0("Ignoring wrong HSB color value: " << value);
 			return string();
 		}
 		double const h = convert<double>(invals[0]) / 240;
@@ -658,7 +658,7 @@ string convert_color_value(string const & model, string const & value)
 				f3 = 1.0;
 				break;
 			default:
-				LYXERR0("Something went wrong when converting from hsb to rgb. Input was: " << value);
+				LYXERR0("Something went wrong when converting from HSB to rgb. Input was: " << value);
 				return string();
 		}
 		return tripleToString((b * (h - s * f1)), (b * (s - s * f2)), (b * (b - s * f3)));
