@@ -362,8 +362,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-02-20 14:37+0100\n"
-"PO-Revision-Date: 2025-02-20 14:40+0100\n"
+"POT-Creation-Date: 2025-02-24 17:53+0100\n"
+"PO-Revision-Date: 2025-02-24 17:56+0100\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
 "Language: fr\n"
@@ -442,13 +442,13 @@ msgid "Ke&y:"
 msgstr "Cl&é :"
 
 #: src/frontends/qt/ui/BibitemUi.ui:52 src/frontends/qt/ui/BibitemUi.ui:76
-#: src/frontends/qt/GuiBibitem.cpp:91
+#: src/frontends/qt/GuiBibitem.cpp:96
 msgid "The label as it appears in the document"
 msgstr "Le nom de l'étiquette tel qu'elle apparaîtra dans le document"
 
 #: src/frontends/qt/ui/BibitemUi.ui:55 src/frontends/qt/ui/IncludeUi.ui:183
-#: src/frontends/qt/ui/LabelUi.ui:36 src/frontends/qt/GuiBibitem.cpp:87
-#: src/frontends/qt/GuiBibitem.cpp:89
+#: src/frontends/qt/ui/LabelUi.ui:36 src/frontends/qt/GuiBibitem.cpp:92
+#: src/frontends/qt/GuiBibitem.cpp:94
 msgid "&Label:"
 msgstr "É&tiquette :"
 
@@ -460,7 +460,7 @@ msgstr "&Année :"
 msgid "The year with \"Author (Year)\" citations (without parentheses)."
 msgstr "L'année pour les citations « Auteur (année) » (sans parenthèses)."
 
-#: src/frontends/qt/ui/BibitemUi.ui:105 src/frontends/qt/GuiBibitem.cpp:64
+#: src/frontends/qt/ui/BibitemUi.ui:105 src/frontends/qt/GuiBibitem.cpp:69
 msgid "A&ll Author Names:"
 msgstr "T&ous les noms des auteurs :"
 
@@ -474,7 +474,7 @@ msgstr ""
 "d'auteurs abréviée (avec « et al. ») ainsi qu'une liste complète , vous "
 "pouvez mettre la liste complète ici et la liste abréviée au-dessus."
 
-#: src/frontends/qt/ui/BibitemUi.ui:122 src/frontends/qt/GuiBibitem.cpp:93
+#: src/frontends/qt/ui/BibitemUi.ui:122 src/frontends/qt/GuiBibitem.cpp:98
 msgid ""
 "Pass content of the `Label' field literally to LaTeX. Check this if you want "
 "to enter LaTeX code."
@@ -29712,7 +29712,7 @@ msgstr "Document %1$s inséré."
 msgid "Could not insert document %1$s"
 msgstr "Impossible d'insérer le document %1$s"
 
-#: src/BufferView.cpp:3887
+#: src/BufferView.cpp:3891
 #, c-format
 msgid ""
 "Could not read the specified document\n"
@@ -29723,11 +29723,11 @@ msgstr ""
 "%1$s\n"
 "à cause de l'erreur : %2$s"
 
-#: src/BufferView.cpp:3889
+#: src/BufferView.cpp:3893
 msgid "Could not read file"
 msgstr "Lecture du fichier impossible"
 
-#: src/BufferView.cpp:3896
+#: src/BufferView.cpp:3900
 #, c-format
 msgid ""
 "%1$s\n"
@@ -29736,17 +29736,17 @@ msgstr ""
 "%1$s\n"
 "est illisible."
 
-#: src/BufferView.cpp:3897 src/frontends/qt/qt_helpers.cpp:319
+#: src/BufferView.cpp:3901 src/frontends/qt/qt_helpers.cpp:319
 #: src/frontends/qt/qt_helpers.cpp:326 src/frontends/qt/qt_helpers.cpp:392
 #: src/output.cpp:39
 msgid "Could not open file"
 msgstr "Ouverture du fichier impossible"
 
-#: src/BufferView.cpp:3904
+#: src/BufferView.cpp:3908
 msgid "Reading not UTF-8 encoded file"
 msgstr "Lecture d'un fichier non encodé en UTF-8"
 
-#: src/BufferView.cpp:3905
+#: src/BufferView.cpp:3909
 msgid ""
 "The file is not UTF-8 encoded.\n"
 "It will be read as local 8Bit-encoded.\n"
@@ -33020,11 +33020,20 @@ msgstr ""
 "Merci d'ouvrir Outils>Préférences>Interface utilisateur\n"
 "et de vérifier le fichier d'interface utilisé."
 
-#: src/frontends/qt/GuiBibitem.cpp:60
+#: src/frontends/qt/GuiBibitem.cpp:61
 msgid "Author &Names:"
 msgstr "Noms des &auteurs :"
 
-#: src/frontends/qt/GuiBibitem.cpp:62
+#: src/frontends/qt/GuiBibitem.cpp:64
+msgid ""
+"Insert the author name(s) for the author-number reference here. If you use "
+"an abbreviated list (with `et al.'), the full list can go below."
+msgstr ""
+"Insérer le ou les noms d'auteur pour la référence auteur-numéro ici. Si vous "
+"utilisez une liste brève (avec « et al. »), la liste complète peut être "
+"saisie ci-dessous."
+
+#: src/frontends/qt/GuiBibitem.cpp:67
 msgid ""
 "Insert the author name(s) for the author-year reference here. If you use an "
 "abbreviated list (with `et al.'), the full list can go below."
@@ -33033,7 +33042,7 @@ msgstr ""
 "utilisez une liste brève (avec « et al. »), la liste complète peut être "
 "saisie ci-dessous."
 
-#: src/frontends/qt/GuiBibitem.cpp:66
+#: src/frontends/qt/GuiBibitem.cpp:71
 msgid ""
 "Pass content of the `Author', `Year' and `All Authors' fields literally to "
 "LaTeX. Check this if you want to enter LaTeX code."
