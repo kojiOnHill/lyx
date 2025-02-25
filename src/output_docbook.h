@@ -43,9 +43,9 @@ xml::EndFontTag docbookEndFontTag(xml::FontTypes type);
 
 /// output a series of paragraphs into the XMLStream
 void docbookParagraphs(Text const &,
-		               Buffer const &,
+                       Buffer const &,
                        XMLStream &,
-		               OutputParams const &);
+                       OutputParams const &);
 
 /// output a single paragraph into the XMLStream
 ParagraphList::const_iterator makeAny(Text const &,
