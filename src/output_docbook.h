@@ -24,10 +24,8 @@
 #ifndef OUTPUT_DOCBOOK_H
 #define OUTPUT_DOCBOOK_H
 
-#include "LayoutEnums.h"
 #include "ParagraphList.h"
 
-#include "support/docstream.h"
 #include "xml.h"
 
 namespace lyx {
