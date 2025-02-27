@@ -1042,9 +1042,14 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        new QShortcut(QKeySequence(QKeySequence::FindPrevious), this);
 #if !defined(Q_OS_MAC)
 	// give a shortcut to the combobox
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QShortcut* sc_load_theme =
 	        new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_L), this);
-#endif
+#else
+	QShortcut* sc_load_theme =
+	        new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_L), this);
+#endif // QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#endif // !defined(Q_OS_MAC)
 
 	initializeLoadThemeCO();
 
