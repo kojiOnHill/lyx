@@ -1051,7 +1051,8 @@ PrefColors::PrefColors(GuiPreferences * form)
 #endif // QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #endif // !defined(Q_OS_MAC)
 
-	initializeLoadThemeCO();
+	initializeThemesLW();
+	initializeThemeMenu();
 
 	// End initialization
 
@@ -1065,12 +1066,10 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(resetColor()));
 	connect(colorResetAllPB, SIGNAL(clicked()),
 	        this, SLOT(resetAllColor()));
-	connect(exportPB, SIGNAL(clicked()),
-	        this, SLOT(exportThemeInterface()));
-	connect(importPB, SIGNAL(clicked()),
-	        this, SLOT(importThemeInterface()));
-	connect(loadThemeCO, SIGNAL(activated(int)),
-	        this, SLOT(loadThemeInterface(int)));
+	connect(themesMenuPB, SIGNAL(clicked()),
+	        this, SLOT(openThemeMenu()));
+	connect(themesLW, SIGNAL(itemClicked(QListWidgetItem*)),
+	        this, SLOT(loadThemeInterface(QListWidgetItem*)));
 	connect(lyxObjectsLW, SIGNAL(focusChanged()),
 	        this, SLOT(changeFocus()));
 	connect(lyxObjectsLW, SIGNAL(itemActivated(QListWidgetItem*)),
@@ -1405,7 +1404,7 @@ void PrefColors::saveTheme(QString file_path)
 		    << fromqstr(newcolors_[i].first) << "\" \""
 		    << fromqstr(newcolors_[i].second) << "\"\n";
 	}
-	initializeLoadThemeCO();
+	initializeThemesLW();
 	activatePrefsWindow(form_);
 }
 
@@ -1428,9 +1427,9 @@ void PrefColors::importThemeInterface()
 }
 
 
-void PrefColors::loadThemeInterface(int index)
+void PrefColors::loadThemeInterface(QListWidgetItem* item)
 {
-	loadTheme(FileName(fromqstr(loadThemeCO->itemData(index).toString())));
+	loadTheme(FileName(fromqstr(theme_filenames_[themesLW->row(item)])));
 }
 
 
@@ -1459,31 +1458,22 @@ void PrefColors::loadTheme(FileName filename)
 
 void PrefColors::removeTheme()
 {
-	const QString theme_name = loadThemeCO->currentText();
+	const QListWidgetItem* cur_item = themesLW->currentItem();
 	// if theme name is empty, urge the user to select it from the dropdown menu
-	if (theme_name.isEmpty()) {
+	if (cur_item == nullptr) {
 		QMessageBox msgBox(this);
 		msgBox.setIcon(QMessageBox::Critical);
 		msgBox.setWindowTitle(qt_("Select a user theme"));
 		msgBox.setText(qt_("Please select a user theme to remove "
-		                   "from the dropdown menu \"Load Theme\"."));
+		                   "from the \"Themes\" list menu."));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.exec();
 		return;
 	}
-	if (theme_name.size() == 0) return;
 
-	// don't replace spaces in theme_name, only in theme_filename
-	QString theme_filename = theme_name;
-	theme_filename = theme_filename.replace(' ', '_') + ".theme";
-
-	const QString theme_path =
-	        toqstr(package().user_support().absFileName()) +
-	        "themes/" + theme_filename;
-	QFile file(theme_path);
-
-	// if file doesn't exist in a user directory, it is a system theme
-	if (!file.exists()) {
+	const int cur_row = themesLW->row(cur_item);
+	const QString theme_name = cur_item->text();
+	if (isSysThemes_[cur_row]) {
 		QMessageBox msgBox(this);
 		msgBox.setIcon(QMessageBox::Critical);
 		msgBox.setWindowTitle(qt_("Not a user theme"));
@@ -1504,23 +1494,29 @@ void PrefColors::removeTheme()
 	msgBox.setDefaultButton(QMessageBox::No);
 
 	if (msgBox.exec() == QMessageBox::Yes) {
+		QFile file(theme_filenames_[cur_row]);
 		file.remove();
-		initializeLoadThemeCO();
+		initializeThemesLW();
 	}
 }
 
 
-void PrefColors::initializeLoadThemeCO()
+void PrefColors::initializeThemesLW()
 {
-	// initialize "load themes" dropdown menu
+	//
+	// initialize themes list widget
+	//
+	// clear dataset
+	theme_filenames_.clear();
+	isSysThemes_.clear();
 
 	const QIcon & sys_theme_icon= QIcon(toqstr(package().system_support().absFileName() + "images/oxygen/float-insert_figure.svgz"));
 	const QIcon & usr_theme_icon= QIcon(toqstr(package().system_support().absFileName() + "images/oxygen/change-accept.svgz"));
 
-	// note that std::map sorts its entries
-	// key is the theme's GUI name
-	// value is a pair of the theme file name and whether it is a user theme
+	// key:   theme's GUI name
+	// value: pair<theme's file name, bool if a user theme>
 	std::map <QString, std::pair<QString, bool>> themes;
+
 	FileName sys_theme_dir;
 	FileName usr_theme_dir;
 	sys_theme_dir.set((package().system_support().absFileName() + "themes").c_str());
@@ -1543,17 +1539,43 @@ void PrefColors::initializeLoadThemeCO()
 		// and user themes are listed even if they have the same name
 		themes.emplace(guiname + "_usr", std::make_pair(filename, true));
 	}
-	loadThemeCO->clear();
+	themesLW->clear();
+	// themes are already sorted with GUI name as std::map sorts its entries
 	for (const auto & theme : themes) {
-		if (theme.second.second)
-			loadThemeCO->addItem(usr_theme_icon,
-			                     theme.first.left(theme.first.length() - 4),
-			                     theme.second.first);
+		QListWidgetItem* item = new QListWidgetItem;
+		item->setText(theme.first.left(theme.first.length() - 4));
+		if (theme.second.second) // if the theme is a user theme
+			item->setIcon(usr_theme_icon);
 		else
-			loadThemeCO->addItem(sys_theme_icon,
-			                     theme.first.left(theme.first.length() - 4),
-			                     theme.second.first);
+			item->setIcon(sys_theme_icon);
+		themesLW->addItem(item);
+		theme_filenames_.push_back(theme.second.first);
+		if (theme.first.right(3) == "sys")
+			isSysThemes_.push_back(true);
+		else
+			isSysThemes_.push_back(false);
 	}
+}
+
+
+void PrefColors::initializeThemeMenu()
+{
+	QAction* ac_export = new QAction(qt_("&Export..."), themesMenuPB);
+	QAction* ac_import = new QAction(qt_("&Import..."), themesMenuPB);
+	theme_menu_.addAction(ac_export);
+	theme_menu_.addAction(ac_import);
+	connect(ac_export, &QAction::triggered,
+	        this, &PrefColors::exportThemeInterface);
+	connect(ac_import, &QAction::triggered,
+	        this, &PrefColors::importThemeInterface);
+}
+
+
+void PrefColors::openThemeMenu()
+{
+	QPoint pos = mapToGlobal(QPoint(themesMenuPB->x() + themesMenuPB->width(),
+	                                themesMenuPB->y()));
+	theme_menu_.exec(pos);
 }
 
 

@@ -46,6 +46,7 @@
 
 #include <string>
 #include <vector>
+#include <QtWidgets/qmenu.h>
 #include <QUndoCommand>
 
 
@@ -267,8 +268,9 @@ private Q_SLOTS:
 		      QString const & old_color);
 	bool isDefaultColor(int const row, std::pair<QString, QString> const & color);
 	void setDisabledResets();
+	void openThemeMenu();
 	void saveThemeInterface();
-	void loadThemeInterface(int index);
+	void loadThemeInterface(QListWidgetItem* item);
 	void removeTheme();
 	void exportThemeInterface();
 	void importThemeInterface();
@@ -296,7 +298,9 @@ private:
 	///
 	void updateAllIcons();
 	///
-	void initializeLoadThemeCO();
+	void initializeThemesLW();
+	///
+	void initializeThemeMenu();
 	///
 	void saveTheme(QString file_path);
 	///
@@ -319,9 +323,13 @@ private:
 	int const spacer_width_ = 6;
 
 	bool autoapply_ = false;
+	QUndoStack * undo_stack_;
+
+	QMenu theme_menu_;
+	std::vector<bool> isSysThemes_;
+	std::vector<QString> theme_filenames_;
 	QString theme_name_ = "";
 	QString theme_file_name_;
-	QUndoStack * undo_stack_;
 
 	friend class SetColor;
 };
