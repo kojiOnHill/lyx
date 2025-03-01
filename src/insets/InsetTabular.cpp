@@ -3697,7 +3697,7 @@ void Tabular::latex(otexstream & os, OutputParams const & runparams) const
 	bool have_local_alt_row_colors = false;
 	// switch on alternating row colors if requested
 	if ((getOddRowColor() != "default" || getEvenRowColor() != "default")
-	    && (!getOddRowColor().empty() && getEvenRowColor().empty())
+	    && (!getOddRowColor().empty() && !getEvenRowColor().empty())
 	    && (odd_row_color != "default" || even_row_color != "default")) {
 		have_local_alt_row_colors = true;
 		string const orc = getOddRowColor() == "none"
