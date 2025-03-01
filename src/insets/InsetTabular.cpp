@@ -1127,11 +1127,13 @@ void Tabular::updateIndexes()
 			int const realrow = realRowNumber(row);
 			if (realrow % 2 == 0) {
 				// even row
-				if (getAltRowColorsStart() <= realrow && getEvenRowColor() != "none" && getEvenRowColor() != "default")
+				if (getAltRowColorsStart() <= realrow && getEvenRowColor() != "none"
+				     && getEvenRowColor() != "default" && !getEvenRowColor().empty())
 					colors.push_back(getEvenRowColor());
 			} else {
 				// odd row
-				if (getAltRowColorsStart() <= realrow && getOddRowColor() != "none" && getOddRowColor() != "default")
+				if (getAltRowColorsStart() <= realrow && getOddRowColor() != "none"
+				    && getOddRowColor() != "default" && !getOddRowColor().empty())
 					colors.push_back(getOddRowColor());
 			}
 			for (auto const & color : colors)
@@ -2816,18 +2818,18 @@ string Tabular::getBorderColor() const
 string Tabular::getOddRowColor() const
 {
 	if (odd_row_color == "default")
-		return buffer().masterParams().table_odd_row_color;
-	if (odd_row_color == "none")
-		return string();
+		return buffer().masterParams().table_odd_row_color == "none"
+				? string()
+				: buffer().masterParams().table_odd_row_color;
 	return odd_row_color;
 }
 
 string Tabular::getEvenRowColor() const
 {
 	if (even_row_color == "default")
-		return buffer().masterParams().table_even_row_color;
-	if (even_row_color == "none")
-		return string();
+		return buffer().masterParams().table_even_row_color == "none"
+				? string()
+				: buffer().masterParams().table_even_row_color;
 	return even_row_color;
 }
 
@@ -3695,13 +3697,16 @@ void Tabular::latex(otexstream & os, OutputParams const & runparams) const
 	bool have_local_alt_row_colors = false;
 	// switch on alternating row colors if requested
 	if ((getOddRowColor() != "default" || getEvenRowColor() != "default")
+	    && (!getOddRowColor().empty() && getEvenRowColor().empty())
 	    && (odd_row_color != "default" || even_row_color != "default")) {
 		have_local_alt_row_colors = true;
-		os << "\\rowcolors{"
-		   << getAltRowColorsStart()
-		   << "}{" << lcolor.getLaTeXName(lcolor.getFromLyXName(getOddRowColor()))
-		   << "}{" << lcolor.getLaTeXName(lcolor.getFromLyXName(getEvenRowColor()))
-		    << "}\n";
+		string const orc = getOddRowColor() == "none"
+				? string()
+				: lcolor.getLaTeXName(lcolor.getFromLyXName(getOddRowColor()));
+		string const erc = getEvenRowColor() == "none"
+				? string()
+				: lcolor.getLaTeXName(lcolor.getFromLyXName(getEvenRowColor()));
+		os << "\\rowcolors{" << getAltRowColorsStart() << "}{" << orc << "}{" << erc << "}\n";
 	}
 
 	bool have_local_border_colors = false;
