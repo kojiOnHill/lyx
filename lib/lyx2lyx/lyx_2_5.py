@@ -1953,7 +1953,7 @@ def revert_colortbl(document):
     goddrowcol = ""
     gevenrowcol = ""
     galtrowstart = ""
-    bordercolor_tex = ""
+    bordercolor_tex = "black"
     i = find_token(document.header, "\\table_border_color", 0)
     if i == -1:
         gbordercol == "default"

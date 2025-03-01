@@ -4003,7 +4003,7 @@ void Tabular::latex(otexstream & os, OutputParams const & runparams) const
 	if (have_local_border_colors) {
 		string outer_border_col = buffer().masterParams().table_border_color;
 		outer_border_col = (outer_border_col == "default")
-				? string()
+				? "black"
 				: lcolor.getLaTeXName(lcolor.getFromLyXName(outer_border_col));
 		os << "\\arrayrulecolor{" << outer_border_col << "}\n";
 	}
