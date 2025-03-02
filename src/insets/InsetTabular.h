@@ -139,25 +139,25 @@ private:
 	// So, well, if someone can do better, please do!
 	// --rkh
 	///
-	bool isFixedWidth;
+	bool isFixedWidth = false;
 	///
-	bool isVarwidth;
+	bool isVarwidth = false;
 	///
-	bool isMultiColumn;
+	bool isMultiColumn = false;
 	///
-	bool isMultiRow;
+	bool isMultiRow = false;
 	///
-	int mr_rows;
+	int mr_rows = 1;
 	///
-	int width;
+	int width = 0;
 	///
-	bool isCaptionRow;
+	bool isCaptionRow = false;
 	///
-	LyXAlignment contentAlign;
+	LyXAlignment contentAlign = LYX_ALIGN_CENTER;
 	///
 	std::string background_color;
 	///
-	bool isDeleted;
+	bool isDeleted = false;
 	/// should paragraph indentation be omitted in any case?
 	bool neverIndent() const override { return true; }
 	///
