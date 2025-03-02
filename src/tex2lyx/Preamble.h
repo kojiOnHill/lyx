@@ -53,7 +53,7 @@ public:
 	///
 	bool svgnames() const { return h_use_xcolor_svgnames; }
 	///
-	bool isCustomColor(std::string const & col) const;
+	std::string getLyXColor(std::string const & col, bool reg = false);
 	///
 	std::string nomenclOpts() const { return h_nomencl_options; }
 	/// The document language

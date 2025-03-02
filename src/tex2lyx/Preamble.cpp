@@ -834,11 +834,50 @@ void Preamble::setTextClass(string const & tclass, TeX2LyXDocClass & tc)
 }
 
 
-bool Preamble::isCustomColor(string const & col) const
+string Preamble::getLyXColor(string const & col, bool const reg)
 {
+	// Is it a base color (color package)?
+	if (is_known(col, known_basic_colors)) {
+		if (reg)
+			registerAutomaticallyLoadedPackage("color");
+		return col;
+	}
+	// Or one of the additional basic xcolor colors?
+	if (is_known(col, known_basic_xcolors)) {
+		if (reg)
+			registerAutomaticallyLoadedPackage("xcolor");
+		return col;
+	}
+	// No? So try the other xcolor types
+	char const * const * where = 0;
+	// svgnames colors get priority with clashing names
+	if (svgnames() && (where = is_known(col, known_svgnames_textcolors))) {
+		if (reg)
+			registerAutomaticallyLoadedPackage("xcolor");
+		return known_coded_svgnames_textcolors[where - known_svgnames_textcolors];
+	}
+	// Consider clashing names as well
+	if (svgnames() && prefixIs(col, "DVIPS") && (where = is_known(col.substr(5), known_textcolors))) {
+		string clashname = known_coded_textcolors[where - known_textcolors];
+		if (prefixIs(clashname, "dvips:")) {
+			if (reg)
+				registerAutomaticallyLoadedPackage("xcolor");
+			return clashname;
+		}
+		return string();
+	}
+	// check the other xcolor types (dvipsnames, x11names)
+	if ((where = is_known(col, known_textcolors))) {
+		if (reg)
+			registerAutomaticallyLoadedPackage("xcolor");
+		return known_coded_textcolors[where - known_textcolors];
+	}
+	// If none of the above is true, check if it is a known custom color
 	if (h_custom_colors.find(col) != h_custom_colors.end())
-		return true;
-	return false;
+		return col;
+
+	// Nothing known, return empty string (will cause ERT to be used)
+	return string();
 }
 
 
@@ -2840,63 +2879,22 @@ void Preamble::parse(Parser & p, string const & forceclass,
 			string const space =
 				(p.hasOpt() ? p.getOpt() : string());
 			string argument = p.getArg('{', '}');
-			char const * const * where = 0;
-			// check the case that a standard color is used
-			if (space.empty() && is_known(argument, known_basic_colors)) {
-				h_fontcolor = argument;
-				registerAutomaticallyLoadedPackage("color");
-			} else if (space.empty() && is_known(argument, known_basic_xcolors)) {
-				h_fontcolor = argument;
-				registerAutomaticallyLoadedPackage("xcolor");
-			// With xcolor, svgnames colors get priority with clashing names
-			} else if (svgnames() && (where = is_known(argument, known_svgnames_textcolors))) {
-				h_fontcolor = known_coded_svgnames_textcolors[where - known_svgnames_textcolors];
-				registerAutomaticallyLoadedPackage("xcolor");
-			} else if ((where = is_known(argument, known_textcolors))) {
-				h_fontcolor = known_coded_textcolors[where - known_textcolors];
-				registerAutomaticallyLoadedPackage("xcolor");
-			} else if (space.empty() && argument == "document_fontcolor")
-				registerAutomaticallyLoadedPackage("color");
-			// check the case that LyX's document_fontcolor is defined
-			// but not used for \color
-			else {
+			if (space.empty())
+				h_fontcolor = getLyXColor(argument, true);
+			if (h_fontcolor.empty()) {
 				h_preamble << t.asInput();
 				if (!space.empty())
 					h_preamble << space;
 				h_preamble << '{' << argument << '}';
-				// the color might already be set because \definecolor
-				// is parsed before this
-				h_fontcolor = "";
 			}
 			continue;
 		}
 
 		if (t.cs() == "pagecolor") {
 			string argument = p.getArg('{', '}');
-			char const * const * where = 0;
-			// check the case that a standard color is used
-			if (is_known(argument, known_basic_colors)) {
-				h_backgroundcolor = argument;
-			} else if (is_known(argument, known_basic_xcolors)) {
-				h_backgroundcolor = argument;
-				registerAutomaticallyLoadedPackage("xcolor");
-			// With xcolor, svgnames colors get priority with clashing names
-			} else if (svgnames() && (where = is_known(argument, known_svgnames_textcolors))) {
-				h_backgroundcolor = known_coded_svgnames_textcolors[where - known_svgnames_textcolors];
-				registerAutomaticallyLoadedPackage("xcolor");
-			} else if ((where = is_known(argument, known_textcolors))) {
-				h_backgroundcolor = known_coded_textcolors[where - known_textcolors];
-				registerAutomaticallyLoadedPackage("xcolor");
-			} else if (argument == "page_backgroundcolor")
-				registerAutomaticallyLoadedPackage("color");
-			// check the case that LyX's page_backgroundcolor is defined
-			// but not used for \pagecolor
-			else {
+			h_backgroundcolor = getLyXColor(argument, true);
+			if (h_backgroundcolor.empty())
 				h_preamble << t.asInput() << '{' << argument << '}';
-				// the color might already be set because \definecolor
-				// is parsed before this
-				h_backgroundcolor = "";
-			}
 			continue;
 		}
 
@@ -3452,72 +3450,15 @@ void Preamble::parse(Parser & p, string const & forceclass,
 		if (t.cs() == "colorlet") {
 			string const color1 = p.getArg('{', '}');
 			string const color2 = p.getArg('{', '}');
-			char const * const * where = 0;
-			if (color1 == "document_fontcolor") {
-				// check the case that a standard color is used
-				if (is_known(color2, known_basic_colors)) {
-					h_fontcolor = color2;
-				} else if (is_known(color2, known_basic_xcolors)) {
-					h_fontcolor = color2;
-					registerAutomaticallyLoadedPackage("xcolor");
-				// With xcolor, svgnames colors get priority with clashing names
-				} else if (svgnames() && (where = is_known(color2, known_svgnames_textcolors))) {
-					h_fontcolor = known_coded_svgnames_textcolors[where - known_svgnames_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if ((where = is_known(color2, known_textcolors))) {
-					h_fontcolor = known_coded_textcolors[where - known_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (isCustomColor(color2))
-					h_fontcolor = color2;
-			} else if (color1 == "note_fontcolor") {
-				// check the case that a standard color is used
-				if (is_known(color2, known_basic_colors)) {
-					h_notefontcolor = color2;
-				} else if (is_known(color2, known_basic_xcolors)) {
-					h_notefontcolor = color2;
-					registerAutomaticallyLoadedPackage("xcolor");
-				// With xcolor, svgnames colors get priority with clashing names
-				} else if (svgnames() && (where = is_known(color2, known_svgnames_textcolors))) {
-					h_notefontcolor = known_coded_svgnames_textcolors[where - known_svgnames_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if ((where = is_known(color2, known_textcolors))) {
-					h_notefontcolor = known_coded_textcolors[where - known_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (isCustomColor(color2))
-					h_notefontcolor = color2;
-			} else if (color1 == "page_backgroundcolor") {
-				// check the case that a standard color is used
-				if (is_known(color2, known_basic_colors)) {
-					h_backgroundcolor = color2;
-				} else if (is_known(color2, known_basic_xcolors)) {
-					h_backgroundcolor = color2;
-					registerAutomaticallyLoadedPackage("xcolor");
-				// With xcolor, svgnames colors get priority with clashing names
-				} else if (svgnames() && (where = is_known(color2, known_svgnames_textcolors))) {
-					h_backgroundcolor = known_coded_svgnames_textcolors[where - known_svgnames_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if ((where = is_known(color2, known_textcolors))) {
-					h_backgroundcolor = known_coded_textcolors[where - known_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (isCustomColor(color2))
-					h_backgroundcolor = color2;
-			} else if (color1 == "shadecolor") {
-				// check the case that a standard color is used
-				if (is_known(color2, known_basic_colors)) {
-					h_boxbgcolor = color2;
-				} else if (is_known(color2, known_basic_xcolors)) {
-					h_boxbgcolor = color2;
-					registerAutomaticallyLoadedPackage("xcolor");
-				// With xcolor, svgnames colors get priority with clashing names
-				} else if (svgnames() && (where = is_known(color2, known_svgnames_textcolors))) {
-					h_boxbgcolor = known_coded_svgnames_textcolors[where - known_svgnames_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if ((where = is_known(color2, known_textcolors))) {
-					h_boxbgcolor = known_coded_textcolors[where - known_textcolors];
-					registerAutomaticallyLoadedPackage("xcolor");
-				} else if (isCustomColor(color2))
-					h_boxbgcolor = color2;
-			} else {
+			if (color1 == "document_fontcolor")
+				h_fontcolor = getLyXColor(color2, true);
+			else if (color1 == "note_fontcolor")
+				h_notefontcolor = getLyXColor(color2, true);
+			else if (color1 == "page_backgroundcolor")
+				h_backgroundcolor = getLyXColor(color2, true);
+			else if (color1 == "shadecolor")
+				h_boxbgcolor = getLyXColor(color2, true);
+			else {
 				h_preamble << "\\colorlet{" << color1
 				           << "}{" << color2 << '}';
 			}
