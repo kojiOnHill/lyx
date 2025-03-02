@@ -6100,6 +6100,34 @@ void InsetTabular::doDispatch(Cursor & cur, FuncRequest & cmd)
 				cur.forceBufferUpdate();
 			}
 			break;
+		} else if (ct && tabular.row_info[tabular.cellRow(cur.idx())].change.deleted()) {
+			// whole row marked deleted
+			row_type r = tabular.cellRow(cur.idx());
+			if (act == LFUN_CHANGE_ACCEPT)
+				tabular.deleteRow(r, true);
+			else
+				tabular.row_info[r].change.setUnchanged();
+			tabular.updateIndexes();
+			// cursor might be invalid
+			cur.fixIfBroken();
+			// change bar might need to be redrawn
+			cur.screenUpdateFlags(Update::Force);
+			cur.forceBufferUpdate();
+			break;
+		} else if (ct && tabular.column_info[tabular.cellColumn(cur.idx())].change.deleted()) {
+			// whole column marked deleted
+			col_type c = tabular.cellColumn(cur.idx());
+			if (act == LFUN_CHANGE_ACCEPT)
+				tabular.deleteColumn(c, true);
+			else
+				tabular.column_info[c].change.setUnchanged();
+			tabular.updateIndexes();
+			// cursor might be invalid
+			cur.fixIfBroken();
+			// change bar might need to be redrawn
+			cur.screenUpdateFlags(Update::Force);
+			cur.forceBufferUpdate();
+			break;
 		} else {
 			cell(cur.idx())->dispatch(cur, cmd);
 			break;
