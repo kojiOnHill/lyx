@@ -250,6 +250,10 @@ private:
 	std::string h_spacing;
 	std::string h_suppress_date;
 	std::string h_save_transient_properties;
+	std::string h_table_bordercolor;
+	std::string h_table_odd_row_color;
+	std::string h_table_even_row_color;
+	int h_table_alt_row_colors_start;
 	std::string h_textclass;
 	std::string h_tocdepth;
 	std::string h_tracking_changes;

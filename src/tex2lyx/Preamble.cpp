@@ -352,7 +352,7 @@ const char * const known_xetex_packages[] = {"arabxetex", "fixlatvian",
 
 /// packages that are automatically skipped if loaded by LyX
 const char * const known_lyx_packages[] = {"amsbsy", "amsmath", "amssymb",
-"amstext", "amsthm", "array", "babel", "booktabs", "calc", "CJK", "color",
+"amstext", "amsthm", "array", "babel", "booktabs", "calc", "CJK", "color", "colortbl",
 "float", "fontspec", "framed", "graphicx", "hhline", "ifthen", "longtable",
 "makeidx", "minted", "multirow", "nomencl", "parskip", "pdfpages", "prettyref", "refstyle",
 "rotating", "rotfloat", "splitidx", "setspace", "subscript", "tabularx","textcomp", "tipa",
@@ -2544,6 +2544,14 @@ bool Preamble::writeLyXHeader(ostream & os, bool subdoc, string const & outfiled
 		os << "\\backgroundcolor " << h_backgroundcolor << '\n';
 	if (!h_boxbgcolor.empty())
 		os << "\\boxbgcolor " << h_boxbgcolor << '\n';
+	if (!h_table_bordercolor.empty())
+		os << "\\table_border_color " << h_table_bordercolor << '\n';
+	if (!h_table_odd_row_color.empty())
+		os << "\\table_odd_row_color " << h_table_odd_row_color << '\n';
+	if (!h_table_even_row_color.empty())
+		os << "\\table_even_row_color " << h_table_even_row_color << '\n';
+	if (h_table_alt_row_colors_start != 0)
+		os << "\\table_alt_row_colors_start " << h_table_alt_row_colors_start << '\n';
 	if (index_number != 0)
 		for (int i = 0; i < index_number; i++) {
 			os << "\\index " << h_index[i] << '\n'
@@ -3414,6 +3422,30 @@ void Preamble::parse(Parser & p, string const & forceclass,
 			vector<string> opts = split_options(p.getArg('{', '}'));
 			handle_geometry(opts);
 			continue;
+		}
+
+		if (t.cs() == "arrayrulecolor") {
+			string const color = p.getArg('{', '}');
+			h_table_bordercolor = getLyXColor(color, true);
+			if (h_table_bordercolor.empty())
+				h_preamble << "\\arrayrulecolor{" << color << '}';
+		}
+
+		if (t.cs() == "rowcolors") {
+			string const startrow = p.getArg('{', '}');
+			string const oddrowcolor = p.getArg('{', '}');
+			string const evenrowcolor = p.getArg('{', '}');
+			if (isStrInt(startrow))
+				h_table_alt_row_colors_start = convert<int>(startrow);
+			else
+				h_table_alt_row_colors_start = 1;
+			h_table_odd_row_color = getLyXColor(oddrowcolor, true);
+			h_table_even_row_color = getLyXColor(evenrowcolor, true);
+			if (h_table_odd_row_color.empty() || h_table_even_row_color.empty()) {
+				h_table_odd_row_color = "default";
+				h_table_even_row_color = "default";
+				h_preamble << "\\rowcolors{" << startrow << "}{" << oddrowcolor << "}{" << evenrowcolor << '}';
+			}
 		}
 
 		if (t.cs() == "definecolor") {

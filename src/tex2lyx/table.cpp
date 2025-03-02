@@ -1575,6 +1575,10 @@ void handle_tabular(Parser & p, ostream & os, string const & name,
 	os << "<features"
 	   << write_attribute("rotate", context.tablerotation)
 	   << write_attribute("booktabs", booktabs)
+	   << write_attribute("borderColor", context.current_table_bordercolor)
+	   << write_attribute("oddRowsColor", context.current_table_odd_row_color)
+	   << write_attribute("evenRowsColor", context.current_table_even_row_color)
+	   << write_attribute("startAltRowColors", context.current_table_alt_row_colors_start)
 	   << write_attribute("islongtable", is_long_tabular);
 	if (is_long_tabular) {
 		os << write_attribute("firstHeadTopDL", endfirsthead.topDL)

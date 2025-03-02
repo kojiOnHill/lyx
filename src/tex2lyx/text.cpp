@@ -5952,6 +5952,30 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			continue;
 		}
 
+		// This accounts for the following table(s)
+		if (t.cs() == "arrayrulecolor") {
+			string const color = p.getArg('{', '}');
+			context.current_table_bordercolor = preamble.getLyXColor(color);
+			if (context.current_table_bordercolor.empty())
+				output_ert_inset(os, t.asInput(), context);
+		}
+
+		// This accounts for the following table(s)
+		if (t.cs() == "rowcolors") {
+			string const startrow = p.getArg('{', '}');
+			string const oddrowcolor = p.getArg('{', '}');
+			string const evenrowcolor = p.getArg('{', '}');
+			if (isStrInt(startrow))
+				context.current_table_alt_row_colors_start = convert<int>(startrow);
+			else
+				context.current_table_alt_row_colors_start = 1;
+			context.current_table_odd_row_color = preamble.getLyXColor(oddrowcolor);
+			context.current_table_even_row_color = preamble.getLyXColor(evenrowcolor);
+			if (context.current_table_odd_row_color.empty() || context.current_table_even_row_color.empty())
+				output_ert_inset(os, t.asInput(), context);
+		}
+		
+
 		if (t.cs() == "DeclareRobustCommand" ||
 		         t.cs() == "DeclareRobustCommandx" ||
 		         t.cs() == "newcommand" ||
