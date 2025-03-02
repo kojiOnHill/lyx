@@ -4911,15 +4911,17 @@ void InsetTableCell::metrics(MetricsInfo & mi, Dimension & dim) const
 
 void InsetTableCell::draw(PainterInfo & pi, int x, int y) const
 {
-	if (background_color == "none" || !lcolor.isKnownLyXName(background_color))
+	// We have a specific draw method for the case when we
+	// need to draw on the whole cell rectangle
+	// (= colored cells or deleted cells)
+	// In the other cases we use InsetText::draw()
+	if ((background_color == "none" || !lcolor.isKnownLyXName(background_color))
+	    && !pi.change.deleted())
 		return InsetText::draw(pi, x, y);
 
-	// special case for colored cells, where we need to fill out
-	// the whole space
 	TextMetrics & tm = pi.base.bv->textMetrics(&text());
-
 	// FIXME: This calculation is ugly, but we do not seem to
-	// have the proper cell dimensions avaliable here.
+	// have the proper cell dimensions available here.
 	int const w = width;
 	int const h = mr_rows * (tm.height() + 2 * topOffset(pi.base.bv) + bottomOffset(pi.base.bv) + Painter::thin_line);
 	int const yframe = y - mr_rows * (tm.ascent()) - mr_rows * (Painter::thin_line) - topOffset(pi.base.bv);
@@ -4937,10 +4939,9 @@ void InsetTableCell::draw(PainterInfo & pi, int x, int y) const
 		tm.draw(pi, x + leftOffset(pi.base.bv), y);
 	}
 
-	if (canPaintChange(*pi.base.bv) && (!change_drawn || pi.change.deleted()))
-		// Do not draw the change tracking cue if already done by RowPainter and
-		// do not draw the cue for INSERTED if the information is already in the
-		// color of the frame
+	// Strike through the cell if deleted and not already handled by
+	// RowPainter.
+	if (!change_drawn || pi.change.deleted())
 		pi.change.paintCue(pi, xframe, yframe, xframe + w, yframe + h);
 }
 
