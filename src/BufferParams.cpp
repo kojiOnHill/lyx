@@ -1013,7 +1013,9 @@ string BufferParams::readToken(Lexer & lex, string const & token,
 		string ppsize;
 		lex >> ppsize;
 		papersize = papersizetranslator().find(ppsize);
-	} else if (token == "\\use_geometry") {
+	}
+	// Start a new chain of conditions to keep MSVC happy.
+	if (token == "\\use_geometry") {
 		lex >> use_geometry;
 	} else if (token == "\\use_package") {
 		string package;
