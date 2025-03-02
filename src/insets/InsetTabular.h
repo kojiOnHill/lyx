@@ -86,7 +86,7 @@ public:
 	///
 	void setContentAlignment(LyXAlignment al) { contentAlign = al; }
 	///
-	void setBackgroundColor(std::string const col) { background_color = col; }
+	void setBackgroundColor(std::string const & col) { background_color = col; }
 	/// writes the contents of the cell as a string, optionally
 	/// descending into insets
 	docstring asString(bool intoInsets = true);
