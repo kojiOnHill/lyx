@@ -4795,7 +4795,7 @@ bool Tabular::hasNewlines(idx_type cell) const
 InsetTableCell::InsetTableCell(Buffer * buf)
 	: InsetText(buf, InsetText::PlainLayout), isFixedWidth(false), isVarwidth(false),
 	  isMultiColumn(false), isMultiRow(false), mr_rows(1), isCaptionRow(false),
-	  contentAlign(LYX_ALIGN_CENTER)
+	  contentAlign(LYX_ALIGN_CENTER), isDeleted(false)
 {}
 
 bool InsetTableCell::allowParagraphCustomization(idx_type) const
@@ -4819,9 +4819,23 @@ ColorCode InsetTableCell::backgroundColor(PainterInfo const & pi) const
 }
 
 
+void InsetTableCell::setChange(Change const & change)
+{
+	// Mark cell deleted
+	isDeleted = change.deleted();
+
+	InsetText::setChange(change);
+}
+
+
 bool InsetTableCell::getStatus(Cursor & cur, FuncRequest const & cmd,
 	FuncStatus & status) const
 {
+	if (isDeleted) {
+		status.message(from_utf8(N_("This portion of the document is deleted.")));
+		status.setEnabled(false);
+		return true;
+	}
 	bool enabled = true;
 	switch (cmd.action()) {
 	case LFUN_INSET_SPLIT:
