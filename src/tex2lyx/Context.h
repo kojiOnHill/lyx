@@ -187,7 +187,7 @@ public:
 	///
 	std::string current_table_even_row_color;
 	///
-	int current_table_alt_row_colors_start = 1;
+	int current_table_alt_row_colors_start = 0;
 	
 
 private:
