@@ -23,6 +23,7 @@
 #include "LyXRC.h"
 #include "Mover.h"
 
+#include "support/types.h"
 #include "ui_PrefsUi.h"
 
 #include "ui_PrefOutputUi.h"
@@ -275,9 +276,9 @@ private Q_SLOTS:
 	void exportThemeInterface();
 	void importThemeInterface();
 
-	void moveCurrentItem(QListWidgetItem *cur = nullptr,
-	                     QListWidgetItem *prev = nullptr);
-	void pressCurrentItem(QListWidgetItem * item = nullptr);
+	void moveCurrentItem(QTableWidgetItem *cur = nullptr,
+	                     QTableWidgetItem *prev = nullptr);
+	void pressCurrentItem(QTableWidgetItem * item = nullptr);
 	void changeFocus();
 
 	void searchColorItem(bool backward_direction);
@@ -290,11 +291,12 @@ private:
 	///
 	std::pair<QColor, QColor> getDefaultColorsByRow(int const row);
 	///
-	QIcon constructIcon(std::pair<QColor, QColor> const colors,
-	                    bool const selected = false);
+	// QIcon constructIcon(std::pair<QColor, QColor> const colors,
+	//                     bool const selected = false);
 	///
-	QIcon updateIconColor(int const row, QColor const color,
-	                      bool const dark_mode, bool const selected);
+	void setIcons(size_type row, std::pair<QColor, QColor> colors);
+	///
+	void setIcon(size_type row, bool const dark_mode, QColor color);
 	///
 	void updateAllIcons();
 	///
@@ -308,14 +310,16 @@ private:
 	///
 	bool themeNameInterface(bool exporting);
 	///
+	std::pair<QColor, QColor> toqcolor(std::pair<QString, QString>);
+	///
 	std::vector<ColorCode> lcolors_;
 	///
 	std::vector<std::pair<QString, QString>> curcolors_;
 	///
 	std::vector<std::pair<QString, QString>> newcolors_;
 	///
-	QList<QListWidgetItem *> items_found_;
-	QList<QListWidgetItem *>::iterator it_;
+	QList<QTableWidgetItem *> items_found_;
+	QList<QTableWidgetItem *>::iterator it_;
 	QString search_string_;
 
 	int const icon_width_  = 24;
@@ -642,6 +646,14 @@ private:
 	QString old_color_;
 	std::vector<std::pair<QString, QString>> & newcolors_;
 	PrefColors* parent_;
+};
+
+
+class ColorViewModel : public QAbstractTableModel
+{
+public:
+	ColorViewModel();
+	~ColorViewModel(){};
 };
 
 
