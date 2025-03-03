@@ -1051,10 +1051,6 @@ PrefColors::PrefColors(GuiPreferences * form)
 
 	connect(autoapplyCB, SIGNAL(toggled(bool)),
 	        this, SLOT(changeAutoapply()));
-	connect(colorChangePB, SIGNAL(clicked(bool)),
-	        this, SLOT(changeLightColor()));
-	connect(colorDarkChangePB, SIGNAL(clicked(bool)),
-	        this, SLOT(changeDarkColor()));
 	connect(colorResetPB, SIGNAL(clicked()),
 	        this, SLOT(resetColor()));
 	connect(colorResetAllPB, SIGNAL(clicked()),
@@ -1063,19 +1059,10 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(openThemeMenu()));
 	connect(themesLW, SIGNAL(itemClicked(QListWidgetItem*)),
 	        this, SLOT(loadThemeInterface(QListWidgetItem*)));
-	// connect(lyxObjectsLW, SIGNAL(focusChanged()),
+	// connect(colorsTW, SIGNAL(focusChanged()),
 	//         this, SLOT(changeFocus()));
-	// connect(lyxObjectsLW, SIGNAL(itemActivated(QListWidgetItem*)),
-	//         this, SLOT(changeColor()));
-	// connect(lyxObjectsLW, SIGNAL(itemSelectionChanged()),
-	//         this, SLOT(changeLyxObjectsSelection()));
-	// connect(lyxObjectsLW,
-	//         SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),
-	//         this, SLOT(moveCurrentItem(QListWidgetItem*,QListWidgetItem*)));
-	// connect(lyxObjectsLW, SIGNAL(itemPressed(QListWidgetItem*)),
-	//         this, SLOT(pressCurrentItem(QListWidgetItem*)));
-	connect(colorsTW, SIGNAL(focusChanged()),
-	        this, SLOT(changeFocus()));
+	connect(colorsTW, SIGNAL(cellClicked(int,int)),
+	        this, SLOT(changeColor(int, int)));
 	connect(colorsTW, SIGNAL(itemActivated(QTableWidgetItem*)),
 	        this, SLOT(changeColor()));
 	connect(colorsTW, SIGNAL(itemSelectionChanged()),
@@ -1135,8 +1122,6 @@ void PrefColors::updateRC(LyXRC const & rc)
 	for (size_type i = 0; i < lcolors_.size(); ++i) {
 		std::pair<QColor, QColor> colors =
 		        guiApp->colorCache().getAll(lcolors_[i], false);
-		// lyxObjectsLW->setIconSize(QSize(2*icon_width_ + spacer_width_, icon_height_));
-		// lyxObjectsLW->item(int(i))->setIcon(constructIcon(colors));
 		setIcons(i, colors);
 		newcolors_[i].first  = curcolors_[i].first  = colors.first.name();
 		newcolors_[i].second = curcolors_[i].second = colors.second.name();
@@ -1156,7 +1141,6 @@ void PrefColors::changeColor()
 
 void PrefColors::changeColor(bool const dark_mode)
 {
-	// int const row = lyxObjectsLW->currentRow();
 	int const row = colorsTW->currentRow();
 
 	// just to be sure
@@ -1179,29 +1163,24 @@ void PrefColors::changeColor(bool const dark_mode)
 }
 
 
-// QIcon PrefColors::constructIcon(std::pair<QColor, QColor> colors,
-//                                 bool const selected)
-// {
-// 	QPixmap joined_coloritem(2*icon_width_ + spacer_width_, icon_height_);
-// 	QPixmap light_coloritem(icon_width_, icon_height_);
-// 	QPixmap dark_coloritem(icon_width_,  icon_height_);
-// 	QPixmap spacer(spacer_width_, icon_height_);
+void PrefColors::changeColor(int const row, int const column)
+{
+	if (column >= 2) return;
 
-// 	light_coloritem.fill(colors.first);
-// 	dark_coloritem.fill(colors.second);
-// 	const QPalette::ColorGroup & cg = lyxObjectsLW->currentColorGroup();
-// 	if (selected)
-// 		spacer.fill(lyxObjectsLW->palette().color(cg, QPalette::Highlight));
-// 	else
-// 		spacer.fill(lyxObjectsLW->palette().color(cg, QPalette::Base));
-// 	// construc a concatenated icon
-// 	QPainter pnt(&joined_coloritem);
-// 	pnt.drawPixmap(0, 0, light_coloritem);
-// 	pnt.drawPixmap(icon_width_, 0, spacer);
-// 	pnt.drawPixmap(icon_width_ + spacer_width_, 0, dark_coloritem);
+	QString color;
+	if (column == 0)
+		color = newcolors_[size_t(row)].first;
+	else // column == 1
+		color = newcolors_[size_t(row)].second;
 
-// 	return QIcon(joined_coloritem);
-// }
+	QColor const c = form_->getColor(QColor(color));
+
+	if (setColor(row, column, c, color)) {
+		setDisabledResets();
+		// emit signal
+		changed();
+	}
+}
 
 
 void PrefColors::setIcons(size_type row, std::pair<QColor, QColor> colors)
@@ -1625,8 +1604,6 @@ void PrefColors::changeSysColor()
 void PrefColors::changeLyxObjectsSelection()
 {
 	int currentRow = colorsTW->currentRow();
-	colorChangePB->setDisabled(currentRow < 0);
-	colorDarkChangePB->setDisabled(currentRow < 0);
 
 	if (currentRow < 0)
 		colorResetPB->setDisabled(true);
@@ -4301,10 +4278,6 @@ void SetColor::setColor(QColor color)
 		parent_->form_->dispatchParams();
 	}
 }
-
-
-ColorViewModel::ColorViewModel()
-{}
 
 
 } // namespace frontend

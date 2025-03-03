@@ -258,6 +258,7 @@ private Q_SLOTS:
 	void changeLightColor(){ changeColor(false); }
 	void changeDarkColor() { changeColor(true);  }
 	void changeColor();
+	void changeColor(int const row, int const column);
 	void resetColor();
 	void resetAllColor();
 	void changeSysColor();
@@ -322,9 +323,8 @@ private:
 	QList<QTableWidgetItem *>::iterator it_;
 	QString search_string_;
 
-	int const icon_width_  = 24;
-	int const icon_height_ = 12;
-	int const spacer_width_ = 6;
+	int const icon_width_  = 36;
+	int const icon_height_ = 18;
 
 	bool autoapply_ = false;
 	QUndoStack * undo_stack_;
@@ -646,14 +646,6 @@ private:
 	QString old_color_;
 	std::vector<std::pair<QString, QString>> & newcolors_;
 	PrefColors* parent_;
-};
-
-
-class ColorViewModel : public QAbstractTableModel
-{
-public:
-	ColorViewModel();
-	~ColorViewModel(){};
 };
 
 
