@@ -256,10 +256,10 @@ public:
 	/// make sure we are outside of given inset
 	void leaveInset(Inset const & inset);
 
-	/// find index of CursorSlice with &cell() == &cell (or -1 if not found)
-	int find(MathData const & cell) const;
-	/// find index of CursorSlice with inset() == inset (or -1 of not found)
-	int find(Inset const * inset) const;
+	/// find index of CursorSlice with &cell() == &cell (or lyx::npos if not found)
+	size_type find(MathData const & cell) const;
+	/// find index of CursorSlice with inset() == inset (or lyx::npos of not found)
+	size_type find(Inset const * inset) const;
 	/// push CursorSlices on top
 	void append(std::vector<CursorSlice> const & x);
 	/// push one CursorSlice on top and set its index and position

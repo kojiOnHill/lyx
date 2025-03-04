@@ -670,23 +670,23 @@ void DocIterator::leaveInset(Inset const & inset)
 }
 
 
-int DocIterator::find(MathData const & cell) const
+size_type DocIterator::find(MathData const & cell) const
 {
 	for (size_t l = 0; l != slices_.size(); ++l) {
 		if (slices_[l].asInsetMath() && &slices_[l].cell() == &cell)
 			return l;
 	}
-	return -1;
+	return lyx::npos;
 }
 
 
-int DocIterator::find(Inset const * inset) const
+size_type DocIterator::find(Inset const * inset) const
 {
 	for (size_t l = 0; l != slices_.size(); ++l) {
 		if (&slices_[l].inset() == inset)
 			return l;
 	}
-	return -1;
+	return lyx::npos;
 }
 
 

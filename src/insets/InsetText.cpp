@@ -1293,10 +1293,10 @@ bool InsetText::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 
 	// find text inset in old cursor
 	Cursor insetCur = old;
-	int scriptSlice	= insetCur.find(this);
+	size_type scriptSlice = insetCur.find(this);
 	// we can try to continue here. returning true means
 	// the cursor is "now" invalid. which it was.
-	LASSERT(scriptSlice != -1, return true);
+	LASSERT(scriptSlice != lyx::npos, return true);
 	insetCur.resize(scriptSlice + 1);
 	LASSERT(&insetCur.inset() == this, return true);
 
