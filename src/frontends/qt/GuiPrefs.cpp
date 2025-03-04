@@ -1029,12 +1029,58 @@ PrefColors::PrefColors(GuiPreferences * form)
 		colorsTW->setItem(row, 0, new QTableWidgetItem(icon, ""));
 		colorsTW->setItem(row, 1, new QTableWidgetItem(icon, ""));
 		QTableWidgetItem* txtItem = new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
+		txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
 		colorsTW->setItem(row, 2, txtItem);
 	}
 	curcolors_.resize(lcolors_.size());
 	newcolors_.resize(lcolors_.size());
 
 	undo_stack_ = new QUndoStack(this);
+
+	// set up tool icons
+	const QIcon undoIcon =
+	        QIcon(QPixmap(
+	                  toqstr(package().system_support().absFileName()
+	                         + "images/undo.svgz")));
+	QAction* undoAct = new QAction(undoIcon, qt_("Undo"), this);
+	undoColorPB->setDefaultAction(undoAct);
+
+	const QIcon redoIcon =
+	        QIcon(QPixmap(
+	                  toqstr(package().system_support().absFileName()
+	                         + "images/redo.svgz")));
+	QAction* redoAct = new QAction(redoIcon, qt_("Redo"), this);
+	redoColorPB->setDefaultAction(redoAct);
+
+	const QIcon resetIcon =
+	        QIcon(QPixmap(
+	                  toqstr(package().system_support().absFileName()
+	                         + "images/reload.svgz")));
+	QAction* resetAct = new QAction(resetIcon, qt_("Reset current light/dark colors to default"), this);
+	colorResetPB->setDefaultAction(resetAct);
+
+	const QIcon resetAllIcon =
+	        QIcon(QPixmap(
+	                  toqstr(package().system_support().absFileName()
+	                         + "images/buffer-close.svgz")));
+	QAction* resetAllAct = new QAction(resetAllIcon, qt_("Reset all colors to default"), this);
+	colorResetAllPB->setDefaultAction(resetAllAct);
+
+	const QIcon findPreviousIcon =
+	        QIcon(QPixmap(
+	                  toqstr(package().system_support().absFileName()
+	                         + "images/bookmark-goto_0.svgz")));
+	QAction* findPreviousAct = new QAction(findPreviousIcon, qt_("Find Previous"), this);
+	searchBackwardPB->setDefaultAction(findPreviousAct);
+
+	const QIcon findNextIcon =
+	        QIcon(QPixmap(
+	                  toqstr(package().system_support().absFileName()
+	                         + "images/bookmark-goto.svgz")));
+	QAction* findNextAct = new QAction(findNextIcon, qt_("Find Next"), this);
+	searchForwardPB->setDefaultAction(findNextAct);
+
+	// setup shortcuts
 	QShortcut* sc_undo = new QShortcut(QKeySequence(QKeySequence::Undo), this);
 	QShortcut* sc_redo = new QShortcut(QKeySequence(QKeySequence::Redo), this);
 	QShortcut* sc_search =
@@ -1051,18 +1097,8 @@ PrefColors::PrefColors(GuiPreferences * form)
 
 	connect(autoapplyCB, SIGNAL(toggled(bool)),
 	        this, SLOT(changeAutoapply()));
-	connect(colorResetPB, SIGNAL(clicked()),
-	        this, SLOT(resetColor()));
-	connect(colorResetAllPB, SIGNAL(clicked()),
-	        this, SLOT(resetAllColor()));
-	connect(themesMenuPB, SIGNAL(clicked()),
-	        this, SLOT(openThemeMenu()));
-	connect(themesLW, SIGNAL(itemClicked(QListWidgetItem*)),
-	        this, SLOT(loadThemeInterface(QListWidgetItem*)));
-	// connect(colorsTW, SIGNAL(focusChanged()),
-	//         this, SLOT(changeFocus()));
 	connect(colorsTW, SIGNAL(cellClicked(int,int)),
-	        this, SLOT(changeColor(int, int)));
+	        this, SLOT(changeColor(int,int)));
 	connect(colorsTW, SIGNAL(itemActivated(QTableWidgetItem*)),
 	        this, SLOT(changeColor()));
 	connect(colorsTW, SIGNAL(itemSelectionChanged()),
@@ -1072,10 +1108,18 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(moveCurrentItem(QTableWidgetItem*,QTableWidgetItem*)));
 	connect(colorsTW, SIGNAL(itemPressed(QTableWidgetItem*)),
 	        this, SLOT(pressCurrentItem(QTableWidgetItem*)));
-	connect(redoColorPB, SIGNAL(clicked()),
+	connect(findNextAct, SIGNAL(triggered()),
+	        this, SLOT(searchNextColorItem()));
+	connect(findPreviousAct, SIGNAL(triggered()),
+	        this, SLOT(searchPreviousColorItem()));
+	connect(redoAct, SIGNAL(triggered()),
 	        undo_stack_, SLOT(redo()));
 	connect(removeThemePB, SIGNAL(clicked()),
 	        this, SLOT(removeTheme()));
+	connect(resetAct, SIGNAL(triggered()),
+	        this, SLOT(resetColor()));
+	connect(resetAllAct, SIGNAL(triggered()),
+	        this, SLOT(resetAllColor()));
 	connect(saveThemePB, SIGNAL(clicked()),
 	        this, SLOT(saveThemeInterface()));
 	connect(sc_search, SIGNAL(activated()),
@@ -1088,17 +1132,17 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        undo_stack_, SLOT(redo()));
 	connect(sc_undo, SIGNAL(activated()),
 	        undo_stack_, SLOT(undo()));
-	connect(searchBackwardPB, SIGNAL(clicked()),
-	        this, SLOT(searchPreviousColorItem()));
-	connect(searchForwardPB, SIGNAL(clicked()),
-	        this, SLOT(searchNextColorItem()));
 	connect(searchStringEdit, SIGNAL(returnPressed()),
 	        this, SLOT(searchNextColorItem()));
 	connect(syscolorsCB, SIGNAL(toggled(bool)),
 	        this, SIGNAL(changed()));
 	connect(syscolorsCB, SIGNAL(toggled(bool)),
 	        this, SLOT(changeSysColor()));
-	connect(undoColorPB, SIGNAL(clicked()),
+	connect(themesMenuPB, SIGNAL(clicked()),
+	        this, SLOT(openThemeMenu()));
+	connect(themesLW, SIGNAL(itemClicked(QListWidgetItem*)),
+	        this, SLOT(loadThemeInterface(QListWidgetItem*)));
+	connect(undoAct, SIGNAL(triggered()),
 	        undo_stack_, SLOT(undo()));
 }
 
@@ -1194,15 +1238,15 @@ void PrefColors::setIcon(size_type row, bool const dark_mode, QColor color)
 {
 	QPixmap coloritem(icon_width_, icon_height_);
 	coloritem.fill(color);
-	colorsTW->item(row, (int)dark_mode)->setIcon(QIcon(coloritem));
+	QTableWidgetItem* item = colorsTW->item(row, (int)dark_mode);
+	item->setIcon(QIcon(coloritem));
 }
 
 
 void PrefColors::updateAllIcons()
 {
 	for (size_type row = 0; row < lcolors_.size(); ++row) {
-		size_type cur_row = colorsTW->currentRow();
-		setIcons(cur_row, toqcolor(newcolors_[cur_row]));
+		setIcons(row, toqcolor(newcolors_[row]));
 	}
 }
 
@@ -1245,6 +1289,8 @@ void PrefColors::resetAllColor()
 		// emit signal
 		changed();
 	}
+
+	updateAllIcons();
 }
 
 
@@ -4269,9 +4315,9 @@ void SetColor::setColor(QColor color)
 	setDisabledResets();
 	// emit signal
 	changed();
-	// somehow this is needed to update the icon of the color list widget
-	// need to be called from the layer of PrefColors?
+
 	parent_->changeFocus();
+	//colorsTW->reset();
 
 	if (autoapply_) {
 		parent_->form_->setColor(lcolors_[row_], newcolors_[row_]);
