@@ -1078,9 +1078,10 @@ void Tabular::updateIndexes()
 			if (!isPartOfMultiColumn(row, column)
 				&& !isPartOfMultiRow(row, column))
 				++numberofcells;
-			if (isPartOfMultiRow(row, column))
+			if (isPartOfMultiRow(row, column)) {
+				LATTEST(row > 0);
 				cell_info[row][column].cellno = cell_info[row - 1][column].cellno;
-			else
+			} else
 				cell_info[row][column].cellno = numberofcells - 1;
 		}
 
