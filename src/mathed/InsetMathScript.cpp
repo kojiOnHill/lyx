@@ -718,7 +718,7 @@ bool InsetMathScript::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 		Cursor insetCur = old;
 		int scriptSlice	= insetCur.find(this);
 		LASSERT(scriptSlice != -1, /**/);
-		insetCur.cutOff(scriptSlice);
+		insetCur.resize(scriptSlice + 1);
 		insetCur.recordUndoInset();
 
 		// Let the script inset commit suicide. This is

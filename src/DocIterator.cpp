@@ -690,16 +690,11 @@ int DocIterator::find(Inset const * inset) const
 }
 
 
-void DocIterator::cutOff(int above, vector<CursorSlice> & cut)
+void DocIterator::resize(size_type count, vector<CursorSlice> & cut)
 {
-	cut = vector<CursorSlice>(slices_.begin() + above + 1, slices_.end());
-	slices_.resize(above + 1);
-}
-
-
-void DocIterator::cutOff(int above)
-{
-	slices_.resize(above + 1);
+	LASSERT(count <= depth(), return);
+	cut = vector<CursorSlice>(slices_.begin() + count, slices_.end());
+	slices_.resize(count);
 }
 
 

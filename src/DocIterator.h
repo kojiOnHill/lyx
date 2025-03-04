@@ -57,8 +57,10 @@ public:
 	CursorSlice const & operator[](size_t i) const { return slices_[i]; }
 	/// access slice at position \p i
 	CursorSlice & operator[](size_t i) { return slices_[i]; }
-	/// chop a few slices from the iterator
-	void resize(size_t i) { slices_.resize(i); }
+	/// Resize cursor to \c count <= depth() slices.
+	void resize(size_t count) { slices_.resize(count); }
+	/// Resize cursor to \c count <= depth() slices and store cut off slices in \c cut.
+	void resize(size_type count, std::vector<CursorSlice> & cut);
 
 	/// is the iterator valid?
 	explicit operator bool() const { return !empty(); }
@@ -258,10 +260,6 @@ public:
 	int find(MathData const & cell) const;
 	/// find index of CursorSlice with inset() == inset (or -1 of not found)
 	int find(Inset const * inset) const;
-	/// cut off CursorSlices with index > above and store cut off slices in cut.
-	void cutOff(int above, std::vector<CursorSlice> & cut);
-	/// cut off CursorSlices with index > above
-	void cutOff(int above);
 	/// push CursorSlices on top
 	void append(std::vector<CursorSlice> const & x);
 	/// push one CursorSlice on top and set its index and position
@@ -280,7 +278,7 @@ private:
 	explicit DocIterator(Buffer * buf, Inset * inset)
 		: inset_(inset), buffer_(buf)
 	{}
-	
+
 	/**
 	 * Normally, when the cursor is at position i, it is painted *before*
 	 * the character at position i. However, what if we want the cursor

@@ -930,7 +930,7 @@ void InsetMathMacroTemplate::removeParameter(Cursor & cur,
 			int macroSlice = cur.find(this);
 			if (macroSlice != -1) {
 				if (cur[macroSlice].idx() == optIdx(pos)) {
-					cur.cutOff(macroSlice);
+					cur.resize(macroSlice + 1);
 					cur[macroSlice].idx() = 1;
 					cur[macroSlice].pos() = 0;
 				} else if (cur[macroSlice].idx() > optIdx(pos))
@@ -985,7 +985,7 @@ void InsetMathMacroTemplate::makeNonOptional(Cursor & cur,
 			if (cur[macroSlice].idx() > optIdx(optionals_))
 				--cur[macroSlice].idx();
 			else if (cur[macroSlice].idx() == optIdx(optionals_)) {
-				cur.cutOff(macroSlice);
+				cur.resize(macroSlice + 1);
 				cur[macroSlice].idx() = optIdx(optionals_);
 				cur[macroSlice].pos() = 0;
 			}

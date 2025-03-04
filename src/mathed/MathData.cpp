@@ -521,7 +521,7 @@ void MathData::updateMacros(Cursor * cur, MacroContext const & mc,
 			if (cur) {
 				int macroSlice = cur->find(macroInset);
 				if (macroSlice != -1)
-					cur->cutOff(macroSlice - 1);
+					cur->resize(macroSlice);
 			}
 		}
 
@@ -588,7 +588,7 @@ void MathData::detachMacroParameters(DocIterator * cur, const size_type macroPos
 	if (curMacroSlice != -1) {
 		curMacroPos = (*cur)[curMacroSlice].pos();
 		curMacroIdx = (*cur)[curMacroSlice].idx();
-		cur->cutOff(curMacroSlice, argSlices);
+		cur->resize(curMacroSlice + 1, argSlices);
 		cur->pop_back();
 	}
 
@@ -837,7 +837,7 @@ void MathData::collectOptionalParameters(Cursor * cur,
 		    && thisPos >= int(pos) && thisPos <= int(right)) {
 			int paramPos = max(0, thisPos - int(pos) - 1);
 			vector<CursorSlice> x;
-			cur->cutOff(thisSlice, x);
+			cur->resize(thisSlice + 1, x);
 			(*cur)[thisSlice].pos() = macroPos;
 			if (brace) {
 				paramPos = x[0].pos();
@@ -877,7 +877,7 @@ void MathData::collectParameters(Cursor * cur,
 		// (see caller), but making this explicit pleases coverity.
 		if (cur && thisSlice != -1
 			&& thisPos == int(pos))
-			cur->cutOff(thisSlice, argSlices);
+			cur->resize(thisSlice + 1, argSlices);
 
 		// which kind of parameter is it? In {}? With index x^n?
 		InsetMathBrace const * brace = cell->asBraceInset();

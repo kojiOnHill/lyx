@@ -1116,7 +1116,7 @@ bool InsetMathMacro::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 			// returning true means the cursor is "now" invalid,
 			// which it was.
 			LASSERT(macroSlice != -1, return true);
-			inset_cursor.cutOff(macroSlice);
+			inset_cursor.resize(macroSlice + 1);
 			inset_cursor.recordUndoInset();
 			inset_cursor.pop();
 			inset_cursor.cell().erase(inset_cursor.pos());
