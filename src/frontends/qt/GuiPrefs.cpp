@@ -1164,7 +1164,7 @@ void PrefColors::applyRC(LyXRC & rc) const
 void PrefColors::updateRC(LyXRC const & rc)
 {
 	for (size_type i = 0; i < lcolors_.size(); ++i) {
-		std::pair<QColor, QColor> colors =
+		ColorPair colors =
 		        guiApp->colorCache().getAll(lcolors_[i], false);
 		setIcons(i, colors);
 		newcolors_[i].first  = curcolors_[i].first  = colors.first.name();
@@ -1227,19 +1227,21 @@ void PrefColors::changeColor(int const row, int const column)
 }
 
 
-void PrefColors::setIcons(size_type row, std::pair<QColor, QColor> colors)
-{
-	setIcon(row, false, colors.first);
-	setIcon(row, true, colors.second);
-}
-
-
 void PrefColors::setIcon(size_type row, bool const dark_mode, QColor color)
 {
 	QPixmap coloritem(icon_width_, icon_height_);
 	coloritem.fill(color);
-	QTableWidgetItem* item = colorsTW->item(row, (int)dark_mode);
-	item->setIcon(QIcon(coloritem));
+	// QTableWidgetItem* item = colorsTW->item(row, (int)dark_mode);
+	// item->setIcon(QIcon(coloritem));
+	QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
+	colorsTW->setItem(row, (int)dark_mode, item);
+}
+
+
+void PrefColors::setIcons(size_type row, ColorPair colors)
+{
+	setIcon(row, false, colors.first);
+	setIcon(row, true, colors.second);
 }
 
 
@@ -1251,7 +1253,7 @@ void PrefColors::updateAllIcons()
 }
 
 
-void PrefColors::redrawTable()
+void PrefColors::redrawColorTable()
 {
 	colorsTW->clearContents();
 	for (size_type row=0; row!=lcolors_.size(); ++row) {
@@ -1262,7 +1264,8 @@ void PrefColors::redrawTable()
 		coloritem.fill(newcolors_[row].second);
 		colorsTW->setItem(row, 1, new QTableWidgetItem(coloritem, ""));
 
-		QTableWidgetItem* txtItem = new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
+		QTableWidgetItem* txtItem =
+		        new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
 		txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
 		colorsTW->setItem(row, 2, txtItem);
 	}
@@ -1277,8 +1280,8 @@ void PrefColors::resetColor()
 	if (row < 0)
 		return;
 
-	std::pair<QString, QString> const colors = newcolors_[size_t(row)];
-	std::pair<QColor, QColor> const c = getDefaultColorsByRow(row);
+	ColorNamePair const colors = newcolors_[size_t(row)];
+	ColorPair const c = getDefaultColorsByRow(row);
 
 	if (setColor(row, c, colors)) {
 		setDisabledResets();
@@ -1295,8 +1298,8 @@ void PrefColors::resetAllColor()
 	colorResetAllPB->setDisabled(true);
 
 	for (int irow = 0, count = colorsTW->rowCount(); irow < count; ++irow) {
-		std::pair<QString, QString> const colors = newcolors_[size_t(irow)];
-		std::pair<QColor, QColor> const c = getDefaultColorsByRow(irow);
+		ColorNamePair const colors = newcolors_[size_t(irow)];
+		ColorPair const c = getDefaultColorsByRow(irow);
 
 		if (setColor(irow, c, colors))
 			isChanged = true;
@@ -1308,13 +1311,13 @@ void PrefColors::resetAllColor()
 		changed();
 	}
 
-	redrawTable();
+	// updateAllIcons is not sufficient
+	redrawColorTable();
 }
 
 
-bool PrefColors::setColor(int const row,
-                          std::pair<QColor, QColor> const & new_colors,
-                          std::pair<QString, QString> const & old_colors)
+bool PrefColors::setColor(int const row, ColorPair const & new_colors,
+                          ColorNamePair const & old_colors)
 {
 	bool res1, res2;
 	res1 = setColor(row, false, new_colors.first,  old_colors.first);
@@ -1629,14 +1632,14 @@ void PrefColors::openThemeMenu()
 }
 
 
-bool PrefColors::isDefaultColor(int const row, std::pair<QString, QString> const & colors)
+bool PrefColors::isDefaultColor(int const row, ColorNamePair const & colors)
 {
 	return colors.first == getDefaultColorsByRow(row).first.name() &&
 	        colors.second == getDefaultColorsByRow(row).second.name();
 }
 
 
-std::pair<QColor, QColor> PrefColors::getDefaultColorsByRow(int const row)
+ColorPair PrefColors::getDefaultColorsByRow(int const row)
 {
 	ColorSet const defaultcolor;
 	std::pair<std::string, std::string> hex_names =
@@ -1757,7 +1760,7 @@ void PrefColors::searchPreviousColorItem()
 }
 
 
-std::pair<QColor, QColor> PrefColors::toqcolor(std::pair<QString, QString> colors)
+ColorPair PrefColors::toqcolor(ColorNamePair colors)
 {
 	return {QColor(colors.first), QColor(colors.second)};
 }
@@ -4227,7 +4230,7 @@ void GuiPreferences::dispatchParams()
 }
 
 
-void GuiPreferences::setColor(ColorCode col, std::pair<QString, QString> const & hex)
+void GuiPreferences::setColor(ColorCode col, ColorNamePair const & hex)
 {
 	colors_.push_back(lcolor.getLyXName(col) + ' ' +
 	                  fromqstr(hex.first) + ' ' + fromqstr(hex.second));
@@ -4295,8 +4298,7 @@ QString GuiPreferences::browse(QString const & file,
 
 
 SetColor::SetColor(const int row, bool dark_mode, const QColor & new_color,
-                   QString old_color,
-                   std::vector<std::pair<QString, QString>> & new_color_list,
+                   QString old_color, ColorNamePairs & new_color_list,
                    const bool autoapply, PrefColors* color_module,
                    QUndoCommand* uc_parent)
     : PrefColors(color_module->form_), QUndoCommand(uc_parent),
@@ -4324,18 +4326,20 @@ void SetColor::undo()
 
 void SetColor::setColor(QColor color)
 {
+
 	if (dark_mode_)
 		newcolors_[size_t(row_)].second = color.name();
 	else
 		newcolors_[size_t(row_)].first = color.name();
 	setIcon(row_, dark_mode_, color);
 
-	setDisabledResets();
+	// LYXERR0("New color at (" << row_ << ", " << dark_mode_ << ") is now " <<
+	//         color.name() << ": " << newcolors_[size_t(row_)].first <<
+	//         ", " << newcolors_[size_t(row_)].second);
+	parent_->changeFocus();
+
 	// emit signal
 	changed();
-
-	parent_->changeFocus();
-	//colorsTW->reset();
 
 	if (autoapply_) {
 		parent_->form_->setColor(lcolors_[row_], newcolors_[row_]);
