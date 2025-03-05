@@ -261,6 +261,7 @@ private Q_SLOTS:
 	void changeColor(int const row, int const column);
 	void resetColor();
 	void resetAllColor();
+	void redrawTable();
 	void changeSysColor();
 	void changeLyxObjectsSelection();
 	void changeAutoapply();
