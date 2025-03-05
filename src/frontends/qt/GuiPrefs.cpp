@@ -1258,13 +1258,14 @@ void PrefColors::redrawTable()
 		QPixmap coloritem(icon_width_, icon_height_);
 		coloritem.fill(newcolors_[row].first);
 		colorsTW->setItem(row, 0, new QTableWidgetItem(coloritem, ""));
+
 		coloritem.fill(newcolors_[row].second);
 		colorsTW->setItem(row, 1, new QTableWidgetItem(coloritem, ""));
+
 		QTableWidgetItem* txtItem = new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
 		txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
 		colorsTW->setItem(row, 2, txtItem);
 	}
-
 }
 
 
