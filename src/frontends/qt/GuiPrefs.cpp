@@ -22,6 +22,7 @@
 #include "GuiLyXFiles.h"
 #include "GuiView.h"
 #include "qt_helpers.h"
+#include "version.h"
 #include "Validator.h"
 
 #include "Author.h"
@@ -1440,7 +1441,7 @@ void PrefColors::saveTheme(QString file_path)
 
 	ofstream ofs(fromqstr(file_path));
 
-	ofs << "#\n" <<
+	ofs << "#LyX version: " << lyx_version << "\n#\n" <<
 	       "#   This is a definition file of a color theme \"" <<
 	            fromqstr(theme_name_) << "\" of LyX\n" <<
 	       "#\n" <<
