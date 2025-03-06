@@ -1041,43 +1041,43 @@ PrefColors::PrefColors(GuiPreferences * form)
 	// set up tool icons
 	const QIcon undoIcon =
 	        QIcon(QPixmap(
-	                  toqstr(package().system_support().absFileName()
-	                         + "images/undo.svgz")));
+	                  toqstr(addName(package().system_support().absFileName(),
+	                                 "images/undo.svgz"))));
 	QAction* undoAct = new QAction(undoIcon, qt_("Undo"), this);
 	undoColorPB->setDefaultAction(undoAct);
 
 	const QIcon redoIcon =
 	        QIcon(QPixmap(
-	                  toqstr(package().system_support().absFileName()
-	                         + "images/redo.svgz")));
+	                  toqstr(addName(package().system_support().absFileName(),
+	                                 "images/redo.svgz"))));
 	QAction* redoAct = new QAction(redoIcon, qt_("Redo"), this);
 	redoColorPB->setDefaultAction(redoAct);
 
 	const QIcon resetIcon =
 	        QIcon(QPixmap(
-	                  toqstr(package().system_support().absFileName()
-	                         + "images/reload.svgz")));
+	                  toqstr(addName(package().system_support().absFileName(),
+	                                 "images/reload.svgz"))));
 	QAction* resetAct = new QAction(resetIcon, qt_("Reset current light/dark colors to default"), this);
 	colorResetPB->setDefaultAction(resetAct);
 
 	const QIcon resetAllIcon =
 	        QIcon(QPixmap(
-	                  toqstr(package().system_support().absFileName()
-	                         + "images/buffer-close.svgz")));
+	                  toqstr(addName(package().system_support().absFileName(),
+	                                 "images/buffer-close.svgz"))));
 	QAction* resetAllAct = new QAction(resetAllIcon, qt_("Reset all colors to default"), this);
 	colorResetAllPB->setDefaultAction(resetAllAct);
 
 	const QIcon findPreviousIcon =
 	        QIcon(QPixmap(
-	                  toqstr(package().system_support().absFileName()
-	                         + "images/bookmark-goto_0.svgz")));
+	                  toqstr(addName(package().system_support().absFileName(),
+	                                 "images/bookmark-goto_0.svgz"))));
 	QAction* findPreviousAct = new QAction(findPreviousIcon, qt_("Find Previous"), this);
 	searchBackwardPB->setDefaultAction(findPreviousAct);
 
 	const QIcon findNextIcon =
 	        QIcon(QPixmap(
-	                  toqstr(package().system_support().absFileName()
-	                         + "images/bookmark-goto.svgz")));
+	                  toqstr(addName(package().system_support().absFileName(),
+	                                 "images/bookmark-goto.svgz"))));
 	QAction* findNextAct = new QAction(findNextIcon, qt_("Find Next"), this);
 	searchForwardPB->setDefaultAction(findNextAct);
 
@@ -1391,9 +1391,11 @@ void PrefColors::saveThemeInterface()
 	if (themeNameInterface(false))
 		return;
 
-	QString file_path = toqstr(package().user_support().absFileName())
-	        + "/themes/" + theme_file_name_;
-	saveTheme(file_path);
+	std::string file_path =
+	        addName(
+	            addPath(package().user_support().absFileName(), "themes"),
+	            fromqstr(theme_file_name_));
+	saveTheme(toqstr(file_path));
 
 	return;
 }
@@ -1564,8 +1566,12 @@ void PrefColors::initializeThemesLW()
 	theme_filenames_.clear();
 	isSysThemes_.clear();
 
-	const QIcon & sys_theme_icon= QIcon(toqstr(package().system_support().absFileName() + "images/oxygen/float-insert_figure.svgz"));
-	const QIcon & usr_theme_icon= QIcon(toqstr(package().system_support().absFileName() + "images/oxygen/change-accept.svgz"));
+	const QIcon & sys_theme_icon =
+	        QIcon(toqstr(addPathName(package().system_support().absFileName(),
+	                                 "images/oxygen/float-insert_figure.svgz")));
+	const QIcon & usr_theme_icon =
+	        QIcon(toqstr(addPathName(package().system_support().absFileName(),
+	                                 "images/oxygen/change-accept.svgz")));
 
 	// key:   theme's GUI name
 	// value: pair<theme's file name, bool if a user theme>
@@ -1573,8 +1579,10 @@ void PrefColors::initializeThemesLW()
 
 	FileName sys_theme_dir;
 	FileName usr_theme_dir;
-	sys_theme_dir.set((package().system_support().absFileName() + "themes").c_str());
-	usr_theme_dir.set((package().user_support().absFileName() + "themes").c_str());
+	sys_theme_dir.set(addName(package().system_support().absFileName(),
+	                          "themes").c_str());
+	usr_theme_dir.set(addName(package().user_support().absFileName(),
+	                          "themes").c_str());
 	const FileNameList sys_theme_files = sys_theme_dir.dirList("theme");
 	const FileNameList usr_theme_files = usr_theme_dir.dirList("theme");
 	for (const FileName & file : sys_theme_files) {
@@ -3356,7 +3364,7 @@ PrefEdit::PrefEdit(GuiPreferences * form)
 		this, SIGNAL(changed()));
 	connect(screenWidthLE, SIGNAL(textChanged(QString)),
 		this, SIGNAL(changed()));
-	connect(screenWidthUnitCO, SIGNAL(selectionChanged(lyx::Length::UNIT)), 
+	connect(screenWidthUnitCO, SIGNAL(selectionChanged(lyx::Length::UNIT)),
 		this, SIGNAL(changed()));
 }
 
