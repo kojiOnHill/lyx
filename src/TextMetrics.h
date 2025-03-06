@@ -171,7 +171,7 @@ private:
 	Row tokenizeParagraph(pit_type pit) const;
 
 	// Break the row produced by tokenizeParagraph() into a list of rows.
-	RowList breakParagraph(Row const & row) const;
+	Rows breakParagraph(Row const & row) const;
 
 	// Expands the alignment of row \param row in paragraph \param par
 	LyXAlignment getAlign(Paragraph const & par, Row const & row) const;
