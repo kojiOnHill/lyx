@@ -1104,9 +1104,6 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(changeColor()));
 	connect(colorsTW, SIGNAL(itemSelectionChanged()),
 	        this, SLOT(changeLyxObjectsSelection()));
-	connect(colorsTW,
-	        SIGNAL(currentItemChanged(QTableWidgetItem*,QTableWidgetItem*)),
-	        this, SLOT(moveCurrentItem(QTableWidgetItem*,QTableWidgetItem*)));
 	connect(colorsTW, SIGNAL(itemPressed(QTableWidgetItem*)),
 	        this, SLOT(pressCurrentItem(QTableWidgetItem*)));
 	connect(findNextAct, SIGNAL(triggered()),
@@ -1694,20 +1691,6 @@ void PrefColors::changeAutoapply()
 	autoapply_ = autoapplyCB->isChecked() ? true : false;
 }
 
-
-void PrefColors::moveCurrentItem(QTableWidgetItem *cur, QTableWidgetItem *prev)
-{
-	// change the color of the spacer in the selected row to the selected
-	// background color and reset the color of the previously selected row
-
-	if (cur == nullptr || prev == nullptr) return;
-		setIcons(prev->row(), {QColor(newcolors_[colorsTW->row(prev)].first),
-		                       QColor(newcolors_[colorsTW->row(prev)].second)});
-		setIcons(cur->row(), {QColor(newcolors_[colorsTW->row(cur)].first),
-		                      QColor(newcolors_[colorsTW->row(cur)].second)});
-
-	changed();
-}
 
 void PrefColors::pressCurrentItem(QTableWidgetItem * item)
 {

@@ -283,8 +283,6 @@ private Q_SLOTS:
 	void exportThemeInterface();
 	void importThemeInterface();
 
-	void moveCurrentItem(QTableWidgetItem *cur = nullptr,
-	                     QTableWidgetItem *prev = nullptr);
 	void pressCurrentItem(QTableWidgetItem * item = nullptr);
 	void changeFocus();
 
