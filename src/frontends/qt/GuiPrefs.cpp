@@ -1230,8 +1230,6 @@ void PrefColors::setIcon(size_type row, bool const dark_mode, QColor color)
 {
 	QPixmap coloritem(icon_width_, icon_height_);
 	coloritem.fill(color);
-	// QTableWidgetItem* item = colorsTW->item(row, (int)dark_mode);
-	// item->setIcon(QIcon(coloritem));
 	QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
 	colorsTW->setItem(row, (int)dark_mode, item);
 }
@@ -1365,44 +1363,45 @@ void PrefColors::setDisabledResets()
 
 void PrefColors::exportThemeInterface()
 {
-	if (themeNameInterface(true))
-		return;
-
 	// ask for directory to export
 	QString home_dir = toqstr(package().get_home_dir().absFileName());
-	FileDialog dialog("Export a color theme");
+	FileDialog dialog(qt_("Export a color theme"));
 	FileDialog::Result result =
-	        dialog.save((home_dir == "") ? "/" : home_dir, {"*.theme", "*.*"},
-	                    theme_file_name_);
+			dialog.save((home_dir == "") ? "/" : home_dir, {"*.theme", "*.*"},
+						theme_filename_);
 	QString file_path;
-	if (result.first == FileDialog::Chosen)
+	if (result.first == FileDialog::Chosen) {
 		file_path = result.second;
-
-	saveTheme(file_path);
-
-	return;
+		(saveTheme(file_path));
+	}
 }
 
 
 void PrefColors::saveThemeInterface()
 {
-	if (themeNameInterface(false))
-		return;
+	while (true) {
+		// this sets theme_filename_
+		if (!askThemeName(false))
+			break;
 
-	std::string file_path =
-	        addName(
-	            addPath(package().user_support().absFileName(), "themes"),
-	            fromqstr(theme_file_name_));
-	saveTheme(toqstr(file_path));
+		std::string file_path =
+				addName(
+					addPath(package().user_support().absFileName(), "themes"),
+					fromqstr(theme_filename_));
 
-	return;
+		QFile target_file(toqstr(file_path));
+		if (!target_file.exists() || wantToOverwrite()) {
+			saveTheme(toqstr(file_path));
+			break;
+		}
+	}
 }
 
 
-bool PrefColors::themeNameInterface(bool exporting)
+bool PrefColors::askThemeName(bool porting)
 {
-	QString prompt = exporting ?
-	            qt_("What is the name of the color theme to export?") :
+	QString prompt = porting ?
+	            qt_("What is the name of the color theme?") :
 	            qt_("What is the name of the new color theme to save?");
 	bool ok;
 	theme_name_ =
@@ -1413,32 +1412,36 @@ bool PrefColors::themeNameInterface(bool exporting)
 	if (ok && !theme_name_.isEmpty()) {
 		// Makefile cannot handle spaces in filenames directly
 		// so replace it with an underscore same as other places
-		theme_file_name_ = theme_name_;
-		theme_file_name_.replace(' ', '_');
-		theme_file_name_ += ".theme";
+		QString tmp_name = theme_name_;
+		tmp_name.replace(' ', '_');
+		theme_filename_ = tmp_name + ".theme";
 	} else {
 		activatePrefsWindow(form_);
-		return true;
+		return false;
 	}
 
-	return false;
+	return true;
 }
+
+
+bool PrefColors::wantToOverwrite()
+{
+	QMessageBox msgBox;
+	msgBox.setIcon(QMessageBox::Warning);
+	msgBox.setText(qt_("A user color theme with the same name exists."));
+	msgBox.setInformativeText(qt_("Do you want to overwrite?"));
+	msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	msgBox.setDefaultButton(QMessageBox::No);
+	int ret = msgBox.exec();
+	if (ret == QMessageBox::No)
+		return false;
+	else
+		return true;
+}
+
 
 void PrefColors::saveTheme(QString file_path)
 {
-	QFile file_to_save(file_path);
-	if (file_to_save.exists()) {
-		QMessageBox msgBox;
-		msgBox.setIcon(QMessageBox::Warning);
-		msgBox.setText("A user color theme with the same name exists.");
-		msgBox.setInformativeText("Do you want to overwrite?");
-		msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-		msgBox.setDefaultButton(QMessageBox::No);
-		int ret = msgBox.exec();
-		if (ret == QMessageBox::No)
-		      return;
-	}
-
 	ofstream ofs(fromqstr(file_path));
 
 	ofs << "#LyX version: " << lyx_version << "\n#\n" <<
@@ -1466,7 +1469,7 @@ void PrefColors::saveTheme(QString file_path)
 void PrefColors::importThemeInterface()
 {
 	QString home_dir = toqstr(package().get_home_dir().absFileName());
-	FileDialog dialog("Import a color theme");
+	FileDialog dialog(qt_("Import a color theme"));
 	FileDialog::Result result =
 	        dialog.open((home_dir == "") ? "/" : home_dir, {"*.theme", "*.*"});
 	QString file_path;
@@ -1475,13 +1478,27 @@ void PrefColors::importThemeInterface()
 	else
 		return;
 
-	QFileInfo import_fileinfo(file_path);
 	QFile import_file(file_path);
-	std::string target_file_path =
-	        addName(
-	            addPath(package().user_support().absFileName(), "themes"),
-	            fromqstr(import_fileinfo.fileName()));
-	// compy to user theme dir
+	std::string target_file_path;
+
+	while (true) {
+		if (askThemeName(true)) {
+			target_file_path =
+			        addName(
+			            addPath(package().user_support().absFileName(), "themes"),
+			            fromqstr(theme_filename_));
+			QFile target_file(toqstr(target_file_path));
+			if (!target_file.exists())
+				break;
+			else if (wantToOverwrite()) {
+				target_file.remove();
+				break;
+			}
+		} else
+			return;
+	}
+
+	// copy to user theme dir
 	import_file.copy(toqstr(target_file_path));
 
 	initializeThemesLW();
@@ -1493,13 +1510,15 @@ void PrefColors::importThemeInterface()
 
 void PrefColors::loadThemeInterface(QListWidgetItem* item)
 {
-	loadTheme(FileName(fromqstr(theme_filenames_[themesLW->row(item)])));
+	loadTheme(FileName(fromqstr(theme_fullpaths_[themesLW->row(item)])));
+	theme_filename_ = onlyFileName(theme_fullpaths_[themesLW->row(item)]);
+	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
 }
 
 
-void PrefColors::loadTheme(FileName filename)
+void PrefColors::loadTheme(FileName fullpath)
 {
-	form_->rc().read(filename, true);
+	form_->rc().read(fullpath, true);
 	for (size_type row = 0; row < lcolors_.size(); ++row) {
 		newcolors_[size_t(row)] =
 		    {QString(lcolor.getX11HexName(lcolors_[row], false).c_str()),
@@ -1558,7 +1577,7 @@ void PrefColors::removeTheme()
 	msgBox.setDefaultButton(QMessageBox::No);
 
 	if (msgBox.exec() == QMessageBox::Yes) {
-		QFile file(theme_filenames_[cur_row]);
+		QFile file(theme_fullpaths_[cur_row]);
 		file.remove();
 		initializeThemesLW();
 	}
@@ -1571,7 +1590,7 @@ void PrefColors::initializeThemesLW()
 	// initialize themes list widget
 	//
 	// clear dataset
-	theme_filenames_.clear();
+	theme_fullpaths_.clear();
 	isSysThemes_.clear();
 
 	const QIcon & sys_theme_icon =
@@ -1619,7 +1638,7 @@ void PrefColors::initializeThemesLW()
 		else
 			item->setIcon(sys_theme_icon);
 		themesLW->addItem(item);
-		theme_filenames_.push_back(theme.second.first);
+		theme_fullpaths_.push_back(theme.second.first);
 		if (theme.first.right(3) == "sys")
 			isSysThemes_.push_back(true);
 		else
@@ -3395,8 +3414,8 @@ void PrefEdit::applyRC(LyXRC & rc) const
 	rc.cursor_width = cursorWidthSB->value();
 	rc.citation_search = citationSearchCB->isChecked();
 	rc.citation_search_pattern = fromqstr(citationSearchLE->text());
-	rc.screen_width = Length(widgetsToLength(screenWidthLE, screenWidthUnitCO)); 
-	rc.screen_limit = screenLimitCB->isChecked(); 
+	rc.screen_width = Length(widgetsToLength(screenWidthLE, screenWidthUnitCO));
+	rc.screen_limit = screenLimitCB->isChecked();
 }
 
 
@@ -4254,7 +4273,7 @@ QString GuiPreferences::browseLibFile(QString const & dir,
 	guilyxfiles_->passParams(fromqstr(dir));
 	guilyxfiles_->selectItem(name);
 	guilyxfiles_->exec();
-	
+
 	activatePrefsWindow(this);
 
 	QString const result = uifile_;

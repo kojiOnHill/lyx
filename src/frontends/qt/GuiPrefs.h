@@ -310,7 +310,9 @@ private:
 	///
 	void loadTheme(support::FileName filename);
 	///
-	bool themeNameInterface(bool exporting);
+	bool askThemeName(bool porting);
+	///
+	bool wantToOverwrite();
 	///
 	ColorPair toqcolor(ColorNamePair);
 
@@ -330,9 +332,11 @@ private:
 
 	QMenu theme_menu_;
 	std::vector<bool> isSysThemes_;
-	std::vector<QString> theme_filenames_;
+	std::vector<QString> theme_fullpaths_;
+	/// holds currently selected theme
 	QString theme_name_ = "";
-	QString theme_file_name_;
+	/// holds filename of currently selected theme
+	QString theme_filename_;
 
 	friend class SetColor;
 };
