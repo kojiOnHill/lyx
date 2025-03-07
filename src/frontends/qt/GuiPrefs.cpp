@@ -59,6 +59,7 @@
 #include <QAbstractItemModel>
 #include <QCheckBox>
 #include <QFile>
+#include <QFileInfo>
 #include <QFontDatabase>
 #include <QHeaderView>
 #include <QInputDialog>
@@ -1474,6 +1475,16 @@ void PrefColors::importThemeInterface()
 	else
 		return;
 
+	QFileInfo import_fileinfo(file_path);
+	QFile import_file(file_path);
+	std::string target_file_path =
+	        addName(
+	            addPath(package().user_support().absFileName(), "themes"),
+	            fromqstr(import_fileinfo.fileName()));
+	// compy to user theme dir
+	import_file.copy(toqstr(target_file_path));
+
+	initializeThemesLW();
 	loadTheme(FileName(fromqstr(file_path)));
 
 	return;
