@@ -1024,6 +1024,7 @@ PrefColors::PrefColors(GuiPreferences * form)
 		lcolors_.push_back(lc);
 	}
 	sort(lcolors_.begin(), lcolors_.end(), ColorSorter);
+
 	colorsTW->setRowCount(lcolors_.size());
 	colorsTW->setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
 	                                     qt_("Color name")});
@@ -1092,8 +1093,13 @@ PrefColors::PrefColors(GuiPreferences * form)
 	QShortcut* sc_search_backward =
 	        new QShortcut(QKeySequence(QKeySequence::FindPrevious), this);
 
+	initializeColorTV();
 	initializeThemesLW();
 	initializeThemeMenu();
+
+	colorsTV->setModel(&colorsTV_model_);
+	colorsTV->setShowGrid(false);
+	colorsTV->show();
 
 	// End initialization
 
@@ -1105,8 +1111,8 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(changeColor()));
 	connect(colorsTW, SIGNAL(itemSelectionChanged()),
 	        this, SLOT(changeLyxObjectsSelection()));
-	connect(colorsTW, SIGNAL(itemPressed(QTableWidgetItem*)),
-	        this, SLOT(pressCurrentItem(QTableWidgetItem*)));
+	// connect(colorsTW, SIGNAL(itemPressed(QTableWidgetItem*)),
+	//         this, SLOT(pressCurrentItem(QTableWidgetItem*)));
 	connect(findNextAct, SIGNAL(triggered()),
 	        this, SLOT(searchNextColorItem()));
 	connect(findPreviousAct, SIGNAL(triggered()),
@@ -1230,8 +1236,11 @@ void PrefColors::setIcon(size_type row, bool const dark_mode, QColor color)
 {
 	QPixmap coloritem(icon_width_, icon_height_);
 	coloritem.fill(color);
-	QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
-	colorsTW->setItem(row, (int)dark_mode, item);
+	// QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
+	// colorsTW->setItem(row, (int)dark_mode, item);
+	QStandardItem* item = new QStandardItem(row, dark_mode);
+	item->setData(coloritem, Qt::DecorationRole);
+	colorsTV_model_.setItem(row, dark_mode, item);
 }
 
 
@@ -1239,6 +1248,16 @@ void PrefColors::setIcons(size_type row, ColorPair colors)
 {
 	setIcon(row, false, colors.first);
 	setIcon(row, true, colors.second);
+}
+
+
+void PrefColors::redrawRow(size_type row, ColorPair colors)
+{
+	colorsTW->removeRow(row);
+	LYXERR0("removing " << row << "-th row");
+	// colorsTW->insertRow(row);
+	// LYXERR0("inserted row: " << row);
+	// setIcons(row, colors);
 }
 
 
@@ -1665,6 +1684,29 @@ void PrefColors::openThemeMenu()
 	QPoint pos = mapToGlobal(QPoint(themesMenuPB->x() + themesMenuPB->width(),
 	                                themesMenuPB->y()));
 	theme_menu_.exec(pos);
+}
+
+
+void PrefColors::initializeColorTV()
+{
+	// Headers
+	colorsTV_model_.setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
+	                                           qt_("Color name")});
+	colorsTV->verticalHeader()->hide();
+
+	// The table
+	// Only color names are listed here. Colors will be set at updateRC().
+	for (int row=0; row<(int)lcolors_.size(); ++row) {
+		colorsTV_model_.takeVerticalHeaderItem(row);
+		for (int column=0; column<3; ++column) {
+			QStandardItem* item = new QStandardItem();
+			if (column == 2)
+				item->setText(toqstr(lcolor.getGUIName(lcolors_[row])));
+			colorsTV_model_.setItem(row, column, item);
+			LYXERR0(colorsTV_model_.item(row, column)->text());
+		}
+	}
+
 }
 
 
@@ -4319,6 +4361,13 @@ QString GuiPreferences::browse(QString const & file,
 }
 
 
+/////////////////////////////////////////////////////////////////////
+//
+// SetColor
+//
+/////////////////////////////////////////////////////////////////////
+
+// This class enables undo/redo of setColor()
 SetColor::SetColor(const int row, bool dark_mode, const QColor & new_color,
                    QString old_color, ColorNamePairs & new_color_list,
                    const bool autoapply, PrefColors* color_module,
@@ -4337,12 +4386,16 @@ SetColor::SetColor(const int row, bool dark_mode, const QColor & new_color,
 void SetColor::redo()
 {
 	setColor(new_color_);
+	LYXERR0("REDO   : row = " << row_ << " col = " << dark_mode_ <<
+	        " color = " << new_color_.name());
 }
 
 
 void SetColor::undo()
 {
 	setColor(old_color_);
+	LYXERR0("UNDO   : row = " << row_ << " col = " << dark_mode_ <<
+	        " color = " << old_color_);
 }
 
 
@@ -4353,12 +4406,17 @@ void SetColor::setColor(QColor color)
 		newcolors_[size_t(row_)].second = color.name();
 	else
 		newcolors_[size_t(row_)].first = color.name();
-	setIcon(row_, dark_mode_, color);
+	LYXERR0("SETICON: row = " << row_ << " col = " << dark_mode_ <<
+	        " color = " << color.name());
+	// setIcon(row_, dark_mode_, color);
+	redrawRow(row_, newcolors_[size_t(row_)]);
 
 	// LYXERR0("New color at (" << row_ << ", " << dark_mode_ << ") is now " <<
 	//         color.name() << ": " << newcolors_[size_t(row_)].first <<
 	//         ", " << newcolors_[size_t(row_)].second);
 	parent_->changeFocus();
+	parent_->form_->update();
+	colorsTW->update();
 
 	// emit signal
 	changed();
@@ -4367,6 +4425,83 @@ void SetColor::setColor(QColor color)
 		parent_->form_->setColor(lcolors_[row_], newcolors_[row_]);
 		parent_->form_->dispatchParams();
 	}
+}
+
+
+/////////////////////////////////////////////////////////////////////
+//
+// ColorTableModel
+//
+/////////////////////////////////////////////////////////////////////
+
+ColorTableModel::ColorTableModel(std::vector<ColorCode> &lcolors,
+                                 ColorNamePairs &colors,QObject *parent)
+    : QAbstractTableModel(parent), lcolors_(lcolors), colors_(colors)
+{
+	for (int row=0; row<(int)lcolors.size(); ++row)
+		for (int column=0; column<column_size_; ++column)
+			indexes_.push_back(createIndex(row, column));
+}
+
+
+int ColorTableModel::rowCount(const QModelIndex &parent) const
+{
+	Q_UNUSED(parent);
+	return lcolors_.size();
+}
+
+
+int ColorTableModel::columnCount(const QModelIndex &parent) const
+{
+	Q_UNUSED(parent);
+	return column_size_;
+}
+
+
+QVariant ColorTableModel::data(const QModelIndex &index, int role) const
+{
+	if (role == Qt::DisplayRole)
+		switch(index.column()) {
+		case 0:
+			return QVariant(colors_[index.row()].first);
+			break;
+		case 1:
+			return QVariant(colors_[index.row()].second);
+			break;
+		case 2:
+			return QVariant(lcolors_[index.row()]);
+			break;
+		default:
+			break;
+		}
+	return QVariant();
+}
+
+
+bool ColorTableModel::setData(const QModelIndex &index,
+                              const QVariant &value, int role)
+{
+	if (role == Qt::DisplayRole/*Qt::DecorationRole*/)
+		switch(index.column()) {
+		case 0:
+			colors_[index.row()].first = value.toString();
+			return true;
+			break;
+		case 1:
+			colors_[index.row()].second = value.toString();
+			return true;
+			break;
+		default:
+			break;
+		}
+	return false;
+}
+
+
+Qt::ItemFlags ColorTableModel::flags(const QModelIndex &index) const
+{
+	// FIXME: base class implementation may be sufficient
+	return index.flags();
 }
 
 

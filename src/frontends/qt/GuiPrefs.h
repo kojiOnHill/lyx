@@ -48,6 +48,7 @@
 #include <string>
 #include <vector>
 #include <QtWidgets/qmenu.h>
+#include <QStandardItemModel>
 #include <QUndoCommand>
 
 
@@ -300,11 +301,15 @@ private:
 	///
 	void setIcon(size_type row, bool const dark_mode, QColor color);
 	///
+	void redrawRow(size_type row, ColorPair colors);
+	///
 	void updateAllIcons();
 	///
 	void initializeThemesLW();
 	///
 	void initializeThemeMenu();
+	///
+	void initializeColorTV();
 	///
 	void saveTheme(QString file_path);
 	///
@@ -319,6 +324,8 @@ private:
 	std::vector<ColorCode> lcolors_;
 	ColorNamePairs curcolors_;
 	ColorNamePairs newcolors_;
+
+	QStandardItemModel colorsTV_model_;
 
 	QList<QTableWidgetItem *> items_found_;
 	QList<QTableWidgetItem *>::iterator it_;
@@ -339,6 +346,7 @@ private:
 	QString theme_filename_;
 
 	friend class SetColor;
+	friend class ColorTableModel;
 };
 
 
@@ -649,6 +657,30 @@ private:
 	QString old_color_;
 	ColorNamePairs & newcolors_;
 	PrefColors* parent_;
+};
+
+
+class ColorTableModel : public QAbstractTableModel
+{
+public:
+	ColorTableModel(std::vector<ColorCode> &lcolors, ColorNamePairs &colors,
+	                QObject *parent = nullptr);
+	~ColorTableModel(){};
+
+	int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+	int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+	QVariant data(const QModelIndex &index,
+	              int role = Qt::DisplayRole) const override;
+
+	bool setData(const QModelIndex &index, const QVariant &value,
+	             int role = Qt::EditRole) override;
+	Qt::ItemFlags flags(const QModelIndex &index) const override;
+
+private:
+	const int column_size_ = 3;
+	std::vector<ColorCode> &lcolors_;
+	ColorNamePairs         &colors_;
+	std::vector<QModelIndex> indexes_;
 };
 
 
