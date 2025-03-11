@@ -1097,10 +1097,6 @@ PrefColors::PrefColors(GuiPreferences * form)
 	initializeThemesLW();
 	initializeThemeMenu();
 
-	colorsTV->setModel(&colorsTV_model_);
-	colorsTV->setShowGrid(false);
-	colorsTV->show();
-
 	// End initialization
 
 	connect(autoapplyCB, SIGNAL(toggled(bool)),
@@ -1113,6 +1109,8 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        this, SLOT(changeLyxObjectsSelection()));
 	// connect(colorsTW, SIGNAL(itemPressed(QTableWidgetItem*)),
 	//         this, SLOT(pressCurrentItem(QTableWidgetItem*)));
+	connect(colorsTV, SIGNAL(clicked(QModelIndex)),
+	        this, SLOT(changeColor(QModelIndex)));
 	connect(findNextAct, SIGNAL(triggered()),
 	        this, SLOT(searchNextColorItem()));
 	connect(findPreviousAct, SIGNAL(triggered()),
@@ -1212,8 +1210,33 @@ void PrefColors::changeColor(bool const dark_mode)
 }
 
 
+// obsolete
 void PrefColors::changeColor(int const row, int const column)
 {
+	if (column >= 2) return;
+
+	QString color;
+	if (column == 0)
+		color = newcolors_[size_t(row)].first;
+	else // column == 1
+		color = newcolors_[size_t(row)].second;
+
+	QColor const c = form_->getColor(QColor(color));
+
+	if (setColor(row, column, c, color)) {
+		setDisabledResets();
+		// emit signal
+		changed();
+	}
+}
+
+
+void PrefColors::changeColor(const QModelIndex &index)
+{
+	const int row    = index.row();
+	const int column = index.column();
+
+	LYXERR0("CLICKED");
 	if (column >= 2) return;
 
 	QString color;
@@ -1690,22 +1713,40 @@ void PrefColors::openThemeMenu()
 void PrefColors::initializeColorTV()
 {
 	// Headers
+	colorsTV->verticalHeader()->hide();
+
 	colorsTV_model_.setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
 	                                           qt_("Color name")});
-	colorsTV->verticalHeader()->hide();
+	QHeaderView* horizontal_header = new QHeaderView(Qt::Horizontal);
+	horizontal_header->setSectionResizeMode(QHeaderView::Fixed);
+	horizontal_header->setDefaultSectionSize(icon_width_);
+	horizontal_header->setStretchLastSection(true);
+	horizontal_header->setDefaultAlignment(Qt::AlignCenter);
+	colorsTV->setHorizontalHeader(horizontal_header);
 
 	// The table
 	// Only color names are listed here. Colors will be set at updateRC().
 	for (int row=0; row<(int)lcolors_.size(); ++row) {
-		colorsTV_model_.takeVerticalHeaderItem(row);
+		colorsTV->setRowHeight(row, icon_height_);
+		// colorsTV_model_.takeVerticalHeaderItem(row);
 		for (int column=0; column<3; ++column) {
 			QStandardItem* item = new QStandardItem();
-			if (column == 2)
+			if (column == 2) {
 				item->setText(toqstr(lcolor.getGUIName(lcolors_[row])));
+				item->setTextAlignment(Qt::AlignLeft);
+			} else {
+				item->setTextAlignment(Qt::AlignCenter);
+			}
 			colorsTV_model_.setItem(row, column, item);
-			LYXERR0(colorsTV_model_.item(row, column)->text());
+			colorsTV->setIndexWidget(colorsTV->currentIndex(), widget);
 		}
 	}
+
+	colorsTV->setModel(&colorsTV_model_);
+	colorsTV->setShowGrid(false);
+	// colorsTV->setSelectionBehavior(QAbstractItemView::SelectRows);
+	colorsTV->setSelectionMode(QAbstractItemView::NoSelection);
+	colorsTV->show();
 
 }
 

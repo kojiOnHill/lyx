@@ -264,7 +264,9 @@ private Q_SLOTS:
 	void changeLightColor(){ changeColor(false); }
 	void changeDarkColor() { changeColor(true);  }
 	void changeColor();
+	// obsolete
 	void changeColor(int const row, int const column);
+	void changeColor(const QModelIndex &index);
 	void resetColor();
 	void resetAllColor();
 	void redrawColorTable();
