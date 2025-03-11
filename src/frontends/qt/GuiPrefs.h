@@ -303,7 +303,7 @@ private:
 	///
 	void setIcon(size_type row, bool const dark_mode, QColor color);
 	///
-	void redrawRow(size_type row, ColorPair colors);
+	// void redrawRow(size_type row, ColorPair colors);
 	///
 	void updateAllIcons();
 	///
@@ -333,8 +333,8 @@ private:
 	QList<QTableWidgetItem *>::iterator it_;
 	QString search_string_;
 
-	int const icon_width_  = 36;
-	int const icon_height_ = 18;
+	int const icon_width_  = 32;
+	int const icon_height_ = 12;
 
 	bool autoapply_ = false;
 	QUndoStack * undo_stack_;

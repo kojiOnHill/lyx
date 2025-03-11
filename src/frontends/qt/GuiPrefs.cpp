@@ -1263,7 +1263,11 @@ void PrefColors::setIcon(size_type row, bool const dark_mode, QColor color)
 	// colorsTW->setItem(row, (int)dark_mode, item);
 	QStandardItem* item = new QStandardItem(row, dark_mode);
 	item->setData(coloritem, Qt::DecorationRole);
+	LYXERR0("changing color to " << color.name());
+	// item->setBackground(color);
 	colorsTV_model_.setItem(row, dark_mode, item);
+	QPixmap tmp = colorsTV_model_.item(row, dark_mode)->data(Qt::DecorationRole).value<QPixmap>();
+	LYXERR0("set color = " << tmp.width());
 }
 
 
@@ -1274,14 +1278,14 @@ void PrefColors::setIcons(size_type row, ColorPair colors)
 }
 
 
-void PrefColors::redrawRow(size_type row, ColorPair colors)
-{
-	colorsTW->removeRow(row);
-	LYXERR0("removing " << row << "-th row");
-	// colorsTW->insertRow(row);
-	// LYXERR0("inserted row: " << row);
-	// setIcons(row, colors);
-}
+// void PrefColors::redrawRow(size_type row, ColorPair colors)
+// {
+// 	colorsTW->removeRow(row);
+// 	LYXERR0("removing " << row << "-th row");
+// 	// colorsTW->insertRow(row);
+// 	// LYXERR0("inserted row: " << row);
+// 	// setIcons(row, colors);
+// }
 
 
 void PrefColors::updateAllIcons()
@@ -1713,6 +1717,10 @@ void PrefColors::openThemeMenu()
 void PrefColors::initializeColorTV()
 {
 	// Headers
+	QHeaderView* vertical_header = new QHeaderView(Qt::Vertical);
+	vertical_header->setSectionResizeMode(QHeaderView::Fixed);
+	vertical_header->setDefaultSectionSize(icon_height_);
+	vertical_header->setDefaultAlignment(Qt::AlignVCenter);
 	colorsTV->verticalHeader()->hide();
 
 	colorsTV_model_.setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
@@ -1721,7 +1729,7 @@ void PrefColors::initializeColorTV()
 	horizontal_header->setSectionResizeMode(QHeaderView::Fixed);
 	horizontal_header->setDefaultSectionSize(icon_width_);
 	horizontal_header->setStretchLastSection(true);
-	horizontal_header->setDefaultAlignment(Qt::AlignCenter);
+	horizontal_header->setDefaultAlignment(Qt::AlignHCenter);
 	colorsTV->setHorizontalHeader(horizontal_header);
 
 	// The table
@@ -1734,11 +1742,10 @@ void PrefColors::initializeColorTV()
 			if (column == 2) {
 				item->setText(toqstr(lcolor.getGUIName(lcolors_[row])));
 				item->setTextAlignment(Qt::AlignLeft);
-			} else {
-				item->setTextAlignment(Qt::AlignCenter);
+			}else{
+				item->setText(" ");
 			}
 			colorsTV_model_.setItem(row, column, item);
-			colorsTV->setIndexWidget(colorsTV->currentIndex(), widget);
 		}
 	}
 
@@ -4449,8 +4456,8 @@ void SetColor::setColor(QColor color)
 		newcolors_[size_t(row_)].first = color.name();
 	LYXERR0("SETICON: row = " << row_ << " col = " << dark_mode_ <<
 	        " color = " << color.name());
-	// setIcon(row_, dark_mode_, color);
-	redrawRow(row_, newcolors_[size_t(row_)]);
+	setIcon(row_, dark_mode_, color);
+	// redrawRow(row_, newcolors_[size_t(row_)]);
 
 	// LYXERR0("New color at (" << row_ << ", " << dark_mode_ << ") is now " <<
 	//         color.name() << ": " << newcolors_[size_t(row_)].first <<
@@ -4458,6 +4465,7 @@ void SetColor::setColor(QColor color)
 	parent_->changeFocus();
 	parent_->form_->update();
 	colorsTW->update();
+	colorsTV->update();
 
 	// emit signal
 	changed();
