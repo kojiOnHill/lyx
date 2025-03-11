@@ -1247,12 +1247,14 @@ void PrefColors::resetColor()
 
 void PrefColors::resetAllColor()
 {
+	guiApp->setOverrideCursor(QCursor(Qt::WaitCursor));
+
 	bool isChanged = false;
 
 	colorResetAllPB->setDisabled(true);
 
 	for (int irow = 0, count = colorsTW->rowCount(); irow < count; ++irow) {
-		ColorNamePair const colors = newcolors_[size_t(irow)];
+		ColorNamePair const & colors = newcolors_[size_t(irow)];
 		ColorPair const c = getDefaultColorsByRow(irow);
 
 		if (setColor(irow, c, colors))
@@ -1267,6 +1269,8 @@ void PrefColors::resetAllColor()
 
 	// updateAllIcons is not sufficient
 	redrawColorTable();
+
+	guiApp->restoreOverrideCursor();
 }
 
 
