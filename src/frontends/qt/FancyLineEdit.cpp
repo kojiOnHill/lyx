@@ -15,6 +15,8 @@
 
 #include "FancyLineEdit.h"
 
+#include "GuiApplication.h"
+
 #include <QEvent>
 #include <QDebug>
 #include <QString>
@@ -26,6 +28,7 @@
 #include <QAbstractButton>
 #include <QPainter>
 #include <QStyle>
+#include <QToolButton>
 #include <QPaintEvent>
 #include <QWindow>
 
@@ -139,6 +142,15 @@ void FancyLineEdit::setClearButton(bool visible)
 	// QLineEdit::setClearButtonEnabled() has been implemented in Qt 5.2.
 	// This is now the minimum required version
 	setClearButtonEnabled(visible);
+	if (visible) {
+		// set a proper clear button which uses the icon theme and
+		// supports dark mode
+		QIcon editclear(guiApp ? guiApp->getScaledPixmap("images/", "editclear")
+				  : getPixmap("images/", "editclear", "svgz,png"));
+		QToolButton * clearAction = findChild<QToolButton*>();
+		if (clearAction)
+			clearAction->setIcon(editclear);
+	}
 }
 
 
