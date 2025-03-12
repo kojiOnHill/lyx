@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-02-22 12:46+0100\n"
-"PO-Revision-Date: 2025-02-23 17:49+0000\n"
+"POT-Creation-Date: 2025-03-12 13:14+0100\n"
+"PO-Revision-Date: 2025-03-12 12:16+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Language: sk_SK\n"
 "X-Source-Language: en_US\n"
@@ -698,10 +698,10 @@ msgstr "Dostupné &vetvy:"
 msgid "Remove the selected branch"
 msgstr "Zmazať vybranú vetvu"
 
-#: src/frontends/qt/ui/BranchesUi.ui:74 src/frontends/qt/ui/IndicesUi.ui:165
-#: src/Buffer.cpp:4848 src/Buffer.cpp:4861
+#: src/Buffer.cpp:4862 src/Buffer.cpp:4875 src/frontends/qt/ui/BranchesUi.ui:74
+#: src/frontends/qt/ui/IndicesUi.ui:165
 msgid "&Remove"
-msgstr "Ods&trániť"
+msgstr "Odstr&ániť"
 
 #: src/frontends/qt/ui/BranchesUi.ui:81
 msgid "Show undefined branches used in this document."
@@ -726,7 +726,7 @@ msgstr "Pridajte novú vetvu do listiny"
 #: src/CutAndPaste.cpp:459 src/frontends/qt/ui/BranchesUi.ui:116
 #: src/frontends/qt/ui/CitationUi.ui:146 src/frontends/qt/ui/IndicesUi.ui:134
 msgid "&Add"
-msgstr "&Pridať"
+msgstr "Pr&idať"
 
 #: src/frontends/qt/ui/BranchesUi.ui:123
 msgid "Define or change background color"
@@ -1644,10 +1644,10 @@ msgstr "Dbať aj na veľkosť písmen"
 msgid "Case &sensitive"
 msgstr "Ro&zlíš veľké/malé"
 
-#: src/frontends/qt/ui/FindAndReplaceUi.ui:205
 #: src/frontends/qt/FindAndReplace.cpp:719
+#: src/frontends/qt/ui/FindAndReplaceUi.ui:205
 msgid "Find next occurrence (Enter, backwards: Shift+Enter)"
-msgstr "Nájdi ďalší výskyt (Enter, naspäť: Shift+Enter)"
+msgstr "Nájsť ďalší výskyt (Enter, naspäť: Shift+Enter)"
 
 #: src/frontends/qt/ui/FindAndReplaceUi.ui:208
 #: src/frontends/qt/ui/SearchUi.ui:190 src/frontends/qt/FindAndReplace.cpp:718
@@ -5429,7 +5429,7 @@ msgstr "< &Nahradiť"
 
 #: src/frontends/qt/ui/SearchUi.ui:184
 msgid "Find next occurrence (Enter)"
-msgstr "Nájdi ďalší výskyt (Enter)"
+msgstr "Nájsť ďalší výskyt (Enter)"
 
 #: src/frontends/qt/ui/SearchUi.ui:228
 msgid "Treat uppercase/lowercase writing as distinct"
@@ -5541,7 +5541,7 @@ msgstr "Aktuálne slovo"
 
 #: src/frontends/qt/ui/SpellcheckerUi.ui:77
 msgid "Skip this match and go to next misspelling"
-msgstr "Preskoč túto zhodu a choď k ďalšej chybe"
+msgstr "Preskočiť túto zhodu a ísť k ďalšej chybe"
 
 #: src/frontends/qt/ui/SpellcheckerUi.ui:80
 msgid "S&kip"
@@ -19526,11 +19526,11 @@ msgstr "Bitstream Charter (PSNFSS)"
 
 #: lib/latexfonts:141
 msgid "Crimson (Cochineal)"
-msgstr "Crimson (Cochineal)"
+msgstr "Karmínová (Košenová) (Crimson Cochineal)"
 
 #: lib/latexfonts:150
 msgid "Crimson"
-msgstr "Crimson"
+msgstr "Karmínová (Crimson)"
 
 #: lib/latexfonts:156
 msgid "Computer Modern Roman"
@@ -19538,19 +19538,19 @@ msgstr "Computer Modern Roman"
 
 #: lib/latexfonts:164
 msgid "Crimson Pro"
-msgstr "Crimson Pro"
+msgstr "Karmínová Pro (Crimson Pro)"
 
 #: lib/latexfonts:175
 msgid "Crimson Pro (Medium)"
-msgstr "Crimson Pro (stredné)"
+msgstr "Karmínová Pro (stredná) (Crimson Pro Medium)"
 
 #: lib/latexfonts:186
 msgid "Crimson Pro (Light)"
-msgstr "Crimson Pro (svetlé)"
+msgstr "Karmínová Pro (svetlá) (Crimson Pro Light)"
 
 #: lib/latexfonts:197
 msgid "Crimson Pro (Extralight)"
-msgstr "Crimson Pro (extra svetlé)"
+msgstr "Karmínová Pro (extra svetlá) (Crimson Pro Extralight)"
 
 #: lib/latexfonts:208
 msgid "DejaVu Serif"
@@ -19933,7 +19933,7 @@ msgstr "TX strojopisné"
 # Times Roman (New TX)
 #: lib/latexfonts:1244
 msgid "Crimson (New TX)"
-msgstr "Crimson (New TX)"
+msgstr "Karmínová (New TX) (Crimson New TX)"
 
 # euler virtual math fonts
 #: lib/latexfonts:1252
@@ -35422,7 +35422,7 @@ msgstr "%1$d slovo"
 #: src/frontends/qt/GuiView.cpp:1503
 #, c-format
 msgid "%1$d Words"
-msgstr "%1$d (Počet slov)"
+msgstr "%1$d slov"
 
 #: src/frontends/qt/GuiView.cpp:1509
 #, c-format
@@ -35432,7 +35432,7 @@ msgstr "%1$d znak"
 #: src/frontends/qt/GuiView.cpp:1511
 #, c-format
 msgid "%1$d Characters"
-msgstr "%1$d (Počet znakov)"
+msgstr "%1$d znakov"
 
 #: src/frontends/qt/GuiView.cpp:1516
 #, c-format
@@ -35442,7 +35442,7 @@ msgstr "%1$d znak (bez medzier)"
 #: src/frontends/qt/GuiView.cpp:1518
 #, c-format
 msgid "%1$d Characters (no Blanks)"
-msgstr "%1$d (Počet znakov bez medzier)"
+msgstr "%1$d znakov (bez medzier)"
 
 #: src/frontends/qt/GuiView.cpp:1520
 msgid ", [[stats separator]]"
@@ -38994,7 +38994,7 @@ msgstr "Neznámy používateľ"
 #~ msgstr "C&elé slová"
 
 #~ msgid "Find next occurrence [Enter]"
-#~ msgstr "Nájdi ďalší výskyt [Enter]"
+#~ msgstr "Nájsť ďalší výskyt [Enter]"
 
 #~ msgid "S&ettings"
 #~ msgstr "Nas&tavenia"
@@ -42153,7 +42153,7 @@ msgstr "Neznámy používateľ"
 #~ msgstr "Ďalší"
 
 #~ msgid "Find previous occurrence [Shift+Enter]"
-#~ msgstr "Nájdi predošlí výskyt [Shift+Enter]"
+#~ msgstr "Nájsť predošlí výskyt [Shift+Enter]"
 
 #~ msgid "&Previous"
 #~ msgstr "&Predošlí"
