@@ -2680,6 +2680,7 @@ QPixmap GuiApplication::getScaledPixmap(QString imagedir, QString name) const
 	// We render SVG directly for HiDPI scalability
 	QPixmap pm = getPixmap(imagedir, name, "svgz,png");
 	FileName fname = imageLibFileSearch(imagedir, name, "svgz,png");
+	bool const dark_mode = theGuiApp() ? theGuiApp()->isInDarkMode() : false;
 	QString fpath = toqstr(fname.absFileName());
 	if (!fpath.isEmpty() && !fpath.endsWith(".png")) {
 		QSvgRenderer svgRenderer(fpath);
@@ -2688,6 +2689,10 @@ QPixmap GuiApplication::getScaledPixmap(QString imagedir, QString name) const
 			pm.fill(Qt::transparent);
 			QPainter painter(&pm);
 			svgRenderer.render(&painter);
+			painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+			QColor const penColor = dark_mode ? Qt::lightGray : Qt::darkGray;
+			painter.fillRect(pm.rect(), penColor);
+			painter.end();
 			pm.setDevicePixelRatio(dpr);
 		}
 	}
