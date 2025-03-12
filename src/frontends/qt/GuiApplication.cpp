@@ -604,6 +604,7 @@ IconInfo iconInfo(FuncRequest const & f, bool unknown, bool rtl)
 		names << "unknown";
 
 	search_mode const mode = theGuiApp() ? theGuiApp()->imageSearchMode() : support::must_exist;
+	bool const dark_mode = theGuiApp() ? theGuiApp()->isInDarkMode() : false;
 	// The folders where icons are searched for
 	QStringList imagedirs;
 	imagedirs << "images/ipa/" << "images/";
@@ -617,7 +618,7 @@ IconInfo iconInfo(FuncRequest const & f, bool unknown, bool rtl)
 		for (QString const & name : names)
 			for (QString const & suffix : suffixes) {
 				QString id = imagedir;
-				FileName fname = imageLibFileSearch(id, name + suffix, "svgz,png", mode);
+				FileName fname = imageLibFileSearch(id, name + suffix, "svgz,png", mode, dark_mode);
 				if (fname.exists()) {
 					docstring const fpath = fname.absoluteFilePath();
 					res.filepath = toqstr(fname.absFileName());
@@ -678,7 +679,8 @@ QPixmap prepareForDarkMode(QPixmap pixmap)
 QPixmap getPixmap(QString const & path, QString const & name, QString const & ext)
 {
 	QString imagedir = path;
-	FileName fname = imageLibFileSearch(imagedir, name, ext, theGuiApp()->imageSearchMode());
+	FileName fname = imageLibFileSearch(imagedir, name, ext, theGuiApp()->imageSearchMode(),
+					    theGuiApp()->isInDarkMode());
 	QString fpath = toqstr(fname.absFileName());
 	QPixmap pixmap = QPixmap();
 
@@ -2712,8 +2714,9 @@ QPixmap GuiApplication::getScaledPixmap(QString imagedir, QString name) const
 		dpr = currentView()->pixelRatio();
 	// We render SVG directly for HiDPI scalability
 	QPixmap pm = getPixmap(imagedir, name, "svgz,png");
-	FileName fname = imageLibFileSearch(imagedir, name, "svgz,png");
+	search_mode const mode = theGuiApp() ? theGuiApp()->imageSearchMode() : support::must_exist;
 	bool const dark_mode = theGuiApp() ? theGuiApp()->isInDarkMode() : false;
+	FileName fname = imageLibFileSearch(imagedir, name, "svgz,png", mode, dark_mode);
 	QString fpath = toqstr(fname.absFileName());
 	if (!fpath.isEmpty() && !fpath.endsWith(".png")) {
 		QSvgRenderer svgRenderer(fpath);
