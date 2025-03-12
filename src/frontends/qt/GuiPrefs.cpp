@@ -1093,7 +1093,7 @@ PrefColors::PrefColors(GuiPreferences * form)
 	QShortcut* sc_search_backward =
 	        new QShortcut(QKeySequence(QKeySequence::FindPrevious), this);
 
-	initializeColorTV();
+	initializeColorsTV();
 	initializeThemesLW();
 	initializeThemeMenu();
 
@@ -1257,17 +1257,29 @@ void PrefColors::changeColor(const QModelIndex &index)
 
 void PrefColors::setIcon(size_type row, bool const dark_mode, QColor color)
 {
-	QPixmap coloritem(icon_width_, icon_height_);
-	coloritem.fill(color);
+	// QPixmap coloritem(icon_width_, icon_height_);
+	// coloritem.fill(color);
 	// QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
 	// colorsTW->setItem(row, (int)dark_mode, item);
 	QStandardItem* item = new QStandardItem(row, dark_mode);
-	item->setData(coloritem, Qt::DecorationRole);
+	item->setData(QVariant(color), Qt::DecorationRole);
 	LYXERR0("changing color to " << color.name());
 	// item->setBackground(color);
-	colorsTV_model_.setItem(row, dark_mode, item);
-	QPixmap tmp = colorsTV_model_.item(row, dark_mode)->data(Qt::DecorationRole).value<QPixmap>();
-	LYXERR0("set color = " << tmp.width());
+	// colorsTV_model_.setItem(row, dark_mode, item);
+	QVariant tmp = colorsTV_model_.item(row, dark_mode)->data(Qt::DecorationRole);
+	LYXERR0("set color = " << tmp.toString() << ": " << tmp.value<QColor>().name());
+	QSize size = colorsTV_model_.item(row, dark_mode)->sizeHint();
+	LYXERR0("size hint = " << size.width() << " x " << size.height());
+}
+
+
+void PrefColors::setIcon(const QModelIndex &index, QColor &color)
+{
+	colorsTV_model_.setData(index, QVariant(color), Qt::DecorationRole);
+	QVariant tmp = colorsTV_model_.data(index, Qt::DecorationRole);
+	LYXERR0("set color = " << tmp.toString() << ": " << tmp.value<QColor>().name());
+	QSize size = colorsTV_model_.itemFromIndex(index)->sizeHint();
+	LYXERR0("size hint = " << size.width() << " x " << size.height());
 }
 
 
@@ -1714,7 +1726,7 @@ void PrefColors::openThemeMenu()
 }
 
 
-void PrefColors::initializeColorTV()
+void PrefColors::initializeColorsTV()
 {
 	// Headers
 	QHeaderView* vertical_header = new QHeaderView(Qt::Vertical);

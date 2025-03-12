@@ -303,6 +303,8 @@ private:
 	///
 	void setIcon(size_type row, bool const dark_mode, QColor color);
 	///
+	void setIcon(const QModelIndex &index, QColor &color);
+	///
 	// void redrawRow(size_type row, ColorPair colors);
 	///
 	void updateAllIcons();
@@ -311,7 +313,7 @@ private:
 	///
 	void initializeThemeMenu();
 	///
-	void initializeColorTV();
+	void initializeColorsTV();
 	///
 	void saveTheme(QString file_path);
 	///
