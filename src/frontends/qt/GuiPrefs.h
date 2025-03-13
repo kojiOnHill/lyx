@@ -277,6 +277,8 @@ private Q_SLOTS:
 	              ColorNamePair const & old_colors);
 	bool setColor(int const row, bool const dark_mode, QColor const & new_color,
 	              QString const & old_color);
+	bool setColor(QModelIndex const &index, QColor const &new_color,
+	              QString const &old_color);
 	bool isDefaultColor(int const row, ColorNamePair const & color);
 	void setDisabledResets();
 	void openThemeMenu();
@@ -299,11 +301,11 @@ private:
 	///
 	ColorPair getDefaultColorsByRow(int const row);
 	///
-	void setIcons(size_type row, ColorPair colors);
+	void setIcons(size_type const &row, ColorPair colors);
 	///
-	void setIcon(size_type row, bool const dark_mode, QColor color);
+	void setIcon(size_type const row, bool const dark_mode, QColor const &color);
 	///
-	void setIcon(const QModelIndex &index, QColor &color);
+	void setIcon(QModelIndex const &index, QColor const &color);
 	///
 	// void redrawRow(size_type row, ColorPair colors);
 	///
@@ -330,6 +332,8 @@ private:
 	ColorNamePairs newcolors_;
 
 	QStandardItemModel colorsTV_model_;
+	std::vector<QPersistentModelIndex> light_color_index_;
+	std::vector<QPersistentModelIndex> dark_color_index_;
 
 	QList<QTableWidgetItem *> items_found_;
 	QList<QTableWidgetItem *>::iterator it_;
@@ -642,21 +646,25 @@ public:
 class SetColor : public PrefColors, public QUndoCommand
 {
 public:
-	SetColor(const int row, bool dark_mode, const QColor & new_color,
-	         QString old_color,
-	         ColorNamePairs & new_color_list,
-	         const bool autoapply, PrefColors* color_module,
+	// SetColor(const int row, bool dark_mode, const QColor & new_color,
+	//          QString old_color,
+	//          ColorNamePairs & new_color_list,
+	//          const bool autoapply, PrefColors* color_module,
+	//          QUndoCommand* uc_parent = nullptr);
+	SetColor(QModelIndex const index, QColor const &new_color,
+	         QString const &old_color,
+	         ColorNamePairs &new_color_list,
+	         bool const autoapply, PrefColors* color_module,
 	         QUndoCommand* uc_parent = nullptr);
 	~SetColor(){};
 
 	void redo() override;
 	void undo() override;
-	void setColor(QColor);
+	void setColor(QColor const &color);
 
 private:
-	const bool autoapply_;
-	const int row_;
-	const bool dark_mode_;
+	bool const autoapply_;
+	QModelIndex const index_;
 	QColor new_color_;
 	QString old_color_;
 	ColorNamePairs & newcolors_;
