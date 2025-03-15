@@ -958,6 +958,11 @@ MacroData const * InsetMathMacro::macroBackup() const
 
 void InsetMathMacro::validate(LaTeXFeatures & features) const
 {
+	// Protect against recursive macros
+	if (features.activeMacros().count(name()))
+		return;
+	features.activeMacros().insert(name());
+
 	// Immediately after a document is loaded, in some cases the MacroData
 	// of the global macros defined in the lib/symbols file may still not
 	// be known to the macro machinery because it will be set only after
@@ -987,23 +992,14 @@ void InsetMathMacro::validate(LaTeXFeatures & features) const
 		if (displayMode() == DISPLAY_NORMAL) {
 				d->definition_.validate(features);
 		} else if (displayMode() == DISPLAY_INIT) {
-			MathData ar(const_cast<Buffer *>(&buffer()));
-			MacroData const * data = buffer().getMacro(name());
-			if (data) {
-				// Avoid recursion on a recursive macro definition
-				docstring const & def = data->definition();
-				int pos = tokenPos(def, '\\', name());
-				char_type c = pos + name().size() < def.size()
-					      ? def.at(pos + name().size()) : 0;
-				if (pos < 0 || (name().size() > 1 &&
-						((c >= 'a' && c <= 'z') ||
-						 (c >= 'A' && c <= 'Z')))) {
-					asArray(def, ar);
-					ar.validate(features);
-				}
+			if (MacroData const * data = buffer().getMacro(name())) {
+				MathData ar(const_cast<Buffer *>(&buffer()));
+				asArray(data->definition(), ar);
+				ar.validate(features);
 			}
 		}
 	}
+	features.activeMacros().erase(name());
 	InsetMathNest::validate(features);
 }
 
