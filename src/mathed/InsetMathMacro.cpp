@@ -872,9 +872,7 @@ bool InsetMathMacro::validName() const
 	// valid characters?
 	if (n.size() > 1) {
 		for (char_type c : n) {
-			if (!(c >= 'a' && c <= 'z')
-			    && !(c >= 'A' && c <= 'Z')
-			    && c != '*')
+			if (!isAlphaASCII(c) && c != '*')
 				return false;
 		}
 	}
