@@ -78,6 +78,9 @@ What's new
 - Improve detection of removed documents. We did not distinguish between
   rewrite and removal in some cases (bug 12819).
 
+- Fix parsing error with math code when LyX file contains DOS line endings
+  (which might happen when importing via tex2lyx on Windows).
+
 
 * USER INTERFACE
 
