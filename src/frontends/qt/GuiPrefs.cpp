@@ -1025,16 +1025,16 @@ PrefColors::PrefColors(GuiPreferences * form)
 	}
 	sort(lcolors_.begin(), lcolors_.end(), ColorSorter);
 
-	colorsTW->setRowCount(lcolors_.size());
-	colorsTW->setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
-	                                     qt_("Color name")});
-	for (size_type row=0; row!=lcolors_.size(); ++row) {
-		colorsTW->setItem(row, 0, new QTableWidgetItem(icon, ""));
-		colorsTW->setItem(row, 1, new QTableWidgetItem(icon, ""));
-		QTableWidgetItem* txtItem = new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
-		txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
-		colorsTW->setItem(row, 2, txtItem);
-	}
+	// colorsTW->setRowCount(lcolors_.size());
+	// colorsTW->setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
+	//                                      qt_("Color name")});
+	// for (size_type row=0; row!=lcolors_.size(); ++row) {
+	// 	colorsTW->setItem(row, 0, new QTableWidgetItem(icon, ""));
+	// 	colorsTW->setItem(row, 1, new QTableWidgetItem(icon, ""));
+	// 	QTableWidgetItem* txtItem = new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
+	// 	txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
+	// 	colorsTW->setItem(row, 2, txtItem);
+	// }
 	curcolors_.resize(lcolors_.size());
 	newcolors_.resize(lcolors_.size());
 
@@ -1101,12 +1101,12 @@ PrefColors::PrefColors(GuiPreferences * form)
 
 	connect(autoapplyCB, SIGNAL(toggled(bool)),
 	        this, SLOT(changeAutoapply()));
-	connect(colorsTW, SIGNAL(cellClicked(int,int)),
-	        this, SLOT(changeColor(int,int)));
-	connect(colorsTW, SIGNAL(itemActivated(QTableWidgetItem*)),
-	        this, SLOT(changeColor()));
-	connect(colorsTW, SIGNAL(itemSelectionChanged()),
-	        this, SLOT(changeLyxObjectsSelection()));
+	// connect(colorsTW, SIGNAL(cellClicked(int,int)),
+	//         this, SLOT(changeColor(int,int)));
+	// connect(colorsTW, SIGNAL(itemActivated(QTableWidgetItem*)),
+	//         this, SLOT(changeColor()));
+	// connect(colorsTW, SIGNAL(itemSelectionChanged()),
+	//         this, SLOT(changeLyxObjectsSelection()));
 	// connect(colorsTW, SIGNAL(itemPressed(QTableWidgetItem*)),
 	//         this, SLOT(pressCurrentItem(QTableWidgetItem*)));
 	connect(colorsTV, SIGNAL(clicked(QModelIndex)),
@@ -1180,55 +1180,55 @@ void PrefColors::updateRC(LyXRC const & rc)
 }
 
 
-void PrefColors::changeColor()
-{
-	changeColor(guiApp->colorCache().isDarkMode());
-}
+// void PrefColors::changeColor()
+// {
+// 	changeColor(guiApp->colorCache().isDarkMode());
+// }
 
 
-void PrefColors::changeColor(bool const dark_mode)
-{
-	int const row = colorsTW->currentRow();
+// void PrefColors::changeColor(bool const dark_mode)
+// {
+// 	int const row = colorsTW->currentRow();
 
-	// just to be sure
-	if (row < 0)
-		return;
+// 	// just to be sure
+// 	if (row < 0)
+// 		return;
 
-	QString color;
-	if (dark_mode)
-		color = newcolors_[size_t(row)].second;
-	else
-		color = newcolors_[size_t(row)].first;
+// 	QString color;
+// 	if (dark_mode)
+// 		color = newcolors_[size_t(row)].second;
+// 	else
+// 		color = newcolors_[size_t(row)].first;
 
-	QColor const c = form_->getColor(QColor(color));
+// 	QColor const c = form_->getColor(QColor(color));
 
-	if (setColor(row, dark_mode, c, color)) {
-		setDisabledResets();
-		// emit signal
-		changed();
-	}
-}
+// 	if (setColor(row, dark_mode, c, color)) {
+// 		setDisabledResets();
+// 		// emit signal
+// 		changed();
+// 	}
+// }
 
 
-// obsolete
-void PrefColors::changeColor(int const row, int const column)
-{
-	if (column >= 2) return;
+// // obsolete
+// void PrefColors::changeColor(int const row, int const column)
+// {
+// 	if (column >= 2) return;
 
-	QString color;
-	if (column == 0)
-		color = newcolors_[size_t(row)].first;
-	else // column == 1
-		color = newcolors_[size_t(row)].second;
+// 	QString color;
+// 	if (column == 0)
+// 		color = newcolors_[size_t(row)].first;
+// 	else // column == 1
+// 		color = newcolors_[size_t(row)].second;
 
-	QColor const c = form_->getColor(QColor(color));
+// 	QColor const c = form_->getColor(QColor(color));
 
-	if (setColor(row, column, c, color)) {
-		setDisabledResets();
-		// emit signal
-		changed();
-	}
-}
+// 	if (setColor(row, column, c, color)) {
+// 		setDisabledResets();
+// 		// emit signal
+// 		changed();
+// 	}
+// }
 
 
 void PrefColors::changeColor(const QModelIndex &index)
@@ -1236,7 +1236,6 @@ void PrefColors::changeColor(const QModelIndex &index)
 	const int row    = index.row();
 	const int column = index.column();
 
-	LYXERR0("CLICKED");
 	if (column >= 2) return;
 
 	QString color;
@@ -1247,7 +1246,7 @@ void PrefColors::changeColor(const QModelIndex &index)
 
 	QColor const c = form_->getColor(QColor(color));
 
-	if (setColor(index, c, color)) {
+	if (setColor(colorsTV_model_.itemFromIndex(index), c, color)) {
 		setDisabledResets();
 		// emit signal
 		changed();
@@ -1255,54 +1254,57 @@ void PrefColors::changeColor(const QModelIndex &index)
 }
 
 
-void PrefColors::setIcon(size_type row, bool const dark_mode, QColor const &color)
+// void PrefColors::setIcon(size_type row, bool const dark_mode, QColor const &color)
+// {
+// 	// QPixmap coloritem(icon_width_, icon_height_);
+// 	// coloritem.fill(color);
+// 	// QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
+// 	// colorsTW->setItem(row, (int)dark_mode, item);
+// 	QStandardItem* item = new QStandardItem(row, dark_mode);
+// 	item->setData(QVariant(color)/*, Qt::DecorationRole*/);
+// 	LYXERR0("changing color to " << color.name());
+// 	// item->setBackground(color);
+// 	// colorsTV_model_.setItem(row, dark_mode, item);
+// 	QVariant tmp = colorsTV_model_.item(row, dark_mode)->data(Qt::DecorationRole);
+// 	LYXERR0("set color = " << tmp.toString() << ": " << tmp.value<QColor>().name());
+// 	QSize size = colorsTV_model_.item(row, dark_mode)->sizeHint();
+// 	LYXERR0("size hint = " << size.width() << " x " << size.height());
+// }
+
+
+// void PrefColors::setIcon(QModelIndex const &index, QColor const &color)
+// {
+// 	QVariant tmp = colorsTV_model_.data(colorsTV_model_.indexFromItem(colorsTV_model_.itemFromIndex(index)), Qt::DecorationRole);
+// 	QVariant tmp2 = colorsTV_model_.data(index, Qt::DisplayRole);
+// 	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "previously set color = " << tmp.toString() << " : " << tmp.value<QColor>().name());
+// 	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "previously set string = " << tmp2.toString() << " : " << tmp2.value<QString>());
+// 	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "setting color to " << color.name());
+
+// 	bool result = colorsTV_model_.setData(index, QVariant(color), Qt::DecorationRole);
+// 	colorsTV_model_.setData(index, "Test");
+
+// 	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "result = " << result);
+// 	tmp = colorsTV_model_.data(index, Qt::DecorationRole);
+// 	tmp2 = colorsTV_model_.data(index, Qt::DisplayRole);
+// 	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "actually set color = " << tmp.toString() << " : " << tmp.value<QColor>().name());
+// 	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "actually set string = " << tmp2.toString() << " : " << tmp2.value<QString>());
+// 	// QSize size = colorsTV_model_.itemFromIndex(index)->sizeHint();
+// 	// LYXERR0("size hint = " << size.width() << " x " << size.height());
+// }
+
+
+bool PrefColors::setIcon(QStandardItem const *item, QColor const &color)
 {
-	// QPixmap coloritem(icon_width_, icon_height_);
-	// coloritem.fill(color);
-	// QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
-	// colorsTW->setItem(row, (int)dark_mode, item);
-	QStandardItem* item = new QStandardItem(row, dark_mode);
-	item->setData(QVariant(color)/*, Qt::DecorationRole*/);
-	LYXERR0("changing color to " << color.name());
-	// item->setBackground(color);
-	// colorsTV_model_.setItem(row, dark_mode, item);
-	QVariant tmp = colorsTV_model_.item(row, dark_mode)->data(Qt::DecorationRole);
-	LYXERR0("set color = " << tmp.toString() << ": " << tmp.value<QColor>().name());
-	QSize size = colorsTV_model_.item(row, dark_mode)->sizeHint();
-	LYXERR0("size hint = " << size.width() << " x " << size.height());
+	QModelIndex index = colorsTV_model_.indexFromItem(item);
+	return colorsTV_model_.setData(index, QVariant(color), Qt::DecorationRole);
 }
 
 
-void PrefColors::setIcon(QModelIndex const &index, QColor const &color)
+bool PrefColors::setIcons(size_type const &row, ColorPair colors)
 {
-	LYXERR0("index = &" << &index);
-	LYXERR0("text: " << colorsTV_model_.itemFromIndex(index)->text());
-	QVariant tmp = colorsTV_model_.data(colorsTV_model_.indexFromItem(colorsTV_model_.itemFromIndex(index)), Qt::DecorationRole);
-	QVariant tmp2 = colorsTV_model_.data(index, Qt::DisplayRole);
-	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "previously set color = " << tmp.toString() << " : " << tmp.value<QColor>().name());
-	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "previously set string = " << tmp2.toString() << " : " << tmp2.value<QString>());
-	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "setting color to " << color.name());
-
-	bool result = colorsTV_model_.setData(index, QVariant(color), Qt::DecorationRole);
-	colorsTV_model_.setData(index, "Test");
-
-	LYXERR0("text: " << colorsTV_model_.itemFromIndex(index)->text());
-	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "result = " << result);
-	tmp = colorsTV_model_.data(index, Qt::DecorationRole);
-	tmp2 = colorsTV_model_.data(index, Qt::DisplayRole);
-	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "actually set color = " << tmp.toString() << " : " << tmp.value<QColor>().name());
-	LYXERR0("(" << index.row() << ", " << index.column() << ") " << "previously set string = " << tmp2.toString() << " : " << tmp2.value<QString>());
-	// QSize size = colorsTV_model_.itemFromIndex(index)->sizeHint();
-	// LYXERR0("size hint = " << size.width() << " x " << size.height());
-}
-
-
-void PrefColors::setIcons(size_type const &row, ColorPair colors)
-{
-	// setIcon(row, false, colors.first);
-	// setIcon(row, true, colors.second);
-	setIcon(colorsTV_model_.item(row, 0)->index(), colors.first);
-	setIcon(colorsTV_model_.item(row, 1)->index(), colors.second);
+	bool res1 = setIcon(colorsTV_model_.item(row, 0), colors.first);
+	bool res2 = setIcon(colorsTV_model_.item(row, 1), colors.second);
+	return res1 && res2;
 }
 
 
@@ -1324,102 +1326,116 @@ void PrefColors::updateAllIcons()
 }
 
 
-void PrefColors::redrawColorTable()
+// void PrefColors::redrawColorTable()
+// {
+// 	colorsTW->clearContents();
+// 	for (size_type row=0; row!=lcolors_.size(); ++row) {
+// 		QPixmap coloritem(icon_width_, icon_height_);
+// 		coloritem.fill(newcolors_[row].first);
+// 		colorsTW->setItem(row, 0, new QTableWidgetItem(coloritem, ""));
+
+// 		coloritem.fill(newcolors_[row].second);
+// 		colorsTW->setItem(row, 1, new QTableWidgetItem(coloritem, ""));
+
+// 		QTableWidgetItem* txtItem =
+// 		        new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
+// 		txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
+// 		colorsTW->setItem(row, 2, txtItem);
+// 	}
+// }
+
+
+bool PrefColors::resetColor(const QModelIndex &index)
 {
-	colorsTW->clearContents();
-	for (size_type row=0; row!=lcolors_.size(); ++row) {
-		QPixmap coloritem(icon_width_, icon_height_);
-		coloritem.fill(newcolors_[row].first);
-		colorsTW->setItem(row, 0, new QTableWidgetItem(coloritem, ""));
-
-		coloritem.fill(newcolors_[row].second);
-		colorsTW->setItem(row, 1, new QTableWidgetItem(coloritem, ""));
-
-		QTableWidgetItem* txtItem =
-		        new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
-		txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
-		colorsTW->setItem(row, 2, txtItem);
-	}
+	return resetColor(index.row());
 }
 
 
-void PrefColors::resetColor()
+bool PrefColors::resetColor(const int row)
 {
-	int const row = colorsTW->currentRow();
-
-	// just to be sure
-	if (row < 0)
-		return;
-
 	ColorNamePair const colors = newcolors_[size_t(row)];
 	ColorPair const c = getDefaultColorsByRow(row);
 
-	if (setColor(row, c, colors)) {
+	bool result = true;
+	for (int column = 0; column < 2; ++column)
+		result &= setColor(colorsTV_model_.item(row, column),
+		                   c.first,  newcolors_[size_t(row)].first);
+
+	if (result) {
 		setDisabledResets();
 		// emit signal
 		changed();
-	}
+	}	
+	return result;
 }
 
 
-void PrefColors::resetAllColor()
+bool PrefColors::resetAllColor()
 {
 	bool isChanged = false;
 
 	colorResetAllPB->setDisabled(true);
 
-	for (int irow = 0, count = colorsTW->rowCount(); irow < count; ++irow) {
-		ColorNamePair const colors = newcolors_[size_t(irow)];
-		ColorPair const c = getDefaultColorsByRow(irow);
-
-		if (setColor(irow, c, colors))
-			isChanged = true;
-	}
+	for (int irow = 0, count = colorsTW->rowCount(); irow < count; ++irow)
+		isChanged |= resetColor(irow);
 
 	if (isChanged) {
 		setDisabledResets();
 		// emit signal
 		changed();
 	}
-
-	// updateAllIcons is not sufficient
-	redrawColorTable();
+	return isChanged;
 }
 
 
-bool PrefColors::setColor(int const row, ColorPair const & new_colors,
-                          ColorNamePair const & old_colors)
-{
-	bool res1, res2;
-	res1 = setColor(row, false, new_colors.first,  old_colors.first);
-	res2 = setColor(row, true,  new_colors.second, old_colors.second);
-	return res1 || res2;
-}
+// bool PrefColors::setColor(int const row, bool const dark_mode,
+//                           QColor const & new_color, QString const & old_color)
+// {
+// 	if (new_color.isValid() && new_color.name() != old_color) {
+// 		// QUndoCommand* setColorCmd =
+// 		//         new SetColor(row, dark_mode, new_color, old_color, newcolors_,
+// 		//                      autoapply_, this);
+// 		QUndoCommand* setColorCmd =
+// 		        new SetColor(colorsTV_model_.index(row, (int)dark_mode),
+// 		                     new_color, old_color, newcolors_, autoapply_, this);
+// 		undo_stack_->push(setColorCmd);
+// 		return true;
+// 	}
+// 	return false;
+// }
 
 
-bool PrefColors::setColor(int const row, bool const dark_mode,
-                          QColor const & new_color, QString const & old_color)
-{
-	if (new_color.isValid() && new_color.name() != old_color) {
-		// QUndoCommand* setColorCmd =
-		//         new SetColor(row, dark_mode, new_color, old_color, newcolors_,
-		//                      autoapply_, this);
-		QUndoCommand* setColorCmd =
-		        new SetColor(colorsTV_model_.index(row, (int)dark_mode),
-		                     new_color, old_color, newcolors_, autoapply_, this);
-		undo_stack_->push(setColorCmd);
-		return true;
-	}
-	return false;
-}
+// bool PrefColors::setColor(QModelIndex const &index,
+//                           QColor const &new_color, QString const &old_color)
+// {
+// 	if (new_color.isValid() && new_color.name() != old_color) {
+// 		QUndoCommand* setColorCmd =
+// 		        new SetColor(index, new_color, old_color, newcolors_,
+// 		                     autoapply_, this);
+// 		undo_stack_->push(setColorCmd);
+// 		return true;
+// 	}
+// 	return false;
+// }
 
 
-bool PrefColors::setColor(QModelIndex const &index,
+// bool PrefColors::setColor(QStandardItem const *pitem,
+//                           ColorPair const & new_colors,
+//                           ColorNamePair const & old_colors)
+// {
+// 	bool res1, res2;
+// 	res1 = setColor(pitem, new_colors.first,  old_colors.first);
+// 	res2 = setColor(row, true,  new_colors.second, old_colors.second);
+// 	return res1 || res2;
+// }
+
+
+bool PrefColors::setColor(QStandardItem const *pitem,
                           QColor const &new_color, QString const &old_color)
 {
 	if (new_color.isValid() && new_color.name() != old_color) {
 		QUndoCommand* setColorCmd =
-		        new SetColor(index, new_color, old_color, newcolors_,
+		        new SetColor2(pitem, new_color, old_color, newcolors_,
 		                     autoapply_, this);
 		undo_stack_->push(setColorCmd);
 		return true;
@@ -1428,28 +1444,28 @@ bool PrefColors::setColor(QModelIndex const &index,
 }
 
 
-void PrefColors::setDisabledResets()
-{
-	int const row = colorsTW->currentRow();
-	// set disable reset buttons ...
-	if (row >= 0)
-		colorResetPB->setDisabled(isDefaultColor(row, newcolors_[size_t(row)]));
+// void PrefColors::setDisabledResets()
+// {
+// 	int const row = colorsTW->currentRow();
+// 	// set disable reset buttons ...
+// 	if (row >= 0)
+// 		colorResetPB->setDisabled(isDefaultColor(row, newcolors_[size_t(row)]));
 
-	colorResetAllPB->setDisabled(true);
+// 	colorResetAllPB->setDisabled(true);
 
-	// ... in between process qt events to give quicker visual feedback to the user ...
-	guiApp->processEvents();
+// 	// ... in between process qt events to give quicker visual feedback to the user ...
+// 	guiApp->processEvents();
 
-	// ... set disable Reset All button
-	for (int irow = 0, count = colorsTW->rowCount(); irow < count; ++irow) {
-		if (!isDefaultColor(irow, newcolors_[size_t(irow)])) {
-			colorResetAllPB->setDisabled(false);
-			// the break condition might hide performance issues
-			// if a non-default color is at the top of the list
-			break;
-		}
-	}
-}
+// 	// ... set disable Reset All button
+// 	for (int irow = 0, count = colorsTW->rowCount(); irow < count; ++irow) {
+// 		if (!isDefaultColor(irow, newcolors_[size_t(irow)])) {
+// 			colorResetAllPB->setDisabled(false);
+// 			// the break condition might hide performance issues
+// 			// if a non-default color is at the top of the list
+// 			break;
+// 		}
+// 	}
+// }
 
 
 void PrefColors::exportThemeInterface()
@@ -4469,51 +4485,119 @@ QString GuiPreferences::browse(QString const & file,
 //                    QString old_color, ColorNamePairs & new_color_list,
 //                    const bool autoapply, PrefColors* color_module,
 //                    QUndoCommand* uc_parent)
-SetColor::SetColor(QModelIndex const index, QColor const &new_color,
+// SetColor::SetColor(QModelIndex const index, QColor const &new_color,
+//                    QString const &old_color, ColorNamePairs &new_color_list,
+//                    bool const autoapply, PrefColors* color_module,
+//                    QUndoCommand* uc_parent)
+//     : PrefColors(color_module->form_), QUndoCommand(uc_parent),
+//       autoapply_(autoapply), index_(index), new_color_(new_color),
+//       old_color_(old_color), newcolors_(new_color_list), parent_(color_module)
+// {
+// 	setText(QString("Color %1 is changed to %2 (light) and %3 (dark)")
+// 	        .arg(lcolors_[index_.row()]).arg(newcolors_[index_.row()].first)
+// 	        .arg(newcolors_[index_.row()].second));
+// }
+
+
+// void SetColor::redo()
+// {
+// 	setColor(new_color_);
+// 	LYXERR0("REDO   : row = " << index_.row() << " col = " << index_.column() <<
+// 	        " color = " << new_color_.name());
+// }
+
+
+// void SetColor::undo()
+// {
+// 	setColor(old_color_);
+// 	LYXERR0("UNDO   : row = " << index_.row() << " col = " << index_.column() <<
+// 	        " color = " << old_color_);
+// }
+
+
+// void SetColor::setColor(QColor const &color)
+// {
+
+// 	if (index_.column() == 1)
+// 		newcolors_[size_t(index_.row())].second = color.name();
+// 	else
+// 		newcolors_[size_t(index_.row())].first = color.name();
+// 	LYXERR0("SETICON: row = " << index_.row() << " col = " << index_.column() <<
+// 	        " color = " << color.name());
+// 	setIcon(index_, color);
+// 	// redrawRow(row_, newcolors_[size_t(row_)]);
+
+// 	// LYXERR0("New color at (" << row_ << ", " << dark_mode_ << ") is now " <<
+// 	//         color.name() << ": " << newcolors_[size_t(row_)].first <<
+// 	//         ", " << newcolors_[size_t(row_)].second);
+// 	parent_->changeFocus();
+// 	parent_->form_->update();
+// 	colorsTW->update();
+// 	colorsTV->update();
+
+// 	// emit signal
+// 	changed();
+
+// 	if (autoapply_) {
+// 		parent_->form_->setColor(lcolors_[index_.row()], newcolors_[index_.row()]);
+// 		parent_->form_->dispatchParams();
+// 	}
+// }
+
+
+/////////////////////////////////////////////////////////////////////
+//
+// SetColor2
+//
+/////////////////////////////////////////////////////////////////////
+
+// This class enables undo/redo of setColor()
+// SetColor::SetColor(const int row, bool dark_mode, const QColor & new_color,
+//                    QString old_color, ColorNamePairs & new_color_list,
+//                    const bool autoapply, PrefColors* color_module,
+//                    QUndoCommand* uc_parent)
+SetColor2::SetColor2(QStandardItem const *item, QColor const &new_color,
                    QString const &old_color, ColorNamePairs &new_color_list,
                    bool const autoapply, PrefColors* color_module,
                    QUndoCommand* uc_parent)
     : PrefColors(color_module->form_), QUndoCommand(uc_parent),
-      autoapply_(autoapply), index_(index), new_color_(new_color),
+      autoapply_(autoapply), item_(*item), new_color_(new_color),
       old_color_(old_color), newcolors_(new_color_list), parent_(color_module)
 {
+	LYXERR0("here we are");
 	setText(QString("Color %1 is changed to %2 (light) and %3 (dark)")
-	        .arg(lcolors_[index_.row()]).arg(newcolors_[index_.row()].first)
-	        .arg(newcolors_[index_.row()].second));
+	        .arg(lcolors_[item_.row()]).arg(newcolors_[item_.row()].first)
+	        .arg(newcolors_[item_.row()].second));
 }
 
 
-void SetColor::redo()
+void SetColor2::redo()
 {
 	setColor(new_color_);
-	LYXERR0("REDO   : row = " << index_.row() << " col = " << index_.column() <<
+	LYXERR0("REDO   : row = " << item_.row() << " col = " << item_.column() <<
 	        " color = " << new_color_.name());
 }
 
 
-void SetColor::undo()
+void SetColor2::undo()
 {
 	setColor(old_color_);
-	LYXERR0("UNDO   : row = " << index_.row() << " col = " << index_.column() <<
+	LYXERR0("UNDO   : row = " << item_.row() << " col = " << item_.column() <<
 	        " color = " << old_color_);
 }
 
 
-void SetColor::setColor(QColor const &color)
+void SetColor2::setColor(QColor const &color)
 {
 
-	if (index_.column() == 1)
-		newcolors_[size_t(index_.row())].second = color.name();
+	if (item_.column() == 1)
+		newcolors_[size_t(item_.row())].second = color.name();
 	else
-		newcolors_[size_t(index_.row())].first = color.name();
-	LYXERR0("SETICON: row = " << index_.row() << " col = " << index_.column() <<
+		newcolors_[size_t(item_.row())].first = color.name();
+	LYXERR0("SETICON: row = " << item_.row() << " col = " << item_.column() <<
 	        " color = " << color.name());
-	setIcon(index_, color);
-	// redrawRow(row_, newcolors_[size_t(row_)]);
+	setIcon(&item_, color);
 
-	// LYXERR0("New color at (" << row_ << ", " << dark_mode_ << ") is now " <<
-	//         color.name() << ": " << newcolors_[size_t(row_)].first <<
-	//         ", " << newcolors_[size_t(row_)].second);
 	parent_->changeFocus();
 	parent_->form_->update();
 	colorsTW->update();
@@ -4523,7 +4607,7 @@ void SetColor::setColor(QColor const &color)
 	changed();
 
 	if (autoapply_) {
-		parent_->form_->setColor(lcolors_[index_.row()], newcolors_[index_.row()]);
+		parent_->form_->setColor(lcolors_[item_.row()], newcolors_[item_.row()]);
 		parent_->form_->dispatchParams();
 	}
 }

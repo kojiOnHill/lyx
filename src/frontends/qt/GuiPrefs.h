@@ -261,23 +261,26 @@ public:
 	void updateRC(LyXRC const & rc) override;
 
 private Q_SLOTS:
-	void changeLightColor(){ changeColor(false); }
-	void changeDarkColor() { changeColor(true);  }
-	void changeColor();
+	// void changeLightColor(){ changeColor(false); }
+	// void changeDarkColor() { changeColor(true);  }
+	// void changeColor();
 	// obsolete
-	void changeColor(int const row, int const column);
+	// void changeColor(int const row, int const column);
 	void changeColor(const QModelIndex &index);
-	void resetColor();
-	void resetAllColor();
+	bool resetColor(const QModelIndex &index);
+	bool resetColor(const int row);
+	bool resetAllColor();
 	void redrawColorTable();
 	void changeSysColor();
 	void changeLyxObjectsSelection();
 	void changeAutoapply();
-	bool setColor(int const row, ColorPair const & new_colors,
-	              ColorNamePair const & old_colors);
-	bool setColor(int const row, bool const dark_mode, QColor const & new_color,
-	              QString const & old_color);
-	bool setColor(QModelIndex const &index, QColor const &new_color,
+	// bool setColor(int const row, bool const dark_mode, QColor const & new_color,
+	//               QString const & old_color);
+	// bool setColor(QModelIndex const &index, QColor const &new_color,
+	//               QString const &old_color);
+	// bool setColor(QStandardItem const *item, ColorPair const & new_colors,
+	//               ColorNamePair const & old_colors);
+	bool setColor(QStandardItem const *item, QColor const &new_color,
 	              QString const &old_color);
 	bool isDefaultColor(int const row, ColorNamePair const & color);
 	void setDisabledResets();
@@ -288,7 +291,7 @@ private Q_SLOTS:
 	void exportThemeInterface();
 	void importThemeInterface();
 
-	void pressCurrentItem(QTableWidgetItem * item = nullptr);
+	// void pressCurrentItem(QTableWidgetItem * item = nullptr);
 	void changeFocus();
 
 	void searchColorItem(bool backward_direction);
@@ -301,11 +304,12 @@ private:
 	///
 	ColorPair getDefaultColorsByRow(int const row);
 	///
-	void setIcons(size_type const &row, ColorPair colors);
+	bool setIcons(size_type const &row, ColorPair colors);
 	///
-	void setIcon(size_type const row, bool const dark_mode, QColor const &color);
+	//void setIcon(size_type const row, bool const dark_mode, QColor const &color);
 	///
-	void setIcon(QModelIndex const &index, QColor const &color);
+	// void setIcon(QModelIndex const &index, QColor const &color);
+	bool setIcon(QStandardItem const *item, QColor const &color);
 	///
 	// void redrawRow(size_type row, ColorPair colors);
 	///
@@ -335,8 +339,8 @@ private:
 	std::vector<QPersistentModelIndex> light_color_index_;
 	std::vector<QPersistentModelIndex> dark_color_index_;
 
-	QList<QTableWidgetItem *> items_found_;
-	QList<QTableWidgetItem *>::iterator it_;
+	// QList<QTableWidgetItem *> items_found_;
+	// QList<QTableWidgetItem *>::iterator it_;
 	QString search_string_;
 
 	int const icon_width_  = 32;
@@ -354,6 +358,7 @@ private:
 	QString theme_filename_;
 
 	friend class SetColor;
+	friend class SetColor2;
 	friend class ColorTableModel;
 };
 
@@ -643,7 +648,36 @@ public:
 };
 
 
-class SetColor : public PrefColors, public QUndoCommand
+// class SetColor : public PrefColors, public QUndoCommand
+// {
+// public:
+// 	// SetColor(const int row, bool dark_mode, const QColor & new_color,
+// 	//          QString old_color,
+// 	//          ColorNamePairs & new_color_list,
+// 	//          const bool autoapply, PrefColors* color_module,
+// 	//          QUndoCommand* uc_parent = nullptr);
+// 	SetColor(QModelIndex const index, QColor const &new_color,
+// 	         QString const &old_color,
+// 	         ColorNamePairs &new_color_list,
+// 	         bool const autoapply, PrefColors* color_module,
+// 	         QUndoCommand* uc_parent = nullptr);
+// 	~SetColor(){};
+
+// 	void redo() override;
+// 	void undo() override;
+// 	void setColor(QColor const &color);
+
+// private:
+// 	bool const autoapply_;
+// 	QModelIndex const index_;
+// 	QColor new_color_;
+// 	QString old_color_;
+// 	ColorNamePairs & newcolors_;
+// 	PrefColors* parent_;
+// };
+
+
+class SetColor2 : public PrefColors, public QUndoCommand
 {
 public:
 	// SetColor(const int row, bool dark_mode, const QColor & new_color,
@@ -651,12 +685,12 @@ public:
 	//          ColorNamePairs & new_color_list,
 	//          const bool autoapply, PrefColors* color_module,
 	//          QUndoCommand* uc_parent = nullptr);
-	SetColor(QModelIndex const index, QColor const &new_color,
+	SetColor2(QStandardItem const *item, QColor const &new_color,
 	         QString const &old_color,
 	         ColorNamePairs &new_color_list,
 	         bool const autoapply, PrefColors* color_module,
 	         QUndoCommand* uc_parent = nullptr);
-	~SetColor(){};
+	~SetColor2(){};
 
 	void redo() override;
 	void undo() override;
@@ -664,7 +698,7 @@ public:
 
 private:
 	bool const autoapply_;
-	QModelIndex const index_;
+	QStandardItem const & item_;
 	QColor new_color_;
 	QString old_color_;
 	ColorNamePairs & newcolors_;
