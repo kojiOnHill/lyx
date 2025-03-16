@@ -25,15 +25,18 @@ function switch-polyglossia-to-dev ()
   # location of TL version
   polyglossia_tl_f="$(/opt/texbin/kpsewhich polyglossia.sty)"
   polyglossia_tl_d="$(dirname "${polyglossia_tl_f}")"
+  # this is the dir outside of the TL tree where we store the TL polyglossia
+  # dir when we replace it with a symlink to the dev dir.
+  polyglossia_tl_bu_d="/home/$(logname)/polyglossia_tl"
   # check whether link or not link to see whether current is tl or dev.
   if [ -L "${polyglossia_tl_d}" ]; then
     echo "Link exists, so you are already using polyglossia-dev."
     return 0
   else
-    # overwrite polyglossia_tl since newer stable version
-    sudo mv "${polyglossia_tl_d}" "/home/$(logname)/polyglossia_tl"
-    # Use a link to poly-dev. That is, do not copy the directory. That way, we
-    # can just do a git pull.
+    # TODO: need to account for different TL versions.
+    sudo mv "${polyglossia_tl_d}" "${polyglossia_tl_bu_d}"
+    # We use a link to poly-dev. That is, we do not copy the directory. That
+    # way, we can just do a git pull.
     sudo ln -s "${polyglossia_dev_d}/tex" "${polyglossia_tl_d}"
     # we need to check for possibly new/removed files
     sudo /opt/texbin/mktexlsr
@@ -45,12 +48,12 @@ function switch-polyglossia-to-dev ()
 
 function switch-polyglossia-to-stable ()
 {
-  polyglossia_stable_d="/home/$(logname)/polyglossia_tl"
   polyglossia_tl_f="$(/opt/texbin/kpsewhich polyglossia.sty)"
   polyglossia_tl_d="$(dirname "${polyglossia_tl_f}")"
+  polyglossia_tl_bu_d="/home/$(logname)/polyglossia_tl"
   if [ -L "${polyglossia_tl_d}" ]; then
     sudo rm "${polyglossia_tl_d}"
-    sudo mv "${polyglossia_stable_d}" "${polyglossia_tl_d}"
+    sudo mv "${polyglossia_tl_bu_d}" "${polyglossia_tl_d}"
     sudo /opt/texbin/mktexlsr
 
     \sudo -k
@@ -65,9 +68,9 @@ function switch-polyglossia-to-stable ()
 # in a script that updates the TeX Live installation.
 function polyglossia-is-stable ()
 {
-  polyglossia_stable_d="/home/$(logname)/polyglossia_tl"
   polyglossia_tl_f="$(/opt/texbin/kpsewhich polyglossia.sty)"
   polyglossia_tl_d="$(dirname "${polyglossia_tl_f}")"
+  polyglossia_tl_bu_d="/home/$(logname)/polyglossia_tl"
   if [ -L "${polyglossia_tl_d}" ]; then
     # 0 = no, not stable
     echo "0"
