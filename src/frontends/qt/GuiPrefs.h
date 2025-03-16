@@ -270,9 +270,9 @@ private Q_SLOTS:
 	bool resetColor(const QModelIndex &index);
 	bool resetColor(const int row);
 	bool resetAllColor();
-	void redrawColorTable();
+	// void redrawColorTable();
 	void changeSysColor();
-	void changeLyxObjectsSelection();
+	// void changeLyxObjectsSelection();
 	void changeAutoapply();
 	// bool setColor(int const row, bool const dark_mode, QColor const & new_color,
 	//               QString const & old_color);
@@ -283,20 +283,21 @@ private Q_SLOTS:
 	bool setColor(QStandardItem const *item, QColor const &new_color,
 	              QString const &old_color);
 	bool isDefaultColor(int const row, ColorNamePair const & color);
-	void setDisabledResets();
+	// void setDisabledResets();
 	void openThemeMenu();
 	void saveThemeInterface();
-	void loadThemeInterface(QListWidgetItem* item);
+	void loadThemeInterface(QListWidgetItem* current_item,
+	                        QListWidgetItem* previous_item);
 	void removeTheme();
 	void exportThemeInterface();
 	void importThemeInterface();
 
 	// void pressCurrentItem(QTableWidgetItem * item = nullptr);
-	void changeFocus();
+	// void changeFocus();
 
-	void searchColorItem(bool backward_direction);
-	void searchNextColorItem();
-	void searchPreviousColorItem();
+	// void searchColorItem(bool backward_direction);
+	// void searchNextColorItem();
+	// void searchPreviousColorItem();
 
 private:
 	///
@@ -358,8 +359,6 @@ private:
 	QString theme_filename_;
 
 	friend class SetColor;
-	friend class SetColor2;
-	friend class ColorTableModel;
 };
 
 
@@ -648,49 +647,15 @@ public:
 };
 
 
-// class SetColor : public PrefColors, public QUndoCommand
-// {
-// public:
-// 	// SetColor(const int row, bool dark_mode, const QColor & new_color,
-// 	//          QString old_color,
-// 	//          ColorNamePairs & new_color_list,
-// 	//          const bool autoapply, PrefColors* color_module,
-// 	//          QUndoCommand* uc_parent = nullptr);
-// 	SetColor(QModelIndex const index, QColor const &new_color,
-// 	         QString const &old_color,
-// 	         ColorNamePairs &new_color_list,
-// 	         bool const autoapply, PrefColors* color_module,
-// 	         QUndoCommand* uc_parent = nullptr);
-// 	~SetColor(){};
-
-// 	void redo() override;
-// 	void undo() override;
-// 	void setColor(QColor const &color);
-
-// private:
-// 	bool const autoapply_;
-// 	QModelIndex const index_;
-// 	QColor new_color_;
-// 	QString old_color_;
-// 	ColorNamePairs & newcolors_;
-// 	PrefColors* parent_;
-// };
-
-
-class SetColor2 : public PrefColors, public QUndoCommand
+class SetColor : public PrefColors, public QUndoCommand
 {
 public:
-	// SetColor(const int row, bool dark_mode, const QColor & new_color,
-	//          QString old_color,
-	//          ColorNamePairs & new_color_list,
-	//          const bool autoapply, PrefColors* color_module,
-	//          QUndoCommand* uc_parent = nullptr);
-	SetColor2(QStandardItem const *item, QColor const &new_color,
+	SetColor(QStandardItem const *item, QColor const &new_color,
 	         QString const &old_color,
 	         ColorNamePairs &new_color_list,
 	         bool const autoapply, PrefColors* color_module,
 	         QUndoCommand* uc_parent = nullptr);
-	~SetColor2(){};
+	~SetColor(){};
 
 	void redo() override;
 	void undo() override;
@@ -703,30 +668,6 @@ private:
 	QString old_color_;
 	ColorNamePairs & newcolors_;
 	PrefColors* parent_;
-};
-
-
-class ColorTableModel : public QAbstractTableModel
-{
-public:
-	ColorTableModel(std::vector<ColorCode> &lcolors, ColorNamePairs &colors,
-	                QObject *parent = nullptr);
-	~ColorTableModel(){};
-
-	int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-	int columnCount(const QModelIndex &parent = QModelIndex()) const override;
-	QVariant data(const QModelIndex &index,
-	              int role = Qt::DisplayRole) const override;
-
-	bool setData(const QModelIndex &index, const QVariant &value,
-	             int role = Qt::EditRole) override;
-	Qt::ItemFlags flags(const QModelIndex &index) const override;
-
-private:
-	const int column_size_ = 3;
-	std::vector<ColorCode> &lcolors_;
-	ColorNamePairs         &colors_;
-	std::vector<QModelIndex> indexes_;
 };
 
 
