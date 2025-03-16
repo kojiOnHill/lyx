@@ -34,6 +34,10 @@ function switch-polyglossia-to-dev ()
     return 0
   else
     # TODO: need to account for different TL versions.
+    if [ -e "${polyglossia_tl_bu_d}" ]; then
+      echo "ERROR: The polyglossia backup dir already exists: ${polyglossia_tl_bu_d}" >&2
+      return 1
+    fi
     sudo mv "${polyglossia_tl_d}" "${polyglossia_tl_bu_d}"
     # We use a link to poly-dev. That is, we do not copy the directory. That
     # way, we can just do a git pull.
