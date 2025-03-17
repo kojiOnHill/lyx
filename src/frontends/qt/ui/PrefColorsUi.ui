@@ -21,9 +21,9 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="1" column="0" colspan="3">
-    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0" columnstretch="0,0,0,0,0,0">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0,0,0,0,0,0">
      <item row="0" column="1">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="labelColor">
        <property name="font">
         <font>
          <pointsize>11</pointsize>
@@ -34,6 +34,9 @@
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
+       </property>
+       <property name="buddy">
+        <cstring>colorsTV</cstring>
        </property>
       </widget>
      </item>
@@ -321,7 +324,7 @@
       </layout>
      </item>
      <item row="0" column="0">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="labelTheme">
        <property name="font">
         <font>
          <pointsize>11</pointsize>
@@ -355,7 +358,23 @@
       </spacer>
      </item>
      <item row="1" column="1" colspan="5">
-      <widget class="QTableView" name="colorsTV"/>
+      <widget class="QTableView" name="colorsTV">
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="showGrid">
+        <bool>false</bool>
+       </property>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>18</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>22</number>
+       </attribute>
+      </widget>
      </item>
     </layout>
    </item>

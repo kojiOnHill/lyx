@@ -281,7 +281,7 @@ private Q_SLOTS:
 	//               QString const &old_color);
 	// bool setColor(QStandardItem const *item, ColorPair const & new_colors,
 	//               ColorNamePair const & old_colors);
-	bool setColor(QStandardItem const *item, QColor const &new_color,
+	bool setColor(QStandardItem *item, QColor const &new_color,
 	              QString const &old_color);
 	bool isDefaultColor(int const row, ColorNamePair const & color);
 	// void setDisabledResets();
@@ -311,7 +311,7 @@ private:
 	//void setSwatch(size_type const row, bool const dark_mode, QColor const &color);
 	///
 	// void setSwatch(QModelIndex const &index, QColor const &color);
-	bool setSwatch(QStandardItem const *item, QColor const &color);
+	bool setSwatch(QStandardItem *item, QColor const &color);
 	///
 	// void redrawRow(size_type row, ColorPair colors);
 	///
@@ -346,8 +346,10 @@ private:
 	// QList<QTableWidgetItem *>::iterator it_;
 	QString search_string_;
 
-	int const icon_width_  = 32;
-	int const icon_height_ = 12;
+	int const swatch_width_  = 32;
+	int const swatch_height_ = 18;
+	int const swatch_hmargin_ = 2;
+	int const swatch_vmargin_ = 2;
 
 	bool autoapply_ = false;
 	QUndoStack * undo_stack_;
@@ -653,7 +655,7 @@ public:
 class SetColor : public PrefColors, public QUndoCommand
 {
 public:
-	SetColor(QStandardItem const *item, QColor const &new_color,
+	SetColor(QStandardItem *item, QColor const &new_color,
 	         QString const &old_color,
 	         ColorNamePairs &new_color_list,
 	         bool const autoapply, PrefColors* color_module,
@@ -666,7 +668,7 @@ public:
 
 private:
 	bool const autoapply_;
-	QStandardItem const & item_;
+	QStandardItem & item_;
 	QColor new_color_;
 	QString old_color_;
 	ColorNamePairs & newcolors_;
@@ -679,27 +681,12 @@ class ColorSwatchDelegate : public QStyledItemDelegate
 	Q_OBJECT
 
 public:
-	ColorSwatchDelegate(QColor color, QObject *parent = nullptr);
-	QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-	                      const QModelIndex &index) const override;
-
-    // void setEditorData(QWidget *editor, const QModelIndex &index) const override;
-    // void setModelData(QWidget *editor, QAbstractItemModel *model,
-	   //                const QModelIndex &index) const override;
-
-    // void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
-	   //                        const QModelIndex &index) const override;
+	ColorSwatchDelegate(QObject *parent = nullptr);
 
 	void paint(QPainter *painter, const QStyleOptionViewItem &option,
 	           const QModelIndex &index) const override;
 
-	QSize sizeHint(const QStyleOptionViewItem &option,
-	               const QModelIndex &index) const override;
-
 private:
-	int width_  = 40;
-	int height_ = 20;
-	QColor color_;
 	PrefColors* pane_;
 };
 

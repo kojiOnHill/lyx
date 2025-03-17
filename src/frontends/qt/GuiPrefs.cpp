@@ -995,7 +995,7 @@ PrefColors::PrefColors(GuiPreferences * form)
 	// FIXME: all of this initialization should be put into the controller.
 	// See http://www.mail-archive.com/lyx-devel@lists.lyx.org/msg113301.html
 	// for some discussion of why that is not trivial.
-	QPixmap icon(icon_width_, icon_height_);
+	QPixmap icon(swatch_width_, swatch_height_);
 	for (int i = 0; i < Color_ignore; ++i) {
 		ColorCode lc = static_cast<ColorCode>(i);
 		if (lc == Color_none
@@ -1025,16 +1025,6 @@ PrefColors::PrefColors(GuiPreferences * form)
 	}
 	sort(lcolors_.begin(), lcolors_.end(), ColorSorter);
 
-	// colorsTW->setRowCount(lcolors_.size());
-	// colorsTW->setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
-	//                                      qt_("Color name")});
-	// for (size_type row=0; row!=lcolors_.size(); ++row) {
-	// 	colorsTW->setItem(row, 0, new QTableWidgetItem(icon, ""));
-	// 	colorsTW->setItem(row, 1, new QTableWidgetItem(icon, ""));
-	// 	QTableWidgetItem* txtItem = new QTableWidgetItem(toqstr(lcolor.getGUIName(lcolors_[row])));
-	// 	txtItem->setFlags(~QFlags(Qt::ItemIsEditable));
-	// 	colorsTW->setItem(row, 2, txtItem);
-	// }
 	curcolors_.resize(lcolors_.size());
 	newcolors_.resize(lcolors_.size());
 
@@ -1171,15 +1161,9 @@ void PrefColors::updateRC(LyXRC const & rc)
 	for (size_type i = 0; i < lcolors_.size(); ++i) {
 		ColorPair colors =
 		        guiApp->colorCache().getAll(lcolors_[i], false);
-		ColorSwatchDelegate *delegate0 = new ColorSwatchDelegate(colors.first, this);
-		LYXERR0("light color = " << colors.first.name());
-		colorsTV->setItemDelegate(delegate0);
-		ColorSwatchDelegate *delegate1 = new ColorSwatchDelegate(colors.second, this);
-		LYXERR0("dark  color = " << colors.second.name());
-		colorsTV->setItemDelegate(delegate1);
-		// setSwatches(i, colors);
 		newcolors_[i].first  = curcolors_[i].first  = colors.first.name();
 		newcolors_[i].second = curcolors_[i].second = colors.second.name();
+		setSwatches(i, colors);
 	}
 	colorsTV->update();
 	syscolorsCB->setChecked(rc.use_system_colors);
@@ -1265,7 +1249,7 @@ void PrefColors::changeColor(const QModelIndex &index)
 
 // void PrefColors::setSwatch(size_type row, bool const dark_mode, QColor const &color)
 // {
-// 	// QPixmap coloritem(icon_width_, icon_height_);
+// 	// QPixmap coloritem(swatch_width_, swatch_height_);
 // 	// coloritem.fill(color);
 // 	// QTableWidgetItem* item = new QTableWidgetItem(QIcon(coloritem), "");
 // 	// colorsTW->setItem(row, (int)dark_mode, item);
@@ -1302,10 +1286,14 @@ void PrefColors::changeColor(const QModelIndex &index)
 // }
 
 
-bool PrefColors::setSwatch(QStandardItem const *item, QColor const &color)
+bool PrefColors::setSwatch(QStandardItem *item, QColor const &color)
 {
 	QModelIndex index = colorsTV_model_.indexFromItem(item);
 	return colorsTV_model_.setData(index, QVariant(color), Qt::DecorationRole);
+	// QPixmap pix(100, 50);
+	// pix.fill(color);
+	// item->setIcon(QIcon(pix));
+	// return true;
 }
 
 
@@ -1339,7 +1327,7 @@ void PrefColors::updateAllIcons()
 // {
 // 	colorsTW->clearContents();
 // 	for (size_type row=0; row!=lcolors_.size(); ++row) {
-// 		QPixmap coloritem(icon_width_, icon_height_);
+// 		QPixmap coloritem(swatch_width_, swatch_height_);
 // 		coloritem.fill(newcolors_[row].first);
 // 		colorsTW->setItem(row, 0, new QTableWidgetItem(coloritem, ""));
 
@@ -1439,7 +1427,7 @@ bool PrefColors::resetAllColor()
 // }
 
 
-bool PrefColors::setColor(QStandardItem const *pitem,
+bool PrefColors::setColor(QStandardItem *pitem,
                           QColor const &new_color, QString const &old_color)
 {
 	if (new_color.isValid() && new_color.name() != old_color) {
@@ -1789,27 +1777,10 @@ void PrefColors::openThemeMenu()
 
 void PrefColors::initializeColorsTV()
 {
-	LYXERR0("**** initializeColorsTV ****");
-	// Headers
-	QHeaderView* vertical_header = new QHeaderView(Qt::Vertical);
-	vertical_header->setSectionResizeMode(QHeaderView::Fixed);
-	vertical_header->setDefaultSectionSize(icon_height_);
-	vertical_header->setDefaultAlignment(Qt::AlignVCenter);
-	colorsTV->verticalHeader()->hide();
-
-	colorsTV_model_.setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
-	                                           qt_("Color name")});
-	QHeaderView* horizontal_header = new QHeaderView(Qt::Horizontal);
-	horizontal_header->setSectionResizeMode(QHeaderView::Fixed);
-	horizontal_header->setDefaultSectionSize(icon_width_);
-	horizontal_header->setStretchLastSection(true);
-	horizontal_header->setDefaultAlignment(Qt::AlignHCenter);
-	colorsTV->setHorizontalHeader(horizontal_header);
-
 	// The table
 	// Only color names are listed here. Colors will be set at updateRC().
 	for (int row=0; row<(int)lcolors_.size(); ++row) {
-		colorsTV->setRowHeight(row, icon_height_);
+		colorsTV->setRowHeight(row, swatch_height_);
 		for (int column=0; column<3; ++column) {
 			QStandardItem* item = new QStandardItem();
 			if (column == 2) {
@@ -1819,13 +1790,42 @@ void PrefColors::initializeColorsTV()
 			colorsTV_model_.setItem(row, column, item);
 		}
 	}
+	colorsTV_model_.setHeaderData(0, Qt::Horizontal, qt_("Light"));
+	colorsTV_model_.setHeaderData(1, Qt::Horizontal, qt_("Dark"));
+	colorsTV_model_.setHeaderData(2, Qt::Horizontal, qt_("Color name"));
+	colorsTV_model_.setHeaderData(3, Qt::Horizontal, qt_(""));
+	// colorsTV_model_.setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
+	//                                            qt_("Color name"), ""});
 
 	colorsTV->setModel(&colorsTV_model_);
-	colorsTV->setColumnWidth(0, 40);
-	colorsTV->setColumnWidth(1, 40);
-	colorsTV->setShowGrid(false);
-	// colorsTV->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+	ColorSwatchDelegate *delegate = new ColorSwatchDelegate(this);
+	colorsTV->setItemDelegate(delegate);
+
+	// Headers
+	QHeaderView* vertical_header = new QHeaderView(Qt::Vertical);
+	vertical_header->setSectionResizeMode(QHeaderView::Fixed);
+	vertical_header->setDefaultSectionSize(swatch_height_);
+	vertical_header->setDefaultAlignment(Qt::AlignCenter);
+	colorsTV->verticalHeader()->hide();
+
+	QHeaderView* horizontal_header = new QHeaderView(Qt::Horizontal);
+	LYXERR0("logical index count = " << horizontal_header->count());
+	LYXERR0("logical index 0 = " << horizontal_header->logicalIndex(0));
+	LYXERR0("logical index 1 = " << horizontal_header->logicalIndex(1));
+	LYXERR0("logical index 2 = " << horizontal_header->logicalIndex(2));
+	LYXERR0("logical index 3 = " << horizontal_header->logicalIndex(3));
+	// horizontal_header->setSectionResizeMode(0, QHeaderView::Fixed);
+	// horizontal_header->setDefaultSectionSize(swatch_width_);
+	// horizontal_header->setStretchLastSection(true);
+	// horizontal_header->setSectionResizeMode(2, QHeaderView::Stretch);
+	horizontal_header->setDefaultAlignment(Qt::AlignCenter);
+	colorsTV->setHorizontalHeader(horizontal_header);
+
+	colorsTV->setColumnWidth(0, swatch_width_ + 2 * swatch_hmargin_);
+	colorsTV->setColumnWidth(1, swatch_width_ + 2 * swatch_hmargin_);
 	colorsTV->setSelectionMode(QAbstractItemView::NoSelection);
+
 	colorsTV->show();
 
 }
@@ -4489,7 +4489,7 @@ QString GuiPreferences::browse(QString const & file,
 /////////////////////////////////////////////////////////////////////
 
 // This class enables undo/redo of setColor()
-SetColor::SetColor(QStandardItem const *item, QColor const &new_color,
+SetColor::SetColor(QStandardItem *item, QColor const &new_color,
                    QString const &old_color, ColorNamePairs &new_color_list,
                    bool const autoapply, PrefColors* color_module,
                    QUndoCommand* uc_parent)
@@ -4551,19 +4551,10 @@ void SetColor::setColor(QColor const &color)
 /////////////////////////////////////////////////////////////////////
 
 
-ColorSwatchDelegate::ColorSwatchDelegate(QColor color, QObject *parent)
-    : QStyledItemDelegate(parent), color_(color)
+ColorSwatchDelegate::ColorSwatchDelegate(QObject *parent)
+    : QStyledItemDelegate(parent)
 {
 	pane_ = static_cast<PrefColors*>(parent);
-	LYXERR0("init color is set to " << color_.name());
-}
-
-
-QWidget* ColorSwatchDelegate::createEditor(QWidget *parent,
-                                           const QStyleOptionViewItem &option,
-                                           const QModelIndex &index) const
-{
-	pane_->changeColor(index);
 }
 
 
@@ -4571,33 +4562,33 @@ void ColorSwatchDelegate::paint(QPainter *painter,
                                 const QStyleOptionViewItem &option,
                                 const QModelIndex &index) const
 {
-	if (!index.isValid()) return;
-	QStandardItem* item = pane_->colorsTV_model_.itemFromIndex(index);
-	if (item->column() < 2) {
-		LYXERR0("paint is called: col = " << item->column() << " color = " <<
-		        color_.name());
-		QStyleOptionViewItem op;
-		op.decorationAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
-		op.palette = QPalette(color_);
-		op.decorationSize = QSize(width_, height_);
-		op.rect = QRect(0, 0, width_, height_);
-		op.displayAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
-		op.features = QStyleOptionViewItem::HasDecoration;
-		this->initStyleOption(&op, index);
-		// pane_->style()->drawControl(QStyle::CE_PushButton, &op, painter);
-		QPixmap pix(width_, height_);
-		pix.fill(color_);
+	Q_ASSERT(index.isValid());
 
-		pane_->style()->drawItemPixmap(painter, QRect(0, 0, width_, height_), 0, pix);
+	QStyleOptionViewItem opt = option;
+	initStyleOption(&opt, index);
+
+	const QWidget *widget = option.widget;
+	QStyle *style = widget ? widget->style() : QApplication::style();
+	int column = index.column();
+	int row = index.row();
+	if (column < 2) {
+		// column of color swatches
+		int x = pane_->colorsTV->columnViewportPosition(column);
+		int y = pane_->colorsTV->rowViewportPosition(row);
+		opt.decorationAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
+		opt.rect = QRect(x + pane_->swatch_hmargin_,
+		                 y + pane_->swatch_vmargin_,
+		                 pane_->swatch_width_,
+		                 pane_->swatch_height_);
+		QPixmap pixmap(pane_->swatch_width_, pane_->swatch_height_);
+		QColor color =
+		        pane_->colorsTV_model_.data(index, Qt::DecorationRole).value<QColor>();
+		pixmap.fill(color);
+		style->drawItemPixmap(painter, opt.rect, 0, pixmap);
+	} else {
+		opt.displayAlignment = Qt::AlignVCenter;
+		style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, widget);
 	}
-
-}
-
-
-QSize ColorSwatchDelegate::sizeHint(const QStyleOptionViewItem &option,
-                                    const QModelIndex &index) const
-{
-	return QSize(width_, height_);
 }
 
 
