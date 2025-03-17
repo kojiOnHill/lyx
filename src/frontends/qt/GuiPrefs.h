@@ -306,12 +306,12 @@ private:
 	///
 	ColorPair getDefaultColorsByRow(int const row);
 	///
-	bool setIcons(size_type const &row, ColorPair colors);
+	bool setSwatches(size_type const &row, ColorPair colors);
 	///
-	//void setIcon(size_type const row, bool const dark_mode, QColor const &color);
+	//void setSwatch(size_type const row, bool const dark_mode, QColor const &color);
 	///
-	// void setIcon(QModelIndex const &index, QColor const &color);
-	bool setIcon(QStandardItem const *item, QColor const &color);
+	// void setSwatch(QModelIndex const &index, QColor const &color);
+	bool setSwatch(QStandardItem const *item, QColor const &color);
 	///
 	// void redrawRow(size_type row, ColorPair colors);
 	///
@@ -692,6 +692,9 @@ public:
 
 	void paint(QPainter *painter, const QStyleOptionViewItem &option,
 	           const QModelIndex &index) const override;
+
+	QSize sizeHint(const QStyleOptionViewItem &option,
+	               const QModelIndex &index) const override;
 
 private:
 	int width_  = 40;

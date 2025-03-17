@@ -1055,11 +1055,11 @@ PrefColors::PrefColors(GuiPreferences * form)
 	QAction* redoAct = new QAction(redoIcon, qt_("Redo"), this);
 	redoColorPB->setDefaultAction(redoAct);
 
-	const QIcon resetIcon =
+	const QIcon resetSwatch =
 	        QIcon(QPixmap(toqstr(
 	                          addPathName(package().system_support().absFileName(),
 	                                      "images/reload.svgz"))));
-	QAction* resetAct = new QAction(resetIcon, qt_("Reset current light/dark colors to default"), this);
+	QAction* resetAct = new QAction(resetSwatch, qt_("Reset current light/dark colors to default"), this);
 	colorResetPB->setDefaultAction(resetAct);
 
 	const QIcon resetAllIcon =
@@ -1172,13 +1172,16 @@ void PrefColors::updateRC(LyXRC const & rc)
 		ColorPair colors =
 		        guiApp->colorCache().getAll(lcolors_[i], false);
 		ColorSwatchDelegate *delegate0 = new ColorSwatchDelegate(colors.first, this);
+		LYXERR0("light color = " << colors.first.name());
 		colorsTV->setItemDelegate(delegate0);
 		ColorSwatchDelegate *delegate1 = new ColorSwatchDelegate(colors.second, this);
+		LYXERR0("dark  color = " << colors.second.name());
 		colorsTV->setItemDelegate(delegate1);
-		// setIcons(i, colors);
+		// setSwatches(i, colors);
 		newcolors_[i].first  = curcolors_[i].first  = colors.first.name();
 		newcolors_[i].second = curcolors_[i].second = colors.second.name();
 	}
+	colorsTV->update();
 	syscolorsCB->setChecked(rc.use_system_colors);
 	// changeLyxObjectsSelection();
 
@@ -1260,7 +1263,7 @@ void PrefColors::changeColor(const QModelIndex &index)
 }
 
 
-// void PrefColors::setIcon(size_type row, bool const dark_mode, QColor const &color)
+// void PrefColors::setSwatch(size_type row, bool const dark_mode, QColor const &color)
 // {
 // 	// QPixmap coloritem(icon_width_, icon_height_);
 // 	// coloritem.fill(color);
@@ -1278,7 +1281,7 @@ void PrefColors::changeColor(const QModelIndex &index)
 // }
 
 
-// void PrefColors::setIcon(QModelIndex const &index, QColor const &color)
+// void PrefColors::setSwatch(QModelIndex const &index, QColor const &color)
 // {
 // 	QVariant tmp = colorsTV_model_.data(colorsTV_model_.indexFromItem(colorsTV_model_.itemFromIndex(index)), Qt::DecorationRole);
 // 	QVariant tmp2 = colorsTV_model_.data(index, Qt::DisplayRole);
@@ -1299,17 +1302,17 @@ void PrefColors::changeColor(const QModelIndex &index)
 // }
 
 
-bool PrefColors::setIcon(QStandardItem const *item, QColor const &color)
+bool PrefColors::setSwatch(QStandardItem const *item, QColor const &color)
 {
 	QModelIndex index = colorsTV_model_.indexFromItem(item);
 	return colorsTV_model_.setData(index, QVariant(color), Qt::DecorationRole);
 }
 
 
-bool PrefColors::setIcons(size_type const &row, ColorPair colors)
+bool PrefColors::setSwatches(size_type const &row, ColorPair colors)
 {
-	bool res1 = setIcon(colorsTV_model_.item(row, 0), colors.first);
-	bool res2 = setIcon(colorsTV_model_.item(row, 1), colors.second);
+	bool res1 = setSwatch(colorsTV_model_.item(row, 0), colors.first);
+	bool res2 = setSwatch(colorsTV_model_.item(row, 1), colors.second);
 	return res1 && res2;
 }
 
@@ -1320,14 +1323,14 @@ bool PrefColors::setIcons(size_type const &row, ColorPair colors)
 // 	LYXERR0("removing " << row << "-th row");
 // 	// colorsTW->insertRow(row);
 // 	// LYXERR0("inserted row: " << row);
-// 	// setIcons(row, colors);
+// 	// setSwatches(row, colors);
 // }
 
 
 void PrefColors::updateAllIcons()
 {
 	for (size_type row = 0; row < lcolors_.size(); ++row) {
-		setIcons(row, toqcolor(newcolors_[row]));
+		setSwatches(row, toqcolor(newcolors_[row]));
 	}
 }
 
@@ -1786,6 +1789,7 @@ void PrefColors::openThemeMenu()
 
 void PrefColors::initializeColorsTV()
 {
+	LYXERR0("**** initializeColorsTV ****");
 	// Headers
 	QHeaderView* vertical_header = new QHeaderView(Qt::Vertical);
 	vertical_header->setSectionResizeMode(QHeaderView::Fixed);
@@ -1819,7 +1823,6 @@ void PrefColors::initializeColorsTV()
 	colorsTV->setModel(&colorsTV_model_);
 	colorsTV->setColumnWidth(0, 40);
 	colorsTV->setColumnWidth(1, 40);
-	LYXERR0("col width = " << colorsTV->columnWidth(0));
 	colorsTV->setShowGrid(false);
 	// colorsTV->setSelectionBehavior(QAbstractItemView::SelectRows);
 	colorsTV->setSelectionMode(QAbstractItemView::NoSelection);
@@ -1886,7 +1889,7 @@ void PrefColors::changeAutoapply()
 // {
 // 	if (item == nullptr) return;
 
-// 	setIcons(item->row(), {QColor(newcolors_[colorsTW->row(item)].first),
+// 	setSwatches(item->row(), {QColor(newcolors_[colorsTW->row(item)].first),
 // 	                       QColor(newcolors_[colorsTW->row(item)].second)});
 // 	changed();
 // }
@@ -4525,7 +4528,7 @@ void SetColor::setColor(QColor const &color)
 		newcolors_[size_t(item_.row())].first = color.name();
 	LYXERR0("SETICON: row = " << item_.row() << " col = " << item_.column() <<
 	        " color = " << color.name());
-	setIcon(&item_, color);
+	setSwatch(&item_, color);
 
 	// parent_->changeFocus();
 	parent_->form_->update();
@@ -4552,6 +4555,7 @@ ColorSwatchDelegate::ColorSwatchDelegate(QColor color, QObject *parent)
     : QStyledItemDelegate(parent), color_(color)
 {
 	pane_ = static_cast<PrefColors*>(parent);
+	LYXERR0("init color is set to " << color_.name());
 }
 
 
@@ -4567,8 +4571,11 @@ void ColorSwatchDelegate::paint(QPainter *painter,
                                 const QStyleOptionViewItem &option,
                                 const QModelIndex &index) const
 {
+	if (!index.isValid()) return;
 	QStandardItem* item = pane_->colorsTV_model_.itemFromIndex(index);
 	if (item->column() < 2) {
+		LYXERR0("paint is called: col = " << item->column() << " color = " <<
+		        color_.name());
 		QStyleOptionViewItem op;
 		op.decorationAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
 		op.palette = QPalette(color_);
@@ -4577,12 +4584,20 @@ void ColorSwatchDelegate::paint(QPainter *painter,
 		op.displayAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
 		op.features = QStyleOptionViewItem::HasDecoration;
 		this->initStyleOption(&op, index);
-		pane_->style()->drawControl(QStyle::CE_PushButton, &op, painter);
-		// QPixmap pix(width_, height_);
-		// pix.fill(color_);
-		// style()->drawItemPixmap(painter, QRect(0, 0, width_, height_), 0, pix);
+		// pane_->style()->drawControl(QStyle::CE_PushButton, &op, painter);
+		QPixmap pix(width_, height_);
+		pix.fill(color_);
+
+		pane_->style()->drawItemPixmap(painter, QRect(0, 0, width_, height_), 0, pix);
 	}
 
+}
+
+
+QSize ColorSwatchDelegate::sizeHint(const QStyleOptionViewItem &option,
+                                    const QModelIndex &index) const
+{
+	return QSize(width_, height_);
 }
 
 
