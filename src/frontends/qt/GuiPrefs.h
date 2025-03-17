@@ -49,6 +49,7 @@
 #include <vector>
 #include <QtWidgets/qmenu.h>
 #include <QStandardItemModel>
+#include <QStyledItemDelegate>
 #include <QUndoCommand>
 
 
@@ -337,6 +338,7 @@ private:
 	ColorNamePairs newcolors_;
 
 	QStandardItemModel colorsTV_model_;
+
 	std::vector<QPersistentModelIndex> light_color_index_;
 	std::vector<QPersistentModelIndex> dark_color_index_;
 
@@ -359,6 +361,7 @@ private:
 	QString theme_filename_;
 
 	friend class SetColor;
+	friend class ColorSwatchDelegate;
 };
 
 
@@ -668,6 +671,33 @@ private:
 	QString old_color_;
 	ColorNamePairs & newcolors_;
 	PrefColors* parent_;
+};
+
+
+class ColorSwatchDelegate : public QStyledItemDelegate
+{
+	Q_OBJECT
+
+public:
+	ColorSwatchDelegate(QColor color, QObject *parent = nullptr);
+	QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+	                      const QModelIndex &index) const override;
+
+    // void setEditorData(QWidget *editor, const QModelIndex &index) const override;
+    // void setModelData(QWidget *editor, QAbstractItemModel *model,
+	   //                const QModelIndex &index) const override;
+
+    // void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
+	   //                        const QModelIndex &index) const override;
+
+	void paint(QPainter *painter, const QStyleOptionViewItem &option,
+	           const QModelIndex &index) const override;
+
+private:
+	int width_  = 40;
+	int height_ = 20;
+	QColor color_;
+	PrefColors* pane_;
 };
 
 

@@ -1135,8 +1135,8 @@ PrefColors::PrefColors(GuiPreferences * form)
 	//         undo_stack_, SLOT(redo()));
 	connect(sc_undo, SIGNAL(activated()),
 	        undo_stack_, SLOT(undo()));
-	connect(searchStringEdit, SIGNAL(returnPressed()),
-	        this, SLOT(searchNextColorItem()));
+	// connect(searchStringEdit, SIGNAL(returnPressed()),
+	//         this, SLOT(searchNextColorItem()));
 	connect(syscolorsCB, SIGNAL(toggled(bool)),
 	        this, SIGNAL(changed()));
 	connect(syscolorsCB, SIGNAL(toggled(bool)),
@@ -1171,7 +1171,11 @@ void PrefColors::updateRC(LyXRC const & rc)
 	for (size_type i = 0; i < lcolors_.size(); ++i) {
 		ColorPair colors =
 		        guiApp->colorCache().getAll(lcolors_[i], false);
-		setIcons(i, colors);
+		ColorSwatchDelegate *delegate0 = new ColorSwatchDelegate(colors.first, this);
+		colorsTV->setItemDelegate(delegate0);
+		ColorSwatchDelegate *delegate1 = new ColorSwatchDelegate(colors.second, this);
+		colorsTV->setItemDelegate(delegate1);
+		// setIcons(i, colors);
 		newcolors_[i].first  = curcolors_[i].first  = colors.first.name();
 		newcolors_[i].second = curcolors_[i].second = colors.second.name();
 	}
@@ -1804,13 +1808,6 @@ void PrefColors::initializeColorsTV()
 		colorsTV->setRowHeight(row, icon_height_);
 		for (int column=0; column<3; ++column) {
 			QStandardItem* item = new QStandardItem();
-			// if (column == 0)
-			// 	light_color_index_.push_back(
-			// 	            QPersistentModelIndex(item->index()));
-			// else if (column == 1)
-			// 	dark_color_index_.push_back(
-			// 	            QPersistentModelIndex(item->index()));
-			// else if (column == 2) {
 			if (column == 2) {
 				item->setText(toqstr(lcolor.getGUIName(lcolors_[row])));
 				item->setTextAlignment(Qt::AlignLeft);
@@ -4541,6 +4538,51 @@ void SetColor::setColor(QColor const &color)
 		parent_->form_->setColor(lcolors_[item_.row()], newcolors_[item_.row()]);
 		parent_->form_->dispatchParams();
 	}
+}
+
+
+/////////////////////////////////////////////////////////////////////
+//
+// ColorSwatchDelegate
+//
+/////////////////////////////////////////////////////////////////////
+
+
+ColorSwatchDelegate::ColorSwatchDelegate(QColor color, QObject *parent)
+    : QStyledItemDelegate(parent), color_(color)
+{
+	pane_ = static_cast<PrefColors*>(parent);
+}
+
+
+QWidget* ColorSwatchDelegate::createEditor(QWidget *parent,
+                                           const QStyleOptionViewItem &option,
+                                           const QModelIndex &index) const
+{
+	pane_->changeColor(index);
+}
+
+
+void ColorSwatchDelegate::paint(QPainter *painter,
+                                const QStyleOptionViewItem &option,
+                                const QModelIndex &index) const
+{
+	QStandardItem* item = pane_->colorsTV_model_.itemFromIndex(index);
+	if (item->column() < 2) {
+		QStyleOptionViewItem op;
+		op.decorationAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
+		op.palette = QPalette(color_);
+		op.decorationSize = QSize(width_, height_);
+		op.rect = QRect(0, 0, width_, height_);
+		op.displayAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
+		op.features = QStyleOptionViewItem::HasDecoration;
+		this->initStyleOption(&op, index);
+		pane_->style()->drawControl(QStyle::CE_PushButton, &op, painter);
+		// QPixmap pix(width_, height_);
+		// pix.fill(color_);
+		// style()->drawItemPixmap(painter, QRect(0, 0, width_, height_), 0, pix);
+	}
+
 }
 
 
