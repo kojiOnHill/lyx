@@ -11,9 +11,7 @@
 _polyglossia_dev_d="/home/$(logname)/polyglossia"
 
 # location of TL version
-# TODO: combine these two, since the first is only used for the second.
-_polyglossia_tl_f="$(/opt/texbin/kpsewhich polyglossia.sty)"
-_polyglossia_tl_d="$(dirname "${_polyglossia_tl_f}")"
+_polyglossia_tl_d="$(/opt/texbin/kpsewhich polyglossia.sty | xargs dirname )"
 
 # e.g., "TL25_2025-03-16"
 _tl_dirname="$( basename "$( dirname "$( kpsewhich -var-value TEXMFDIST )")")"
