@@ -333,6 +333,14 @@ private:
 	///
 	ColorPair toqcolor(ColorNamePair);
 
+	QStringList const header_labels_ = {qt_("Light"), qt_("Dark"),
+	                                    qt_("Color name"), ""};
+	QString const reset_label_ = qt_("Reset");
+	int const swatch_width_  = 32;
+	int const swatch_height_ = 18;
+	int const swatch_hmargin_ = 2;
+	int const swatch_vmargin_ = 2;
+
 	std::vector<ColorCode> lcolors_;
 	ColorNamePairs curcolors_;
 	ColorNamePairs newcolors_;
@@ -345,11 +353,6 @@ private:
 	// QList<QTableWidgetItem *> items_found_;
 	// QList<QTableWidgetItem *>::iterator it_;
 	QString search_string_;
-
-	int const swatch_width_  = 32;
-	int const swatch_height_ = 18;
-	int const swatch_hmargin_ = 2;
-	int const swatch_vmargin_ = 2;
 
 	bool autoapply_ = false;
 	QUndoStack * undo_stack_;

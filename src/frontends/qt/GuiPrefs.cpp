@@ -1780,22 +1780,20 @@ void PrefColors::initializeColorsTV()
 	// The table
 	// Only color names are listed here. Colors will be set at updateRC().
 	for (int row=0; row<(int)lcolors_.size(); ++row) {
-		colorsTV->setRowHeight(row, swatch_height_);
-		for (int column=0; column<3; ++column) {
+		// colorsTV->setRowHeight(row, swatch_height_);
+		colorsTV->setRowHeight(row, 50);
+		for (int column = 0; column < header_labels_.length(); ++column) {
 			QStandardItem* item = new QStandardItem();
 			if (column == 2) {
 				item->setText(toqstr(lcolor.getGUIName(lcolors_[row])));
 				item->setTextAlignment(Qt::AlignLeft);
-			}
+			}/* else if (column == 3) {
+				item->setFlags(QFlags(Qt::ItemIsEnabled));
+			}*/
 			colorsTV_model_.setItem(row, column, item);
 		}
 	}
-	colorsTV_model_.setHeaderData(0, Qt::Horizontal, qt_("Light"));
-	colorsTV_model_.setHeaderData(1, Qt::Horizontal, qt_("Dark"));
-	colorsTV_model_.setHeaderData(2, Qt::Horizontal, qt_("Color name"));
-	colorsTV_model_.setHeaderData(3, Qt::Horizontal, qt_(""));
-	// colorsTV_model_.setHorizontalHeaderLabels({qt_("Light"), qt_("Dark"),
-	//                                            qt_("Color name"), ""});
+	colorsTV_model_.setHorizontalHeaderLabels(header_labels_);
 
 	colorsTV->setModel(&colorsTV_model_);
 
@@ -1803,23 +1801,21 @@ void PrefColors::initializeColorsTV()
 	colorsTV->setItemDelegate(delegate);
 
 	// Headers
+	// we don't set a model for vertical header since it is hidden
 	QHeaderView* vertical_header = new QHeaderView(Qt::Vertical);
 	vertical_header->setSectionResizeMode(QHeaderView::Fixed);
 	vertical_header->setDefaultSectionSize(swatch_height_);
+	// vertical_header->setSectionResizeMode(QHeaderView::ResizeToContents);
 	vertical_header->setDefaultAlignment(Qt::AlignCenter);
 	colorsTV->verticalHeader()->hide();
 
 	QHeaderView* horizontal_header = new QHeaderView(Qt::Horizontal);
-	LYXERR0("logical index count = " << horizontal_header->count());
-	LYXERR0("logical index 0 = " << horizontal_header->logicalIndex(0));
-	LYXERR0("logical index 1 = " << horizontal_header->logicalIndex(1));
-	LYXERR0("logical index 2 = " << horizontal_header->logicalIndex(2));
-	LYXERR0("logical index 3 = " << horizontal_header->logicalIndex(3));
-	// horizontal_header->setSectionResizeMode(0, QHeaderView::Fixed);
-	// horizontal_header->setDefaultSectionSize(swatch_width_);
-	// horizontal_header->setStretchLastSection(true);
-	// horizontal_header->setSectionResizeMode(2, QHeaderView::Stretch);
+	horizontal_header->setModel(&colorsTV_model_);
+	horizontal_header->setSectionResizeMode(QHeaderView::Fixed);
+	horizontal_header->setSectionResizeMode(2, QHeaderView::Stretch);
+	horizontal_header->setSectionResizeMode(3, QHeaderView::ResizeToContents);
 	horizontal_header->setDefaultAlignment(Qt::AlignCenter);
+	horizontal_header->setDefaultSectionSize(swatch_width_);
 	colorsTV->setHorizontalHeader(horizontal_header);
 
 	colorsTV->setColumnWidth(0, swatch_width_ + 2 * swatch_hmargin_);
@@ -4565,16 +4561,17 @@ void ColorSwatchDelegate::paint(QPainter *painter,
 	Q_ASSERT(index.isValid());
 
 	QStyleOptionViewItem opt = option;
+
 	initStyleOption(&opt, index);
 
 	const QWidget *widget = option.widget;
 	QStyle *style = widget ? widget->style() : QApplication::style();
 	int column = index.column();
 	int row = index.row();
+	int x = pane_->colorsTV->columnViewportPosition(column);
+	int y = pane_->colorsTV->rowViewportPosition(row);
 	if (column < 2) {
 		// column of color swatches
-		int x = pane_->colorsTV->columnViewportPosition(column);
-		int y = pane_->colorsTV->rowViewportPosition(row);
 		opt.decorationAlignment = (Qt::AlignHCenter | Qt::AlignVCenter);
 		opt.rect = QRect(x + pane_->swatch_hmargin_,
 		                 y + pane_->swatch_vmargin_,
@@ -4585,6 +4582,21 @@ void ColorSwatchDelegate::paint(QPainter *painter,
 		        pane_->colorsTV_model_.data(index, Qt::DecorationRole).value<QColor>();
 		pixmap.fill(color);
 		style->drawItemPixmap(painter, opt.rect, 0, pixmap);
+	} else if (column > 2) {
+		QStyleOptionButton pbopt;
+		QFont font;
+		font.setFamily(font.defaultFamily());
+		font.setPointSize(8);
+		QFontMetrics fm(font);
+		LYXERR0("(" << x << ", " << y << "): " << "font size = (" << fm.horizontalAdvance("Light") << ", " <<
+		        fm.height() << ")");
+		pbopt.fontMetrics = fm;
+		pbopt.text = qt_("Light");
+		pbopt.rect = QRect(x, y, 80, 50);
+		pbopt.features =
+		        QStyleOptionButton::DefaultButton/* | QStyleOptionButton::Flat*/;
+		pbopt.state = QStyle::State_Enabled;
+		style->drawControl(QStyle::CE_PushButton, &pbopt, painter, widget);
 	} else {
 		opt.displayAlignment = Qt::AlignVCenter;
 		style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, widget);
