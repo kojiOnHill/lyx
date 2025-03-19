@@ -109,7 +109,7 @@ export/templates/Articles/Journal_of_Statistical_Software_.*(dvi|dvi3_.*|pdf3?)
 ##############
 # Beamer does not work with dvipdf[m] (wrong output or compilation errors).
 # See `texdoc beamer`.
-# TODO: Should the export do PDF (dvipdfm) be made unavailable for Beamer or
+# TODO: Should the export to PDF (dvipdfm) be made unavailable for Beamer or
 # just a warning be given in the example or documentation?
 export/.*/(|de/|es/|fr/|ja/).*Beamer.*pdf3
 
