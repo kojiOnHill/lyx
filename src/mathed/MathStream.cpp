@@ -697,7 +697,7 @@ MathMLStream & operator<<(MathMLStream & ms, docstring const & s)
 							lyxerr << "Assertion failed in MathLMStream::operator<<(docstring): the buffer is not empty (" << buf << ") when processing a single character";
 						}
 
-						buf = docstring(c, 1);
+						buf = docstring(1, c);
 						ms.os_ << ms.current_font_.convertCharacterToUnicodeEntityWithFont(buf, ms.inText());
 						buf.clear();
 					}
