@@ -1672,6 +1672,7 @@ GuiDocument::GuiDocument(GuiView & lv)
 	latexModule->childDocLE->setValidator(new NoNewLineValidator(
 		latexModule->childDocLE));
 
+	latexModule->xrefPackageCO->addItem(qt_("Cleveref and varioref"), toqstr("cleveref"));
 	latexModule->xrefPackageCO->addItem(qt_("Prettyref and varioref"), toqstr("prettyref"));
 	latexModule->xrefPackageCO->addItem(qt_("Refstyle and varioref"), toqstr("refstyle"));
 

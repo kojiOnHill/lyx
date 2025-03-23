@@ -137,17 +137,23 @@ void GuiRef::enableView(bool enable)
 void GuiRef::enableBoxes()
 {
 	QString const reftype =
-	    typeCO->itemData(typeCO->currentIndex()).toString();
+		typeCO->itemData(typeCO->currentIndex()).toString();
+	bool const use_refstyle = buffer().params().xref_package == "refstyle";
+	bool const use_cleveref = buffer().params().xref_package == "cleveref";
 	bool const isFormatted = (reftype == "formatted");
 	bool const isLabelOnly = (reftype == "labelonly");
-	bool const usingRefStyle = buffer().params().xref_package == "refstyle";
-	bool const intext = bufferview()->cursor().inTexted();
 	bool const hyper_on = buffer().params().pdfoptions().use_hyperref;
-	pluralCB->setEnabled(intext && isFormatted && usingRefStyle);
-	capsCB->setEnabled(intext && isFormatted && usingRefStyle);
+	bool const cleveref_nameref = use_cleveref && reftype == "nameref"
+			&& (!hyper_on || nolinkCB->isChecked());
+	bool const allow_plural = use_refstyle || cleveref_nameref;
+	bool const allow_caps = use_refstyle || use_cleveref;
+	bool const allow_nohyper = !isLabelOnly && (!isFormatted || use_cleveref);
+	bool const intext = bufferview()->cursor().inTexted();
+	pluralCB->setEnabled(intext && (isFormatted || cleveref_nameref) && allow_plural);
+	capsCB->setEnabled(intext && (isFormatted || cleveref_nameref) && allow_caps);
 	noprefixCB->setEnabled(intext && isLabelOnly);
 	// disabling of hyperlinks not supported by formatted references
-	nolinkCB->setEnabled(hyper_on && intext && !isFormatted && !isLabelOnly);
+	nolinkCB->setEnabled(hyper_on && intext && allow_nohyper);
 }
 
 

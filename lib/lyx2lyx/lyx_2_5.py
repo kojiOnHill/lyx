@@ -2524,6 +2524,69 @@ def revert_crossref_package(document):
             document.header[i] = "\\use_refstyle 1"
 
 
+def revert_cleveref(document):
+    "Reverts cleveref commands to ERT"
+
+    i = find_token(document.header, "\\crossref_package cleveref", 0)
+    if i == -1:
+        return
+
+    # Reset header
+    document.header[i] = "\\crossref_package prettyref"
+
+    # Check and revert insets
+    i = 0
+    need_cleveref = False
+    while True:
+        i = find_token(document.body, "\\begin_inset CommandInset ref", i)
+        if i == -1:
+            break
+        j = find_end_of_inset(document.body, i)
+        if j == -1:
+            document.warning("Can't find end of reference inset at line %d!!" % (i))
+            i += 1
+            continue
+
+        nameref = False
+        k = find_token(document.body, "LatexCommand formatted", i, j)
+        if k == -1:
+            k = find_token(document.body, "LatexCommand nameref", i, j)
+            if k == -1:
+                i += 1
+                continue
+            nolink = get_bool_value(document.body, "nolink", i, j, False)
+            if not nolink:
+                i += 1
+                continue
+            nameref = True
+        
+        plural = get_bool_value(document.body, "plural", i, j, False)
+        caps = get_bool_value(document.body, "caps", i, j, False)
+        label = get_quoted_value(document.body, "reference", i, j)
+
+        cmd = "\\"
+        if nameref:
+            cmd += "name"
+        if caps:
+            cmd += "C"
+        else:
+            cmd += "c"
+        cmd += "ref"
+        if plural:
+            cmd += "s"
+        cmd += "{" + label + "}"
+        document.body[i : j + 1] = put_cmd_in_ert([cmd])
+        need_cleveref = True
+        i += 1
+
+    # preamble
+    if need_cleveref:
+        add_to_preamble(
+            document,
+            ["\\usepackage{cleveref}"]
+        )
+    
+
 ##
 # Conversion hub
 #
@@ -2544,11 +2607,13 @@ convert = [
     [632, []],
     [633, [convert_doc_colors]],
     [634, []],
-    [635, [convert_crossref_package]]
+    [635, [convert_crossref_package]],
+    [636, []]
 ]
 
 
 revert = [
+    [635, [revert_cleveref]],
     [634, [revert_crossref_package]],
     [633, [revert_colortbl]],
     [632, [revert_doc_colors, revert_colorbox]],
