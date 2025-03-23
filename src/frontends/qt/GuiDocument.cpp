@@ -1675,6 +1675,7 @@ GuiDocument::GuiDocument(GuiView & lv)
 	latexModule->xrefPackageCO->addItem(qt_("Cleveref and varioref"), toqstr("cleveref"));
 	latexModule->xrefPackageCO->addItem(qt_("Prettyref and varioref"), toqstr("prettyref"));
 	latexModule->xrefPackageCO->addItem(qt_("Refstyle and varioref"), toqstr("refstyle"));
+	latexModule->xrefPackageCO->addItem(qt_("Zref-clever and zref-vario"), toqstr("zref"));
 
 	// postscript drivers
 	for (int n = 0; tex_graphics[n][0]; ++n) {

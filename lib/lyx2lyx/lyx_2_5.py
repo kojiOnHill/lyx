@@ -2585,7 +2585,96 @@ def revert_cleveref(document):
             document,
             ["\\usepackage{cleveref}"]
         )
-    
+
+
+def revert_zref(document):
+    "Reverts zref-clever and zref-vario commands to ERT"
+
+    use_zref = True
+    i = find_token(document.header, "\\crossref_package zref", 0)
+    if i == -1:
+        use_zref = False
+
+    if use_zref:
+        # Reset header
+        document.header[i] = "\\crossref_package prettyref"
+
+    # Check and revert insets
+    i = 0
+    need_zref_clever = False
+    need_zref_vario = False
+    while True:
+        i = find_token(document.body, "\\begin_inset CommandInset ref", i)
+        if i == -1:
+            break
+        j = find_end_of_inset(document.body, i)
+        if j == -1:
+            document.warning("Can't find end of reference inset at line %d!!" % (i))
+            i += 1
+            continue
+
+        if not use_zref:
+            # only need to remove the options
+            del_token(document.body, "options", i, j)
+            i += 1
+            continue
+
+        vref = False
+        vpageref = False
+        k = find_token(document.body, "LatexCommand formatted", i, j)
+        if k == -1:
+            k = find_token(document.body, "LatexCommand vref", i, j)
+            if k == -1:
+                k = find_token(document.body, "LatexCommand vpageref", i, j)
+                if k == -1:
+                    i += 1
+                    continue
+                vpageref = True
+            else:
+                vref = True
+
+        caps = get_bool_value(document.body, "caps", i, j, False)
+        nolink = get_bool_value(document.body, "nolink", i, j, False)
+        label = get_quoted_value(document.body, "reference", i, j)
+        options = get_quoted_value(document.body, "options", i, j)
+
+        cmd = ""
+        if vref:
+            cmd = "\\zvref"
+        elif vpageref:
+            cmd = "\\zvpageref"
+        else:
+            cmd = "\\zcref"
+        if nolink:
+            cmd += "*"
+        opts = ""
+        if caps:
+            opts = "S"
+            if options != "":
+                opts += "," + options
+        elif options != "":
+            opts = options
+        if opts != "":
+            cmd += "[" + opts + "]"
+        cmd += "{" + label + "}"
+        document.body[i : j + 1] = put_cmd_in_ert([cmd])
+        if vref or vpageref:
+            need_zref_vario = True
+        else:
+            need_zref_clever = True
+        i += 1
+
+    # preamble
+    if need_zref_clever:
+        add_to_preamble(
+            document,
+            ["\\usepackage{zref-clever}"]
+        )
+    if need_zref_vario:
+        add_to_preamble(
+            document,
+            ["\\usepackage{zref-vario}"]
+        )
 
 ##
 # Conversion hub
@@ -2613,7 +2702,7 @@ convert = [
 
 
 revert = [
-    [635, [revert_cleveref]],
+    [635, [revert_cleveref, revert_zref]],
     [634, [revert_crossref_package]],
     [633, [revert_colortbl]],
     [632, [revert_doc_colors, revert_colorbox]],

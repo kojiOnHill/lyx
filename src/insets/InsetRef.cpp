@@ -78,6 +78,7 @@ ParamInfo const & InsetRef::findInfo(string const & /* cmdName */)
 		param_info_.add("caps", ParamInfo::LYX_INTERNAL);
 		param_info_.add("noprefix", ParamInfo::LYX_INTERNAL);
 		param_info_.add("nolink", ParamInfo::LYX_INTERNAL);
+		param_info_.add("options", ParamInfo::LYX_INTERNAL);
 	}
 	return param_info_;
 }
@@ -205,10 +206,16 @@ docstring InsetRef::getFormattedCmd(docstring const & ref,
 	docstring & label, docstring & prefix, string const xref_package,
 	bool use_caps)
 {
-	bool const use_cleveref = xref_package == "cleveref";
-	docstring const crefcmd = use_caps ? from_ascii("\\Cref") : from_ascii("\\cref");
-	static docstring const defcmd = use_cleveref ? crefcmd : from_ascii("\\ref");
-	static docstring const prtcmd = use_cleveref ? crefcmd : from_ascii("\\prettyref");
+	docstring defcmd = from_ascii("\\ref");
+	docstring prtcmd = from_ascii("\\prettyref");
+	if (xref_package == "cleveref") {
+		docstring const crefcmd = use_caps ? from_ascii("\\Cref") : from_ascii("\\cref");
+		defcmd = crefcmd;
+		prtcmd = crefcmd;
+	} else if  (xref_package == "zref") {
+		defcmd = from_ascii("\\zcref");
+		prtcmd = from_ascii("\\zcref");
+	}
 
 
 	label = split(ref, prefix, ':');
@@ -267,7 +274,10 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 	docstring const & data = getEscapedLabel(rp);
 	bool const hyper_on = buffer().masterParams().pdfoptions().use_hyperref;
 	bool const use_nolink = hyper_on && getParam("nolink") == "true";
+	bool const use_caps   = getParam("caps") == "true";
+	bool const use_plural = getParam("plural") == "true";
 	bool const use_cleveref = buffer().masterParams().xref_package == "cleveref";
+	bool const use_zref = buffer().masterParams().xref_package == "zref";
 
 	if (rp.inulemcmd > 0)
 		os << "\\mbox{";
@@ -284,15 +294,23 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 	} else if (cmd == "formatted") {
 		docstring label;
 		docstring prefix;
-		bool const use_caps     = getParam("caps") == "true";
-		bool const use_plural   = getParam("plural") == "true";
 		docstring const fcmd =
 			getFormattedCmd(data, label, prefix, buffer().masterParams().xref_package, use_caps);
 		os << fcmd;
-		if (use_cleveref && use_nolink)
+		if ((use_cleveref || use_zref) && use_nolink)
 			os << "*";
 		if (buffer().masterParams().xref_package == "refstyle" && use_plural)
 			os << "[s]";
+		else if (use_zref) {
+			docstring opts = getParam("options");
+			if (use_caps) {
+				if (!opts.empty())
+					opts +=", ";
+				opts += "S";
+			}
+			if (!opts.empty())
+				os << "[" << opts << "]";
+		}
 		if (contains(label, ' '))
 			// refstyle bug: labels with blanks need to be grouped
 			// otherwise the blanks will be gobbled
@@ -300,8 +318,6 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 		else
 			os << '{' << label << '}';
 	} else if (cmd == "nameref" && use_cleveref && (use_nolink || !hyper_on)) {
-		bool const use_caps     = getParam("caps") == "true";
-		bool const use_plural   = getParam("plural") == "true";
 		docstring const crefcmd = use_caps ? from_ascii("Cref") : from_ascii("cref");
 		os << "\\name" << crefcmd;
 		if (use_plural)
@@ -321,6 +337,19 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 				os << suffix;
 			}
 		}
+	} else if ((cmd == "vref" || cmd == "vpageref") && use_zref) {
+		os << "\\z" << cmd;
+		if (use_nolink)
+			os << "*";
+		docstring opts = getParam("options");
+		if (use_caps) {
+			if (!opts.empty())
+				opts +=", ";
+			opts += "S";
+		}
+		if (!opts.empty())
+			os << "[" << opts << "]";
+		os << '{' << data << '}';
 	} else {
 		InsetCommandParams p(REF_CODE, cmd);
 		bool const use_nolink = hyper_on && getParam("nolink") == "true";
@@ -609,9 +638,12 @@ void InsetRef::addToToc(DocIterator const & cpit, bool output_active,
 void InsetRef::validate(LaTeXFeatures & features) const
 {
 	string const & cmd = getCmdName();
-	if (cmd == "vref" || cmd == "vpageref")
-		features.require("varioref");
-	else if (cmd == "formatted") {
+	if (cmd == "vref" || cmd == "vpageref") {
+		if (buffer().masterParams().xref_package == "zref")
+			features.require("zref-vario");
+		else
+			features.require("varioref");
+	} else if (cmd == "formatted") {
 		docstring const data = getEscapedLabel(features.runparams());
 		docstring label;
 		docstring prefix;
@@ -629,6 +661,8 @@ void InsetRef::validate(LaTeXFeatures & features) const
 			}
 		} else if (buffer().masterParams().xref_package == "cleveref") {
 			features.require("cleveref");
+		} else if (buffer().masterParams().xref_package == "zref") {
+			features.require("zref-clever");
 		} else {
 			features.require("prettyref");
 			// prettyref uses "cha" for chapters, so we provide a kind of
