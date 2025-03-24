@@ -659,6 +659,22 @@ MathMLStream & operator<<(MathMLStream & ms, MathData const & ar)
 }
 
 
+bool MathMLStream::needsFontMapping() const {
+	// Condition written for *not* needing mapping, because it's easier
+	// (every field has a default value). The function returns the
+	// opposite because it's easier to understand.
+	return !(
+		(current_font_.family() == MathFontInfo::MathFontFamily::MATH_INHERIT_FAMILY ||
+					current_font_.family() == MathFontInfo::MathFontFamily::MATH_NORMAL_FAMILY) &&
+		(current_font_.series() == MathFontInfo::MathFontSeries::MATH_INHERIT_SERIES ||
+		   			current_font_.series() == MathFontInfo::MathFontSeries::MATH_MEDIUM_SERIES) &&
+		(current_font_.shape() == MathFontInfo::MathFontShape::MATH_INHERIT_SHAPE ||
+					(in_mtext_ && current_font_.shape() == MathFontInfo::MathFontShape::MATH_UP_SHAPE) ||
+					(!in_mtext_ && current_font_.shape() == MathFontInfo::MathFontShape::MATH_ITALIC_SHAPE))
+	);
+}
+
+
 MathMLStream & operator<<(MathMLStream & ms, docstring const & s)
 {
 	ms.beforeText();
@@ -670,16 +686,8 @@ MathMLStream & operator<<(MathMLStream & ms, docstring const & s)
 		if (ms.version() == MathMLVersion::mathmlCore) {
 			// New case: MathML uses Unicode characters to indicate fonts.
 			// If possible, avoid doing the mapping: it involves looking up a hash
-			// table and doing a lot of conditions *per character*
-			bool needs_no_mapping =
-				(ms.current_font_.family() == MathFontInfo::MathFontFamily::MATH_INHERIT_FAMILY ||
-					ms.current_font_.family() == MathFontInfo::MathFontFamily::MATH_NORMAL_FAMILY) &&
-				(ms.current_font_.series() == MathFontInfo::MathFontSeries::MATH_INHERIT_SERIES ||
-					ms.current_font_.series() == MathFontInfo::MathFontSeries::MATH_MEDIUM_SERIES) &&
-				(ms.current_font_.shape() == MathFontInfo::MathFontShape::MATH_INHERIT_SHAPE ||
-					(ms.in_mtext_ && ms.current_font_.shape() == MathFontInfo::MathFontShape::MATH_UP_SHAPE) ||
-					(!ms.in_mtext_ && ms.current_font_.shape() == MathFontInfo::MathFontShape::MATH_ITALIC_SHAPE));
-			if (needs_no_mapping) {
+			// table and doing a lot of conditions *per character*.
+			if (!ms.needsFontMapping()) {
 				ms.os_ << s;
 			} else {
 				// Perform the conversion character per character (which might
