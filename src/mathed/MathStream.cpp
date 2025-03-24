@@ -208,10 +208,21 @@ docstring MathFontInfo::convertCharacterToUnicodeEntityWithFont(const docstring 
 
 docstring MathFontInfo::convertCharacterToUnicodeWithFont(const docstring & c, bool in_text) const
 {
+	// Not much to do if the query is empty.
+	if (c.empty()) {
+		return c;
+	}
+
 	MathVariantList const & mvl = mathedVariantList();
 
 	// If this character is unknown, exit early.
-	const auto it = mvl.find(support::ascii_lowercase(c));
+	auto it = mvl.find(support::ascii_lowercase(c));
+	if (it == mvl.end() && c.size() >= 2 && c[0] == '0' && c[1] == 'x') {
+		// If the character starts with "0x", it might be a hex encoding,
+		// like "0x1d73d": also look for the variant that browsers support
+		// best, "x1d73d".
+		it = mvl.find(support::ascii_lowercase(c.substr(1)));
+	}
 	if (it == mvl.end()) {
 		return c;
 	}
