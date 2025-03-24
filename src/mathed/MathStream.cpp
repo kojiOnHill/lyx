@@ -198,11 +198,12 @@ std::string MathFontInfo::toHTMLSpanClass() const
 
 docstring MathFontInfo::convertCharacterToUnicodeEntityWithFont(const docstring & c, bool in_text) const
 {
-	if (c.size() <= 1) {
-		return c;
+	docstring mapped = convertCharacterToUnicodeWithFont(c, in_text);
+	if (mapped == c || mapped.length() == 1) {
+		return mapped;
 	}
 	// Otherwise, it's an entity, like 0x1d44e (as a hexadecimal number).
-	return from_ascii("&#") + convertCharacterToUnicodeWithFont(c, in_text) + from_ascii(";");
+	return from_ascii("&#") + mapped + from_ascii(";");
 }
 
 
