@@ -1213,6 +1213,8 @@ GuiDocument::GuiDocument(GuiView & lv)
 		this, SLOT(change_adaptor()));
 	connect(pageLayoutModule->facingPagesCB, SIGNAL(clicked()),
 		this, SLOT(change_adaptor()));
+	connect(pageLayoutModule->facingPagesCB, SIGNAL(stateChanged(int)),
+			this, SLOT(updateMarginLabels(int)));
 	connect(pageLayoutModule->pagestyleCO, SIGNAL(activated(int)),
 		this, SLOT(change_adaptor()));
 
@@ -1962,6 +1964,19 @@ void GuiDocument::changeTrackingChanged(bool state)
 	changesModule->trackChangesCB->setChecked(state);
 }
 
+
+void GuiDocument::updateMarginLabels(int state)
+{
+	// One-sided
+	if (state == 0) {
+		marginsModule->outerL->setText(qt_("&Left:"));
+		marginsModule->innerL->setText(qt_("&Right:"));
+		// Two-sided
+	} else {
+		marginsModule->outerL->setText(qt_("&Outer:"));
+		marginsModule->innerL->setText(qt_("&Inner:"));
+	}
+}
 
 void GuiDocument::slotApply()
 {
@@ -4687,6 +4702,7 @@ void GuiDocument::paramsToDialog()
 
 	pageLayoutModule->facingPagesCB->setChecked(
 		bp_.sides == TwoSides);
+	updateMarginLabels(pageLayoutModule->facingPagesCB->checkState());
 
 	lengthToWidgets(pageLayoutModule->paperwidthLE,
 		pageLayoutModule->paperwidthUnitCO, bp_.paperwidth, default_unit);
