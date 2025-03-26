@@ -202,7 +202,7 @@ void GuiBranches::on_addBranchPB_pressed()
 	// in the tree when we search for it to select it.
 	updateView();
 	// now select the newly added branch
-	QList<QTreeWidgetItem *> items_found = branchesTW->findItems(new_branch, Qt::MatchExactly);
+	QList<QTreeWidgetItem *> const items_found = branchesTW->findItems(new_branch, Qt::MatchExactly);
 	LASSERT(items_found.size() == 1, return);
 	branchesTW->setCurrentItem(items_found[0]);
 
