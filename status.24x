@@ -15,7 +15,8 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- LyX now includes a layout, template and example for the Springer Nature Journal class. 
+- LyX now includes a layout, template and example for the Springer Nature
+  Journal class. 
 
 - Support GNOME's paper PDF viewer.
 
@@ -30,22 +31,22 @@ What's new
 
 * USER INTERFACE
 
-- LyX includes a new icon set to select from in preferences: Adwaita. This is the default
-  GNOME icon set with flat (symbolic) design, completed with some LyX-specific icons that
-  match the design.
-  We provide a dark and light mode version which will be automatically selected as needed.
+- LyX includes a new icon set to select from in preferences: Adwaita. This is 
+  the default GNOME icon set with flat (symbolic) design, completed with some 
+  LyX-specific icons that match the design. We provide a dark and light mode
+  version which will be automatically selected as needed.
 
-- LyX now (again) has a function (error-next) and a menu entry (Navigate > Next Error)
-  to quickly jump to the next compilation error. This re-introduces a feature we
-  lost 20 years ago with LyX 1.4 (bug 2775)!
+- LyX now (again) has a function (error-next) and a menu entry (Navigate > 
+  Next Error) to quickly jump to the next compilation error. This re-introduces
+  a feature we lost 20 years ago with LyX 1.4 (bug 2775)!
 
-- LyX now also has a function (errors-show) and a menu entry (Document > Processing
-  Errors) to (re)open the dialog that lists compilation errors (a.k.a. "LaTeX
-  Errors") after it has been closed, with the next error at/after cursor
-  highlighted.
+- LyX now also has a function (errors-show) and a menu entry (Document > 
+  Processing Errors) to (re)open the dialog that lists compilation errors
+  (a.k.a. "LaTeX Errors") after it has been closed, with the next error at/after 
+  cursor highlighted.
 
-- The grid display in the MathGrid dialog has been visually improved, particularly
-  in dark mode (bug 13146).
+- The grid display in the MathGrid dialog has been visually improved,
+  particularly in dark mode (bug 13146).
 
 - The document dialog now opens faster on first launch.
 
@@ -85,6 +86,8 @@ What's new
 
 - Fix parsing error with math code when LyX file contains DOS line endings
   (which might happen when importing via tex2lyx on Windows).
+
+- Include local layout files in LyX archive (bug 13149).
 
 
 * USER INTERFACE
