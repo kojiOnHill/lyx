@@ -44,6 +44,7 @@ re_input = re.compile(b'^(.*)\\\\(input|include){(\\s*)(.+)(\\s*)}.*$')
 re_ertinput = re.compile(b'^(input|include)({)(\\s*)(.+)(\\s*)}.*$')
 re_package = re.compile(b'^(.*)\\\\(usepackage){(\\s*)(.+)(\\s*)}.*$')
 re_class = re.compile(b'^(\\\\)(textclass)(\\s+)(.+)\\s*$')
+re_latexclass = re.compile(b'^(.*)\\\\(DeclareLaTeXClass)\\[(\\s*)(.+)(\\s*)\\].*$')
 re_norecur = re.compile(b'^(.*)\\\\(verbatiminput|lstinputlisting|includegraphics\\[*.*\\]*){(\\s*)(.+)(\\s*)}.*$')
 re_ertnorecur = re.compile(b'^(verbatiminput|lstinputlisting|includegraphics\\[*.*\\]*)({)(\\s*)(.+)(\\s*)}.*$')
 re_filename = re.compile(b'^(\\s*)(filename)(\\s+)(.+)\\s*$')
@@ -154,8 +155,23 @@ def gather_files(curfile, incfiles, lyx2lyx):
                 extlist = [b'.sty']
                 if not match:
                     match = re_class.match(lines[i])
-                    extlist = [b'.cls']
-                    if not match:
+                    if match:
+                        extlist = [b'.cls']
+                        file = match.group(4).strip(b'"')
+                        local_layout = os.path.join(curdir, file) + b'.layout'
+                        if os.path.exists(unicode(local_layout, 'utf-8')):
+                            if not abspath(local_layout) in incfiles:
+                                incfiles.append(abspath(local_layout))
+                                f = gzopen(local_layout)
+                                l = f.readlines()
+                                f.close()
+                                j = 0
+                                while j < len(l):
+                                    match = re_latexclass.match(l[j])
+                                    if match:
+                                        break
+                                    j += 1
+                    else:
                         if maybe_in_ert:
                             match = re_ertnorecur.match(lines[i])
                         else:
