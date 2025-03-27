@@ -323,7 +323,7 @@ private:
 	ColorPair toqcolor(ColorNamePair);
 
 	QStringList const header_labels_ =
-	  {qt_("Light"), qt_("Dark"), qt_("Color name"), qt_("Light"), qt_("Dark")};
+	  {qt_("Light"), qt_("Dark"), qt_("Object/Element"), qt_("Light"), qt_("Dark")};
 	QString const reset_label_ = qt_("Reset");
 	int const swatch_width_  = 32;
 	int const swatch_height_ = 18;
