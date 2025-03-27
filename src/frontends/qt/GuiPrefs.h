@@ -328,7 +328,6 @@ private:
 	int const swatch_width_  = 32;
 	int const swatch_height_ = 18;
 	int const swatch_hmargin_ = 2;
-	int const swatch_vmargin_ = 2;
 	int const reset_pb_width_ = 50;
 
 	std::vector<ColorCode> lcolors_;
@@ -691,8 +690,6 @@ public:
 private:
 	PrefColors* pane_;
 	QFont font_;
-	int pb_width_;
-	int pb_height_;
 
 	// To give impression that a button is pressed, flip the direction of
 	// gradiation giving colors slightly darker
