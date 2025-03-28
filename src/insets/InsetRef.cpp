@@ -620,7 +620,7 @@ docstring InsetRef::displayString(docstring const & ref, string const & cmd,
 			else if (cmd == "vref")
 				// normally, would be "ref on page #", but we have no pages
 				display_string.push_back(value);
-			else if (cmd == "pageref" || cmd == "vpageref") {
+			else if (cmd == "pageref" || cmd == "vpageref" || cmd == "cpageref") {
 				// normally would be "on page #", but we have no pages.
 				display_string.push_back(language.empty() ? buffer().B_("elsewhere")
 					: getMessages(language).get("elsewhere"));
