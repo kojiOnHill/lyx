@@ -360,21 +360,32 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 				os << "[" << opts << "]";
 		}
 		os << "{";
-		for (auto const & l : label) {
+		vector<docstring>::const_iterator it = labels.begin();
+		vector<docstring>::const_iterator en = labels.end();
+		for (size_t i = 0; it != en; ++it, ++i) {
 			if (!first) {
-				if (buffer().masterParams().xref_package == "prettyref")
-					os << "}, \\ref{";
-				else if (useRange())
+				if (buffer().masterParams().xref_package == "prettyref") {
+					if (!first) {
+						os << "}";
+						if (labels.size() == 2)
+							os << buffer().B_("[[reference 1]] and [[reference2]]");
+						else if (i > 0 && i == labels.size() - 1)
+							os << buffer().B_("[[reference 1, ...]], and [[reference n]]");
+						else
+							os << buffer().B_("[[reference 1]], [[reference2, ...]]");
+					}
+					os << "\\ref{";
+				} else if (useRange())
 					os << "}{";
 				else
 					os << ",";
 			}
-			if (contains(l, ' '))
+			if (contains(*it, ' '))
 				// refstyle bug: labels with blanks need to be grouped
 				// otherwise the blanks will be gobbled
-				os << "{" << l << "}";
+				os << "{" << *it << "}";
 			else
-				os << l;
+				os << *it;
 			first = false;
 		}
 		os << "}";
@@ -526,13 +537,21 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 		os << p.getCommand(rp, use_nolink);
 	} else {
 		bool first = true;
-		for (auto const & label : labels) {
-			if (!first)
-				os << ", ";
+		vector<docstring>::const_iterator it = labels.begin();
+		vector<docstring>::const_iterator en = labels.end();
+		for (size_t i = 0; it != en; ++it, ++i) {
+			if (!first) {
+				if (labels.size() == 2)
+					os << buffer().B_("[[reference 1]] and [[reference2]]");
+				else if (i > 0 && i == labels.size() - 1)
+					os << buffer().B_("[[reference 1, ...]], and [[reference n]]");
+				else
+					os << buffer().B_("[[reference 1]], [[reference2, ...]]");
+			}
 			os << "\\" << cmd;
 			if (use_nolink)
 				os << "*";
-			os << '{' << label << '}';
+			os << '{' << *it << '}';
 			first = false;
 		}
 	}
