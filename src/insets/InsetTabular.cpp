@@ -1160,6 +1160,7 @@ idx_type Tabular::numberOfCellsInRow(row_type const row) const
 	for (col_type c = 0; c < ncols(); ++c)
 		if (cell_info[row][c].multicolumn != Tabular::CELL_PART_OF_MULTICOLUMN)
 			++result;
+	LATTEST(result > 0);
 	return result;
 }
 
