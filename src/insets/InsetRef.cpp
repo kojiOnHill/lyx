@@ -321,7 +321,6 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 	if (rp.inulemcmd > 0)
 		os << "\\mbox{";
 
-	bool first = true;
 	if (buffer().masterParams().xref_package == "refstyle" && cmd == "eqref") {
 		// we advertise this as printing "(n)", so we'll do that, at least
 		// for refstyle, since refstlye's own \eqref prints, by default,
@@ -334,12 +333,7 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 	} else if (cmd == "formatted") {
 		vector<docstring> label;
 		docstring prefix;
-		docstring const fcmd =
-			getFormattedCmd(data, label, prefix, buffer().masterParams().xref_package, use_caps, useRange());
-		if (!first && buffer().masterParams().xref_package == "prettyref")
-			os << from_ascii("\\ref");
-		else
-			os << fcmd;
+		os << getFormattedCmd(data, label, prefix, buffer().masterParams().xref_package, use_caps, useRange());;
 		if ((use_cleveref || use_zref) && use_nolink)
 			os << "*";
 		if (buffer().masterParams().xref_package == "refstyle" && use_plural)
@@ -360,6 +354,7 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 				os << "[" << opts << "]";
 		}
 		os << "{";
+		bool first = true;
 		vector<docstring>::const_iterator it = labels.begin();
 		vector<docstring>::const_iterator en = labels.end();
 		for (size_t i = 0; it != en; ++it, ++i) {
