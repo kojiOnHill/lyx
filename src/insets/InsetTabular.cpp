@@ -7138,6 +7138,9 @@ void InsetTabular::movePrevCell(Cursor & cur, EntryDirection entry_from)
 
 void InsetTabular::tabularFeatures(Cursor & cur, string const & argument)
 {
+	// Tell Coverity Scan that a tabular is never empty
+	LATTEST(tabular.nrows() > 0 && tabular.ncols() > 0);
+
 	cur.recordUndoInset(this);
 
 	istringstream is(argument);
