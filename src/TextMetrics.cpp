@@ -25,6 +25,7 @@
 #include "CoordCache.h"
 #include "Cursor.h"
 #include "CutAndPaste.h"
+#include "InsetList.h"
 #include "Layout.h"
 #include "LyXRC.h"
 #include "MetricsInfo.h"

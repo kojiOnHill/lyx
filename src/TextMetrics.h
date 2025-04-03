@@ -15,7 +15,6 @@
 #define TEXT_METRICS_H
 
 #include "Font.h"
-#include "InsetList.h"
 #include "LayoutEnums.h"
 #include "ParagraphMetrics.h"
 
