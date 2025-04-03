@@ -22,7 +22,6 @@
 #include <QTextCharFormat>
 #include <QInputMethodEvent>
 #include <QObject>
-#include <QFontMetrics>
 #include <QLocale>
 #include <QString>
 
