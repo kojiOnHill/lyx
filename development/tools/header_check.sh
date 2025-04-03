@@ -2,6 +2,9 @@
 # Syntax: header_check.sh [output_log_file]
 #
 # Typical usage: cd src; ../development/tools/header_check.sh ../development/tools/header_check.sh.log
+# 
+# The tree needs to be configured. ./configure --disable-debug --disable-optimization
+# looks ~1/3 faster than -g -O2 alternatives.
 
 # file header_check.sh
 # This file is part of LyX, the document processor.
