@@ -1425,23 +1425,23 @@ void InsetMathGrid::doDispatch(Cursor & cur, FuncRequest & cmd)
 
 	case LFUN_NEWLINE_INSERT: {
 		cur.recordUndoInset();
-		row_type const r = cur.row();
-		addRow(r);
+		row_type const oldr = cur.row();
+		col_type const oldc = cur.col();
+		addRow(oldr);
 
 		// split line
 		for (col_type c = col(cur.idx()) + 1; c < ncols(); ++c)
-			swap(cell(index(r, c)), cell(index(r + 1, c)));
+			swap(cell(index(oldr, c)), cell(index(oldr + 1, c)));
 
 		// split cell
 		splitCell(cur);
 		if (ncols() > 1)
 			swap(cell(cur.idx()), cell(cur.idx() + ncols() - 1));
-		if (cur.idx() > 0)
-			--cur.idx();
-		cur.pos() = cur.lastpos();
+
+		// move cursor to next line
+		cur.idx() = index(oldr + 1, oldc);
+		cur.pos() = 0;
 		cur.forceBufferUpdate();
-		//mathcursor->normalize();
-		//cmd = FuncRequest(LFUN_FINISHED_BACKWARD);
 		break;
 	}
 
