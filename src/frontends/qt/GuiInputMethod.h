@@ -20,7 +20,6 @@
 #include "support/docstring.h"
 
 #include <QTextCharFormat>
-#include <QInputMethod>
 #include <QInputMethodEvent>
 #include <QObject>
 #include <QFontMetrics>
