@@ -326,21 +326,15 @@ void InsetMathHull::addToToc(DocIterator const & pit, bool output_active,
 
 	// compute first and last item
 	row_type first = nrows();
+	row_type last = 0;
 	for (row_type row = 0; row != nrows(); ++row)
 		if (numbered(row)) {
-			first = row;
-			break;
+			first = min(first, row);
+			last = max(last, row);
 		}
 	if (first == nrows())
 		// no equation
 		return;
-
-	// Reassure Coverity Scan that we have at least one row.
-	LATTEST(nrows() > 0);
-	row_type last = nrows() - 1;
-	for (; last != 0; --last)
-		if (numbered(last))
-            break;
 
 	TocBuilder & b = backend.builder("equation");
         b.pushItem(pit, docstring(), output_active);
