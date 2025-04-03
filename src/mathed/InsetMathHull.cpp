@@ -236,6 +236,9 @@ void InsetMathHull::setBuffer(Buffer & buffer)
 
 void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool const deleted)
 {
+	// Tell Coverity Scan that the inset is never empty
+	LATTEST(nrows() > 0 && ncols() > 0);
+
 	if (!buffer_) {
 		//FIXME: buffer_ should be set at creation for this inset! Problem is
 		// This inset is created at too many places (see Parser::parse1() in
