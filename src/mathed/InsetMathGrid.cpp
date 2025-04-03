@@ -1357,7 +1357,7 @@ void InsetMathGrid::splitCell(Cursor & cur)
 	ar.erase(0, cur.pos());
 	cur.cell().erase(cur.pos(), cur.lastpos());
 	++cur.idx();
-	while (cur.idx() << nargs() &&
+	while (cur.idx() < nargs() &&
 	       cellinfo_[cur.idx()].multi == CELL_BEGIN_OF_MULTICOLUMN)
 		++cur.idx();
 	cur.pos() = 0;
