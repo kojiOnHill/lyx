@@ -42,6 +42,7 @@
 #include "mathed/MacroTable.h"
 
 #include "frontends/FontMetrics.h"
+#include "frontends/InputMethod.h"
 #include "frontends/NullPainter.h"
 
 #include "support/debug.h"
