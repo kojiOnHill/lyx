@@ -18,9 +18,6 @@ suspicious: ./DocIterator.h::#include <algorithm> // std::min in MSVC 2017
 ./Exporter.h::#include <string>
 ./FloatList.h::#include <string>
 ./FontInfo.h::#include "ColorCode.h"
-suspicious: ./FontInfo.h::#include "LaTeXColors.h"
-./FontInfo.h::#include "support/docstring.h"
-./FontList.h::#include <vector>
 ./Graph.h::#include <vector>
 ./HunspellChecker.h::#include "SpellChecker.h"
 ./KeyMap.h::#include <vector>
@@ -29,7 +26,6 @@ suspicious: ./FontInfo.h::#include "LaTeXColors.h"
 ./LaTeX.h::#include <vector>
 ./LaTeX.h::#include <set>
 ./Layout.h::#include "support/docstring.h"
-./Layout.h::#include <map>
 ./LayoutFile.h::#include <string>
 ./LayoutFile.h::#include <vector>
 ./LyXRC.h::#include <string>
@@ -61,10 +57,7 @@ suspicious: ./FontInfo.h::#include "LaTeXColors.h"
 ./TextClass.h::#include <set>
 ./TextClass.h::#include <vector>
 ./TextMetrics.h::#include "Font.h"
-suspicious: ./TextMetrics.h::#include "InsetList.h"
-suspicious: ./TextMetrics.h::#include "frontends/InputMethod.h"
 ./TextMetrics.h::#include "support/types.h"
-./TextMetrics.h::#include <map>
 ./Toc.h::#include <string>
 ./TocBackend.h::#include "OutputEnums.h"
 ./TocBackend.h::#include "Toc.h"
@@ -111,9 +104,7 @@ suspicious: ./TextMetrics.h::#include "frontends/InputMethod.h"
 ./frontends/qt/GuiIndices.h::#include <QWidget>
 ./frontends/qt/GuiInputMethod.h::#include "ParagraphMetrics.h"
 ./frontends/qt/GuiInputMethod.h::#include "support/docstring.h"
-./frontends/qt/GuiInputMethod.h::#include <QInputMethod>
 ./frontends/qt/GuiInputMethod.h::#include <QObject>
-./frontends/qt/GuiInputMethod.h::#include <QFontMetrics>
 ./frontends/qt/GuiInputMethod.h::#include <QLocale>
 ./frontends/qt/GuiInputMethod.h::#include <QString>
 ./frontends/qt/GuiLyXFiles.h::#include <vector>
@@ -130,7 +121,6 @@ suspicious: ./TextMetrics.h::#include "frontends/InputMethod.h"
 ./frontends/qt/GuiToolbar.h::#include <QList>
 ./frontends/qt/GuiViewSource.h::#include <QDockWidget>
 ./frontends/qt/GuiViewSource.h::#include <QString>
-suspicious: ./frontends/qt/GuiWorkArea_Private.h::#include "GuiInputMethod.h"
 ./frontends/qt/GuiWorkArea_Private.h::#include <QMouseEvent>
 ./frontends/qt/IconPalette.h::#include <QWidget>
 ./frontends/qt/InGuiThread.h::#include <functional>
@@ -185,7 +175,6 @@ suspicious: ./frontends/qt/qt_helpers.h::#include "qt_i18n.h"
 ./mathed/InsetMathMacro.h::#include "MathData.h"
 ./mathed/InsetMathMacroArgument.h::#include "support/docstring.h"
 ./mathed/InsetMathMacroTemplate.h::#include "MathData.h"
-./mathed/InsetMathNest.h::#include "Row.h"
 ./mathed/InsetMathNest.h::#include <map>
 ./mathed/InsetMathNumber.h::#include "support/docstring.h"
 ./mathed/InsetMathScript.h::#include "FontEnums.h"
