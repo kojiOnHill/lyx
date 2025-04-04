@@ -50,6 +50,7 @@
 #include <QtWidgets/qmenu.h>
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
+#include <QTableView>
 #include <QUndoCommand>
 
 
@@ -259,9 +260,7 @@ public:
 	enum Column {
 		LightColorColumn,
 		DarkColorColumn,
-		ColorNameColumn,
-		LightColorResetColumn,
-		DarkColorResetColumn
+		ColorNameColumn
 	};
 
 	PrefColors(GuiPreferences * form);
@@ -272,14 +271,18 @@ public:
 
 private Q_SLOTS:
 	// void changeColor();
-	void pressedColorsTV(const QModelIndex index);
+	// void pressedColorsTV(const QModelIndex index);
 	void clickedColorsTV(const QModelIndex index);
+	void selectionChanged(const QItemSelection &selected,
+	                      const QItemSelection &deselected);
 	bool resetAllColor();
 	void changeSysColor();
 	void changeAutoapply();
 	bool setColor(QStandardItem *item, QColor const &new_color,
 	              QString const &old_color);
-	void setEnabledReset(int const &row, Column const &column);
+	bool resetLightColor(){ return resetColor(false); }
+	bool resetDarkColor() { return resetColor(true);  }
+	void setResetButtonStatus(int const &row);
 	void openThemeMenu();
 	void saveTheme();
 	void loadTheme(QListWidgetItem* current_item,
@@ -292,19 +295,27 @@ private Q_SLOTS:
 
 private:
 	/// Change color at (row, column).
-	void changeColor(int const &row, Column const &column);
-	/// Reset color to the previously set theme color.
-	bool resetColor(int const &row, Column const &column);
+	void changeColor(int const &row, bool const &is_dark_mode);
+	/// Reset color to the previously set theme color
+	bool resetColor(bool const is_dark_color);
+	/// Reset color to the previously set theme color
+	bool resetColor(int const row, bool const is_dark_color);
 	/// Get default color of current theme at (row, column) in the colorsTV.
 	/// If theme_colors_ is empty, this returns an invalid QColor.
-	QColor getCurrentThemeColor(int const &row, Column const &column);
+	QColor getCurrentThemeColor(int const &row, bool const &is_dark_color);
+	///
+	ColorPair getCurrentThemeColors(int const &row);
+	///
+	// QColor getCurrentThemeColor(QModelIndex selected);
 	/// Set color swatches for both light and dark colors by row.
 	bool setSwatches(size_type const &row, ColorPair colors);
 	/// Set color swatch at item.
 	bool setSwatch(QStandardItem *item, QColor const &color);
 	///
 	void updateAllSwatches();
-	/// This initializes the theme list widget.
+	///
+	void setUndoRedoButtonStatuses(bool isUndoing);
+	///
 	void initializeThemesLW();
 	/// This initializes the extension menu for theme including exports and
 	/// imports.
@@ -335,6 +346,8 @@ private:
 	ColorNamePairs theme_colors_;
 
 	QStandardItemModel colorsTV_model_;
+	QItemSelectionModel selection_model_;
+	QModelIndexList selected_indexes_;
 
 	std::vector<QPersistentModelIndex> light_color_index_;
 	std::vector<QPersistentModelIndex> dark_color_index_;
@@ -356,6 +369,7 @@ private:
 	bool mouse_pressed_;
 
 	friend class SetColor;
+	friend class ColorTableView;
 	friend class ColorSwatchDelegate;
 };
 
@@ -648,28 +662,30 @@ public:
 class SetColor : public PrefColors, public QUndoCommand
 {
 public:
-	SetColor(QStandardItem *item, QColor const &new_color,
-	         QString const &old_color,
-	         ColorNamePairs &new_color_list,
-	         bool const autoapply,
-	         PrefColors* color_module,
+	SetColor(QStandardItem *item,
+	         QColor const &new_color, QString const &old_color,
+	         ColorNamePairs &new_color_list, ColorNamePairs &cur_color_list,
+	         bool const autoapply, PrefColors* color_module,
 	         QUndoCommand* uc_parent = nullptr);
 	~SetColor(){};
 
 	void redo() override;
 	void undo() override;
 	void setColor(QColor const &color);
-	/// If new_color_ (when doingUndo is false) or old_color_ (when doingUndo is
-	/// true) is different from theme's color, enable the reset button. If not,
-	/// disable it.
-	void setStateOfResetButtons(bool doingUndo);
 
 private:
+	/// This initializes the theme list widget.
+	/// If new_color_ (when isUndoing is false) or old_color_ (when isUndoing is
+	/// true) is different from theme's color, enable the reset button. If not,
+	/// disable it.
+	void setResetButtonStatus();
+
 	bool const autoapply_;
 	QStandardItem & item_;
 	QColor new_color_;
 	QString old_color_;
 	ColorNamePairs & newcolors_;
+	ColorNamePairs & curcolors_;
 	PrefColors* parent_;
 };
 

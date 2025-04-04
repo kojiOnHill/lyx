@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>656</width>
+    <width>701</width>
     <height>439</height>
    </rect>
   </property>
@@ -32,14 +32,14 @@
       <string>Use the color scheme of your Operating System/Desktop Environment</string>
      </property>
      <property name="text">
-      <string>&amp;Use system colors</string>
+      <string>Use &amp;system colors</string>
      </property>
     </widget>
    </item>
    <item row="3" column="2">
     <spacer name="hsBottomRight">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -61,161 +61,18 @@
    </item>
    <item row="1" column="0" colspan="4">
     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0,0,0">
-     <item row="0" column="2">
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>0</number>
+     <item row="0" column="0">
+      <widget class="QLabel" name="themesLabel">
+       <property name="text">
+        <string>&amp;Themes:</string>
        </property>
-       <property name="rightMargin">
-        <number>0</number>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
        </property>
-       <item>
-        <spacer name="horizontalSpacerLeft">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::MinimumExpanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>13</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="searchStringEdit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>16</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>500</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Enter a string to filter colors</string>
-         </property>
-         <property name="placeholderText">
-          <string>Filter colors</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacerMiddleLeft">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>6</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QToolButton" name="undoColorPB">
-         <property name="toolTip">
-          <string>Undo</string>
-         </property>
-         <property name="text">
-          <string>&amp;Undo</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>16</width>
-           <height>16</height>
-          </size>
-         </property>
-         <property name="arrowType">
-          <enum>Qt::NoArrow</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="redoColorPB">
-         <property name="toolTip">
-          <string>Redo</string>
-         </property>
-         <property name="text">
-          <string>Re&amp;do</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>16</width>
-           <height>16</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacerMiddleRight">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>6</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QToolButton" name="colorResetAllPB">
-         <property name="toolTip">
-          <string>Reset all colors to theme</string>
-         </property>
-         <property name="text">
-          <string>Reset A&amp;ll</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>16</width>
-           <height>16</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacerRight">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>6</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
+       <property name="buddy">
+        <cstring>themesLW</cstring>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <layout class="QGridLayout" name="gridLayoutThemes">
@@ -225,10 +82,10 @@
        <item row="1" column="3">
         <spacer name="horizontalSpacer">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Preferred</enum>
+          <enum>QSizePolicy::Policy::Preferred</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -244,10 +101,7 @@
           <string>Remove a selected color theme</string>
          </property>
          <property name="text">
-          <string>&amp;Remove</string>
-         </property>
-         <property name="shortcut">
-          <string notr="true">Ctrl+R</string>
+          <string>R&amp;emove</string>
          </property>
         </widget>
        </item>
@@ -267,10 +121,7 @@
           <string>Add the current color set as a theme</string>
          </property>
          <property name="text">
-          <string>&amp;Add</string>
-         </property>
-         <property name="shortcut">
-          <string>Ctrl+S</string>
+          <string>A&amp;dd</string>
          </property>
         </widget>
        </item>
@@ -298,49 +149,220 @@
        </item>
       </layout>
      </item>
+     <item row="1" column="1" colspan="2">
+      <widget class="QTableView" name="colorsTV">
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+       </property>
+       <property name="showGrid">
+        <bool>false</bool>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::PenStyle::NoPen</enum>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="QLabel" name="colorLabel">
        <property name="text">
         <string>&amp;Color Settings:</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+        <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
        </property>
        <property name="buddy">
         <cstring>colorsTV</cstring>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="themesLabel">
-       <property name="text">
-        <string>&amp;Themes:</string>
+     <item row="0" column="2">
+      <layout class="QGridLayout" name="ResetGridLayout">
+       <property name="spacing">
+        <number>0</number>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-       </property>
-       <property name="buddy">
-        <cstring>themesLW</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" colspan="2">
-      <widget class="QTableView" name="colorsTV">
-       <property name="alternatingRowColors">
-        <bool>true</bool>
-       </property>
-       <property name="showGrid">
-        <bool>false</bool>
-       </property>
-      </widget>
+       <item row="1" column="9">
+        <widget class="QToolButton" name="colorResetAllPB">
+         <property name="toolTip">
+          <string>Reset all colors in the table to the last saved</string>
+         </property>
+         <property name="text">
+          <string>Reset &amp;All</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="10">
+        <spacer name="horizontalSpacerButtomRight">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>6</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="3">
+        <widget class="QToolButton" name="undoColorPB">
+         <property name="toolTip">
+          <string>Undo</string>
+         </property>
+         <property name="text">
+          <string>&amp;Undo</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <spacer name="horizontalSpacerMiddleLeft">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>6</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="7">
+        <widget class="QToolButton" name="darkColorResetPB">
+         <property name="toolTip">
+          <string>Reset selected dark-mode color to the last saved</string>
+         </property>
+         <property name="text">
+          <string>Dark</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="horizontalSpacerButtomLeft">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="searchStringEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Enter a string to filter colors</string>
+         </property>
+         <property name="placeholderText">
+          <string>Filter colors</string>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QToolButton" name="redoColorPB">
+         <property name="toolTip">
+          <string>Redo</string>
+         </property>
+         <property name="text">
+          <string>Re&amp;do</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="8">
+        <spacer name="horizontalSpacerBottomMiddle">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>6</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="6">
+        <widget class="QToolButton" name="lightColorResetPB">
+         <property name="toolTip">
+          <string>Reset selected light-mode color to the last saved</string>
+         </property>
+         <property name="text">
+          <string>Light</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6" colspan="2">
+        <widget class="QLabel" name="resetLabel">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Reset</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <spacer name="horizontalSpacerRight">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>6</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>undoColorPB</tabstop>
-  <tabstop>redoColorPB</tabstop>
   <tabstop>syscolorsCB</tabstop>
   <tabstop>autoapplyCB</tabstop>
  </tabstops>
