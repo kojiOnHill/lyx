@@ -939,10 +939,14 @@ void GuiRef::updateRefs()
 	if (show_labels) {
 		refsTW->header()->setVisible(true);
 		availableLA->setText(qt_("Available &Labels:"));
+		filter_->setPlaceholderText(qt_("All available labels"));
+		filter_->setToolTip(qt_("Enter string to filter the list of available labels"));
 		updateAvailableLabels();
 	} else {
 		refsTW->header()->setVisible(false);
 		availableLA->setText(qt_("Available &Targets:"));
+		filter_->setPlaceholderText(qt_("All available targets"));
+		filter_->setToolTip(qt_("Enter string to filter the list of available targets"));
 		updateAvailableTargets();
 	}
 }
@@ -973,16 +977,32 @@ void GuiRef::gotoBookmark()
 
 void GuiRef::filterLabels()
 {
+	bool const show_labels = targetCO->itemData(targetCO->currentIndex()).toString() == "labels";
 	Qt::CaseSensitivity cs = csFindCB->isChecked() ?
 		Qt::CaseSensitive : Qt::CaseInsensitive;
 	QTreeWidgetItemIterator it(refsTW);
-	while (*it) {
-		(*it)->setHidden(
-			(*it)->childCount() == 0
-			&& !(*it)->text(0).contains(filter_->text(), cs)
-			&& !(*it)->text(1).contains(filter_->text(), cs)
-		);
-		++it;
+	if (show_labels) {
+		while (*it) {
+			(*it)->setHidden(
+				(*it)->childCount() == 0
+				&& !(*it)->text(0).contains(filter_->text(), cs)
+				&& !(*it)->text(1).contains(filter_->text(), cs)
+			);
+			++it;
+		}
+	} else {
+		QTreeWidgetItemIterator itt(refsTW);
+		while (*it) {
+			(*it)->setHidden(!(*it)->text(0).contains(filter_->text(), cs));
+			itt = it;
+			++it;
+		}
+		// recursively unhide parents of unhidden children
+		while (*itt) {
+			if (!(*itt)->isHidden() && (*itt)->parent())
+				(*itt)->parent()->setHidden(false);
+			--itt;
+		}
 	}
 }
 
