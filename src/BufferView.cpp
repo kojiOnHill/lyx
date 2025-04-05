@@ -1674,6 +1674,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 				// if the paragraph has a label, we refer to this
 				string const arg = (type.empty()) ? label : label + " " + type;
 				lyx::dispatch(FuncRequest(LFUN_REFERENCE_INSERT, arg));
+				cur.forceBufferUpdate();
 				break;
 			} else {
 				// if there is not a label yet
@@ -1700,6 +1701,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 				lyx::dispatch(FuncRequest(LFUN_BOOKMARK_GOTO, "0"));
 				// ... to insert the ref
 				lyx::dispatch(FuncRequest(LFUN_REFERENCE_INSERT, arg));
+				cur.forceBufferUpdate();
 				break;
 			}
 		}
