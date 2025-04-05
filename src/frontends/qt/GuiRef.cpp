@@ -935,6 +935,8 @@ void GuiRef::updateRefs()
 	refsTW->setEnabled(enable_tw);
 	sortingCO->setEnabled(show_labels && !refs_.empty());
 	groupCB->setEnabled(show_labels && !refs_.empty());
+	bufferCO->setEnabled(show_labels);
+	bufferLA->setEnabled(show_labels);
 
 	if (show_labels) {
 		refsTW->header()->setVisible(true);
