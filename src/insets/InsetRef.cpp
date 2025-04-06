@@ -333,9 +333,9 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 			(use_nolink ? from_utf8("*") : from_utf8("")) +
 			from_ascii("{") << data << from_ascii("})");
 	} else if (cmd == "formatted") {
-		vector<docstring> label;
+		vector<docstring> flabels;
 		docstring prefix;
-		os << getFormattedCmd(data, label, prefix, buffer().masterParams().xref_package, use_caps, useRange());;
+		os << getFormattedCmd(data, flabels, prefix, buffer().masterParams().xref_package, use_caps, useRange());;
 		if ((use_cleveref || use_zref) && use_nolink)
 			os << "*";
 		if (buffer().masterParams().xref_package == "refstyle" && use_plural)
@@ -357,16 +357,16 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 		}
 		os << "{";
 		bool first = true;
-		vector<docstring>::const_iterator it = labels.begin();
-		vector<docstring>::const_iterator en = labels.end();
+		vector<docstring>::const_iterator it = flabels.begin();
+		vector<docstring>::const_iterator en = flabels.end();
 		for (size_t i = 0; it != en; ++it, ++i) {
 			if (!first) {
 				if (buffer().masterParams().xref_package == "prettyref") {
 					if (!first) {
 						os << "}";
-						if (labels.size() == 2)
+						if (flabels.size() == 2)
 							os << buffer().B_("[[reference 1]] and [[reference2]]");
-						else if (i > 0 && i == labels.size() - 1)
+						else if (i > 0 && i == flabels.size() - 1)
 							os << buffer().B_("[[reference 1, ...]], and [[reference n]]");
 						else
 							os << buffer().B_("[[reference 1]], [[reference2, ...]]");
