@@ -24,14 +24,14 @@ find . -name "*.h" -print0 | while IFS= read -r -d $'\0' file; do
   class_declaration="class tt${filename}_h;"
   # Read the entire content of the file
   content=$(cat "$file")
-#  echo "$class_declaration" > "$file"
-#  echo "$content" >> "$file"
+  echo "$class_declaration" > "$file"
+  echo "$content" >> "$file"
   #echo "Processed: $file"
 done
 
 # Let's have all .o file contain just preprocessed output
-#find . -name "Makefile" -print0 | xargs -0 sed -i 's/^CXX = g++ *$/CXX = g++ -E /'
-#make -k 2>/dev/null 1>/dev/null
+find . -name "Makefile" -print0 | xargs -0 sed -i 's/^CXX = g++ *$/CXX = g++ -E /'
+make -k 2>/dev/null 1>/dev/null
 
 input_file="../development/tools/header_check.sh.log"
 
