@@ -42,8 +42,6 @@ while IFS='::' read -r header include; do
   if [ -n "$header" ] && [ -n "$include" ]; then
     header_file=$(basename "$header")
     header_file="${header_file%.*}" # Extract filename without extension
-    #trap_declaration="class tt${header_file}_h;"
-
 
     # Remove the "#include" part and the quotes and alike
     trap_file=$(echo "$include" | tr '<' '"' | tr '>' '"' |sed -E 's/.*#include\s+"(.*)"/\1/'|sed 's/.*#include.//'| sed 's/\/\/.*//'|sed 's/ $//' |sed 's/.h$/_h/'|sed 's/.hxx$/_h/'|sed 's/.*\///')
@@ -55,9 +53,6 @@ while IFS='::' read -r header include; do
     #echo "Preprocess output: $preprocessed_output"
     #echo "Include statement: $include"
     #echo "Expected trap: $trap_declaration"
-
-    # Preprocess the header file
-    #preprocessed_output=$(g++ -E "$header" 2>/dev/null)
 
     if [ -e "$preprocessed_output" ]; then
       trap_count=$(cat "$preprocessed_output" | grep -F -c "$trap_declaration")
