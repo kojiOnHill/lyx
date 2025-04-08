@@ -1008,6 +1008,9 @@ vector<FileName> InsetRef::externalFilenames(bool const warn) const
 		FileName fn =
 			support::makeAbsPath(incFileName,
 					     support::onlyPath(buffer().absFileName()));
+		if (buffer().fileName() == fn || contains(buffer().absFileName(), "clipboard.internal"))
+			// ignore own file and internal clipboard buffer
+			continue;
 		if (fn.exists()) {
 			bool is_family = false;
 			for (auto const * b : children) {
@@ -1073,9 +1076,9 @@ void InsetRef::cleanUpExternalFileNames()
 		FileName fn =
 			support::makeAbsPath(incFileName,
 					     support::onlyPath(buffer().absFileName()));
+		if (buffer().fileName() == fn)
+			continue;
 		if (fn.exists()) {
-			if (buffer().fileName() == fn)
-				continue;
 			bool is_family = false;
 			for (auto const * b : children) {
 				if (b->fileName() == fn) {
