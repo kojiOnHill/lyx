@@ -4634,71 +4634,69 @@ bool Paragraph::brokenBiblio() const
 }
 
 
-int Paragraph::fixBiblio(Buffer const & buffer)
+void Paragraph::fixBiblio(Cursor & cur)
 {
-	// FIXME: when there was already an inset at 0, the return value is 1,
-	// which does not tell whether another inset has been removed; the
-	// cursor cannot be correctly updated.
-
-	bool const track_changes = buffer.params().track_changes;
+	bool const track_changes = cur.buffer()->params().track_changes;
 	int bibitem_pos = getInsetPos(BIBITEM_CODE, 0, true);
+	Cursor changecur = cur;
 
 	// The case where paragraph is not BIBLIO
 	if (d->layout_->labeltype != LABEL_BIBLIO) {
 		if (bibitem_pos == -1)
 			// No InsetBibitem => OK
-			return 0;
+			return;
 		// There is an InsetBibitem: remove it!
-		eraseChar(bibitem_pos, track_changes);
-		return (bibitem_pos == 0) ? -1 : -bibitem_pos;
+		if (eraseChar(bibitem_pos, track_changes)) {
+			changecur.pos() = bibitem_pos;
+			cur.updateAfterInsertion(changecur, -1);
+			cur.resetAnchor();
+		}
 	}
-
-	bool const hasbibitem0 = bibitem_pos == 0;
-	if (hasbibitem0) {
+	else if (bibitem_pos == 0) {
 		bibitem_pos = getInsetPos(BIBITEM_CODE, 1, true);
 		// There was an InsetBibitem at pos 0,
 		// and no other one => OK
 		if (bibitem_pos == -1)
-			return 0;
-		// there is a bibitem at the 0 position, but since
-		// there is a second one, we copy the second on the
-		// first. We're assuming there are at most two of
-		// these, which there should be.
-		// FIXME: why does it make sense to do that rather
-		// than keep the first? (JMarc)
-		Inset * inset = releaseInset(bibitem_pos);
-		d->insetlist_.begin()->inset = inset;
-		// This needs to be done to update the counter (#8499)
-		buffer.updateBuffer();
-		return -bibitem_pos;
+			return;
+		// there is a bibitem at the 0 position, so remove the second
+		// one. We're assuming there are at most two of these, which
+		// there should be.
+		if (eraseChar(bibitem_pos, track_changes)) {
+			changecur.pos() = bibitem_pos;
+			cur.updateAfterInsertion(changecur, -1);
+			cur.resetAnchor();
+		}
+	} else {
+
+		// We need to create an inset at the beginning
+		Inset * inset = nullptr;
+		if (bibitem_pos > 0) {
+			// There was one somewhere in the paragraph, let's move it
+			// * With change tracking, we use a clone
+			//   and leave the old inset at its position
+			//   (marked deleted)
+			// * Without change tracking, we release the inset
+			//   from its previous InsetList position
+			inset = new InsetBibitem(cur.buffer(),
+			                         getInset(bibitem_pos)->asInsetCommand()->params());
+			if (eraseChar(bibitem_pos, track_changes)) {
+				changecur.pos() = bibitem_pos;
+				cur.updateAfterInsertion(changecur, -1);
+				cur.resetAnchor();
+			}
+		} else
+			// No inset found -- make a fresh one
+			inset = new InsetBibitem(cur.buffer(), InsetCommandParams(BIBITEM_CODE));
+
+		Font font(inherit_font, cur.buffer()->params().language);
+		insertInset(0, inset, font, Change(track_changes ? Change::INSERTED : Change::UNCHANGED));
+		changecur.pos() = 0;
+		cur.updateAfterInsertion(changecur);
+		cur.resetAnchor();
 	}
 
-	// We need to create an inset at the beginning
-	Inset * inset = nullptr;
-	if (bibitem_pos > 0) {
-		// There was one somewhere in the paragraph, let's move it
-		// * With change tracking, we use a clone
-		//   and leave the old inset at its position
-		//   (marked deleted)
-		// * Without change tracking, we release the inset
-		//   from its previous InsetList position
-		inset = track_changes
-				? new InsetBibitem(const_cast<Buffer *>(&buffer),
-						   getInset(bibitem_pos)->asInsetCommand()->params())
-				: d->insetlist_.release(bibitem_pos);
-		eraseChar(bibitem_pos, track_changes);
-	} else
-		// No inset found -- make a fresh one
-		inset = new InsetBibitem(const_cast<Buffer *>(&buffer),
-					 InsetCommandParams(BIBITEM_CODE));
-
-	Font font(inherit_font, buffer.params().language);
-	insertInset(0, inset, font, Change(track_changes ? Change::INSERTED
-				                   : Change::UNCHANGED));
-
-	// This is needed to get the counters right
-	buffer.updateBuffer();
-	return 1;
+	// This is needed to get the counters right (#8499)
+	cur.buffer()->updateBuffer();
 }
 
 

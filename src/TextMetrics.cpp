@@ -513,15 +513,7 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 		if (&cur.inset() == &text_->inset())
 			cur.recordUndo(pit, pit);
 
-		int const moveCursor = par.fixBiblio(buffer);
-
-		// Is it necessary to update the cursor?
-		if (&cur.inset() == &text_->inset() && cur.pit() == pit) {
-			if (moveCursor > 0)
-				cur.posForward();
-			else if (moveCursor < 0 && cur.pos() >= -moveCursor)
-				cur.posBackward();
-		}
+		par.fixBiblio(cur);
 	}
 
 	// Optimisation: this is used in the next two loops
