@@ -1099,6 +1099,9 @@ void PrefColors::applyRC(LyXRC & rc) const
 			form_->setColor(lcolors_[i], newcolors_[i]);
 	rc.use_system_colors = syscolorsCB->isChecked();
 
+	if (toqstr(rc.color_theme) != theme_name_)
+		rc.color_theme = theme_name_.toStdString();
+
 	if (oldrc.use_system_colors != rc.use_system_colors)
 		guiApp->colorCache().clear();
 }
@@ -1632,6 +1635,10 @@ void PrefColors::initializeThemesLW()
 		themes.emplace(guiname + "_usr", std::make_pair(filename, true));
 	}
 	themesLW->clear();
+
+	if (toqstr(lyxrc.color_theme) != theme_name_)
+		theme_name_ = toqstr(lyxrc.color_theme);
+
 	// themes are already sorted with GUI name as std::map sorts its entries
 	for (const auto & theme : themes) {
 		QListWidgetItem* item = new QListWidgetItem;
@@ -1641,6 +1648,11 @@ void PrefColors::initializeThemesLW()
 		else
 			item->setIcon(sys_theme_icon);
 		themesLW->addItem(item);
+
+		// current theme is indicated by selection
+		if (item->text() == theme_name_)
+			themesLW->setCurrentItem(item);
+
 		theme_fullpaths_.push_back(theme.second.first);
 		if (theme.first.right(3) == "sys")
 			isSysThemes_.push_back(true);

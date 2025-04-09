@@ -59,6 +59,7 @@ public:
 		RC_CITATION_SEARCH_PATTERN,
 		RC_CITATION_SEARCH_VIEW,
 		RC_COLOR_SCHEME,
+		RC_COLOR_THEME,
 		RC_COMPLETION_CURSOR_TEXT,
 		RC_COMPLETION_INLINE_DELAY,
 		RC_COMPLETION_INLINE_MATH,
@@ -354,6 +355,8 @@ public:
 	bool use_tooltip = true;
 	/// Use the colors from current system theme?
 	bool use_system_colors = false;
+	/// Current color theme if named
+	std::string color_theme;
 	/// use native file dialog or our own ?
 	bool use_native_filedialog = true;
 	/// Spellchecker engine: aspell, hunspell, etc

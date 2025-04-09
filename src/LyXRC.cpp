@@ -60,7 +60,7 @@ namespace {
 
 // The format should also be updated in configure.py, and conversion code
 // should be added to prefs2prefs_prefs.py.
-static unsigned int const LYXRC_FILEFORMAT = 39; // spitz: \color_scheme {system|light|dark}
+static unsigned int const LYXRC_FILEFORMAT = 40; // koji: \color_theme
 // when adding something to this array keep it sorted!
 LexerKeyword lyxrcTags[] = {
 	{ "\\accept_compound", LyXRC::RC_ACCEPT_COMPOUND },
@@ -82,6 +82,7 @@ LexerKeyword lyxrcTags[] = {
 	{ "\\citation_search_view", LyXRC::RC_CITATION_SEARCH_VIEW },
 	{ "\\close_buffer_with_last_view", LyXRC::RC_CLOSE_BUFFER_WITH_LAST_VIEW },
 	{ "\\color_scheme", LyXRC::RC_COLOR_SCHEME },
+    { "\\color_theme", LyXRC::RC_COLOR_THEME },
 	{ "\\completion_cursor_text", LyXRC::RC_COMPLETION_CURSOR_TEXT },
 	{ "\\completion_inline_delay", LyXRC::RC_COMPLETION_INLINE_DELAY },
 	{ "\\completion_inline_dots", LyXRC::RC_COMPLETION_INLINE_DOTS },
@@ -678,6 +679,11 @@ LyXRC::ReturnValues LyXRC::read(Lexer & lexrc, bool check_format)
 			       << x11_name << " and " << x11_darkname);
 			break;
 		}
+
+		case RC_COLOR_THEME:
+			if (lexrc.next())
+				color_theme = lexrc.getString();
+			break;
 
 		case RC_AUTOREGIONDELETE:
 			// Auto region delete defaults to true
@@ -2092,6 +2098,15 @@ void LyXRC::write(ostream & os, bool ignore_system_lyxrc, string const & name) c
 		<< "#\n\n";
 
 	// fall through
+	case RC_COLOR_THEME:
+		if (ignore_system_lyxrc ||
+		        color_theme != system_lyxrc.color_theme)
+			os << "\\color_theme \"" << color_theme << "\"\n";
+
+		if (tag != RC_LAST)
+			break;
+
+	// fall through
 	case RC_SET_COLOR:
 		for (int i = 0; i < Color_ignore; ++i) {
 			ColorCode lc = static_cast<ColorCode>(i);
@@ -3064,6 +3079,7 @@ void actOnUpdatedPrefs(LyXRC const & lyxrc_orig, LyXRC const & lyxrc_new)
 		// fall through
 	case LyXRC::RC_GEOMETRY_SESSION:
 	case LyXRC::RC_SERVERPIPE:
+	case LyXRC::RC_COLOR_THEME:
 	case LyXRC::RC_SET_COLOR:
 	case LyXRC::RC_SHOW_BANNER:
 	case LyXRC::RC_OPEN_BUFFERS_IN_TABS:
@@ -3228,6 +3244,10 @@ string const LyXRC::getDescription(LyXRCTags tag)
 
 	case LyXRC::RC_COLOR_SCHEME:
 		str = _("Possibility to enforce a particular color scheme (system|dark|light)");
+		break;
+
+	case LyXRC::RC_COLOR_THEME:
+		str = _("Current color theme if it has a name otherwise empty");
 		break;
 
 	case RC_DEFFILE:

@@ -563,5 +563,6 @@ conversions = [
 	[ 36, [add_spellcheck_default]],
 	[ 37, [remove_fullscreen_widthlimit]],
 	[ 38, []],
-	[ 39, []]
+	[ 39, []],
+	[ 40, []]
 ]
