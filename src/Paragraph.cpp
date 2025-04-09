@@ -4630,7 +4630,7 @@ int Paragraph::fixBiblio(Buffer const & buffer)
 
 	bool const hasbibitem0 = bibitem_pos == 0;
 	if (hasbibitem0) {
-		bibitem_pos = getInsetPos(BIBITEM_CODE, 0, true);
+		bibitem_pos = getInsetPos(BIBITEM_CODE, 1, true);
 		// There was an InsetBibitem at pos 0,
 		// and no other one => OK
 		if (bibitem_pos == -1)
