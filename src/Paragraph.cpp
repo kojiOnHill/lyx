@@ -4623,7 +4623,6 @@ int Paragraph::fixBiblio(Buffer const & buffer)
 			// No InsetBibitem => OK
 			return 0;
 		// There is an InsetBibitem: remove it!
-		d->insetlist_.release(bibitem_pos);
 		eraseChar(bibitem_pos, track_changes);
 		return (bibitem_pos == 0) ? -1 : -bibitem_pos;
 	}
