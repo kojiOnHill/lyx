@@ -4634,11 +4634,11 @@ bool Paragraph::brokenBiblio() const
 }
 
 
-void Paragraph::fixBiblio(Cursor & cur)
+void Paragraph::fixBiblio(DocIterator & dit)
 {
-	bool const track_changes = cur.buffer()->params().track_changes;
+	bool const track_changes = dit.buffer()->params().track_changes;
 	int bibitem_pos = getInsetPos(BIBITEM_CODE, 0, true);
-	Cursor changecur = cur;
+	DocIterator changedit = dit;
 
 	// The case where paragraph is not BIBLIO
 	if (d->layout_->labeltype != LABEL_BIBLIO) {
@@ -4647,9 +4647,8 @@ void Paragraph::fixBiblio(Cursor & cur)
 			return;
 		// There is an InsetBibitem: remove it!
 		if (eraseChar(bibitem_pos, track_changes)) {
-			changecur.pos() = bibitem_pos;
-			cur.updateAfterInsertion(changecur, -1);
-			cur.resetAnchor();
+			changedit.pos() = bibitem_pos;
+			dit.buffer()->updateCursorsAfterDeletion(changedit);
 		}
 	}
 	else if (bibitem_pos == 0) {
@@ -4662,9 +4661,8 @@ void Paragraph::fixBiblio(Cursor & cur)
 		// one. We're assuming there are at most two of these, which
 		// there should be.
 		if (eraseChar(bibitem_pos, track_changes)) {
-			changecur.pos() = bibitem_pos;
-			cur.updateAfterInsertion(changecur, -1);
-			cur.resetAnchor();
+			changedit.pos() = bibitem_pos;
+			dit.buffer()->updateCursorsAfterDeletion(changedit);
 		}
 	} else {
 
@@ -4677,26 +4675,24 @@ void Paragraph::fixBiblio(Cursor & cur)
 			//   (marked deleted)
 			// * Without change tracking, we release the inset
 			//   from its previous InsetList position
-			inset = new InsetBibitem(cur.buffer(),
+			inset = new InsetBibitem(dit.buffer(),
 			                         getInset(bibitem_pos)->asInsetCommand()->params());
 			if (eraseChar(bibitem_pos, track_changes)) {
-				changecur.pos() = bibitem_pos;
-				cur.updateAfterInsertion(changecur, -1);
-				cur.resetAnchor();
+				changedit.pos() = bibitem_pos;
+				dit.buffer()->updateCursorsAfterDeletion(changedit);
 			}
 		} else
 			// No inset found -- make a fresh one
-			inset = new InsetBibitem(cur.buffer(), InsetCommandParams(BIBITEM_CODE));
+			inset = new InsetBibitem(dit.buffer(), InsetCommandParams(BIBITEM_CODE));
 
-		Font font(inherit_font, cur.buffer()->params().language);
+		Font font(inherit_font, dit.buffer()->params().language);
 		insertInset(0, inset, font, Change(track_changes ? Change::INSERTED : Change::UNCHANGED));
-		changecur.pos() = 0;
-		cur.updateAfterInsertion(changecur);
-		cur.resetAnchor();
+		changedit.pos() = 0;
+		dit.buffer()->updateCursorsAfterInsertion(changedit);
 	}
 
 	// This is needed to get the counters right (#8499)
-	cur.buffer()->updateBuffer();
+	dit.buffer()->updateBuffer();
 }
 
 

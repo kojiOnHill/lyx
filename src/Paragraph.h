@@ -464,7 +464,7 @@ public:
 	/// Check if we are in a Biblio environment and insert or
 	/// delete InsetBibitems as necessary.
 	/// \param cur : the cursor that needs to be updated accordingly
-	void fixBiblio(Cursor & cur);
+	void fixBiblio(DocIterator & dit);
 
 	/// For each author, set 'used' to true if there is a change
 	/// by this author in the paragraph.

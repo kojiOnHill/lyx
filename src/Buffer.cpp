@@ -691,6 +691,13 @@ void Buffer::changed(bool update_metrics) const
 }
 
 
+void Buffer::updateCursorsAfterInsertion(DocIterator const & dit, int const count)
+{
+	if (d->wa_)
+		d->wa_->updateCursorsAfterInsertion(dit, count);
+}
+
+
 frontend::WorkAreaManager & Buffer::workAreaManager() const
 {
 	LBUFERR(d->wa_);
