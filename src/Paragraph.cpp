@@ -4690,9 +4690,6 @@ void Paragraph::fixBiblio(DocIterator & dit)
 		changedit.pos() = 0;
 		dit.buffer()->updateCursorsAfterInsertion(changedit);
 	}
-
-	// This is needed to get the counters right (#8499)
-	dit.buffer()->updateBuffer();
 }
 
 
