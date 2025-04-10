@@ -174,6 +174,9 @@
 #   Add \color_scheme {system|light|dark}
 #   No conversion necessary.
 
+# Incremented to format 40, by koji
+# Add \color_theme
+
 # NOTE: The format should also be updated in LYXRC.cpp and
 # in configure.py (search for lyxrc_fileformat).
 
