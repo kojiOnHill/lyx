@@ -885,7 +885,6 @@ void Compare::Impl::writeToDestBuffer(ParagraphList const & pars) const
 		mergeParagraph(dest_buf_->params(), *dest_pars_, pit);
 }
 
+} // namespace lyx
 
 #include "moc_Compare.cpp"
-
-} // namespace lyx
