@@ -535,7 +535,7 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 			// by itself. But the tex macro semantics allow
 			// recursion, so we artifically take the context
 			// after the macro template to simulate this.
-			if (e.inset->lyxCode() == MATHMACRO_CODE)
+			if (e.inset->lyxCode() == MATH_MACROTEMPLATE_CODE)
 				parPos.pos()++;
 		}
 
