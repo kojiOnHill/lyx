@@ -2927,7 +2927,7 @@ void Tabular::TeXTopHLine(otexstream & os, row_type row, list<col_type> const & 
 				if (topltrims[c])
 					trim = "l";
 				col_type cstart = c;
-				for ( ; c < ncols() && topline[c + 1]
+				for ( ; c < ncols() - 1 && topline[c + 1]
 				      && (!topltrims[c + 1] || isPartOfMultiColumn(row, c + 1)) ; ++c) {
 					if (isMultiColumn(cellIndex(row, c))
 					    && c < ncols() - 1 && isPartOfMultiColumn(row, c + 1))
@@ -3051,7 +3051,7 @@ void Tabular::TeXBottomHLine(otexstream & os, row_type row, list<col_type> const
 				if (bottomltrims[c])
 					trim = "l";
 				col_type cstart = c;
-				for ( ; c < ncols() && bottomline[c + 1]
+				for ( ; c < ncols() - 1 && bottomline[c + 1]
 				      && (!bottomltrims[c + 1] || isPartOfMultiColumn(row, c + 1)) ; ++c) {
 					if (isMultiColumn(cellIndex(row, c))
 					    && c < ncols() - 1
