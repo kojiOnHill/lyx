@@ -2887,7 +2887,10 @@ void BufferView::mouseEventDispatch(FuncRequest const & cmd0)
 
 	// Notify left insets
 	if (cur != old) {
+		#pragma clang diagnostic push
+		#pragma clang diagnostic ignored "-Wbitwise-instead-of-logical"
 		bool badcursor = old.fixIfBroken() | cur.fixIfBroken();
+		#pragma clang diagnostic pop
 		badcursor |= notifyCursorLeavesOrEnters(old, cur);
 		if (badcursor)
 			cursor().fixIfBroken();
