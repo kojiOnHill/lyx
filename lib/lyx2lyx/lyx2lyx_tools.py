@@ -116,14 +116,17 @@ def add_to_preamble(document, text):
       if i == -1:
         break
       # we need a perfect match
+      # ignoring surrounding whitespace, though (see #13168)
       matched = True
       for line in text:
-        if i >= prelen or line != document.preamble[i]:
+        if i >= prelen or line.strip() != document.preamble[i].strip():
           matched = False
           break
         i += 1
       if matched:
         return
+      else:
+        i += 1
 
     document.preamble.extend(["% Added by lyx2lyx"])
     document.preamble.extend(text)
