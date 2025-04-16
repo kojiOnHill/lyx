@@ -27,6 +27,7 @@
 #include <stdlib.h>
 
 #ifdef __APPLE__
+#include <AssertMacros.h>
 #include <CoreServices/CoreServices.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreFoundation/CFArray.h>
@@ -240,6 +241,8 @@ bool canAutoOpenFile(string const & ext, auto_open_mode const mode)
 #ifdef __APPLE__
 	// References:
 	// https://developer.apple.com/reference/coreservices/1447734-lscopydefaultapplicationurlforco
+	//     Carbon Core Deprecations:
+	//       https://developer.apple.com/library/archive/releasenotes/General/CarbonCoreDeprecations/index.html#//apple_ref/doc/uid/TP40012224
 	CFStringRef cfs_ext = CFStringCreateWithBytes(kCFAllocatorDefault,
 					(UInt8 *) ext.c_str(), ext.length(),
 					kCFStringEncodingISOLatin1, false);
