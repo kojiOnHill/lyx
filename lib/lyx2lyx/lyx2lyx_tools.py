@@ -123,7 +123,7 @@ def add_to_preamble(document, text):
         # we need a perfect match
         matched = True
         for line in text:
-            if i >= prelen or line != document.preamble[i].strip():
+            if i >= prelen or line.strip() != document.preamble[i].strip():
                 matched = False
                 break
             i += 1
