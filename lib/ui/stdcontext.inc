@@ -90,6 +90,7 @@ Menuset
 #
 	Menu "context-mathref"
 		Item "Next Cross-Reference or Label with the Same Target|N" "reference-next"
+		Item "Next Cross-Reference|C" "reference-next anyref"
 		Item "Go to Label|G" "label-goto"
 		Separator
 		Item "<Reference>|R" "inset-modify changetype ref"
@@ -110,6 +111,7 @@ Menuset
 #
 	Menu "context-ref"
 		Item "Next Cross-Reference or Label with the Same Target|N" "reference-next"
+		Item "Next Cross-Reference|C" "reference-next anyref"
 		Item "Go to Label|G" "label-goto"
 		Separator
 		Item "<Reference>|R" "inset-modify changetype ref"

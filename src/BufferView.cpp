@@ -1291,7 +1291,6 @@ bool BufferView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 	case LFUN_INFO_INSERT:
 	case LFUN_PARAGRAPH_GOTO:
 	case LFUN_NOTE_NEXT:
-	case LFUN_REFERENCE_NEXT:
 	case LFUN_WORD_FIND:
 	case LFUN_WORD_FIND_FORWARD:
 	case LFUN_WORD_FIND_BACKWARD:
@@ -1324,6 +1323,16 @@ bool BufferView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 		iss >> opt;
 		flag.setEnabled(opt.repl_buf_name.empty()
 				|| !buffer_.isReadonly());
+		break;
+	}
+	
+	case LFUN_REFERENCE_NEXT: {
+		if (cmd.argument() == "anyref")
+			flag.setEnabled(true);
+		else
+			flag.setEnabled(getInsetByCode<InsetRef>(cur, REF_CODE)
+					|| getInsetByCode<InsetMathRef>(cur, MATH_REF_CODE)
+					|| getInsetByCode<InsetMathRef>(cur, LABEL_CODE));
 		break;
 	}
 
@@ -1774,8 +1783,13 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		break;
 
 	case LFUN_REFERENCE_NEXT: {
-		if (gotoInset(this, { LABEL_CODE, REF_CODE }, true))
-			dr.screenUpdate(Update::Force);
+		if (cmd.argument() == "anyref") {
+			if (gotoInset(this, { REF_CODE }, false))
+				dr.screenUpdate(Update::Force);
+		} else {
+			if (gotoInset(this, { LABEL_CODE, REF_CODE }, true))
+				dr.screenUpdate(Update::Force);
+		}
 		break;
 	}
 
