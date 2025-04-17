@@ -146,12 +146,22 @@ bool findInset(DocIterator & dit, vector<InsetCode> const & codes,
 {
 	docstring contents;
 	DocIterator tmpdit = dit;
+	if (same_content && tmpdit.nextInset()) {
+		// if we are in front of an inset, its content matters
+		InsetCommand const * ic = tmpdit.nextInset()->asInsetCommand();
+		if (ic) {
+			bool const valid_code = std::find(codes.begin(), codes.end(),
+				ic->lyxCode()) != codes.end();
+			if (valid_code)
+				contents = ic->getFirstNonOptParam();
+		}
+	}
 	tmpdit.forwardInset();
 	if (!tmpdit)
 		return false;
 
 	Inset const * inset = tmpdit.nextInset();
-	if (same_content && inset) {
+	if (same_content && contents.empty() && inset) {
 		InsetCommand const * ic = inset->asInsetCommand();
 		if (ic) {
 			bool const valid_code = std::find(codes.begin(), codes.end(),
