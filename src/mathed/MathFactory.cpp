@@ -27,6 +27,7 @@
 #include "InsetMathFont.h"
 #include "InsetMathFontOld.h"
 #include "InsetMathFrac.h"
+#include "InsetMathIntertext.h"
 #include "InsetMathKern.h"
 #include "InsetMathLefteqn.h"
 #include "InsetMathOverset.h"
@@ -718,6 +719,8 @@ MathAtom createInsetMath(docstring const & s, Buffer * buf)
 		return MathAtom(new InsetMathFrac(buf, InsetMathFrac::ATOP));
 	if (s == "lefteqn")
 		return MathAtom(new InsetMathLefteqn(buf));
+	if (s == "intertext" || s == "shortintertext")
+		return MathAtom(new InsetMathIntertext(buf, s));
 	if (s == "boldsymbol")
 		return MathAtom(new InsetMathBoldSymbol(buf, InsetMathBoldSymbol::AMS_BOLD));
 	if (s == "bm")
