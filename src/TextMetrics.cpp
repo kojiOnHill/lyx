@@ -588,10 +588,13 @@ bool TextMetrics::redoParagraph(pit_type const pit, bool const align_rows)
 	/* If there is more than one row, expand the text to the full
 	 * allowable width. This setting here is needed for the
 	 * setRowAlignment() below. We do nothing when tight insets are
-	 * requested.
+	 * requested or when the first row of two is empty due to
+	 * AlwaysBreakBefore flag.
 	 */
-	if (pm.rows().size() > 1 && !tight_ && dim_.wid < max_width_)
-			dim_.wid = max_width_;
+	if (!tight_ && dim_.wid < max_width_
+	    && (pm.rows().size() > 2
+	        || (pm.rows().size() == 2 && !pm.rows().front().empty())))
+		dim_.wid = max_width_;
 
 	// Compute height and alignment of the rows.
 	for (Row & row : pm.rows()) {
