@@ -1944,8 +1944,6 @@ string const LaTeXFeatures::getThmDefinitions() const
 		if (thm.counter == "none")
 			tmp << "\\newtheorem*{" << thm.name << "}";
 		else {
-			if (params_.xref_package == "zref" && !thm.zrefname.empty() && thm.zrefname != "none")
-				tmp << "\\zcsetup{countertype={" << thm.name << "=" << thm.zrefname << "}}\n";
 			tmp << "\\newtheorem{" << thm.name << "}";
 			if (!thm.counter.empty())
 				tmp << "[" << thm.counter << "]";
@@ -1957,6 +1955,37 @@ string const LaTeXFeatures::getThmDefinitions() const
 				tmp << "[" << thm.parent_counter << "]";
 		}
 		tmp << "\n";
+
+		// Extra definitions for zref-clever
+		if (thm.counter != "none" && params_.xref_package == "zref" && !thm.zrefname.empty() && thm.zrefname != "none") {
+			if (thm.counter.empty())
+				tmp << "\\zcsetup{countertype={" << thm.name << "=" << thm.zrefname << "}}\n";
+			else {
+				if (isAvailableAtLeastFrom("LaTeX", 2020, 10))
+					// we have hooks
+					tmp << "\\AddToHook{env/" << thm.name << "/begin}"
+					     << "{\\zcsetup{countertype={" << thm.counter << "=" << thm.zrefname << "}}}\n";
+				else {
+					tmp << "\\let\\lyxsave" << thm.name << "\\" << thm.name << "\n";
+					tmp << "\\def\\" << thm.name
+					    << "{\\zcsetup{countertype={" << thm.counter << "=" << thm.zrefname << "}}"
+					    << "\\lyxsave" << thm.name << "}\n";
+				}
+			}
+		}
+		// or cleveref
+		else if (thm.counter != "none" && params_.xref_package == "cleveref" && !thm.counter.empty()) {
+			if (isAvailableAtLeastFrom("LaTeX", 2020, 10))
+				// we have hooks
+				tmp << "\\AddToHook{env/" << thm.name << "/begin}"
+				     << "{\\crefalias{" << thm.counter << "}{" << thm.name << "}}\n";
+			else {
+				tmp << "\\let\\lyxsave" << thm.name << "\\" << thm.name << "\n";
+				tmp << "\\def\\" << thm.name
+				    << "{\\crefalias{" << thm.counter << "}{" << thm.name << "}"
+				    << "\\lyxsave" << thm.name << "}\n";
+			}
+		}
 	}
 
 	return tmp.str();
