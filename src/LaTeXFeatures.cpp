@@ -703,6 +703,18 @@ void LaTeXFeatures::useLayout(docstring const & layoutname, int level)
 		if (!layout.depends_on().empty()) {
 			useLayout(layout.depends_on(), level + 1);
 		}
+
+		if (!layout.thmName().empty()) {
+			ThmInfo thm;
+			thm.name = layout.thmName();
+			thm.latexname = layout.thmLaTeXName();
+			thm.counter = layout.thmCounter();
+			thm.parent_counter = layout.thmParentCounter();
+			thm.style = layout.thmStyle();
+			thm.zrefname = layout.thmZRefName();
+			usedTheorems_.push_back(thm);
+			require("amsthm");
+		}
 		usedLayouts_.push_back(layoutname);
 	} else {
 		lyxerr << "LaTeXFeatures::useLayout: layout `"
@@ -1919,6 +1931,38 @@ docstring const LaTeXFeatures::getBabelPostsettings() const
 }
 
 
+string const LaTeXFeatures::getThmDefinitions() const
+{
+	ostringstream tmp;
+
+	string laststyle;
+	for (auto const & thm : usedTheorems_) {
+		if (thm.style != laststyle) {
+			tmp << "\\theoremstyle{" << thm.style << "}\n";
+			laststyle = thm.style;
+		}
+		if (thm.counter == "none")
+			tmp << "\\newtheorem*{" << thm.name << "}";
+		else {
+			if (params_.xref_package == "zref" && !thm.zrefname.empty() && thm.zrefname != "none")
+				tmp << "\\zcsetup{countertype={" << thm.name << "=" << thm.zrefname << "}}\n";
+			tmp << "\\newtheorem{" << thm.name << "}";
+			if (!thm.counter.empty())
+				tmp << "[" << thm.counter << "]";
+		}
+		tmp << "{\\protect\\" << thm.latexname << "}";
+		if (!thm.parent_counter.empty()) {
+			if (thm.parent_counter != "chapter"
+			    || params_.documentClass().hasLaTeXLayout("chapter"))
+				tmp << "[" << thm.parent_counter << "]";
+		}
+		tmp << "\n";
+	}
+
+	return tmp.str();
+}
+
+
 string const LaTeXFeatures::loadAMSPackages() const
 {
 	ostringstream tmp;
@@ -1936,6 +1980,9 @@ string const LaTeXFeatures::loadAMSPackages() const
 
 	if (mustProvide("amsthm"))
 		tmp << "\\usepackage{amsthm}\n";
+
+	if (!mustProvide("cleveref"))
+		tmp << getThmDefinitions();
 
 	if (mustProvide("amssymb")
 	    && params_.use_package("amssymb") != BufferParams::package_off)

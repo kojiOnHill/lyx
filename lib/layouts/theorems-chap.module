@@ -34,12 +34,5 @@ Counter theorem
 End
 
 Style Theorem
-	Preamble
-		\theoremstyle{plain}
-		\ifx\thechapter\undefined
-			\newtheorem{thm}{\protect\theoremname}
-		\else
-			\newtheorem{thm}{\protect\theoremname}[chapter]
-		\fi
-	EndPreamble
+	TheoremParentCounter  chapter
 End

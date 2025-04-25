@@ -33,8 +33,5 @@ Counter theorem
 End
 
 Style Theorem
-	Preamble
-		\theoremstyle{plain}
-		\newtheorem{thm}{\protect\theoremname}[section]
-	EndPreamble
+	TheoremParentCounter  section
 End

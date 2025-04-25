@@ -179,9 +179,6 @@ Input theorems-starred.inc
 
 # the Monthly wants its remarks to look like definitions
 Style Remark*
-  Preamble
-    \theoremstyle{definition}
-    \newtheorem*{rem*}{\protect\remarkname}
-  EndPreamble
+  TheoremStyle          definition
 End
 
