@@ -271,14 +271,22 @@ def layouts_l10n(input_files, output, base, layouttranslations):
             res = TheoremCrossRefName.search(line)
             if res != None:
                 string = res.group(1)
-                writeString(out, src, base, lineno, string)
-                writeString(out, src, base, lineno, string.lower())
+                if layouttranslations:
+                    keyset.add(string)
+                    keyset.add(string.lower())
+                else:
+                    writeString(out, src, base, lineno, string)
+                    writeString(out, src, base, lineno, string.lower())
                 continue
             res = TheoremCrossRefPluralName.search(line)
             if res != None:
                 string = res.group(1)
-                writeString(out, src, base, lineno, string)
-                writeString(out, src, base, lineno, string.lower())
+                if layouttranslations:
+                    keyset.add(string)
+                    keyset.add(string.lower())
+                else:
+                    writeString(out, src, base, lineno, string)
+                    writeString(out, src, base, lineno, string.lower())
                 continue
             res = OutlinerName.search(line)
             if res != None:
