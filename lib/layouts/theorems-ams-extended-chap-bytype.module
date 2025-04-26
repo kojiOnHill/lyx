@@ -121,6 +121,8 @@ Style Algorithm
 	TheoremLaTeXName      algorithmname
 	TheoremParentCounter  chapter
 	TheoremZRefName       algorithm
+	TheoremCrossRefName   Algorithm
+	TheoremCrossRefPluralName Algorithms
 	LangPreamble
 	  \providecommand{\algorithmname}{_(Algorithm)}
 	EndLangPreamble
@@ -247,6 +249,8 @@ Style Note
 	TheoremStyle          remark
 	TheoremLaTeXName      notename
 	TheoremParentCounter  chapter
+	TheoremCrossRefName   Note
+	TheoremCrossRefPluralName Notes[[theorem]]
 	LangPreamble
 	  \providecommand{\notename}{_(Note)}
 	EndLangPreamble

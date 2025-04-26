@@ -64,6 +64,8 @@ Style Theorem
 	TheoremName           thm
 	TheoremLaTeXName      theoremname
 	TheoremZRefName       theorem
+	TheoremCrossRefName   Theorem
+	TheoremCrossRefPluralName Theorems
 	LangPreamble
 		\providecommand{\theoremname}{_(Theorem)}
 	EndLangPreamble
@@ -86,6 +88,8 @@ Style Corollary
 	TheoremName           cor
 	TheoremLaTeXName      corollaryname
 	TheoremZRefName       corollary
+	TheoremCrossRefName   Corollary
+	TheoremCrossRefPluralName Corollaries
 	LangPreamble
 		\providecommand{\corollaryname}{_(Corollary)}
 	EndLangPreamble
@@ -107,6 +111,8 @@ Style Lemma
 	TheoremName           lem
 	TheoremLaTeXName      lemmaname
 	TheoremZRefName       lemma
+	TheoremCrossRefName   Lemma
+	TheoremCrossRefPluralName Lemmas
 	LangPreamble
 	  \providecommand{\lemmaname}{_(Lemma)}
 	EndLangPreamble
@@ -129,6 +135,8 @@ Style Proposition
 	TheoremName           prop
 	TheoremLaTeXName      propositionname
 	TheoremZRefName       proposition
+	TheoremCrossRefName   Proposition
+	TheoremCrossRefPluralName Propositions
 	LangPreamble
 	  \providecommand{\propositionname}{_(Proposition)}
 	EndLangPreamble
@@ -207,6 +215,8 @@ Style Definition
 	TheoremStyle          definition
 	TheoremLaTeXName      definitionname
 	TheoremZRefName       definition
+	TheoremCrossRefName   Definition
+	TheoremCrossRefPluralName Definitions
 	LangPreamble
 	  \providecommand{\definitionname}{_(Definition)}
 	EndLangPreamble
@@ -229,6 +239,8 @@ Style Example
 	TheoremName           example
 	TheoremStyle          definition
 	TheoremLaTeXName      examplename
+	TheoremCrossRefName   Example
+	TheoremCrossRefPluralName Examples
 	LangPreamble
 	  \providecommand{\examplename}{_(Example)}
 	EndLangPreamble
@@ -275,6 +287,8 @@ Style Exercise
 	TheoremStyle          definition
 	TheoremLaTeXName      exercisename
 	TheoremZRefName       exercise
+	TheoremCrossRefName   Exercise
+	TheoremCrossRefPluralName Exercises
 	LangPreamble
 	  \providecommand{\exercisename}{_(Exercise)}
 	EndLangPreamble
@@ -298,6 +312,8 @@ Style Solution
 	TheoremStyle          definition
 	TheoremLaTeXName      solutionname
 	TheoremZRefName       solution
+	TheoremCrossRefName   Solution
+	TheoremCrossRefPluralName Solutions
 	LangPreamble
 		\providecommand{\solutionname}{_(Solution)}
 	EndLangPreamble
@@ -329,6 +345,8 @@ Style Remark
 	TheoremStyle          remark
 	TheoremLaTeXName      remarkname
 	TheoremZRefName       remark
+	TheoremCrossRefName   Remark
+	TheoremCrossRefPluralName Remarks
 	LangPreamble
 	  \providecommand{\remarkname}{_(Remark)}
 	EndLangPreamble
