@@ -144,6 +144,8 @@ Style Conjecture
 	LabelString           "Conjecture \theconjecture."
 	TheoremName           conjecture
 	TheoremLaTeXName      conjecturename
+	TheoremCrossRefName   Conjecture
+	TheoremCrossRefPluralName  Conjectures
 	TheoremZRefName       none
 	LangPreamble
 		\providecommand{\conjecturename}{_(Conjecture)}
@@ -166,6 +168,8 @@ Style Fact
 	LabelString           "Fact \thefact."
 	TheoremName           fact
 	TheoremLaTeXName      factname
+	TheoremCrossRefName   Fact
+	TheoremCrossRefPluralName  Facts
 	TheoremZRefName       none
 	LangPreamble
 		\providecommand{\factname}{_(Fact)}
@@ -239,6 +243,8 @@ Style Problem
 	TheoremName           problem
 	TheoremStyle          definition
 	TheoremLaTeXName      problemname
+	TheoremCrossRefName   Problem
+	TheoremCrossRefPluralName  Problems
 	TheoremZRefName       none
 	LangPreamble
 		\providecommand{\problemname}{_(Problem)}
@@ -339,6 +345,8 @@ Style Claim
 	TheoremName           claim
 	TheoremStyle          remark
 	TheoremLaTeXName      claimname
+	TheoremCrossRefName   Claim
+	TheoremCrossRefPluralName  Claims
 	TheoremZRefName       none
 	LangPreamble
 		\providecommand{\claimname}{_(Claim)}

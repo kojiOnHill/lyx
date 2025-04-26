@@ -220,6 +220,8 @@ Style Fact
 	TheoremName           fact
 	TheoremLaTeXName      factname
 	TheoremParentCounter  chapter
+	TheoremCrossRefName   Fact
+	TheoremCrossRefPluralName  Facts
 	TheoremZRefName       none
 	LangPreamble
 	  \providecommand{\factname}{_(Fact)}
@@ -296,6 +298,8 @@ Style Problem
 	TheoremStyle          definition
 	TheoremLaTeXName      problemname
 	TheoremParentCounter  chapter
+	TheoremCrossRefName   Problem
+	TheoremCrossRefPluralName  Problems
 	TheoremZRefName       none
 	LangPreamble
 	  \providecommand{\problemname}{_(Problem)}
@@ -400,6 +404,8 @@ Style Claim
 	TheoremStyle          remark
 	TheoremLaTeXName      claimname
 	TheoremParentCounter  chapter
+	TheoremCrossRefName   Claim
+	TheoremCrossRefPluralName  Claims
 	TheoremZRefName       none
 	LangPreamble
 	  \providecommand{\claimname}{_(Claim)}
