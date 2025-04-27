@@ -3054,8 +3054,8 @@ bool BufferParams::writeLaTeX(otexstream & os, LaTeXFeatures & features,
 		os << "{cleveref}\n";
 	}
 
-	if (features.mustProvide("cleveref") || features.mustProvide("zref"))
-		os << features.getThmDefinitions();
+	// theorem definitions
+	os << features.getThmDefinitions();
 
 	// Since menukeys uses catoptions, which does some heavy changes on key-value options,
 	// it is recommended to load menukeys as the last package (even after hyperref)
