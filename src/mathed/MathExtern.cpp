@@ -331,7 +331,7 @@ void replaceNested(
 {
 	Buffer * buf = md.buffer();
 	// use indices rather than iterators for the loop  because we are going
-	// to modify the array.
+	// to modify the data.
 	for (size_t i = 0; i < md.size(); ++i) {
 		// check whether this is the begin of the sequence
 		if (!testOpen(md[i]))
@@ -657,7 +657,7 @@ void extractFunctions(MathData & md, ExternalMath kind)
 		// replace the function name by a real function inset
 		*it = MathAtom(p.release());
 
-		// remove the source of the argument from the array
+		// remove the source of the argument from the data
 		md.erase(it + 1, st);
 
 		// re-insert exponent
@@ -862,7 +862,7 @@ bool testDiffItem(MathAtom const & at)
 }
 
 
-bool testDiffArray(MathData const & md)
+bool testDiffCell(MathData const & md)
 {
 	return !md.empty() && testDiffItem(md.front());
 }
@@ -872,8 +872,8 @@ bool testDiffFrac(MathAtom const & at)
 {
 	return
 		at->asFracInset()
-			&& testDiffArray(at->asFracInset()->cell(0))
-			&& testDiffArray(at->asFracInset()->cell(1));
+			&& testDiffCell(at->asFracInset()->cell(0))
+			&& testDiffCell(at->asFracInset()->cell(1));
 }
 
 

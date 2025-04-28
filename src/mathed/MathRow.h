@@ -50,8 +50,8 @@ public:
 	enum Type {
 		INSET, // this element is a plain inset
 		BOX, // an empty box
-		BEGIN, // an inset and/or a math array begins here
-		END, // an inset and/or a math array ends here
+		BEGIN, // an inset and/or a cell begins here
+		END, // an inset and/or a cell ends here
 		BEGIN_SEL, // the selection begins here
 		END_SEL, // the selection ends here
 		DUMMY // a dummy element (used before or after row)

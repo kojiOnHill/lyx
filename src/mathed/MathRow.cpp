@@ -160,7 +160,7 @@ MathRow::MathRow(MetricsInfo & mi, MathData const * md)
 	// A MathRow should not be completely empty
 	if (!has_contents) {
 		Element e(mi, BOX, MC_ORD);
-		// empty arrays are visible when they are editable
+		// empty cells are visible when they are editable
 		e.color = mi.base.macro_nesting == 0 ? Color_mathline : Color_none;
 		push_back(e);
 	}
@@ -250,7 +250,7 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 	// In order to compute the dimension of macros and their
 	// arguments, it is necessary to keep track of them.
 	vector<pair<InsetMath const *, Dimension>> dim_insets;
-	vector<pair<MathData const *, Dimension>> dim_arrays;
+	vector<pair<MathData const *, Dimension>> dim_cells;
 	CoordCache & coords = mi.base.bv->coordCache();
 	for (Element & e : elements_) {
 		mi.base.macro_nesting = e.macro_nesting;
@@ -273,7 +273,7 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 				e.inset->beforeMetrics();
 			}
 			if (e.md)
-				dim_arrays.push_back(make_pair(e.md, Dimension()));
+				dim_cells.push_back(make_pair(e.md, Dimension()));
 			break;
 		case END:
 			if (e.inset) {
@@ -289,9 +289,9 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 				d.wid = e.before + e.after;
 			}
 			if (e.md) {
-				LATTEST(dim_arrays.back().first == e.md);
-				coords.cells().add(e.md, dim_arrays.back().second);
-				dim_arrays.pop_back();
+				LATTEST(dim_cells.back().first == e.md);
+				coords.cells().add(e.md, dim_cells.back().second);
+				dim_cells.pop_back();
 			}
 			break;
 		case BOX:
@@ -311,8 +311,8 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 			// Now add the dimension to current macros and arguments.
 			for (auto & dim_macro : dim_insets)
 				dim_macro.second += d;
-			for (auto & dim_array : dim_arrays)
-				dim_array.second += d;
+			for (auto & dim_cell : dim_cells)
+				dim_cell.second += d;
 		}
 
 		if (e.compl_text.empty())
@@ -321,7 +321,7 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 		augmentFont(font, "mathnormal");
 		dim.wid += mathed_string_width(font, e.compl_text);
 	}
-	LATTEST(dim_insets.empty() && dim_arrays.empty());
+	LATTEST(dim_insets.empty() && dim_cells.empty());
 }
 
 

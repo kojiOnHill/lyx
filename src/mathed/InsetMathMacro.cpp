@@ -364,7 +364,7 @@ bool InsetMathMacro::addToMathRow(MathRow & mrow, MetricsInfo & mi) const
 	bool has_contents = d->expanded_.addToMathRow(mrow, mi);
 	d->macro_->unlock();
 
-	// if there was no contents and the array is editable, then we
+	// if there was no contents and the cell is editable, then we
 	// insert a grey box instead.
 	if (!has_contents && mi.base.macro_nesting == 1) {
 		// mathclass is unknown because it is irrelevant for spacing

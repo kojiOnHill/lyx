@@ -120,7 +120,7 @@ public:
 	/// checked read access
 	MathAtom const & operator[](pos_type) const;
 
-	/// Add this array to a math row. Return true if contents got added
+	/// Add this data to a math row. Return true if contents got added
 	bool addToMathRow(MathRow &, MetricsInfo & mi) const;
 
 	/// rebuild cached metrics information
@@ -159,7 +159,7 @@ public:
 	int ym(BufferView const & bv) const;
 	/// write access to coordinate;
 	void setXY(BufferView & bv, int x, int y) const;
-	/// returns x coordinate of given position in the array
+	/// returns x coordinate of given position in the data
 	int pos2x(BufferView const * bv, size_type pos) const;
 	/// returns position of given x coordinate
 	size_type x2pos(BufferView const * bv, int targetx) const;

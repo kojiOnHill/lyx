@@ -151,7 +151,7 @@ void InsetMathNest::cursorPos(BufferView const & bv,
 	if (!coord_cache.cells().has(&md)) {
 		// this can (semi-)legally happen if we just created this cell
 		// and it never has been drawn before. So don't ASSERT.
-		//lyxerr << "no cached data for array " << &md << endl;
+		//lyxerr << "no cached data for cell " << &md << endl;
 		x = 0;
 		y = 0;
 		return;
@@ -2355,7 +2355,7 @@ bool InsetMathNest::script(Cursor & cur, bool up,
 		cur.pos() = cur.lastpos();
 	} else {
 		// convert the thing to our left to a scriptinset or create a new
-		// one if in the very first position of the array
+		// one if in the very first position of the data
 		if (cur.pos() == 0) {
 			//lyxerr << "new scriptinset" << endl;
 			cur.insert(new InsetMathScript(buffer_, up));

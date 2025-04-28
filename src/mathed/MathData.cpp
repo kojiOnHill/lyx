@@ -478,7 +478,7 @@ void MathData::updateMacros(Cursor * cur, MacroContext const & mc,
 	InsetMathMacro const * inmacro = inmath ? inmath->asMacro() : 0;
 	docstring const edited_name = inmacro ? inmacro->name() : docstring();
 
-	// go over the array and look for macros
+	// go over the data and look for macros
 	for (size_t i = 0; i < size(); ++i) {
 		InsetMathMacro * macroInset = operator[](i).nucleus()->asMacro();
 		if (!macroInset || macroInset->macroName().empty()
@@ -638,7 +638,7 @@ void MathData::detachMacroParameters(DocIterator * cur, const size_type macroPos
 		} else
 			optarg.insert(1, arg);
 
-		// insert it into the array
+		// insert it
 		insert(p, optarg);
 		p += optarg.size();
 
@@ -963,7 +963,7 @@ MathData::size_type MathData::x2pos(BufferView const * bv, int targetx) const
 	}
 
 	/**
-	 * If we are not at the beginning of the array, go to the left
+	 * If we are not at the beginning of the data, go to the left
 	 * of the inset if one of the following two condition holds:
 	 * - the current inset is editable (so that the cursor tip is
 	 *   deeper than us): in this case, we want all intermediate

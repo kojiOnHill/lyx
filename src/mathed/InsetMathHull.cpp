@@ -104,7 +104,7 @@ namespace {
 	}
 
 
-	// returns position of first relation operator in the array
+	// returns position of first relation operator in the data
 	// used for "intelligent splitting"
 	size_t firstRelOp(MathData const & md)
 	{
