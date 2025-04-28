@@ -238,9 +238,6 @@ void InsetMathHull::setBuffer(Buffer & buffer)
 
 void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool const deleted)
 {
-	// Tell Coverity Scan that the inset is never empty
-	LATTEST(nrows() > 0 && ncols() > 0);
-
 	if (!buffer_) {
 		//FIXME: buffer_ should be set at creation for this inset! Problem is
 		// This inset is created at too many places (see Parser::parse1() in
@@ -285,29 +282,13 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 		if (labels_[i])
 			labels_[i]->updateBuffer(it, utype, deleted);
 	}
-        // set up equation numbers
 
-	// compute first and last item
-	row_type first = nrows();
-	for (row_type row = 0; row != nrows(); ++row)
-		if (numbered(row)) {
-			first = row;
-			break;
-		}
-	if (first != nrows()) {
-		row_type last = nrows() - 1;
-		for (; last != 0; --last)
-			if (numbered(last))
-				break;
-
-		for (row_type row = 0; row != nrows(); ++row) {
-			if (!numbered(row))
-				continue;
-			if (labels_[row]) {
-				labels_[row]->setCounterValue(numbers_[row]);
-				labels_[row]->setPrettyCounter("(" + numbers_[row] + ")");
-				labels_[row]->setFormattedCounter("(" + numbers_[row] + ")");
-			}
+	// set up equation numbers
+	for (row_type row = 0; row != nrows(); ++row) {
+		if (numbered(row) && labels_[row]) {
+			labels_[row]->setCounterValue(numbers_[row]);
+			labels_[row]->setPrettyCounter("(" + numbers_[row] + ")");
+			labels_[row]->setFormattedCounter("(" + numbers_[row] + ")");
 		}
 	}
 
