@@ -6937,7 +6937,7 @@ int InsetTabular::dist(BufferView & bv, idx_type const cell, int x, int y) const
 	int xx = 0;
 	int yy = 0;
 	Inset const & inset = *tabular.cellInset(cell);
-	Point o = bv.coordCache().getInsets().xy(&inset);
+	Point o = bv.coordCache().insets().xy(&inset);
 	int const xbeg = o.x - tabular.textHOffset(cell);
 	int const xend = xbeg + tabular.cellWidth(cell);
 	row_type const row = tabular.cellRow(cell);
@@ -6984,7 +6984,7 @@ idx_type InsetTabular::getNearestCell(BufferView & bv, int x, int y) const
 	idx_type idx_min = 0;
 	int dist_min = numeric_limits<int>::max();
 	for (idx_type i = 0, n = nargs(); i != n; ++i) {
-		if (bv.coordCache().getInsets().has(tabular.cellInset(i).get())) {
+		if (bv.coordCache().insets().has(tabular.cellInset(i).get())) {
 			int const d = dist(bv, i, x, y);
 			if (d < dist_min) {
 				dist_min = d;

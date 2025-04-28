@@ -201,11 +201,11 @@ public:
 	/// A map from MathData to position on the screen
 	typedef CoordCacheBase<MathData> Arrays;
 	Arrays & arrays() { return arrays_; }
-	Arrays const & getArrays() const { return arrays_; }
+	Arrays const & arrays() const { return arrays_; }
 	/// A map from insets to positions on the screen
 	typedef CoordCacheBase<Inset> Insets;
 	Insets & insets() { return insets_; }
-	Insets const & getInsets() const { return insets_; }
+	Insets const & insets() const { return insets_; }
 
 	/// Dump the contents of the cache to lyxerr in debugging form
 	void dump() const;

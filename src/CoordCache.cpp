@@ -35,13 +35,13 @@ void CoordCache::clear()
 
 void CoordCache::dump() const
 {
-	if (getInsets().data_.empty()) {
+	if (insets().data_.empty()) {
 		LYXERR0("InsetCache is empty.");
 		return;
 	}
 
 	LYXERR0("InsetCache contains:");
-	for (auto const & ccd : getInsets().data_) {
+	for (auto const & ccd : insets().data_) {
 		// Warning: it is not guaranteed that inset is a valid pointer
 		// (therefore it has type 'void *') (see bug #7376).
 		void const * inset = ccd.first;

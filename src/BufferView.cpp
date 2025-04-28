@@ -735,7 +735,7 @@ string BufferView::contextMenu(int x, int y) const
 	if (covering_inset) {
 		if (covering_inset->asInsetMath()) {
 			CoordCache::Insets const & inset_cache =
-				coordCache().getInsets();
+				coordCache().insets();
 			Inset const * inner_inset = mathContextMenu(
 				covering_inset->asInsetMath()->asNestInset(),
 				inset_cache, x, y);
@@ -2774,7 +2774,7 @@ void BufferView::updateHoveredInset() const
 	if (covering_inset && covering_inset->asInsetMath()) {
 		Inset const * inner_inset = clickableMathInset(
 				covering_inset->asInsetMath()->asNestInset(),
-				coordCache().getInsets(), x, y);
+				coordCache().insets(), x, y);
 		if (inner_inset)
 			covering_inset = inner_inset;
 	}

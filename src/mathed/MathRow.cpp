@@ -101,7 +101,7 @@ void drawMarkers(PainterInfo const & pi, MathRow::Element const & e,
 		return;
 
 	CoordCache const & coords = pi.base.bv->coordCache();
-	Dimension const dim = coords.getInsets().dim(e.inset);
+	Dimension const dim = coords.insets().dim(e.inset);
 
 	// the marker is before/after the inset. Necessary space has been reserved already.
 	int const l = x + e.before - (markerMargin(e) > 0 ? 1 : 0);

@@ -79,7 +79,7 @@ DocIterator bruteFind(Cursor const & c, int x, int y)
 		int xo;
 		int yo;
 		Inset const * inset = &it.inset();
-		CoordCache::Insets const & insetCache = c.bv().coordCache().getInsets();
+		CoordCache::Insets const & insetCache = c.bv().coordCache().insets();
 
 		// FIXME: in the case where the inset is not in the cache, this
 		// means that no part of it is visible on screen. In this case
@@ -2558,7 +2558,7 @@ void Cursor::moveToClosestEdge(int const x, bool const edit)
 		// (e.g. InsetMathSpace).
 		if (edit && (inset->hasSettings() || !inset->contextMenuName().empty()))
 			return;
-		CoordCache::Insets const & insetCache = bv().coordCache().getInsets();
+		CoordCache::Insets const & insetCache = bv().coordCache().insets();
 		if (!insetCache.has(inset))
 			return;
 		int const wid = insetCache.dim(inset).wid;
