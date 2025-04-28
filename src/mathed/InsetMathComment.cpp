@@ -42,7 +42,7 @@ InsetMathComment::InsetMathComment(Buffer * buf, docstring const & str)
 	: InsetMathNest(buf, 1)
 {
 	// FIXME UNICODE
-	asArray(str, cell(0));
+	asMathData(str, cell(0));
 }
 
 

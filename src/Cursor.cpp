@@ -1551,7 +1551,7 @@ int Cursor::niceInsert(docstring const & t, Parse::flags f, bool enter)
 {
 	LATTEST(inMathed());
 	MathData ar(buffer());
-	asArray(t, ar, f);
+	asMathData(t, ar, f);
 	if (ar.size() == 1 && (enter || selection()))
 		niceInsert(ar[0]);
 	else
@@ -1570,12 +1570,12 @@ void Cursor::niceInsert(MathAtom const & t)
 	if (t->isActive()) {
 		idx_type const idx = prevMath().asNestInset()->firstIdx();
 		MathData ar(buffer());
-		asArray(safe, ar);
+		asMathData(safe, ar);
 		prevMath().cell(idx).insert(0, ar);
 		editInsertedInset();
 	} else if (t->asMacro() && !safe.empty()) {
 		MathData ar(buffer());
-		asArray(safe, ar);
+		asMathData(safe, ar);
 		docstring const name = t->asMacro()->name();
 		MacroData const * data = buffer()->getMacro(name);
 		if (data && data->numargs() - data->optionals() > 0) {
@@ -1728,7 +1728,7 @@ void Cursor::handleNest(MathAtom const & a)
 	Parse::flags const f = im && im->currentMode() != InsetMath::MATH_MODE
 		? Parse::TEXTMODE : Parse::NORMAL;
 	MathAtom t = a;
-	asArray(cap::grabAndEraseSelection(*this), t.nucleus()->cell(idx), f);
+	asMathData(cap::grabAndEraseSelection(*this), t.nucleus()->cell(idx), f);
 	insert(t);
 	editInsertedInset();
 }
@@ -1767,7 +1767,7 @@ bool Cursor::macroModeClose(bool cancel)
 	InsetMathUnknown * p = activeMacro();
 	p->finalize();
 	MathData selection(buffer());
-	asArray(p->selection(), selection);
+	asMathData(p->selection(), selection);
 	docstring const s = p->name();
 	--pos();
 	cell().erase(pos());

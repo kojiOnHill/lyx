@@ -826,12 +826,12 @@ void InsetMathHull::usedMacros(MathData const & md, DocIterator const & pos,
 						       from_ascii("\r\n"),
 						       from_ascii("\n")),
 						 "\n") + "\n");
-				asArray(data->definition(), ar);
+				asMathData(data->definition(), ar);
 			}
 			usedMacros(ar, pos, macros, defs);
 		} else if (mt) {
 			MathData ar(pos.buffer());
-			asArray(mt->definition(), ar);
+			asMathData(mt->definition(), ar);
 			usedMacros(ar, pos, macros, defs);
 		} else if (si) {
 			if (!si->nuc().empty())
@@ -1794,7 +1794,7 @@ void InsetMathHull::doExtern(Cursor & cur, FuncRequest & func)
 	// replace selection with result of computation
 	if (reduceSelectionToOneCell(cur)) {
 		MathData ar(buffer_);
-		asArray(grabAndEraseSelection(cur), ar);
+		asMathData(grabAndEraseSelection(cur), ar);
 		lyxerr << "use selection: " << ar << endl;
 		cur.insert(pipeThroughExtern(lang, extra, ar));
 		return;

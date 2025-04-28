@@ -427,7 +427,7 @@ InsetMathMacroTemplate::InsetMathMacroTemplate(Buffer * buf, docstring const & n
 		lyxerr << "InsetMathMacroTemplate::InsetMathMacroTemplate: wrong # of arguments: "
 			<< numargs_ << endl;
 
-	asArray(name, cell(0));
+	asMathData(name, cell(0));
 	optionalValues_.resize(9, MathData(buffer_));
 	for (int i = 0; i < optionals_; ++i)
 		cell(optIdx(i)) = optionalValues_[i];
@@ -444,7 +444,7 @@ bool InsetMathMacroTemplate::fromString(docstring const & str)
 	mathed_parse_cell(ar, str, Parse::NORMAL);
 	if (ar.size() != 1 || !ar[0]->asMacroTemplate()) {
 		lyxerr << "Cannot read macro from '" << ar << "'" << endl;
-		asArray(from_ascii("invalidmacro"), cell(0));
+		asMathData(from_ascii("invalidmacro"), cell(0));
 		// The macro template does not make sense after this.
 		return false;
 	}
@@ -1310,7 +1310,7 @@ bool InsetMathMacroTemplate::validName() const
 
 	// converting back and force doesn't swallow anything?
 	/*MathData ma;
-	asArray(n, ma);
+	asMathData(n, ma);
 	if (asString(ma) != n)
 		return false;*/
 

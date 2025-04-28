@@ -1093,7 +1093,7 @@ docstring asString(MathData const & ar)
 }
 
 
-void asArray(docstring const & str, MathData & ar, Parse::flags pf)
+void asMathData(docstring const & str, MathData & ar, Parse::flags pf)
 {
 	// If the QUIET flag is set, we are going to parse for either
 	// a paste operation or a macro definition. We try to do the

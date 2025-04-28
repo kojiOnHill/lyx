@@ -618,7 +618,7 @@ void MathData::detachMacroParameters(DocIterator * cur, const size_type macroPos
 
 		// Otherwise we don't drop an empty optional, put it back normally
 		MathData optarg(buffer_);
-		asArray(from_ascii("[]"), optarg);
+		asMathData(from_ascii("[]"), optarg);
 		MathData & arg = detachedArgs[j];
 
 		// look for "]", i.e. put a brace around?

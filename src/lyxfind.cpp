@@ -5013,7 +5013,7 @@ static int findAdvReplace(BufferView * bv, FindAndReplaceOptions const & opt, Ma
 		repl_latex = from_utf8(s);
 		LYXERR(Debug::FINDVERBOSE, "Replacing by insert()ing latex: '" << repl_latex << "' cur=" << showPos(cur) );
 		MathData ar(cur.buffer());
-		asArray(repl_latex, ar, Parse::NORMAL);
+		asMathData(repl_latex, ar, Parse::NORMAL);
 		cur.insert(ar);
 		sel_len = ar.size();
 		LYXERR(Debug::FINDVERBOSE, "After insert() cur=" << showPos(cur) << " and len: " << sel_len);

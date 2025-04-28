@@ -1794,7 +1794,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			// FIXME: This is swallowed in inline formulas
 			docstring label = parse_verbatim_item();
 			MathData ar(buf);
-			asArray(label, ar);
+			asMathData(label, ar);
 			if (grid.asHullInset()) {
 				grid.asHullInset()->label(cellrow, label);
 			} else {

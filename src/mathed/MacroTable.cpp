@@ -66,7 +66,7 @@ bool MacroData::expand(vector<MathData> const & from, MathData & to) const
 	InsetMathSqrt inset(const_cast<Buffer *>(buffer_));
 
 	docstring const & definition(display_.empty() ? definition_ : display_);
-	asArray(definition, inset.cell(0), Parse::QUIET | Parse::MACRODEF);
+	asMathData(definition, inset.cell(0), Parse::QUIET | Parse::MACRODEF);
 	//lyxerr << "MathData::expand: args: " << args << endl;
 	//LYXERR0("MathData::expand: ar: " << inset.cell(0));
 	for (DocIterator it = doc_iterator_begin(buffer_, &inset); it; it.forwardChar()) {

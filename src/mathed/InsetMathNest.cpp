@@ -1553,7 +1553,7 @@ void InsetMathNest::doDispatch(Cursor & cur, FuncRequest & cmd)
 			cur.niceInsert(cmd.argument());
 		else {
 			MathData ar(cur.buffer());
-			asArray(cmd.argument(), ar);
+			asMathData(cmd.argument(), ar);
 			if (ar.size() == 1
 			    && ar[0]->asNestInset()
 			    && ar[0]->asNestInset()->nargs() > 1)
@@ -1956,7 +1956,7 @@ void InsetMathNest::lfunMousePress(Cursor & cur, FuncRequest & cmd)
 			doDispatch(bv.cursor(), cmd);
 		} else {
 			MathData ar(buffer_);
-			asArray(theSelection().get(), ar);
+			asMathData(theSelection().get(), ar);
 			bv.cursor().insert(ar);
 		}
 	}
@@ -2067,7 +2067,7 @@ bool InsetMathNest::interpretChar(Cursor & cur, char_type const c)
 				InsetMathUnknown * p = cur.activeMacro();
 				p->finalize();
 				MathData sel(cur.buffer());
-				asArray(p->selection(), sel);
+				asMathData(p->selection(), sel);
 				cur.backspace();
 				if (c == '{')
 					cur.niceInsert(MathAtom(new InsetMathBrace(buffer_, sel)));

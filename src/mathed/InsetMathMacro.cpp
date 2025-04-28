@@ -66,7 +66,7 @@ public:
 		: InsetMath(&mathMacro->buffer()), mathMacro_(mathMacro), idx_(idx),
 		  def_(&mathMacro->buffer())
 	{
-			asArray(def, def_);
+			asMathData(def, def_);
 	}
 	///
 	void setBuffer(Buffer & buffer) override
@@ -741,7 +741,7 @@ void InsetMathMacro::updateRepresentation(Cursor * cur, MacroContext const & mc,
 			d->expanded_.updateMacros(cur, mc, utype, nesting);
 	}
 	// get definition for list edit mode
-	asArray(display.empty() ? d->macro_->definition() : display,
+	asMathData(display.empty() ? d->macro_->definition() : display,
 		d->definition_, Parse::QUIET | Parse::MACRODEF);
 }
 
@@ -829,7 +829,7 @@ void InsetMathMacro::setDisplayMode(InsetMathMacro::DisplayMode mode, int appeti
 		// transfer name if changing from or to DISPLAY_UNFOLDED
 		if (mode == DISPLAY_UNFOLDED) {
 			cells_.resize(1, MathData(buffer_));
-			asArray(d->name_, cell(0));
+			asMathData(d->name_, cell(0));
 		} else if (d->displayMode_ == DISPLAY_UNFOLDED) {
 			d->name_ = asString(cell(0));
 			cells_.clear();
@@ -865,7 +865,7 @@ bool InsetMathMacro::validName() const
 
 	// converting back and force doesn't swallow anything?
 	/*MathData ma;
-	asArray(n, ma);
+	asMathData(n, ma);
 	if (asString(ma) != n)
 		return false;*/
 
@@ -992,7 +992,7 @@ void InsetMathMacro::validate(LaTeXFeatures & features) const
 		} else if (displayMode() == DISPLAY_INIT) {
 			if (MacroData const * data = buffer().getMacro(name())) {
 				MathData ar(const_cast<Buffer *>(&buffer()));
-				asArray(data->definition(), ar);
+				asMathData(data->definition(), ar);
 				ar.validate(features);
 			}
 		}
@@ -1441,7 +1441,7 @@ bool InsetMathMacro::insertCompletion(Cursor & cur, docstring const & s, bool fi
 
 	// append completion
 	docstring newName = name() + s;
-	asArray(newName, cell(0));
+	asMathData(newName, cell(0));
 	cur.bv().cursor().pos() = name().size();
 	cur.screenUpdateFlags(Update::SinglePar);
 
