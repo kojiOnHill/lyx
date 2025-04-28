@@ -952,6 +952,7 @@ InsetRef::type_info const InsetRef::types[] = {
 	{ "ref",       N_("Standard"),              N_("Ref")},
 	{ "eqref",     N_("Equation"),              N_("EqRef")},
 	{ "pageref",   N_("Page Number"),           N_("Page")},
+	{ "cpageref",  N_("Prefixed Page Number"),  N_("PrefPage")},
 	{ "vpageref",  N_("Textual Page Number"),   N_("TextPage")},
 	{ "vref",      N_("Standard+Textual Page"), N_("Ref+Text")},
 	{ "nameref",   N_("Reference to Name"),     N_("NameRef")},
