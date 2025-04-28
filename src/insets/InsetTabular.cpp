@@ -7340,6 +7340,8 @@ void InsetTabular::tabularFeatures(Cursor & cur,
 			if (r == 0)
 				break;
 		}
+		// Tell Coverity Scan that a tabular is never empty
+		LATTEST(tabular.nrows() > 0);
 		if (sel_row_start >= tabular.nrows())
 			--sel_row_start;
 		cur.idx() = tabular.cellIndex(sel_row_start, column);
@@ -7366,6 +7368,8 @@ void InsetTabular::tabularFeatures(Cursor & cur,
 			if (c == 0)
 				break;
 		}
+		// Tell Coverity Scan that a tabular is never empty
+		LATTEST(tabular.ncols() > 0);
 		if (sel_col_start >= tabular.ncols())
 			--sel_col_start;
 		cur.idx() = tabular.cellIndex(row, sel_col_start);
