@@ -378,7 +378,7 @@ void MathData::metrics(MetricsInfo & mi, Dimension & dim, bool tight) const
 
 	// Cache row and dimension.
 	bv->setMathRow(this, mrow);
-	bv->coordCache().arrays().add(this, dim);
+	bv->coordCache().cells().add(this, dim);
 }
 
 
@@ -396,7 +396,7 @@ void MathData::drawSelection(PainterInfo & pi, int const x, int const y) const
 
 	if (s1.idx() == s2.idx() && &c1 == this) {
 		// selection inside cell
-		Dimension const dim = bv->coordCache().arrays().dim(&c1);
+		Dimension const dim = bv->coordCache().cells().dim(&c1);
 		int const beg = c1.pos2x(bv, s1.pos());
 		int const end = c1.pos2x(bv, s2.pos());
 		pi.pain.fillRectangle(x + beg, y - dim.ascent(),
@@ -406,7 +406,7 @@ void MathData::drawSelection(PainterInfo & pi, int const x, int const y) const
 			MathData const & c = inset->cell(i);
 			if (&c == this && inset->idxBetween(i, s1.idx(), s2.idx())) {
 				// The whole cell is selected
-				Dimension const dim = bv->coordCache().arrays().dim(&c);
+				Dimension const dim = bv->coordCache().cells().dim(&c);
 				pi.pain.fillRectangle(x, y - dim.ascent(),
 				                      dim.width(), dim.height(),
 				                      Color_selection);
@@ -984,26 +984,26 @@ MathData::size_type MathData::x2pos(BufferView const * bv, int targetx) const
 
 int MathData::dist(BufferView const & bv, int x, int y) const
 {
-	return bv.coordCache().arrays().squareDistance(this, x, y);
+	return bv.coordCache().cells().squareDistance(this, x, y);
 }
 
 
 void MathData::setXY(BufferView & bv, int x, int y) const
 {
 	//lyxerr << "setting position cache for MathData " << this << endl;
-	bv.coordCache().arrays().add(this, x, y);
+	bv.coordCache().cells().add(this, x, y);
 }
 
 
 Dimension const & MathData::dimension(BufferView const & bv) const
 {
-	return bv.coordCache().arrays().dim(this);
+	return bv.coordCache().cells().dim(this);
 }
 
 
 int MathData::xm(BufferView const & bv) const
 {
-	Geometry const & g = bv.coordCache().arrays().geometry(this);
+	Geometry const & g = bv.coordCache().cells().geometry(this);
 
 	return g.pos.x + g.dim.wid / 2;
 }
@@ -1011,7 +1011,7 @@ int MathData::xm(BufferView const & bv) const
 
 int MathData::ym(BufferView const & bv) const
 {
-	Geometry const & g = bv.coordCache().arrays().geometry(this);
+	Geometry const & g = bv.coordCache().cells().geometry(this);
 
 	return g.pos.y + (g.dim.des - g.dim.asc) / 2;
 }
@@ -1019,13 +1019,13 @@ int MathData::ym(BufferView const & bv) const
 
 int MathData::xo(BufferView const & bv) const
 {
-	return bv.coordCache().arrays().x(this);
+	return bv.coordCache().cells().x(this);
 }
 
 
 int MathData::yo(BufferView const & bv) const
 {
-	return bv.coordCache().arrays().y(this);
+	return bv.coordCache().cells().y(this);
 }
 
 

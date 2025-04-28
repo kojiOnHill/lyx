@@ -28,7 +28,7 @@ void lyxbreaker(void const * data, const char * hint, int size)
 
 void CoordCache::clear()
 {
-	arrays_.clear();
+	cells_.clear();
 	insets_.clear();
 }
 

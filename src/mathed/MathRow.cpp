@@ -290,7 +290,7 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 			}
 			if (e.ar) {
 				LATTEST(dim_arrays.back().first == e.ar);
-				coords.arrays().add(e.ar, dim_arrays.back().second);
+				coords.cells().add(e.ar, dim_arrays.back().second);
 				dim_arrays.pop_back();
 			}
 			break;
@@ -354,7 +354,7 @@ void MathRow::draw(PainterInfo & pi, int x, int const y) const
 		}
 		case BEGIN:
 			if (e.ar) {
-				coords.arrays().add(e.ar, x, y);
+				coords.cells().add(e.ar, x, y);
 				e.ar->drawSelection(pi, x, y);
 			}
 			if (e.inset) {

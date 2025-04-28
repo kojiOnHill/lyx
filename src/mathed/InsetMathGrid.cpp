@@ -967,7 +967,7 @@ bool InsetMathGrid::idxUpDown(Cursor & cur, bool up) const
 	// FIXME: this is only a workaround to avoid a crash if the inset
 	// in not in coord cache. The best would be to force a FitCursor
 	// operation.
-	CoordCache::Arrays const & arraysCache = cur.bv().coordCache().arrays();
+	CoordCache::Arrays const & arraysCache = cur.bv().coordCache().cells();
 	if (arraysCache.has(&cur.cell()))
 		cur.pos() = cur.cell().x2pos(&cur.bv(), cur.x_target() - cur.cell().xo(cur.bv()));
 	else

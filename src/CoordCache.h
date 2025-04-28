@@ -199,9 +199,9 @@ public:
 	void clear();
 
 	/// A map from MathData to position on the screen
-	typedef CoordCacheBase<MathData> Arrays;
-	Arrays & arrays() { return arrays_; }
-	Arrays const & arrays() const { return arrays_; }
+	typedef CoordCacheBase<MathData> Cells;
+	Cells & cells() { return cells_; }
+	Cells const & cells() const { return cells_; }
 	/// A map from insets to positions on the screen
 	typedef CoordCacheBase<Inset> Insets;
 	Insets & insets() { return insets_; }
@@ -212,7 +212,7 @@ public:
 private:
 
 	/// MathDatas
-	Arrays arrays_;
+	Cells cells_;
 	// All insets
 	Insets insets_;
 };

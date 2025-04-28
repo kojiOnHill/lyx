@@ -782,7 +782,7 @@ void InsetMathMacro::draw(PainterInfo & pi, int x, int y) const
 
 		// draw definition
 		d->definition_.draw(pi, x, y);
-		Dimension const & defDim = coords.arrays().dim(&d->definition_);
+		Dimension const & defDim = coords.cells().dim(&d->definition_);
 		y += max(fontDim.des, defDim.des);
 
 		// draw parameters
@@ -792,7 +792,7 @@ void InsetMathMacro::draw(PainterInfo & pi, int x, int y) const
 
 		for (idx_type i = 0; i < nargs(); ++i) {
 			// position of label
-			Dimension const & cdim = coords.arrays().dim(&cell(i));
+			Dimension const & cdim = coords.cells().dim(&cell(i));
 			x = expx + 1;
 			y += max(fontDim.asc, cdim.asc) + 1;
 

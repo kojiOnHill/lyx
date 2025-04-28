@@ -148,7 +148,7 @@ void InsetMathNest::cursorPos(BufferView const & bv,
 	LASSERT(&sl.inset() == this, return);
 	MathData const & ar = sl.cell();
 	CoordCache const & coord_cache = bv.coordCache();
-	if (!coord_cache.arrays().has(&ar)) {
+	if (!coord_cache.cells().has(&ar)) {
 		// this can (semi-)legally happen if we just created this cell
 		// and it never has been drawn before. So don't ASSERT.
 		//lyxerr << "no cached data for array " << &ar << endl;
@@ -156,7 +156,7 @@ void InsetMathNest::cursorPos(BufferView const & bv,
 		y = 0;
 		return;
 	}
-	Point const pt = coord_cache.arrays().xy(&ar);
+	Point const pt = coord_cache.cells().xy(&ar);
 	if (!coord_cache.insets().has(this)) {
 		// same as above
 		//lyxerr << "no cached data for inset " << this << endl;
@@ -174,7 +174,7 @@ void InsetMathNest::cursorPos(BufferView const & bv,
 //		<< " ar.asc: " << ar.ascent() << " ar.des: " << ar.descent() << endl;
 	// move cursor visually into empty cells ("blue rectangles");
 	if (ar.empty() && bv.inputMethod()->preeditString().empty()) {
-		Dimension const dim = coord_cache.arrays().dim(&ar);
+		Dimension const dim = coord_cache.cells().dim(&ar);
 		x += dim.wid / 3;
 	}
 }
