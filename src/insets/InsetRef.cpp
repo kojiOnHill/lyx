@@ -174,6 +174,12 @@ bool InsetRef::getStatus(Cursor & cur, FuncRequest const & cmd,
 		status.setEnabled(false);
 		return true;
 	}
+	if (cmd.argument() == "changetype cpageref"
+	     && buffer().params().xref_package != "cleveref"
+	     && buffer().params().xref_package != "zref") {
+		status.setEnabled(false);
+		return true;
+	}
 
 	if (cmd.getArg(0) != "ref")
 		return InsetCommand::getStatus(cur, cmd, status);
