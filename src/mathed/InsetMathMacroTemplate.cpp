@@ -440,15 +440,15 @@ InsetMathMacroTemplate::InsetMathMacroTemplate(Buffer * buf, docstring const & n
 
 bool InsetMathMacroTemplate::fromString(docstring const & str)
 {
-	MathData ar(buffer_);
-	mathed_parse_cell(ar, str, Parse::NORMAL);
-	if (ar.size() != 1 || !ar[0]->asMacroTemplate()) {
-		lyxerr << "Cannot read macro from '" << ar << "'" << endl;
+	MathData md(buffer_);
+	mathed_parse_cell(md, str, Parse::NORMAL);
+	if (md.size() != 1 || !md[0]->asMacroTemplate()) {
+		lyxerr << "Cannot read macro from '" << md << "'" << endl;
 		asMathData(from_ascii("invalidmacro"), cell(0));
 		// The macro template does not make sense after this.
 		return false;
 	}
-	operator=( *(ar[0]->asMacroTemplate()) );
+	operator=( *(md[0]->asMacroTemplate()) );
 
 	updateLook();
 	return true;
@@ -1174,14 +1174,14 @@ bool InsetMathMacroTemplate::getStatus(Cursor & cur, FuncRequest const & cmd,
 
 void InsetMathMacroTemplate::read(Lexer & lex)
 {
-	MathData ar(buffer_);
-	mathed_parse_cell(ar, lex.getStream(), Parse::TRACKMACRO);
-	if (ar.size() != 1 || !ar[0]->asMacroTemplate()) {
-		lyxerr << "Cannot read macro from '" << ar << "'" << endl;
-		lyxerr << "Read: " << to_utf8(asString(ar)) << endl;
+	MathData md(buffer_);
+	mathed_parse_cell(md, lex.getStream(), Parse::TRACKMACRO);
+	if (md.size() != 1 || !md[0]->asMacroTemplate()) {
+		lyxerr << "Cannot read macro from '" << md << "'" << endl;
+		lyxerr << "Read: " << to_utf8(asString(md)) << endl;
 		return;
 	}
-	operator=( *(ar[0]->asMacroTemplate()) );
+	operator=( *(md[0]->asMacroTemplate()) );
 
 	updateLook();
 }

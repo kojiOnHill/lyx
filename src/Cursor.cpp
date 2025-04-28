@@ -1534,14 +1534,14 @@ void Cursor::insert(MathAtom const & t)
 }
 
 
-void Cursor::insert(MathData const & ar)
+void Cursor::insert(MathData const & md)
 {
 	LATTEST(inMathed());
 	macroModeClose();
 	if (selection())
 		cap::eraseSelection(*this);
-	cell().insert(pos(), ar);
-	pos() += ar.size();
+	cell().insert(pos(), md);
+	pos() += md.size();
 	// FIXME audit setBuffer calls
 	inset().setBuffer(bv_->buffer());
 }
@@ -1550,13 +1550,13 @@ void Cursor::insert(MathData const & ar)
 int Cursor::niceInsert(docstring const & t, Parse::flags f, bool enter)
 {
 	LATTEST(inMathed());
-	MathData ar(buffer());
-	asMathData(t, ar, f);
-	if (ar.size() == 1 && (enter || selection()))
-		niceInsert(ar[0]);
+	MathData md(buffer());
+	asMathData(t, md, f);
+	if (md.size() == 1 && (enter || selection()))
+		niceInsert(md[0]);
 	else
-		insert(ar);
-	return ar.size();
+		insert(md);
+	return md.size();
 }
 
 
@@ -1569,17 +1569,17 @@ void Cursor::niceInsert(MathAtom const & t)
 	// If possible, enter the new inset and move the contents of the selection
 	if (t->isActive()) {
 		idx_type const idx = prevMath().asNestInset()->firstIdx();
-		MathData ar(buffer());
-		asMathData(safe, ar);
-		prevMath().cell(idx).insert(0, ar);
+		MathData md(buffer());
+		asMathData(safe, md);
+		prevMath().cell(idx).insert(0, md);
 		editInsertedInset();
 	} else if (t->asMacro() && !safe.empty()) {
-		MathData ar(buffer());
-		asMathData(safe, ar);
+		MathData md(buffer());
+		asMathData(safe, md);
 		docstring const name = t->asMacro()->name();
 		MacroData const * data = buffer()->getMacro(name);
 		if (data && data->numargs() - data->optionals() > 0) {
-			plainInsert(MathAtom(new InsetMathBrace(buffer(), ar)));
+			plainInsert(MathAtom(new InsetMathBrace(buffer(), md)));
 			posBackward();
 		}
 	}
@@ -1880,10 +1880,10 @@ docstring Cursor::macroName()
 void Cursor::pullArg()
 {
 	// FIXME: Look here
-	MathData ar = cell();
+	MathData md = cell();
 	if (popBackward() && inMathed()) {
 		plainErase();
-		cell().insert(pos(), ar);
+		cell().insert(pos(), md);
 		resetAnchor();
 	}
 }

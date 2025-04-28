@@ -41,7 +41,7 @@ namespace lyx {
 
 MathRow::Element::Element(MetricsInfo const & mi, Type t, MathClass mc)
 	: type(t), mclass(mc), before(0), after(0), macro_nesting(mi.base.macro_nesting),
-	  marker(marker_type::NO_MARKER), inset(nullptr), compl_unique_to(0), ar(nullptr),
+	  marker(marker_type::NO_MARKER), inset(nullptr), compl_unique_to(0), md(nullptr),
 	  color(Color_red)
 {}
 
@@ -149,13 +149,13 @@ void drawMarkers(PainterInfo const & pi, MathRow::Element const & e,
 } // namespace
 
 
-MathRow::MathRow(MetricsInfo & mi, MathData const * ar)
+MathRow::MathRow(MetricsInfo & mi, MathData const * md)
 {
 	// First there is a dummy element of type "open"
 	push_back(Element(mi, DUMMY, MC_OPEN));
 
 	// Then insert the MathData argument
-	bool const has_contents = ar->addToMathRow(*this, mi);
+	bool const has_contents = md->addToMathRow(*this, mi);
 
 	// A MathRow should not be completely empty
 	if (!has_contents) {
@@ -272,8 +272,8 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 				d.wid = e.before + e.after;
 				e.inset->beforeMetrics();
 			}
-			if (e.ar)
-				dim_arrays.push_back(make_pair(e.ar, Dimension()));
+			if (e.md)
+				dim_arrays.push_back(make_pair(e.md, Dimension()));
 			break;
 		case END:
 			if (e.inset) {
@@ -288,9 +288,9 @@ void MathRow::metrics(MetricsInfo & mi, Dimension & dim)
 				// padding and the vertical dimension are meaningful.
 				d.wid = e.before + e.after;
 			}
-			if (e.ar) {
-				LATTEST(dim_arrays.back().first == e.ar);
-				coords.cells().add(e.ar, dim_arrays.back().second);
+			if (e.md) {
+				LATTEST(dim_arrays.back().first == e.md);
+				coords.cells().add(e.md, dim_arrays.back().second);
 				dim_arrays.pop_back();
 			}
 			break;
@@ -353,9 +353,9 @@ void MathRow::draw(PainterInfo & pi, int x, int const y) const
 			break;
 		}
 		case BEGIN:
-			if (e.ar) {
-				coords.cells().add(e.ar, x, y);
-				e.ar->drawSelection(pi, x, y);
+			if (e.md) {
+				coords.cells().add(e.md, x, y);
+				e.md->drawSelection(pi, x, y);
 			}
 			if (e.inset) {
 				coords.insets().add(e.inset, x, y);
@@ -443,11 +443,11 @@ ostream & operator<<(ostream & os, MathRow::Element const & e)
 		if (e.inset)
 			os << "\\" << to_utf8(e.inset->name())
 			   << "^" << e.macro_nesting << "[";
-		if (e.ar)
+		if (e.md)
 			os << "(";
 		break;
 	case MathRow::END:
-		if (e.ar)
+		if (e.md)
 			os << ")";
 		if (e.inset)
 			os << "]";

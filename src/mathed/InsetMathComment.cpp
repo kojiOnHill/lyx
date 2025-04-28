@@ -31,10 +31,10 @@ InsetMathComment::InsetMathComment(Buffer * buf)
 {}
 
 
-InsetMathComment::InsetMathComment(MathData const & ar)
-	: InsetMathNest(const_cast<Buffer *>(ar.buffer()), 1)
+InsetMathComment::InsetMathComment(MathData const & md)
+	: InsetMathNest(const_cast<Buffer *>(md.buffer()), 1)
 {
-	cell(0) = ar;
+	cell(0) = md;
 }
 
 

@@ -1358,15 +1358,15 @@ void InsetMathGrid::splitCell(Cursor & cur)
 {
 	if (cur.idx() == cur.lastidx())
 		return;
-	MathData ar = cur.cell();
-	ar.erase(0, cur.pos());
+	MathData md = cur.cell();
+	md.erase(0, cur.pos());
 	cur.cell().erase(cur.pos(), cur.lastpos());
 	++cur.idx();
 	while (cur.idx() < nargs() &&
 	       cellinfo_[cur.idx()].multi == CELL_BEGIN_OF_MULTICOLUMN)
 		++cur.idx();
 	cur.pos() = 0;
-	cur.cell().insert(0, ar);
+	cur.cell().insert(0, md);
 }
 
 

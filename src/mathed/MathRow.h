@@ -88,7 +88,7 @@ public:
 		size_t char_format_index = 0;
 
 		// type is BEGIN, END
-		MathData const * ar;
+		MathData const * md;
 
 		// type is BOX
 		ColorCode color;
@@ -121,7 +121,7 @@ public:
 
 	// create the math row by unwinding all macros in the MathData and
 	// compute the spacings.
-	MathRow(MetricsInfo & mi, MathData const * ar);
+	MathRow(MetricsInfo & mi, MathData const * md);
 
 	//
 	void metrics(MetricsInfo & mi, Dimension & dim);

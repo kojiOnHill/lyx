@@ -101,7 +101,7 @@ public:
 
 		MathRow::Element e_beg(mi, MathRow::BEGIN);
 		e_beg.inset = this;
-		e_beg.ar = &mathMacro_->cell(idx_);
+		e_beg.md = &mathMacro_->cell(idx_);
 		mrow.push_back(e_beg);
 
 		mathMacro_->macro()->unlock();
@@ -120,7 +120,7 @@ public:
 
 		MathRow::Element e_end(mi, MathRow::END);
 		e_end.inset = this;
-		e_end.ar = &mathMacro_->cell(idx_);
+		e_end.md = &mathMacro_->cell(idx_);
 		mrow.push_back(e_end);
 
 		return has_contents;
@@ -286,17 +286,17 @@ void InsetMathMacro::Private::updateChildren(InsetMathMacro * owner)
 void InsetMathMacro::Private::updateNestedChildren(InsetMathMacro * owner, InsetMathNest * ni)
 {
 	for (size_t i = 0; i < ni->nargs(); ++i) {
-		MathData & ar = ni->cell(i);
-		for (size_t j = 0; j < ar.size(); ++j) {
+		MathData & md = ni->cell(i);
+		for (size_t j = 0; j < md.size(); ++j) {
 			InsetArgumentProxy * ap = dynamic_cast
-				<InsetArgumentProxy *>(ar[j].nucleus());
+				<InsetArgumentProxy *>(md[j].nucleus());
 			if (ap) {
 				InsetMathMacro::Private * md = ap->owner()->d;
 				if (md->macro_)
 					md->macro_ = &md->macroBackup_;
 				ap->setOwner(owner);
 			}
-			InsetMathNest * imn = ar[j].nucleus()->asNestInset();
+			InsetMathNest * imn = md[j].nucleus()->asNestInset();
 			if (imn)
 				updateNestedChildren(owner, imn);
 		}
@@ -991,9 +991,9 @@ void InsetMathMacro::validate(LaTeXFeatures & features) const
 				d->definition_.validate(features);
 		} else if (displayMode() == DISPLAY_INIT) {
 			if (MacroData const * data = buffer().getMacro(name())) {
-				MathData ar(const_cast<Buffer *>(&buffer()));
-				asMathData(data->definition(), ar);
-				ar.validate(features);
+				MathData md(const_cast<Buffer *>(&buffer()));
+				asMathData(data->definition(), md);
+				md.validate(features);
 			}
 		}
 	}

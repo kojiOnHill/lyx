@@ -81,7 +81,7 @@ bool isTextFont(std::string const & name);
 bool isAlphaSymbol(MathAtom const & at);
 
 // converts single cell to string
-docstring asString(MathData const & ar);
+docstring asString(MathData const & md);
 // converts single inset to string
 docstring asString(InsetMath const &);
 docstring asString(MathAtom const &);
