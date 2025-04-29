@@ -2154,6 +2154,7 @@ void static fillMissingUnicodesymbols()
 	addAccents("\\thaiKhomut", getutf8(0x0e5b));
 	addAccents("\\dag", getutf8(0xf0320));
 	addAccents("\\dagger", getutf8(0xf0320));
+	addAccents("\\textdagger", getutf8(0xf0320));
 	addAccents("\\ddag", getutf8(0xf0321));
 	addAccents("\\ddagger", getutf8(0xf0321));
 	addAccents("\\textdaggerdbl", getutf8(0xf0321));
