@@ -408,12 +408,6 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 			first = false;
 		}
 		os << "}";
-	} else if (cmd == "nameref" && use_cleveref && (use_nolink || !hyper_on)) {
-		docstring const crefcmd = use_caps ? from_ascii("Cref") : from_ascii("cref");
-		os << "\\name" << crefcmd;
-		if (use_plural)
-			os << "s";
-		os << '{' << data << '}';
 	} else if (cmd == "labelonly") {
 		docstring const & ref = getParam("reference");
 		if (getParam("noprefix") != "true")
@@ -916,14 +910,9 @@ void InsetRef::validate(LaTeXFeatures & features) const
 	} else if (cmd == "eqref" && buffer().params().xref_package != "refstyle")
 		// with refstyle, we simply output "(\ref{label})"
 		features.require("amsmath");
-	else if (cmd == "nameref") {
-		bool const nr_clever = !buffer().masterParams().pdfoptions().use_hyperref
-			|| getParam("nolink") == "true";
-		if (buffer().masterParams().xref_package == "cleveref" && nr_clever)
-			features.require("cleveref");
-		else
-			features.require("nameref");
-	} else if (cmd == "cpageref") {
+	else if (cmd == "nameref")
+		features.require("nameref");
+	else if (cmd == "cpageref") {
 		if (buffer().masterParams().xref_package == "cleveref")
 			features.require("cleveref");
 		else if (buffer().masterParams().xref_package == "zref")
