@@ -913,9 +913,12 @@ void InsetRef::validate(LaTeXFeatures & features) const
 	else if (cmd == "nameref")
 		features.require("nameref");
 	else if (cmd == "cpageref") {
-		if (buffer().masterParams().xref_package == "cleveref")
+		if (buffer().masterParams().xref_package == "cleveref") {
 			features.require("cleveref");
-		else if (buffer().masterParams().xref_package == "zref")
+			if (getLabels().size() > 1)
+				// work around bug in cleveref
+				features.require("cleveref:cpagereffix");
+		} else if (buffer().masterParams().xref_package == "zref")
 			features.require("zref-clever");
 	} else if (getLabels().size() > 1 && (cmd == "ref" || cmd == "pageref")) {
 		if (buffer().masterParams().xref_package == "cleveref")
