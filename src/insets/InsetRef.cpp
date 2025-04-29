@@ -1015,6 +1015,9 @@ vector<FileName> InsetRef::externalFilenames(bool const warn) const
 
 	// check whether the included file exist
 	vector<string> incFileNames = getVectorFromString(ltrim(to_utf8(params()["filenames"])));
+	if (incFileNames.empty())
+		return res;
+
 	ListOfBuffers const children = buffer().masterBuffer()->getDescendants();
 	for (auto const & ifn : incFileNames) {
 		string label;
@@ -1049,6 +1052,9 @@ vector<FileName> InsetRef::externalFilenames(bool const warn) const
 FileName InsetRef::getExternalFileName(docstring const & inlabel) const
 {
 	vector<string> incFileNames = getVectorFromString(ltrim(to_utf8(params()["filenames"])));
+	if (incFileNames.empty())
+		return FileName();
+
 	ListOfBuffers const children = buffer().masterBuffer()->getDescendants();
 	for (auto const & ifn : incFileNames) {
 		string label;
