@@ -2248,7 +2248,15 @@ docstring const LaTeXFeatures::getThmI18nDefs(Layout const & lay) const
 		    << "\\def\\RS" << capitalize(thmname) << "txt{_(" << tn << ")~}\n"
 		    << "\\def\\RS" << capitalize(thmname) << "stxt{_(" << tnp << ")~}\n";
 		return ods.str();
-	}
+	} else if (params_.xref_package == "cleveref" && !lay.thmXRefName().empty()) {
+		docstring const tn = from_utf8(lay.thmXRefName());
+		docstring const tnp = from_utf8(lay.thmXRefNamePl());
+		odocstringstream ods;
+		docstring const thmname = from_utf8(lay.thmName());
+		ods << "\\crefname{" << thmname << "}{_(" << lowercase(tn) << ")}{" << lowercase(tnp) << "}\n"
+		    << "\\Crefname{" << thmname << "}{_(" << tn << ")}{" << tnp << "}\n";
+		return ods.str();
+}
 	return docstring();
 }
 
