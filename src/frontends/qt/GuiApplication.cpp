@@ -638,7 +638,7 @@ IconInfo iconInfo(FuncRequest const & f, bool unknown, bool rtl)
 }
 
 
-QPixmap prepareForDarkMode(QPixmap pixmap)
+QPixmap GuiApplication::prepareForDarkMode(QPixmap pixmap) const
 {
 	QPalette palette = QPalette();
 	QColor text_color = palette.color(QPalette::Active, QPalette::WindowText);
@@ -687,7 +687,7 @@ QPixmap getPixmap(QString const & path, QString const & name, QString const & ex
 	if (pixmap.load(fpath)) {
 		if (fpath.contains("math") || fpath.contains("ipa")
 		    || fpath.contains("bullets"))
-			return prepareForDarkMode(pixmap);
+			return guiApp->prepareForDarkMode(pixmap);
 		return pixmap;
 	}
 
@@ -727,7 +727,7 @@ QIcon getIcon(FuncRequest const & f, bool unknown, bool rtl)
 	}
 
 	if (icondata.invert)
-		pixmap = prepareForDarkMode(pixmap);
+		pixmap = guiApp->prepareForDarkMode(pixmap);
 
 	if (icondata.swap)
 		return QIcon(pixmap.transformed(QTransform().scale(-1, 1)));
