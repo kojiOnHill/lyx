@@ -1105,13 +1105,23 @@ namespace {
 		return npos;
 	}
 
-	MathData pipeThroughMaxima(docstring const &, MathData const & ar)
+	MathData pipeThroughMaxima(docstring const &command, MathData const & ar)
 	{
 		odocstringstream os;
 		MaximaStream ms(os);
 		ms << ar;
 		docstring expr = os.str();
 		docstring const header = from_ascii("simpsum:true;");
+
+		docstring comm_left = from_ascii("tex(");
+		docstring comm_right = from_ascii(");");
+		// "simpsum:true;tex(COMMAND(EXPR));" if command (e.g. "factor") is present
+		if (command != "noextra") {
+			comm_left = comm_left + command + "(";
+			comm_right = ")" + comm_right;
+		}
+		int preplen = comm_left.length();
+		int headlen = header.length();
 
 		string out;
 		for (int i = 0; i < 100; ++i) { // at most 100 attempts
@@ -1123,8 +1133,8 @@ namespace {
 			// 2x;
 			//  ^
 			//
-			lyxerr << "checking expr: '" << to_utf8(expr) << "'" << endl;
-			docstring full = header + "tex(" + expr + ");";
+			docstring full = header + comm_left + expr + comm_right;
+			lyxerr << "checking input: '" << to_utf8(full) << "'" << endl;
 			out = captureOutput("maxima", to_utf8(full));
 
 			// leave loop if expression syntax is probably ok
@@ -1144,10 +1154,10 @@ namespace {
 			getline(is, line);
 			getline(is, line);
 			size_t pos = line.find('^');
-			lyxerr << "found caret at pos: '" << pos << "'" << endl;
+			lyxerr << "found caret at pos: '" << pos + headlen << "'" << endl;
 			if (pos == npos || pos < 4)
 				break; // caret position not found
-			pos -= 4; // skip the "tex(" part
+			pos -= preplen; // skip the "tex(" part
 			if (expr[pos] == '*')
 				break; // two '*' in a row are definitely bad
 			expr.insert(pos, from_ascii("*"));
@@ -1277,7 +1287,7 @@ namespace {
 	}
 
 
-	MathData pipeThroughOctave(docstring const &, MathData const & ar)
+	MathData pipeThroughOctave(docstring const &command, MathData const & ar)
 	{
 		odocstringstream os;
 		OctaveStream vs(os);
@@ -1289,6 +1299,14 @@ namespace {
 		lyxerr << "pipe: ar: '" << ar << "'\n"
 		       << "pipe: expr: '" << expr << "'" << endl;
 
+		string comm_left;
+		string comm_right;
+		if (command != "noextra") {
+			comm_left = to_utf8(command) + "(";
+			comm_right = ")" + comm_right;
+		}
+		int preplen = comm_left.length();
+
 		for (int i = 0; i < 100; ++i) { // at most 100 attempts
 			//
 			// try to fix missing '*' the hard way
@@ -1296,8 +1314,9 @@ namespace {
 			// >>> ([[1 2 3 ];[2 3 1 ];[3 1 2 ]])([[1 2 3 ];[2 3 1 ];[3 1 2 ]])
 			//                                   ^
 			//
-			lyxerr << "checking expr: '" << expr << "'" << endl;
-			out = captureOutput("octave -q 2>&1", expr);
+			string full = comm_left + expr + comm_right;
+			lyxerr << "checking input: '" << full << "'" << endl;
+			out = captureOutput("octave -q 2>&1", full);
 			lyxerr << "output: '" << out << "'" << endl;
 
 			// leave loop if expression syntax is probably ok
@@ -1317,11 +1336,11 @@ namespace {
 			// found line with error, next line is the one with caret
 			getline(is, line);
 			size_t pos = line.find('^');
-			lyxerr << "caret line: '" << line << "'" << endl;
+			lyxerr << "caret line   : '" << line << "'" << endl;
 			lyxerr << "found caret at pos: '" << pos << "'" << endl;
 			if (pos == string::npos || pos < 4)
 				break; // caret position not found
-			pos -= 4; // skip the ">>> " part
+			pos -= 4 + preplen; // skip the ">>> " part and command prefix
 			if (expr[pos] == '*')
 				break; // two '*' in a row are definitely bad
 			expr.insert(pos, 1, '*');
