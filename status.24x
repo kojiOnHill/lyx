@@ -121,11 +121,12 @@ What's new
 
 - Correctly check maxima output for syntax errors.
 
-- Extend cooperation with computer algebra systems (bug 13178).
-  Maxima and Octave can now properly prepend commands in front of
-  expressions, e.g. you can use math-extern maxima factor
-  for factoring the expression in mathed. See LyX Function Manual
-  for details of math-extern function.
+- Extend cooperation with computer algebra systems:
+  - Maxima and Octave can now properly prepend commands in front of
+    expressions, e.g. you can use math-extern maxima factor
+    for factoring the expression in mathed. See LyX Function Manual
+    for details of math-extern function (also see bug 13178).
+  - Matrix output of Octave can be read again (very old bug 13180).
 
 
 * INTERNALS
