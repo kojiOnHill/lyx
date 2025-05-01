@@ -59,6 +59,7 @@ void InsetMathMatrix::maple(MapleStream & os) const
 			}
 			os << ']';
 		}
+		os << ')';
 	} else {
 		os << "matrix(" << int(nrows()) << ',' << int(ncols()) << ",[";
 		for (idx_type idx = 0; idx < nargs(); ++idx) {
@@ -66,8 +67,8 @@ void InsetMathMatrix::maple(MapleStream & os) const
 				os << ',';
 			os << cell(idx);
 		}
+		os << "])";
 	}
-	os << "])";
 }
 
 
