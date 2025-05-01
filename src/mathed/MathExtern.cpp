@@ -1123,6 +1123,10 @@ namespace {
 		int preplen = comm_left.length();
 		int headlen = header.length();
 
+		// remove spaces after '%' sign
+		while (expr.find(from_ascii("% ")) != docstring::npos)
+		    expr = subst(expr, from_ascii("% "), from_ascii("%"));
+
 		string out;
 		for (int i = 0; i < 100; ++i) { // at most 100 attempts
 			// try to fix missing '*' the hard way
