@@ -127,6 +127,11 @@ What's new
     for factoring the expression in mathed. See LyX Function Manual
     for details of math-extern function (also see bug 13178).
   - Matrix output of Octave can be read again (very old bug 13180).
+  - Matrix output of recent Maxima versions is correctly parsed again.
+  - Allow using %-notation with Maxima to specify math constants
+    such as the imaginary unit (%i) or Euler's number (%e).
+  - Improve input to Maxima such that, for example, \pi is always
+    translated as "%pi" and not simply as "pi" in some circumstances.
 
 
 * INTERNALS
