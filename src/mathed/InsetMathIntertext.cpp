@@ -51,7 +51,6 @@ void InsetMathIntertext::metrics(MetricsInfo & mi, Dimension & dim) const
 {
 	Changer dummy = mi.base.changeFontSet("text");
 	cell(0).metrics(mi, dim);
-	dim.wid = 4;
 	if (name_ == "shortintertext")
 		dim.asc += dim.asc + dim.des + spacer_;
 	else
@@ -70,7 +69,7 @@ void InsetMathIntertext::draw(PainterInfo & pi, int x, int y) const
 		text_y = y - dim.asc + dim.des + 2 * spacer_;
 	else
 		text_y = y - dim.asc + 2 * dim.des + 4 * spacer_;
-	cell(0).draw(pi, (pi.leftx + x)/2, text_y);
+	cell(0).draw(pi, x, text_y);
 }
 
 
