@@ -2546,6 +2546,8 @@ MathCompletionList::MathCompletionList(Cursor const & cur)
 	globals.push_back(from_ascii("\\infer"));
 	globals.push_back(from_ascii("\\atop"));
 	globals.push_back(from_ascii("\\lefteqn"));
+	// globals.push_back(from_ascii("\\intertext"));
+	// globals.push_back(from_ascii("\\shortintertext"));
 	globals.push_back(from_ascii("\\boldsymbol"));
 	globals.push_back(from_ascii("\\bm"));
 	globals.push_back(from_ascii("\\color"));
