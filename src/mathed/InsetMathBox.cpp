@@ -128,6 +128,8 @@ void InsetMathBox::validate(LaTeXFeatures & features) const
 
 	if (name_ == "tag" || name_ == "tag*")
 		features.require("amsmath");
+	if (name_ == "shortintertext")
+		features.require("mathtools");
 
 	InsetMathNest::validate(features);
 }
