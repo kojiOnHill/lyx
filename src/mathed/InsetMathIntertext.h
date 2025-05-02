@@ -39,7 +39,7 @@ public:
 	///
 	void infoize(odocstream & os) const override;
 	///
-	// InsetCode lyxCode() const override { return MATH_INTERTEXT_CODE; }
+	InsetCode lyxCode() const override { return MATH_INTERTEXT_CODE; }
 	///
 	void validate(LaTeXFeatures &) const override;
 
