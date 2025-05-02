@@ -2690,17 +2690,15 @@ void Tabular::TeXTopHLine(otexstream & os, row_type row, list<col_type> const & 
 				     && topltrims.find(c)->second)
 					trim = "l";
 				col_type cstart = c;
-				for ( ; c < ncols() - 1 && topline.find(c + 1)->second ; ++c) {
+				for ( ; c < ncols() - 1 && topline.find(c + 1)->second
+				      && (topltrims.find(c + 1) == topltrims.end()
+					  || !topltrims.find(c + 1)->second
+					  || isPartOfMultiColumn(row, c + 1)); ++c) {
 					if (isMultiColumn(cellIndex(row, c))
 					    && c < ncols() - 1 && isPartOfMultiColumn(row, c + 1))
 						continue;
-					if (c > cstart && topltrims.find(c) != topltrims.end()
-							&& topltrims.find(c)->second) {
-						if (!isPartOfMultiColumn(row, c))
-							--c;
-						break;
-					} else if (toprtrims.find(c) != toprtrims.end()
-						   && toprtrims.find(c)->second)
+					if (toprtrims.find(c) != toprtrims.end()
+					    && toprtrims.find(c)->second)
 						break;
 				}
 
@@ -2824,19 +2822,16 @@ void Tabular::TeXBottomHLine(otexstream & os, row_type row, list<col_type> const
 				     && bottomltrims.find(c)->second)
 					trim = "l";
 				col_type cstart = c;
-				for ( ; c < ncols() - 1 && bottomline.find(c + 1)->second ; ++c) {
+				for ( ; c < ncols() - 1 && bottomline.find(c + 1)->second
+				      && (bottomltrims.find(c + 1) == bottomltrims.end()
+					  || !bottomltrims.find(c + 1)->second
+					  || isPartOfMultiColumn(row, c + 1)); ++c) {
 					if (isMultiColumn(cellIndex(row, c))
 					    && c < ncols() - 1
 					    && isPartOfMultiColumn(row, c + 1))
 						continue;
-					if (c > cstart
-					    && bottomltrims.find(c) != bottomltrims.end()
-					    && bottomltrims.find(c)->second) {
-						if (!isPartOfMultiColumn(row, c))
-							--c;
-						break;
-					} else if (bottomrtrims.find(c) != bottomrtrims.end()
-						   && bottomrtrims.find(c)->second)
+					if (bottomrtrims.find(c) != bottomrtrims.end()
+					    && bottomrtrims.find(c)->second)
 						break;
 				}
 
