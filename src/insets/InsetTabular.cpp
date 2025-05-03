@@ -1076,7 +1076,7 @@ void Tabular::insertColumn(col_type col, bool copy, row_type row)
 		setLeftLine(i, leftLine(j));
 		setRightLine(i, rightLine(j));
 		// avoid creating double lines in between old and new cell, leaving
-		// only the left line in berween (the default when creating a table)
+		// only the left line in between (the default when creating a table)
 		if (leftLine(i) && cell_info[r][col + 1].multicolumn == CELL_NORMAL)
 			setRightLine(j, false);
 	}
