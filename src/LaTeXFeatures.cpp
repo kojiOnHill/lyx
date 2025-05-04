@@ -2235,15 +2235,15 @@ docstring const LaTeXFeatures::getThmI18nDefs(Layout const & lay) const
 	if (params_.xref_package == "prettyref-l7n") {
 		odocstringstream ods;
 		if (lay.refprefix == "part")
-			ods << "\\newrefformat{" << lay.refprefix << "}{_(Part) \\ref{#1}}\n";
+			ods << "\\newrefformat{" << lay.refprefix << "}{_(Part)~\\ref{#1}}\n";
 		if (lay.refprefix == "cha")
-			ods << "\\newrefformat{" << lay.refprefix << "}{_(Chapter) \\ref{#1}}\n";
+			ods << "\\newrefformat{" << lay.refprefix << "}{_(Chapter)~\\ref{#1}}\n";
 		if (lay.refprefix == "sec" || lay.refprefix == "subsec" || lay.refprefix == "sub")
-			ods << "\\newrefformat{" << lay.refprefix << "}{_(Section) \\ref{#1}}\n";
+			ods << "\\newrefformat{" << lay.refprefix << "}{_(Section)~\\ref{#1}}\n";
 		if (lay.refprefix == "par")
-			ods << "\\newrefformat{alg}{_(Paragraph[[Sectioning]]) \\ref{#1}}\n";
+			ods << "\\newrefformat{alg}{_(Paragraph[[Sectioning]])~\\ref{#1}}\n";
 		if (lay.refprefix == "fn")
-			ods << "\\newrefformat{alg}{_(Footnote) \\ref{#1}}\n";
+			ods << "\\newrefformat{alg}{_(Footnote)~\\ref{#1}}\n";
 		if (!ods.str().empty())
 			return ods.str();
 	}
@@ -2345,15 +2345,16 @@ docstring const LaTeXFeatures::getTClassI18nPreamble(bool use_babel,
 			docstring prettyreffloatdefs;
 			if (params_.xref_package == "prettyref-l7n") {
 				odocstringstream ods;
-				if (fl.refPrefix() == "alg")
-					ods << "\\newrefformat{" << from_ascii(fl.refPrefix()) << "}{_(Algorithm) \\ref{#1}}\n";
+				if (fl.refPrefix() == "alg") {
+					ods << "\\newrefformat{" << from_ascii(fl.refPrefix()) << "}{_(Algorithm)~\\ref{#1}}\n";
+					prettyreffloatdefs = ods.str();
+				}
 				if (fl.refPrefix() == "fig")
-					ods << "\\newrefformat{" << from_ascii(fl.refPrefix()) << "}{_(Figure) \\ref{#1}}\n";
+					ods << "\\newrefformat{" << from_ascii(fl.refPrefix()) << "}{\\figurename~\\ref{#1}}\n";
 				if (fl.refPrefix() == "tab")
-					ods << "\\newrefformat{" << from_ascii(fl.refPrefix()) << "}{_(Table) \\ref{#1}}\n";
-				prettyreffloatdefs = ods.str();
-				if (!prettyreffloatdefs.empty())
-					snippets.insert(i18npreamble(prettyreffloatdefs,
+					ods << "\\newrefformat{" << from_ascii(fl.refPrefix()) << "}{\\tablename~\\ref{#1}}\n";
+				if (!ods.str().empty())
+					snippets.insert(i18npreamble(ods.str(),
 								     buffer().language(),
 								     buffer().params().encoding(),
 								     use_polyglossia, false));
