@@ -1002,7 +1002,7 @@ bool InsetRef::useRange() const
 	if (getLabels().size() != 2 || getParam("tuple") == "list")
 		return false;
 	return cmd == "vref" || cmd == "vpageref"
-		|| (cmd == "formatted" && !(buffer().masterParams().xref_package, "prettyref"))
+		|| (cmd == "formatted" && !prefixIs(buffer().masterParams().xref_package, "prettyref"))
 		|| (cmd == "cpageref");
 }
 
