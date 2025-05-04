@@ -1949,6 +1949,8 @@ string const LaTeXFeatures::getThmDefinitions() const
 
 	string laststyle;
 	for (auto const & thm : usedTheorems_) {
+		if (isProvided("newtheorem:" + thm.name))
+			continue;
 		if (thm.style != laststyle) {
 			tmp << "\\theoremstyle{" << thm.style << "}\n";
 			laststyle = thm.style;
