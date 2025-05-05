@@ -36,6 +36,7 @@ QPalette::ColorRole role(ColorCode col)
 
 	case Color_foreground:
 	case Color_cursor:
+	case Color_bullets:
 	case Color_preview:
 	case Color_tabularline:
 	case Color_previewframe:
