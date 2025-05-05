@@ -72,6 +72,8 @@ FontInfo RowPainter::labelFont(bool end) const
 	if ((end ? row_.end_margin_sel : row_.begin_margin_sel)
 	    || pi_.selected)
 		f.setPaintColor(Color_selectiontext);
+	else
+		f.setPaintColor(Color_bullets);
 	return f;
 }
 

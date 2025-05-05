@@ -112,6 +112,9 @@ enum ColorCode {
 	/// Label color for URL insets
 	Color_urllabel,
 
+	/// Color for bullets
+	Color_bullets,
+
 	/// Label color 1 for text (layout) labels
 	Color_textlabel1,
 	/// Label color 2 for text (layout) labels

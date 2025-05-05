@@ -270,6 +270,7 @@ ColorSet::ColorSet()
 	{ Color_textlabel1, N_("Text label 1"), "textlabel1", blue, "#86a4ff", "textlabel1" },
 	{ Color_textlabel2, N_("Text label 2"), "textlabel2", Green, green, "textlabel2" },
 	{ Color_textlabel3, N_("Text label 3"), "textlabel3", magenta, magenta, "textlabel3" },
+	{ Color_bullets, N_("bullets"), "bullets", black, Linen, "bullets" },
 	{ Color_inlinecompletion, N_("inline completion"),
 		"inlinecompletion", grey60, grey40, "inlinecompletion" },
 	{ Color_nonunique_inlinecompletion, N_("inline completion (non-unique)"),
