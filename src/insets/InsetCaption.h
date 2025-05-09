@@ -32,8 +32,8 @@ public:
 	int getCaptionAsPlaintext(odocstream & os, OutputParams const &) const;
 	/// write the caption text as DocBook in os
 	void getCaptionAsDocBook(XMLStream & os, OutputParams const &) const;
-	/// return the caption text as HTML
-	docstring getCaptionAsHTML(XMLStream & os, OutputParams const &) const;
+	/// write the caption text as HTML in os
+	void writeCaptionAsHTML(XMLStream & os, OutputParams const &) const;
 	///
 	std::string contextMenuName() const override;
 private:
