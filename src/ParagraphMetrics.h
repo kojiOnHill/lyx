@@ -95,7 +95,8 @@ public:
 private:
 	///
 	int position_ = 0;
-	///
+	/// This is stored separately from the paragraph to work around
+	/// InsetInfo messiness in ticket #12639.
 	int id_ = -1;
 	///
 	mutable Rows rows_;
