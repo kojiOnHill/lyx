@@ -40,7 +40,7 @@ using namespace lyx::support;
 
 namespace lyx {
 
-const int pm_npos = -10000;
+const int pm_npos = 0xdeadbeef;
 
 ParagraphMetrics::ParagraphMetrics(Paragraph const & par) :
 	position_(pm_npos), id_(par.id()), par_(&par)
