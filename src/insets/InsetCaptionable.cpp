@@ -133,7 +133,7 @@ docstring InsetCaptionable::getCaptionDocBook(OutputParams const & runparams) co
 
 	odocstringstream ods;
 	XMLStream xs(ods);
-	ins->getCaptionAsDocBook(xs, runparams);
+	ins->writeCaptionAsDocBook(xs, runparams);
 	return ods.str();
 }
 

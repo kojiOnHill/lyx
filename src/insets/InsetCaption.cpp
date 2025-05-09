@@ -371,7 +371,7 @@ int InsetCaption::getCaptionAsPlaintext(odocstream & os,
 }
 
 
-void InsetCaption::getCaptionAsDocBook(XMLStream & xs,
+void InsetCaption::writeCaptionAsDocBook(XMLStream & xs,
 				       OutputParams const & runparams) const
 {
 	if (runparams.docbook_in_float)

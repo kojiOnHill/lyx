@@ -594,7 +594,7 @@ void docbookSubfigures(XMLStream & xs, OutputParams const & runparams, const Ins
 
 	xs << xml::StartTag("title"); // Don't take attr here, the ID should only go in one place, not two.
 	if (caption) {
-		caption->getCaptionAsDocBook(xs, rpNoLabel);
+		caption->writeCaptionAsDocBook(xs, rpNoLabel);
 	} else {
 		xs << "No caption";
 		// No caption has been detected, but this tag is required for the document to be valid DocBook.
@@ -684,7 +684,7 @@ void docbookSubfigures(XMLStream & xs, OutputParams const & runparams, const Ins
 				xs << xml::CR();
 				xs << xml::StartTag(docbook_caption);
 				if (scaption)
-					scaption->getCaptionAsDocBook(xs, rpNoLabel);
+					scaption->writeCaptionAsDocBook(xs, rpNoLabel);
 				else // Mandatory in formalgroup.
 					xs << "No caption detected";
 				xs << xml::EndTag(docbook_caption);
@@ -783,7 +783,7 @@ void docbookNoSubfigures(XMLStream & xs, OutputParams const & runparams, const I
 
 	if (caption != nullptr) {
 		XMLStream xsCaptionContent(osCaptionContent);
-		caption->getCaptionAsDocBook(xsCaptionContent, rpNoLabel);
+		caption->writeCaptionAsDocBook(xsCaptionContent, rpNoLabel);
 		hasCaption = !osCaptionContent.str().empty();
 	}
 
