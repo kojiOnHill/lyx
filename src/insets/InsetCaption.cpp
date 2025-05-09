@@ -389,7 +389,8 @@ docstring InsetCaption::getCaptionAsHTML(XMLStream & xs,
 	xs << full_label_ << ' ';
 	InsetText::XHTMLOptions const opts =
 		InsetText::WriteLabel | InsetText::WriteInnerTag;
-	return InsetText::insetAsXHTML(xs, runparams, opts);
+	InsetText::insetAsXHTML(xs, runparams, opts);
+	return docstring();
 }
 
 
