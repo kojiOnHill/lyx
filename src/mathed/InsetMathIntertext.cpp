@@ -15,6 +15,7 @@
 #include "Buffer.h"
 #include "BufferView.h"
 #include "Dimension.h"
+#include "InsetMathChar.h"
 #include "LaTeXFeatures.h"
 #include "MathData.h"
 #include "MathFactory.h"
@@ -76,6 +77,19 @@ void InsetMathIntertext::draw(PainterInfo & pi, int x, int y) const
 docstring InsetMathIntertext::name() const
 {
 	return name_;
+}
+
+
+void InsetMathIntertext::mathmlize(MathMLStream & ms) const
+{
+	ms << MTagInline("mtext", "style=\"position:absolute;left:0px\"");
+	for (size_type i=0; i<cell(0).size(); ++i)
+		ms << cell(0)[i]->asCharInset()->getChar();
+	ms << ETagInline("mtext");
+	// make a new line
+	ms << ETag("mtd") << ETag("mtr")
+	   << MTag("mtr", "style=\"height:3ex\"") << ETag("mtr")
+	   << MTag("mtr") << MTag("mtd");
 }
 
 
