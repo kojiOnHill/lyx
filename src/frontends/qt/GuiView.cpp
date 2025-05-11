@@ -833,15 +833,12 @@ void GuiView::checkCancelBackground()
 
 void GuiView::statsPressed()
 {
-	DispatchResult dr;
-	dispatch(FuncRequest(LFUN_STATISTICS), dr);
+	lyx::dispatch(FuncRequest(LFUN_STATISTICS));
 }
 
 void GuiView::zoomSliderMoved(int value)
 {
-	DispatchResult dr;
-	dispatch(FuncRequest(LFUN_BUFFER_ZOOM, convert<string>(value)), dr);
-	scheduleRedrawWorkAreas();
+	lyx::dispatch(FuncRequest(LFUN_BUFFER_ZOOM, convert<string>(value)));
 	zoom_value_->setText(toqstr(bformat(_("[[ZOOM]]%1$d%"), value)));
 	zoom_in_->setEnabled(currentBufferView()
 			     && value < zoom_slider_->maximum());
@@ -859,17 +856,13 @@ void GuiView::zoomValueChanged(int value)
 
 void GuiView::zoomInPressed()
 {
-	DispatchResult dr;
-	dispatch(FuncRequest(LFUN_BUFFER_ZOOM_IN), dr);
-	scheduleRedrawWorkAreas();
+	lyx::dispatch(FuncRequest(LFUN_BUFFER_ZOOM_IN));
 }
 
 
 void GuiView::zoomOutPressed()
 {
-	DispatchResult dr;
-	dispatch(FuncRequest(LFUN_BUFFER_ZOOM_OUT), dr);
-	scheduleRedrawWorkAreas();
+	lyx::dispatch(FuncRequest(LFUN_BUFFER_ZOOM_OUT));
 }
 
 
@@ -2228,8 +2221,7 @@ int GuiView::nextError(string const & error_type, bool from_master,
 			continue;
 		}
 		if (navigateto) {
-			DispatchResult dr;
-			dispatch(TexRow::goToFunc(err.start, err.end), dr);
+			lyx::dispatch(TexRow::goToFunc(err.start, err.end));
 		}
 		return item;
 	}
@@ -3551,8 +3543,7 @@ bool GuiView::exportBufferAs(Buffer & b, docstring const & iformat)
 	}
 
 	FuncRequest cmd(LFUN_BUFFER_EXPORT, fmt_name + " " + fname.absFileName());
-	DispatchResult dr;
-	dispatch(cmd, dr);
+	DispatchResult dr = lyx::dispatch(cmd);
 	return dr.dispatched();
 }
 
