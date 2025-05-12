@@ -49,7 +49,7 @@ private:
 	Inset * clone() const override;
 	/// the string
 	docstring name_;
-	int spacer_ = 2;
+	int spacer_ = 10;
 };
 
 
