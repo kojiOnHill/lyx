@@ -53,10 +53,9 @@ void InsetMathIntertext::metrics(MetricsInfo & mi, Dimension & dim) const
 	Changer dummy = mi.base.changeFontSet("text");
 	cell(0).metrics(mi, dim);
 	if (name_ == "shortintertext")
-		dim.asc += dim.asc + dim.des + spacer_;
+		dim.asc += 2 * dim.asc + dim.des + spacer_;
 	else
-		dim.asc += 2 * (dim.asc + dim.des + spacer_);
-	dim.des += 2;
+		dim.asc += 3 * dim.asc + 2 * (dim.des + spacer_);
 }
 
 
@@ -65,11 +64,11 @@ void InsetMathIntertext::draw(PainterInfo & pi, int x, int y) const
 	Changer dummy = pi.base.changeFontSet("text");
 	Dimension const dim = dimension(*pi.base.bv);
 	int text_y;
+	// note that dim.asc is already updated in metrics()
 	if (name_ == "shortintertext")
-		// note that dim is already updated in metrics()
-		text_y = y - dim.asc + dim.des + 2 * spacer_;
+		text_y = y - (dim.asc + dim.des + spacer_)/2;
 	else
-		text_y = y - dim.asc + 2 * dim.des + 4 * spacer_;
+		text_y = y - (dim.asc - dim.des + spacer_)/2;
 	cell(0).draw(pi, x, text_y);
 }
 
