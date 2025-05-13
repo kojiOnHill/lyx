@@ -56,6 +56,17 @@ void InsetMathIntertext::metrics(MetricsInfo & mi, Dimension & dim) const
 		dim.asc += 2 * dim.asc + dim.des + spacer_;
 	else
 		dim.asc += 3 * dim.asc + 2 * (dim.des + spacer_);
+
+	int const ind = indent(*mi.base.bv);
+	mi.extrawidth = ind;
+	Dimension dimnl;
+	mathed_string_dim(mi.base.font, nl, dimnl);
+
+	int const x = ind ? ind : (mi.base.textwidth - dim.wid) / 2;
+	LYXERR0("x = " << x << " dim.wid = " << dim.wid << " textwidth = " <<
+	        mi.base.textwidth << " dim.asc = " << dim.asc);
+	// if (x + dim.wid < mi.base.textwidth)
+	// 	dim.wid = 50;
 }
 
 
