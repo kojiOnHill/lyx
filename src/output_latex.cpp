@@ -320,7 +320,9 @@ static TeXEnvironmentData prepareEnvironment(Buffer const & buf,
 			rp.local_font = &pit->getFirstFontSettings(bparams);
 			latexArgInsets(paragraphs, pit, os, rp, style.latexargs());
 		}
-		os << from_ascii(style.latexparam()) << "{%";
+		os << from_ascii(style.latexparam()) << '{';
+		if (!style.intitle)
+			os << '%';
 	}
 	data.style = &style;
 
@@ -873,6 +875,7 @@ void TeXOnePar(Buffer const & buf,
 
 	Paragraph const * nextpar = runparams.isLastPar
 		? nullptr : &paragraphs.at(pit + 1);
+	Paragraph const * priorpar = (pit == 0) ? nullptr : &paragraphs.at(pit - 1);
 
 	bool const intitle_command = style.intitle && style.isCommand();
 	// Intitle commands switch languages locally, thus increase
@@ -889,15 +892,19 @@ void TeXOnePar(Buffer const & buf,
 			// are output after this command (#2154)
 			runparams.postpone_fragile_stuff =
 				bparams.postpone_fragile_content;
-		if (intitle_command)
-			os << '{';
+		if (intitle_command) {
+			if (style.isMultiparCommand() && priorpar && priorpar->hasSameLayout(par))
+				os << '\n' << '\n';
+			else if (!style.isMultiparCommand())
+				os << '{';
+		}
 
 		par.latex(bparams, outerfont, os, runparams, start_pos, end_pos, force);
 
 		// I did not create a parEndCommand for this minuscule
 		// task because in the other user of parStartCommand
 		// the code is different (JMarc)
-		if (style.isCommand()) {
+		if (style.isCommand() && !style.isMultiparCommand()) {
 			os << "}";
 			if (!runparams.no_cprotect && par.needsCProtection(runparams.moving_arg)
 			    && contains(runparams.active_chars, '^'))
@@ -907,15 +914,15 @@ void TeXOnePar(Buffer const & buf,
 			else
 				os << "\n";
 		}
-		else if (!merged_par)
+		else if (!merged_par && !style.isMultiparCommand())
 			os << '\n';
-		if (!style.parbreak_is_newline && !merged_par) {
+		if (!style.parbreak_is_newline && !merged_par && !style.isMultiparCommand()) {
 			os << '\n';
 		} else if (nextpar && !style.isEnvironment()) {
 			Layout const nextstyle = text.inset().forcePlainLayout()
 				? bparams.documentClass().plainLayout()
 				: nextpar->layout();
-			if (nextstyle.name() != style.name() && !merged_par)
+			if (nextstyle.name() != style.name() && !merged_par && !style.isMultiparCommand())
 				os << '\n';
 		}
 
@@ -933,8 +940,6 @@ void TeXOnePar(Buffer const & buf,
 	Language const * const outer_language =
 		(runparams.local_font != nullptr) ?
 			runparams.local_font->language() : doc_language;
-
-	Paragraph const * priorpar = (pit == 0) ? nullptr : &paragraphs.at(pit - 1);
 
 	// The previous language that was in effect is the language of the
 	// previous paragraph, unless the previous paragraph is inside an
@@ -1006,7 +1011,10 @@ void TeXOnePar(Buffer const & buf,
 			// are output after this command (#2154)
 			runparams.postpone_fragile_stuff =
 				bparams.postpone_fragile_content;
-		os << '{';
+		if (!style.isMultiparCommand())
+			os << '{';
+		else if (priorpar && priorpar->hasSameLayout(par))
+			os << '\n';
 	}
 
 	// In some insets (such as Arguments), we cannot use \selectlanguage.
