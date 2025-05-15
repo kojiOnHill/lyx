@@ -2607,22 +2607,6 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			eat_whitespace(p, os, parent_context, false);
 			Context context(true, parent_context.textclass, newlayout,
 					parent_context.layout, parent_context.font);
-			if ((context.layout->latextype == LATEX_LIST_ENVIRONMENT
-			     || context.layout->latextype == LATEX_ITEM_ENVIRONMENT)
-			     && p.hasOpt()
-			     && context.layout->latexargs().empty()) {
-				// FIXME: findLayout() looks for layouts in the class
-				// first and only in modules if a layout is not found.
-				// So if a module adds arguments to existing layouts
-				// (e.g., enumitem to itemize), they wont't be recognized (#13185).
-				// Workaround: If a list environment has an optional argument,
-				// and the document class layout does not provide for
-				// an optional argument (some, e.g. beamer, do!),
-				// store it here to output it manually later
-				// in the first list paragraph.
-				context.list_options = p.getArg('[', ']');
-				p.skip_spaces(true);
-			}
 			if (parent_context.deeper_paragraph) {
 				// We are beginning a nested environment after a
 				// deeper paragraph inside the outer list environment.
@@ -3711,16 +3695,6 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			if (context.layout->labeltype != LABEL_MANUAL)
 				output_arguments(os, p, outer, false, "item", context,
 					         context.layout->itemargs());
-			if (!context.list_options.empty()) {
-				// We have an optional list argument. Output it here.
-				begin_inset(os, "Argument 1");
-				os << "\nstatus collapsed\n\n"
-				   << "\\begin_layout Plain Layout\n\n";
-				output_ert_inset(os, rtrim(context.list_options), context);
-				os << "\n\\end_layout";
-				end_inset(os);
-				context.list_options.clear();
-			}
 			if (!context.list_preamble.empty()) {
 				// We have a list preamble. Output it here.
 				begin_inset(os, "Argument listpreamble:1");
