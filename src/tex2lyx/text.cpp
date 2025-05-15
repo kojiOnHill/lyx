@@ -2550,9 +2550,16 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 					parent_context.layout, parent_context.font);
 			if ((context.layout->latextype == LATEX_LIST_ENVIRONMENT
 			     || context.layout->latextype == LATEX_ITEM_ENVIRONMENT)
-			     && p.hasOpt()) {
-				// if a list environment has an optional argument
-				// (e.g., with enumitem), store it to output it later
+			     && p.hasOpt()
+			     && context.layout->latexargs().empty()) {
+				// FIXME: findLayout() looks for layouts in the class
+				// first and only in modules if a layout is not found.
+				// So if a module adds arguments to existing layouts
+				// (e.g., enumitem to itemize), they wont't be recognized (#13185).
+				// Workaround: If a list environment has an optional argument,
+				// and the document class layout does not provide for
+				// an optional argument (some, e.g. beamer, do!),
+				// store it here to output it manually later
 				// in the first list paragraph.
 				context.list_options = p.getArg('[', ']');
 				p.skip_spaces(true);
