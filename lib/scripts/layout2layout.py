@@ -9,7 +9,7 @@
 # This script will update a .layout file to current format
 
 # The latest layout format is also defined in src/TextClass.cpp
-currentFormat = 108
+currentFormat = 109
 
 
 # Incremented to format 4, 6 April 2007, lasgouttes
