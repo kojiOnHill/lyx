@@ -305,6 +305,23 @@ static TeXEnvironmentData prepareEnvironment(Buffer const & buf,
 				       "listpreamble:");
 		}
 	}
+
+	if (style.isMultiparCommand() && !style.latexname().empty()) {
+		if (!runparams.no_cprotect && pit->needsCProtection(runparams.moving_arg)) {
+			if (contains(runparams.active_chars, '^'))
+				// cprotect relies on ^ being on catcode 7
+				os << "\\begingroup\\catcode`\\^=7";
+			os << "\\cprotect";
+		}
+		os << "\\" << from_ascii(style.latexname());
+		// Command arguments
+		if (!style.latexargs().empty()) {
+			OutputParams rp = runparams;
+			rp.local_font = &pit->getFirstFontSettings(bparams);
+			latexArgInsets(paragraphs, pit, os, rp, style.latexargs());
+		}
+		os << from_ascii(style.latexparam()) << "{%";
+	}
 	data.style = &style;
 
 	// in multilingual environments, the CJK tags have to be nested properly
@@ -340,8 +357,9 @@ static void finishEnvironment(otexstream & os, OutputParams const & runparams,
 		state->open_encoding_ = none;
 	}
 
-	if (data.style->isEnvironment()) {
-		os << breakln;
+	if (data.style->isEnvironment() || data.style->isMultiparCommand()) {
+		if (data.style->isEnvironment())
+			os << breakln;
 		bool const using_begin_end =
 			runparams.use_polyglossia ||
 				!lyxrc.language_command_end.empty();
@@ -365,8 +383,12 @@ static void finishEnvironment(otexstream & os, OutputParams const & runparams,
 			os << '\n';
 		state->nest_level_ -= 1;
 		string const & name = data.style->latexname();
-		if (!name.empty())
-			os << "\\end{" << from_ascii(name) << "}\n";
+		if (!name.empty()) {
+			if (data.style->isEnvironment())
+				os << "\\end{" << from_ascii(name) << "}\n";
+			else
+				os << "}\n";
+		}
 		state->prev_env_language_ = data.par_language;
 		if (runparams.encoding != data.prev_encoding) {
 			runparams.encoding = data.prev_encoding;
@@ -738,6 +760,8 @@ namespace {
 void parStartCommand(Paragraph const & par, otexstream & os,
 		     OutputParams const & runparams, Layout const & style)
 {
+	if (style.isMultiparCommand())
+		return;
 	switch (style.latextype) {
 	case LATEX_COMMAND:
 		if (!runparams.no_cprotect && par.needsCProtection(runparams.moving_arg)) {
@@ -1232,7 +1256,8 @@ void TeXOnePar(Buffer const & buf,
 							 par.parEndChange(), runparams);
 				os << bparams.encoding().latexString(docstring(1, 0x00b6)).first << "}";
 			}
-			os << '}';
+			if (!style.isMultiparCommand())
+				os << '}';
 			if (!style.postcommandargs().empty())
 				latexArgInsets(par, os, runparams, style.postcommandargs(), "post:");
 			if (!runparams.post_macro.empty()) {
@@ -1403,7 +1428,8 @@ void TeXOnePar(Buffer const & buf,
 
 	// InTitle commands need to be closed after the language has been closed.
 	if (intitle_command) {
-		os << '}';
+		if (!style.isMultiparCommand())
+			os << '}';
 		if (!style.postcommandargs().empty())
 			latexArgInsets(par, os, runparams, style.postcommandargs(), "post:");
 		if (!runparams.post_macro.empty()) {
@@ -1429,7 +1455,12 @@ void TeXOnePar(Buffer const & buf,
 		os << bparams.encoding().latexString(docstring(1, 0x00b6)).first << "}";
 	}
 
-	if (pending_newline) {
+	// with multipar layouts, do not output new line for last par in group
+	bool last_multipar_command = false;
+	if (nextpar && par.layout().isMultiparCommand()
+	    && nextpar->layout().latexname() != par.layout().latexname())
+		last_multipar_command = true;
+	if (pending_newline && !last_multipar_command) {
 		if (unskip_newline)
 			// prevent unwanted whitespace
 			os << '%';
@@ -1514,7 +1545,7 @@ void TeXOnePar(Buffer const & buf,
 	// we don't need a newline for the last paragraph!!!
 	// Note from JMarc: we will re-add a \n explicitly in
 	// TeXEnvironment, because it is needed in this case
-	if (nextpar && !os.afterParbreak() && !last_was_separator) {
+	if (nextpar && !os.afterParbreak() && !last_was_separator && !last_multipar_command) {
 		if (!text.inset().getLayout().parbreakIgnored() && !merged_par)
 			// Make sure to start a new line
 			os << breakln;
@@ -1725,8 +1756,9 @@ void latexParagraphs(Buffer const & buf,
 			}
 		}
 
-		if (!layout.isEnvironment() && par->params().leftIndent().zero()) {
-			// This is a standard top level paragraph, TeX it and continue.
+		if (!layout.isEnvironment() && !layout.isMultiparCommand()
+		     && par->params().leftIndent().zero()) {
+			// This is a standard top level single-par paragraph, TeX it and continue.
 			TeXOnePar(buf, text, pit, os, runparams, everypar);
 			continue;
 		}
