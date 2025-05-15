@@ -2607,6 +2607,12 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			eat_whitespace(p, os, parent_context, false);
 			Context context(true, parent_context.textclass, newlayout,
 					parent_context.layout, parent_context.font);
+			// If we have options we don't know of in the layout,
+			// output ERT
+			if (p.hasOpt() && context.layout->optArgs() == 0) {
+				parse_unknown_environment(p, name, os, FLAG_END, outer, parent_context);
+				break;
+			}
 			if (parent_context.deeper_paragraph) {
 				// We are beginning a nested environment after a
 				// deeper paragraph inside the outer list environment.
