@@ -2636,8 +2636,9 @@ void GuiApplication::createView(QString const & geometry_arg, bool autoShow,
 		d->global_menubar_->releaseKeyboard();
 
 	// need to reset system input method coords with the preserved one
-	// when the new view is the second one or later
-	if (d->views_.size() > 0)
+	// when the new view is the second one or later and a document is
+	// open in the current view
+	if (d->views_.size() > 0 && current_view_->currentWorkArea())
 		current_view_->currentWorkArea()->resetInputItemGeometry(true);
 
 	// create new view
