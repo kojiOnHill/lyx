@@ -895,7 +895,8 @@ void InsetRef::validate(LaTeXFeatures & features) const
 				features.addPreambleSnippet(from_ascii("\\let\\charef=\\chapref"));
 			else if (prefix == "subsec")
 				features.require("refstyle:subsecref");
-			else if (!prefix.empty()) {
+			else if (!prefix.empty() && !buffer().masterParams().documentClass().hasRefPrefix(prefix)) {
+				// fallback command for unknown prefixes
 				docstring lcmd = "\\AtBeginDocument{\\providecommand" +
 						fcmd + "[1]{\\ref{" + prefix + ":#1}}}";
 				features.addPreambleSnippet(lcmd);
