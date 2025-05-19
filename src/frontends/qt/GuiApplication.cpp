@@ -113,7 +113,9 @@
 #include <QSocketNotifier>
 #include <QSortFilterProxyModel>
 #include <QStandardItemModel>
+#include <QStyle>
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
+#include <QStyleHints>
 #endif
 #include <QSvgRenderer>
 #include <QTimer>
