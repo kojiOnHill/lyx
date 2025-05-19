@@ -21,7 +21,6 @@
 #include "insets/InsetCommand.h"
 
 
-
 namespace lyx {
 namespace frontend {
 

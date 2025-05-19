@@ -22,7 +22,6 @@
 #include "IndicesList.h"
 #include "insets/InsetIndex.h"
 
-
 using namespace std;
 
 namespace lyx {

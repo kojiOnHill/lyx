@@ -16,7 +16,6 @@
 #include "qt_helpers.h"
 #include "support/filetools.h"
 
-
 using namespace std;
 using namespace lyx::support;
 

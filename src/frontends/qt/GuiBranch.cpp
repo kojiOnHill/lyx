@@ -25,7 +25,6 @@
 #include "support/gettext.h"
 #include "support/lstrings.h"
 
-
 using namespace std;
 using namespace lyx::support;
 

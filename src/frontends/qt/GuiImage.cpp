@@ -21,7 +21,6 @@
 #include "support/FileName.h"
 #include "support/lstrings.h"       // ascii_lowercase
 
-
 using namespace std;
 using namespace lyx::support;
 

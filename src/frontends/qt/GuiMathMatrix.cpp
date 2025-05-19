@@ -20,7 +20,6 @@
 
 #include "support/gettext.h"
 
-
 using namespace std;
 
 namespace lyx {

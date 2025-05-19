@@ -19,7 +19,6 @@
 
 #include "insets/InsetERT.h"
 
-
 using namespace std;
 
 namespace lyx {

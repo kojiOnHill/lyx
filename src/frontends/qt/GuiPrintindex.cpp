@@ -25,7 +25,6 @@
 
 #include "insets/InsetCommand.h"
 
-
 using namespace std;
 using namespace lyx::support;
 
