@@ -18,8 +18,6 @@
 
 #include "support/gettext.h"
 
-#include <QLineEdit>
-#include <QPushButton>
 
 using namespace std;
 

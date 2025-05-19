@@ -34,10 +34,6 @@
 #include "support/debug.h"
 #include "support/lstrings.h"
 
-#include <QCheckBox>
-#include <QPushButton>
-#include <QRadioButton>
-#include <QLineEdit>
 
 using namespace std;
 
