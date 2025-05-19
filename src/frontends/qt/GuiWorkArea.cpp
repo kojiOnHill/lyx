@@ -53,6 +53,7 @@
 #include <QHelpEvent>
 #include <QInputMethod>
 #ifdef Q_OS_MAC
+#include <QProxyStyle>
 #endif
 #include <QMenu>
 #include <QPainter>
