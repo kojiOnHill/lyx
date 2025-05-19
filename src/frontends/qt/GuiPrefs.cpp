@@ -65,6 +65,7 @@
 #include <QString>
 #include <QStyleFactory>
 #if (defined(Q_OS_WIN) || defined(Q_CYGWIN_WIN) || defined(Q_OS_MAC)) && QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+#include <QStyleHints>
 #endif
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
