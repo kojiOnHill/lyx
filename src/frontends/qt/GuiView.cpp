@@ -5095,7 +5095,8 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			int zoom = (int)(lyxrc.defaultZoom * zoom_ratio_);
 			zoom = min(max(zoom, zoom_min_), zoom_max_);
 
-			setCurrentZoom(zoom);
+			// Sync zoom sliders in all active views
+			guiApp->syncZoomSliders(zoom);
 
 			dr.setMessage(bformat(_("Zoom level is now %1$d% (default value: %2$d%)"),
 					      lyxrc.currentZoom, lyxrc.defaultZoom));
