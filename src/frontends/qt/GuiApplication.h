@@ -175,6 +175,9 @@ public:
 	/// Current ratio between physical pixels and device-independent pixels
 	double pixelRatio() const;
 
+	///
+	void syncZoomSliders(int const v);
+
 	/// How to load image files
 	support::search_mode imageSearchMode() const {
 		return pixelRatio() > 1 ? support::check_hidpi : support::must_exist;
