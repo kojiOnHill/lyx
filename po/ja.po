@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lyx-japanese\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2025-05-20 22:12-0400\n"
-"PO-Revision-Date: 2024-12-14 08:31+0900\n"
+"PO-Revision-Date: 2025-05-21 23:47+0900\n"
 "Last-Translator: Koji Yokota <yokota@lyx.org>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Crowdin-Project: lyx-japanese\n"
 "X-Crowdin-Project-ID: 488981\n"
 "X-Crowdin-Language: ja\n"
@@ -17307,85 +17307,71 @@ msgstr "<以下可視文>"
 
 #: lib/layouts/sn-jnl.layout:3 lib/examples/Articles:0
 msgid "Springer Nature Journals"
-msgstr ""
+msgstr "Springer Nature発行誌"
 
 #: lib/layouts/sn-jnl.layout:60 lib/layouts/sn-jnl.layout:74
-#, fuzzy
 msgid "Affiliation Nr."
-msgstr "所属："
+msgstr "所属番号"
 
 #: lib/layouts/sn-jnl.layout:64
-#, fuzzy
 msgid "Author (Corresp.)"
-msgstr "著者の住所"
+msgstr "著者(責任)"
 
 #: lib/layouts/sn-jnl.layout:67
-#, fuzzy
 msgid "Author (Corr.):"
-msgstr "著者註釈："
+msgstr "著者(責任)："
 
 #: lib/layouts/sn-jnl.layout:78
-#, fuzzy
 msgid "Affiliation (Corresp.)"
-msgstr "所属(なし)"
+msgstr "所属(責任)"
 
 #: lib/layouts/sn-jnl.layout:89
-#, fuzzy
 msgid "Equal Contribution"
-msgstr "著者の貢献"
+msgstr "共同筆頭著者"
 
 #: lib/layouts/sn-jnl.layout:138
-#, fuzzy
 msgid "Classification"
-msgstr "分類コード"
+msgstr "分類"
 
 #: lib/layouts/sn-jnl.layout:140
-#, fuzzy
 msgid "Classification:"
-msgstr "分類コード"
+msgstr "分類："
 
 #: lib/layouts/sn-jnl.layout:143
-#, fuzzy
 msgid "Classification System"
-msgstr "分類コード"
+msgstr "分類体系"
 
 #: lib/layouts/sn-jnl.layout:144
 msgid "E.g., MSC, PACS, or JEL"
-msgstr ""
+msgstr "例：MSC，PACS，JEL"
 
 #: lib/layouts/sn-jnl.layout:175 lib/layouts/sn-jnl.layout:178
-#, fuzzy
 msgid "Organization"
-msgstr "画面遷移"
+msgstr "組織"
 
 #: lib/layouts/sn-jnl.layout:181 lib/layouts/sn-jnl.layout:184
-#, fuzzy
 msgid "Org. Address"
-msgstr "住所"
+msgstr "組織住所"
 
 #: lib/layouts/sn-jnl.layout:199
-#, fuzzy
 msgid "Post Code"
 msgstr "郵便番号"
 
 #: lib/layouts/sn-jnl.layout:202
-#, fuzzy
 msgid "Postcode"
 msgstr "郵便番号"
 
 #: lib/layouts/sn-jnl.layout:236
 msgid "----------- Begin Backmatter ----------"
-msgstr ""
+msgstr "----------- ここから後付け ----------"
 
 #: lib/layouts/sn-jnl.layout:246
-#, fuzzy
 msgid "Backmatter heading"
-msgstr "ページヘッダ"
+msgstr "後付けヘッダ"
 
 #: lib/layouts/sn-jnl.layout:277
-#, fuzzy
 msgid "Appendix \\Alph{appendix}"
-msgstr "Appendix \\Alph{appendix}:"
+msgstr "附録\\Alph{appendix}"
 
 #: lib/layouts/soul.module:2
 msgid "Hyphenatable Text Markup (Soul)"
@@ -22052,9 +22038,8 @@ msgid "LaTeX Log|L"
 msgstr "LaTeXログ|L"
 
 #: lib/ui/stdmenus.inc:577
-#, fuzzy
 msgid "Processing Errors|r"
-msgstr "索引処理器のエラーです"
+msgstr "処理エラー(R)|R"
 
 #: lib/ui/stdmenus.inc:578
 msgid "Start Appendix Here|x"
@@ -22113,9 +22098,8 @@ msgid "Bookmarks|B"
 msgstr "しおり(B)|B"
 
 #: lib/ui/stdmenus.inc:607
-#, fuzzy
 msgid "Next Error|E"
-msgstr "次のエラー(&E)"
+msgstr "次のエラー(E)|E"
 
 #: lib/ui/stdmenus.inc:608
 msgid "Next Note|N"
@@ -28037,6 +28021,9 @@ msgid ""
 "which means that it is probably corrupted.\n"
 "You can find the converted file at %2$s while LyX is running."
 msgstr ""
+"%1$s を現行LyX書式へ変換したものが予期せずして終了したため，破損している恐れ"
+"があります．\n"
+"変換後ファイルは，LyXが実行中であれば %2$s にあります．"
 
 #: src/Buffer.cpp:1281 src/Buffer.cpp:1352
 msgid "Document format failure"
@@ -28634,7 +28621,7 @@ msgid "File deleted from disk"
 msgstr "ファイルがディスクから削除されました"
 
 #: src/Buffer.cpp:5797
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The file\n"
 "  %1$s\n"
@@ -28643,7 +28630,8 @@ msgid ""
 msgstr ""
 "ファイル\n"
 " %1$s\n"
-"はディスクから削除されました！"
+"はディスクから削除されました！\n"
+"これより修正済みとしてマークされます．"
 
 #: src/BufferParams.cpp:536
 msgid ""
@@ -32340,13 +32328,12 @@ msgid "Author &Names:"
 msgstr "著者名(&N)："
 
 #: src/frontends/qt/GuiBibitem.cpp:64
-#, fuzzy
 msgid ""
 "Insert the author name(s) for the author-number reference here. If you use "
 "an abbreviated list (with `et al.'), the full list can go below."
 msgstr ""
-"著者-年 参照用の著者名をここに入力してください．省略されたリスト(「et al.」を"
-"付けるもの)を使う場合には，完全リストはその下に入力することができます．"
+"著者-番号 参照用の著者名をここに入力してください．省略されたリスト(「et al.」"
+"を付けるもの)を使う場合には，完全リストはその下に入力することができます．"
 
 #: src/frontends/qt/GuiBibitem.cpp:67
 msgid ""
@@ -33340,19 +33327,16 @@ msgid "&Switch Back"
 msgstr "戻る(&S)"
 
 #: src/frontends/qt/GuiDocument.cpp:1972
-#, fuzzy
 msgid "&Left:"
-msgstr "左揃え(&L)"
+msgstr "左側(&L)："
 
 #: src/frontends/qt/GuiDocument.cpp:1973
-#, fuzzy
 msgid "&Right:"
-msgstr "右揃え(&R)"
+msgstr "右側(&R)："
 
 #: src/frontends/qt/GuiDocument.cpp:1976
-#, fuzzy
 msgid "&Outer:"
-msgstr "外側(&U)："
+msgstr "外側(&O)："
 
 #: src/frontends/qt/GuiDocument.cpp:2365
 msgid "Default margins"
@@ -34625,11 +34609,11 @@ msgstr "操作画面"
 
 #: src/frontends/qt/GuiPrefs.cpp:2545
 msgid "Adwaita"
-msgstr ""
+msgstr "Adwaita"
 
 #: src/frontends/qt/GuiPrefs.cpp:2546
 msgid "Classic"
-msgstr "古典的"
+msgstr "Classic"
 
 #: src/frontends/qt/GuiPrefs.cpp:2547
 msgid "Oxygen"
