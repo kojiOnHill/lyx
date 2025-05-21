@@ -1,18 +1,20 @@
-Public release of LyX version 2.4.3
+Public release of LyX version 2.4.4
 ===================================
 
-We are proud to announce the release LyX 2.4.3, the third maintenance
+We are proud to announce the release LyX 2.4.4, the fourth maintenance
 release in the 2.4.x series.
 
-This is mostly a bug-fixing release. Most of the bugs are minor, but
-there was one significant one (13118) concerning the loading order of
-the fancyhdr package that was causing errors in page layout. In terms of
-updates, the most significant are that it is not possible to insert
-cross-references from the outliner, even to sections that have not yet
-been given a label. In that case, the label is automatically created.
-There has also been a major update to the Swedish localization.
 
-You can download LyX 2.4.3 from https://www.lyx.org/Download.
+
+One important fix concerns the generation of previews. In certain cases, the dvipng script will throw an error due to its inability to determine the 
+number of output pages. This requires a re-run of LaTeX, which we can easily 
+do, but detecting this error has proven more difficult than one might expect.
+The problem has been solved for dvipng versions >= 1.16. With earlier versions,
+LyX will 'fall back' to the legacy method for generating previews. These will 
+be of lower quality, and various messages will be output to the terminal. If 
+this bothers you, please upgrade your version of dvipng.
+
+You can download LyX 2.4.4 from https://www.lyx.org/Download.
 
 If you have trouble using LyX or have a question, consult the
 documentation that comes with LyX (under Help) and the LyX wiki, which
@@ -24,104 +26,4 @@ developers' list (lyx-devel at lists.lyx.org).
 The LyX team.
 https://www.lyx.org
 
-
-What's new
-==========
-
-** Updates:
-***********
-
-* DOCUMENT INPUT/OUTPUT
-
-- The "URW Classico (Optima)" TeX fonts are now also supported via
-  the classico LaTeX package (bug 13124).
-
-
-* USER INTERFACE
-
-- It is now possible to inserts cross references to sections via
-  the outliner, even of they do not have a label yet. In the latter
-  case, a label is automatically inserted.
-
-- Approximate word count for cross-references in document statistics.
-
-- Document PDF settings allow color links and frames around them.
-  These two settings are mutually exclusive by default and we signal
-  that within UI now. Workarounds can be found in our and hyperref manual.
-
-- It is now possible to use inset-forall for math equations with the
-  selector "Formula" or "Formula:eqnarray", for example.
-
-
-* DOCUMENTATION AND LOCALIZATION
-
-- Major update of Swedish localization of the user interface.
-
-- Update Basque, Brazilian Portuguese, Czech, Dutch, French, German,
-  Italian, Japanese, Slovak, Swedish, and Ukranainan translations.
-
-- Include DocBook documentation in German customization manual.
-
-
-** Bug fixes:
-*************
-
-* DOCUMENT INPUT/OUTPUT
-
-- Fix size of Logical and/or characters in LaTeX output (bug 13099).
-
-- Work around bug in aa.cls in the "Astronomy & Astrophysics" template
-  and example documents.
-
-- Fix instant preview of lilypond snippets (bug 13103).
-
-- Fix LaTeX error with listings, book classes and utf8 encoding.
-
-- Fix loading order of fancyhdr (bug 13118).
-
-- Fix spacing problems in previews with math macros under specific
-  circumstances (bug 13120).
-
-- Fix tabular styles on systems with blanks in system directory path.
-
-- Fix inclusion of bibliography files in a LyX archive when the document
-  was imported from a LaTeX source (bug 13129).
-
-
-* USER INTERFACE
-
-- Allow negative offset values in Horizontal Line dialog (bug 13102).
-
-- Use proper background color with default branches and system colors.
-
-- Fix handling of (biblatex) bib file encodings in dialog (bug 13109).
-
-- Fix problem with display of heading in document float settings.
-
-- Fix some layout problems with the About LyX dialog.
-
-- Fix missing label prefixes with some AMS theorem modules (bug 13125).
-
-- Fix display of superscripts on Windows (bug 13100).
-
-
-* INTERNALS
-
-- Fix some defects found by Coverity.
-
-
-* DOCUMENTATION AND LOCALIZATION
-
-- All URLs in the included documents have been verified, outdated
-  links have been updated.
-
-
-* BUILD/INSTALLATION
-
-- Fix (only informational) check for hyphenation patterns in
-  (re)configuration.
-
-- Improve check for package versions in (re)configuration. Particularly,
-  configuration does not break any longer if a sub-dependency of a
-  tested package is missing (bug 13112),
 
