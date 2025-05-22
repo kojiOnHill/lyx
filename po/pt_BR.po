@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: pt_BR 2.4.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2025-05-20 22:12-0400\n"
-"PO-Revision-Date: 2024-12-08 18:27-0300\n"
+"PO-Revision-Date: 2025-05-22 14:56-0300\n"
 "Last-Translator: Georger Araújo <georger underscore br at yahoo dot com dot "
 "br>\n"
 "Language-Team: Brazilian Portuguese <georger underscore br at yahoo dot com "
@@ -124,8 +124,8 @@ msgid ""
 "abbreviated list above."
 msgstr ""
 "Se você quiser usar uma lista abreviada de autores (com 'et al.') além de "
-"uma lista completa para citações autor-ano, você pode pôr a lista completa "
-"aqui e a lista abreviada acima."
+"uma lista completa para citações autor-ano, pode digitar a lista completa "
+"aqui e a lista abreviada no campo logo acima."
 
 #: src/frontends/qt/ui/BibitemUi.ui:122 src/frontends/qt/GuiBibitem.cpp:98
 msgid ""
@@ -2345,11 +2345,11 @@ msgstr "Tipo de link"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:133
 msgid ""
-"Link to the web or any other target with an \"authority\" component "
-"(i.e., :// in the URI)"
+"Link to the web or any other target with an \"authority\" component (i."
+"e., :// in the URI)"
 msgstr ""
-"Vincular à web ou a qualquer outro alvo com um componente \"autoridade\" "
-"(isto é, :// no URI)"
+"Vincular à web ou a qualquer outro alvo com um componente "
+"\"autoridade\" (isto é, :// no URI)"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:136
 msgid "&Web"
@@ -3429,8 +3429,8 @@ msgstr "Opções de Saída"
 
 #: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
 msgid ""
-"Scaling factor for images that are generated for some LaTeX constructs "
-"(e.g., math formulae) in non-LaTeX output."
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
 msgstr ""
 "Fator de escala para imagens que são geradas para algumas construções LaTeX "
 "(p. ex. fórmulas matemáticas) em saída não-LaTeX."
@@ -4909,8 +4909,8 @@ msgstr ""
 "expandidos com base na pasta de trabalho (PT). Para todos os caminho exceto "
 "o \"prefixo TEXINPUTS\" a PT é a pasta a partir da qual você inicia o LyX, e "
 "por isso pode mudar de uma sessão do LyX para outra. Para o caminho "
-"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \".\" "
-"(sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
+"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \"."
+"\" (sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
 
 #: src/frontends/qt/ui/PrefPathsUi.ui:36
 msgid "&PATH prefix:"
@@ -14559,9 +14559,9 @@ msgid ""
 "it depends on R >= 2.14.1. For more info see http://yihui.name/knitr"
 msgstr ""
 "Usa o pacote knitr do R para gerar relatórios dinamicamente. Este pacote do "
-"R deve ser instalado para que o módulo possa funcionar: "
-"install.packages('knitr'). Nota: exige R >= 2.14.1. Para mais informações, "
-"consulte http://yihui.name/knitr"
+"R deve ser instalado para que o módulo possa funcionar: install."
+"packages('knitr'). Nota: exige R >= 2.14.1. Para mais informações, consulte "
+"http://yihui.name/knitr"
 
 #: lib/layouts/knitr.module:14 lib/layouts/litinsets.inc:12
 #: lib/layouts/sweave.module:14
@@ -17461,66 +17461,54 @@ msgid "<Visible Text Follows>"
 msgstr "<Texto Visível Segue>"
 
 #: lib/layouts/sn-jnl.layout:3 lib/examples/Articles:0
-#, fuzzy
 msgid "Springer Nature Journals"
-msgstr "Springer SV Jour/Jog"
+msgstr "Periódicos Springer Nature"
 
 #: lib/layouts/sn-jnl.layout:60 lib/layouts/sn-jnl.layout:74
-#, fuzzy
 msgid "Affiliation Nr."
-msgstr "Afiliação: "
+msgstr "Nr. de Afiliação"
 
 #: lib/layouts/sn-jnl.layout:64
-#, fuzzy
 msgid "Author (Corresp.)"
-msgstr "Endereço do Autor"
+msgstr "Autor (Corresp.)"
 
 #: lib/layouts/sn-jnl.layout:67
-#, fuzzy
 msgid "Author (Corr.):"
-msgstr "Nota do Autor:"
+msgstr "Autor (Corr.):"
 
 #: lib/layouts/sn-jnl.layout:78
-#, fuzzy
 msgid "Affiliation (Corresp.)"
-msgstr "Afiliação (nenhuma)"
+msgstr "Afiliação (Corresp.)"
 
 #: lib/layouts/sn-jnl.layout:89
-#, fuzzy
 msgid "Equal Contribution"
-msgstr "ContribuiçãoDoAutor"
+msgstr "Contribuição Igual"
 
 #: lib/layouts/sn-jnl.layout:138
-#, fuzzy
 msgid "Classification"
-msgstr "Códigos de Classificação"
+msgstr "Classificação"
 
 #: lib/layouts/sn-jnl.layout:140
-#, fuzzy
 msgid "Classification:"
-msgstr "Códigos de Classificação"
+msgstr "Classificação:"
 
 #: lib/layouts/sn-jnl.layout:143
-#, fuzzy
 msgid "Classification System"
-msgstr "Códigos de Classificação"
+msgstr "Sistema de Classificação"
 
 #: lib/layouts/sn-jnl.layout:144
 msgid "E.g., MSC, PACS, or JEL"
-msgstr ""
+msgstr "P. ex., MSC, PACS, ou JEL"
 
 #: lib/layouts/sn-jnl.layout:175 lib/layouts/sn-jnl.layout:178
-#, fuzzy
 msgid "Organization"
-msgstr "Transição"
+msgstr "Organização"
 
 #: lib/layouts/sn-jnl.layout:181 lib/layouts/sn-jnl.layout:184
-#, fuzzy
 msgid "Org. Address"
-msgstr "Endereço"
+msgstr "Endereço da Org."
 
 #: lib/layouts/sn-jnl.layout:199
-#, fuzzy
 msgid "Post Code"
 msgstr "Código Postal"
 
@@ -17530,17 +17518,15 @@ msgstr "Código-postal"
 
 #: lib/layouts/sn-jnl.layout:236
 msgid "----------- Begin Backmatter ----------"
-msgstr ""
+msgstr "----------- Iniciar Matéria Pós-Textual ----------"
 
 #: lib/layouts/sn-jnl.layout:246
-#, fuzzy
 msgid "Backmatter heading"
-msgstr "Cabeçalhos de página"
+msgstr "Cabeçalho de matéria pós-textual"
 
 #: lib/layouts/sn-jnl.layout:277
-#, fuzzy
 msgid "Appendix \\Alph{appendix}"
-msgstr "Apêndice \\Alph{appendix}:"
+msgstr "Apêndice \\Alph{appendix}"
 
 #: lib/layouts/soul.module:2
 msgid "Hyphenatable Text Markup (Soul)"
@@ -22232,9 +22218,8 @@ msgid "LaTeX Log|L"
 msgstr "Log do LaTeX|X"
 
 #: lib/ui/stdmenus.inc:577
-#, fuzzy
 msgid "Processing Errors|r"
-msgstr "Erro no Processador de Índice"
+msgstr "Erros de Processamento"
 
 #: lib/ui/stdmenus.inc:578
 msgid "Start Appendix Here|x"
@@ -22293,9 +22278,8 @@ msgid "Bookmarks|B"
 msgstr "Indicadores|I"
 
 #: lib/ui/stdmenus.inc:607
-#, fuzzy
 msgid "Next Error|E"
-msgstr "Próximo &Erro"
+msgstr "Próximo Erro|E"
 
 #: lib/ui/stdmenus.inc:608
 msgid "Next Note|N"
@@ -28226,6 +28210,10 @@ msgid ""
 "which means that it is probably corrupted.\n"
 "You can find the converted file at %2$s while LyX is running."
 msgstr ""
+"A versão convertida de %1$s para o formato atual do LyX terminou "
+"inesperadamente, o que significa que provavelmente está corrompido.\n"
+"Você pode encontrar o arquivo convertido em %2$s enquanto o LyX estiver em "
+"execução."
 
 #: src/Buffer.cpp:1281 src/Buffer.cpp:1352
 msgid "Document format failure"
@@ -28829,7 +28817,7 @@ msgid "File deleted from disk"
 msgstr "Arquivo excluído do disco"
 
 #: src/Buffer.cpp:5797
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The file\n"
 "  %1$s\n"
@@ -28838,7 +28826,8 @@ msgid ""
 msgstr ""
 "O arquivo\n"
 "  %1$s\n"
-"foi excluído do disco!"
+"foi excluído do disco!\n"
+"Ele será marcado como modificado agora."
 
 #: src/BufferParams.cpp:536
 msgid ""
@@ -30583,8 +30572,9 @@ msgstr ""
 "Sinal SIGSEGV capturado!\n"
 "Desculpe, você achou um erro no LyX, esperamos que você não tenha perdido "
 "nenhum dado.\n"
-"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda->Introdução' "
-"(Help->Introduction) e envie um relato de bug, se necessário. Obrigado!\n"
+"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda-"
+">Introdução' (Help->Introduction) e envie um relato de bug, se necessário. "
+"Obrigado!\n"
 "Até logo."
 
 #: src/LyX.cpp:721
@@ -30642,8 +30632,8 @@ msgid ""
 "Failed to create directory. Perhaps wrong -userdir command-line option?\n"
 "Exiting."
 msgstr ""
-"Não foi possível criar pasta. Talvez erro na opção de linha de comando "
-"-userdir?\n"
+"Não foi possível criar pasta. Talvez erro na opção de linha de comando -"
+"userdir?\n"
 "Encerrando."
 
 #: src/LyX.cpp:1179
@@ -30877,11 +30867,11 @@ msgstr "Marque para verificar se os arquivos recentes ainda existem."
 
 #: src/LyXRC.cpp:3168
 msgid ""
-"Define how to run chktex. E.g. \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -n30 "
-"-n38\" Refer to the ChkTeX documentation."
+"Define how to run chktex. E.g. \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -n30 -"
+"n38\" Refer to the ChkTeX documentation."
 msgstr ""
-"Defina como rodar o chktex. Exemplo: \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 "
-"-n30 -n38\" Consulte a documentação ChkTeX."
+"Defina como rodar o chktex. Exemplo: \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -"
+"n30 -n38\" Consulte a documentação ChkTeX."
 
 #: src/LyXRC.cpp:3175
 msgid ""
@@ -31263,8 +31253,8 @@ msgid ""
 "This starts the lyxserver. The pipes get an additional extension \".in\" and "
 "\".out\". Only for advanced users."
 msgstr ""
-"Inicia o lyxserver. Os pipes recebem uma extensão adicional \".in\" e "
-"\".out\". Somente para usuários avançados."
+"Inicia o lyxserver. Os pipes recebem uma extensão adicional \".in\" e \"."
+"out\". Somente para usuários avançados."
 
 #: src/LyXRC.cpp:3448
 msgid "De-select if you don't want the startup banner."
@@ -32575,14 +32565,13 @@ msgid "Author &Names:"
 msgstr "Nomes dos Autores:"
 
 #: src/frontends/qt/GuiBibitem.cpp:64
-#, fuzzy
 msgid ""
 "Insert the author name(s) for the author-number reference here. If you use "
 "an abbreviated list (with `et al.'), the full list can go below."
 msgstr ""
-"Insira o(s) nome(s) do(s) autor(es) para a referência ano-autor aqui. Se "
-"você usar uma lista abreviada (com `et al.'), a lista completa pode entrar "
-"abaixo."
+"Insira aqui o(s) nome(s) do(s) autor(es) para a referência ano-autor. Se "
+"você usar uma lista abreviada (com `et al.'), pode digitar a lista completa "
+"no campo logo abaixo."
 
 #: src/frontends/qt/GuiBibitem.cpp:67
 msgid ""
@@ -33583,17 +33572,14 @@ msgid "&Switch Back"
 msgstr "&Voltar"
 
 #: src/frontends/qt/GuiDocument.cpp:1972
-#, fuzzy
 msgid "&Left:"
-msgstr "À &esquerda"
+msgstr "&Esquerda:"
 
 #: src/frontends/qt/GuiDocument.cpp:1973
-#, fuzzy
 msgid "&Right:"
-msgstr "À direita"
+msgstr "&Direita:"
 
 #: src/frontends/qt/GuiDocument.cpp:1976
-#, fuzzy
 msgid "&Outer:"
 msgstr "E&xterior:"
 
@@ -34881,7 +34867,7 @@ msgstr "Interface de Usuário"
 
 #: src/frontends/qt/GuiPrefs.cpp:2545
 msgid "Adwaita"
-msgstr ""
+msgstr "Adwaita"
 
 #: src/frontends/qt/GuiPrefs.cpp:2546
 msgid "Classic"
@@ -40824,8 +40810,8 @@ msgstr "Usuário desconhecido"
 
 #~ msgid "Extension of printer program output file. Usually \".ps\"."
 #~ msgstr ""
-#~ "Extensão do arquivo de saída do programa de impressão. Normalmente "
-#~ "\".ps\"."
+#~ "Extensão do arquivo de saída do programa de impressão. Normalmente \"."
+#~ "ps\"."
 
 #~ msgid "The option to print only odd pages."
 #~ msgstr "A opção para imprimir apenas páginas ímpares."
@@ -41957,8 +41943,8 @@ msgstr "Usuário desconhecido"
 #~ msgid ""
 #~ "Specify an alternate personal dictionary file. E.g. \".ispell_english\"."
 #~ msgstr ""
-#~ "Especificar um ficheiro de dicionário pessoal alternativo. Ex "
-#~ "\".ispell_english\"."
+#~ "Especificar um ficheiro de dicionário pessoal alternativo. Ex \"."
+#~ "ispell_english\"."
 
 #~ msgid "What command runs the spellchecker?"
 #~ msgstr "Que comando corre o verificador ortográfico?"
