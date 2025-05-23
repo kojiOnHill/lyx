@@ -648,6 +648,13 @@ docstring InsetRef::displayString(docstring const & ref, string const & cmd,
 	vector<docstring> display_string;
 	vector<docstring> labels = getVectorFromString(ref);
 
+	bool const caps = cmd == "formatted"
+			&& !prefixIs(buffer().params().xref_package, "prettyref")
+			&& getParam("caps") == "true";
+	bool plural = !prefixIs(buffer().params().xref_package, "prettyref") && labels.size() > 1;
+	if (buffer().params().xref_package == "refstyle")
+		plural = getParam("plural") == "true";
+
 	bool first = true;
 	for (auto const & label : labels) {
 		InsetLabel const * il = buffer().insetLabel(label, true);
@@ -667,7 +674,7 @@ docstring InsetRef::displayString(docstring const & ref, string const & cmd,
 				display_string.push_back('(' + value + ')');
 			else if (cmd == "formatted") {
 				if (first)
-					display_string.push_back(il->formattedCounter());
+					display_string.push_back(il->formattedCounter(!caps, plural));
 				else
 					display_string.push_back(value);
 			}
@@ -685,11 +692,6 @@ docstring InsetRef::displayString(docstring const & ref, string const & cmd,
 	}
 	docstring res = (useRange()) ? getStringFromVector(display_string, from_utf8("–"))
 				     : getStringFromVector(display_string, from_ascii(", "));
-
-	if (cmd == "formatted" && !prefixIs(buffer().params().xref_package, "prettyref")
-	    && getParam("caps") == "true")
-		return capitalize(res);
-		// it is hard to see what to do about plurals...
 
 	return res;
 }
