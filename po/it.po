@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
 "POT-Creation-Date: 2025-05-20 22:12-0400\n"
-"PO-Revision-Date: 2025-01-25 16:46+0100\n"
+"PO-Revision-Date: 2025-05-24 13:11+0200\n"
 "Last-Translator: Enrico Forestieri <forenr@lyx.org>\n"
 "Language-Team: italiano <it@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: C:/cygwin/usr/local/src/lyx/lyx-devel\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
 
@@ -17461,66 +17461,54 @@ msgid "<Visible Text Follows>"
 msgstr "<Segue testo visibile>"
 
 #: lib/layouts/sn-jnl.layout:3 lib/examples/Articles:0
-#, fuzzy
 msgid "Springer Nature Journals"
-msgstr "Springer SV Jour/Jog"
+msgstr "Riviste Springer Nature"
 
 #: lib/layouts/sn-jnl.layout:60 lib/layouts/sn-jnl.layout:74
-#, fuzzy
 msgid "Affiliation Nr."
-msgstr "Affiliazione: "
+msgstr "Affiliazione Nr."
 
 #: lib/layouts/sn-jnl.layout:64
-#, fuzzy
 msgid "Author (Corresp.)"
-msgstr "Indirizzo autore"
+msgstr "Autore (Corrisp.)"
 
 #: lib/layouts/sn-jnl.layout:67
-#, fuzzy
 msgid "Author (Corr.):"
-msgstr "Nota all'autore:"
+msgstr "Autore (Corr.):"
 
 #: lib/layouts/sn-jnl.layout:78
-#, fuzzy
 msgid "Affiliation (Corresp.)"
-msgstr "Affiliazione (nessuna)"
+msgstr "Affiliazione (Corrisp.)"
 
 #: lib/layouts/sn-jnl.layout:89
-#, fuzzy
 msgid "Equal Contribution"
-msgstr "Contributo autore"
+msgstr "Contributo paritario"
 
 #: lib/layouts/sn-jnl.layout:138
-#, fuzzy
 msgid "Classification"
-msgstr "Codici Classificazione"
+msgstr "Classificazione"
 
 #: lib/layouts/sn-jnl.layout:140
-#, fuzzy
 msgid "Classification:"
-msgstr "Codici Classificazione"
+msgstr "Classificazione:"
 
 #: lib/layouts/sn-jnl.layout:143
-#, fuzzy
 msgid "Classification System"
-msgstr "Codici Classificazione"
+msgstr "Sistema di Classificazione"
 
 #: lib/layouts/sn-jnl.layout:144
 msgid "E.g., MSC, PACS, or JEL"
-msgstr ""
+msgstr "p. es. MSC, PACS, o JEL"
 
 #: lib/layouts/sn-jnl.layout:175 lib/layouts/sn-jnl.layout:178
-#, fuzzy
 msgid "Organization"
-msgstr "Transizione"
+msgstr "Organizzazione"
 
 #: lib/layouts/sn-jnl.layout:181 lib/layouts/sn-jnl.layout:184
-#, fuzzy
 msgid "Org. Address"
-msgstr "Indirizzo"
+msgstr "Indirizzo org."
 
 #: lib/layouts/sn-jnl.layout:199
-#, fuzzy
 msgid "Post Code"
 msgstr "Codice postale"
 
@@ -17530,17 +17518,15 @@ msgstr "Codice postale"
 
 #: lib/layouts/sn-jnl.layout:236
 msgid "----------- Begin Backmatter ----------"
-msgstr ""
+msgstr "----------- Inizio retro ----------"
 
 #: lib/layouts/sn-jnl.layout:246
-#, fuzzy
 msgid "Backmatter heading"
-msgstr "Testatine"
+msgstr "Testatine del retro"
 
 #: lib/layouts/sn-jnl.layout:277
-#, fuzzy
 msgid "Appendix \\Alph{appendix}"
-msgstr "Appendix \\Alph{appendix}:"
+msgstr "Appendice \\Alph{appendix}"
 
 #: lib/layouts/soul.module:2
 msgid "Hyphenatable Text Markup (Soul)"
@@ -28212,6 +28198,10 @@ msgid ""
 "which means that it is probably corrupted.\n"
 "You can find the converted file at %2$s while LyX is running."
 msgstr ""
+"La conversione di %1$s al formato attuale di LyX si è interrotta, quindi la "
+"versione convertita è probabilmente corrotta.\n"
+"Mentre LyX è ancora attivo, si può trovare la versione convertita col nome "
+"%2$s."
 
 #: src/Buffer.cpp:1281 src/Buffer.cpp:1352
 msgid "Document format failure"
@@ -28811,7 +28801,7 @@ msgid "File deleted from disk"
 msgstr "File eliminato dal disco"
 
 #: src/Buffer.cpp:5797
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The file\n"
 "  %1$s\n"
@@ -28820,7 +28810,8 @@ msgid ""
 msgstr ""
 "Il file\n"
 "  %1$s\n"
-"è stato eliminato dal disco!"
+"è stato eliminato dal disco!\n"
+"Ora verrà contrassegnato come modificato."
 
 #: src/BufferParams.cpp:536
 msgid ""
@@ -32570,7 +32561,6 @@ msgid "Author &Names:"
 msgstr "&Nomi autori:"
 
 #: src/frontends/qt/GuiBibitem.cpp:64
-#, fuzzy
 msgid ""
 "Insert the author name(s) for the author-number reference here. If you use "
 "an abbreviated list (with `et al.'), the full list can go below."
@@ -33577,17 +33567,14 @@ msgid "&Switch Back"
 msgstr "&Torna indietro"
 
 #: src/frontends/qt/GuiDocument.cpp:1972
-#, fuzzy
 msgid "&Left:"
-msgstr "A &sinistra"
+msgstr "&Sinistro:"
 
 #: src/frontends/qt/GuiDocument.cpp:1973
-#, fuzzy
 msgid "&Right:"
-msgstr "A &destra"
+msgstr "&Destro:"
 
 #: src/frontends/qt/GuiDocument.cpp:1976
-#, fuzzy
 msgid "&Outer:"
 msgstr "&Esterno:"
 
@@ -34873,7 +34860,7 @@ msgstr "Interfaccia utente"
 
 #: src/frontends/qt/GuiPrefs.cpp:2545
 msgid "Adwaita"
-msgstr ""
+msgstr "Adwaita"
 
 #: src/frontends/qt/GuiPrefs.cpp:2546
 msgid "Classic"
