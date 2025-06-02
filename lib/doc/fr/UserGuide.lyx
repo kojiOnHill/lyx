@@ -10252,12 +10252,14 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim
+
 This is Verbatim.
 \end_layout
 
 \begin_layout Verbatim
 \noindent
 \align block
+
 The following 2 lines are empty:
 \end_layout
 
@@ -10270,6 +10272,7 @@ The following 2 lines are empty:
 \end_layout
 
 \begin_layout Verbatim
+
 Almost everything is allowed in Verbatim:"%&$§#~'`
 \backslash
 }][{|
@@ -10302,6 +10305,7 @@ Verbatim
 \end_layout
 
 \begin_layout Verbatim*
+
 This is Verbatim*.
 \end_layout
 
@@ -38782,195 +38786,12 @@ Réponse
 \begin_layout Standard
 Pour utiliser la sortie conditionnelle à des endroits où vous ne pouvez pas utiliser de branches,
  comme dans des équations,
- vous pouvez utiliser des définitions \SpecialChar LaTeX
- spéciales pour chaque branche.
- Par exemple,
- vous pouvez définir pour la branche question
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Pour une introduction à la syntaxe \SpecialChar LaTeX
-,
- voir section
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Syntaxe-de-Latex"
-nolink "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-
-\backslash
-newcommand{
-\backslash
-question}[1]{#1}
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-
-\backslash
-newcommand{
-\backslash
-reponse}[1]{}
-\end_layout
-
-\begin_layout Standard
-et pour la branche réponse
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-
-\backslash
-newcommand{
-\backslash
-question}[1]{}
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-
-\backslash
-newcommand{
-\backslash
-reponse}[1]{#1}
-\end_layout
-
-\begin_layout Standard
-\begin_inset Branch Question
-inverted 0
-status open
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand{
-\backslash
-question}[1]{#1}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand{
-\backslash
-reponse}[1]{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Branch Réponse
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand{
-\backslash
-question}[1]{}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand{
-\backslash
-reponse}[1]{#1}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Il est maintenant possible d'utiliser les commandes  
-\series bold
-
-\backslash
-question{\SpecialChar ldots
-}
-\series default
- et 
-\series bold
-
-\backslash
-reponse{\SpecialChar ldots
-}
-\series default
- pour obtenir une sortie conditionnelle.
- Voici un exemple de formule où seule la partie 
-\series bold
-
-\backslash
-question
-\series default
- apparaît:
-\begin_inset Formula 
-\[
-x^{2}-2x-2\Rightarrow\question{x_{1}}\reponse{x_{2}}=1\question{+\sqrt{3}}\reponse{-\sqrt{3}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-À l'intérieur du mode math,
- on peut obtenir le même effet en utilisant des macros,
- voir le manuel 
+ vous pouvez définir des macros mathématiques dans les branches,
+ voir le 
 \emph on
-Math
+manuel des Maths
 \emph default
-s.
+.
 \end_layout
 
 \begin_layout Standard
