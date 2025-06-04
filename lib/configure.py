@@ -345,6 +345,8 @@ def checkMacOSappInstalled(prog):
     result = checkMacOSapp(prog)
     if result != False:
         return result != ''
+    else:
+        return result
 
 
 def checkMacOSapp(prog):
@@ -1213,15 +1215,19 @@ def checkConverterEntries():
 \converter dia        svg        "dia -e $$o -t svg $$i"	""''')
     #
     progName = 'draw.io'
-    appPath = checkMacOSapp(progName + ".app") + "/Contents/MacOS"
-    logger.info('appPath = ' + appPath + ', progName = ' + progName)
+    appPath = checkMacOSapp(progName + ".app")
+    if appPath != False:
+        progPaths = [ appPath + "/Contents/MacOS" ]
+    else:
+        progPaths = None
     checkProg('a Draw.io -> Image converter', [ progName ],
         rc_entry = [
             r'''\converter drawio        pdf6        "%% -xf pdf -o $$o --crop $$i"	""
 \converter drawio        png        "%% -xf png -o $$o $$i"	""
 \converter drawio        jpg        "%% -xf jpg -o $$o $$i"	""
 \converter drawio        svg        "%% -xf svg -o $$o $$i"	""
-\converter drawio        docbook5        "%% -xf xml -o $$o $$i"	"xml"'''], path = [ appPath ])
+\converter drawio        docbook5        "%% -xf xml -o $$o $$i"	"xml"'''
+        ], path = progPaths)
 
     #
     # Actually, this produces EPS, but with a wrong bounding box (usually A4 or letter).
