@@ -571,7 +571,6 @@ marker_type InsetMathMacro::marker(BufferView const * bv) const
 			return marker_type::MARKER2;
 		}
 	}
-	// please gcc 4.6
 	return marker_type::NO_MARKER;
 }
 
