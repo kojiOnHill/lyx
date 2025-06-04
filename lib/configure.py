@@ -342,6 +342,12 @@ def check_java():
 
 
 def checkMacOSappInstalled(prog):
+    result = checkMacOSapp(prog)
+    if result != False:
+        return result != ''
+
+
+def checkMacOSapp(prog):
     '''
         Use metadata lookup to search for an "installed" macOS application bundle.
     '''
@@ -349,9 +355,8 @@ def checkMacOSappInstalled(prog):
         command = r'mdfind "kMDItemContentTypeTree == \"com.apple.application\"c && kMDItemFSName == \"%s\""' % prog
         result = cmdOutput(command)
         logger.debug(command + ": " + result)
-        return result != ''
+        return result
     return False
-
 
 def checkProgAlternatives(description, progs, rc_entry=None,
                           alt_rc_entry=None, path=None, not_found=''):
@@ -1207,13 +1212,16 @@ def checkConverterEntries():
 \converter dia        eps        "dia -e $$o -t eps $$i"	""
 \converter dia        svg        "dia -e $$o -t svg $$i"	""''')
     #
-    checkProg('a Draw.io -> Image converter', ['draw.io', '/Applications/draw.io.app/Contents/MacOS/draw.io'],
+    progName = 'draw.io'
+    appPath = checkMacOSapp(progName + ".app") + "/Contents/MacOS"
+    logger.info('appPath = ' + appPath + ', progName = ' + progName)
+    checkProg('a Draw.io -> Image converter', [ progName ],
         rc_entry = [
             r'''\converter drawio        pdf6        "%% -xf pdf -o $$o --crop $$i"	""
 \converter drawio        png        "%% -xf png -o $$o $$i"	""
 \converter drawio        jpg        "%% -xf jpg -o $$o $$i"	""
 \converter drawio        svg        "%% -xf svg -o $$o $$i"	""
-\converter drawio        docbook5        "%% -xf xml -o $$o $$i"	"xml"'''])
+\converter drawio        docbook5        "%% -xf xml -o $$o $$i"	"xml"'''], path = [ appPath ])
 
     #
     # Actually, this produces EPS, but with a wrong bounding box (usually A4 or letter).
