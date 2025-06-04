@@ -1220,14 +1220,15 @@ def checkConverterEntries():
         progPaths = [ appPath + "/Contents/MacOS" ]
     else:
         progPaths = None
-    checkProg('a Draw.io -> Image converter', [ progName ],
-        rc_entry = [
-            r'''\converter drawio        pdf6        "%% -xf pdf -o $$o --crop $$i"	""
-\converter drawio        png        "%% -xf png -o $$o $$i"	""
-\converter drawio        jpg        "%% -xf jpg -o $$o $$i"	""
-\converter drawio        svg        "%% -xf svg -o $$o $$i"	""
-\converter drawio        docbook5        "%% -xf xml -o $$o $$i"	"xml"'''
-        ], path = progPaths)
+    path, drawio = checkProg('a Draw.io -> Image converter', [ progName ], path = progPaths)
+    if drawio == 'draw.io':
+        fullpath = path + "/" + drawio
+        addToRC(r'''\converter drawio        pdf6        "%s -xf pdf -o $$o --crop $$i"	""
+\converter drawio        png        "%s -xf png -o $$o $$i"	""
+\converter drawio        jpg        "%s -xf jpg -o $$o $$i"	""
+\converter drawio        svg        "%s -xf svg -o $$o $$i"	""
+\converter drawio        docbook5        "%s -xf xml -o $$o $$i"	"xml"'''
+            % (fullpath, fullpath, fullpath, fullpath, fullpath))
 
     #
     # Actually, this produces EPS, but with a wrong bounding box (usually A4 or letter).
