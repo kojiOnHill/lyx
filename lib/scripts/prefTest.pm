@@ -122,7 +122,7 @@ sub getConverter($$$)
   return undef if ($par !~ $extrapar);
   my $key = "\"$from\" \"$to\"";
   if ($add) {
-    if ($dev) {
+    if ($dev && ($cmd !~ /^dvipdfmx/)) {
       $cmd =~ s/^([a-z]+)\s/$1-dev /;
     }
     else {
