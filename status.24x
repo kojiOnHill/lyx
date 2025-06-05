@@ -1,6 +1,6 @@
 -*- text -*-
 
-This file describes what has been done in the preparation of LyX 2.4.4.
+This file describes what has been done in the preparation of LyX 2.4.5.
 All comments are welcome.
 
 We try to group things by topic and in decreasing order of importance.
@@ -15,12 +15,6 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- LyX now includes a layout, template and example for the Springer Nature
-  Journal class. 
-
-- Support GNOME's paper PDF viewer.
-
-- Implement product for computer algebra systems (bug 13186).
 
 
 * MISCELLANEOUS
@@ -33,41 +27,14 @@ What's new
 
 * USER INTERFACE
 
-- LyX includes a new icon set to select from in preferences: Adwaita. This is 
-  the default GNOME icon set with flat (symbolic) design, completed with some 
-  LyX-specific icons that match the design. We provide a dark and light mode
-  version which will be automatically selected as needed.
-
-- LyX now (again) has a function (error-next) and a menu entry (Navigate > 
-  Next Error) to quickly jump to the next compilation error. This re-introduces
-  a feature we lost 20 years ago with LyX 1.4 (bug 2775)!
-
-- LyX now also has a function (errors-show) and a menu entry (Document > 
-  Processing Errors) to (re)open the dialog that lists compilation errors
-  (a.k.a. "LaTeX Errors") after it has been closed, with the next error at/after 
-  cursor highlighted.
-
-- The grid display in the MathGrid dialog has been visually improved,
-  particularly in dark mode (bug 13146).
-
-- The document dialog now opens faster on first launch.
-
-- Use Right/Left or Outer/Inner for page margins, as appropriate (bug 12410).
-
-- Changing zoom values should be now consistently maintained across different
-  LyX Windows. It supposedly also fixes a crash when switching between documents
-  in different LyX windows on Mac (bug 13162).
 
 
 * DOCUMENTATION AND LOCALIZATION
 
-- Updated Brazilian Portuguese, Chinese (traditional and simplified), 
-  French, German, Japanese, Slovak, and Ukranian localizations.
 
 
 * BUILD/INSTALLATION
 
-- Update macOS build script to check for more recent SDKs too
 
 
 
@@ -76,81 +43,10 @@ What's new
 
 * DOCUMENT INPUT/OUTPUT
 
-- Fix crash when attempting to load a corrupted master from a child (bug 13151).
-
-- Fix crash when adding custom LaTeX argument to multicolumn in varwidth table
-  (bug 13158).
-
-- Improve fix for crash when exporting a recursive macro (bug 12633).
-
-- Try to handle differences in how divpng reports certain kinds of errors.
-
-- Fix erroneous whitespace before and after math preview (bug 13127).
-
-- Ask to save unsaved changes before closing document dialog via ESC key or
-  cross button (bug 8145).
-
-- Fix Libertinus Math fonts with AMS symbols (bug 13145).
-
-- Japanese default quote style for direct input (not via IME) is changed to
-  english.
-
-- Improve detection of removed documents. We did not distinguish between
-  rewrite and removal in some cases (bug 12819).
-
-- Fix parsing error with math code when LyX file contains DOS line endings
-  (which might happen when importing via tex2lyx on Windows).
-
-- Include local layout files in LyX archive (bug 13149).
-
-- Fix handling of integrals with external computer algebra systems.
-
-- Fix cmidrule trimming in last column of a formal table (bug 13171).
-
-- Use proper minus sign character in MathML export (bug 13067).
 
 
 * USER INTERFACE
 
-- Fix tiny previews when initially loading a file (bug 13078).
-
-- Fix preview update missing after some operations (bug 13116).
-
-- Fix crash in batch LyX when ui_style is set (bug 13141).
-
-- Rebuild toolbars on runtime mode switch on Linux.
-
-- Fix an assertion when image previews are loaded.
-
-- Do not require the input of year in bibliography item
-  dialog with Natbib (Numeric).
-
-- Fix display of accented characters in math (bug 13156).
-
-- Fix cell splitting in cell equations.
-
-- Fix (dark/light) mode setting and run-time switch with Qt >= 6.8
-  (bug 13144).
-
-- Fix display of some icons in dialogs in dark mode.
-
-- Fix display of menu buttons in dark mode.
-
-- Fix minor issues with automatic deletion of bibitem insets.
-
-- Correctly check maxima output for syntax errors.
-
-- Extend cooperation with computer algebra systems:
-  - Maxima and Octave can now properly prepend commands in front of
-    expressions, e.g. you can use math-extern maxima factor
-    for factoring the expression in mathed. See LyX Function Manual
-    for details of math-extern function (also see bug 13178).
-  - Matrix output of Octave can be read again (very old bug 13180).
-  - Matrix output of recent Maxima versions is correctly parsed again.
-  - Allow using %-notation with Maxima to specify math constants
-    such as the imaginary unit (%i) or Euler's number (%e).
-  - Improve input to Maxima such that, for example, \pi is always
-    translated as "%pi" and not simply as "pi" in some circumstances.
 
 
 * INTERNALS
@@ -160,18 +56,15 @@ What's new
 
 * DOCUMENTATION AND LOCALIZATION
 
-- Fix preview error in UserGuide.
 
 
 * LYX2LYX
 
-- Fix endless recursion and string detection mismatch in lyx2lyx
-  (bug 13168).
 
 
 * TEX2LYX
 
-- Fix import of enumitem lists with optional argument (bug 13185).
+
 
 * LYXHTML
 
@@ -183,8 +76,3 @@ What's new
 
 * BUILD/INSTALLATION
 
-- Fix compilation with gcc 15.
-
-- Fix compilation against Qt 6.9.
-
-- Fix detection of necessary APIs to print callstacks.
