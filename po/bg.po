@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.3.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-05-20 22:12-0400\n"
+"POT-Creation-Date: 2025-06-05 17:36-0400\n"
 "PO-Revision-Date: 2019-04-23 13:49+0300\n"
 "Last-Translator: V. Jeliazkov <vveesskkoo@google.com>\n"
 "Language-Team: Bulgarian <lyx-docs@lists.lyx.org>\n"
@@ -32842,6 +32842,15 @@ msgstr "Пример"
 msgid "External Material"
 msgstr "Материал външен формат"
 
+#: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "Файнман диаграми"
+
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Instant Preview"
+msgstr "Непосредствен прадварителен преглед"
+
 # src/LyXAction.C:251
 #: lib/examples/Articles:0
 #, fuzzy
@@ -32854,13 +32863,11 @@ msgstr "Изброяване с водещи знаци"
 msgid "Minted File Listing"
 msgstr "&В реда"
 
+# src/ext_l10n.h:244
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr ""
-
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "Файнман диаграми"
+#, fuzzy
+msgid "Minted Listings"
+msgstr "Фигура"
 
 # src/ext_l10n.h:244
 #: lib/examples/Articles:0
@@ -32868,16 +32875,9 @@ msgstr "Файнман диаграми"
 msgid "XY-Figure"
 msgstr "Изображение"
 
-# src/ext_l10n.h:244
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Minted Listings"
-msgstr "Фигура"
-
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Instant Preview"
-msgstr "Непосредствен прадварителен преглед"
+msgid "XY-Pic"
+msgstr ""
 
 # src/frontends/xforms/FormGraphics.C:36
 # src/frontends/xforms/FormGraphics.C:359
@@ -32898,17 +32898,17 @@ msgstr "Ротация"
 msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "допълнителни опции"
 
-# src/ext_l10n.h:423
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Writing Armenian"
-msgstr "американски"
-
 # src/frontends/xforms/form_preferences.C:926
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Mixing Japanese with other Languages (with platex)"
 msgstr "допълнителни опции"
+
+# src/ext_l10n.h:423
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Writing Armenian"
+msgstr "американски"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -32934,6 +32934,10 @@ msgid "Serial Letter 3"
 msgstr "Държава"
 
 #: lib/examples/Articles:0
+msgid "Hazard and Precautionary Statements"
+msgstr ""
+
+#: lib/examples/Articles:0
 #, fuzzy
 msgid "LilyPond Book"
 msgstr "LilyPond"
@@ -32944,41 +32948,37 @@ msgstr "LilyPond"
 msgid "Multilingual Captions"
 msgstr "допълнителни опции"
 
-#: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr ""
-
-#: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr ""
-
 # src/frontends/kde/parageneraldlg.C:37 src/frontends/kde/parageneraldlg.C:44
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Noweb2LyX"
 msgstr "NoWeb"
 
+#: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr ""
+
 # src/frontends/kde/dlg/paraextradlgdata.C:155
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1830
 msgid "Modules"
 msgstr "Модули"
-
-# src/frontends/xforms/form_preferences.C:920
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "Foils Landslide"
-msgstr "пейзаж"
-
-# src/frontends/kde/dlg/printdlgdata.C:246
-#: lib/examples/Articles:0
-msgid "Foils"
-msgstr "Обтекаеми профили"
 
 # src/ext_l10n.h:136
 #: lib/examples/Articles:0
 #, fuzzy
 msgid "Beamer (Complex)"
 msgstr "Бележка(N)|N"
+
+# src/frontends/kde/dlg/printdlgdata.C:246
+#: lib/examples/Articles:0
+msgid "Foils"
+msgstr "Обтекаеми профили"
+
+# src/frontends/xforms/form_preferences.C:920
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Foils Landslide"
+msgstr "пейзаж"
 
 # src/minibuffer.C:46 src/minibuffer.C:244
 #: lib/examples/Articles:0
@@ -32990,17 +32990,10 @@ msgstr "Добре дошли в LyX!"
 msgid "Writing Korean with CJK-ko"
 msgstr ""
 
-# src/mathed/math_panel.C:134
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Mathematical Monthly"
-msgstr "Матрица"
-
-# src/ext_l10n.h:400
-#: lib/examples/Articles:0
-#, fuzzy
-msgid "IEEE Transactions Journal"
-msgstr "Преход"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Статия за прожектор KOMA-скрипт"
 
 # src/ext_l10n.h:400
 #: lib/examples/Articles:0
@@ -33008,14 +33001,31 @@ msgstr "Преход"
 msgid "IEEE Transactions Conference"
 msgstr "Преход"
 
+# src/ext_l10n.h:400
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "IEEE Transactions Journal"
+msgstr "Преход"
+
+# src/mathed/math_panel.C:134
+#: lib/examples/Articles:0
+#, fuzzy
+msgid "Mathematical Monthly"
+msgstr "Матрица"
+
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr ""
 
+# src/lyxfunc.C:1105 src/lyxfunc.C:2550
 #: lib/examples/Articles:0
-#, fuzzy
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Статия за прожектор KOMA-скрипт"
+msgid "00 Main File"
+msgstr "00 Главен файл"
+
+# src/ext_l10n.h:219
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Посвещение"
 
 # src/ext_l10n.h:262 src/frontends/gnome/FormIndex.C:89
 # src/frontends/xforms/form_index.C:28
@@ -33025,21 +33035,29 @@ msgstr "02 Предговор"
 
 # src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
 #: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Част"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Речник"
+msgid "03 Preface"
+msgstr "03 Корица"
 
 # src/ext_l10n.h:202
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04 Благодарности"
 
+# src/frontends/gnome/FormToc.C:108 src/frontends/gnome/FormToc.C:185
+# src/frontends/kde/FormToc.C:177 src/frontends/kde/FormToc.C:178
+# src/frontends/kde/tocdlg.C:30 src/insets/insettoc.C:28
+#: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 Списък със сътрудници"
+
 #: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06 Съкращения"
+
+# src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Част"
 
 # src/ext_l10n.h:175
 #: lib/examples/Articles:0
@@ -33051,37 +33069,18 @@ msgstr "08 Автор"
 msgid "09 Appendix"
 msgstr "09 Приложение"
 
+#: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Речник"
+
 # src/ext_l10n.h:329
 #: lib/examples/Articles:0
 msgid "11 References"
 msgstr "11 Препратки"
 
-# src/frontends/gnome/FormToc.C:108 src/frontends/gnome/FormToc.C:185
-# src/frontends/kde/FormToc.C:177 src/frontends/kde/FormToc.C:178
-# src/frontends/kde/tocdlg.C:30 src/insets/insettoc.C:28
 #: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Списък със сътрудници"
-
-# src/ext_l10n.h:219
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Посвещение"
-
-# src/lyxfunc.C:1105 src/lyxfunc.C:2550
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Главен файл"
-
-# src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Корица"
-
-# src/ext_l10n.h:357
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Решения"
+msgid "05 Acronym"
+msgstr "05 Съкращения"
 
 # src/BufferView2.C:601 src/LyXAction.C:346 src/MenuBackend.C:433
 #: lib/examples/Articles:0
@@ -33099,22 +33098,23 @@ msgid "08 Appendix"
 msgstr "08 Приложение"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 Съкращения"
-
-#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Речник"
 
-# src/LColor.C:91
+# src/ext_l10n.h:357
 #: lib/examples/Articles:0
-msgid "Simple"
-msgstr "Обикновен"
+msgid "10 Solutions"
+msgstr "10 Решения"
 
 # src/frontends/xforms/FormPreferences.C:244
 #: lib/examples/Articles:0
 msgid "Colored"
 msgstr "Цветен"
+
+# src/LColor.C:91
+#: lib/examples/Articles:0
+msgid "Simple"
+msgstr "Обикновен"
 
 # src/ext_l10n.h:194
 #: lib/examples/Articles:0
@@ -33142,8 +33142,8 @@ msgstr "Дисертация"
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Книга на япоски (стандартен клас, вертикално написана)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Статия на японски (стандяртен клас: вертикално написана)"
 
 #: lib/examples/Articles:0
 #, fuzzy
@@ -33152,8 +33152,8 @@ msgstr "Книга на япоски (стандартен клас, верти�
 
 #: lib/examples/Articles:0
 #, fuzzy
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Статия на японски (стандяртен клас: вертикално написана)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Книга на япоски (стандартен клас, вертикално написана)"
 
 # src/LColor.C:84
 #: lib/tabletemplates/Formal_with_Footline.lyx:0

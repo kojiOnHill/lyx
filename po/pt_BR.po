@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR 2.4.x\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-05-20 22:12-0400\n"
+"POT-Creation-Date: 2025-06-05 17:36-0400\n"
 "PO-Revision-Date: 2025-05-22 14:56-0300\n"
 "Last-Translator: Georger Araújo <georger underscore br at yahoo dot com dot "
 "br>\n"
@@ -2345,11 +2345,11 @@ msgstr "Tipo de link"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:133
 msgid ""
-"Link to the web or any other target with an \"authority\" component (i."
-"e., :// in the URI)"
+"Link to the web or any other target with an \"authority\" component "
+"(i.e., :// in the URI)"
 msgstr ""
-"Vincular à web ou a qualquer outro alvo com um componente "
-"\"autoridade\" (isto é, :// no URI)"
+"Vincular à web ou a qualquer outro alvo com um componente \"autoridade\" "
+"(isto é, :// no URI)"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:136
 msgid "&Web"
@@ -3429,8 +3429,8 @@ msgstr "Opções de Saída"
 
 #: src/frontends/qt/ui/OutputUi.ui:157 src/frontends/qt/ui/OutputUi.ui:175
 msgid ""
-"Scaling factor for images that are generated for some LaTeX constructs (e."
-"g., math formulae) in non-LaTeX output."
+"Scaling factor for images that are generated for some LaTeX constructs "
+"(e.g., math formulae) in non-LaTeX output."
 msgstr ""
 "Fator de escala para imagens que são geradas para algumas construções LaTeX "
 "(p. ex. fórmulas matemáticas) em saída não-LaTeX."
@@ -4909,8 +4909,8 @@ msgstr ""
 "expandidos com base na pasta de trabalho (PT). Para todos os caminho exceto "
 "o \"prefixo TEXINPUTS\" a PT é a pasta a partir da qual você inicia o LyX, e "
 "por isso pode mudar de uma sessão do LyX para outra. Para o caminho "
-"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \"."
-"\" (sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
+"\"prefixo TEXINPUTS\" a PT é a pasta que contém o documento. O caminho \".\" "
+"(sem aspas) é um exemplo comum de caminho relativo e se refere à PT."
 
 #: src/frontends/qt/ui/PrefPathsUi.ui:36
 msgid "&PATH prefix:"
@@ -14559,9 +14559,9 @@ msgid ""
 "it depends on R >= 2.14.1. For more info see http://yihui.name/knitr"
 msgstr ""
 "Usa o pacote knitr do R para gerar relatórios dinamicamente. Este pacote do "
-"R deve ser instalado para que o módulo possa funcionar: install."
-"packages('knitr'). Nota: exige R >= 2.14.1. Para mais informações, consulte "
-"http://yihui.name/knitr"
+"R deve ser instalado para que o módulo possa funcionar: "
+"install.packages('knitr'). Nota: exige R >= 2.14.1. Para mais informações, "
+"consulte http://yihui.name/knitr"
 
 #: lib/layouts/knitr.module:14 lib/layouts/litinsets.inc:12
 #: lib/layouts/sweave.module:14
@@ -27843,6 +27843,14 @@ msgid "External Material"
 msgstr "Material Externo"
 
 #: lib/examples/Articles:0
+msgid "Feynman Diagrams"
+msgstr "Diagramas de Feynman"
+
+#: lib/examples/Articles:0
+msgid "Instant Preview"
+msgstr "Previsualização Instantânea"
+
+#: lib/examples/Articles:0
 msgid "Itemize Bullets"
 msgstr "Itemizar Marcadores"
 
@@ -27851,24 +27859,16 @@ msgid "Minted File Listing"
 msgstr "Listagem de Arquivo Minted"
 
 #: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "XY-Pic"
-
-#: lib/examples/Articles:0
-msgid "Feynman Diagrams"
-msgstr "Diagramas de Feynman"
+msgid "Minted Listings"
+msgstr "Listagens Minted"
 
 #: lib/examples/Articles:0
 msgid "XY-Figure"
 msgstr "Figura-XY"
 
 #: lib/examples/Articles:0
-msgid "Minted Listings"
-msgstr "Listagens Minted"
-
-#: lib/examples/Articles:0
-msgid "Instant Preview"
-msgstr "Previsualização Instantânea"
+msgid "XY-Pic"
+msgstr "XY-Pic"
 
 #: lib/examples/Articles:0
 msgid "Graphics and Insets"
@@ -27883,12 +27883,12 @@ msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "Misturando Japonês com outros Idiomas (com CJKutf8)"
 
 #: lib/examples/Articles:0
-msgid "Writing Armenian"
-msgstr "Escrevendo Armênio"
-
-#: lib/examples/Articles:0
 msgid "Mixing Japanese with other Languages (with platex)"
 msgstr "Misturando Japonês com outros Idiomas (com platex)"
+
+#: lib/examples/Articles:0
+msgid "Writing Armenian"
+msgstr "Escrevendo Armênio"
 
 #: lib/examples/Articles:0
 msgid "Language Support"
@@ -27907,6 +27907,10 @@ msgid "Serial Letter 3"
 msgstr "Carta Serial 3"
 
 #: lib/examples/Articles:0
+msgid "Hazard and Precautionary Statements"
+msgstr "Declarações de Risco e Preventivas"
+
+#: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "Livro LilyPond"
 
@@ -27915,32 +27919,28 @@ msgid "Multilingual Captions"
 msgstr "Legendas Multilíngues"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "Declarações de Risco e Preventivas"
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
 msgstr "Noweb Listerrors"
-
-#: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1830
 msgid "Modules"
 msgstr "Módulos"
 
 #: lib/examples/Articles:0
-msgid "Foils Landslide"
-msgstr "Landslide Foils"
+msgid "Beamer (Complex)"
+msgstr "Beamer (Complexo)"
 
 #: lib/examples/Articles:0
 msgid "Foils"
 msgstr "Foils"
 
 #: lib/examples/Articles:0
-msgid "Beamer (Complex)"
-msgstr "Beamer (Complexo)"
+msgid "Foils Landslide"
+msgstr "Landslide Foils"
 
 #: lib/examples/Articles:0
 msgid "Welcome"
@@ -27951,44 +27951,56 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Escrevendo em Coreano com CJK-ko"
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
-
-#: lib/examples/Articles:0
-msgid "IEEE Transactions Journal"
-msgstr "IEEE Transactions Journal"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Artigo em Hebraico (KOMA-Script)"
 
 #: lib/examples/Articles:0
 msgid "IEEE Transactions Conference"
 msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
+msgid "IEEE Transactions Journal"
+msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
+
+#: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Modelo Springers Global Journal (V. 3)"
 
 #: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Artigo em Hebraico (KOMA-Script)"
+msgid "00 Main File"
+msgstr "00 Arquivo Principal"
+
+#: lib/examples/Articles:0
+msgid "01 Dedication"
+msgstr "01 Dedicatória"
 
 #: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02 Preâmbulo"
 
 #: lib/examples/Articles:0
-msgid "07 Part"
-msgstr "07 Parte"
-
-#: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10 Glossário"
+msgid "03 Preface"
+msgstr "03 Prefácio"
 
 #: lib/examples/Articles:0
 msgid "04 Acknowledgements"
 msgstr "04 Agradecimentos"
 
 #: lib/examples/Articles:0
+msgid "05 Contributor List"
+msgstr "05 Lista de Colaboradores"
+
+#: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06 Acrônimo"
+
+#: lib/examples/Articles:0
+msgid "07 Part"
+msgstr "07 Parte"
 
 #: lib/examples/Articles:0
 msgid "08 Author"
@@ -27999,28 +28011,16 @@ msgid "09 Appendix"
 msgstr "09 Apêndice"
 
 #: lib/examples/Articles:0
+msgid "10 Glossary"
+msgstr "10 Glossário"
+
+#: lib/examples/Articles:0
 msgid "11 References"
 msgstr "11 Referências"
 
 #: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05 Lista de Colaboradores"
-
-#: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01 Dedicatória"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00 Arquivo Principal"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03 Prefácio"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10 Soluções"
+msgid "05 Acronym"
+msgstr "05 Acrônimo"
 
 #: lib/examples/Articles:0
 msgid "06 Part"
@@ -28035,20 +28035,20 @@ msgid "08 Appendix"
 msgstr "08 Apêndice"
 
 #: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05 Acrônimo"
-
-#: lib/examples/Articles:0
 msgid "09 Glossary"
 msgstr "09 Glossário"
 
 #: lib/examples/Articles:0
-msgid "Simple"
-msgstr "Simples"
+msgid "10 Solutions"
+msgstr "10 Soluções"
 
 #: lib/examples/Articles:0
 msgid "Colored"
 msgstr "Colorido"
+
+#: lib/examples/Articles:0
+msgid "Simple"
+msgstr "Simples"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -28071,16 +28071,16 @@ msgid "Theses"
 msgstr "Tese"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Relatório Japonês (Classe Padrão para LuaTeX%2C Escrita vertical)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Artigo Japonês (Classe Padrão para LuaTeX%2C Escrita vertical)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "Livro Japonês (Classe Padrão para LuaTeX%2C Escrita vertical)"
 
 #: lib/examples/Articles:0
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "Artigo Japonês (Classe Padrão para LuaTeX%2C Escrita vertical)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "Relatório Japonês (Classe Padrão para LuaTeX%2C Escrita vertical)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -30572,9 +30572,8 @@ msgstr ""
 "Sinal SIGSEGV capturado!\n"
 "Desculpe, você achou um erro no LyX, esperamos que você não tenha perdido "
 "nenhum dado.\n"
-"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda-"
-">Introdução' (Help->Introduction) e envie um relato de bug, se necessário. "
-"Obrigado!\n"
+"Por favor, leia as instruções sobre como relatar bugs em 'Ajuda->Introdução' "
+"(Help->Introduction) e envie um relato de bug, se necessário. Obrigado!\n"
 "Até logo."
 
 #: src/LyX.cpp:721
@@ -30632,8 +30631,8 @@ msgid ""
 "Failed to create directory. Perhaps wrong -userdir command-line option?\n"
 "Exiting."
 msgstr ""
-"Não foi possível criar pasta. Talvez erro na opção de linha de comando -"
-"userdir?\n"
+"Não foi possível criar pasta. Talvez erro na opção de linha de comando "
+"-userdir?\n"
 "Encerrando."
 
 #: src/LyX.cpp:1179
@@ -30867,11 +30866,11 @@ msgstr "Marque para verificar se os arquivos recentes ainda existem."
 
 #: src/LyXRC.cpp:3168
 msgid ""
-"Define how to run chktex. E.g. \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -n30 -"
-"n38\" Refer to the ChkTeX documentation."
+"Define how to run chktex. E.g. \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -n30 "
+"-n38\" Refer to the ChkTeX documentation."
 msgstr ""
-"Defina como rodar o chktex. Exemplo: \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -"
-"n30 -n38\" Consulte a documentação ChkTeX."
+"Defina como rodar o chktex. Exemplo: \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 "
+"-n30 -n38\" Consulte a documentação ChkTeX."
 
 #: src/LyXRC.cpp:3175
 msgid ""
@@ -31253,8 +31252,8 @@ msgid ""
 "This starts the lyxserver. The pipes get an additional extension \".in\" and "
 "\".out\". Only for advanced users."
 msgstr ""
-"Inicia o lyxserver. Os pipes recebem uma extensão adicional \".in\" e \"."
-"out\". Somente para usuários avançados."
+"Inicia o lyxserver. Os pipes recebem uma extensão adicional \".in\" e "
+"\".out\". Somente para usuários avançados."
 
 #: src/LyXRC.cpp:3448
 msgid "De-select if you don't want the startup banner."
@@ -40810,8 +40809,8 @@ msgstr "Usuário desconhecido"
 
 #~ msgid "Extension of printer program output file. Usually \".ps\"."
 #~ msgstr ""
-#~ "Extensão do arquivo de saída do programa de impressão. Normalmente \"."
-#~ "ps\"."
+#~ "Extensão do arquivo de saída do programa de impressão. Normalmente "
+#~ "\".ps\"."
 
 #~ msgid "The option to print only odd pages."
 #~ msgstr "A opção para imprimir apenas páginas ímpares."
@@ -41943,8 +41942,8 @@ msgstr "Usuário desconhecido"
 #~ msgid ""
 #~ "Specify an alternate personal dictionary file. E.g. \".ispell_english\"."
 #~ msgstr ""
-#~ "Especificar um ficheiro de dicionário pessoal alternativo. Ex \"."
-#~ "ispell_english\"."
+#~ "Especificar um ficheiro de dicionário pessoal alternativo. Ex "
+#~ "\".ispell_english\"."
 
 #~ msgid "What command runs the spellchecker?"
 #~ msgstr "Que comando corre o verificador ortográfico?"
