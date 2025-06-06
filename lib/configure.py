@@ -349,13 +349,36 @@ def checkMacOSappInstalled(prog):
         return result
 
 
-def checkMacOSapp(prog):
+def checkMacOSapp(prog, retarderKeys = False):
     '''
         Use metadata lookup to search for an "installed" macOS application bundle.
+        It returns full path of only one program among those found.
+        If retarderKeys == False, the path of first-found program is returned.
+        If retarderKeys is specified, programs that contains one of retarderKeys
+        in their path name will have lower priority to be reported.
     '''
     if sys.platform == 'darwin' and len(prog) >= 1:
         command = r'mdfind "kMDItemContentTypeTree == \"com.apple.application\"c && kMDItemFSName == \"%s\""' % prog
-        result = cmdOutput(command)
+        # Take the one found first (outcome of cmdOutput is multiple lines if
+        # it finds more than one)
+        results = cmdOutput(command).split('\n')
+        if retarderKeys != False:
+            retarder = []
+            priority = []
+            isRetarder = False
+            for idx in range(len(results)):
+                path_components = results[idx].split(os.sep)
+                for com in path_components:
+                    if com in retarderKeys:
+                        retarder.append(results[idx])
+                        isRetarder = True
+                        break
+                if not isRetarder:
+                    priority.append(results[idx])
+                else:
+                    isRetarder = False
+            results = priority + retarder
+        result = results[0]
         logger.debug(command + ": " + result)
         return result
     return False
@@ -380,7 +403,10 @@ def checkProgAlternatives(description, progs, rc_entry=None,
     logger.info('checking for ' + description + '...')
     logger.debug('(' + ','.join(progs) + ')')
     additional_path = path
-    path = os.environ["PATH"].split(os.pathsep) + additional_path
+    sys_path = os.environ["PATH"].split(os.pathsep)
+    if (isinstance(sys_path, list)):
+        sys_path = [ x for x in sys_path if x !='' ]
+    path = sys_path + additional_path
     extlist = ['']
     if "PATHEXT" in os.environ:
         extlist = extlist + os.environ["PATHEXT"].split(os.pathsep)
@@ -638,6 +664,47 @@ def checkInkscapeStable():
         return True
 
 
+def checkDrawIO(progName, WinLMkey):
+    # Returns a list of additional paths to search for binary draw.io
+    # (draw.io inside of draw.io.app contents in the case of MacOS)
+
+    # check for MacOS
+    appPath = checkMacOSapp(progName + ".app",
+                            retarderKeys = [ 'Applications (Parallels)' ])
+    if appPath != False and appPath != '':
+        progPaths = [ appPath + "/Contents/MacOS" ]
+    elif os.name == 'nt':
+        result = checkWindowsProgram(progName, WinLMkey)[0]
+        if result == None:
+            progPaths = None
+        else:
+            progPaths = result
+    else:
+        progPaths = None
+    return progPaths
+
+
+def checkWindowsProgram(progName, WinLMkey):
+    # Returns a tuple of the installed path and filename of the program
+    # named 'progName' which has registered the fullpath in the registry key
+    # 'WinLMkey' in the hive HKEY_LOCAL_MACHINE
+    if os.name != 'nt':
+      return None, None
+
+    import winreg
+    reg_hive = winreg.HKEY_LOCAL_MACHINE
+    try:
+        with winreg.OpenKey(reg_hive, WinLMkey) as reg_key:
+          binPath = winreg.QueryValue(reg_key, None).replace('"%1"', '').strip()
+          logger.info('investigating in Windows registry for ' + progName + ': found ' + binPath)
+          pathComponents = binPath.replace('\\' + progName + '.exe', '')
+
+    except OSError:
+        return None, None
+
+    return [ pathComponents ], progName + '.exe'
+
+
 def checkLatex(dtl_tools):
     ''' Check latex, return lyx_check_config '''
     path, LATEX = checkProg('a Latex2e program', ['latex $$i', 'latex2e $$i'])
@@ -719,8 +786,9 @@ def checkFormatEntries(dtl_tools):
     checkViewerEditor('a Dia viewer and editor', ['dia'],
         rc_entry = [r'\Format dia        dia     DIA                    "" "%%"	"%%"	"vector,zipped=native", "application/x-dia-diagram"'])
     #
-    checkViewerEditor('a draw.io viewer and editor', ['draw.io', 'draw.io.app'],
-        rc_entry = [r'\Format drawio     drawio  Draw.io                    "" "%%"	"%%"	"vector,zipped=native", "application/x-draw.io-diagram"'])
+    checkViewerEditor('a draw.io viewer and editor', [ 'draw.io', 'drawio', 'draw.io.app' ],
+        rc_entry = [r'\Format drawio     drawio  Draw.io                    "" "%%"	"%%"	"vector,zipped=native", "application/x-draw.io-diagram"'],
+        path = checkWindowsProgram('draw.io', "SOFTWARE\\Classes\\draw.io Diagram\\shell\\open\\command")[0])
     #
     checkViewerEditor('an OpenDocument drawing viewer and editor', ['libreoffice', 'lodraw', 'ooffice', 'oodraw', 'soffice'],
         rc_entry = [r'\Format odg        "odg, sxd" "OpenDocument drawing"   "" "%%"	"%%"	"vector,zipped=native"	"application/vnd.oasis.opendocument.graphics"'])
@@ -1214,20 +1282,19 @@ def checkConverterEntries():
 \converter dia        eps        "dia -e $$o -t eps $$i"	""
 \converter dia        svg        "dia -e $$o -t svg $$i"	""''')
     #
-    progName = 'draw.io'
-    appPath = checkMacOSapp(progName + ".app")
-    if appPath != False:
-        progPaths = [ appPath + "/Contents/MacOS" ]
-    else:
-        progPaths = None
-    path, drawio = checkProg('a Draw.io -> Image converter', [ progName ], path = progPaths)
-    if drawio == 'draw.io':
-        fullpath = path + "/" + drawio
-        addToRC(r'''\converter drawio        pdf6        "%s -xf pdf -o $$o --crop $$i"	""
-\converter drawio        png        "%s -xf png -o $$o $$i"	""
-\converter drawio        jpg        "%s -xf jpg -o $$o $$i"	""
-\converter drawio        svg        "%s -xf svg -o $$o $$i"	""
-\converter drawio        docbook5        "%s -xf xml -o $$o $$i"	"xml"'''
+    # draw.io
+    progNames = [ 'draw.io', 'drawio' ]
+    additionalPaths = checkDrawIO(progNames[0],
+                     "SOFTWARE\\Classes\\draw.io Diagram\\shell\\open\\command")
+    path, drawio = checkProg('a Draw.io -> Image converter', progNames,
+                             path=additionalPaths)
+    if drawio == progNames[0] or drawio == progNames[1]:
+        fullpath = os.path.join(path, drawio)
+        addToRC(r'''\converter drawio        pdf6        "\"%s\" -xf pdf -o $$o --crop $$i"	""
+\converter drawio        png        "\"%s\" -xf png -o $$o $$i"	""
+\converter drawio        jpg        "\"%s\" -xf jpg -o $$o $$i"	""
+\converter drawio        svg        "\"%s\" -xf svg -o $$o $$i"	""
+\converter drawio        docbook5        "\"%s\" -xf xml -o $$o $$i"	"xml"'''
             % (fullpath, fullpath, fullpath, fullpath, fullpath))
 
     #
