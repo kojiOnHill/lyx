@@ -1770,6 +1770,7 @@ void PrefColors::initializeColorsTV()
 				item->setToolTip(qt_("Click here to change the color in the light mode"));
 			else if (column == DarkColorColumn)
 				item->setToolTip(qt_("Click here to change the color in the dark mode"));
+			item->setEditable(false);
 			colorsTV_model_.setItem(row, column, item);
 		}
 	}
