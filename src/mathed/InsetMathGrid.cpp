@@ -27,6 +27,7 @@
 #include "CutAndPaste.h"
 #include "FuncRequest.h"
 #include "FuncStatus.h"
+#include "InsetMathIntertext.h"
 #include "LaTeXFeatures.h"
 #include "TexRow.h"
 
@@ -1296,6 +1297,8 @@ void InsetMathGrid::write(TeXMathStream & os,
 				   << "}{" << cellinfo_[idx].align
 				   << "}{";
 			}
+			if (cell(idx).front()->name() == "intertext" && getType() == hullEqnArray)
+				LYXERR0("INTERTEXT! hulltype = " << getType());
 			os << cell(idx);
 			if (os.pendingBrace())
 				ModeSpecifier specifier(os, TEXT_MODE);
