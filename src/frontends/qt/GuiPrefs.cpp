@@ -1129,7 +1129,7 @@ void PrefColors::clickedColorsTV(const QModelIndex index)
 	if (column < 2)
 		changeColor(row, column);
 
-	enableEditButtons();
+	setEditButtonStatus();
 	setResetButtonStatus(row);
 }
 
@@ -1395,12 +1395,15 @@ void PrefColors::setResetButtonStatus(bool is_undoing)
 }
 
 
-void PrefColors::enableEditButtons()
+void PrefColors::setEditButtonStatus()
 {
-	if (!lightColorEditPB->isEnabled())
+	if (selection_model_.hasSelection()) {
 		lightColorEditPB->setEnabled(true);
-	if (!darkColorEditPB->isEnabled())
 		darkColorEditPB->setEnabled(true);
+	} else {
+		lightColorEditPB->setEnabled(false);
+		darkColorEditPB->setEnabled(false);
+	}
 }
 
 
