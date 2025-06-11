@@ -27,6 +27,7 @@
 #include "CutAndPaste.h"
 #include "FuncRequest.h"
 #include "FuncStatus.h"
+#include "InsetMathIntertext.h"
 #include "LaTeXFeatures.h"
 #include "MathFactory.h"
 #include "TexRow.h"
@@ -1328,7 +1329,6 @@ void InsetMathGrid::write(TeXMathStream & os,
 
 void InsetMathGrid::checkMathCommandConflict(idx_type idx) const
 {
-	LYXERR0("hulltype = " << hullName(getType()));
 	for (docstring const &command : mathedConflictCommands()) {
 		if (!cell(idx).empty() && cell(idx).front()->name() == command) {
 			for (docstring const & hull : mathedConflictList().at(command)) {

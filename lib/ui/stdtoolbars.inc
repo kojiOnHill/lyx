@@ -218,6 +218,7 @@ ToolbarSet
 	Toolbar "math_panels" "Math Panels"
 		PopupMenu "space" "Math spacings"
 		PopupMenu "style" "Styles & classes"
+		PopupMenu "text" "Text"
 		PopupMenu "frac-square" "Fractions"
 		PopupMenu "font" "Fonts"
 		PopupMenu "functions" "Functions"
@@ -407,6 +408,13 @@ ToolbarSet
 		Item "Left overlap	\\mathllap" "math-insert \mathllap"
 		Item "Center overlap	\\mathclap" "math-insert \mathclap"
 		Item "Right overlap	\\mathrlap" "math-insert \mathrlap"
+	End
+
+	Toolbar "text" "Text"
+		Item "Mbox	\\mbox", "math-size \mbox"
+		Item "Text	\\text", "math-size \text"
+		Item "Intertext	\\intertext", "math-size \intertext"
+		Item "Short intertext	\\shortintertext", "math-size \shortintertext"
 	End
 
 	Toolbar "sqrt-square" "Roots"
