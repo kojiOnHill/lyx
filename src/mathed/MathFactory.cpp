@@ -64,8 +64,11 @@
 #include "support/docstream.h"
 #include "support/FileName.h"
 #include "support/filetools.h" // LibFileSearch
+#include "support/gettext.h"
 #include "support/lstrings.h"
+#include "support/Package.h"
 
+#include "frontends/alert.h"
 #include "frontends/FontLoader.h"
 
 #include "Buffer.h"
@@ -88,6 +91,8 @@ namespace {
 
 MathWordList theMathWordList;
 MathVariantList theMathVariantList;
+MathConflictList theMathConflictList;
+std::vector<docstring> theMathConflictCommands;
 
 
 bool isMathFontAvailable(string & name)
@@ -425,6 +430,41 @@ void initVariantSymbols()
 }
 
 
+void initConflictList() {
+	FileName const filename = libFileSearch(string(), "math_conflicts");
+	LYXERR(Debug::MATHED, "read conflict list from " << filename);
+	if (filename.empty()) {
+		lyxerr << "Could not find conflict list file" << endl;
+		return;
+	}
+
+	ifstream fs(filename.toFilesystemEncoding().c_str());
+	// limit the size of strings we read to avoid memory problems
+	fs >> setw(65636);
+	string line;
+
+	while (getline(fs, line)) {
+
+		if (line.empty() || line[0] == '#')
+			continue;
+
+		docstring command;
+		docstring mathHulls;
+		idocstringstream is(from_utf8(line));
+		is >> command >> mathHulls;
+		docstring hul;
+		vector<docstring> mathHullList;
+		idocstringstream is2(subst(mathHulls, ',', '\n'));
+		while (getline(is2, hul)) {
+			mathHullList.push_back(hul);
+		}
+
+		theMathConflictList[command] = mathHullList;
+		theMathConflictCommands.push_back(command);
+	}
+}
+
+
 bool isSpecialChar(docstring const & name)
 {
 	if (name.size() != 1)
@@ -451,6 +491,18 @@ MathVariantList const & mathedVariantList()
 }
 
 
+MathConflictList const & mathedConflictList()
+{
+	return theMathConflictList;
+}
+
+
+std::vector<docstring> const & mathedConflictCommands()
+{
+	return theMathConflictCommands;
+}
+
+
 void initMath()
 {
 	static bool initialized = false;
@@ -459,6 +511,7 @@ void initMath()
 		initParser();
 		initSymbols();
 		initVariantSymbols();
+		initConflictList();
 	}
 }
 
