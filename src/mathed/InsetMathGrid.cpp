@@ -28,8 +28,10 @@
 #include "FuncRequest.h"
 #include "FuncStatus.h"
 #include "LaTeXFeatures.h"
+#include "MathFactory.h"
 #include "TexRow.h"
 
+#include "frontends/alert.h"
 #include "frontends/Clipboard.h"
 #include "frontends/Painter.h"
 
@@ -1296,6 +1298,7 @@ void InsetMathGrid::write(TeXMathStream & os,
 				   << "}{" << cellinfo_[idx].align
 				   << "}{";
 			}
+			checkMathCommandConflict(idx);
 			os << cell(idx);
 			if (os.pendingBrace())
 				ModeSpecifier specifier(os, TEXT_MODE);
@@ -1320,6 +1323,26 @@ void InsetMathGrid::write(TeXMathStream & os,
 			os << "\\\\";
 		}
 		os << s;
+	}
+}
+
+void InsetMathGrid::checkMathCommandConflict(idx_type idx) const
+{
+	LYXERR0("hulltype = " << hullName(getType()));
+	for (docstring const &command : mathedConflictCommands()) {
+		if (!cell(idx).empty() && cell(idx).front()->name() == command) {
+			for (docstring const & hull : mathedConflictList().at(command)) {
+				if (getType() == hullType(hull)) {
+					docstring const & warnTitle =
+					        from_utf8(N_("Command conflict"));
+					docstring const & warnMessage =
+					        bformat(_("TeX command '%1$s' cannot be used in math environment '%2$s'. Please change the environment or the command."),
+					                command, hull);
+					frontend::Alert::warning(warnTitle, warnMessage);
+					return;
+				}
+			}
+		}
 	}
 }
 

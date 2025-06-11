@@ -37,6 +37,11 @@ MathWordList const & mathedWordList();
 typedef std::map<docstring, UnicodeVariants> MathVariantList;
 MathVariantList const & mathedVariantList();
 
+typedef std::map<docstring, std::vector<docstring>> MathConflictList;
+MathConflictList const & mathedConflictList();
+
+std::vector<docstring> const & mathedConflictCommands();
+
 } // namespace lyx
 
 #endif
