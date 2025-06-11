@@ -1129,7 +1129,6 @@ void PrefColors::clickedColorsTV(const QModelIndex index)
 	if (column < 2)
 		changeColor(row, column);
 
-	setEditButtonStatus();
 	setResetButtonStatus(row);
 }
 
@@ -1159,6 +1158,7 @@ void PrefColors::selectionChanged(const QItemSelection &selected,
 	                        QItemSelectionModel::Current |
 	                        QItemSelectionModel::Select);
 	selected_indexes_ = selection_model_.selectedIndexes();
+	setEditButtonStatus();
 }
 
 
