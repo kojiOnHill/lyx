@@ -7,8 +7,9 @@ CHMOD = chmod
 EXTRA_DIST = examples/CMakeLists.txt scripts/CMakeLists.txt examples/README.new_examples
 
 dist_pkgdata_DATA = CREDITS autocorrect chkconfig.ltx \
-	encodings layouttranslations languages latexcolors latexfonts RELEASE-NOTES \
-	symbols syntax.default unicode_alphanum_variants unicodesymbols
+	encodings layouttranslations languages latexcolors latexfonts \
+	math_conflicts RELEASE-NOTES symbols syntax.default \
+	unicode_alphanum_variants unicodesymbols
 
 # We use DATA now instead of PYTHON because automake 1.11.2 complains.
 # Note that we "chmod 755" manually this file in install-data-hook.
@@ -1480,6 +1481,7 @@ dist_imagesmath_DATA = \
 	images/math/talloblong.svgz \
 	images/math/tau.svgz \
 	images/math/taurus.svgz \
+	images/math/text.svgz \
 	images/math/textrm_AA.svgz \
 	images/math/textrm_O.svgz \
 	images/math/therefore.svgz \
