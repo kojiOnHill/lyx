@@ -372,6 +372,7 @@ bool DynamicMenuButton::isMenuType(string const & s)
 {
 	return s == "dynamic-custom-insets"
 		|| s == "dynamic-char-styles"
+		|| s == "dynamic-math-texts"
 		|| s == "textstyle-apply"
 		|| s == "paste";
 }
@@ -422,6 +423,12 @@ void DynamicMenuButton::updateTriggered()
 		setEnabled(!bv->buffer().isReadonly()
 			   && !m->isEmpty()
 			   && inset->insetAllowed(FLEX_CODE));
+	} else if (menutype == "dynamic-math-texts") {
+		//  && d->inset_->insetAllowed(MATH_ARRAY_CODE)
+		if (bv->cursor().inMathed())
+			LYXERR0("in mathed and array!");
+		else
+			LYXERR0("not in mathed and array!");
 	} else if (menutype == "textstyle-apply") {
 		m->clear();
 		setPopupMode(QToolButton::MenuButtonPopup);
@@ -489,11 +496,6 @@ void DynamicMenuButton::updateTriggered()
 		}
 		QToolButton::setDefaultAction(default_action);
 		setEnabled(lyx::getStatus(FuncRequest(LFUN_PASTE)).enabled());
-	} else if (menutype == "dynamic-math-texts") {
-		if (bv->cursor().inMathed() && d->inset_->insetAllowed(MATH_ARRAY_CODE))
-			LYXERR0("in mathed and array!");
-		else
-			LYXERR0("not in mathed and array!");
 	}
 }
 

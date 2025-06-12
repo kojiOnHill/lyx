@@ -218,7 +218,7 @@ ToolbarSet
 	Toolbar "math_panels" "Math Panels"
 		PopupMenu "space" "Math spacings"
 		PopupMenu "style" "Styles & classes"
-		PopupMenu "text" "Text"
+		DynamicMenu "dynamic-math-texts" "Text"
 		PopupMenu "frac-square" "Fractions"
 		PopupMenu "font" "Fonts"
 		PopupMenu "functions" "Functions"
