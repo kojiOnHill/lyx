@@ -425,9 +425,10 @@ void DynamicMenuButton::updateTriggered()
 			   && inset->insetAllowed(FLEX_CODE));
 	} else if (menutype == "dynamic-math-texts") {
 		//  && d->inset_->insetAllowed(MATH_ARRAY_CODE)
-		if (bv->cursor().inMathed())
-			LYXERR0("in mathed and array!");
-		else
+		if (bv->cursor().inMathed()) {
+			Inset & inset = bv->cursor().inset();
+			LYXERR0("in mathed and array! \n" << inset.insetAllowed(MATH_HULL_CODE));
+		} else
 			LYXERR0("not in mathed and array!");
 	} else if (menutype == "textstyle-apply") {
 		m->clear();

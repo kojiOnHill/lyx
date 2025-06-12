@@ -910,9 +910,13 @@ bool InsetMathHull::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 
 bool InsetMathHull::insetAllowed(InsetCode code) const
 {
+	LYXERR0("inset code = " << code);
 	switch (code) {
-	case MATH_ARRAY_CODE:
-		LYXERR0("This math inset is allowed!");
+	case MATH_HULL_CODE:
+		if (getType() == hullAlign)
+			LYXERR0("This math inset is allowed!");
+		else
+			LYXERR0("This math inset may be allowed, but not align");
 		return true;
 	default:
 		LYXERR0("This math inset is NOT allowed!");
