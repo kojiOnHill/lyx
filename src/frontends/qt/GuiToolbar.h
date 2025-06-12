@@ -101,6 +101,8 @@ protected:
 	void initialize() override;
 	///
 	void loadFlexInsets();
+	///
+	void loadMathTexts();
 	/// pimpl so we don't have to include big files
 	class Private;
 	Private * d;

@@ -908,6 +908,19 @@ bool InsetMathHull::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 }
 
 
+bool InsetMathHull::insetAllowed(InsetCode code) const
+{
+	switch (code) {
+	case MATH_ARRAY_CODE:
+		LYXERR0("This math inset is allowed!");
+		return true;
+	default:
+		LYXERR0("This math inset is NOT allowed!");
+		return false;
+	}
+}
+
+
 docstring InsetMathHull::label(row_type row) const
 {
 	LASSERT(row < nrows(), return docstring());

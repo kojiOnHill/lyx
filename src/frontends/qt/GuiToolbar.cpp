@@ -489,6 +489,11 @@ void DynamicMenuButton::updateTriggered()
 		}
 		QToolButton::setDefaultAction(default_action);
 		setEnabled(lyx::getStatus(FuncRequest(LFUN_PASTE)).enabled());
+	} else if (menutype == "dynamic-math-texts") {
+		if (bv->cursor().inMathed() && d->inset_->insetAllowed(MATH_ARRAY_CODE))
+			LYXERR0("in mathed and array!");
+		else
+			LYXERR0("not in mathed and array!");
 	}
 }
 
@@ -524,6 +529,15 @@ void DynamicMenuButton::loadFlexInsets()
 				new Action(func, getIcon(func, false), loc_item, loc_item, this);
 		m->addAction(act);
 	}
+}
+
+
+void DynamicMenuButton::loadMathTexts()
+{
+	QMenu * m = menu();
+	m->clear();
+	string const & menutype = tbitem_.name;
+	if (menutype == "dynamic-math-texts"){}
 }
 
 
