@@ -913,13 +913,21 @@ bool InsetMathHull::insetAllowed(InsetCode code) const
 	LYXERR0("inset code = " << code);
 	switch (code) {
 	case MATH_HULL_CODE:
-		if (getType() == hullAlign)
-			LYXERR0("This math inset is allowed!");
-		else
-			LYXERR0("This math inset may be allowed, but not align");
+		LYXERR0("type = " << hullName(getType()));
+		for (HullType const & env : mathedConflictEnvs()) {
+			LYXERR0("current env = " << hullName(env));
+			if (getType() == env) {
+				LYXERR0("getType == env: size = " << mathedConflictList(env).size());
+				for (docstring const & command : mathedConflictList(env)) {
+					LYXERR0("The math inset " << command << " is NOT allowed!");
+					return false;
+				}
+			} else
+				LYXERR0("This math inset may be allowed, but not align");
+		}
 		return true;
 	default:
-		LYXERR0("This math inset is NOT allowed!");
+		LYXERR0("This inset is not MATH_HULL_CODE");
 		return false;
 	}
 }

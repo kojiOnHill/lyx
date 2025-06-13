@@ -101,7 +101,7 @@ ToolbarSet
 		Item "Insert math" "math-mode on"
 		Item "Insert graphics" "dialog-show-new-inset graphics"
 		TableInsert "Insert table"
-		DynamicMenu "dynamic-custom-insets" "Custom insets"
+		DynamicMenu "dynamic-custom-insets" "Custom insets
 		Separator
 		Item "Toggle outline" "dialog-toggle toc"
 		PopupMenu "toolbar-toggle_math" "Show math toolbar"
@@ -408,13 +408,6 @@ ToolbarSet
 		Item "Left overlap	\\mathllap" "math-insert \mathllap"
 		Item "Center overlap	\\mathclap" "math-insert \mathclap"
 		Item "Right overlap	\\mathrlap" "math-insert \mathrlap"
-	End
-
-	Toolbar "text" "Text"
-		Item "Mbox	\\mbox", "math-size \mbox"
-		Item "Text	\\text", "math-size \text"
-		Item "Intertext	\\intertext", "math-size \intertext"
-		Item "Short intertext	\\shortintertext", "math-size \shortintertext"
 	End
 
 	Toolbar "sqrt-square" "Roots"

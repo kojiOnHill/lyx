@@ -1299,7 +1299,7 @@ void InsetMathGrid::write(TeXMathStream & os,
 				   << "}{" << cellinfo_[idx].align
 				   << "}{";
 			}
-			checkMathCommandConflict(idx);
+			// checkMathCommandConflict(idx);
 			os << cell(idx);
 			if (os.pendingBrace())
 				ModeSpecifier specifier(os, TEXT_MODE);
@@ -1327,24 +1327,24 @@ void InsetMathGrid::write(TeXMathStream & os,
 	}
 }
 
-void InsetMathGrid::checkMathCommandConflict(idx_type idx) const
-{
-	for (docstring const &command : mathedConflictCommands()) {
-		if (!cell(idx).empty() && cell(idx).front()->name() == command) {
-			for (docstring const & hull : mathedConflictList().at(command)) {
-				if (getType() == hullType(hull)) {
-					docstring const & warnTitle =
-					        from_utf8(N_("Command conflict"));
-					docstring const & warnMessage =
-					        bformat(_("TeX command '%1$s' cannot be used in math environment '%2$s'. Please change the environment or the command."),
-					                command, hull);
-					frontend::Alert::warning(warnTitle, warnMessage);
-					return;
-				}
-			}
-		}
-	}
-}
+// void InsetMathGrid::checkMathCommandConflict(idx_type idx) const
+// {
+// 	for (docstring const &command : mathedConflictCommands()) {
+// 		if (!cell(idx).empty() && cell(idx).front()->name() == command) {
+// 			for (docstring const & hull : mathedConflictList().at(command)) {
+// 				if (getType() == hullType(hull)) {
+// 					docstring const & warnTitle =
+// 					        from_utf8(N_("Command conflict"));
+// 					docstring const & warnMessage =
+// 					        bformat(_("TeX command '%1$s' cannot be used in math environment '%2$s'. Please change the environment or the command."),
+// 					                command, hull);
+// 					frontend::Alert::warning(warnTitle, warnMessage);
+// 					return;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 
 int InsetMathGrid::colsep() const
