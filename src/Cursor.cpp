@@ -44,6 +44,7 @@
 #include "mathed/InsetMath.h"
 #include "mathed/InsetMathBrace.h"
 #include "mathed/InsetMathEnsureMath.h"
+#include "mathed/InsetMathHull.h"
 #include "mathed/InsetMathScript.h"
 #include "mathed/MacroTable.h"
 #include "mathed/MathData.h"
@@ -1786,6 +1787,11 @@ bool Cursor::macroModeClose(bool cancel)
 	if (in && in->interpretString(*this, s))
 		return true;
 	bool const user_macro = buffer()->getMacro(name, *this, false);
+
+	// check if the inset can be used in the current math hull
+	if (in != nullptr && in->asHullInset() &&
+	        !in->asHullInset()->insetAllowed(insetCode("math"+to_utf8(name))))
+		return false;
 	MathAtom atom = user_macro ? MathAtom(new InsetMathMacro(buffer(), name))
 				   : createInsetMath(name, buffer());
 

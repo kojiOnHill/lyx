@@ -908,6 +908,22 @@ bool InsetMathHull::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 }
 
 
+bool InsetMathHull::insetAllowed(InsetCode code) const
+{
+	switch (code) {
+	case MATH_INTERTEXT_CODE:
+	case MATH_SHORTINTERTEXT_CODE:
+		for (HullType const & env : mathedConflictEnvs()) {
+			if (getType() == env)
+				return false;
+		}
+		return true;
+	default:
+		return !isPassThru();
+	}
+}
+
+
 docstring InsetMathHull::label(row_type row) const
 {
 	LASSERT(row < nrows(), return docstring());
