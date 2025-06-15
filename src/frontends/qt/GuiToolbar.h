@@ -16,6 +16,8 @@
 #ifndef GUITOOLBAR_H
 #define GUITOOLBAR_H
 
+#include "mathed/InsetMathHull.h"
+
 #include <QList>
 #include <QToolBar>
 #include <QToolButton>
@@ -101,6 +103,8 @@ protected:
 	void initialize() override;
 	///
 	void loadFlexInsets();
+	///
+	void loadMathTexts(InsetMathHull * hull);
 	/// pimpl so we don't have to include big files
 	class Private;
 	Private * d;
@@ -113,6 +117,22 @@ private:
 	static QIcon icon_textstyle_apply_;
 	static QIcon icon_undo_;
 	static QIcon icon_paste_;
+
+	/// Size of the menu items of math texts
+	// Make this number sync with the row number of mathTextMenu
+	int const mathTextMenuSize_ = 6;
+	/// Dynamic menu items of math texts
+	// As of June 2025, only applicable to "Text" toolbar menu
+	std::string mathTextMenu[6][2] =
+	{
+	    {"mbox",           "LR Text"},
+		{"fbox",           "Framed Text"},
+		{"framebox",       "Framed Text with sizes"},
+		{"text",           "AMS Text"},
+		{"intertext",      "Intertext"},
+		{"shortintertext", "Short intertext"}
+	};
+
 };
 
 

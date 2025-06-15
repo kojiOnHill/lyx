@@ -42,6 +42,8 @@
 
 #include "insets/InsetText.h"
 
+#include "mathed/MathFactory.h"
+
 #include "support/convert.h"
 #include "support/debug.h"
 #include "support/docstring_list.h"
@@ -372,6 +374,7 @@ bool DynamicMenuButton::isMenuType(string const & s)
 {
 	return s == "dynamic-custom-insets"
 		|| s == "dynamic-char-styles"
+		|| s == "dynamic-math-texts"
 		|| s == "textstyle-apply"
 		|| s == "paste";
 }
@@ -422,6 +425,12 @@ void DynamicMenuButton::updateTriggered()
 		setEnabled(!bv->buffer().isReadonly()
 			   && !m->isEmpty()
 			   && inset->insetAllowed(FLEX_CODE));
+	} else if (menutype == "dynamic-math-texts") {
+		InsetMathHull * hull = bv->cursor().inset().asInsetMath()->asHullInset();
+		if (bv->cursor().inMathed() && hull != nullptr) {
+			setEnabled(true);
+			loadMathTexts(hull);
+		}
 	} else if (menutype == "textstyle-apply") {
 		m->clear();
 		setPopupMode(QToolButton::MenuButtonPopup);
@@ -523,6 +532,41 @@ void DynamicMenuButton::loadFlexInsets()
 		Action * act = 
 				new Action(func, getIcon(func, false), loc_item, loc_item, this);
 		m->addAction(act);
+	}
+}
+
+
+void DynamicMenuButton::loadMathTexts(InsetMathHull * hull)
+{
+	string const & menutype = tbitem_.name;
+	if (menutype != "dynamic-math-texts")
+		return;
+
+	QMenu * m = menu();
+	m->clear();
+
+	HullType hullType = hull->getType();
+	bool skippedMenu = false;
+	for (int i=0; i<mathTextMenuSize_; i++) {
+		for (docstring const & command : mathedConflictList(hullType)) {
+			if (from_utf8(mathTextMenu[i][0]) == command) {
+				skippedMenu = true;
+				break;
+			}
+		}
+		if (!skippedMenu) {
+			FuncRequest func(LFUN_MATH_INSERT,
+			                 "\"\\" + mathTextMenu[i][0] + "\"",
+			                 FuncRequest::TOOLBAR);
+			QString menuText = toqstr(from_utf8(mathTextMenu[i][1] + "\t\\" +
+			                            mathTextMenu[i][0]));
+			Action * act =
+			        new Action(func, getIcon(func, false),
+			                   menuText, menuText, this);
+			m->addAction(act);
+		} else {
+			skippedMenu = false;
+		}
 	}
 }
 

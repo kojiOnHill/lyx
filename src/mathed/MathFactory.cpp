@@ -92,7 +92,7 @@ namespace {
 MathWordList theMathWordList;
 MathVariantList theMathVariantList;
 MathConflictList theMathConflictList;
-std::vector<docstring> theMathConflictCommands;
+std::vector<HullType> theMathConflictEnvs;
 
 
 bool isMathFontAvailable(string & name)
@@ -443,24 +443,18 @@ void initConflictList() {
 	fs >> setw(65636);
 	string line;
 
+	HullType currentMathHull;
 	while (getline(fs, line)) {
 
 		if (line.empty() || line[0] == '#')
 			continue;
 
-		docstring command;
-		docstring mathHulls;
-		idocstringstream is(from_utf8(line));
-		is >> command >> mathHulls;
-		docstring hul;
-		vector<docstring> mathHullList;
-		idocstringstream is2(subst(mathHulls, ',', '\n'));
-		while (getline(is2, hul)) {
-			mathHullList.push_back(hul);
+		if (line[0] == '[') {
+			currentMathHull = hullType(from_utf8(trim(line, "[]")));
+			theMathConflictEnvs.push_back(currentMathHull);
+		} else {
+			theMathConflictList[currentMathHull].push_back(from_utf8(line));
 		}
-
-		theMathConflictList[command] = mathHullList;
-		theMathConflictCommands.push_back(command);
 	}
 }
 
@@ -497,9 +491,15 @@ MathConflictList const & mathedConflictList()
 }
 
 
-std::vector<docstring> const & mathedConflictCommands()
+std::vector<docstring> const & mathedConflictList(HullType hull)
 {
-	return theMathConflictCommands;
+	return theMathConflictList[hull];
+}
+
+
+std::vector<HullType> const & mathedConflictEnvs()
+{
+	return theMathConflictEnvs;
 }
 
 

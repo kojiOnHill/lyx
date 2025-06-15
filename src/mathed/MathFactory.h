@@ -12,6 +12,7 @@
 #ifndef MATH_FACTORY_H
 #define MATH_FACTORY_H
 
+#include "InsetMath.h"
 #include "MathParser.h"
 
 #include <map>
@@ -37,10 +38,11 @@ MathWordList const & mathedWordList();
 typedef std::map<docstring, UnicodeVariants> MathVariantList;
 MathVariantList const & mathedVariantList();
 
-typedef std::map<docstring, std::vector<docstring>> MathConflictList;
+typedef std::map<HullType, std::vector<docstring>> MathConflictList;
 MathConflictList const & mathedConflictList();
+std::vector<docstring> const & mathedConflictList(HullType hull);
 
-std::vector<docstring> const & mathedConflictCommands();
+std::vector<HullType> const & mathedConflictEnvs();
 
 } // namespace lyx
 
