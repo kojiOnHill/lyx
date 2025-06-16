@@ -461,18 +461,6 @@ void initConflictList() {
 }
 
 
-void initDynamicMathToolBar() {
-	// At this moment, only applicable to "Text" toolbar menu
-	string mathTextMenu[4][2] = {
-	    {"Mbox	\\mbox", "math-insert \\mbox"},
-	    {"Text	\\text", "math-insert \\text"},
-	    {"Intertext	\\intertext", "math-insert \\intertext"},
-	    {"Short intertext	\\shortintertext", "math-insert \\shortintertext"}
-	};
-
-}
-
-
 bool isSpecialChar(docstring const & name)
 {
 	if (name.size() != 1)

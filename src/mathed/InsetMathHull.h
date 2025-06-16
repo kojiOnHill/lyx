@@ -272,6 +272,7 @@ private:
 	std::unique_ptr<RenderPreview> preview_;
 	///
 	DocIterator docit_;
+
 //
 // Incorporate me
 //

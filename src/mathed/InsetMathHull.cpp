@@ -910,25 +910,20 @@ bool InsetMathHull::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 
 bool InsetMathHull::insetAllowed(InsetCode code) const
 {
-	LYXERR0("inset code = " << code);
+	LYXERR0("inquiried inset code = " << code);
 	switch (code) {
-	case MATH_HULL_CODE:
-		LYXERR0("type = " << hullName(getType()));
+	case MATH_INTERTEXT_CODE:
+		LYXERR0("hull type = " << hullName(getType()));
 		for (HullType const & env : mathedConflictEnvs()) {
 			LYXERR0("current env = " << hullName(env));
-			if (getType() == env) {
-				LYXERR0("getType == env: size = " << mathedConflictList(env).size());
-				for (docstring const & command : mathedConflictList(env)) {
-					LYXERR0("The math inset " << command << " is NOT allowed!");
-					return false;
-				}
-			} else
-				LYXERR0("This math inset may be allowed, but not align");
+			if (getType() == env)
+				return false;
 		}
 		return true;
 	default:
-		LYXERR0("This inset is not MATH_HULL_CODE");
-		return false;
+		LYXERR0("This inset is not MATH_INTERTEXT_CODE. Return no passthru => "
+		        << !isPassThru());
+		return !isPassThru();
 	}
 }
 
@@ -2128,6 +2123,17 @@ bool InsetMathHull::getStatus(Cursor & cur, FuncRequest const & cmd,
 		FuncStatus & status) const
 {
 	switch (cmd.action()) {
+	case LFUN_SELF_INSERT:
+		LYXERR0("***** FuncRequest action = " << cmd.action());
+		if (insetAllowed(MATH_INTERTEXT_CODE)) {
+			status.setEnabled(true);
+			return true;
+		} else {
+			LYXERR0("INTERTEXT CANNOT BE USED HERE!!!!!");
+			// status.setEnabled(false);
+			return true;
+		}
+		break;
 	case LFUN_FINISHED_BACKWARD:
 	case LFUN_FINISHED_FORWARD:
 	case LFUN_FINISHED_RIGHT:
@@ -2206,9 +2212,12 @@ bool InsetMathHull::getStatus(Cursor & cur, FuncRequest const & cmd,
 	}
 
 	case LFUN_INSET_INSERT:
+		LYXERR0("Argument for LFUN_INSET_INSERT is " << cmd.getArg(0));
 		if (cmd.getArg(0) == "label") {
 			status.setEnabled(type_ != hullSimple);
 			return true;
+		} else if (cmd.getArg(0) == "intertext") {
+			return false;
 		}
 		return InsetMathGrid::getStatus(cur, cmd, status);
 

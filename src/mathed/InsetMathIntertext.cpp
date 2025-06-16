@@ -10,11 +10,13 @@
 
 #include <config.h>
 
+#include "InsetMathHull.h"
 #include "InsetMathIntertext.h"
 
 #include "Buffer.h"
 #include "BufferView.h"
 #include "Dimension.h"
+#include "FuncRequest.h"
 #include "InsetMathChar.h"
 #include "LaTeXFeatures.h"
 #include "MathData.h"
@@ -32,7 +34,31 @@ namespace lyx {
 
 InsetMathIntertext::InsetMathIntertext(Buffer * buf, docstring const & name)
 	: InsetMathNest(buf, 1), name_(name)
-{}
+{
+	LYXERR0("Constructing InsetMathIntertext ******");
+	// FuncRequest fr(LFUN_MATH_INSERT, "\\intertext");
+}
+
+
+bool InsetMathIntertext::getStatus(Cursor & cur, FuncRequest const & cmd,
+                                   FuncStatus & status) const
+{
+	switch (cmd.action()) {
+	case LFUN_SELF_INSERT:
+		LYXERR0("***** FuncRequest action = " << cmd.action());
+		if (insetAllowed(MATH_INTERTEXT_CODE)) {
+			// status.setEnabled(true);
+			return true;
+		} else {
+			LYXERR0("INTERTEXT CANNOT BE USED HERE!!!!!");
+			// status.setEnabled(false);
+			return true;
+		}
+		break;
+	default:
+		return InsetMath::getStatus(cur, cmd, status);
+	}
+}
 
 
 void InsetMathIntertext::write(TeXMathStream & os) const

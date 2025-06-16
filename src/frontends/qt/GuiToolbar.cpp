@@ -34,6 +34,7 @@
 #include "LayoutBox.h"
 #include "LyX.h"
 #include "Menus.h"
+#include "mathed/MathFactory.h"
 #include "qt_helpers.h"
 #include "Session.h"
 #include "Text.h"
@@ -425,11 +426,21 @@ void DynamicMenuButton::updateTriggered()
 			   && inset->insetAllowed(FLEX_CODE));
 	} else if (menutype == "dynamic-math-texts") {
 		//  && d->inset_->insetAllowed(MATH_ARRAY_CODE)
-		if (bv->cursor().inMathed()) {
-			Inset & inset = bv->cursor().inset();
-			LYXERR0("in mathed and array! \n" << inset.insetAllowed(MATH_HULL_CODE));
-		} else
+		InsetMathHull * hull = bv->cursor().inset().asInsetMath()->asHullInset();
+		if (bv->cursor().inMathed() && hull != nullptr) {
+			LYXERR0("LyXcode " << hull->lyxCode() <<
+			        " is in mathed and array!");
+			if (hull->insetAllowed(MATH_INTERTEXT_CODE)) {
+				LYXERR0("math intertext is allowed");
+			} else {
+				LYXERR0("math intertext is NOT allowed");
+			}
+			setEnabled(true);
+			loadMathTexts(hull);
+		} else {
 			LYXERR0("not in mathed and array!");
+			// setEnabled(false);
+		}
 	} else if (menutype == "textstyle-apply") {
 		m->clear();
 		setPopupMode(QToolButton::MenuButtonPopup);
@@ -535,12 +546,43 @@ void DynamicMenuButton::loadFlexInsets()
 }
 
 
-void DynamicMenuButton::loadMathTexts()
+void DynamicMenuButton::loadMathTexts(InsetMathHull * hull)
 {
+	string const & menutype = tbitem_.name;
+	if (menutype != "dynamic-math-texts")
+		return;
+
 	QMenu * m = menu();
 	m->clear();
-	string const & menutype = tbitem_.name;
-	if (menutype == "dynamic-math-texts"){}
+
+	HullType hullType = hull->getType();
+	bool skippedMenu = false;
+	LYXERR0("getType == env: size = " << mathedConflictList(hullType).size());
+	for (int i=0; i<mathTextMenuSize_; i++) {
+		for (docstring const & command : mathedConflictList(hullType)) {
+			if (from_utf8(mathTextMenu[i][0]) == command) {
+				LYXERR0(command << " needs to be skipped");
+				skippedMenu = true;
+				break;
+			}
+		}
+		if (!skippedMenu) {
+			LYXERR0("menu " << mathTextMenu[i][0] << " " <<
+			        mathTextMenu[i][1]);
+			FuncRequest func(LFUN_MATH_INSERT,
+			                 "\"\\" + mathTextMenu[i][0] + "\"",
+			                 FuncRequest::TOOLBAR);
+			QString menuText = toqstr(from_utf8(mathTextMenu[i][1] + "\t" +
+			                            mathTextMenu[i][0]));
+			Action * act =
+			        new Action(func, getIcon(func, false),
+			                   menuText, menuText, this);
+			m->addAction(act);
+		} else {
+			LYXERR0(mathTextMenu[i][0] << " is indeed skipped");
+			skippedMenu = false;
+		}
+	}
 }
 
 
