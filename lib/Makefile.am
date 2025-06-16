@@ -1001,6 +1001,7 @@ dist_imagesmath_DATA = \
 	images/math/fatbslash.svgz \
 	images/math/fatsemi.svgz \
 	images/math/fatslash.svgz \
+	images/math/fbox.svgz \
 	images/math/female.svgz \
 	images/math/fint.svgz \
 	images/math/fintop.svgz \
@@ -1010,6 +1011,7 @@ dist_imagesmath_DATA = \
 	images/math/forall.svgz \
 	images/math/frac.svgz \
 	images/math/frac-square.svgz \
+	images/math/framebox.svgz \
 	images/math/frown.svgz \
 	images/math/frownie.svgz \
 	images/math/fullmoon.svgz \
@@ -1221,6 +1223,7 @@ dist_imagesmath_DATA = \
 	images/math/mathsf.svgz \
 	images/math/mathtt.svgz \
 	images/math/matrix.svgz \
+	images/math/mbox.svgz \
 	images/math/measuredangle.svgz \
 	images/math/mercury.svgz \
 	images/math/merge.svgz \
@@ -1487,6 +1490,7 @@ dist_imagesmath_DATA = \
 	images/math/therefore.svgz \
 	images/math/theta.svgz \
 	images/math/theta2.svgz \
+	images/math/text.svgz \
 	images/math/textdegree.svgz \
 	images/math/textrm.svgz \
 	images/math/thickapprox.svgz \
