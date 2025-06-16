@@ -556,7 +556,7 @@ void DynamicMenuButton::loadMathTexts(InsetMathHull * hull)
 		}
 		if (!skippedMenu) {
 			FuncRequest func(LFUN_MATH_INSERT,
-			                 "\"\\" + mathTextMenu[i][0] + "\"",
+			                 "\\" + mathTextMenu[i][0],
 			                 FuncRequest::TOOLBAR);
 			QString menuText = toqstr(from_utf8(mathTextMenu[i][1] + "\t\\" +
 			                            mathTextMenu[i][0]));
