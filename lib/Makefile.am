@@ -1488,6 +1488,7 @@ dist_imagesmath_DATA = \
 	images/math/tau.svgz \
 	images/math/taurus.svgz \
 	images/math/text.svgz \
+	images/math/textnormal.svgz \
 	images/math/textrm_AA.svgz \
 	images/math/textrm_O.svgz \
 	images/math/therefore.svgz \

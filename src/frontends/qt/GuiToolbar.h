@@ -120,17 +120,19 @@ private:
 
 	/// Size of the menu items of math texts
 	// Make this number sync with the row number of mathTextMenu
-	int const mathTextMenuSize_ = 6;
+	int const mathTextMenuSize_ = 8;
 	/// Dynamic menu items of math texts
 	// As of June 2025, only applicable to "Text" toolbar menu
-	std::string mathTextMenu[6][2] =
+	std::string mathTextMenu[8][3] =
 	{
-	    {"mbox",           "LR Text"},
-		{"fbox",           "Framed Text"},
-		{"framebox",       "Framed Text with sizes"},
-		{"text",           "AMS Text"},
-		{"intertext",      "Intertext"},
-		{"shortintertext", "Short intertext"}
+		{"mbox",           "LR Text",          "Text in current font with constant sizes"},
+		{"fbox",           "Framed Text",      "Framed text"},
+		{"framebox",       "Framed Text with sizes", "Framed text with variable frame sizes"},
+		{"text",           "AMS Text",         "Text in current font with variable sizes"},
+		{"textrm",         "Roman text",       "Text in roman font"},
+		{"textnormal",     "Normal font text", "Text using \\normalfont"},
+		{"intertext",      "Intertext",        "Text between equations"},
+		{"shortintertext", "Short intertext",  "Text between equations of short height"}
 	};
 
 };

@@ -560,9 +560,10 @@ void DynamicMenuButton::loadMathTexts(InsetMathHull * hull)
 			                 FuncRequest::TOOLBAR);
 			QString menuText = toqstr(from_utf8(mathTextMenu[i][1] + "\t\\" +
 			                            mathTextMenu[i][0]));
+			QString tooltip = toqstr(from_utf8(mathTextMenu[i][2]));
 			Action * act =
 			        new Action(func, getIcon(func, false),
-			                   menuText, menuText, this);
+			                   menuText, tooltip, this);
 			m->addAction(act);
 		} else {
 			skippedMenu = false;

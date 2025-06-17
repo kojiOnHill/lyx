@@ -218,10 +218,10 @@ ToolbarSet
 	Toolbar "math_panels" "Math Panels"
 		PopupMenu "space" "Math spacings"
 		PopupMenu "style" "Styles & classes"
-		DynamicMenu "dynamic-math-texts" "Text"
 		PopupMenu "frac-square" "Fractions"
-		PopupMenu "font" "Fonts"
 		PopupMenu "functions" "Functions"
+		PopupMenu "font" "Fonts"
+		DynamicMenu "dynamic-math-texts" "Text"
 		IconPalette "latex_deco" "Frame decorations"
 		IconPalette "latex_varsz" "Big operators"
 		IconPalette "latex_misc" "Miscellaneous"
@@ -455,7 +455,6 @@ ToolbarSet
 		Item "Fraktur	\\mathfrak" "math-insert \mathfrak"
 		Item "Calligraphic	\\mathcal" "math-insert \mathcal"
 		Item "Formal Script	\\mathscr" "math-insert \mathscr"
-		Item "Normal text mode	\\textrm" "math-insert \textrm"
 	End
 
 	Toolbar "latex_dots" "Dots"
