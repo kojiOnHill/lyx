@@ -977,6 +977,7 @@ dist_imagesmath_DATA = \
 	images/math/downdownarrows.svgz \
 	images/math/downharpoonleft.svgz \
 	images/math/downharpoonright.svgz \
+	images/math/dynamic-math-texts.svgz \
 	images/math/earth.svgz \
 	images/math/eighthnote.svgz \
 	images/math/ell.svgz \
@@ -1073,6 +1074,7 @@ dist_imagesmath_DATA = \
 	images/math/int.svgz \
 	images/math/intercal.svgz \
 	images/math/interleave.svgz \
+	images/math/intertext.svgz \
 	images/math/intop.svgz \
 	images/math/iota.svgz \
 	images/math/invdiameter.svgz \
@@ -1404,6 +1406,7 @@ dist_imagesmath_DATA = \
 	images/math/setminus.svgz \
 	images/math/sharp.svgz \
 	images/math/shortdownarrow.svgz \
+	images/math/shortintertext.svgz \
 	images/math/shortleftarrow.svgz \
 	images/math/shortmid.svgz \
 	images/math/shortparallel.svgz \
