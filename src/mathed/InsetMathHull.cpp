@@ -2243,7 +2243,16 @@ bool InsetMathHull::getStatus(Cursor & cur, FuncRequest const & cmd,
 		return InsetMathGrid::getStatus(cur, cmd, status);
 	}
 
+	case LFUN_SELF_INSERT:
+		// LYXERR0("LFUN_SELF_INSERT! " << cmd.argument());
+		return false;
+
+	case LFUN_MATH_INSERT:
+		// LYXERR0("LFUN_MATH_INSERT! " << cmd.argument());
+		return false;
+
 	default:
+		// LYXERR0("default: " << cmd.argument());
 		return InsetMathGrid::getStatus(cur, cmd, status);
 	}
 }

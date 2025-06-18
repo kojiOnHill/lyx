@@ -14,7 +14,10 @@
 
 #include "Buffer.h"
 #include "BufferView.h"
+#include "Cursor.h"
 #include "Dimension.h"
+#include "FuncRequest.h"
+#include "FuncStatus.h"
 #include "InsetMathChar.h"
 #include "LaTeXFeatures.h"
 #include "MathData.h"
@@ -34,6 +37,22 @@ InsetMathIntertext::InsetMathIntertext(Buffer * buf, docstring const & name)
 	: InsetMathNest(buf, 1), name_(name)
 {}
 
+
+bool InsetMathIntertext::getStatus(Cursor & cur, FuncRequest const & cmd,
+	FuncStatus & status) const
+{
+	switch(cmd.action()) {
+	case LFUN_INSET_INSERT:
+		break;
+	case LFUN_MATH_INSERT:
+		break;
+	case LFUN_SELF_INSERT:
+		break;
+	default:
+		break;
+	}
+	return false;
+}
 
 void InsetMathIntertext::write(TeXMathStream & os) const
 {

@@ -443,6 +443,7 @@ bool Inset::getStatus(Cursor &, FuncRequest const & cmd,
 		return true;
 
 	case LFUN_INSET_INSERT:
+		LYXERR0("LFUN_INSET_INSERT! " << cmd.argument());
 		// Don't allow insertion of new insets.
 		// Every inset that wants to allow new insets from open
 		// dialogs needs to override this.
@@ -469,6 +470,7 @@ bool Inset::getStatus(Cursor &, FuncRequest const & cmd,
 		return true;
 
 	default:
+		LYXERR0("INSET " << cmd.action() << " " << cmd.argument());
 		break;
 	}
 	return false;

@@ -1789,9 +1789,9 @@ bool Cursor::macroModeClose(bool cancel)
 	bool const user_macro = buffer()->getMacro(name, *this, false);
 
 	// check if the inset can be used in the current math hull
-	if (in != nullptr && in->asHullInset() &&
-	        !in->asHullInset()->insetAllowed(insetCode("math"+to_utf8(name))))
-		return false;
+	// if (in != nullptr && in->asHullInset() &&
+	//         !in->asHullInset()->insetAllowed(insetCode("math"+to_utf8(name))))
+	// 	return false;
 	MathAtom atom = user_macro ? MathAtom(new InsetMathMacro(buffer(), name))
 				   : createInsetMath(name, buffer());
 
