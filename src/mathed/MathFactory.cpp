@@ -605,8 +605,9 @@ MathAtom createInsetMath(docstring const & s, Buffer * buf)
 	latexkeys const * l = in_word_set(s);
 	if (l) {
 		string const & inset = l->inset;
-		FuncRequest fr(LFUN_SELF_INSERT, "\\intertext");
-		LYXERR0("getStatus = " << getStatus(fr).enabled());
+		FuncRequest fr(LFUN_MATH_INSERT, "\\" + inset);
+		if(!getStatus(fr).enabled())
+			return MathAtom(nullptr);
 		//lyxerr << " found inset: '" << inset << '\'' << endl;
 		if (inset == "ref")
 			return MathAtom(new InsetMathRef(buf, l->name));

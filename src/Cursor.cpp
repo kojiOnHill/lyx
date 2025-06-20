@@ -1788,12 +1788,11 @@ bool Cursor::macroModeClose(bool cancel)
 		return true;
 	bool const user_macro = buffer()->getMacro(name, *this, false);
 
-	// check if the inset can be used in the current math hull
-	// if (in != nullptr && in->asHullInset() &&
-	//         !in->asHullInset()->insetAllowed(insetCode("math"+to_utf8(name))))
-	// 	return false;
 	MathAtom atom = user_macro ? MathAtom(new InsetMathMacro(buffer(), name))
 				   : createInsetMath(name, buffer());
+	// exit if the inset cannot be used e.g. in the current math hull
+	if (atom.nucleus() == nullptr)
+		return false;
 
 	// try to put argument into macro, if we just inserted a macro
 	bool macroArg = false;

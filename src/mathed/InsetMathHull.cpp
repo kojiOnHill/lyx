@@ -915,11 +915,9 @@ bool InsetMathHull::insetAllowed(InsetCode code) const
 	case MATH_SHORTINTERTEXT_CODE:
 		for (HullType const & env : mathedConflictEnvs()) {
 			if (getType() == env) {
-				LYXERR0("returning false");
 				return false;
 			}
 		}
-		LYXERR0("returning true");
 		return true;
 	default:
 		return !isPassThru();
@@ -2140,7 +2138,6 @@ bool InsetMathHull::getStatus(Cursor & cur, FuncRequest const & cmd,
 		status.setEnabled(false);
 		return true;
 	case LFUN_MATH_MUTATE: {
-		LYXERR0("LFUN_MATH_MUTATE: " << cmd.argument());
 		HullType const ht = hullType(cmd.argument());
 		status.setOnOff(type_ == ht);
 		status.setEnabled(isMutable(ht) && isMutable(type_));
@@ -2247,16 +2244,12 @@ bool InsetMathHull::getStatus(Cursor & cur, FuncRequest const & cmd,
 		return InsetMathGrid::getStatus(cur, cmd, status);
 	}
 
-	case LFUN_SELF_INSERT:
-		LYXERR0("LFUN_SELF_INSERT! " << cmd.argument());
-		return false;
-
 	case LFUN_MATH_INSERT:
-		if (cmd.argument() == "\\intertext") {
-			LYXERR0("LFUN_MATH_INSERT! " << cmd.argument());
-			return insetAllowed(MATH_INTERTEXT_CODE);
-		}
-		return false;
+		if (cmd.argument() == "\\intertext" || cmd.argument() == "\\shortintertext") {
+			status.setEnabled(insetAllowed(MATH_INTERTEXT_CODE));
+			return true;
+		} else
+			return InsetMathGrid::getStatus(cur, cmd, status);
 
 	default:
 		// LYXERR0("default: " << cmd.argument());

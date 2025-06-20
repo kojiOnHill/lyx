@@ -429,7 +429,7 @@ void DynamicMenuButton::updateTriggered()
 		InsetMathHull * hull = bv->cursor().inset().asInsetMath()->asHullInset();
 		if (bv->cursor().inMathed() && hull != nullptr) {
 			setEnabled(true);
-			loadMathTexts(hull);
+			loadMathTexts();
 		}
 	} else if (menutype == "textstyle-apply") {
 		m->clear();
@@ -536,7 +536,7 @@ void DynamicMenuButton::loadFlexInsets()
 }
 
 
-void DynamicMenuButton::loadMathTexts(InsetMathHull * hull)
+void DynamicMenuButton::loadMathTexts()
 {
 	string const & menutype = tbitem_.name;
 	if (menutype != "dynamic-math-texts")
@@ -545,29 +545,15 @@ void DynamicMenuButton::loadMathTexts(InsetMathHull * hull)
 	QMenu * m = menu();
 	m->clear();
 
-	HullType hullType = hull->getType();
-	bool skippedMenu = false;
 	for (int i=0; i<mathTextMenuSize_; i++) {
-		for (docstring const & command : mathedConflictList(hullType)) {
-			if (from_utf8(mathTextMenu[i][0]) == command) {
-				skippedMenu = true;
-				break;
-			}
-		}
-		if (!skippedMenu) {
-			FuncRequest func(LFUN_MATH_INSERT,
-			                 "\\" + mathTextMenu[i][0],
-			                 FuncRequest::TOOLBAR);
-			QString menuText = toqstr(from_utf8(mathTextMenu[i][1] + "\t\\" +
-			                            mathTextMenu[i][0]));
-			QString tooltip = toqstr(from_utf8(mathTextMenu[i][2]));
-			Action * act =
-			        new Action(func, getIcon(func, false),
-			                   menuText, tooltip, this);
-			m->addAction(act);
-		} else {
-			skippedMenu = false;
-		}
+		FuncRequest func(LFUN_MATH_INSERT, "\\" + mathTextMenu[i][0],
+		                 FuncRequest::TOOLBAR);
+		QString menuText = toqstr(from_utf8(mathTextMenu[i][1] + "\t\\" +
+		                                    mathTextMenu[i][0]));
+		QString tooltip = toqstr(from_utf8(mathTextMenu[i][2]));
+		Action * act =
+		        new Action(func, getIcon(func, false), menuText, tooltip, this);
+		m->addAction(act);
 	}
 }
 

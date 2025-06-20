@@ -104,7 +104,7 @@ protected:
 	///
 	void loadFlexInsets();
 	///
-	void loadMathTexts(InsetMathHull * hull);
+	void loadMathTexts();
 	/// pimpl so we don't have to include big files
 	class Private;
 	Private * d;

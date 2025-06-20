@@ -1753,7 +1753,6 @@ bool InsetMathNest::getStatus(Cursor & cur, FuncRequest const & cmd,
 		break;
 
 	case LFUN_MATH_INSERT:
-		LYXERR0("MATH_INSERT: " << cmd.argument());
 		flag.setEnabled(currentMode() != TEXT_MODE);
 		break;
 

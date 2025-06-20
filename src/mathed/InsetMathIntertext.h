@@ -27,9 +27,6 @@ public:
 	///
 	explicit InsetMathIntertext(Buffer * buf, docstring const & name);
 	///
-	bool getStatus(Cursor & cur, FuncRequest const & cmd,
-		FuncStatus & status) const override;
-	///
 	mode_type currentMode() const override { return TEXT_MODE; }
 	///
 	docstring name() const override;
