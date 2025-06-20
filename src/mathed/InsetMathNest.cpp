@@ -1753,6 +1753,7 @@ bool InsetMathNest::getStatus(Cursor & cur, FuncRequest const & cmd,
 		break;
 
 	case LFUN_MATH_INSERT:
+		LYXERR0("MATH_INSERT: " << cmd.argument());
 		flag.setEnabled(currentMode() != TEXT_MODE);
 		break;
 
@@ -1765,6 +1766,7 @@ bool InsetMathNest::getStatus(Cursor & cur, FuncRequest const & cmd,
 		// Don't test createMathInset_fromDialogStr(), since
 		// getStatus is not called with a valid reference and the
 		// dialog would not be applicable.
+		LYXERR0("INSET_INSERT: " << cmd.argument());
 		string const name = cmd.getArg(0);
 		flag.setEnabled(name == "ref" || name == "mathspace");
 		break;

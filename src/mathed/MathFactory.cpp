@@ -12,6 +12,8 @@
 
 #include "MathFactory.h"
 
+#include "FuncRequest.h"
+#include "FuncStatus.h"
 #include "InsetMathAMSArray.h"
 #include "InsetMathArray.h"
 #include "InsetMathBoldSymbol.h"
@@ -603,6 +605,8 @@ MathAtom createInsetMath(docstring const & s, Buffer * buf)
 	latexkeys const * l = in_word_set(s);
 	if (l) {
 		string const & inset = l->inset;
+		FuncRequest fr(LFUN_SELF_INSERT, "\\intertext");
+		LYXERR0("getStatus = " << getStatus(fr).enabled());
 		//lyxerr << " found inset: '" << inset << '\'' << endl;
 		if (inset == "ref")
 			return MathAtom(new InsetMathRef(buf, l->name));

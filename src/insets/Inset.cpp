@@ -469,8 +469,12 @@ bool Inset::getStatus(Cursor &, FuncRequest const & cmd,
 		status.setEnabled(false);
 		return true;
 
+	case LFUN_MATH_INSERT:
+		if (cmd.argument() == "\\intertext")
+			LYXERR0("LFUN_MATH_INSERT! " << cmd.argument());
+		return true;
+
 	default:
-		LYXERR0("INSET " << cmd.action() << " " << cmd.argument());
 		break;
 	}
 	return false;

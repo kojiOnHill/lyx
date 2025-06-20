@@ -47,6 +47,10 @@ public:
 	InsetCode lyxCode() const override { return MATH_INTERTEXT_CODE; }
 	///
 	void validate(LaTeXFeatures &) const override;
+	///
+	InsetMathIntertext const * asIntertextInset() const override { return this; }
+	///
+	InsetMathIntertext * asIntertextInset() override { return this; }
 
 private:
 	Inset * clone() const override;

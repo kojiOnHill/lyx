@@ -41,16 +41,24 @@ InsetMathIntertext::InsetMathIntertext(Buffer * buf, docstring const & name)
 bool InsetMathIntertext::getStatus(Cursor & cur, FuncRequest const & cmd,
 	FuncStatus & status) const
 {
+	// LYXERR0("Intertext? = " << cur.inset().asInsetMath()->asIntertextInset());
+	// LYXERR0("previous inset = " << cur.prevInset()->lyxCode());
+	if (cmd.origin() != FuncRequest::INTERNAL)
+		return InsetMath::getStatus(cur, cmd, status);
 	switch(cmd.action()) {
 	case LFUN_INSET_INSERT:
+		LYXERR0("LFUN_INSET_INSERT! " << cmd.argument());
 		break;
 	case LFUN_MATH_INSERT:
+		LYXERR0("LFUN_MATH_INSERT! " << cmd.argument());
 		break;
 	case LFUN_SELF_INSERT:
+		LYXERR0("LFUN_SELF_INSERT! " << cmd.argument());
 		break;
 	default:
 		break;
 	}
+	LYXERR0("Return false " << cmd.action() << ": " << cmd.argument());
 	return false;
 }
 
@@ -123,5 +131,6 @@ void InsetMathIntertext::validate(LaTeXFeatures & features) const
 		features.require("mathtools");
 	InsetMathNest::validate(features);
 }
+
 
 } // namespace lyx
