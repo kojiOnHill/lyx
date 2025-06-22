@@ -426,8 +426,7 @@ bool InsetText::getStatus(Cursor & cur, FuncRequest const & cmd,
 			                    to_utf8("math" + ltrim(cmd.argument(), "\\")))));
 			return true;
 		}
-		// let else go down to default
-
+	// fall through
 	default:
 		// Dispatch only to text_ if the cursor is inside
 		// the text_. It is not for context menus (bug 5797).
