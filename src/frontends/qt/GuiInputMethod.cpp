@@ -507,7 +507,11 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 	}
 	// when preedit cursor is available, string fonts are all common
 	// so pick up the last one
-	QTextCharFormat & qtcf = d->style_.segments_.back().char_format_;
+	QTextCharFormat qtcf;
+	if (!d->style_.segments_.empty())
+		qtcf = d->style_.segments_.back().char_format_;
+	else
+		conformToSurroundingFont(qtcf);
 	QFontMetrics qfm(qtcf.font());
 	QString str_before_caret = "";
 
