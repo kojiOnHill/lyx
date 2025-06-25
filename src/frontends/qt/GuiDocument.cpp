@@ -1856,7 +1856,7 @@ GuiDocument::GuiDocument(GuiView & lv)
 
 void GuiDocument::checkOnClosing()
 {
-	if (buffer().isReadonly() || !bc().policy().buttonStatus(ButtonPolicy::RESTORE))
+	if (!bufferview() || buffer().isReadonly() || !bc().policy().buttonStatus(ButtonPolicy::RESTORE))
 		// nothing to do
 		return;
 
