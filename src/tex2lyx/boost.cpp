@@ -20,15 +20,6 @@ using namespace std;
 
 namespace boost {
 
-#ifndef BOOST_NO_EXCEPTIONS
-void throw_exception(exception const & e)
-{
-	cerr << "Exception caught:\n" << e.what() << endl;
-	BOOST_ASSERT(false);
-}
-#endif
-
-
 void assertion_failed(char const * expr, char const * function,
 		char const * file, long line)
 {

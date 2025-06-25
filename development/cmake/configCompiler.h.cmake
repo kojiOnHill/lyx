@@ -92,13 +92,9 @@
 #define BOOST_ENABLE_ASSERT_HANDLER 1
 
 //#define BOOST_DISABLE_THREADS 1
-#define BOOST_NO_WSTRING 1
 
 #ifdef __CYGWIN__
 #  define _DEFAULT_SOURCE
-#  define BOOST_POSIX 1
-#  define BOOST_POSIX_API 1
-#  define BOOST_POSIX_PATH 1
 #endif
 
 #if defined(HAVE_WCHAR_T) && SIZEOF_WCHAR_T == 4

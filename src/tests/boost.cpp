@@ -19,14 +19,6 @@ using namespace std;
 
 namespace boost {
 
-#ifndef BOOST_NO_EXCEPTIONS
-void throw_exception(exception const & /*e*/)
-{
-	BOOST_ASSERT(false);
-}
-#endif
-
-
 void assertion_failed(char const * /*expr*/, char const * /*function*/,
 		      char const * /*file*/, long /*line*/)
 {
