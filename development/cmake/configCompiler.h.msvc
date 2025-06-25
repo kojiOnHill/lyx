@@ -118,7 +118,7 @@
 #define PATH_MAX 512
 #endif
 
-#ifdef _WIN32 
+#ifdef _WIN32
 #undef HAVE_MKDIR // use _mkdir instead
 #endif
 
@@ -127,11 +127,6 @@
 #ifdef _DEBUG
 #  define ENABLE_ASSERTIONS 1
 #endif
-
-#ifndef ENABLE_ASSERTIONS
-#  define BOOST_DISABLE_ASSERTS 1
-#endif
-#define BOOST_ENABLE_ASSERT_HANDLER 1
 
 #define BOOST_DISABLE_THREADS 1
 

@@ -284,11 +284,6 @@ char * strerror(int n);
 
 #define BOOST_USER_CONFIG <config.h>
 
-#if !defined(ENABLE_ASSERTIONS)
-#  define BOOST_DISABLE_ASSERTS 1
-#endif
-#define BOOST_ENABLE_ASSERT_HANDLER 1
-
 #define BOOST_DISABLE_THREADS 1
 
 #ifdef __CYGWIN__
