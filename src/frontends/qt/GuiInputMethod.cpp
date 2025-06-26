@@ -1103,12 +1103,18 @@ void GuiInputMethod::setSurroundingText(const Cursor & cur) {
 			++insets_before_cur;
 	}
 
-	d->im_state_.text_before_ =
-	        partext.substr(0, *d->cur_pos_ptr_ - insets_before_cur);
-	d->im_state_.text_after_  =
-	        partext.substr(*d->cur_pos_ptr_ - insets_before_cur);
-	d->im_state_.surrounding_text_ =
-	        d->im_state_.text_before_ + d->im_state_.text_after_;
+	if (*d->cur_pos_ptr_ >= insets_before_cur) {
+		d->im_state_.text_before_ =
+				partext.substr(0, *d->cur_pos_ptr_ - insets_before_cur);
+		d->im_state_.text_after_  =
+				partext.substr(*d->cur_pos_ptr_ - insets_before_cur);
+		d->im_state_.surrounding_text_ =
+		        d->im_state_.text_before_ + d->im_state_.text_after_;
+	} else {
+		d->im_state_.text_before_.clear();
+		d->im_state_.text_after_  = partext;
+		d->im_state_.surrounding_text_ = partext;
+	}
 
 	LYXERR(Debug::DEBUG, "surrounding text before cursor = " <<
 	       d->im_state_.text_before_);
