@@ -40,8 +40,6 @@ function runthis() {
     # DBG: sometimes useful to just echo directly.
     #echo "$@"
 
-    echo "$@" >> "${build_script_f}"
-
     # (https://stackoverflow.com/a/9057699/1376404)
     # todo: sanity check the log name. use whitelist?
     #
@@ -49,6 +47,8 @@ function runthis() {
     # derive the log name from there.
     LOG="${LOGS_D}/$1"
     shift
+
+    echo "$@" >> "${build_script_f}"
 
     # TODO: first need to clean up STDERR from other outputs
     # The following tee's STDERR:
@@ -469,10 +469,14 @@ mkdir "${LOGS_D}"
 
 # Start timing here for profiling.
 begin_chain="$(date +%s)"
+
 gitRepoDIR="$( readlink -f ./ )"
+# use *relative* gitRepoDIR so that when this command is logged it's more
+# portable.
+git_repo_d="../${PWD##*/}"
 
 # We want to do this for autotools also so mylyx() doesn't run an old cmake build rather than a new autotools build.
-[ -d ../CMakeBuild ] && { echo "$(ECHOPREFIX)removing previous CMake build" && rm -rf ../CMakeBuild ;}
+[ -d ../CMakeBuild ] && { echo "$(ECHOPREFIX)removing previous CMake build" && runthis misc.log rm -rf ../CMakeBuild ;}
 
 echo "$(ECHOPREFIX)updating layouts in LyX's lib..."
 python3 development/tools/updatelayouts.py
@@ -553,8 +557,8 @@ else
 
 
   echo "$(ECHOPREFIX)creating \"CMakeBuild\" dir and running cmake..."
-  mkdir ../CMakeBuild
-  cd ../CMakeBuild
+  runthis misc.log mkdir ../CMakeBuild
+  runthis misc.log cd ../CMakeBuild
 
 
   if [ "${WERROR}" = "1" ]; then
@@ -698,7 +702,7 @@ else
     -DLYX_DEBUG_GLIBC_PEDANTIC=OFF
   )
 
-  runthis cmake.log cmake ${cmake_Werror_flags} "${gitRepoDIR}/" ${cmake_flags[@]} \
+  runthis cmake.log cmake ${cmake_Werror_flags} "${git_repo_d}/" ${cmake_flags[@]} \
     || { echo "$(ERRORPREFIX)running cmake" >&2; exit 1; }
 fi
 
@@ -819,7 +823,7 @@ fi
 PYTHON_EXEC="python3"
 
 cd "${LYX_USER_DIR}"
-runthis configure-lyx.log ${PYTHON_EXEC} -tt "${gitRepoDIR}/lib/configure.py" \
+runthis configure-lyx.log ${PYTHON_EXEC} -tt "${git_repo_d}/lib/configure.py" \
   || { echo "$(WARNINGPREFIX)reconfigure failed." >&2; exit 1; }
 
 LYX_USER_DIR_NOAUTH="${LYX_USER_DIR}-noauth"
