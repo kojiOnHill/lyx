@@ -584,7 +584,7 @@ else
     # bisect a warning (e.g., from -pedantic), we need to remember to turn it
     # on unconditionally.
     if [ "${current_branch}" = "master" ]; then
-      CPPFLAGS="-Werror;-Wextra;-pedantic"
+      CPPFLAGS="-Werror;-Wextra;-pedantic;-Wextra-semi"
     else
       CPPFLAGS=""
     fi
