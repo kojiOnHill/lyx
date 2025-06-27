@@ -661,7 +661,7 @@ else
     -DLYX_ENABLE_EXPORT_TESTS=${ctest_flags}
     -DLYX_ENABLE_KEYTESTS=OFF
     -DLYX_PROFILE=ON
-    -DLYX_USE_QT=${qt_version} -DLYX_CXX_FLAGS_EXTRA="${CPPFLAGS}"
+    -DLYX_USE_QT=${qt_version} -DLYX_CXX_FLAGS_EXTRA=\"${CPPFLAGS}\"
     # Compile with STL debug code.
     # For one particular use case, see:
     #   https://www.lyx.org/trac/ticket/11204
@@ -696,7 +696,7 @@ else
     -DLYX_ENABLE_EXPORT_TESTS=${ctest_flags}
     -DLYX_ENABLE_KEYTESTS=OFF
     -DLYX_PROFILE=OFF
-    -DLYX_USE_QT=${qt_version} -DLYX_CXX_FLAGS_EXTRA="${CPPFLAGS_FAST}"
+    -DLYX_USE_QT=${qt_version} -DLYX_CXX_FLAGS_EXTRA=\"${CPPFLAGS_FAST}\"
     -DLYX_STDLIB_DEBUG=OFF
     -DLYX_DEBUG_GLIBC=OFF
     -DLYX_DEBUG_GLIBC_PEDANTIC=OFF
