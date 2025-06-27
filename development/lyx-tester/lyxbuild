@@ -823,7 +823,7 @@ fi
 PYTHON_EXEC="python3"
 
 cd "${LYX_USER_DIR}"
-runthis configure-lyx.log ${PYTHON_EXEC} -tt "${git_repo_d}/lib/configure.py" \
+runthis configure-lyx.log ${PYTHON_EXEC} "${git_repo_d}/lib/configure.py" \
   || { echo "$(WARNINGPREFIX)reconfigure failed." >&2; exit 1; }
 
 LYX_USER_DIR_NOAUTH="${LYX_USER_DIR}-noauth"
