@@ -281,8 +281,6 @@ void GuiInputMethod::setPreeditStyle(
 #else
 	bool initial_tf_entry = false;
 #endif
-	// max segment position whose information we already have
-	pos_type max_start = -1;
 
 	// obtain attributes of input method
 	for (const QInputMethodEvent::Attribute & it : attr) {
@@ -301,7 +299,7 @@ void GuiInputMethod::setPreeditStyle(
 				focus_style = &it;
 				initial_tf_entry = false;
 			} else
-				setTextFormat(it, focus_style, max_start);
+				setTextFormat(it, focus_style);
 
 			break;
 
@@ -396,8 +394,7 @@ void GuiInputMethod::setPreeditStyle(
 }
 
 void GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
-                                   const QInputMethodEvent::Attribute * focus_style,
-                                   pos_type & max_start)
+                                   const QInputMethodEvent::Attribute * focus_style)
 {
 	// get LyX's color setting
 	QTextCharFormat char_format = it.value.value<QTextCharFormat>();
@@ -415,7 +412,8 @@ void GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 	// this is simply from a (subjective) aethetic consideration
 	if (focus_style != nullptr &&
 	        (it.start == focus_style->start || focus_style->length == 0) &&
-	        it.length < (int)d->preedit_str_.length() /* completing mode*/)
+	        it.length < (int)d->preedit_str_.length() /* completing mode */)
+	        // don't use d->im_state_.edit_mode_ since it may not be initialized
 		char_format.merge(focus_style->value.value<QTextCharFormat>());
 
 	conformToSurroundingFont(char_format);
@@ -427,24 +425,10 @@ void GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 	// QLocale is used for wrapping words
 	char_format.setProperty(QMetaType::QLocale, d->style_.lang_);
 
-	// Do we already have some information about the incoming segment?
-	// On Linux, same information arrives repeatedly from IM (a bug? 2025/1/10)
-	if (it.start <= max_start) {
-		for (auto & seg : d->style_.segments_) {
-			if (it.start == seg.start_ &&
-			        (it.length == (int)seg.length_ || it.length == 0))
-				// merge old and new information on style
-				seg.char_format_.merge(char_format);
-		}
-	} else {
-		// push the constructed char format together with start and length
-		// to the list
-		PreeditSegment seg = {it.start, (size_type)it.length, char_format};
-		d->style_.segments_.push_back(seg);
-	}
-
-	if (it.start > max_start)
-		max_start = it.start;
+	// push the constructed char format together with start and length
+	// to the list
+	PreeditSegment seg = {it.start, (size_type)it.length, char_format};
+	d->style_.segments_.push_back(seg);
 }
 
 

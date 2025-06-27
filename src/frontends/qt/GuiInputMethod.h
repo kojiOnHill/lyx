@@ -149,8 +149,7 @@ private:
 	void setPreeditStyle(const QList<QInputMethodEvent::Attribute> & attr);
 	/// Sets TextFormat
 	void setTextFormat(const QInputMethodEvent::Attribute & it,
-	                   const QInputMethodEvent::Attribute * focus_style,
-	                   pos_type & max_start);
+	                   const QInputMethodEvent::Attribute * focus_style);
 	/// Set QTextCharFormat to fit the font used in the surrounding text
 	void conformToSurroundingFont(QTextCharFormat & char_format);
 	/// Returns index of the focused segment
