@@ -704,7 +704,7 @@ endif()
 
 if (LYX_DEBUG_SANITIZE MATCHES "ADDRESS")
     set(LYX_CXX_FLAGS "${LYX_CXX_FLAGS} -fsanitize=address -fno-omit-frame-pointer")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=thread -fno-omit-frame-pointe  r -static-libasan")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address -fno-omit-frame-pointer -l:libasan.a")
     message(STATUS)
     message(STATUS "Download from https://github.com/llvm/llvm-project/blob/main/compiler-rt/lib/asan/scripts/asan_symbolize.py")
     message(STATUS "(You have to use a browser and download the raw file from this page)")
