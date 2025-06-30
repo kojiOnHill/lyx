@@ -724,8 +724,8 @@ Menuset
 # Toc Table of Context context menu
 #
 
-        Menu "context-toc-ref-to-par"
-        	Item "<Reference>|R" "reference-to-paragraph ref"
+	Menu "context-toc-ref-to-par"
+		Item "<Reference>|R" "reference-to-paragraph ref"
 		Item "(<Reference>)|e" "reference-to-paragraph eqref"
 		Item "<Page>|P" "reference-to-paragraph pageref"
 		OptItem "p. <Page>|." "reference-to-paragraph cpageref"
@@ -734,8 +734,7 @@ Menuset
 		Item "Formatted Reference|t" "reference-to-paragraph formatted"
 		Item "Textual Reference|x" "reference-to-paragraph nameref"
 		Item "Label Only|L" "reference-to-paragraph labelonly"
-        
-        End
+	End
 
 	Menu "context-toc-tableofcontents"
 		Item "Promote Section|P" "outline-out"
