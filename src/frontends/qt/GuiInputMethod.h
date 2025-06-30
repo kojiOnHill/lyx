@@ -147,9 +147,9 @@ private:
 	/// Aquire and set character style of each preedit segment from
 	/// attributes of the incoming input method event
 	void setPreeditStyle(const QList<QInputMethodEvent::Attribute> & attr);
-	/// Sets TextFormat
-	void setTextFormat(const QInputMethodEvent::Attribute & it,
-	                   const QInputMethodEvent::Attribute * focus_style);
+	/// Sets TextFormat. Returns next pos of finished text
+	pos_type setTextFormat(const QInputMethodEvent::Attribute & it,
+	                   pos_type next_seg_pos);
 	/// Set QTextCharFormat to fit the font used in the surrounding text
 	void conformToSurroundingFont(QTextCharFormat & char_format);
 	/// Returns index of the focused segment

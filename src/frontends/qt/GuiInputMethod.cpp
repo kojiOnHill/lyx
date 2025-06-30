@@ -30,6 +30,7 @@
 #include "TextMetrics.h"
 
 #include "support/debug.h"
+#include "support/lassert.h"
 #include "support/qstring_helpers.h"
 
 using namespace std;
@@ -64,6 +65,7 @@ struct GuiInputMethod::Private
 	ParagraphMetrics * pm_ptr_ = nullptr;
 
 	PreeditStyle style_;
+	std::vector<const QInputMethodEvent::Attribute *> seg_turnout_;
 
 	InputMethodState im_state_;
 
@@ -272,34 +274,34 @@ void GuiInputMethod::setPreeditStyle(
 
 	const QInputMethodEvent::Attribute * focus_style = nullptr;
 
-	// Since Qt6 and on MacOS, the initial entry seems to deliver information
+	// Since Qt6, the initial entry seems to deliver information
 	// about the focused segment (undocumented). We formulate the code to
 	// utilize this fact keeping fail-safe against its failure.
 
-#if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-	bool initial_tf_entry = true;
-#else
-	bool initial_tf_entry = false;
-#endif
+	// next char position to be set up the preedit style
+	pos_type next_seg_pos = 0;
+	//
+	d->seg_turnout_.clear();
 
+	LYXERR0("***** start parsing *****");
 	// obtain attributes of input method
 	for (const QInputMethodEvent::Attribute & it : attr) {
 
 		switch (it.type) {
 		case QInputMethodEvent::TextFormat:
-			// We adapt to the protocol on MacOS Qt6 that the first entry is the
-			// style for the focused segment and the rest is the baseline styles
-			// for all segments including a duplicate of the focused one.
+			// We adapt to the *observed* protocol of Qt6 that the first entry
+			// is the style for the focused segment and the rest is the baseline
+			// styles for all segments including a duplicate of the focused one
+			// (MacOS) or the rest is the remaining segments except the focused
+			// one (Linux).
 			// Since Qt documentation says there should be at most one format
-			// for every part of the preedit string, we ignore possibility of
-			// other duplicate cases (at least they are not observed).
-
-			if (initial_tf_entry) {
-				// most likely the style for the focused segment
-				focus_style = &it;
-				initial_tf_entry = false;
-			} else
-				setTextFormat(it, focus_style);
+			// for every part of the preedit string, we do not need respect
+			// other duplicate possibilities.
+			//
+			// Whereas observed protocol shows a fixed pattern, we need prepare
+			// for *any* type of information arrival that satisfies documented
+			// protocol. Efficiency should not break required generality.
+			next_seg_pos = setTextFormat(it, next_seg_pos);
 
 			break;
 
@@ -346,6 +348,26 @@ void GuiInputMethod::setPreeditStyle(
 		} // end switch
 	} // end for
 
+	// Finalize TextFormat
+	while (!d->seg_turnout_.empty()) {
+		for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
+			if ((*past_attr)->start == next_seg_pos && (*past_attr)->length > 0) {
+				LYXERR0("**Pushing (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
+				PreeditSegment seg = {(*past_attr)->start,
+									  (size_type)(*past_attr)->length,
+									  (*past_attr)->value.value<QTextCharFormat>()};
+				d->style_.segments_.push_back(seg);
+				next_seg_pos += (*past_attr)->length;
+				// Clear d->seg_turnout_
+				if (d->seg_turnout_.size() == 1)
+					d->seg_turnout_.pop_back();
+				else
+					d->seg_turnout_.erase(past_attr);
+				break;
+			}
+		}
+	}
+
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	// set background color for a focused segment
 	if (!d->style_.segments_.empty()) {
@@ -367,9 +389,11 @@ void GuiInputMethod::setPreeditStyle(
 	        (d->style_.segments_.size() == 0 && focus_style != nullptr)
 	        || (focus_style != nullptr && focus_style->length == 0)
 	        || (focus_style == nullptr && d->style_.segments_.size() <= 1);
+	LYXERR0("d->im_state_.edit_mode_ = " << d->im_state_.edit_mode_
+	        << " focus_style  = " << focus_style);
 
 	if (d->im_state_.edit_mode_) {
-		LYXERR(Debug::DEBUG, "preedit is in the edit mode");
+		LYXERR0(/*Debug::DEBUG, */"preedit is in the edit mode");
 		QTextCharFormat char_format;
 		int start = 0;
 		size_type length = 0;
@@ -393,28 +417,19 @@ void GuiInputMethod::setPreeditStyle(
 	}
 }
 
-void GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
-                                   const QInputMethodEvent::Attribute * focus_style)
+pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
+                                   pos_type next_seg_pos)
 {
 	// get LyX's color setting
 	QTextCharFormat char_format = it.value.value<QTextCharFormat>();
 
-	LYXERR(Debug::GUI,
+	LYXERR0(/*Debug::GUI,*/
 	       "QInputMethodEvent::TextFormat start: " << it.start <<
 	       " length: " << it.length <<
 	       " underline? " << char_format.font().underline() <<
 	       " UnderlineStyle: " << char_format.underlineStyle() <<
 	       " fg: " << char_format.foreground().color().name() <<
 	       " bg: " << char_format.background().color().name());
-
-	// take union of the current style and the focus style
-	// the last condition clears background color in the edit mode
-	// this is simply from a (subjective) aethetic consideration
-	if (focus_style != nullptr &&
-	        (it.start == focus_style->start || focus_style->length == 0) &&
-	        it.length < (int)d->preedit_str_.length() /* completing mode */)
-	        // don't use d->im_state_.edit_mode_ since it may not be initialized
-		char_format.merge(focus_style->value.value<QTextCharFormat>());
 
 	conformToSurroundingFont(char_format);
 
@@ -425,10 +440,49 @@ void GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 	// QLocale is used for wrapping words
 	char_format.setProperty(QMetaType::QLocale, d->style_.lang_);
 
-	// push the constructed char format together with start and length
-	// to the list
-	PreeditSegment seg = {it.start, (size_type)it.length, char_format};
-	d->style_.segments_.push_back(seg);
+	LYXERR0("it.start = " << it.start << " next_seg_pos = " << next_seg_pos);
+	if (it.start == next_seg_pos) {
+		if (!d->seg_turnout_.empty()) {
+			// Merge attributes held in d->seg_turnout_
+			for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
+				if ((it.start == (*past_attr)->start || (*past_attr)->length == 0)
+				        && it.length < (int)d->preedit_str_.length() /* completing mode */) {
+					LYXERR0("Merging...");
+					char_format.merge((*past_attr)->value.value<QTextCharFormat>());
+					// Clear d->seg_turnout_
+					if (d->seg_turnout_.size() == 1)
+						d->seg_turnout_.pop_back();
+					else
+						d->seg_turnout_.erase(past_attr);
+				}
+			}
+		}
+		// push the constructed char format together with start and length
+		// to the list
+		LYXERR0("Pushing (" << it.start << ", " << it.start + it.length - 1 << ") color: " << char_format.background().color().name());
+		PreeditSegment seg = {it.start, (size_type)it.length, char_format};
+		d->style_.segments_.push_back(seg);
+		next_seg_pos += it.length;
+	} else {
+		if (it.length > 0)
+			d->seg_turnout_.push_back(&it);
+		for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
+			if ((*past_attr)->start == next_seg_pos) {
+				LYXERR0("*Pushing (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
+				PreeditSegment seg = {(*past_attr)->start,
+				                      (size_type)(*past_attr)->length,
+				                      (*past_attr)->value.value<QTextCharFormat>()};
+				d->style_.segments_.push_back(seg);
+				next_seg_pos += (*past_attr)->length;
+				// Clear d->seg_turnout_
+				if (d->seg_turnout_.size() == 1)
+					d->seg_turnout_.pop_back();
+				else
+					d->seg_turnout_.erase(past_attr);
+			}
+		}
+	}
+	return next_seg_pos;
 }
 
 
