@@ -49,10 +49,11 @@ namespace frontend {
 
 void noAppDialog(QString const & title, QString const & msg, QMessageBox::Icon mode)
 {
+	string appname = "lyx";
 	int argc = 1;
-	const char *argv[] = { "lyx", 0 };
+	char *argv[] = { appname.data(), nullptr };
 
-	QApplication app(argc, (char**)argv);
+	QApplication app(argc, argv);
 	switch (mode)
 	{
 		case QMessageBox::Information: QMessageBox::information(0, title, msg); break;
