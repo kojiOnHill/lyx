@@ -32,11 +32,11 @@
 #include <CoreFoundation/CFArray.h>
 #endif
 
-using namespace std;
-
 namespace lyx {
 namespace support {
 namespace os {
+
+using namespace std;
 
 namespace {
 
