@@ -615,6 +615,9 @@ else
         #
         # (https://www.mail-archive.com/search?l=mid&q=dy5v4r6k5ifynwg46bbcp4rtcd5if7jl5wlnamqoicotorlvfe%405vep6fwux6yj)
         CPPFLAGS+=";-Wno-error=implicit-int-float-conversion"
+
+        # todo: look through these. Helped for commit 08323653.
+        CPPFLAGS+=";-Wno-error=unreachable-code-return"
       fi
 
       # Good candidates to clean up, but not urgent.
