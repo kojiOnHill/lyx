@@ -179,7 +179,7 @@ bool TocWidget::getStatus(Cursor & cur, FuncRequest const & cmd,
 	case LFUN_SECTION_SELECT:
 		status.setEnabled((bool)item.dit());
 		return true;
-	
+
 	case LFUN_REFERENCE_TO_PARAGRAPH: {
 		if (cmd.argument() == "cpageref" && cur.buffer()->params().xref_package != "cleveref"
 		     && cur.buffer()->params().xref_package != "zref") {
