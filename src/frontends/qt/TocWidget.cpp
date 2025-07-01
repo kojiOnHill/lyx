@@ -184,7 +184,6 @@ bool TocWidget::getStatus(Cursor & cur, FuncRequest const & cmd,
 		if (cmd.argument() == "cpageref" && cur.buffer()->params().xref_package != "cleveref"
 		     && cur.buffer()->params().xref_package != "zref") {
 			status.setEnabled(false);
-			break;
 			return true;
 		}
 		status.setEnabled((bool)item.dit());
