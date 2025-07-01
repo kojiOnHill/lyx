@@ -33,7 +33,7 @@
 #include "insets/InsetHyperlink.h"
 #include "insets/InsetInclude.h"
 #include "insets/InsetIndex.h"
-#include "insets/InsetIndexMacro.cpp"
+#include "insets/InsetIndexMacro.h"
 #include "insets/InsetInfo.h"
 #include "insets/InsetIPA.h"
 #include "insets/InsetIPAMacro.h"
