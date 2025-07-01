@@ -309,6 +309,7 @@ void GuiInputMethod::setPreeditStyle(
 			// Meet the peculiarity of MacOS that the first entry is a duplicate
 #if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 			if (initial_tf_entry && it.length > 0) {
+				LYXERR0("Pushing to turnout");
 				d->seg_turnout_.push_back(&it);
 				initial_tf_entry = false;
 			}
@@ -366,24 +367,7 @@ void GuiInputMethod::setPreeditStyle(
 		LYXERR0(" (start, length) = (" << d->seg_turnout_.back()->start
 		        << ", " << d->seg_turnout_.back()->length << ")");
 	while (!d->seg_turnout_.empty()) {
-		for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
-			// LYXERR0("(*past_attr)->start = " << (*past_attr)->start
-			//         << " next_seg_pos = " << next_seg_pos);
-			if ((*past_attr)->start == next_seg_pos && (*past_attr)->length > 0) {
-				LYXERR0("**Pushing (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
-				PreeditSegment seg = {(*past_attr)->start,
-									  (size_type)(*past_attr)->length,
-									  (*past_attr)->value.value<QTextCharFormat>()};
-				d->style_.segments_.push_back(seg);
-				next_seg_pos += (*past_attr)->length;
-				// Clear d->seg_turnout_
-				if (d->seg_turnout_.size() == 1)
-					d->seg_turnout_.pop_back();
-				else
-					d->seg_turnout_.erase(past_attr);
-				break;
-			}
-		}
+		pickNextSegFromTurnout(next_seg_pos);
 	}
 	LYXERR0("ended while");
 
@@ -462,20 +446,29 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 	LYXERR0("it.start = " << it.start << " next_seg_pos = " << next_seg_pos);
 	if (it.start == next_seg_pos) {
 #if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+		LYXERR0("it.start == next_seg_pos");
 		if (!d->seg_turnout_.empty()) {
-			// Merge attributes held in d->seg_turnout_
+			LYXERR0("d->seg_turnout_.size() = " << d->seg_turnout_.size());
+			// Merge attributes held d->seg_turnout_
+			std::vector<const QInputMethodEvent::Attribute*>::iterator to_erase;
 			for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
+				LYXERR0("Looking at seg_turnout_: (" << (*past_attr)->start << ", " << (*past_attr)->length << ")");
 				if ((it.start == (*past_attr)->start || (*past_attr)->length == 0)
-				        && it.length < (int)d->preedit_str_.length() /* completing mode */) {
+				       /* && it.length < (int)d->preedit_str_.length() *//* completing mode */) {
 					LYXERR0("Merging...");
 					char_format.merge((*past_attr)->value.value<QTextCharFormat>());
-					// Clear d->seg_turnout_
-					if (d->seg_turnout_.size() == 1)
-						d->seg_turnout_.pop_back();
-					else
-						d->seg_turnout_.erase(past_attr);
+					if (d->seg_turnout_.size() < 1)
+						to_erase = past_attr;
+					break; // assuming no duplicates in seg_turnout_
 				}
 			}
+			LYXERR0("Check ended");
+			// Clear d->seg_turnout_
+			if (d->seg_turnout_.size() == 1)
+				d->seg_turnout_.pop_back();
+			else
+				// this is unlikely to happen
+				d->seg_turnout_.erase(to_erase);
 		}
 #endif
 		// push the constructed char format together with start and length
@@ -485,25 +478,36 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 		d->style_.segments_.push_back(seg);
 		next_seg_pos += it.length;
 	} else if (it.start > next_seg_pos) {
-		if (it.length > 0)
+		if (it.length > 0) {
+			LYXERR0("Pushing to turnout 2");
 			d->seg_turnout_.push_back(&it);
-		for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
-			if ((*past_attr)->start == next_seg_pos) {
-				LYXERR0("*Pushing past:  (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
-				PreeditSegment seg = {(*past_attr)->start,
-				                      (size_type)(*past_attr)->length,
-				                      (*past_attr)->value.value<QTextCharFormat>()};
-				d->style_.segments_.push_back(seg);
-				next_seg_pos += (*past_attr)->length;
-				// Clear d->seg_turnout_
-				if (d->seg_turnout_.size() == 1)
-					d->seg_turnout_.pop_back();
-				else
-					d->seg_turnout_.erase(past_attr);
-			}
 		}
+		pickNextSegFromTurnout(next_seg_pos);
 	}
 	return next_seg_pos;
+}
+
+
+void GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos) {
+	std::vector<const QInputMethodEvent::Attribute*>::iterator to_erase;
+	for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
+		if ((*past_attr)->start == next_seg_pos && (*past_attr)->length > 0) {
+			LYXERR0("*Pushing past:  (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
+			PreeditSegment seg = {(*past_attr)->start,
+			                      (size_type)(*past_attr)->length,
+			                      (*past_attr)->value.value<QTextCharFormat>()};
+			d->style_.segments_.push_back(seg);
+			next_seg_pos += (*past_attr)->length;
+			if (d->seg_turnout_.size() < 1)
+				to_erase = past_attr;
+			break; // assuming no duplicates in seg_turnout_
+		}
+	}
+	// Clear d->seg_turnout_
+	if (d->seg_turnout_.size() == 1)
+		d->seg_turnout_.pop_back();
+	else
+		d->seg_turnout_.erase(to_erase);
 }
 
 

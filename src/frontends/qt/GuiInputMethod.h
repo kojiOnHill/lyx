@@ -158,6 +158,8 @@ private:
 	int shiftFromCaretToSegmentHead();
 	///
 	PreeditRow getCaretInfo(const bool real_boundary, const bool virtual_boundary);
+	///
+	void pickNextSegFromTurnout(pos_type next_seg_pos);
 
 	/// Returns enum Qt::InputMethodQuery constant from its value
 	docstring inputMethodQueryFlagsAsString(unsigned long int query) const;
