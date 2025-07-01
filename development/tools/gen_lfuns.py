@@ -366,7 +366,7 @@ def write_sections(file,lfuns):
         "Layout":  u"Layout Functions (Font, Layout and Textclass related)",
         "Edit":    u"Editing Functions (Cursor and Mouse Movement, Copy/Paste etc.)",
         "Math":    u"Math Editor Functions",
-        "Buffer":  u"Buffer Fuctions (File and Window related)",
+        "Buffer":  u"Buffer Functions (File and Window related)",
         "System":  u"System Functions (Preferences, LyX Server etc.)",
         "Hidden":  u"Hidden Functions (not listed for configuration)"
         }
