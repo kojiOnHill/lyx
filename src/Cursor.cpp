@@ -1574,14 +1574,21 @@ void Cursor::niceInsert(MathAtom const & t)
 		asMathData(safe, md);
 		prevMath().cell(idx).insert(0, md);
 		editInsertedInset();
-	} else if (t->asMacroInset() && !safe.empty()) {
+	} else if (t->asMacroInset()) {
 		MathData md(buffer());
-		asMathData(safe, md);
+		if (!safe.empty())
+			asMathData(safe, md);
 		docstring const name = t->asMacroInset()->name();
 		MacroData const * data = buffer()->getMacro(name);
-		if (data && data->numargs() - data->optionals() > 0) {
+		int npar = data ? data->numargs() - data->optionals() : 0;
+		if (npar > 0) {
 			plainInsert(MathAtom(new InsetMathBrace(buffer(), md)));
 			posBackward();
+			md.clear();
+			for (int i = 1; i < npar; ++i) {
+				plainInsert(MathAtom(new InsetMathBrace(buffer(), md)));
+				posBackward();
+			}
 		}
 	}
 }
