@@ -595,7 +595,6 @@ else
       # fixed one instance of this (c0ccedd0)
       CPPFLAGS+=";-Wmissing-include-dirs"
 
-
       # todo: lyx-devel says it would be good to clean these up.
       # (https://www.mail-archive.com/search?l=mid&q=4cee06c8-0646-4f1a-b81f-409d6de33a4b%40gmail.com)
       #CPPFLAGS="-Wshadow"
@@ -604,6 +603,9 @@ else
       if [ "${clang}" = "1" ]; then
         # This option only works with Clang.
         CPPFLAGS+=";-ferror-limit=1"
+
+        # Helped for commits 22b35872 and b69abd49
+        CPPFLAGS+=";-Wheader-hygiene"
 
         # We state we require C++17.
         CPPFLAGS+=";-Wno-error=pre-c++17-compat"
