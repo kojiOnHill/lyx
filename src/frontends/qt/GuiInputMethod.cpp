@@ -278,6 +278,10 @@ void GuiInputMethod::setPreeditStyle(
 	// about the focused segment (undocumented). We formulate the code to
 	// utilize this fact keeping fail-safe against its failure.
 
+#if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+	bool initial_tf_entry = true;
+#endif
+
 	// next char position to be set up the preedit style
 	pos_type next_seg_pos = 0;
 	//
@@ -300,7 +304,15 @@ void GuiInputMethod::setPreeditStyle(
 			//
 			// Whereas observed protocol shows a fixed pattern, we need prepare
 			// for *any* type of information arrival that satisfies documented
-			// protocol. Efficiency should not break required generality.
+			// protocol. Efficiency should not violate required generality.
+			//
+			// Meet the peculiarity of MacOS that the first entry is a duplicate
+#if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+			if (initial_tf_entry && it.length > 0) {
+				d->seg_turnout_.push_back(&it);
+				initial_tf_entry = false;
+			}
+#endif
 			next_seg_pos = setTextFormat(it, next_seg_pos);
 
 			break;
@@ -349,8 +361,14 @@ void GuiInputMethod::setPreeditStyle(
 	} // end for
 
 	// Finalize TextFormat
+	LYXERR0("start while: size = " << d->seg_turnout_.size());
+	if (!d->seg_turnout_.empty())
+		LYXERR0(" (start, length) = (" << d->seg_turnout_.back()->start
+		        << ", " << d->seg_turnout_.back()->length << ")");
 	while (!d->seg_turnout_.empty()) {
 		for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
+			// LYXERR0("(*past_attr)->start = " << (*past_attr)->start
+			//         << " next_seg_pos = " << next_seg_pos);
 			if ((*past_attr)->start == next_seg_pos && (*past_attr)->length > 0) {
 				LYXERR0("**Pushing (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
 				PreeditSegment seg = {(*past_attr)->start,
@@ -367,6 +385,7 @@ void GuiInputMethod::setPreeditStyle(
 			}
 		}
 	}
+	LYXERR0("ended while");
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	// set background color for a focused segment
@@ -442,6 +461,7 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 
 	LYXERR0("it.start = " << it.start << " next_seg_pos = " << next_seg_pos);
 	if (it.start == next_seg_pos) {
+#if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 		if (!d->seg_turnout_.empty()) {
 			// Merge attributes held in d->seg_turnout_
 			for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
@@ -457,18 +477,19 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 				}
 			}
 		}
+#endif
 		// push the constructed char format together with start and length
 		// to the list
 		LYXERR0("Pushing (" << it.start << ", " << it.start + it.length - 1 << ") color: " << char_format.background().color().name());
 		PreeditSegment seg = {it.start, (size_type)it.length, char_format};
 		d->style_.segments_.push_back(seg);
 		next_seg_pos += it.length;
-	} else {
+	} else if (it.start > next_seg_pos) {
 		if (it.length > 0)
 			d->seg_turnout_.push_back(&it);
 		for (auto past_attr = d->seg_turnout_.begin(); past_attr != d->seg_turnout_.end(); past_attr++) {
 			if ((*past_attr)->start == next_seg_pos) {
-				LYXERR0("*Pushing (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
+				LYXERR0("*Pushing past:  (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
 				PreeditSegment seg = {(*past_attr)->start,
 				                      (size_type)(*past_attr)->length,
 				                      (*past_attr)->value.value<QTextCharFormat>()};
