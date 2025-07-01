@@ -622,6 +622,9 @@ else
       # (https://www.mail-archive.com/search?l=mid&q=x33ucwxt5nvx2olovrq47tmpkai4322r6mrdyiuz7ymbqdbogy%40yqusr5vw7ctr)
       CPPFLAGS+=";-Wno-error=float-equal"
 
+      # related commits: 0c2a1d81
+      CPPFLAGS+=";-Wcast-qual"
+
     else
       CPPFLAGS=""
     fi
