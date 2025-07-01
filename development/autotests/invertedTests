@@ -600,4 +600,8 @@ Sublabel: should fail
 # These documents have errors that should be detected (e.g., missing reference)
 # ======================================================================
 !export/export/latex/lyxbugs-resolved/c0b73f6f-missing-reference-should-fail_docbook5
+# docbook should in theory pass but there seems to be a different issue.
+# TODO: ask Thibaut to take a look? Maybe an issue with non-ascii characters in label?
+#!export/export/latex/lyxbugs-resolved/c0b73f6f-missing-reference-should-fail2_docbook5
 export/export/latex/lyxbugs-resolved/c0b73f6f-missing-reference-should-fail_.*
+export/export/latex/lyxbugs-resolved/c0b73f6f-missing-reference-should-fail2_.*
