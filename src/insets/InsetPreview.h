@@ -51,25 +51,26 @@ public:
 
 	bool descendable(BufferView const & /*bv*/) const override { return true; }
 
+	bool canPaintChange(BufferView const &) const override { return true; }
+
 	std::string contextMenuName() const override
 		{ return "context-preview"; }
 
-	void metrics(MetricsInfo & mi, Dimension & dim) const override;
+	void addPreview(DocIterator const & inset_pos,
+		graphics::PreviewLoader & ploader) const override;
 
-	Inset * editXY(Cursor & cur, int x, int y) override;
+	void metrics(MetricsInfo & mi, Dimension & dim) const override;
 
 	void draw(PainterInfo & pi, int x, int y) const override;
 
-	void addPreview(DocIterator const & inset_pos,
-		graphics::PreviewLoader & ploader) const override;
+	void edit(Cursor & cur, bool front, EntryDirection entry_from) override;
+
+	Inset * editXY(Cursor & cur, int x, int y) override;
 
 	bool notifyCursorLeaves(Cursor const & old, Cursor & cur) override;
 
 	void write(std::ostream & os) const override;
 
-	void edit(Cursor & cur, bool front, EntryDirection entry_from) override;
-
-	bool canPaintChange(BufferView const &) const override { return true; }
 	//@}
 
 protected:

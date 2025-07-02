@@ -70,13 +70,6 @@ void InsetPreview::write(ostream & os) const
 }
 
 
-void InsetPreview::addPreview(DocIterator const & inset_pos,
-	graphics::PreviewLoader &) const
-{
-	preparePreview(inset_pos);
-}
-
-
 MacroNameSet gatherMacroDefinitions(const Buffer* buffer, const Inset * inset)
 {
 	// Collect macros for this inset.
@@ -121,6 +114,13 @@ docstring insetToLaTeXSnippet(const Buffer* buffer, const Inset * inset)
 }
 
 
+void InsetPreview::addPreview(DocIterator const & inset_pos,
+	graphics::PreviewLoader &) const
+{
+	preparePreview(inset_pos);
+}
+
+
 void InsetPreview::preparePreview(DocIterator const & pos) const
 {
 	docstring const snippet = insetToLaTeXSnippet(pos.buffer(), this);
@@ -143,6 +143,27 @@ void InsetPreview::reloadPreview(DocIterator const & pos) const
 {
 	preparePreview(pos);
 	preview_->startLoading(*pos.buffer());
+}
+
+
+void InsetPreview::metrics(MetricsInfo & mi, Dimension & dim) const
+{
+	if (previewState(mi.base.bv)) {
+		preview_->metrics(mi, dim);
+
+		dim.wid = max(dim.wid, 4);
+		dim.asc = max(dim.asc, 4);
+
+		dim.asc += topOffset(mi.base.bv);
+		dim.des += bottomOffset(mi.base.bv);
+		// insert a one pixel gap
+		dim.wid += 1;
+		Dimension dim_dummy;
+		MetricsInfo mi_dummy = mi;
+		InsetText::metrics(mi_dummy, dim_dummy);
+		return;
+	}
+	InsetText::metrics(mi, dim);
 }
 
 
@@ -180,27 +201,6 @@ Inset * InsetPreview::editXY(Cursor & cur, int x, int y)
 	}
 	cur.push(*this);
 	return InsetText::editXY(cur, x, y);
-}
-
-
-void InsetPreview::metrics(MetricsInfo & mi, Dimension & dim) const
-{
-	if (previewState(mi.base.bv)) {
-		preview_->metrics(mi, dim);
-
-		dim.wid = max(dim.wid, 4);
-		dim.asc = max(dim.asc, 4);
-
-		dim.asc += topOffset(mi.base.bv);
-		dim.des += bottomOffset(mi.base.bv);
-		// insert a one pixel gap
-		dim.wid += 1;
-		Dimension dim_dummy;
-		MetricsInfo mi_dummy = mi;
-		InsetText::metrics(mi_dummy, dim_dummy);
-		return;
-	}
-	InsetText::metrics(mi, dim);
 }
 
 
