@@ -29,6 +29,8 @@ public:
 	///
 	void draw(PainterInfo & pi, int x, int y) const override;
 	///
+	InsetMathSubstack * asSubstackInset() override { return this; }
+	///
 	InsetMathSubstack const * asSubstackInset() const override { return this; }
 
 	///
