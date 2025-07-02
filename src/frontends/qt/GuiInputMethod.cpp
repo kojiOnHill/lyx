@@ -65,7 +65,7 @@ struct GuiInputMethod::Private
 	ParagraphMetrics * pm_ptr_ = nullptr;
 
 	PreeditStyle style_;
-	std::vector<const QInputMethodEvent::Attribute *> seg_turnout_;
+	std::vector<PreeditSegment> seg_turnout_;
 
 	InputMethodState im_state_;
 
@@ -81,6 +81,7 @@ struct GuiInputMethod::Private
 
 	bool real_boundary_    = false;
 	bool virtual_boundary_ = false;
+	bool initial_tf_entry_ = false;;
 
 	Point init_point_;
 	Dimension cur_dim_;
@@ -279,7 +280,7 @@ void GuiInputMethod::setPreeditStyle(
 	// utilize this fact keeping fail-safe against its failure.
 
 #if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-	bool initial_tf_entry = true;
+	d->initial_tf_entry_ = true;
 #endif
 
 	// next char position to be set up the preedit style
@@ -308,14 +309,16 @@ void GuiInputMethod::setPreeditStyle(
 			//
 			// Meet the peculiarity of MacOS that the first entry is a duplicate
 #if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-			if (initial_tf_entry && it.length > 0) {
-				LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
-				        << it.start + it.length - 1 << ")");
-				d->seg_turnout_.push_back(&it);
-				initial_tf_entry = false;
-			}
-#endif
+			// if (initial_tf_entry && it.length > 0) {
+			// 	LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
+			// 	        << it.start + it.length - 1 << ")");
+			// 	d->seg_turnout_.push_back(&it);
+			// 	initial_tf_entry = false;
+			// } else
 			next_seg_pos = setTextFormat(it, next_seg_pos);
+#else
+			next_seg_pos = setTextFormat(it, next_seg_pos);
+#endif
 
 			break;
 
@@ -365,8 +368,8 @@ void GuiInputMethod::setPreeditStyle(
 	// Finalize TextFormat
 	LYXERR0("start while: size = " << d->seg_turnout_.size());
 	if (!d->seg_turnout_.empty())
-		LYXERR0(" (start, length) = (" << d->seg_turnout_.back()->start
-		        << ", " << d->seg_turnout_.back()->length << ")");
+		LYXERR0(" (start, length) = (" << d->seg_turnout_.back().start_
+		        << ", " << d->seg_turnout_.back().length_ << ")");
 	while (!d->seg_turnout_.empty()) {
 		next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
 	}
@@ -422,7 +425,7 @@ void GuiInputMethod::setPreeditStyle(
 }
 
 pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
-                                   pos_type next_seg_pos)
+                                       pos_type next_seg_pos)
 {
 	// get LyX's color setting
 	QTextCharFormat char_format = it.value.value<QTextCharFormat>();
@@ -445,7 +448,9 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 	char_format.setProperty(QMetaType::QLocale, d->style_.lang_);
 
 	LYXERR0("it.start = " << it.start << " next_seg_pos = " << next_seg_pos);
-	if (it.start == next_seg_pos) {
+	// cursor segment (?) in the edit mode comes with it.start > 0 and
+	// it.length == 0, which does not go in if's below
+	if (it.start == next_seg_pos && !d->initial_tf_entry_) {
 		LYXERR0("it.start == next_seg_pos");
 		if (!d->seg_turnout_.empty()) {
 			// Merge attributes held d->seg_turnout_
@@ -460,14 +465,12 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 			LYXERR0("### Pushing to register: (" << it.start << ", " << it.start + it.length - 1 << ") color: " << char_format.background().color().name());
 			next_seg_pos = registerSegment(it.start, (size_type)it.length, char_format);
 		}
-	} else if (it.start > next_seg_pos) {
-		// cursor segment (?) in the edit mode comes with it.start > 0 and
-		// it.length == 0, which we ignore
-		if (it.length > 0) {
-			LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
-			        << it.start + it.length - 1 << ")");
-			d->seg_turnout_.push_back(&it);
-		}
+	} else if ((it.start > next_seg_pos || d->initial_tf_entry_) && it.length > 0) {
+		LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
+				<< it.start + it.length - 1 << ")");
+		PreeditSegment turnout = {it.start, (size_type)it.length, char_format};
+		d->seg_turnout_.push_back(turnout);
+		d->initial_tf_entry_ = false;
 	}
 	next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
 	return next_seg_pos;
@@ -475,20 +478,22 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 
 
 pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos, QTextCharFormat * cf) {
-	std::vector<const QInputMethodEvent::Attribute*>::iterator to_erase;
+	std::vector<PreeditSegment>::iterator to_erase;
 	bool is_matched = false;
 	for (auto past_attr = d->seg_turnout_.begin();
 	     past_attr != d->seg_turnout_.end(); past_attr++) {
-		if ((*past_attr)->start == next_seg_pos) {
-			QTextCharFormat picked_cf = (*past_attr)->value.value<QTextCharFormat>();
-			if (cf != nullptr)
-				picked_cf.merge(*cf);
-			PreeditSegment seg = {(*past_attr)->start,
-								  (size_type)(*past_attr)->length,
-								  picked_cf};
-			LYXERR0("### Pushing to register: (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
+		if ((*past_attr).start_ == next_seg_pos) {
+			if (cf != nullptr) {
+				LYXERR0("Merging...");
+				(*past_attr).char_format_.merge(*cf);
+			}
+			PreeditSegment seg = {(*past_attr).start_,
+								  (size_type)(*past_attr).length_,
+								  (*past_attr).char_format_};
+			LYXERR0("### Pushing to register: (" << (*past_attr).start_ <<
+			        ", " << (*past_attr).start_ + (*past_attr).length_ - 1 << ")");
 			d->style_.segments_.push_back(seg);
-			next_seg_pos += (*past_attr)->length;
+			next_seg_pos += (*past_attr).length_;
 			if (d->seg_turnout_.size() > 1)
 				to_erase = past_attr;
 			is_matched = true;
@@ -498,15 +503,15 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos, QTextChar
 	// Clear d->seg_turnout_
 	if (is_matched) {
 		if (d->seg_turnout_.size() == 1) {
-			LYXERR0("*** Turnout clearing:   (" << d->seg_turnout_.back()->start
+			LYXERR0("*** Turnout clearing:   (" << d->seg_turnout_.back().start_
 			        << ", " <<
-			        d->seg_turnout_.back()->start+d->seg_turnout_.back()->length-1
+			        d->seg_turnout_.back().start_+d->seg_turnout_.back().length_-1
 			        << ")");
 			d->seg_turnout_.pop_back();
 		} else if (d->seg_turnout_.size() > 1) {
-			LYXERR0("*** Turnout clearing: (" << (*to_erase)->start
+			LYXERR0("*** Turnout clearing: (" << (*to_erase).start_
 			        << ", " <<
-			        (*to_erase)->start+(*to_erase)->length-1
+			        (*to_erase).start_+(*to_erase).length_-1
 			        << ")");
 			d->seg_turnout_.erase(to_erase);
 		}

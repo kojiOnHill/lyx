@@ -149,7 +149,7 @@ private:
 	void setPreeditStyle(const QList<QInputMethodEvent::Attribute> & attr);
 	/// Sets TextFormat. Returns next pos of finished text
 	pos_type setTextFormat(const QInputMethodEvent::Attribute & it,
-	                   pos_type next_seg_pos);
+	                       pos_type next_seg_pos);
 	/// Set QTextCharFormat to fit the font used in the surrounding text
 	void conformToSurroundingFont(QTextCharFormat & char_format);
 	/// Returns index of the focused segment
