@@ -308,17 +308,7 @@ void GuiInputMethod::setPreeditStyle(
 			// protocol. Efficiency should not violate required generality.
 			//
 			// Meet the peculiarity of MacOS that the first entry is a duplicate
-#if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-			// if (initial_tf_entry && it.length > 0) {
-			// 	LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
-			// 	        << it.start + it.length - 1 << ")");
-			// 	d->seg_turnout_.push_back(&it);
-			// 	initial_tf_entry = false;
-			// } else
 			next_seg_pos = setTextFormat(it, next_seg_pos);
-#else
-			next_seg_pos = setTextFormat(it, next_seg_pos);
-#endif
 
 			break;
 
@@ -440,31 +430,35 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 
 	conformToSurroundingFont(char_format);
 
+	// QLocale is used for wrapping words
+	char_format.setProperty(QMetaType::QLocale, d->style_.lang_);
+
 #if (! defined(Q_OS_MACOS)) || QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	char_format.setFontUnderline(true);
 #endif
 
-	// QLocale is used for wrapping words
-	char_format.setProperty(QMetaType::QLocale, d->style_.lang_);
-
 	LYXERR0("it.start = " << it.start << " next_seg_pos = " << next_seg_pos);
 	// cursor segment (?) in the edit mode comes with it.start > 0 and
-	// it.length == 0, which does not go in if's below
+	// it.length == 0, whose info we don't use, so it does not go in if's below
 	if (it.start == next_seg_pos && !d->initial_tf_entry_) {
-		LYXERR0("it.start == next_seg_pos");
 		if (!d->seg_turnout_.empty()) {
 			// Merge attributes held d->seg_turnout_
 			pos_type updated_pos = pickNextSegFromTurnout(next_seg_pos, &char_format);
 			if (updated_pos == next_seg_pos) {
 				// no matching segment in the turnout
+				LYXERR0("### Pushing to register: (" << it.start << ", " << it.start + it.length - 1 << ") color: " << char_format.background().color().name());
 				next_seg_pos = registerSegment(it.start, (size_type)it.length, char_format);
-			}
+				LYXERR0("... next_seg_pos = " << next_seg_pos);
+			} else
+				next_seg_pos = updated_pos;
 		} else {
 			// push the constructed char format together with start and length
 			// to the list
 			LYXERR0("### Pushing to register: (" << it.start << ", " << it.start + it.length - 1 << ") color: " << char_format.background().color().name());
 			next_seg_pos = registerSegment(it.start, (size_type)it.length, char_format);
+			LYXERR0("... next_seg_pos = " << next_seg_pos);
 		}
+		next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
 	} else if ((it.start > next_seg_pos || d->initial_tf_entry_) && it.length > 0) {
 		LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
 				<< it.start + it.length - 1 << ")");
@@ -472,7 +466,6 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 		d->seg_turnout_.push_back(turnout);
 		d->initial_tf_entry_ = false;
 	}
-	next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
 	return next_seg_pos;
 }
 
@@ -484,16 +477,17 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos, QTextChar
 	     past_attr != d->seg_turnout_.end(); past_attr++) {
 		if ((*past_attr).start_ == next_seg_pos) {
 			if (cf != nullptr) {
-				LYXERR0("Merging...");
+				LYXERR0("========= MERGING... =========");
 				(*past_attr).char_format_.merge(*cf);
 			}
 			PreeditSegment seg = {(*past_attr).start_,
 								  (size_type)(*past_attr).length_,
 								  (*past_attr).char_format_};
 			LYXERR0("### Pushing to register: (" << (*past_attr).start_ <<
-			        ", " << (*past_attr).start_ + (*past_attr).length_ - 1 << ")");
+			        ", " << (*past_attr).start_ + (*past_attr).length_ - 1 << ") color: " << (*past_attr).char_format_.background().color().name());
 			d->style_.segments_.push_back(seg);
 			next_seg_pos += (*past_attr).length_;
+			LYXERR0("... next_seg_pos = " << next_seg_pos);
 			if (d->seg_turnout_.size() > 1)
 				to_erase = past_attr;
 			is_matched = true;
@@ -503,7 +497,7 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos, QTextChar
 	// Clear d->seg_turnout_
 	if (is_matched) {
 		if (d->seg_turnout_.size() == 1) {
-			LYXERR0("*** Turnout clearing:   (" << d->seg_turnout_.back().start_
+			LYXERR0("*** Turnout clearing:    (" << d->seg_turnout_.back().start_
 			        << ", " <<
 			        d->seg_turnout_.back().start_+d->seg_turnout_.back().length_-1
 			        << ")");
