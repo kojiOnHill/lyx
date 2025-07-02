@@ -309,7 +309,8 @@ void GuiInputMethod::setPreeditStyle(
 			// Meet the peculiarity of MacOS that the first entry is a duplicate
 #if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 			if (initial_tf_entry && it.length > 0) {
-				LYXERR0("Pushing to turnout");
+				LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
+				        << it.start + it.length - 1 << ")");
 				d->seg_turnout_.push_back(&it);
 				initial_tf_entry = false;
 			}
@@ -445,21 +446,26 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 
 	LYXERR0("it.start = " << it.start << " next_seg_pos = " << next_seg_pos);
 	if (it.start == next_seg_pos) {
-#if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 		LYXERR0("it.start == next_seg_pos");
-		if (!d->seg_turnout_.empty())
+		if (!d->seg_turnout_.empty()) {
 			// Merge attributes held d->seg_turnout_
-			next_seg_pos = pickNextSegFromTurnout(next_seg_pos, &char_format);
-#endif
-		// push the constructed char format together with start and length
-		// to the list
-		LYXERR0("Pushing (" << it.start << ", " << it.start + it.length - 1 << ") color: " << char_format.background().color().name());
-		PreeditSegment seg = {it.start, (size_type)it.length, char_format};
-		d->style_.segments_.push_back(seg);
-		next_seg_pos += it.length;
+			pos_type updated_pos = pickNextSegFromTurnout(next_seg_pos, &char_format);
+			if (updated_pos == next_seg_pos) {
+				// no matching segment in the turnout
+				next_seg_pos = registerSegment(it.start, (size_type)it.length, char_format);
+			}
+		} else {
+			// push the constructed char format together with start and length
+			// to the list
+			LYXERR0("### Pushing to register: (" << it.start << ", " << it.start + it.length - 1 << ") color: " << char_format.background().color().name());
+			next_seg_pos = registerSegment(it.start, (size_type)it.length, char_format);
+		}
 	} else if (it.start > next_seg_pos) {
+		// cursor segment (?) in the edit mode comes with it.start > 0 and
+		// it.length == 0, which we ignore
 		if (it.length > 0) {
-			LYXERR0("Pushing to turnout 2");
+			LYXERR0("*** Pushing to turnout:  (" << it.start << ", "
+			        << it.start + it.length - 1 << ")");
 			d->seg_turnout_.push_back(&it);
 		}
 	}
@@ -472,15 +478,15 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos, QTextChar
 	std::vector<const QInputMethodEvent::Attribute*>::iterator to_erase;
 	bool is_matched = false;
 	for (auto past_attr = d->seg_turnout_.begin();
-		 past_attr != d->seg_turnout_.end(); past_attr++) {
+	     past_attr != d->seg_turnout_.end(); past_attr++) {
 		if ((*past_attr)->start == next_seg_pos) {
-			LYXERR0("*Pushing past:  (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
 			QTextCharFormat picked_cf = (*past_attr)->value.value<QTextCharFormat>();
 			if (cf != nullptr)
 				picked_cf.merge(*cf);
 			PreeditSegment seg = {(*past_attr)->start,
 								  (size_type)(*past_attr)->length,
 								  picked_cf};
+			LYXERR0("### Pushing to register: (" << (*past_attr)->start << ", " << (*past_attr)->start + (*past_attr)->length - 1 << ")");
 			d->style_.segments_.push_back(seg);
 			next_seg_pos += (*past_attr)->length;
 			if (d->seg_turnout_.size() > 1)
@@ -491,13 +497,30 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos, QTextChar
 	}
 	// Clear d->seg_turnout_
 	if (is_matched) {
-		if (d->seg_turnout_.size() == 1)
+		if (d->seg_turnout_.size() == 1) {
+			LYXERR0("*** Turnout clearing:   (" << d->seg_turnout_.back()->start
+			        << ", " <<
+			        d->seg_turnout_.back()->start+d->seg_turnout_.back()->length-1
+			        << ")");
 			d->seg_turnout_.pop_back();
-		else if (d->seg_turnout_.size() > 1)
+		} else if (d->seg_turnout_.size() > 1) {
+			LYXERR0("*** Turnout clearing: (" << (*to_erase)->start
+			        << ", " <<
+			        (*to_erase)->start+(*to_erase)->length-1
+			        << ")");
 			d->seg_turnout_.erase(to_erase);
+		}
 	}
 
 	return next_seg_pos;
+}
+
+
+pos_type GuiInputMethod::registerSegment(pos_type start, size_type length,
+                                         QTextCharFormat char_format) {
+	PreeditSegment seg = {start, length, char_format};
+	d->style_.segments_.push_back(seg);
+	return start + length;
 }
 
 
