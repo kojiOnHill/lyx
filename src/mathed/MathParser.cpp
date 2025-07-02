@@ -1081,12 +1081,13 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			if (nextToken().cat() == catBegin)
 				parse(display, FLAG_ITEM, InsetMath::MATH_MODE);
 
+			size_t const optionals = 0;
 			cell->emplace_back(new InsetMathMacroTemplate(buf,
-				name, nargs, 0, MacroTypeDef,
+				name, nargs, optionals, MacroTypeDef,
 				vector<MathData>(), def, display));
 
 			if (buf && (mode_ & Parse::TRACKMACRO))
-				buf->usermacros.insert(name);
+				buf->usermacros[name] = optionals;
 		}
 
 		else if (t.cs() == "newcommand" ||
@@ -1134,7 +1135,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 				optionalValues, def, display));
 
 			if (buf && (mode_ & Parse::TRACKMACRO))
-				buf->usermacros.insert(name);
+				buf->usermacros[name] = optionals;
 		}
 
 		else if (t.cs() == "newcommandx" ||
@@ -1255,7 +1256,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 				optionalValues, def, display));
 
 			if (buf && (mode_ & Parse::TRACKMACRO))
-				buf->usermacros.insert(name);
+				buf->usermacros[name] = optionals;
 		}
 
 		else if (t.cs() == "(") {
@@ -1990,8 +1991,26 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			if (l && !is_user_macro) {
 				if (l->inset == "big") {
 					skipSpaces();
+					// If we are parsing for an optional argument,
+					// we must not handle ']' as a delimiter (bug 8934).
+					// In standard LaTeX \foo[\Big] will give an error
+					// "Missing delimiter (. inserted)", however in
+					// combination with \DeclarePairedDelimiterX from
+					// the mathtools package \Big on its own inside an
+					// optional argument is valid:
+					// \documentclass{article}
+					// \usepackage{mathtools}
+					// \DeclarePairedDelimiterX{\COM}[2]{[}{]}{#1,#2}
+					// \newcommand{\Com}[3][]{\COM[#1]{#2}{#3}}
+					// \begin{document}
+					// $\Com[\Big]AB$
+					// \end{document}
+					// Therefore, if we are looking for FLAG_BRACK_LAST,
+					// and if the delimiter is ']', let FLAG_BRACK_LAST
+					// take precedence.
 					docstring const delim = getToken().asInput();
-					if (InsetMathBig::isBigInsetDelim(delim))
+					if (InsetMathBig::isBigInsetDelim(delim) &&
+					    (delim != "]" || !(flags & FLAG_BRACK_LAST)))
 						cell->emplace_back(new InsetMathBig(buf, t.cs(), delim));
 					else {
 						cell->push_back(createInsetMath(t.cs(), buf));
@@ -2109,19 +2128,57 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 						m = at->currentMode();
 					//lyxerr << "default creation: m2: " << m << endl;
 					idx_type start = 0;
-					// this fails on \bigg[...\bigg]
-					//MathData opt;
-					//parse(opt, FLAG_OPTION, InsetMath::VERBATIM_MODE);
-					//if (!opt.empty()) {
-					//	start = 1;
-					//	at.nucleus()->cell(0) = opt;
-					//}
-					for (idx_type i = start; i < at->nargs(); ++i) {
-						parse(at.nucleus()->cell(i), FLAG_ITEM, m);
-						if (mode == InsetMath::MATH_MODE)
-							skipSpaces();
+					// The code for handling arguments of at does not work
+					// together with the optional argument handling, therefore
+					// we must not use the latter if at->nargs() > 0.
+					size_t optionals = 0;
+					if (is_user_macro && at->nargs() == 0 && buf) {
+						if (mode_ & Parse::TRACKMACRO) {
+							Buffer::UserMacroSet::const_iterator it =
+								buf->usermacros.find(t.cs());
+							if (it != buf->usermacros.end())
+								optionals = it->second;
+						} else {
+							MacroData const * const user_macro =
+								buf->getMacro(t.cs(), false);
+							if (user_macro)
+								optionals = user_macro->optionals();
+
+						}
 					}
-					cell->push_back(at);
+					if (optionals > 0)
+					{
+						cell->push_back(at);
+						// Try to parse the optional arguments with FLAG_OPTION.
+						// Without this the end of the optional arg will not
+						// be handled correctly (bug 8934).
+						// We must know the number of allowed optional arguments
+						// of the macro template. Otherwise user defined macros
+						// similar to big operators like \mybigg[...\mybigg]
+						// would not be parsed correctly.
+						for (size_t i = 0; i < optionals; ++i) {
+							// We need to distinguish empty arguments []
+							// and missing arguments, since this makes a
+							// difference for some macros.
+							MathData opt(buf);
+							skipSpaces();
+							if (good() && nextToken().asInput() == "[") {
+								parse(opt, FLAG_OPTION, m);
+								// the optional arg will later be attached to the
+								// macro by MathData::collectOptionalParameters()
+								opt.insert(0, MathAtom(new InsetMathChar(buf, '[')));
+								opt.push_back(MathAtom(new InsetMathChar(buf, ']')));
+								cell->append(opt);
+							}
+						}
+					} else {
+						for (idx_type i = start; i < at->nargs(); ++i) {
+							parse(at.nucleus()->cell(i), FLAG_ITEM, m);
+							if (mode == InsetMath::MATH_MODE)
+								skipSpaces();
+						}
+						cell->push_back(at);
+					}
 				}
 			}
 		}

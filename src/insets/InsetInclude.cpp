@@ -506,8 +506,9 @@ Buffer * InsetInclude::loadIfNeeded() const
 			// FIXME: Do something.
 		}
 	} else {
-		// The file was already loaded, so, simply
-		// inform parent buffer about local macros.
+		// The file was already loaded, so, simply inform
+		// parent buffer about local macros (we don't need
+		// to know the number of optional arguments here).
 		Buffer const * parent = &buffer();
 		child->setParent(parent);
 		MacroNameSet macros;
@@ -515,7 +516,7 @@ Buffer * InsetInclude::loadIfNeeded() const
 		MacroNameSet::const_iterator cit = macros.begin();
 		MacroNameSet::const_iterator end = macros.end();
 		for (; cit != end; ++cit)
-			parent->usermacros.insert(*cit);
+			parent->usermacros[*cit] = 0;
 	}
 
 	// Cache the child buffer.

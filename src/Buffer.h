@@ -629,7 +629,8 @@ public:
 	MacroData const * getMacro(docstring const & name, Buffer const & child, bool global = true) const;
 
 	/// Collect user macro names at loading time
-	typedef std::set<docstring> UserMacroSet;
+	/// Map maps from macro name to number of optional arguments
+	typedef std::map<docstring, size_t> UserMacroSet;
 	mutable UserMacroSet usermacros;
 
 	/// Replace the inset contents for insets which InsetCode is equal
