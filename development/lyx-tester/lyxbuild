@@ -769,7 +769,7 @@ else
   # might not be the same on the reproducer's system.
   #
   # Make sure we keep these two commands in sync.
-  echo "cmake ${cmake_Werror_flags} \"\${LYX_GIT_REPO}/\" ${cmake_flags[@]}" >> "${LOGS_D}/build-commands"
+  echo "cmake ${cmake_Werror_flags} \"\${LYX_GIT_REPO}/\" ${cmake_flags[@]} &&" >> "${LOGS_D}/build-commands"
   # We do not redirect STDERR on purpose. This way, if there is new STDERR output, it
   # will be easier to catch.
   # todo: ideally we would want to tee STDERR so it is also in the log.
