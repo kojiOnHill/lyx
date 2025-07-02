@@ -208,9 +208,9 @@ public:
 	virtual bool handlesMulticolumn() const { return false; }
 
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
-	void write(TeXMathStream & os,
+	void writeMath(TeXMathStream & os,
 	           row_type beg_row, col_type beg_col,
 	           row_type end_row, col_type end_col) const;
 	///

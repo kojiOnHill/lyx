@@ -97,7 +97,7 @@ void InsetMathDiff::mathematica(MathematicaStream & os) const
 }
 
 
-void InsetMathDiff::write(TeXMathStream &) const
+void InsetMathDiff::writeMath(TeXMathStream &) const
 {
 	LYXERR0("should not happen");
 }

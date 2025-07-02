@@ -257,7 +257,7 @@ void InsetMathNest::dump() const
 	otexrowstream ots(oss);
 	TeXMathStream os(ots);
 	os << "---------------------------------------------\n";
-	write(os);
+	writeMath(os);
 	os << "\n";
 	for (idx_type i = 0, n = nargs(); i != n; ++i)
 		os << cell(i) << "\n";
@@ -326,7 +326,7 @@ MathData InsetMathNest::glue() const
 }
 
 
-void InsetMathNest::write(TeXMathStream & os) const
+void InsetMathNest::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os, currentMode() == MATH_MODE);
 	ModeSpecifier specifier(os, currentMode(), lockedMode());
@@ -380,7 +380,7 @@ void InsetMathNest::latex(otexstream & os, OutputParams const & runparams) const
 	wi.canBreakLine(os.canBreakLine());
 	Changer dummy = wi.changeRowEntry(TexRow::textEntry(runparams.lastid,
 	                                                    runparams.lastpos));
-	write(wi);
+	writeMath(wi);
 	// Reset parbreak and command termination status after a math inset.
 	os.lastChar(0);
 	os.canBreakLine(wi.canBreakLine());

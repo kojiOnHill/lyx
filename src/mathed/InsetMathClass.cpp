@@ -50,9 +50,9 @@ void InsetMathClass::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathClass::write(TeXMathStream & os) const
+void InsetMathClass::writeMath(TeXMathStream & os) const
 {
-	InsetMathNest::write(os);
+	InsetMathNest::writeMath(os);
 	writeLimits(os);
 }
 

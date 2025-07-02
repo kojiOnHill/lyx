@@ -88,7 +88,7 @@ void InsetMathArray::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathArray::write(TeXMathStream & os) const
+void InsetMathArray::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 
@@ -102,7 +102,7 @@ void InsetMathArray::write(TeXMathStream & os) const
 		os << '[' << v << ']';
 	os << '{' << horizontalAlignments() << "}\n";
 
-	InsetMathGrid::write(os);
+	InsetMathGrid::writeMath(os);
 
 	if (os.fragile())
 		os << "\\protect";

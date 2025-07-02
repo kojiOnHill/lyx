@@ -91,7 +91,7 @@ void InsetMathBoldSymbol::validate(LaTeXFeatures & features) const
 }
 
 
-void InsetMathBoldSymbol::write(TeXMathStream & os) const
+void InsetMathBoldSymbol::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	switch (kind_) {

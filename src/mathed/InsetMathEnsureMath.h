@@ -49,7 +49,7 @@ public:
 	docstring eocString(col_type, col_type) const override
 	{ return docstring(); }
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void mathmlize(MathMLStream &) const override;
 	///

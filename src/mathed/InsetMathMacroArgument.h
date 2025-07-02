@@ -33,7 +33,7 @@ public:
 	///
 	void normalize(NormalStream &) const override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 
 private:
 	Inset * clone() const override;

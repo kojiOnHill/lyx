@@ -124,14 +124,14 @@ void InsetMathSubstack::infoize(odocstream & os) const
 }
 
 
-void InsetMathSubstack::write(TeXMathStream & os) const
+void InsetMathSubstack::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	if (os.fragile())
 		os << "\\protect";
 	os << "\\substack{";
 	bool open = os.startOuterRow();
-	InsetMathGrid::write(os);
+	InsetMathGrid::writeMath(os);
 	os << "}\n";
 	if (open)
 		os.startOuterRow();

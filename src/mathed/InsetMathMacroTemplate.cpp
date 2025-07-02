@@ -1192,18 +1192,18 @@ void InsetMathMacroTemplate::write(ostream & os) const
 	otexrowstream ots(oss);
 	TeXMathStream wi(ots, false, false, TeXMathStream::wsDefault);
 	oss << "FormulaMacro\n";
-	write(wi);
+	writeMath(wi);
 	os << to_utf8(oss.str());
 }
 
 
-void InsetMathMacroTemplate::write(TeXMathStream & os) const
+void InsetMathMacroTemplate::writeMath(TeXMathStream & os) const
 {
-	write(os, false);
+	writeMath(os, false);
 }
 
 
-int InsetMathMacroTemplate::write(TeXMathStream & os, bool overwriteRedefinition) const
+int InsetMathMacroTemplate::writeMath(TeXMathStream & os, bool overwriteRedefinition) const
 {
 	int num_lines = 0;
 

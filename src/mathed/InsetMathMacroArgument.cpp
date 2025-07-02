@@ -28,7 +28,7 @@ Inset * InsetMathHash::clone() const
 }
 
 
-void InsetMathHash::write(TeXMathStream & os) const
+void InsetMathHash::writeMath(TeXMathStream & os) const
 {
 	os << str_;
 }

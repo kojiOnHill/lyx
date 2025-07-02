@@ -34,7 +34,7 @@ public:
 	void metricsT(TextMetricsInfo const & mi, Dimension & dim) const override;
 
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void normalize(NormalStream &) const override;
 	///

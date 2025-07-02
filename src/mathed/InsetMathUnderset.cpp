@@ -78,7 +78,7 @@ bool InsetMathUnderset::idxLast(Cursor & cur) const
 }
 
 
-void InsetMathUnderset::write(TeXMathStream & os) const
+void InsetMathUnderset::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	if (os.fragile())

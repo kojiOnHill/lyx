@@ -1551,12 +1551,12 @@ namespace {
 
 } // namespace
 
-void write(MathData const & dat, TeXMathStream & wi)
+void write(MathData const & md, TeXMathStream & wi)
 {
 	wi.firstitem() = true;
 	docstring s;
-	for (MathData::const_iterator it = dat.begin(); it != dat.end(); ++it) {
-		InsetMathChar const * const c = (*it)->asCharInset();
+	for (MathAtom const & at : md) {
+		InsetMathChar const * const c = at->asCharInset();
 		if (c)
 			s += c->getChar();
 		else {
@@ -1564,7 +1564,7 @@ void write(MathData const & dat, TeXMathStream & wi)
 				writeString(s, wi);
 				s.clear();
 			}
-			(*it)->write(wi);
+			at->writeMath(wi);
 			wi.firstitem() = false;
 		}
 	}

@@ -127,7 +127,7 @@ void InsetMath::dump() const
 	odocstringstream os;
 	otexrowstream ots(os);
 	TeXMathStream wi(ots, false, true, TeXMathStream::wsDefault);
-	write(wi);
+	writeMath(wi);
 	lyxerr << to_utf8(os.str());
 	lyxerr << "\n---------------------------------------------" << endl;
 }
@@ -145,7 +145,7 @@ void InsetMath::drawT(TextPainter &, int, int) const
 }
 
 
-void InsetMath::write(TeXMathStream & os) const
+void InsetMath::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	docstring const s = name();
@@ -234,7 +234,7 @@ ostream & operator<<(ostream & os, MathAtom const & at)
 	odocstringstream oss;
 	otexrowstream ots(oss);
 	TeXMathStream wi(ots, false, false, TeXMathStream::wsDefault);
-	at->write(wi);
+	at->writeMath(wi);
 	return os << to_utf8(oss.str());
 }
 
@@ -243,7 +243,7 @@ odocstream & operator<<(odocstream & os, MathAtom const & at)
 {
 	otexrowstream ots(os);
 	TeXMathStream wi(ots, false, false, TeXMathStream::wsDefault);
-	at->write(wi);
+	at->writeMath(wi);
 	return os;
 }
 

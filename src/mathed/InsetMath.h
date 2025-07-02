@@ -233,11 +233,8 @@ public:
 	/// access to the lock (only insets with cells have one)
 	virtual void lock(bool) {}
 
-	// Indicate that we do not want to hide the normal version of
-	// write(). This is to shut off a clang warning.
-	using Inset::write;
 	/// write LaTeX and LyX code
-	virtual void write(TeXMathStream & os) const;
+	virtual void writeMath(TeXMathStream & os) const;
 	/// write normalized content
 	virtual void normalize(NormalStream &) const;
 	/// write content as something readable by Maple

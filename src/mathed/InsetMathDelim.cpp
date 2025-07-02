@@ -82,7 +82,7 @@ void InsetMathDelim::validate(LaTeXFeatures & features) const
 }
 
 
-void InsetMathDelim::write(TeXMathStream & os) const
+void InsetMathDelim::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	os << "\\left" << convertDelimToLatexName(left_) << cell(0)

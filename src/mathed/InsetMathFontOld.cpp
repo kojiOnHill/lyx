@@ -94,7 +94,7 @@ void InsetMathFontOld::drawT(TextPainter & pain, int x, int y) const
 }
 
 
-void InsetMathFontOld::write(TeXMathStream & os) const
+void InsetMathFontOld::writeMath(TeXMathStream & os) const
 {
 	os << "{\\" << key_->name << ' ' << cell(0) << '}';
 }

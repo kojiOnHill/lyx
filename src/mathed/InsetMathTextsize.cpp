@@ -76,7 +76,7 @@ void InsetMathTextsize::drawT(TextPainter & pain, int x, int y) const
 }
 
 
-void InsetMathTextsize::write(TeXMathStream & os) const
+void InsetMathTextsize::writeMath(TeXMathStream & os) const
 {
 	os << "{\\" << key_->name << ' ' << cell(0) << '}';
 }

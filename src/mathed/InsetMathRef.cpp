@@ -303,7 +303,7 @@ void InsetMathRef::changeTarget(docstring const & target)
 }
 
 
-void InsetMathRef::write(TeXMathStream & os) const
+void InsetMathRef::writeMath(TeXMathStream & os) const
 {
 	docstring const & cmd = commandname();
 	// This should not happen, but of course it does
@@ -314,7 +314,7 @@ void InsetMathRef::write(TeXMathStream & os) const
 	// are we writing to the LyX file?
 	if (!os.latex()) {
 		// if so, then this is easy
-		InsetMathCommand::write(os);
+		InsetMathCommand::writeMath(os);
 		return;
 	}
 	bool const use_refstyle =

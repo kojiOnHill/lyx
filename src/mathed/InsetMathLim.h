@@ -40,7 +40,7 @@ public:
 	///
 	void mathematica(MathematicaStream &) const override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	InsetCode lyxCode() const override { return MATH_LIM_CODE; }
 

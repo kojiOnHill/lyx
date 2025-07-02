@@ -38,7 +38,7 @@ public:
 	///
 	void drawT(TextPainter & pi, int x, int y) const override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void normalize(NormalStream &) const override;
 	///

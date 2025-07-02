@@ -709,7 +709,7 @@ void InsetMathHull::metricsT(TextMetricsInfo const & mi, Dimension & dim) const
 		odocstringstream os;
 		otexrowstream ots(os);
 		TeXMathStream wi(ots, false, true, TeXMathStream::wsDefault);
-		write(wi);
+		writeMath(wi);
 		dim.wid = os.str().size();
 		dim.asc = 1;
 		dim.des = 0;
@@ -725,7 +725,7 @@ void InsetMathHull::drawT(TextPainter & pain, int x, int y) const
 		odocstringstream os;
 		otexrowstream ots(os);
 		TeXMathStream wi(ots, false, true, TeXMathStream::wsDefault);
-		write(wi);
+		writeMath(wi);
 		pain.draw(x, y, os.str().c_str());
 	}
 }
@@ -744,7 +744,7 @@ static docstring latexString(InsetMathHull const & inset)
 		encoding = &(inset.buffer().params().encoding());
 	otexrowstream ots(ls);
 	TeXMathStream wi(ots, false, true, TeXMathStream::wsPreview, encoding);
-	inset.write(wi);
+	inset.writeMath(wi);
 	return ls.str();
 }
 
@@ -1160,7 +1160,7 @@ CtObject InsetMathHull::getCtObject(OutputParams const & runparams) const
 }
 
 
-void InsetMathHull::header_write(TeXMathStream & os) const
+void InsetMathHull::header_writeMath(TeXMathStream & os) const
 {
 	bool n = numberedType();
 
@@ -1226,7 +1226,7 @@ void InsetMathHull::header_write(TeXMathStream & os) const
 }
 
 
-void InsetMathHull::footer_write(TeXMathStream & os) const
+void InsetMathHull::footer_writeMath(TeXMathStream & os) const
 {
 	bool n = numberedType();
 
@@ -1748,12 +1748,12 @@ void InsetMathHull::eol(TeXMathStream & os, row_type row, bool fragile, bool lat
 	InsetMathGrid::eol(os, row, fragile, latex, last_eoln);
 }
 
-void InsetMathHull::write(TeXMathStream & os) const
+void InsetMathHull::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, MATH_MODE);
-	header_write(os);
-	InsetMathGrid::write(os);
-	footer_write(os);
+	header_writeMath(os);
+	InsetMathGrid::writeMath(os);
+	footer_writeMath(os);
 }
 
 
@@ -2336,7 +2336,7 @@ void InsetMathHull::write(ostream & os) const
 	otexrowstream ots(oss);
 	TeXMathStream wi(ots, false, false, TeXMathStream::wsDefault);
 	oss << "Formula ";
-	write(wi);
+	writeMath(wi);
 	os << to_utf8(oss.str());
 }
 
@@ -2387,7 +2387,7 @@ int InsetMathHull::plaintext(odocstringstream & os,
 	// Fix Bug #6139
 	if (type_ == hullRegexp) {
 		TeXMathStream wi(ots, false, true, ot, enc);
-		write(wi);
+		writeMath(wi);
 	}
 	else {
 		TeXMathStream wi(ots, false, true, ot, enc);
@@ -2468,7 +2468,7 @@ void InsetMathHull::docbook(XMLStream & xs, OutputParams const & runparams) cons
 	odocstringstream ls;
 	otexstream ols(ls);
 	TeXMathStream wi(ols, false, false, TeXMathStream::wsDefault, runparams.encoding);
-	InsetMathGrid::write(wi);
+	InsetMathGrid::writeMath(wi);
 	ms << from_utf8(subst(subst(to_utf8(ls.str()), "&", "&amp;"), "<", "&lt;"));
 	ms << "</" << from_ascii("alt") << ">";
 

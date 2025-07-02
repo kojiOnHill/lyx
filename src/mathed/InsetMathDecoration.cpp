@@ -178,7 +178,7 @@ void InsetMathDecoration::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathDecoration::write(TeXMathStream & os) const
+void InsetMathDecoration::writeMath(TeXMathStream & os) const
 {
 	bool needs_mathmode = currentMode() == MATH_MODE;
 	bool textmode_macro = currentMode() == TEXT_MODE

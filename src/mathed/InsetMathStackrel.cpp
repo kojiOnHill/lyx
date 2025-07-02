@@ -123,7 +123,7 @@ void InsetMathStackrel::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathStackrel::write(TeXMathStream & os) const
+void InsetMathStackrel::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	os << "\\stackrel";

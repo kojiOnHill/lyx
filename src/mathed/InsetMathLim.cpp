@@ -71,7 +71,7 @@ void InsetMathLim::mathematica(MathematicaStream & os) const
 }
 
 
-void InsetMathLim::write(TeXMathStream &) const
+void InsetMathLim::writeMath(TeXMathStream &) const
 {
 	LYXERR0("should not happen");
 }

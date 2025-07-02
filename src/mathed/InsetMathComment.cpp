@@ -78,7 +78,7 @@ void InsetMathComment::drawT(TextPainter & pain, int x, int y) const
 }
 
 
-void InsetMathComment::write(TeXMathStream & os) const
+void InsetMathComment::writeMath(TeXMathStream & os) const
 {
 	os << '%' << cell(0) << "\n";
 }

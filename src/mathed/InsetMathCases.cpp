@@ -108,14 +108,14 @@ bool InsetMathCases::getStatus(Cursor & cur, FuncRequest const & cmd,
 }
 
 
-void InsetMathCases::write(TeXMathStream & os) const
+void InsetMathCases::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	if (os.fragile())
 		os << "\\protect";
 	bool open = os.startOuterRow();
 	os << "\\begin{cases}\n";
-	InsetMathGrid::write(os);
+	InsetMathGrid::writeMath(os);
 	if (os.fragile())
 		os << "\\protect";
 	os << "\\end{cases}";

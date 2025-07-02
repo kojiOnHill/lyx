@@ -147,12 +147,12 @@ bool InsetMathAMSArray::getStatus(Cursor & cur, FuncRequest const & cmd,
 }
 
 
-void InsetMathAMSArray::write(TeXMathStream & os) const
+void InsetMathAMSArray::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	os << "\\begin{" << name_ << '}';
 	bool open = os.startOuterRow();
-	InsetMathGrid::write(os);
+	InsetMathGrid::writeMath(os);
 	os << "\\end{" << name_ << '}';
 	if (open)
 		os.startOuterRow();

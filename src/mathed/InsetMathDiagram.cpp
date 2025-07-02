@@ -66,13 +66,13 @@ void InsetMathDiagram::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathDiagram::write(TeXMathStream & os) const
+void InsetMathDiagram::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	os << "\\Diagram";
 	bool open = os.startOuterRow();
 	os << '{';
-	InsetMathGrid::write(os);
+	InsetMathGrid::writeMath(os);
 	os << "}\n";
 	if (open)
 		os.startOuterRow();

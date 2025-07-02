@@ -214,7 +214,7 @@ void InsetMathChar::drawT(TextPainter & pain, int x, int y) const
 }
 
 
-void InsetMathChar::write(TeXMathStream & os) const
+void InsetMathChar::writeMath(TeXMathStream & os) const
 {
 	if (os.latex() && os.pendingSpace()) {
 		if (isAlphaASCII(char_))

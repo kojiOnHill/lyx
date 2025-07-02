@@ -69,7 +69,7 @@ void InsetMathXArrow::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathXArrow::write(TeXMathStream & os) const
+void InsetMathXArrow::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	os << '\\' << name_;

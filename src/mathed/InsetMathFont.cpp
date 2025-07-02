@@ -63,7 +63,7 @@ bool InsetMathFont::lockedMode() const
 }
 
 
-void InsetMathFont::write(TeXMathStream & os) const
+void InsetMathFont::writeMath(TeXMathStream & os) const
 {
 	// Close the mode changing command inserted during export if
 	// we are going to output another mode changing command that
@@ -77,7 +77,7 @@ void InsetMathFont::write(TeXMathStream & os) const
 		os.pendingBrace(false);
 		os.textMode(!os.textMode());
 	}
-	InsetMathNest::write(os);
+	InsetMathNest::writeMath(os);
 }
 
 

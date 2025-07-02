@@ -142,7 +142,7 @@ bool InsetMathSplit::getStatus(Cursor & cur, FuncRequest const & cmd,
 }
 
 
-void InsetMathSplit::write(TeXMathStream & ws) const
+void InsetMathSplit::writeMath(TeXMathStream & ws) const
 {
 	MathEnsurer ensurer(ws);
 	if (ws.fragile())
@@ -166,7 +166,7 @@ void InsetMathSplit::write(TeXMathStream & ws) const
 	}
 	if (hasArg)
 		ws << '{' << static_cast<unsigned int>((ncols() + 1)/2) << '}';
-	InsetMathGrid::write(ws);
+	InsetMathGrid::writeMath(ws);
 	if (ws.fragile())
 		ws << "\\protect";
 	ws << "\\end{" << name_ << suffix << "}\n";

@@ -51,7 +51,7 @@ public:
 	///
 	void validate(LaTeXFeatures & features) const override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	/// write normalized content
 	void normalize(NormalStream &) const override;
 	///

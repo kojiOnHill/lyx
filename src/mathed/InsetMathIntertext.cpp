@@ -37,7 +37,7 @@ InsetMathIntertext::InsetMathIntertext(Buffer * buf, docstring const & name)
 {}
 
 
-void InsetMathIntertext::write(TeXMathStream & os) const
+void InsetMathIntertext::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, TEXT_MODE);
 	os << '\\' << name_ << '{' << cell(0) << '}';

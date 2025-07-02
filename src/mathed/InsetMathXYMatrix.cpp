@@ -63,7 +63,7 @@ void InsetMathXYMatrix::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathXYMatrix::write(TeXMathStream & os) const
+void InsetMathXYMatrix::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	if (os.fragile())
@@ -95,7 +95,7 @@ void InsetMathXYMatrix::write(TeXMathStream & os) const
 		}
 	}
 	os << '{';
-	InsetMathGrid::write(os);
+	InsetMathGrid::writeMath(os);
 	os << "}";
 	if (open)
 		os.startOuterRow();

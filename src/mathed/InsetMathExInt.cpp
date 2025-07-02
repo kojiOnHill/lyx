@@ -202,7 +202,7 @@ void InsetMathExInt::htmlize(HtmlStream & os) const
 }
 
 
-void InsetMathExInt::write(TeXMathStream &) const
+void InsetMathExInt::writeMath(TeXMathStream &) const
 {
 	LYXERR0("should not happen");
 }

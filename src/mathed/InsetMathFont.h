@@ -34,7 +34,7 @@ public:
 	/// do we allow changing mode during latex export?
 	bool lockedMode() const override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	docstring name() const override;
 	///

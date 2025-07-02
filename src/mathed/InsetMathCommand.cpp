@@ -58,7 +58,7 @@ void InsetMathCommand::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathCommand::write(TeXMathStream & os) const
+void InsetMathCommand::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, currentMode(), lockedMode(), asciiOnly());
 	MathEnsurer ensurer(os, needs_math_mode_);

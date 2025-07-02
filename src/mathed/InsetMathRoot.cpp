@@ -134,7 +134,7 @@ void InsetMathRoot::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathRoot::write(TeXMathStream & os) const
+void InsetMathRoot::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	if (os.latex() && !cell(1).empty() && !cell(1).front()->asBraceInset()

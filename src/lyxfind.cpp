@@ -4406,7 +4406,7 @@ docstring latexifyFromCursor(DocIterator const & cur, int len)
 			CursorSlice const & cs = cur[s];
 			if (cs.asInsetMath() && cs.asInsetMath()->asHullInset()) {
 				TeXMathStream ws(os);
-				cs.asInsetMath()->asHullInset()->header_write(ws);
+				cs.asInsetMath()->asHullInset()->header_writeMath(ws);
 				break;
 			}
 		}
@@ -4430,7 +4430,7 @@ docstring latexifyFromCursor(DocIterator const & cur, int len)
 			InsetMath * inset = cs2.asInsetMath();
 			if (inset && inset->asHullInset()) {
 				TeXMathStream ws(os);
-				inset->asHullInset()->footer_write(ws);
+				inset->asHullInset()->footer_writeMath(ws);
 				break;
 			}
 		}

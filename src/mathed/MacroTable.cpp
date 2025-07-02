@@ -194,7 +194,7 @@ int MacroData::write(odocstream & os, bool overwriteRedefinition) const
 		static_cast<InsetMathMacroTemplate const &>(*inset);
 	otexrowstream ots(os);
 	TeXMathStream wi(ots, false, true, TeXMathStream::wsDefault);
-	return tmpl.write(wi, overwriteRedefinition);
+	return tmpl.writeMath(wi, overwriteRedefinition);
 }
 
 

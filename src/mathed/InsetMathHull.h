@@ -125,7 +125,7 @@ public:
 	char displayColAlign(idx_type idx) const override;
 
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void normalize(NormalStream &) const override;
 	///
@@ -134,9 +134,9 @@ public:
 	///
 	void write(std::ostream & os) const override;
 	///
-	void header_write(TeXMathStream &) const;
+	void header_writeMath(TeXMathStream &) const;
 	///
-	void footer_write(TeXMathStream &) const;
+	void footer_writeMath(TeXMathStream &) const;
 	///
 	void read(support::Lexer & lex) override;
 	///

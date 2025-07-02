@@ -36,7 +36,7 @@ public:
 	/// we inherit the mode
 	mode_type currentMode() const override { return current_mode_; }
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	/// write normalized content
 	void normalize(NormalStream & ns) const override;
 	///

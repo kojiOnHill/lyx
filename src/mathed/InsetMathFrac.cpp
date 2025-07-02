@@ -393,7 +393,7 @@ void InsetMathFrac::drawT(TextPainter & /*pain*/, int /*x*/, int /*y*/) const
 }
 
 
-void InsetMathFrac::write(TeXMathStream & os) const
+void InsetMathFrac::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	switch (kind_) {
@@ -413,7 +413,7 @@ void InsetMathFrac::write(TeXMathStream & os) const
 	case CFRAC:
 	case UNITFRAC:
 		if (nargs() == 2)
-			InsetMathNest::write(os);
+			InsetMathNest::writeMath(os);
 		else
 			os << "\\unitfrac[" << cell(2) << "]{" << cell(0) << "}{" << cell(1) << '}';
 		break;
@@ -717,7 +717,7 @@ bool InsetMathBinom::extraBraces() const
 }
 
 
-void InsetMathBinom::write(TeXMathStream & os) const
+void InsetMathBinom::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 	switch (kind_) {

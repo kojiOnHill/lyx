@@ -1924,7 +1924,7 @@ void Cursor::normalize()
 		odocstringstream os;
 		otexrowstream ots(os);
 		TeXMathStream wi(ots, false, true, TeXMathStream::wsDefault);
-		inset().asInsetMath()->write(wi);
+		inset().asInsetMath()->writeMath(wi);
 		lyxerr << to_utf8(os.str()) << endl;
 		pos() = lastpos();
 	}

@@ -44,7 +44,7 @@ InsetMathBox::InsetMathBox(Buffer * buf, docstring const & name)
 {}
 
 
-void InsetMathBox::write(TeXMathStream & os) const
+void InsetMathBox::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, TEXT_MODE);
 	os << '\\' << name_ << '{' << cell(0) << '}';
@@ -167,7 +167,7 @@ void InsetMathFBox::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathFBox::write(TeXMathStream & os) const
+void InsetMathFBox::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, TEXT_MODE);
 	os << "\\fbox{" << cell(0) << '}';
@@ -294,7 +294,7 @@ void InsetMathMakebox::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathMakebox::write(TeXMathStream & os) const
+void InsetMathMakebox::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, TEXT_MODE);
 	os << (framebox_ ? "\\framebox" : "\\makebox");
@@ -385,7 +385,7 @@ void InsetMathBoxed::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathBoxed::write(TeXMathStream & os) const
+void InsetMathBoxed::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, MATH_MODE);
 	os << "\\boxed{" << cell(0) << '}';

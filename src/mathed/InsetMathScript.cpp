@@ -504,7 +504,7 @@ bool InsetMathScript::idxUpDown(Cursor & cur, bool up) const
 }
 
 
-void InsetMathScript::write(TeXMathStream & os) const
+void InsetMathScript::writeMath(TeXMathStream & os) const
 {
 	MathEnsurer ensurer(os);
 

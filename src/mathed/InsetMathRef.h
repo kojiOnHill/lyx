@@ -29,7 +29,7 @@ public:
 	///
 	void updateBuffer(ParIterator const &, UpdateType, bool const deleted = false) override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void infoize(odocstream & os) const override;
 	///

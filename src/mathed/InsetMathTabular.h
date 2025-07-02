@@ -36,7 +36,7 @@ public:
 	InsetMathTabular const * asTabularInset() const { return this; }
 
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void infoize(odocstream & os) const override;
 	///

@@ -32,7 +32,7 @@ public:
 	///
 	bool idxLast(Cursor &) const override;
 	///
-	void write(TeXMathStream & ws) const override;
+	void writeMath(TeXMathStream & ws) const override;
 	///
 	void normalize(NormalStream & ns) const override;
 	///

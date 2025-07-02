@@ -206,7 +206,7 @@ void InsetMathSymbol::octave(OctaveStream & os) const
 }
 
 
-void InsetMathSymbol::write(TeXMathStream & os) const
+void InsetMathSymbol::writeMath(TeXMathStream & os) const
 {
 	unique_ptr<MathEnsurer> ensurer;
 	if (currentMode() != TEXT_MODE)

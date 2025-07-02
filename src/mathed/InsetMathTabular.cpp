@@ -56,7 +56,7 @@ void InsetMathTabular::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathTabular::write(TeXMathStream & os) const
+void InsetMathTabular::writeMath(TeXMathStream & os) const
 {
 	ModeSpecifier specifier(os, TEXT_MODE);
 
@@ -70,7 +70,7 @@ void InsetMathTabular::write(TeXMathStream & os) const
 		os << '[' << v << ']';
 	os << '{' << horizontalAlignments() << "}\n";
 
-	InsetMathGrid::write(os);
+	InsetMathGrid::writeMath(os);
 
 	if (os.fragile())
 		os << "\\protect";

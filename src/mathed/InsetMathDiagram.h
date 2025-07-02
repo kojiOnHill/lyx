@@ -35,7 +35,7 @@ public:
 	int rowsep() const override;
 
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void infoize(odocstream & os) const override;
 	///

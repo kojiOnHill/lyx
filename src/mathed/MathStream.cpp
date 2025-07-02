@@ -514,7 +514,7 @@ bool TeXMathStream::startOuterRow()
 
 TeXMathStream & operator<<(TeXMathStream & ws, MathAtom const & at)
 {
-	at->write(ws);
+	at->writeMath(ws);
 	return ws;
 }
 

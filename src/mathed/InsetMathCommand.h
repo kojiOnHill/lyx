@@ -36,7 +36,7 @@ public:
 	///
 	Inset * editXY(Cursor &, int, int) override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	//
 	// void infoize(odocstream & os) const;
 	///

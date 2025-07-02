@@ -37,7 +37,7 @@ public:
 	/// we inherit the mode
 	mode_type currentMode() const override { return current_mode_; }
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	/// FIXME XHTML For now, we do nothing with color.
 	void mathmlize(MathMLStream &) const override {}
 	/// FIXME XHTML For now, we do nothing with color.

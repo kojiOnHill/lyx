@@ -1114,7 +1114,7 @@ docstring asString(InsetMath const & inset)
 	odocstringstream os;
 	otexrowstream ots(os);
 	TeXMathStream ws(ots);
-	inset.write(ws);
+	inset.writeMath(ws);
 	return os.str();
 }
 
@@ -1124,7 +1124,7 @@ docstring asString(MathAtom const & at)
 	odocstringstream os;
 	otexrowstream ots(os);
 	TeXMathStream ws(ots);
-	at->write(ws);
+	at->writeMath(ws);
 	return os.str();
 }
 

@@ -41,7 +41,7 @@ public:
 	///
 	void infoize(odocstream & os) const override;
 	///
-	void write(TeXMathStream & os) const override;
+	void writeMath(TeXMathStream & os) const override;
 	///
 	void mathmlize(MathMLStream &) const override;
 	///
