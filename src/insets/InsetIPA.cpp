@@ -162,8 +162,17 @@ void InsetIPA::draw(PainterInfo & pi, int x, int y) const
 
 void InsetIPA::edit(Cursor & cur, bool front, EntryDirection entry_from)
 {
+	bool const has_preview = previewState(&cur.bv());
 	cur.push(*this);
 	InsetText::edit(cur, front, entry_from);
+	if (has_preview) {
+		// The insets contents is in general different from the one of
+		// the instant preview image, so we have to indicate to the
+		// BufferView that a metrics update is needed.
+		// FIXME : it should be possible to trigger a SinglePar update
+		//   on the parent paragraph.
+		cur.screenUpdateFlags(Update::Force);
+	}
 }
 
 
