@@ -656,12 +656,11 @@ else
       # https://stackoverflow.com/a/8933773/1376404
       # great info (and should not always order from largest to smallest!):
       # #https://stackoverflow.com/questions/56761591/how-do-i-organize-members-in-a-struct-to-waste-the-least-space-on-alignment
-      CPPFLAGS+=";-Wno-error=padded"
+      CPPFLAGS+=";-Wno-padded"
 
       # todo: lyx-devel says it would be good to clean these up.
       # (https://www.mail-archive.com/search?l=mid&q=4cee06c8-0646-4f1a-b81f-409d6de33a4b%40gmail.com)
-      CPPFLAGS="-Wno-shadow"
-      #
+      CPPFLAGS+=";-Wno-shadow"
 
       # -Weffc++
       # Gives a lot of warnings with GCC.
