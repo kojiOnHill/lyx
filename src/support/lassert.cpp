@@ -138,11 +138,11 @@ docstring printCallStack()
 			}
 		}
 		int status = 0;
-		const char* demangled =
+		char* demangled =
 			abi::__cxa_demangle(mangled, nullptr, nullptr, &status);
 		const QByteArray line = QString("(%1) %2: %3\n").arg(i, 3).arg(messages[i])
 								.arg(demangled ? demangled : orig.c_str()).toLocal8Bit();
-		free((void*)demangled);
+		free(demangled);
 
 		fprintf(stderr, "%s", line.constData());
 		bt += from_local8bit(line.constData());
