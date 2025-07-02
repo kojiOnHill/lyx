@@ -557,8 +557,7 @@ else
     HUNSPELL_FLAG="OFF"
   fi
 
-  # this commit is not the one that fixed it, it is just known to work.
-  if git merge-base --is-ancestor "3aab9ad2" HEAD; then
+  if [ "${current_branch}" = "master" ]; then
     # -Werror=dev turns CMake warnings into errors, but not all warnings. For
     # example, cannot turn warnings about unused flags into errors:
     # https://stackoverflow.com/questions/42684572/how-to-make-cmake-exit-non-0-in-response-to-warning-manually-specified-variable
