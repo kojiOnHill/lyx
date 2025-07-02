@@ -368,7 +368,7 @@ void GuiInputMethod::setPreeditStyle(
 		LYXERR0(" (start, length) = (" << d->seg_turnout_.back()->start
 		        << ", " << d->seg_turnout_.back()->length << ")");
 	while (!d->seg_turnout_.empty()) {
-		pickNextSegFromTurnout(next_seg_pos);
+		next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
 	}
 	LYXERR0("ended while");
 
@@ -469,7 +469,7 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 			d->seg_turnout_.push_back(&it);
 		}
 	}
-	pickNextSegFromTurnout(next_seg_pos);
+	next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
 	return next_seg_pos;
 }
 
