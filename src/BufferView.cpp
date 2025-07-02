@@ -3120,9 +3120,12 @@ bool BufferView::mouseSetCursor(Cursor & cur, bool const select)
 		// persistent selection
 		cap::saveSelection(cursor());
 
-	d->cursor_.macroModeClose();
-	// If a macro has been finalized, the cursor might have been broken
-	cur.fixIfBroken();
+	if (d->cursor_.inMacroMode()) {
+		d->cursor_.macroModeClose();
+		cur.screenUpdateFlags(Update::Force);
+		// If a macro has been finalized, the cursor might have been broken
+		cur.fixIfBroken();
+	}
 
 	// Has the cursor just left the inset?
 	bool const leftinset = (&d->cursor_.inset() != &cur.inset());
