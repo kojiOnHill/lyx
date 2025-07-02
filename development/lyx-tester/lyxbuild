@@ -685,6 +685,38 @@ else
       CPPFLAGS+=";-Wswitch"
       CPPFLAGS+=";-Wunused-but-set-parameter"
       CPPFLAGS+=";-Wwrite-strings"
+
+      # TODO: check this one out soon.
+      CPPFLAGS+=";-Wno-missing-declarations"
+      # TODO: check this one out soon.
+      CPPFLAGS+=";-Wno-redundant-decls"
+
+      # TODO: haven't looked at yet:
+      #CPPFLAGS+=";-Wno-error=undef"
+      #CPPFLAGS+=";-Wno-error=reserved-macro-identifier"
+
+      # TODO: lots of warnings
+      # Warns when case statements fall-through. (Included with -Wextra in GCC, not in clang)
+      CPPFLAGS+=";-Wno-implicit-fallthrough"
+      # warn if float is implicitly promoted to double
+      # TODO: only a couple warnings: look into them?
+      CPPFLAGS+=";-Wno-double-promotion"
+      #-Wmisleading-indentation (only in GCC >= 6.0) warn if indentation implies blocks where blocks do not exist
+      CPPFLAGS+=";-Wmisleading-indentation"
+      # TODO: lots of warnings
+      CPPFLAGS+=";-Wno-sign-conversion"
+      # TODO: Lots of warnings
+      # warn on type conversions that may lose data
+      CPPFLAGS+=";-Wno-conversion"
+      # I sent a message to lyx-devel.
+      # (5 main warnings, only triggered by GCC)
+      # warn if you overload (not override) a virtual function
+      CPPFLAGS+=";-Wno-overloaded-virtual"
+      # warn on anything being unused
+      CPPFLAGS+=";-Wunused"
+      # TODO: lots of warnings
+      # warn for c-style casts
+      CPPFLAGS+=";-Wno-old-style-cast"
     else
       CPPFLAGS=""
     fi
