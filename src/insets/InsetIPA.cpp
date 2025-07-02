@@ -80,7 +80,12 @@ void InsetIPA::doDispatch(Cursor & cur, FuncRequest & cmd)
 		break;
 	}
 	default:
+		bool const has_preview = previewState(&cur.bv());
 		InsetText::doDispatch(cur, cmd);
+		if (has_preview != previewState(&cur.bv()))
+			// FIXME : it should be possible to trigger a SinglePar update
+			//   on the parent paragraph.
+			cur.screenUpdateFlags(Update::Force);
 		break;
 	}
 

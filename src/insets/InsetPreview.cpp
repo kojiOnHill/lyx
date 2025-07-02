@@ -177,6 +177,17 @@ void InsetPreview::draw(PainterInfo & pi, int x, int y) const
 }
 
 
+void InsetPreview::doDispatch(Cursor & cur, FuncRequest & cmd)
+{
+	bool const has_preview = previewState(&cur.bv());
+	InsetText::doDispatch(cur, cmd);
+	if (has_preview != previewState(&cur.bv()))
+		// FIXME : it should be possible to trigger a SinglePar update
+		//   on the parent paragraph.
+		cur.screenUpdateFlags(Update::Force);
+}
+
+
 void InsetPreview::edit(Cursor & cur, bool front, EntryDirection entry_from)
 {
 	bool const has_preview = previewState(&cur.bv());

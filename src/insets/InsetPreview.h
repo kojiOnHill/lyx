@@ -74,6 +74,9 @@ public:
 	//@}
 
 protected:
+	///
+	void doDispatch(Cursor & cur, FuncRequest & cmd) override;
+
 	/// Retrieves the preview state. Returns true if preview
 	/// is enabled and the preview image is available.
 	bool previewState(BufferView * bv) const;
