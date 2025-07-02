@@ -480,6 +480,8 @@ gitRepoDIR="$( readlink -f ./ )"
 # use *relative* gitRepoDIR so that when this command is logged it's more
 # portable.
 git_repo_d="../${PWD##*/}"
+echo 'LYX_GIT_REPO="$( pwd )" &&' >> "${LOGS_D}/build-commands"
+
 
 # We want to do this for autotools also so mylyx() doesn't run an old cmake build rather than a new autotools build.
 [ -d ../CMakeBuild ] && { echo "$(ECHOPREFIX)removing previous CMake build" && runthis misc.log rm -rf ../CMakeBuild ;}
@@ -759,7 +761,19 @@ else
     -DLYX_DEBUG_GLIBC_PEDANTIC=OFF
   )
 
-  runthis cmake.log cmake ${cmake_Werror_flags} "${git_repo_d}/" ${cmake_flags[@]} \
+  # Ideally we would do "runthis cmake.log cmake...", but we want the
+  # build-commands command to be portable, so instead we want to reference a
+  # variable (LYX_GIT_REPO) that will work on the reproducer's system.
+  # Otherwise build-commands would contain, e.g., "../repo" (this might be the
+  # name of the Git repository directory where lyxbuild was called), which
+  # might not be the same on the reproducer's system.
+  #
+  # Make sure we keep these two commands in sync.
+  echo "cmake ${cmake_Werror_flags} \"\${LYX_GIT_REPO}/\" ${cmake_flags[@]}" >> "${LOGS_D}/build-commands"
+  # We do not redirect STDERR on purpose. This way, if there is new STDERR output, it
+  # will be easier to catch.
+  # todo: ideally we would want to tee STDERR so it is also in the log.
+  cmake ${cmake_Werror_flags} "${git_repo_d}/" ${cmake_flags[@]} > "${LOGS_D}/cmake.log" \
     || { echo "$(ERRORPREFIX)running cmake" >&2; exit 1; }
 fi
 
