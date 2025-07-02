@@ -8,7 +8,12 @@ project(${_lyx})
 
 include_directories(${TOP_SRC_DIR}/src)
 
-add_compile_options(-Wno-nested-anon-types)
+if (CMAKE_CXX_COMPILER_ID MATCHES "^([cC]lang|AppleClang)$")
+  add_compile_options(-Wno-nested-anon-types)
+else()
+  # GNU compiler emits the note "unrecognized command-line option ‘-Wno-nested-anon-types’"
+  # but only if some other warning also occured
+endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMakeTargets")
