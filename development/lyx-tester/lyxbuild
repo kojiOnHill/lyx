@@ -628,6 +628,20 @@ else
       # related commits: 0c2a1d81
       CPPFLAGS+=";-Wcast-qual"
 
+      # Did not ask for feedback on lyx-devel yet, since these do not seem good
+      # candidates to address
+      #
+      # might be useful to avoid *some* of these warnings by just rearranging the elements from biggest
+      # to smallest.
+      #https://stackoverflow.com/a/52030848/1376404
+      # could in theory add explicit padding, but that seems like a bad idea:
+      # https://stackoverflow.com/a/76107281/1376404
+      # alternative, but not recommended:
+      # https://stackoverflow.com/a/8933773/1376404
+      # great info (and should not always order from largest to smallest!):
+      # #https://stackoverflow.com/questions/56761591/how-do-i-organize-members-in-a-struct-to-waste-the-least-space-on-alignment
+      CPPFLAGS+=";-Wno-error=padded"
+
     else
       CPPFLAGS=""
     fi
