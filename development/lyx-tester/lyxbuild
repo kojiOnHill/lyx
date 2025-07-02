@@ -470,7 +470,20 @@ fi
 echo "$(ECHOPREFIX)removing previous build logs..."
 [ -d "${LOGS_D}" ] && rm -rf "${LOGS_D}"
 mkdir "${LOGS_D}"
-
+#
+#
+# The point of centralizing this code is to finish the chain of commands
+# in 'build-commands', which is delimited by '&&'. Otherwise, the last
+# command will end with "&&" and will not be complete.
+# We do not just run this echo at the end of the script, because if there
+# is an error from 'cmake' or 'make' we want build-commands to be complete
+# to reproduce that error.
+function on_exit () {
+  echo "echo 'all done.'" >> "${LOGS_D}/build-commands"
+}
+trap "on_exit" EXIT
+#
+#
 echo "Arguments to lyxbuild: ${args_orig}" >> "${LOGS_D}/misc.log"
 
 # Start timing here for profiling.
@@ -777,6 +790,7 @@ else
     || { echo "$(ERRORPREFIX)running cmake" >&2; exit 1; }
 fi
 
+
 echo "$(ECHOPREFIX)running make..."
 echo "$(ECHOPREFIX)building with ${njobs} core(s)" >> "${LOGS_D}/make.log"
 runthis make.log make -j${njobs} 2>&1
@@ -909,9 +923,5 @@ if [ "${bisect}" = "1" ] && [ "${patch_old}" = "1" ]; then
   git reset --hard
   git checkout "${hash_orig}"
 fi
-
-# this is mostly to close the chain, because runthis appends "&&" to every
-# command line stored in build-commands.
-echo "echo 'all done.'" >> "${LOGS_D}/build-commands"
 
 echo "$(ECHOPREFIX)done."
