@@ -585,34 +585,21 @@ else
   if [ "${WERROR}" = "1" ]; then
     # CPPFLAGS should be a semi-colon separated list (if more than one option).
 
-    # '-pedantic' warnings aren't too useful, but solving them
-    # may make compilation smoother for compilers that LyX
-    # developers are not testing.
-    #
-    # If a warning from '-pedantic' comes up, we can ignore certain classes of
-    # warnings. e.g., see dd4f9670 for how we now append
-    # '-Wno-nested-anon-types' (which I think is the same as
-    # '-Wno-error=nested-anon-types')
-    #
-    # An alternative to dd4f9670 is handling it in 'lyxbuild' by adding the
-    # following *after* the initial CPPFLAGS definition below:
-    #if [ "${clang}" = "1" ]; then
-    #  CPPFLAGS+=";-Wno-error=nested-anon-types"
-    #fi
-
     # TODO: starting with 2.5.0, also turn on with 2.5.x branch?
     # Only use these flags on master. The only issue with this is that when we
     # bisect a warning (e.g., from -pedantic), we need to remember to turn it
     # on unconditionally.
     if [ "${current_branch}" = "master" ]; then
-      CPPFLAGS="-Werror;-Wextra;-pedantic;-Wextra-semi"
+      CPPFLAGS="-Werror;-Wextra;-Wextra-semi"
+
+      # '-pedantic' warnings aren't too useful, but solving them
+      # may make compilation smoother for compilers that LyX
+      # developers are not testing.
+      CPPFLAGS+=";-pedantic"
 
       # fixed one instance of this (c0ccedd0)
       CPPFLAGS+=";-Wmissing-include-dirs"
 
-      # todo: lyx-devel says it would be good to clean these up.
-      # (https://www.mail-archive.com/search?l=mid&q=4cee06c8-0646-4f1a-b81f-409d6de33a4b%40gmail.com)
-      #CPPFLAGS="-Wshadow"
       if [ "${clang}" = "1" ]; then
         CPPFLAGS+=";-ferror-limit=1"
       else
@@ -636,6 +623,17 @@ else
 
         # todo: look through these. Helped for commit 08323653.
         CPPFLAGS+=";-Wno-error=unreachable-code-return"
+
+      else
+        # GCC only
+        # warn about logical operations being used where bitwise were probably wanted
+        CPPFLAGS+=";-Wlogical-op"
+        CPPFLAGS+=";-Wduplicated-cond"
+        CPPFLAGS+=";-Wduplicated-branches"
+        CPPFLAGS+=";-fdelete-null-pointer-checks;-Wnull-dereference"
+        # TODO: ask on lyx-devel. Does not look very useful.
+        # warn if you perform a cast to the same type
+        CPPFLAGS+=";-Wno-useless-cast"
       fi
 
       # Good candidates to clean up, but not urgent.
@@ -660,6 +658,33 @@ else
       # #https://stackoverflow.com/questions/56761591/how-do-i-organize-members-in-a-struct-to-waste-the-least-space-on-alignment
       CPPFLAGS+=";-Wno-error=padded"
 
+      # todo: lyx-devel says it would be good to clean these up.
+      # (https://www.mail-archive.com/search?l=mid&q=4cee06c8-0646-4f1a-b81f-409d6de33a4b%40gmail.com)
+      CPPFLAGS="-Wno-shadow"
+      #
+
+      # -Weffc++
+      # Gives a lot of warnings with GCC.
+      # TODO: ask on lyx-devel
+      CPPFLAGS+=";-Wno-effc++"
+
+      # TODO: Gives warnings. Currently only for 3rdparty/nod/nod.hpp. Would be
+      # nice to #pragma those out so we could turn this on.
+      CPPFLAGS+=";-Wno-non-virtual-dtor"
+
+      # Don't seem useful for our purposes:
+      # https://stackoverflow.com/questions/14016993/confusion-in-regards-to-purpose-behavior-of-waggregate-return
+      CPPFLAGS+=";-Wno-aggregate-return"
+
+      # warn for potential performance problem casts
+      CPPFLAGS+=";-Wcast-align"
+       # warn on security issues around functions that format output (i.e., printf)
+      CPPFLAGS+=";-Wformat=2"
+      CPPFLAGS+=";-Wpointer-arith"
+      CPPFLAGS+=";-Wsequence-point"
+      CPPFLAGS+=";-Wswitch"
+      CPPFLAGS+=";-Wunused-but-set-parameter"
+      CPPFLAGS+=";-Wwrite-strings"
     else
       CPPFLAGS=""
     fi
