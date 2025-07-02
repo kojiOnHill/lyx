@@ -613,11 +613,14 @@ else
       # todo: lyx-devel says it would be good to clean these up.
       # (https://www.mail-archive.com/search?l=mid&q=4cee06c8-0646-4f1a-b81f-409d6de33a4b%40gmail.com)
       #CPPFLAGS="-Wshadow"
+      if [ "${clang}" = "1" ]; then
+        CPPFLAGS+=";-ferror-limit=1"
+      else
+        CPPFLAGS+=";-fmax-errors=1"
+      fi
 
       # Stop and give error immediately on first error.
       if [ "${clang}" = "1" ]; then
-        # This option only works with Clang.
-        CPPFLAGS+=";-ferror-limit=1"
 
         # Helped for commits 22b35872 and b69abd49
         CPPFLAGS+=";-Wheader-hygiene"
