@@ -781,7 +781,10 @@ set(LYX_CXX_FLAGS_EXTRA "" CACHE STRING "Desired semicolon separated list of ext
 mark_as_advanced(LYX_CXX_FLAGS_EXTRA)
 if(LYX_CXX_FLAGS_EXTRA)
 	foreach(_flag ${LYX_CXX_FLAGS_EXTRA})
-		add_definitions(${_flag})
+		CHECK_CXX_COMPILER_FLAG(${_flag} tmp_check_flag)
+		if (${tmp_check_flag})
+			add_compile_options(${_flag})
+		endif()
 	endforeach()
 endif()
 
