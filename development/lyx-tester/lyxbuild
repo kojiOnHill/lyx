@@ -589,12 +589,15 @@ else
     # bisect a warning (e.g., from -pedantic), we need to remember to turn it
     # on unconditionally.
     if [ "${current_branch}" = "master" ]; then
-      CPPFLAGS="-Werror;-Wextra;-Wextra-semi"
+      CPPFLAGS="-Werror;-Wextra"
 
       # '-pedantic' warnings aren't too useful, but solving them
       # may make compilation smoother for compilers that LyX
       # developers are not testing.
       CPPFLAGS+=";-pedantic"
+
+      # Helped for commits: 162dc505
+      CPPFLAGS+=";-Wextra-semi"
 
       # fixed one instance of this (c0ccedd0)
       CPPFLAGS+=";-Wmissing-include-dirs"
@@ -633,6 +636,11 @@ else
         # TODO: ask on lyx-devel. Does not look very useful.
         # warn if you perform a cast to the same type
         CPPFLAGS+=";-Wno-useless-cast"
+        # todo: this currently gives a lot of warnings.
+        # This flag exists on clang but seems to have different behavior, and is included
+        # by default.
+        # https://reviews.llvm.org/D119361
+        CPPFLAGS+=";-Wno-missing-declarations"
       fi
 
       # Good candidates to clean up, but not urgent.
@@ -685,13 +693,13 @@ else
       CPPFLAGS+=";-Wwrite-strings"
 
       # TODO: check this one out soon.
-      CPPFLAGS+=";-Wno-missing-declarations"
-      # TODO: check this one out soon.
       CPPFLAGS+=";-Wno-redundant-decls"
 
-      # TODO: haven't looked at yet:
-      #CPPFLAGS+=";-Wno-error=undef"
-      #CPPFLAGS+=";-Wno-error=reserved-macro-identifier"
+      # TODO: Gives two main warnings. I asked on lyx-devel.
+      CPPFLAGS+=";-Wno-undef"
+      # gives many warnings, I did not ask on lyx-devel yet but not sure it is
+      # useful to us.
+      CPPFLAGS+=";-Wno-reserved-macro-identifier"
 
       # TODO: lots of warnings
       # Warns when case statements fall-through. (Included with -Wextra in GCC, not in clang)
