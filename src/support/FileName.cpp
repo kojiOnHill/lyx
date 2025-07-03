@@ -683,8 +683,8 @@ bool FileName::destroyDirectory() const
 static int mymkdir(char const * pathname, unsigned long int mode)
 {
 	// FIXME: why don't we have mode_t in lyx::mkdir prototype ??
-# if HAVE_MKDIR
-#  if MKDIR_TAKES_ONE_ARG
+# if defined(HAVE_MKDIR)
+#  if defined(MKDIR_TAKES_ONE_ARG)
 	// MinGW32
 	return ::mkdir(pathname);
 	// FIXME: "Permissions of created directories are ignored on this system."
@@ -696,7 +696,7 @@ static int mymkdir(char const * pathname, unsigned long int mode)
 	// plain Windows 32
 	return CreateDirectory(pathname, 0) != 0 ? 0 : -1;
 	// FIXME: "Permissions of created directories are ignored on this system."
-# elif HAVE__MKDIR
+# elif defined(HAVE__MKDIR)
 	return ::_mkdir(pathname);
 	// FIXME: "Permissions of created directories are ignored on this system."
 # else
