@@ -695,8 +695,12 @@ else
       # TODO: check this one out soon.
       CPPFLAGS+=";-Wno-redundant-decls"
 
-      # TODO: Gives two main warnings. I asked on lyx-devel.
-      CPPFLAGS+=";-Wno-undef"
+      # Helped for these commits: 5dbd11be, 0566a02f
+      #
+      # One approach for these types of warnings, suggested by Kornel,
+      # is to add a condition "if defined()". e.g.,:
+      #   if defined(THE_UNDEFINED_MACRO) && THE_UNDEFINED_MACRO
+      CPPFLAGS+=";-Wundef"
       # gives many warnings, I did not ask on lyx-devel yet but not sure it is
       # useful to us.
       CPPFLAGS+=";-Wno-reserved-macro-identifier"
