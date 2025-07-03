@@ -627,6 +627,15 @@ else
         # todo: look through these. Helped for commit 08323653.
         CPPFLAGS+=";-Wno-unreachable-code-return"
 
+        # Clang only.
+        # TODO: make sure this is turned on even if we set -Wno-conversion. Test this
+        #       by reverting the commit referenced below. If it doesn't work, may need
+        #       to include this *after* the -Wno-conversion.
+        # Helped with commits 406a1357
+        # this is included in -Wconversion but -Wconversion turns on a lot of
+        # other warnings.
+        CPPFLAGS+=";-Wstring-conversion"
+
       else
         # GCC only
         # warn about logical operations being used where bitwise were probably wanted
