@@ -589,7 +589,8 @@ else
     # bisect a warning (e.g., from -pedantic), we need to remember to turn it
     # on unconditionally.
     if [ "${current_branch}" = "master" ]; then
-      CPPFLAGS="-Werror;-Wextra"
+      CPPFLAGS="-Wextra"
+      CPPFLAGS+=";-Werror"
 
       # '-pedantic' warnings aren't too useful, but solving them
       # may make compilation smoother for compilers that LyX
@@ -615,16 +616,16 @@ else
         CPPFLAGS+=";-Wheader-hygiene"
 
         # We state we require C++17.
-        CPPFLAGS+=";-Wno-error=pre-c++17-compat"
-        CPPFLAGS+=";-Wno-error=c++98-compat"
+        CPPFLAGS+=";-Wno-pre-c++17-compat"
+        CPPFLAGS+=";-Wno-c++98-compat"
 
         # Good candidates to clean up, but not urgent.
         #
         # (https://www.mail-archive.com/search?l=mid&q=dy5v4r6k5ifynwg46bbcp4rtcd5if7jl5wlnamqoicotorlvfe%405vep6fwux6yj)
-        CPPFLAGS+=";-Wno-error=implicit-int-float-conversion"
+        CPPFLAGS+=";-Wno-implicit-int-float-conversion"
 
         # todo: look through these. Helped for commit 08323653.
-        CPPFLAGS+=";-Wno-error=unreachable-code-return"
+        CPPFLAGS+=";-Wno-unreachable-code-return"
 
       else
         # GCC only
@@ -646,7 +647,7 @@ else
       # Good candidates to clean up, but not urgent.
       #
       # (https://www.mail-archive.com/search?l=mid&q=x33ucwxt5nvx2olovrq47tmpkai4322r6mrdyiuz7ymbqdbogy%40yqusr5vw7ctr)
-      CPPFLAGS+=";-Wno-error=float-equal"
+      CPPFLAGS+=";-Wno-float-equal"
 
       # related commits: 0c2a1d81, 121a8d05
       CPPFLAGS+=";-Wcast-qual"
