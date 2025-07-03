@@ -440,7 +440,7 @@ void initConflictList() {
 	fs >> setw(65636);
 	string line;
 
-	HullType currentMathHull;
+	HullType currentMathHull = HullNone;
 	while (getline(fs, line)) {
 
 		if (line.empty() || line[0] == '#')
