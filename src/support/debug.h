@@ -218,11 +218,7 @@ extern LyXErr lyxerr;
 
 } // namespace lyx
 
-#if USE__func__
-#	define CURRENT_POSITION __func__ ": "
-#else
-# define CURRENT_POSITION lyx::LyXErr::stripName(__FILE__) << " (" << __LINE__ << "): "
-#endif
+#define CURRENT_POSITION lyx::LyXErr::stripName(__FILE__) << " (" << __LINE__ << "): "
 
 #define LYXERR(type, msg) \
 	do { \
