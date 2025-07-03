@@ -65,8 +65,8 @@ public:
 
 	struct InputMethodState {
 		bool      enabled_ = true;
-		bool      preediting_ = false; // either in edit or completing mode
-		bool      edit_mode_ = true;  // i.e. not completing mode
+		bool      preediting_ = false; // either in composing or completing mode
+		bool      composing_mode_ = true;  // i.e. not completing mode
 		QRectF    cursor_rect_;
 		QRectF    anchor_rect_;
 		docstring surrounding_text_;
@@ -147,10 +147,9 @@ private:
 	/// Aquire and set character style of each preedit segment from
 	/// attributes of the incoming input method event
 	void setPreeditStyle(const QList<QInputMethodEvent::Attribute> & attr);
-	/// Sets TextFormat
-	void setTextFormat(const QInputMethodEvent::Attribute & it,
-	                   const QInputMethodEvent::Attribute * focus_style,
-	                   pos_type & max_start);
+	/// Sets TextFormat. Returns next pos of finished text
+	pos_type setTextFormat(const QInputMethodEvent::Attribute & it,
+	                       pos_type next_seg_pos);
 	/// Set QTextCharFormat to fit the font used in the surrounding text
 	void conformToSurroundingFont(QTextCharFormat & char_format);
 	/// Returns index of the focused segment
@@ -159,7 +158,12 @@ private:
 	int shiftFromCaretToSegmentHead();
 	///
 	PreeditRow getCaretInfo(const bool real_boundary, const bool virtual_boundary);
-
+	/// Pick up next segment from the turnout if there is a match and return
+	/// the next segment position to be filled
+	/// If the second argument is given, it is merged before filling the segment
+	pos_type pickNextSegFromTurnout(pos_type next_seg_pos, QTextCharFormat * char_format = nullptr);
+	/// Register preedit segment for final output
+	pos_type registerSegment(pos_type start, size_type length, QTextCharFormat char_format);
 	/// Returns enum Qt::InputMethodQuery constant from its value
 	docstring inputMethodQueryFlagsAsString(unsigned long int query) const;
 

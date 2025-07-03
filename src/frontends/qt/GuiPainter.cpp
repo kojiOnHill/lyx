@@ -365,6 +365,7 @@ void GuiPainter::text(int x, int y, docstring const & s,
 	else setLayoutDirection(Qt::LeftToRight);
 	GuiInputMethod const * gim = dynamic_cast<GuiInputMethod const *>(im);
 	LATTEST(gim);
+	const QPen orig_pen = pen();
 	setPen(gim->charFormat(char_format_index).foreground().color());
 	setBackgroundMode(Qt::OpaqueMode);
 	setBackground(gim->charFormat(char_format_index).background());
@@ -378,6 +379,7 @@ void GuiPainter::text(int x, int y, docstring const & s,
 
 	drawText(x, y, str);
 	setBackgroundMode(Qt::TransparentMode);
+	setPen(orig_pen);
 }
 
 void GuiPainter::text(int x, int y, docstring const & str, Font const & f,

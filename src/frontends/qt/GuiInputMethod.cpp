@@ -30,6 +30,7 @@
 #include "TextMetrics.h"
 
 #include "support/debug.h"
+#include "support/lassert.h"
 #include "support/qstring_helpers.h"
 
 using namespace std;
@@ -64,6 +65,7 @@ struct GuiInputMethod::Private
 	ParagraphMetrics * pm_ptr_ = nullptr;
 
 	PreeditStyle style_;
+	std::vector<PreeditSegment> seg_turnout_;
 
 	InputMethodState im_state_;
 
@@ -79,6 +81,7 @@ struct GuiInputMethod::Private
 
 	bool real_boundary_    = false;
 	bool virtual_boundary_ = false;
+	bool initial_tf_entry_ = false;;
 
 	Point init_point_;
 	Dimension cur_dim_;
@@ -226,7 +229,7 @@ void GuiInputMethod::processPreedit(QInputMethodEvent* ev)
 	// initialize virtual caret to the anchor (real cursor) position
 	d->init_point_ =
 	        initializeCaretCoords(d->cur_row_idx_,
-	                              d->real_boundary_ && !d->im_state_.edit_mode_);
+	                              d->real_boundary_ && !d->im_state_.composing_mode_);
 
 	// Push preedit texts into row elements, which can shift the anchor
 	// point of the preedit texts in a centered or right-flushed row.
@@ -272,36 +275,61 @@ void GuiInputMethod::setPreeditStyle(
 
 	const QInputMethodEvent::Attribute * focus_style = nullptr;
 
-	// Since Qt6 and on MacOS, the initial entry seems to deliver information
-	// about the focused segment (undocumented). We formulate the code to
-	// utilize this fact keeping fail-safe against its failure.
-
 #if defined(Q_OS_MACOS) && QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-	bool initial_tf_entry = true;
-#else
-	bool initial_tf_entry = false;
+	d->initial_tf_entry_ = true;
 #endif
-	// max segment position whose information we already have
-	pos_type max_start = -1;
 
+	// next char position to be set up the preedit style
+	pos_type next_seg_pos = 0;
+	//
+	d->seg_turnout_.clear();
+
+	LYXERR(Debug::GUI, "Start parsing attributes of the preedit");
 	// obtain attributes of input method
 	for (const QInputMethodEvent::Attribute & it : attr) {
 
 		switch (it.type) {
 		case QInputMethodEvent::TextFormat:
-			// We adapt to the protocol on MacOS Qt6 that the first entry is the
-			// style for the focused segment and the rest is the baseline styles
-			// for all segments including a duplicate of the focused one.
-			// Since Qt documentation says there should be at most one format
-			// for every part of the preedit string, we ignore possibility of
-			// other duplicate cases (at least they are not observed).
+			// Explanation on attributes of QInputMethodEvent:
+			//     https://doc.qt.io/archives/qt-5.15/qinputmethodevent.html
+			//
+			// CJK and European languages that use deadkeys use preedit strings.
+			// Japanese language tends to use longer preedit strings so that
+			// sorting of their text format attributes is generally required.
+			// Even though the above documentation does not exclude random
+			// arrival of any number of sections in the communication with the
+			// input method, there is observed regularity in its arrival and the
+			// number of sections used is at most three.
+			//
+			// Moreover, MacOS has a peculiarity that the text format attribute
+			// for the focused section arrives twice, whose behavior is
+			// undefined in the above documentation.
+			//
+			// Typical observed pattern on the completing stage is as follows.
+			// Assuming that the second section is a focused one, the order of
+			// the attributes is:
+			//
+			//     Linux/Windows: 2 1   3
+			//     MacOS (Qt6)  : 2 1 2 3 (the first '2' conveys color info)
+			//     MacOS (Qt5)  :   1 2 3
+			//
+			// (The number shows the order of sections.)
+			//
+			// That is, the first attribute is the focused section and other
+			// sections follow in order.
+			//
+			// Preedit strings on the composing stage consists of only one
+			// section on Qt5. However, MacOS on Qt6 appends a void section
+			// with length zero whose position is at the end of the string
+			// containing information of the same color as the focused section.
+			// We will not use this information but need to prepare for this
+			// pattern of information arrival.
+			//
+			// Whereas observed protocol shows a fixed pattern which we are
+			// going to utilize, we need prepare for *any* type of information
+			// arrival that satisfies the documented protocol.
 
-			if (initial_tf_entry) {
-				// most likely the style for the focused segment
-				focus_style = &it;
-				initial_tf_entry = false;
-			} else
-				setTextFormat(it, focus_style, max_start);
+			next_seg_pos = setTextFormat(it, next_seg_pos);
 
 			break;
 
@@ -348,6 +376,13 @@ void GuiInputMethod::setPreeditStyle(
 		} // end switch
 	} // end for
 
+	// Finalize TextFormat: sweep all remaining turnouts
+	for (size_type i=0; i<d->seg_turnout_.size(); ++i)
+		next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
+	if (!d->seg_turnout_.empty()) {
+		LATTEST("Turnouts of preedit segments have not been all swept");
+	}
+
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	// set background color for a focused segment
 	if (!d->style_.segments_.empty()) {
@@ -362,16 +397,16 @@ void GuiInputMethod::setPreeditStyle(
 	}
 #endif // QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 
-	// edit mode: it has no focused segments
-	// edit mode in Qt version 6 or later gives focus_style->length == 0 and
+	// composing mode: it has no focused segments
+	// composing mode in Qt version 6 or later gives focus_style->length == 0 and
 	// focus_style->start > d->preedit_str_.length() on MacOS (undocumented)
-	d->im_state_.edit_mode_ =
+	d->im_state_.composing_mode_ =
 	        (d->style_.segments_.size() == 0 && focus_style != nullptr)
 	        || (focus_style != nullptr && focus_style->length == 0)
 	        || (focus_style == nullptr && d->style_.segments_.size() <= 1);
 
-	if (d->im_state_.edit_mode_) {
-		LYXERR(Debug::DEBUG, "preedit is in the edit mode");
+	if (d->im_state_.composing_mode_) {
+		LYXERR(Debug::DEBUG, "preedit is in the composing mode");
 		QTextCharFormat char_format;
 		int start = 0;
 		size_type length = 0;
@@ -395,56 +430,122 @@ void GuiInputMethod::setPreeditStyle(
 	}
 }
 
-void GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
-                                   const QInputMethodEvent::Attribute * focus_style,
-                                   pos_type & max_start)
+pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
+                                       pos_type next_seg_pos)
 {
 	// get LyX's color setting
 	QTextCharFormat char_format = it.value.value<QTextCharFormat>();
 
 	LYXERR(Debug::GUI,
 	       "QInputMethodEvent::TextFormat start: " << it.start <<
-	       " length: " << it.length <<
+	       " end: " << it.start + it.length - 1 <<
 	       " underline? " << char_format.font().underline() <<
 	       " UnderlineStyle: " << char_format.underlineStyle() <<
 	       " fg: " << char_format.foreground().color().name() <<
 	       " bg: " << char_format.background().color().name());
 
-	// take union of the current style and the focus style
-	// the last condition clears background color in the edit mode
-	// this is simply from a (subjective) aethetic consideration
-	if (focus_style != nullptr &&
-	        (it.start == focus_style->start || focus_style->length == 0) &&
-	        it.length < (int)d->preedit_str_.length() /* completing mode*/)
-		char_format.merge(focus_style->value.value<QTextCharFormat>());
-
+	//
+	// Fit and adjust arrived text formats
+	//
 	conformToSurroundingFont(char_format);
-
+	// QLocale is used for wrapping words
+	char_format.setProperty(QMetaType::QLocale, d->style_.lang_);
 #if (! defined(Q_OS_MACOS)) || QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	char_format.setFontUnderline(true);
 #endif
 
-	// QLocale is used for wrapping words
-	char_format.setProperty(QMetaType::QLocale, d->style_.lang_);
 
-	// Do we already have some information about the incoming segment?
-	// On Linux, same information arrives repeatedly from IM (a bug? 2025/1/10)
-	if (it.start <= max_start) {
-		for (auto & seg : d->style_.segments_) {
-			if (it.start == seg.start_ &&
-			        (it.length == (int)seg.length_ || it.length == 0))
-				// merge old and new information on style
-				seg.char_format_.merge(char_format);
+	// The void "cursor segment" in the composing mode comes with it.start > 0 and
+	// it.length == 0, whose info we don't use, so it does not go in if's below
+	if (it.start == next_seg_pos && !d->initial_tf_entry_) {
+		if (!d->seg_turnout_.empty()) {
+			// Merge attributes held d->seg_turnout_
+			pos_type updated_pos =
+			        pickNextSegFromTurnout(next_seg_pos, &char_format);
+			if (updated_pos == next_seg_pos) {
+				// no matching segment in the turnout
+				LYXERR(Debug::GUI, "Pushing to preedit register: (" << it.start
+				       << ", " << it.start + it.length - 1 << ") color: "
+				       << char_format.background().color().name());
+				next_seg_pos = registerSegment(it.start, (size_type)it.length,
+				                               char_format);
+			} else
+				next_seg_pos = updated_pos;
+		} else {
+			// push the constructed char format together with start and length
+			// to the list
+			LYXERR(Debug::GUI, "Pushing to preedit register: (" << it.start
+			       << ", " << it.start + it.length - 1 << ") color: "
+			       << char_format.background().color().name());
+			next_seg_pos =
+			        registerSegment(it.start, (size_type)it.length, char_format);
 		}
-	} else {
-		// push the constructed char format together with start and length
-		// to the list
-		PreeditSegment seg = {it.start, (size_type)it.length, char_format};
-		d->style_.segments_.push_back(seg);
+		next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
+	} else if ((it.start > next_seg_pos || d->initial_tf_entry_) && it.length > 0) {
+		LYXERR(Debug::GUI, "Pushing to preedit turnout:  (" << it.start << ", "
+				<< it.start + it.length - 1 << ")");
+		PreeditSegment turnout = {it.start, (size_type)it.length, char_format};
+		d->seg_turnout_.push_back(turnout);
+		d->initial_tf_entry_ = false;
+	}
+	return next_seg_pos;
+}
+
+
+pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos,
+                                                QTextCharFormat * cf) {
+	std::vector<PreeditSegment>::iterator to_erase;
+	bool is_matched = false;
+
+	// we prepare "multiple tracks" in d->seg_turnout_,
+	// but typically only one is used
+	for (auto past_attr = d->seg_turnout_.begin();
+	     past_attr != d->seg_turnout_.end(); past_attr++) {
+		if ((*past_attr).start_ == next_seg_pos) {
+			if (cf != nullptr) {
+				(*past_attr).char_format_.merge(*cf);
+			}
+			PreeditSegment seg = {(*past_attr).start_,
+								  (size_type)(*past_attr).length_,
+								  (*past_attr).char_format_};
+			LYXERR(Debug::GUI,
+			       "Pushing to preedit register: (" << (*past_attr).start_
+			        << ", " << (*past_attr).start_ + (*past_attr).length_ - 1
+			        << ") color: "
+			        << (*past_attr).char_format_.background().color().name());
+			d->style_.segments_.push_back(seg);
+			next_seg_pos += (*past_attr).length_;
+			if (d->seg_turnout_.size() > 1)
+				to_erase = past_attr;
+			is_matched = true;
+			break; // assuming no duplicates in seg_turnout_
+		}
+	}
+	// Clear d->seg_turnout_
+	if (is_matched) {
+		if (d->seg_turnout_.size() == 1) {
+			LYXERR(Debug::GUI, "Preedit turnout clearing:    ("
+			        << d->seg_turnout_.back().start_ << ", "
+			        << d->seg_turnout_.back().start_
+			               + d->seg_turnout_.back().length_ - 1 << ")");
+			d->seg_turnout_.pop_back();
+		} else if (d->seg_turnout_.size() > 1) {
+			LYXERR(Debug::GUI, "Preedit turnout clearing: ("
+			        << (*to_erase).start_ << ", "
+			        << (*to_erase).start_ + (*to_erase).length_ - 1 << ")");
+			d->seg_turnout_.erase(to_erase);
+		}
 	}
 
-	if (it.start > max_start)
-		max_start = it.start;
+	return next_seg_pos;
+}
+
+
+pos_type GuiInputMethod::registerSegment(pos_type start, size_type length,
+                                         QTextCharFormat char_format) {
+	PreeditSegment seg = {start, length, char_format};
+	d->style_.segments_.push_back(seg);
+	return start + length;
 }
 
 
@@ -523,7 +624,7 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 	QString str_before_caret = "";
 
 #if defined(Q_OS_MACOS) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-	if (d->im_state_.edit_mode_)
+	if (d->im_state_.composing_mode_)
 		str_before_caret =
 		    toqstr(d->preedit_str_.substr(0, caret_pos - *d->cur_pos_ptr_));
 	else
@@ -580,13 +681,13 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 			inset_offset = 0;
 		}
 #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
-		if (d->real_boundary_ && !d->im_state_.edit_mode_)
+		if (d->real_boundary_ && !d->im_state_.composing_mode_)
 			caret_offset[0] = qfm.horizontalAdvance(lastline_str);
 		else
 			caret_offset[0] = - d->init_point_.x + left_margin
 			        + inset_offset + qfm.horizontalAdvance(lastline_str);
 #else
-		if (d->real_boundary_ && !d->im_state_.edit_mode_)
+		if (d->real_boundary_ && !d->im_state_.composing_mode_)
 			caret_offset[0] = qfm.width(lastline_str);
 		else
 			caret_offset[0] = - d->init_point_.x + left_margin
@@ -608,9 +709,9 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 	// vertical offset only applicable to main text
 	caret_offset[1] = 0;
 	for (pos_type i = d->cur_row_idx_ -
-	     (d->real_boundary_ && d->im_state_.edit_mode_);
+	     (d->real_boundary_ && d->im_state_.composing_mode_);
 	     i < caret_row.index -
-	     (d->real_boundary_ && !d->im_state_.edit_mode_); ++i)
+	     (d->real_boundary_ && !d->im_state_.composing_mode_); ++i)
 		caret_offset[1] += d->rows_[i].descent() + d->rows_[i+1].ascent();
 
 	return caret_offset;
@@ -712,14 +813,14 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 	// the context menu position when the menu key is pressed.
 	case Qt::ImCursorRectangle: {
 		QRectF * rect;
-		if (d->im_state_.edit_mode_) {
+		if (d->im_state_.composing_mode_) {
 			// in the editing mode, cursor_rect_ follows the position of the
 			// virtual caret, but the drop down of predicted candidates wants
 			// the starting point of the preedit, so respond with anchor_rect_
 			// that points the starting point during the editing mode
 			rect = &d->im_state_.anchor_rect_;
 			LYXERR(Debug::DEBUG,
-			       "     (Edit mode: use anchor_rect_ for ImCursorRectangle)");
+			       "     (Composing mode: use anchor_rect_ for ImCursorRectangle)");
 		} else
 			rect = &d->im_state_.cursor_rect_;
 
@@ -1040,7 +1141,7 @@ GuiInputMethod::PreeditRow GuiInputMethod::getCaretInfo(
 	// when real_boundary is true, cursor position is at the beginning of the
 	// new line, while the caret on screen stays at the end of one line above
 	// below is the starting point to calculate caret_row.pos
-	caret_row.pos = (real_boundary && !d->im_state_.edit_mode_) ?
+	caret_row.pos = (real_boundary && !d->im_state_.composing_mode_) ?
 	            *d->cur_pos_ptr_ : second_row_pos;
 
 	// if the preedit caret is on the second row or later, count the second row
