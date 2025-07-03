@@ -380,7 +380,8 @@ void GuiInputMethod::setPreeditStyle(
 	for (size_type i=0; i<d->seg_turnout_.size(); ++i)
 		next_seg_pos = pickNextSegFromTurnout(next_seg_pos);
 	if (!d->seg_turnout_.empty()) {
-		LATTEST("Turnouts of preedit segments have not been all swept");
+		LYXERR0("Turnouts of preedit segments have not been all swept");
+		LATTEST(false);
 	}
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
