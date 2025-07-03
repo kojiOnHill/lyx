@@ -25,7 +25,7 @@ set(LIBICONV_VERSION 1.15)
 
 set(SRCDIR ${LIBICONV_VERSION})
 
-add_compile_options(-Wno-deprecated-non-prototype -Wno-strict-prototypes -Wno-static-in-inline -Wno-parentheses-equality)
+add_compile_options(-Wno-deprecated-non-prototype -Wno-strict-prototypes -Wno-static-in-inline -Wno-parentheses-equality -Wno-undef)
 
 # Options
 option(ENABLE_EXTRA "Enable a few rarely used encodings" OFF)
