@@ -81,7 +81,7 @@ struct GuiInputMethod::Private
 
 	bool real_boundary_    = false;
 	bool virtual_boundary_ = false;
-	bool initial_tf_entry_ = false;;
+	bool initial_tf_entry_ = false;
 
 	Point init_point_;
 	Dimension cur_dim_;
