@@ -30,7 +30,6 @@
 
 enum { margin = 6 };
 
-#define ICONBUTTON_HEIGHT 18
 #define FADE_TIME 160
 
 
