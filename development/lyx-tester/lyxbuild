@@ -636,6 +636,17 @@ else
         # other warnings.
         CPPFLAGS+=";-Wstring-conversion"
 
+        # gives many warnings, I did not ask on lyx-devel yet but not sure it is
+        # useful to us.
+        CPPFLAGS+=";-Wno-reserved-macro-identifier"
+
+        # Only one instance (Clang) and it is a false-positive. It thinks a
+        # comment about xhtml *export* (using the <span> tag) is meant to
+        # generate documentation, and warns that we are missing an end tag,
+        # but the comment is not meant to generate HTML documentation, it is
+        # describing LyX's export.
+        CPPFLAGS+=";-Wno-documentation-html"
+
       else
         # GCC only
         # warn about logical operations being used where bitwise were probably wanted
@@ -679,9 +690,9 @@ else
       # (https://www.mail-archive.com/search?l=mid&q=4cee06c8-0646-4f1a-b81f-409d6de33a4b%40gmail.com)
       CPPFLAGS+=";-Wno-shadow"
 
-      # -Weffc++
-      # Gives a lot of warnings with GCC.
-      # TODO: ask on lyx-devel
+      # Gives a lot of various types of warnings with GCC.
+      # todo: ask on lyx-devel if any of the types of warnings are useful.
+      # On Clang, it is a "Synonym for -Wnon-virtual-dtor."
       CPPFLAGS+=";-Wno-effc++"
 
       # TODO: Gives warnings. Currently only for 3rdparty/nod/nod.hpp. Would be
@@ -714,9 +725,6 @@ else
       # is to add a condition "if defined()". e.g.,:
       #   if defined(THE_UNDEFINED_MACRO) && THE_UNDEFINED_MACRO
       CPPFLAGS+=";-Wundef"
-      # gives many warnings, I did not ask on lyx-devel yet but not sure it is
-      # useful to us.
-      CPPFLAGS+=";-Wno-reserved-macro-identifier"
 
       # TODO: lots of warnings
       # Warns when case statements fall-through. (Included with -Wextra in GCC, not in clang)
