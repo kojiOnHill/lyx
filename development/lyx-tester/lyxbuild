@@ -721,9 +721,9 @@ else
       # TODO: lots of warnings
       # Warns when case statements fall-through. (Included with -Wextra in GCC, not in clang)
       CPPFLAGS+=";-Wno-implicit-fallthrough"
+      # Helped with commit 59aa3e04 (only Clang found those two warnings).
       # warn if float is implicitly promoted to double
-      # TODO: only a couple warnings: look into them?
-      CPPFLAGS+=";-Wno-double-promotion"
+      CPPFLAGS+=";-Wdouble-promotion"
       #-Wmisleading-indentation (only in GCC >= 6.0) warn if indentation implies blocks where blocks do not exist
       CPPFLAGS+=";-Wmisleading-indentation"
       # TODO: lots of warnings
