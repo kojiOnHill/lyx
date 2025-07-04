@@ -1131,7 +1131,6 @@ bool Buffer::readDocument(Lexer & lex)
 		for (auto const & m : usermacros)
 			pbuf->usermacros.insert(m);
 	}
-	usermacros.clear();
 	updateMacros();
 	updateMacroInstances(InternalUpdate);
 	return res;

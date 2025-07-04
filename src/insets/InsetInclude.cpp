@@ -506,8 +506,12 @@ Buffer * InsetInclude::loadIfNeeded() const
 			// FIXME: Do something.
 		}
 	} else {
-		// The file was already loaded, so, simply set the parent
-		child->setParent(&buffer());
+		// The file was already loaded, so, simply
+		// inform parent buffer about local macros
+		Buffer const * parent = &buffer();
+		child->setParent(parent);
+		for (auto const & m : child->usermacros)
+			parent->usermacros.insert(m);
 	}
 
 	// Cache the child buffer.
