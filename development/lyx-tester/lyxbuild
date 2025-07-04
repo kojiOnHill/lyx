@@ -702,8 +702,11 @@ else
       CPPFLAGS+=";-Wunused-but-set-parameter"
       CPPFLAGS+=";-Wwrite-strings"
 
-      # TODO: check this one out soon.
-      CPPFLAGS+=";-Wno-redundant-decls"
+      # helped with commit 0ec1d06d
+      # This flag technically exists for Clang, but currently states:
+      # "This diagnostic flag exists for GCC compatibility, and has no effect in Clang."
+      # Indeed, only GCC found the warning fixed by 0ec1d06d.
+      CPPFLAGS+=";-Wredundant-decls"
 
       # Helped for these commits: 5dbd11be, 0566a02f
       #
