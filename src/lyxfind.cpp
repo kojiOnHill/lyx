@@ -1478,7 +1478,6 @@ public:
 	int upper;
 };
 
-#define MAXOPENED 30
 class Intervall {
 	bool isPatternString_;
 public:
@@ -1556,6 +1555,7 @@ void Intervall::setForDefaultLang(KeyInfo const & defLang) const
 
 #if 0
 // Not needed, because dpts and closes are now dynamically expanded
+#define MAXOPENED 30
 static void checkDepthIndex(int val)
 {
 	static int maxdepthidx = MAXOPENED-2;
