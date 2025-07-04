@@ -181,7 +181,7 @@ public:
 		qreal const fsize = fontSize();
 		bool ok;
 		int hfsize = 20;
-		qreal locscale = htextsize.toFloat(&ok);
+		qreal locscale = htextsize.toDouble(&ok);
 		if (!ok)
 			locscale = 1.0;
 		QPointF const position = textPosition(false);
