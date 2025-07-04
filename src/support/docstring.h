@@ -61,8 +61,6 @@ extern odocstream & operator<<(odocstream &, char);
 // defined in lstrings.cpp
 docstring const & empty_docstring();
 std::string const & empty_string();
-// defined in docstring.cpp
-bool operator==(docstring const &, char const *);
 
 //trivstring signalizes thread-safety request; should not be needed for any
 //C++11 conformant std::basic_string, e.g. GCC >= 5.
