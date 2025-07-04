@@ -309,9 +309,10 @@ void GuiInputMethod::setPreeditStyle(
 			// Assuming that the second section is a focused one, the order of
 			// the attributes is:
 			//
-			//     Linux/Windows: 2 1   3
-			//     MacOS (Qt6)  : 2 1 2 3 (the first '2' conveys color info)
-			//     MacOS (Qt5)  :   1 2 3
+			//     Linux       : 2 1   3
+			//     MacOS (Qt6) : 2 1 2 3 (the first '2' conveys color info)
+			//     MacOS (Qt5) :   1 2 3
+			//     Windows     :   1 2 3
 			//
 			// (The number shows the order of sections.)
 			//
@@ -466,7 +467,7 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 			if (updated_pos == next_seg_pos) {
 				// no matching segment in the turnout
 				LYXERR(Debug::GUI, "Pushing to preedit register: (" << it.start
-				       << ", " << it.start + it.length - 1 << ") color: "
+				       << ", " << it.start + it.length - 1 << ") bg color: "
 				       << char_format.background().color().name());
 				next_seg_pos = registerSegment(it.start, (size_type)it.length,
 				                               char_format);
@@ -476,7 +477,7 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 			// push the constructed char format together with start and length
 			// to the list
 			LYXERR(Debug::GUI, "Pushing to preedit register: (" << it.start
-			       << ", " << it.start + it.length - 1 << ") color: "
+			       << ", " << it.start + it.length - 1 << ") bg color: "
 			       << char_format.background().color().name());
 			next_seg_pos =
 			        registerSegment(it.start, (size_type)it.length, char_format);
@@ -512,7 +513,7 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos,
 			LYXERR(Debug::GUI,
 			       "Pushing to preedit register: (" << (*past_attr).start_
 			        << ", " << (*past_attr).start_ + (*past_attr).length_ - 1
-			        << ") color: "
+			        << ") bg color: "
 			        << (*past_attr).char_format_.background().color().name());
 			d->style_.segments_.push_back(seg);
 			next_seg_pos += (*past_attr).length_;
