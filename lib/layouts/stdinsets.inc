@@ -165,6 +165,7 @@ InsetLayout Note:Note
 	LatexType             command
 	LatexName             note
 	BgColor               notebg
+	InheritFont 	      false
 	LabelFont
 	  Color               note
 	  Size                Small
@@ -212,6 +213,7 @@ InsetLayout ERT
 	LabelString           ERT
 	LatexType             none
 	Decoration            minimalistic
+	InheritFont 	      false
 	Font
 	  Color               latex
 	  Family              typewriter
