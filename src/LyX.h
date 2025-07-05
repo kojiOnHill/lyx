@@ -61,6 +61,21 @@ namespace frontend {
 class Application;
 }
 
+
+/// This chunk is above the LyX class so that
+/// we can use the [[noreturn]] property.
+/// (https://stackoverflow.com/a/79474684/1376404)
+///
+/// in the case of failure
+void emergencyCleanup();
+/// Try to exit LyX properly.
+/// \p exit_code is 0 by default, if a non zero value is passed,
+/// emergencyCleanup() will be called before exiting.
+[[noreturn]] void lyx_exit(int exit_code);
+/// Execute batch commands if available.
+void execBatchCommands();
+
+
 /// initial startup
 class LyX {
 	friend class LyXConsoleApp;
@@ -160,15 +175,6 @@ private:
 	friend void lyx_exit(int exit_code);
 };
 
-
-/// in the case of failure
-void emergencyCleanup();
-/// Try to exit LyX properly.
-/// \p exit_code is 0 by default, if a non zero value is passed,
-/// emergencyCleanup() will be called before exiting.
-void lyx_exit(int exit_code);
-/// Execute batch commands if available.
-void execBatchCommands();
 
 ///
 FuncStatus getStatus(FuncRequest const & action);

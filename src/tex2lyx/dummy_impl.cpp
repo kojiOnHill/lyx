@@ -104,7 +104,7 @@ string alignmentToCSS(LyXAlignment)
 //
 
 void lyx_exit(int)
-{}
+{abort();}
 
 namespace xml {
 docstring StartTag::writeTag() const { return docstring(); }

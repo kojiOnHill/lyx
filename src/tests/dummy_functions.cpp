@@ -18,7 +18,7 @@ bool verbose = false;
 LyXRC lyxrc;
 
 // Keep the linker happy on Windows
-void lyx_exit(int) {}
+void lyx_exit(int) {abort();}
 
 // Dummy language support
 Messages const & getGuiMessages()
