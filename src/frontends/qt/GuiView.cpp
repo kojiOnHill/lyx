@@ -3040,8 +3040,13 @@ Buffer * GuiView::loadDocument(FileName const & filename, bool tolastfiles)
 
 	if (tolastfiles) {
 		theSession().lastFiles().add(filename);
+		// refresh last opened list before writing
+		// otherwise we end up with an empty list
+		// when we crash (#12374)
+		theSession().lastOpened().clear();
+		writeSession();
 		theSession().writeFile();
-  }
+	}
 
 	return newBuffer;
 }
@@ -3776,7 +3781,8 @@ bool GuiView::closeBuffer()
 }
 
 
-void GuiView::writeSession() const {
+void GuiView::writeSession() const
+{
 	GuiWorkArea const * active_wa = currentMainWorkArea();
 	for (int i = 0; i < d.splitter_->count(); ++i) {
 		TabWorkArea * twa = d.tabWorkArea(i);
