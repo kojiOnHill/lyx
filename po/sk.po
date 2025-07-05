@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.5\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-06-15 08:06+0200\n"
-"PO-Revision-Date: 2025-06-15 06:10+0000\n"
+"POT-Creation-Date: 2025-07-05 12:51+0200\n"
+"PO-Revision-Date: 2025-07-05 11:02+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -1184,6 +1184,10 @@ msgstr ""
 msgid "Force upcas&ing"
 msgstr "Vynútiť v&eľké písmo"
 
+#: src/frontends/qt/ui/ColorUi.ui:39
+msgid "Alternating table row colors"
+msgstr "Striedajúce sa farby riadkov tabuľky"
+
 #: src/frontends/qt/ui/CitationUi.ui:408 src/frontends/qt/GuiCitation.cpp:343
 msgid ""
 "Always list all authors (rather than using \"et al.\"), if the current "
@@ -1196,17 +1200,17 @@ msgstr ""
 msgid "All aut&hors"
 msgstr "Každý a&utor"
 
-#: src/frontends/qt/ui/ColorUi.ui:39
-msgid "Alternati&ng table row colors"
-msgstr "Str&iedajúce sa farby riadkov tabuľky"
-
 #: src/frontends/qt/ui/ColorUi.ui:47 src/frontends/qt/ui/TabularUi.ui:1514
 msgid "O&dd rows:"
-msgstr "&Nepárne riadky:"
+msgstr "N&epárne riadky:"
 
 #: src/frontends/qt/ui/ColorUi.ui:67 src/frontends/qt/ui/TabularUi.ui:1534
 msgid "&Even rows:"
-msgstr "Párn&e riadky:"
+msgstr "&Párne riadky:"
+
+#: src/frontends/qt/ui/ColorUi.ui:104
+msgid "Start with r&ow:"
+msgstr "Z&ačnite riadkom:"
 
 #: src/frontends/qt/ui/ColorUi.ui:104 src/frontends/qt/ui/TabularUi.ui:1571
 msgid "&Start with row:"
@@ -1217,8 +1221,12 @@ msgid "Background Colors"
 msgstr "Farby pozadia"
 
 #: src/frontends/qt/ui/ColorUi.ui:163
-msgid "Shaded boxes:"
-msgstr "Tieňované rámiky:"
+msgid "Shaded bo&xes:"
+msgstr "&Tieňované rámiky:"
+
+#: src/frontends/qt/ui/ColorUi.ui:173
+msgid "Pa&ge:"
+msgstr "St&rana:"
 
 #: src/frontends/qt/ui/ColorUi.ui:170 lib/layouts/europecv.layout:188
 msgid "Page:"
@@ -1242,6 +1250,10 @@ msgstr "Zmazať vybranú farbu"
 msgid "Rename the selected color"
 msgstr "Premenovať označenú farbu"
 
+#: src/frontends/qt/ui/ColorUi.ui:267
+msgid "Rena&me..."
+msgstr "Premenu&j…"
+
 #: src/frontends/qt/ui/ColorUi.ui:261 src/frontends/qt/ui/IndicesUi.ui:179
 msgid "R&ename..."
 msgstr "P&remenuj…"
@@ -1250,9 +1262,9 @@ msgstr "P&remenuj…"
 msgid "Define or change button color"
 msgstr "Určiť alebo zmeniť farbu tlačidla"
 
-#: src/frontends/qt/ui/ColorUi.ui:298
+#: src/frontends/qt/ui/ColorUi.ui:304
 msgid "&New:[[color]]"
-msgstr "Nov&á:"
+msgstr "&Nová:"
 
 #: src/frontends/qt/ui/ColorUi.ui:308
 msgid ""
@@ -1274,13 +1286,13 @@ msgstr "Do&stupné vlastné farby:"
 msgid "Font Colors"
 msgstr "Farby písma"
 
-#: src/frontends/qt/ui/ColorUi.ui:351
-msgid "Main text:"
-msgstr "Hlavný text:"
+#: src/frontends/qt/ui/ColorUi.ui:357
+msgid "Ma&in text:"
+msgstr "&Hlavný text:"
 
-#: src/frontends/qt/ui/ColorUi.ui:358
-msgid "Greyed-out notes:"
-msgstr "Zosivelé poznámky:"
+#: src/frontends/qt/ui/ColorUi.ui:367
+msgid "Greyed-o&ut notes:"
+msgstr "Zosi&velé poznámky:"
 
 #: src/frontends/qt/ui/ColorUi.ui:418
 msgid "Table &border color:"
@@ -27894,10 +27906,6 @@ msgstr "Kaligrafické\t\\mathcal"
 msgid "Formal Script\t\\mathscr"
 msgstr "Formálne písmo\t\\mathscr"
 
-#: lib/ui/stdtoolbars.inc:457
-msgid "Normal text mode\t\\textrm"
-msgstr "Normálny text. mód\t\\textrm"
-
 #: lib/ui/stdtoolbars.inc:461
 msgid "ldots"
 msgstr "ldots"
@@ -43719,6 +43727,9 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Neznámy používateľ"
+
+#~ msgid "Normal text mode\t\\textrm"
+#~ msgstr "Normálny text. mód\t\\textrm"
 
 #~ msgid "Enter a color name to search"
 #~ msgstr "Zadajte časť názvu zafarbeného prvku na vyhľadávanie"
