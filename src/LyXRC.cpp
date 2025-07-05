@@ -199,7 +199,7 @@ LexerKeyword lyxrcTags[] = {
 	{ "\\thesaurusdir_path", LyXRC::RC_THESAURUSDIRPATH },
 	{ "\\ui_file", LyXRC::RC_UIFILE },
 	{ "\\ui_style", LyXRC::RC_UI_STYLE },
-    { "\\ui_theme", LyXRC::RC_UI_THEME },
+	{ "\\ui_theme", LyXRC::RC_UI_THEME },
 	{ "\\use_converter_cache", LyXRC::RC_USE_CONVERTER_CACHE },
 	{ "\\use_converter_needauth", LyXRC::RC_USE_CONVERTER_NEEDAUTH },
 	{ "\\use_converter_needauth_forbidden", LyXRC::RC_USE_CONVERTER_NEEDAUTH_FORBIDDEN },
@@ -217,6 +217,7 @@ LexerKeyword lyxrcTags[] = {
 	{ "\\viewer", LyXRC::RC_VIEWER},
 	{ "\\viewer_alternatives", LyXRC::RC_VIEWER_ALTERNATIVES },
 	{ "\\visual_cursor", LyXRC::RC_VISUAL_CURSOR },
+	{ "\\workarea_justify", LyXRC::RC_WORKAREA_JUSTIFY },
 	{ "format", LyXRC::RC_LYXRCFORMAT }
 };
 
@@ -1152,6 +1153,10 @@ LyXRC::ReturnValues LyXRC::read(Lexer & lexrc, bool check_format)
 			}
 			break;
 
+		case RC_WORKAREA_JUSTIFY:
+			lexrc >> workarea_justify;
+			break;
+
 		case RC_DRAW_STRATEGY:
 			if (lexrc.next()) {
 				string const tmp = lexrc.getString();
@@ -1771,6 +1776,16 @@ void LyXRC::write(ostream & os, bool ignore_system_lyxrc, string const & name) c
 		    != system_lyxrc.scroll_below_document) {
 			os << "\\scroll_below_document "
 			   << convert<string>(scroll_below_document) << '\n';
+		}
+		if (tag != RC_LAST)
+			break;
+		// fall through
+	case RC_WORKAREA_JUSTIFY:
+		if (ignore_system_lyxrc ||
+		    workarea_justify != system_lyxrc.workarea_justify) {
+			os << "\\workarea_justify "
+			   << convert<string>(workarea_justify)
+			   << '\n';
 		}
 		if (tag != RC_LAST)
 			break;
@@ -3133,6 +3148,7 @@ void actOnUpdatedPrefs(LyXRC const & lyxrc_orig, LyXRC const & lyxrc_new)
 	case LyXRC::RC_DEFAULT_LENGTH_UNIT:
 	case LyXRC::RC_SCROLL_WHEEL_ZOOM:
 	case LyXRC::RC_CURSOR_WIDTH:
+	case LyXRC::RC_WORKAREA_JUSTIFY:
 		break;
 	}
 }

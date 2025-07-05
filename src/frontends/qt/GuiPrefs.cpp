@@ -1945,6 +1945,7 @@ PrefDisplay::PrefDisplay(GuiPreferences * form)
 	bookmarksCO->addItem(qt_("No[[bookmarks]]"), "none");
 	bookmarksCO->addItem(qt_("Inline"), "inline");
 	bookmarksCO->addItem(qt_("In Margin"), "margin");
+	connect(justCB, SIGNAL(toggled(bool)), this, SIGNAL(changed()));
 }
 
 
@@ -1972,6 +1973,7 @@ void PrefDisplay::applyRC(LyXRC & rc) const
 	rc.preview_scale_factor = previewSizeSB->value();
 	rc.paragraph_markers = paragraphMarkerCB->isChecked();
 	rc.ct_additions_underlined = ctAdditionsUnderlinedCB->isChecked();
+	rc.workarea_justify = justCB->isChecked();
 	QString const bm = bookmarksCO->itemData(bookmarksCO->currentIndex()).toString();
 	if (bm == "inline")
 		rc.bookmarks_visibility = LyXRC::BMK_INLINE;
@@ -2007,6 +2009,7 @@ void PrefDisplay::updateRC(LyXRC const & rc)
 	displayGraphicsCB->setChecked(rc.display_graphics);
 	previewSizeSB->setValue(rc.preview_scale_factor);
 	paragraphMarkerCB->setChecked(rc.paragraph_markers);
+	justCB->setChecked(rc.workarea_justify);
 	ctAdditionsUnderlinedCB->setChecked(rc.ct_additions_underlined);
 	bookmarksCO->setCurrentIndex(rc.bookmarks_visibility);
 	switch (rc.bookmarks_visibility) {

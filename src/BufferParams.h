@@ -413,7 +413,9 @@ public:
 	///
 	unsigned int columns;
 	///
-	bool justification;
+	std::string justification;
+	///
+	bool workareaJustified() const;
 	/// parameters for the listings package
 	std::string listings_params;
 	///

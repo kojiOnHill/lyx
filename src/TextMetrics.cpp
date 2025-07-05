@@ -631,7 +631,7 @@ LyXAlignment TextMetrics::getAlign(Paragraph const & par, Row const & row) const
 		// A forced block alignment can only be overridden the 'no
 		// justification on screen' setting.
 		if ((row.flushed() && !forced_block)
-		    || !bv_->buffer().params().justification)
+		    || !bv_->buffer().params().workareaJustified())
 			align = row.isRTL() ? LYX_ALIGN_RIGHT : LYX_ALIGN_LEFT;
 	}
 

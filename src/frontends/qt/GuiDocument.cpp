@@ -866,8 +866,11 @@ GuiDocument::GuiDocument(GuiView & lv)
 		this, SLOT(change_adaptor()));
 	connect(textLayoutModule->twoColumnCB, SIGNAL(clicked()),
 		this, SLOT(setColSep()));
-	connect(textLayoutModule->justCB, SIGNAL(clicked()),
+	connect(textLayoutModule->justCO, SIGNAL(activated(int)),
 		this, SLOT(change_adaptor()));
+	textLayoutModule->justCO->addItem(qt_("Default"), toqstr("default"));
+	textLayoutModule->justCO->addItem(qt_("Yes"), toqstr("true"));
+	textLayoutModule->justCO->addItem(qt_("No"), toqstr("false"));
 
 	connect(textLayoutModule->tableStyleCO, SIGNAL(activated(int)),
 		this, SLOT(change_adaptor()));
@@ -3892,7 +3895,8 @@ void GuiDocument::applyView()
 	else
 		bp_.columns = 1;
 
-	bp_.justification = textLayoutModule->justCB->isChecked();
+	bp_.justification = fromqstr(textLayoutModule->justCO->itemData(
+					     textLayoutModule->justCO->currentIndex()).toString());
 
 	if (textLayoutModule->indentRB->isChecked()) {
 		// if paragraphs are separated by an indentation
@@ -4485,7 +4489,7 @@ void GuiDocument::paramsToDialog()
 
 	textLayoutModule->twoColumnCB->setChecked(
 		bp_.columns == 2);
-	textLayoutModule->justCB->setChecked(bp_.justification);
+	textLayoutModule->justCO->setCurrentIndex(textLayoutModule->justCO->findData(toqstr(bp_.justification)));
 
 	if (!bp_.options.empty()) {
 		latexModule->optionsLE->setText(

@@ -3181,6 +3181,18 @@ def revert_prettyref_l7n(document):
     if i != -1:
         document.header[i] = "\\crossref_package prettyref"
 
+def revert_justification_pref(document):
+    """Revert justification pref setting"""
+    i = find_token(document.header, "\\justification default", 0)
+    if i != -1:
+        document.header[i] = "\\justification true"
+
+def convert_justification_pref(document):
+    """Convert justification pref setting"""
+    i = find_token(document.header, "\\justification true", 0)
+    if i != -1:
+        document.header[i] = "\\justification default"
+
 ##
 # Conversion hub
 #
@@ -3206,11 +3218,13 @@ convert = [
     [637, [convert_reflists]],
     [638, []],
     [639, [convert_theorem_local_def]],
-    [640, []]
+    [640, []],
+    [641, [convert_justification_pref]]
 ]
 
 
 revert = [
+    [640, [revert_justification_pref]],
     [639, [revert_prettyref_l7n]],
     [638, [revert_theorem_local_def]],
     [637, [revert_xr]],

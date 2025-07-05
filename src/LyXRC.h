@@ -192,6 +192,7 @@ public:
 		RC_VIEWER,
 		RC_VIEWER_ALTERNATIVES,
 		RC_VISUAL_CURSOR,
+		RC_WORKAREA_JUSTIFY,
 		RC_CLOSE_BUFFER_WITH_LAST_VIEW,
 		RC_DRAW_STRATEGY,
 		RC_LAST
@@ -581,6 +582,8 @@ public:
 		BMK_MARGIN,
 		BMK_INLINE
 	};
+	///
+	bool workarea_justify = true;
 
 	///
 	BookmarksVisibility bookmarks_visibility = BMK_MARGIN;

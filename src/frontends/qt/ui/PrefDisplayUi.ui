@@ -107,7 +107,17 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="2" column="0" colspan="5">
+    <widget class="QCheckBox" name="justCB">
+     <property name="toolTip">
+      <string>Justify text in the LyX editor (this does not affect whether the text is justified in the output)</string>
+     </property>
+     <property name="text">
+      <string>Use &amp;justification in LyX work area</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
     <widget class="QCheckBox" name="paragraphMarkerCB">
      <property name="toolTip">
       <string>Mark end of paragraphs on screen with a pilcrow character.</string>
@@ -117,7 +127,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="3">
+   <item row="4" column="0" colspan="3">
     <widget class="QCheckBox" name="ctAdditionsUnderlinedCB">
      <property name="toolTip">
       <string>If this is checked, additions in change tracking are underlined in the workarea</string>
@@ -127,7 +137,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="3">
+   <item row="5" column="0" colspan="3">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="bookmarksLA">
@@ -161,7 +171,7 @@
      </item>
     </layout>
    </item>
-   <item row="5" column="2">
+   <item row="6" column="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -169,7 +179,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>121</height>
+       <height>67</height>
       </size>
      </property>
     </spacer>

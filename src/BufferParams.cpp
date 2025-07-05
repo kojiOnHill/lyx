@@ -462,7 +462,7 @@ BufferParams::BufferParams()
 	float_alignment = "class";
 	float_placement = "class";
 	suppress_date = false;
-	justification = true;
+	justification = "default";
 	// no color is the default (white)
 	backgroundcolor = "none";
 	// no color is the default (black)
@@ -1769,7 +1769,7 @@ void BufferParams::writeFile(ostream & os, Buffer const * buf) const
 	   << "\n\\use_indices " << convert<string>(use_indices)
 	   << "\n\\paperorientation " << string_orientation[orientation]
 	   << "\n\\suppress_date " << convert<string>(suppress_date)
-	   << "\n\\justification " << convert<string>(justification)
+	   << "\n\\justification " << justification
 	   << "\n\\crossref_package " << xref_package
 	   << "\n\\use_formatted_ref " << use_formatted_ref
 	   << "\n\\use_minted " << use_minted
@@ -4504,6 +4504,14 @@ BufferParams const & defaultBufferParams()
 {
 	static BufferParams default_params;
 	return default_params;
+}
+
+
+bool BufferParams::workareaJustified() const
+{
+	if (justification == "default")
+		return lyxrc.workarea_justify;
+	return justification == "true";
 }
 
 
