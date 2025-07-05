@@ -60,8 +60,11 @@ int PathChanger::pop()
 
 } // namespace support
 } // namespace lyx
-
-
+//
+// grep for 'unnamed_UpdateLocker' and corresponding comment for
+// the purpose of this chunk.
 #define PathChanger(x) unnamed_PathChanger;
+#if defined PathChanger
+#endif
 
 // in merged builds this is not the last line.

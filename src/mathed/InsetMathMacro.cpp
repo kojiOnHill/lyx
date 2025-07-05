@@ -681,6 +681,9 @@ private:
 */
 #define UpdateLocker(x) unnamed_UpdateLocker;
 // Tip gotten from Bobby Schmidt's column in C/C++ Users Journal
+// Now we no-op use it to avoid -Wunused-macros
+#if defined UpdateLocker
+#endif
 
 
 void InsetMathMacro::updateRepresentation(Cursor * cur, MacroContext const & mc,
