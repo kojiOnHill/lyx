@@ -38,7 +38,7 @@ class MathData;
 #define ASSERT_HAS_POS(thing, hint)
 #endif
 
-void lyxbreaker(void const * data, const char * hint, int size);
+[[noreturn]] void lyxbreaker(void const * data, const char * hint, int size);
 
 struct Geometry {
 	Point pos = {-10000, -10000 };
