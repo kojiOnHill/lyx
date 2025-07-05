@@ -647,6 +647,9 @@ else
         # describing LyX's export.
         CPPFLAGS+=";-Wno-documentation-html"
 
+        # helped with commits: 4ae8ec8d
+        CPPFLAGS+=";-Wused-but-marked-unused"
+
       else
         # GCC only
         # warn about logical operations being used where bitwise were probably wanted
