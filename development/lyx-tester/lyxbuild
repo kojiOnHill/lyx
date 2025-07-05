@@ -749,10 +749,14 @@ else
       # TODO: lots of warnings
       # warn for c-style casts
       CPPFLAGS+=";-Wno-old-style-cast"
+
+      # Helped with commits 58723717, c36a02f7, 62f0921b
+      CPPFLAGS+=";-Wunused-macros"
     else
       CPPFLAGS=""
     fi
   else
+    # TODO: need to implement flags for autotools build.
     CPPFLAGS=""
   fi
   #
