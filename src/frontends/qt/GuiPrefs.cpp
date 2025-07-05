@@ -4580,11 +4580,7 @@ void ColorSwatchDelegate::paint(QPainter *painter,
 		if (index.flags().testFlag(Qt::ItemIsEnabled))
 			pixmap.fill(color);
 		else
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-			pixmap.fill(QColorConstants::Transparent);
-#else
-			pixmap.fill(QColor("transparent"));
-#endif
+			pixmap.fill(Qt::transparent);
 		style->drawItemPixmap(painter, opt.rect, Qt::AlignCenter, pixmap);
 	} else {
 		opt.displayAlignment = Qt::AlignVCenter;
