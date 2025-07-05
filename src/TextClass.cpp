@@ -59,7 +59,7 @@ namespace lyx {
 // You should also run the development/tools/updatelayouts.py script,
 // to update the format of all of our layout files.
 //
-int const LAYOUT_FORMAT = 109; // spitz: MultiPar (styles)
+int const LAYOUT_FORMAT = 110; // spitz: Preamble tag for floats
 
 
 // Layout format for the current lyx file format. Controls which format is
@@ -1465,6 +1465,7 @@ bool TextClass::readFloat(Lexer & lexrc)
 		FT_ALLOWS_WIDE,
 		FT_REQUIRES,
 		FT_PRETTYFORMAT,
+		FT_PREAMBLE,
 		FT_END
 	};
 
@@ -1488,6 +1489,7 @@ bool TextClass::readFloat(Lexer & lexrc)
 		{ "listname", FT_LISTNAME },
 		{ "numberwithin", FT_WITHIN },
 		{ "placement", FT_PLACEMENT },
+		{ "preamble", FT_PREAMBLE },
 		{ "prettyformat", FT_PRETTYFORMAT },
 		{ "refprefix", FT_REFPREFIX },
 		{ "requires", FT_REQUIRES },
@@ -1518,6 +1520,7 @@ bool TextClass::readFloat(Lexer & lexrc)
 	string within;
 	string required;
 	docstring prettyformat;
+	docstring preamble;
 	bool usesfloat = true;
 	bool ispredefined = false;
 	bool allowswide = true;
@@ -1554,6 +1557,9 @@ bool TextClass::readFloat(Lexer & lexrc)
 		case FT_NAME:
 			lexrc.next();
 			name = lexrc.getString();
+			break;
+		case FT_PREAMBLE:
+			preamble = lexrc.getLongString(from_ascii("EndPreamble"));
 			break;
 		case FT_PLACEMENT:
 			lexrc.next();
@@ -1677,8 +1683,8 @@ bool TextClass::readFloat(Lexer & lexrc)
 			listname, listcommand, refprefix, allowed_placement,
 			htmltag, htmlattr, htmlstyle, docbooktag, docbookattr,
 			docbooktagtype, docbookfloattype, docbookcaption,
-			required, usesfloat, ispredefined,
-	        allowswide, allowssideways);
+			required, preamble, usesfloat, ispredefined,
+			allowswide, allowssideways);
 		floatlist_.newFloat(fl);
 		// each float has its own counter
 		counters_.newCounter(from_ascii(type), from_ascii(within),

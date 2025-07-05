@@ -34,16 +34,16 @@ Floating::Floating(string const & type, string const & placement,
 		   docstring const & htmlStyle, std::string const & docbookTag,
 		   string const & docbookAttr, string const & docbookTagType,
 		   std::string const & docbookFloatType, std::string const & docbookCaption,
-		   string const & required, bool usesfloat, bool ispredefined,
-		   bool allowswide, bool allowssideways)
+		   string const & required, docstring const & preamble,
+		   bool usesfloat, bool ispredefined, bool allowswide, bool allowssideways)
 	: floattype_(type), placement_(placement), ext_(ext), within_(within),
 	  style_(style), name_(name), listname_(listName), listcommand_(listCmd),
 	  refprefix_(refPrefix), allowedplacement_(allowedplacement), required_(required),
-	  usesfloatpkg_(usesfloat), ispredefined_(ispredefined),
-	  allowswide_(allowswide), allowssideways_(allowssideways),
-	  html_tag_(htmlTag), html_attrib_(htmlAttrib), html_style_(htmlStyle),
-	  docbook_caption_(docbookCaption), docbook_tag_(docbookTag),
-	  docbook_tag_type_(docbookTagType)
+	  preamble_(preamble), usesfloatpkg_(usesfloat),
+	  ispredefined_(ispredefined), allowswide_(allowswide),
+	  allowssideways_(allowssideways), html_tag_(htmlTag), html_attrib_(htmlAttrib),
+	  html_style_(htmlStyle), docbook_caption_(docbookCaption),
+	  docbook_tag_(docbookTag), docbook_tag_type_(docbookTagType)
 {
 	// Implement some edge cases for DocBook. Both docbook_float_type_ and docbook_attr_ must be computed
 	// based on the given value of docbookFloatType; docbook_tag_ can still be guessed without correlation.

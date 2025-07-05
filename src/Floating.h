@@ -37,8 +37,8 @@ public:
 		 docstring const & htmlStyle, std::string const & docbookTag,
 		 std::string const & docbookAttr, std::string const & docbookTagType,
 		 std::string const & docbookFloatType, std::string const & docbookCaption,
-		 std::string const & required, bool usesfloat, bool ispredefined,
-		 bool allowswide, bool allowssideways);
+		 std::string const & required, docstring const & preamble,
+		 bool usesfloat, bool ispredefined, bool allowswide, bool allowssideways);
 	///
 	std::string const & floattype() const { return floattype_; }
 	///
@@ -68,6 +68,8 @@ public:
 	bool usesFloatPkg() const { return usesfloatpkg_; }
 	/// allowed placement options
 	std::string const & required() const { return required_; }
+	///
+	docstring const & preamble() const { return preamble_; }
 	///
 	bool isPredefined() const { return ispredefined_; }
 	///
@@ -114,6 +116,8 @@ private:
 	std::string allowedplacement_;
 	///
 	std::string required_;
+	/// Macro definitions needed for this layout
+	docstring preamble_;
 	///
 	bool usesfloatpkg_;
 	///

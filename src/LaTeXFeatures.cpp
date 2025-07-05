@@ -2081,6 +2081,14 @@ docstring const LaTeXFeatures::getTClassPreamble() const
 			continue;
 		tcpreamble << it->second.preamble();
 	}
+	FloatList const & floats = params_.documentClass().floats();
+	UsedFloats::const_iterator fit = usedFloats_.begin();
+	UsedFloats::const_iterator fend = usedFloats_.end();
+	for (; fit != fend; ++fit) {
+		Floating const & fl = floats.getType(fit->first);
+		if (!fl.preamble().empty())
+			tcpreamble << fl.preamble();
+	}
 
 	return tcpreamble.str();
 }

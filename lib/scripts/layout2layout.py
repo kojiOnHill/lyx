@@ -9,7 +9,7 @@
 # This script will update a .layout file to current format
 
 # The latest layout format is also defined in src/TextClass.cpp
-currentFormat = 109
+currentFormat = 110
 
 
 # Incremented to format 4, 6 April 2007, lasgouttes
@@ -368,6 +368,9 @@ currentFormat = 109
 # Incremented to format 109, 15 May 2025 by spitz
 # New Layout tag "MultiPar"
 
+# Incremented to format 110, 5 July 2025 by spitz
+# New Float tag "Preamble"
+
 # Do not forget to document format change in Customization
 # Manual (section "Declaring a new text class").
 
@@ -707,7 +710,7 @@ def convert(lines, end_format):
                 i += 1
             continue
 
-        if 101 <= format <= 109:
+        if 101 <= format <= 110:
             # nothing to do.
             i += 1
             continue
