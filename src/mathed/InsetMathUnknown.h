@@ -48,9 +48,9 @@ public:
 	///
 	void mathematica(MathematicaStream &) const override;
 	///
-	void mathmlize(MathMLStream &) const override;
+	[[noreturn]] void mathmlize(MathMLStream &) const override;
 	///
-	void htmlize(HtmlStream &) const override;
+	[[noreturn]] void htmlize(HtmlStream &) const override;
 	///
 	void octave(OctaveStream &) const override;
 	///

@@ -80,7 +80,7 @@ private:
 	void prepareExit();
 
 	/// Early exit during the initialisation process.
-	void earlyExit(int status);
+	[[noreturn]] void earlyExit(int status);
 
 	/// Initialise LyX and fills-in the vector of files to be loaded.
 	/**

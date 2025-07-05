@@ -49,9 +49,9 @@ public:
 	///
 	InsetCode lyxCode() const override { return MATH_XYMATRIX_CODE; }
 	///
-	void mathmlize(MathMLStream &) const override;
+	[[noreturn]] void mathmlize(MathMLStream &) const override;
 	///
-	void htmlize(HtmlStream &) const override;
+	[[noreturn]] void htmlize(HtmlStream &) const override;
 
 private:
 	///

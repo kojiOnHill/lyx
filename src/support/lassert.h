@@ -67,9 +67,9 @@ LAPPERR(expr)
 
 void doAssert(char const * expr, char const * file, long line);
 void doAssertStatic(char const * expr, char const * file, long line);
-void doWarnIf(char const * expr, char const * file, long line);
-void doBufErr(char const * expr, char const * file, long line);
-void doAppErr(char const * expr, char const * file, long line);
+[[noreturn]] void doWarnIf(char const * expr, char const * file, long line);
+[[noreturn]] void doBufErr(char const * expr, char const * file, long line);
+[[noreturn]] void doAppErr(char const * expr, char const * file, long line);
 
 void doAssertWithCallstack(bool value);
 

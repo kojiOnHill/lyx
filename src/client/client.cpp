@@ -452,7 +452,7 @@ void usage()
 }
 
 
-int h(vector<docstring> const &)
+[[noreturn]] int h(vector<docstring> const &)
 {
 	usage();
 	throw StopException(EXIT_SUCCESS);
