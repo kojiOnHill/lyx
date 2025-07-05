@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
+    <width>489</width>
     <height>534</height>
    </rect>
   </property>
@@ -160,14 +160,20 @@
         <item row="1" column="0">
          <widget class="QLabel" name="boxBackgroundColorLA">
           <property name="text">
-           <string>Shaded boxes:</string>
+           <string>Shaded bo&amp;xes:</string>
+          </property>
+          <property name="buddy">
+           <cstring>shadedColorCO</cstring>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="backgroundColorLA">
           <property name="text">
-           <string>Page:</string>
+           <string>Pa&amp;ge:</string>
+          </property>
+          <property name="buddy">
+           <cstring>pageColorCO</cstring>
           </property>
          </widget>
         </item>
@@ -348,14 +354,20 @@
         <item row="0" column="0">
          <widget class="QLabel" name="fontColorLA">
           <property name="text">
-           <string>Main text:</string>
+           <string>Ma&amp;in text:</string>
+          </property>
+          <property name="buddy">
+           <cstring>textColorCO</cstring>
           </property>
          </widget>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="noteFontColorLA">
           <property name="text">
-           <string>Greyed-out notes:</string>
+           <string>Greyed-o&amp;ut notes:</string>
+          </property>
+          <property name="buddy">
+           <cstring>noteColorCO</cstring>
           </property>
          </widget>
         </item>
