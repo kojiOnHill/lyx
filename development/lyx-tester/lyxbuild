@@ -755,6 +755,14 @@ else
 
       # Helped with commits 58723717, c36a02f7, 62f0921b
       CPPFLAGS+=";-Wunused-macros"
+
+      # Kornel sees an issue with Clang 18.1.3, so for now
+      # do not turn this flag on until that's figured out.
+      #
+      # Helped with commits 37b9655f, 877a227b, cd5fb840.
+      # Using this property can enable some compiler optimizations,
+      # and can also help with code readability.
+      CPPFLAGS+=";-Wno-missing-noreturn"
     else
       CPPFLAGS=""
     fi
