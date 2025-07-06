@@ -612,17 +612,13 @@ void LyX::execCommands()
 	// create the first main window
 	lyx::dispatch(FuncRequest(LFUN_WINDOW_NEW));
 
-	if (!pimpl_->files_to_load_.empty()) {
-		// if some files were specified at command-line we assume that the
-		// user wants to edit *these* files and not to restore the session.
-		for (size_t i = 0; i != pimpl_->files_to_load_.size(); ++i) {
-			lyx::dispatch(
-				FuncRequest(LFUN_FILE_OPEN, pimpl_->files_to_load_[i]));
-		}
-		// clear this list to save a few bytes of RAM
-		pimpl_->files_to_load_.clear();
-	} else
-		pimpl_->application_->restoreGuiSession();
+	// restore GUI session first
+	pimpl_->application_->restoreGuiSession();
+	// the user wants to edit these files specified at command-line
+	for (string const & file : pimpl_->files_to_load_)
+		lyx::dispatch(FuncRequest(LFUN_FILE_OPEN, file));
+	// clear this list to save a few bytes of RAM
+	pimpl_->files_to_load_.clear();
 
 	// Execute batch commands if available
 	if (pimpl_->batch_commands.empty())
