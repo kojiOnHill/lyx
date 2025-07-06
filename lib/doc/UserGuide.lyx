@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 640
+\lyxformat 641
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -116,7 +116,7 @@ logicalmkup
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
+\justification default
 \crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
@@ -28420,14 +28420,14 @@ limits
  over and under the symbol in displayed formulas,
  and to the side in inline formulas,
  as in 
-\begin_inset Formula $\sum_{n=0}^{\infty}\frac{1}{n!}=e$
+\begin_inset Formula $\sum^{\infty}_{n=0}\frac{1}{n!}=e$
 \end_inset
 
 ,
  versus
 \begin_inset Formula 
 \[
-\sum_{n=0}^{\infty}\frac{1}{n!}=e
+\sum^{\infty}_{n=0}\frac{1}{n!}=e
 \]
 
 \end_inset
@@ -31155,7 +31155,7 @@ largest
 
 \family roman
 \size largest
-\begin_inset Formula $\mathrm{e}=\sum_{n=0}^{\infty}\frac{1}{n!}$
+\begin_inset Formula $\mathrm{e}=\sum^{\infty}_{n=0}\frac{1}{n!}$
 \end_inset
 
 
@@ -42772,7 +42772,7 @@ R
 
  letters occurring in normal text),
  or occurrences of 
-\begin_inset Formula $x_{j}^{i}$
+\begin_inset Formula $x^{i}_{j}$
 \end_inset
 
  with 
@@ -52046,6 +52046,16 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
+
+\change_inserted -712698321 1751785476
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Text-Layout"
+
+\end_inset
+
+
+\change_unchanged
 Text Layout
 \end_layout
 
@@ -52098,6 +52108,33 @@ Use justification in \SpecialChar LyX
  justifies the text on screen.
  This only affects the text inside \SpecialChar LyX
  not in the output.
+
+\change_inserted -712698321 1751785819
+ The 
+\emph on
+default
+\emph default
+ setting means that global justification setting as set in 
+\family sans
+Tools\SpecialChar menuseparator
+Preferences\SpecialChar menuseparator
+Look and Feel\SpecialChar menuseparator
+Display
+\family default
+ is used (see section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Display"
+
+\end_inset
+
+).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -56413,6 +56450,16 @@ More
 \end_layout
 
 \begin_layout Subsection
+
+\change_inserted -712698321 1751785681
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Display"
+
+\end_inset
+
+
+\change_unchanged
 Display
 \begin_inset Index idx
 range none
@@ -56439,8 +56486,32 @@ Display
 \end_layout
 
 \begin_layout Standard
-Here you can specify if graphics are displayed inside \SpecialChar LyX
+Here you can specify 
+\change_inserted -712698321 1751795328
+how different elements 
+\change_deleted -712698321 1751795331
+if graphics 
+\change_unchanged
+are displayed inside 
+\change_inserted -712698321 1751795557
+the workarea of 
+\change_unchanged
+\SpecialChar LyX
 .
+\change_inserted -712698321 1751795356
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1751795399
+
+\family sans
+Display graphics
+\family default
+ determines whether graphics are displayed or just represented symbolically.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -56462,6 +56533,36 @@ nolink "false"
 \end_inset
 
 .
+\change_inserted -712698321 1751785600
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1751785641
+With the option 
+\family sans
+Use justification in \SpecialChar LyX
+ work area
+\family default
+ you can decide if \SpecialChar LyX
+ justifies the text on screen.
+ This only affects the text inside \SpecialChar LyX
+ not in the output.
+ Note that this setting can be overwritten on a per-document basis (see section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Text-Layout"
+
+\end_inset
+
+).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -56482,6 +56583,31 @@ of
 paragraphs
 \family default
  displays a pilcrow (¶) at the end of every paragraph.
+\change_inserted -712698321 1751795512
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1751795621
+
+\family sans
+Underline change tracking additions
+\family default
+ applies to the markup of tracked additions in the workarea (not the output).
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1751795669
+With 
+\family sans
+Display bookmarks
+\family default
+,
+ you can select whether and how bookmarks should be visualized in the workarea (in the margin,
+ inline,
+ or not at all).
 \end_layout
 
 \begin_layout Section

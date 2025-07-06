@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 640
+\lyxformat 641
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -123,7 +123,7 @@ logicalmkup
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
+\justification default
 \crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
@@ -27664,7 +27664,7 @@ Die Summen- und Integralzeichen
  (wie in \SpecialChar LaTeX
 ) als Exponenten und Indizes geschrieben werden.
  Bei Summen in der Zeile werden die Grenzen automatisch neben dem Summenzeichen platziert wie bei 
-\begin_inset Formula $\sum_{n=0}^{\infty}\frac{1}{n!}=e$
+\begin_inset Formula $\sum^{\infty}_{n=0}\frac{1}{n!}=e$
 \end_inset
 
 ,
@@ -27672,20 +27672,20 @@ Die Summen- und Integralzeichen
  
 \begin_inset Formula 
 \[
-\sum_{n=0}^{\infty}\frac{1}{n!}=e
+\sum^{\infty}_{n=0}\frac{1}{n!}=e
 \]
 
 \end_inset
 
 Bei Integralen werden die Grenzen immer neben dem Integralzeichen platziert wie in 
-\begin_inset Formula $\int_{a}^{x}f(t)dt:=F(x)$
+\begin_inset Formula $\int^{x}_{a}f(t)dt:=F(x)$
 \end_inset
 
 ,
  bei abgesetzten Formeln sieht es so aus:
 \begin_inset Formula 
 \[
-\int_{-\infty}^{\infty}\frac{dx}{1+x^{2}}=\pi.
+\int^{\infty}_{-\infty}\frac{dx}{1+x^{2}}=\pi.
 \]
 
 \end_inset
@@ -30111,7 +30111,7 @@ größer
 \begin_layout Standard
 
 \size largest
-\begin_inset Formula $\mathrm{e}=\sum_{n=0}^{\infty}\frac{1}{n!}$
+\begin_inset Formula $\mathrm{e}=\sum^{\infty}_{n=0}\frac{1}{n!}$
 \end_inset
 
 
@@ -40185,7 +40185,7 @@ Einstellungen
  um zu verhindern,
  dass alle „R“ im normalen Text ersetzt werden),
  oder 
-\begin_inset Formula $x_{j}^{i}$
+\begin_inset Formula $x^{i}_{j}$
 \end_inset
 
  mit 
@@ -49002,6 +49002,12 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Textformat"
+
+\end_inset
+
 Textformat
 \end_layout
 
@@ -49032,6 +49038,30 @@ Blocksatz im \SpecialChar LyX
  Dies betrifft nur den Text innerhalb von \SpecialChar LyX
 ,
  nicht den der Ausgabe.
+ Die Option 
+\emph on
+Standard
+\emph default
+ bedeutet,
+ dass die globale Einstellung aus 
+\family sans
+Werkzeuge\SpecialChar menuseparator
+Einstellungen\SpecialChar menuseparator
+Aussehen und Handhabung\SpecialChar menuseparator
+Anzeige
+\family default
+ übernommen wird (siehe Abschnitt
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Anzeige"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -52942,6 +52972,12 @@ Mehr \SpecialChar ldots
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Anzeige"
+
+\end_inset
+
 Anzeige
 \begin_inset Index idx
 range none
@@ -52969,8 +53005,17 @@ Anzeige
 
 \begin_layout Standard
 Hier kann festgelegt werden,
- ob Grafiken in \SpecialChar LyX
- dargestellt werden sollen.
+ wie bestimmte Elemente im \SpecialChar LyX
+-Arbeitsbereich dargestellt werden sollen.
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+Grafiken anzeigen
+\family default
+ legt fest,
+ ob Grafiken im Arbeitsbereich angezeigt oder nur symbolisch repräsentiert werden.
 \end_layout
 
 \begin_layout Standard
@@ -52995,6 +53040,32 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+Mit der Option 
+\family sans
+Blocksatz im \SpecialChar LyX
+-Arbeitsbereich verwenden
+\family default
+ kann man festlegen,
+ ob \SpecialChar LyX
+ den Text im Blocksatz anzeigt.
+ Dies betrifft nur den Text innerhalb von \SpecialChar LyX
+,
+ nicht den der Ausgabe.
+ Diese Einstellung kann in den Dokumenteinstellungen für einzelne Dokumente überschrieben werden (siehe Abschnitt
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Textformat"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
 Die Option 
 \family sans
 Absatzenden
@@ -53004,6 +53075,24 @@ Absatzenden
 markieren
 \family default
  zeigt ein Absatzzeichen (¶) am Ende jedes Absatzes an.
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+Hinzufügungen im Änderungsmodus unterstreichen
+\family default
+ bezieht sich auf die Auszeichnung von Hinzufügungen im Änderungsmodus im Arbeitsbereich (nicht in der Ausgabe).
+\end_layout
+
+\begin_layout Standard
+Mit 
+\family sans
+Lesezeichen anzeigen
+\family default
+ können Sie festlegen,
+ ob und wie Lesezeichen im Arbeitsbereich visualisiert werden sollen (am Rand,
+ in der Zeile oder gar nicht).
 \end_layout
 
 \begin_layout Section
