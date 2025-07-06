@@ -285,28 +285,28 @@ static QString version(bool const plain = false)
 	if (plain)
 		out << '\n';
 	else
-		out << "</span></p><p>";
+		out << "</span><br>";
 	out << toqstr(bformat(_("Qt Version (run-time): %1$s on platform %2$s"), from_ascii(qVersion()), qstring_to_ucs4(guiApp->platformName())));
 	if (plain)
 		out << '\n';
 	else
-		out << "</p><p>";
+		out << "<br>";
 	out << toqstr(bformat(_("Qt Version (compile-time): %1$s"), from_ascii(QT_VERSION_STR)));
 	if (plain)
 		out << '\n';
 	else
-		out << "</p><p>";
+		out << "<br>";
 	out << toqstr(bformat(_("OS Version (run-time): %1$s"),
 		qstring_to_ucs4(QSysInfo::prettyProductName())));
 	if (plain)
 		out << '\n';
 	else
-		out << "</p><p>";
+		out << "<br>";
 	out << toqstr(bformat(_("Python detected: %1$s"), from_utf8(os::python_info())));
 	if (plain)
 		out << '\n';
 	else
-		out << "</p><p>";
+		out << "<br>";
 	out << toqstr(bformat(_("Draw strategy: %1$s"), guiApp->drawStrategyDescription()));
 	if (!plain)
 		out << toqstr("</p></body></html>");
