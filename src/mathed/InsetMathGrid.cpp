@@ -27,12 +27,9 @@
 #include "CutAndPaste.h"
 #include "FuncRequest.h"
 #include "FuncStatus.h"
-#include "InsetMathIntertext.h"
 #include "LaTeXFeatures.h"
-#include "MathFactory.h"
 #include "TexRow.h"
 
-#include "frontends/alert.h"
 #include "frontends/Clipboard.h"
 #include "frontends/Painter.h"
 

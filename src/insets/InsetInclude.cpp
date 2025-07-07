@@ -44,8 +44,6 @@
 #include "insets/InsetListingsParams.h"
 #include "insets/RenderPreview.h"
 
-#include "mathed/MacroTable.h"
-
 #include "support/convert.h"
 #include "support/debug.h"
 #include "support/docstream.h"
