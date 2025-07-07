@@ -118,6 +118,7 @@ suspicious: ./DocIterator.h::#include <algorithm> // std::min in MSVC 2017
 ./frontends/qt/GuiSymbols.h::#include <map>
 ./frontends/qt/GuiSymbols.h::#include <vector>
 ./frontends/qt/GuiTabularCreate.h::#include <utility>
+./frontends/qt/GuiToolbar.h::#include "mathed/InsetMathHull.h"
 ./frontends/qt/GuiToolbar.h::#include <QList>
 ./frontends/qt/GuiViewSource.h::#include <QString>
 ./frontends/qt/GuiWorkArea_Private.h::#include <QMouseEvent>
@@ -188,6 +189,7 @@ suspicious: ./frontends/qt/qt_helpers.h::#include "qt_i18n.h"
 ./mathed/MathCompletionList.h::#include "support/docstring.h"
 ./mathed/MathCompletionList.h::#include <vector>
 ./mathed/MathData.h::#include <cstddef>
+./mathed/MathFactory.h::#include <map>
 ./mathed/MathRow.h::#include "support/docstring.h"
 ./mathed/MathStream.h::#include "support/Changer.h"
 ./mathed/ReplaceData.h::#include "MathData.h"
@@ -543,7 +545,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./Server.cpp::#include <cerrno>
 ./Server.cpp::#include "moc_Server.cpp"
 ./ServerSocket.cpp::#include "support/FileName.h"
-./ServerSocket.cpp::#include "support/lassert.h"
 ./ServerSocket.cpp::#include <cerrno>
 ./Statistics.cpp::#include "Paragraph.h"
 ./TexRow.cpp::#include <algorithm>
@@ -604,12 +605,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./VCBackend.cpp::#include <sstream>
 ./VSpace.cpp::#include "support/Length.h"
 ./WordList.cpp::#include "support/docstring.h"
-./boost.cpp::#include <exception>
-./boost.cpp::#include <iomanip>
-./boost.cpp::#include <ostream>
 ./buffer_funcs.cpp::#include "support/lassert.h"
-./client/boost.cpp::#include <cstdlib>
-./client/boost.cpp::#include <exception>
 ./client/client.cpp::#include "support/FileName.h"
 ./client/client.cpp::#include <string.h>
 ./client/client.cpp::#include <cerrno>
@@ -626,8 +622,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./convert/lyxconvert.cpp::#include <QPainter>
 ./convert/lyxconvert.cpp::#include <QPdfWriter>
 ./factory.cpp::#include "factory.h"
-./factory.cpp::#include "FuncRequest.h"
-./factory.cpp::#include "support/Lexer.h"
 ./factory.cpp::#include "support/lstrings.h"
 ./factory.cpp::#include <sstream>
 ./frontends/qt/BulletsModule.cpp::#include "Bullet.h"
@@ -1063,9 +1057,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./frontends/tests/biblio.cpp::#include <iostream>
 ./frontends/tests/biblio.cpp::#include <map>
 ./frontends/tests/biblio.cpp::#include <regex>
-./frontends/tests/boost.cpp::#include <boost/assert.hpp>
-./frontends/tests/boost.cpp::#include <cstdlib>
-./frontends/tests/boost.cpp::#include <exception>
 ./graphics/GraphicsCacheItem.cpp::#include "support/FileName.h"
 ./graphics/GraphicsLoader.cpp::#include <memory>
 ./graphics/GraphicsLoader.cpp::#include <set>
@@ -1213,6 +1204,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./insets/InsetInclude.cpp::#include "FuncRequest.h"
 ./insets/InsetInclude.cpp::#include "LayoutModuleList.h"
 ./insets/InsetInclude.cpp::#include "texstream.h"
+./insets/InsetInclude.cpp::#include "mathed/MacroTable.h"
 ./insets/InsetInclude.cpp::#include "support/docstream.h"
 ./insets/InsetInclude.cpp::#include "support/FileName.h"
 ./insets/InsetInclude.cpp::#include "support/FileNameList.h"
@@ -1436,9 +1428,13 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./mathed/InsetMathFrac.cpp::#include "Dimension.h"
 ./mathed/InsetMathGrid.cpp::#include <algorithm>
 ./mathed/InsetMathGrid.cpp::#include "MathData.h"
+./mathed/InsetMathGrid.cpp::#include "MathParser.h"
 ./mathed/InsetMathGrid.cpp::#include "MathStream.h"
 ./mathed/InsetMathGrid.cpp::#include "CoordCache.h"
+./mathed/InsetMathGrid.cpp::#include "InsetMathIntertext.h"
+./mathed/InsetMathGrid.cpp::#include "MathFactory.h"
 ./mathed/InsetMathGrid.cpp::#include "TexRow.h"
+./mathed/InsetMathGrid.cpp::#include "frontends/alert.h"
 ./mathed/InsetMathGrid.cpp::#include "frontends/Clipboard.h"
 ./mathed/InsetMathGrid.cpp::#include "support/docstream.h"
 ./mathed/InsetMathGrid.cpp::#include <sstream>
@@ -1448,10 +1444,17 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./mathed/InsetMathHull.cpp::#include "Language.h"
 ./mathed/InsetMathHull.cpp::#include "MacroTable.h"
 ./mathed/InsetMathHull.cpp::#include "TexRow.h"
+./mathed/InsetMathHull.cpp::#include "insets/Inset.h"
 ./mathed/InsetMathHull.cpp::#include "support/lstrings.h"
 ./mathed/InsetMathHull.cpp::#include "support/Changer.h"
 ./mathed/InsetMathHull.cpp::#include <sstream>
+./mathed/InsetMathIntertext.cpp::#include "Buffer.h"
+./mathed/InsetMathIntertext.cpp::#include "BufferView.h"
+./mathed/InsetMathIntertext.cpp::#include "Cursor.h"
+./mathed/InsetMathIntertext.cpp::#include "Dimension.h"
 ./mathed/InsetMathIntertext.cpp::#include "MathData.h"
+./mathed/InsetMathIntertext.cpp::#include "MathFactory.h"
+./mathed/InsetMathIntertext.cpp::#include "MathSupport.h"
 ./mathed/InsetMathIntertext.cpp::#include "support/docstream.h"
 ./mathed/InsetMathKern.cpp::#include "support/docstring.h"
 ./mathed/InsetMathLim.cpp::#include "MathData.h"
@@ -1739,9 +1742,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./support/socktools.cpp::#include <cerrno>
 ./support/socktools.cpp::#include <string>
 ./support/socktools.cpp::#include <cstring>
-./support/tests/boost.cpp::#include <boost/assert.hpp>
-./support/tests/boost.cpp::#include <cstdlib>
-./support/tests/boost.cpp::#include <exception>
 ./support/tests/check_convert.cpp::#include "../convert.h"
 ./support/tests/check_convert.cpp::#include <iostream>
 ./support/tests/check_convert.cpp::#include <string>
@@ -1759,9 +1759,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./support/unicode.cpp::#include <string>
 ./support/userinfo.cpp::#include "support/userinfo.h"
 ./support/userinfo.cpp::#include "support/docstring.h"
-./tests/boost.cpp::#include <boost/assert.hpp>
-./tests/boost.cpp::#include <cstdlib>
-./tests/boost.cpp::#include <exception>
 ./tests/check_ExternalTransforms.cpp::#include "../insets/ExternalTransforms.h"
 ./tests/check_ExternalTransforms.cpp::#include <iostream>
 ./tests/check_Length.cpp::#include "LyXRC.h"
@@ -1801,8 +1798,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./tex2lyx/Preamble.cpp::#include "TextClass.h"
 ./tex2lyx/Preamble.cpp::#include <algorithm>
 ./tex2lyx/Preamble.cpp::#include <iostream>
-./tex2lyx/boost.cpp::#include <cstdlib>
-./tex2lyx/boost.cpp::#include <exception>
 ./tex2lyx/dummy_impl.cpp::#include <iostream>
 ./tex2lyx/math.cpp::#include <iostream>
 ./tex2lyx/table.cpp::#include "tex2lyx.h"
@@ -1855,7 +1850,6 @@ filtered: ./LyX.cpp : AppleSpellChecker_h
 filtered: ./LyX.cpp : AspellChecker_h
 filtered: ./LyX.cpp : HunspellChecker_h
 filtered: ./Server.cpp : lassert_h
-filtered: ./ServerSocket.cpp : lassert_h
 filtered: ./buffer_funcs.cpp : lassert_h
 filtered: ./factory.cpp : factory_h
 filtered: ./frontends/qt/DialogFactory.cpp : DialogFactory_h
@@ -1875,12 +1869,21 @@ filtered: ./insets/InsetExternal.cpp : PreviewLoader_h
 filtered: ./insets/InsetFlex.cpp : FuncStatus_h
 filtered: ./insets/InsetGraphics.cpp : MetricsInfo_h
 filtered: ./insets/InsetInclude.cpp : FileNameList_h
+filtered: ./insets/InsetInclude.cpp : MacroTable_h
 filtered: ./insets/InsetListings.cpp : lassert_h
 filtered: ./insets/InsetScript.cpp : BufferView_h
 filtered: ./insets/InsetText.cpp : CompletionList_h
 filtered: ./mathed/InsetMathChar.cpp : LaTeXFeatures_h
 filtered: ./mathed/InsetMathDelim.cpp : LaTeXFeatures_h
 filtered: ./mathed/InsetMathExFunc.cpp : MetricsInfo_h
+filtered: ./mathed/InsetMathGrid.cpp : InsetMathIntertext_h
+filtered: ./mathed/InsetMathGrid.cpp : MathFactory_h
+filtered: ./mathed/InsetMathGrid.cpp : alert_h
+filtered: ./mathed/InsetMathIntertext.cpp : BufferView_h
+filtered: ./mathed/InsetMathIntertext.cpp : Buffer_h
+filtered: ./mathed/InsetMathIntertext.cpp : Cursor_h
+filtered: ./mathed/InsetMathIntertext.cpp : MathFactory_h
+filtered: ./mathed/InsetMathIntertext.cpp : MathSupport_h
 filtered: ./mathed/InsetMathMacroTemplate.cpp : BufferView_h
 filtered: ./mathed/InsetMathNest.cpp : LaTeXFeatures_h
 filtered: ./mathed/InsetMathSideset.cpp : lassert_h
@@ -1903,18 +1906,15 @@ filtered: miss: ./AspellChecker.o
 filtered: miss: ./HunspellChecker.o
 filtered: miss: ./convert/lyxconvert.o
 filtered: miss: ./frontends/tests/biblio.o
-filtered: miss: ./frontends/tests/boost.o
 filtered: miss: ./support/AppleScriptProxy.o
 filtered: miss: ./support/os_cygwin.o
 filtered: miss: ./support/os_unix.o
 filtered: miss: ./support/os_win32.o
-filtered: miss: ./support/tests/boost.o
 filtered: miss: ./support/tests/check_convert.o
 filtered: miss: ./support/tests/check_filetools.o
 filtered: miss: ./support/tests/check_lstrings.o
 filtered: miss: ./support/tests/check_trivstring.o
 filtered: miss: ./support/tests/dummy_functions.o
-filtered: miss: ./tests/boost.o
 filtered: miss: ./tests/check_ExternalTransforms.o
 filtered: miss: ./tests/check_Length.o
 filtered: miss: ./tests/check_ListingsCaption.o
