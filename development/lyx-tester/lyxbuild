@@ -264,6 +264,8 @@ if [ "${version}" = "1" ]; then
   exit 0
 fi
 
+# TODO: guard this for only automake?
+# see "Some influential environment variables" in ./configure --help
 # automake's analog to CMake's -DLYX_STDLIB_DEBUG=ON
 configure_options="${configure_options} --enable-stdlib-debug=yes"
 
@@ -520,8 +522,13 @@ fi
 if [ "${automake}" = "1" ]; then
 
   if [ "${WERROR}" = "1" ]; then
-    # see "Some influential environment variables" in ./configure --help
-    export CXXFLAGS="-Werror"
+    # TODO: can derive a *space*-delimited string of compile flags
+    #       from the string used for CMake as follows:
+    #echo "${CPPFLAGS//;/ }"
+    # TODO: first need to centralize (move out of CMake branch) the
+    #       definition of CPPFLAGS.
+    # TODO: Maybe name CPPFLAGS something different?
+    echo "need to implement warnings flags for automake"
   fi
 
   echo "$(ECHOPREFIX)running autogen..."
@@ -591,6 +598,8 @@ else
     if [ "${current_branch}" = "master" ]; then
       CPPFLAGS="-Wextra"
       CPPFLAGS+=";-Werror"
+      #CPPFLAGS+=";-Weverything"
+
 
       # '-pedantic' warnings aren't too useful, but solving them
       # may make compilation smoother for compilers that LyX
@@ -761,8 +770,11 @@ else
       # Helped with commits 58723717, c36a02f7, 62f0921b
       CPPFLAGS+=";-Wunused-macros"
 
-      # Kornel sees an issue with Clang 18.1.3, so for now
-      # do not turn this flag on until that's figured out.
+      # TODO: turn this back on once we figure out the issue with the -DNDEBUG.
+      #
+      # We may want to set this flag depending on whether we also use -DNDEBUG.
+      # See here for details:
+      #   https://www.mail-archive.com/search?l=mid&q=pvnhaildjqwx3woyixeo7ap3cpewfi4zggh33wxksablr47uqk%40gxd336xvqgmt
       #
       # Helped with commits 37b9655f, 877a227b, cd5fb840.
       # Using this property can enable some compiler optimizations,
@@ -1019,6 +1031,7 @@ fi
 #       starting with 23.04.
 PYTHON_EXEC="python3"
 
+# TODO: need to put this 'cd' into the build-command script!
 cd "${LYX_USER_DIR}"
 runthis configure-lyx.log ${PYTHON_EXEC} "${git_repo_d}/lib/configure.py" \
   || { echo "$(WARNINGPREFIX)reconfigure failed." >&2; exit 1; }
