@@ -3241,7 +3241,7 @@ void Intervall::output(ostringstream &os, int lastpos)
 		startindex = actualdeptindex-langcount;
 	else
 		startindex = actualdeptindex;
-	for (int i = startindex; i > 0; --i) {
+	for (int i1 = startindex; i1 > 0; --i1) {
 		os << "}";
 	}
 	if (hasTitle && (printed > 0))
@@ -3477,13 +3477,13 @@ int LatexInfo::dispatch(ostringstream &os, int previousStart, KeyInfo &actual)
 			int blk = interval_.nextNotIgnored(actual._dataEnd+1);
 			if (blk > posdown) {
 				// Discard at most 1 space after empty item
-				int count;
-				for (count = 0; count < 1; count++) {
-					if (interval_.par[blk+count] != ' ')
+				int count1;
+				for (count1 = 0; count1 < 1; count1++) {
+					if (interval_.par[blk+count1] != ' ')
 						break;
 				}
-				if (count > 0)
-					interval_.addIntervall(blk, blk+count);
+				if (count1 > 0)
+					interval_.addIntervall(blk, blk+count1);
 			}
 		}
 		break;
@@ -3808,8 +3808,8 @@ static void identifyClosing(string & t, bool ignoreformat)
 static int num_replaced = 0;
 static bool previous_single_replace = true;
 
-void MatchStringAdv::CreateRegexp(FindAndReplaceOptions const & opt, string const & regexp_str,
-                                  string const & regexp2_str, string const & par_as_string)
+void MatchStringAdv::CreateRegexp(FindAndReplaceOptions const & optx, string const & regexp_str,
+                                  string const & regexp2_str, string const & par_as_stringx)
 {
 #if QTSEARCH
 	if (regexp_str.empty() || regexp2_str.empty()) {
@@ -3819,7 +3819,7 @@ void MatchStringAdv::CreateRegexp(FindAndReplaceOptions const & opt, string cons
 	}
 	// Handle \w properly
 	QRegularExpression::PatternOptions popts = QRegularExpression::UseUnicodePropertiesOption | QRegularExpression::MultilineOption;
-	if (! opt.casesensitive) {
+	if (! optx.casesensitive) {
 		popts |= QRegularExpression::CaseInsensitiveOption;
 	}
 	regexp = QRegularExpression(QString::fromStdString(regexp_str), popts);
@@ -3830,8 +3830,8 @@ void MatchStringAdv::CreateRegexp(FindAndReplaceOptions const & opt, string cons
 		// Check '{', '}' pairs inside the regex
 		int balanced = 0;
 		int skip = 1;
-		for (unsigned i = 0; i < par_as_string.size(); i+= skip) {
-			char c = par_as_string[i];
+		for (unsigned i = 0; i < par_as_stringx.size(); i+= skip) {
+			char c = par_as_stringx[i];
 			if (c == '\\') {
 				skip = 2;
 				continue;
@@ -3858,8 +3858,8 @@ void MatchStringAdv::CreateRegexp(FindAndReplaceOptions const & opt, string cons
 			regexError += "Invalid regexp2 \"" + regexp2_str + "\", error = " + regexp2.errorString().toStdString();
 	}
 #else
-	(void)par_as_string;
-	if (opt.casesensitive) {
+	(void)par_as_stringx;
+	if (optx.casesensitive) {
 		regexp = regex(regexp_str);
 		regexp2 = regex(regexp2_str);
 	}
