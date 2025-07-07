@@ -650,6 +650,11 @@ else
         # helped with commits: 4ae8ec8d
         CPPFLAGS+=";-Wused-but-marked-unused"
 
+        # TODO: Riki gave some helpful info for addressing these:
+        #   https://www.mail-archive.com/search?l=mid&q=8f694d35-afda-4d0d-838f-35ceac10a157%40gmail.com
+        # this flag also turns on:
+        # -Wdeprecated-copy-with-user-provided-dtor
+        CPPFLAGS+=";-Wno-deprecated-copy-with-dtor"
       else
         # GCC only
         # warn about logical operations being used where bitwise were probably wanted
