@@ -1453,7 +1453,12 @@ bool Tabular::updateColumnWidths(MetricsInfo & mi)
 			for(col_type j = c; j < c + span ; ++j)
 				old_width += column_info[j].width;
 
-			if (cellInfo(i).width > old_width) {
+			if (tabularx && span == int(ncols())) {
+				// With tabularx and multicolumns spanning all columns,
+				// we assign tabular width
+				column_info[c + span - 1].width += max(mi.base.inPixels(tab_width), column_info[c + span - 1].width) - old_width;
+				update = false;
+			} else if (cellInfo(i).width > old_width) {
 				column_info[c + span - 1].width += cellInfo(i).width - old_width;
 				// Do not trigger update when no space is left for variable
 				// columns, as this will loop
