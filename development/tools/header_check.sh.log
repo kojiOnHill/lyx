@@ -118,7 +118,6 @@ suspicious: ./DocIterator.h::#include <algorithm> // std::min in MSVC 2017
 ./frontends/qt/GuiSymbols.h::#include <map>
 ./frontends/qt/GuiSymbols.h::#include <vector>
 ./frontends/qt/GuiTabularCreate.h::#include <utility>
-./frontends/qt/GuiToolbar.h::#include "mathed/InsetMathHull.h"
 ./frontends/qt/GuiToolbar.h::#include <QList>
 ./frontends/qt/GuiViewSource.h::#include <QString>
 ./frontends/qt/GuiWorkArea_Private.h::#include <QMouseEvent>
@@ -1204,7 +1203,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./insets/InsetInclude.cpp::#include "FuncRequest.h"
 ./insets/InsetInclude.cpp::#include "LayoutModuleList.h"
 ./insets/InsetInclude.cpp::#include "texstream.h"
-./insets/InsetInclude.cpp::#include "mathed/MacroTable.h"
 ./insets/InsetInclude.cpp::#include "support/docstream.h"
 ./insets/InsetInclude.cpp::#include "support/FileName.h"
 ./insets/InsetInclude.cpp::#include "support/FileNameList.h"
@@ -1428,13 +1426,9 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./mathed/InsetMathFrac.cpp::#include "Dimension.h"
 ./mathed/InsetMathGrid.cpp::#include <algorithm>
 ./mathed/InsetMathGrid.cpp::#include "MathData.h"
-./mathed/InsetMathGrid.cpp::#include "MathParser.h"
 ./mathed/InsetMathGrid.cpp::#include "MathStream.h"
 ./mathed/InsetMathGrid.cpp::#include "CoordCache.h"
-./mathed/InsetMathGrid.cpp::#include "InsetMathIntertext.h"
-./mathed/InsetMathGrid.cpp::#include "MathFactory.h"
 ./mathed/InsetMathGrid.cpp::#include "TexRow.h"
-./mathed/InsetMathGrid.cpp::#include "frontends/alert.h"
 ./mathed/InsetMathGrid.cpp::#include "frontends/Clipboard.h"
 ./mathed/InsetMathGrid.cpp::#include "support/docstream.h"
 ./mathed/InsetMathGrid.cpp::#include <sstream>
@@ -1448,13 +1442,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./mathed/InsetMathHull.cpp::#include "support/lstrings.h"
 ./mathed/InsetMathHull.cpp::#include "support/Changer.h"
 ./mathed/InsetMathHull.cpp::#include <sstream>
-./mathed/InsetMathIntertext.cpp::#include "Buffer.h"
-./mathed/InsetMathIntertext.cpp::#include "BufferView.h"
-./mathed/InsetMathIntertext.cpp::#include "Cursor.h"
-./mathed/InsetMathIntertext.cpp::#include "Dimension.h"
-./mathed/InsetMathIntertext.cpp::#include "MathData.h"
-./mathed/InsetMathIntertext.cpp::#include "MathFactory.h"
-./mathed/InsetMathIntertext.cpp::#include "MathSupport.h"
 ./mathed/InsetMathIntertext.cpp::#include "support/docstream.h"
 ./mathed/InsetMathKern.cpp::#include "support/docstring.h"
 ./mathed/InsetMathLim.cpp::#include "MathData.h"
@@ -1869,21 +1856,12 @@ filtered: ./insets/InsetExternal.cpp : PreviewLoader_h
 filtered: ./insets/InsetFlex.cpp : FuncStatus_h
 filtered: ./insets/InsetGraphics.cpp : MetricsInfo_h
 filtered: ./insets/InsetInclude.cpp : FileNameList_h
-filtered: ./insets/InsetInclude.cpp : MacroTable_h
 filtered: ./insets/InsetListings.cpp : lassert_h
 filtered: ./insets/InsetScript.cpp : BufferView_h
 filtered: ./insets/InsetText.cpp : CompletionList_h
 filtered: ./mathed/InsetMathChar.cpp : LaTeXFeatures_h
 filtered: ./mathed/InsetMathDelim.cpp : LaTeXFeatures_h
 filtered: ./mathed/InsetMathExFunc.cpp : MetricsInfo_h
-filtered: ./mathed/InsetMathGrid.cpp : InsetMathIntertext_h
-filtered: ./mathed/InsetMathGrid.cpp : MathFactory_h
-filtered: ./mathed/InsetMathGrid.cpp : alert_h
-filtered: ./mathed/InsetMathIntertext.cpp : BufferView_h
-filtered: ./mathed/InsetMathIntertext.cpp : Buffer_h
-filtered: ./mathed/InsetMathIntertext.cpp : Cursor_h
-filtered: ./mathed/InsetMathIntertext.cpp : MathFactory_h
-filtered: ./mathed/InsetMathIntertext.cpp : MathSupport_h
 filtered: ./mathed/InsetMathMacroTemplate.cpp : BufferView_h
 filtered: ./mathed/InsetMathNest.cpp : LaTeXFeatures_h
 filtered: ./mathed/InsetMathSideset.cpp : lassert_h
