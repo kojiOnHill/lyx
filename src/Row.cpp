@@ -242,11 +242,11 @@ void Row::Element::rtrim()
 }
 
 
-bool Row::isMarginSelected(bool left, DocIterator const & beg,
+bool Row::isMarginSelected(bool margin_begin, DocIterator const & beg,
 		DocIterator const & end) const
 {
-	pos_type const sel_pos = left ? sel_beg : sel_end;
-	pos_type const margin_pos = left ? pos_ : end_;
+	pos_type const sel_pos = margin_begin ? sel_beg : sel_end;
+	pos_type const margin_pos = margin_begin ? pos_ : end_;
 
 	// Is there a selection and is the chosen margin selected ?
 	if (!selection() || sel_pos != margin_pos)
@@ -269,6 +269,24 @@ bool Row::isMarginSelected(bool left, DocIterator const & beg,
 }
 
 
+void Row::setSelection(pos_type beg, pos_type end) const
+{
+	if (pos_ >= beg && pos_ <= end)
+		change(sel_beg, pos_);
+	else if (beg > pos_ && beg <= end_)
+		change(sel_beg, beg);
+	else
+		change(sel_beg, -1);
+
+	if (end_ >= beg && end_ <= end)
+		change(sel_end,end_);
+	else if (end < end_ && end >= pos_)
+		change(sel_end, end);
+	else
+		change(sel_end, -1);
+}
+
+
 void Row::setSelectionAndMargins(DocIterator const & beg,
 		DocIterator const & end) const
 {
@@ -285,24 +303,6 @@ void Row::clearSelectionAndMargins() const
 	change(sel_end, -1);
 	change(end_margin_sel, false);
 	change(begin_margin_sel, false);
-}
-
-
-void Row::setSelection(pos_type beg, pos_type end) const
-{
-	if (pos_ >= beg && pos_ <= end)
-		change(sel_beg, pos_);
-	else if (beg > pos_ && beg <= end_)
-		change(sel_beg, beg);
-	else
-		change(sel_beg, -1);
-
-	if (end_ >= beg && end_ <= end)
-		change(sel_end,end_);
-	else if (end < end_ && end >= pos_)
-		change(sel_end, end);
-	else
-		change(sel_end, -1);
 }
 
 

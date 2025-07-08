@@ -377,11 +377,13 @@ public:
 private:
 	/// Decides whether the margin is selected.
 	/**
-	  * \param margin_begin
-	  * \param beg
-	  * \param end
+	  * \param margin_begin: if true check the margin at the beginning
+	  * of text (left or right depending on bidi status).
+	  * \param beg: the beginning of selection, preprocessed in
+	  * TextMetrics::drawParagraph.
+	  * \param end: same for end of selection.
 	  */
-	bool isMarginSelected(bool left, DocIterator const & beg,
+	bool isMarginSelected(bool margin_begin, DocIterator const & beg,
 		DocIterator const & end) const;
 	/// Set the selection begin and end.
 	void setSelection(pos_type sel_beg, pos_type sel_end) const;
