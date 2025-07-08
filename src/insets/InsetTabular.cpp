@@ -1378,9 +1378,14 @@ bool Tabular::updateColumnWidths(MetricsInfo & mi)
 		// If no tabular width is specified with X columns,
 		// we use 100% colwidth
 		tab_width = Length(100, Length::PCW);
+	int table_width = mi.base.inPixels(tab_width);
+	if (tab_width == Length(100, Length::PCW))
+		// Subtract the additional widths from the table width
+		// to keep the too large markers sleeping
+		table_width -= 2 * ADD_TO_TABULAR_WIDTH;
 	int restwidth = -1;
 	if (!tab_width.zero()) {
-		restwidth = mi.base.inPixels(tab_width);
+		restwidth = table_width;
 		// Subtract the fixed widths from the table width
 		for (auto const & w : max_pwidth)
 			restwidth -= w.second;
@@ -1456,7 +1461,7 @@ bool Tabular::updateColumnWidths(MetricsInfo & mi)
 			if (tabularx && span == int(ncols())) {
 				// With tabularx and multicolumns spanning all columns,
 				// we assign tabular width
-				column_info[c + span - 1].width += max(mi.base.inPixels(tab_width), column_info[c + span - 1].width) - old_width;
+				column_info[c + span - 1].width += max(table_width, column_info[c + span - 1].width) - old_width;
 				update = false;
 			} else if (cellInfo(i).width > old_width) {
 				column_info[c + span - 1].width += cellInfo(i).width - old_width;
