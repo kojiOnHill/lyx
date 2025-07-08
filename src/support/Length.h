@@ -80,6 +80,8 @@ public:
 	bool zero() const { return val_ == 0.0; }
 	///
 	bool empty() const { return unit_ == Length::UNIT_NONE; }
+	/// This amounts to 100% of the workarea width 
+	bool isWorkareaWidth() const;
 	/// return string representation
 	std::string const asString() const;
 	/// return string representation

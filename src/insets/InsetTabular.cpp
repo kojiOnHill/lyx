@@ -1379,7 +1379,7 @@ bool Tabular::updateColumnWidths(MetricsInfo & mi)
 		// we use 100% colwidth
 		tab_width = Length(100, Length::PCW);
 	int table_width = mi.base.inPixels(tab_width);
-	if (tab_width == Length(100, Length::PCW))
+	if (tab_width.isWorkareaWidth())
 		// Subtract the additional widths from the table width
 		// to keep the too large markers sleeping
 		table_width -= 2 * ADD_TO_TABULAR_WIDTH;

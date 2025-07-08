@@ -277,6 +277,15 @@ Length::UNIT Length::defaultUnit()
 }
 
 
+bool Length::isWorkareaWidth() const
+{
+	return val_ == 100.0
+		&& (unit_ == PCW
+		    || unit_ == PTW
+		    || unit_ == PLW);
+}
+
+
 /////////////////////////////////////////////////////////////////////
 //
 // GlueLength
