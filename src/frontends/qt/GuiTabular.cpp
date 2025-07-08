@@ -218,6 +218,8 @@ GuiTabular::GuiTabular(QWidget * parent)
 		this, SLOT(checkEnabled()));
 	connect(tabularWidthED, SIGNAL(textEdited(const QString &)),
 		this, SLOT(checkEnabled()));
+	connect(tabularWidthUnitLC, SIGNAL(selectionChanged(lyx::Length::UNIT)),
+		this, SLOT(checkEnabled()));
 
 	decimalPointED->setValidator(new QRegularExpressionValidator(QRegularExpression("\\S"), this));
 	decimalPointED->setMaxLength(1);
