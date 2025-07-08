@@ -353,6 +353,15 @@ private:
 	///
 	ColorPair toqcolor(ColorNamePair);
 
+	// Dictionary of theme names for translation purpose
+	// Add a system theme name here if you create another one
+	typedef std::map<QString, QString> ThemeNameDic;
+	ThemeNameDic theme_name_dic_ = {
+	    {"Default",    qt_("Default")},
+	    {"Monochrome", qt_("Monochrome")},
+	    {"Solarized",  qt_("Solarized")}
+	};
+
 	QStringList header_labels_ =
 	                {qt_("Light"), qt_("Dark"), qt_("Object/Element")};
 	QString reset_label_ = qt_("Reset");

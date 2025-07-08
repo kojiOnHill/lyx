@@ -1692,9 +1692,15 @@ void PrefColors::initializeThemesLW()
 	const FileNameList sys_theme_files = sys_theme_dir.dirList("theme");
 	const FileNameList usr_theme_files = usr_theme_dir.dirList("theme");
 	for (const FileName & file : sys_theme_files) {
-		const QString guiname =
+		QString guiname =
 		        QString(file.onlyFileNameWithoutExt().c_str()).replace('_', ' ');
+		// if theme name matches the dictionary, use it for translation
+		ThemeNameDic::iterator dic_it = theme_name_dic_.find(guiname);
+		if (dic_it != theme_name_dic_.end())
+			guiname = dic_it->second;
+
 		const QString filename = file.absFileName().c_str();
+
 		// four labeling chars are appended to guiname to gurantee both system
 		// and user themes are listed even if they have the same name
 		themes.emplace(guiname + "_sys", std::make_pair(filename, false));
