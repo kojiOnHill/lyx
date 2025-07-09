@@ -1679,9 +1679,9 @@ void PrefColors::initializeThemesLW()
 	        QIcon(toqstr(addPathName(package().system_support().absFileName(),
 	                                 "images/oxygen/change-accept.svgz")));
 
-	// key:   theme's GUI name
-	// value: pair<theme's file name, bool if a user theme>
-	std::map <QString, std::pair<QString, bool>> themes;
+	// key:   theme's sort key (usually equal to GUI name)
+	// value: tuple<GUI name, theme's file name, bool if a user theme>
+	std::map <QString, std::tuple<QString, QString, bool>> themes;
 
 	FileName sys_theme_dir;
 	FileName usr_theme_dir;
@@ -1694,16 +1694,19 @@ void PrefColors::initializeThemesLW()
 	for (const FileName & file : sys_theme_files) {
 		QString guiname =
 		        QString(file.onlyFileNameWithoutExt().c_str()).replace('_', ' ');
+		QString sortkey = guiname;
 		// if theme name matches the dictionary, use it for translation
 		ThemeNameDic::iterator dic_it = theme_name_dic_.find(guiname);
-		if (dic_it != theme_name_dic_.end())
-			guiname = dic_it->second;
+		if (dic_it != theme_name_dic_.end()){
+			sortkey = dic_it->second.first;
+			guiname = dic_it->second.second;
+		}
 
 		const QString filename = file.absFileName().c_str();
 
 		// four labeling chars are appended to guiname to gurantee both system
 		// and user themes are listed even if they have the same name
-		themes.emplace(guiname + "_sys", std::make_pair(filename, false));
+		themes.emplace(sortkey + "_sys", make_tuple(guiname, filename, false));
 	}
 	for (const FileName & file : usr_theme_files) {
 		const QString guiname =
@@ -1711,7 +1714,7 @@ void PrefColors::initializeThemesLW()
 		const QString filename = file.absFileName().c_str();
 		// four labeling chars are appended to guiname to gurantee both system
 		// and user themes are listed even if they have the same name
-		themes.emplace(guiname + "_usr", std::make_pair(filename, true));
+		themes.emplace(guiname + "_usr", std::make_tuple(guiname, filename, true));
 	}
 	themesLW->clear();
 
@@ -1721,8 +1724,8 @@ void PrefColors::initializeThemesLW()
 	// themes are already sorted with GUI name as std::map sorts its entries
 	for (const auto & theme : themes) {
 		QListWidgetItem* item = new QListWidgetItem;
-		item->setText(theme.first.left(theme.first.length() - 4));
-		if (theme.second.second) // if the theme is a user theme
+		item->setText(std::get<0>(theme.second));
+		if (std::get<2>(theme.second)) // if the theme is a user theme
 			item->setIcon(usr_theme_icon);
 		else
 			item->setIcon(sys_theme_icon);
@@ -1732,7 +1735,7 @@ void PrefColors::initializeThemesLW()
 		if (item->text() == theme_name_)
 			themesLW->setCurrentItem(item);
 
-		theme_fullpaths_.push_back(theme.second.first);
+		theme_fullpaths_.push_back(std::get<1>(theme.second));
 		if (theme.first.right(3) == "sys")
 			isSysThemes_.push_back(true);
 		else

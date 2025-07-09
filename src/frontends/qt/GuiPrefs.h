@@ -354,12 +354,20 @@ private:
 	ColorPair toqcolor(ColorNamePair);
 
 	// Dictionary of theme names for translation purpose
-	// Add a system theme name here if you create another one
-	typedef std::map<QString, QString> ThemeNameDic;
+	// Add a system theme name here if you create a new one.
+	// Any record should contain the same string for all entries except
+	// for the bracketed identifiers.
+	// The value will be translated by gettext.
+	// The first value is a sort key used for sorting of the translated GUI
+	// theme names. In most of languages, this is the same as the GUI name.
+	// It is used by languages in which sorting by char code is not meaningful.
+	// The second value is the GUI theme name whose translation by gettext
+	// appears in the ThemesLW list.
+	typedef std::map<QString, std::pair<QString, QString>> ThemeNameDic;
 	ThemeNameDic theme_name_dic_ = {
-	    {"Default",    qt_("Default")},
-	    {"Monochrome", qt_("Monochrome")},
-	    {"Solarized",  qt_("Solarized")}
+	    {"Default",    {qt_("Default[[sortkey]]"),    qt_("Default[[guiname]]")}},
+	    {"Monochrome", {qt_("Monochrome[[sortkey]]"), qt_("Monochrome[[guiname]]")}},
+	    {"Solarized",  {qt_("Solarized[[sortkey]]"),  qt_("Solarized[[guiname]]")}}
 	};
 
 	QStringList header_labels_ =
