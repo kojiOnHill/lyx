@@ -975,12 +975,12 @@ copy_dictionaries() {
 	fi
 	if [ -d "${DictionarySourceDir}" -a "yes" = "${hunspell_dictionaries}" ]; then
 		HunSpellResources="${LyxAppPrefix}/Contents/Resources"
-		( cd "${DictionarySourceDir}" && find dicts -name .svn -prune -o -type f -print | cpio -pmdv "${HunSpellResources}" )
+		( cd "${DictionarySourceDir}" && find dicts -name .svn -prune -o -type f -print | cpio -pmdv --insecure "${HunSpellResources}" )
 		deduplicate "${HunSpellResources}"/dicts
 	fi
 	if [ -d "${DictionarySourceDir}" -a "yes" = "${thesaurus_deployment}" ]; then
 		MyThesResources="${LyxAppPrefix}/Contents/Resources"
-		( cd "${DictionarySourceDir}" && find thes -name .svn -prune -o -type f -print | cpio -pmdv "${MyThesResources}" )
+		( cd "${DictionarySourceDir}" && find thes -name .svn -prune -o -type f -print | cpio -pmdv --insecure "${MyThesResources}" )
 		deduplicate "${MyThesResources}"/thes
 	fi
 }
