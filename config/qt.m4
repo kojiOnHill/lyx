@@ -128,7 +128,7 @@ dnl start here
 AC_DEFUN([QT_DO_IT_ALL],
 [
 	dnl this variable is precious
-	AC_ARG_VAR(QTDIR, [the place where the Qt files are, e.g. /usr/lib/qt5])
+	AC_ARG_VAR(QTDIR, [the place where the Qt files are, e.g. /usr/lib/qt6])
 
 	AC_ARG_WITH(qt-dir, [AS_HELP_STRING([--with-qt-dir], [where the root of Qt is installed])],
 		[ qt_cv_dir=`eval echo "$withval"/` ])

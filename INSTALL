@@ -11,7 +11,7 @@ Quick compilation guide
 
 These four steps will compile, test and install LyX:
 
-	0) Linux users beware: You need qt5 and qt5-devel packages
+	0) Linux users beware: You need qt and qt-devel packages
 	   of the same version to compile LyX.
 
 	   In general, it is also recommended to have pkg-config
@@ -20,7 +20,7 @@ These four steps will compile, test and install LyX:
 
 	1) ./configure configures LyX according to your system. You
 	   may have to set --with-qt-dir=<path-to-your-qt-installation>
-	   (for example, "--with-qt-dir=/usr/share/qt5/") if the
+	   (for example, "--with-qt-dir=/usr/share/qt6/") if the
 	   environment variable QTDIR is not set and pkg-config is not
 	   available.
 
@@ -59,10 +59,9 @@ LyX makes great use of the C++ Standard Library. This means that gcc
 users will have to install the relevant libstdc++ library to be able
 to compile this version of LyX.
 
-LyX requires Qt 5.9.4 or higher. It is also possible to compile
-against Qt 6. The only special point to make is that you must ensure
-that both LyX and the Qt libraries are compiled with the same C++
-compiler.
+LyX requires Qt 5.9.4 or higher. It will compile with Qt6 support if
+possible. The only special point to make is that you must ensure that
+both LyX and the Qt libraries are compiled with the same C++ compiler.
 
 To build LyX with spell checking capabilities included you have to
 install at least one of the development packages of the spell checker
@@ -121,8 +120,8 @@ flags:
 
     The `gprof' build type compiles and links with -pg option with gcc.
 
-  o --enable-qt6 that checks configuration with Qt 6.x, and then Qt
-    5.x. By default, only Qt5 is tried.
+  o --disable-qt6 that checks configuration with Qt 5.x only. By
+    default, Qt6 is tried first, and Qt5 is used as a backup solution.
 
   o --with-extra-lib=DIRECTORY that specifies the path where LyX will
     find extra libraries (like Qt) it needs. Defaults to NONE
@@ -141,7 +140,7 @@ flags:
     LyX data directory will be something like <whatever>/lyxSUFFIX/.
     Additionally your user configuration files will be found in e.g.
     $HOME/.lyxSUFFIX. The default for SUFFIX is "-<currentversion>",
-    e.g. lyx-1.6.1.
+    e.g. lyx-2.5.0.
 
     You can use this feature to install more than one version of LyX
     on the same system. You can optionally specify a "version" of your

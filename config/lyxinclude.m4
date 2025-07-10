@@ -1,6 +1,6 @@
 dnl Some useful functions for LyXs configure.in                 -*- sh -*-
 dnl Author: Jean-Marc Lasgouttes (Jean-Marc.Lasgouttes@inria.fr)
-dnl         Lars Gullik Bjønnes (larsbj@lyx.org)
+dnl         Lars Gullik BjÃ¸nnes (larsbj@lyx.org)
 dnl         Allan Rae (rae@lyx.org)
 
 dnl Compute the default build type from AC_PACKAGE_VERSION at autoconf time.
@@ -63,13 +63,13 @@ AC_MSG_RESULT([$withval])
 ])
 
 
-dnl Check whether to configure for Qt5, or Qt6. Default is Qt5.
+dnl Check whether to configure for Qt5, or Qt6. Default is Qt6.
 dnl
 AC_DEFUN([LYX_CHECK_QT6],[
 AC_MSG_CHECKING([whether Qt6 is requested])
 AC_ARG_ENABLE([qt6],
-  [AS_HELP_STRING([--enable-qt6],[use Qt6 for building])],
-  USE_QT6=$enableval, USE_QT6=no)
+  [AS_HELP_STRING([--disable-qt6],[do not use Qt6 for building])],
+  USE_QT6=$enableval, USE_QT6=yes)
 AC_MSG_RESULT([$USE_QT6])
 AC_SUBST([USE_QT6])
 ])
