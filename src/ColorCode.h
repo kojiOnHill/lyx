@@ -69,6 +69,10 @@ enum ColorCode {
 	Color_selectionmath,
 	/// Foreground color of selected text
 	Color_selectiontext,
+	/// Background color of the focused segment of the preedit
+	Color_preeditfocus,
+	/// Text color of the focused segment of the preedit
+	Color_preeditfocustext,
 	/// Text color in LaTeX mode
 	Color_latex,
 	/// The color used for previews

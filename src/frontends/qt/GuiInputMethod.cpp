@@ -25,6 +25,7 @@
 #include "InsetList.h"
 #include "KeyMap.h"
 #include "LyX.h"
+#include "LyXRC.h"
 #include "Row.h"
 #include "Text.h"
 #include "TextMetrics.h"
@@ -391,8 +392,8 @@ void GuiInputMethod::setPreeditStyle(
 		QTextCharFormat & focus_char_format =
 		        d->style_.segments_[focusedSegmentIndex()].char_format_;
 		if (d->style_.segments_.size() > 1) {
-			QBrush fgbrush(guiApp->colorCache().get(Color_selectiontext));
-			QBrush bgbrush(guiApp->colorCache().get(Color_selection));
+			QBrush fgbrush(guiApp->colorCache().get(Color_preeditfocustext));
+			QBrush bgbrush(guiApp->colorCache().get(Color_preeditfocus));
 			focus_char_format.setForeground(fgbrush);
 			focus_char_format.setBackground(bgbrush);
 		}
@@ -456,6 +457,16 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 	char_format.setFontUnderline(true);
 #endif
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+	// set the style of a focused sector as specified by color themes
+	// it uses a system color if "Use system colors" is checked
+	if (char_format.background().color() != QColorConstants::Black) {
+		QBrush fgbrush(guiApp->colorCache().get(Color_preeditfocustext));
+		QBrush bgbrush(guiApp->colorCache().get(Color_preeditfocus));
+		char_format.setForeground(fgbrush);
+		char_format.setBackground(bgbrush);
+	}
+#endif // QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 
 	// The void "cursor segment" in the composing mode comes with it.start > 0 and
 	// it.length == 0, whose info we don't use, so it does not go in if's below
@@ -477,7 +488,10 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 			// push the constructed char format together with start and length
 			// to the list
 			LYXERR(Debug::GUI, "Pushing to preedit register: (" << it.start
-			       << ", " << it.start + it.length - 1 << ") bg color: "
+			       << ", " << it.start + it.length - 1
+			       << ") fg: "
+		           << char_format.foreground().color().name()
+			       << " bg: "
 			       << char_format.background().color().name());
 			next_seg_pos =
 			        registerSegment(it.start, (size_type)it.length, char_format);
@@ -504,16 +518,21 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos,
 	for (auto past_attr = d->seg_turnout_.begin();
 	     past_attr != d->seg_turnout_.end(); past_attr++) {
 		if ((*past_attr).start_ == next_seg_pos) {
+			PreeditSegment seg;
 			if (cf != nullptr) {
-				(*past_attr).char_format_.merge(*cf);
-			}
-			PreeditSegment seg = {(*past_attr).start_,
+				cf->merge((*past_attr).char_format_);
+				seg = {(*past_attr).start_,
+								  (size_type)(*past_attr).length_, *cf};
+			} else
+				seg = {(*past_attr).start_,
 								  (size_type)(*past_attr).length_,
 								  (*past_attr).char_format_};
 			LYXERR(Debug::GUI,
 			       "Pushing to preedit register: (" << (*past_attr).start_
 			        << ", " << (*past_attr).start_ + (*past_attr).length_ - 1
-			        << ") bg color: "
+			        << ") fg: "
+			        << (*past_attr).char_format_.foreground().color().name()
+			        << " bg: "
 			        << (*past_attr).char_format_.background().color().name());
 			d->style_.segments_.push_back(seg);
 			next_seg_pos += (*past_attr).length_;
@@ -585,7 +604,8 @@ void GuiInputMethod::conformToSurroundingFont(QTextCharFormat & char_format) {
 		char_format.setFontItalic(!surrounding_font.italic());
 
 	// set font color
-	if (char_format.foreground().style() == Qt::NoBrush) {
+	if (!lyxrc.use_system_colors &&
+	        char_format.foreground().style() == Qt::NoBrush) {
 		ColorCache cc;
 		char_format.setForeground(
 		    cc.get(d->cur_->real_current_font.fontInfo().realColor(), false));

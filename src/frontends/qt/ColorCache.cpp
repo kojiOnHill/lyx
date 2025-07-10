@@ -43,10 +43,12 @@ QPalette::ColorRole role(ColorCode col)
 		break;
 
 	case Color_selection:
+	case Color_preeditfocus:
 		return QPalette::Highlight;
 		break;
 	case Color_selectionmath:
 	case Color_selectiontext:
+	case lyx::Color_preeditfocustext:
 		return QPalette::HighlightedText;
 		break;
 	case Color_urllabel:
