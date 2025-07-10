@@ -15,7 +15,6 @@ Style Proof
 	Margin                First_Dynamic
 	LatexType             Environment
 	LatexName             proof
-	NextNoIndent          1
 	ResetArgs             1
 	Argument 1
 		LabelString   "Alternative Proof String"
