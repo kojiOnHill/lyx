@@ -73,6 +73,10 @@ enum ColorCode {
 	Color_preeditfocus,
 	/// Text color of the focused segment of the preedit
 	Color_preeditfocustext,
+	/// Background color of the focused segment of the preedit
+	Color_preeditbg,
+	/// Text color of the focused segment of the preedit
+	Color_preedittext,
 	/// Text color in LaTeX mode
 	Color_latex,
 	/// The color used for previews

@@ -31,6 +31,7 @@ QPalette::ColorRole role(ColorCode col)
 	case Color_graphicsbg:
 	case Color_mathmacrobg:
 	case Color_mathcorners:
+	case Color_preeditbg:
 		return QPalette::Base;
 		break;
 
@@ -39,6 +40,7 @@ QPalette::ColorRole role(ColorCode col)
 	case Color_preview:
 	case Color_tabularline:
 	case Color_previewframe:
+	case Color_preedittext:
 		return QPalette::Text;
 		break;
 

@@ -268,6 +268,8 @@ ColorSet::ColorSet()
 	{ Color_selectiontext, N_("selected text"), "selectiontext", black, black, "selectiontext" },
 	{ Color_preeditfocus, N_("preedit focus background"), "preeditfocus", "#add8e6", "#add8e6", "preeditfocus" },
 	{ Color_preeditfocustext, N_("preedit focus text"), "preeditfocustext", black, black, "preeditfocustext" },
+	{ Color_preeditbg, N_("preedit background"), "preeditbg", Linen, black, "preeditbg" },
+	{ Color_preedittext, N_("preedit text"), "preedittext", black, Linen, "preedittext" },
 	{ Color_latex, N_("LaTeX text"), "latex", DarkRed, "#D66613", "latex" },
 	{ Color_textlabel1, N_("Text label 1"), "textlabel1", blue, "#86a4ff", "textlabel1" },
 	{ Color_textlabel2, N_("Text label 2"), "textlabel2", Green, green, "textlabel2" },

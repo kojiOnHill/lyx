@@ -460,12 +460,19 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 	// set the style of a focused sector as specified by color themes
 	// it uses a system color if "Use system colors" is checked
+	QBrush fgbrush;
+	QBrush bgbrush;
 	if (char_format.background().color() != QColorConstants::Black) {
-		QBrush fgbrush(guiApp->colorCache().get(Color_preeditfocustext));
-		QBrush bgbrush(guiApp->colorCache().get(Color_preeditfocus));
-		char_format.setForeground(fgbrush);
-		char_format.setBackground(bgbrush);
+		fgbrush.setColor(guiApp->colorCache().get(Color_preeditfocustext));
+		bgbrush.setColor(guiApp->colorCache().get(Color_preeditfocus));
+	} else {
+		fgbrush.setColor(guiApp->colorCache().get(Color_preedittext));
+		bgbrush.setColor(guiApp->colorCache().get(Color_preeditbg));
 	}
+	fgbrush.setStyle(Qt::SolidPattern);
+	bgbrush.setStyle(Qt::SolidPattern);
+	char_format.setForeground(fgbrush);
+	char_format.setBackground(bgbrush);
 #endif // QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 
 	// The void "cursor segment" in the composing mode comes with it.start > 0 and
