@@ -1757,7 +1757,7 @@ def convert_doc_colors(document):
 
 
 # helper function for revert_doc_colors
-def revert_doc_col(document, color, default_value, xcolor, x11, svg, dvips):
+def revert_doc_col(document, color, default_value, xcolor, x11, svg, dvips, nonedefault):
     "Reverts a given document color"
 
     i = find_token(document.header, color, 0)
@@ -1765,7 +1765,7 @@ def revert_doc_col(document, color, default_value, xcolor, x11, svg, dvips):
         document.warning("Can't find %s header!" % color)
     else:
         value = get_value(document.header, color, i)
-        if value == default_value:
+        if value == default_value or (nonedefault and value == "none"):
             # default; nothing more to do
             del document.header[i]
             return
@@ -1806,10 +1806,10 @@ def revert_doc_colors(document):
     x11 = False
     svg = False
     dvips = False
-    revert_doc_col(document, "\\fontcolor", "none", xcolor, x11, svg, dvips)
-    revert_doc_col(document, "\\backgroundcolor", "none", xcolor, x11, svg, dvips)
-    revert_doc_col(document, "\\notefontcolor", "lightgray", xcolor, x11, svg, dvips)
-    revert_doc_col(document, "\\boxbgcolor", "red", xcolor, x11, svg, dvips)
+    revert_doc_col(document, "\\fontcolor", "none", xcolor, x11, svg, dvips, False)
+    revert_doc_col(document, "\\backgroundcolor", "none", xcolor, x11, svg, dvips, False)
+    revert_doc_col(document, "\\notefontcolor", "lightgray", xcolor, x11, svg, dvips, True)
+    revert_doc_col(document, "\\boxbgcolor", "red", xcolor, x11, svg, dvips, True)
     
     # Preamble stuff if needed
     if xcolor == True:
