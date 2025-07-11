@@ -62,10 +62,12 @@ public:
 				     << ' ' << to_format << ' ' << cache_name
 				     << ' ' << long(timestamp) << ' ' << checksum << '.');
 	}
-	~CacheItem()
-	{}
+
+	///
 	FileName cache_name;
+	///
 	time_t timestamp;
+	///
 	unsigned long checksum;
 };
 
@@ -94,6 +96,7 @@ public:
 	void writeIndex();
 	///
 	CacheItem * find(FileName const & from, string const & format);
+	///
 	CacheType cache;
 };
 
