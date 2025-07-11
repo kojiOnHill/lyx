@@ -1249,18 +1249,23 @@ string const LaTeXFeatures::getColorOptions() const
 		colors << "\\color{document_fontcolor}\n";
 	}
 
-	if (mustProvide("lyxgreyedout") && !getColorValue(params_.notefontcolor).empty()) {
+	if (mustProvide("lyxgreyedout")) {
 		colors << "\\colorlet{note_fontcolor}{";
-		colors << getColorValue(params_.notefontcolor) << "}\n";
+		if (getColorValue(params_.notefontcolor).empty())
+			colors << "lightgray}\n";
+		else
+			colors << getColorValue(params_.notefontcolor) << "}\n";
 		// the color will be set together with the definition of
 		// the lyxgreyedout environment (see lyxgreyedout_def)
 	}
 
 	// color for shaded boxes
-	if (isRequired("framed") && mustProvide("xcolor")
-	     && !getColorValue(params_.boxbgcolor).empty()) {
+	if (isRequired("framed") && mustProvide("xcolor")) {
 		colors << "\\colorlet{shadecolor}{";
-		colors << getColorValue(params_.boxbgcolor) << "}\n";
+		if (getColorValue(params_.boxbgcolor).empty())
+			colors << "red}\n";
+		else
+			colors << getColorValue(params_.boxbgcolor) << "}\n";
 		// this color is automatically used by the LaTeX-package "framed"
 	}
 
