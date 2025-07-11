@@ -2112,7 +2112,6 @@ void LyXRC::write(ostream & os, bool ignore_system_lyxrc, string const & name) c
 		<< "# COLOR SECTION ###################################\n"
 		<< "#\n\n";
 
-	// fall through
 	case RC_UI_THEME:
 		if (ignore_system_lyxrc ||
 		        ui_theme != system_lyxrc.ui_theme)
@@ -2120,8 +2119,7 @@ void LyXRC::write(ostream & os, bool ignore_system_lyxrc, string const & name) c
 
 		if (tag != RC_LAST)
 			break;
-
-	// fall through
+		// fall through
 	case RC_SET_COLOR:
 		for (int i = 0; i < Color_ignore; ++i) {
 			ColorCode lc = static_cast<ColorCode>(i);
@@ -2138,6 +2136,17 @@ void LyXRC::write(ostream & os, bool ignore_system_lyxrc, string const & name) c
 		}
 		if (tag != RC_LAST)
 			break;
+		// fall through
+	case RC_USE_SYSTEM_COLORS:
+		if (ignore_system_lyxrc ||
+		    use_system_colors != system_lyxrc.use_system_colors) {
+			os << "\\use_system_colors "
+			   << convert<string>(use_system_colors)
+			   << '\n';
+		}
+		if (tag != RC_LAST)
+			break;
+		// fall through
 
 	os << "\n#\n"
 		 << "# PRINTER SECTION ###################################\n"
@@ -2474,16 +2483,6 @@ void LyXRC::write(ostream & os, bool ignore_system_lyxrc, string const & name) c
 		    use_native_filedialog != system_lyxrc.use_native_filedialog) {
 			os << "\\use_native_filedialog "
 			   << convert<string>(use_native_filedialog)
-			   << '\n';
-		}
-		if (tag != RC_LAST)
-			break;
-		// fall through
-	case RC_USE_SYSTEM_COLORS:
-		if (ignore_system_lyxrc ||
-		    use_system_colors != system_lyxrc.use_system_colors) {
-			os << "\\use_system_colors "
-			   << convert<string>(use_system_colors)
 			   << '\n';
 		}
 		if (tag != RC_LAST)
