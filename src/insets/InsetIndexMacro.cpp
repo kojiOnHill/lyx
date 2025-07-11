@@ -115,10 +115,6 @@ InsetIndexMacro::InsetIndexMacro(Buffer * buf, string const & label)
 }
 
 
-InsetIndexMacro::~InsetIndexMacro()
-{}
-
-
 docstring InsetIndexMacro::layoutName() const
 {
 	return from_ascii("IndexMacro:" + insetindexmacrotranslator().find(params_.type));

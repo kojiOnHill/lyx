@@ -53,8 +53,6 @@ public:
 	///
 	InsetIndexMacro(Buffer *, std::string const &);
 	///
-	~InsetIndexMacro();
-	///
 	static std::string params2string(InsetIndexMacroParams const &);
 	///
 	static void string2params(std::string const &, InsetIndexMacroParams &);

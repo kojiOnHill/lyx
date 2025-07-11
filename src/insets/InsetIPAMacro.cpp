@@ -135,10 +135,6 @@ InsetIPADeco::InsetIPADeco(Buffer * buf, string const & label)
 }
 
 
-InsetIPADeco::~InsetIPADeco()
-{}
-
-
 docstring InsetIPADeco::layoutName() const
 {
 	return from_ascii("IPADeco:" + ipadecotranslator().find(params_.type));

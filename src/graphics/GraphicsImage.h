@@ -30,9 +30,6 @@ class Params;
 
 class Image {
 public:
-	///
-	virtual ~Image() {}
-
 	/// Create a copy
 	virtual Image * clone() const = 0;
 

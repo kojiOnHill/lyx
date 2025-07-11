@@ -51,8 +51,6 @@ public:
 	///
 	InsetIPADeco(Buffer *, std::string const &);
 	///
-	~InsetIPADeco();
-	///
 	static std::string params2string(InsetIPADecoParams const &);
 	///
 	static void string2params(std::string const &, InsetIPADecoParams &);
