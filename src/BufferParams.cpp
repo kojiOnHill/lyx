@@ -1299,6 +1299,8 @@ string BufferParams::readToken(Lexer & lex, string const & token,
 		if (token == "\\notefontcolor") {
 			lex.eatLine();
 			notefontcolor = lex.getString();
+			if (notefontcolor == "none")
+				break;
 			// set a local name for the painter
 			lcolor.setColor("notefontcolor@" + filename.absFileName(),
 					lcolor.getX11HexName(notefontcolor));
@@ -1307,6 +1309,8 @@ string BufferParams::readToken(Lexer & lex, string const & token,
 		if (token == "\\boxbgcolor") {
 			lex.eatLine();
 			boxbgcolor = lex.getString();
+			if (boxbgcolor == "none")
+				break;
 			// set a local name for the painter
 			lcolor.setColor("boxbgcolor@" + filename.absFileName(),
 					lcolor.getX11HexName(boxbgcolor));
