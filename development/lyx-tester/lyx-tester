@@ -339,6 +339,10 @@ function install_main_deps() {
   #
   # Without TL font link, this fixes compilation for many ja documents:
   # fonts-ipaexfont
+  #
+  # Not strictly necessary, but LyX does potentially use this if it's available.
+  # Grep for the CMake code 'include_directories(${Qt6Gui_PRIVATE_INCLUDE_DIRS})'
+  # qt6-base-private-dev \
 
 
   apt-get -y install --no-install-recommends r-base ghostscript imagemagick \
@@ -363,6 +367,7 @@ function install_main_deps() {
     comparepdf \
     libfile-slurp-perl \
     qt6-base-dev libqt6opengl6-dev qmake6 qmake6-bin libqt6opengl6-dev qmake6 qmake6-bin qt6-base-dev qt6-svg-dev qt6-wayland \
+    qt6-base-private-dev \
     fonts-ipafont fonts-hosny-amiri fonts-baekmuk fonts-unfonts-extra fonts-ipaexfont \
     >&3 2>&3 \
     || { echo "$(ERRORPREFIX)"install of r-base or a LyX test dependency failed. \
