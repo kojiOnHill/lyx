@@ -33,7 +33,11 @@ public:
 	///
 	InsetListings(Buffer *, InsetListingsParams const & par = InsetListingsParams());
 	///
+	InsetListings(InsetListings const &) = default;
+	///
 	~InsetListings();
+	///
+	InsetListings & operator=(InsetListings const &) = default;
 	///
 	static void string2params(std::string const &, InsetListingsParams &);
 	///

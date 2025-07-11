@@ -47,7 +47,11 @@ public:
 	///
 	InsetWrap(Buffer *, std::string const &);
 	///
+	InsetWrap(InsetWrap const &) = default;
+	///
 	~InsetWrap();
+	///
+	InsetWrap & operator=(InsetWrap const &) = default;
 	///
 	InsetWrapParams const & params() const { return params_; }
 	///

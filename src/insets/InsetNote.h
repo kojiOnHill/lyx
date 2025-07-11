@@ -49,7 +49,11 @@ public:
 	///
 	InsetNote(Buffer *, std::string const &);
 	///
+	InsetNote(InsetNote const &) = default;
+	///
 	~InsetNote();
+	///
+	InsetNote & operator=(InsetNote const &) = default;
 	///
 	static std::string params2string(InsetNoteParams const &);
 	///

@@ -49,7 +49,11 @@ public:
 	///
 	InsetPhantom(Buffer *, std::string const &);
 	///
+	InsetPhantom(InsetPhantom const &) = default;
+	///
 	~InsetPhantom();
+	///
+	InsetPhantom & operator=(InsetPhantom const &) = default;
 	///
 	static std::string params2string(InsetPhantomParams const &);
 	///

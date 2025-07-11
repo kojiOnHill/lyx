@@ -83,7 +83,13 @@ public:
 		Layout const * layout_ = 0,
 		Layout const * parent_layout_= 0,
 		TeXFont const & font_ = normalfont);
+	///
+	Context(Context const &) = default;
+	///
 	~Context();
+	///
+	Context & operator=(Context const &) = default;
+
 
 	/// Output a \\begin_layout if requested
 	void check_layout(std::ostream & os);
