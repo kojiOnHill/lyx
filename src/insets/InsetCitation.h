@@ -33,7 +33,11 @@ public:
 	///
 	InsetCitation(Buffer * buf, InsetCommandParams const &);
 	///
+	InsetCitation(InsetCitation const &) = default;
+	///
 	~InsetCitation();
+	///
+	InsetCitation & operator=(InsetCitation const &) = default;
 
 	///
 	bool addKey(std::string const & key);

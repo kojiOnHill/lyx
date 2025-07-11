@@ -34,7 +34,11 @@ public:
 	///
 	InsetBibitem(Buffer *, InsetCommandParams const &);
 	///
+	InsetBibitem(InsetBibitem const &) = default;
+	///
 	~InsetBibitem();
+	///
+	InsetBibitem & operator=(InsetBibitem const &) = default;
 
 	///
 	void updateCommand(docstring const & new_key, bool dummy = false);
