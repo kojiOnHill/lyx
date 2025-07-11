@@ -2106,11 +2106,11 @@ void LyXRC::write(ostream & os, bool ignore_system_lyxrc, string const & name) c
 		}
 		if (tag != RC_LAST)
 			break;
-		// fall through
 
-	os << "\n#\n"
+		os << "\n#\n"
 		<< "# COLOR SECTION ###################################\n"
 		<< "#\n\n";
+		// fall through
 
 	case RC_UI_THEME:
 		if (ignore_system_lyxrc ||
