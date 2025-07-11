@@ -53,8 +53,6 @@ public:
 	///
 	InsetScript(Buffer *, std::string const &);
 	///
-	~InsetScript();
-	///
 	static std::string params2string(InsetScriptParams const &);
 	///
 	static void string2params(std::string const &, InsetScriptParams &);

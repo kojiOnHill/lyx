@@ -30,10 +30,6 @@ OutputParams::OutputParams(Encoding const * enc)
 }
 
 
-OutputParams::~OutputParams()
-{}
-
-
 bool OutputParams::isLaTeX() const
 {
 	return flavor == Flavor::LaTeX

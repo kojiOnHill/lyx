@@ -190,8 +190,6 @@ struct StartTag
 	explicit StartTag(std::string const & tag, docstring const & attr,
 					  bool keepempty = false, std::string const & tagtype = "none")
 			: tag_(from_ascii(tag)), attr_(attr), keepempty_(keepempty), tagtype_(tagtype) {}
-	///
-	virtual ~StartTag() = default;
 	/// <tag_ attr_>
 	virtual docstring writeTag() const;
 	/// </tag_>
@@ -222,8 +220,6 @@ struct EndTag
 	/// Create an EndTag corresponding to the given StartTag.
 	explicit EndTag(StartTag const & start_tag)
 	        : tag_(start_tag.tag_), tagtype_(start_tag.tagtype_) {}
-	///
-	virtual ~EndTag() = default;
 	/// </tag_>
 	virtual docstring writeEndTag() const;
 	///
@@ -275,8 +271,6 @@ struct ParTag : public StartTag
 {
 	///
 	explicit ParTag(std::string const & tag, const std::string & attr): StartTag(tag, from_utf8(attr)) {}
-	///
-	~ParTag() override = default;
 };
 
 
@@ -285,8 +279,6 @@ struct NullTag : public StartTag
 {
 	///
 	NullTag(): StartTag("NULLTAG", from_utf8(""), true) {}
-	///
-	~NullTag() override = default;
 };
 
 

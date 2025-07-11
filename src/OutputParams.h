@@ -74,7 +74,6 @@ public:
 	};
 
 	OutputParams(Encoding const *);
-	~OutputParams();
 
 	/** The file that we export depends occasionally on what is to
 	    compile the file.

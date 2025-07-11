@@ -135,11 +135,6 @@ InsetScript::InsetScript(Buffer * buf, string const & label)
 }
 
 
-InsetScript::~InsetScript()
-{
-}
-
-
 docstring InsetScript::layoutName() const
 {
 	return from_ascii("Script:" + scripttranslator().find(params_.type));

@@ -40,8 +40,6 @@ public:
 	///
 	ForkedProcess();
 	///
-	virtual ~ForkedProcess() {}
-	///
 	virtual std::shared_ptr<ForkedProcess> clone() const = 0;
 
 	/** A Signal signal can be emitted once the forked process
