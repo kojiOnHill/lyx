@@ -9,8 +9,8 @@
  * during the compilation.
  */
 
-#ifndef _CONFIG_FUNCTIONS_H
-#define _CONFIG_FUNCTIONS_H
+#ifndef LYX_CONFIG_FUNCTIONS_H
+#define LYX_CONFIG_FUNCTIONS_H
 
 ${Function_Defines}
 

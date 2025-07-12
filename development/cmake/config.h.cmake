@@ -9,8 +9,8 @@
  * during the compilation.
  */
 
-#ifndef _CONFIG_H
-#define _CONFIG_H
+#ifndef LYX_CONFIG_H
+#define LYX_CONFIG_H
 
 // obligatory flags
 #define QT_NO_STL 1

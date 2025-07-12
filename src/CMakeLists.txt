@@ -1,19 +1,14 @@
 # This file is part of LyX, the document processor.
 # Licence details can be found in the file COPYING.
 #
-# Copyright (c) 2006-2011 Peter K�mmel, <syntheticpp@gmx.net>
+# Copyright (c) 2006-2011 Peter Kümmel, <syntheticpp@gmx.net>
 #
 
 project(${_lyx})
 
 include_directories(${TOP_SRC_DIR}/src)
 
-if (CMAKE_CXX_COMPILER_ID MATCHES "^([cC]lang|AppleClang)$")
-  add_compile_options(-Wno-nested-anon-types)
-else()
-  # GNU compiler emits the note "unrecognized command-line option ‘-Wno-nested-anon-types’"
-  # but only if some other warning also occured
-endif()
+handle_warning_options("SRC" "CXX" -Wno-nested-anon-types -Wno-deprecated-declarations -Wno-reserved-macro-identifier)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMakeTargets")
@@ -45,6 +40,40 @@ list(REMOVE_ITEM lyx_sources
 	${TOP_SRC_DIR}/src/lyxinsets.cpp
 	${TOP_SRC_DIR}/src/lyxmathed.cpp)
 
+# -Wno-error needed, because gcc seems to ignore -Wno-missing-noreturn
+handle_source_option("CXX" "${TOP_SRC_DIR}/src/LyX.cpp" -Wno-invalid-noreturn -Wno-missing-noreturn -Wno-error)
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/TextMetrics.cpp -Wno-implicit-int-float-conversion)
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/CursorSlice.cpp -Wno-null-dereference)
+
+foreach(_base BiblioInfo Buffer BufferEncodings BufferList BufferParams BufferView
+	Changes Compare Converter Counters Cursor CursorSlice CutAndPaste
+	DocIterator Font FontInfo FontList Format InsetIterator
+	InsetList Language LaTeX LaTeXFeatures Layout LayoutFile LayoutModuleList LyX LyXRC
+	MetricsInfo PDFOptions ParIterator Paragraph ParagraphMetrics ParagraphParameters
+	Row RowPainter Statistics TexRow Text TextClass TextMetrics TocBackend TocBuilder Trans
+	Undo VSpace factory lyxfind output_docbook output_latex output_plaintext output_xhtml
+	xml) 
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-shadow)
+endforeach()
+if (${LYX_DEBUG_SANITIZE} MATCHES "ADDRESS")
+  foreach(_base BiblioInfo Encoding LaTeX LaTeXFeatures LayoutFile Text VCBackend lyxfind Preamble)
+    handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-maybe-uninitialized)
+  endforeach()
+endif()
+if (${LYX_DEBUG_SANITIZE} MATCHES "UNSPECIFIED")
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/TexRow.cpp -Wno-array-bounds -Wno-stringop-overread)
+endif()
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/Statistics.cpp -Wno-null-dereference)
+foreach(_base Buffer BufferList BufferParams BufferView ConverterCache CutAndPaste
+	LaTeX Text TextClass factory output_docbook output_latex output_plaintext output_xhtml)
+  #handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-deprecated-copy-with-user-provided-dtor)
+endforeach()
+foreach(_base Paragraph xml)
+  #handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-deprecated-copy-with-dtor)
+endforeach()
+foreach(_base LayoutFile Paragraph xml)
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
+endforeach()
 list(REMOVE_ITEM lyx_headers
 	${TOP_SRC_DIR}/src/Variables.h
 	${TOP_SRC_DIR}/src/Section.h)

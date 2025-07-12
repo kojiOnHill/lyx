@@ -13,7 +13,7 @@ file(GLOB _lyxclient_headers ${TOP_SRC_DIR}/src/client/*.h)
 
 list(REMOVE_ITEM _lyxclient_headers "${TOP_SRC_DIR}/src/client/pch.h")
 list(REMOVE_ITEM _lyxclient_sources "${TOP_SRC_DIR}/src/client/lyxclient.cpp")
-
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/client/client.cpp -Wno-implicit-int-float-conversion)
 include_directories(BEFORE
 	"${TOP_SRC_DIR}/src/client"
 	${ZLIB_INCLUDE_DIR})

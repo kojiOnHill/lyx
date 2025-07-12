@@ -18,7 +18,7 @@ project(zlib C)
 set(VERSION "1.2.11")
 set(SRCDIR ${CMAKE_CURRENT_SOURCE_DIR}/1.2.11)
 
-add_compile_options(-Wno-deprecated-non-prototype -Wno-strict-prototypes)
+handle_warning_options("zlib" "CC" -Wno-deprecated-non-prototype -Wno-strict-prototypes -Wnested-anon-types -Wno-implicit-fallthrough -Wno-format-nonliteral -Wno-reserved-macro-identifier)
 
 option(ASM686 "Enable building i686 assembly implementation")
 option(AMD64 "Enable building amd64 assembly implementation")
@@ -130,7 +130,6 @@ set(ZLIB_SRCS
     ${SRCDIR}/uncompr.c
     ${SRCDIR}/zutil.c
 )
-
 
 if(CMAKE_COMPILER_IS_GNUCC)
     if(ASM686)

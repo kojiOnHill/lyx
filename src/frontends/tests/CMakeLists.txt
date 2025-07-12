@@ -12,6 +12,9 @@ target_link_libraries(biblio)
 add_dependencies(lyx_run_tests biblio)
 set_target_properties(biblio PROPERTIES FOLDER "tests/frontends")
 
+if (${LYX_DEBUG_SANITIZE} MATCHES "ADDRESS")
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/frontends/tests/biblio.cpp -Wno-maybe-uninitialized)
+endif()
 foreach(tst ${TESTS})
   add_test(NAME "frontends/${tst}"
     COMMAND ${CMAKE_COMMAND}

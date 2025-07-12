@@ -11,7 +11,7 @@ endif()
 
 project(hunspell)
 
-add_compile_options(-Wno-unused-but-set-variable)
+handle_warning_options("hunspell" "CXX" -Wno-unused-but-set-variable -Wno-deprecated-declarations -Wno-format-nonliteral -Wno-unused-macros)
 
 set(HUNSPELL_VERSION 1.7.0)
 
@@ -37,6 +37,10 @@ set(SRCS
     ${SRCDIR}/hunspell/hunspell.cxx
     ${SRCDIR}/hunspell/replist.cxx)
 
+handle_source_option("CC" ${SRCDIR}/hunspell/affixmgr.cxx -Wno-shadow)
+foreach(_base affixmgr suggestmgr)
+  handle_source_option("CC" ${SRCDIR}/hunspell/${_base}.cxx -Wno-null-dereference)
+endforeach()
 set(HEADERS
     ${SRCDIR}/hunspell/affentry.hxx
     ${SRCDIR}/hunspell/htypes.hxx

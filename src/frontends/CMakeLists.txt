@@ -1,7 +1,7 @@
 # This file is part of LyX, the document processor.
 # Licence details can be found in the file COPYING.
 #
-# Copyright (c) 2006-2011 Peter Kümmel, <syntheticpp@gmx.net>
+# Copyright (c) 2006-2011 Peter KÃ¼mmel, <syntheticpp@gmx.net>
 #
 
 project(frontends)
@@ -13,7 +13,7 @@ add_subdirectory(qt)
 file(GLOB frontends_sources ${TOP_SRC_DIR}/src/frontends/${LYX_CPP_FILES})
 file(GLOB frontends_headers ${TOP_SRC_DIR}/src/frontends/${LYX_HPP_FILES})
 
-
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/frontends/WorkAreaManager.cpp -Wno-shadow)
 if(NOT LYX_MERGE_FILES)
 	add_library(frontends ${library_type} ${frontends_sources} ${frontends_headers})
 else()

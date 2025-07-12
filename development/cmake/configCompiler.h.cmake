@@ -9,8 +9,8 @@
  * during the compilation.
  */
 
-#ifndef _CONFIG_COMPILER_H
-#define _CONFIG_COMPILER_H
+#ifndef LYX_CONFIG_COMPILER_H
+#define LYX_CONFIG_COMPILER_H
 
 
 #cmakedefine HAVE_ISTREAM 1

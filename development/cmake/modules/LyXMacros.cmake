@@ -1,5 +1,5 @@
 #
-#  Copyright (c) 2006-2011 Peter Kümmel, <syntheticpp@gmx.net>
+#  Copyright (c) 2006-2011 Peter Kï¿½mmel, <syntheticpp@gmx.net>
 #
 #  Redistribution and use in source and binary forms, with or without
 #  modification, are permitted provided that the following conditions
@@ -491,3 +491,103 @@ function(lyxgetknowncmakestd max_desired min_enabled result)
   set(${result} ${CXX_STD_LIST} PARENT_SCOPE)
 endfunction()
 
+# Assign a cache variable to an option.
+# E.g. "CC" + "-Wno-shadow" -> "CC_WSHADOW"
+# or "CXX" + "-Wformat=2" -> "CXX_WFORMAT_2"
+function(get_warning_var_name _compiler _warning _testwarning _varname)
+  string(REGEX REPLACE "^\-Wno\-" "-W" _testwarning1 ${_warning})
+  string(REGEX REPLACE "[\-=]" "_" _flag3 ${_testwarning1})
+  # create check_flag_name for cache
+  string(TOUPPER ${_flag3} _FLAG3)
+  set(${_varname} "${_compiler}${_FLAG3}" PARENT_SCOPE)
+  #message(STATUS "setting set(${_testwarning} ${_testwarning1})")
+  set(${_testwarning} ${_testwarning1} PARENT_SCOPE)
+endfunction(get_warning_var_name)
+
+function(perform_check_warning _compiler VARNAME _testwarning _valid)
+  mark_as_advanced(${VARNAME}) # Needed to avoid multiple checks on same warning-option
+  if (${_compiler} MATCHES "CC")
+    check_c_compiler_flag(${_testwarning} ${VARNAME})
+  else()
+    #message(STATUS "performing check_cxx_compiler_flag(${_testwarning} ${VARNAME})")
+    check_cxx_compiler_flag(${_testwarning} ${VARNAME})
+  endif()
+  if (${${VARNAME}})
+    set(${_valid} ON PARENT_SCOPE)
+  else()
+    set(${_valid} OFF PARENT_SCOPE)
+  endif()
+endfunction(perform_check_warning)
+
+# Add extra warning option to specific source file
+# mostly used to disable option (like "-Wno-invalid-noreturn")
+# given in parameters ${ARGN}
+# e.g. handle_source_option("CXX" "${TOP_SRC_DIR}/src/LyX.cpp" -Wno-invalid-noreturn -Wno-missing-noreturn)
+macro(handle_source_option _compiler _sourcefile)
+  #message(STATUS "handle_source_option ${_compiler} ${_sourcefile} ${ARGN}")
+  set(tmp_list "")
+  get_source_file_property(_myflags ${_sourcefile} COMPILE_FLAGS)
+  if (${_myflags} MATCHES "NOTFOUND")
+    # this happens for the first time this _sourcefile has no COMPILE_FLAGS property yet
+    set(_myflags "")
+  else()
+    string(REGEX REPLACE "^ +" "" _myflags ${_myflags})
+    string(REGEX REPLACE " " ";" _myflags ${_myflags})
+  endif()
+  foreach(_lab ${_myflags} ${ARGN})
+    get_warning_var_name(${_compiler} ${_lab} _testwarning NAME)
+    perform_check_warning(${_compiler} ${NAME} ${_testwarning} _valid)
+    if (${_valid})
+      set(tmp_list "${tmp_list} ${_lab}")
+    endif()
+  endforeach()
+  if (tmp_list)
+    #message(STATUS "Adding ${tmp_list} to ${_sourcefile}")
+    set_property(SOURCE ${_sourcefile} PROPERTY COMPILE_FLAGS ${tmp_list})
+  endif()
+endmacro(handle_source_option)
+
+# Extract only valid compiler options from LYX_CXX_OPTIONS and LYX_CXX_FLAGS_EXTRA,
+# But also omit options provided with any the extra parameters ${ARGN}
+# Selected options will be valid for current source directory + all its subdirectories
+#
+# like: handle_warning_options("libiconv" "CC" -Wnested-anon-types -Werror)
+macro(handle_warning_options _source _compiler)
+  set(tmp_list ${LYX_CXX_OPTIONS} ${LYX_CXX_FLAGS_EXTRA})
+  list(REMOVE_DUPLICATES tmp_list)
+  #message(STATUS "_source = ${_source},_compiler = ${_compiler}, tmp_list = ${tmp_list}")
+  #message(STATUS "ARGN = ${ARGN}")
+  set(result_list)
+  foreach(_lab ${ARGN})
+    if (${_lab} MATCHES "^\-Wno\-.*")
+      string(REGEX REPLACE "^\-Wno\-" "-W" _lab2 ${_lab})
+      #message(STATUS "Removing option ${_lab2}")
+      list(REMOVE_ITEM tmp_list ${_lab2})
+      #message(STATUS "Appending option ${_lab}")
+      list(APPEND tmp_list ${_lab})
+    else()
+      list(REMOVE_ITEM tmp_list ${_lab})
+    endif()
+  endforeach()
+  foreach(_flag ${tmp_list})
+    get_warning_var_name(${_compiler} ${_flag} _testwarning NAME)
+    message(STATUS "Name = ${NAME}, _testwarning = ${_testwarning}")
+    perform_check_warning(${_compiler} ${NAME} ${_testwarning} _valid)
+    if (${_valid})
+      #message(STATUS "ADDING option ${_flag}")
+      add_compile_options(${_flag})
+      list(APPEND result_list ${_flag})
+    else()
+      #message(STATUS "DISCARD option ${_flag}")
+    endif()
+  endforeach()
+  message(STATUS "result_list = ${result_list}")
+endmacro(handle_warning_options)
+
+macro(check_includes _par)
+  get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+  message(STATUS "source dir${_par} = ${CMAKE_CURRENT_SOURCE_DIR}")
+  foreach(dir ${dirs})
+    message(STATUS "include dir${_par} = '${dir}'")
+  endforeach()
+endmacro(check_includes)

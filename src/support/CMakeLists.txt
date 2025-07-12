@@ -32,6 +32,17 @@ list(REMOVE_ITEM support_sources
 	${TOP_SRC_DIR}/src/support/os_unix.cpp
 	${TOP_SRC_DIR}/src/support/os_cygwin.cpp
 	${TOP_SRC_DIR}/src/support/gettext.cpp)
+if (${LYX_DEBUG_SANITIZE} MATCHES "ADDRESS")
+  foreach(_base filetools os)
+    handle_source_option("CXX" ${TOP_SRC_DIR}/src/support/${_base}.cpp -Wno-maybe-uninitialized)
+  endforeach()
+endif()
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/support/environment.cpp -Wno-unreachable-code-return -Wno-null-dereference)
+foreach(_base FileMonitor unicode)
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/support/${_base}.cpp -Wno-shadow)
+endforeach()
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/support/checksum.cpp -Wno-null-dereference)
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/support/ForkedCalls.cpp -Wno-delete-non-abstract-non-virtual-dtor)
 if(NOT STD_STRING_USES_COW)
 	list(REMOVE_ITEM support_sources ${TOP_SRC_DIR}/src/support/trivstring.cpp)
 endif()

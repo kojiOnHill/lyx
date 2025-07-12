@@ -720,6 +720,15 @@ elseif (LYX_DEBUG_SANITIZE MATCHES "UNSPECIFIED")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=undefined -fno-omit-frame-pointer")
 endif()
 
+# The following includes are needed because of use
+# check_cxx_compiler_flag() and check_c_compiler_flag()
+#
+# Also the following setting with LYX_GCC11_MODE is needed because cmake does not honor
+# CMAKE_CXX_STANDARD while performing tests like
+# check_cxx_source_compiles("..." HAVE_DEF_MAKE_UNIQUE)
+#
+include(CheckCXXCompilerFlag)
+include(CheckCCompilerFlag)	# used in 3rdparty
 if(MSVC)
   if (CXX11_FLAG MATCHES "\\+\\+([0-9]+)")
     set(CMAKE_CXX_STANDARD ${CMAKE_MATCH_1})
@@ -742,17 +751,7 @@ else()
 	  set(CMAKE_CXX_STANDARD 11)
 	  set(LYX_GCC11_MODE "--std=c++11")
 	endif()
-	# The following setting with LYX_GCC11_MODE is needed because cmake does not honor
-	# CMAKE_CXX_STANDARD while performing tests like
-	# check_cxx_source_compiles("..." HAVE_DEF_MAKE_UNIQUE)
-	include(CheckCXXCompilerFlag)
-	unset(CHECK_WNODEPRECATEDCOPY_FLAG CACHE)
-	CHECK_CXX_COMPILER_FLAG("-Wdeprecated-copy" CHECK_WNODEPRECATEDCOPY_FLAG)
-	if(${CHECK_WNODEPRECATEDCOPY_FLAG})
-		set(LYX_CXX_FLAGS "-Wall -Wextra -Wno-deprecated-copy ${LYX_GCC11_MODE}${LYX_CXX_FLAGS}")
-	else()
-		set(LYX_CXX_FLAGS "-Wall -Wextra ${LYX_GCC11_MODE}${LYX_CXX_FLAGS}")
-	endif()
+	set(LYX_CXX_OPTIONS "-Wall;-Wextra;-Wno-deprecated-copy")
 	message(STATUS "LYX_USE_QT = ${LYX_USE_QT}")
 	if(LYX_USE_QT MATCHES "QT6")
 	  if (LYX_DEBUG_GLIBC OR LYX_DEBUG_GLIBC_PEDANTIC)
@@ -779,14 +778,6 @@ endif()
 
 set(LYX_CXX_FLAGS_EXTRA "" CACHE STRING "Desired semicolon separated list of extra cxx compile flags, like '-Werror'")
 mark_as_advanced(LYX_CXX_FLAGS_EXTRA)
-if(LYX_CXX_FLAGS_EXTRA)
-	foreach(_flag ${LYX_CXX_FLAGS_EXTRA})
-		CHECK_CXX_COMPILER_FLAG(${_flag} tmp_check_flag)
-		if (${tmp_check_flag})
-			add_compile_options(${_flag})
-		endif()
-	endforeach()
-endif()
 
 if(LYX_XMINGW)
 	list(APPEND CMAKE_FIND_ROOT_PATH ${GNUWIN32_DIR})
@@ -883,6 +874,7 @@ include_directories(${TOP_BINARY_DIR} ${TOP_SRC_DIR}/src)
 set(Spelling_FOUND OFF)
 set(Include_used_spellchecker)   # String will be inserted into config.h
 
+message(STATUS "LYX_EXTERNAL_MYTHES = ${LYX_EXTERNAL_MYTHES}")
 if (LYX_EXTERNAL_MYTHES MATCHES "AUTO")
   # try system library first
   find_package(MYTHESLIB)

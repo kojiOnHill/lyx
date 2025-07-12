@@ -9,8 +9,8 @@
  * during the compilation.
  */
 
-#ifndef _CONFIG_INCLUDES_H
-#define _CONFIG_INCLUDES_H
+#ifndef LYX_CONFIG_INCLUDES_H
+#define LYX_CONFIG_INCLUDES_H
 
 ${Include_Defines}
 

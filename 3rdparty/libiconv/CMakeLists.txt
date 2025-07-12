@@ -25,7 +25,7 @@ set(LIBICONV_VERSION 1.15)
 
 set(SRCDIR ${LIBICONV_VERSION})
 
-add_compile_options(-Wno-deprecated-non-prototype -Wno-strict-prototypes -Wno-static-in-inline -Wno-parentheses-equality -Wno-undef)
+handle_warning_options("libiconv" "CC" -Wno-error -Wdeprecated-non-prototype -Wstrict-prototypes -Wstatic-in-inline -Wparentheses-equality -Wundef -Wno-reserved-macro-identifier)
 
 # Options
 option(ENABLE_EXTRA "Enable a few rarely used encodings" OFF)
@@ -68,6 +68,8 @@ set(ICONV_INCLUDE_DIR ${BINDIR}/include CACHE STRING "libiconv include  dir" FOR
 set(ICONV_LIBRARY iconv CACHE STRING "libiconv library" FORCE)
 set(ICONV_FOUND iconv CACHE STRING "libiconv found" FORCE)
 
+handle_source_option("CC" ${SRCDIR}/lib/iconv.c -Werror -Wno-cast-align -Wno-parentheses-equality -Wno-static-in-inline -Wno-unused-parameter -Wno-sign-compare -Wno-type-limits -Wno-missing-field-initializers -Wno-unused-macros -Wno-redundant-decls -Wno-implicit-fallthrough -Wno-strict-prototypes)
+handle_source_option("CC" ${SRCDIR}/lib/relocatable.c -Wno-unused-macros)
 set_target_properties(iconv PROPERTIES
 	FOLDER "3rd_party"
 	INTERPROCEDURAL_OPTIMIZATION ${LYX_IPO_SUPPORTED})

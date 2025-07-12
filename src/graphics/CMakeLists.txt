@@ -1,7 +1,7 @@
 # This file is part of LyX, the document processor.
 # Licence details can be found in the file COPYING.
 #
-# Copyright (c) 2006-2011 Peter Kümmel, <syntheticpp@gmx.net>
+# Copyright (c) 2006-2011 Peter KÃ¼mmel, <syntheticpp@gmx.net>
 #
 
 project(graphics)
@@ -9,6 +9,18 @@ project(graphics)
 file(GLOB graphics_sources ${TOP_SRC_DIR}/src/graphics/${LYX_CPP_FILES})
 file(GLOB graphics_headers ${TOP_SRC_DIR}/src/graphics/${LYX_HPP_FILES})
 
+if (${LYX_DEBUG_SANITIZE} MATCHES "ADDRESS")
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/graphics/epstools.cpp -Wno-maybe-uninitialized)
+endif()
+foreach(_base GraphicsLoader PreviewImage PreviewLoader)
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/graphics/${_base}.cpp -Wno-shadow)
+endforeach()
+foreach(_base GraphicsConverter PreviewLoader)
+  #handle_source_option("CXX" ${TOP_SRC_DIR}/src/graphics/${_base}.cpp -Wno-deprecated-copy-with-user-provided-dtor)
+endforeach()
+foreach(_base GraphicsCacheItem GraphicsConverter GraphicsLoader PreviewLoader)
+  handle_source_option("CXX" ${TOP_SRC_DIR}/src/graphics/${_base}.cpp -Wno-delete-abstract-non-virtual-dtor -Wno-delete-non-abstract-non-virtual-dtor)
+endforeach()
 lyx_add_msvc_pch(graphics)
 
 include_directories(${TOP_SRC_DIR}/src/graphics)
