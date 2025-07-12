@@ -77,34 +77,35 @@ def minor_versions(major, last_minor_version):
 # Regular expressions used
 format_re = re.compile(r"(\d)[\.,]?(\d\d)")
 fileformat = re.compile(r"\\lyxformat\s*(\S*)")
+layoutformat = re.compile(r"Format\s*(\S*)")
 original_version = re.compile(b".*?LyX ([\\d.]*)")
 original_tex2lyx_version = re.compile(b".*?tex2lyx ([\\d.]*)")
 
 ##
 # file format information:
-#  file, supported formats, stable release versions
+#  file, supported formats, stable release versions, layout format
 format_relation = [
-    ("0_06", [200], minor_versions("0.6", 4)),
-    ("0_08", [210], minor_versions("0.8", 6) + ["0.7"]),
-    ("0_10", [210], minor_versions("0.10", 7) + ["0.9"]),
-    ("0_12", [215], minor_versions("0.12", 1) + ["0.11"]),
-    ("1_0", [215], minor_versions("1.0", 4)),
-    ("1_1", [215], minor_versions("1.1", 4)),
-    ("1_1_5", [216], ["1.1", "1.1.5", "1.1.5.1", "1.1.5.2"]),
-    ("1_1_6_0", [217], ["1.1", "1.1.6", "1.1.6.1", "1.1.6.2"]),
-    ("1_1_6_3", [218], ["1.1", "1.1.6.3", "1.1.6.4"]),
-    ("1_2", [220], minor_versions("1.2", 4)),
-    ("1_3", [221], minor_versions("1.3", 7)),
+    ("0_06", [200], minor_versions("0.6", 4), 0),
+    ("0_08", [210], minor_versions("0.8", 6) + ["0.7"], 0),
+    ("0_10", [210], minor_versions("0.10", 7) + ["0.9"], 0),
+    ("0_12", [215], minor_versions("0.12", 1) + ["0.11"], 0),
+    ("1_0", [215], minor_versions("1.0", 4), 0),
+    ("1_1", [215], minor_versions("1.1", 4), 0),
+    ("1_1_5", [216], ["1.1", "1.1.5", "1.1.5.1", "1.1.5.2"], 0),
+    ("1_1_6_0", [217], ["1.1", "1.1.6", "1.1.6.1", "1.1.6.2"], 0),
+    ("1_1_6_3", [218], ["1.1", "1.1.6.3", "1.1.6.4"], 0),
+    ("1_2", [220], minor_versions("1.2", 4), 0),
+    ("1_3", [221], minor_versions("1.3", 7), 0),
     # Note that range(i,j) is up to j *excluded*.
-    ("1_4", list(range(222, 246)), minor_versions("1.4", 5)),
-    ("1_5", list(range(246, 277)), minor_versions("1.5", 7)),
-    ("1_6", list(range(277, 346)), minor_versions("1.6", 10)),
-    ("2_0", list(range(346, 414)), minor_versions("2.0", 8)),
-    ("2_1", list(range(414, 475)), minor_versions("2.1", 5)),
-    ("2_2", list(range(475, 509)), minor_versions("2.2", 4)),
-    ("2_3", list(range(509, 545)), minor_versions("2.3", 7)),
-    ("2_4", list(range(545, 621)), minor_versions("2.4", 0)),
-    ("2_5", (), minor_versions("2.5", 0)),
+    ("1_4", list(range(222, 246)), minor_versions("1.4", 5), 2),
+    ("1_5", list(range(246, 277)), minor_versions("1.5", 7), 4),
+    ("1_6", list(range(277, 346)), minor_versions("1.6", 10), 11),
+    ("2_0", list(range(346, 414)), minor_versions("2.0", 8), 35),
+    ("2_1", list(range(414, 475)), minor_versions("2.1", 5), 48),
+    ("2_2", list(range(475, 509)), minor_versions("2.2", 4), 60),
+    ("2_3", list(range(509, 545)), minor_versions("2.3", 7), 66),
+    ("2_4", list(range(545, 621)), minor_versions("2.4", 0), 104),
+    ("2_5", (), minor_versions("2.5", 0), 1000),
 ]
 
 ####################################################################
@@ -230,6 +231,7 @@ class LyX_base:
     def __init__(
         self,
         end_format=0,
+        end_layoutformat=0,
         input="",
         output="",
         error="",
@@ -291,9 +293,18 @@ class LyX_base:
             for step in format_relation:
                 if self.end_format in step[1]:
                     final_version = step[2][1]
+
+        self.end_layoutformat = 0
+        for version in format_relation:
+            if final_version in version[2]:
+                # set the layout format for that version
+                self.end_layoutformat = version[3]
+                break
+        
         self.final_version = final_version
         self.warning("Final version: %s" % self.final_version, 10)
         self.warning("Final format: %d" % self.end_format, 10)
+        self.warning("Final layout format: %d" % self.end_layoutformat, 10)
 
         self.backend = "latex"
         self.textclass = "article"
@@ -673,6 +684,9 @@ class LyX_base:
         mode, conversion_chain = self.chain()
         self.warning("conversion chain: " + str(conversion_chain), 3)
 
+        if mode == "revert":
+             self.check_local_layouts()
+
         for step in conversion_chain:
             steps = getattr(__import__("lyx_" + step), mode)
 
@@ -820,6 +834,30 @@ class LyX_base:
         self.header[i:j] = []
         return True
 
+    def check_local_layouts(self):
+        "Check whether local layout formats are supported in final version."
+        i = 0
+        while True:
+            i = find_token(self.header, "\\begin_local_layout", i)
+            if i == -1:
+                return
+            j = find_end_of(self.header, i, "\\begin_local_layout", "\\end_local_layout")
+            if j == -1:
+                # this should not happen
+                self.warning("Malformed LyX document: Can't find end of local layout!")
+                return
+            for line in self.header[i:j]:
+                result = layoutformat.match(line)
+                if result:
+                    llf = int(result.group(1))
+                    if llf > self.end_layoutformat:
+                        self.warning("A local layout in this document uses a higher layout format (%i) "
+                                     "than is supported in the target version (%i). "
+                                     "The output of the generated file might not work!" % (llf, self.end_layoutformat))
+                    break
+            i += 1
+
+
     def del_from_header(self, lines):
         "Delete `lines` from the document header, return success."
         i = find_complete_lines(self.header, lines)
@@ -899,6 +937,7 @@ class File(LyX_base):
     def __init__(
         self,
         end_format=0,
+        end_layoutformat=0,
         input="",
         output="",
         error="",
@@ -911,6 +950,7 @@ class File(LyX_base):
         LyX_base.__init__(
             self,
             end_format,
+            end_layoutformat,
             input,
             output,
             error,
