@@ -280,6 +280,22 @@ void GuiInputMethod::setPreeditStyle(
 	d->initial_tf_entry_ = true;
 #endif
 
+	// brushes to draw each segment
+	QBrush brush[4];
+	// foreground of focused segment
+	brush[0].setColor(guiApp->colorCache().get(Color_preeditfocustext));
+	// background of focused segment
+	brush[1].setColor(guiApp->colorCache().get(Color_preeditfocus));
+	// foreground of other segments
+	brush[2].setColor(guiApp->colorCache().get(Color_preedittext));
+	// background of other segments
+	brush[3].setColor(guiApp->colorCache().get(Color_preeditbg));
+	// make pattern solid
+	brush[0].setStyle(Qt::SolidPattern);
+	brush[1].setStyle(Qt::SolidPattern);
+	brush[2].setStyle(Qt::SolidPattern);
+	brush[3].setStyle(Qt::SolidPattern);
+
 	// next char position to be set up the preedit style
 	pos_type next_seg_pos = 0;
 	//
@@ -331,7 +347,7 @@ void GuiInputMethod::setPreeditStyle(
 			// going to utilize, we need prepare for *any* type of information
 			// arrival that satisfies the documented protocol.
 
-			next_seg_pos = setTextFormat(it, next_seg_pos);
+			next_seg_pos = setTextFormat(it, next_seg_pos, brush);
 
 			break;
 
@@ -434,7 +450,7 @@ void GuiInputMethod::setPreeditStyle(
 }
 
 pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
-                                       pos_type next_seg_pos)
+                                       pos_type next_seg_pos, const QBrush brush[])
 {
 	// get LyX's color setting
 	QTextCharFormat char_format = it.value.value<QTextCharFormat>();
@@ -460,19 +476,17 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 	// set the style of a focused sector as specified by color themes
 	// it uses a system color if "Use system colors" is checked
-	QBrush fgbrush;
-	QBrush bgbrush;
+	// NOTE: brush size is assumed to be four
+	//       if it is to be changed, change the declaration of array in
+	//       setPreeditStyle()
 	if (char_format.background().color() != QColorConstants::Black) {
-		fgbrush.setColor(guiApp->colorCache().get(Color_preeditfocustext));
-		bgbrush.setColor(guiApp->colorCache().get(Color_preeditfocus));
+		char_format.setForeground(brush[0]);
+		char_format.setBackground(brush[1]);
 	} else {
-		fgbrush.setColor(guiApp->colorCache().get(Color_preedittext));
-		bgbrush.setColor(guiApp->colorCache().get(Color_preeditbg));
+		char_format.setForeground(brush[2]);
+		char_format.setBackground(brush[3]);
 	}
-	fgbrush.setStyle(Qt::SolidPattern);
-	bgbrush.setStyle(Qt::SolidPattern);
-	char_format.setForeground(fgbrush);
-	char_format.setBackground(bgbrush);
+
 #endif // QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 
 	// The void "cursor segment" in the composing mode comes with it.start > 0 and
