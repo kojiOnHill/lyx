@@ -359,7 +359,7 @@ bool TextClass::read(FileName const & filename, ReadType rt)
 
 	if (retval == FORMAT_UNKNOWN) {
 		docstring const msg =
-			bformat(_("The layout file %1$s has a version unkown to LyX and could thus not be converted.\n"),
+			bformat(_("The layout file %1$s has a version unknown to LyX and could thus not be converted."),
 				from_utf8(filename.absFileName()));
 		frontend::Alert::warning(_("Layout Conversion Error"), msg);
 		return false;
