@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.5\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-07-11 11:23+0200\n"
-"PO-Revision-Date: 2025-07-11 09:52+0000\n"
+"POT-Creation-Date: 2025-07-12 14:00+0200\n"
+"PO-Revision-Date: 2025-07-12 12:15+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -35989,6 +35989,29 @@ msgstr "Formát odstavca je nastavený"
 #: src/TextClass.cpp:124
 msgid "Plain Layout"
 msgstr "Prostý formát"
+
+#: src/TextClass.cpp:362
+#, c-format
+msgid ""
+"The layout file %1$s has a version unknown to LyX and could thus not be "
+"converted."
+msgstr ""
+"Súbor formátu %1$s má verziu, ktorú LyX nepozná, a preto sa nedá "
+"skonvertovať."
+
+#: src/TextClass.cpp:364 src/TextClass.cpp:394
+msgid "Layout Conversion Error"
+msgstr "Chyba pri konverzii formátu"
+
+#: src/TextClass.cpp:395
+msgid ""
+"A local layout of this document has a version unknown to LyX and could thus "
+"not be converted.\n"
+"Please check Document > Settings > Local Layouts!"
+msgstr ""
+"Lokálny formát tohto dokumentu má verziu, ktorú LyX nepozná, a preto sa nedá "
+"skonvertovať.\n"
+"Skontrolujte Dokument > Nastavenia…> Lokálny formát!"
 
 #: src/TextClass.cpp:940
 msgid "Missing File"
