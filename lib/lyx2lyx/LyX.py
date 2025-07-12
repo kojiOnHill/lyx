@@ -105,7 +105,7 @@ format_relation = [
     ("2_2", list(range(475, 509)), minor_versions("2.2", 4), 60),
     ("2_3", list(range(509, 545)), minor_versions("2.3", 7), 66),
     ("2_4", list(range(545, 621)), minor_versions("2.4", 0), 104),
-    ("2_5", (), minor_versions("2.5", 0), 1000),
+    ("2_5", (), minor_versions("2.5", 0), sys.maxsize),
 ]
 
 ####################################################################
@@ -114,7 +114,7 @@ format_relation = [
 if not format_relation[-1][1]:
     step, mode = format_relation[-1][0], "convert"
     convert = getattr(__import__("lyx_" + step), mode)
-    format_relation[-1] = (step, [conv[0] for conv in convert], format_relation[-1][2], sys.maxsize)
+    format_relation[-1] = (step, [conv[0] for conv in convert], format_relation[-1][2], format_relation[-1][3])
 #                                                                  #
 ####################################################################
 
