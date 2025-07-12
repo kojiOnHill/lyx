@@ -296,7 +296,7 @@ class LyX_base:
 
         self.end_layoutformat = 0
         for version in format_relation:
-            if final_version in version[2]:
+            if final_version in version[2] and len(version) > 3:
                 # set the layout format for that version
                 self.end_layoutformat = version[3]
                 break
