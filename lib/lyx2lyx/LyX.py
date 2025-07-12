@@ -114,7 +114,7 @@ format_relation = [
 if not format_relation[-1][1]:
     step, mode = format_relation[-1][0], "convert"
     convert = getattr(__import__("lyx_" + step), mode)
-    format_relation[-1] = (step, [conv[0] for conv in convert], format_relation[-1][2])
+    format_relation[-1] = (step, [conv[0] for conv in convert], format_relation[-1][2], sys.maxsize)
 #                                                                  #
 ####################################################################
 
@@ -296,7 +296,7 @@ class LyX_base:
 
         self.end_layoutformat = 0
         for version in format_relation:
-            if final_version in version[2] and len(version) > 3:
+            if final_version in version[2]:
                 # set the layout format for that version
                 self.end_layoutformat = version[3]
                 break
