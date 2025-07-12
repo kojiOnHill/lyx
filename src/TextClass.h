@@ -156,7 +156,8 @@ public:
 		OK,
 		OK_OLDFORMAT,
 		ERROR,
-		FORMAT_MISMATCH
+		FORMAT_MISMATCH,
+		FORMAT_UNKNOWN
 	};
 
 	/// Performs the read of the layout file.
@@ -164,7 +165,7 @@ public:
 	// FIXME Should return ReturnValues....
 	bool read(support::FileName const & filename, ReadType rt = BASECLASS);
 	///
-	ReturnValues read(std::string const & str, ReadType rt = MODULE);
+	ReturnValues read(std::string const & str, ReadType rt = MODULE, bool warn = false);
 	///
 	ReturnValues read(support::Lexer & lex, ReadType rt = BASECLASS);
 	/// validates the layout information passed in str

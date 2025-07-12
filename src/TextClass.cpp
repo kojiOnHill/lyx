@@ -354,9 +354,16 @@ TextClass::ReturnValues TextClass::readWithoutConv(FileName const & filename, Re
 bool TextClass::read(FileName const & filename, ReadType rt)
 {
 	ReturnValues const retval = readWithoutConv(filename, rt);
-	if (retval != FORMAT_MISMATCH)
+	if (retval != FORMAT_MISMATCH && retval != FORMAT_UNKNOWN)
 		return retval == OK;
 
+	if (retval == FORMAT_UNKNOWN) {
+		docstring const msg =
+			bformat(_("The layout file %1$s has a version unkown to LyX and could thus not be converted.\n"),
+				from_utf8(filename.absFileName()));
+		frontend::Alert::warning(_("Layout Conversion Error"), msg);
+		return false;
+	}
 	bool const worx = convertLayoutFormat(filename, rt);
 	if (!worx)
 		LYXERR0 ("Unable to convert " << filename <<
@@ -372,15 +379,24 @@ TextClass::ReturnValues TextClass::validate(std::string const & str)
 }
 
 
-TextClass::ReturnValues TextClass::read(std::string const & str, ReadType rt)
+TextClass::ReturnValues TextClass::read(std::string const & str, ReadType rt, bool const warn)
 {
 	Lexer lexrc(textClassTags);
 	istringstream is(str);
 	lexrc.setStream(is);
 	ReturnValues retval = read(lexrc, rt);
 
-	if (retval != FORMAT_MISMATCH)
+	if (retval != FORMAT_MISMATCH && retval != FORMAT_UNKNOWN)
 		return retval;
+
+	if (retval == FORMAT_UNKNOWN && rt == MODULE) {
+		if (warn)
+			frontend::Alert::warning(_("Layout Conversion Error"),
+						 _("A local layout of this document has a version unknown to LyX "
+						   "and could thus not be converted.\n"
+						   "Please check Document > Settings > Local Layouts!"));
+		return FORMAT_UNKNOWN;
+	}
 
 	// write the layout string to a temporary file
 	TempFile tmp("TextClass_read");
@@ -412,8 +428,12 @@ TextClass::ReturnValues TextClass::read(Lexer & lexrc, ReadType rt)
 
 	// The first usable line should be
 	// Format LAYOUT_FORMAT
-	if (lexrc.lex() != TC_FORMAT || !lexrc.next()
-	    || lexrc.getInteger() != LAYOUT_FORMAT)
+	if (lexrc.lex() != TC_FORMAT || !lexrc.next())
+		return FORMAT_MISMATCH;
+	int const format = lexrc.getInteger();
+	if (format > LAYOUT_FORMAT)
+		return FORMAT_UNKNOWN;
+	else if (format != LAYOUT_FORMAT)
 		return FORMAT_MISMATCH;
 
 	// parsing

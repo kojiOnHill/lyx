@@ -3133,7 +3133,7 @@ void GuiDocument::classChanged()
 	// or  whatever else there could be). Our parameters come from the document
 	// class. So when we set the base class, we also need to recreate the document
 	// class. Otherwise, we still have the old one.
-	bp_.makeDocumentClass();
+	bp_.makeDocumentClass(false, false, true);
 	paramsToDialog();
 }
 
@@ -3418,7 +3418,7 @@ void GuiDocument::modulesChanged()
 	}
 
 	modulesChanged_ = true;
-	bp_.makeDocumentClass();
+	bp_.makeDocumentClass(false, false, true);
 	paramsToDialog();
 	changed();
 }
@@ -3593,7 +3593,7 @@ void GuiDocument::updateDefaultFormat()
 	if (idx >= 0) {
 		string const classname = fromqstr(latexModule->classCO->getData(idx));
 		param_copy.setBaseClass(classname, buffer().layoutPos());
-		param_copy.makeDocumentClass(true);
+		param_copy.makeDocumentClass(true, false, true);
 	}
 	outputModule->defaultFormatCO->blockSignals(true);
 	outputModule->defaultFormatCO->clear();

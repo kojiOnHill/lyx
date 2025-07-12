@@ -3182,7 +3182,7 @@ LayoutFileIndex const & BufferParams::baseClassID() const
 }
 
 
-void BufferParams::makeDocumentClass(bool clone, bool internal)
+void BufferParams::makeDocumentClass(bool clone, bool internal, bool fromgui)
 {
 	if (!baseClass())
 		return;
@@ -3197,11 +3197,12 @@ void BufferParams::makeDocumentClass(bool clone, bool internal)
 	TextClass::ReturnValues success = TextClass::OK;
 	if (!forced_local_layout_.empty())
 		success = doc_class_->read(to_utf8(forced_local_layout_),
-		                           TextClass::MODULE);
+		                           TextClass::MODULE, !clone && !fromgui);
 	if (!local_layout_.empty() &&
 	    (success == TextClass::OK || success == TextClass::OK_OLDFORMAT))
-		success = doc_class_->read(to_utf8(local_layout_), TextClass::MODULE);
-	if (success != TextClass::OK && success != TextClass::OK_OLDFORMAT) {
+		success = doc_class_->read(to_utf8(local_layout_), TextClass::MODULE, !clone && !fromgui);
+	if (success != TextClass::OK && success != TextClass::OK_OLDFORMAT
+	    && success != TextClass::FORMAT_UNKNOWN) {
 		docstring const msg = _("Error reading internal layout information");
 		frontend::Alert::warning(_("Read Error"), msg);
 	}
