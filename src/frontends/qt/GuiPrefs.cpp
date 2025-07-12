@@ -1911,6 +1911,10 @@ void PrefColors::changeSysColor()
 void PrefColors::changeAutoapply()
 {
 	autoapply_ = autoapplyCB->isChecked() ? true : false;
+	if (autoapply_) {
+		applyRC(form_->rc());
+		form_->dispatchParams();
+	}
 }
 
 
