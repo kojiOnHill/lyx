@@ -1452,17 +1452,18 @@ void PrefColors::saveTheme()
 }
 
 
-bool PrefColors::askThemeName(bool porting)
+bool PrefColors::askThemeName(bool porting, QString name_suggestion)
 {
 	QString prompt = porting ?
 	            qt_("What is the name of the color theme?") :
 	            qt_("What is the name of the new color theme to save?");
+	QString suggestion = (name_suggestion != "") ? name_suggestion : theme_name_;
 	bool ok;
 	theme_name_ =
 	        QInputDialog::getText(this, qt_("Name the color theme"),
 	                              prompt, QLineEdit::Normal,
-	                              (theme_name_ == "") ? qt_("New theme name")
-	                                                  : theme_name_, &ok);
+	                              (suggestion == "") ? qt_("New theme name")
+	                                                  : suggestion, &ok);
 
 	if (ok && !theme_name_.isEmpty()) {
 		// Makefile cannot handle spaces in filenames directly
@@ -1537,7 +1538,7 @@ void PrefColors::importTheme()
 	std::string target_file_path;
 
 	while (true) {
-		if (askThemeName(true)) {
+		if (askThemeName(true, removeExtension(onlyFileName(file_path)))) {
 			target_file_path =
 			        addName(
 			            addPath(package().user_support().absFileName(), "themes"),
@@ -1558,6 +1559,7 @@ void PrefColors::importTheme()
 
 	initializeThemesLW();
 	theme_colors_ = loadImportThemeCommon(FileName(fromqstr(file_path)));
+	theme_filename_ = onlyFileName(toqstr(target_file_path));
 	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
 	initial_edit_ = true;
 
@@ -1934,7 +1936,6 @@ void PrefColors::filterByColorName(const QString &text) const
 
 void PrefColors::filterByColor(const QColor &color)
 {
-	LYXERR0("Color name   = " << color.name());
 	QList<QStandardItem *>rows_found;
 	for (int i=0; i<colorsTV_model_.rowCount(); ++i) {
 		if (colorsTV_model_.item(i, 0)->data(Qt::DecorationRole).value<QColor>().name()
@@ -1968,7 +1969,7 @@ void PrefColors::clearFilter() {
 
 void PrefColors::openColorChooser()
 {
-	QColorDialog cdlg;
+	QColorDialog cdlg(form_);
 	QColor color = cdlg.getColor();
 	filterByColor(color);
 }

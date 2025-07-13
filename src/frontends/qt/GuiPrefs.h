@@ -350,7 +350,7 @@ private:
 	/// It returns the color set read from \p fullpath.
 	ColorNamePairs loadImportThemeCommon(support::FileName fullpath);
 	/// Ask the user a theme name
-	bool askThemeName(bool porting);
+	bool askThemeName(bool porting, QString name_suggestion = "");
 	///
 	bool wantToOverwrite();
 	///
