@@ -276,11 +276,11 @@ public:
 	double pos2x(pos_type const pos, bool const boundary) const;
 
 	///
-	void add(pos_type pos, Inset const * ins,
-	         Font const & f, Change const & ch);
+	void addInset(pos_type pos, Inset const * ins,
+	              Font const & f, Change const & ch);
 	///
-	void add(pos_type pos, char_type const c,
-	         Font const & f, Change const & ch);
+	void addChar(pos_type pos, char_type const c,
+	             Font const & f, Change const & ch);
 	///
 	void addVirtual(pos_type pos, docstring const & s,
 	                Font const & f, Change const & ch);

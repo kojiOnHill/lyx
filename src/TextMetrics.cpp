@@ -904,7 +904,7 @@ Row TextMetrics::tokenizeParagraph(pit_type const pit) const
 		// The most special cases are handled first.
 		if (par.isInset(i)) {
 			Inset const * ins = par.getInset(i);
-			row.add(i, ins, *fi, par.lookupChange(i));
+			row.addInset(i, ins, *fi, par.lookupChange(i));
 		} else if (c == ' ' && i + 1 == body_pos) {
 			// This space is an \item separator. Represent it with a
 			// special space element, which dimension will be computed
@@ -930,10 +930,10 @@ Row TextMetrics::tokenizeParagraph(pit_type const pit) const
 			// ⤶ U+2936 ARROW POINTING DOWNWARDS THEN CURVING LEFTWARDS
 			// ¶ U+00B6 PILCROW SIGN
 			char_type const screen_char = (c == 0x2028) ? 0x2936 : 0x00B6;
-			row.add(i, screen_char, *fi, par.lookupChange(i));
+			row.addChar(i, screen_char, *fi, par.lookupChange(i));
 		} else
 			// row elements before body are unbreakable
-			row.add(i, c, *fi, par.lookupChange(i));
+			row.addChar(i, c, *fi, par.lookupChange(i));
 
 		// add inline completion width
 		// draw logically behind the previous character

@@ -522,8 +522,8 @@ void Row::finalizeLast()
 }
 
 
-void Row::add(pos_type const pos, Inset const * ins,
-              Font const & f, Change const & ch)
+void Row::addInset(pos_type const pos, Inset const * ins,
+                   Font const & f, Change const & ch)
 {
 	finalizeLast();
 	Element e(INSET, pos, f, ch);
@@ -534,8 +534,8 @@ void Row::add(pos_type const pos, Inset const * ins,
 }
 
 
-void Row::add(pos_type const pos, char_type const c,
-              Font const & f, Change const & ch)
+void Row::addChar(pos_type const pos, char_type const c,
+                  Font const & f, Change const & ch)
 {
 	if (!sameString(f, ch)) {
 		finalizeLast();
