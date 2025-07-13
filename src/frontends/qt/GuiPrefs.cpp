@@ -52,6 +52,7 @@
 
 #include <QAbstractItemModel>
 #include <QCheckBox>
+#include <QColorDialog>
 #include <QFile>
 #include <QFontDatabase>
 #include <QHeaderView>
@@ -1040,6 +1041,10 @@ PrefColors::PrefColors(GuiPreferences * form)
 
 	connect(bothColorResetPB, SIGNAL(clicked()),
 	        this, SLOT(resetColors()));
+	connect(clearFilterPB, SIGNAL(clicked()),
+	        this, SLOT(clearFilter()));
+	connect(colorChooserPB, SIGNAL(clicked()),
+	        this, SLOT(openColorChooser()));
 	connect(colorsTV, SIGNAL(clicked(QModelIndex)),
 	        this, SLOT(clickedColorsTV(QModelIndex)));
 	connect(colorResetAllPB, SIGNAL(clicked()),
@@ -1065,7 +1070,7 @@ PrefColors::PrefColors(GuiPreferences * form)
 	connect(sc_undo, SIGNAL(activated()),
 	        undo_stack_, SLOT(undo()));
 	connect(searchStringEdit, SIGNAL(textEdited(QString)),
-	        this, SLOT(filterColorItem(QString)));
+	        this, SLOT(filterByColorName(QString)));
 	connect(&selection_model_,
 	        SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
 	        this, SLOT(selectionChanged(QItemSelection,QItemSelection)));
@@ -1918,18 +1923,54 @@ void PrefColors::changeAutoapply()
 }
 
 
-void PrefColors::filterColorItem(const QString &text)
+void PrefColors::filterByColorName(const QString &text) const
 {
-	search_string_ = text;
-	items_found_ =
-	        colorsTV_model_.findItems(search_string_, Qt::MatchContains,
+	const QList<QStandardItem *> items_found =
+	        colorsTV_model_.findItems(text, Qt::MatchContains,
 	                                  ColorNameColumn);
-	if (items_found_.empty())
+	filterCommon(items_found);
+}
+
+
+void PrefColors::filterByColor(const QColor &color)
+{
+	LYXERR0("Color name   = " << color.name());
+	QList<QStandardItem *>rows_found;
+	for (int i=0; i<colorsTV_model_.rowCount(); ++i) {
+		if (colorsTV_model_.item(i, 0)->data(Qt::DecorationRole).value<QColor>().name()
+		        == color.name() ||
+		        colorsTV_model_.item(i, 1)->data(Qt::DecorationRole).value<QColor>().name()
+		        == color.name()) {
+			rows_found.push_back(colorsTV_model_.item(i));
+		}
+	}
+	filterCommon(rows_found);
+}
+
+
+void PrefColors::filterCommon(const QList<QStandardItem *> items_found) const
+{
+	if (items_found.empty())
 		return;
 	for (size_type row = 0; row < lcolors_.size(); ++row)
 		colorsTV->hideRow(row);
-	for (QStandardItem* item : std::as_const(items_found_))
+	for (QStandardItem* item : std::as_const(items_found))
 		colorsTV->showRow(item->row());
+}
+
+
+void PrefColors::clearFilter() {
+	for (size_type row = 0; row < lcolors_.size(); ++row)
+		colorsTV->showRow(row);
+	searchStringEdit->clear();
+}
+
+
+void PrefColors::openColorChooser()
+{
+	QColorDialog cdlg;
+	QColor color = cdlg.getColor();
+	filterByColor(color);
 }
 
 

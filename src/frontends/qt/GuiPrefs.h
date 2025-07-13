@@ -295,7 +295,10 @@ private Q_SLOTS:
 	void exportTheme();
 	void importTheme();
 
-	void filterColorItem(const QString &text);
+	void filterByColorName(const QString &text) const;
+	void filterByColor(const QColor &color);
+	void clearFilter();
+	void openColorChooser();
 
 private:
 	/// Change color at (row, column).
@@ -352,6 +355,8 @@ private:
 	bool wantToOverwrite();
 	///
 	ColorPair toqcolor(ColorNamePair);
+	///
+	void filterCommon(const QList<QStandardItem *> items_found) const;
 
 	// Dictionary of theme names for translation purpose
 	// Add a system theme name here if you create a new one.
@@ -386,9 +391,6 @@ private:
 	QStandardItemModel colorsTV_model_;
 	QItemSelectionModel selection_model_;
 	QModelIndexList selected_indexes_;
-
-	QList<QStandardItem *> items_found_;
-	QString search_string_;
 
 	bool autoapply_ = false;
 	QUndoStack * undo_stack_;
