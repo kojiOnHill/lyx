@@ -727,6 +727,7 @@ else
       CPPFLAGS+=";-Wpointer-arith"
       CPPFLAGS+=";-Wsequence-point"
       CPPFLAGS+=";-Wswitch"
+      # One approach to addressing these is 2a66f40f: <<(void) brush;>>
       CPPFLAGS+=";-Wunused-but-set-parameter"
       CPPFLAGS+=";-Wwrite-strings"
 
