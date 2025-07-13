@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.5\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-07-12 14:00+0200\n"
-"PO-Revision-Date: 2025-07-12 12:15+0000\n"
+"POT-Creation-Date: 2025-07-13 13:54+0200\n"
+"PO-Revision-Date: 2025-07-13 11:55+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -3940,6 +3940,10 @@ msgstr "Okamžite použiť zmenené farby"
 msgid "Apply &immediately"
 msgstr "O&kamžite uplatniť"
 
+#: src/frontends/qt/ui/PrefColorsUi.ui:212
+msgid "Undo/Redo"
+msgstr "Späť/Opäť"
+
 #: src/frontends/qt/ui/PrefColorsUi.ui:67
 msgid "&Themes:"
 msgstr "&Témy:"
@@ -3987,9 +3991,21 @@ msgstr "T&mavá"
 msgid "Enter a string to filter colors"
 msgstr "Zadajte reťazec na filtrovanie prvkov"
 
-#: src/frontends/qt/ui/PrefColorsUi.ui:220
-msgid "Filter colors"
-msgstr "Filter prvkov"
+#: src/frontends/qt/ui/PrefColorsUi.ui:361
+msgid "by color name"
+msgstr "Podľa názvu farby"
+
+#: src/frontends/qt/ui/PrefColorsUi.ui:384
+msgid "C&lear[[colorPrefDialog]]"
+msgstr "V&ymazať"
+
+#: src/frontends/qt/ui/PrefColorsUi.ui:391
+msgid "by c&olor"
+msgstr "Podľa fa&rby"
+
+#: src/frontends/qt/ui/PrefColorsUi.ui:409
+msgid "&Filter"
+msgstr "&Filter"
 
 #: src/frontends/qt/ui/PrefColorsUi.ui:259 lib/ui/stdtoolbars.inc:87
 #: src/BufferView.cpp:1592
@@ -4016,7 +4032,7 @@ msgstr "Obnoviť"
 
 #: src/frontends/qt/ui/PrefColorsUi.ui:307
 msgid "&Color Settings:"
-msgstr "Nastavenie &farieb:"
+msgstr "Nastavenie& farieb:"
 
 #: src/frontends/qt/ui/PrefColorsUi.ui:354
 msgid ""
@@ -43794,6 +43810,9 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Neznámy používateľ"
+
+#~ msgid "Filter colors"
+#~ msgstr "Filter prvkov"
 
 #~ msgid "Normal text mode\t\\textrm"
 #~ msgstr "Normálny text. mód\t\\textrm"
