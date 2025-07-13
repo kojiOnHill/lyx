@@ -486,7 +486,9 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 		char_format.setForeground(brush[2]);
 		char_format.setBackground(brush[3]);
 	}
-
+#else
+	// avoid unused-parameter warning.
+	(void) brush;
 #endif // QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 
 	// The void "cursor segment" in the composing mode comes with it.start > 0 and
