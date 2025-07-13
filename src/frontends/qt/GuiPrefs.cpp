@@ -1782,6 +1782,7 @@ void PrefColors::initializeColorsTV()
 			if (column == ColorNameColumn) {
 				item->setText(toqstr(lcolor.getGUIName(lcolors_[row])));
 				item->setTextAlignment(Qt::AlignLeft);
+				item->setToolTip(item->text());
 			} else if (column == LightColorColumn)
 				item->setToolTip(qt_("Click here to change the color in the light mode"));
 			else if (column == DarkColorColumn)
