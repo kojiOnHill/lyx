@@ -51,7 +51,7 @@ private:
 /// Buffer-specific information should therefore be placed in a
 /// DocumentClass object.
 ///
-class LayoutFile : public TextClass {
+class LayoutFile final : public TextClass {
 public:
 	/// check whether the TeX class is available
 	bool isTeXClassAvailable() const { return tex_class_avail_; }
