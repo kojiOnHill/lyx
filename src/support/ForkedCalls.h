@@ -149,7 +149,7 @@ private:
  * function.
  */
 
-class ForkedCall : public ForkedProcess {
+class ForkedCall final : public ForkedProcess {
 public:
 	///
 	ForkedCall(std::string const & path = empty_string(),
