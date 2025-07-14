@@ -3279,6 +3279,8 @@ FormatList const & BufferParams::exportableFormats(bool only_viewable) const
 		  excludes.insert("xetex");
 	}
 
+	// rebuild graph and consider non-available paths
+	theConverters().buildGraph(!baseClass()->isTeXClassAvailable());
 	FormatList result =
 		theConverters().getReachable(backs[0], only_viewable, true, excludes);
 	vector<string>::const_iterator it = backs.begin() + 1;

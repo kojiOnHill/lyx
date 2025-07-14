@@ -16,6 +16,7 @@
 #include "Author.h"
 #include "BiblioInfo.h"
 #include "BranchList.h"
+#include "LayoutFile.h"
 #include "buffer_funcs.h"
 #include "BufferList.h"
 #include "BufferParams.h"
@@ -4566,7 +4567,7 @@ Buffer::ExportStatus Buffer::doExport(string const & target, bool put_in_tempdir
 	bool need_nice_file = false;
 	if (find(backs.begin(), backs.end(), format) == backs.end()) {
 		// Get the shortest path to format
-		converters.buildGraph();
+		converters.buildGraph(!params().baseClass()->isTeXClassAvailable());
 		Graph::EdgePath path;
 		for (string const & sit : backs) {
 			Graph::EdgePath p = converters.getPath(sit, format);

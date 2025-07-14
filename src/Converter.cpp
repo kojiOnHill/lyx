@@ -967,7 +967,7 @@ Converters::RetVal Converters::runLaTeX(Buffer const & buffer, string const & co
 
 
 
-void Converters::buildGraph()
+void Converters::buildGraph(bool notex)
 {
 	// clear graph's data structures
 	G_.init(theFormats().size());
@@ -975,6 +975,8 @@ void Converters::buildGraph()
 	// so, for each of them, we create an arrow on the graph, going from
 	// the one to the other
 	for (auto const & cvt : converterlist_) {
+		if (notex && cvt.latex())
+			continue;
 		int const from = theFormats().getNumber(cvt.from());
 		int const to   = theFormats().getNumber(cvt.to());
 		LASSERT(from >= 0, continue);

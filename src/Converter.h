@@ -213,7 +213,7 @@ public:
 	///
 	const_iterator end() const { return converterlist_.end(); }
 	///
-	void buildGraph();
+	void buildGraph(bool notex = false);
 
 	/// Check whether converter conv is authorized to be run for elements
 	/// within document doc_fname.
