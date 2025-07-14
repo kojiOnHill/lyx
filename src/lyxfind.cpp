@@ -105,10 +105,6 @@ class IgnoreFormats {
 	///
 	bool getNonContent() const { return searchNonContent_; }
 	///
-	void setSpaceType(bool value);
-	///
-	bool getSpaceType() const { return ignoreSpaceType_; }
-	///
 	void setIgnoreFormat(string const & type, bool value, bool fromUser = true);
 
 private:
@@ -139,8 +135,6 @@ private:
 	bool ignoreDeleted_ = true;
 	///
 	bool searchNonContent_ = true;
-	///
-	bool ignoreSpaceType_ = false;
 };
 
 void IgnoreFormats::setIgnoreFormat(string const & type, bool value, bool fromUser)
@@ -191,9 +185,6 @@ void IgnoreFormats::setIgnoreFormat(string const & type, bool value, bool fromUs
 	}
 	else if (type == "non-output-content") {
 		searchNonContent_ = !value;
-	}
-	else if (type == "ignore-space-type") {
-		ignoreSpaceType_ = value;
 	}
 }
 
@@ -827,15 +818,10 @@ typedef vector<pair<string, string> > Escapes;
 static string getRegexSpaceCount(int count)
 {
 	if (count > 0) {
-		string whitespace;
-		if (ignoreFormats.getSpaceType())
-			whitespace = "[\\s" + accents["negthinspace{}"] + accents["negmedspace{}"] + accents["negthickspace{}"] + "]";
-		else
-			whitespace = "\\s";
 		if (count > 1)
-			return whitespace + "{" + std::to_string(count) + "}";
+			return "\\s{" + std::to_string(count) + "}";
 		else
-			return whitespace;
+			return "\\s";
 	}
 	return "";
 }
@@ -893,17 +879,6 @@ string string2regex(string in)
 				i += 2;
 			}
 		}
-		else if (ignoreFormats.getSpaceType()
-			&& (tempx[i] == '\363')
-			&& (tempx[i+1] == '\260')
-			&& (tempx[i+2] == '\200')
-			&& ((tempx[i+3] == '\203') || (tempx[i+3] == '\205') || (tempx[i+3] == '\207'))) {
-			// negthinspace
-			// negmedspace
-			// negthickspace
-			blanks++;
-			i += 3;
-		}
 		else {
 			if (blanks > 0) {
 				temp += getRegexSpaceCount(blanks);
@@ -945,7 +920,7 @@ string correctRegex(string t, bool withformat)
 	 * and \{, \}, \[, \] => {, }, [, ]
 	 */
 	string s("");
-	static std::regex wordre("(\\\\)*(\\\\(( |[A-Za-z]+|[\\{\\}%,>!;:])( |\\{\\})?|[\\[\\]\\{\\}]))");
+	static std::regex wordre("(\\\\)*(\\\\(( |[A-Za-z]+|[\\{\\}%])( |\\{\\})?|[\\[\\]\\{\\}]))");
 	static std::regex protectedSpace { R"(~)" };
 	size_t lastpos = 0;
 	smatch sub;
@@ -1018,22 +993,12 @@ string correctRegex(string t, bool withformat)
 			else if (sub.str(4) == " ")
 				replace = " ";
 			else {
-				if ((!withformat || ignoreFormats.getSpaceType()) &&
-					((sub.str(4) == ",") ||
-					 (sub.str(4) == ">") ||
-					 (sub.str(4) == "!") ||
-					 (sub.str(4) == ";") ||
-					 (sub.str(4) == ":"))) {
-					replace = " ";
+				AccentsIterator it_ac = accents.find(sub.str(4));
+				if (it_ac == accents.end()) {
+					replace = sub.str(2);
 				}
 				else {
-					AccentsIterator it_ac = accents.find(sub.str(4));
-					if (it_ac == accents.end()) {
-						replace = sub.str(2);
-					}
-					else {
-						replace = it_ac->second;
-					}
+					replace = it_ac->second;
 				}
 			}
 		}
@@ -1251,9 +1216,6 @@ static docstring buffer_to_latex(Buffer & buffer)
 		runparams.find_set_feature(OutputParams::SearchWithDeleted);
 	if (ignoreFormats.getNonContent()) {
 		runparams.find_add_feature(OutputParams::SearchNonOutput);
-	}
-	if (ignoreFormats.getSpaceType()) {
-		runparams.find_add_feature(OutputParams::SearchDifferSpaces);
 	}
 	pit_type const endpit = buffer.paragraphs().size();
 	for (pit_type pit = 0; pit != endpit; ++pit) {
@@ -2253,14 +2215,11 @@ static void buildAccentsMap()
 	accents["guillemotright"] = "»";
 	accents["guillemotleft"] = "«";
 	accents["hairspace"]     = getutf8(0xf0000);	// select from free unicode plane 15
-	accents["thinspace"]     = getutf8(0x202f);	// and used _only_ by findadv
-	accents[","]             = getutf8(0x202f);
+	accents["thinspace"]     = getutf8(0xf0002);	// and used _only_ by findadv
 	accents["negthinspace{}"]= getutf8(0xf0003);	// to omit backslashed latex macros
-	accents["medspace"]      = getutf8(0x2005);	// See https://en.wikipedia.org/wiki/Private_Use_Areas
-	accents[":"]             = getutf8(0x2005);
+	accents["medspace"]      = getutf8(0xf0004);	// See https://en.wikipedia.org/wiki/Private_Use_Areas
 	accents["negmedspace{}"] = getutf8(0xf0005);
-	accents["thickspace"]    = getutf8(0x2004);
-	accents[";"]             = getutf8(0x2004);
+	accents["thickspace"]    = getutf8(0xf0006);
 	accents["negthickspace{}"]= getutf8(0xf0007);
 	accents["lyx"]           = getutf8(0xf0010);	// Used logos
 	accents["LyX"]           = getutf8(0xf0010);
@@ -4430,9 +4389,6 @@ docstring latexifyFromCursor(DocIterator const & cur, int len)
 	}
 	if (ignoreFormats.getNonContent()) {
 		runparams.find_add_feature(OutputParams::SearchNonOutput);
-	}
-	if (ignoreFormats.getSpaceType()) {
-		runparams.find_add_feature(OutputParams::SearchDifferSpaces);
 	}
 
 	if (cur.inTexted()) {
