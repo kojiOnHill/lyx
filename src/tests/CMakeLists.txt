@@ -128,7 +128,7 @@ foreach(_base TextClass)
   #handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-deprecated-copy-with-user-provided-dtor)
 endforeach()
 foreach(_base LayoutFile)
-  handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
+  #handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
 endforeach()
 add_executable(check_ListingsCaption ${check_ListingsCaption_SOURCES})
 

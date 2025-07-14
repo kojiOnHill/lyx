@@ -33,7 +33,7 @@ foreach(_base DialogFactory GuiApplication GuiCitation GuiImage GuiListings GuiN
   #handle_source_option("CXX" ${TOP_SRC_DIR}/src/frontends/qt/${_base}.cpp -Wno-deprecated-copy-with-user-provided-dtor)
 endforeach()
 foreach(_base GuiApplication GuiView)
-  handle_source_option("CXX" ${TOP_SRC_DIR}/src/frontends/qt/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
+  #handle_source_option("CXX" ${TOP_SRC_DIR}/src/frontends/qt/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
 endforeach()
 file(GLOB moc_files ${TOP_SRC_DIR}/src/frontends/qt/${LYX_MOC_FILES})
 

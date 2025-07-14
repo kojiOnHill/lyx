@@ -72,7 +72,7 @@ foreach(_base Paragraph xml)
   #handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-deprecated-copy-with-dtor)
 endforeach()
 foreach(_base LayoutFile Paragraph xml)
-  handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
+  #handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
 endforeach()
 list(REMOVE_ITEM lyx_headers
 	${TOP_SRC_DIR}/src/Variables.h
