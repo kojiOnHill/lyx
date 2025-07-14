@@ -329,6 +329,36 @@
          <property name="spacing">
           <number>0</number>
          </property>
+         <item row="1" column="4">
+          <spacer name="horizontalSpacerRight">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>8</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="5">
+          <widget class="QToolButton" name="clearFilterPB">
+           <property name="text">
+            <string>Clea&amp;r[[colorPrefDialog]]</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QToolButton" name="colorChooserPB">
+           <property name="text">
+            <string>&amp;by color</string>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="2">
           <widget class="QLineEdit" name="searchStringEdit">
            <property name="sizePolicy">
@@ -365,33 +395,6 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <spacer name="horizontalSpacerButtomLeft">
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>6</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="5">
-          <widget class="QToolButton" name="clearFilterPB">
-           <property name="text">
-            <string>Clea&amp;r[[colorPrefDialog]]</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QToolButton" name="colorChooserPB">
-           <property name="text">
-            <string>&amp;by color</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="0">
           <widget class="QLabel" name="labelFilter">
            <property name="sizePolicy">
@@ -413,8 +416,8 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="4">
-          <spacer name="horizontalSpacerRight">
+         <item row="1" column="1">
+          <spacer name="horizontalSpacerButtomLeft">
            <property name="orientation">
             <enum>Qt::Orientation::Horizontal</enum>
            </property>
@@ -423,7 +426,7 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>6</width>
+             <width>4</width>
              <height>20</height>
             </size>
            </property>
@@ -447,11 +450,11 @@
           <enum>Qt::Orientation::Horizontal</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Policy::Preferred</enum>
+          <enum>QSizePolicy::Policy::Expanding</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
+           <width>8</width>
            <height>20</height>
           </size>
          </property>

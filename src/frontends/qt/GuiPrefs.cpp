@@ -1971,8 +1971,20 @@ void PrefColors::clearFilter() {
 void PrefColors::openColorChooser()
 {
 	QColorDialog cdlg(form_);
-	QColor color = cdlg.getColor();
-	filterByColor(color);
+	QColor initial_color = Qt::white;
+
+	if (!selected_indexes_.empty()) {
+		if (!guiApp->colorCache().isDarkMode())
+			initial_color = theme_colors_[selected_indexes_.first().row()].first;
+		else
+			initial_color = theme_colors_[selected_indexes_.first().row()].second;
+	}
+
+	// open color dialog
+	QColor color = cdlg.getColor(initial_color, form_);
+
+	if (color.isValid())
+		filterByColor(color);
 }
 
 
