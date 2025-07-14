@@ -30,6 +30,10 @@ class Params;
 
 class Image {
 public:
+	/// A virtual destructor is needed by clang/libc++
+	///
+	virtual ~Image() = default;
+
 	/// Create a copy
 	virtual Image * clone() const = 0;
 
@@ -53,6 +57,13 @@ public:
 	 *  Returns true if the pixmap is created.
 	 */
 	virtual bool setPixmap(Params const & params) = 0;
+protected:
+	///
+	Image() = default;
+	///
+	Image(Image const &) = default;
+	///
+	Image & operator=(Image const &) = default;
 };
 
 /// Only way to create a new Image.
