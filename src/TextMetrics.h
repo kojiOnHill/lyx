@@ -177,7 +177,8 @@ private:
 	Row tokenizeParagraph(pit_type pit) const;
 
 	// Compute metrics of inset element
-	bool redoInset(Row::Element & elt, DocIterator & parPos, int w, int & extrawidth) const;
+	// Returns the extra width that can be necessary for things like InsetMathHull
+	int redoInset(Row::Element & elt, DocIterator & parPos, int w) const;
 
 	// Break the row produced by tokenizeParagraph() into a list of rows.
 	Rows breakParagraph(Row const & row) const;

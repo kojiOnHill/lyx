@@ -1097,7 +1097,7 @@ bool needsRowBreak(int f1, int f2)
 }
 
 
-bool TextMetrics::redoInset(Row::Element & elt, DocIterator & parPos, int w, int & extrawidth) const
+int TextMetrics::redoInset(Row::Element & elt, DocIterator & parPos, int w) const
 {
 	Buffer const & buffer = bv_->buffer();
 	Font const bufferfont = buffer.params().getFont();
@@ -1116,7 +1116,7 @@ bool TextMetrics::redoInset(Row::Element & elt, DocIterator & parPos, int w, int
 	MetricsInfo mi(bv_, font.fontInfo(), w, mc, elt.pos == 0, tight_);
 	mi.base.outer_font = displayFont(parPos.pit(), elt.pos).fontInfo();
 	elt.inset->metrics(mi, elt.dim);
-	bool const changed = bv_->coordCache().insets().add(elt.inset, elt.dim);
+	bv_->coordCache().insets().add(elt.inset, elt.dim);
 	/* FIXME: This is a hack. This allows InsetMathHull to state that
 	 * it needs some elbow room beyond its width, in order to fit the
 	 * numbering and/or the left margin (with left alignment), which
@@ -1129,9 +1129,7 @@ bool TextMetrics::redoInset(Row::Element & elt, DocIterator & parPos, int w, int
 	 *
 	 * See ticket #12320 for details.
 	 */
-	extrawidth = mi.extrawidth;
-
-	return changed;
+	return mi.extrawidth;
 }
 
 
@@ -1234,8 +1232,7 @@ Rows TextMetrics::breakParagraph(Row const & bigrow) const
 			}
 			int const w = max_width_ - leftMargin(pit, elt.pos)
 				- rightMargin(pit) - eop;
-			int extrawidth = 0;
-			redoInset(elt, parPos, w, extrawidth);
+			int const extrawidth = redoInset(elt, parPos, w);
 			// For now only hull inset sets this, and it is alone on its row
 			if (elt.dim.wid < max_width_ || tight_)
 				rb.dim().wid += extrawidth;
