@@ -88,7 +88,7 @@ public:
 	///
 	~Context();
 	///
-	Context & operator=(Context const &) = default;
+	Context & operator=(Context const &) = delete;
 
 
 	/// Output a \\begin_layout if requested
