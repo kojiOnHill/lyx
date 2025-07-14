@@ -666,6 +666,10 @@ else
         # this flag also turns on:
         # -Wdeprecated-copy-with-user-provided-dtor
         CPPFLAGS+=";-Wdeprecated-copy-with-dtor"
+
+        # Helped with commits 233ba77d, 3c8525d0, a9fe9d1a, 2c24591d, c6aee1c6
+        # Controls the following flags: -Wdelete-abstract-non-virtual-dtor, -Wdelete-non-abstract-non-virtual-dtor.
+        CPPFLAGS+=";-Wdelete-non-virtual-dtor"
       else
         # GCC only
         # warn about logical operations being used where bitwise were probably wanted
