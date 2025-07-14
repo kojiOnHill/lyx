@@ -449,12 +449,14 @@ public:
 		SearchWithDeleted = 1,
 		SearchWithoutDeleted = 2,
 		SearchQuick = 4,
-		SearchNonOutput = 8
+		SearchNonOutput = 8,
+		SearchDifferSpaces = 16
 	};
 		
 	inline bool find_effective(void) const { return (for_search != OutputParams::NoSearch); }
 	inline bool find_with_non_output() const { return ((for_search & OutputParams::SearchNonOutput) != 0); }
 	inline bool find_with_deleted() const { return ((for_search & OutputParams::SearchWithDeleted) != 0); }
+	inline bool find_discriminate_spaces() const { return ((for_search & OutputParams::SearchDifferSpaces) != 0); }
 	inline void find_set_feature(enum Search set_) { for_search = set_; }
 	inline void find_add_feature(enum Search add_) { for_search |= add_; }
 	inline void find_clean_features(void) { for_search = OutputParams::NoSearch; }

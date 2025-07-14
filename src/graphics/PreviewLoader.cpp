@@ -624,7 +624,7 @@ void PreviewLoader::Impl::startLoading(bool wait)
 	// output format (see bug 9371).
 	Flavor flavor = docformat
 					? buffer_.params().getOutputFlavor()
-					: Flavor::LaTeX;
+					: Flavor::PdfLaTeX;
 	if (buffer_.params().encoding().package() == Encoding::japanese) {
 		latexparam = " --latex=platex";
 		flavor = Flavor::LaTeX;
