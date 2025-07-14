@@ -1458,18 +1458,15 @@ pair<pos_type, bool> TextMetrics::getPosNearX(Row const & row, int & x) const
 	/// For the main Text, it is possible that this pit is not
 	/// yet in the CoordCache when moving cursor up.
 	/// x Paragraph coordinate is always 0 for main text anyway.
-	int const xo = origin_.x;
-	x -= xo;
 
 	// Adapt to cursor row scroll offset if applicable.
 	int const offset = bv_->horizScrollOffset(text_, row.pit(), row.pos());
-	x += offset;
 
+	x += offset - origin_.x;
 	auto [pos, boundary] = row.x2pos(x);
+	x -= offset - origin_.x;
 
-	x += xo - offset;
 	//LYXERR0("getPosNearX ==> pos=" << pos << ", boundary=" << boundary);
-
 	return make_pair(pos, boundary);
 }
 
@@ -1613,15 +1610,12 @@ void TextMetrics::setCursorFromCoordinates(Cursor & cur, int x, int y)
 }
 
 
-//takes screen x,y coordinates
+// takes a row and x screen coordinate
 Row::Element const * TextMetrics::checkInsetHit(Row const & row, int x) const
 {
-	int const xo = origin_.x;
-	x -= xo;
-
 	// Adapt to cursor row scroll offset if applicable.
 	int const offset = bv_->horizScrollOffset(text_, row.pit(), row.pos());
-	x += offset;
+	x += offset - origin_.x;
 
 	int xx = row.left_margin;
 	for (auto const & e : row) {
