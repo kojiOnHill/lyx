@@ -40,7 +40,7 @@ class CheckedLineEdit
 {
 public:
 	CheckedLineEdit(QLineEdit * input, QWidget * label = nullptr,
-			int tabindex = -1, QString const panel = QString());
+			int tabindex = -1, QString const & panel = QString());
 	/// check the widget and do visual marking
 	bool check() const;
 	/// reset all visual markings for tabs or panel sections
@@ -56,7 +56,7 @@ private:
 
 
 CheckedLineEdit::CheckedLineEdit(QLineEdit * input, QWidget * label,
-				 int tabindex, QString const panel)
+				 int tabindex, QString const & panel)
 	: input_(input), target_(label), tab_index_(tabindex), panel_name_(panel)
 {}
 

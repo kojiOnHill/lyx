@@ -356,7 +356,7 @@ private:
 	///
 	ColorPair toqcolor(ColorNamePair);
 	///
-	void filterCommon(const QList<QStandardItem *> items_found) const;
+	void filterCommon(QList<QStandardItem *> const & items_found) const;
 
 	// Dictionary of theme names for translation purpose
 	// Add a system theme name here if you create a new one.

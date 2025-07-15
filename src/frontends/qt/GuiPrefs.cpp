@@ -1420,11 +1420,8 @@ void PrefColors::exportTheme()
 	FileDialog::Result result =
 			dialog.save((home_dir == "") ? "/" : home_dir, {"*.theme", "*.*"},
 						theme_filename_);
-	QString file_path;
-	if (result.first == FileDialog::Chosen) {
-		file_path = result.second;
-		(saveExportThemeCommon(file_path));
-	}
+	if (result.first == FileDialog::Chosen)
+		saveExportThemeCommon(result.second);
 }
 
 
@@ -1950,7 +1947,7 @@ void PrefColors::filterByColor(const QColor &color)
 }
 
 
-void PrefColors::filterCommon(const QList<QStandardItem *> items_found) const
+void PrefColors::filterCommon(QList<QStandardItem *> const & items_found) const
 {
 	if (items_found.empty())
 		return;
