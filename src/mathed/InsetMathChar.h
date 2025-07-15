@@ -28,9 +28,9 @@ public:
 	///
 	void draw(PainterInfo & pi, int x, int y) const override;
 	///
-	void draw(PainterInfo & pi, int x, int y,
-	          frontend::InputMethod const * im,
-	          pos_type const char_format_index) const override;
+	void drawWithInputMethod(PainterInfo & pi, int x, int y,
+	                         frontend::InputMethod const * im,
+	                         pos_type const char_format_index) const;
 	///
 	void metricsT(TextMetricsInfo const & mi, Dimension & dim) const override;
 	///

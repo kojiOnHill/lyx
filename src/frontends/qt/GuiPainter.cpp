@@ -288,13 +288,6 @@ void GuiPainter::text(int x, int y, char_type c, FontInfo const & f, Direction c
 }
 
 
-void GuiPainter::text(int x, int y, char_type c, InputMethod const * im,
-                      pos_type const char_format_index, Direction const dir)
-{
-	text(x, y, docstring(1, c), im, char_format_index, dir);
-}
-
-
 void GuiPainter::text(int x, int y, docstring const & s, FontInfo const & f, Direction const dir)
 {
 	text(x, y, s, f, dir, 0.0, 0.0);
@@ -351,9 +344,17 @@ void GuiPainter::text(int x, int y, docstring const & s,
 }
 
 
-void GuiPainter::text(int x, int y, docstring const & s,
-                      InputMethod const * im,
+void GuiPainter::textWithInputMethod(int x, int y, char_type c, InputMethod const * im,
                       pos_type const char_format_index, Direction const dir)
+{
+	textWithInputMethod(x, y, docstring(1, c), im, char_format_index, dir);
+}
+
+
+void GuiPainter::textWithInputMethod(int x, int y, docstring const & s,
+                                     InputMethod const * im,
+                                     pos_type const char_format_index,
+                                     Direction const dir)
 {
 	if (s.empty())
 		return;

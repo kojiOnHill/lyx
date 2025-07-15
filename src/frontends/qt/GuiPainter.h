@@ -117,17 +117,9 @@ public:
 	/// draw a string at position x, y (y is the baseline).
 	void text(int x, int y, docstring const & str, FontInfo const & f,
 	          Direction const dir = Auto) override;
-	/// draw a string at position x, y (y is the baseline) using input method.
-	void text(int x, int y, docstring const & str, InputMethod const * im,
-	          pos_type const char_format_index,
-	          Direction const dir = Auto) override;
 
 	/// draw a char at position x, y (y is the baseline)
 	void text(int x, int y, char_type c, FontInfo const & f,
-	          Direction const dir = Auto) override;
-	/// draw a char at position x, y (y is the baseline) using input method
-	void text(int x, int y, char_type c, InputMethod const * im,
-	          pos_type const char_format_index,
 	          Direction const dir = Auto) override;
 
 	/** draw a string at position x, y (y is the baseline). The
@@ -143,6 +135,16 @@ public:
 	void text(int x, int y, docstring const & str, Font const & f,
 	                  Color other, size_type from, size_type to,
                       double wordspacing, double textwidth) override;
+
+	/// draw a string at position x, y (y is the baseline) using input method.
+	void textWithInputMethod(int x, int y, docstring const & str,
+	                         InputMethod const * im,
+	                         pos_type const char_format_index,
+	                         Direction const dir = Auto) override;
+	/// draw a char at position x, y (y is the baseline) using input method
+	void textWithInputMethod(int x, int y, char_type c, InputMethod const * im,
+	                         pos_type const char_format_index,
+	                         Direction const dir = Auto) override;
 
 	///
 	void textDecoration(FontInfo const & f, int x, int y, int width) override;

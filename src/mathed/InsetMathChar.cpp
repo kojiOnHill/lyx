@@ -156,14 +156,6 @@ void InsetMathChar::metrics(MetricsInfo & mi, Dimension & dim) const
 
 void InsetMathChar::draw(PainterInfo & pi, int x, int y) const
 {
-	draw(pi, x, y, nullptr, 0);
-}
-
-
-void InsetMathChar::draw(PainterInfo & pi, int x, int y,
-                         frontend::InputMethod const * im,
-                         pos_type const char_format_index) const
-{
 	// lyxerr << "drawing '" << char_ << "' font: " << pi.base.fontname << std::endl;
 	if (isMathFont(pi.base.fontname)) {
 		if (subst_) {
@@ -195,7 +187,15 @@ void InsetMathChar::draw(PainterInfo & pi, int x, int y,
 	if (pi.base.fontname == "mathnormal") {
 		x += max(-theFontMetrics(pi.base.font).lbearing(char_), 0);
 	}
-	pi.draw(x, y, char_, im, char_format_index);
+	pi.draw(x, y, char_);
+}
+
+
+void InsetMathChar::drawWithInputMethod(PainterInfo & pi, int x, int y,
+                         frontend::InputMethod const * im,
+                         pos_type const char_format_index) const
+{
+	pi.drawWithInputMethod(x, y, char_, im, char_format_index);
 }
 
 

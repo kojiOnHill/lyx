@@ -256,7 +256,7 @@ void RowPainter::paintStringAndSel(Row::Element const & e) const
 
 	if (e.type == Row::PREEDIT) {
 		// the case of the preedit element
-		pi_.pain.text(int(x_), yo_, e.str, e.im, e.char_format_index);
+		pi_.pain.textWithInputMethod(int(x_), yo_, e.str, e.im, e.char_format_index);
 	} else if (all_sel || e.change.changed()) {
 		Font copy = e.font;
 		Color const col = e.change.changed() ? e.change.color()

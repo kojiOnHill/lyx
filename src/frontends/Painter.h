@@ -142,17 +142,10 @@ public:
 	/// draw a string at position x, y (y is the baseline).
 	virtual void text(int x, int y, docstring const & str, FontInfo const & f,
 	                  Direction const dir = Auto) = 0;
-	/// draw a string at position x, y (y is the baseline) using input method.
-	virtual void text(int x, int y, docstring const & str,
-	                  InputMethod const * im, pos_type const char_format_index,
-	                  Direction const dir = Auto) = 0;
 
 	/// draw a char at position x, y (y is the baseline)
 	virtual void text(int x, int y, char_type c, FontInfo const & f,
 	                  Direction const dir = Auto) = 0;
-	/// draw a char at position x, y (y is the baseline) using input method
-	virtual void text(int, int, char_type, InputMethod const *,
-	                  pos_type const, Direction const = Auto) {}
 	/** draw a string at position x, y (y is the baseline). The
 	 * text direction is enforced by the \c Font.
 	 */
@@ -166,6 +159,16 @@ public:
 	virtual void text(int x, int y, docstring const & str, Font const & f,
 	                  Color other, size_type from, size_type to,
                       double wordspacing, double textwidth) = 0;
+
+	/// draw a char at position x, y (y is the baseline) using input method
+	virtual void textWithInputMethod(int, int, char_type, InputMethod const *,
+	                                 pos_type const, Direction const = Auto) {}
+
+	/// draw a string at position x, y (y is the baseline) using input method.
+	virtual void textWithInputMethod(int x, int y, docstring const & str,
+	                                 InputMethod const * im,
+	                                 pos_type const char_format_index,
+	                                 Direction const dir = Auto) = 0;
 
 	// Returns true if the painter does not actually paint.
 	virtual bool isNull() const = 0;
