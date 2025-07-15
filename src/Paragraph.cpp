@@ -4675,6 +4675,8 @@ void Paragraph::fixBiblio(DocIterator & dit)
 			//   (marked deleted)
 			// * Without change tracking, we release the inset
 			//   from its previous InsetList position
+			LATTEST(getInset(bibitem_pos));
+			LATTEST(getInset(bibitem_pos)->asInsetCommand());
 			inset = new InsetBibitem(dit.buffer(),
 			                         getInset(bibitem_pos)->asInsetCommand()->params());
 			if (eraseChar(bibitem_pos, track_changes)) {
