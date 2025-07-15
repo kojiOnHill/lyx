@@ -763,9 +763,10 @@ else
       # TODO: Lots of warnings
       # warn on type conversions that may lose data
       CPPFLAGS+=";-Wno-conversion"
-      # Helped for these commits: 797bb3b7, ea287fb5
-      # I sent a message to lyx-devel.
+      # Helped for these commits: 797bb3b7, ea287fb5, 57a24fbe
       # (initially 5 main warnings, only triggered by GCC)
+      # TODO: Now down to just one warning, Painter.h:164.
+      #
       # warn if you overload (not override) a virtual function
       CPPFLAGS+=";-Wno-overloaded-virtual"
       # warn on anything being unused
