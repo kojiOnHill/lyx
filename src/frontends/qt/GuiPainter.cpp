@@ -344,14 +344,14 @@ void GuiPainter::text(int x, int y, docstring const & s,
 }
 
 
-void GuiPainter::textWithInputMethod(int x, int y, char_type c, InputMethod const * im,
+void GuiPainter::text(int x, int y, char_type c, InputMethod const * im,
                       pos_type const char_format_index, Direction const dir)
 {
-	textWithInputMethod(x, y, docstring(1, c), im, char_format_index, dir);
+	text(x, y, docstring(1, c), im, char_format_index, dir);
 }
 
 
-void GuiPainter::textWithInputMethod(int x, int y, docstring const & s,
+void GuiPainter::text(int x, int y, docstring const & s,
                                      InputMethod const * im,
                                      pos_type const char_format_index,
                                      Direction const dir)

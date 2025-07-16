@@ -346,8 +346,7 @@ void MathRow::draw(PainterInfo & pi, int x, int const y) const
 				e.inset->draw(pi, x + e.before, y);
 			else
 				e.inset->asInsetMath()->asCharInset()
-				       ->drawWithInputMethod(pi, x + e.before, y, e.im,
-				                             e.char_format_index);
+				       ->draw(pi, x + e.before, y, e.im, e.char_format_index);
 			g.pos = {x, y};
 			g.dim.wid += e.before + e.after;
 			drawMarkers(pi, e, x, y);

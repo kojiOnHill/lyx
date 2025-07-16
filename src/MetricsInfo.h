@@ -128,9 +128,8 @@ public:
 	///
 	void draw(int x, int y, docstring const & str);
 	///
-	void drawWithInputMethod(int x, int y, char_type c,
-	                         frontend::InputMethod const * im,
-	                         pos_type const char_format_index);
+	void draw(int x, int y, char_type c, frontend::InputMethod const * im,
+	          pos_type const char_format_index);
 
 	/// Determines the background color based on the
 	/// selection state, the background color inherited from the parent inset

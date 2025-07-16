@@ -161,14 +161,13 @@ public:
                       double wordspacing, double textwidth) = 0;
 
 	/// draw a char at position x, y (y is the baseline) using input method
-	virtual void textWithInputMethod(int, int, char_type, InputMethod const *,
-	                                 pos_type const, Direction const = Auto) {}
+	virtual void text(int, int, char_type, InputMethod const *,
+	                  pos_type const, Direction const = Auto) = 0;
 
 	/// draw a string at position x, y (y is the baseline) using input method.
-	virtual void textWithInputMethod(int x, int y, docstring const & str,
-	                                 InputMethod const * im,
-	                                 pos_type const char_format_index,
-	                                 Direction const dir = Auto) = 0;
+	virtual void text(int x, int y, docstring const & str,
+	                  InputMethod const * im, pos_type const char_format_index,
+	                  Direction const dir = Auto) = 0;
 
 	// Returns true if the painter does not actually paint.
 	virtual bool isNull() const = 0;

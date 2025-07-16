@@ -191,11 +191,11 @@ void InsetMathChar::draw(PainterInfo & pi, int x, int y) const
 }
 
 
-void InsetMathChar::drawWithInputMethod(PainterInfo & pi, int x, int y,
+void InsetMathChar::draw(PainterInfo & pi, int x, int y,
                          frontend::InputMethod const * im,
                          pos_type const char_format_index) const
 {
-	pi.drawWithInputMethod(x, y, char_, im, char_format_index);
+	pi.draw(x, y, char_, im, char_format_index);
 }
 
 
