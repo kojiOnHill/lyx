@@ -1925,10 +1925,17 @@ void PrefColors::changeAutoapply()
 
 void PrefColors::filterByColorName(const QString &text) const
 {
+	searchStringEdit->setStyleSheet("");
+
 	const QList<QStandardItem *> items_found =
 	        colorsTV_model_.findItems(text, Qt::MatchContains,
 	                                  ColorNameColumn);
-	filterCommon(items_found);
+	if (!items_found.empty())
+		filterCommon(items_found);
+	else
+		searchStringEdit->setStyleSheet("color: red;");
+
+	form_->raise();
 }
 
 
@@ -1943,14 +1950,21 @@ void PrefColors::filterByColor(const QColor &color)
 			rows_found.push_back(colorsTV_model_.item(i));
 		}
 	}
-	filterCommon(rows_found);
+	if (!rows_found.empty())
+		filterCommon(rows_found);
+	else {
+		QMessageBox msgBox(form_);
+		msgBox.setIcon(QMessageBox::Information);
+		msgBox.setText(qt_("Such a color is not found"));
+		msgBox.exec();
+	}
+
+	form_->raise();
 }
 
 
 void PrefColors::filterCommon(QList<QStandardItem *> const & items_found) const
 {
-	if (items_found.empty())
-		return;
 	for (size_type row = 0; row < lcolors_.size(); ++row)
 		colorsTV->hideRow(row);
 	for (QStandardItem* item : std::as_const(items_found))
@@ -1962,6 +1976,7 @@ void PrefColors::clearFilter() {
 	for (size_type row = 0; row < lcolors_.size(); ++row)
 		colorsTV->showRow(row);
 	searchStringEdit->clear();
+	searchStringEdit->setStyleSheet("");
 }
 
 
@@ -1979,6 +1994,8 @@ void PrefColors::openColorChooser()
 
 	// open color dialog
 	QColor color = cdlg.getColor(initial_color, form_);
+
+	form_->raise();
 
 	if (color.isValid())
 		filterByColor(color);
