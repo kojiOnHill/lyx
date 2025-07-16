@@ -2576,17 +2576,27 @@ void InsetMathHull::mathmlize(MathMLStream & ms) const
 	}
 
 	// More complex case: wrap elements in a table.
-    if (getType() == hullSimple) {
-        ms << MTag("mtable");
+	if (getType() == hullSimple) {
+        ms << MTag("mtable",
+        	// Use a different class value if the table contains
+			// an equation number so that users can style appropriately.
+			haveNumbers() ? R"(class="hull numbered")" : R"(class="hull")"
+        );
     } else if (getType() >= hullAlign && getType() <= hullXXAlignAt) {
 		// hullAlign, hullAlignAt, hullXAlignAt, hullXXAlignAt
         string alignment;
         for (col_type col = 0; col < ncols(); ++col) {
             alignment += (col % 2) ? "left " : "right ";
         }
-        ms << MTag("mtable", "displaystyle='true' columnalign='" + alignment + "'");
+        ms << MTag("mtable", R"(displaystyle="true" columnalign=")" + alignment + R"(" class="align")");
     } else {
-        ms << MTag("mtable", "displaystyle='true'");
+    	// Use a different class value if the table contains
+    	// an equation number so that users can style appropriately.
+    	std::string attr = R"(displaystyle="true" class="hull)";
+    	if (haveNumbers())
+    		attr += " numbered";
+    	attr += R"(")";
+        ms << MTag("mtable", attr);
     }
 
 	for (row_type row = 0; row < nrows(); ++row) {

@@ -114,7 +114,7 @@ void InsetMathMatrix::mathmlize(MathMLStream & ms) const
 	ms << MTagInline("mo", "form='prefix' fence='true' stretchy='true' symmetric='true' lspace='0.1666em'")
 	   << convertDelimToXMLEscape(left_)
 	   << ETagInline("mo")
-	   << MTag("mtable");
+	   << MTag("mtable", R"(class="matrix")");
 	for (row_type row = 0; row < nrows(); ++row) {
 		ms << MTag("mtr");
 		for (col_type col = 0; col < ncols(); ++col) {

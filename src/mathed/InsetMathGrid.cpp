@@ -1167,7 +1167,7 @@ void InsetMathGrid::mathmlize(MathMLStream & ms) const
 {
 	bool const havetable = nrows() > 1 || ncols() > 1;
 	if (havetable)
-		ms << MTag("mtable");
+		ms << MTag("mtable", R"(class="grid")");
 	char const * const celltag = havetable ? "mtd" : "mrow";
 	for (row_type row = 0; row < nrows(); ++row) {
 		if (havetable)
