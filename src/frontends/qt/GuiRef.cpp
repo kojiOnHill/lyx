@@ -338,8 +338,8 @@ void GuiRef::gotoClicked()
 	// and no-one seems to have any better idea.
 	bool const toggled =
 		last_reference_.isEmpty() || last_reference_.isNull();
-	if (toggled && refsTW->currentItem())
-		last_reference_ = refsTW->currentItem()->data(0, Qt::UserRole).toString();
+	if (toggled && selectedLV->currentItem())
+		last_reference_ = selectedLV->currentItem()->data(0, Qt::UserRole).toString();
 	gotoRef();
 	if (toggled)
 		last_reference_.clear();
