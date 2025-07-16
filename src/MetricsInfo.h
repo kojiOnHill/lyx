@@ -40,7 +40,7 @@ class MacroContext;
 class MetricsBase {
 public:
 	///
-	MetricsBase(BufferView * bv = 0, FontInfo font = FontInfo(),
+	MetricsBase(BufferView * bv = 0, FontInfo const & font = FontInfo(),
 	            int textwidth = 0);
 
 	/// the current view
@@ -50,11 +50,11 @@ public:
 	/// font of the containing inset
 	FontInfo outer_font;
 	/// name of current font - mathed specific
-	std::string fontname;
+	std::string fontname = "mathnormal";
 	/// This is the width available in pixels
 	int textwidth;
 	/// count wether the current mathdata is nested in macro(s)
-	int macro_nesting;
+	int macro_nesting = 0;
 
 	/// Temporarily change a full font.
 	Changer changeFontSet(std::string const & name);
@@ -83,11 +83,10 @@ public:
 	int inPixels(Length const & len) const;
 
 private:
-	int solid_line_thickness_;
-	int solid_line_offset_;
-	int dotted_line_thickness_;
+	int solid_line_thickness_ = 1;
+	int solid_line_offset_ = 1;
+	int dotted_line_thickness_ = 1;
 };
-
 
 //
 // This contains a MetricsBase and information that's only relevant during
@@ -111,7 +110,7 @@ public:
 	/// if true, do not expand insets to max width artificially
 	bool tight_insets;
 	/// Extra width required by an inset, in addition to its dimension
-	int extrawidth;
+	int extrawidth = 0;
 };
 
 
@@ -147,22 +146,24 @@ public:
 	///
 	frontend::Painter & pain;
 	/// Whether the text at this point is right-to-left (for insets)
-	bool ltr_pos;
+	bool ltr_pos = false;
 	/// The change the parent is part of (change tracking)
 	Change change;
 	/// Whether the parent is selected as a whole
-	bool selected;
+	bool selected = false;
 	/// Whether the left/right margins are selected
-	bool selected_left, selected_right;
+	bool selected_left = false;
+	bool selected_right = false;
 	/// Whether the spell checker is enabled for the parent
-	bool do_spellcheck;
+	bool do_spellcheck = true;
 	/// True when it can be assumed that the screen has been cleared
-	bool full_repaint;
+	bool full_repaint = true;
 	/// Current background color
-	ColorCode background_color;
+	ColorCode background_color = Color_background;
 	/// The left and right position of current line (inside margins).
 	/// Useful for drawing display math numbering
-	int leftx, rightx;
+	int leftx = 0;
+	int rightx = 0;
 };
 
 class TextMetricsInfo {};

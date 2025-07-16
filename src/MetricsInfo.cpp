@@ -34,10 +34,8 @@ namespace lyx {
 //
 /////////////////////////////////////////////////////////////////////////
 
-MetricsBase::MetricsBase(BufferView * b, FontInfo f, int w)
-	: bv(b), font(std::move(f)), fontname("mathnormal"),
-	  textwidth(w), macro_nesting(0),
-	  solid_line_thickness_(1), solid_line_offset_(1), dotted_line_thickness_(1)
+MetricsBase::MetricsBase(BufferView * b, FontInfo const & f, int w)
+	: bv(b), font(f), textwidth(w)
 {
 	if (lyxrc.currentZoom >= 200) {
 		// derive the line thickness from zoom factor
@@ -138,6 +136,52 @@ int MetricsBase::inPixels(Length const & len) const
 }
 
 
+Changer MetricsBase::changeScript()
+{
+	switch (font.style()) {
+	case DISPLAY_STYLE:
+	case TEXT_STYLE:
+		return font.changeStyle(SCRIPT_STYLE);
+	case SCRIPT_STYLE:
+	case SCRIPTSCRIPT_STYLE:
+		return font.changeStyle(SCRIPTSCRIPT_STYLE);
+	case INHERIT_STYLE:
+	case IGNORE_STYLE:
+		return noChange();
+	}
+	//remove Warning
+	return noChange();
+}
+
+
+Changer MetricsBase::changeFrac()
+{
+	switch (font.style()) {
+	case DISPLAY_STYLE:
+		return font.changeStyle(TEXT_STYLE);
+	case TEXT_STYLE:
+		return font.changeStyle(SCRIPT_STYLE);
+	case SCRIPT_STYLE:
+	case SCRIPTSCRIPT_STYLE:
+		return font.changeStyle(SCRIPTSCRIPT_STYLE);
+	case INHERIT_STYLE:
+	case IGNORE_STYLE:
+		return noChange();
+	}
+	//remove Warning
+	return noChange();
+}
+
+
+Changer MetricsBase::changeArray(bool small)
+{
+	if (small)
+		return font.changeStyle(SCRIPT_STYLE);
+	return (font.style() == DISPLAY_STYLE) ? font.changeStyle(TEXT_STYLE)
+		: noChange();
+}
+
+
 /////////////////////////////////////////////////////////////////////////
 //
 // MetricsInfo
@@ -146,8 +190,7 @@ int MetricsBase::inPixels(Length const & len) const
 
 MetricsInfo::MetricsInfo(BufferView * bv, FontInfo font, int textwidth,
                          MacroContext const & mc, bool vm, bool tight)
-	: base(bv, font, textwidth), macrocontext(mc), vmode(vm), tight_insets(tight),
-	  extrawidth(0)
+	: base(bv, font, textwidth), macrocontext(mc), vmode(vm), tight_insets(tight)
 {}
 
 
@@ -158,13 +201,8 @@ MetricsInfo::MetricsInfo(BufferView * bv, FontInfo font, int textwidth,
 /////////////////////////////////////////////////////////////////////////
 
 PainterInfo::PainterInfo(BufferView * bv, lyx::frontend::Painter & painter)
-	: pain(painter), ltr_pos(false), change(),
-	  selected(false), selected_left(false), selected_right(false),
-	  do_spellcheck(true), full_repaint(true), background_color(Color_background),
-	  leftx(0), rightx(0)
-{
-	base.bv = bv;
-}
+	: base(bv), pain(painter)
+{}
 
 
 void PainterInfo::draw(int x, int y, char_type c)
@@ -223,52 +261,6 @@ Color PainterInfo::textColor(Color const & color) const
 	if (selected)
 		return Color_selectiontext;
 	return color;
-}
-
-
-Changer MetricsBase::changeScript()
-{
-	switch (font.style()) {
-	case DISPLAY_STYLE:
-	case TEXT_STYLE:
-		return font.changeStyle(SCRIPT_STYLE);
-	case SCRIPT_STYLE:
-	case SCRIPTSCRIPT_STYLE:
-		return font.changeStyle(SCRIPTSCRIPT_STYLE);
-	case INHERIT_STYLE:
-	case IGNORE_STYLE:
-		return noChange();
-	}
-	//remove Warning
-	return noChange();
-}
-
-
-Changer MetricsBase::changeFrac()
-{
-	switch (font.style()) {
-	case DISPLAY_STYLE:
-		return font.changeStyle(TEXT_STYLE);
-	case TEXT_STYLE:
-		return font.changeStyle(SCRIPT_STYLE);
-	case SCRIPT_STYLE:
-	case SCRIPTSCRIPT_STYLE:
-		return font.changeStyle(SCRIPTSCRIPT_STYLE);
-	case INHERIT_STYLE:
-	case IGNORE_STYLE:
-		return noChange();
-	}
-	//remove Warning
-	return noChange();
-}
-
-
-Changer MetricsBase::changeArray(bool small)
-{
-	if (small)
-		return font.changeStyle(SCRIPT_STYLE);
-	return (font.style() == DISPLAY_STYLE) ? font.changeStyle(TEXT_STYLE)
-		: noChange();
 }
 
 
