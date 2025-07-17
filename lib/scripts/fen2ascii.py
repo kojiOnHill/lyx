@@ -10,7 +10,6 @@
 # format to an ascii representation of the position.
 
 import os
-import string
 import sys
 
 os.close(0)
@@ -22,8 +21,8 @@ line = sys.stdin.readline()
 if line[-1] == "\n":
     line = line[:-1]
 
-line = string.split(line, " ")[0]
-comp = string.split(line, "/")
+line = line.split(" ")[0]
+comp = line.split("/")
 
 cont = 1
 margin = " " * 6
