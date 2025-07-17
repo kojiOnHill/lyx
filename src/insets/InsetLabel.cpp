@@ -201,7 +201,8 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 	active_counter_ = cnts.currentCounter();
 	Language const * lang = it->getParLanguage(buffer().params());
 	if (lang && !active_counter_.empty()) {
-		if (active_counter_ != from_ascii("equation")) {
+		bool const equation = active_counter_ == from_ascii("equation");
+		if (!equation || it.inTexted()) {
 			counter_value_ = cnts.theCounter(active_counter_, lang->code());
 			pretty_counter_ = cnts.prettyCounter(active_counter_, lang->code());
 			docstring pretty_counter_pl = cnts.prettyCounter(active_counter_, lang->code(), false, true);
@@ -220,6 +221,14 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 				formatted_counter_pl_ = cnts.formattedCounter(active_counter_, prex, lang->code(), false, true);
 				formatted_counter_lc_ = cnts.formattedCounter(active_counter_, prex, lang->code(), true);
 				formatted_counter_lc_pl_ = cnts.formattedCounter(active_counter_, prex, lang->code(), true, true);
+			}
+			if (equation) {
+				// FIXME: special code just for the subequations module (#13199)
+				//        replace with a genuine solution long-term!
+				formatted_counter_ = "(" + trim(formatted_counter_, "?") + ")";
+				formatted_counter_pl_ = "(" + trim(formatted_counter_pl_, "?") + ")";
+				formatted_counter_lc_ = "(" + trim(formatted_counter_lc_, "?") + ")";
+				formatted_counter_lc_pl_ = "(" + trim(formatted_counter_lc_pl_, "?") + ")";
 			}
 		} else {
 			// For equations, the counter value and pretty counter

@@ -159,6 +159,7 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 	}
 
 	// Special case for `subequations' module.
+	// FIXME: replace with a genuine solution long-term!
 	if (il.latextype() == InsetLaTeXType::ENVIRONMENT &&
 	    il.latexname() == "subequations") {
 		docstring equation(from_ascii("equation"));
