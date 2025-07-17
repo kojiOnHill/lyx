@@ -12,13 +12,13 @@
 #ifndef STATISTICS_H
 #define STATISTICS_H
 
+#include "Cursor.h"
+
 #include "support/docstring.h"
 #include "support/types.h"
 
 namespace lyx {
 
-class CursorData;
-class CursorSlice;
 class Text;
 class Paragraph;
 
@@ -33,6 +33,9 @@ public:
 	void update(docstring const & s);
 	/// Helper: count chars and words in the paragraphs of \c text
 	void update(Text const & text);
+
+	// Did the buffer or the selection change since last update?
+	bool needsUpdate(CursorData const & cur) const;
 
 	// Number of words
 	int word_count = 0;
@@ -59,7 +62,9 @@ private:
 	// Used in the code to track status
 	bool inword_ = false;
 	// The buffer id at last statistics computation.
-	int stats_id_ = -1;
+	int last_buffer_id_ = -1;
+	// The selection at last statistics computation.
+	CursorData last_cur_;
 };
 
 }

@@ -31,14 +31,11 @@ using namespace support;
 
 void Statistics::update(CursorData const & cur, bool skip)
 {
-	// early exit if the buffer has not changed since last time
-	if (stats_id_ == cur.buffer()->id())
-		return;
-
 	// reset counts
 	*this = Statistics();
 	skip_no_output_ = skip;
-	stats_id_ = cur.buffer()->id();
+	last_buffer_id_ = cur.buffer()->id();
+	last_cur_ = cur;
 
 	if (cur.selection()) {
 		if (cur.inMathed())
@@ -122,6 +119,14 @@ void Statistics::update(Paragraph const & par, pos_type from, pos_type to)
 		}
 	}
 	inword_ = false;
+}
+
+
+bool Statistics::needsUpdate(CursorData const & cur) const
+{
+	return cur.buffer()->id() != last_buffer_id_
+	       || (cur.selection() && cur != last_cur_)
+	       || cur.selection() != last_cur_.selection();
 }
 
 

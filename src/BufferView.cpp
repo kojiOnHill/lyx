@@ -2145,7 +2145,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 	}
 
 	case LFUN_STATISTICS: {
-		Statistics & stats = buffer_.statistics();
+		Statistics stats;
 		stats.update(cur);
 		int const words = stats.word_count;
 		int const chars = stats.char_count;
