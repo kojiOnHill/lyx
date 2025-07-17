@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This DocBook file was created by LyX 2.5.0~devel
+  See https://www.lyx.org/ for more information -->
+<article xml:lang="en-US" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.2">
+<info>
+<title>Color Test</title>
+<author>
+<personname>Iris</personname>
+</author>
+</info>
+<section>
+<title>Insets</title>
+<para>This is a text.<footnote>
+<para>Footnote comes here.</para>
+</footnote> It shows how <glossterm linkend="nomencolor-theme">color theme</glossterm>color theme looks like. Important <indexterm><primary>words</primary></indexterm>words.
+<programlisting>Sometimes I write a code.</programlisting>
+Or sometimes I write equations.
+<informalequation>
+<alt role='tex'>y &amp; =x\\
+z &amp; =y\text{Text in math.}
+</alt>
+<m:math display="block">
+ 
+<m:mtable displaystyle="true" columnalign="right left " class="align">
+ <m:mtr>
+  <m:mtd>
+   <m:mi>y</m:mi>
+  </m:mtd>
+  <m:mtd>
+   <m:mrow>
+    <m:mo stretchy='false'>=</m:mo>
+    <m:mi>x</m:mi>
+   </m:mrow>
+  </m:mtd>
+ </m:mtr>
+ <m:mtr>
+  <m:mtd>
+   <m:mi>z</m:mi>
+  </m:mtd>
+  <m:mtd>
+   <m:mrow>
+    <m:mo stretchy='false'>=</m:mo>
+    <m:mi>y</m:mi>
+    <m:mtext>Text&#0160;in&#0160;math</m:mtext>
+    <m:mn>.</m:mn>
+   </m:mrow>
+  </m:mtd>
+ </m:mtr>
+</m:mtable>
+</m:math>
+</informalequation>
+Writing a small math in text too such as <inlineequation>
+<alt role='tex'>y=x</alt>
+<m:math display="inline">
+ 
+<m:mrow>
+ <m:mi>y</m:mi>
+ <m:mo stretchy='false'>=</m:mo>
+ <m:mi>x</m:mi>
+</m:mrow>
+</m:math>
+</inlineequation>.<sidebar role="margin">
+<?dbfo float-type="margin.note"?>
+<para>By the way, this goes to margin.</para>
+</sidebar> <table xml:id="tab.Table">
+<caption>Table</caption>
+<tbody>
+<tr>
+<td style='border-bottom: 3.000000px double; border-left: 1px solid; border-top: 1.000000px solid' align='center' valign='top'>
+<para>A</para>
+</td>
+<td style='border-bottom: 3.000000px double; border-right: 1px solid; border-left: 1px solid; border-top: 1.000000px solid' align='center' valign='top'>
+<para>B</para>
+</td>
+</tr>
+<tr>
+<td style='border-bottom: 1.000000px solid; border-left: 1px solid; border-top: 1.000000px solid' align='center' valign='top'>
+<para>C</para>
+</td>
+<td style='border-bottom: 1.000000px solid; border-right: 1px solid; border-left: 1px solid; border-top: 1.000000px solid' align='center' valign='top'>
+<para>D</para>
+</td>
+</tr>
+</tbody>
+</table>
+I&#8217;m referring to Table <xref linkend="tab.Table" />.<remark>
+Comment
+</remark>
+greyed out <link xlink:href="URL">URL</link><link xlink:href="https:://www.lyx.org/">LyX's webpage</link><!-- \LaTeX { code} -->Preview<date role="current-date">2025-07-17</date></para>
+</section>
+<section>
+<title>Boxes</title>
+<sidebar role='frameless'>
+<para>Without boundaries</para>
+</sidebar>
+<sidebar role='boxed'>
+<para>Simple box</para>
+</sidebar>
+<sidebar role='ovalbox'>
+<para>Ellipse</para>
+</sidebar>
+<sidebar role='ovalbox-var'>
+<para>Ellipse bold</para>
+</sidebar>
+<sidebar role='shadowbox'>
+<para>Shadow</para>
+</sidebar>
+<sidebar role='shaded'>
+<para>Shadow with background</para>
+</sidebar>
+<sidebar role='doublebox'>
+<para>Double lines</para>
+</sidebar>
+<glossary>
+<title>Nomenclature</title>
+<glossentry xml:id="nomencolor-theme">
+<glossterm>color theme</glossterm>
+<glossdef>
+<para>Color Theme</para>
+</glossdef>
+</glossentry>
+</glossary>
+</section>
+<!-- The bibliography is empty! -->
+</article>
