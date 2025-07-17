@@ -3769,7 +3769,7 @@ std::tuple<std::vector<docstring>, std::vector<docstring>, std::vector<docstring
 
 		// Determine which tags should be opened or closed regarding fonts. Consider the last output character (i.e. not
 		// deleted).
-		int last_output_char = (i == 0) ? 0 : i - 1;
+		pos_type last_output_char = (i == 0) ? 0 : i - 1;
 		if (i > 0) {
 			while (last_output_char > 0 && isDeleted(last_output_char))
 				--last_output_char;
