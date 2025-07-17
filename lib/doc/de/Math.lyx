@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 640
+\lyxformat 641
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -216,7 +216,7 @@ logicalmkup
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
+\justification default
 \crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
@@ -315,7 +315,7 @@ Verfasser:
 
 
 \family sans
-Version 2.4.x
+Version 2.5.x
 \end_layout
 
 \begin_layout Standard
@@ -3883,7 +3883,7 @@ durch Hoch- und Tiefstellen erzeugte Indizes:
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $_{9}^{19}\mathrm{F}$
+\begin_inset Formula $^{19}_{9}\mathrm{F}$
 \end_inset
 
 
@@ -3906,7 +3906,7 @@ korrekte Indizes:
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $_{\phantom{1}9}^{19}\mathrm{F}$
+\begin_inset Formula $^{19}_{\phantom{1}9}\mathrm{F}$
 \end_inset
 
 
@@ -4071,7 +4071,7 @@ F
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $_{\phantom{1}9}^{19}\mathrm{F}$
+\begin_inset Formula $^{19}_{\phantom{1}9}\mathrm{F}$
 \end_inset
 
 
@@ -4118,7 +4118,7 @@ F
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $_{\phantom{23}9}^{235}\mathrm{F}$
+\begin_inset Formula $^{235}_{\phantom{23}9}\mathrm{F}$
 \end_inset
 
 
@@ -4165,7 +4165,7 @@ _MMt
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Lambda_{MMt}^{\phantom{ii}t}$
+\begin_inset Formula $\Lambda^{\phantom{ii}t}_{MMt}$
 \end_inset
 
 
@@ -18002,7 +18002,7 @@ A(x)
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\prod_{0}^{\infty}A(x)$
+\begin_inset Formula $\prod^{\infty}_{0}A(x)$
 \end_inset
 
 
@@ -18058,7 +18058,7 @@ L
 Die normalen Grenzen sehen so aus:
 \begin_inset Formula 
 \[
-\sum_{x=0}^{\infty}\frac{1}{x^{2}}
+\sum^{\infty}_{x=0}\frac{1}{x^{2}}
 \]
 
 \end_inset
@@ -18067,7 +18067,7 @@ So sieht die Formel aus,
  wenn man die Grenzen neben das Summenzeichen setzt:
 \begin_inset Formula 
 \[
-\sum\nolimits_{x=0}^{\infty}\frac{1}{x^{2}}
+\sum\nolimits^{\infty}_{x=0}\frac{1}{x^{2}}
 \]
 
 \end_inset
@@ -18202,10 +18202,10 @@ B.
  diesen Ausdruck 
 \begin_inset Formula 
 \begin{equation}
-\sum_{\begin{subarray}{c}
+\sum^{n}_{\begin{subarray}{c}
 0<k<1000\\
 \\k\,\in\,\mathbb{N}
-\end{subarray}}^{n}k^{-2}\label{eq:substack}
+\end{subarray}}k^{-2}\label{eq:substack}
 \end{equation}
 
 \end_inset
@@ -18442,10 +18442,10 @@ und fügt den Operator mit seinen Grenze in die geschweifte Klammer ein.
  Nach der geschweiften Klammer setzt man die Formel fort:
 \begin_inset Formula 
 \[
-\smashoperator{\sum_{\begin{subarray}{c}
+\smashoperator{\sum^{n}_{\begin{subarray}{c}
 0<k<1000\\
 \\k\,\in\,\mathbb{N}
-\end{subarray}}^{n}}k^{-2}
+\end{subarray}}}k^{-2}
 \]
 
 \end_inset
@@ -18495,7 +18495,7 @@ smashoperator
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Y\smashoperator{\sum_{1\le i\le j\le n}^{n=3456}}X_{ij}=Y\smashoperator[l]{\sum_{1\le i\le j\le n}^{n=3456}}X_{ij}=Y\smashoperator[r]{\sum_{1\le i\le j\le n}^{n=3456}}X_{ij}
+Y\smashoperator{\sum^{n=3456}_{1\le i\le j\le n}}X_{ij}=Y\smashoperator[l]{\sum^{n=3456}_{1\le i\le j\le n}}X_{ij}=Y\smashoperator[r]{\sum^{n=3456}_{1\le i\le j\le n}}X_{ij}
 \]
 
 \end_inset
@@ -18887,7 +18887,7 @@ n
  :
 \begin_inset Formula 
 \[
-\sideset{}{'}\sum_{k=1}^{n}
+\sideset{}{'}\sum^{n}_{k=1}
 \]
 
 \end_inset
@@ -20260,7 +20260,7 @@ nolink "false"
  besteht:
 \begin_inset Formula 
 \[
-\Raute_{n=1}^{\infty}
+\Raute^{\infty}_{n=1}
 \]
 
 \end_inset
@@ -20423,7 +20423,7 @@ B.
  um eine Grenze für mehrere Operatoren zu verwenden:
 \begin_inset Formula 
 \[
-\mathop{\sum\negmedspace\sum}_{i,j=1}^{N}
+\mathop{\sum\negmedspace\sum}^{N}_{i,j=1}
 \]
 
 \end_inset
@@ -21196,7 +21196,7 @@ mathbf
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\mathbf{\int_{n}^{2}f(\theta)=\Gamma}\qquad\textrm{Formel mit \textbackslash mathbf}
+\mathbf{\int^{2}_{n}f(\theta)=\Gamma}\qquad\textrm{Formel mit \textbackslash mathbf}
 \]
 
 \end_inset
@@ -21215,7 +21215,7 @@ boldsymbol
 :
 \begin_inset Formula 
 \[
-\boldsymbol{\int_{n}^{2}f(\theta)=\Gamma\qquad\textrm{Formel mit \textbackslash boldsymbol}}
+\boldsymbol{\int^{2}_{n}f(\theta)=\Gamma\qquad\textrm{Formel mit \textbackslash boldsymbol}}
 \]
 
 \end_inset
@@ -21325,7 +21325,7 @@ boldmath
 
 \begin_inset Formula 
 \[
-\int_{n}^{2}f(\theta)=\Gamma\qquad\textrm{Formel in boldmath-Umgebung}
+\int^{2}_{n}f(\theta)=\Gamma\qquad\textrm{Formel in boldmath-Umgebung}
 \]
 
 \end_inset
@@ -30657,8 +30657,8 @@ Zeilenabstand
 Bei mehrzeiligen Formeln fehlt manchmal etwas Platz zwischen den Zeilen:
 \begin_inset Formula 
 \begin{eqnarray*}
-B^{2}(B^{2}-2r_{g}^{2}+2x_{0}^{2}-2r_{k}^{2})+4x_{0}^{2}x^{2}+4x_{0}xD & = & \textrm{-}4x^{2}B^{2}+4x_{0}xB^{2}\\
-4x^{2}\left(B^{2}+x_{0}^{2}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r_{g}^{2}+2x_{0}^{2}-2r_{k}^{2}\right) & = & 0
+B^{2}(B^{2}-2r^{2}_{g}+2x^{2}_{0}-2r^{2}_{k})+4x^{2}_{0}x^{2}+4x_{0}xD & = & \textrm{-}4x^{2}B^{2}+4x_{0}xB^{2}\\
+4x^{2}\left(B^{2}+x^{2}_{0}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r^{2}_{g}+2x^{2}_{0}-2r^{2}_{k}\right) & = & 0
 \end{eqnarray*}
 
 \end_inset
@@ -30911,8 +30911,8 @@ jot}{3mm+3pt}
 
 \begin_inset Formula 
 \begin{eqnarray*}
-B^{2}(B^{2}-2r_{g}^{2}+2x_{0}^{2}-2r_{k}^{2})+4x_{0}^{2}x^{2}+4x_{0}xD & = & \textrm{-}4x^{2}B^{2}+4x_{0}xB^{2}\\
-4x^{2}\left(B^{2}+x_{0}^{2}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r_{g}^{2}+2x_{0}^{2}-2r_{k}^{2}\right) & = & 0
+B^{2}(B^{2}-2r^{2}_{g}+2x^{2}_{0}-2r^{2}_{k})+4x^{2}_{0}x^{2}+4x_{0}xD & = & \textrm{-}4x^{2}B^{2}+4x_{0}xB^{2}\\
+4x^{2}\left(B^{2}+x^{2}_{0}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r^{2}_{g}+2x^{2}_{0}-2r^{2}_{k}\right) & = & 0
 \end{eqnarray*}
 
 \end_inset
@@ -31318,9 +31318,9 @@ lefteqn
  dass alle weiteren Eingaben die folgenden Spalten überschreiben:
 \begin_inset Formula 
 \begin{eqnarray}
-\lefteqn{4x^{2}\left(B^{2}+x_{0}^{2}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r_{g}^{2}+2x_{0}^{2}-2r_{k}^{2}\right)+D^{2}}\nonumber \\
- &  & -\hspace{3pt}B^{2}-2B\sqrt{r_{g}^{2}-x^{2}+2x_{0}x-x_{0}^{2}}+r_{g}^{2}-x^{2}+2x_{0}x-x_{0}^{2}\nonumber \\
- &  & =B^{2}+2\left(r_{g}^{2}+2x_{0}x-x_{0}^{2}-r_{k}^{2}\right)+\frac{\left(r_{g}^{2}+2x_{0}x-x_{0}^{2}-r_{k}^{2}\right)^{2}}{B^{2}}\label{eq:lefteqn}
+\lefteqn{4x^{2}\left(B^{2}+x^{2}_{0}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r^{2}_{g}+2x^{2}_{0}-2r^{2}_{k}\right)+D^{2}}\nonumber \\
+ &  & -\hspace{3pt}B^{2}-2B\sqrt{r^{2}_{g}-x^{2}+2x_{0}x-x^{2}_{0}}+r^{2}_{g}-x^{2}+2x_{0}x-x^{2}_{0}\nonumber \\
+ &  & =B^{2}+2\left(r^{2}_{g}+2x_{0}x-x^{2}_{0}-r^{2}_{k}\right)+\frac{\left(r^{2}_{g}+2x_{0}x-x^{2}_{0}-r^{2}_{k}\right)^{2}}{B^{2}}\label{eq:lefteqn}
 \end{eqnarray}
 
 \end_inset
@@ -31626,7 +31626,7 @@ Bei Klammern,
  tritt folgendes Problem auf:
 \begin_inset Formula 
 \begin{eqnarray*}
-A & = & \sin(x)\left[\prod_{R=1}^{\infty}\frac{1}{R}+\cdots\right.\\
+A & = & \sin(x)\left[\prod^{\infty}_{R=1}\frac{1}{R}+\cdots\right.\\
  &  & \left.\cdots+B-D\right]
 \end{eqnarray*}
 
@@ -31841,8 +31841,8 @@ vphantom
 Das Ergebnis sieht so aus:
 \begin_inset Formula 
 \begin{eqnarray*}
-A & = & \sin(x)\left[\prod_{R=1}^{\infty}\frac{1}{R}+\cdots\right.\\
- &  & \left.\vphantom{\prod_{R=1}^{\infty}}\cdots+B-D\right]
+A & = & \sin(x)\left[\prod^{\infty}_{R=1}\frac{1}{R}+\cdots\right.\\
+ &  & \left.\vphantom{\prod^{\infty}_{R=1}}\cdots+B-D\right]
 \end{eqnarray*}
 
 \end_inset
@@ -32382,9 +32382,9 @@ nolink "false"
  in der multline-Umgebung:
 \begin_inset Formula 
 \begin{multline}
-4x^{2}\left(B^{2}+x_{0}^{2}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r_{g}^{2}+2x_{0}^{2}-2r_{k}^{2}\right)+D^{2}\\
--B^{2}-2B\sqrt{r_{g}^{2}-x^{2}+2x_{0}x-x_{0}^{2}}+r_{g}^{2}-x^{2}+2x_{0}x-x_{0}^{2}\\
-=B^{2}+2\left(r_{g}^{2}+2x_{0}x-x_{0}^{2}-r_{k}^{2}\right)+\frac{\left(r_{g}^{2}+2x_{0}x-x_{0}^{2}-r_{k}^{2}\right)^{2}}{B^{2}}
+4x^{2}\left(B^{2}+x^{2}_{0}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r^{2}_{g}+2x^{2}_{0}-2r^{2}_{k}\right)+D^{2}\\
+-B^{2}-2B\sqrt{r^{2}_{g}-x^{2}+2x_{0}x-x^{2}_{0}}+r^{2}_{g}-x^{2}+2x_{0}x-x^{2}_{0}\\
+=B^{2}+2\left(r^{2}_{g}+2x_{0}x-x^{2}_{0}-r^{2}_{k}\right)+\frac{\left(r^{2}_{g}+2x_{0}x-x^{2}_{0}-r^{2}_{k}\right)^{2}}{B^{2}}
 \end{multline}
 
 \end_inset
@@ -32608,9 +32608,9 @@ multlinegap}{2cm}
 
 \begin_inset Formula 
 \begin{multline}
-4x^{2}\left(B^{2}+x_{0}^{2}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r_{g}^{2}+2x_{0}^{2}-2r_{k}^{2}\right)+D^{2}\\
-\shoveleft{-B^{2}-2B\sqrt{r_{g}^{2}-x^{2}+2x_{0}x-x_{0}^{2}}+r_{g}^{2}-x^{2}+2x_{0}x-x_{0}^{2}}\\
-=B^{2}+2\left(r_{g}^{2}+2x_{0}x-x_{0}^{2}-r_{k}^{2}\right)+\frac{\left(r_{g}^{2}+2x_{0}x-x_{0}^{2}-r_{k}^{2}\right)^{2}}{B^{2}}
+4x^{2}\left(B^{2}+x^{2}_{0}\right)+4x_{0}x\left(D-B^{2}\right)+B^{2}\left(B^{2}-2r^{2}_{g}+2x^{2}_{0}-2r^{2}_{k}\right)+D^{2}\\
+\shoveleft{-B^{2}-2B\sqrt{r^{2}_{g}-x^{2}+2x_{0}x-x^{2}_{0}}+r^{2}_{g}-x^{2}+2x_{0}x-x^{2}_{0}}\\
+=B^{2}+2\left(r^{2}_{g}+2x_{0}x-x^{2}_{0}-r^{2}_{k}\right)+\frac{\left(r^{2}_{g}+2x_{0}x-x^{2}_{0}-r^{2}_{k}\right)^{2}}{B^{2}}
 \end{multline}
 
 \end_inset
@@ -33023,7 +33023,7 @@ Text
 \begin_layout Standard
 Bei den Align-Umgebungen sowie der multline- und gather-Umgebung besteht die Möglichkeit Text einzufügen,
  der in einer eigenen Zeile erscheint und die Ausrichtung der Spalten nicht beeinflusst.
- Dazu wird der Befehl 
+ Dazu wird im Hintergrund der Befehl 
 \series bold
 
 \backslash
@@ -33063,41 +33063,55 @@ intertext
 
 \end_inset
 
- nach folgendem Schema benutzt:
-\end_layout
+ benutzt.
+ Um dies zu nutzen,
+ können Sie diesen Befehl,
+ gefolgt von einem Leerzeichen,
+ direkt am Anfang einer Gleichungszeile eingeben.
+ Sie können aber auch auf den Mathe-Werkzeugleistenknopf 
+\begin_inset Graphics
+	filename ../../images/math/dynamic-math-texts.svgz
+	lyxscale 15
+	darkModeSensitive
+	width 16pt
 
-\begin_layout Standard
+\end_inset
 
+ drücken und dann 
+\family sans
+Intertext
+\family default
+ auswählen.
+ Sollte die Mathe-Werkzeugleiste nicht sichtbar sein,
+ ändern Sie die Einstellungen in 
+\family sans
+Ansicht\SpecialChar menuseparator
+Werkzeugleisten\SpecialChar menuseparator
+Mathe-Kontrollflächen
+\family default
+.
+ Im Ergebnis wird ein Eingabefeld eingefügt,
+ in das Sie Text schreiben können,
+ der zwischen Gleichungen erscheinen soll.
+ Eine Version mit kleinerer Höhe,
+ 
 \series bold
 
 \backslash
-intertext{Text}
+shortintertext
+\series default
+,
+ kann analog eingefügt werden.
 \end_layout
 
 \begin_layout Standard
 Der Text sollte nicht länger als eine Zeile sein,
  da er nicht umgebrochen werden kann.
- Weil \SpecialChar LyX
- 
-\series bold
-
-\backslash
-intertext
-\series default
- noch nicht direkt unterstützt,
- schreibt man den Text als mathematischen Text.
- 
-\series bold
-
-\backslash
-intertext
-\series default
- muss dabei zu Beginn einer Zeile stehen und erscheint in der Ausgabe über dieser Zeile.
  Ein Beispiel bei dem der Text zu Beginn der zweiten Zeile eingegeben wurde:
 \begin_inset Formula 
 \begin{align}
-I & =a\sqrt{2}\int_{0}^{2\pi}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi\\
-\intertext{\text{Integrand ist symmetrisch zu \ensuremath{\phi=\pi}, daher}} & =2a\sqrt{2}\int_{0}^{\pi}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi
+I & =a\sqrt{2}\int^{2\pi}_{0}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi\\
+\intertext{\text{Integrand ist symmetrisch zu \ensuremath{\phi=\pi}, daher}} & =2a\sqrt{2}\int^{\pi}_{0}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi
 \end{align}
 
 \end_inset
@@ -33114,46 +33128,7 @@ intertext
 \series default
  erzeugt immer etwas vertikalen Leerraum zwischen dem Text und den Formelzeilen.
  Um dies zu vermeiden,
- stellt man in den Dokumenteinstellungen unter 
-\family sans
-Mathe-Optionen
-\family default
- für das Paket 
-\series bold
-mathtools
-\series default
-
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-Pakete
-\begin_inset IndexMacro subentry
-status open
-
-\begin_layout Plain Layout
-mathtools
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- die Option 
-\family sans
-Immer
-\begin_inset space ~
-\end_inset
-
-laden
-\family default
- ein.
- Man kann nun den Befehl 
+ kann man den Befehl 
 \series bold
 
 \backslash
@@ -33199,11 +33174,12 @@ shortintertext
 \backslash
 intertext
 \series default
- verwenden:
+ verwenden.
+ Das sieht dann so aus:
 \begin_inset Formula 
 \begin{align}
-I & =a\sqrt{2}\int_{0}^{2\pi}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi\\
-\shortintertext{\text{Integrand ist symmetrisch zu \ensuremath{\phi=\pi}, daher}} & =2a\sqrt{2}\int_{0}^{\pi}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi
+I & =a\sqrt{2}\int^{2\pi}_{0}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi\\
+\shortintertext{\text{Integrand ist symmetrisch zu \ensuremath{\phi=\pi}, daher}} & =2a\sqrt{2}\int^{\pi}_{0}\sqrt{1+\cos(\phi)}\;\mathrm{d}\phi
 \end{align}
 
 \end_inset
@@ -35491,7 +35467,7 @@ Ein Beispieltext aus der Chemie:
 
 \begin_layout Quote
 Das 
-\begin_inset Formula $\mathrm{SO_{4}^{2-}}$
+\begin_inset Formula $\mathrm{SO^{2-}_{4}}$
 \end_inset
 
 -Ion verbindet sich mit zwei 
@@ -35506,7 +35482,7 @@ Das
  Die Reaktionsgleichung dazu lautet:
 \begin_inset Formula 
 \begin{equation}
-\mathrm{2\,Na^{+}+SO_{4}^{2-}\longrightarrow Na_{2}SO_{4}}\label{eq:chemische-Reaktion}
+\mathrm{2\,Na^{+}+SO^{2-}_{4}\longrightarrow Na_{2}SO_{4}}\label{eq:chemische-Reaktion}
 \end{equation}
 
 \end_inset
@@ -35840,7 +35816,7 @@ Th+
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\ce{_{90}^{227}Th+}$
+\begin_inset Formula $\ce{^{227}_{90}Th+}$
 \end_inset
 
 
@@ -38436,7 +38412,7 @@ Maxima
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\frac{37}{3}*2-\sum_{i=1}^{3}i^{i}=-\frac{22}{3}$
+\begin_inset Formula $\frac{37}{3}*2-\sum^{3}_{i=1}i^{i}=-\frac{22}{3}$
 \end_inset
 
 
@@ -38450,7 +38426,7 @@ Maxima
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\int_{1}^{2}\sin(x)dx=\cos1-\cos2$
+\begin_inset Formula $\int^{2}_{1}\sin(x)dx=\cos1-\cos2$
 \end_inset
 
 
@@ -38506,14 +38482,14 @@ Achtung:
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $powerseries\left(-\log\left(5-x\right),x,1\right)=\sum_{{\mathit{i}_{2}}=0}^{\infty}{\frac{4^{-{\mathit{i}_{2}}-1}\,\left(x-1\right)^{{\mathit{i}_{2}}+1}}{{\mathit{i}_{2}}+1}}-\log4$
+\begin_inset Formula $powerseries\left(-\log\left(5-x\right),x,1\right)=\sum^{\infty}_{{\mathit{i}_{2}}=0}{\frac{4^{-{\mathit{i}_{2}}-1}\,\left(x-1\right)^{{\mathit{i}_{2}}+1}}{{\mathit{i}_{2}}+1}}-\log4$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $solve\left(x_{1}+y_{1}^{3}=y_{1}+x_{1}^{2},x_{1}\right)=\left[x_{1}=-\frac{\sqrt{4\,y_{1}^{3}-4\,y_{1}+1}-1}{2},x_{1}=\frac{\sqrt{4\,y_{1}^{3}-4\,y_{1}+1}+1}{2}\right]$
+\begin_inset Formula $solve\left(x_{1}+y^{3}_{1}=y_{1}+x^{2}_{1},x_{1}\right)=\left[x_{1}=-\frac{\sqrt{4\,y^{3}_{1}-4\,y_{1}+1}-1}{2},x_{1}=\frac{\sqrt{4\,y^{3}_{1}-4\,y_{1}+1}+1}{2}\right]$
 \end_inset
 
 
@@ -40062,7 +40038,7 @@ cancelto
  wenn man das Kürzen innerhalb einer Formel darstellen will:
 \begin_inset Formula 
 \[
-\frac{\left(x_{0}+bB\right)^{2}}{\left(1+b^{2}\right)^{\cancelto{2}{3}}}=\frac{x_{0}^{2}+B^{2}-r_{g}^{2}}{\cancel{1+b^{2}}}
+\frac{\left(x_{0}+bB\right)^{2}}{\left(1+b^{2}\right)^{\cancelto{2}{3}}}=\frac{x^{2}_{0}+B^{2}-r^{2}_{g}}{\cancel{1+b^{2}}}
 \]
 
 \end_inset
@@ -40167,7 +40143,7 @@ color{red}}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\left(x_{0}+bB\right)^{2}}{\left(1+b^{2}\right)^{\cancelto{2}{3}}}=\frac{x_{0}^{2}+B^{2}-r_{g}^{2}}{\cancel{1+b^{2}}}
+\frac{\left(x_{0}+bB\right)^{2}}{\left(1+b^{2}\right)^{\cancelto{2}{3}}}=\frac{x^{2}_{0}+B^{2}-r^{2}_{g}}{\cancel{1+b^{2}}}
 \]
 
 \end_inset
@@ -40827,7 +40803,7 @@ end{multicols}
 
 \begin_inset Formula 
 \begin{equation}
-S(t)=S_{0}(t)\int_{-\infty}^{\infty}P(\phi,t)\mathrm{e}^{\mathrm{i}\phi}\,\mathrm{d}\phi
+S(t)=S_{0}(t)\int^{\infty}_{-\infty}P(\phi,t)\mathrm{e}^{\mathrm{i}\phi}\,\mathrm{d}\phi
 \end{equation}
 
 \end_inset
@@ -40849,7 +40825,7 @@ wobei
 \end_inset
 
  das Signal ohne Gradient ist und die Normierungsbedingung 
-\begin_inset Formula $\int_{-\infty}^{\infty}P(\phi,t)\,\mathrm{d}\phi=1$
+\begin_inset Formula $\int^{\infty}_{-\infty}P(\phi,t)\,\mathrm{d}\phi=1$
 \end_inset
 
  gilt.
