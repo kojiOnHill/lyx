@@ -553,7 +553,7 @@ public:
 	int const timer_rate = 500;
 	/// Real stats updates infrequently. First they take long time for big buffers, second
 	/// they are visible for fast-repeat keyboards even for mid documents.
-	int const default_stats_rate = 5000;
+	int const default_stats_rate = 2000;
 	/// Detection of new selection, so we can react fast
 	bool already_in_selection_ = false;
 	/// Maximum size of "short" selection for which we can update with faster timer_rate
