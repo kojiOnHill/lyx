@@ -9,43 +9,31 @@
 # This script will convert a chess position in the FEN
 # format to an ascii representation of the position.
 
-import os
 import sys
 
-os.close(0)
-os.close(1)
-sys.stdin = open(sys.argv[1])
-sys.stdout = open(sys.argv[2], "w")
+fout = open(sys.argv[2], "w")
 
-line = sys.stdin.readline()
-if line[-1] == "\n":
-    line = line[:-1]
-
-line = line.split(" ")[0]
-comp = line.split("/")
+placement = open(sys.argv[1]).readline().split()[0]
+row_codes = placement.split("/")
 
 cont = 1
-margin = " " * 6
+MARGIN = " " * 6
+RULE = f"+{'-' * 15}+"
 
-print(margin + "   +" + "-" * 15 + "+")
+print(f"{MARGIN}   {RULE}", file=fout)
 for i in range(8):
-    cont = cont + 1
-    tmp = ""
-    for j in comp[i]:
-        if j >= "0" and j <= "9":
-            for k in range(int(j)):
-                cont = cont + 1
-                x, mod = divmod(cont, 2)
-                if mod:
-                    tmp = tmp + "| "
-                else:
-                    tmp = tmp + "|*"
+    cont += 1
+    row = ""
+    for p in row_codes[i]:
+        if "1" <= p <= "8":
+            for k in range(int(p)):
+                cont += 1
+                row += "| " if (cont % 2) else "|*"
         else:
-            tmp = tmp + "|" + j
-            cont = cont + 1
+            row += "|" + p
+            cont += 1
 
-    row = 8 - i
-    print(margin, row, tmp + "|")
+    print(f"{MARGIN} {8 - i} {row}|", file=fout)
 
-print(margin + "   +" + "-" * 15 + "+")
-print(margin + "    a b c d e f g h ")
+print(f"{MARGIN}   {RULE}", file=fout)
+print(f"{MARGIN}    a b c d e f g h ", file=fout)
