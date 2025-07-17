@@ -149,6 +149,14 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 	docstring custom_label = translateIfPossible(il.labelstring());
 
 	Counters & cnts = bp.documentClass().counters();
+	docstring const & count = il.counter();
+	bool const have_counter = cnts.hasCounter(count);
+	if (have_counter) {
+		// we assume the counter is local to this inset
+		// if this turns out to be wrong in some case, we will
+		// need a layout flag
+		cnts.saveLastCounter();
+	}
 
 	// Special case for `subequations' module.
 	if (il.latextype() == InsetLaTeXType::ENVIRONMENT &&
@@ -174,8 +182,6 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 		return;
 	}
 
-	docstring const & count = il.counter();
-	bool const have_counter = cnts.hasCounter(count);
 	if (have_counter) {
 		if (!deleted) {
 			cnts.step(count, utype);
@@ -186,15 +192,8 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 	}
 	setLabel(custom_label);
 
-	bool const save_counter = have_counter && utype == OutputUpdate;
-	if (save_counter) {
-		// we assume the counter is local to this inset
-		// if this turns out to be wrong in some case, we will
-		// need a layout flag
-		cnts.saveLastCounter();
-	}
 	InsetCollapsible::updateBuffer(it, utype, deleted);
-	if (save_counter)
+	if (have_counter)
 		cnts.restoreLastCounter();
 }
 

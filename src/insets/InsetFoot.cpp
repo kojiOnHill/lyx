@@ -50,10 +50,8 @@ void InsetFoot::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 {
 	BufferParams const & bp = buffer().masterBuffer()->params();
 	Counters & cnts = bp.documentClass().counters();
-	if (utype == OutputUpdate) {
-		// the footnote counter is local to this inset
-		cnts.saveLastCounter();
-	}
+	// the footnote counter is local to this inset
+	cnts.saveLastCounter();
 
 	intitle_ = false;
 	infloattable_ = false;
@@ -96,8 +94,7 @@ void InsetFoot::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 	setLabel(custom_label_);
 
 	InsetCollapsible::updateBuffer(it, utype, deleted);
-	if (utype == OutputUpdate)
-		cnts.restoreLastCounter();
+	cnts.restoreLastCounter();
 }
 
 

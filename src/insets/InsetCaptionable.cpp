@@ -175,10 +175,9 @@ void InsetCaptionable::updateBuffer(ParIterator const & it, UpdateType utype, bo
 		buffer().masterBuffer()->params().documentClass().counters();
 	string const saveflt = cnts.current_float();
 	bool const savesubflt = cnts.isSubfloat();
-	if (utype == OutputUpdate) {
-		// counters are local to the float
-		cnts.saveLastCounter();
-	}
+	// counters are local to the float
+	cnts.saveLastCounter();
+
 	bool const subflt = hasSubCaptions(it);
 	// floats can only embed subfloats of their own kind
 	if (subflt && !saveflt.empty() && saveflt != "senseless")
@@ -189,8 +188,8 @@ void InsetCaptionable::updateBuffer(ParIterator const & it, UpdateType utype, bo
 	InsetCollapsible::updateBuffer(it, utype, deleted);
 	// Restore counters
 	cnts.current_float(saveflt);
-	if (utype == OutputUpdate)
-		cnts.restoreLastCounter();
+
+	cnts.restoreLastCounter();
 	cnts.isSubfloat(savesubflt);
 }
 

@@ -400,10 +400,9 @@ void InsetCaption::updateBuffer(ParIterator const & it, UpdateType utype, bool c
 	string const & lang = it.paragraph().getParLanguage(master.params())->code();
 	Counters & cnts = tclass.counters();
 	string const & type = cnts.current_float();
-	if (utype == OutputUpdate) {
-		// counters are local to the caption
-		cnts.saveLastCounter();
-	}
+	// counters are local to the caption
+	cnts.saveLastCounter();
+
 	is_deleted_ = deleted;
 	// Memorize type for addToToc().
 	floattype_ = type;
@@ -454,8 +453,7 @@ void InsetCaption::updateBuffer(ParIterator const & it, UpdateType utype, bool c
 
 	// Do the real work now.
 	InsetText::updateBuffer(it, utype, deleted);
-	if (utype == OutputUpdate)
-		cnts.restoreLastCounter();
+	cnts.restoreLastCounter();
 }
 
 
