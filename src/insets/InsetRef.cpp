@@ -588,7 +588,6 @@ int InsetRef::plaintext(odocstringstream & os,
 void InsetRef::docbook(XMLStream & xs, OutputParams const &) const
 {
 	docstring const & ref = getParam("reference");
-	InsetLabel const * il = buffer().insetLabel(ref, true);
 	string const & cmd = params().getCmdName();
 	docstring linkend = xml::cleanID(ref);
 
@@ -605,36 +604,44 @@ void InsetRef::docbook(XMLStream & xs, OutputParams const &) const
 	}
 
 	// The DocBook processor will generate the name when required.
+	//
+	// The DocBook processor deals with generating the right text,
+	// including in the right language. That means that the DocBook
+	// processor must be LyX-aware in some sense.
+	//
+	// We could bake as much as possible instead of relying on the
+	// DocBook processor (e.g., write "on page " manually), but we
+	// would still have to rely on the processor to generate the
+	// right value (continuing the example, the page number).
 	docstring display_before;
 	docstring display_after;
-	docstring role;
+	docstring xref_style;
 
-	if (il && !il->counterValue().empty()) {
-		// Try to construct a label from the InsetLabel we reference.
-		if (cmd == "vref" || cmd == "pageref" || cmd == "vpageref" || cmd == "nameref" || cmd == "formatted") {
-			// "ref on page #", "on page #", etc. The DocBook processor deals with generating the right text,
-			// including in the right language.
-			role = from_ascii(cmd);
+	if (cmd == "formatted") {
+		xref_style = from_ascii(cmd);
 
-			if (cmd == "formatted") {
-				// A formatted reference may have many parameters. Generate all of them as roles, the only
-				// way arbitrary parameters can be passed into DocBook.
-				if (buffer().params().xref_package == "refstyle" && getParam("caps") == "true")
-					role += " refstyle-caps";
-				if (buffer().params().xref_package == "refstyle" && getParam("plural") == "true")
-					role += " refstyle-plural";
-			}
-		} else if (cmd == "eqref") {
-			display_before = from_ascii("(");
-			display_after = from_ascii(")");
-		}
-		// TODO: what about labelonly? I don't get how this is supposed to work...
+		// A formatted reference may have many parameters. Generate all of them as roles, the only
+		// way arbitrary parameters can be passed into DocBook.
+		if (buffer().params().xref_package == "refstyle" && getParam("caps") == "true")
+			xref_style += " refstyle-caps";
+		if (buffer().params().xref_package == "refstyle" && getParam("plural") == "true")
+			xref_style += " refstyle-plural";
+	} else if (cmd == "eqref") {
+		// Probably the only exception: no need for a role here,
+		// we can do the processor's job.
+		display_before = from_ascii("(");
+		display_after = from_ascii(")");
+	} else {
+		// For all commands that have no specific support, just
+		// let the DocBook processor do its job.
+		xref_style = from_ascii(cmd);
 	}
+	// TODO: what about labelonly? I don't get how this is supposed to work...
 
 	// No name, ask DocBook to generate one.
-	docstring attr = from_utf8("linkend=\"") + xml::cleanID(ref) + from_utf8("\"");
-	if (!role.empty())
-		attr += " role=\"" + role + "\"";
+	docstring attr = from_utf8("linkend=\"") + linkend + from_utf8("\"");
+	if (!xref_style.empty())
+		attr += " xrefstyle=\"" + xref_style + "\"";
 	xs << display_before;
 	xs << xml::CompTag("xref", to_utf8(attr));
 	xs << display_after;
