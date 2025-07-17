@@ -387,7 +387,8 @@ void makeParagraph(
 			INCLUDE_CODE,
 			NOMENCL_PRINT_CODE,
 			TOC_CODE, // To be ignored in DocBook, the processor afterwards should deal with ToCs.
-			NOTE_CODE // Notes do not produce any output.
+			NOTE_CODE, // Notes do not produce any output.
+			INDEX_PRINT_CODE
 	};
 	auto isLyxCodeSpecialCase = [](InsetList::Element inset) {
 		return lyxCodeSpecialCases.find(inset.inset->lyxCode()) != lyxCodeSpecialCases.end();
