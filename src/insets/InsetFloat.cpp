@@ -578,12 +578,12 @@ void docbookSubfigures(XMLStream & xs, OutputParams const & runparams, const Ins
 	// Ensure there is no label output, it is supposed to be handled as xml:id.
 	OutputParams rpNoLabel = runparams;
 	if (label)
-		rpNoLabel.docbook_anchors_to_ignore.emplace(label->screenLabel());
+		rpNoLabel.docbook_anchors_to_ignore.emplace(label->getParam("name"));
 
 	// First, open the formal group.
 	docstring attr = docstring();
 	if (label)
-		attr += "xml:id=\"" + xml::cleanID(label->screenLabel()) + "\"";
+		attr += "xml:id=\"" + xml::cleanID(label->getParam("name")) + "\"";
 
 	xs.startDivision(false);
 	xs << xml::StartTag("formalgroup", attr);
@@ -662,7 +662,7 @@ void docbookSubfigures(XMLStream & xs, OutputParams const & runparams, const Ins
 
 				// Ensure there is no label output, it is supposed to be handled as xml:id.
 				if (slabel)
-					rpNoLabel.docbook_anchors_to_ignore.emplace(slabel->screenLabel());
+					rpNoLabel.docbook_anchors_to_ignore.emplace(slabel->getParam("name"));
 
 				// Ensure the float does not output its caption, as it is handled here (DocBook mandates a specific place for
 				// captions, they cannot appear at the end of the float, albeit LyX is happy with that).
@@ -674,7 +674,7 @@ void docbookSubfigures(XMLStream & xs, OutputParams const & runparams, const Ins
 				// Organisation: <float> <title if any/> <contents without title/> </float>.
 				docstring sattr = docstring();
 				if (slabel)
-					sattr += "xml:id=\"" + xml::cleanID(slabel->screenLabel()) + "\"";
+					sattr += "xml:id=\"" + xml::cleanID(slabel->getParam("name")) + "\"";
 				// No layout way of adding attributes, unlike the normal code path.
 
 				xs << xml::StartTag(stag, sattr);
@@ -755,7 +755,7 @@ void docbookNoSubfigures(XMLStream & xs, OutputParams const & runparams, const I
 	// Ensure there is no label output, it is supposed to be handled as xml:id.
 	OutputParams rpNoLabel = runparams;
 	if (label)
-		rpNoLabel.docbook_anchors_to_ignore.emplace(label->screenLabel());
+		rpNoLabel.docbook_anchors_to_ignore.emplace(label->getParam("name"));
 
 	// Ensure the float does not output its caption, as it is handled here (DocBook mandates a specific place for
 	// captions, they cannot appear at the end of the float, albeit LyX is happy with that).
@@ -790,7 +790,7 @@ void docbookNoSubfigures(XMLStream & xs, OutputParams const & runparams, const I
 	// - Generate the attributes for the float tag.
 	docstring attr = docstring();
 	if (label)
-		attr += "xml:id=\"" + xml::cleanID(label->screenLabel()) + "\"";
+		attr += "xml:id=\"" + xml::cleanID(label->getParam("name")) + "\"";
 	if (!ftype.docbookAttr().empty()) {
 		if (!attr.empty())
 			attr += " ";

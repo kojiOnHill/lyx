@@ -1278,10 +1278,10 @@ void docbookParagraphs(Text const &text,
 					if (inset) {
 						if (auto label = dynamic_cast<InsetLabel const *>(inset)) {
 							// Generate the attributes for the section if need be.
-							id += "xml:id=\"" + xml::cleanID(label->screenLabel()) + "\"";
+							id += "xml:id=\"" + xml::cleanID(label->getParam("name")) + "\"";
 
 							// Don't output the ID as a DocBook <anchor>.
-							ourparams.docbook_anchors_to_ignore.emplace(label->screenLabel());
+							ourparams.docbook_anchors_to_ignore.emplace(label->getParam("name"));
 
 							// Cannot have multiple IDs per tag. If there is another ID inset in the document, it will
 							// be output as a DocBook anchor.
