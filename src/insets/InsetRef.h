@@ -138,7 +138,7 @@ private:
 	///
 	std::vector<docstring> getLabels() const { return support::getVectorFromString(getParam("reference")); }
 	///
-	bool isBroken(docstring const & label, bool const preset = false) const;
+	bool isBroken(docstring const & label) const;
 
 	///
 	mutable docstring screen_label_;

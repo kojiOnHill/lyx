@@ -1023,22 +1023,26 @@ InsetRef::type_info const InsetRef::types[] = {
 docstring InsetRef::getTOCString() const
 {
 	broken_ = false;
-	for (auto const & label : getLabels()) {
-		broken_ &= isBroken(label, active_);
-	}
+	for (auto const & label : getLabels())
+		broken_ &= isBroken(label) && active_;
+
 	return (broken_ ? _("BROKEN: ") : docstring()) + toc_string_;
 }
 
 
-bool InsetRef::isBroken(docstring const & label, bool const preset) const
+bool InsetRef::isBroken(docstring const & label) const
 {
 	FileName fn = getExternalFileName(label);
-	if (fn.empty() || !fn.exists())
-		return !buffer().activeLabel(label) && preset;
+	if (fn.empty() || !fn.exists()) {
+		if (buffer().insetLabel(label))
+			return !buffer().activeLabel(label);
+		else
+			return true;
+	}
 	Buffer const * buf = theBufferList().getBuffer(fn);
-	if (buf)
-		return !buf->activeLabel(label) && preset;
-	return preset;
+	if (buf && buf->insetLabel(label))
+		return !buf->activeLabel(label);
+	return true;
 }
 
 
