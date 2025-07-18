@@ -240,7 +240,7 @@ literal "false"
 \begin_inset Newline newline
 \end_inset
 
-Version 2.4.x
+Version 2.5.x
 \begin_inset Note Note
 status collapsed
 
@@ -18320,6 +18320,114 @@ LyX-HTML
  als XHTML-Datei exportieren.
 \end_layout
 
+\begin_layout Subsubsection
+DocBook
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Dateiformate
+\begin_inset IndexMacro subentry
+status open
+
+\begin_layout Plain Layout
+DocBook
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+DocBook
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieses Dateiformat hat die Erweiterung 
+\begin_inset Quotes gld
+\end_inset
+
+
+\family typewriter
+.
+\family default
+xml
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Typischerweise wird es nicht direkt zum Lesen oder Bearbeiten verwendet,
+ sondern dient als Ausgangsformat für diverse Zielformate,
+ die über geeignete Werkzeuge wie die DocBook-Stylesheets oder DocBook xslTNG erzeugt werden.
+ Bilder und ähnliches sind nicht in die Datei eingebettet,
+ sondern werden nur von dort aus verlinkt.
+ Wenn \SpecialChar LyX
+ DocBook generiert,
+ werden auch passende Dateiformate mit erzeugt.
+ Für die Darstellung mathematischer Inhalte können Sie unter 
+\family sans
+Dokument\SpecialChar menuseparator
+Einstellungen\SpecialChar menuseparator
+Ausgabe
+\family default
+ zwischen verschiedenen Formaten auswählen.
+\end_layout
+
+\begin_layout Standard
+Die DocBook-Ausgabe ist noch in Entwicklung,
+ daher werden noch nichtt alle output \SpecialChar LyX
+-Features unterstützt.
+\end_layout
+
+\begin_layout Standard
+Die können Ihr Dokument als XML-Datei exportierten,
+ indem Sie file using the menu item 
+\family sans
+Datei\SpecialChar menuseparator
+Exportieren\SpecialChar menuseparator
+DocBook
+\begin_inset space ~
+\end_inset
+
+5
+\family default
+ wählen.
+ Im Dokument können Sie über \SpecialChar TeX
+-Code (siehe Abschnitt
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:DocBook-roh"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) direkt auch XMLeingeben,
+ der so im DocBook-Dokument landet.
+\end_layout
+
 \begin_layout Subsection
 Vorschau
 \begin_inset Index idx
@@ -29916,18 +30024,10 @@ Die verschiedenen Schriftstile sind hilfreich,
  aber sicherlich nicht,
  um damit normalen Text zu schreiben.
  Verwenden Sie deshalb zum Schreiben von längeren Textstücken den mathematischen Textmodus,
- den Sie über den Eintrag 
-\family sans
-Normaler
-\begin_inset space ~
-\end_inset
-
-Textmodus
-\family default
- des Knopfs 
+ den Sie über die Einträge des Knopfs 
 \begin_inset Info
 type  "icon"
-arg   "math-insert \\font"
+arg   "math-insert \\dynamic-math-texts"
 \end_inset
 
  der 
@@ -29935,7 +30035,484 @@ arg   "math-insert \\font"
 Mathe-Werkzeugleiste
 \family default
  aktivieren.
- Mathematischer Text wird am Bildschirm in Schwarz anstelle des üblichen Blau dargestellt.
+ Die Einträge 
+\family sans
+LR-Text
+\family default
+,
+ 
+\family sans
+AMS-Text
+\family default
+,
+ 
+\family sans
+Serifenschrift-Text
+\family default
+ and 
+\family sans
+Grundschrift-Text
+\family default
+ können verwendet werden,
+ um normalen Text zu schreiben.
+ Beachten Sie aber,
+ dass diese Texte nicht in mehrere Zeilen umbrochen werden können.
+ Obwohl sie verschiedene \SpecialChar LaTeX
+-Befehle verwenden,
+ können sie in den meisten Fällen in \SpecialChar LyX
+ füreinander ausgetauscht werden,
+ es gibt keine großen Unterschiede in der Ausgabe.
+ Die genauen Unterschiede können Sie aber den \SpecialChar LaTeX
+-Handbüchern entnehmen (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mathe-Text-Befehle"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ für die entsprechenden Befehle).
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mathe-Text-Befehle"
+
+\end_inset
+
+Mathe-Text-Befehle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menü-Eintrag
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\SpecialChar LaTeX
+-Befehl
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+LR-Text
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+mbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+AMS-Text
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+text
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+Serifenschrift-Text
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textrm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+Grundschrift-Text
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textnormal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+Gerahmter Text
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+fbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+Gerahmter Text (anpassbar)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+framebox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+Intertext
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+intertext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+Kurzer Intertext
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+shortintertext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+Gerahmter
+\begin_inset space ~
+\end_inset
+
+Text
+\family default
+ und 
+\family sans
+Gerahmter
+\begin_inset space ~
+\end_inset
+
+Text (anpassbar)
+\family default
+ geben Text in einer gerahmten Box aus.
+ Ersteres verwendet eine Box in vorgegebener Größe.
+ Bei zweiterer kann die Breite und die Positionierung des Texts in der Box angepasst werden.
+ Dazu werden zwei Untereinfügungen eingefügt (die erste für die Breite,
+ die mit den üblichen Einheiten eingegeben werden kann,
+ siehe Anhang
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Units-available-in"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+:
+ die zweite für die Positionierung mittels der Buchstaben 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+l
+\end_layout
+
+\end_inset
+
+ [links],
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+c
+\end_layout
+
+\end_inset
+
+ [zentriert] und 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+
+ [rechts]).
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+Intertext
+\family default
+ und 
+\family sans
+Kurzer
+\begin_inset space ~
+\end_inset
+
+Intertext
+\family default
+ werden verwendet,
+ um Textzeilen zwischen Gleichungszeilen in mehrzeiligen Gleichungen einzufügen.
+ Nur dort können sie verwendet werden.
+ Genaueres erläutert Abschnitt
+\begin_inset space ~
+\end_inset
+
+18.7,
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Texte in mehrzeiligen Gleichungen
+\begin_inset Quotes grd
+\end_inset
+
+,
+ im Mathe-Handbuch.
+\end_layout
+
+\begin_layout Standard
+Mathematischer Text wird am Bildschirm in Schwarz anstelle des üblichen Blau dargestellt.
  Sie können in diesem Modus Leerzeichen und Akzente wie im normalen Text verwenden.
  Hier ist ein Beispiel:
 \end_layout
@@ -38233,6 +38810,67 @@ literal "true"
 .
 \end_layout
 
+\begin_layout Subsection
+Rohes XML für die DocBook-Ausgabe
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+DocBook
+\begin_inset IndexMacro subentry
+status open
+
+\begin_layout Plain Layout
+Rohes XML
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:DocBook-roh"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\SpecialChar TeX
+-Code-Einfügungen können auch in Verbindung mit der DocBook-Ausgabe verwendet werden.
+ Einige typische Fälle werden automatisch behandelt,
+ bspw.
+ einige Kodierungen von Sonderzeichen (wie 
+\family typewriter
+
+\backslash
+"u
+\family default
+ für ü),
+ die in gültige DocBook-Ausgabe umgewandelt werden.
+ Wenn diese Einfügungen rohes XML enthalten,
+ wird es in allen Ausgabemodi (DocBook,
+ HTML,
+ LaTeX etc.) genau so ausgegeben;
+ rohes XML wird als Reihe von XML-Tags interpretiert (mit passender Verwendung von 
+\family typewriter
+<
+\family default
+ und 
+\family typewriter
+>
+\family default
+).
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage clearpage
 \end_inset
@@ -42343,20 +42981,12 @@ LyX Format der speziellen \SpecialChar LyX
 \end_layout
 
 \begin_layout Description
-DocBook Textdatei mit Code in der Sprache SGML,
- die für die Auszeichnungssprache 
-\family typewriter
-DocBook
-\family default
- verwendet wird
-\end_layout
-
-\begin_layout Description
 DocBook
 \begin_inset space ~
 \end_inset
 
-(XML) Textdatei mit Code in der Sprache XML die für die Auszeichnungssprache 
+5 Textdatei mit Code in der Sprache XML,
+ die für die Auszeichnungssprache 
 \family typewriter
 DocBook
 \family default
