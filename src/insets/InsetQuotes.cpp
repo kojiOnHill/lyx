@@ -999,7 +999,7 @@ void InsetQuotes::validate(LaTeXFeatures & features) const
 	case 0x0027: {
 		if (features.runparams().isFullUnicode() && fontspec_)
 			features.require("textquotesinglep");
-		else
+		else if (!features.isAvailableAtLeastFrom("LaTeX", 2020, 02))
 			features.require("textcomp");
 		break;
 	}
