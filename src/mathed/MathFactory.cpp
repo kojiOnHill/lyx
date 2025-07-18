@@ -142,16 +142,8 @@ bool isUnicodeSymbolAvailable(docstring const & name, char_type & c)
 }
 
 
-void initSymbols()
+void initSymbolsFromFile(ifstream & fs)
 {
-	FileName const filename = libFileSearch(string(), "symbols");
-	LYXERR(Debug::MATHED, "read symbols from " << filename);
-	if (filename.empty()) {
-		lyxerr << "Could not find symbols file" << endl;
-		return;
-	}
-
-	ifstream fs(filename.toFilesystemEncoding().c_str());
 	// limit the size of strings we read to avoid memory problems
 	fs >> setw(65636);
 	string line;
@@ -181,6 +173,23 @@ void initSymbols()
 			continue;
 		} else if (skip)
 			continue;
+
+		// special case of include_system_file
+		if (line.size() >= 19 && line.substr(0, 19) == "include_system_file") {
+			string tmp;
+			istringstream is(line);
+			is >> setw(65536) >> tmp;
+			FileName const sysfile = libFileSearch(string(), "symbols",
+			                                       string(), must_exist, true);
+			LYXERR(Debug::MATHED, "read symbols from " << sysfile);
+			if (sysfile.empty()) {
+				lyxerr << "Could not find system symbols file" << endl;
+				continue;
+			}
+			ifstream sysfs(sysfile.toFilesystemEncoding().c_str());
+			initSymbolsFromFile(sysfs);
+			continue;
+		}
 
 		// special case of pre-defined macros
 		if (line.size() > 8 && line.substr(0, 5) == "\\def\\") {
@@ -342,6 +351,19 @@ void initSymbols()
 			<< "  requires: " << tmp.required
 			<< "  hidden: " << tmp.hidden << '\'');
 	}
+}
+
+
+void initSymbols()
+{
+	FileName const filename = libFileSearch(string(), "symbols");
+	LYXERR(Debug::MATHED, "read symbols from " << filename);
+	if (filename.empty()) {
+		lyxerr << "Could not find symbols file" << endl;
+		return;
+	}
+	ifstream fs(filename.toFilesystemEncoding().c_str());
+	initSymbolsFromFile(fs);
 	string tmp = "cmm";
 	string tmp2 = "cmsy";
 	has_math_fonts = isMathFontAvailable(tmp) && isMathFontAvailable(tmp2);
