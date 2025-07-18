@@ -40,10 +40,10 @@ public:
 	///
 	int rowFlags() const override { return CanBreakBefore | CanBreakAfter; }
 	/// Updates only the label string, doesn't handle undo nor references.
-	void updateLabel(docstring const & new_label, bool const active = true);
+	void updateLabel(docstring const & new_label, bool active = true);
 	/// Updates the label and the references to it.
 	/// Will also handle undo/redo if \p cursor is passed.
-	void updateLabelAndRefs(docstring const & new_label, Cursor * cursor = 0);
+	void updateLabelAndRefs(docstring const & new_label, Cursor * cursor = nullptr);
 
 	/// \name Public functions inherited from Inset class
 	//@{
@@ -65,7 +65,7 @@ public:
 	///
 	docstring xhtml(XMLStream &, OutputParams const &) const override;
 	///
-	void updateBuffer(ParIterator const & it, UpdateType, bool const deleted = false) override;
+	void updateBuffer(ParIterator const & it, UpdateType, bool deleted = false) override;
 	///
 	void addToToc(DocIterator const & di, bool output_active,
 				  UpdateType utype, TocBackend & backend) const override;
@@ -108,7 +108,7 @@ private:
 	void uniqueLabel(docstring & label) const;
 	///
 	void updateReferences(docstring const & old_label,
-		docstring const & new_label, bool const changes);
+		docstring const & new_label, bool changes);
 	///
 	docstring screen_label_;
 	///
