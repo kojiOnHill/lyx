@@ -216,7 +216,13 @@ literal "false"
 \begin_inset Newline newline
 \end_inset
 
-Version 2.4.x
+Version 2.
+\change_deleted -1900975149 1752836134
+4
+\change_inserted -1900975149 1752836136
+5
+\change_unchanged
+.x
 \begin_inset Note Note
 status collapsed
 
@@ -30956,7 +30962,11 @@ Text
 Typefaces are useful for entering some characters in some given font,
  but not for text.
  For typing longer pieces of text use the math text,
- which is obtained using the entry 
+ which is obtained using the entr
+\change_inserted -1900975149 1752824536
+ies
+\change_deleted -1900975149 1752824547
+y 
 \family sans
 Normal
 \begin_inset space ~
@@ -30967,6 +30977,8 @@ text
 \end_inset
 
 mode
+\change_unchanged
+
 \family default
  of the 
 \family sans
@@ -30979,11 +30991,614 @@ Panel
  button 
 \begin_inset Info
 type  "icon"
-arg   "math-insert \\font"
+arg   "math-insert \\dynamic-math-texts"
 \end_inset
 
 .
- Math text appears in \SpecialChar LyX
+ 
+\change_inserted -1900975149 1752835977
+The entries 
+\family sans
+LR
+\begin_inset space ~
+\end_inset
+
+Text
+\family default
+,
+ 
+\family sans
+AMS
+\begin_inset space ~
+\end_inset
+
+Text
+\family default
+,
+ 
+\family sans
+Roman
+\begin_inset space ~
+\end_inset
+
+Text
+\family default
+ and 
+\family sans
+Normal
+\begin_inset space ~
+\end_inset
+
+Font
+\begin_inset space ~
+\end_inset
+
+Text
+\family default
+ can be used for typing normal texts.
+ Note that those texts cannot be broken into lines.
+ While they use different \SpecialChar LaTeX
+ commands,
+ they can be used interchangeably in most of cases in \SpecialChar LyX
+,
+ and there are no noticeable differences.
+ For precise differences in their implementations,
+ please refer to the manual of the underlying \SpecialChar LaTeX
+ commands (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Math-Text-Commands"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ for the correspondence).
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\change_deleted -1900975149 1752834962
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752834941
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835248
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Math-Text-Commands"
+
+\end_inset
+
+Math Text Commands
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted -1900975149 1752835003
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835029
+Menu entry
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835211
+Underlying \SpecialChar LaTeX
+ command
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835024
+
+\family sans
+LR
+\begin_inset space ~
+\end_inset
+
+Text
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835147
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835147
+
+\backslash
+mbox
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835036
+
+\family sans
+AMS
+\begin_inset space ~
+\end_inset
+
+Text
+\family default
+,
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835157
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835161
+
+\backslash
+text
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835043
+
+\family sans
+Roman
+\begin_inset space ~
+\end_inset
+
+Text
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835163
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835178
+
+\backslash
+textrm
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835051
+
+\family sans
+Normal
+\begin_inset space ~
+\end_inset
+
+Font
+\begin_inset space ~
+\end_inset
+
+Text
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835179
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835198
+
+\backslash
+textnormal
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row change="inserted -1900975149 1752835003" color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835003
+
+\family sans
+Framed
+\begin_inset space ~
+\end_inset
+
+Text
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835450
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835455
+
+\backslash
+fbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row change="inserted -1900975149 1752835003" color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835003
+
+\family sans
+Framed
+\begin_inset space ~
+\end_inset
+
+Text
+\begin_inset space ~
+\end_inset
+
+with
+\begin_inset space ~
+\end_inset
+
+Sizes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835460
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835468
+
+\backslash
+framebox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row change="inserted -1900975149 1752835003" color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835438
+
+\family sans
+Intertext
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835473
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835479
+
+\backslash
+intertext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row change="inserted -1900975149 1752835003" color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835445
+
+\family sans
+Short
+\begin_inset space ~
+\end_inset
+
+Intertext
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835487
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -1900975149 1752835490
+
+\backslash
+shortintertext
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -1900975149 1752833413
+
+\family sans
+Framed
+\begin_inset space ~
+\end_inset
+
+Text
+\family default
+ and 
+\family sans
+Framed
+\begin_inset space ~
+\end_inset
+
+Text
+\begin_inset space ~
+\end_inset
+
+with
+\begin_inset space ~
+\end_inset
+
+Sizes
+\family default
+ type a text in a framed box.
+ The latter command puts three spaceholders on screen,
+ the first two surrounded by square brackets.
+ The first spaceholder with brackets is the place for width specification and the second is for specification of the position of the text within the frame.
+ The width can be specified using ordinary units listed in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Units-available-in"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ The text position can be specified using either letter l (left),
+ c (center) or r (right).
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -1900975149 1752833122
+
+\family sans
+Intertext
+\family default
+ and 
+\family sans
+Short
+\begin_inset space ~
+\end_inset
+
+Intertext
+\family default
+ are used to insert a text line between equations in multiline equation environments.
+ They cannot be used in other places.
+ See Section 18.7 
+\begin_inset Quotes eld
+\end_inset
+
+Text in Multiline Formulas
+\begin_inset Quotes erd
+\end_inset
+
+ in Math manual for their usage.
+ 
+\end_layout
+
+\begin_layout Standard
+Math text appears in \SpecialChar LyX
  in black instead of blue.
  You can use spaces and accents in math text as in normal text.
  Here is an example:
