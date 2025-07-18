@@ -125,7 +125,7 @@ private:
 	{
 		{"mbox",           "LR Text",          "Text in current font with constant sizes"},
 		{"fbox",           "Framed Text",      "Framed text"},
-		{"framebox",       "Framed Text with sizes", "Framed text with variable frame sizes"},
+		{"framebox",       "Framed Text with Sizes", "Framed text with variable frame sizes"},
 		{"text",           "AMS Text",         "Text in current font with variable sizes"},
 		{"textrm",         "Roman Text",       "Text in roman font"},
 		{"textnormal",     "Normal Font Text", "Text using \\normalfont"},
