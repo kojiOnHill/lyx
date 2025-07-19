@@ -1191,17 +1191,13 @@ Rows TextMetrics::breakParagraph(Row const & bigrow) const
 				cleanupRow(rows.back(), false);
 			}
 			pos_type pos = rows.empty() ? 0 : rows.back().endpos();
-			if (!rows.empty() && !rows.back().empty() &&
-			        rows.back().back().type == Row::PREEDIT) {
-				rows.push_back(
-				            newRow(
-				                *this, pit, pos, is_rtl,
-				                rows.back().back().str.length()
-				                )
-				            );
-			} else {
+			if (!rows.empty() && !rows.back().empty()
+			      && rows.back().back().type == Row::PREEDIT) {
+				size_type const shift = rows.back().back().str.length();
+				rows.push_back(newRow(*this, pit, pos, is_rtl, shift));
+			} else
 				rows.push_back(newRow(*this, pit, pos, is_rtl));
-			}
+
 			// the width available for the row.
 			width = max_width_ - rows.back().right_margin;
 		}
