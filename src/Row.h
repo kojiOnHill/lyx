@@ -169,9 +169,6 @@ public:
 	///
 	typedef Element value_type;
 
-	///
-	Row() {}
-
 	/**
 	 * Helper function: set variable \c var to value \c val, and mark
 	 * row as changed is the values were different. This is intended
@@ -254,6 +251,15 @@ public:
 	Dimension const & contents_dim() const { return contents_dim_; }
 	///
 	Dimension & contents_dim() { return contents_dim_; }
+
+	///
+	bool isRTL() const { return rtl_; }
+	///
+	void setRTL(bool rtl) { rtl_ = rtl; }
+	///
+	bool needsChangeBar() const { return changebar_; }
+	///
+	void needsChangeBar(bool ncb) { changebar_ = ncb; }
 
 	/// The offset of the left-most cursor position on the row
 	int left_x() const;
@@ -343,14 +349,6 @@ public:
 	 * This should be called once the row is completely built.
 	 */
 	void reverseRTL();
-	///
-	bool isRTL() const { return rtl_; }
-	///
-	void setRTL(bool rtl) { rtl_ = rtl; }
-	///
-	bool needsChangeBar() const { return changebar_; }
-	///
-	void needsChangeBar(bool ncb) { changebar_ = ncb; }
 
 	/// Find row element that contains \c pos.
 	const_iterator const findElement(pos_type pos, bool boundary) const;
