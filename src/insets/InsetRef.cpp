@@ -585,7 +585,7 @@ int InsetRef::plaintext(odocstringstream & os,
 }
 
 
-void InsetRef::docbook(XMLStream & xs, OutputParams const & rp) const
+void InsetRef::docbook(XMLStream & xs, OutputParams const &) const
 {
 	// When there are several labels, iterate over them all
 	// and generate one xref per label: DocBook's xref only
