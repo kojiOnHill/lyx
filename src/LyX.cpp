@@ -436,7 +436,9 @@ void LyX::prepareExit()
 
 void LyX::earlyExit(int status)
 {
-	LATTEST(pimpl_->application_.get());
+	if (use_gui) {
+		LATTEST(pimpl_->application_.get());
+	}
 	// LyX::pimpl_::application_ is not initialised at this
 	// point so it's safe to just exit after some cleanup.
 	prepareExit();
