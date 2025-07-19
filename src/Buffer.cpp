@@ -4566,7 +4566,7 @@ Buffer::ExportStatus Buffer::doExport(string const & target, bool put_in_tempdir
 	bool need_nice_file = false;
 	if (find(backs.begin(), backs.end(), format) == backs.end()) {
 		// Get the shortest path to format
-		converters.buildGraph(!params().baseClass()->isTeXClassAvailable());
+		converters.buildGraph();
 		Graph::EdgePath path;
 		for (string const & sit : backs) {
 			Graph::EdgePath p = converters.getPath(sit, format);
