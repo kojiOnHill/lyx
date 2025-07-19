@@ -1942,14 +1942,53 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		FindAndReplaceOptions opt;
 		istringstream iss(to_utf8(cmd.argument()));
 		iss >> opt;
-		if (findAdv(this, opt)) {
-			dr.screenUpdate(Update::Force | Update::FitCursor);
-			cur.dispatched();
-			dispatched = true;
-		} else {
-			cur.undispatched();
-			dispatched = false;
-		}
+		bool repeat_search;
+		do {
+			repeat_search = false;
+
+			if (findAdv(this, opt)) {
+				dr.screenUpdate(Update::Force | Update::FitCursor);
+				cur.dispatched();
+				dispatched = true;
+			} else {
+				DocIterator cur_orig(cursor());
+				if (opt.forward) {
+					docstring q = _("End of file reached while searching forward.\n"
+						"Continue searching from the beginning?");
+					int wrap_answer = frontend::Alert::prompt(_("Wrap search?"),
+						q, 0, 1, _("&Yes"), _("&No"));
+					if (wrap_answer == 0) {
+						cursor().clear();
+						cursor().push_back(CursorSlice(buffer().inset()));
+						repeat_search =  true;
+					}
+				}
+				else {
+					docstring q = _("Beginning of file reached while searching backward.\n"
+						"Continue searching from the end?");
+					int wrap_answer = frontend::Alert::prompt(_("Wrap search?"),
+						q, 0, 1, _("&Yes"), _("&No"));
+					if (wrap_answer == 0) {
+						cursor().setCursor(doc_iterator_end(&buffer()));
+						cursor().backwardPos();
+						dispatched = true;
+						repeat_search =  true;
+					}
+				}
+
+				if (repeat_search)  {
+					clearSelection();
+					cur.setCursor(cursor().selectionBegin());
+					dr.screenUpdate(Update::Force | Update::FitCursor);
+					cur.dispatched();
+					dispatched = true;
+				}
+				else {
+					cur.undispatched();
+					dispatched = false;
+				}
+			}
+		} while (repeat_search);
 		break;
 	}
 
