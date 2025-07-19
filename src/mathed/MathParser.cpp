@@ -947,11 +947,32 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 		else if (t.cat() == catBegin) {
 			MathData md(buf);
 			parse(md, FLAG_BRACE_LAST, mode);
+			// Correctly set the label if this is a display inset.
+			// A label inside braces is parsed as a normal macro,
+			// so recover its argument stored as a verbatim string.
+			// This issue may occur when importing from latex
+			// (see bug 13195).
+			docstring label;
+			if (md.size() > 1 && grid.asHullInset()) {
+				for (size_t i = 0; i < md.size() - 1; ++i) {
+					InsetMathMacro * mm = md[i]->asMacroInset();
+					InsetMathBrace * mb = md[i + 1]->asBraceInset();
+					if (mm && mb && mm->name() == "label") {
+						MathData & ar = mb->cell(0);
+						if (ar.size() == 1 && ar[0]->asStringInset()) {
+							label = ar[0]->asStringInset()->str();
+							grid.asHullInset()->label(cellrow, label);
+							md.erase(i, i + 2);
+							break;
+						}
+					}
+				}
+			}
 			// do not create a BraceInset if they were written by LyX
 			// this helps to keep the annoyance of  "a choose b"  to a minimum
 			if (md.size() == 1 && md[0]->extraBraces())
 				cell->append(md);
-			else
+			else if (md.size() > 0 || label.empty())
 				cell->emplace_back(new InsetMathBrace(buf, md));
 		}
 
@@ -1794,7 +1815,7 @@ bool Parser::parse1(InsetMathGrid & grid, unsigned flags,
 			// FIXME: This is swallowed in inline formulas
 			docstring label = parse_verbatim_item();
 			MathData md(buf);
-			asMathData(label, md);
+			md.emplace_back(new InsetMathString(buf, label));
 			if (grid.asHullInset()) {
 				grid.asHullInset()->label(cellrow, label);
 			} else {
