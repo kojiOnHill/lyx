@@ -30057,11 +30057,41 @@ Grundschrift-Text
  um normalen Text zu schreiben.
  Beachten Sie aber,
  dass diese Texte nicht in mehrere Zeilen umbrochen werden können.
- Obwohl sie verschiedene \SpecialChar LaTeX
--Befehle verwenden,
- können sie in den meisten Fällen in \SpecialChar LyX
- füreinander ausgetauscht werden,
- es gibt keine großen Unterschiede in der Ausgabe.
+ Die Unterschiede der verschiedenen Varianten liegen darin,
+ ob und wie sie die Schriftart setzen.
+ 
+\family sans
+LR-Text
+\family default
+ und 
+\family sans
+AMS-Text
+\family default
+ behalten die Einstellungen der Umgebung bei,
+ 
+\family sans
+Serifenschrift-Text
+\family default
+ setzt den Text immer in der Serifenschrift,
+ 
+\family sans
+Grundschrift-Text
+\family default
+ setzt auf die Einstellungen (Schriftfamilie,
+ Schriftschnitt usw.) der Grundschrift zurück.
+ 
+\family sans
+AMS-Text
+\family default
+ hat gegenüber dem ansonsten identischen 
+\family sans
+LR-Text
+\family default
+ ein paar kleinere Vorteile
+\family sans
+.
+
+\family default
  Die genauen Unterschiede können Sie aber den \SpecialChar LaTeX
 -Handbüchern entnehmen (siehe Tabelle 
 \begin_inset CommandInset ref
@@ -30434,7 +30464,7 @@ Text (anpassbar)
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:Units-available-in"
+reference "chap:In-LyX-verfügbare"
 plural "false"
 caps "false"
 noprefix "false"
