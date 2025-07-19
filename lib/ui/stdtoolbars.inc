@@ -458,7 +458,7 @@ ToolbarSet
 	End
 
 	Toolbar "math-texts" "Text"
-		Item "LR Text	\mbox" "math-insert \mbox"
+		Item "LR Text	\\mbox" "math-insert \mbox"
 		Item "Framed Text	\\fbox" "math-insert \fbox"
 		Item "Framed Text (Adjustable)	\\framebox" "math-insert \framebox"
 		Item "AMS Text	\\text" "math-insert \text"
