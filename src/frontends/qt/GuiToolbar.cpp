@@ -372,7 +372,6 @@ bool DynamicMenuButton::isMenuType(string const & s)
 {
 	return s == "dynamic-custom-insets"
 		|| s == "dynamic-char-styles"
-		|| s == "dynamic-math-texts"
 		|| s == "textstyle-apply"
 		|| s == "paste";
 }
@@ -423,8 +422,6 @@ void DynamicMenuButton::updateTriggered()
 		setEnabled(!bv->buffer().isReadonly()
 			   && !m->isEmpty()
 			   && inset->insetAllowed(FLEX_CODE));
-	} else if (menutype == "dynamic-math-texts") {
-		setEnabled(loadMathTexts());
 	} else if (menutype == "textstyle-apply") {
 		m->clear();
 		setPopupMode(QToolButton::MenuButtonPopup);
@@ -527,27 +524,6 @@ void DynamicMenuButton::loadFlexInsets()
 				new Action(func, getIcon(func, false), loc_item, loc_item, this);
 		m->addAction(act);
 	}
-}
-
-
-bool DynamicMenuButton::loadMathTexts()
-{
-	QMenu * m = menu();
-	m->clear();
-	bool isEnabled = false;
-
-	for (int i=0; i<mathTextMenuSize_; i++) {
-		FuncRequest func(LFUN_MATH_INSERT, "\\" + mathTextMenu[i][0],
-		                 FuncRequest::TOOLBAR);
-		QString menuText = toqstr(from_utf8(mathTextMenu[i][1] + "\t\\" +
-		                                    mathTextMenu[i][0]));
-		QString tooltip = toqstr(from_utf8(mathTextMenu[i][2]));
-		Action * act =
-		        new Action(func, getIcon(func, false), menuText, tooltip, this);
-		m->addAction(act);
-		isEnabled |= lyx::getStatus(func).enabled();
-	}
-	return isEnabled;
 }
 
 

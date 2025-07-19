@@ -221,7 +221,7 @@ ToolbarSet
 		PopupMenu "frac-square" "Fractions"
 		PopupMenu "functions" "Functions"
 		PopupMenu "font" "Fonts"
-		DynamicMenu "dynamic-math-texts" "Text"
+		PopupMenu "math-texts" "Text"
 		IconPalette "latex_deco" "Frame decorations"
 		IconPalette "latex_varsz" "Big operators"
 		IconPalette "latex_misc" "Miscellaneous"
@@ -455,6 +455,17 @@ ToolbarSet
 		Item "Fraktur	\\mathfrak" "math-insert \mathfrak"
 		Item "Calligraphic	\\mathcal" "math-insert \mathcal"
 		Item "Formal Script	\\mathscr" "math-insert \mathscr"
+	End
+
+	Toolbar "math-texts" "Text"
+		Item "LR Text	\mbox" "math-insert \mbox"
+		Item "Framed Text	\\fbox" "math-insert \fbox"
+		Item "Framed Text (Adjustable)	\\framebox" "math-insert \framebox"
+		Item "AMS Text	\\text" "math-insert \text"
+		Item "Roman Text	\\textrm" "math-insert \textrm"
+		Item "Normal Font Text	\\textnormal" "math-insert \textnormal"
+		Item "Intertext	\\intertext" "math-insert \intertext"
+		Item "Short Intertext	\\shortintertext" "math-insert \shortintertext"
 	End
 
 	Toolbar "latex_dots" "Dots"

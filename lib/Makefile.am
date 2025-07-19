@@ -977,7 +977,7 @@ dist_imagesmath_DATA = \
 	images/math/downdownarrows.svgz \
 	images/math/downharpoonleft.svgz \
 	images/math/downharpoonright.svgz \
-	images/math/dynamic-math-texts.svgz \
+	images/math/math-texts.svgz \
 	images/math/earth.svgz \
 	images/math/eighthnote.svgz \
 	images/math/ell.svgz \
