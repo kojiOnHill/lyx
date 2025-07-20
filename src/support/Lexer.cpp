@@ -557,12 +557,6 @@ bool Lexer::isOK() const
 }
 
 
-void Lexer::setLineNumber(int l)
-{
-	pimpl_->lineno = l;
-}
-
-
 int Lexer::lineNumber() const
 {
 	return pimpl_->lineno;

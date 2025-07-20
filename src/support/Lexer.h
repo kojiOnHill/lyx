@@ -101,8 +101,6 @@ public:
 	void setStream(std::istream & is);
 	///
 	std::istream & getStream();
-	/// Danger! Don't use it unless you know what you are doing.
-	void setLineNumber(int l);
 	/// Change the character that begins a comment. Default is '#'
 	void setCommentChar(char c);
 
