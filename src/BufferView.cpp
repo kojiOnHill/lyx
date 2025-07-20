@@ -1943,6 +1943,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		istringstream iss(to_utf8(cmd.argument()));
 		iss >> opt;
 		bool repeat_search;
+		bool check_wrap = true; // do not repeat if the whole document does not contain the searched string
 		do {
 			repeat_search = false;
 
@@ -1951,28 +1952,31 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 				cur.dispatched();
 				dispatched = true;
 			} else {
-				DocIterator cur_orig(cursor());
-				if (opt.forward) {
-					docstring q = _("End of file reached while searching forward.\n"
-						"Continue searching from the beginning?");
-					int wrap_answer = frontend::Alert::prompt(_("Wrap search?"),
-						q, 0, 1, _("&Yes"), _("&No"));
-					if (wrap_answer == 0) {
-						cursor().clear();
-						cursor().push_back(CursorSlice(buffer().inset()));
-						repeat_search =  true;
+				if (check_wrap) {
+					check_wrap = false;
+					DocIterator cur_orig(cursor());
+					if (opt.forward) {
+						docstring q = _("End of file reached while searching forward.\n"
+							"Continue searching from the beginning?");
+						int wrap_answer = frontend::Alert::prompt(_("Wrap search?"),
+							q, 0, 1, _("&Yes"), _("&No"));
+						if (wrap_answer == 0) {
+							cursor().clear();
+							cursor().push_back(CursorSlice(buffer().inset()));
+							repeat_search =  true;
+						}
 					}
-				}
-				else {
-					docstring q = _("Beginning of file reached while searching backward.\n"
-						"Continue searching from the end?");
-					int wrap_answer = frontend::Alert::prompt(_("Wrap search?"),
-						q, 0, 1, _("&Yes"), _("&No"));
-					if (wrap_answer == 0) {
-						cursor().setCursor(doc_iterator_end(&buffer()));
-						cursor().backwardPos();
-						dispatched = true;
-						repeat_search =  true;
+					else {
+						docstring q = _("Beginning of file reached while searching backward.\n"
+							"Continue searching from the end?");
+						int wrap_answer = frontend::Alert::prompt(_("Wrap search?"),
+							q, 0, 1, _("&Yes"), _("&No"));
+						if (wrap_answer == 0) {
+							cursor().setCursor(doc_iterator_end(&buffer()));
+							cursor().backwardPos();
+							dispatched = true;
+							repeat_search =  true;
+						}
 					}
 				}
 
