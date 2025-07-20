@@ -255,6 +255,11 @@ sub interpretedCopy($$$$)
 		# filetype::prefix_only should be interpreted by latex
 		print "WARNING: Prefixed file \"$f\" not found, at \"$source:$fi_line_no\"\n";
 	      }
+	      elsif ($rStatus->{"filetype"} eq "copy_only") {
+		#  ignore the missing file. If there is an error, then the creation of pdf
+		#  will fail. If it is part of deleted text, then it is not even an error.
+		print "WARNING: Copy only file \"$f\" not found, at \"$source:$fi_line_no\"\n";
+	      }
 	      else {
 		# Collect the path-error-messages
 		push(@path_errors, "File \"$f(" . $rStatus->{"filetype"} . ")\" not found, at \"$source:$fi_line_no\"");
