@@ -118,9 +118,9 @@ GuiInputMethod::~GuiInputMethod()
 
 void GuiInputMethod::toggleInputMethodAcceptance(){
 	// note that d->cur_->inset() is a cache so it lags from actual key moves
-	if (d->is_cjk_locale &&
-	        (d->cur_->inset().currentMode() == Inset::MATH_MODE ||
-	         guiApp->isInCommandMode()))
+	if ((d->is_cjk_locale &&
+	        d->cur_->inset().currentMode() == Inset::MATH_MODE) ||
+	         guiApp->isInCommandMode())
 		d->im_state_.enabled_ = false;
 	else
 		d->im_state_.enabled_ = true;
