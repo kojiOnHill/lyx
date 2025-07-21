@@ -41,7 +41,7 @@ list(REMOVE_ITEM lyx_sources
 	${TOP_SRC_DIR}/src/lyxmathed.cpp)
 
 # -Wno-error needed, because gcc seems to ignore -Wno-missing-noreturn
-handle_source_option("CXX" "${TOP_SRC_DIR}/src/LyX.cpp" -Wno-invalid-noreturn -Wno-missing-noreturn -Wno-error)
+handle_source_option("CXX" "${TOP_SRC_DIR}/src/LyX.cpp" -Wno-error -Wno-invalid-noreturn -Wno-missing-noreturn -Wno-unreachable-code-return)
 handle_source_option("CXX" ${TOP_SRC_DIR}/src/TextMetrics.cpp -Wno-implicit-int-float-conversion)
 handle_source_option("CXX" ${TOP_SRC_DIR}/src/CursorSlice.cpp -Wno-null-dereference)
 
@@ -74,6 +74,7 @@ endforeach()
 foreach(_base LayoutFile Paragraph xml)
   #handle_source_option("CXX" ${TOP_SRC_DIR}/src/${_base}.cpp -Wno-delete-non-abstract-non-virtual-dtor)
 endforeach()
+handle_source_option("CXX" ${TOP_SRC_DIR}/src/EnchantChecker.cpp -Wno-suggest-destructor-override)
 list(REMOVE_ITEM lyx_headers
 	${TOP_SRC_DIR}/src/Variables.h
 	${TOP_SRC_DIR}/src/Section.h)
