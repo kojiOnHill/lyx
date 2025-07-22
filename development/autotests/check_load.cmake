@@ -20,7 +20,7 @@
 
 message(STATUS "Executing ${lyx} -batch -userdir \"${LYX_TESTS_USERDIR}\" ${LYXFILE}")
 set(ENV{${LYX_USERDIR_VER}} "${LYX_TESTS_USERDIR}")
-set(ENV{LANG} "en") # to get all error-messages in english
+set(ENV{LANG} "en_US.UTF-8") # to get all error-messages in english
 
 execute_process(
   COMMAND ${lyx} -batch -userdir "${LYX_TESTS_USERDIR}" ${LYXFILE}
