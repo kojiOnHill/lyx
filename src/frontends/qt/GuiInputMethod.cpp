@@ -24,9 +24,7 @@
 #include "GuiWorkArea.h"
 #include "InsetList.h"
 #include "KeyMap.h"
-#if defined(Q_OS_WIN) || defined (Q_CYGWIN_WIN) || defined (Q_OS_LINUX)
 #include "Language.h"
-#endif
 #include "LyX.h"
 #include "LyXRC.h"
 #include "Row.h"
@@ -960,6 +958,14 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 		                         << d->work_area_->inputMethodHints()
 		                         << std::dec);
 		Q_EMIT queryProcessed((qlonglong)d->work_area_->inputMethodHints());
+		break;
+	}
+	//
+	case Qt::ImPreferredLanguage: {
+		QLocale locale(toqstr(d->cur_->getFont().language()->code()));
+		QString lang = locale.languageToString(locale.language());
+		LYXERR(Debug::DEBUG, msg << lang);
+		Q_EMIT queryProcessed(lang);
 		break;
 	}
 	// Qt::ImAnchorRectangle holds the selection rectangle in preedit.
