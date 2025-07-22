@@ -121,6 +121,8 @@ GuiInputMethod::~GuiInputMethod()
 
 void GuiInputMethod::toggleInputMethodAcceptance(){
 #if defined(Q_OS_WIN) || defined (Q_CYGWIN_WIN) || defined (Q_OS_LINUX)
+	// Since QInputMethod::locale() doesn't work on these systems, use language
+	// at the cursor point to infer the current input language as a second best
 	std::string lang = d->cur_->getFont().language()->lang();
 	if (lang == "chinese-simplified" || lang == "chinese-traditional" ||
 	        lang == "korean" || lang == "japanese")
