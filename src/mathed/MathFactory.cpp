@@ -142,7 +142,7 @@ bool isUnicodeSymbolAvailable(docstring const & name, char_type & c)
 }
 
 
-void initSymbolsFromFile(ifstream & fs)
+void initSymbols(ifstream & fs)
 {
 	// limit the size of strings we read to avoid memory problems
 	fs >> setw(65636);
@@ -187,7 +187,7 @@ void initSymbolsFromFile(ifstream & fs)
 				continue;
 			}
 			ifstream sysfs(sysfile.toFilesystemEncoding().c_str());
-			initSymbolsFromFile(sysfs);
+			initSymbols(sysfs);
 			continue;
 		}
 
@@ -363,7 +363,7 @@ void initSymbols()
 		return;
 	}
 	ifstream fs(filename.toFilesystemEncoding().c_str());
-	initSymbolsFromFile(fs);
+	initSymbols(fs);
 	string tmp = "cmm";
 	string tmp2 = "cmsy";
 	has_math_fonts = isMathFontAvailable(tmp) && isMathFontAvailable(tmp2);
