@@ -24,6 +24,9 @@
 #include "GuiWorkArea.h"
 #include "InsetList.h"
 #include "KeyMap.h"
+#if defined(Q_OS_WIN) || defined (Q_CYGWIN_WIN) || defined (Q_OS_LINUX)
+#include "Language.h"
+#endif
 #include "LyX.h"
 #include "LyXRC.h"
 #include "Row.h"
@@ -117,6 +120,14 @@ GuiInputMethod::~GuiInputMethod()
 
 
 void GuiInputMethod::toggleInputMethodAcceptance(){
+#if defined(Q_OS_WIN) || defined (Q_CYGWIN_WIN) || defined (Q_OS_LINUX)
+	std::string lang = d->cur_->getFont().language()->lang();
+	if (lang == "chinese-simplified" || lang == "chinese-traditional" ||
+	        lang == "korean" || lang == "japanese")
+		d->is_cjk_locale = true;
+	else
+		d->is_cjk_locale = false;
+#endif
 	// note that d->cur_->inset() is a cache so it lags from actual key moves
 	if ((d->is_cjk_locale &&
 	        d->cur_->inset().currentMode() == Inset::MATH_MODE) ||
