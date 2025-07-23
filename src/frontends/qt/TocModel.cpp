@@ -364,8 +364,8 @@ void TocModels::reset(BufferView const * bv)
 		return;
 	}
 
-	names_->blockSignals(true);
 	names_->beginResetModel();
+	names_->blockSignals(true);
 	names_->insertColumns(0, 1);
 	// In the outliner, add Tocs from the master document
 	TocBackend const & backend = bv->buffer().masterBuffer()->tocBackend();
