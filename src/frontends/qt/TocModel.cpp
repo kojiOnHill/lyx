@@ -168,8 +168,8 @@ void TocModel::reset(shared_ptr<Toc const> const & toc)
 		return;
 	}
 
-	model_->blockSignals(true);
 	model_->beginResetModel();
+	model_->blockSignals(true);
 	model_->insertColumns(0, 1);
 	maxdepth_ = 0;
 	mindepth_ = INT_MAX;
