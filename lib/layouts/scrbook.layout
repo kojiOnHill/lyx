@@ -16,8 +16,8 @@ NoStyle Abstract
 
 
 Style Chapter
-	LabelString	"\thechapter"
-	TocLevel 0
+	LabelString           "\thechapter"
+	TocLevel              0
 	HTMLTag               h2
 	DocBookTag            title
 	DocBookTagType        paragraph
@@ -27,10 +27,10 @@ End
 
 # Equations are numbered by chapter
 Counter equation
-	GuiName Equation
-	Within chapter
-	LabelString "\thechapter.\arabic{equation}"
-	PrettyFormat "Equation|Equations \thechapter.\arabic{equation}"
+	GuiName         Equation
+	Within          chapter
+	LabelString     "\thechapter.\arabic{equation}"
+	PrettyFormat    "Equation|Equations \thechapter.\arabic{equation}"
 End
 
 
@@ -38,8 +38,8 @@ Style Bibliography
 	TopSep		4
 	LabelString	"Bibliography"
 	LabelFont
-	  Series	    Bold
-	  Size		    Largest
+	  Series	Bold
+	  Size		Largest
 	EndFont
 	TocLevel        0
 	HTMLTag         h2
