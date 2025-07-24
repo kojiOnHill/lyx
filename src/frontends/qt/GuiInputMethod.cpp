@@ -118,22 +118,18 @@ GuiInputMethod::~GuiInputMethod()
 
 
 void GuiInputMethod::toggleInputMethodAcceptance(){
-	if (guiApp->platformName() != "cocoa") {
-		// Since QInputMethod::locale() doesn't work on these systems, use language
-		// at the cursor point to infer the current input language as a second best
-		if (d->cur_->getFont().language()->inputMethodOffInMath())
-			d->im_off_in_math_ = true;
-		else
-			d->im_off_in_math_ = false;
-	}
+	if (guiApp->platformName() != "cocoa")
+		// Since QInputMethod::locale() doesn't work on other systems, use
+		// language at the cursor point to infer the current input language
+		// as a second best
+		d->im_off_in_math_ =
+		        d->cur_->getFont().language()->inputMethodOffInMath();
 
 	// note that d->cur_->inset() is a cache so it lags from actual key moves
-	if ((d->im_off_in_math_ &&
-	        d->cur_->inset().currentMode() == Inset::MATH_MODE) ||
-	         guiApp->isInCommandMode())
-		d->im_state_.enabled_ = false;
-	else
-		d->im_state_.enabled_ = true;
+	d->im_state_.enabled_=
+	        !((d->im_off_in_math_
+	           && d->cur_->inset().currentMode() == Inset::MATH_MODE)
+	          || guiApp->isInCommandMode());
 
 	Q_EMIT inputMethodStateChanged(Qt::ImEnabled);
 }
@@ -144,10 +140,7 @@ void GuiInputMethod::onLocaleChanged()
 	const std::string im_locale_code = fromqstr(d->sys_im_->locale().name());
 	const Language * lang = languages.getFromCode(im_locale_code);
 
-	if (lang->inputMethodOffInMath())
-		d->im_off_in_math_ = true;
-	else
-		d->im_off_in_math_ = false;
+	d->im_off_in_math_ = lang->inputMethodOffInMath();
 }
 
 
