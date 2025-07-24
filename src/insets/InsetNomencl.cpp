@@ -222,15 +222,15 @@ docstring InsetPrintNomencl::xhtml(XMLStream &, OutputParams const & op) const
 		Inset const * inset = par.getInset(dit.top().pos());
 		if (!inset)
 			return docstring();
-		InsetCommand const * ic = inset->asInsetCommand();
-		if (!ic)
+		InsetNomencl const * in = inset->asInsetNomencl();
+		if (!in)
 			return docstring();
 
 		// FIXME We need a link to the paragraph here, so we
 		// need some kind of struct.
-		docstring const symbol = ic->getParam("symbol");
-		docstring const desc = ic->getParam("description");
-		docstring const prefix = ic->getParam("prefix");
+		docstring const symbol = in->getSymbol();
+		docstring const desc = in->getDescription();;
+		docstring const prefix = in->getPrefix();;
 		docstring const sortas = prefix.empty() ? symbol : prefix;
 
 		entries[sortas] = NomenclEntry(symbol, desc, &par);
