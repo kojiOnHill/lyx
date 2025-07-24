@@ -140,7 +140,7 @@ void GuiInputMethod::onLocaleChanged()
 	const std::string im_locale_code = fromqstr(d->sys_im_->locale().name());
 	const Language * lang = languages.getFromCode(im_locale_code);
 
-	d->im_off_in_math_ = lang->inputMethodOffInMath();
+	d->im_off_in_math_ = lang != nullptr ? lang->inputMethodOffInMath() : false;
 }
 
 
