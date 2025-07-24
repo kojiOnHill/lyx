@@ -229,8 +229,8 @@ docstring InsetPrintNomencl::xhtml(XMLStream &, OutputParams const & op) const
 		// FIXME We need a link to the paragraph here, so we
 		// need some kind of struct.
 		docstring const symbol = in->getSymbol();
-		docstring const desc = in->getDescription();;
-		docstring const prefix = in->getPrefix();;
+		docstring const desc = in->getDescription();
+		docstring const prefix = in->getPrefix();
 		docstring const sortas = prefix.empty() ? symbol : prefix;
 
 		entries[sortas] = NomenclEntry(symbol, desc, &par);
