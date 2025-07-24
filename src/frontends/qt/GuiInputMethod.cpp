@@ -58,7 +58,7 @@ struct GuiInputMethod::Private
 	QInputMethod * sys_im_ = guiApp->inputMethod();
 	QLocale locale_;
 	/// if language should not use preedit in the math mode
-	bool is_cjk_locale = false;
+	bool im_off_in_math_ = false;
 
 	ColorCache & color_cache_ = guiApp->colorCache();
 	QColor font_color_;
@@ -118,18 +118,17 @@ GuiInputMethod::~GuiInputMethod()
 
 
 void GuiInputMethod::toggleInputMethodAcceptance(){
-#if defined(Q_OS_WIN) || defined (Q_CYGWIN_WIN) || defined (Q_OS_LINUX)
-	// Since QInputMethod::locale() doesn't work on these systems, use language
-	// at the cursor point to infer the current input language as a second best
-	std::string lang = d->cur_->getFont().language()->lang();
-	if (lang == "chinese-simplified" || lang == "chinese-traditional" ||
-	        lang == "korean" || lang == "japanese")
-		d->is_cjk_locale = true;
-	else
-		d->is_cjk_locale = false;
-#endif
+	if (guiApp->platformName() != "cocoa") {
+		// Since QInputMethod::locale() doesn't work on these systems, use language
+		// at the cursor point to infer the current input language as a second best
+		if (d->cur_->getFont().language()->inputMethodOffInMath())
+			d->im_off_in_math_ = true;
+		else
+			d->im_off_in_math_ = false;
+	}
+
 	// note that d->cur_->inset() is a cache so it lags from actual key moves
-	if ((d->is_cjk_locale &&
+	if ((d->im_off_in_math_ &&
 	        d->cur_->inset().currentMode() == Inset::MATH_MODE) ||
 	         guiApp->isInCommandMode())
 		d->im_state_.enabled_ = false;
@@ -142,12 +141,13 @@ void GuiInputMethod::toggleInputMethodAcceptance(){
 
 void GuiInputMethod::onLocaleChanged()
 {
-	QLocale lang = d->sys_im_->locale().language();
-	if (lang == QLocale::Chinese || lang == QLocale::Japanese ||
-	        lang == QLocale::Korean)
-		d->is_cjk_locale = true;
+	const std::string im_locale_code = fromqstr(d->sys_im_->locale().name());
+	const Language * lang = languages.getFromCode(im_locale_code);
+
+	if (lang->inputMethodOffInMath())
+		d->im_off_in_math_ = true;
 	else
-		d->is_cjk_locale = false;
+		d->im_off_in_math_ = false;
 }
 
 
@@ -445,7 +445,7 @@ void GuiInputMethod::setPreeditStyle(
 			char_format.setFontUnderline(true);
 			start = focus_style->start;
 			length = (size_type)focus_style->length;
-		} else if (!d->is_cjk_locale && !d->preedit_str_.empty() &&
+		} else if (!d->im_off_in_math_ && !d->preedit_str_.empty() &&
 		           d->style_.segments_.empty()) {
 			// dead keys on MacOS give no char format having preedit strings
 			length = d->preedit_str_.length();

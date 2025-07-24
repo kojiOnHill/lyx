@@ -38,6 +38,7 @@ public:
 	///
 	Language() : rightToLeft_(false), encoding_(0), internal_enc_(false),
 				 has_gui_support_(false), word_wrap_(true),
+	             im_off_in_math_(false),
 				 use_babel_provide_(0){}
 	/// LyX language name
 	std::string const lang() const { return lang_; }
@@ -73,6 +74,8 @@ public:
 	bool rightToLeft() const { return rightToLeft_; }
 	/// shall text be wrapped at word boundary ?
 	bool wordWrap() const { return word_wrap_; }
+	///
+	bool inputMethodOffInMath() const { return im_off_in_math_; }
 	/**
 	 * Translate a string from the layout files that appears in the output.
 	 * It takes the translations from lib/layouttranslations instead of
@@ -165,6 +168,8 @@ private:
 	bool has_gui_support_;
 	///
 	bool word_wrap_;
+	///
+	bool im_off_in_math_;
 	///
 	TranslationMap layoutTranslations_;
 	///

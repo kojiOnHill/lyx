@@ -140,6 +140,7 @@ bool Language::readLanguage(Lexer & lex)
 		LA_FONTENC,
 		LA_GUINAME,
 		LA_HAS_GUI_SUPPORT,
+		LA_IM_OFF_IN_MATH,
 		LA_INTERNAL_ENC,
 		LA_LANG_CODE,
 		LA_LANG_VARIETY,
@@ -169,6 +170,7 @@ bool Language::readLanguage(Lexer & lex)
 		{ "fontencoding",         LA_FONTENC },
 		{ "guiname",              LA_GUINAME },
 		{ "hasguisupport",        LA_HAS_GUI_SUPPORT },
+	    { "imoffinmath",          LA_IM_OFF_IN_MATH },
 		{ "internalencoding",     LA_INTERNAL_ENC },
 		{ "langcode",             LA_LANG_CODE },
 		{ "langvariety",          LA_LANG_VARIETY },
@@ -256,6 +258,9 @@ bool Language::readLanguage(Lexer & lex)
 			break;
 		case LA_HAS_GUI_SUPPORT:
 			lex >> has_gui_support_;
+			break;
+		case LA_IM_OFF_IN_MATH:
+			lex >> im_off_in_math_;
 			break;
 		case LA_INTERNAL_ENC:
 			lex >> internal_enc_;

@@ -22,7 +22,8 @@
 #	FontEncoding       <font encoding|font encoding|...>
 #	InternalEncoding   <true|false>
 #	RTL                <true|false>
-#	WordWrap	   <true|false>
+#	WordWrap           <true|false>
+#	ImOffInMath        <true|false>
 #	LangCode           <language_code>
 #	LangVariety        <language_variety>
 #	PreBabelPreamble
@@ -111,6 +112,8 @@
 # * WordWrap is only used for on-screen display: when is is true (the default), rows are broken
 #   at word boundary; otherwise, they can be ended at arbitrary position. This
 #   setting is useful for CJK languages.
+# * ImOffInMath shows if the input method should be turned off in the math mode.
+#   It is applicable to the languages that use the input method.
 # * LangCode is also used for spellchecking and thesaurus, where the
 #   dictionaries are named accordingly. Thus, check this when introducing/
 #   changing language codes (especially aspell, thesaurus).
@@ -554,6 +557,7 @@ Language chinese-simplified
 	Encoding         euc-cn
 	QuoteStyle       english
 	WordWrap         false
+	ImOffInMath      true
 	LangCode         zh_CN
 	DateFormats      "yyyy年M月d日|yyyy-M-d|yy-M-d"
 	Requires         CJK
@@ -568,6 +572,7 @@ Language chinese-traditional
 	QuoteStyle       cjk
 	Encoding         utf8-cjk
 	WordWrap         false
+	ImOffInMath      true
 	LangCode         zh_TW
 	DateFormats      "yyyy年M月d日|yyyy年M月d日|yy年M月d日"
 	Requires         CJK
@@ -980,6 +985,7 @@ Language japanese
 	PolyglossiaName  japanese
 	Encoding         jis-platex
 	WordWrap         false
+	ImOffInMath      true
 	LangCode         ja_JP
 	Requires         japanese
 	FontEncoding     ASCII
@@ -993,6 +999,7 @@ Language japanese-cjk
 	Encoding        euc-jp
 	DateFormats     "yyyy年M月d日|yyyy/MM/dd|yy/MM/dd"
 	WordWrap        false
+	ImOffInMath      true
 	LangCode        ja_JP
 	Requires        CJK
 	QuoteStyle      cjk
@@ -1037,6 +1044,7 @@ Language korean
 	QuoteStyle      cjkangle
 	DateFormats     "yyyy년 M월 d일|yyyy. M. d.|yy. M. d."
 	WordWrap        false
+	ImOffInMath      true
 	LangCode        ko_KR
 	Requires        CJK
 End
