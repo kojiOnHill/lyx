@@ -242,6 +242,31 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 		pretty_counter_ = from_ascii("#");
 		formatted_counter_ = from_ascii("#");
 	}
+	if (!active_counter_.empty()) {
+		if (active_counter_ == (*it).layout().counter) {
+			textref_ = (*it).asString(AS_STR_INSETS);
+			return;
+		}
+		ParIterator prev_it = it;
+		while (true) {
+			if (prev_it.pit())
+				--prev_it.top().pit();
+			else {
+				// start of nested inset: go to outer par
+				prev_it.pop_back();
+				if (prev_it.empty()) {
+					// start of document: nothing to do
+					break;
+				}
+			}
+			// We search for the first paragraph which has the counter.
+			Paragraph & prev_par = *prev_it;
+			if (active_counter_ == prev_par.layout().counter) {
+				textref_ = prev_par.asString(AS_STR_INSETS);
+				break;
+			}
+		}
+	}
 }
 
 

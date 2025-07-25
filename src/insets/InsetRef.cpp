@@ -713,14 +713,12 @@ docstring InsetRef::displayString(docstring const & ref, string const & cmd,
 				else
 					display_string.push_back(value);
 			}
-			else if (cmd == "nameref")
-				// FIXME We don't really have the ability to handle these
-				// properly in XHTML output yet (bug #8599).
-				// It might not be that hard to do. We have the InsetLabel,
-				// and we can presumably find its paragraph using the TOC.
-				// But the label might be referencing a section, yet not be
-				// in that section. So this is not trivial.
-				display_string.push_back(il->prettyCounter());
+			else if (cmd == "nameref") {
+				if (il->textRef().empty())
+					display_string.push_back(il->prettyCounter());
+				else
+					display_string.push_back(il->textRef());
+			}
 		} else
 			display_string.push_back(ref);
 		first = false;

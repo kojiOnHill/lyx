@@ -28,6 +28,8 @@ public:
 	///
 	docstring const & counterValue() const { return counter_value_; }
 	///
+	docstring const & textRef() const { return textref_; }
+	///
 	docstring const & prettyCounter(bool lc = false) const { return lc ? pretty_counter_lc_ : pretty_counter_; }
 	///
 	docstring formattedCounter(bool lc = false, bool pl = false) const;
@@ -127,6 +129,8 @@ private:
 	docstring formatted_counter_pl_;
 	///
 	docstring formatted_counter_lc_pl_;
+	///
+	docstring textref_;
 };
 
 
