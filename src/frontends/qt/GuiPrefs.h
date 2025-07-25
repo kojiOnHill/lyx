@@ -269,7 +269,7 @@ public:
 	QColor getCurrentColor(ColorCode color_code, bool is_dark_mode);
 
 private Q_SLOTS:
-	void clickedColorsTV(const QModelIndex index);
+	void onColorsTVClicked(const QModelIndex index);
 	void selectionChanged(const QItemSelection &selected,
 	                      const QItemSelection &deselected);
 	bool resetAllColor();
@@ -343,12 +343,15 @@ private:
 	/// This initializes the color setting table view.
 	void initializeColorsTV();
 	///
+	void selectCurrentTheme();
+	///
 	void cacheAllThemes();
 	/// Common algorithm between saving and exporting
 	void saveExportThemeCommon(QString file_path);
 	/// Common algorithm between loading and importing.
 	/// It returns the color set read from \p fullpath.
-	ColorNamePairs loadImportThemeCommon(support::FileName fullpath);
+	ColorNamePairs loadImportThemeCommon(support::FileName fullpath,
+	                                     bool update_swatch = true);
 	/// Ask the user a theme name
 	bool askThemeName(bool porting, QString name_suggestion = "");
 	///

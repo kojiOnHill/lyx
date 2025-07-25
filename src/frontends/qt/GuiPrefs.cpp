@@ -1046,7 +1046,7 @@ PrefColors::PrefColors(GuiPreferences * form)
 	connect(colorChooserPB, SIGNAL(clicked()),
 	        this, SLOT(openColorChooser()));
 	connect(colorsTV, SIGNAL(clicked(QModelIndex)),
-	        this, SLOT(clickedColorsTV(QModelIndex)));
+	        this, SLOT(onColorsTVClicked(QModelIndex)));
 	connect(colorResetAllPB, SIGNAL(clicked()),
 	        this, SLOT(resetAllColor()));
 	connect(darkColorEditPB, SIGNAL(clicked()),
@@ -1123,7 +1123,7 @@ void PrefColors::updateRC(LyXRC const & rc)
 }
 
 
-void PrefColors::clickedColorsTV(const QModelIndex index)
+void PrefColors::onColorsTVClicked(const QModelIndex index)
 {
 	if (!index.flags().testFlag(Qt::ItemIsEnabled))
 		return;
@@ -1555,7 +1555,8 @@ void PrefColors::importTheme()
 	import_file.copy(toqstr(target_file_path));
 
 	initializeThemesLW();
-	theme_colors_ = loadImportThemeCommon(FileName(fromqstr(file_path)));
+	theme_colors_ = newcolors_ =
+	        loadImportThemeCommon(FileName(fromqstr(file_path)));
 	theme_filename_ = onlyFileName(toqstr(target_file_path));
 	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
 	initial_edit_ = true;
@@ -1568,7 +1569,8 @@ void PrefColors::loadTheme(int const row)
 {
 	if (row < 0) return;
 
-	theme_colors_ = loadImportThemeCommon(FileName(fromqstr(theme_fullpaths_[row])));
+	theme_colors_ = newcolors_ =
+	        loadImportThemeCommon(FileName(fromqstr(theme_fullpaths_[row])));
 	// variables below are used for suggestion in input dialogs
 	theme_filename_ = onlyFileName(theme_fullpaths_[row]);
 	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
@@ -1586,28 +1588,32 @@ void PrefColors::cacheAllThemes()
 	guiApp->setOverrideCursor(QCursor(Qt::WaitCursor));
 	for (int id = 0; id < themesLW->count(); ++id) {
 		FileName const fn(fromqstr(theme_fullpaths_[id]));
-		themes_cache_.push_back(loadImportThemeCommon(fn));
+		themes_cache_.push_back(loadImportThemeCommon(fn, false));
 		theme_names_cache_.push_back(themesLW->item(id)->text());
 	}
 	guiApp->restoreOverrideCursor();
 }
 
 
-ColorNamePairs PrefColors::loadImportThemeCommon(FileName fullpath)
+ColorNamePairs PrefColors::loadImportThemeCommon(FileName fullpath,
+                                                 bool update_swatch)
 {
+	ColorNamePairs colors;
+	colors.resize(lcolors_.size());
 	// read RC colors to extern ColorSet lcolor
 	form_->rc().read(fullpath, true);
 	for (size_type row = 0; row < lcolors_.size(); ++row) {
 		// get colors from extern lcolor
-		newcolors_[size_t(row)] =
+		colors[size_t(row)] =
 		    {getCurrentColor(lcolors_[row], false).name(),
 		     getCurrentColor(lcolors_[row], true).name()};
 	}
-	updateAllSwatches();
+	if (update_swatch)
+		updateAllSwatches();
 
 	if (autoapply_) {
 		for (unsigned int i = 0; i < lcolors_.size(); ++i) {
-			form_->setColor(lcolors_[i], newcolors_[i]);
+			form_->setColor(lcolors_[i], colors[i]);
 		}
 		form_->dispatchParams();
 	}
@@ -1616,7 +1622,7 @@ ColorNamePairs PrefColors::loadImportThemeCommon(FileName fullpath)
 	changed();
 	activatePrefsWindow(form_);
 
-	return newcolors_;
+	return colors;
 }
 
 
@@ -1722,8 +1728,12 @@ void PrefColors::initializeThemesLW()
 	}
 	themesLW->clear();
 
-	if (toqstr(lyxrc.ui_theme) != theme_name_)
-		theme_name_ = toqstr(lyxrc.ui_theme);
+	// note that form_->rc() is not initialized yet here when pref dialog is opened
+	if (form_->rc().ui_theme.empty()) {
+		if (toqstr(lyxrc.ui_theme) != theme_name_ || theme_name_ == "")
+			theme_name_ = toqstr(lyxrc.ui_theme);
+	} else if (toqstr(form_->rc().ui_theme) != theme_name_ || theme_name_ == "")
+		theme_name_ = toqstr(form_->rc().ui_theme);
 
 	// themes are already sorted with GUI name as std::map sorts its entries
 	for (const auto & theme : themes) {
@@ -1735,16 +1745,22 @@ void PrefColors::initializeThemesLW()
 			item->setIcon(sys_theme_icon);
 		themesLW->addItem(item);
 
-		// current theme is indicated by selection
-		if (item->text() == theme_name_)
-			themesLW->setCurrentItem(item);
-
 		theme_fullpaths_.push_back(std::get<1>(theme.second));
 		if (theme.first.right(3) == "sys")
 			isSysThemes_.push_back(true);
 		else
 			isSysThemes_.push_back(false);
 	}
+	selectCurrentTheme();
+}
+
+
+void PrefColors::selectCurrentTheme()
+{
+	QList<QListWidgetItem *> selected_items =
+	        themesLW->findItems(theme_name_, Qt::MatchExactly);
+	if (!selected_items.empty())
+		themesLW->setCurrentItem(selected_items.first());
 }
 
 
