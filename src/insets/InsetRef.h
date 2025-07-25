@@ -123,7 +123,7 @@ private:
 
 	///
 	docstring displayString(docstring const & ref, std::string const & cmd,
-			std::string const & language = std::string()) const;
+			std::string const & language = std::string(), bool first = true) const;
 
 	/// \return the label with things that need to be escaped escaped
 	docstring getEscapedLabel(OutputParams const &) const;

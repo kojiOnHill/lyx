@@ -678,7 +678,7 @@ void InsetRef::docbook(XMLStream & xs, OutputParams const &) const
 
 
 docstring InsetRef::displayString(docstring const & ref, string const & cmd,
-		string const & language) const
+		string const & language, bool first) const
 
 {
 	vector<docstring> display_string;
@@ -691,7 +691,6 @@ docstring InsetRef::displayString(docstring const & ref, string const & cmd,
 	if (buffer().params().xref_package == "refstyle")
 		plural = getParam("plural") == "true";
 
-	bool first = true;
 	for (auto const & label : labels) {
 		InsetLabel const * il = buffer().insetLabel(label, true);
 		if (il && !il->counterValue().empty()) {
@@ -754,15 +753,32 @@ docstring InsetRef::displayString(docstring const & ref, string const & cmd,
 
 docstring InsetRef::xhtml(XMLStream & xs, OutputParams const & op) const
 {
-	docstring const & ref = getParam("reference");
+	vector<docstring> display_string;
+	vector<docstring> refs = getVectorFromString(getParam("reference"));
 	string const & cmd = params().getCmdName();
-	// FIXME What we'd really like to do is to be able to output some
-	// appropriate sort of text here. But to do that, we need to associate
-	// some sort of counter with the label, and we don't have that yet.
-	docstring const attr = "href=\"#" + xml::cleanAttr(ref) + '"';
-	xs << xml::StartTag("a", to_utf8(attr));
-	xs << displayString(ref, cmd, getLocalOrDefaultLang(op)->lang());
-	xs << xml::EndTag("a");
+	bool first = true;
+	size_type i = 0;
+	for (auto const & ref : refs) {
+		if (!first) {
+			if (useRange())
+				xs << from_utf8("–");
+			else if (refs.size() == 2)
+				xs << buffer().B_("[[reference 1]] and [[reference2]]");
+			else if (i > 0 && i == refs.size() - 1)
+				xs << buffer().B_("[[reference 1, ...]], and [[reference n]]");
+			else
+				xs << buffer().B_("[[reference 1]], [[reference2, ...]]");
+		}
+		docstring const attr = "href=\"#" + xml::cleanAttr(ref) + '"';
+		xs << xml::StartTag("a", to_utf8(attr));
+		xs << displayString(ref, cmd, getLocalOrDefaultLang(op)->lang(), first);
+		xs << xml::EndTag("a");
+		++i;
+		if (first) {
+			first = false;
+			continue;
+		}
+	}
 	return docstring();
 }
 
