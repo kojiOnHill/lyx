@@ -169,7 +169,9 @@ void InsetTOC::makeTOCWithDepth(XMLStream & xs,
 		if (!tocitem.isOutput())
 			continue;
 
-		if (!tocitem.dit().paragraph().layout().htmlintoc())
+		bool const is_bibtex = tocitem.dit().nextInset()
+				&& tocitem.dit().nextInset()->lyxCode() == BIBTEX_CODE;
+		if (!tocitem.dit().paragraph().layout().htmlintoc() && !is_bibtex)
 			continue;
 
 		// First, we need to manage increases and decreases of depth
@@ -211,7 +213,13 @@ void InsetTOC::makeTOCWithDepth(XMLStream & xs,
 
 		// Now output TOC info for this entry
 		Paragraph const & par = tocitem.dit().innerParagraph();
-		makeTOCEntry(xs, par, op);
+		if (is_bibtex) {
+			string const attr = "href='#" + par.magicLabel() + "' class='tocentry'";
+			xs << xml::StartTag("a", attr)
+			   <<  tocitem.str()
+			   << xml::EndTag("a") << xml::CR();
+		} else
+			makeTOCEntry(xs, par, op);
 	}
 	for (int i = lastdepth; i > 0; --i)
 		xs << xml::EndTag("div") << xml::CR();
