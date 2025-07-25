@@ -1031,7 +1031,7 @@ docstring InsetBibtex::xhtml(XMLStream & xs, OutputParams const &) const
 	ci.max_key_size = UINT_MAX;
 
 	xs << xml::StartTag("h2", "class='bibtex'")
-	   << buffer().B_("References")
+	   << getRefLabel()
 	   << xml::EndTag("h2")
 	   << xml::StartTag("div", "class='bibtex'");
 
