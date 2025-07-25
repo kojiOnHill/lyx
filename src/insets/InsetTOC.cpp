@@ -143,12 +143,17 @@ void InsetTOC::makeTOCEntry(XMLStream & xs,
 	// First the label, if there is one
 	docstring const & label = par.params().labelString();
 	if (!label.empty())
-		xs << label << " ";
+		xs << label;
 	// Now the content of the TOC entry, taken from the paragraph itself
-	OutputParams ours = op;
-	ours.for_toc = true;
-	Font const dummy;
-	par.simpleLyXHTMLOnePar(buffer(), xs, ours, dummy);
+	// Except for bibliography where we really only want the label
+	if (par.layout().labeltype != LABEL_BIBLIO) {
+		if (!label.empty())
+			xs << " ";
+		OutputParams ours = op;
+		ours.for_toc = true;
+		Font const dummy;
+		par.simpleLyXHTMLOnePar(buffer(), xs, ours, dummy);
+	}
 
 	xs << xml::EndTag("a") << xml::CR();
 }
