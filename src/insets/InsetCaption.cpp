@@ -423,7 +423,7 @@ void InsetCaption::updateBuffer(ParIterator const & it, UpdateType utype, bool c
 			// only standard captions allowed in subfloats
 			type_ = "Standard";
 			counter = "sub-" + from_utf8(type);
-			name = bformat(_("Sub-%1$s"),
+			name = bformat(master.B_("Sub-%1$s"),
 				       master.B_(tclass.floats().getType(type).name()));
 		}
 		docstring const lstring = getLayout().labelstring();
