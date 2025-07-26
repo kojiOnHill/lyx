@@ -366,6 +366,8 @@ public:
 
 	///
 	mutable bool need_update;
+	/// do we need a second update pass?
+	mutable bool need_extra_update;
 
 	///
 	bool is_closing;
@@ -458,7 +460,7 @@ Buffer::Impl::Impl(Buffer * owner, FileName const & file, bool readonly_,
 	  internal_buffer(false), read_only(readonly_), file_fully_loaded(false),
 	  need_format_backup(false), ignore_parent(false), macro_lock(false),
 	  externally_modified_(false), bibinfo_cache_valid_(false), need_update(false),
-	  is_closing(false)
+	  need_extra_update(false), is_closing(false)
 {
 	refreshFileMonitor();
 	if (!cloned_buffer_) {
@@ -5081,6 +5083,12 @@ void Buffer::updateBuffer() const
 {
 	updateBuffer(UpdateMaster, InternalUpdate);
 	d->need_update = false;
+	if (d->need_extra_update) {
+		// an additional update cycle has been
+		// requested from within the cycle
+		updateBuffer(UpdateMaster, InternalUpdate);
+		d->need_extra_update = false;
+	}
 }
 
 
@@ -5473,9 +5481,12 @@ void Buffer::updateBuffer(ParIterator & parit, UpdateType utype, bool const dele
 }
 
 
-void Buffer::forceUpdate() const
+void Buffer::forceUpdate(bool const extra) const
 {
-	d->need_update = true;
+	if (extra)
+		d->need_extra_update = true;
+	else
+		d->need_update = true;
 }
 
 

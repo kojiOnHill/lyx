@@ -773,8 +773,9 @@ public:
 	void updateBuffer(UpdateScope scope, UpdateType utype) const;
 	///
 	void updateBuffer(ParIterator & parit, UpdateType utype, bool const deleted = false) const;
-	/// Forces an updateBuffer() call
-	void forceUpdate() const;
+	/// Forces an updateBuffer() call. \p extra determines whether this
+	/// is an additional update request from within an updateBuffer() call
+	void forceUpdate(bool const extra = false) const;
 	/// Do we need to call updateBuffer()?
 	bool needUpdate() const;
 
