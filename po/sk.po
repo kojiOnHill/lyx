@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.5\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-07-19 08:20+0200\n"
-"PO-Revision-Date: 2025-07-19 06:51+0000\n"
+"POT-Creation-Date: 2025-07-26 18:09+0200\n"
+"PO-Revision-Date: 2025-07-26 16:29+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -3163,7 +3163,7 @@ msgstr "Výstup hlavného dokumentu"
 
 #: src/frontends/qt/ui/MasterChildUi.ui:29
 msgid "Include only the selected subdocuments in the output"
-msgstr "Zahrnúť len označené pod-dokumenty do výstupu"
+msgstr "Zahrnúť len označené poddokumenty do výstupu"
 
 #: src/frontends/qt/ui/MasterChildUi.ui:32
 msgid "Include only &selected children"
@@ -3171,7 +3171,7 @@ msgstr "Zahrnúť &len označené potomky"
 
 #: src/frontends/qt/ui/MasterChildUi.ui:42
 msgid "Include all subdocuments in the output"
-msgstr "Zahrň každý pod-dokument do výstupu"
+msgstr "Zahrň každý poddokument do výstupu"
 
 #: src/frontends/qt/ui/MasterChildUi.ui:45
 msgid "&Include all children"
@@ -5379,7 +5379,7 @@ msgstr "Skryť st&avový pruh"
 
 #: src/frontends/qt/ui/PrefUi.ui:291
 msgid "H&ide tabbar"
-msgstr "Skryť lištu po&d-okien"
+msgstr "S&kryť lištu podokien"
 
 #: src/frontends/qt/ui/PrefUi.ui:333
 msgid "&Hide toolbars"
@@ -5434,7 +5434,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/PrintindexUi.ui:67
 msgid "&Subindex"
-msgstr "&Pod-register"
+msgstr "&Podregister"
 
 #: src/frontends/qt/ui/PrintindexUi.ui:74
 msgid ""
@@ -5510,7 +5510,7 @@ msgstr "Vn&útri:"
 
 #: src/frontends/qt/ui/RefUi.ui:62
 msgid "The (sub-)document from which the available labels are displayed"
-msgstr "Ten (pod-)dokument z ktorého sa dostupné štítky majú zobraziť"
+msgstr "Ten (pod)dokument z ktorého sa dostupné štítky majú zobraziť"
 
 #: src/frontends/qt/ui/RefUi.ui:108 src/frontends/qt/GuiRef.cpp:988
 msgid "Available &Labels:"
@@ -9188,6 +9188,10 @@ msgstr "Náčrtky"
 msgid "Scheme"
 msgstr "Náčrtok"
 
+#: lib/layouts/achemso.layout:210
+msgid "Sub-Scheme"
+msgstr "Podnáčrtok"
+
 #: lib/layouts/achemso.layout:216
 msgid "List of Schemes"
 msgstr "Zoznam náčrtkov"
@@ -9200,6 +9204,10 @@ msgstr "Diagramy"
 msgid "Chart"
 msgstr "Diagram"
 
+#: lib/layouts/achemso.layout:234
+msgid "Sub-Chart"
+msgstr "Poddiagram"
+
 #: lib/layouts/achemso.layout:240
 msgid "List of Charts"
 msgstr "Zoznam diagramov"
@@ -9211,6 +9219,10 @@ msgstr "Grafy"
 #: lib/layouts/achemso.layout:260 lib/layouts/achemso.layout:272
 msgid "Graph[[mathematical]]"
 msgstr "Graf"
+
+#: lib/layouts/achemso.layout:260
+msgid "Sub-Graph[[mathematical]]"
+msgstr "Podgraf"
 
 #: lib/layouts/achemso.layout:266
 msgid "List of Graphs[[mathematical]]"
@@ -9586,9 +9598,17 @@ msgstr "Bočný panel"
 msgid "Sidebar (sigchi-a only)"
 msgstr "Bočný panel (len sigchi-a)"
 
+#: lib/layouts/acmart.layout:537
+msgid "Sub-Sidebar (sigchi-a only)"
+msgstr "Podbočný panel (len sigchi-a)"
+
 #: lib/layouts/acmart.layout:545
 msgid "Margin figure (sigchi-a only)"
 msgstr "Okrajový obrázok (len sigchi-a)"
+
+#: lib/layouts/acmart.layout:547
+msgid "Sub-Margin figure (sigchi-a only)"
+msgstr "Podokrajový obrázok (len sigchi-a)"
 
 #: lib/layouts/acmart.layout:550 lib/layouts/beamer.layout:1752
 #: lib/layouts/powerdot.layout:585 lib/layouts/sciposter.layout:110
@@ -9599,6 +9619,10 @@ msgstr "Zoznam obrázkov"
 #: lib/layouts/acmart.layout:558
 msgid "Margin table (sigchi-a only)"
 msgstr "Okrajová tabuľka (len sigchi-a)"
+
+#: lib/layouts/acmart.layout:560
+msgid "Sub-Margin table (sigchi-a only)"
+msgstr "Podokrajová tabuľka (len sigchi-a)"
 
 #: lib/layouts/acmart.layout:563 lib/layouts/beamer.layout:1738
 #: lib/layouts/powerdot.layout:567 lib/layouts/sciposter.layout:125
@@ -10026,9 +10050,17 @@ msgstr "Plano-tabuľky"
 msgid "Plate"
 msgstr "Vyobrazenie"
 
+#: lib/layouts/aguplus.inc:189
+msgid "Sub-Plate"
+msgstr "Podvyobrazenie"
+
 #: lib/layouts/aguplus.inc:200
 msgid "Planotable"
 msgstr "Plano-tabuľka"
+
+#: lib/layouts/aguplus.inc:200
+msgid "Sub-Planotable"
+msgstr "Podplano-tabuľka"
 
 #: lib/layouts/aguplus.inc:211 lib/layouts/beamer.layout:1733
 #: lib/layouts/powerdot.layout:560 lib/layouts/powerdot.layout:645
@@ -10084,6 +10116,12 @@ msgid ""
 msgstr ""
 "Použiť balík algorithm2e pre plávajúce algoritmy namiesto LyXovej samohonky "
 "plávajúcich algoritmov. Použiť štýl 'Algorithm' na vklad a zarážka algoritmu."
+
+#: lib/layouts/algorithm2e.module:19 lib/layouts/powerdot.layout:596
+#: lib/layouts/revtex4-x.inc:311 lib/layouts/sciposter.layout:89
+#: lib/layouts/stdfloats.inc:45
+msgid "Sub-Algorithm"
+msgstr "Podalgoritmus"
 
 #: lib/layouts/algorithm2e.module:26 lib/layouts/powerdot.layout:603
 #: lib/layouts/revtex4-x.inc:319 lib/layouts/stdfloats.inc:50
@@ -11199,6 +11237,11 @@ msgstr "Mód prezentácie"
 msgid "Presentation"
 msgstr "Prezentácia"
 
+#: lib/layouts/beamer.layout:1733 lib/layouts/powerdot.layout:560
+#: lib/layouts/sciposter.layout:120 lib/layouts/stdfloats.inc:13
+msgid "Sub-Table"
+msgstr "Podtabuľka"
+
 #: lib/layouts/beamer.layout:1742 lib/layouts/powerdot.layout:572
 #: lib/layouts/sciposter.layout:130 lib/layouts/stdfloats.inc:23
 msgid "Table ##"
@@ -11224,6 +11267,11 @@ msgstr "tabuľky ##"
 #: lib/layouts/stdfloats.inc:29
 msgid "Figure"
 msgstr "Obrázok"
+
+#: lib/layouts/beamer.layout:1747 lib/layouts/powerdot.layout:578
+#: lib/layouts/sciposter.layout:105 lib/layouts/stdfloats.inc:29
+msgid "Sub-Figure"
+msgstr "Podobrázok"
 
 #: lib/layouts/beamer.layout:1756 lib/layouts/powerdot.layout:590
 #: lib/layouts/sciposter.layout:115 lib/layouts/stdfloats.inc:39
@@ -15773,15 +15821,15 @@ msgstr "Prispôsobiť číslovanie"
 
 #: lib/layouts/linguistics.module:149
 msgid "Subexamples options"
-msgstr "Pod-príkladné voľby"
+msgstr "Podpríkladné voľby"
 
 #: lib/layouts/linguistics.module:150
 msgid "Subexamples options|s"
-msgstr "Pod-príkladné voľby|n"
+msgstr "Podpríkladné voľby|n"
 
 #: lib/layouts/linguistics.module:151
 msgid "Add subexamples options here"
-msgstr "Pridajte sem voľby pre pod-príklad"
+msgstr "Pridajte sem voľby pre podpríklad"
 
 #: lib/layouts/linguistics.module:157
 msgid "Example Preamble"
@@ -15793,7 +15841,7 @@ msgstr "Pr. preambula"
 
 #: lib/layouts/linguistics.module:171
 msgid "Subexample Preamble"
-msgstr "Pod-príkladná preambula"
+msgstr "Podpríkladná preambula"
 
 #: lib/layouts/linguistics.module:174
 msgid "Subex. Preamble"
@@ -15809,7 +15857,7 @@ msgstr "Pr. záver"
 
 #: lib/layouts/linguistics.module:187
 msgid "Subexample Postamble"
-msgstr "Pod-príkladný záver"
+msgstr "Podpríkladný záver"
 
 #: lib/layouts/linguistics.module:190
 msgid "Subex. Postamble"
@@ -16137,6 +16185,10 @@ msgstr "Tablá"
 #: lib/layouts/linguistics.module:600
 msgid "Tableau"
 msgstr "Tablo"
+
+#: lib/layouts/linguistics.module:600
+msgid "Sub-Tableau"
+msgstr "Podtablo"
 
 #: lib/layouts/linguistics.module:605
 msgid "List of Tableaux"
@@ -17723,6 +17775,10 @@ msgstr "Široký text"
 msgid "Video"
 msgstr "Video"
 
+#: lib/layouts/revtex4-x.inc:329
+msgid "Sub-Video"
+msgstr "Podvideo"
+
 #: lib/layouts/revtex4-x.inc:332
 msgid "List of Videos"
 msgstr "Zoznam videí"
@@ -18888,9 +18944,9 @@ msgstr "Viď tiež"
 msgid "Sort as"
 msgstr "Triediť ako"
 
-#: lib/layouts/stdinsets.inc:454 src/insets/InsetIndexMacro.cpp:65
+#: src/insets/InsetIndexMacro.cpp:58 lib/layouts/stdinsets.inc:456
 msgid "Subentry"
-msgstr "Pod-záznam"
+msgstr "Podzáznam"
 
 #: lib/layouts/stdinsets.inc:458
 msgid "Nom"
@@ -18967,14 +19023,14 @@ msgstr "Pododstavec*"
 #: lib/layouts/subequations.module:2 lib/layouts/subequations.module:11
 #: lib/layouts/subequations.module:14
 msgid "Subequations"
-msgstr "Pod-rovnice"
+msgstr "Podrovnice"
 
 #: lib/layouts/subequations.module:6
 msgid ""
 "Provide a straightforward way to segregate subequations in LyX. See the Math "
 "manual."
 msgstr ""
-"Umožniť priamy spôsob na oddelenie pod-rovníc v LyXe. Viďte manuál Math."
+"Umožniť priamy spôsob na oddelenie podrovníc v LyXe. Viďte manuál Math."
 
 #: lib/layouts/svcommon.inc:125 lib/layouts/svmult.layout:117
 msgid "PartBacktext"
@@ -19006,7 +19062,7 @@ msgstr "Nadpisy do záhlavia"
 
 #: lib/layouts/svcommon.inc:328
 msgid "Sub-run-in headings"
-msgstr "Pod-nadpisy do záhlavia"
+msgstr "Podnadpisy do záhlavia"
 
 #: lib/layouts/svcommon.inc:338 lib/layouts/svmult.layout:142
 msgid "Extrachap"
@@ -21380,9 +21436,17 @@ msgstr "krajné tabuľky ##"
 msgid "MarginTable"
 msgstr "Krajná tabuľka"
 
+#: lib/layouts/tufte-book.layout:269
+msgid "Sub-MarginTable"
+msgstr "Podkrajná tabuľka"
+
 #: lib/layouts/tufte-book.layout:285
 msgid "MarginFigure"
 msgstr "Krajný obrázok"
+
+#: lib/layouts/tufte-book.layout:285
+msgid "Sub-MarginFigure"
+msgstr "Podkrajný obrázok"
 
 #: lib/layouts/tufte-handout.layout:3 lib/examples/Articles:0
 msgid "Tufte Handout"
@@ -25608,9 +25672,9 @@ msgstr "Zdôraznené formátovanie strán|d"
 msgid "Custom Page Formatting...|u"
 msgstr "Vlastné formátovanie Strán…|V"
 
-#: lib/ui/stdcontext.inc:666
+#: lib/ui/stdcontext.inc:668
 msgid "Insert Subentry|n"
-msgstr "Vložiť pod-záznam|d"
+msgstr "Vložiť podzáznam|d"
 
 #: lib/ui/stdcontext.inc:667
 msgid "Insert Sortkey|k"
@@ -25636,9 +25700,9 @@ msgstr "Viď tiež|t"
 msgid "All Indexes|A"
 msgstr "Všetky registre|V"
 
-#: lib/ui/stdcontext.inc:690
+#: lib/ui/stdcontext.inc:692
 msgid "Subindex|b"
-msgstr "Pod-register|P"
+msgstr "Podregister|P"
 
 #: lib/ui/stdcontext.inc:718 lib/ui/stdmenus.inc:595
 msgid "Reject Change|R"
@@ -26626,7 +26690,7 @@ msgstr "Dokument potomka…|p"
 
 #: lib/ui/stdmenus.inc:540
 msgid "Subentry|b"
-msgstr "Pod-záznam|d"
+msgstr "Podzáznam|d"
 
 #: lib/ui/stdmenus.inc:541
 msgid "Sortkey|k"
@@ -36083,15 +36147,15 @@ msgstr "%1$s ##"
 msgid "%1$s (Float)"
 msgstr "%1$s (plávajúc)"
 
-#: src/TextClass.cpp:1692
+#: src/TextClass.cpp:1718
 #, c-format
 msgid "Sub-%1$s ##"
-msgstr "Pod-%1$s ##"
+msgstr "Pod%1$s ##"
 
-#: src/TextClass.cpp:1693
+#: src/TextClass.cpp:1719
 #, c-format
 msgid "Sub-%1$s (Float)"
-msgstr "Pod-%1$s (plávajúc)"
+msgstr "Pod%1$s (plávajúc)"
 
 #: src/TextClass.cpp:1983
 #, c-format
@@ -40555,9 +40619,9 @@ msgid ""
 "This subdirectory does not exists yet.\n"
 "Do you want to create it?"
 msgstr ""
-"Navrhuje sa uložiť šablónu do pod-adresára\n"
+"Navrhuje sa uložiť šablónu do podadresára\n"
 "vhodné pre jazyk dokumentu (%1$s).\n"
-"Tento pod-adresár ešte neexistuje.\n"
+"Tento podadresár ešte neexistuje.\n"
 "Chcete ho vytvoriť?"
 
 #: src/frontends/qt/GuiView.cpp:3415
@@ -40574,14 +40638,14 @@ msgstr "&Nie, Uložiť Šablónu v Nadriadenom Adresári"
 
 #: src/frontends/qt/GuiView.cpp:3419 src/frontends/qt/GuiView.cpp:3450
 msgid "Subdirectory creation failed!"
-msgstr "Vytvorenie pod-adresára zlyhalo!"
+msgstr "Vytvorenie podadresára zlyhalo!"
 
 #: src/frontends/qt/GuiView.cpp:3420 src/frontends/qt/GuiView.cpp:3451
 msgid ""
 "Could not create subdirectory.\n"
 "The template will be saved in the parent directory."
 msgstr ""
-"Nepodaril sa vytvoriť pod-adresár.\n"
+"Nepodaril sa vytvoriť podadresár.\n"
 "Šablóna sa uloží do nadriadeného adresára."
 
 #: src/frontends/qt/GuiView.cpp:3441
@@ -40592,9 +40656,9 @@ msgid ""
 "This subdirectory does not exists yet.\n"
 "Do you want to create it?"
 msgstr ""
-"Navrhuje sa uložiť šablónu do pod-adresára\n"
+"Navrhuje sa uložiť šablónu do podadresára\n"
 "vhodného pre kategóriu schémy (%1$s).\n"
-"Tento pod-adresár ešte neexistuje.\n"
+"Tento podadresár ešte neexistuje.\n"
 "Chcete ho vytvoriť?"
 
 #: src/frontends/qt/GuiView.cpp:3446
@@ -41629,11 +41693,6 @@ msgstr ""
 msgid "Orphaned caption:"
 msgstr "Osirelý popis:"
 
-#: src/insets/InsetCaption.cpp:432
-#, c-format
-msgid "Sub-%1$s"
-msgstr "Pod-%1$s"
-
 #: src/insets/InsetCaption.cpp:456
 #, c-format
 msgid "%1$s %2$s: [[Caption label (ex. Figure 1: )]]"
@@ -42104,18 +42163,18 @@ msgstr ""
 msgid "Index sorting failed"
 msgstr "Triedenie registra zlyhalo"
 
-#: src/insets/InsetIndex.cpp:783
+#: src/insets/InsetIndex.cpp:779
 #, c-format
 msgid ""
 "There is an empty index subentry in the entry '%1$s'.\n"
 "It will be ignored in the output."
 msgstr ""
-"Je to prázdny pod-záznam v hesle '%1$s'.\n"
+"Je to prázdny podzáznam v hesle '%1$s'.\n"
 "Vo výstupe bude ignorovaný."
 
-#: src/insets/InsetIndex.cpp:786
+#: src/insets/InsetIndex.cpp:782
 msgid "Empty index subentry!"
-msgstr "Prázdny pod-záznam registra!"
+msgstr "Prázdny podzáznam registra!"
 
 #: src/insets/InsetIndex.cpp:1025
 msgid "Index Entry"
@@ -42145,9 +42204,9 @@ msgstr "Neznámy typ registra!"
 msgid "All indexes"
 msgstr "Všetky registre"
 
-#: src/insets/InsetIndex.cpp:1304
+#: src/insets/InsetIndex.cpp:1300
 msgid "subindex"
-msgstr "Pod-register"
+msgstr "Podregister"
 
 #: src/insets/InsetIndexMacro.cpp:278
 #, c-format
@@ -43842,6 +43901,10 @@ msgstr ""
 #: src/support/userinfo.cpp:45
 msgid "Unknown user"
 msgstr "Neznámy používateľ"
+
+#, c-format
+#~ msgid "Sub-%1$s"
+#~ msgstr "Pod-%1$s"
 
 #~ msgid "Filter colors"
 #~ msgstr "Filter prvkov"
