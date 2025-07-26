@@ -915,8 +915,11 @@ void InsetText::insetAsXHTML(XMLStream & xs, OutputParams const & rp,
 		}
 	}
 
-	if (opts & WriteInnerTag)
-		xs << xml::StartTag(il.htmlinnertag(), il.htmlinnerattr());
+	if (opts & WriteInnerTag) {
+		string inner_attr = il.htmlinnerattr();
+		inner_attr = subst(inner_attr, "$$content", to_utf8(text_.asString(AS_STR_INSETS)));
+		xs << xml::StartTag(il.htmlinnertag(), inner_attr);
+	}
 
 	// we will eventually lose information about the containing inset
 	if (!allowMultiPar() || opts == JustText)

@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 640
+\lyxformat 641
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -109,7 +109,7 @@ logicalmkup
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
+\justification default
 \crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
@@ -28170,6 +28170,40 @@ insetname_inner
 \end_inset
 
 .
+ Der Platzhalter 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+$$content
+\end_layout
+
+\end_inset
+
+ kann verwendet werden,
+ um den Inhalt der Einfügung zu repräsentieren (bspw.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+href='$$content'
+\end_layout
+
+\end_inset
+
+ für Einfügungen mit 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+HTMLInnerTag a
+\end_layout
+
+\end_inset
+
+,
+ die Links produzieren).
 \end_layout
 
 \begin_layout Description

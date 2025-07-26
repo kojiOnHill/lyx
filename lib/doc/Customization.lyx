@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 640
+\lyxformat 641
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -101,7 +101,7 @@ logicalmkup
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
+\justification default
 \crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
@@ -18716,6 +18716,8 @@ status collapsed
 
 \change_inserted -712698321 1751702464
 Preamble
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -18738,6 +18740,8 @@ status collapsed
 
 \change_inserted -712698321 1751702464
 EndPreamble
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -29163,7 +29167,13 @@ string
 status collapsed
 
 \begin_layout Plain Layout
-class=`insetname_inner'
+class=
+\change_deleted -712698321 1753508399
+`
+\change_inserted -712698321 1753508400
+'
+\change_unchanged
+insetname_inner'
 \end_layout
 
 \end_inset
@@ -29173,6 +29183,56 @@ class=`insetname_inner'
 \end_inset
 
 .
+
+\change_inserted -712698321 1753508560
+ The placeholder 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1753508431
+$$content
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ can be used to represent the content of the inset (e.
+\begin_inset space \thinspace{}
+\end_inset
+
+g.,
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1753508520
+href='$$content'
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ for insets producing hyperlinks with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1753508560
+HTMLInnerTag a
+\end_layout
+
+\end_inset
+
+).
+\change_unchanged
+
 \end_layout
 
 \begin_layout Description

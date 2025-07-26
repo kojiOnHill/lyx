@@ -681,6 +681,8 @@ InsetLayout "Flex:URL"
 	  Size                Small
 	EndFont
 	HTMLIsBlock           false
+	HTMLInnerTag          a
+	HTMLInnerAttr         href='$$content'
 	DocBookTag            link
 	DocBookTagType        inline
 End
