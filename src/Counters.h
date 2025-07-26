@@ -224,6 +224,8 @@ public:
 	/// We're trying to track \refstepcounter in LaTeX, more or less.
 	/// Note that this may be empty.
 	docstring currentCounter() const;
+	///
+	docstring currentParentCounter() const;
 	/// Called during updateBuffer() as we go through various paragraphs,
 	/// to track the layouts as we go through.
 	void setActiveLayout(Layout const & lay);

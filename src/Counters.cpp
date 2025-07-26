@@ -689,6 +689,20 @@ docstring Counters::currentCounter() const
 }
 
 
+docstring Counters::currentParentCounter() const
+{
+	docstring const cc = currentCounter();
+	CounterList::const_iterator const cit = counterList_.find(cc);
+	if (cit == counterList_.end()) {
+		lyxerr << "value: Counter does not exist: "
+		       << to_utf8(cc) << endl;
+		return docstring();
+	}
+	Counter const & cnt = cit->second;
+	return cnt.parent();
+}
+
+
 void Counters::setActiveLayout(Layout const & lay)
 {
 	LASSERT(!layout_stack_.empty(), return);
