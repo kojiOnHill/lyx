@@ -78,6 +78,8 @@ public:
 	LyXAlignment contentAlignment() const override;
 	///
 	bool forceParDirectionSwitch() const override { return true; }
+	/// 
+	InsetFloat const * asInsetFloat() const override { return this; }
 private:
 	///
 	void setCaptionType(std::string const & type) override;

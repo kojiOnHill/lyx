@@ -36,6 +36,8 @@ public:
 	void writeCaptionAsHTML(XMLStream & os, OutputParams const &) const;
 	///
 	std::string contextMenuName() const override;
+	///
+	docstring counterValue() const { return val_; }
 private:
 	///
 	void write(std::ostream & os) const override;
@@ -107,6 +109,8 @@ private:
 	bool is_deleted_ = false;
 	///
 	bool non_float_ = false;
+	///
+	docstring val_;
 	///
 	std::string type_;
 };

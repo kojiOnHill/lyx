@@ -13,6 +13,8 @@
 #include "InsetLabel.h"
 
 #include "InsetRef.h"
+#include "InsetFloat.h"
+#include "InsetCaption.h"
 
 #include "Buffer.h"
 #include "BufferParams.h"
@@ -199,6 +201,7 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 	Counters & cnts =
 		buffer().masterBuffer()->params().documentClass().counters();
 	active_counter_ = cnts.currentCounter();
+	docstring const parent = (cnts.isSubfloat()) ? cnts.currentParentCounter() : docstring();
 	Language const * lang = it->getParLanguage(buffer().params());
 	if (lang && !active_counter_.empty()) {
 		bool const equation = active_counter_ == from_ascii("equation");
@@ -221,6 +224,39 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 				formatted_counter_pl_ = cnts.formattedCounter(active_counter_, prex, lang->code(), false, true);
 				formatted_counter_lc_ = cnts.formattedCounter(active_counter_, prex, lang->code(), true);
 				formatted_counter_lc_pl_ = cnts.formattedCounter(active_counter_, prex, lang->code(), true, true);
+			}
+			// handle subfloat references
+			if (!parent.empty()) {
+				docstring pc;
+				// The parent counter value might well be set after
+				// the child (if the main caption comes at the bottom
+				// of the float). So try to get that:
+				ParIterator nit = it;
+				for (size_type sl = 0 ; sl < it.depth() ; ++sl) {
+					Paragraph const & outer_par = it[sl].paragraph();
+					if (outer_par.inInset().lyxCode() != FLOAT_CODE)
+						continue;
+					InsetFloat const * fl = outer_par.inInset().asInsetFloat();
+					if (fl) {
+						InsetCaption const * cap = fl->getCaptionInset();
+						if (cap) {
+							if (cap->counterValue().empty())
+								// the caption has not been handled yet,
+								// so we need another pass
+								buffer().masterBuffer()->forceUpdate(true);
+							else
+								pc = cap->counterValue();
+							break;
+						}
+					}
+					break;
+				}
+				docstring const plain_value = counter_value_;
+				counter_value_ = pc + "(" + counter_value_ + ")";
+				formatted_counter_ = subst(formatted_counter_, plain_value, counter_value_);
+				formatted_counter_pl_ = subst(formatted_counter_pl_, plain_value, counter_value_);
+				formatted_counter_lc_ = subst(formatted_counter_lc_, plain_value, counter_value_);
+				formatted_counter_lc_pl_ = subst(formatted_counter_lc_pl_, plain_value, counter_value_);
 			}
 			if (equation) {
 				// FIXME: special code just for the subequations module (#13199)

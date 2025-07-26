@@ -426,28 +426,27 @@ void InsetCaption::updateBuffer(ParIterator const & it, UpdateType utype, bool c
 			name = bformat(_("Sub-%1$s"),
 				       master.B_(tclass.floats().getType(type).name()));
 		}
-		docstring sec;
 		docstring const lstring = getLayout().labelstring();
 		docstring const labelstring = isAscii(lstring) ?
 				master.B_(to_ascii(lstring)) : lstring;
 		if (cnts.hasCounter(counter)) {
-			int val = cnts.value(counter);
+			int const val = cnts.value(counter);
 			// for longtables, we step the counter upstream
 			if (!cnts.isLongtable())
 				cnts.step(counter, utype);
-			sec = cnts.theCounter(counter, lang);
+			val_ = cnts.theCounter(counter, lang);
 			if (deleted && !cnts.isLongtable())
 				// un-step after deleted counter
 				cnts.set(counter, val);
 		}
 		if (labelstring != master.B_("standard")) {
-			if (!sec.empty())
-				sec += from_ascii(" ");
-			sec += bformat(from_ascii("(%1$s)"), labelstring);
+			if (!val_.empty())
+				val_ += from_ascii(" ");
+			val_ += bformat(from_ascii("(%1$s)"), labelstring);
 		}
-		if (sec.empty())
-			sec = from_ascii("#");
-		full_label_ = bformat(master.B_("%1$s %2$s: [[Caption label (ex. Figure 1: )]]"), name, sec);
+		if (val_.empty())
+			val_ = from_ascii("#");
+		full_label_ = bformat(master.B_("%1$s %2$s: [[Caption label (ex. Figure 1: )]]"), name, val_);
 		non_float_ = false;
 	}
 

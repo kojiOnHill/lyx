@@ -33,9 +33,8 @@ public:
 	///
 	docstring floatName(std::string const & type) const;
 	///
-protected:
-	///
 	InsetCaption const * getCaptionInset() const;
+protected:
 	///
 	InsetLabel const * getLabelInset() const;
 	///
