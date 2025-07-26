@@ -1042,12 +1042,16 @@ int LaTeX::scanLogFile(TeXErrors & terr)
 
 			// Just get the error description:
 			string desc;
+			bool preamble_error = false;
 			if (prefixIs(token, "! "))
 				desc = string(token, 2);
 			else if (fle_style)
 				desc = sub.str();
-			if (contains(token, "LaTeX Error:"))
+			if (contains(token, "LaTeX Error:")) {
 				retval |= LATEX_ERROR;
+				if (contains(token, "Missing \\begin{document}"))
+					preamble_error = true;
+			}
 
 			if (prefixIs(token, "! File ended while scanning")) {
 				if (prefixIs(token, "! File ended while scanning use of \\Hy@setref@link.")){
@@ -1126,7 +1130,6 @@ int LaTeX::scanLogFile(TeXErrors & terr)
 				sscanf(tmp.c_str(), "l.%d", &line);
 				// get the rest of the message:
 				string errstr(tmp, tmp.find(' '));
-				bool preamble_error = false;
 				if (suffixIs(errstr, "\\begin{document}")) {
 					// this is an error in preamble
 					// the real error is in the
