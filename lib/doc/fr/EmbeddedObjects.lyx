@@ -133,7 +133,8 @@
 % used for surrounded fixed objects
 \newboolean{picinpar}
 \IfFileExists{picinpar.sty}
- {\usepackage{picinpar}
+ {\tracinglostchars=3
+  \usepackage{picinpar}
   \setboolean{picinpar}{true}}
  {\setboolean{picinpar}{false}}
 
