@@ -433,6 +433,7 @@ int LaTeX::run(TeXErrors & terr)
 			rerun = false;
 			++count;
 			LYXERR(Debug::OUTFILE, "Run #" << count);
+			terr.clearErrors();
 			message(runMessage(count));
 			startscript();
 			scanres = scanLogFile(terr);
@@ -530,6 +531,7 @@ int LaTeX::run(TeXErrors & terr)
 		rerun = false;
 		++count;
 		LYXERR(Debug::OUTFILE, "Run #" << count);
+		terr.clearErrors();
 		message(runMessage(count));
 		startscript();
 		scanres = scanLogFile(terr);
