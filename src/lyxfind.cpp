@@ -2199,6 +2199,10 @@ static void buildAccentsMap()
 	accents["braceleft"]     = getutf8(0xf0030);
 	accents["braceright"]    = getutf8(0xf0031);
 	accents["lyxdollar"]     = getutf8(0xf0033);
+	accents["stst"]          = getutf8(0xf0034);	// from plimsoll
+	accents["plimsoll"]      = getutf8(0xf0034);	// for use in math mode
+	accents["minuso"]        = getutf8(0xf0034);	// from stmaryrd
+	accents["standardstate"] = getutf8(0xf0034);	// from chemmacros
 	accents["backslash lyx"]           = getutf8(0xf0010);	// Used logos inserted with starting \backslash
 	accents["backslash LyX"]           = getutf8(0xf0010);
 	accents["backslash tex"]           = getutf8(0xf0011);
