@@ -6713,7 +6713,7 @@ msgstr " a "
 
 #: lib/citeengines/biblatex-chicago.citeengine:167
 msgid "'s[[genitive suffix for author names]]"
-msgstr ""
+msgstr "'s"
 
 #: lib/citeengines/biblatex-chicago.citeengine:322
 #: lib/citeengines/biblatex-natbib.citeengine:332
@@ -18770,14 +18770,12 @@ msgid "in"
 msgstr "v"
 
 #: lib/layouts/stdciteformats.inc:32
-#, fuzzy
 msgid ", & [[separate name of last author in citation w/ ampersand]]"
-msgstr ", a "
+msgstr ", & "
 
 #: lib/layouts/stdciteformats.inc:33
-#, fuzzy
 msgid " & [[separate two authors in citation w/ ampersand]]"
-msgstr " a "
+msgstr " & "
 
 #: lib/layouts/stdcounters.inc:10
 msgid "\\Roman{part}"
@@ -19563,7 +19561,7 @@ msgstr "Fakt \\thefact."
 #: lib/layouts/theorems-ams.inc:188 lib/layouts/theorems-bytype.inc:179
 #: lib/layouts/theorems.inc:189
 msgid "fact"
-msgstr ""
+msgstr "fakt"
 
 #: lib/layouts/theorems-ams-bytype.inc:186
 #: lib/layouts/theorems-ams-chap-bytype.inc:234
@@ -21470,7 +21468,7 @@ msgstr "Řečtina (archaická)"
 
 #: lib/languages:246
 msgid "Arabic (ArabTeX, only with TeX fonts)"
-msgstr "Arabština (ArabTeX, pouze s TeXovými fonty)"
+msgstr "Arabština (ArabTeX, pouze TeXové fonty)"
 
 #: lib/languages:258
 msgid "Arabic (Arabi or non-TeX fonts)"
@@ -21680,7 +21678,7 @@ msgstr "Japonština"
 
 #: lib/languages:992
 msgid "Japanese (CJK, only with TeX fonts)"
-msgstr ""
+msgstr "Japonština (CJK, pouze TeXové fonty)"
 
 #: lib/languages:1002 src/frontends/qt/GuiSymbols.cpp:73
 msgid "Kannada"
@@ -21896,7 +21894,7 @@ msgstr "Urdština"
 
 #: lib/languages:1747
 msgid "Uyghur"
-msgstr ""
+msgstr "Ujgurština"
 
 #: lib/languages:1760
 msgid "Vietnamese"
@@ -35327,11 +35325,11 @@ msgstr ""
 
 #: src/LyXRC.cpp:3262
 msgid "Possibility to enforce a particular color scheme (system|dark|light)"
-msgstr ""
+msgstr "Vynutit určité schéma barev (systémové/světlé/tmavé)"
 
 #: src/LyXRC.cpp:3266
 msgid "Current UI theme if it has a name, otherwise empty"
-msgstr ""
+msgstr "Současný UI motiv (má-li jméno, jinak prázdný řetězec)"
 
 #: src/LyXRC.cpp:3270
 msgid ""
@@ -35346,7 +35344,7 @@ msgid ""
 "The default format used with LFUN_BUFFER_[VIEW|UPDATE] with non-TeX fonts."
 msgstr ""
 "Standardní formát používaný funkcí LFUN_BUFFER_[VIEW|UPDATE] pro neTeXové "
-"fonty.."
+"fonty."
 
 #: src/LyXRC.cpp:3278
 msgid "The default format used with LFUN_BUFFER_[VIEW|UPDATE]."
@@ -36511,11 +36509,11 @@ msgstr "Jiné"
 #: src/frontends/qt/ColorsCombo.cpp:186
 #, c-format
 msgid "%1$s (= Default[[color]])"
-msgstr ""
+msgstr "%1$s (= Výchozí)"
 
 #: src/frontends/qt/ColorsCombo.cpp:384
 msgid "Type on the list to filter on color names."
-msgstr ""
+msgstr "Pro filtrování jmen barev pište v seznamu."
 
 #: src/frontends/qt/FileDialog.cpp:206
 msgid "Directories"
@@ -36716,7 +36714,7 @@ msgstr "Detekovaný python: %1$s"
 #: src/frontends/qt/GuiAbout.cpp:310
 #, c-format
 msgid "Draw strategy: %1$s"
-msgstr ""
+msgstr "Způsob vykreslování: %1$s"
 
 #: src/frontends/qt/GuiAbout.cpp:347
 msgid "About LyX"
@@ -36878,17 +36876,16 @@ msgid "Unknown function."
 msgstr "Neznámá funkce."
 
 #: src/frontends/qt/GuiApplication.cpp:2777
-#, fuzzy
 msgid "partial draw"
-msgstr "partial"
+msgstr "částečné vykreslovaní"
 
 #: src/frontends/qt/GuiApplication.cpp:2780
 msgid "partial draw on backing store"
-msgstr ""
+msgstr "částečné vykreslovaní pomocí QBackingStore"
 
 #: src/frontends/qt/GuiApplication.cpp:2783
 msgid "full draw"
-msgstr ""
+msgstr "plné vykreslování"
 
 #: src/frontends/qt/GuiApplication.cpp:3069
 msgid "The current document was closed."
@@ -37180,9 +37177,9 @@ msgid "No"
 msgstr "Ne"
 
 #: src/frontends/qt/GuiBranches.cpp:189
-#, fuzzy, c-format
+#, c-format
 msgid "A branch with the name \"%1$s\" already exists."
-msgstr "Skupina obrázků se jménem '%1$s' již existuje."
+msgstr "Větev se jménem \"%1$s\" již existuje."
 
 #: src/frontends/qt/GuiBranches.cpp:246
 msgid "Enter new branch name"
@@ -37824,9 +37821,8 @@ msgid "Page Margins"
 msgstr "Okraje stránky"
 
 #: src/frontends/qt/GuiDocument.cpp:1395
-#, fuzzy
 msgid "Double-click on an item to change its color"
-msgstr "Klikněte pro změnu barvy"
+msgstr "Dvoj-klik na položce pro změnu barvy"
 
 #: src/frontends/qt/GuiDocument.cpp:1424
 msgid "Numbered"
@@ -37837,9 +37833,8 @@ msgid "Appears in TOC"
 msgstr "Objeví se v Obsahu"
 
 #: src/frontends/qt/GuiDocument.cpp:1525
-#, fuzzy
 msgid "Tabular"
-msgstr "Tabulka|T"
+msgstr "Tabulka"
 
 #: src/frontends/qt/GuiDocument.cpp:1531
 msgid "Package"
@@ -37881,23 +37876,23 @@ msgstr "Nastavení matematiky"
 
 #: src/frontends/qt/GuiDocument.cpp:1680
 msgid "Cleveref and varioref"
-msgstr ""
+msgstr "Cleveref a varioref"
 
 #: src/frontends/qt/GuiDocument.cpp:1681
 msgid "Prettyref (unlocalized) and varioref"
-msgstr ""
+msgstr "Prettyref (nelokalizovaný) a varioref"
 
 #: src/frontends/qt/GuiDocument.cpp:1682
 msgid "Prettyref and varioref"
-msgstr ""
+msgstr "Prettyref a varioref"
 
 #: src/frontends/qt/GuiDocument.cpp:1683
 msgid "Refstyle and varioref"
-msgstr ""
+msgstr "Refstyle a varioref"
 
 #: src/frontends/qt/GuiDocument.cpp:1684
 msgid "Zref-clever and zref-vario"
-msgstr ""
+msgstr "Zref-clever a zref-vario"
 
 #: src/frontends/qt/GuiDocument.cpp:1701 src/frontends/qt/GuiDocument.cpp:3061
 #, c-format
@@ -38140,9 +38135,8 @@ msgid "Author-number"
 msgstr "Autor-číslo"
 
 #: src/frontends/qt/GuiDocument.cpp:3303
-#, fuzzy
 msgid "Notes and Bibliography"
-msgstr "Bibliografie"
+msgstr "Poznámky a Bibliografie"
 
 #: src/frontends/qt/GuiDocument.cpp:3337
 #, c-format
@@ -38313,25 +38307,23 @@ msgid "<b>Note:</b> Some requirements for this module are missing!"
 msgstr "<b>Poznámka:</b> Některé závislosti pro tento modul chybí!"
 
 #: src/frontends/qt/GuiDocument.cpp:5631
-#, fuzzy
 msgid "Color naming failed"
-msgstr "Přejmenování se nezdařilo"
+msgstr "Pojmenování barvy se nezdařilo"
 
 #: src/frontends/qt/GuiDocument.cpp:5632
-#, fuzzy, c-format
+#, c-format
 msgid "The color name `%1$s' is already taken."
-msgstr "Jazyk %1$s je podporovaný pouze Babel-em."
+msgstr "Jméno barvy `%1$s' je již používáno."
 
 #: src/frontends/qt/GuiDocument.cpp:5693
-#, fuzzy
 msgid "Enter new color name"
-msgstr "Vložte nové jméno větve"
+msgstr "Vložte nové jméno barvy"
 
 #: src/frontends/qt/GuiDocument.cpp:5701
 msgid ""
 "The color could not be renamed since the new name consists of non-ASCII "
 "characters or blanks."
-msgstr ""
+msgstr "Barvu nelze přejmenovat, jelikož nové jméno obsahuje mezery nebo znaky mimo ASCII."
 
 #: src/frontends/qt/GuiERT.h:33
 msgid "TeX Mode Inset Settings"
@@ -39183,86 +39175,77 @@ msgid "Screen Fonts"
 msgstr "Fonty na obrazovce"
 
 #: src/frontends/qt/GuiPrefs.cpp:1414
-#, fuzzy
 msgid "Export a color theme"
-msgstr "Export zrušen"
+msgstr "Export motivu barev"
 
 #: src/frontends/qt/GuiPrefs.cpp:1453
 msgid "What is the name of the color theme?"
-msgstr ""
+msgstr "Jaké je jméno motivu barev?"
 
 #: src/frontends/qt/GuiPrefs.cpp:1454
 msgid "What is the name of the new color theme to save?"
-msgstr ""
+msgstr "Zadejte jméno nového motivu narev pro uložení"
 
 #: src/frontends/qt/GuiPrefs.cpp:1457
-#, fuzzy
 msgid "Name the color theme"
-msgstr "Name of the conference"
+msgstr "Pojmenovat motiv barev"
 
 #: src/frontends/qt/GuiPrefs.cpp:1459
 msgid "New theme name"
-msgstr ""
+msgstr "Nové jméno motivu"
 
 #: src/frontends/qt/GuiPrefs.cpp:1481
 msgid "A user color theme with the same name exists."
-msgstr ""
+msgstr "Uživatelský motiv s tímto jménem již existuje."
 
 #: src/frontends/qt/GuiPrefs.cpp:1482
-#, fuzzy
 msgid "Do you want to overwrite?"
-msgstr "Soubor %1$s již existuje. Chcete tento soubor přepsat?"
+msgstr "Chcete tento motiv přepsat?"
 
 #: src/frontends/qt/GuiPrefs.cpp:1522
 msgid "Import a color theme"
-msgstr ""
+msgstr "Importovat motiv"
 
 #: src/frontends/qt/GuiPrefs.cpp:1626
-#, fuzzy
 msgid "Select a user theme"
-msgstr "Vybrat hlavní dokument"
+msgstr "Vybrat uživatelský motiv"
 
 #: src/frontends/qt/GuiPrefs.cpp:1627
 msgid "Please select a user theme to remove from the \"Themes\" list menu."
-msgstr ""
+msgstr "Vyberte uživatelský motiv ke smazání ze seznamu motivů."
 
 #: src/frontends/qt/GuiPrefs.cpp:1639
 msgid "Not a user theme"
-msgstr ""
+msgstr "Není uživatlským motivem"
 
 #: src/frontends/qt/GuiPrefs.cpp:1640
-#, fuzzy
 msgid "The selected theme is a system theme. It cannot be removed."
-msgstr "Standardní rejštřík nemůže být smazán."
+msgstr "Vybraný motiv je systémovým a nemůže být smazán."
 
 #: src/frontends/qt/GuiPrefs.cpp:1650
-msgid "Are you sure?"
-msgstr ""
+msgid "Confirm removal"
+msgstr "Potvrdit smázání"
 
 #: src/frontends/qt/GuiPrefs.cpp:1651
 #, c-format
 msgid "Do you really want to remove the theme \"%1$s\"?"
-msgstr ""
+msgstr "Přejete si opravdu smazat motiv \"%1$s\"?"
 
 #: src/frontends/qt/GuiPrefs.cpp:1746
-#, fuzzy
 msgid "&Export..."
-msgstr "Exportování..."
+msgstr "&Export..."
 
 #: src/frontends/qt/GuiPrefs.cpp:1747
-#, fuzzy
 msgid "&Import..."
-msgstr "Import|m"
+msgstr "&Import..."
 
 #: src/frontends/qt/GuiPrefs.cpp:1776
-#, fuzzy
 msgid "Click here to change the color in the light mode"
-msgstr "Klikněte pro změnu barvy"
+msgstr "Klikněte pro změnu barvy ve světlém modu"
 
 #: src/frontends/qt/GuiPrefs.cpp:1778
-#, fuzzy
 msgid "Click here to change the color in the dark mode"
-msgstr "Klikněte pro změnu barvy"
+msgstr "Klikněte pro změnu barvy v tmavém modu"
 
 #: src/frontends/qt/GuiPrefs.cpp:1951
 msgid "No[[bookmarks]]"
@@ -39728,7 +39711,6 @@ msgid "Click here to change search options"
 msgstr "Klikněte pro změnu nastavení vyhledávání"
 
 #: src/frontends/qt/GuiSearch.cpp:597
-#, fuzzy
 msgid "Find and Replace"
 msgstr "Najít a zaměnit"
 
@@ -40091,7 +40073,7 @@ msgstr "Symboly"
 
 #: src/frontends/qt/GuiTabular.cpp:64
 msgid "Adjust the horizontal overhang of the coloring here if needed."
-msgstr ""
+msgstr "Zde upravte horizontální přesah barvení, je-li třeba."
 
 #: src/frontends/qt/GuiTabular.h:48
 msgid "Tabular Settings"
@@ -40246,9 +40228,8 @@ msgid "Conversion cancelled while previewing format: %1$s"
 msgstr "Konverze zrušena při prohlížení formátu: %1$s"
 
 #: src/frontends/qt/GuiView.cpp:1271
-#, fuzzy
 msgid "None[[color]]"
-msgstr "Žádná barva"
+msgstr "Žádná"
 
 #: src/frontends/qt/GuiView.cpp:1272
 msgid "(Without)[[color]]"
@@ -40773,7 +40754,7 @@ msgstr "Exportování..."
 
 #: src/frontends/qt/GuiView.cpp:4710
 msgid "Preparing externally referenced file ..."
-msgstr ""
+msgstr "Příprava externě odkazovaného souboru..."
 
 #: src/frontends/qt/GuiView.cpp:4732
 msgid "Previewing ..."
@@ -42766,22 +42747,21 @@ msgstr "text%1$s"
 #: src/insets/InsetRef.cpp:383 src/insets/InsetRef.cpp:560
 #: src/insets/InsetRef.cpp:707
 msgid "[[reference 1]] and [[reference2]]"
-msgstr ""
+msgstr "[[reference 1]] a [[reference2]]"
 
 #: src/insets/InsetRef.cpp:385 src/insets/InsetRef.cpp:562
 #: src/insets/InsetRef.cpp:709
 msgid "[[reference 1, ...]], and [[reference n]]"
-msgstr ""
+msgstr "[[reference 1, ...]], a [[reference n]]"
 
 #: src/insets/InsetRef.cpp:387 src/insets/InsetRef.cpp:564
 #: src/insets/InsetRef.cpp:711
 msgid "[[reference 1]], [[reference2, ...]]"
-msgstr ""
+msgstr "[[reference 1]], [[reference2, ...]]"
 
 #: src/insets/InsetRef.cpp:403
-#, fuzzy
 msgid "Invalid label!"
-msgstr "Neplatný název souboru"
+msgstr "Neplatný štítek!"
 
 #: src/insets/InsetRef.cpp:404
 #, c-format
@@ -42789,7 +42769,7 @@ msgid ""
 "The label `%1$s' does not have a prefix (e.g., `sec:'), which is needed for "
 "formatted references with prettyref.\n"
 "You will most likely run into a LaTeX error."
-msgstr ""
+msgstr "Štítek `%1$s' nemá prefix (např. `sec:'), což je třeba pro formátované odkazy s balíčkem prettyref.\nPravděpodobně narazíte na chybu LaTeX-u. "
 
 #: src/insets/InsetRef.cpp:671
 msgid "elsewhere"
@@ -42808,14 +42788,12 @@ msgid "Page Number"
 msgstr "Číslo stránky"
 
 #: src/insets/InsetRef.cpp:977 src/mathed/InsetMathRef.cpp:428
-#, fuzzy
 msgid "Prefixed Page Number"
-msgstr "Odkaz pomocí čísla stránky"
+msgstr "Prefixované číslo stránky"
 
 #: src/insets/InsetRef.cpp:977
-#, fuzzy
 msgid "PrefPage"
-msgstr "Předmluva"
+msgstr "PrefStránky"
 
 #: src/insets/InsetRef.cpp:978 src/mathed/InsetMathRef.cpp:429
 msgid "Textual Page Number"
@@ -42854,9 +42832,8 @@ msgid "Label Only"
 msgstr "Pouze značka"
 
 #: src/insets/InsetRef.cpp:1071
-#, fuzzy
 msgid "Unknown external file!"
-msgstr "Vybrat externí soubor"
+msgstr "Neznámý externí soubor!"
 
 #: src/insets/InsetRef.cpp:1072
 #, c-format
@@ -42864,7 +42841,7 @@ msgid ""
 "The label `%1$s' refers to an external file\n"
 "(`%2$s')\n"
 "which could not be found. Output will be broken!"
-msgstr ""
+msgstr "Štítek `%1$s' odkazuje na neexistující soubor\n(`%2$s').\nVýsledek bude nefunkční!"
 
 #: src/insets/InsetScript.cpp:332
 msgid "subscript"
@@ -43318,9 +43295,8 @@ msgid "Page: "
 msgstr "Stránka: "
 
 #: src/mathed/InsetMathRef.cpp:428
-#, fuzzy
 msgid "PrefPage: "
-msgstr "Preface:"
+msgstr "PrefStránka:"
 
 #: src/mathed/InsetMathRef.cpp:429
 msgid "TextPage: "
