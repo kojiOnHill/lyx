@@ -45,13 +45,14 @@ Style Labeling
 			{\end{list}}
 	EndPreamble
 
+	# See bug 13189, comment:35ff.
+	# for why we don't use negative text-indent
 	HTMLStyle
 		ol.lyxlist {
 			list-style-type: none;
 		}
 		li.labeling_item {
-			text-indent: -5em;
-			margin-left: 5em;
+			text-indent: 5em hanging;
 		}
 		span.lyxlist {
 			margin-right: 1em;
