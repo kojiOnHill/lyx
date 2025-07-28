@@ -1031,7 +1031,7 @@ PrefColors::PrefColors(GuiPreferences * form)
 	        new QShortcut(QKeySequence(QKeySequence::Find), this);
 
 	initializeColorsTV();
-	initializeThemesLW();
+	initializeThemes();
 	initializeThemeMenu();
 
 	// End initialization
@@ -1184,31 +1184,29 @@ void PrefColors::changeColor(int const &row, bool const &is_dark_mode)
 	QColor const c = form_->getColor(QColor(color));
 
 	if (setColor(colorsTV_model_.item(row, is_dark_mode), c, color)) {
-		setCurrentTheme();
+		if (is_dark_mode)
+			newcolors_[size_t(row)].second = c.name();
+		else
+			newcolors_[size_t(row)].first  = c.name();
+		findThemeFromColorSet();
 		// emit signal
 		changed();
 	}
 }
 
 
-void PrefColors::setCurrentTheme()
+void PrefColors::findThemeFromColorSet()
 {
+	QString name = "";
 	for (int theme_id = 0; theme_id < themesLW->count(); ++theme_id) {
 		if (checkMatchWithTheme(theme_id)) {
 			// all colors matched
-			theme_name_ = theme_names_cache_[theme_id];
-			// set the theme indicator
-			for (int theme_row = 0; theme_row < themesLW->count(); ++theme_row) {
-				if (themesLW->item(theme_row)->text() == theme_name_) {
-					themesLW->setCurrentRow(theme_row);
-					break;
-				}
-			}
-			return;
+			name = theme_names_cache_[theme_id];
+			break;
 		}
 	}
-	// no themes have matched
-	dismissCurrentTheme();
+	theme_name_ = name;
+	selectCurrentTheme(theme_name_);
 }
 
 
@@ -1224,7 +1222,7 @@ bool PrefColors::checkMatchWithTheme(int const theme_id)
 
 void PrefColors::dismissCurrentTheme()
 {
-	theme_name_ = "";
+	theme_name_ = theme_filename_ = "";
 	themesLW->setCurrentRow(themesLW->currentRow(),
 	                        QItemSelectionModel::Deselect);
 }
@@ -1441,7 +1439,7 @@ void PrefColors::saveTheme()
 		if (!target_file.exists() || wantToOverwrite()) {
 			saveExportThemeCommon(toqstr(file_path));
 			cacheAllThemes();
-			setCurrentTheme();
+			selectCurrentTheme(theme_name_);
 			initial_edit_ = true;
 			break;
 		}
@@ -1498,7 +1496,7 @@ void PrefColors::saveExportThemeCommon(QString file_path)
 	ofstream ofs(fromqstr(file_path));
 
 	ofs << "#LyX version: " << lyx_version << "\n#\n" <<
-	       "#   This is a definition file of a color theme \"" <<
+	       "#   This is a definition file of color theme \"" <<
 	            fromqstr(theme_name_) << "\" of LyX\n" <<
 	       "#\n" <<
 	       "#   Author: " << form_->rc().user_name <<
@@ -1673,6 +1671,21 @@ void PrefColors::removeTheme()
 }
 
 
+void PrefColors::initializeThemes()
+{
+	// note that form_->rc() is not initialized yet here when pref dialog is
+	// opened for the first time
+	if (form_->rc().ui_theme.empty()) {
+		if (toqstr(lyxrc.ui_theme) != theme_name_ || theme_name_ == "")
+			theme_name_ = toqstr(lyxrc.ui_theme);
+	} else if (toqstr(form_->rc().ui_theme) != theme_name_ || theme_name_ == "") {
+		theme_name_ = toqstr(form_->rc().ui_theme);
+	}
+
+	initializeThemesLW();
+}
+
+
 void PrefColors::initializeThemesLW()
 {
 	//
@@ -1728,13 +1741,6 @@ void PrefColors::initializeThemesLW()
 	}
 	themesLW->clear();
 
-	// note that form_->rc() is not initialized yet here when pref dialog is opened
-	if (form_->rc().ui_theme.empty()) {
-		if (toqstr(lyxrc.ui_theme) != theme_name_ || theme_name_ == "")
-			theme_name_ = toqstr(lyxrc.ui_theme);
-	} else if (toqstr(form_->rc().ui_theme) != theme_name_ || theme_name_ == "")
-		theme_name_ = toqstr(form_->rc().ui_theme);
-
 	// themes are already sorted with GUI name as std::map sorts its entries
 	for (const auto & theme : themes) {
 		QListWidgetItem* item = new QListWidgetItem;
@@ -1751,16 +1757,27 @@ void PrefColors::initializeThemesLW()
 		else
 			isSysThemes_.push_back(false);
 	}
-	selectCurrentTheme();
+	selectCurrentTheme(theme_name_);
 }
 
 
-void PrefColors::selectCurrentTheme()
+void PrefColors::selectCurrentTheme(QString theme_name_en)
 {
+	// note that themesLW->findItems() matches translated theme name
+	// whereas theme_name contains untranslated one
+	ThemeNameDic::iterator dic_it = theme_name_dic_.find(theme_name_en);
+	QString translated_name;
+	if (dic_it != theme_name_dic_.end())
+		translated_name = dic_it->second.second;
+	else
+		translated_name = theme_name_en;
+
 	QList<QListWidgetItem *> selected_items =
-	        themesLW->findItems(theme_name_, Qt::MatchExactly);
+	        themesLW->findItems(translated_name, Qt::MatchExactly);
 	if (!selected_items.empty())
 		themesLW->setCurrentItem(selected_items.first());
+	else
+		dismissCurrentTheme();
 }
 
 
@@ -4610,7 +4627,7 @@ void SetColor::redo()
 	// set button statuses
 	parent_->setResetButtonStatus(false);
 	parent_->setUndoRedoButtonStatuses(false);
-	parent_->setCurrentTheme();
+	parent_->findThemeFromColorSet();
 }
 
 
@@ -4621,7 +4638,7 @@ void SetColor::undo()
 	// set button statuses
 	parent_->setResetButtonStatus(true);
 	parent_->setUndoRedoButtonStatuses(true);
-	parent_->setCurrentTheme();
+	parent_->findThemeFromColorSet();
 }
 
 

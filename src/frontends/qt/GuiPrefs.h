@@ -320,7 +320,7 @@ private:
 	ColorPair getCurrentThemeColors(int const &row);
 	/// Find a theme name of the current color set and indicates it in themesLW
 	/// if there is a match.
-	void setCurrentTheme();
+	void findThemeFromColorSet();
 	/// Check if the current color set matches with a theme. Returns true if
 	/// it matches or false otherwise.
 	bool checkMatchWithTheme(int const theme_id);
@@ -336,14 +336,17 @@ private:
 	///
 	void setUndoRedoButtonStatuses(bool isUndoing);
 	///
+	void initializeThemes();
+	///
 	void initializeThemesLW();
 	/// This initializes the extension menu for theme including exports and
 	/// imports.
 	void initializeThemeMenu();
 	/// This initializes the color setting table view.
 	void initializeColorsTV();
-	///
-	void selectCurrentTheme();
+	/// Find a theme name of the current color set and indicates it in themesLW
+	/// if there is a match.
+	void selectCurrentTheme(QString theme_name_en);
 	///
 	void cacheAllThemes();
 	/// Common algorithm between saving and exporting
