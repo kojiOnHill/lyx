@@ -1450,8 +1450,8 @@ void PrefColors::saveTheme()
 bool PrefColors::askThemeName(bool porting, QString name_suggestion)
 {
 	QString prompt = porting ?
-	            qt_("What is the name of the color theme?") :
-	            qt_("What is the name of the new color theme to save?");
+	            qt_("Enter the name of the color theme.") :
+	            qt_("Enter the name of the new color theme to save.");
 	QString suggestion = (name_suggestion != "") ? name_suggestion : theme_name_;
 	bool ok;
 	theme_name_ =
@@ -1480,7 +1480,7 @@ bool PrefColors::wantToOverwrite()
 	QMessageBox msgBox;
 	msgBox.setIcon(QMessageBox::Warning);
 	msgBox.setText(qt_("A user color theme with the same name exists."));
-	msgBox.setInformativeText(qt_("Do you want to overwrite?"));
+	msgBox.setInformativeText(qt_("Do you want to overwrite the theme?"));
 	msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	msgBox.setDefaultButton(QMessageBox::No);
 	int ret = msgBox.exec();
@@ -1655,7 +1655,7 @@ void PrefColors::removeTheme()
 	// confirmation to delete
 	QMessageBox msgBox(this);
 	msgBox.setIcon(QMessageBox::Warning);
-	msgBox.setWindowTitle(qt_("Are you sure?"));
+	msgBox.setWindowTitle(qt_("Confirm the removal"));
 	msgBox.setText(toqstr(bformat(_("Do you really want to remove the theme \"%1$s\"?"),
 				      qstring_to_ucs4(theme_name))));
 	msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
