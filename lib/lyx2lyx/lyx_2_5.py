@@ -3198,23 +3198,20 @@ def convert_justification_pref(document):
 
 def revert_plimsoll(document):
     """Add plimsoll package when that is used"""
-    document.warning("Starting...")
     i = 0
     while True:
         i = find_token(document.body, "\\begin_inset Formula")
         if i == -1:
             return
-        document.warning(str(i))
         j = find_end_of_inset(document.body, i)
         if j == -1:
-            document.warning("Malformed LyX document: Could not find end of URL inset.")
+            document.warning("Malformed LyX document: Could not find end of Formula inset.")
             i += 1
             continue
         k = find_substring(document.body, "\\plimsoll", i, j)
         if k == -1:
             i = j
             continue
-        document.warning("adding...")
         add_to_preamble(document, ["\\usepackage{plimsoll}"])
         return
 
