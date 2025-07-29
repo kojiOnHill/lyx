@@ -3181,17 +3181,43 @@ def revert_prettyref_l7n(document):
     if i != -1:
         document.header[i] = "\\crossref_package prettyref"
 
+
 def revert_justification_pref(document):
     """Revert justification pref setting"""
     i = find_token(document.header, "\\justification default", 0)
     if i != -1:
         document.header[i] = "\\justification true"
 
+
 def convert_justification_pref(document):
     """Convert justification pref setting"""
     i = find_token(document.header, "\\justification true", 0)
     if i != -1:
         document.header[i] = "\\justification default"
+
+
+def revert_plimsoll(document):
+    """Add plimsoll package when that is used"""
+    document.warning("Starting...")
+    i = 0
+    while True:
+        i = find_token(document.body, "\\begin_inset Formula")
+        if i == -1:
+            return
+        document.warning(str(i))
+        j = find_end_of_inset(document.body, i)
+        if j == -1:
+            document.warning("Malformed LyX document: Could not find end of URL inset.")
+            i += 1
+            continue
+        k = find_substring(document.body, "\\plimsoll", i, j)
+        if k == -1:
+            i = j
+            continue
+        document.warning("adding...")
+        add_to_preamble(document, ["\\usepackage{plimsoll}"])
+        return
+
 
 ##
 # Conversion hub
@@ -3219,11 +3245,13 @@ convert = [
     [638, []],
     [639, [convert_theorem_local_def]],
     [640, []],
-    [641, [convert_justification_pref]]
+    [641, [convert_justification_pref]],
+    [642, []]
 ]
 
 
 revert = [
+    [641, [revert_plimsoll]],
     [640, [revert_justification_pref]],
     [639, [revert_prettyref_l7n]],
     [638, [revert_theorem_local_def]],
