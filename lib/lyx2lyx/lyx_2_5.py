@@ -3200,7 +3200,7 @@ def revert_plimsoll(document):
     """Add plimsoll package when that is used"""
     i = 0
     while True:
-        i = find_token(document.body, "\\begin_inset Formula")
+        i = find_token(document.body, "\\begin_inset Formula", i)
         if i == -1:
             return
         j = find_end_of_inset(document.body, i)
@@ -3210,7 +3210,7 @@ def revert_plimsoll(document):
             continue
         k = find_substring(document.body, "\\plimsoll", i, j)
         if k == -1:
-            i = j
+            i = j + 1
             continue
         add_to_preamble(document, ["\\usepackage{plimsoll}"])
         return
