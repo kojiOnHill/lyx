@@ -55,9 +55,9 @@
 % de bas de page et des retraits de premiers paragraphes dépend
 % de la langue locale, voir le paragraphe 3.3.6.2 et la documentation
 % de babel-french
-\@ifpackageloaded{babel}{%
-\frenchbsetup{GlobalLayoutFrench=false}
-}{}
+%\@ifpackageloaded{babel}{%
+%\frenchbsetup{GlobalLayoutFrench=false}
+%}{}
 
 \AtBeginDocument{\addto\captionsfrench{\def\nomname{Glossaire}}}
 % Added by lyx2lyx
