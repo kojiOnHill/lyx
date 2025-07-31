@@ -1212,6 +1212,9 @@ void PrefColors::findThemeFromColorSet()
 
 bool PrefColors::checkMatchWithTheme(int const theme_id)
 {
+	if (themes_cache_.empty())
+		cacheAllThemes();
+
 	for (int col = 0; col < colorsTV_model_.rowCount(); ++col) {
 		if (newcolors_[col] != themes_cache_[theme_id][col])
 			return false;
@@ -1512,6 +1515,7 @@ void PrefColors::saveExportThemeCommon(QString file_path)
 		    << fromqstr(newcolors_[i].first) << "\" \""
 		    << fromqstr(newcolors_[i].second) << "\"\n";
 	}
+	ofs.close();
 	initializeThemesLW();
 	activatePrefsWindow(form_);
 }
@@ -1664,6 +1668,7 @@ void PrefColors::removeTheme()
 	if (msgBox.exec() == QMessageBox::Yes) {
 		QFile file(theme_fullpaths_[cur_row]);
 		file.remove();
+		theme_name_ = "";
 		initializeThemesLW();
 		dismissCurrentTheme();
 		initial_edit_ = true;
@@ -1681,8 +1686,9 @@ void PrefColors::initializeThemes()
 	} else if (toqstr(form_->rc().ui_theme) != theme_name_ || theme_name_ == "") {
 		theme_name_ = toqstr(form_->rc().ui_theme);
 	}
-
 	initializeThemesLW();
+	updateRC(lyxrc);
+	findThemeFromColorSet();
 }
 
 
@@ -1757,7 +1763,6 @@ void PrefColors::initializeThemesLW()
 		else
 			isSysThemes_.push_back(false);
 	}
-	selectCurrentTheme(theme_name_);
 }
 
 
