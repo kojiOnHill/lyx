@@ -46,7 +46,13 @@ function add_suffix () {
 #
 # Springer_Nature_Journals: todo: just need to install dependencies.
 #
-ctest_exclude='(supported-languages_polyglossia_.*_systemF|(%28APA%29,_v._6|Astronomical).*(pdf|dvi|lyx22|lyx23|lyx24)|BATCH_compare-test|BATCH_outline-beamer|BATCH_vcs-info|Springer_Nature_Journals)'
+# These tests require a lot of RAM (e.g., 10 GB for each one), so it is best not
+# to run them in parallel.
+# The dev can choose to run these separately, sequentially. e.g.,
+# ctest -R "${lyx_ctests_lots_of_ram}"
+lyx_ctests_lots_of_ram='supported-languages_babel_non-tex_(dvi3|pdf5)_systemF|export/doc/zh_CN/Intro_(dvi3|pdf5)_systemF|export/doc/zh_CN/Tutorial_(dvi3|pdf5)_systemF'
+# TODO: rename ctest_exclude to include "lyx".
+ctest_exclude="(supported-languages_polyglossia_.*_systemF|(%28APA%29,_v._6|Astronomical).*(pdf|dvi|lyx22|lyx23|lyx24)|BATCH_compare-test|BATCH_outline-beamer|BATCH_vcs-info|Springer_Nature_Journals|${lyx_ctests_lots_of_ram})"
 # timeout of 10m.
 function ctest-reg-if-fail ()
 {
