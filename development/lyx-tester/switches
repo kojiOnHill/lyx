@@ -159,6 +159,7 @@ function switch-latex-to-tl-stable ()
 }
 
 
+# see also 'update-alternatives-add-new-gcc-and-clang' in 'convenience-functions.sh'
 function switch-gcc-to ()
 {
   sudo update-alternatives --set gcc "/usr/bin/gcc-$1"
