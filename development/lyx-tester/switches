@@ -213,6 +213,9 @@ function gcc-apt-get-install ()
   "gcc-$1" \
   "g++-$1" \
   "gfortran-$1"
+
+  # now register them so that 'switch-gcc-to' works.
+  update-alternatives-add-new-gcc-and-clang
 }
 
 
@@ -221,4 +224,7 @@ function clang-apt-get-install ()
   # don't need to separately install "clang++-$1".
   # approximate size taken up by installing: # 722 MB
   sudo apt-get install "clang-$1"
+
+  # now register them so that 'switch-clang-to' works.
+  update-alternatives-add-new-gcc-and-clang
 }
