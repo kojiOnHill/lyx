@@ -362,8 +362,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.5\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-07-29 11:43+0200\n"
-"PO-Revision-Date: 2025-07-29 17:55+0200\n"
+"POT-Creation-Date: 2025-07-31 18:30+0200\n"
+"PO-Revision-Date: 2025-07-31 18:33+0200\n"
 "Last-Translator: Jean-Pierre Chrétien <jeanpierre.chretien@free.fr>\n"
 "Language-Team: lyxfr\n"
 "Language: fr\n"
@@ -36820,7 +36820,7 @@ msgstr " inconnu"
 msgid "Table Style "
 msgstr "Style de tableau "
 
-#: src/Text.cpp:5764 src/frontends/qt/GuiApplication.cpp:1895
+#: src/Text.cpp:5764 src/frontends/qt/GuiApplication.cpp:1896
 msgid "Missing argument"
 msgstr "Paramètre manquant"
 
@@ -37378,7 +37378,7 @@ msgid "This tab contains invalid input. Please fix!"
 msgstr "Cet onglet contient une saisie invalide. Corrigez-le !"
 
 #: src/frontends/qt/ButtonController.cpp:267
-#: src/frontends/qt/GuiApplication.cpp:2014 src/frontends/qt/GuiCompare.cpp:195
+#: src/frontends/qt/GuiApplication.cpp:2015 src/frontends/qt/GuiCompare.cpp:195
 #: src/frontends/qt/GuiSymbols.cpp:345
 msgid "Cancel"
 msgstr "Annuler"
@@ -37653,52 +37653,56 @@ msgstr "Ouvir"
 msgid "Select Color"
 msgstr "Sélectionner une couleur"
 
-#: src/frontends/qt/GuiApplication.cpp:1296
+#: src/frontends/qt/GuiApplication.cpp:783
+msgid "Paragraph[[Sectioning]]"
+msgstr "Paragraphe"
+
+#: src/frontends/qt/GuiApplication.cpp:1297
 msgid "Nothing to do"
 msgstr "Rien à faire"
 
-#: src/frontends/qt/GuiApplication.cpp:1302
+#: src/frontends/qt/GuiApplication.cpp:1303
 msgid "Unknown action"
 msgstr "Action inconnue"
 
-#: src/frontends/qt/GuiApplication.cpp:1346
+#: src/frontends/qt/GuiApplication.cpp:1347
 msgid "Command not handled"
 msgstr "Commande non gérée"
 
-#: src/frontends/qt/GuiApplication.cpp:1352
+#: src/frontends/qt/GuiApplication.cpp:1353
 msgid "Command disabled"
 msgstr "Commande désactivée"
 
-#: src/frontends/qt/GuiApplication.cpp:1460
+#: src/frontends/qt/GuiApplication.cpp:1461
 #, c-format
 msgid "Bad debug value `%1$s'."
 msgstr "Valeur de débogage incorrecte « %1$s »."
 
-#: src/frontends/qt/GuiApplication.cpp:1489 src/frontends/qt/GuiView.cpp:2569
+#: src/frontends/qt/GuiApplication.cpp:1490 src/frontends/qt/GuiView.cpp:2569
 msgid "Command not allowed without a buffer open"
 msgstr "Commande non autorisée si aucun tampon n'est ouvert"
 
-#: src/frontends/qt/GuiApplication.cpp:1496
+#: src/frontends/qt/GuiApplication.cpp:1497
 msgid "the <LFUN-COMMAND> argument of buffer-forall is not valid"
 msgstr "l'argument <LFUN-COMMAND> de buffer-forall est invalide"
 
-#: src/frontends/qt/GuiApplication.cpp:1573
+#: src/frontends/qt/GuiApplication.cpp:1574
 msgid "Wrong focus!"
 msgstr "Mauvaise cible !"
 
-#: src/frontends/qt/GuiApplication.cpp:1707
+#: src/frontends/qt/GuiApplication.cpp:1708
 msgid "Running configure..."
 msgstr "Lancement de configure..."
 
-#: src/frontends/qt/GuiApplication.cpp:1717
+#: src/frontends/qt/GuiApplication.cpp:1718
 msgid "Reloading configuration..."
 msgstr "Rechargement de la configuration..."
 
-#: src/frontends/qt/GuiApplication.cpp:1727
+#: src/frontends/qt/GuiApplication.cpp:1728
 msgid "System reconfiguration failed"
 msgstr "Échec de la reconfiguration"
 
-#: src/frontends/qt/GuiApplication.cpp:1728
+#: src/frontends/qt/GuiApplication.cpp:1729
 msgid ""
 "The system reconfiguration has failed.\n"
 "Default textclass is used but LyX may\n"
@@ -37710,11 +37714,11 @@ msgstr ""
 "ne pourra peut-être pas fonctionner correctement.\n"
 "Merci de reconfigurer de nouveau si c'est le cas."
 
-#: src/frontends/qt/GuiApplication.cpp:1733
+#: src/frontends/qt/GuiApplication.cpp:1734
 msgid "System reconfigured"
 msgstr "Système reconfiguré"
 
-#: src/frontends/qt/GuiApplication.cpp:1734
+#: src/frontends/qt/GuiApplication.cpp:1735
 msgid ""
 "The system has been reconfigured.\n"
 "You need to restart LyX to make use of any\n"
@@ -37724,71 +37728,71 @@ msgstr ""
 "Il faut redémarrer LyX pour utiliser\n"
 "les classes de document mises à jour."
 
-#: src/frontends/qt/GuiApplication.cpp:1812
+#: src/frontends/qt/GuiApplication.cpp:1813
 msgid "Exiting."
 msgstr "Quitte."
 
-#: src/frontends/qt/GuiApplication.cpp:1907
+#: src/frontends/qt/GuiApplication.cpp:1908
 #, c-format
 msgid "Opening help file %1$s..."
 msgstr "Ouverture du fichier d'aide %1$s..."
 
-#: src/frontends/qt/GuiApplication.cpp:1922
+#: src/frontends/qt/GuiApplication.cpp:1923
 msgid "Wrong argument. Must be 'examples' or 'templates'."
 msgstr "Argument incorrect . Doit être 'examples' ou 'templates'."
 
-#: src/frontends/qt/GuiApplication.cpp:1936
+#: src/frontends/qt/GuiApplication.cpp:1937
 msgid "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 msgstr "Syntaxe : set-color <nom_lyx> <nom_x11> <nom-inversé_x11"
 
-#: src/frontends/qt/GuiApplication.cpp:1956
+#: src/frontends/qt/GuiApplication.cpp:1957
 #, c-format
 msgid "Set-color \"%1$s\" failed - color is undefined or may not be redefined"
 msgstr ""
 "Set-color « %1$s » a échoué - la couleur n'est pas définie ou ne peut pas "
 "être redéfinie"
 
-#: src/frontends/qt/GuiApplication.cpp:2062
+#: src/frontends/qt/GuiApplication.cpp:2063
 #, c-format
 msgid "Cannot iterate more than %1$d times"
 msgstr "Impossible d'itérer plus de %1$d fois"
 
-#: src/frontends/qt/GuiApplication.cpp:2162
+#: src/frontends/qt/GuiApplication.cpp:2163
 #, c-format
 msgid "Applied \"%1$s\" to %2$d buffer(s)"
 msgstr "\"%1$s\" appliqué à %2$d tampon(s)"
 
-#: src/frontends/qt/GuiApplication.cpp:2249
+#: src/frontends/qt/GuiApplication.cpp:2250
 #, c-format
 msgid "Document defaults saved in %1$s"
 msgstr "Les valeurs implicites du document ont été enregistrées dans %1$s"
 
-#: src/frontends/qt/GuiApplication.cpp:2253
+#: src/frontends/qt/GuiApplication.cpp:2254
 msgid "Unable to save document defaults"
 msgstr "Impossible d'enregistrer les valeurs implicites du document"
 
-#: src/frontends/qt/GuiApplication.cpp:2528
-#: src/frontends/qt/GuiApplication.cpp:2543
+#: src/frontends/qt/GuiApplication.cpp:2529
+#: src/frontends/qt/GuiApplication.cpp:2544
 msgid "Unknown function."
 msgstr "Fonction inconnue."
 
-#: src/frontends/qt/GuiApplication.cpp:2777
+#: src/frontends/qt/GuiApplication.cpp:2778
 msgid "partial draw"
 msgstr "tracé partiel"
 
-#: src/frontends/qt/GuiApplication.cpp:2780
+#: src/frontends/qt/GuiApplication.cpp:2781
 msgid "partial draw on backing store"
 msgstr "tracé partiel à partir du tampon mémoire"
 
-#: src/frontends/qt/GuiApplication.cpp:2783
+#: src/frontends/qt/GuiApplication.cpp:2784
 msgid "full draw"
 msgstr "tracé complet"
 
-#: src/frontends/qt/GuiApplication.cpp:3069
+#: src/frontends/qt/GuiApplication.cpp:3070
 msgid "The current document was closed."
 msgstr "Le document courant était fermé."
 
-#: src/frontends/qt/GuiApplication.cpp:3079
+#: src/frontends/qt/GuiApplication.cpp:3080
 msgid ""
 "LyX has caught an exception, it will now attempt to save all unsaved "
 "documents and exit.\n"
@@ -37800,12 +37804,12 @@ msgstr ""
 "\n"
 "Exception : "
 
-#: src/frontends/qt/GuiApplication.cpp:3083
-#: src/frontends/qt/GuiApplication.cpp:3089
+#: src/frontends/qt/GuiApplication.cpp:3084
+#: src/frontends/qt/GuiApplication.cpp:3090
 msgid "Software exception Detected"
 msgstr "Détection d'une exception logicielle"
 
-#: src/frontends/qt/GuiApplication.cpp:3087
+#: src/frontends/qt/GuiApplication.cpp:3088
 msgid ""
 "LyX has caught some really weird exception, it will now attempt to save all "
 "unsaved documents and exit."
@@ -37813,12 +37817,12 @@ msgstr ""
 "LyX a reçu une exception vraiment sérieuse, il va maintenant essayer "
 "d'enregistrer tous les documents en cours de modification avant de quitter."
 
-#: src/frontends/qt/GuiApplication.cpp:3393
-#: src/frontends/qt/GuiApplication.cpp:3405
+#: src/frontends/qt/GuiApplication.cpp:3394
+#: src/frontends/qt/GuiApplication.cpp:3406
 msgid "Could not find UI definition file"
 msgstr "Fichier descriptif d'interface utilisateur introuvable"
 
-#: src/frontends/qt/GuiApplication.cpp:3394
+#: src/frontends/qt/GuiApplication.cpp:3395
 #, c-format
 msgid ""
 "Error while reading the included file\n"
@@ -37829,11 +37833,11 @@ msgstr ""
 "%1$s.\n"
 "Veuillez vérifier votre installation."
 
-#: src/frontends/qt/GuiApplication.cpp:3400
+#: src/frontends/qt/GuiApplication.cpp:3401
 msgid "Could not find default UI file"
 msgstr "Fichier interface utilisateur implicite introuvable"
 
-#: src/frontends/qt/GuiApplication.cpp:3401
+#: src/frontends/qt/GuiApplication.cpp:3402
 msgid ""
 "LyX could not find the default UI file!\n"
 "Please check your installation."
@@ -37841,7 +37845,7 @@ msgstr ""
 "LyX n'a pu trouver le fichier interface utilisateur implicite !\n"
 "Veuillez vérifier votre installation."
 
-#: src/frontends/qt/GuiApplication.cpp:3406
+#: src/frontends/qt/GuiApplication.cpp:3407
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
