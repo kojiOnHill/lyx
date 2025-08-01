@@ -224,6 +224,8 @@ private:
 	Features features_;
 	/// Features that are provided
 	Features provides_;
+	/// Already accounted for features
+	mutable Features features_loaded_;
 	/// Static preamble bits, from external templates, or anywhere else
 	typedef std::list<TexString> SnippetList;
 	///

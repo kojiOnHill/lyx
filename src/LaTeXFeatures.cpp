@@ -775,7 +775,11 @@ bool LaTeXFeatures::isProvided(string const & name) const
 
 bool LaTeXFeatures::mustProvide(string const & name) const
 {
-	return isRequired(name) && !isProvided(name);
+	if (isRequired(name) && !isProvided(name)) {
+		features_loaded_.insert(name);
+		return true;
+	}
+	return false;
 }
 
 
@@ -1305,12 +1309,6 @@ string const LaTeXFeatures::getPackages() const
 {
 	ostringstream packages;
 
-	// FIXME: currently, we can only load packages and macros known
-	// to LyX.
-	// However, with the Require tag of layouts/custom insets,
-	// also unknown packages can be requested. They are silently
-	// swallowed now. We should change this eventually.
-
 	// Simple hooks to add things before or after a given "simple"
 	// feature. Useful if loading order matters.
 	map<string, string> before_simplefeature_;
@@ -1610,6 +1608,13 @@ string const LaTeXFeatures::getPackages() const
 
 	if (mustProvide("microtype")){
 		packages << "\\usepackage{microtype}\n";
+	}
+
+	// Account for unknown packages mentioned in the Require tag
+	// of layouts/custom insets
+	for (string const & name : features_) {
+		if (features_loaded_.find(name) == features_loaded_.end())
+			packages << "\\usepackage{" << name << "}\n";
 	}
 
 	return packages.str();
