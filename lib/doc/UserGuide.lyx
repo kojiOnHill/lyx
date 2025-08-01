@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 641
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -31090,8 +31090,18 @@ Text
 \change_inserted -1900975149 1752835977
 .
  
-\change_inserted -712698321 1752906185
+\change_inserted -712698321 1754059311
+Also,
+ in contrast to
+\family sans
+ LR
+\begin_inset space ~
+\end_inset
 
+Text
+\family default
+,
+ 
 \family sans
 AMS
 \begin_inset space ~
@@ -31099,15 +31109,17 @@ AMS
 
 Text
 \family default
- has some more minor advantages to the otherwise identical 
+ adapts itself to the font specifics of the surrounding text (e.g.,
+ smaller font size in superscripts),
+ whereas 
 \family sans
 LR
 \begin_inset space ~
 \end_inset
 
-Text.
-
+Text
 \family default
+ sticks with the default settings.
  
 \change_inserted -1900975149 1752835977
 For precise differences in their implementations,
@@ -31462,17 +31474,11 @@ Text
 \begin_inset space ~
 \end_inset
 
-
-\change_deleted -712698321 1752906129
 with
 \begin_inset space ~
 \end_inset
 
-Sizes
-\change_inserted -712698321 1752906132
-(Adjustable)
-\change_inserted -1900975149 1752835003
-
+Sizes(Adjustable)
 \end_layout
 
 \end_inset
