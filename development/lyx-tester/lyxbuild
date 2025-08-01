@@ -695,6 +695,18 @@ else
         CPPFLAGS+=";-Wsuggest-final-types"
         CPPFLAGS+=";-Wsuggest-final-methods"
         CPPFLAGS+=";-Wmaybe-uninitialized"
+
+        # I think Kornel looked at this one?
+        CPPFLAGS+=";-Wno-suggest-override"
+        # TODO: this one looks kind of useful, no? only 7 warnings or so.
+        CPPFLAGS+=";-Wno-redundant-tags"
+        CPPFLAGS+=";-Wno-sign-promo"
+        CPPFLAGS+=";-Wno-multiple-inheritance"
+
+        # not useful to us.
+        # (https://stackoverflow.com/questions/78993522/what-do-gcc-wabi-tag-warn-me-for-and-how-should-i-avoid-that)
+        # "You only have to care about this if you are linking to code compiled by a different version of gcc. If your build process is compiling everything from scratch, it does not matter to you, and you should disable this warning."
+        CPPFLAGS+=";-Wno-abi-tag"
       fi
 
       # Good candidates to clean up, but not urgent.
