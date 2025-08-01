@@ -316,9 +316,9 @@ def layouts_l10n(input_files, output, base, layouttranslations):
                         floatname = string
                 else:
                     writeString(out, src, base, lineno, string)
-                if readingFloat:
-                    # also add subfloat name
-                    writeString(out, src, base, lineno, "Sub-%s" % string)
+                    if readingFloat:
+                        # also add subfloat name
+                        writeString(out, src, base, lineno, "Sub-%s" % string)
                 continue
             res = CategoryName.search(line)
             if res != None:
