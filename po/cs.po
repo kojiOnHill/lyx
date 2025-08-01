@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lyx 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-07-31 00:07+0200\n"
+"POT-Creation-Date: 2025-07-31 23:20+0200\n"
 "PO-Revision-Date: 2025-07-09 01:09-0800\n"
 "Last-Translator: Pavel Sanda <sanda@lyx.org>\n"
 "Language-Team: Czech <LL@li.org>\n"
@@ -3996,8 +3996,8 @@ msgid "Clea&r[[colorPrefDialog]]"
 msgstr "Sma&zat"
 
 #: src/frontends/qt/ui/PrefColorsUi.ui:358
-msgid "&By color..."
-msgstr "&Podle barvy..."
+msgid "&By color"
+msgstr "&Podle barvy"
 
 #: src/frontends/qt/ui/PrefColorsUi.ui:388
 msgid "Enter a string to filter colors"
@@ -11488,11 +11488,11 @@ msgstr "Definice."
 #: lib/layouts/theorems-ams.inc:223 lib/layouts/theorems-bytype.inc:213
 #: lib/layouts/theorems.inc:224
 msgid "Definitions"
-msgstr "Definitions"
+msgstr "Definice"
 
 #: lib/layouts/beamer.layout:1357
 msgid "Definitions."
-msgstr "Definitions."
+msgstr "Definice."
 
 #: lib/layouts/beamer.layout:1363 lib/layouts/theorems-starred.inc:218
 msgid "Example."
@@ -11503,11 +11503,11 @@ msgstr "Příklad."
 #: lib/layouts/theorems-ams.inc:247 lib/layouts/theorems-bytype.inc:237
 #: lib/layouts/theorems.inc:248
 msgid "Examples"
-msgstr "Examples"
+msgstr "Příklady"
 
 #: lib/layouts/beamer.layout:1373
 msgid "Examples."
-msgstr "Examples."
+msgstr "Příklady."
 
 #: lib/layouts/beamer.layout:1376 lib/layouts/theorems-ams-bytype.inc:179
 #: lib/layouts/theorems-ams-bytype.inc:185
@@ -20178,7 +20178,7 @@ msgstr "předpoklad"
 #: lib/layouts/theorems-ams-extended-chap-bytype.module:425
 #: lib/layouts/theorems-ams-extended.module:381
 msgid "Assumptions"
-msgstr "předpoklady"
+msgstr "Předpoklady"
 
 #: lib/layouts/theorems-ams-extended-bytype.module:381
 #: lib/layouts/theorems-ams-extended-chap-bytype.module:425
@@ -36096,7 +36096,7 @@ msgstr " neznámý"
 msgid "Table Style "
 msgstr "Style tabulky"
 
-#: src/Text.cpp:5764 src/frontends/qt/GuiApplication.cpp:1895
+#: src/Text.cpp:5764 src/frontends/qt/GuiApplication.cpp:1896
 msgid "Missing argument"
 msgstr "Chybí argument"
 
@@ -36145,7 +36145,8 @@ msgstr "Jednoduché"
 msgid ""
 "The layout file %1$s has a version unknown to LyX and could thus not be "
 "converted."
-msgstr "Soubor s rozvržením %1$s má neznámou verzi a nemůže být proto konvertován."
+msgstr ""
+"Soubor s rozvržením %1$s má neznámou verzi a nemůže být proto konvertován."
 
 #: src/TextClass.cpp:364 src/TextClass.cpp:394
 msgid "Layout Conversion Error"
@@ -36156,7 +36157,10 @@ msgid ""
 "A local layout of this document has a version unknown to LyX and could thus "
 "not be converted.\n"
 "Please check Document > Settings > Local Layouts!"
-msgstr "Lokální rozvržení v nastaveních tohoto dokumentu má neznámou verzi a nemůžete být proto konvertováno.\nProsím zkontrolujte Dokument > Nastavení > Lokální rozvržení!"
+msgstr ""
+"Lokální rozvržení v nastaveních tohoto dokumentu má neznámou verzi a "
+"nemůžete být proto konvertováno.\n"
+"Prosím zkontrolujte Dokument > Nastavení > Lokální rozvržení!"
 
 #: src/TextClass.cpp:960
 msgid "Missing File"
@@ -36649,7 +36653,7 @@ msgid "This tab contains invalid input. Please fix!"
 msgstr "Tento panel obsahuje špatný vstup. Prosím opravte!"
 
 #: src/frontends/qt/ButtonController.cpp:267
-#: src/frontends/qt/GuiApplication.cpp:2014 src/frontends/qt/GuiCompare.cpp:195
+#: src/frontends/qt/GuiApplication.cpp:2015 src/frontends/qt/GuiCompare.cpp:195
 #: src/frontends/qt/GuiSymbols.cpp:345
 msgid "Cancel"
 msgstr "Zrušit"
@@ -36921,52 +36925,56 @@ msgstr "Otevřít"
 msgid "Select Color"
 msgstr "Zvolit barvu"
 
-#: src/frontends/qt/GuiApplication.cpp:1296
+#: src/frontends/qt/GuiApplication.cpp:783
+msgid "Paragraph[[Sectioning]]"
+msgstr "Odstavec"
+
+#: src/frontends/qt/GuiApplication.cpp:1297
 msgid "Nothing to do"
 msgstr "Nic k vykonání"
 
-#: src/frontends/qt/GuiApplication.cpp:1302
+#: src/frontends/qt/GuiApplication.cpp:1303
 msgid "Unknown action"
 msgstr "Neznámá akce"
 
-#: src/frontends/qt/GuiApplication.cpp:1346
+#: src/frontends/qt/GuiApplication.cpp:1347
 msgid "Command not handled"
 msgstr "Příkaz nelze obsloužit"
 
-#: src/frontends/qt/GuiApplication.cpp:1352
+#: src/frontends/qt/GuiApplication.cpp:1353
 msgid "Command disabled"
 msgstr "Příkaz vypnut"
 
-#: src/frontends/qt/GuiApplication.cpp:1460
+#: src/frontends/qt/GuiApplication.cpp:1461
 #, c-format
 msgid "Bad debug value `%1$s'."
 msgstr "Neplatná ladící volba `%1$s'."
 
-#: src/frontends/qt/GuiApplication.cpp:1489 src/frontends/qt/GuiView.cpp:2569
+#: src/frontends/qt/GuiApplication.cpp:1490 src/frontends/qt/GuiView.cpp:2569
 msgid "Command not allowed without a buffer open"
 msgstr "Příkaz není povolen bez otevřeného dokumentu"
 
-#: src/frontends/qt/GuiApplication.cpp:1496
+#: src/frontends/qt/GuiApplication.cpp:1497
 msgid "the <LFUN-COMMAND> argument of buffer-forall is not valid"
 msgstr "<LFUN-COMMAND> argument funkce buffer-forall není platný"
 
-#: src/frontends/qt/GuiApplication.cpp:1573
+#: src/frontends/qt/GuiApplication.cpp:1574
 msgid "Wrong focus!"
 msgstr "Chybné ohnisko!"
 
-#: src/frontends/qt/GuiApplication.cpp:1707
+#: src/frontends/qt/GuiApplication.cpp:1708
 msgid "Running configure..."
 msgstr "Spouštění konfigurace..."
 
-#: src/frontends/qt/GuiApplication.cpp:1717
+#: src/frontends/qt/GuiApplication.cpp:1718
 msgid "Reloading configuration..."
 msgstr "Znovunačtení konfigurace..."
 
-#: src/frontends/qt/GuiApplication.cpp:1727
+#: src/frontends/qt/GuiApplication.cpp:1728
 msgid "System reconfiguration failed"
 msgstr "Rekonfigurace systému selhala"
 
-#: src/frontends/qt/GuiApplication.cpp:1728
+#: src/frontends/qt/GuiApplication.cpp:1729
 msgid ""
 "The system reconfiguration has failed.\n"
 "Default textclass is used but LyX may\n"
@@ -36978,11 +36986,11 @@ msgstr ""
 "pracovat správně.\n"
 "Je-li zapotřebí, zkuste prosím rekonfigurovat znovu."
 
-#: src/frontends/qt/GuiApplication.cpp:1733
+#: src/frontends/qt/GuiApplication.cpp:1734
 msgid "System reconfigured"
 msgstr "Systém překonfigurován"
 
-#: src/frontends/qt/GuiApplication.cpp:1734
+#: src/frontends/qt/GuiApplication.cpp:1735
 msgid ""
 "The system has been reconfigured.\n"
 "You need to restart LyX to make use of any\n"
@@ -36992,70 +37000,70 @@ msgstr ""
 "Musíte znovu spustit LyX, aby se nechala používat všechna\n"
 "aktualizovaná nastavení tříd dokumentů."
 
-#: src/frontends/qt/GuiApplication.cpp:1812
+#: src/frontends/qt/GuiApplication.cpp:1813
 msgid "Exiting."
 msgstr "Ukončování."
 
-#: src/frontends/qt/GuiApplication.cpp:1907
+#: src/frontends/qt/GuiApplication.cpp:1908
 #, c-format
 msgid "Opening help file %1$s..."
 msgstr "Otvírání nápovědy %1$s..."
 
-#: src/frontends/qt/GuiApplication.cpp:1922
+#: src/frontends/qt/GuiApplication.cpp:1923
 msgid "Wrong argument. Must be 'examples' or 'templates'."
 msgstr "Chybný argument. Lze použít buďto 'examples' nebo 'templates'."
 
-#: src/frontends/qt/GuiApplication.cpp:1936
+#: src/frontends/qt/GuiApplication.cpp:1937
 msgid "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 msgstr "Syntax: set-color <lyx_name> <x11_name> <x11_darkname>"
 
-#: src/frontends/qt/GuiApplication.cpp:1956
+#: src/frontends/qt/GuiApplication.cpp:1957
 #, c-format
 msgid "Set-color \"%1$s\" failed - color is undefined or may not be redefined"
 msgstr ""
 "Set-color \"%1$s\" selhalo - barva je nedefinována nebo nelze předefinovat"
 
-#: src/frontends/qt/GuiApplication.cpp:2062
+#: src/frontends/qt/GuiApplication.cpp:2063
 #, c-format
 msgid "Cannot iterate more than %1$d times"
 msgstr "Nelze iterovat více než %1$d x"
 
-#: src/frontends/qt/GuiApplication.cpp:2162
+#: src/frontends/qt/GuiApplication.cpp:2163
 #, c-format
 msgid "Applied \"%1$s\" to %2$d buffer(s)"
 msgstr "\"%1$s\" aplikován na %2$d dokument(ů)"
 
-#: src/frontends/qt/GuiApplication.cpp:2249
+#: src/frontends/qt/GuiApplication.cpp:2250
 #, c-format
 msgid "Document defaults saved in %1$s"
 msgstr "Standardní nastavení dokumentu uloženo v %1$s"
 
-#: src/frontends/qt/GuiApplication.cpp:2253
+#: src/frontends/qt/GuiApplication.cpp:2254
 msgid "Unable to save document defaults"
 msgstr "Nelze uložit standardní nastavení dokumentu"
 
-#: src/frontends/qt/GuiApplication.cpp:2528
-#: src/frontends/qt/GuiApplication.cpp:2543
+#: src/frontends/qt/GuiApplication.cpp:2529
+#: src/frontends/qt/GuiApplication.cpp:2544
 msgid "Unknown function."
 msgstr "Neznámá funkce."
 
-#: src/frontends/qt/GuiApplication.cpp:2777
+#: src/frontends/qt/GuiApplication.cpp:2778
 msgid "partial draw"
 msgstr "částečné vykreslovaní"
 
-#: src/frontends/qt/GuiApplication.cpp:2780
+#: src/frontends/qt/GuiApplication.cpp:2781
 msgid "partial draw on backing store"
 msgstr "částečné vykreslovaní pomocí QBackingStore"
 
-#: src/frontends/qt/GuiApplication.cpp:2783
+#: src/frontends/qt/GuiApplication.cpp:2784
 msgid "full draw"
 msgstr "plné vykreslování"
 
-#: src/frontends/qt/GuiApplication.cpp:3069
+#: src/frontends/qt/GuiApplication.cpp:3070
 msgid "The current document was closed."
 msgstr "Aktuální dokukment byl uzavřen."
 
-#: src/frontends/qt/GuiApplication.cpp:3079
+#: src/frontends/qt/GuiApplication.cpp:3080
 msgid ""
 "LyX has caught an exception, it will now attempt to save all unsaved "
 "documents and exit.\n"
@@ -37067,12 +37075,12 @@ msgstr ""
 "\n"
 "Vyjímka: "
 
-#: src/frontends/qt/GuiApplication.cpp:3083
-#: src/frontends/qt/GuiApplication.cpp:3089
+#: src/frontends/qt/GuiApplication.cpp:3084
+#: src/frontends/qt/GuiApplication.cpp:3090
 msgid "Software exception Detected"
 msgstr "Detekována softwarová vyjímka"
 
-#: src/frontends/qt/GuiApplication.cpp:3087
+#: src/frontends/qt/GuiApplication.cpp:3088
 msgid ""
 "LyX has caught some really weird exception, it will now attempt to save all "
 "unsaved documents and exit."
@@ -37080,12 +37088,12 @@ msgstr ""
 "LyX zachytil neobvyklou vyjímku a nyní se pokusí uložit všechny neuložené "
 "dokumenty a skončit."
 
-#: src/frontends/qt/GuiApplication.cpp:3393
-#: src/frontends/qt/GuiApplication.cpp:3405
+#: src/frontends/qt/GuiApplication.cpp:3394
+#: src/frontends/qt/GuiApplication.cpp:3406
 msgid "Could not find UI definition file"
 msgstr "Nelze přečíst definiční soubor uživatelského rozhraní"
 
-#: src/frontends/qt/GuiApplication.cpp:3394
+#: src/frontends/qt/GuiApplication.cpp:3395
 #, c-format
 msgid ""
 "Error while reading the included file\n"
@@ -37096,11 +37104,11 @@ msgstr ""
 "%1$s\n"
 "Zkontrolujte prosím vaši instalaci."
 
-#: src/frontends/qt/GuiApplication.cpp:3400
+#: src/frontends/qt/GuiApplication.cpp:3401
 msgid "Could not find default UI file"
 msgstr "Nelze nalézt standardní soubor uživatelského rozhraní"
 
-#: src/frontends/qt/GuiApplication.cpp:3401
+#: src/frontends/qt/GuiApplication.cpp:3402
 msgid ""
 "LyX could not find the default UI file!\n"
 "Please check your installation."
@@ -37108,7 +37116,7 @@ msgstr ""
 "LyX nenašel standardní soubor uživatelského rozhraní (.ui)!\n"
 "Zkontrolujte prosím vaši instalaci."
 
-#: src/frontends/qt/GuiApplication.cpp:3406
+#: src/frontends/qt/GuiApplication.cpp:3407
 #, c-format
 msgid ""
 "Error while reading the configuration file\n"
