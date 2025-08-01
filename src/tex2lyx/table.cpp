@@ -364,6 +364,7 @@ void handle_colalign(Parser & p, vector<ColInfo> & colinfo,
 			"Expected '{', got '" + p.curr_token().asInput()+ "'");
 
 	ColInfo next = start;
+	p.skip_spaces(true);
 	for (Token t = p.get_token(); p.good() && t.cat() != catEnd;
 	     t = p.get_token()) {
 
