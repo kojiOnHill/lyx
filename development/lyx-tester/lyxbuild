@@ -685,6 +685,16 @@ else
         # by default.
         # https://reviews.llvm.org/D119361
         CPPFLAGS+=";-Wno-missing-declarations"
+
+        CPPFLAGS+=";-Wno-defaulted-function-deleted"
+        CPPFLAGS+=";-Wcomma-subscript"
+        CPPFLAGS+=";-Wctor-dtor-privacy"
+        CPPFLAGS+=";-Wdeprecated"
+        CPPFLAGS+=";-Winvalid-imported-macros"
+        CPPFLAGS+=";-Wmismatched-tags"
+        CPPFLAGS+=";-Wsuggest-final-types"
+        CPPFLAGS+=";-Wsuggest-final-methods"
+        CPPFLAGS+=";-Wmaybe-uninitialized"
       fi
 
       # Good candidates to clean up, but not urgent.
