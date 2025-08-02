@@ -676,7 +676,6 @@ else
         CPPFLAGS+=";-Wlogical-op"
         CPPFLAGS+=";-Wduplicated-cond"
         CPPFLAGS+=";-Wduplicated-branches"
-        CPPFLAGS+=";-fdelete-null-pointer-checks;-Wnull-dereference"
         # TODO: ask on lyx-devel. Does not look very useful.
         # warn if you perform a cast to the same type
         CPPFLAGS+=";-Wno-useless-cast"
@@ -692,9 +691,13 @@ else
         CPPFLAGS+=";-Wdeprecated"
         CPPFLAGS+=";-Winvalid-imported-macros"
         CPPFLAGS+=";-Wmismatched-tags"
-        CPPFLAGS+=";-Wsuggest-final-types"
-        CPPFLAGS+=";-Wsuggest-final-methods"
         CPPFLAGS+=";-Wmaybe-uninitialized"
+
+        # These trigger warnings if GCC and if -DLYX_DEBUG=OFF
+        CPPFLAGS+=";-Wno-suggest-final-types"
+        CPPFLAGS+=";-Wno-suggest-final-methods"
+        # Currently 27 warnings.
+        CPPFLAGS+=";-fdelete-null-pointer-checks;-Wno-null-dereference"
 
         # I think Kornel looked at this one?
         CPPFLAGS+=";-Wno-suggest-override"
