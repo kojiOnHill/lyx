@@ -3066,6 +3066,10 @@ bool BufferParams::writeLaTeX(otexstream & os, LaTeXFeatures & features,
 	// package-specific theorem definitions
 	os << features.getThmExtraDefinitions();
 
+	// load last the unknown packages mentioned in the Require tag
+	// of layouts/custom insets
+	os << features.getUnknownPackages();
+
 	// Since menukeys uses catoptions, which does some heavy changes on key-value options,
 	// it is recommended to load menukeys as the last package (even after hyperref)
 	if (features.isRequired("menukeys"))

@@ -208,6 +208,10 @@ public:
 	bool hasRTLLanguage() const;
 	/// This is used to avoid recursion in InsetMathMacro::validate
 	std::set<docstring> & activeMacros() { return active_macros_; }
+	/// Return a series of \usepackage{} commands for unknown packages
+	/// mentioned in the Require tag of layouts/custom insets that
+	/// that have not already been accounted for
+	std::string getUnknownPackages() const;
 
 private:
 	///
@@ -224,6 +228,8 @@ private:
 	Features features_;
 	/// Features that are provided
 	Features provides_;
+	/// Already accounted for features
+	mutable Features features_loaded_;
 	/// Static preamble bits, from external templates, or anywhere else
 	typedef std::list<TexString> SnippetList;
 	///
