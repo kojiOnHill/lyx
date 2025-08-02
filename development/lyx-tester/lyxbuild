@@ -1065,7 +1065,8 @@ PYTHON_EXEC="python3"
 
 # TODO: need to put this 'cd' into the build-command script!
 cd "${LYX_USER_DIR}"
-runthis configure-lyx.log ${PYTHON_EXEC} "${git_repo_d}/lib/configure.py" \
+echo "${PYTHON_EXEC} \"\${LYX_GIT_REPO}/lib/configure.py\" &&" >> "${LOGS_D}/build-commands"
+${PYTHON_EXEC} "${git_repo_d}/lib/configure.py" >> "${LOGS_D}/configure-lyx.log" \
   || { echo "$(WARNINGPREFIX)reconfigure failed." >&2; exit 1; }
 
 LYX_USER_DIR_NOAUTH="${LYX_USER_DIR}-noauth"
