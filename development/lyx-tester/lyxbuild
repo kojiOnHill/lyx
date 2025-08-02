@@ -500,6 +500,7 @@ echo 'LYX_GIT_REPO="$( pwd )" &&' >> "${LOGS_D}/build-commands"
 
 # We want to do this for autotools also so mylyx() doesn't run an old cmake build rather than a new autotools build.
 [ -d ../CMakeBuild ] && { echo "$(ECHOPREFIX)removing previous CMake build" && runthis misc.log rm -rf ../CMakeBuild ;}
+[ -d ../user-dir ] && { echo "$(ECHOPREFIX)removing previous user dir" && runthis misc.log rm -rf ../user-dir ;}
 
 echo "$(ECHOPREFIX)updating layouts in LyX's lib..."
 python3 development/tools/updatelayouts.py
@@ -583,8 +584,9 @@ else
   fi
 
 
-  echo "$(ECHOPREFIX)creating \"CMakeBuild\" dir and running cmake..."
+  echo "$(ECHOPREFIX)creating \"CMakeBuild\" dir, user-dir, and running cmake..."
   runthis misc.log mkdir ../CMakeBuild
+  runthis misc.log mkdir ../user-dir
   runthis misc.log cd ../CMakeBuild
 
 
@@ -1046,7 +1048,7 @@ if [ -n "${userUserDir}" ]; then
 fi
 
 # Just for convenience (of not having to configure when starting LyX and of having preferences)
-echo "$(ECHOPREFIX)reconfiguring..."
+echo "$(ECHOPREFIX)reconfiguring the user directory..."
 # LyX did not have perfect Python3 support for a while, so we use Python2 for
 # older commits.
 # This commit is conservative (could make it older).
@@ -1063,8 +1065,7 @@ fi
 #       starting with 23.04.
 PYTHON_EXEC="python3"
 
-# TODO: need to put this 'cd' into the build-command script!
-cd "${LYX_USER_DIR}"
+runthis misc.log cd "../user-dir"
 echo "${PYTHON_EXEC} \"\${LYX_GIT_REPO}/lib/configure.py\" &&" >> "${LOGS_D}/build-commands"
 ${PYTHON_EXEC} "${git_repo_d}/lib/configure.py" >> "${LOGS_D}/configure-lyx.log" \
   || { echo "$(WARNINGPREFIX)reconfigure failed." >&2; exit 1; }
