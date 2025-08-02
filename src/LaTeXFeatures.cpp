@@ -775,11 +775,7 @@ bool LaTeXFeatures::isProvided(string const & name) const
 
 bool LaTeXFeatures::mustProvide(string const & name) const
 {
-	if (isRequired(name) && !isProvided(name)) {
-		features_loaded_.insert(name);
-		return true;
-	}
-	return false;
+	return isRequired(name) && !isProvided(name);
 }
 
 
@@ -1613,7 +1609,7 @@ string const LaTeXFeatures::getPackages() const
 	// Account for unknown packages mentioned in the Require tag
 	// of layouts/custom insets
 	for (string const & name : features_) {
-		if (features_loaded_.find(name) == features_loaded_.end())
+		if (!mustProvide(name))
 			packages << "\\usepackage{" << name << "}\n";
 	}
 
