@@ -318,7 +318,7 @@ void InsetMathHull::addToToc(DocIterator const & pit, bool output_active,
 		return;
 
 	TocBuilder & b = backend.builder("equation");
-        b.pushItem(pit, docstring(), output_active);
+	b.pushItem(pit, docstring(), output_active);
 	if (first != last)
 		b.argumentItem(bformat(from_ascii("(%1$s-%2$s)"),
 		                       numbers_[first], numbers_[last]));
