@@ -3066,14 +3066,14 @@ bool BufferParams::writeLaTeX(otexstream & os, LaTeXFeatures & features,
 	// package-specific theorem definitions
 	os << features.getThmExtraDefinitions();
 
-	// load last the unknown packages mentioned in the Require tag
-	// of layouts/custom insets
-	os << features.getUnknownPackages();
-
 	// Since menukeys uses catoptions, which does some heavy changes on key-value options,
 	// it is recommended to load menukeys as the last package (even after hyperref)
 	if (features.isRequired("menukeys"))
 		os << "\\usepackage{menukeys}\n";
+
+	// load last the unknown packages mentioned in the Require tag
+	// of layouts/custom insets
+	os << features.getUnknownPackages();
 
 	docstring const i18npreamble =
 		features.getTClassI18nPreamble(use_babel, use_polyglossia,

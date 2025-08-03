@@ -734,7 +734,11 @@ void LaTeXFeatures::useInsetLayout(InsetLayout const & lay)
 
 bool LaTeXFeatures::isRequired(string const & name) const
 {
-	return features_.find(name) != features_.end();
+	if (features_.find(name) != features_.end()) {
+		features_loaded_.insert(name);
+		return true;
+	}
+	return false;
 }
 
 
@@ -775,11 +779,7 @@ bool LaTeXFeatures::isProvided(string const & name) const
 
 bool LaTeXFeatures::mustProvide(string const & name) const
 {
-	if (isRequired(name) && !isProvided(name)) {
-		features_loaded_.insert(name);
-		return true;
-	}
-	return false;
+	return isRequired(name) && !isProvided(name);
 }
 
 
