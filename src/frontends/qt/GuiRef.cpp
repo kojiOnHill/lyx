@@ -187,7 +187,7 @@ void GuiRef::enableBoxes()
 	refOptionsLE->setEnabled(use_zref && (isFormatted || zref_clever));
 	refOptionsLA->setEnabled(use_zref && (isFormatted || zref_clever));
 	bool const allow_range_list_switch = selectedLV->topLevelItemCount() == 2
-		&& (isFormatted || reftype == "cpageref") && !use_prettyref;
+		&& (isFormatted || reftype == "cpageref") && !use_prettyref && intext;
 	if (reftype == "vref" || reftype == "vpageref")
 		rangeListCO->setCurrentIndex(rangeListCO->findData("range"));
 	rangeListCO->setEnabled(allow_range_list_switch);
