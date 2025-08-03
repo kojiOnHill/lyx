@@ -2099,6 +2099,10 @@ Buffer::ExportStatus Buffer::writeLaTeXSource(otexstream & os,
 		// but once required, we must keep use_japanese true.
 		runparams.use_japanese |= features.isRequired("japanese");
 
+		// load last the unknown packages mentioned in the Require tag
+		// of layouts/custom insets
+		os << features.getUnknownPackages();
+
 		if (!output_body) {
 			// Restore the parenthood if needed
 			if (!runparams.is_child)
