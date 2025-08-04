@@ -232,6 +232,11 @@ export/export/latex/languages/uk-babel-date-missing-chars-with-ascii_dvi3_texF
 export/export/latex/languages/supported-languages_(dvi|pdf).*_texF
 export/export/latex/languages/supported-languages_babel_(dvi|pdf).*_texF
 
+# Combination of LuaLaTeX + luainputenc fails sometimes with
+# TeX capacity exceeded, sorry [input stack size=10000].
+# See also report from Jürgen Spitz
+# 	https://github.com/wehro/babel-latin/issues/3
+export/examples/Articles/Springer_Nature_Journals_(dvi3|pdf5)_texF
 
 # Polyglossia + LuaTeX issue
 # Reported upstream here:
