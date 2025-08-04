@@ -37,7 +37,6 @@
 #include "PanelStack.h"
 
 #include "support/debug.h"
-#include "support/FileName.h"
 #include "support/FileNameList.h"
 #include "support/filetools.h"
 #include "support/gettext.h"
@@ -1557,8 +1556,9 @@ void PrefColors::importTheme()
 	import_file.copy(toqstr(target_file_path));
 
 	initializeThemesLW();
-	theme_colors_ = newcolors_ =
-	        loadImportThemeCommon(FileName(fromqstr(file_path)));
+	ColorNamePairs colors = readTheme(FileName(fromqstr(file_path)));
+	loadImportThemeCommon(colors);
+	theme_colors_ = newcolors_ = colors;
 	theme_filename_ = onlyFileName(toqstr(target_file_path));
 	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
 	initial_edit_ = true;
@@ -1571,11 +1571,11 @@ void PrefColors::loadTheme(int const row)
 {
 	if (row < 0) return;
 
-	theme_colors_ = newcolors_ =
-	        loadImportThemeCommon(FileName(fromqstr(theme_fullpaths_[row])));
+	theme_colors_ = newcolors_ = themes_cache_[row];
 	// variables below are used for suggestion in input dialogs
 	theme_filename_ = onlyFileName(theme_fullpaths_[row]);
 	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
+	loadImportThemeCommon(theme_colors_);
 }
 
 
@@ -1588,17 +1588,21 @@ void PrefColors::loadTheme(QListWidgetItem *item)
 void PrefColors::cacheAllThemes()
 {
 	guiApp->setOverrideCursor(QCursor(Qt::WaitCursor));
+	themes_cache_.clear();
+	theme_names_cache_.clear();
+	// readTheme() changes form_->rc()
+	LyXRC origrc = form_->rc();
 	for (int id = 0; id < themesLW->count(); ++id) {
 		FileName const fn(fromqstr(theme_fullpaths_[id]));
-		themes_cache_.push_back(loadImportThemeCommon(fn, false));
+		themes_cache_.push_back(readTheme(fn));
 		theme_names_cache_.push_back(themesLW->item(id)->text());
 	}
+	form_->rc() = origrc;
 	guiApp->restoreOverrideCursor();
 }
 
 
-ColorNamePairs PrefColors::loadImportThemeCommon(FileName fullpath,
-                                                 bool update_swatch)
+ColorNamePairs PrefColors::readTheme(FileName fullpath)
 {
 	ColorNamePairs colors;
 	colors.resize(lcolors_.size());
@@ -1610,8 +1614,13 @@ ColorNamePairs PrefColors::loadImportThemeCommon(FileName fullpath,
 		    {getCurrentColor(lcolors_[row], false).name(),
 		     getCurrentColor(lcolors_[row], true).name()};
 	}
-	if (update_swatch)
-		updateAllSwatches();
+	return colors;
+}
+
+
+void PrefColors::loadImportThemeCommon(ColorNamePairs & colors)
+{
+	updateAllSwatches();
 
 	if (autoapply_) {
 		for (unsigned int i = 0; i < lcolors_.size(); ++i) {
@@ -1623,8 +1632,6 @@ ColorNamePairs PrefColors::loadImportThemeCommon(FileName fullpath,
 	// emit signal
 	changed();
 	activatePrefsWindow(form_);
-
-	return colors;
 }
 
 

@@ -349,12 +349,12 @@ private:
 	void selectCurrentTheme(QString theme_name_en);
 	///
 	void cacheAllThemes();
+	///
+	ColorNamePairs readTheme(support::FileName fullpath);
 	/// Common algorithm between saving and exporting
 	void saveExportThemeCommon(QString file_path);
 	/// Common algorithm between loading and importing.
-	/// It returns the color set read from \p fullpath.
-	ColorNamePairs loadImportThemeCommon(support::FileName fullpath,
-	                                     bool update_swatch = true);
+	void loadImportThemeCommon(ColorNamePairs & colors);
 	/// Ask the user a theme name
 	bool askThemeName(bool porting, QString name_suggestion = "");
 	///
