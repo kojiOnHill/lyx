@@ -2078,7 +2078,7 @@ def revert_rotfloat(document):
             )
             document.body[i - 3 : i + 2] = put_cmd_in_ert(
                 "\\begin{sideways" + fType + star + "}[" + placement + "]"
-            )
+            ) + ["\\end_layout"]
             add_to_preamble(document, ["\\usepackage{rotfloat}"])
 
         i = i + 1
