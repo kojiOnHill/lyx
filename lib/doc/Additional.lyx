@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 640
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -103,7 +103,7 @@ initials
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
+\justification default
 \crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
@@ -144,6 +144,7 @@ initials
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author -712698321 "Jürgen Spitzmüller"
 \author -584632292 "Richard Kimberly Heck"
 \author -495245474 "Jean-Marc Lasgouttes"
 \author 5863208 "ab"
@@ -1221,16 +1222,33 @@ The commands which \SpecialChar LyX
 status collapsed
 
 \begin_layout Plain Layout
+
+\change_deleted -712698321 1753944999
 \SpecialChar LaTeX
 
 \begin_inset space ~
 \end_inset
 
 Preamble
+\change_unchanged
+
 \end_layout
 
 \end_inset
 
+
+\change_inserted -712698321 1753945008
+
+\family sans
+Preamble
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
+\family default
  in the 
 \family sans
 Document\SpecialChar menuseparator
@@ -1838,7 +1856,18 @@ Fonts
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
+
+\change_deleted -712698321 1753945050
 Preamble
+\change_inserted -712698321 1753945050
+Preamble
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
  usually reduces the overfull lines drastically (we use this in the preamble of this document):
 \end_layout
@@ -4556,6 +4585,8 @@ ettings
 \family default
 \SpecialChar menuseparator
 
+\change_deleted -712698321 1753945064
+
 \family sans
 \SpecialChar LaTeX
 
@@ -4563,6 +4594,15 @@ ettings
 \end_inset
 
 Preamble
+\change_inserted -712698321 1753945064
+Preamble
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 ) and the problem is solved.
 \end_layout
@@ -13412,8 +13452,19 @@ fxsetup{draft}
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
+
+\change_deleted -712698321 1753945098
 \SpecialChar LaTeX
  Preamble
+\change_inserted -712698321 1753945098
+Preamble
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 .
 \end_layout
@@ -17275,7 +17326,18 @@ As a final example,
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
+
+\change_deleted -712698321 1753945108
 LaTeX Preamble
+\change_inserted -712698321 1753945108
+Preamble
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 :
 \end_layout

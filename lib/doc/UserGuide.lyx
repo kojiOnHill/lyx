@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 642
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -33888,7 +33888,20 @@ Typewriter
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
-LaTeX Preamble
+
+\change_deleted -712698321 1753943975
+LaTeX
+\change_unchanged
+ Preamble
+\change_inserted -712698321 1753943985
+
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 :
 \end_layout
@@ -33986,7 +33999,20 @@ usepackage{xurl}
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
-LaTeX Preamble
+
+\change_deleted -712698321 1753944002
+LaTeX 
+\change_unchanged
+Preamble
+\change_inserted -712698321 1753944000
+
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 ;
  this will cause URLs to be broken at every character.
@@ -41339,12 +41365,25 @@ Settings
 \family default
 \SpecialChar menuseparator
 
+\change_deleted -712698321 1753944022
+
 \family sans
 LaTeX
 \begin_inset space ~
 \end_inset
 
+
+\change_unchanged
 Preamble
+\change_inserted -712698321 1753944019
+
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 ) with the command
 \end_layout
@@ -42348,11 +42387,24 @@ footheight
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
+
+\change_deleted -712698321 1753944033
 LaTeX
 \begin_inset space ~
 \end_inset
 
+
+\change_unchanged
 Preamble
+\change_inserted -712698321 1753944035
+
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 :
 \end_layout
@@ -55694,12 +55746,25 @@ Note:
 \family sans
 Document\SpecialChar menuseparator
 Settings\SpecialChar menuseparator
+
+\change_deleted -712698321 1753944044
 \SpecialChar LaTeX
 
 \begin_inset space ~
 \end_inset
 
+
+\change_unchanged
 Preamble
+\change_inserted -712698321 1753944046
+
+\family default
+\SpecialChar menuseparator
+
+\family sans
+LaTeX
+\change_unchanged
+
 \family default
 ).
  For example for the € sign one needs to add the line 
@@ -56107,23 +56172,146 @@ programs If this is switched on,
 \end_layout
 
 \begin_layout Section
+
+\change_deleted -712698321 1753941355
 La
 \family sans
 TeX
 \family default
- Preamble
+ 
+\change_unchanged
+Preamble
 \end_layout
 
 \begin_layout Standard
-In this text field you can enter commands to load special \SpecialChar LaTeX
--packages or to define \SpecialChar LaTeX
--commands.
- The preamble is a thing for \SpecialChar LaTeX
--experts.
- You should not enter commands here until you know exactly what you are doing.
+In this
+\change_inserted -712698321 1753941368
+ section,
+ you can add
+\change_unchanged
+ 
+\change_inserted -712698321 1753943793
+code that is output verbatim in a specific position of the generated \SpecialChar LaTeX
+ or XHTML document,
+ before the main document (body) starts.
+ Use the respective input widget (
+\family sans
+LaTeX
+\family default
+ or 
+\family sans
+HTML
+\family default
+) for this.
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted -712698321 1753943106
+In the case of \SpecialChar LaTeX
+,
+ the preamble is the place where you can manually load 
+\change_deleted -712698321 1753943110
+text field you can enter commands to load special \SpecialChar LaTeX
+-
+\change_unchanged
+packages or 
+\change_deleted -712698321 1753943115
+to 
+\change_inserted -712698321 1753943361
+(re-)
+\change_unchanged
+define 
+\change_deleted -712698321 1753943117
+\SpecialChar LaTeX
+-
+\change_inserted -712698321 1753943120
+ 
+\change_unchanged
+commands
+\change_inserted -712698321 1753943720
+ (cf.
+ the introduction to the \SpecialChar LaTeX
+ syntax in section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:LaTeX-Syntax"
+nolink "false"
+
+\end_inset
+
+)
+\change_unchanged
+.
+
+\change_inserted -712698321 1753943188
+ In the case of XHTML,
+ you might,
+ for instance,
+ add or alter CSS definitions here.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1753943192
+In any case,
+
+\change_deleted -712698321 1753943188
+ 
+\change_inserted -712698321 1753943194
+ 
+\change_deleted -712698321 1753943195
+T
+\change_inserted -712698321 1753943196
+t
+\change_unchanged
+he preamble is a
+\change_inserted -712698321 1753943208
+n expert tool
+\change_deleted -712698321 1753943216
+ thing for \SpecialChar LaTeX
+-experts
+\change_unchanged
+.
+ You should not 
+\change_deleted -712698321 1753943326
+enter commands her
+\change_inserted -712698321 1753943327
+us
+\change_unchanged
+e 
+\change_inserted -712698321 1753943329
+it 
+\change_unchanged
+until you know exactly what you are doing.
+\change_inserted -712698321 1753944829
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1753944865
+For details on the preamble,
+ please also refer to section
+\begin_inset space ~
+\end_inset
+
+2.4 of the 
+\emph on
+Additional Features
+\emph default
+ manual.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -712698321 1753943140
 An introduction to the \SpecialChar LaTeX
 -syntax is given in section
 \begin_inset space ~
@@ -56137,6 +56325,8 @@ nolink "false"
 
 \end_inset
 
+
+\change_unchanged
 .
 \end_layout
 

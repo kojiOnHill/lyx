@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 642
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -32366,7 +32366,8 @@ Schreibmaschinenstil
 \family sans
 Dokument\SpecialChar menuseparator
 Einstellungen\SpecialChar menuseparator
-LaTeX-Vorspann
+Vorspann\SpecialChar menuseparator
+LaTeX
 \family default
  folgendes einfügen:
 \end_layout
@@ -32463,7 +32464,8 @@ usepackage{xurl}
 \family sans
 Dokument\SpecialChar menuseparator
 Einstellungen\SpecialChar menuseparator
-LaTeX-Vorspann
+Vorspann\SpecialChar menuseparator
+LaTeX
 \family default
  einfügen;
  dann werden URLs nach jedem beliebigen Zeichen umbrochen.
@@ -36897,7 +36899,8 @@ textbf{#1}}}
 \begin_inset Newline newline
 \end_inset
 
-zum LaTeX-Vorspann in den Dokumenteinstellungen hinzu.
+zum \SpecialChar LaTeX
+-Vorspann in den Dokumenteinstellungen hinzu.
  Dieser Befehl setzt die Schrift für alle Symbole 
 \series bold
 fett
@@ -38698,7 +38701,8 @@ Einstellungen
 \SpecialChar menuseparator
 
 \family sans
-LaTeX-Vorspann
+Vorspann\SpecialChar menuseparator
+LaTeX
 \family default
 ) mit dem Befehl
 \end_layout
@@ -52324,7 +52328,8 @@ Einige Zeichen erfordern das Laden von speziellen \SpecialChar LaTeX
 \family sans
 Dokument\SpecialChar menuseparator
 Einstellungen\SpecialChar menuseparator
-LaTeX-Vorspann
+Vorspann\SpecialChar menuseparator
+LaTeX
 \family default
 ).
  Für das €-Zeichen muss man beispielsweise die Zeile 
@@ -52636,18 +52641,29 @@ Programme Wenn dies aktiviert ist,
 \end_layout
 
 \begin_layout Section
-\SpecialChar LaTeX
--Vorspann
+Vorspann
 \end_layout
 
 \begin_layout Standard
-Er enthält \SpecialChar LaTeX
--Befehle,
- die nicht zum Klassenstandard gehören.
- Dies ist etwas für \SpecialChar LaTeX
--Experten.
- Eine Einführung in die \SpecialChar LaTeX
--Syntax finden Sie in Abschnitt
+In diesem Abschnitt können Sie Code eingeben,
+ der an einer spezifischen Stelle des generierten \SpecialChar LaTeX
+- oder XHTML-Dokuments (bevor das Hauptdokument beginnt) genau so ausgegeben wird,
+ wie Sie ihn eingegeben haben.
+ Verwenden Sie dafür das entsprechende Eingabefeld (
+\family sans
+LaTeX
+\family default
+ oder 
+\family sans
+HTML).
+\end_layout
+
+\begin_layout Standard
+Im Fall von \SpecialChar LaTeX
+ ist der Vorspann der Ort,
+ wo man manuell Pakete laden oder Befehle (um-)definieren kann (vgl.
+ die Einführung in die \SpecialChar LaTeX
+-Syntax in Abschnitt
 \begin_inset space \space{}
 \end_inset
 
@@ -52659,6 +52675,27 @@ nolink "false"
 
 \end_inset
 
+).
+ Im Fall von XHTML kann man hier beispielsweise CSS-Definitionen ergänzen oder verändern.
+\end_layout
+
+\begin_layout Standard
+Im jedem Fall ist der Vorspann ein Expertenwerkzeug.
+ Sie sollten ihn nicht verwenden,
+ wenn Sie nicht ganz genau wissen,
+ was Sie tun!
+\end_layout
+
+\begin_layout Standard
+Weitere Informationen zum Vorspann finden Sie in Abschnitt
+\begin_inset space ~
+\end_inset
+
+2.4 des Handbuchs 
+\emph on
+Erweiterte \SpecialChar LyX
+-Features
+\emph default
 .
 \end_layout
 
