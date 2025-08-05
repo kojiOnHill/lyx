@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -17,7 +17,7 @@ theorems-ams
 \maintain_unincluded_children no
 \language english
 \language_package default
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -53,7 +53,7 @@ theorems-ams
 \pdf_backref false
 \pdf_pdfusetitle true
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -71,11 +71,19 @@ theorems-ams
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -101,6 +109,7 @@ theorems-ams
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -284,6 +293,24 @@ sn-chicago
 \family default
 :
  Chicago-based Humanities Reference Style
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+sn-vancouver-num
+\family default
+:
+ Vancouver Numbered Reference Style
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+sn-vancouver-ay
+\family default
+:
+ Vancouver Author Year Reference Style
 \end_layout
 
 \begin_layout Itemize
@@ -995,7 +1022,7 @@ EqnArray
  
 \begin_inset Formula 
 \begin{equation}
-\|\tilde{X}(k)\|^{2}\leq\frac{\sum\limits_{i=1}^{p}\left\Vert \tilde{Y}_{i}(k)\right\Vert ^{2}+\sum\limits_{j=1}^{q}\left\Vert \tilde{Z}_{j}(k)\right\Vert ^{2}}{p+q}\label{eq:tildeX}
+\|\tilde{X}(k)\|^{2}\leq\frac{\sum\limits^{p}_{i=1}\left\Vert \tilde{Y}_{i}(k)\right\Vert ^{2}+\sum\limits^{q}_{j=1}\left\Vert \tilde{Z}_{j}(k)\right\Vert ^{2}}{p+q}\label{eq:tildeX}
 \end{equation}
 
 \end_inset
@@ -1003,8 +1030,8 @@ EqnArray
 where
 \begin_inset Formula 
 \begin{eqnarray}
-D_{\mu} & = & \partial_{\mu}-ig\frac{\lambda^{a}}{2}A_{\mu}^{a}\nonumber \\
-F_{\mu\nu}^{a} & = & \partial_{\mu}A_{\nu}^{a}-\partial_{\nu}A_{\mu}^{a}+gf^{abc}A_{\mu}^{b}A_{\nu}^{a}\label{eq:D_mu}
+D_{\mu} & = & \partial_{\mu}-ig\frac{\lambda^{a}}{2}A^{a}_{\mu}\nonumber \\
+F^{a}_{\mu\nu} & = & \partial_{\mu}A^{a}_{\nu}-\partial_{\nu}A^{a}_{\mu}+gf^{abc}A^{b}_{\mu}A^{a}_{\nu}\label{eq:D_mu}
 \end{eqnarray}
 
 \end_inset
@@ -2294,13 +2321,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{program} 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 BEGIN 
@@ -2311,7 +2336,6 @@ BEGIN
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 FOR i:=1 
@@ -2324,7 +2348,6 @@ DO
 \end_layout
 
 \begin_layout Plain Layout
-
 		|expt|(2,i);
  
 \backslash
@@ -2337,20 +2360,17 @@ OD %
 
 \begin_layout Plain Layout
 
-
 \backslash
 rcomment{Comments will be set flush to the right margin} 
 \end_layout
 
 \begin_layout Plain Layout
 
-
 \backslash
 WHERE 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 PROC |expt|(x,n) 
@@ -2359,13 +2379,11 @@ BODY
 \end_layout
 
 \begin_layout Plain Layout
-
 	z:=1;
            
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 DO 
@@ -2381,7 +2399,6 @@ FI;
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 DO 
@@ -2398,14 +2415,12 @@ FI;
 
 \begin_layout Plain Layout
 
-
 \backslash
 COMMENT{This is a comment statement};
                  
 \end_layout
 
 \begin_layout Plain Layout
-
 		n:=n/2;
  x:=x*x 
 \backslash
@@ -2414,7 +2429,6 @@ OD;
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 { n>0 
@@ -2424,7 +2438,6 @@ OD;
 \end_layout
 
 \begin_layout Plain Layout
-
 	n:=n-1;
  z:=z*x 
 \backslash
@@ -2433,7 +2446,6 @@ OD;
 \end_layout
 
 \begin_layout Plain Layout
-
 |print|(z) 
 \backslash
 ENDPROC 
@@ -2441,13 +2453,11 @@ ENDPROC
 
 \begin_layout Plain Layout
 
-
 \backslash
 END 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{program}
@@ -2495,13 +2505,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{algorithmic}[1] 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 Require $n 
@@ -2515,13 +2523,11 @@ neq 0$
 
 \begin_layout Plain Layout
 
-
 \backslash
 Ensure $y = x^n$  
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 State $y 
@@ -2531,7 +2537,6 @@ Leftarrow 1$
 
 \begin_layout Plain Layout
 
-
 \backslash
 If{$n < 0$}
 \backslash
@@ -2539,7 +2544,6 @@ label{algln2}
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 State $X 
@@ -2548,7 +2552,6 @@ Leftarrow 1 / x$
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 State $N 
@@ -2558,13 +2561,11 @@ Leftarrow -n$
 
 \begin_layout Plain Layout
 
-
 \backslash
 Else         
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 State $X 
@@ -2573,7 +2574,6 @@ Leftarrow x$
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 State $N 
@@ -2583,13 +2583,11 @@ Leftarrow n$
 
 \begin_layout Plain Layout
 
-
 \backslash
 EndIf 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 While{$N 
@@ -2598,14 +2596,12 @@ neq 0$}
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 If{$N$ is even}             
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 State $X 
@@ -2616,7 +2612,6 @@ times X$
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 State $N 
@@ -2625,14 +2620,12 @@ Leftarrow N / 2$
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 Else[$N$ is odd]             
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 State $y 
@@ -2643,7 +2636,6 @@ times X$
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 State $N 
@@ -2652,7 +2644,6 @@ Leftarrow N - 1$
 \end_layout
 
 \begin_layout Plain Layout
-
 	
 \backslash
 EndIf 
@@ -2660,13 +2651,11 @@ EndIf
 
 \begin_layout Plain Layout
 
-
 \backslash
 EndWhile 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{algorithmic}
@@ -2700,34 +2689,28 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 for i:=maxint to 0 do 
 \end_layout
 
 \begin_layout Plain Layout
-
 begin 
 \end_layout
 
 \begin_layout Plain Layout
-
 { do nothing } 
 \end_layout
 
 \begin_layout Plain Layout
-
 end;
  
 \end_layout
 
 \begin_layout Plain Layout
-
 Write('Case insensitive ');
  
 \end_layout
 
 \begin_layout Plain Layout
-
 Write('Pascal keywords.');
 \end_layout
 
@@ -2917,7 +2900,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 ref{algln2}
 \end_layout
@@ -3002,7 +2984,7 @@ literal "false"
 Examples for theorem like environments
 \end_layout
 
-\begin_layout Quotation
+\begin_layout Standard
 For theorem like environments,
  we require 
 \noun on
@@ -3299,7 +3281,6 @@ If your manuscript includes potentially identifying patient/participant informat
 status open
 
 \begin_layout Plain Layout
-
 https://www.nature.com/nature-research/editorial-policies
 \end_layout
 
@@ -3311,7 +3292,6 @@ https://www.nature.com/nature-research/editorial-policies
 status open
 
 \begin_layout Plain Layout
-
 https://www.springer.com/gp/authors-editors/journal-author/journal-author-helpdesk/publishing-ethics/14214
 \end_layout
 
@@ -3323,7 +3303,6 @@ https://www.springer.com/gp/authors-editors/journal-author/journal-author-helpde
 status open
 
 \begin_layout Plain Layout
-
 https://www.biomedcentral.com/getpublished/editorial-policies
 \backslash
 #ethics+and+consent
@@ -3453,7 +3432,6 @@ Springer journals and proceedings:
 status open
 
 \begin_layout Plain Layout
-
 https://www.springer.com/gp/editorial-policies
 \end_layout
 
@@ -3469,7 +3447,6 @@ Nature Portfolio journals:
 status open
 
 \begin_layout Plain Layout
-
 https://www.nature.com/nature-research/editorial-policies
 \end_layout
 
@@ -3489,7 +3466,6 @@ Scientific Reports
 status open
 
 \begin_layout Plain Layout
-
 https://www.nature.com/srep/journal-policies/editorial-policies
 \end_layout
 
@@ -3505,7 +3481,6 @@ BMC journals:
 status open
 
 \begin_layout Plain Layout
-
 https://www.biomedcentral.com/getpublished/editorial-policies
 \end_layout
 
