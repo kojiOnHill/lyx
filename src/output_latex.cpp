@@ -671,6 +671,8 @@ void addArgInsets(Paragraph const & par, string const & prefix,
 			LYXERR0("Error: Unnamed argument inset!");
 			continue;
 		}
+		if (!prefix.empty() && !prefixIs(arg->name(), prefix))
+			continue;
 		string const name = prefix.empty() ?
 			arg->name() : split(arg->name(), ':');
 		size_t const nr = convert<size_t>(name);
