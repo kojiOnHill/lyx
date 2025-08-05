@@ -945,6 +945,7 @@ int Buffer::readHeader(Lexer & lex)
 	// Initialize parameters that may be/go lacking in header:
 	params().branchlist().clear();
 	params().preamble.erase();
+	params().html_preamble.erase();
 	params().options.erase();
 	params().master.erase();
 	params().float_placement.erase();
@@ -2365,6 +2366,11 @@ Buffer::ExportStatus Buffer::writeLyXHTMLSource(odocstream & os,
 					 << dstyles
 					 << "\n</style>\n";
 			}
+		}
+		// the user-defined preamble
+		if (!params().html_preamble.empty()) {
+			os << "<!-- User specified HTML <head> commands -->\n"
+			   << params().html_preamble << "\n";
 		}
 		os << "</head>\n";
 	}

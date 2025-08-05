@@ -35,13 +35,14 @@ from lyx2lyx_tools import (
 
 # Uncomment only what you need to import, please (parser_tools):
 #    check_token, count_pars_in_inset, del_complete_lines, 
-#    del_value, find_complete_lines, find_end_of, 
+#    del_value, find_complete_lines, 
 #    find_re, find_token_backwards, find_token_exact,
 #    find_tokens,
 #    get_option_value,
 #    is_in_inset
 from parser_tools import (
     del_token,
+    find_end_of,
     find_end_of_inset,
     find_end_of_layout,
     find_re,
@@ -3216,6 +3217,26 @@ def revert_plimsoll(document):
         return
 
 
+def revert_html_preamble(document):
+    """Revert html preamble to local layout"""
+    i = find_token(document.header, "\\begin_preamble_html", 0)
+    if i == -1:
+        return
+
+    j = find_end_of(document.header, i, "\\begin_preamble_html", "\\end_preamble_html")
+    if j == -1:
+        # this should not happen
+        document.warning("Malformed LyX document: Could not find end of html preamble.")
+        return
+
+    html_def = document.header[i + 1 : j]
+    document.header[i : j + 1] = []
+    if len(html_def) > 0:
+        html_def.insert(0, "HTMLPreamble")
+        html_def.append("EndPreamble")
+        document.append_local_layout(html_def)
+
+
 ##
 # Conversion hub
 #
@@ -3243,11 +3264,13 @@ convert = [
     [639, [convert_theorem_local_def]],
     [640, []],
     [641, [convert_justification_pref]],
-    [642, []]
+    [642, []],
+    [643, []]
 ]
 
 
 revert = [
+    [642, [revert_html_preamble]],
     [641, [revert_plimsoll]],
     [640, [revert_justification_pref]],
     [639, [revert_prettyref_l7n]],

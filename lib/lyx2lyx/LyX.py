@@ -362,7 +362,7 @@ class LyX_base:
 
             line = trim_eol_binary(line)
             decoded = line.decode("latin1")
-            if check_token(decoded, "\\begin_preamble"):
+            if decoded == "\\begin_preamble":
                 while True:
                     line = self.input.readline()
                     if not line:
@@ -388,7 +388,7 @@ class LyX_base:
 
                     self.preamble.append(line)
 
-            if check_token(decoded, "\\end_preamble"):
+            if decoded == "\\end_preamble":
                 continue
 
             line = line.rstrip()

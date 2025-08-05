@@ -459,30 +459,35 @@ void ModuleSelectionManager::updateDelPB()
 
 PreambleModule::PreambleModule(QWidget * parent)
 	: UiWidget<Ui::PreambleUi>(parent), current_id_(nullptr),
-	  highlighter_(new LaTeXHighlighter(preambleTE->document(), true))
+	  highlighter_(new LaTeXHighlighter(latexPreambleTE->document(), true))
 {
 	// This is not a memory leak. The object will be destroyed
 	// with this.
 	// @ is letter in the LyX user preamble
-	preambleTE->setFont(guiApp->typewriterSystemFont());
-	preambleTE->setWordWrapMode(QTextOption::NoWrap);
-	setFocusProxy(preambleTE);
+	latexPreambleTE->setFont(guiApp->typewriterSystemFont());
+	latexPreambleTE->setWordWrapMode(QTextOption::NoWrap);
+	setFocusProxy(latexPreambleTE);
+	htmlPreambleTE->setFont(guiApp->typewriterSystemFont());
+	htmlPreambleTE->setWordWrapMode(QTextOption::NoWrap);
 	// Install event filter on find line edit to capture return/enter key
 	findLE->installEventFilter(this);
-	connect(preambleTE, SIGNAL(textChanged()), this, SIGNAL(changed()));
+	connect(latexPreambleTE, SIGNAL(textChanged()), this, SIGNAL(changed()));
+	connect(htmlPreambleTE, SIGNAL(textChanged()), this, SIGNAL(changed()));
 	connect(findLE, SIGNAL(textEdited(const QString &)), this, SLOT(checkFindButton()));
 	connect(findButtonPB, SIGNAL(clicked()), this, SLOT(findText()));
 	connect(editPB, SIGNAL(clicked()), this, SLOT(editExternal()));
 	connect(findLE, SIGNAL(returnPressed()), this, SLOT(findText()));
 	checkFindButton();
 	int const tabStop = 4;
-	QFontMetrics metrics(preambleTE->currentFont());
+	QFontMetrics metrics(latexPreambleTE->currentFont());
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
 	// horizontalAdvance() is available starting in 5.11.0
 	// setTabStopDistance() is available starting in 5.10.0
-	preambleTE->setTabStopDistance(tabStop * metrics.horizontalAdvance(' '));
+	latexPreambleTE->setTabStopDistance(tabStop * metrics.horizontalAdvance(' '));
+	htmlPreambleTE->setTabStopDistance(tabStop * metrics.horizontalAdvance(' '));
 #else
-	preambleTE->setTabStopWidth(tabStop * metrics.width(' '));
+	latexPreambleTE->setTabStopWidth(tabStop * metrics.width(' '));
+	htmlPreambleTE->setTabStopWidth(tabStop * metrics.width(' '));
 #endif
 }
 
@@ -520,13 +525,14 @@ void PreambleModule::checkFindButton()
 
 void PreambleModule::findText()
 {
-	bool const found = preambleTE->find(findLE->text());
+	QTextEdit * currentTE = preamblesTW->currentWidget()->findChild<QTextEdit *>();
+	bool const found = currentTE && currentTE->find(findLE->text());
 	if (!found) {
 		// wrap
-		QTextCursor qtcur = preambleTE->textCursor();
+		QTextCursor qtcur = currentTE->textCursor();
 		qtcur.movePosition(QTextCursor::Start);
-		preambleTE->setTextCursor(qtcur);
-		preambleTE->find(findLE->text());
+		currentTE->setTextCursor(qtcur);
+		currentTE->find(findLE->text());
 	}
 }
 
@@ -534,45 +540,62 @@ void PreambleModule::findText()
 void PreambleModule::update(BufferParams const & params, BufferId id)
 {
 	QString preamble = toqstr(params.preamble);
+	QString htmlpreamble = toqstr(params.html_preamble);
 	// Nothing to do if the params and preamble are unchanged.
 	if (id == current_id_
-		&& preamble == preambleTE->document()->toPlainText())
+	    && preamble == latexPreambleTE->document()->toPlainText()
+	    && htmlpreamble == htmlPreambleTE->document()->toPlainText())
 		return;
 
-	QTextCursor cur = preambleTE->textCursor();
+	QTextCursor cur = latexPreambleTE->textCursor();
+	QTextCursor htmlcur = htmlPreambleTE->textCursor();
 	// Save the coords before switching to the new one.
-	preamble_coords_[current_id_] =
-		make_pair(cur.position(), preambleTE->verticalScrollBar()->value());
+	latex_preamble_coords_[current_id_] =
+		make_pair(cur.position(), latexPreambleTE->verticalScrollBar()->value());
+	html_preamble_coords_[current_id_] =
+		make_pair(htmlcur.position(), htmlPreambleTE->verticalScrollBar()->value());
 
 	// Save the params address for further use.
 	current_id_ = id;
-	preambleTE->document()->setPlainText(preamble);
-	Coords::const_iterator it = preamble_coords_.find(current_id_);
-	if (it == preamble_coords_.end())
+	latexPreambleTE->document()->setPlainText(preamble);
+	htmlPreambleTE->document()->setPlainText(htmlpreamble);
+	Coords::const_iterator it = latex_preamble_coords_.find(current_id_);
+	Coords::const_iterator htmlit = html_preamble_coords_.find(current_id_);
+	if (it == latex_preamble_coords_.end()) {
 		// First time we open this one.
-		preamble_coords_[current_id_] = make_pair(0, 0);
-	else {
+		latex_preamble_coords_[current_id_] = make_pair(0, 0);
+		html_preamble_coords_[current_id_] = make_pair(0, 0);
+	} else {
 		// Restore saved coords.
-		cur = preambleTE->textCursor();
+		cur = latexPreambleTE->textCursor();
 		cur.setPosition(it->second.first);
-		preambleTE->setTextCursor(cur);
-		preambleTE->verticalScrollBar()->setValue(it->second.second);
+		latexPreambleTE->setTextCursor(cur);
+		latexPreambleTE->verticalScrollBar()->setValue(it->second.second);
+
+		htmlcur = htmlPreambleTE->textCursor();
+		htmlcur.setPosition(htmlit->second.first);
+		htmlPreambleTE->setTextCursor(htmlcur);
+		htmlPreambleTE->verticalScrollBar()->setValue(htmlit->second.second);
 	}
 }
 
 
 void PreambleModule::apply(BufferParams & params)
 {
-	params.preamble = qstring_to_ucs4(preambleTE->document()->toPlainText());
+	params.preamble = qstring_to_ucs4(latexPreambleTE->document()->toPlainText());
+	params.html_preamble = qstring_to_ucs4(htmlPreambleTE->document()->toPlainText());
 }
 
 
 void PreambleModule::closeEvent(QCloseEvent * e)
 {
 	// Save the coords before closing.
-	QTextCursor cur = preambleTE->textCursor();
-	preamble_coords_[current_id_] =
-		make_pair(cur.position(), preambleTE->verticalScrollBar()->value());
+	QTextCursor cur = latexPreambleTE->textCursor();
+	QTextCursor htmlcur = htmlPreambleTE->textCursor();
+	latex_preamble_coords_[current_id_] =
+		make_pair(cur.position(), latexPreambleTE->verticalScrollBar()->value());
+	html_preamble_coords_[current_id_] =
+		make_pair(htmlcur.position(), htmlPreambleTE->verticalScrollBar()->value());
 	e->accept();
 }
 
@@ -581,11 +604,15 @@ void PreambleModule::editExternal() {
 	if (!current_id_)
 		return;
 
+	QTextEdit * currentTE = preamblesTW->currentWidget()->findChild<QTextEdit *>();
+	if (!currentTE)
+		return;
+
 	if (tempfile_) {
-		preambleTE->setReadOnly(false);
+		currentTE->setReadOnly(false);
 		FileName const tempfilename = tempfile_->name();
 		docstring const s = tempfilename.fileContents("UTF-8");
-		preambleTE->document()->setPlainText(toqstr(s));
+		currentTE->document()->setPlainText(toqstr(s));
 		tempfile_.reset();
 		editPB->setText(qt_("&Edit Externally"));
 		editPB->setIcon(QIcon());
@@ -600,9 +627,9 @@ void PreambleModule::editExternal() {
 	FileName const tempfilename = tempfile_->name();
 	string const name = tempfilename.toFilesystemEncoding();
 	ofdocstream os(name.c_str());
-	os << qstring_to_ucs4(preambleTE->document()->toPlainText());
+	os << qstring_to_ucs4(currentTE->document()->toPlainText());
 	os.close();
-	preambleTE->setReadOnly(true);
+	currentTE->setReadOnly(true);
 	theFormats().edit(*current_id_, tempfilename, format);
 	editPB->setText(qt_("&End Edit"));
 	QIcon warn(guiApp ? guiApp->getScaledPixmap("images/", "emblem-shellescape-user")
@@ -1886,7 +1913,7 @@ GuiDocument::GuiDocument(GuiView & lv)
 	docPS->addPanel(bulletsModule, N_("Bullets"));
 	docPS->addPanel(branchesModule, N_("Branches"));
 	docPS->addPanel(outputModule, N_("Output"));
-	docPS->addPanel(preambleModule, N_("LaTeX Preamble"));
+	docPS->addPanel(preambleModule, N_("Preamble"));
 	docPS->setCurrentPanel("Document Class");
 
 	// Filter out (dark/light) mode changes
@@ -5164,7 +5191,7 @@ bool GuiDocument::isValid()
 
 	docPS->markPanelValid(N_("Listings[[inset]]"), listings_valid);
 	docPS->markPanelValid(N_("Local Layout"), local_layout_valid && localLayout->isValid());
-	docPS->markPanelValid(N_("LaTeX Preamble"), preamble_valid);
+	docPS->markPanelValid(N_("Preamble"), preamble_valid);
 	
 	return listings_valid && local_layout_valid && preamble_valid;
 }

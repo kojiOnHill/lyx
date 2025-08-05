@@ -13,22 +13,48 @@
   <property name="windowTitle">
    <string/>
   </property>
-  <layout class="QGridLayout">
-   <property name="leftMargin">
-    <number>11</number>
-   </property>
-   <property name="topMargin">
-    <number>11</number>
-   </property>
-   <property name="rightMargin">
-    <number>11</number>
-   </property>
-   <property name="bottomMargin">
-    <number>11</number>
-   </property>
-   <property name="spacing">
-    <number>6</number>
-   </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0" colspan="3">
+    <widget class="QTabWidget" name="preamblesTW">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>LaTe&amp;X</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="latexPreambleTE">
+         <property name="inputMethodHints">
+          <set>Qt::ImhMultiLine|Qt::ImhPreferLatin</set>
+         </property>
+         <property name="acceptRichText">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>&amp;HTML</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="htmlPreambleTE">
+         <property name="inputMethodHints">
+          <set>Qt::ImhMultiLine|Qt::ImhPreferLatin</set>
+         </property>
+         <property name="acceptRichText">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
    <item row="1" column="0">
     <widget class="QLineEdit" name="findLE">
      <property name="placeholderText">
@@ -50,16 +76,6 @@
      </property>
      <property name="text">
       <string>&amp;Edit Externally</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="3">
-    <widget class="QTextEdit" name="preambleTE">
-     <property name="inputMethodHints">
-      <set>Qt::ImhMultiLine|Qt::ImhPreferLatin</set>
-     </property>
-     <property name="acceptRichText">
-      <bool>false</bool>
      </property>
     </widget>
    </item>

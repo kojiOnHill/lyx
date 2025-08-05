@@ -864,6 +864,10 @@ string BufferParams::readToken(Lexer & lex, string const & token,
 			readPreamble(lex);
 			break;
 		}
+		if (token == "\\begin_preamble_html") {
+			readHTMLPreamble(lex);
+			break;
+		}
 		if (token == "\\begin_local_layout") {
 			readLocalLayout(lex, false);
 			break;
@@ -1600,13 +1604,22 @@ void BufferParams::writeFile(ostream & os, Buffer const * buf) const
 		   << "\n\\end_metadata\n";
 	}
 
-	// then the preamble
+	// then the preambles
+	// 1. LaTeX
 	if (!preamble.empty()) {
 		// remove '\n' from the end of preamble
 		docstring const tmppreamble = rtrim(preamble, "\n");
 		os << "\\begin_preamble\n"
 		   << to_utf8(tmppreamble)
 		   << "\n\\end_preamble\n";
+	}
+	// 2. HTML
+	if (!html_preamble.empty()) {
+		// remove '\n' from the end of preamble
+		docstring const tmphtmlpreamble = rtrim(html_preamble, "\n");
+		os << "\\begin_preamble_html\n"
+		   << to_utf8(tmphtmlpreamble)
+		   << "\n\\end_preamble_html\n";
 	}
 
 	// the options
@@ -3470,6 +3483,16 @@ void BufferParams::readPreamble(Lexer & lex)
 			"consistency check failed." << endl;
 
 	preamble = lex.getLongString(from_ascii("\\end_preamble"));
+}
+
+
+void BufferParams::readHTMLPreamble(Lexer & lex)
+{
+	if (lex.getString() != "\\begin_preamble_html")
+		lyxerr << "Error (BufferParams::readHTMLPreamble):"
+			"consistency check failed." << endl;
+
+	html_preamble = lex.getLongString(from_ascii("\\end_preamble_html"));
 }
 
 

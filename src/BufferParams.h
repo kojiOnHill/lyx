@@ -396,6 +396,8 @@ public:
 	std::string origin;
 	///
 	docstring preamble;
+	///
+	docstring html_preamble;
 	/// DocumentMetadata as introduced by LaTeX 2022/06
 	docstring document_metadata;
 	///
@@ -669,6 +671,8 @@ public:
 private:
 	///
 	void readPreamble(support::Lexer &);
+	///
+	void readHTMLPreamble(support::Lexer &);
 	///
 	void readDocumentMetadata(support::Lexer &);
 	///

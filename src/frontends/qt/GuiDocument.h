@@ -424,10 +424,12 @@ protected:
 
 private:
 	void closeEvent(QCloseEvent *) override;
-	void on_preambleTE_textChanged() { changed(); }
+	void on_latexPreambleTE_textChanged() { changed(); }
+	void on_htmlPreambleTE_textChanged() { changed(); }
 
 	typedef std::map<BufferId, std::pair<int,int> > Coords;
-	Coords preamble_coords_;
+	Coords latex_preamble_coords_;
+	Coords html_preamble_coords_;
 	BufferId current_id_;
 	std::unique_ptr<support::TempFile> tempfile_;
 	/// LaTeX syntax highlighter
