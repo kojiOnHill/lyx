@@ -17,6 +17,7 @@
 
 #include "support/debug.h"
 #include "support/docstream.h"
+#include "support/lassert.h"
 #include "support/FileName.h"
 #include "support/filetools.h"
 #include "support/Lexer.h"
@@ -361,6 +362,8 @@ docstring const Trans::process(char_type c, TransManager & k)
 
 	if (!t.empty() && t[0] != 0)
 		return t; //return k.normalkey(c);
+
+	LASSERT(t.size()>1, return docstring());
 
 	return k.deadkey(c, kmod_list_[static_cast<tex_accent>(t[1])]);
 }
