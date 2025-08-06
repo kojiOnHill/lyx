@@ -75,14 +75,30 @@ void TeXErrors::insertError(int line, docstring const & error_desc,
 			    docstring const & error_text,
 			    string const & child_name)
 {
+	for (Error const & e : errors) {
+		if (e.error_in_line == line
+		    && e.error_desc == error_desc
+		    && e.error_text == error_text
+		    && e.child_name == child_name)
+			// already recorded
+			return;
+	}
 	errors.emplace_back(line, error_desc, error_text, child_name);
 }
 
 
 void TeXErrors::insertRef(int line, docstring const & error_desc,
-			    docstring const & error_text,
-			    string const & child_name)
+			  docstring const & error_text,
+			  string const & child_name)
 {
+	for (Error const & e : undef_ref) {
+		if (e.error_in_line == line
+		    && e.error_desc == error_desc
+		    && e.error_text == error_text
+		    && e.child_name == child_name)
+			// already recorded
+			return;
+	}
 	undef_ref.emplace_back(line, error_desc, error_text, child_name);
 }
 
@@ -433,7 +449,6 @@ int LaTeX::run(TeXErrors & terr)
 			rerun = false;
 			++count;
 			LYXERR(Debug::OUTFILE, "Run #" << count);
-			terr.clearErrors();
 			message(runMessage(count));
 			startscript();
 			scanres = scanLogFile(terr);
@@ -531,7 +546,6 @@ int LaTeX::run(TeXErrors & terr)
 		rerun = false;
 		++count;
 		LYXERR(Debug::OUTFILE, "Run #" << count);
-		terr.clearErrors();
 		message(runMessage(count));
 		startscript();
 		scanres = scanLogFile(terr);
