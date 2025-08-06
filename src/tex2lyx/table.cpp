@@ -512,8 +512,8 @@ void handle_colalign(Parser & p, vector<ColInfo> & colinfo,
 					continue;
 				// *{n}{arg} means 'n' columns of type 'arg'
 				string const num = p.verbatim_item();
-				string const arg = p.verbatim_item();
-				if (!support::isStrUnsignedInt(num)) {
+				string arg = p.getArg('{', '}');
+				if (!support::isStrUnsignedInt(num) || arg.empty()) {
 					error_message("Invalid column specification"
 							" '*{" + num + "}{" + arg + "}'.\n"
 							"Cannot proceed!", true);
