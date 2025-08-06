@@ -513,6 +513,11 @@ void handle_colalign(Parser & p, vector<ColInfo> & colinfo,
 				// *{n}{arg} means 'n' columns of type 'arg'
 				string const num = p.verbatim_item();
 				string const arg = p.verbatim_item();
+				if (!support::isStrUnsignedInt(num)) {
+					warning_message("Ignoring invalid column specification"
+							" '*{" + num + "}{" + arg + "}'.");
+					break;
+				}
 				size_t const n = convert<unsigned int>(num);
 				if (!arg.empty() && n > 0) {
 					string s("{");
