@@ -54,7 +54,7 @@ lyx_ctests_long_time='ru/UserGuide_(dvi3|pdf4|pdf5)_systemF'
 # ctest -R "${lyx_ctests_lots_of_ram}"
 lyx_ctests_lots_of_ram='supported-languages_babel_non-tex_(dvi3|pdf5)_systemF|export/doc/zh_CN/Intro_(dvi3|pdf5)_systemF|export/doc/zh_CN/Tutorial_(dvi3|pdf5)_systemF'
 # TODO: rename ctest_exclude to include "lyx".
-ctest_exclude="(supported-languages_polyglossia_.*_systemF|(%28APA%29,_v._6|Astronomical).*(pdf|dvi|lyx22|lyx23|lyx24)|BATCH_compare-test|BATCH_outline-beamer|BATCH_vcs-info|Springer_Nature_Journals_docbook5|${lyx_ctests_lots_of_ram}|${lyx_ctests_long_time})"
+ctest_exclude="(supported-languages_polyglossia_.*_systemF|(%28APA%29,_v._6|Astronomical).*(pdf|dvi|lyx22|lyx23|lyx24)|BATCH_compare-test|BATCH_outline-beamer|BATCH_vcs-info|${lyx_ctests_lots_of_ram}|${lyx_ctests_long_time})"
 # timeout of 10m.
 function ctest-reg-if-fail ()
 {
