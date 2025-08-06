@@ -5108,7 +5108,16 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			continue;
 		}
 
-		if (t.cs() == "index" ||
+		if (t.cs() == "index" && p.hasOpt()) {
+			// advanced index command (maybe from package imakeidx)
+			// output as ERT
+			string const opt = p.getOpt();
+			output_ert_inset(os, t.asInput() + opt + "{" +
+					 p.verbatim_item() + '}', context);
+			continue;
+		}
+
+		if ((t.cs() == "index") ||
 		    (t.cs() == "sindex" && preamble.use_indices() == "true")) {
 			context.check_layout(os);
 			string const arg = (t.cs() == "sindex" && p.hasOpt()) ?
@@ -5160,6 +5169,14 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 				parse_text_snippet(p, FLAG_ITEM, false, context);
 			}
 			eat_whitespace(p, os, context, true);
+			continue;
+		}
+
+		if (t.cs() == "printindex" && p.hasOpt() && preamble.use_indices() != "true") {
+			// advanced printindex command (maybe from package imakeidx)
+			// output as ERT
+			string const opt = p.getOpt();
+			output_ert_inset(os, t.asInput() + opt, context);
 			continue;
 		}
 

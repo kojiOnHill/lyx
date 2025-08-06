@@ -2980,7 +2980,7 @@ void Preamble::parse(Parser & p, string const & forceclass,
 			continue;
 		}
 
-		if (t.cs() == "makeindex") {
+		if (t.cs() == "makeindex" && !p.hasOpt()) {
 			// LyX will re-add this if a print index command is found
 			p.skip_spaces();
 			continue;
