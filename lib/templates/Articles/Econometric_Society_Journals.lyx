@@ -1,0 +1,4370 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 642
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /systemlyxdir/templates/Articles/
+\textclass econsocart
+\options ecta,nameyear
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding utf8-plain
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle false
+\pdf_quoted_options "citecolor=blue,linkcolor=blue,urlcolor=blue"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style ecta-fullname
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package prettyref
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor none
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is a template \SpecialChar LyX
+ file for articles to be submitted to the journals of Econometrics Society (Econometrica,
+ Quantitative Economics and Theoretical Economics).
+ This document is typeset for Econometrica using keyword 
+\series bold
+ecta
+\series default
+ in menu 
+\family sans
+Document
+\family default
+\SpecialChar menuseparator
+
+\family sans
+Settings
+\family default
+\SpecialChar menuseparator
+
+\family sans
+DocumentClass
+\family default
+\SpecialChar menuseparator
+
+\family sans
+Class
+\begin_inset space ~
+\end_inset
+
+options
+\family default
+.
+ The journal can be switched to Quantitative Economics by changing this keyword to 
+\series bold
+qe
+\series default
+.
+ Similarly,
+ keyword 
+\series bold
+te
+\series default
+ is for Theoretical Economics.
+ How to install the Econometrica \SpecialChar LaTeX
+ class to your \SpecialChar LaTeX
+ system is explained in 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://wiki.lyx.org/Examples/Econometrica
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This template is prepared for the 
+\series bold
+draft
+\series default
+ mode.
+ When you finalize the document for actual submission,
+ uncheck the option 
+\family sans
+Predefined
+\family default
+ in the menu 
+\family sans
+Document
+\family default
+\SpecialChar menuseparator
+
+\family sans
+Settings
+\family default
+\SpecialChar menuseparator
+
+\family sans
+DocumentClass
+\family default
+\SpecialChar menuseparator
+
+\family sans
+Class
+\begin_inset space ~
+\end_inset
+
+options
+\family default
+ and write 
+\series bold
+final
+\series default
+ in the field 
+\family sans
+Custom
+\family default
+.
+ For eqnation numbering by sections,
+ set 
+\series bold
+seceqn
+\series default
+.
+ To set multiple otions in the field 
+\family sans
+Custom
+\family default
+,
+ use comma as a separator.
+\end_layout
+
+\begin_layout Plain Layout
+Other available document options are:
+\end_layout
+
+\begin_layout Itemize
+Specific options
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+notes,
+ supplement,
+ onlineonly,
+ report
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Different paper sizes
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+wwwview,
+ wwwprint
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+PDF options
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+bookmarks,
+ nobookmarks,
+ nowpsmd
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+XML options
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+xmlfm,
+ xmlbm
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Open access
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+openaccess
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Query page
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+noquerypage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Put line numbers in margins
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+linenumbers,
+ nolinenumbers
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Title of an article in Econometrics Society Journals
+\end_layout
+
+\begin_layout RunTitle
+Title to be shown at the header of odd pages
+\end_layout
+
+\begin_layout Authors Block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+You can use Author environment when there is only one author.
+ However,
+ if you have multiple authors,
+ use Authors Block instead of Author environment as in this example.
+ Put the name of each author in the Author inset.
+ Put all names within one line.
+\end_layout
+
+\begin_layout Plain Layout
+Use 
+\backslash
+particle for den|der|de|van|von (only lc!)
+\end_layout
+
+\begin_layout Plain Layout
+Initials should be in the First Name inset (if any) with spaces.
+\end_layout
+
+\begin_layout Plain Layout
+E-mail is mandatory for each author.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Author
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+add1,add11
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Name (First Name)
+status open
+
+\begin_layout Plain Layout
+First
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Flex Name (Surname)
+status open
+
+\begin_layout Plain Layout
+Author
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Email Address
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+e1
+\end_layout
+
+\end_inset
+
+first@somewhere.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Author
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+add11
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Name (First Name)
+status open
+
+\begin_layout Plain Layout
+Second
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Flex Name (Surname)
+status open
+
+\begin_layout Plain Layout
+Author
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Email Address
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+e2
+\end_layout
+
+\end_inset
+
+second@somewhere.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Author
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+add2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Name (First Name)
+status open
+
+\begin_layout Plain Layout
+Third
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Flex Name (Surname)
+status open
+
+\begin_layout Plain Layout
+Author
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Email Address
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+e3
+\end_layout
+
+\end_inset
+
+third@somewhere.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Authors Block
+\begin_inset Flex Address
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+add1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Address Division
+status open
+
+\begin_layout Plain Layout
+First Department of the First Author
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset Flex Address Organization
+status open
+
+\begin_layout Plain Layout
+University
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Address
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+add11
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Address Division
+status open
+
+\begin_layout Plain Layout
+Second Department of the First Author
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset Flex Address Organization
+status open
+
+\begin_layout Plain Layout
+University
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Address
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+add2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Address Division
+status open
+
+\begin_layout Plain Layout
+Department of the Second and Third Authors
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset Flex Address Organization
+status open
+
+\begin_layout Plain Layout
+University
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout RunAuthor
+Author name to be shown at the header of even pages
+\end_layout
+
+\begin_layout Funding
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Put support info here.
+ Reminder:
+ do not thank the handling coeditor anonymously or by name.
+\end_layout
+
+\end_inset
+
+We thank four anonymous referees.
+ The Editor should not be thanked anonymously or by name in this footnote,
+ or elsewhere in the paper.
+ The first author gratefully acknowledges financial support from the National Science Foundation through Grant XXX-0000000.
+\end_layout
+
+\begin_layout Coeditor
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Name (First Name)
+status open
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Name (Surname)
+status open
+
+\begin_layout Plain Layout
+Surname
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+[Name Surname;
+ will be inserted later]
+\end_layout
+
+\begin_layout Abstract
+The abstract should summarize the contents of the paper.
+ It should be clear,
+ descriptive,
+ self-explanatory and not longer than 150 words.
+ It should also be suitable for publication in abstracting services.
+ Please avoid using math formulas as much as possible.
+ We recommend 3–8 keywords.
+\end_layout
+
+\begin_layout Keyword
+\begin_inset Flex Keyword
+status open
+
+\begin_layout Plain Layout
+First keyword
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Keyword
+status open
+
+\begin_layout Plain Layout
+second keyword
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Keyword
+status open
+
+\begin_layout Plain Layout
+third keyword
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:s1"
+
+\end_inset
+
+This template helps you to create a properly formatted \SpecialChar LaTeX2e
+ manuscript using \SpecialChar LyX
+.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This document is basically adopted from 
+\family typewriter
+ecta_sample.tex
+\family default
+ and other files at 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/vtex-soft/texsupport.econometricsociety-ecta/
+\end_layout
+
+\end_inset
+
+ to fit the usage in \SpecialChar LyX
+.
+ If there is any difference in discription or results in \SpecialChar LaTeX
+ output,
+ the original documents have the precedence.
+ Also,
+ if there is any inconvenience in the layout 
+\begin_inset Quotes eld
+\end_inset
+
+Econometric Society Journals
+\begin_inset Quotes erd
+\end_inset
+
+ for submission or else,
+ please report to 
+\family typewriter
+lyx-devel@lists.lyx.org
+\family default
+.
+\end_layout
+
+\end_inset
+
+ Prepare your paper in the same style as used in this sample .pdf file.
+ Try to avoid excessive use of italics and bold face;
+ underlining is generally banned (except for exceptional cases).
+ Please do not use any \SpecialChar LyX
+ specification that results in \SpecialChar LaTeX2e
+ or \SpecialChar TeX
+ commands that affect the layout or formatting of your document (i.e.,
+ settings in 
+\family sans
+Document\SpecialChar menuseparator
+Page
+\begin_inset space ~
+\end_inset
+
+Layout
+\family default
+ or 
+\family sans
+Page
+\begin_inset space ~
+\end_inset
+
+Margins
+\family default
+ etc.).
+ Note that the Introduction should be Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:s1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ it should not immediately follow the abstract without a heading.
+\end_layout
+
+\begin_layout Section
+Section Headings
+\end_layout
+
+\begin_layout Standard
+Here are some subsections:
+ 
+\end_layout
+
+\begin_layout Subsection
+A Subsection
+\end_layout
+
+\begin_layout Standard
+Regular text.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+A Subsubsection
+\end_layout
+
+\begin_layout Standard
+Regular text.
+\end_layout
+
+\begin_layout Paragraph*
+Paragraph heading
+\end_layout
+
+\begin_layout Standard
+If you want to add mini-headings for paragraphs without numbers please use 
+\family sans
+Paragraph*
+\family default
+ environment.
+\end_layout
+
+\begin_layout Section
+Text
+\end_layout
+
+\begin_layout Subsection
+Lists
+\end_layout
+
+\begin_layout Standard
+The following is an example of an 
+\emph on
+itemized
+\emph default
+ list,
+ two levels deep.
+\end_layout
+
+\begin_layout Itemize
+This is the first item of an itemized list.
+ Each item in the list is marked with a 
+\begin_inset Quotes eld
+\end_inset
+
+tick.
+\begin_inset Quotes erd
+\end_inset
+
+ The document style determines what kind of tick mark is used.
+\end_layout
+
+\begin_layout Itemize
+This is the second item of the list.
+ It contains another list nested inside of it.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the first item of an itemized list that is nested within the itemized list.
+\end_layout
+
+\begin_layout Itemize
+This is the second item of the inner list.
+ \SpecialChar LaTeX
+ allows you to nest lists deeper than you really should.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is the rest of the second item of the outer list.
+\end_layout
+
+\begin_layout Itemize
+This is the third item of the list.
+\end_layout
+
+\begin_layout Standard
+The following is an example of an 
+\emph on
+enumerated
+\emph default
+ list,
+ two levels deep.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument listpreamble:1
+status open
+
+\begin_layout Plain Layout
+[(ii)]
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+(i)
+\end_layout
+
+\end_inset
+
+This is the first item of an enumerated list.
+ Each item in the list is marked with a 
+\begin_inset Quotes eld
+\end_inset
+
+tick.
+\begin_inset Quotes erd
+\end_inset
+
+ The document style determines what kind of tick mark is used.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+(ii)
+\end_layout
+
+\end_inset
+
+ This is the second item of the list.
+ It contains another list nested inside of it.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+This is the first item of an enumerated list that is nested within.
+\end_layout
+
+\begin_layout Enumerate
+This is the second item of the inner list.
+ \SpecialChar LaTeX
+ allows you to nest lists deeper than you really should.
+\end_layout
+
+\begin_layout Standard
+This is the rest of the second item of the outer list.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+(iii)
+\end_layout
+
+\end_inset
+
+ This is the third item of the list.
+\end_layout
+
+\begin_layout Standard
+Do not use (1),
+ (2),
+ etc.
+\begin_inset space \space{}
+\end_inset
+
+for items in order to avoid confusion with numbered equations.
+\end_layout
+
+\begin_layout Subsection
+Punctuation
+\end_layout
+
+\begin_layout Standard
+Avoid unnecessary hyphenation;
+ many hyphenated words can be treated as one or two words.
+ Dashes come in three sizes:
+ a hyphen,
+ an intra-word dash like 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $U$
+\end_inset
+
+-statistics
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+the time-homogeneous model
+\begin_inset Quotes erd
+\end_inset
+
+;
+ a medium dash (also called an 
+\begin_inset Quotes eld
+\end_inset
+
+en-dash
+\begin_inset Quotes erd
+\end_inset
+
+) for number ranges or between two equal entities like 
+\begin_inset Quotes eld
+\end_inset
+
+1–2
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+Cauchy–Schwarz inequality
+\begin_inset Quotes erd
+\end_inset
+
+,
+ which can be inserted by typing 
+\begin_inset Quotes eld
+\end_inset
+
+-
+\begin_inset Quotes erd
+\end_inset
+
+ twice in \SpecialChar LyX
+;
+ and a punctuation dash (also called an 
+\begin_inset Quotes eld
+\end_inset
+
+em-dash
+\begin_inset Quotes erd
+\end_inset
+
+) which can be inserted by typing 
+\begin_inset Quotes eld
+\end_inset
+
+-
+\begin_inset Quotes erd
+\end_inset
+
+ three times in \SpecialChar LyX
+ in place of a comma,
+ semicolon,
+ colon or parentheses—
+like this.
+\end_layout
+
+\begin_layout Standard
+Generating an ellipsis \SpecialChar ldots
+ with the right spacing around the periods requires using 
+\family sans
+Insert\SpecialChar menuseparator
+Special Character\SpecialChar menuseparator
+Ellipsis
+\family default
+.
+\end_layout
+
+\begin_layout Subsection
+Citation
+\end_layout
+
+\begin_layout Standard
+Only include in the reference list entries for which there are text citations,
+ and make sure all citations are included in the reference list.
+ Simple author and year cite:
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "b1"
+literal "false"
+
+\end_inset
+
+.
+ Multiple bibliography items cite:
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "b2,b3,b4,b5"
+literal "false"
+
+\end_inset
+
+.
+ Author only cite:
+ 
+\begin_inset CommandInset citation
+LatexCommand citeauthor
+key "b4"
+literal "false"
+
+\end_inset
+
+.
+ Year only cite:
+ (
+\begin_inset CommandInset citation
+LatexCommand citeyear
+key "b4"
+literal "false"
+
+\end_inset
+
+).
+ Citing bibliography with object 
+\begin_inset CommandInset citation
+LatexCommand citet
+before "Theorem 1"
+key "b1"
+literal "false"
+
+\end_inset
+
+.
+ Citing within brackets is done with the same commands (e.g.,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "b2,b3,b4"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+Fonts
+\end_layout
+
+\begin_layout Standard
+Please use text fonts in text mode that can be specified through 
+\family sans
+Edit\SpecialChar menuseparator
+Text Properties\SpecialChar menuseparator
+Customize
+\family default
+,
+ e.g.:
+ 
+\end_layout
+
+\begin_layout Itemize
+Roman
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Italic
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bold
+\end_layout
+
+\begin_layout Itemize
+
+\shape smallcaps
+Small Caps
+\end_layout
+
+\begin_layout Itemize
+
+\family sans
+Sans serif
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+Typewriter
+\end_layout
+
+\begin_layout Standard
+Please use mathematical fonts in mathematical mode which can be inserted from 
+\family sans
+Fonts
+\family default
+ button in the 
+\family sans
+Math Panels 
+\family default
+toolbar,
+ e.g.:
+\end_layout
+
+\begin_layout Itemize
+Roman:
+ 
+\begin_inset Formula $\mathrm{ABCabc123}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Italic:
+ 
+\begin_inset Formula $\mathit{ABCabc123}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Bold:
+ 
+\begin_inset Formula $\mathbf{ABCabc123}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bold symbol:
+ 
+\begin_inset Formula $\boldsymbol{ABCabc123\alpha\beta\gamma}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Calligraphic:
+ 
+\begin_inset Formula $\mathcal{ABC}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Blackboard:
+ 
+\begin_inset Formula $\mathbb{ABC}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sans serif:
+ 
+\begin_inset Formula $\mathsf{ABCabc123}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Typewriter:
+ 
+\begin_inset Formula $\mathtt{ABCabc123}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Fraktur:
+ 
+\begin_inset Formula $\mathfrak{ABCabc123}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that Calligraphic and Blackboard fonts belongs to capital letters-only font typefaces.
+\end_layout
+
+\begin_layout Section
+Notes
+\end_layout
+
+\begin_layout Standard
+Footnotes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This is an example of a footnote.
+\end_layout
+
+\end_inset
+
+ pose no problems in text.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that footnote number is after punctuation.
+\end_layout
+
+\end_inset
+
+ Please do not add footnotes on math.
+\end_layout
+
+\begin_layout Section
+Numbers
+\end_layout
+
+\begin_layout Standard
+A decimal point always should be preceded by a whole number and never should be left 
+\begin_inset Quotes eld
+\end_inset
+
+naked.
+\begin_inset Quotes erd
+\end_inset
+
+ Decimal expressions of numbers less than 1 always should be preceded by a zero (0) to enhance the visibility of the decimal.
+ For example,
+ .3 should be 0.3.
+ This applies to text,
+ tables,
+ and figures.
+\end_layout
+
+\begin_layout Section
+Quotations
+\end_layout
+
+\begin_layout Standard
+Text is displayed by indenting it from the left margin.
+ There are short quotations
+\end_layout
+
+\begin_layout Quote
+This is a short quotation.
+ It consists of a single paragraph of text.
+ There is no paragraph indentation.
+ It should be set by selecting 
+\family sans
+Quote
+\family default
+ environment.
+\end_layout
+
+\begin_layout Standard
+and longer ones.
+\end_layout
+
+\begin_layout Quotation
+This is a longer quotation.
+ It consists of two paragraphs of text.
+ The beginning of each paragraph is indicated by an extra indentation.
+\end_layout
+
+\begin_layout Quotation
+This is the second paragraph of the quotation.
+ It is just as dull as the first paragraph.
+ It should be set by selecting 
+\family sans
+Quotation
+\family default
+ environment.
+\end_layout
+
+\begin_layout Section
+Environments
+\end_layout
+
+\begin_layout Standard
+Please use regular counters (Theorem 1) as opposed to counters belonging on sections (Theorem 3.1).
+ Results (Lemmas,
+ Propositions,
+ Theorems,
+ Claims) can be on the same or different counters.
+\end_layout
+
+\begin_layout Subsection
+Examples for 
+\family typewriter
+\emph on
+plain
+\family default
+\emph default
+-Style Environments
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:th1"
+
+\end_inset
+
+ This is the body of Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:th1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+This is the body of the proof of the theorem above.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim:1"
+
+\end_inset
+
+This is the body of Claim 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim:1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Axiom
+\begin_inset CommandInset label
+LatexCommand label
+name "axm:1"
+
+\end_inset
+
+This is the body of Axiom 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "axm:1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Axioms have a different counter from results (e.g.
+ Theorems,
+ Propositions,
+ Lemmas).
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Title of the Theorem
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:2"
+
+\end_inset
+
+This is the body of Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Theorem
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ has additional title.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:1"
+
+\end_inset
+
+This is the body of Lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lem:1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lem:1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ is numbered after Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ because they share the same counter.
+\end_layout
+
+\begin_layout Fact
+This is the body of the fact.
+ Fact is unnumbered since it is defined in the layout file.
+ If this is to be changed,
+ fill the following code in 
+\family sans
+Document\SpecialChar menuseparator
+Settings...\SpecialChar menuseparator
+Local
+\begin_inset space ~
+\end_inset
+
+Layout
+\family default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Verbatim
+Style Fact
+\end_layout
+
+\begin_layout Verbatim
+	LabelString "Fact 
+\backslash
+thefact:"
+\end_layout
+
+\begin_layout Verbatim
+End
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Proof of Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+This is the body of the proof of Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Examples for 
+\family typewriter
+\emph on
+definition
+\family default
+\emph default
+-Style Environments
+\end_layout
+
+\begin_layout Standard
+The following environments can be numbered or not;
+ if numbered,
+ they should be on different counters from results.
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:1"
+
+\end_inset
+
+This is the body of Definition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Definitions should be on a different counter from results (e.g.
+ Theorems,
+ Propositions,
+ Lemmas).
+\end_layout
+
+\begin_layout Example
+This is the body of the example.
+ Example is unnumbered because it is defined in the layout file.
+\end_layout
+
+\begin_layout Remark
+This is the body of the remark.
+\end_layout
+
+\begin_layout Section
+Equations and the Like
+\end_layout
+
+\begin_layout Standard
+Only number equations to which there is a subsequent reference.
+ See equations below 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:ccs"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:7"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Please punctuate equations as you would punctuate a sentence,
+ that is add a comma between two equations and add a period if it ends a sentence.
+\end_layout
+
+\begin_layout Standard
+Two equations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+C_{s}=K_{M}\frac{\mu/\mu_{x}}{1-\mu/\mu_{x}}\label{eq:ccs}
+\end{equation}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{equation}
+G=\frac{P_{\mathrm{opt}}-P_{\mathrm{ref}}}{P_{\mathrm{ref}}}100(\%)
+\end{equation}
+
+\end_inset
+
+Equation arrays:
+\begin_inset Formula 
+\begin{eqnarray}
+\frac{dS}{dt} & = & -\sigma X+s_{F}F,\\
+\frac{dX}{dt} & = & \mu X,\\
+\frac{dP}{dt} & = & \pi X-k_{h}P,\\
+\frac{dV}{dt} & = & F.
+\end{eqnarray}
+
+\end_inset
+
+One long equation,
+ note that the equation number is on the last line:
+\begin_inset Formula 
+\begin{eqnarray}
+\mu_{\text{normal}} & = & \mu_{x}\frac{C_{s}}{K_{x}C_{x}+C_{s}}\nonumber \\
+ & = & \mu_{\text{normal}}-Y_{x/s}\bigl(1-H(C_{s})\bigr)(m_{s}+\pi/Y_{p/s})\nonumber \\
+ & = & \mu_{\text{normal}}/Y_{x/s}+H(C_{s})(m_{s}+\pi/Y_{p/s})\label{eq:7}
+\end{eqnarray}
+
+\end_inset
+
+Note that variables made of more than one letter should use 
+\family sans
+Italic
+\family default
+ font from the 
+\family sans
+Font
+\family default
+ button in the 
+\family sans
+Math
+\family default
+
+\begin_inset space ~
+\end_inset
+
+
+\family sans
+Panel
+\family default
+ toolbar,
+ e.g.,
+ 
+\begin_inset Formula $\mathit{sov}=550$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\mathit{sov}$
+\end_inset
+
+ is sum of votes.
+ Abbreviations used in subscripts or superscripts should use 
+\family sans
+Roman
+\family default
+ font in the same button,
+ e.g.,
+ 
+\begin_inset Formula $t_{\mathrm{max}}-t_{\mathrm{min}}=10$
+\end_inset
+
+.
+ Operator names should use 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+verb|
+\backslash
+operatorname|
+\end_layout
+
+\end_inset
+
+ in the math mode,
+ e.g.
+ 
+\begin_inset Formula $\operatorname{AR}(1)$
+\end_inset
+
+.
+ To insert it,
+ start typing in the math mode as 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+verb|
+\backslash
+operatorname{|
+\end_layout
+
+\end_inset
+
+ which opens a spaceholder for the operator name,
+ i.e.
+ the closing \SpecialChar LaTeX
+ brace is prepared by \SpecialChar LyX
+.
+ Type 
+\begin_inset Quotes eld
+\end_inset
+
+AR
+\begin_inset Quotes erd
+\end_inset
+
+ in the spaceholder,
+ hit a spacekey to exit,
+ and continue the rest,
+ 
+\begin_inset Quotes eld
+\end_inset
+
+(1)
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Also,
+ note that 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ symbol is preferred to 
+\begin_inset Formula $\varnothing$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Tables and Figures
+\end_layout
+
+\begin_layout Standard
+Cross-references to labeled tables:
+ As you can see in Table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sphericcase"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ and also in Table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "parset"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sample of cross-reference to figure:
+ Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "penG"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ shows that it is not easy to get something on paper.
+ Note that figures will be in grayscale in the printed version.
+\begin_inset Float table
+placement document
+alignment document
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The spherical case (
+\begin_inset Formula $I_{1}=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $I_{2}=0$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sphericcase"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="6">
+<features booktabs="true" borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="left" valignment="top" color="default" special="@{}l">
+<column alignment="right" valignment="top" color="default">
+<column alignment="right" valignment="top" color="default">
+<column alignment="right" valignment="top" color="default">
+<column alignment="right" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default" special="c@{}@{}">
+<row color="default">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Equil.
+ Points
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="left" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+2.485252241
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.017100631
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.230711648
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="left" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.068883732
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.009869059
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.756386544
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.000057922
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.210589855
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.007021459
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.440510897
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.455926604
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.212446624
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.586126667
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.667031314
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.529879957
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.497660052
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.164386674
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.169308438
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.866562449
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.560414471
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.421735658
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.093667445
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.241525367
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{9}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.560414471
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.421735658
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.093667445
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.241525367
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.472523232
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.393484549
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.083801333
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.733436505
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="left" valignment="top" bottomline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{11}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.472523232
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+1.393484549
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.083801333
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.733436505
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This table will be centered in the output
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Legend
+status open
+
+\begin_layout Plain Layout
+This is how table note should be presented.
+ Please do not use asterisks or bold face to denote statistical significance.
+ We encourage authors to report standard errors and coverage sets or confidence intervals.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample posterior estimates for each model.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "parset"
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="7">
+<features booktabs="true" borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default" special="@{}l">
+<column alignment="center" valignment="top" color="default">
+<column alignment="right" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="right" valignment="top" color="default">
+<column alignment="right" valignment="top" color="default">
+<column alignment="right" valignment="top" color="default" special="r@{}@{}">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quantile
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mean
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Std.
+ Dev.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.5%
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50%
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+97.5%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Model 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+12.29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+18.04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+11.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+8.56
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.02
+\end_layout
+
+\end_inset
+</cell>
+<cell mroffset="6pt" alignment="right" valignment="top" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+[6pt]
+\end_layout
+
+\end_inset
+
+Model 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+4.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+11.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+4.44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.06
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.79
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.78
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.07
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+[6pt]
+\end_layout
+
+\end_inset
+
+Model 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+11.85
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+17.34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+11.60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+7.85
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.73
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.73
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.16 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.34
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+0.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This table will be centered in the output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Econometric_Society_Journals_figure.pdf
+	lyxscale 50
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This figure will be centered in the output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The dotted lines show the values of 
+\begin_inset Formula $u(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x$
+\end_inset
+
+ in the discrete support of 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ The solid lines show 
+\begin_inset Formula $u_{\textrm{conv}}(x)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "penG"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Appendix
+
+\end_layout
+
+\begin_deeper
+\begin_layout Section*
+Title
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:appn"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Appendices should be provided using Appendix environment in the dropdown menu of the standard toolbar,
+ instead of using 
+\family sans
+Document\SpecialChar menuseparator
+Start Appendix Here
+\family default
+.
+ If there is only one appendix,
+ then please refer to it in text as \SpecialChar ldots
+ in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+hyperref[sec:appn]{Appendix}
+\end_layout
+
+\end_inset
+
+.
+ Type nothing in the Appendix environtment itself,
+ and insert nested Section and Standard environments immediately below for texts as in this example.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Appendix
+
+\end_layout
+
+\begin_deeper
+\begin_layout Section
+Title of the First Appendix
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:appA"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If there are more than one appendix,
+ then please refer to it as \SpecialChar ldots
+ in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:appA"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+,
+ Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:appB"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+,
+ etc.
+\end_layout
+
+\begin_layout Section
+Title of the Second Appendix
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:appB"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+First Subsection of Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:appB"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:appB1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If your appendix is long,
+ make sure to divide it into subsections and refer to them in text.
+ Use the standard \SpecialChar LyX
+ labels for headings in Appendix environments.
+\end_layout
+
+\begin_layout Standard
+Headings and other objects will be numbered automatically.
+\begin_inset Formula 
+\begin{equation}
+\mathcal{P}=(j_{k,1},j_{k,2},\ldots,j_{k,m(k)})\label{eq:path}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sample of cross-reference to formula 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:path"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:appB1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Note that it is better to refer to Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:appB1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ as opposed to Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:appB"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+,
+ because it is easier for the reader to locate the necessary place.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset Note Note
+status open
+
+\begin_layout Section*
+Note for References
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+\color dvips:wildstrawberry
+IMPORTANT:
+\end_layout
+
+\begin_layout Quote
+References in the bibliography should be complete,
+ including the first and last names,
+ and date of publication.
+\end_layout
+
+\begin_layout Plain Layout
+If your bibliography is in bibtex format,
+ use 
+\family sans
+Insert\SpecialChar menuseparator
+List/Contents/References\SpecialChar menuseparator
+BibTeX Bibliography
+\family default
+ (or dissolve the LyX Note inset immediately below) and choose your bibliography file (ususally '*.bib').
+ If it is in the search paths of \SpecialChar LaTeX
+,
+ you can find it in the 
+\family sans
+Found by LaTeX
+\family default
+ list,
+ otherwise use the button 
+\family sans
+Add Local...
+
+\family default
+ to select the bibliography file.
+ The Style in the dialog should be set to:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+
+\family sans
+ecta-fullname
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+ (default for this document) for a paper in Econometrica,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+
+\family sans
+qe
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+ for Quantitative Economics,
+ and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+
+\family sans
+te
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+ for Theoretical Economics.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "library-bibtex"
+options "ecta-fullname"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Aumann(1987)"
+key "b1"
+literal "false"
+
+\end_inset
+
+ 
+\shape smallcaps
+Aumann,
+ Robert
+\shape default
+ (1987):
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Correlated Equilibrium as an Expression of Bayesian Rationality,
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\shape italic
+Econometrica
+\shape default
+,
+ 55 (1),
+ 1–18.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Peck(1994)"
+key "b2"
+literal "false"
+
+\end_inset
+
+ 
+\shape smallcaps
+Peck,
+ James
+\shape default
+ (1994):
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Competition in Transactions Mechanisms:
+ The Emergence of Competition,
+\begin_inset Quotes erd
+\end_inset
+
+ Unpublished Manuscript,
+ Ohio State University.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Enelow and Hinich(1990)"
+key "b3"
+literal "true"
+
+\end_inset
+
+ 
+\shape smallcaps
+Enelow,
+ James,
+ and Melvin Hinich
+\shape default
+,
+ eds.
+ (1990):
+ 
+\shape italic
+Advances in the Spatial Theory of Voting
+\shape default
+.
+ Cambridge,
+ U.K.:
+ Cambridge University Press.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Wittman(1990)"
+key "b4"
+literal "true"
+
+\end_inset
+
+
+\shape smallcaps
+Wittman,
+ Donald
+\shape default
+ (1990):
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Spatial Strategies when Candidates Have Policy Preferences,
+\begin_inset Quotes erd
+\end_inset
+
+ in 
+\shape italic
+Advances in the Spatial Theory of Voting
+\shape default
+,
+ ed.
+ by M.
+ Hinich and J.
+ Enelow.
+ Cambridge,
+ U.K.:
+ Cambridge University Press,
+ 66–98.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Cahuc, Postel-Vinay and Robin(2006)"
+key "b5"
+literal "true"
+
+\end_inset
+
+
+\shape smallcaps
+Cahuc,
+ Pierre,
+ Fabien Postel-Vinay,
+ and Jean-Marc Robin
+\shape default
+ (2006):
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Supplement to `Wage Bargaining with On-the-Job Search:
+ Theory and Evidence',
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\shape italic
+Econometrica Supplementary Material
+\shape default
+,
+ 74.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,521 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[econsocart]{Econometric Society Journals}
+#  \DeclareCategory{Articles}
+# Author : Koji Yokota <yok...@lyx.org>
+
+Format 110
+Input article.layout
+Input stdcounters.inc
+Input theorems-ams-bytype.inc
+Input theorems-ams-extended-bytype.module
+
+Provides                natbib 1
+Provides                amsmath 1
+Provides                amssymb 1
+TitleLatexType          Environment
+TitleLatexName          frontmatter
+
+ClassOptions
+	Other           draft
+End
+
+Style Title
+	Margin          Manual
+	LeftMargin      -MMMMMMMM
+	Align           Center
+	DocBookTag      title
+	DocBookTagType  paragraph
+	DocBookInInfo   maybe
+End
+
+Style RunTitle
+	Category        FrontMatter
+	LatexType       Command
+	LatexName       runtitle
+	InTitle         1
+	Margin          Dynamic
+	LabelType       Static
+	LabelString     "Running Title:"
+	LabelSep        M
+	LabelFont
+	  Color         textlabel3
+	EndFont
+	DocBookTag      titleabbrev
+	DocBookTagType  paragraph
+	DocBookInInfo   maybe
+End
+
+Style RunAuthor
+	CopyStyle       RunTitle
+	LatexType       Command
+	LatexName       runauthor
+	LabelString     "Running Author:"
+	DocBookTag      authorinitials
+	DocBookTagType  paragraph
+	DocBookInInfo   maybe
+End
+
+Style Abstract
+	Margin                  Dynamic
+	LatexType               Environment
+	LatexName               abstract
+	InTitle                 1
+	Category                FrontMatter
+	NextNoIndent            1
+	LabelSep                xxx
+	ParSkip                 0.4
+	TopSep                  0.7
+	BottomSep               0.4
+	Align                   Block
+	LabelType               Static
+	LabelString             "Abstract"
+	LabelFont
+		Size            Normal
+		Series          Medium
+	EndFont
+	DocBookAbstract         true
+	DocBookInInfo           always
+	DocBookWrapperTag       abstract
+	DocBookWrapperMergeWithPrevious    true
+	DocBookTag              para
+End
+
+Style Web_Address
+	CopyStyle             Email
+	LatexName             lyxeadurl
+	LabelString           "Web address:"
+	Preamble
+		\def\lyxeadurl[#1]#2{\ead[label=#1,url]{#2}}
+	EndPreamble
+	DocBookTag            uri
+	DocBookWrapperTag     address
+	DocBookInInfo         always
+End
+
+Style Author
+	LatexType             Command
+	LatexName             author
+	NewLine               0
+	InTitle               1
+	DocBookTag            personname
+	DocBookTagType        paragraph
+	DocBookWrapperTag     author
+	DocBookWrapperTagType inline
+	DocBookInInfo         always
+End
+
+Style Authors_Block
+	CopyStyle             RunTitle
+	LatexType             Environment
+	LatexName             aug
+	LabelString           "Authors Block:"
+	DocBookTag            personname
+	DocBookTagType        paragraph
+	DocBookWrapperTag     author
+	DocBookWrapperTagType inline
+	DocBookInInfo         always
+End
+
+Style Keyword
+	CopyStyle       Abstract
+	LatexType       Environment
+	LatexName       keyword
+	LabelString     "Keywords:"
+	LabelFont
+	  Shape         SmallCaps
+	EndFont
+End
+
+Style Funding
+	CopyStyle       RunTitle
+	LatexType       Environment
+	LatexName       funding
+	LabelType       Static
+	LabelString     "Funding:"
+End
+
+Style Coeditor
+	CopyStyle       RunTitle
+	LatexType       Command
+	LatexName       coeditor
+	LabelType       Static
+	LabelString     "Coeditor:"
+End
+
+Style Emphasize
+	CopyStyle       Standard
+	LatexType       Environment
+	LatexName       lyxem
+	TopSep          1
+	Font
+	  Shape         Italic
+	EndFont
+	Preamble
+		\newenvironment{lyxem}{\par\begin{em}}{\end{em}\par}
+	EndPreamble
+End
+
+Style Appendix
+	CopyStyle       Standard
+	LatexType       Environment
+	LatexName       appendix
+	LabelType       Centered
+	LabelString     Appendix
+	LabelBottomsep  -2
+	LabelFont
+		Size    larger
+	EndFont
+	Margin          Static
+	LeftMargin      MMM
+	TopSep          1
+	KeepEmpty       1
+	AutoNests
+		Section
+	EndAutoNests
+End
+
+# Math theorem environments that use the plain style
+Style Theorem
+	LabelString     "Theorem \thetheorem:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    plain
+End
+
+Style Axiom
+	LabelString     "Axiom \theaxiom:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    plain
+End
+
+Style Claim
+	LabelString     "Claim \theclaim:"
+	Font
+		Shape   Italic
+	EndFont
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    plain
+End
+
+Style Lemma
+	LabelString      "Lemma \arabic{theorem}:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	LabelCounter    theorem
+	TheoremCounter  thm
+	TheoremStyle    plain
+End
+
+Style Fact
+	LabelString     "Fact:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremCounter  none
+	TheoremStyle    plain
+End
+
+Style Assumption
+	LabelString     "Assumption \theassumption:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    plain
+End
+
+Style Corollary
+	LabelString     "Corollary \thecorollary:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    plain
+End
+
+Style Proposition
+	LabelString     "Proposition \theproposition:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    plain
+End
+
+# Math theorem environments that use the definition style
+Style Definition
+	LabelString     "Definition \thedefinition:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    definition
+End
+
+Style Example
+	LabelString     "Example:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    definition
+End
+
+Style Remark
+	LabelString     "Remark \theremark:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    definition
+End
+
+Style Notation
+	LabelString     "Notation \thenotation:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremStyle    definition
+End
+
+Style Proof
+	LatexType       Environment
+	LatexName       proof
+	Margin          Dynamic
+	LabelType       Static
+	LabelString     "Proof:"
+	LabelSep        M
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	Argument 1
+		LabelString   "Title"
+		Tooltip       "Title of the proof"
+	EndArgument
+	Preamble
+	EndPreamble
+End
+
+# Other AMS environments (which are left to defaults)
+Style Conjecture
+	LabelString     "Conjecture \theconjecture:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Problem
+	LabelString     "Problem \theproblem:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Exercise
+	LabelString     "Exercise \theexercise:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Solution
+	LabelString     "Solution \thesolution:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Case
+	LabelString     "Case \thecase:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Criterion
+	LabelString     "Criterion \thecriterion:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Algorithm
+	LabelString     "Algorithm \thealgorithm:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Condition
+	LabelString     "Condition \thecondition:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Note
+	LabelString     "Note \thenote:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Summary
+	LabelString     "Summary \thesummary:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Conclusion
+	LabelString     "Conclusion \theconclusion:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+Style Question
+	LabelString     "Question \thequestion:"
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+End
+
+# Flex insets
+InsetLayout Flex:Legend
+	LyxType         custom
+	LatexType       Command
+	LatexName       legend
+	LabelString     "Legend"
+	MultiPar        0
+	CustomPars      0
+	Decoration      Classic
+	ForcePlain      1
+	BgColor         background
+	ResetsFont      true
+End
+
+InsetLayout Flex:Author
+	CopyStyle       Flex:Legend
+	LatexName       author
+	LabelString     "Author"
+	BgColor         greyedoutbg
+	Argument 1
+		LabelString   "Address Label"
+		Tooltip       "Label to be used to relate an author and his/her address"
+	EndArgument
+	AllowedInLayouts
+		Authors_Block
+	EndAllowedInLayouts
+End
+
+InsetLayout Flex:Name_(First_Name)
+	CopyStyle       Flex:Legend
+	LatexName       fnms
+	LabelString     "First Name"
+	AllowedInInsets
+		Flex:Author
+	EndAllowedInInsets
+	AllowedInLayouts
+		Coeditor
+	EndAllowedInLayouts
+End
+
+InsetLayout Flex:Name_(Surname)
+	CopyStyle       Flex:Legend
+	LatexName       snm
+	LabelString     "Surname"
+	AllowedInInsets
+		Flex:Author
+	EndAllowedInInsets
+	AllowedInLayouts
+		Coeditor
+	EndAllowedInLayouts
+End
+
+InsetLayout Flex:Email_Address
+	CopyStyle             Flex:Legend
+	LatexName             lyxead
+	Argument 1
+		LabelString   "Label"
+		Tooltip       "Label of this e-mail address"
+	EndArgument
+	LabelString           "Email"
+	AllowedInInsets
+		Flex:Author
+	EndAllowedInInsets
+	Preamble
+		\def\lyxead[#1]#2{\ead[label=#1]{#2}}
+	EndPreamble
+	DocBookTag            email
+	DocBookWrapperTag     address
+	DocBookInInfo         always
+End
+
+InsetLayout Flex:Address
+	CopyStyle             Flex:Legend
+	LatexName             address
+	Argument 1
+		LabelString   "Label"
+		Tooltip       "Label of this address to relate it to authors"
+	EndArgument
+	AllowedInLayouts
+		Authors_Block
+	EndAllowedInLayouts
+	LabelString           "Address"
+	BgColor               greyedoutbg
+	DocBookInInfo         always
+	DocBookTag            address
+End
+
+InsetLayout Flex:Address_Division
+	CopyStyle       Flex:Legend
+	LatexName       orgdiv
+	LabelString     "Organization Division"
+	AllowedInInsets
+		Flex:Address
+	EndAllowedInInsets
+End
+
+InsetLayout Flex:Address_Organization
+	CopyStyle       Flex:Legend
+	LatexName       orgname
+	LabelString     "Organization Name"
+	AllowedInInsets
+		Flex:Address
+	EndAllowedInInsets
+End
+
+InsetLayout Flex:Keyword
+	CopyStyle       Flex:Legend
+	LatexName       kwd
+	LabelString     "Keyword"
+	AllowedInLayouts
+		Keyword
+	EndAllowedInLayouts
+End

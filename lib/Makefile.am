@@ -2981,6 +2981,7 @@ dist_layouts_DATA =\
 	layouts/docbook-section.layout \
 	layouts/doublecol-new.layout \
 	layouts/dtk.layout \
+	layouts/econsocart.layout \
 	layouts/ectaart.layout \
 	layouts/egs.layout \
 	layouts/elsart.layout \
@@ -3237,7 +3238,8 @@ dist_articletemplates_DATA = \
 	templates/Articles/Astronomy_%26_Astrophysics.lyx \
 	templates/Articles/Chinese_Article_%28CTeX%29.lyx \
 	templates/Articles/Copernicus_Publications_Manuscript_Preparation.lyx \
-	templates/Articles/Econometrica.lyx \
+	templates/Articles/Econometric_Society_Journals.lyx \
+	templates/Articles/Econometric_Society_Journals_figure.pdf \
 	templates/Articles/Elsevier.lyx \
 	templates/Articles/Figure1.pdf \
 	templates/Articles/Hebrew_Article_%28KOMA-Script%29.lyx \
@@ -3323,6 +3325,7 @@ dist_obsoletetemplates_DATA = \
 	templates/Obsolete/American_Astronomical_Society_%28AASTeX_v._6.2%29.lyx \
 	templates/Obsolete/American_Geophysical_Union_%28AGUTeX%29.lyx \
 	templates/Obsolete/American_Psychological_Association_%28APA%29,_v._6.lyx \
+	templates/Obsolete/Econometrica.lyx \
 	templates/Obsolete/Latex8_Article_%28Obsolete%29.lyx
 
 obsoletegbrieftemplatesdir = $(pkgdatadir)/templates/Obsolete/G-Brief_%28V._1,_Obsolete%29
