@@ -514,8 +514,9 @@ void handle_colalign(Parser & p, vector<ColInfo> & colinfo,
 				string const num = p.verbatim_item();
 				string const arg = p.verbatim_item();
 				if (!support::isStrUnsignedInt(num)) {
-					warning_message("Ignoring invalid column specification"
-							" '*{" + num + "}{" + arg + "}'.");
+					error_message("Invalid column specification"
+							" '*{" + num + "}{" + arg + "}'.\n"
+							"Cannot proceed!", true);
 					break;
 				}
 				size_t const n = convert<unsigned int>(num);

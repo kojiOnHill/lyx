@@ -1138,9 +1138,11 @@ void warning_message(string const & message)
 }
 
 
-void error_message(string const & message)
+void error_message(string const & message, bool const exit)
 {
 	cerr << "tex2lyx error: " << message << endl;
+	if (exit)
+		throw StopException(EXIT_FAILURE);
 }
 
 #ifdef FILEDEBUG
