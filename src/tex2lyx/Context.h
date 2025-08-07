@@ -178,6 +178,8 @@ public:
 	Layout const * parent_layout;
 	/// font attributes of this context
 	TeXFont font;
+	/// font attributes of inner context
+	TeXFont inner_font;
 	/// font attributes of normal text
 	static TeXFont normalfont;
 	/// Table rotation angle

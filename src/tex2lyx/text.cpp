@@ -115,6 +115,8 @@ void parse_text_snippet(Parser & p, ostream & os, unsigned flags, bool outer,
 	// Make sure that we don't create invalid .lyx files
 	context.need_layout = newcontext.need_layout;
 	context.need_end_layout = newcontext.need_end_layout;
+	// store inner font
+	context.inner_font = newcontext.font;
 }
 
 
@@ -3572,32 +3574,28 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 				parse_text_snippet(p, os, FLAG_BRACE_LAST,
 						   outer, context);
 				if (!context.atParagraphStart())
-					os << "\n\\size "
-					   << context.font.size << "\n";
+					output_font_change(os, context.inner_font, context.font);
 			} else if (is_known(next.cs(), known_font_families)) {
 				// next will change the font family, so we
 				// must reset it here
 				parse_text_snippet(p, os, FLAG_BRACE_LAST,
 						   outer, context);
 				if (!context.atParagraphStart())
-					os << "\n\\family "
-					   << context.font.family << "\n";
+					output_font_change(os, context.inner_font, context.font);
 			} else if (is_known(next.cs(), known_font_series)) {
 				// next will change the font series, so we
 				// must reset it here
 				parse_text_snippet(p, os, FLAG_BRACE_LAST,
 						   outer, context);
 				if (!context.atParagraphStart())
-					os << "\n\\series "
-					   << context.font.series << "\n";
+					output_font_change(os, context.inner_font, context.font);
 			} else if (is_known(next.cs(), known_font_shapes)) {
 				// next will change the font shape, so we
 				// must reset it here
 				parse_text_snippet(p, os, FLAG_BRACE_LAST,
 						   outer, context);
 				if (!context.atParagraphStart())
-					os << "\n\\shape "
-					   << context.font.shape << "\n";
+					output_font_change(os, context.inner_font, context.font);
 			} else if (is_known(next.cs(), known_old_font_families) ||
 				   is_known(next.cs(), known_old_font_series) ||
 				   is_known(next.cs(), known_old_font_shapes)) {
@@ -3606,12 +3604,7 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 				parse_text_snippet(p, os, FLAG_BRACE_LAST,
 						   outer, context);
 				if (!context.atParagraphStart())
-					os <<  "\n\\family "
-					   << context.font.family
-					   << "\n\\series "
-					   << context.font.series
-					   << "\n\\shape "
-					   << context.font.shape << "\n";
+					output_font_change(os, context.inner_font, context.font);
 			} else {
 				output_ert_inset(os, "{", context);
 				parse_text_snippet(p, os, FLAG_BRACE_LAST,
