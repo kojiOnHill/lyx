@@ -3542,26 +3542,26 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 					// we did not find a non-ert version
 					output_ert_inset(os, name, context);
 			} else {
-			context.check_layout(os);
-			// special handling of font attribute changes
-			Token const prev = p.prev_token();
-			TeXFont const oldFont = context.font;
-			if (next.character() == '[' ||
-			    next.character() == ']' ||
-			    next.character() == '*') {
-				p.get_token();
-				if (p.next_token().cat() == catEnd) {
-					os << next.cs();
+				context.check_layout(os);
+				// special handling of font attribute changes
+				Token const prev = p.prev_token();
+				TeXFont const oldFont = context.font;
+				if (next.character() == '[' ||
+				    next.character() == ']' ||
+				    next.character() == '*') {
 					p.get_token();
-				} else {
-					p.putback();
-					output_ert_inset(os, "{", context);
-					parse_text_snippet(p, os,
-							FLAG_BRACE_LAST,
-							outer, context);
-					output_ert_inset(os, "}", context);
-				}
-			} else if (! context.new_layout_allowed) {
+					if (p.next_token().cat() == catEnd) {
+						os << next.cs();
+						p.get_token();
+					} else {
+						p.putback();
+						output_ert_inset(os, "{", context);
+						parse_text_snippet(p, os,
+								FLAG_BRACE_LAST,
+								outer, context);
+						output_ert_inset(os, "}", context);
+					}
+			} else if (!context.new_layout_allowed) {
 				output_ert_inset(os, "{", context);
 				parse_text_snippet(p, os, FLAG_BRACE_LAST,
 						   outer, context);
