@@ -1917,6 +1917,7 @@ void parse_unknown_environment(Parser & p, string const & name, ostream & os,
 		output_ert_inset(os, "]", parent_context);
 	}
 	parse_text_snippet(p, os, flags, outer, parent_context);
+	output_font_change(os, parent_context.inner_font, parent_context.font);
 	output_ert_inset(os, "\\end{" + name + "}", parent_context);
 	if (specialfont)
 		parent_context.new_layout_allowed = new_layout_allowed;
@@ -2758,9 +2759,11 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			if (contents == verbatim)
 				output_ert_inset(os, p.ertEnvironment(name),
 					   parent_context);
-			else
+			else {
 				parse_text_snippet(p, os, FLAG_END, outer,
 						   parent_context);
+				output_font_change(os, parent_context.inner_font, parent_context.font);
+			}
 			output_ert_inset(os, "\\end{" + name + "}", parent_context);
 			if (specialfont)
 				parent_context.new_layout_allowed = new_layout_allowed;
