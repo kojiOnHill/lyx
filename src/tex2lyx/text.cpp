@@ -4518,6 +4518,15 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			continue;
 		}
 
+		if (t.cs() == "hyperref" && p.hasOpt()) {
+			// Catch this since the syntax file covers versions
+			// without optional argument
+			string const opt = p.getOpt();
+			output_ert_inset(os, t.asInput() + opt + "{" +
+					 p.verbatim_item() + '}', context);
+			continue;
+		}
+
 		if (t.cs() == "lyxline") {
 			// swallow size argument (it is not used anyway)
 			p.getArg('{', '}');
