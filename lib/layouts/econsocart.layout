@@ -6,6 +6,9 @@
 Format 110
 Input article.layout
 Input stdcounters.inc
+Input theorems-order.inc
+Input theorems-starred.inc
+Input theorems-proof.inc
 Input theorems-ams-bytype.inc
 Input theorems-ams-extended-bytype.module
 
@@ -78,18 +81,6 @@ Style Abstract
 	DocBookWrapperTag       abstract
 	DocBookWrapperMergeWithPrevious    true
 	DocBookTag              para
-End
-
-Style Web_Address
-	CopyStyle             Email
-	LatexName             lyxeadurl
-	LabelString           "Web address:"
-	Preamble
-		\def\lyxeadurl[#1]#2{\ead[label=#1,url]{#2}}
-	EndPreamble
-	DocBookTag            uri
-	DocBookWrapperTag     address
-	DocBookInInfo         always
 End
 
 Style Author
@@ -206,6 +197,7 @@ Style Claim
 End
 
 Style Lemma
+	DependsOn       Theorem
 	LabelString      "Lemma \arabic{theorem}:"
 	LabelFont
 		Shape   SmallCaps
@@ -291,22 +283,14 @@ Style Notation
 End
 
 Style Proof
-	LatexType       Environment
-	LatexName       proof
-	Margin          Dynamic
-	LabelType       Static
 	LabelString     "Proof:"
 	LabelSep        M
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
 	EndFont
-	Argument 1
-		LabelString   "Title"
-		Tooltip       "Title of the proof"
-	EndArgument
-	Preamble
-	EndPreamble
+	EndLabelType    Static
+	EndLabelString  "    Q.E.D."
 End
 
 # Other AMS environments (which are left to defaults)

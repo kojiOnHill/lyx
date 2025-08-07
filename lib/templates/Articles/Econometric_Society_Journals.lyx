@@ -1,5 +1,5 @@
 #LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 642
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -1656,7 +1656,7 @@ tuple "list"
 
 \begin_layout Fact
 This is the body of the fact.
- Fact is unnumbered since it is defined in the layout file.
+ Fact is unnumbered since it is defined so in the layout file.
  If this is to be changed,
  fill the following code in 
 \family sans
@@ -1673,17 +1673,25 @@ Layout
 
 \begin_deeper
 \begin_layout Verbatim
-Style Fact
+    Style Fact
 \end_layout
 
 \begin_layout Verbatim
-	LabelString "Fact 
+        LabelString    "Fact 
 \backslash
 thefact:"
 \end_layout
 
 \begin_layout Verbatim
-End
+        LabelCounter   fact
+\end_layout
+
+\begin_layout Verbatim
+        TheoremCounter ""
+\end_layout
+
+\begin_layout Verbatim
+    End
 \end_layout
 
 \end_deeper
