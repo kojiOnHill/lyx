@@ -180,6 +180,12 @@ export/examples/ru/Presentations/Beamer_lyx(16|20)
 # see: https://www.mail-archive.com/search?l=mid&q=ildx4xd4o7ybeqroh3blxgnxqnsqnte256utip2fbmcwi4zolz%40wsh7ez36kkhl
 export/templates/Articles/American_Psychological_Association_%28APA%29,_v._7_xhtml
 
+# Text.cpp (2125): Handling unknown body token: `\noindent'
+# Reported here:
+# https://www.mail-archive.com/search?l=mid&q=t7rtnlwre6b2ciih6l4opakzdfkkcdrie5j26u6h7iuyn5pszm%40n237nagcrew7
+export/templates/Articles/Econometric_Society_Journals_lyx16
+export/templates/Articles/Econometric_Society_Journals_lyx20
+
 
 # ==============================================================
 Sublabel: ert
@@ -554,6 +560,16 @@ export/examples/(|ja/)Modules/LilyPond_Book_docbook5
 # - xmllint errors with Spring Nature.
 export/examples/Articles/Springer_Nature_Journals_docbook5
 export/templates/Articles/Springer_Nature_Journals_docbook5
+#
+export/templates/Articles/Econometric_Society_Journals_docbook5
+# Missing glyphs!
+export/templates/Articles/Econometric_Society_Journals_dvi3_texF
+export/templates/Articles/Econometric_Society_Journals_pdf5_texF
+# ! LaTeX Error: Control sequence \c__fontspec_shape_it_sc_tl already defined.
+export/templates/Articles/Econometric_Society_Journals_dvi3_systemF
+export/templates/Articles/Econometric_Society_Journals_pdf4_systemF
+export/templates/Articles/Econometric_Society_Journals_pdf5_systemF
+
 
 Sublabel: docbook poster
 # Posters cannot be properly exported, the LyX documents are too far from
