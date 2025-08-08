@@ -1116,21 +1116,26 @@ def revert_verbatim(document, starred=False):
         if k != j + 2 and consecutive == True:
             document.body[j : j + 1] = subst_end
             # the next paragraph must not be indented
-            # FIXME This seems to be causing problems, because of the
-            # hardcoded use of 19. We should figure out exactly where
-            # this needs to go by searching for the right tag.
-            document.body[j + 19 : j + 19] = ["\\noindent"]
+            k = find_token(document.body, "end{%s}" % (latex_name), j)
+            if k != -1:
+                k += 6
+                k = find_token(document.body, "\\begin_layout", k)
+                if k != -1 and not document.body[k].startswith("\\begin_layout Verbatim"):
+                    document.body[k + 1 : k + 1] = ["\\noindent"]
             del document.body[i : i + 1]
             consecutive = False
             continue
         else:
             document.body[j : j + 1] = subst_end
             # the next paragraph must not be indented
-            # FIXME This seems to be causing problems, because of the
-            # hardcoded use of 19. We should figure out exactly where
-            # this needs to go by searching for the right tag.
-            document.body[j + 19 : j + 19] = ["\\noindent"]
             document.body[i : i + 1] = subst_begin
+            k = find_token(document.body, "end{%s}" % (latex_name), i)
+            if k != -1:
+                k += 6
+                k = find_token(document.body, "\\begin_layout", k)
+                if k == -1 or document.body[k].startswith("\\begin_layout Verbatim"):
+                    continue
+                document.body[k + 1 : k + 1] = ["\\noindent"]
 
 
 def revert_tipa(document):
