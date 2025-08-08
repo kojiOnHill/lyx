@@ -188,6 +188,10 @@ public:
 	bool in_table_cell;
 	///
 	char cell_align;
+	/// Are we in a custom (ERT) environment
+	bool in_custom_environment;
+	/// Do we have custom (ERT) environments with multiple paragraphs?
+	bool has_custom_mp_environment;
 	///
 	std::string current_table_bordercolor;
 	///

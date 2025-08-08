@@ -115,6 +115,7 @@ void parse_text_snippet(Parser & p, ostream & os, unsigned flags, bool outer,
 	// Make sure that we don't create invalid .lyx files
 	context.need_layout = newcontext.need_layout;
 	context.need_end_layout = newcontext.need_end_layout;
+	context.has_custom_mp_environment = newcontext.has_custom_mp_environment;
 	// store inner font
 	context.inner_font = newcontext.font;
 }
@@ -1904,6 +1905,8 @@ void parse_unknown_environment(Parser & p, string const & name, ostream & os,
 	// will not work.
 	bool const specialfont =
 		(parent_context.font != parent_context.normalfont);
+	bool const was_custom_environment = parent_context.in_custom_environment;
+	parent_context.in_custom_environment = true;
 	bool const new_layout_allowed = parent_context.new_layout_allowed;
 	if (specialfont)
 		parent_context.new_layout_allowed = false;
@@ -1921,6 +1924,7 @@ void parse_unknown_environment(Parser & p, string const & name, ostream & os,
 	output_ert_inset(os, "\\end{" + name + "}", parent_context);
 	if (specialfont)
 		parent_context.new_layout_allowed = new_layout_allowed;
+	parent_context.in_custom_environment = was_custom_environment;
 }
 
 
@@ -2556,8 +2560,6 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 		}
 
 		// Alignment and spacing settings
-		// FIXME (bug xxxx): These settings can span multiple paragraphs and
-		//					 therefore are totally broken!
 		// Note that \centering, \raggedright, and \raggedleft cannot be handled, as
 		// they are commands not environments. They are furthermore switches that
 		// can be ended by another switches, but also by commands like \footnote or
@@ -2596,7 +2598,28 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 				parent_context.add_extra_stuff("\\paragraph_spacing other " + p.verbatim_item() + "\n");
 				preamble.registerAutomaticallyLoadedPackage("setspace");
 			}
-			parse_text(p, os, FLAG_END, outer, parent_context);
+			// If the alignment environment has nested custom (ERT) environments
+			// and spans multiple paragraphs, we output it as ERT,
+			// otherwise we will end up in nesting problems
+			// To check this, we need to look ahead here
+			Context newcontext = parent_context;
+			newcontext.has_custom_mp_environment = false;
+			ostringstream oss;
+			p.pushPosition();
+			parse_text(p, oss, FLAG_END, outer, newcontext);
+			string const save_extrastuff = parent_context.extra_stuff;
+			if (newcontext.has_custom_mp_environment) {
+				parent_context.extra_stuff.erase();
+				parent_context.check_layout(os);
+				output_ert_inset(os, "\\begin{" + name + "}", parent_context);
+				p.popPosition();
+				parse_text(p, os, FLAG_END, outer, parent_context);
+				output_ert_inset(os, "\\end{" + name + "}", parent_context);
+				parent_context.extra_stuff = save_extrastuff;
+			} else {
+				p.popPosition();
+				parse_text(p, os, FLAG_END, outer, parent_context);
+			}
 			// Just in case the environment is empty
 			parent_context.extra_stuff.erase();
 			// We must begin a new paragraph to reset the alignment
@@ -2750,6 +2773,8 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			// See comment in parse_unknown_environment()
 			bool const specialfont =
 				(parent_context.font != parent_context.normalfont);
+			bool const was_custom_environment = parent_context.in_custom_environment;
+			parent_context.in_custom_environment = true;
 			bool const new_layout_allowed =
 				parent_context.new_layout_allowed;
 			if (specialfont)
@@ -2767,6 +2792,7 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			output_ert_inset(os, "\\end{" + name + "}", parent_context);
 			if (specialfont)
 				parent_context.new_layout_allowed = new_layout_allowed;
+			parent_context.in_custom_environment = was_custom_environment;
 			break;
 		}
 
@@ -3477,9 +3503,11 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			// everything into the caption, where multiple
 			// paragraphs are forbidden.
 			if (minted_float.empty()) {
-				if (context.new_layout_allowed)
+				if (context.new_layout_allowed) {
 					context.new_paragraph(os);
-				else
+					if (context.in_custom_environment)
+						context.has_custom_mp_environment = true;
+				} else
 					output_ert_inset(os, "\\par ", context);
 			} else
 				os << ' ';
