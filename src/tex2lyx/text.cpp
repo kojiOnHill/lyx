@@ -2796,6 +2796,20 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			break;
 		}
 
+		// FIXME Remove when we support fancyvrb natively
+		if (preamble.isPackageUsed("fancyvrb")
+		    && (unstarred_name == "Verbatim" || unstarred_name == "BVerbatim"
+			|| unstarred_name == "LVerbatim")) {
+			// We do not natively support this, but in order to handle it,
+			// we need to import the whole environment as ERT (#7648)
+			output_ert_inset(os, "\\begin{" + name + "}", parent_context);
+			output_ert_inset(os, p.ertEnvironment(name),
+				   parent_context);
+			p.skip_spaces();
+			output_ert_inset(os, "\\end{" + name + "}\n", parent_context);
+			break;
+		}
+
 		parse_unknown_environment(p, name, os, FLAG_END, outer, parent_context);
 		break;
 	}// end of loop
