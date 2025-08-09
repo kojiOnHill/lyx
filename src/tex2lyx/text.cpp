@@ -6201,7 +6201,8 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			    t.cs() == "DeclareRobustCommandx" ||
 			    t.cs() == "providecommand" ||
 			    t.cs() == "providecommandx" ||
-			    name[name.length()-1] == '*')
+			    name[name.length()-1] == '*' ||
+			    is_known(ltrim(command, "\\"), known_sizes))
 				output_ert_inset(os, ert, context);
 			else {
 				context.check_layout(os);
