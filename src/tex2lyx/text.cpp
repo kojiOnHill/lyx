@@ -2503,6 +2503,16 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			break;
 		}
 
+		if (name == "twocolumn") {
+			output_ert_inset(os, "\\twocolumn", parent_context);
+			if (p.hasOpt()) {
+				p.get_token(); // eat '['
+				output_ert_inset(os, "[", parent_context);
+				os << parse_text_snippet(p, FLAG_BRACK_LAST, outer, parent_context);
+				output_ert_inset(os, "]", parent_context);
+			}
+		}
+
 		if (name == "lstlisting" || name == "minted") {
 			bool use_minted = name == "minted";
 			// with listings, we do not eat newlines here since
