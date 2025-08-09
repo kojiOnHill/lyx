@@ -406,6 +406,7 @@ $$
 \addtocounter{}{}
 \addtolength{}{}
 \addvspace{}
+\allsectionsfont{}% sectsty
 \Alph{}
 \alph{}
 \alsoname
@@ -431,6 +432,9 @@ $$
 \centerline{translate}
 \chapter[]{}
 \chapter*{}
+\chapterfont{}% sectsty
+\chapternumberfont{}% sectsty
+\chaptertitlefont{}% sectsty
 \chaptername
 \check{}
 \CheckCommand{}[][]{}
@@ -550,6 +554,7 @@ $$
 \mathversion{}
 \mbox{translate}
 \mddefault
+\minisectfont{}% sectsty
 % \multiput(,)(,){}{}     %picture
 \name{}
 \newboolean{}
@@ -590,10 +595,14 @@ $$
 \par
 \paragraph[]{}
 \paragraph*{}
+\paragraphfont{}% sectsty
 %\parbox[]{}{}            % reLyX treats next line same as this one (adk)
 \parbox[][][]{}{translate}
 \part[]{}
 \part*{}
+\partfont{}% sectsty
+\partnumberfont{}% sectsty
+\parttitlefont{}% sectsty
 \partname
 \pdfbookmark[]{}{}       % from the hyperref package
 \pdfstringdef{}{}        % from the hyperref package
@@ -647,6 +656,7 @@ $$
 \scdefault
 \section[]{}
 \section*{}
+\sectionfont{}% sectsty
 \see
 \seename
 \selectfont
@@ -676,12 +686,15 @@ $$
 \subfigure[translate][translate]{translate} % obsolete subfigure.sty
 \subparagraph[]{}  % These "sub" versions of the sectioning commands weren't
 \subparagraph*{}   % in the original commandlist for some reason (adk)
+\subparagraphfont{}% sectsty
 \subref{} % subcaption.sty
 \subref*{} % subcaption.sty
 \subsection[]{}    %
 \subsection*{}     %
 \subsubsection[]{} %
 \subsubsection*{}  %
+\subsectionfont{}% sectsty
+\subsubsectionfont{}% sectsty
 %\subsubitem{}   % unsupported theindex environment
 \subtable[translate][translate]{translate} % obsolete subfigure.sty
 \suppressfloats[]
@@ -710,6 +723,8 @@ $$
 \thinlines
 \thispagestyle{}
 \title{}
+\titleformat*{}{}% titlesec
+\titleformat{}[]{}{}{}{}[]% titlesec
 \titlespacing*{}{}{}{}[]% titlesec
 \today
 \topfigrule
