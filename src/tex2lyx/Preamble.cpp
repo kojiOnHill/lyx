@@ -163,7 +163,7 @@ const char * const known_sans_font_packages[] = { "avant", "berasans", "biolinum
 
 const char * const known_typewriter_font_packages[] = { "beramono", "cmtl", "cmtt", "courier", "DejaVuSansMono",
 "FiraMono", "lmtt", "luximono", "libertineMono", "libertineMono-type1", "LibertinusMono-TLF", "lmodern",
-"mathpazo", "mathptmx", "newcent", "noto-mono", "PTMono", "tgcursor", "txtt", 0 };
+"newcent", "noto-mono", "PTMono", "tgcursor", "txtt", 0 };
 
 const char * const known_math_font_packages[] = { "eulervm", "newtxmath", 0};
 
