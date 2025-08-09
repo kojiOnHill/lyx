@@ -6209,6 +6209,7 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			    t.cs() == "providecommand" ||
 			    t.cs() == "providecommandx" ||
 			    name[name.length()-1] == '*' ||
+			    contains(command, "@") ||
 			    is_known(ltrim(command, "\\"), known_sizes))
 				output_ert_inset(os, ert, context);
 			else {
