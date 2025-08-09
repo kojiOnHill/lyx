@@ -2576,7 +2576,7 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 		    || name == "doublespace" || name == "spacing") {
 			eat_whitespace(p, os, parent_context, false);
 			// We must begin a new paragraph if not already done
-			if (! parent_context.atParagraphStart()) {
+			if (!parent_context.atParagraphStart()) {
 				parent_context.check_end_layout(os);
 				parent_context.new_paragraph(os);
 			}
@@ -3851,7 +3851,7 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			continue;
 		}
 
-		if (t.cs() == "noindent") {
+		if (t.cs() == "noindent" && context.atParagraphStart()) {
 			p.skip_spaces();
 			context.add_par_extra_stuff("\\noindent\n");
 			continue;
