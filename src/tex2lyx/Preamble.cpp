@@ -2075,7 +2075,8 @@ void Preamble::handle_package(Parser &p, string const & name,
 				// perhaps in future others.
 				// Therefore keep the babel call as it is as the user might have
 				// reasons for it.
-				string const babelcall = "\\usepackage[" + opts + "]{babel}\n";
+				// But use \PassOptionsToPackage to avoid clashes.
+				string const babelcall = "\\PassOptionsToPackage{"+ opts + "}{babel}\n\\usepackage{babel}\n";
 				if (!contains(h_preamble.str(), babelcall))
 					h_preamble << babelcall;
 			}
