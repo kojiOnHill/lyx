@@ -4210,8 +4210,15 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			continue;
 		}
 
-		if (t.cs() == "footnote" ||
-			 (t.cs() == "thanks" && context.layout->intitle)) {
+		if ((t.cs() == "footnote")
+		     || (t.cs() == "thanks" && context.layout->intitle)) {
+			if (p.hasOpt()) {
+				if (p.hasOpt()) {
+					string const opt = p.getOpt();
+					output_ert_inset(os, t.asInput() + opt, context);
+					continue;
+				}
+			}
 			p.skip_spaces();
 			context.check_layout(os);
 			begin_inset(os, "Foot\n");
