@@ -2245,8 +2245,10 @@ void Preamble::handle_package(Parser &p, string const & name,
 				options.erase(it);
 			}
 		}
-		if (!options.empty())
+		if (!options.empty()) {
 			h_biblio_options = join(options, ",");
+			options.clear();
+		}
 	}
 
 	else if (name == "biblatex" || name == "biblatex-chicago") {
