@@ -173,12 +173,19 @@ const char * const known_latex_paper_sizes[] = { "a0paper", "b0paper", "c0paper"
 "c5paper", "a6paper", "b6paper", "c6paper", "executivepaper", "legalpaper",
 "letterpaper", "b0j", "b1j", "b2j", "b3j", "b4j", "b5j", "b6j", 0};
 
-const char * const known_paper_margins[] = { "lmargin", "tmargin", "rmargin",
-"bmargin", "headheight", "headsep", "footskip", "columnsep", 0};
+const char * const known_paper_margins[] = {
+"lmargin", "left", "inner",
+"tmargin", "top",
+"rmargin", "right", "outer",
+"bmargin", "bottom",
+"headheight", "headsep", "footskip", "columnsep", 0};
 
-const char * const known_coded_paper_margins[] = { "leftmargin", "topmargin",
-"rightmargin", "bottommargin", "headheight", "headsep", "footskip",
-"columnsep", 0};
+const char * const known_coded_paper_margins[] = {
+"leftmargin", "leftmargin", "leftmargin",
+"topmargin",  "topmargin",
+"rightmargin", "rightmargin", "rightmargin",
+"bottommargin", "bottommargin",
+"headheight", "headsep", "footskip", "columnsep", 0};
 
 /// commands that can start an \if...\else...\endif sequence
 const char * const known_if_commands[] = {"if", "ifarydshln", "ifbraket",
