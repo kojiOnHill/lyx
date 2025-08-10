@@ -324,7 +324,7 @@ export/.*/el/.*_(dvi3|pdf5)_texF
 # It is not high priority to look into the underlying cause of these two
 # failures since TeX fonts are not commonly used with LuaTeX and the ectaart
 # class is not in TeX Live.
-export/templates/Articles/Econometrica_(dvi3|pdf5)_texF
+export/templates/Obsolete/Econometrica_(dvi3|pdf5)_texF
 
 # xymatrix + LuaTeX
 # Error message says pdfTeX is required for xypdf.
@@ -411,6 +411,7 @@ export/examples/ru/Modules/Fancy_Colored_Boxes_(dvi3|pdf[45])_systemF
 Sublabel: docbook
 # Don't work too hard on obsolete things.
 !export/templates/Obsolete/Latex8_Article_%28Obsolete%29_docbook5
+!export/templates/Obsolete/Econometrica_docbook5
 export/templates/Obsolete/.*_docbook5
 # Specific things that are not expected to work.
 # - No real content apart from metadata (forbidden in DocBook).
