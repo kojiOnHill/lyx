@@ -1187,6 +1187,28 @@ void Preamble::handle_geometry(vector<string> & options)
 }
 
 
+void Preamble::add_roman_tex_font(string const & lyxname, string const & package,
+				  string const & opts)
+{
+	// We need to store the LaTeX package call.
+	// If another roman font package is loaded afterwards,
+	// we need to resotre the preamble code rather than
+	// just overwriting the former one, since the package might
+	// also set other fonts (e.g., math) that stay in force.
+	string rm_font = "\\usepackage";
+	if (!opts.empty())
+		rm_font += "[" + opts + "]";
+	rm_font += "{" + package + "}";
+	if (prev_rm_font.empty() || prev_rm_font == rm_font) {
+		h_font_roman[0] = lyxname;
+		prev_rm_font = rm_font;
+	} else {
+		h_font_roman[0] = "default";
+		prev_rm_font += "\n" + rm_font;
+	}
+}
+
+
 void Preamble::handle_package(Parser &p, string const & name,
                               string const & opts, bool in_lyx_preamble,
                               bool detectEncoding, TeX2LyXDocClass & tc)
@@ -1219,7 +1241,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	// By default, we use the package name as LyX font name,
 	// so this only needs to be reset if these names differ
 	if (is_known(name, known_roman_font_packages))
-		h_font_roman[0] = name;
+		add_roman_tex_font(name, name, opts);
 
 	if (name == "ccfonts") {
 		for (auto const & opt : allopts) {
@@ -1244,7 +1266,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	if (name == "fourier") {
-		h_font_roman[0] = "utopia";
+		add_roman_tex_font("utopia", name, opts);
 		for (auto const & opt : allopts) {
 			if (opt == "osf") {
 				h_font_roman_osf = "true";
@@ -1302,7 +1324,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	if (name == "libertineRoman" || name == "libertine-type1") {
-		h_font_roman[0] = "libertine";
+		add_roman_tex_font("libertine", name, opts);
 		// NOTE: contrary to libertine.sty, libertineRoman
 		// and libertine-type1 do not automatically invoke
 		// biolinum and libertineMono
@@ -1355,7 +1377,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 			xopts += opt;
 		}
 		if (rm) {
-			h_font_roman[0] = "libertinus";
+			add_roman_tex_font("libertinus", name, opts);
 			if (osf)
 				h_font_roman_osf = "true";
 			else
@@ -1381,7 +1403,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	if (name == "MinionPro") {
-		h_font_roman[0] = "minionpro";
+		add_roman_tex_font("minionpro", name, opts);
 		h_font_roman_osf = "true";
 		h_font_math[0] = "auto";
 		for (auto const & opt : allopts) {
@@ -1405,15 +1427,15 @@ void Preamble::handle_package(Parser &p, string const & name,
 	if (name == "mathdesign") {
 		for (auto const & opt : allopts) {
 			if (opt == "charter") {
-				h_font_roman[0] = "md-charter";
+				add_roman_tex_font("md-charter", name, opts);
 				continue;
 			}
 			if (opt == "garamond") {
-				h_font_roman[0] = "md-garamond";
+				add_roman_tex_font("md-garamond", name, opts);
 				continue;
 			}
 			if (opt == "utopia") {
-				h_font_roman[0] = "md-utopia";
+				add_roman_tex_font("md-utopia", name, opts);
 				continue;
 			}
 			if (opt == "expert") {
@@ -1425,7 +1447,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	else if (name == "mathpazo") {
-		h_font_roman[0] = "palatino";
+		add_roman_tex_font("palatino", name, opts);
 		for (auto const & opt : allopts) {
 			if (opt == "osf") {
 				h_font_roman_osf = "true";
@@ -1445,7 +1467,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	else if (name == "mathptmx") {
-		h_font_roman[0] = "times";
+		add_roman_tex_font("times", name, opts);
 		for (auto const & opt : allopts) {
 			if (!xopts.empty())
 				xopts += ", ";
@@ -1457,7 +1479,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	if (name == "crimson")
-		h_font_roman[0] = "cochineal";
+		add_roman_tex_font("cochineal", name, opts);
 
 	if (name == "cochineal") {
 		for (auto const & opt : allopts) {
@@ -1486,15 +1508,15 @@ void Preamble::handle_package(Parser &p, string const & name,
 			if (opt == "proportional" || opt == "p")
 				continue;
 			if (opt == "medium") {
-				h_font_roman[0] = "CrimsonProMedium";
+				add_roman_tex_font("CrimsonProMedium", name, opts);
 				continue;
 			}
 			if (opt == "extralight") {
-				h_font_roman[0] = "CrimsonProExtraLight";
+				add_roman_tex_font("CrimsonProExtraLight", name, opts);
 				continue;
 			}
 			if (opt == "light") {
-				h_font_roman[0] = "CrimsonProLight";
+				add_roman_tex_font("CrimsonProLight", name, opts);
 				continue;
 			}
 			if (!xopts.empty())
@@ -1513,16 +1535,16 @@ void Preamble::handle_package(Parser &p, string const & name,
 
 	if (name == "paratype") {
 		// in this case all fonts are ParaType
-		h_font_roman[0] = "PTSerif-TLF";
+		add_roman_tex_font("PTSerif-TLF", name, opts);
 		h_font_sans[0] = "default";
 		h_font_typewriter[0] = "default";
 	}
 
 	if (name == "PTSerif")
-		h_font_roman[0] = "PTSerif-TLF";
+		add_roman_tex_font("PTSerif-TLF", name, opts);
 
 	if (name == "XCharter") {
-		h_font_roman[0] = "xcharter";
+		add_roman_tex_font("xcharter", name, opts);
 		for (auto const & opt : allopts) {
 			if (opt == "osf") {
 				h_font_roman_osf = "true";
@@ -1538,18 +1560,18 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	if (name == "plex-serif") {
-		h_font_roman[0] = "IBMPlexSerif";
+		add_roman_tex_font("IBMPlexSerif", name, opts);
 		for (auto const & opt : allopts) {
 			if (opt == "thin") {
-				h_font_roman[0] = "IBMPlexSerifThin";
+				add_roman_tex_font("IBMPlexSerifThin", name, opts);
 				continue;
 			}
 			if (opt == "extralight") {
-				h_font_roman[0] = "IBMPlexSerifExtraLight";
+				add_roman_tex_font("IBMPlexSerifExtraLight", name, opts);
 				continue;
 			}
 			if (opt == "light") {
-				h_font_roman[0] = "IBMPlexSerifLight";
+				add_roman_tex_font("IBMPlexSerifLight", name, opts);
 				continue;
 			}
 			if (!xopts.empty())
@@ -1634,15 +1656,15 @@ void Preamble::handle_package(Parser &p, string const & name,
 		// handle options that might affect different shapes
 		if (name == "noto-serif" || rm) {
 			if (thin)
-				h_font_roman[0] = "NotoSerifThin";
+				add_roman_tex_font("NotoSerifThin", name, opts);
 			else if (extralight)
-				h_font_roman[0] = "NotoSerifExtralight";
+				add_roman_tex_font("NotoSerifExtralight", name, opts);
 			else if (light)
-				h_font_roman[0] = "NotoSerifLight";
+				add_roman_tex_font("NotoSerifLight", name, opts);
 			else if (medium)
-				h_font_roman[0] = "NotoSerifMedium";
+				add_roman_tex_font("NotoSerifMedium", name, opts);
 			else
-				h_font_roman[0] = "NotoSerifRegular";
+				add_roman_tex_font("NotoSerifRegular", name, opts);
 			if (osf)
 				h_font_roman_osf = "true";
 			if (!xopts.empty())
@@ -1678,7 +1700,7 @@ void Preamble::handle_package(Parser &p, string const & name,
 	}
 
 	if (name == "sourceserifpro") {
-		h_font_roman[0] = "ADOBESourceSerifPro";
+		add_roman_tex_font("ADOBESourceSerifPro", name, opts);
 		for (auto const & opt : allopts) {
 			if (opt == "osf") {
 				h_font_roman_osf = "true";
@@ -1752,19 +1774,19 @@ void Preamble::handle_package(Parser &p, string const & name,
 	if (name == "Chivo") {
 		for (auto const & opt : allopts) {
 			if (opt == "thin") {
-				h_font_roman[0] = "ChivoThin";
+				add_roman_tex_font("ChivoThin", name, opts);
 				continue;
 			}
 			if (opt == "light") {
-				h_font_roman[0] = "ChivoLight";
+				add_roman_tex_font("ChivoLight", name, opts);
 				continue;
 			}
 			if (opt == "regular") {
-				h_font_roman[0] = "Chivo";
+				add_roman_tex_font("Chivo", name, opts);
 				continue;
 			}
 			if (opt == "medium") {
-				h_font_roman[0] = "ChivoMedium";
+				add_roman_tex_font("ChivoMedium", name, opts);
 				continue;
 			}
 			if (prefixIs(opt, "oldstyle")) {
@@ -2466,7 +2488,11 @@ bool Preamble::writeLyXHeader(ostream & os, bool subdoc, string const & outfiled
 		   << h_doc_metadata
 		   << "\n\\end_metadata\n";
 	}
-	string const raw = subdoc ? empty_string() : h_preamble.str();
+	string raw = subdoc ? empty_string() : h_preamble.str();
+	if (h_font_roman[0] == "default" && !prev_rm_font.empty()) {
+		// we need to use the preamble
+		raw = prev_rm_font + "\n" + raw;
+	}
 	if (!raw.empty()) {
 		os << "\\begin_preamble\n";
 		for (string::size_type i = 0; i < raw.size(); ++i) {
@@ -2514,6 +2540,12 @@ bool Preamble::writeLyXHeader(ostream & os, bool subdoc, string const & outfiled
 		for (auto const & iofile : h_includeonlys)
 			os << iofile << '\n';
 		os << "\\end_includeonly\n";
+	}
+	if (h_font_roman[0] == "default" && !prev_rm_font.empty()) {
+		// we use the preamble, reset options
+		h_font_roman_opts.clear();
+		h_font_sc = "false";
+		h_font_roman_osf = "false";
 	}
 	os << "\\maintain_unincluded_children " << h_maintain_unincluded_children << "\n"
 	   << "\\language " << h_language << "\n"

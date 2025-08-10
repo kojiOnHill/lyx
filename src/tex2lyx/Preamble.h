@@ -273,6 +273,7 @@ private:
 	bool h_use_minted;
 	std::string h_nomencl_options;
 	bool h_use_xcolor_svgnames;
+	std::string prev_rm_font;
 
 	/*!
 	 * Add package \p name with options \p options to used_packages.
@@ -284,6 +285,9 @@ private:
 	void handle_hyperref(std::vector<std::string> & options);
 	///
 	void handle_geometry(std::vector<std::string> & options);
+	///
+	void add_roman_tex_font(std::string const & lyxname, std::string const & package,
+			    std::string const & opts = std::string());
 	///
 	void handle_package(Parser &p, std::string const & name,
 	                    std::string const & opts, bool in_lyx_preamble,
