@@ -446,13 +446,17 @@ vector<string> split_options(string const & input)
  * \p options and return the value.
  * The found option is also removed from \p options.
  */
-string process_keyval_opt(vector<string> & options, string const & name)
+string process_keyval_opt(vector<string> & options, string const & name,
+			  string const defval = string())
 {
 	for (size_t i = 0; i < options.size(); ++i) {
 		vector<string> option;
+		if (!contains(options[i], "=")) {
+			// No value given. Return default.
+			options.erase(options.begin() + i);
+			return defval;
+		}
 		split(options[i], option, '=');
-		if (option.size() < 2)
-			continue;
 		if (option[0] == name) {
 			options.erase(options.begin() + i);
 			option.erase(option.begin());
@@ -1019,7 +1023,7 @@ Preamble::Preamble() : one_language(true), explicit_babel(false),
 	h_pdf_breaklinks          = "0";
 	h_pdf_pdfborder           = "0";
 	h_pdf_colorlinks          = "0";
-	h_pdf_backref             = "section";
+	h_pdf_backref             = "false";
 	h_pdf_pdfusetitle         = "0";
 	//h_pdf_pagemode;
 	//h_pdf_quoted_options;
@@ -1107,7 +1111,7 @@ void Preamble::handle_hyperref(vector<string> & options)
 		h_pdf_pdfborder = "1";
 	else if (pdfborder == "{0 0 1}")
 		h_pdf_pdfborder = "0";
-	string backref = process_keyval_opt(options, "backref");
+	string backref = process_keyval_opt(options, "backref", "section");
 	if (!backref.empty())
 		h_pdf_backref = backref;
 	string colorlinks = process_keyval_opt(options, "colorlinks");
