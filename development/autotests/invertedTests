@@ -556,7 +556,14 @@ export/templates/Articles/Econometric_Society_Journals_docbook5
 # Missing glyphs!
 export/templates/Articles/Econometric_Society_Journals_dvi3_texF
 export/templates/Articles/Econometric_Society_Journals_pdf5_texF
-# ! LaTeX Error: Control sequence \c__fontspec_shape_it_sc_tl already defined.
+#
+# These give the following error:
+#   ! LaTeX Error: Control sequence \c__fontspec_shape_it_sc_tl already defined.
+# Explanation from Jürgen:
+#   The class loads fontenc and the times font package. This class is
+#   certainly not intended for the use with fontspec (or, understandably
+#   enough with journal templates, any font modification), I would simply
+#   disable this case in the tests.
 export/templates/Articles/Econometric_Society_Journals_dvi3_systemF
 export/templates/Articles/Econometric_Society_Journals_pdf4_systemF
 export/templates/Articles/Econometric_Society_Journals_pdf5_systemF
