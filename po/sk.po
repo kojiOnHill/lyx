@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.5\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-08-04 09:38+0200\n"
-"PO-Revision-Date: 2025-08-04 07:49+0000\n"
+"POT-Creation-Date: 2025-08-10 07:36+0200\n"
+"PO-Revision-Date: 2025-08-10 06:01+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -3914,6 +3914,14 @@ msgstr "Vertikálny priestor obsahu fantóm"
 #: src/frontends/qt/ui/PhantomUi.ui:70
 msgid "Verti&cal Phantom"
 msgstr "&Vertikálny fantóm"
+
+#: src/frontends/qt/ui/PreambleUi.ui:24
+msgid "LaTe&X"
+msgstr "&LaTeX"
+
+#: src/frontends/qt/ui/PreambleUi.ui:41
+msgid "&HTML"
+msgstr "&HTML"
 
 #: src/frontends/qt/ui/PreambleUi.ui:35
 msgid "Find in preamble"
@@ -12477,6 +12485,10 @@ msgstr "Inderscience A4 Časopisy"
 msgid "Die TeXnische Komoedie"
 msgstr "Die TeXnische Komödie"
 
+#: lib/layouts/econsocart.layout:3 lib/examples/Articles:0
+msgid "Econometric Society Journals"
+msgstr "Časopisy ekonometrickej spoločnosti"
+
 #: lib/layouts/ectaart.layout:3 lib/examples/Articles:0
 msgid "Econometrica"
 msgstr "Econometrica"
@@ -12540,6 +12552,42 @@ msgstr "Blok autorov:"
 msgid "Keyword"
 msgstr "Heslo"
 
+#: lib/layouts/econsocart.layout:120
+msgid "Funding"
+msgstr "Financovanie"
+
+#: lib/layouts/econsocart.layout:125
+msgid "Funding:"
+msgstr "Financovanie:"
+
+#: lib/layouts/econsocart.layout:128
+msgid "Coeditor"
+msgstr "Spolueditor"
+
+#: lib/layouts/econsocart.layout:133
+msgid "Coeditor:"
+msgstr "Spolueditor:"
+
+#: lib/layouts/econsocart.layout:170
+msgid "Theorem \\thetheorem:"
+msgstr "Teoréma \\thetheorem:"
+
+#: lib/layouts/econsocart.layout:179
+msgid "Axiom \\theaxiom:"
+msgstr "Axióma \\theaxiom:"
+
+#: lib/layouts/econsocart.layout:188
+msgid "Claim \\theclaim:"
+msgstr "Nárok \\theclaim:"
+
+#: lib/layouts/econsocart.layout:201
+msgid "Lemma \\arabic{theorem}:"
+msgstr "Lemma \\arabic{theorem}:"
+
+#: lib/layouts/econsocart.layout:212
+msgid "Fact:"
+msgstr "Fakt:"
+
 #: lib/layouts/ectaart.layout:165
 msgid "Thanks Text"
 msgstr "Vďaka text"
@@ -12576,6 +12624,38 @@ msgstr "Krstné meno"
 #: lib/layouts/ectaart.layout:231
 msgid "Name (Surname)"
 msgstr "Meno (Priezvisko)"
+
+#: lib/layouts/econsocart.layout:445
+msgid "Email Address"
+msgstr "E-mail adresa"
+
+#: lib/layouts/econsocart.layout:450
+msgid "Label of this e-mail address"
+msgstr "Štítok tejto e-mailovej adresy"
+
+#: lib/layouts/econsocart.layout:469
+msgid "Label of this address to relate it to authors"
+msgstr "Štítok tejto adresy na prepojenie s autormi"
+
+#: lib/layouts/econsocart.layout:480
+msgid "Address Division"
+msgstr "Adresa divízie"
+
+#: lib/layouts/econsocart.layout:483
+msgid "Organization Division"
+msgstr "Divízia organizácie"
+
+#: lib/layouts/econsocart.layout:489
+msgid "Address Organization"
+msgstr "Adresa organizácie"
+
+#: lib/layouts/econsocart.layout:492
+msgid "Organization Name"
+msgstr "Meno organizácie"
+
+#: lib/layouts/ectaart.layout:3
+msgid "Econometrica (ectaart, obsolete)"
+msgstr "Ekonometria (ectaart, zastarané)"
 
 #: lib/layouts/ectaart.layout:244
 msgid "By Same Author (bib)"
@@ -13076,6 +13156,10 @@ msgstr "Korešpondujúci autor text:"
 #: lib/layouts/elsarticle.layout:229
 msgid "Address Label"
 msgstr "Štítok s adresou"
+
+#: lib/layouts/econsocart.layout:414
+msgid "Label to be used to relate an author and his/her address"
+msgstr "Štítok, ktorý sa má použiť na označenie autora a jeho/jej adresy"
 
 #: lib/layouts/elsarticle.layout:230
 msgid "Label of the author you refer to"
@@ -14640,6 +14724,54 @@ msgstr "Pripomienky \\thetheorem."
 msgid "Proof:"
 msgstr "Dôkaz:"
 
+#: lib/layouts/econsocart.layout:293
+msgid "    Q.E.D."
+msgstr "    Q.E.D."
+
+#: lib/layouts/econsocart.layout:298
+msgid "Conjecture \\theconjecture:"
+msgstr "Hypotéza \\theconjecture:"
+
+#: lib/layouts/econsocart.layout:306
+msgid "Problem \\theproblem:"
+msgstr "Problém \\theproblem:"
+
+#: lib/layouts/econsocart.layout:314
+msgid "Exercise \\theexercise:"
+msgstr "Úloha \\theexercise:"
+
+#: lib/layouts/econsocart.layout:322
+msgid "Solution \\thesolution:"
+msgstr "Riešenie \\thesolution:"
+
+#: lib/layouts/econsocart.layout:330
+msgid "Case \\thecase:"
+msgstr "Prípad \\thecase:"
+
+#: lib/layouts/econsocart.layout:338
+msgid "Criterion \\thecriterion:"
+msgstr "Kritérium \\thecriterion:"
+
+#: lib/layouts/econsocart.layout:346
+msgid "Algorithm \\thealgorithm:"
+msgstr "Algoritmus \\thealgorithm:"
+
+#: lib/layouts/econsocart.layout:354
+msgid "Condition \\thecondition:"
+msgstr "Podmienka \\thecondition:"
+
+#: lib/layouts/econsocart.layout:362
+msgid "Note \\thenote:"
+msgstr "Poznámka \\thenote:"
+
+#: lib/layouts/econsocart.layout:370
+msgid "Summary \\thesummary:"
+msgstr "Súhrn \\thesummary:"
+
+#: lib/layouts/econsocart.layout:378
+msgid "Conclusion \\theconclusion:"
+msgstr "Záver \\theconclusion:"
+
 #: lib/layouts/hollywood.layout:3 lib/examples/Articles:0
 msgid "Hollywood"
 msgstr "Hollywood"
@@ -14850,6 +14982,10 @@ msgstr "Tvrdenie \\theproposition."
 #: lib/layouts/theorems-without-preamble.inc:518
 msgid "Question"
 msgstr "Otázka"
+
+#: lib/layouts/econsocart.layout:386
+msgid "Question \\thequestion:"
+msgstr "Otázka \\thequestion:"
 
 #: lib/layouts/ijmpc.layout:459 lib/layouts/ijmpd.layout:494
 #: lib/layouts/theorems-ams-extended-bytype.module:414
@@ -20061,6 +20197,34 @@ msgstr "Záver."
 #: lib/layouts/theorems-counters-extended-bytype.inc:39
 msgid "Assumption"
 msgstr "Predpoklad"
+
+#: lib/layouts/econsocart.layout:222
+msgid "Assumption \\theassumption:"
+msgstr "Predpoklad \\theassumption:"
+
+#: lib/layouts/econsocart.layout:231
+msgid "Corollary \\thecorollary:"
+msgstr "Korolár \\thecorollary:"
+
+#: lib/layouts/econsocart.layout:240
+msgid "Proposition \\theproposition:"
+msgstr "Tvrdenie \\theproposition:"
+
+#: lib/layouts/econsocart.layout:250
+msgid "Definition \\thedefinition:"
+msgstr "Definícia \\thedefinition:"
+
+#: lib/layouts/econsocart.layout:259
+msgid "Example:"
+msgstr "Príklad:"
+
+#: lib/layouts/econsocart.layout:268
+msgid "Remark \\theremark:"
+msgstr "Pripomienka \\theremark:"
+
+#: lib/layouts/econsocart.layout:277
+msgid "Notation \\thenotation:"
+msgstr "Notácia \\thenotation:"
 
 #: lib/layouts/theorems-ams-extended-bytype.module:373
 #: lib/layouts/theorems-ams-extended-chap-bytype.module:416
@@ -38101,10 +38265,6 @@ msgstr "PDF vlastnosti"
 msgid "Bullets"
 msgstr "Odrážky"
 
-#: src/frontends/qt/GuiDocument.cpp:1885 src/frontends/qt/GuiDocument.cpp:5162
-msgid "LaTeX Preamble"
-msgstr "Preambula LaTeX-u"
-
 #: src/frontends/qt/GuiDocument.cpp:1899 src/frontends/qt/GuiDocument.cpp:1947
 #: src/frontends/qt/GuiDocument.cpp:3106 src/frontends/qt/GuiDocument.cpp:3408
 #: src/frontends/qt/GuiDocument.cpp:5126
@@ -45152,9 +45312,6 @@ msgstr "Neznámy používateľ"
 #~ "Latin Modern je doporučený ako podobne vyzerajúci.\n"
 #~ "Kódovanie gréckych a cyrilských fontov je, keď požadované, pridané "
 #~ "automaticky. "
-
-#~ msgid "Example:"
-#~ msgstr "Príklad:"
 
 #~ msgid "Examples:"
 #~ msgstr "Príklady:"
