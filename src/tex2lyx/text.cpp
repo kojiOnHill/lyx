@@ -3278,6 +3278,7 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			|| (isProvided("biblatex") && preamble.citeEngine() == "biblatex-chicago");
 	need_commentbib = use_biblatex || use_biblatex_natbib || use_biblatex_chicago;
 	string last_env;
+	bool output_bibliographystyle = true;
 
 	// it is impossible to determine the correct encoding for non-CJK Japanese.
 	// Therefore write a note at the beginning of the document
@@ -5773,11 +5774,11 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 			// store new bibliographystyle
 			bibliographystyle = p.verbatim_item();
 			// If any other command than \bibliography, \addcontentsline
-			// and \nocite{*} follows, we need to output the style
+			// and \nocite{*} follows, and we did not have a preceding
+			// \bibliography, we need to output the style
 			// (because it might be used by that command).
 			// Otherwise, it will automatically be output by LyX.
 			p.pushPosition();
-			bool output = true;
 			for (Token t2 = p.get_token(); p.good(); t2 = p.get_token()) {
 				if (t2.cat() == catBegin)
 					break;
@@ -5787,9 +5788,9 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 					if (p.getArg('{', '}') == "*")
 						continue;
 				} else if (t2.cs() == "bibliography")
-					output = false;
+					output_bibliographystyle = false;
 				else if (t2.cs() == "phantomsection") {
-					output = false;
+					output_bibliographystyle = false;
 					continue;
 				}
 				else if (t2.cs() == "addcontentsline") {
@@ -5799,12 +5800,12 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 					contentslineContent = p.getArg('{', '}');
 					// if the last argument is not \refname we must output
 					if (contentslineContent == "\\refname")
-						output = false;
+						output_bibliographystyle = false;
 				}
 				break;
 			}
 			p.popPosition();
-			if (output) {
+			if (output_bibliographystyle) {
 				output_ert_inset(os,
 					"\\bibliographystyle{" + bibliographystyle + '}',
 					context);
@@ -5863,6 +5864,19 @@ void parse_text(Parser & p, ostream & os, unsigned flags, bool outer,
 				contentslineContent.clear();
 			}
 			// Do we have a bibliographystyle set?
+			if (bibliographystyle.empty()) {
+				// Look ahead
+				p.pushPosition();
+				for (Token t2 = p.get_token(); p.good(); t2 = p.get_token()) {
+					if (t2.cs() == "bibliographystyle") {
+						bibliographystyle = p.verbatim_item();
+						output_bibliographystyle = false;
+						break;
+					}
+					continue;
+				}
+				p.popPosition();
+			}
 			if (!bibliographystyle.empty()) {
 				if (BibOpts.empty())
 					BibOpts = normalize_filename(bibliographystyle);
