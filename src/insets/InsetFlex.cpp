@@ -174,7 +174,7 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 		cnts.newCounter(equation, parentequation,
 		                eqlabel + from_ascii("\\alph{equation}"),
 		                eqlabel + from_ascii("\\alph{equation}"),
-		                eqlabel + from_ascii("\\alph{equation}"),
+		                from_ascii("Equation|Equations ##"),
 		                cnts.guiName(parentequation));
 		InsetCollapsible::updateBuffer(it, utype, deleted);
 		// reset equation counter as it was.

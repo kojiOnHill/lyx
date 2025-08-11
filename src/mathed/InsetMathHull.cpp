@@ -243,11 +243,11 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 		return;
 	}
 
+	BufferParams const & bp = buffer_->params();
+	string const & lang = it->getParLanguage(bp)->code();
 	// if any of the equations are numbered, then we want to save the values
 	// of some of the counters.
 	if (haveNumbers()) {
-		BufferParams const & bp = buffer_->params();
-		string const & lang = it->getParLanguage(bp)->code();
 		Counters & cnts =
 			buffer_->masterBuffer()->params().documentClass().counters();
 
@@ -285,8 +285,20 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 	for (row_type row = 0; row != nrows(); ++row) {
 		if (numbered(row) && labels_[row]) {
 			labels_[row]->setCounterValue(numbers_[row]);
-			labels_[row]->setPrettyCounter("(" + numbers_[row] + ")");
-			labels_[row]->setFormattedCounter("(" + numbers_[row] + ")");
+			docstring const embraced_num = "(" + numbers_[row] + ")";
+			labels_[row]->setPrettyCounter(embraced_num);
+			// lowercase singular
+			docstring pf = translateIfPossible(from_ascii("equation ##"), lang);
+			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), embraced_num), true, false);
+			// lowercase plural
+			pf = translateIfPossible(from_ascii("equations ##"), lang);
+			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), embraced_num), true, true);
+			// uppercase singular
+			pf = translateIfPossible(from_ascii("Equation ##"), lang);
+			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), embraced_num), false, false);
+			// uppercase plural
+			pf = translateIfPossible(from_ascii("Equations ##"), lang);
+			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), embraced_num), false, true);
 		}
 	}
 

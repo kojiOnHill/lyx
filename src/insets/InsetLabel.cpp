@@ -40,6 +40,7 @@
 #include "support/convert.h"
 #include "support/gettext.h"
 #include "support/lstrings.h"
+#include "support/textutils.h"
 
 using namespace std;
 using namespace lyx::support;
@@ -169,6 +170,46 @@ docstring InsetLabel::formattedCounter(bool const lc, bool const pl) const
 }
 
 
+void InsetLabel::setFormattedCounter(docstring const & fc, bool const lc, bool const pl)
+{
+	if (pl) {
+		if (lc)
+			formatted_counter_lc_pl_ = fc;
+		else
+			formatted_counter_pl_ = fc;
+	} else {
+		if (lc)
+			formatted_counter_lc_ = fc;
+		else
+			formatted_counter_ = fc;
+	}
+}
+
+
+namespace {
+docstring stripSubrefs(docstring const & in, bool const parens){
+	docstring res;
+	bool have_digit = false;
+	size_t const len = in.length();
+	for (size_t i = 0; i < len; ++i) {
+		// subref can be an alphabetic letter or '?'
+		// as soon as we encounter this, break
+		if (have_digit && (isLetterChar(in[i]) || in[i] == '?'))
+			return parens ? res + ")" : res;
+		else {
+			if (isNumberChar(in[i]) && !have_digit) {
+				if (parens)
+					res += "(";
+				have_digit = true;
+			}
+			res += in[i];
+		}
+	}
+	return parens ? res + ")" : res;
+}
+}
+
+
 void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*deleted*/)
 {
 	docstring const & label = getParam("name");
@@ -261,10 +302,11 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 			if (equation) {
 				// FIXME: special code just for the subequations module (#13199)
 				//        replace with a genuine solution long-term!
-				formatted_counter_ = "(" + trim(formatted_counter_, "?") + ")";
-				formatted_counter_pl_ = "(" + trim(formatted_counter_pl_, "?") + ")";
-				formatted_counter_lc_ = "(" + trim(formatted_counter_lc_, "?") + ")";
-				formatted_counter_lc_pl_ = "(" + trim(formatted_counter_lc_pl_, "?") + ")";
+				counter_value_ = stripSubrefs(counter_value_, false);
+				formatted_counter_ = stripSubrefs(formatted_counter_, true);
+				formatted_counter_pl_ = stripSubrefs(formatted_counter_pl_, true);
+				formatted_counter_lc_ = stripSubrefs(formatted_counter_lc_, true);
+				formatted_counter_lc_pl_ = stripSubrefs(formatted_counter_lc_pl_, true);
 			}
 		} else {
 			// For equations, the counter value and pretty counter
@@ -272,11 +314,17 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 			counter_value_ = from_ascii("#");
 			pretty_counter_ = from_ascii("");
 			formatted_counter_ = from_ascii("");
+			formatted_counter_lc_ = from_ascii("");
+			formatted_counter_pl_ = from_ascii("");
+			formatted_counter_lc_pl_ = from_ascii("");
 		}
 	} else {
 		counter_value_ = from_ascii("#");
 		pretty_counter_ = from_ascii("#");
 		formatted_counter_ = from_ascii("#");
+		formatted_counter_lc_ = from_ascii("#");
+		formatted_counter_pl_ = from_ascii("#");
+		formatted_counter_lc_pl_ = from_ascii("#");
 	}
 	if (!active_counter_.empty()) {
 		if (active_counter_ == (*it).layout().counter) {
