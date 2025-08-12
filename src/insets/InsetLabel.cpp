@@ -187,25 +187,25 @@ void InsetLabel::setFormattedCounter(docstring const & fc, bool const lc, bool c
 
 
 namespace {
-docstring stripSubrefs(docstring const & in, bool const parens){
+docstring stripSubrefs(docstring const & in){
 	docstring res;
 	bool have_digit = false;
 	size_t const len = in.length();
 	for (size_t i = 0; i < len; ++i) {
 		// subref can be an alphabetic letter or '?'
 		// as soon as we encounter this, break
-		if (have_digit && (isLetterChar(in[i]) || in[i] == '?'))
-			return parens ? res + ")" : res;
+		char_type const c = in[i];
+		if (have_digit && (('a' <= c && c <= 'z') || c == '?'))
+			continue;
 		else {
-			if (isNumberChar(in[i]) && !have_digit) {
-				if (parens)
-					res += "(";
+			if (isNumberChar(c) && !have_digit)
 				have_digit = true;
-			}
-			res += in[i];
+			else if (have_digit)
+				have_digit = false;
+			res += c;
 		}
 	}
-	return parens ? res + ")" : res;
+	return res;
 }
 }
 
@@ -302,11 +302,11 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 			if (equation) {
 				// FIXME: special code just for the subequations module (#13199)
 				//        replace with a genuine solution long-term!
-				counter_value_ = stripSubrefs(counter_value_, false);
-				formatted_counter_ = stripSubrefs(formatted_counter_, true);
-				formatted_counter_pl_ = stripSubrefs(formatted_counter_pl_, true);
-				formatted_counter_lc_ = stripSubrefs(formatted_counter_lc_, true);
-				formatted_counter_lc_pl_ = stripSubrefs(formatted_counter_lc_pl_, true);
+				counter_value_ = stripSubrefs(counter_value_);
+				formatted_counter_ = stripSubrefs(formatted_counter_);
+				formatted_counter_pl_ = stripSubrefs(formatted_counter_pl_);
+				formatted_counter_lc_ = stripSubrefs(formatted_counter_lc_);
+				formatted_counter_lc_pl_ = stripSubrefs(formatted_counter_lc_pl_);
 			}
 		} else {
 			// For equations, the counter value and pretty counter

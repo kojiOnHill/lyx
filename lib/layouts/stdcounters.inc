@@ -84,7 +84,7 @@ End
 
 Counter equation
 	GuiName Equation
-	PrettyFormat         "Equation|Equations ##"
+	PrettyFormat         "Equation|Equations (##)"
 End
 
 Counter footnote
