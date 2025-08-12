@@ -95,8 +95,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-08-08 13:27+0200\n"
-"PO-Revision-Date: 2025-08-08 13:51+0200\n"
+"POT-Creation-Date: 2025-08-12 12:41+0200\n"
+"PO-Revision-Date: 2025-08-12 12:46+0200\n"
 "Last-Translator: Juergen Spitzmueller <spitz@lyx.org>\n"
 "Language-Team: German <lyx-docs@lists.lyx.org>\n"
 "Language: de\n"
@@ -820,7 +820,7 @@ msgstr "Füge einen neuen Zweig zur Liste hinzu"
 
 #: src/frontends/qt/ui/BranchesUi.ui:119 src/frontends/qt/ui/CitationUi.ui:146
 #: src/frontends/qt/ui/ColorUi.ui:324 src/frontends/qt/ui/IndicesUi.ui:135
-#: src/frontends/qt/ui/RefUi.ui:160 src/CutAndPaste.cpp:458
+#: src/frontends/qt/ui/RefUi.ui:160 src/CutAndPaste.cpp:459
 msgid "&Add"
 msgstr "&Hinzufügen"
 
@@ -5729,7 +5729,7 @@ msgid "Selected &Labels:"
 msgstr "Ausgewählte &Marken:"
 
 #: src/frontends/qt/ui/RefUi.ui:144 lib/layouts/econsocart.layout:449
-#: lib/layouts/econsocart.layout:468 src/insets/InsetRef.cpp:1032
+#: lib/layouts/econsocart.layout:468 src/insets/InsetRef.cpp:1048
 msgid "Label"
 msgstr "Marke"
 
@@ -8085,21 +8085,25 @@ msgid "Remark"
 msgstr "Bemerkung"
 
 #: lib/layouts/AEA.layout:351 lib/layouts/ijmpd.layout:452
+#: lib/layouts/theorems-counters-bytype.inc:58
 #: lib/layouts/theorems-without-preamble.inc:416
 msgid "Remark ##"
 msgstr "Bemerkung ##"
 
 #: lib/layouts/AEA.layout:351 lib/layouts/ijmpd.layout:452
+#: lib/layouts/theorems-counters-bytype.inc:58
 #: lib/layouts/theorems-without-preamble.inc:416
 msgid "remark ##"
 msgstr "Bemerkung ##"
 
 #: lib/layouts/AEA.layout:351 lib/layouts/ijmpd.layout:452
+#: lib/layouts/theorems-counters-bytype.inc:58
 #: lib/layouts/theorems-without-preamble.inc:416
 msgid "Remarks ##"
 msgstr "Bemerkungen ##"
 
 #: lib/layouts/AEA.layout:351 lib/layouts/ijmpd.layout:452
+#: lib/layouts/theorems-counters-bytype.inc:58
 #: lib/layouts/theorems-without-preamble.inc:416
 msgid "remarks ##"
 msgstr "Bemerkungen ##"
@@ -8139,19 +8143,23 @@ msgstr "Bemerkung \\theremark."
 msgid "Solution"
 msgstr "Lösung"
 
-#: lib/layouts/AEA.layout:366 lib/layouts/theorems-without-preamble.inc:349
+#: lib/layouts/AEA.layout:366 lib/layouts/theorems-counters-bytype.inc:53
+#: lib/layouts/theorems-without-preamble.inc:349
 msgid "Solution ##"
 msgstr "Lösung ##"
 
-#: lib/layouts/AEA.layout:366 lib/layouts/theorems-without-preamble.inc:349
+#: lib/layouts/AEA.layout:366 lib/layouts/theorems-counters-bytype.inc:53
+#: lib/layouts/theorems-without-preamble.inc:349
 msgid "solution ##"
 msgstr "Lösung ##"
 
-#: lib/layouts/AEA.layout:366 lib/layouts/theorems-without-preamble.inc:349
+#: lib/layouts/AEA.layout:366 lib/layouts/theorems-counters-bytype.inc:53
+#: lib/layouts/theorems-without-preamble.inc:349
 msgid "Solutions ##"
 msgstr "Lösungen ##"
 
-#: lib/layouts/AEA.layout:366 lib/layouts/theorems-without-preamble.inc:349
+#: lib/layouts/AEA.layout:366 lib/layouts/theorems-counters-bytype.inc:53
+#: lib/layouts/theorems-without-preamble.inc:349
 msgid "solutions ##"
 msgstr "Lösungen ##"
 
@@ -8192,18 +8200,22 @@ msgid "Summary"
 msgstr "Zusammenfassung"
 
 #: lib/layouts/AEA.layout:383 lib/layouts/elsart.layout:528
+#: lib/layouts/theorems-counters-extended-bytype.inc:32
 msgid "Summary ##"
 msgstr "Zusammenfassung ##"
 
 #: lib/layouts/AEA.layout:383 lib/layouts/elsart.layout:528
+#: lib/layouts/theorems-counters-extended-bytype.inc:32
 msgid "summary ##"
 msgstr "Zusammenfassung ##"
 
 #: lib/layouts/AEA.layout:383 lib/layouts/elsart.layout:528
+#: lib/layouts/theorems-counters-extended-bytype.inc:32
 msgid "Summaries ##"
 msgstr "Zusammenfassungen ##"
 
 #: lib/layouts/AEA.layout:383 lib/layouts/elsart.layout:528
+#: lib/layouts/theorems-counters-extended-bytype.inc:32
 msgid "summaries ##"
 msgstr "Zusammenfassungen ##"
 
@@ -8289,416 +8301,332 @@ msgstr "IEEE Transactions"
 #: lib/layouts/slides.layout:61 lib/layouts/stdclass.inc:28
 #: lib/layouts/stdinsets.inc:771 lib/layouts/stdletter.inc:12
 #: lib/layouts/svcommon.inc:26 lib/layouts/tufte-book.layout:35
-#: src/insets/InsetRef.cpp:1024
+#: src/insets/InsetRef.cpp:1040
 msgid "Standard"
 msgstr "Standard"
 
 #: lib/layouts/IEEEtran.layout:51 lib/layouts/acmart.layout:576
 #: lib/layouts/elsart.layout:298 lib/layouts/elsart.layout:330
-#: lib/layouts/theorems-ams.module:24
-#: lib/layouts/theorems-counters-bytype.inc:7
-#: lib/layouts/theorems-std.module:17
+#: lib/layouts/theorems-ams.module:24 lib/layouts/theorems-std.module:17
 msgid "Theorem \\arabic{theorem}"
 msgstr "Theorem \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:51 lib/layouts/acmart.layout:576
 #: lib/layouts/elsart.layout:298 lib/layouts/theorems-ams.module:24
-#: lib/layouts/theorems-counters-bytype.inc:7
 #: lib/layouts/theorems-std.module:17
 msgid "theorem \\arabic{theorem}"
 msgstr "Theorem \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:51 lib/layouts/acmart.layout:576
 #: lib/layouts/elsart.layout:298 lib/layouts/theorems-ams.module:24
-#: lib/layouts/theorems-counters-bytype.inc:7
 #: lib/layouts/theorems-std.module:17
 msgid "Theorems \\arabic{theorem}"
 msgstr "Theoreme \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:51 lib/layouts/acmart.layout:576
 #: lib/layouts/elsart.layout:298 lib/layouts/theorems-ams.module:24
-#: lib/layouts/theorems-counters-bytype.inc:7
 #: lib/layouts/theorems-std.module:17
 msgid "theorems \\arabic{theorem}"
 msgstr "Theoreme \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:52 lib/layouts/acmart.layout:577
 #: lib/layouts/elsart.layout:299 lib/layouts/elsart.layout:396
-#: lib/layouts/theorems-ams.module:25
-#: lib/layouts/theorems-counters-bytype.inc:12
-#: lib/layouts/theorems-std.module:18
+#: lib/layouts/theorems-ams.module:25 lib/layouts/theorems-std.module:18
 msgid "Corollary \\arabic{theorem}"
 msgstr "Korollar \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:52 lib/layouts/acmart.layout:577
 #: lib/layouts/elsart.layout:299 lib/layouts/theorems-ams.module:25
-#: lib/layouts/theorems-counters-bytype.inc:12
 #: lib/layouts/theorems-std.module:18
 msgid "corollary \\arabic{theorem}"
 msgstr "Korollar \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:52 lib/layouts/acmart.layout:577
 #: lib/layouts/elsart.layout:299 lib/layouts/theorems-ams.module:25
-#: lib/layouts/theorems-counters-bytype.inc:12
 #: lib/layouts/theorems-std.module:18
 msgid "Corollaries \\arabic{theorem}"
 msgstr "Korollare \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:52 lib/layouts/acmart.layout:577
 #: lib/layouts/elsart.layout:299 lib/layouts/theorems-ams.module:25
-#: lib/layouts/theorems-counters-bytype.inc:12
 #: lib/layouts/theorems-std.module:18
 msgid "corollaries \\arabic{theorem}"
 msgstr "Korollare \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:53 lib/layouts/acmart.layout:578
 #: lib/layouts/elsart.layout:300 lib/layouts/elsart.layout:384
-#: lib/layouts/theorems-ams.module:26
-#: lib/layouts/theorems-counters-bytype.inc:17
-#: lib/layouts/theorems-std.module:19
+#: lib/layouts/theorems-ams.module:26 lib/layouts/theorems-std.module:19
 msgid "Lemma \\arabic{theorem}"
 msgstr "Lemma \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:53 lib/layouts/acmart.layout:578
 #: lib/layouts/elsart.layout:300 lib/layouts/theorems-ams.module:26
-#: lib/layouts/theorems-counters-bytype.inc:17
 #: lib/layouts/theorems-std.module:19
 msgid "lemma \\arabic{theorem}"
 msgstr "Lemma \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:53 lib/layouts/acmart.layout:578
 #: lib/layouts/elsart.layout:300 lib/layouts/theorems-ams.module:26
-#: lib/layouts/theorems-counters-bytype.inc:17
 #: lib/layouts/theorems-std.module:19
 msgid "Lemmas \\arabic{theorem}"
 msgstr "Lemmata \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:53 lib/layouts/acmart.layout:578
 #: lib/layouts/elsart.layout:300 lib/layouts/theorems-ams.module:26
-#: lib/layouts/theorems-counters-bytype.inc:17
 #: lib/layouts/theorems-std.module:19
 msgid "lemmas \\arabic{theorem}"
 msgstr "Lemmata \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:54 lib/layouts/acmart.layout:579
 #: lib/layouts/elsart.layout:301 lib/layouts/elsart.layout:408
-#: lib/layouts/theorems-ams.module:27
-#: lib/layouts/theorems-counters-bytype.inc:22
-#: lib/layouts/theorems-std.module:20
+#: lib/layouts/theorems-ams.module:27 lib/layouts/theorems-std.module:20
 msgid "Proposition \\arabic{theorem}"
 msgstr "Satz \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:54 lib/layouts/acmart.layout:579
 #: lib/layouts/elsart.layout:301 lib/layouts/theorems-ams.module:27
-#: lib/layouts/theorems-counters-bytype.inc:22
 #: lib/layouts/theorems-std.module:20
 msgid "proposition \\arabic{theorem}"
 msgstr "Satz \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:54 lib/layouts/acmart.layout:579
 #: lib/layouts/elsart.layout:301 lib/layouts/theorems-ams.module:27
-#: lib/layouts/theorems-counters-bytype.inc:22
 #: lib/layouts/theorems-std.module:20
 msgid "Propositions \\arabic{theorem}"
 msgstr "Sätze \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:54 lib/layouts/acmart.layout:579
 #: lib/layouts/elsart.layout:301 lib/layouts/theorems-ams.module:27
-#: lib/layouts/theorems-counters-bytype.inc:22
 #: lib/layouts/theorems-std.module:20
 msgid "propositions \\arabic{theorem}"
 msgstr "Sätze \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:55 lib/layouts/acmart.layout:580
 #: lib/layouts/elsart.layout:302 lib/layouts/elsart.layout:463
-#: lib/layouts/theorems-ams.module:28
-#: lib/layouts/theorems-counters-bytype.inc:26
-#: lib/layouts/theorems-std.module:21
+#: lib/layouts/theorems-ams.module:28 lib/layouts/theorems-std.module:21
 msgid "Conjecture \\arabic{theorem}"
 msgstr "Vermutung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:55 lib/layouts/acmart.layout:580
 #: lib/layouts/elsart.layout:302 lib/layouts/theorems-ams.module:28
-#: lib/layouts/theorems-counters-bytype.inc:26
 #: lib/layouts/theorems-std.module:21
 msgid "conjecture \\arabic{theorem}"
 msgstr "Vermutung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:55 lib/layouts/acmart.layout:580
 #: lib/layouts/elsart.layout:302 lib/layouts/theorems-ams.module:28
-#: lib/layouts/theorems-counters-bytype.inc:26
 #: lib/layouts/theorems-std.module:21
 msgid "Conjectures \\arabic{theorem}"
 msgstr "Vermutungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:55 lib/layouts/acmart.layout:580
 #: lib/layouts/elsart.layout:302 lib/layouts/theorems-ams.module:28
-#: lib/layouts/theorems-counters-bytype.inc:26
 #: lib/layouts/theorems-std.module:21
 msgid "conjectures \\arabic{theorem}"
 msgstr "Vermutungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:56 lib/layouts/acmart.layout:581
 #: lib/layouts/elsart.layout:303 lib/layouts/elsart.layout:444
-#: lib/layouts/theorems-ams.module:29
-#: lib/layouts/theorems-counters-bytype.inc:35
-#: lib/layouts/theorems-std.module:23
+#: lib/layouts/theorems-ams.module:29 lib/layouts/theorems-std.module:23
 msgid "Definition \\arabic{theorem}"
 msgstr "Definition \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:56 lib/layouts/acmart.layout:581
 #: lib/layouts/elsart.layout:303 lib/layouts/theorems-ams.module:29
-#: lib/layouts/theorems-counters-bytype.inc:35
 #: lib/layouts/theorems-std.module:23
 msgid "definition \\arabic{theorem}"
 msgstr "Definition \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:56 lib/layouts/acmart.layout:581
 #: lib/layouts/elsart.layout:303 lib/layouts/theorems-ams.module:29
-#: lib/layouts/theorems-counters-bytype.inc:35
 #: lib/layouts/theorems-std.module:23
 msgid "Definitions \\arabic{theorem}"
 msgstr "Definitionen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:56 lib/layouts/acmart.layout:581
 #: lib/layouts/elsart.layout:303 lib/layouts/theorems-ams.module:29
-#: lib/layouts/theorems-counters-bytype.inc:35
 #: lib/layouts/theorems-std.module:23
 msgid "definitions \\arabic{theorem}"
 msgstr "Definitionen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:57 lib/layouts/acmart.layout:582
 #: lib/layouts/elsart.layout:304 lib/layouts/elsart.layout:475
-#: lib/layouts/theorems-ams.module:30
-#: lib/layouts/theorems-counters-bytype.inc:39
-#: lib/layouts/theorems-std.module:24
+#: lib/layouts/theorems-ams.module:30 lib/layouts/theorems-std.module:24
 msgid "Example \\arabic{theorem}"
 msgstr "Beispiel \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:57 lib/layouts/acmart.layout:582
 #: lib/layouts/elsart.layout:304 lib/layouts/theorems-ams.module:30
-#: lib/layouts/theorems-counters-bytype.inc:39
 #: lib/layouts/theorems-std.module:24
 msgid "example \\arabic{theorem}"
 msgstr "Beispiel \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:57 lib/layouts/acmart.layout:582
 #: lib/layouts/elsart.layout:304 lib/layouts/theorems-ams.module:30
-#: lib/layouts/theorems-counters-bytype.inc:39
 #: lib/layouts/theorems-std.module:24
 msgid "Examples \\arabic{theorem}"
 msgstr "Beispiele \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:57 lib/layouts/acmart.layout:582
 #: lib/layouts/elsart.layout:304 lib/layouts/theorems-ams.module:30
-#: lib/layouts/theorems-counters-bytype.inc:39
 #: lib/layouts/theorems-std.module:24
 msgid "examples \\arabic{theorem}"
 msgstr "Beispiele \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:58 lib/layouts/elsart.layout:305
 #: lib/layouts/elsart.layout:485 lib/layouts/theorems-ams.module:31
-#: lib/layouts/theorems-counters-bytype.inc:43
 #: lib/layouts/theorems-std.module:25
 msgid "Problem \\arabic{theorem}"
 msgstr "Problem \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:58 lib/layouts/elsart.layout:305
-#: lib/layouts/theorems-ams.module:31
-#: lib/layouts/theorems-counters-bytype.inc:43
-#: lib/layouts/theorems-std.module:25
+#: lib/layouts/theorems-ams.module:31 lib/layouts/theorems-std.module:25
 msgid "problem \\arabic{theorem}"
 msgstr "Problem \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:58 lib/layouts/elsart.layout:305
-#: lib/layouts/theorems-ams.module:31
-#: lib/layouts/theorems-counters-bytype.inc:43
-#: lib/layouts/theorems-std.module:25
+#: lib/layouts/theorems-ams.module:31 lib/layouts/theorems-std.module:25
 msgid "Problems \\arabic{theorem}"
 msgstr "Probleme \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:58 lib/layouts/elsart.layout:305
-#: lib/layouts/theorems-ams.module:31
-#: lib/layouts/theorems-counters-bytype.inc:43
-#: lib/layouts/theorems-std.module:25
+#: lib/layouts/theorems-ams.module:31 lib/layouts/theorems-std.module:25
 msgid "problems \\arabic{theorem}"
 msgstr "Probleme \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:59 lib/layouts/elsart.layout:306
-#: lib/layouts/theorems-ams.module:32
-#: lib/layouts/theorems-counters-bytype.inc:48
-#: lib/layouts/theorems-std.module:26
+#: lib/layouts/theorems-ams.module:32 lib/layouts/theorems-std.module:26
 msgid "Exercise \\arabic{theorem}"
 msgstr "Übung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:59 lib/layouts/elsart.layout:306
-#: lib/layouts/theorems-ams.module:32
-#: lib/layouts/theorems-counters-bytype.inc:48
-#: lib/layouts/theorems-std.module:26
+#: lib/layouts/theorems-ams.module:32 lib/layouts/theorems-std.module:26
 msgid "exercise \\arabic{theorem}"
 msgstr "Übung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:59 lib/layouts/elsart.layout:306
-#: lib/layouts/theorems-ams.module:32
-#: lib/layouts/theorems-counters-bytype.inc:48
-#: lib/layouts/theorems-std.module:26
+#: lib/layouts/theorems-ams.module:32 lib/layouts/theorems-std.module:26
 msgid "Exercises \\arabic{theorem}"
 msgstr "Übungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:59 lib/layouts/elsart.layout:306
-#: lib/layouts/theorems-ams.module:32
-#: lib/layouts/theorems-counters-bytype.inc:48
-#: lib/layouts/theorems-std.module:26
+#: lib/layouts/theorems-ams.module:32 lib/layouts/theorems-std.module:26
 msgid "exercises \\arabic{theorem}"
 msgstr "Übungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:60 lib/layouts/elsart.layout:307
-#: lib/layouts/theorems-ams.module:33
-#: lib/layouts/theorems-counters-bytype.inc:53
-#: lib/layouts/theorems-std.module:27
+#: lib/layouts/theorems-ams.module:33 lib/layouts/theorems-std.module:27
 msgid "Solution \\arabic{theorem}"
 msgstr "Lösung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:60 lib/layouts/elsart.layout:307
-#: lib/layouts/theorems-ams.module:33
-#: lib/layouts/theorems-counters-bytype.inc:53
-#: lib/layouts/theorems-std.module:27
+#: lib/layouts/theorems-ams.module:33 lib/layouts/theorems-std.module:27
 msgid "solution \\arabic{theorem}"
 msgstr "Lösung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:60 lib/layouts/elsart.layout:307
-#: lib/layouts/theorems-ams.module:33
-#: lib/layouts/theorems-counters-bytype.inc:53
-#: lib/layouts/theorems-std.module:27
+#: lib/layouts/theorems-ams.module:33 lib/layouts/theorems-std.module:27
 msgid "Solutions \\arabic{theorem}"
 msgstr "Lösungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:60 lib/layouts/elsart.layout:307
-#: lib/layouts/theorems-ams.module:33
-#: lib/layouts/theorems-counters-bytype.inc:53
-#: lib/layouts/theorems-std.module:27
+#: lib/layouts/theorems-ams.module:33 lib/layouts/theorems-std.module:27
 msgid "solutions \\arabic{theorem}"
 msgstr "Lösungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:61 lib/layouts/elsart.layout:308
 #: lib/layouts/elsart.layout:496 lib/layouts/theorems-ams.module:34
-#: lib/layouts/theorems-counters-bytype.inc:58
 #: lib/layouts/theorems-std.module:28
 msgid "Remark \\arabic{theorem}"
 msgstr "Bemerkung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:61 lib/layouts/elsart.layout:308
-#: lib/layouts/theorems-ams.module:34
-#: lib/layouts/theorems-counters-bytype.inc:58
-#: lib/layouts/theorems-std.module:28
+#: lib/layouts/theorems-ams.module:34 lib/layouts/theorems-std.module:28
 msgid "remark \\arabic{theorem}"
 msgstr "Bemerkung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:61 lib/layouts/elsart.layout:308
-#: lib/layouts/theorems-ams.module:34
-#: lib/layouts/theorems-counters-bytype.inc:58
-#: lib/layouts/theorems-std.module:28
+#: lib/layouts/theorems-ams.module:34 lib/layouts/theorems-std.module:28
 msgid "Remarks \\arabic{theorem}"
 msgstr "Bemerkungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:61 lib/layouts/elsart.layout:308
-#: lib/layouts/theorems-ams.module:34
-#: lib/layouts/theorems-counters-bytype.inc:58
-#: lib/layouts/theorems-std.module:28
+#: lib/layouts/theorems-ams.module:34 lib/layouts/theorems-std.module:28
 msgid "remarks \\arabic{theorem}"
 msgstr "Bemerkungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:62 lib/layouts/elsart.layout:309
 #: lib/layouts/elsart.layout:518 lib/layouts/theorems-ams.module:35
-#: lib/layouts/theorems-counters-bytype.inc:62
 #: lib/layouts/theorems-std.module:29
 msgid "Claim \\arabic{theorem}"
 msgstr "Behauptung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:62 lib/layouts/elsart.layout:309
-#: lib/layouts/theorems-ams.module:35
-#: lib/layouts/theorems-counters-bytype.inc:62
-#: lib/layouts/theorems-std.module:29
+#: lib/layouts/theorems-ams.module:35 lib/layouts/theorems-std.module:29
 msgid "claim \\arabic{theorem}"
 msgstr "Behauptung \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:62 lib/layouts/elsart.layout:309
-#: lib/layouts/theorems-ams.module:35
-#: lib/layouts/theorems-counters-bytype.inc:62
-#: lib/layouts/theorems-std.module:29
+#: lib/layouts/theorems-ams.module:35 lib/layouts/theorems-std.module:29
 msgid "Claims \\arabic{theorem}"
 msgstr "Behauptungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:62 lib/layouts/elsart.layout:309
-#: lib/layouts/theorems-ams.module:35
-#: lib/layouts/theorems-counters-bytype.inc:62
-#: lib/layouts/theorems-std.module:29
+#: lib/layouts/theorems-ams.module:35 lib/layouts/theorems-std.module:29
 msgid "claims \\arabic{theorem}"
 msgstr "Behauptungen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:63 lib/layouts/theorems-ams.module:36
-#: lib/layouts/theorems-counters-bytype.inc:30
 #: lib/layouts/theorems-std.module:22
 msgid "Fact \\arabic{theorem}"
 msgstr "Fakt \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:63 lib/layouts/theorems-ams.module:36
-#: lib/layouts/theorems-counters-bytype.inc:30
 #: lib/layouts/theorems-std.module:22
 msgid "fact \\arabic{theorem}"
 msgstr "Fakt \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:63 lib/layouts/theorems-ams.module:36
-#: lib/layouts/theorems-counters-bytype.inc:30
 #: lib/layouts/theorems-std.module:22
 msgid "Facts \\arabic{theorem}"
 msgstr "Fakten \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:63 lib/layouts/theorems-ams.module:36
-#: lib/layouts/theorems-counters-bytype.inc:30
 #: lib/layouts/theorems-std.module:22
 msgid "facts \\arabic{theorem}"
 msgstr "Fakten \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:64 lib/layouts/elsart.layout:420
 #: lib/layouts/theorems-ams.module:37
-#: lib/layouts/theorems-counters-extended-bytype.inc:6
 msgid "Criterion \\arabic{theorem}"
 msgstr "Kriterium \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:64 lib/layouts/theorems-ams.module:37
-#: lib/layouts/theorems-counters-extended-bytype.inc:6
 msgid "criterion \\arabic{theorem}"
 msgstr "Kriterium \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:64 lib/layouts/theorems-ams.module:37
-#: lib/layouts/theorems-counters-extended-bytype.inc:6
 msgid "Criteria \\arabic{theorem}"
 msgstr "Kriterien \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:64 lib/layouts/theorems-ams.module:37
-#: lib/layouts/theorems-counters-extended-bytype.inc:6
 msgid "criteria \\arabic{theorem}"
 msgstr "Kriterien \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:65 lib/layouts/elsart.layout:432
 #: lib/layouts/theorems-ams.module:38
-#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "Algorithm \\arabic{theorem}"
 msgstr "Algorithmus \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:65 lib/layouts/theorems-ams.module:38
-#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "algorithm \\arabic{theorem}"
 msgstr "Algorithmus \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:65 lib/layouts/theorems-ams.module:38
-#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "Algorithms \\arabic{theorem}"
 msgstr "Algorithmen \\arabic{theorem}"
 
 #: lib/layouts/IEEEtran.layout:65 lib/layouts/theorems-ams.module:38
-#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "algorithms \\arabic{theorem}"
 msgstr "Algorithmen \\arabic{theorem}"
 
@@ -9506,7 +9434,7 @@ msgid "Altaffilation"
 msgstr "Alt. Zugehörigkeit"
 
 #: lib/layouts/aastex.layout:201 lib/layouts/agutex.layout:132
-#: src/mathed/InsetMathHull.cpp:1928 src/mathed/InsetMathHull.cpp:1937
+#: src/mathed/InsetMathHull.cpp:1940 src/mathed/InsetMathHull.cpp:1949
 msgid "Number"
 msgstr "Nummer"
 
@@ -10807,24 +10735,28 @@ msgstr "Algorithmenverzeichnis"
 #: lib/layouts/algorithm2e.module:31 lib/layouts/powerdot.layout:607
 #: lib/layouts/revtex4-x.inc:323 lib/layouts/sciposter.layout:100
 #: lib/layouts/stdfloats.inc:54
+#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "Algorithm ##"
 msgstr "Algorithmus ##"
 
 #: lib/layouts/algorithm2e.module:31 lib/layouts/powerdot.layout:607
 #: lib/layouts/revtex4-x.inc:323 lib/layouts/sciposter.layout:100
 #: lib/layouts/stdfloats.inc:54
+#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "algorithm ##"
 msgstr "Algorithmus ##"
 
 #: lib/layouts/algorithm2e.module:31 lib/layouts/powerdot.layout:607
 #: lib/layouts/revtex4-x.inc:323 lib/layouts/sciposter.layout:100
 #: lib/layouts/stdfloats.inc:54
+#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "Algorithms ##"
 msgstr "Algorithmen ##"
 
 #: lib/layouts/algorithm2e.module:31 lib/layouts/powerdot.layout:607
 #: lib/layouts/revtex4-x.inc:323 lib/layouts/sciposter.layout:100
 #: lib/layouts/stdfloats.inc:54
+#: lib/layouts/theorems-counters-extended-bytype.inc:11
 msgid "algorithms ##"
 msgstr "Algorithmen ##"
 
@@ -13609,7 +13541,6 @@ msgid "PROOF."
 msgstr "BEWEIS."
 
 #: lib/layouts/elsart.layout:507
-#: lib/layouts/theorems-counters-extended-bytype.inc:24
 msgid "Note \\arabic{theorem}"
 msgstr "Notiz \\arabic{theorem}"
 
@@ -13872,7 +13803,7 @@ msgstr ""
 "Gleichungsnummer die Abschnittsnummer voran, bspw. '(2.1)'."
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:29
-#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:1025
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:1041
 #: src/mathed/InsetMathRef.cpp:426
 msgid "Equation"
 msgstr "Gleichung"
@@ -14184,7 +14115,7 @@ msgid "Size the photo is resized to"
 msgstr "Ausgabegröße des Bildes"
 
 #: lib/layouts/europecv.layout:185 src/frontends/qt/GuiDocument.cpp:126
-#: src/insets/InsetRef.cpp:1026
+#: src/insets/InsetRef.cpp:1042
 msgid "Page"
 msgstr "Seite"
 
@@ -15455,18 +15386,22 @@ msgid "Question \\thequestion."
 msgstr "Frage \\thequestion."
 
 #: lib/layouts/ijmpc.layout:469 lib/layouts/ijmpd.layout:503
+#: lib/layouts/theorems-counters-bytype.inc:62
 msgid "Claim ##"
 msgstr "Behauptung ##"
 
 #: lib/layouts/ijmpc.layout:469 lib/layouts/ijmpd.layout:503
+#: lib/layouts/theorems-counters-bytype.inc:62
 msgid "claim ##"
 msgstr "Behauptung ##"
 
 #: lib/layouts/ijmpc.layout:469 lib/layouts/ijmpd.layout:503
+#: lib/layouts/theorems-counters-bytype.inc:62
 msgid "Claims ##"
 msgstr "Behauptungen ##"
 
 #: lib/layouts/ijmpc.layout:469 lib/layouts/ijmpd.layout:503
+#: lib/layouts/theorems-counters-bytype.inc:62
 msgid "claims ##"
 msgstr "Behauptungen ##"
 
@@ -15501,83 +15436,103 @@ msgstr "Int. Journal of Modern Physics D"
 msgid "Comby"
 msgstr "Comby"
 
-#: lib/layouts/ijmpd.layout:434
+#: lib/layouts/ijmpd.layout:434 lib/layouts/theorems-counters-bytype.inc:7
 msgid "Theorem ##"
 msgstr "Theorem ##"
 
-#: lib/layouts/ijmpd.layout:434
+#: lib/layouts/ijmpd.layout:434 lib/layouts/theorems-counters-bytype.inc:7
 msgid "theorem ##"
 msgstr "Theorem ##"
 
-#: lib/layouts/ijmpd.layout:434
+#: lib/layouts/ijmpd.layout:434 lib/layouts/theorems-counters-bytype.inc:7
 msgid "Theorems ##"
 msgstr "Theoreme ##"
 
-#: lib/layouts/ijmpd.layout:434
+#: lib/layouts/ijmpd.layout:434 lib/layouts/theorems-counters-bytype.inc:7
 msgid "theorems ##"
 msgstr "Theoreme ##"
 
-#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-without-preamble.inc:87
+#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-counters-bytype.inc:12
+#: lib/layouts/theorems-without-preamble.inc:87
 msgid "Corollary ##"
 msgstr "Korollar ##"
 
-#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-without-preamble.inc:87
+#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-counters-bytype.inc:12
+#: lib/layouts/theorems-without-preamble.inc:87
 msgid "corollary ##"
 msgstr "Korollar ##"
 
-#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-without-preamble.inc:87
+#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-counters-bytype.inc:12
+#: lib/layouts/theorems-without-preamble.inc:87
 msgid "Corollaries ##"
 msgstr "Korollare ##"
 
-#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-without-preamble.inc:87
+#: lib/layouts/ijmpd.layout:465 lib/layouts/theorems-counters-bytype.inc:12
+#: lib/layouts/theorems-without-preamble.inc:87
 msgid "corollaries ##"
 msgstr "Korollare ##"
 
-#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-without-preamble.inc:110
+#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-counters-bytype.inc:17
+#: lib/layouts/theorems-without-preamble.inc:110
 msgid "Lemma ##"
 msgstr "Lemma ##"
 
-#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-without-preamble.inc:110
+#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-counters-bytype.inc:17
+#: lib/layouts/theorems-without-preamble.inc:110
 msgid "lemma ##"
 msgstr "Lemma ##"
 
-#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-without-preamble.inc:110
+#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-counters-bytype.inc:17
+#: lib/layouts/theorems-without-preamble.inc:110
 msgid "Lemmas ##"
 msgstr "Lemmata ##"
 
-#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-without-preamble.inc:110
+#: lib/layouts/ijmpd.layout:474 lib/layouts/theorems-counters-bytype.inc:17
+#: lib/layouts/theorems-without-preamble.inc:110
 msgid "lemmas ##"
 msgstr "Lemmata ##"
 
-#: lib/layouts/ijmpd.layout:491 lib/layouts/theorems-without-preamble.inc:506
+#: lib/layouts/ijmpd.layout:491
+#: lib/layouts/theorems-counters-extended-bytype.inc:44
+#: lib/layouts/theorems-without-preamble.inc:506
 msgid "Question ##"
 msgstr "Frage ##"
 
-#: lib/layouts/ijmpd.layout:491 lib/layouts/theorems-without-preamble.inc:506
+#: lib/layouts/ijmpd.layout:491
+#: lib/layouts/theorems-counters-extended-bytype.inc:44
+#: lib/layouts/theorems-without-preamble.inc:506
 msgid "question ##"
 msgstr "Frage ##"
 
-#: lib/layouts/ijmpd.layout:491 lib/layouts/theorems-without-preamble.inc:506
+#: lib/layouts/ijmpd.layout:491
+#: lib/layouts/theorems-counters-extended-bytype.inc:44
+#: lib/layouts/theorems-without-preamble.inc:506
 msgid "Questions ##"
 msgstr "Fragen ##"
 
-#: lib/layouts/ijmpd.layout:491 lib/layouts/theorems-without-preamble.inc:506
+#: lib/layouts/ijmpd.layout:491
+#: lib/layouts/theorems-counters-extended-bytype.inc:44
+#: lib/layouts/theorems-without-preamble.inc:506
 msgid "questions ##"
 msgstr "Fragen ##"
 
-#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-without-preamble.inc:179
+#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-counters-bytype.inc:26
+#: lib/layouts/theorems-without-preamble.inc:179
 msgid "Conjecture ##"
 msgstr "Vermutung ##"
 
-#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-without-preamble.inc:179
+#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-counters-bytype.inc:26
+#: lib/layouts/theorems-without-preamble.inc:179
 msgid "conjecture ##"
 msgstr "Vermutung ##"
 
-#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-without-preamble.inc:179
+#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-counters-bytype.inc:26
+#: lib/layouts/theorems-without-preamble.inc:179
 msgid "Conjectures ##"
 msgstr "Vermutungen ##"
 
-#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-without-preamble.inc:179
+#: lib/layouts/ijmpd.layout:516 lib/layouts/theorems-counters-bytype.inc:26
+#: lib/layouts/theorems-without-preamble.inc:179
 msgid "conjectures ##"
 msgstr "Vermutungen ##"
 
@@ -15585,22 +15540,26 @@ msgstr "Vermutungen ##"
 msgid "Prop(osition)"
 msgstr "Satz"
 
-#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-without-preamble.inc:133
+#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-counters-bytype.inc:22
+#: lib/layouts/theorems-without-preamble.inc:133
 #: lib/layouts/theorems-without-preamble.inc:156
 msgid "Proposition ##"
 msgstr "Satz ##"
 
-#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-without-preamble.inc:133
+#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-counters-bytype.inc:22
+#: lib/layouts/theorems-without-preamble.inc:133
 #: lib/layouts/theorems-without-preamble.inc:156
 msgid "proposition ##"
 msgstr "Satz ##"
 
-#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-without-preamble.inc:133
+#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-counters-bytype.inc:22
+#: lib/layouts/theorems-without-preamble.inc:133
 #: lib/layouts/theorems-without-preamble.inc:156
 msgid "Propositions ##"
 msgstr "Sätze ##"
 
-#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-without-preamble.inc:133
+#: lib/layouts/ijmpd.layout:528 lib/layouts/theorems-counters-bytype.inc:22
+#: lib/layouts/theorems-without-preamble.inc:133
 #: lib/layouts/theorems-without-preamble.inc:156
 msgid "propositions ##"
 msgstr "Sätze ##"
@@ -18583,20 +18542,20 @@ msgid "\\thechapter.\\arabic{equation}"
 msgstr "\\thechapter.\\arabic{equation}"
 
 #: lib/layouts/scrbook.layout:32
-msgid "Equation \\thechapter.\\arabic{equation}"
-msgstr "Gleichung \\thechapter.\\arabic{equation}"
+msgid "Equation (\\thechapter.\\arabic{equation})"
+msgstr "Gleichung (\\thechapter.\\arabic{equation})"
 
 #: lib/layouts/scrbook.layout:32
-msgid "equation \\thechapter.\\arabic{equation}"
-msgstr "Gleichung \\thechapter.\\arabic{equation}"
+msgid "equation (\\thechapter.\\arabic{equation})"
+msgstr "Gleichung (\\thechapter.\\arabic{equation})"
 
 #: lib/layouts/scrbook.layout:32
-msgid "Equations \\thechapter.\\arabic{equation}"
-msgstr "Gleichungen \\thechapter.\\arabic{equation}"
+msgid "Equations (\\thechapter.\\arabic{equation})"
+msgstr "Gleichungen (\\thechapter.\\arabic{equation})"
 
 #: lib/layouts/scrbook.layout:32
-msgid "equations \\thechapter.\\arabic{equation}"
-msgstr "Gleichungen \\thechapter.\\arabic{equation}"
+msgid "equations (\\thechapter.\\arabic{equation})"
+msgstr "Gleichungen (\\thechapter.\\arabic{equation})"
 
 #: lib/layouts/scrclass.inc:52
 msgid "\\alph{enumii})"
@@ -19449,20 +19408,20 @@ msgid "listings ##"
 msgstr "Programmlistings ##"
 
 #: lib/layouts/stdcounters.inc:87
-msgid "Equation ##"
-msgstr "Gleichung ##"
+msgid "Equation (##)"
+msgstr "Gleichung (##)"
 
 #: lib/layouts/stdcounters.inc:87
-msgid "equation ##"
-msgstr "Gleichung ##"
+msgid "equation (##)"
+msgstr "Gleichung (##)"
 
 #: lib/layouts/stdcounters.inc:87
-msgid "Equations ##"
-msgstr "Gleichungen ##"
+msgid "Equations (##)"
+msgstr "Gleichungen (##)"
 
 #: lib/layouts/stdcounters.inc:87
-msgid "equations ##"
-msgstr "Gleichungen ##"
+msgid "equations (##)"
+msgstr "Gleichungen (##)"
 
 #: lib/layouts/stdcounters.inc:98
 msgid "\\fnsymbol{thanks}"
@@ -19630,6 +19589,34 @@ msgstr "Kapitel \\thechapter"
 #: lib/layouts/stdsections.inc:60
 msgid "Appendix \\thechapter"
 msgstr "Anhang \\thechapter"
+
+#: lib/layouts/stdspecialchars.inc:8 lib/ui/stdmenus.inc:467
+msgid "Ligature Break|k"
+msgstr "Ligaturtrenner|r"
+
+#: lib/layouts/stdspecialchars.inc:17 lib/ui/stdmenus.inc:418
+msgid "End of Sentence|E"
+msgstr "Satzendepunkt|S"
+
+#: lib/layouts/stdspecialchars.inc:26 lib/ui/stdmenus.inc:417
+msgid "Ellipsis|i"
+msgstr "Fortsetzungspunkte|F"
+
+#: lib/layouts/stdspecialchars.inc:36 lib/ui/stdmenus.inc:425
+msgid "Menu Separator|M"
+msgstr "Menütrenner|M"
+
+#: lib/layouts/stdspecialchars.inc:49 lib/ui/stdmenus.inc:466
+msgid "Hyphenation Point|H"
+msgstr "Trennmöglichkeit|ö"
+
+#: lib/layouts/stdspecialchars.inc:56 lib/ui/stdmenus.inc:423
+msgid "Breakable Slash|a"
+msgstr "Umbruchfähiger Schrägstrich|ä"
+
+#: lib/layouts/stdspecialchars.inc:65 lib/ui/stdmenus.inc:422
+msgid "Non-Breaking Hyphen|y"
+msgstr "Geschützter Trennstrich|T"
 
 #: lib/layouts/stdstarsections.inc:109
 msgid "Subparagraph*"
@@ -21236,129 +21223,225 @@ msgstr "Algorithmen \\thechapter.\\arabic{theorem}"
 msgid "algorithms \\thechapter.\\arabic{theorem}"
 msgstr "Algorithmen \\thechapter.\\arabic{theorem}"
 
-#: lib/layouts/theorems-counters-extended-bytype.inc:16
-msgid "Axiom \\arabic{theorem}"
-msgstr "Axiom \\arabic{theorem}"
+#: lib/layouts/theorems-counters-bytype.inc:30
+#: lib/layouts/theorems-without-preamble.inc:209
+msgid "Fact ##"
+msgstr "Fakt ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:30
+#: lib/layouts/theorems-without-preamble.inc:209
+msgid "fact ##"
+msgstr "Fakt ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:30
+#: lib/layouts/theorems-without-preamble.inc:209
+msgid "Facts ##"
+msgstr "Fakten ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:30
+#: lib/layouts/theorems-without-preamble.inc:209
+msgid "facts ##"
+msgstr "Fakten ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:35
+#: lib/layouts/theorems-without-preamble.inc:232
+msgid "Definition ##"
+msgstr "Definition ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:35
+#: lib/layouts/theorems-without-preamble.inc:232
+msgid "definition ##"
+msgstr "Definition ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:35
+#: lib/layouts/theorems-without-preamble.inc:232
+msgid "Definitions ##"
+msgstr "Definitionen ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:35
+#: lib/layouts/theorems-without-preamble.inc:232
+msgid "definitions ##"
+msgstr "Definitionen ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:39
+#: lib/layouts/theorems-without-preamble.inc:263
+msgid "Example ##"
+msgstr "Beispiel ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:39
+#: lib/layouts/theorems-without-preamble.inc:263
+msgid "example ##"
+msgstr "Beispiel ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:39
+#: lib/layouts/theorems-without-preamble.inc:263
+msgid "Examples ##"
+msgstr "Beispiele ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:39
+#: lib/layouts/theorems-without-preamble.inc:263
+msgid "examples ##"
+msgstr "Beispiele ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:43
+#: lib/layouts/theorems-without-preamble.inc:285
+#: lib/layouts/theorems-without-preamble.inc:311
+msgid "Problem ##"
+msgstr "Problem ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:43
+#: lib/layouts/theorems-without-preamble.inc:285
+#: lib/layouts/theorems-without-preamble.inc:311
+msgid "problem ##"
+msgstr "Problem ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:43
+#: lib/layouts/theorems-without-preamble.inc:285
+#: lib/layouts/theorems-without-preamble.inc:311
+msgid "Problems ##"
+msgstr "Probleme ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:43
+#: lib/layouts/theorems-without-preamble.inc:285
+#: lib/layouts/theorems-without-preamble.inc:311
+msgid "problems ##"
+msgstr "Probleme ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:48
+#: lib/layouts/theorems-without-preamble.inc:392
+msgid "Exercise ##"
+msgstr "Übung ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:48
+#: lib/layouts/theorems-without-preamble.inc:392
+msgid "exercise ##"
+msgstr "Übung ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:48
+#: lib/layouts/theorems-without-preamble.inc:392
+msgid "Exercises ##"
+msgstr "Übungen ##"
+
+#: lib/layouts/theorems-counters-bytype.inc:48
+#: lib/layouts/theorems-without-preamble.inc:392
+msgid "exercises ##"
+msgstr "Übungen ##"
+
+#: lib/layouts/theorems-counters-extended-bytype.inc:6
+msgid "Criterion ##"
+msgstr "Kriterium ##"
+
+#: lib/layouts/theorems-counters-extended-bytype.inc:6
+msgid "criterion ##"
+msgstr "Kriterium ##"
+
+#: lib/layouts/theorems-counters-extended-bytype.inc:6
+msgid "Criteria ##"
+msgstr "Kriterien ##"
+
+#: lib/layouts/theorems-counters-extended-bytype.inc:6
+msgid "criteria ##"
+msgstr "Kriterien ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:16
-msgid "axiom \\arabic{theorem}"
-msgstr "Axiom \\arabic{theorem}"
+msgid "Axiom ##"
+msgstr "Axiom ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:16
-msgid "Axioms \\arabic{theorem}"
-msgstr "Axiome \\arabic{theorem}"
+msgid "axiom ##"
+msgstr "Axiom ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:16
-msgid "axioms \\arabic{theorem}"
-msgstr "Axiome \\arabic{theorem}"
+msgid "Axioms ##"
+msgstr "Axiome ##"
+
+#: lib/layouts/theorems-counters-extended-bytype.inc:16
+msgid "axioms ##"
+msgstr "Axiome ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:20
-msgid "Condition \\arabic{theorem}"
-msgstr "Bedingung \\arabic{theorem}"
+msgid "Condition ##"
+msgstr "Bedingung ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:20
-msgid "condition \\arabic{theorem}"
-msgstr "Bedingung \\arabic{theorem}"
+msgid "condition ##"
+msgstr "Bedingung ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:20
-msgid "Conditions \\arabic{theorem}"
-msgstr "Bedingungen \\arabic{theorem}"
+msgid "Conditions ##"
+msgstr "Bedingungen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:20
-msgid "conditions \\arabic{theorem}"
-msgstr "Bedingungen \\arabic{theorem}"
+msgid "conditions ##"
+msgstr "Bedingungen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:24
-msgid "note \\arabic{theorem}"
-msgstr "Notiz \\arabic{theorem}"
+#: lib/layouts/theorems-without-preamble.inc:530
+msgid "Note ##"
+msgstr "Notiz ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:24
-msgid "Notes \\arabic{theorem}"
-msgstr "Notizen \\arabic{theorem}"
+#: lib/layouts/theorems-without-preamble.inc:530
+msgid "note ##"
+msgstr "Notiz ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:24
-msgid "notes \\arabic{theorem}"
-msgstr "Notizen \\arabic{theorem}"
+#: lib/layouts/theorems-without-preamble.inc:530
+msgid "Notes ##"
+msgstr "Notizen ##"
+
+#: lib/layouts/theorems-counters-extended-bytype.inc:24
+#: lib/layouts/theorems-without-preamble.inc:530
+msgid "notes ##"
+msgstr "Notizen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:28
-msgid "Notation \\arabic{theorem}"
-msgstr "Notation \\arabic{theorem}"
+msgid "Notation ##"
+msgstr "Notation ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:28
-msgid "notation \\arabic{theorem}"
-msgstr "Notation \\arabic{theorem}"
+msgid "notation ##"
+msgstr "Notation ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:28
-msgid "Notations \\arabic{theorem}"
-msgstr "Notationen \\arabic{theorem}"
+msgid "Notations ##"
+msgstr "Notationen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:28
-msgid "notations \\arabic{theorem}"
-msgstr "Notationen \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:32
-msgid "Summary \\arabic{theorem}"
-msgstr "Zusammenfassung \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:32
-msgid "summary \\arabic{theorem}"
-msgstr "Zusammenfassung \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:32
-msgid "Summaries \\arabic{theorem}"
-msgstr "Zusammenfassungen \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:32
-msgid "summaries \\arabic{theorem}"
-msgstr "Zusammenfassungen \\arabic{theorem}"
+msgid "notations ##"
+msgstr "Notationen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:36
-msgid "Conclusion \\arabic{theorem}"
-msgstr "Schlussfolgerung \\arabic{theorem}"
+msgid "Conclusion ##"
+msgstr "Schlussfolgerung ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:36
-msgid "conclusion \\arabic{theorem}"
-msgstr "Schlussfolgerung \\arabic{theorem}"
+msgid "conclusion ##"
+msgstr "Schlussfolgerung ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:36
-msgid "Conclusions \\arabic{theorem}"
-msgstr "Schlussfolgerungen \\arabic{theorem}"
+msgid "Conclusions ##"
+msgstr "Schlussfolgerungen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:36
-msgid "conclusions \\arabic{theorem}"
-msgstr "Schlussfolgerungen \\arabic{theorem}"
+msgid "conclusions ##"
+msgstr "Schlussfolgerungen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:40
-msgid "Assumption \\arabic{theorem}"
-msgstr "Annahme \\arabic{theorem}"
+msgid "Assumption ##"
+msgstr "Annahme ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:40
-msgid "assumption \\arabic{theorem}"
-msgstr "Annahme \\arabic{theorem}"
+msgid "assumption ##"
+msgstr "Annahme ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:40
-msgid "Assumptions \\arabic{theorem}"
-msgstr "Annahmen \\arabic{theorem}"
+msgid "Assumptions ##"
+msgstr "Annahmen ##"
 
 #: lib/layouts/theorems-counters-extended-bytype.inc:40
-msgid "assumptions \\arabic{theorem}"
-msgstr "Annahmen \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:44
-msgid "Question \\arabic{theorem}"
-msgstr "Frage \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:44
-msgid "question \\arabic{theorem}"
-msgstr "Frage \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:44
-msgid "Questions \\arabic{theorem}"
-msgstr "Fragen \\arabic{theorem}"
-
-#: lib/layouts/theorems-counters-extended-bytype.inc:44
-msgid "questions \\arabic{theorem}"
-msgstr "Fragen \\arabic{theorem}"
+msgid "assumptions ##"
+msgstr "Annahmen ##"
 
 #: lib/layouts/theorems-named.module:3
 msgid "Standard Theorems (Nameable)"
@@ -21641,74 +21724,6 @@ msgstr "Alternativer optionaler Name oder Titel"
 msgid "Prop \\theprop."
 msgstr "Eigenschaft \\theprop."
 
-#: lib/layouts/theorems-without-preamble.inc:209
-msgid "Fact ##"
-msgstr "Fakt ##"
-
-#: lib/layouts/theorems-without-preamble.inc:209
-msgid "fact ##"
-msgstr "Fakt ##"
-
-#: lib/layouts/theorems-without-preamble.inc:209
-msgid "Facts ##"
-msgstr "Fakten ##"
-
-#: lib/layouts/theorems-without-preamble.inc:209
-msgid "facts ##"
-msgstr "Fakten ##"
-
-#: lib/layouts/theorems-without-preamble.inc:232
-msgid "Definition ##"
-msgstr "Definition ##"
-
-#: lib/layouts/theorems-without-preamble.inc:232
-msgid "definition ##"
-msgstr "Definition ##"
-
-#: lib/layouts/theorems-without-preamble.inc:232
-msgid "Definitions ##"
-msgstr "Definitionen ##"
-
-#: lib/layouts/theorems-without-preamble.inc:232
-msgid "definitions ##"
-msgstr "Definitionen ##"
-
-#: lib/layouts/theorems-without-preamble.inc:263
-msgid "Example ##"
-msgstr "Beispiel ##"
-
-#: lib/layouts/theorems-without-preamble.inc:263
-msgid "example ##"
-msgstr "Beispiel ##"
-
-#: lib/layouts/theorems-without-preamble.inc:263
-msgid "Examples ##"
-msgstr "Beispiele ##"
-
-#: lib/layouts/theorems-without-preamble.inc:263
-msgid "examples ##"
-msgstr "Beispiele ##"
-
-#: lib/layouts/theorems-without-preamble.inc:285
-#: lib/layouts/theorems-without-preamble.inc:311
-msgid "Problem ##"
-msgstr "Problem ##"
-
-#: lib/layouts/theorems-without-preamble.inc:285
-#: lib/layouts/theorems-without-preamble.inc:311
-msgid "problem ##"
-msgstr "Problem ##"
-
-#: lib/layouts/theorems-without-preamble.inc:285
-#: lib/layouts/theorems-without-preamble.inc:311
-msgid "Problems ##"
-msgstr "Probleme ##"
-
-#: lib/layouts/theorems-without-preamble.inc:285
-#: lib/layouts/theorems-without-preamble.inc:311
-msgid "problems ##"
-msgstr "Probleme ##"
-
 #: lib/layouts/theorems-without-preamble.inc:309
 msgid "Prob(lem)"
 msgstr "Problem"
@@ -21737,22 +21752,6 @@ msgstr "Marke des Problems"
 msgid "Label of the corresponding problem"
 msgstr "Marke des betreffenden Problems"
 
-#: lib/layouts/theorems-without-preamble.inc:392
-msgid "Exercise ##"
-msgstr "Übung ##"
-
-#: lib/layouts/theorems-without-preamble.inc:392
-msgid "exercise ##"
-msgstr "Übung ##"
-
-#: lib/layouts/theorems-without-preamble.inc:392
-msgid "Exercises ##"
-msgstr "Übungen ##"
-
-#: lib/layouts/theorems-without-preamble.inc:392
-msgid "exercises ##"
-msgstr "Übungen ##"
-
 #: lib/layouts/theorems-without-preamble.inc:482
 msgid "Property ##"
 msgstr "Eigenschaft ##"
@@ -21772,22 +21771,6 @@ msgstr "Eigenschaften ##"
 #: lib/layouts/theorems-without-preamble.inc:488
 msgid "Property \\theproperty."
 msgstr "Eigenschaft \\theproperty."
-
-#: lib/layouts/theorems-without-preamble.inc:530
-msgid "Note ##"
-msgstr "Notiz ##"
-
-#: lib/layouts/theorems-without-preamble.inc:530
-msgid "note ##"
-msgstr "Notiz ##"
-
-#: lib/layouts/theorems-without-preamble.inc:530
-msgid "Notes ##"
-msgstr "Notizen ##"
-
-#: lib/layouts/theorems-without-preamble.inc:530
-msgid "notes ##"
-msgstr "Notizen ##"
 
 #: lib/layouts/todonotes.module:2
 msgid "TODO Notes"
@@ -27008,14 +26991,6 @@ msgstr "Eingebettete Vorschau|i"
 msgid "Symbols...|b"
 msgstr "Symbole...|b"
 
-#: lib/ui/stdmenus.inc:417
-msgid "Ellipsis|i"
-msgstr "Fortsetzungspunkte|F"
-
-#: lib/ui/stdmenus.inc:418
-msgid "End of Sentence|E"
-msgstr "Satzendepunkt|S"
-
 #: lib/ui/stdmenus.inc:419
 msgid "Plain Double Quotation Mark|Q"
 msgstr "Nicht-typographisches doppeltes Anführungszeichen|N"
@@ -27028,21 +27003,9 @@ msgstr "Nicht-typographisches einfaches Anführungszeichen|e"
 msgid "Inner Quotation Mark|n"
 msgstr "Inneres Anführungszeichen|I"
 
-#: lib/ui/stdmenus.inc:422
-msgid "Non-Breaking Hyphen|y"
-msgstr "Geschützter Trennstrich|T"
-
-#: lib/ui/stdmenus.inc:423
-msgid "Breakable Slash|a"
-msgstr "Umbruchfähiger Schrägstrich|ä"
-
 #: lib/ui/stdmenus.inc:424
 msgid "Visible Space|V"
 msgstr "Sichtbares Leerzeichen|L"
-
-#: lib/ui/stdmenus.inc:425
-msgid "Menu Separator|M"
-msgstr "Menütrenner|M"
 
 #: lib/ui/stdmenus.inc:426
 msgid "Phonetic Symbols|P"
@@ -27143,14 +27106,6 @@ msgstr "Vertikaler Abstand...|V"
 #: lib/ui/stdmenus.inc:464
 msgid "Phantom|m"
 msgstr "Phantom|m"
-
-#: lib/ui/stdmenus.inc:466
-msgid "Hyphenation Point|H"
-msgstr "Trennmöglichkeit|ö"
-
-#: lib/ui/stdmenus.inc:467
-msgid "Ligature Break|k"
-msgstr "Ligaturtrenner|r"
 
 #: lib/ui/stdmenus.inc:468
 msgid "Optional Line Break|B"
@@ -32963,20 +32918,20 @@ msgid "Serial Letter 3"
 msgstr "Serienbrief 3"
 
 #: lib/examples/Articles:0
-msgid "Hazard and Precautionary Statements"
-msgstr "H- und P-Sätze"
-
-#: lib/examples/Articles:0
-msgid "Noweb2LyX"
-msgstr "Noweb2LyX"
-
-#: lib/examples/Articles:0
 msgid "Multilingual Captions"
 msgstr "Mehrsprachige Legenden"
 
 #: lib/examples/Articles:0
 msgid "LilyPond Book"
 msgstr "LilyPond-Buch"
+
+#: lib/examples/Articles:0
+msgid "Hazard and Precautionary Statements"
+msgstr "H- und P-Sätze"
+
+#: lib/examples/Articles:0
+msgid "Noweb2LyX"
+msgstr "Noweb2LyX"
 
 #: lib/examples/Articles:0
 msgid "Noweb Listerrors"
@@ -33007,24 +32962,24 @@ msgid "Writing Korean with CJK-ko"
 msgstr "Koreanisch schreiben mit CJK-ko"
 
 #: lib/examples/Articles:0
-msgid "Hebrew Article (KOMA-Script)"
-msgstr "Hebräischer Aufsatz (KOMA-Script)"
-
-#: lib/examples/Articles:0
 msgid "IEEE Transactions Journal"
 msgstr "IEEE Transactions Journal"
 
 #: lib/examples/Articles:0
-msgid "Mathematical Monthly"
-msgstr "Mathematical Monthly"
+msgid "Hebrew Article (KOMA-Script)"
+msgstr "Hebräischer Aufsatz (KOMA-Script)"
+
+#: lib/examples/Articles:0
+msgid "IEEE Transactions Conference"
+msgstr "IEEE Transactions Conference"
 
 #: lib/examples/Articles:0
 msgid "Springers Global Journal Template (V. 3)"
 msgstr "Springers globale Vorlage für Zeitschriften (V. 3)"
 
 #: lib/examples/Articles:0
-msgid "IEEE Transactions Conference"
-msgstr "IEEE Transactions Conference"
+msgid "Mathematical Monthly"
+msgstr "Mathematical Monthly"
 
 #: lib/examples/Articles:0
 msgid "00 Main File"
@@ -35187,7 +35142,7 @@ msgstr ", Zelle: "
 msgid ", Position: "
 msgstr ", Position: "
 
-#: src/CutAndPaste.cpp:220
+#: src/CutAndPaste.cpp:221
 #, c-format
 msgid ""
 "The character \"%1$s\" is uncodable in this verbatim context and thus has "
@@ -35196,7 +35151,7 @@ msgstr ""
 "Das Zeichen \"%1$s\" ist in diesem unformatierten Absatz nicht kodierbar und "
 "wurde daher nicht eingefügt."
 
-#: src/CutAndPaste.cpp:224
+#: src/CutAndPaste.cpp:225
 #, c-format
 msgid ""
 "The characters \"%1$s\" are uncodable in this verbatim context and thus have "
@@ -35205,11 +35160,11 @@ msgstr ""
 "Die Zeichen \"%1$s\" sind in diesem unformatierten Absatz nicht kodierbar "
 "und wurden daher nicht eingefügt."
 
-#: src/CutAndPaste.cpp:261
+#: src/CutAndPaste.cpp:262
 msgid "Uncodable content"
 msgstr "Nicht kodierbarer Inhalt"
 
-#: src/CutAndPaste.cpp:454
+#: src/CutAndPaste.cpp:455
 #, c-format
 msgid ""
 "The pasted branch \"%1$s\" is undefined.\n"
@@ -35219,31 +35174,31 @@ msgstr ""
 "\n"
 "Möchten Sie ihn zur Liste der Zweige dieses Dokuments hinzufügen?"
 
-#: src/CutAndPaste.cpp:457
+#: src/CutAndPaste.cpp:458
 msgid "Unknown branch"
 msgstr "Unbekannter Zweig"
 
-#: src/CutAndPaste.cpp:458
+#: src/CutAndPaste.cpp:459
 msgid "&Don't Add"
 msgstr "&Nicht hinzufügen"
 
-#: src/CutAndPaste.cpp:865 src/Text.cpp:455
+#: src/CutAndPaste.cpp:866 src/Text.cpp:455
 #, c-format
 msgid "Layout `%1$s' was not found."
 msgstr "Der Absatzstil ,%1$s` wurde nicht gefunden."
 
-#: src/CutAndPaste.cpp:866 src/Text.cpp:456
+#: src/CutAndPaste.cpp:867 src/Text.cpp:456
 msgid "Layout Not Found"
 msgstr "Absatzstil nicht gefunden"
 
-#: src/CutAndPaste.cpp:897
+#: src/CutAndPaste.cpp:898
 #, c-format
 msgid "Flex inset %1$s is undefined after reloading `%2$s' layout."
 msgstr ""
 "Die Einfügung %1$s ist nach dem Laden des Dokumentformats\n"
 ",%2$s` undefiniert."
 
-#: src/CutAndPaste.cpp:900
+#: src/CutAndPaste.cpp:901
 #, c-format
 msgid ""
 "Flex inset %1$s is undefined because of conversion from `%2$s' layout to "
@@ -35252,7 +35207,7 @@ msgstr ""
 "Der Zeichenstil %1$s ist aufgrund des Wechsels vom\n"
 "Dokumentformat ,%2$s` zu ,%3$s` undefiniert."
 
-#: src/CutAndPaste.cpp:905
+#: src/CutAndPaste.cpp:906
 msgid "Undefined flex inset"
 msgstr "Undefinierter Zeichenstil"
 
@@ -42488,8 +42443,8 @@ msgstr "Kein Literaturverzeichnis definiert!"
 msgid "+ %1$d more entries."
 msgstr "+ %1$d weitere Einträge."
 
-#: src/insets/InsetCitation.cpp:585 src/insets/InsetRef.cpp:904
-#: src/insets/InsetRef.cpp:1043
+#: src/insets/InsetCitation.cpp:585 src/insets/InsetRef.cpp:920
+#: src/insets/InsetRef.cpp:1059
 msgid "BROKEN: "
 msgstr "UNGÜLTIG: "
 
@@ -43290,11 +43245,11 @@ msgstr "Kein Menüeintrag für die Aktion %1$s"
 msgid "%1$s[[vcs data]] unknown"
 msgstr "%1$s unbekannt"
 
-#: src/insets/InsetLabel.cpp:77
+#: src/insets/InsetLabel.cpp:78
 msgid "Label names must be unique!"
 msgstr "Markennamen müssen eindeutig sein!"
 
-#: src/insets/InsetLabel.cpp:78
+#: src/insets/InsetLabel.cpp:79
 #, c-format
 msgid ""
 "The label %1$s already exists,\n"
@@ -43303,7 +43258,7 @@ msgstr ""
 "Die Marke %1$s existiert bereits,\n"
 "sie wird zu %2$s geändert."
 
-#: src/insets/InsetLabel.cpp:194
+#: src/insets/InsetLabel.cpp:235
 msgid "DUPLICATE: "
 msgstr "DUPLIKAT: "
 
@@ -43688,26 +43643,26 @@ msgstr "%1$sText"
 msgid "text%1$s"
 msgstr "Text%1$s"
 
-#: src/insets/InsetRef.cpp:383 src/insets/InsetRef.cpp:560
-#: src/insets/InsetRef.cpp:740 src/insets/InsetRef.cpp:764
+#: src/insets/InsetRef.cpp:399 src/insets/InsetRef.cpp:576
+#: src/insets/InsetRef.cpp:756 src/insets/InsetRef.cpp:780
 msgid "[[reference 1]] and [[reference2]]"
 msgstr " und "
 
-#: src/insets/InsetRef.cpp:385 src/insets/InsetRef.cpp:562
-#: src/insets/InsetRef.cpp:742 src/insets/InsetRef.cpp:766
+#: src/insets/InsetRef.cpp:401 src/insets/InsetRef.cpp:578
+#: src/insets/InsetRef.cpp:758 src/insets/InsetRef.cpp:782
 msgid "[[reference 1, ...]], and [[reference n]]"
 msgstr " und "
 
-#: src/insets/InsetRef.cpp:387 src/insets/InsetRef.cpp:564
-#: src/insets/InsetRef.cpp:744 src/insets/InsetRef.cpp:768
+#: src/insets/InsetRef.cpp:403 src/insets/InsetRef.cpp:580
+#: src/insets/InsetRef.cpp:760 src/insets/InsetRef.cpp:784
 msgid "[[reference 1]], [[reference2, ...]]"
 msgstr ", "
 
-#: src/insets/InsetRef.cpp:403
+#: src/insets/InsetRef.cpp:419
 msgid "Invalid label!"
 msgstr "Ungültige Marke!"
 
-#: src/insets/InsetRef.cpp:404
+#: src/insets/InsetRef.cpp:420
 #, c-format
 msgid ""
 "The label `%1$s' does not have a prefix (e.g., `sec:'), which is needed for "
@@ -43718,71 +43673,71 @@ msgstr ""
 "formatierte Querverweise mit Prettyref nötig ist.\n"
 "Sie werden wahrscheinlich einen LaTeX-Fehler gemeldet bekommen."
 
-#: src/insets/InsetRef.cpp:706
+#: src/insets/InsetRef.cpp:722
 msgid "elsewhere"
 msgstr "woanders"
 
-#: src/insets/InsetRef.cpp:1024
+#: src/insets/InsetRef.cpp:1040
 msgid "Ref"
 msgstr "Querverweis"
 
-#: src/insets/InsetRef.cpp:1025
+#: src/insets/InsetRef.cpp:1041
 msgid "EqRef"
 msgstr "(Querverweis)"
 
-#: src/insets/InsetRef.cpp:1026 src/mathed/InsetMathRef.cpp:427
+#: src/insets/InsetRef.cpp:1042 src/mathed/InsetMathRef.cpp:427
 msgid "Page Number"
 msgstr "Seitennummer"
 
-#: src/insets/InsetRef.cpp:1027 src/mathed/InsetMathRef.cpp:428
+#: src/insets/InsetRef.cpp:1043 src/mathed/InsetMathRef.cpp:428
 msgid "Prefixed Page Number"
 msgstr "Seitennummer mit Präfix"
 
-#: src/insets/InsetRef.cpp:1027
+#: src/insets/InsetRef.cpp:1043
 msgid "PrefPage"
 msgstr "PräfSeite"
 
-#: src/insets/InsetRef.cpp:1028 src/mathed/InsetMathRef.cpp:429
+#: src/insets/InsetRef.cpp:1044 src/mathed/InsetMathRef.cpp:429
 msgid "Textual Page Number"
 msgstr "Seitennummer in Textform"
 
-#: src/insets/InsetRef.cpp:1028
+#: src/insets/InsetRef.cpp:1044
 msgid "TextPage"
 msgstr "TextSeite"
 
-#: src/insets/InsetRef.cpp:1029 src/mathed/InsetMathRef.cpp:430
+#: src/insets/InsetRef.cpp:1045 src/mathed/InsetMathRef.cpp:430
 msgid "Standard+Textual Page"
 msgstr "Standard+Seite in Textform"
 
-#: src/insets/InsetRef.cpp:1029
+#: src/insets/InsetRef.cpp:1045
 msgid "Ref+Text"
 msgstr "Querverweis+Text"
 
-#: src/insets/InsetRef.cpp:1030 src/mathed/InsetMathRef.cpp:432
+#: src/insets/InsetRef.cpp:1046 src/mathed/InsetMathRef.cpp:432
 msgid "Reference to Name"
 msgstr "Referenz auf Namen"
 
-#: src/insets/InsetRef.cpp:1030
+#: src/insets/InsetRef.cpp:1046
 msgid "NameRef"
 msgstr "Namen-Querverweis"
 
-#: src/insets/InsetRef.cpp:1031
+#: src/insets/InsetRef.cpp:1047
 msgid "Formatted"
 msgstr "Formatiert"
 
-#: src/insets/InsetRef.cpp:1031
+#: src/insets/InsetRef.cpp:1047
 msgid "Format"
 msgstr "Format"
 
-#: src/insets/InsetRef.cpp:1032 src/mathed/InsetMathRef.cpp:433
+#: src/insets/InsetRef.cpp:1048 src/mathed/InsetMathRef.cpp:433
 msgid "Label Only"
 msgstr "Nur Marke"
 
-#: src/insets/InsetRef.cpp:1125
+#: src/insets/InsetRef.cpp:1141
 msgid "Unknown external file!"
 msgstr "Unbekannte externe Datei!"
 
-#: src/insets/InsetRef.cpp:1126
+#: src/insets/InsetRef.cpp:1142
 #, c-format
 msgid ""
 "The label `%1$s' refers to an external file\n"
@@ -44077,7 +44032,7 @@ msgid "Match found."
 msgstr "Die Zeichenkette wurde gefunden!"
 
 #: src/mathed/InsetMathAMSArray.cpp:136 src/mathed/InsetMathCases.cpp:91
-#: src/mathed/InsetMathHull.cpp:2233 src/mathed/InsetMathSplit.cpp:127
+#: src/mathed/InsetMathHull.cpp:2245 src/mathed/InsetMathSplit.cpp:127
 #: src/mathed/InsetMathSubstack.cpp:89
 #, c-format
 msgid "Can't add vertical grid lines in '%1$s'"
@@ -44133,16 +44088,16 @@ msgstr "Keine vertikale Linie zu löschen"
 msgid "Unknown tabular feature '%1$s'"
 msgstr "Unbekanntes Tabellenmerkmal '%1$s'"
 
-#: src/mathed/InsetMathHull.cpp:1769
+#: src/mathed/InsetMathHull.cpp:1781
 #, c-format
 msgid "Type: %1$s"
 msgstr "Typ: %1$s"
 
-#: src/mathed/InsetMathHull.cpp:1805
+#: src/mathed/InsetMathHull.cpp:1817
 msgid "Bad math environment"
 msgstr "Ungeeignete Matheumgebung"
 
-#: src/mathed/InsetMathHull.cpp:1806
+#: src/mathed/InsetMathHull.cpp:1818
 msgid ""
 "Computation cannot be performed for AMS math environments.\n"
 "Change the math formula type and try again."
@@ -44150,16 +44105,16 @@ msgstr ""
 "In AMS-Matheumgebungen kann keine Berechnung durchgeführt werden.\n"
 "Bitte ändern Sie die Formelart und versuchen Sie es noch einmal."
 
-#: src/mathed/InsetMathHull.cpp:1928 src/mathed/InsetMathHull.cpp:1937
+#: src/mathed/InsetMathHull.cpp:1940 src/mathed/InsetMathHull.cpp:1949
 msgid "No number"
 msgstr "Keine Nummer"
 
-#: src/mathed/InsetMathHull.cpp:2216
+#: src/mathed/InsetMathHull.cpp:2228
 #, c-format
 msgid "Can't change number of rows in '%1$s'"
 msgstr "Die Anzahl der Zeilen in '%1$s' kann nicht geändert werden."
 
-#: src/mathed/InsetMathHull.cpp:2226
+#: src/mathed/InsetMathHull.cpp:2238
 #, c-format
 msgid "Can't change number of columns in '%1$s'"
 msgstr "Die Anzahl der Spalten in '%1$s' kann nicht geändert werden."
@@ -44687,6 +44642,99 @@ msgstr ""
 msgid "Unknown user"
 msgstr "Unbekannter Benutzer"
 
+#~ msgid "Axiom \\arabic{theorem}"
+#~ msgstr "Axiom \\arabic{theorem}"
+
+#~ msgid "axiom \\arabic{theorem}"
+#~ msgstr "Axiom \\arabic{theorem}"
+
+#~ msgid "Axioms \\arabic{theorem}"
+#~ msgstr "Axiome \\arabic{theorem}"
+
+#~ msgid "axioms \\arabic{theorem}"
+#~ msgstr "Axiome \\arabic{theorem}"
+
+#~ msgid "Condition \\arabic{theorem}"
+#~ msgstr "Bedingung \\arabic{theorem}"
+
+#~ msgid "condition \\arabic{theorem}"
+#~ msgstr "Bedingung \\arabic{theorem}"
+
+#~ msgid "Conditions \\arabic{theorem}"
+#~ msgstr "Bedingungen \\arabic{theorem}"
+
+#~ msgid "conditions \\arabic{theorem}"
+#~ msgstr "Bedingungen \\arabic{theorem}"
+
+#~ msgid "note \\arabic{theorem}"
+#~ msgstr "Notiz \\arabic{theorem}"
+
+#~ msgid "Notes \\arabic{theorem}"
+#~ msgstr "Notizen \\arabic{theorem}"
+
+#~ msgid "notes \\arabic{theorem}"
+#~ msgstr "Notizen \\arabic{theorem}"
+
+#~ msgid "Notation \\arabic{theorem}"
+#~ msgstr "Notation \\arabic{theorem}"
+
+#~ msgid "notation \\arabic{theorem}"
+#~ msgstr "Notation \\arabic{theorem}"
+
+#~ msgid "Notations \\arabic{theorem}"
+#~ msgstr "Notationen \\arabic{theorem}"
+
+#~ msgid "notations \\arabic{theorem}"
+#~ msgstr "Notationen \\arabic{theorem}"
+
+#~ msgid "Summary \\arabic{theorem}"
+#~ msgstr "Zusammenfassung \\arabic{theorem}"
+
+#~ msgid "summary \\arabic{theorem}"
+#~ msgstr "Zusammenfassung \\arabic{theorem}"
+
+#~ msgid "Summaries \\arabic{theorem}"
+#~ msgstr "Zusammenfassungen \\arabic{theorem}"
+
+#~ msgid "summaries \\arabic{theorem}"
+#~ msgstr "Zusammenfassungen \\arabic{theorem}"
+
+#~ msgid "Conclusion \\arabic{theorem}"
+#~ msgstr "Schlussfolgerung \\arabic{theorem}"
+
+#~ msgid "conclusion \\arabic{theorem}"
+#~ msgstr "Schlussfolgerung \\arabic{theorem}"
+
+#~ msgid "Conclusions \\arabic{theorem}"
+#~ msgstr "Schlussfolgerungen \\arabic{theorem}"
+
+#~ msgid "conclusions \\arabic{theorem}"
+#~ msgstr "Schlussfolgerungen \\arabic{theorem}"
+
+#~ msgid "Assumption \\arabic{theorem}"
+#~ msgstr "Annahme \\arabic{theorem}"
+
+#~ msgid "assumption \\arabic{theorem}"
+#~ msgstr "Annahme \\arabic{theorem}"
+
+#~ msgid "Assumptions \\arabic{theorem}"
+#~ msgstr "Annahmen \\arabic{theorem}"
+
+#~ msgid "assumptions \\arabic{theorem}"
+#~ msgstr "Annahmen \\arabic{theorem}"
+
+#~ msgid "Question \\arabic{theorem}"
+#~ msgstr "Frage \\arabic{theorem}"
+
+#~ msgid "question \\arabic{theorem}"
+#~ msgstr "Frage \\arabic{theorem}"
+
+#~ msgid "Questions \\arabic{theorem}"
+#~ msgstr "Fragen \\arabic{theorem}"
+
+#~ msgid "questions \\arabic{theorem}"
+#~ msgstr "Fragen \\arabic{theorem}"
+
 #~ msgid "LaTeX Preamble"
 #~ msgstr "LaTeX-Vorspann"
 
@@ -44714,9 +44762,6 @@ msgstr "Unbekannter Benutzer"
 
 #~ msgid "Search and Replace"
 #~ msgstr "Suchen und Ersetzen"
-
-#~ msgid "conclusions"
-#~ msgstr "Schlussfolgerungen"
 
 #~ msgid "Update &immediately"
 #~ msgstr "&Sofort aktualisieren"
@@ -48466,12 +48511,6 @@ msgstr "Unbekannter Benutzer"
 #~ msgid "Conjecture #:"
 #~ msgstr "Vermutung #:"
 
-#~ msgid "Criterion #:"
-#~ msgstr "Kriterium #:"
-
-#~ msgid "Axiom #:"
-#~ msgstr "Axiom #:"
-
 #~ msgid "Definition #:"
 #~ msgstr "Definition #:"
 
@@ -48492,9 +48531,6 @@ msgstr "Unbekannter Benutzer"
 
 #~ msgid "Note #:"
 #~ msgstr "Notiz #:"
-
-#~ msgid "Notation #:"
-#~ msgstr "Notation #:"
 
 #~ msgid "Case #:"
 #~ msgstr "Fall #:"
