@@ -35,7 +35,9 @@ public:
 	InsetRef(Buffer * buffer, InsetCommandParams const &);
 
 	///
-	void changeTarget(docstring const & new_label);
+	bool hasTarget(docstring const & label) const;
+	///
+	void changeTarget(docstring const & old_label, docstring const & new_label);
 
 	/// \name Public functions inherited from Inset class
 	//@{
@@ -103,6 +105,8 @@ public:
 	static docstring getFormattedCmd(docstring const & ref, std::vector<docstring> & label,
 			docstring & prefix, std::string const & xref_package,
 			bool use_caps = false, bool use_range = false);
+	///
+	InsetRef * asInsetRef() override { return this; }
 
 protected:
 	///

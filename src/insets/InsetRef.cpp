@@ -99,18 +99,34 @@ docstring InsetRef::layoutName() const
 }
 
 
-void InsetRef::changeTarget(docstring const & new_label)
+bool InsetRef::hasTarget(docstring const & label) const
 {
+	vector<docstring> const labels = getVectorFromString(getParam("reference"));
+	return find(labels.begin(), labels.end(), label) != labels.end();
+}
+
+
+void InsetRef::changeTarget(docstring const & old_label, docstring const & new_label)
+{
+	// Subsitute old_label with new_label in the target list
+	vector<docstring> labels = getVectorFromString(getParam("reference"));
+	vector<docstring> newtargets;
+	for (docstring const & l : labels) {
+		if (l == old_label)
+			newtargets.push_back(new_label);
+		else
+			newtargets.push_back(l);
+	}
 	// With change tracking, we insert a new ref
 	// and delete the old one
-	if (buffer().masterParams().track_changes) {
+	if (isBufferValid() && buffer().masterParams().track_changes) {
 		InsetCommandParams icp(REF_CODE, "ref");
-		icp["reference"] = new_label;
+		icp["reference"] = getStringFromVector(newtargets);
 		string const data = InsetCommand::params2string(icp);
 		lyx::dispatch(FuncRequest(LFUN_INSET_INSERT, data));
 		lyx::dispatch(FuncRequest(LFUN_CHAR_DELETE_FORWARD));
 	} else
-		setParam("reference", new_label);
+		setParam("reference", getStringFromVector(newtargets));
 }
 
 
@@ -137,11 +153,11 @@ void InsetRef::doDispatch(Cursor & cur, FuncRequest & cmd)
 		else if (arg == "toggle-nolink")
 			pstring = "nolink";
 		else if (arg == "changetarget") {
-			string const oldtarget = cmd.getArg(2);
-			string const newtarget = cmd.getArg(3);
+			docstring const oldtarget = from_utf8(cmd.getArg(2));
+			docstring const newtarget = from_utf8(cmd.getArg(3));
 			if (!oldtarget.empty() && !newtarget.empty()
-			    && getParam("reference") == from_utf8(oldtarget))
-				changeTarget(from_utf8(newtarget));
+			    && hasTarget(oldtarget))
+				changeTarget(oldtarget, newtarget);
 			cur.forceBufferUpdate();
 			return;
 		}

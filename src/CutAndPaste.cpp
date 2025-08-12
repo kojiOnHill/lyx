@@ -45,6 +45,7 @@
 #include "insets/InsetGraphicsParams.h"
 #include "insets/InsetInclude.h"
 #include "insets/InsetLabel.h"
+#include "insets/InsetRef.h"
 #include "insets/InsetTabular.h"
 
 #include "mathed/MathData.h"
@@ -342,9 +343,9 @@ pasteSelectionHelper(DocIterator const & cur, ParagraphList const & parlist,
 				for (InsetIterator itt = begin(in);
 				      itt != i_end; ++itt) {
 					if (itt->lyxCode() == REF_CODE) {
-						InsetCommand * ref = itt->asInsetCommand();
-						if (ref->getParam("reference") == oldname)
-							ref->setParam("reference", newname);
+						InsetRef * ref = itt->asInsetRef();
+						if (ref->hasTarget(oldname))
+							ref->changeTarget(oldname, newname);
 					} else if (itt->lyxCode() == MATH_REF_CODE) {
 						InsetMathRef * mi = itt->asInsetMath()->asRefInset();
 						// this is necessary to prevent an uninitialized
@@ -372,9 +373,9 @@ pasteSelectionHelper(DocIterator const & cur, ParagraphList const & parlist,
 			// adapt the references
 			for (InsetIterator itt = begin(in); itt != i_end; ++itt) {
 				if (itt->lyxCode() == REF_CODE) {
-					InsetCommand & ref = static_cast<InsetCommand &>(*itt);
-					if (ref.getParam("reference") == oldname)
-						ref.setParam("reference", newname);
+					InsetRef & ref = static_cast<InsetRef &>(*itt);
+					if (ref.hasTarget(oldname))
+						ref.changeTarget(oldname, newname);
 				} else if (itt->lyxCode() == MATH_REF_CODE) {
 					InsetMathRef * mi = itt->asInsetMath()->asRefInset();
 					// this is necessary to prevent an uninitialized

@@ -137,8 +137,8 @@ void InsetLabel::updateReferences(docstring const & old_label,
 				InsetMathRef * mi = p.first->asInsetMath()->asRefInset();
 				mi->changeTarget(new_label);
 			} else {
-				InsetCommand * ref = p.first->asInsetCommand();
-				ref->setParam("reference", new_label);
+				InsetRef * ref = p.first->asInsetRef();
+				ref->changeTarget(old_label, new_label);
 			}
 		}
 	}
