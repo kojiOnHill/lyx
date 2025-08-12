@@ -2291,7 +2291,7 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 				p.skip_spaces(true);
 			}
 			string const bibfile = p.getArg('{', '}');
-			eat_whitespace(p, os, parent_context, false);
+			p.skip_spaces(true);
 			Token t = p.get_token();
 			if (t.asInput() == "\\btPrintCited") {
 				p.skip_spaces(true);
