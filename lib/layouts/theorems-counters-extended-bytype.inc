@@ -3,43 +3,43 @@
 Format 110
 Counter criterion
 	GuiName Criterion
-	PrettyFormat "Criterion|Criteria \arabic{theorem}"
+	PrettyFormat "Criterion|Criteria ##"
 End
 Counter algorithm
 	GuiName Algorithm
 	LaTeXName lyxalgorithm
-	PrettyFormat "Algorithm|Algorithms \arabic{theorem}"
+	PrettyFormat "Algorithm|Algorithms ##"
 End
 Counter axiom
 	GuiName Axiom
 	LaTeXName ax
-	PrettyFormat "Axiom|Axioms \arabic{theorem}"
+	PrettyFormat "Axiom|Axioms ##"
 End
 Counter condition
 	GuiName Condition
-	PrettyFormat "Condition|Conditions \arabic{theorem}"
+	PrettyFormat "Condition|Conditions ##"
 End
 Counter note
 	GuiName Note
-	PrettyFormat "Note|Notes \arabic{theorem}"
+	PrettyFormat "Note|Notes ##"
 End
 Counter notation
 	GuiName Notation
-	PrettyFormat "Notation|Notations \arabic{theorem}"
+	PrettyFormat "Notation|Notations ##"
 End
 Counter summary
 	GuiName Summary
-	PrettyFormat "Summary|Summaries \arabic{theorem}"
+	PrettyFormat "Summary|Summaries ##"
 End
 Counter conclusion
 	GuiName Conclusion
-	PrettyFormat "Conclusion|Conclusions \arabic{theorem}"
+	PrettyFormat "Conclusion|Conclusions ##"
 End
 Counter assumption
 	GuiName Assumption
-	PrettyFormat "Assumption|Assumptions \arabic{theorem}"
+	PrettyFormat "Assumption|Assumptions ##"
 End
 Counter question
 	GuiName Question
-	PrettyFormat "Question|Questions \arabic{theorem}"
+	PrettyFormat "Question|Questions ##"
 End
