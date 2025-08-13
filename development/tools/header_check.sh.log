@@ -49,6 +49,8 @@ suspicious: ./DocIterator.h::#include <algorithm> // std::min in MSVC 2017
 ./Server.h::#include <QEvent>
 ./ServerSocket.h::#include <string>
 ./Session.h::#include <string>
+./Statistics.h::#include "support/docstring.h"
+./Statistics.h::#include "support/types.h"
 ./TextClass.h::#include "FontInfo.h"
 ./TextClass.h::#include "LayoutEnums.h"
 ./TextClass.h::#include "support/docstring.h"
@@ -267,7 +269,9 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./BranchList.cpp::#include "Color.h"
 ./BranchList.cpp::#include <algorithm>
 ./Buffer.cpp::#include "Author.h"
+./Buffer.cpp::#include "LayoutFile.h"
 ./Buffer.cpp::#include "Counters.h"
+./Buffer.cpp::#include "Cursor.h"
 ./Buffer.cpp::#include "DispatchResult.h"
 ./Buffer.cpp::#include "DocIterator.h"
 ./Buffer.cpp::#include "FuncRequest.h"
@@ -280,6 +284,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./Buffer.cpp::#include "texstream.h"
 ./Buffer.cpp::#include "TexRow.h"
 ./Buffer.cpp::#include "Text.h"
+./Buffer.cpp::#include "TextClass.h"
 ./Buffer.cpp::#include "Undo.h"
 ./Buffer.cpp::#include "WordLangTuple.h"
 ./Buffer.cpp::#include "xml.h"
@@ -312,6 +317,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./BufferParams.cpp::#include <algorithm>
 ./BufferParams.cpp::#include <sstream>
 ./BufferView.cpp::#include "CoordCache.h"
+./BufferView.cpp::#include "Cursor.h"
 ./BufferView.cpp::#include "DispatchResult.h"
 ./BufferView.cpp::#include "FuncRequest.h"
 ./BufferView.cpp::#include "Language.h"
@@ -546,12 +552,14 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./ServerSocket.cpp::#include "support/FileName.h"
 ./ServerSocket.cpp::#include <cerrno>
 ./Statistics.cpp::#include "Paragraph.h"
+./Statistics.cpp::#include "Cursor.h"
 ./TexRow.cpp::#include <algorithm>
 ./TexRow.cpp::#include <iterator>
 ./Text.cpp::#include "Text.h"
 ./Text.cpp::#include "Author.h"
 ./Text.cpp::#include "BufferParams.h"
 ./Text.cpp::#include "Changes.h"
+./Text.cpp::#include "Cursor.h"
 ./Text.cpp::#include "CursorSlice.h"
 ./Text.cpp::#include "DispatchResult.h"
 ./Text.cpp::#include "FloatList.h"
@@ -822,6 +830,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./frontends/qt/GuiInputMethod.cpp::#include <array>
 ./frontends/qt/GuiInputMethod.cpp::#include <ios>
 ./frontends/qt/GuiInputMethod.cpp::#include "GuiWorkArea.h"
+./frontends/qt/GuiInputMethod.cpp::#include "LyX.h"
 ./frontends/qt/GuiInputMethod.cpp::#include "Row.h"
 ./frontends/qt/GuiKeySymbol.cpp::#include "GuiApplication.h"
 ./frontends/qt/GuiKeySymbol.cpp::#include <QKeyEvent>
@@ -853,7 +862,6 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./frontends/qt/GuiPrefs.cpp::#include "LengthCombo.h"
 ./frontends/qt/GuiPrefs.cpp::#include "LyX.h"
 ./frontends/qt/GuiPrefs.cpp::#include "PanelStack.h"
-./frontends/qt/GuiPrefs.cpp::#include "support/FileName.h"
 ./frontends/qt/GuiPrefs.cpp::#include "support/filetools.h"
 ./frontends/qt/GuiPrefs.cpp::#include "support/os.h"
 ./frontends/qt/GuiPrefs.cpp::#include "frontends/Application.h"
@@ -934,6 +942,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./frontends/qt/GuiView.cpp::#include "qt_helpers.h"
 ./frontends/qt/GuiView.cpp::#include "frontends/KeySymbol.h"
 ./frontends/qt/GuiView.cpp::#include "BufferView.h"
+./frontends/qt/GuiView.cpp::#include "Cursor.h"
 ./frontends/qt/GuiView.cpp::#include "KeySymbol.h"
 ./frontends/qt/GuiView.cpp::#include "Language.h"
 ./frontends/qt/GuiView.cpp::#include "LyX.h"
@@ -1080,6 +1089,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./insets/ExternalTransforms.cpp::#include <sstream>
 ./insets/Inset.cpp::#include "Inset.h"
 ./insets/Inset.cpp::#include "CoordCache.h"
+./insets/Inset.cpp::#include "Cursor.h"
 ./insets/Inset.cpp::#include "Dimension.h"
 ./insets/Inset.cpp::#include "DispatchResult.h"
 ./insets/Inset.cpp::#include "InsetLayout.h"
@@ -1234,6 +1244,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./insets/InsetLabel.cpp::#include "FuncRequest.h"
 ./insets/InsetLabel.cpp::#include "Language.h"
 ./insets/InsetLabel.cpp::#include "texstream.h"
+./insets/InsetLabel.cpp::#include "Text.h"
 ./insets/InsetLabel.cpp::#include "support/lstrings.h"
 ./insets/InsetLayout.cpp::#include "InsetLayout.h"
 ./insets/InsetLayout.cpp::#include <vector>
@@ -1275,12 +1286,14 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./insets/InsetPreview.cpp::#include "Dimension.h"
 ./insets/InsetPreview.cpp::#include "texstream.h"
 ./insets/InsetPreview.cpp::#include <sstream>
+./insets/InsetQuotes.cpp::#include "Cursor.h"
 ./insets/InsetQuotes.cpp::#include "Dimension.h"
 ./insets/InsetQuotes.cpp::#include "Font.h"
 ./insets/InsetQuotes.cpp::#include "Language.h"
 ./insets/InsetQuotes.cpp::#include "texstream.h"
 ./insets/InsetQuotes.cpp::#include "support/docstring.h"
 ./insets/InsetQuotes.cpp::#include "support/docstream.h"
+./insets/InsetRef.cpp::#include "Cursor.h"
 ./insets/InsetRef.cpp::#include "Language.h"
 ./insets/InsetRef.cpp::#include "texstream.h"
 ./insets/InsetRef.cpp::#include "support/docstream.h"
@@ -1310,6 +1323,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./insets/InsetTabular.cpp::#include "BufferParams.h"
 ./insets/InsetTabular.cpp::#include "CoordCache.h"
 ./insets/InsetTabular.cpp::#include "Counters.h"
+./insets/InsetTabular.cpp::#include "Cursor.h"
 ./insets/InsetTabular.cpp::#include "DispatchResult.h"
 ./insets/InsetTabular.cpp::#include "Language.h"
 ./insets/InsetTabular.cpp::#include "LyX.h"
@@ -1324,6 +1338,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./insets/InsetText.cpp::#include "insets/InsetLayout.h"
 ./insets/InsetText.cpp::#include "CompletionList.h"
 ./insets/InsetText.cpp::#include "CoordCache.h"
+./insets/InsetText.cpp::#include "Cursor.h"
 ./insets/InsetText.cpp::#include "DispatchResult.h"
 ./insets/InsetText.cpp::#include "FuncRequest.h"
 ./insets/InsetText.cpp::#include "Language.h"
@@ -1538,6 +1553,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./mathed/MathParser.cpp::#include <cstdint>
 ./mathed/MathParser.cpp::#include <sstream>
 ./mathed/MathRow.cpp::#include "CoordCache.h"
+./mathed/MathRow.cpp::#include "mathed/InsetMath.h"
 ./mathed/MathRow.cpp::#include "support/docstring.h"
 ./mathed/MathRow.cpp::#include <algorithm>
 ./mathed/MathStream.cpp::#include "TexRow.h"
@@ -1828,6 +1844,7 @@ suspicious: ./support/checksum.h::#include <fstream>
 ./xml.cpp::#include <map>
 ./xml.cpp::#include <functional>
 Following are strong candidates from above for removal:
+filtered: ./Buffer.cpp : LayoutFile_h
 filtered: ./Changes.cpp : lassert_h
 filtered: ./EnchantChecker.cpp : lassert_h
 filtered: ./Graph.cpp : lassert_h
