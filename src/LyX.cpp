@@ -974,7 +974,8 @@ bool LyX::init()
 	// This one is edited through the preferences dialog.
 	if (!readRcFile("preferences", true))
 		return false;
-	pimpl_->application_->applyPrefs();
+	if (use_gui)
+		pimpl_->application_->applyPrefs();
 
 	// The language may have been set to someting useful through prefs
 	setLocale();
