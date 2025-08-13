@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -34,6 +34,9 @@
 
 % Trennausnahmen
 \hyphenation{Dis-kurs-reprä-sen-ta-tions-struk-tur}
+
+% Formatierte Querverweise auf (Unter-)Beispiele mittels prettyref
+\newrefformat{lex}{Beispiel~(\ref{#1})}
 \end_preamble
 \use_default_options false
 \begin_modules
@@ -96,10 +99,19 @@ linguistics
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
+\use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Stichwortverzeichnis
 \shortcut idx
 \color #008000
@@ -125,6 +137,7 @@ linguistics
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -152,7 +165,8 @@ literal "false"
 \end_layout
 
 \begin_layout Date
-21.04.2015
+\SpecialChar LyX
+-Version 2.5
 \end_layout
 
 \begin_layout Abstract
@@ -489,7 +503,7 @@ Wie der Name sagt,
 Das ist ein einzeiliges Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "exa:Beispiel-einzeilig"
+name "lex:Beispiel-einzeilig"
 
 \end_inset
 
@@ -508,7 +522,7 @@ Jeder Absatz wird in diesem Stil neu nummeriert
 Dies ist ein Unterbeispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:Unterbeispiel"
+name "lex:Unterbeispiel"
 
 \end_inset
 
@@ -538,25 +552,723 @@ Querverweis\SpecialChar ldots
 \end_layout
 
 \begin_layout Standard
-Als kleine Demonstration verweisen wir hier auf die Beispiele 
+Einfache Verweise,
+ die nur die Beispielnummer ausgeben,
+ sehen so aus:
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "exa:Beispiel-einzeilig"
+reference "lex:Beispiel-einzeilig"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
  und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Unterbeispiel"
+reference "lex:Unterbeispiel"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Wenn Sie die Nummern in Klammern ausgeben wollen,
+ wie dies üblich ist,
+ verwenden Sie statt dessen die Klammervariante:
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lex:Beispiel-einzeilig"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lex:Unterbeispiel"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
 
 \end_inset
 
 .
 \end_layout
 
+\begin_layout Standard
+Es geht aber auch bequemer:
+ Sie können 
+\begin_inset Quotes gld
+\end_inset
+
+formatierte Querverweise
+\begin_inset Quotes grd
+\end_inset
+
+ verwenden,
+ die automatisch das Wort 
+\emph on
+Beispiel
+\emph default
+ voranstellen und die Nummer einklammern,
+ etwa so:
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lex:Beispiel-einzeilig"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lex:Unterbeispiel"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Da jedoch die \SpecialChar LaTeX
+-Pakete,
+ die \SpecialChar LyX
+ zur Produktion solcher Querverweise einbindet,
+ das Paket 
+\emph on
+covington
+\emph default
+ nicht kennen,
+ müssen Sie \SpecialChar LaTeX
+-Code in den Vorspann eingeben,
+ damit dies funktioniert.
+ Welcher Code das ist,
+ hängt von Ihrer Auswahl in 
+\family sans
+Dokument\SpecialChar menuseparator
+Einstellungen\SpecialChar menuseparator
+Dokumentklasse\SpecialChar menuseparator
+Formatpakete
+\family default
+ ab.
+\end_layout
+
+\begin_layout Standard
+Im Folgenden beschreiben wir,
+ was Sie für englischsprachige Dokumente tun müssen (englischsprachig deshalb,
+ weil wir dort anders als im Deutschen die Differenzierung zwischen Groß- und Kleinschreibung brauchen).
+ Falls Sie in einer anderen Sprache schreiben (oder eine andere Terminologie bevorzugen),
+ passen Sie die Zeichenketten 
+\emph on
+example
+\emph default
+ in den verschiedenen Varianten (
+\emph on
+\lang english
+examples
+\emph default
+\lang ngerman
+,
+ 
+\emph on
+\lang english
+Example
+\emph default
+\lang ngerman
+,
+ 
+\emph on
+\lang english
+Examples
+\emph default
+\lang ngerman
+) an.
+ Für Deutsch,
+ wo Nomina stets großgeschrieben werden,
+ verwenden Sie natürlich für alle Varianten Großschreibung (die Differenzierung der Varianten ist dennoch auch hier aus systematischen Gründen sinnvoll):
+\end_layout
+
+\begin_layout Enumerate
+Mit 
+\begin_inset Quotes gld
+\end_inset
+
+Prettyref und Varioref
+\begin_inset Quotes grd
+\end_inset
+
+ (was wir auch in diesem Dokument verwenden),
+ fügen Sie ein:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+newrefformat{lex}{example~(
+\backslash
+ref{#1})}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Beachten Sie,
+ dass das Paket 
+\emph on
+prettyref
+\emph default
+ sehr basal ist und keine optionalen Plural- (
+\emph on
+\lang english
+examples
+\emph default
+\lang ngerman
+) oder Groß-/Kleinschreibungsvarianten (
+\emph on
+\lang english
+Example
+\emph default
+,
+ 
+\emph on
+Examples
+\emph default
+\lang ngerman
+) anbietet (welche Sie ansonsten im Querverweis-Dialog auswählen könnten).
+ Beachten Sie auch,
+ dass die Definition von dem Präfix,
+ das Sie in den Marken verwenden,
+ abhängt.
+ Die Definition oben setzt voraus,
+ dass dies 
+\begin_inset Quotes gld
+\end_inset
+
+lex:
+\begin_inset Quotes grd
+\end_inset
+
+ ist,
+ denn dies ist auch das Präfix,
+ das \SpecialChar LyX
+ für linguistische Beispiele und Unterbeispiele automatisch einfügt.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Mit 
+\begin_inset Quotes gld
+\end_inset
+
+Refstyle und Varioref
+\begin_inset Quotes grd
+\end_inset
+
+ (der Voreinstellung für neue Dokumente),
+ fügen Sie statt dessen ein:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+newref{lex}{
+\end_layout
+
+\begin_layout Plain Layout
+    name = 
+\backslash
+RSlextxt,
+\end_layout
+
+\begin_layout Plain Layout
+    names = 
+\backslash
+RSlexstxt,
+\end_layout
+
+\begin_layout Plain Layout
+    Name = 
+\backslash
+RSLextxt,
+\end_layout
+
+\begin_layout Plain Layout
+    Names = 
+\backslash
+RSLexstxt,
+\end_layout
+
+\begin_layout Plain Layout
+    refcmd =(
+\backslash
+ref{#1})
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+def
+\backslash
+RSlextxt{example~}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+def
+\backslash
+RSlexstxt{examples~}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+def
+\backslash
+RSLextxt{Example~}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+def
+\backslash
+RSLexstxt{Examples~}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wie bei 
+\emph on
+prettyref
+\emph default
+ hängt die Definition von dem Präfix,
+ das Sie in den Marken verwenden,
+ ab.
+ Die Definition oben setzt voraus,
+ dass dies 
+\begin_inset Quotes gld
+\end_inset
+
+lex:
+\begin_inset Quotes grd
+\end_inset
+
+ ist,
+ denn dies ist auch das Präfix,
+ das \SpecialChar LyX
+ für linguistische Beispiele und Unterbeispiele automatisch einfügt.
+ Anders als 
+\emph on
+prettyref
+\emph default
+ erlaubt 
+\emph on
+refstyle
+\emph default
+ Plural und Großschreibung (bspw.
+ am Satzanfang im Englischen).
+ Beides kann für individuelle Verweise im Querverwies-Dialog ausgewählt werden.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Mit 
+\begin_inset Quotes gld
+\end_inset
+
+Cleveref und Varioref
+\begin_inset Quotes grd
+\end_inset
+
+,
+ fügen Sie ein:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+% Wir müssen
+\lang ngerman
+ cleveref manuell laden
+\lang ngerman
+,
+ da es
+\end_layout
+
+\begin_layout Plain Layout
+% vor
+\lang ngerman
+ covington geladen werden muss
+\lang ngerman
+!
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+usepackage{cleveref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+crefname{covex}{example}{examples}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+Crefname{covex}{Example}{Examples}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+creflabelformat{covex}{
+\backslash
+textup{(#2#1#3)}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+AddToHook{env/covsubexamples/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+  
+\backslash
+crefalias{enumi}{covex}
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+% Das Folgende ist mit der O
+\lang ngerman
+ption 
+\begin_inset Quotes eld
+\end_inset
+
+owncounter
+\begin_inset Quotes erd
+\end_inset
+
+ nicht nötig
+\lang ngerman
+:
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+AddToHook{env/covexamples/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+  
+\backslash
+crefalias{equation}{covex}
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Anders als 
+\emph on
+prettyref
+\emph default
+ und 
+\emph on
+refstyle
+\emph default
+ verwendet 
+\emph on
+cleveref
+\emph default
+ nicht das Präfi,
+ um den Verweistyp zu bestimmen,
+ sondern den verwendeten \SpecialChar TeX
+-Zähler.
+ Standardmäßig verwendet 
+\emph on
+covington
+\emph default
+ den bereits vorhandenen Zähler 
+\family typewriter
+equation
+\family default
+ für Beispiele,
+ für Unterbeispiele den Zählen 
+\family typewriter
+enumi
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Das hat den Effekt,
+ dass mathematische Gleichungen und linguistische Beispiele denselben Zähler verwenden,
+ also nicht getrennt nummeriert werden.
+ Wenn Sie dies nicht wollen,
+ können Sie die Paketoption 
+\emph on
+owncounter
+\emph default
+ (über 
+\family sans
+Dokument\SpecialChar menuseparator
+Einstellungen\SpecialChar menuseparator
+Dokumentklasse\SpecialChar menuseparator
+Klassoptionen\SpecialChar menuseparator
+Benutzerdefinitert
+\family default
+) verwenden.
+ In diesem Fall können Sie den letzten Teil des Codes (wie im Kommentar vermerkt) weglassen.
+\end_layout
+
+\begin_layout Standard
+Anders als bei 
+\emph on
+refstyle
+\emph default
+ (aber wie bei
+\emph on
+ zref-clever
+\emph default
+) werden Pluralformen nicht im Dialog ausgewählt.
+ Das Paket wählt sie automatisch,
+ wenn ein Querverweis auf mehrere Beispiele verweist.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Mit 
+\begin_inset Quotes gld
+\end_inset
+
+Zref-Clever und Zref-Vario
+\begin_inset Quotes grd
+\end_inset
+
+ schließlich geben Sie dies ein:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+zcRefTypeSetup{covex}{
+\end_layout
+
+\begin_layout Plain Layout
+  Name-sg = Example ,
+\end_layout
+
+\begin_layout Plain Layout
+  name-sg = example ,
+\end_layout
+
+\begin_layout Plain Layout
+  Name-pl = Examples ,
+\end_layout
+
+\begin_layout Plain Layout
+  name-pl = examples ,
+\end_layout
+
+\begin_layout Plain Layout
+  refbounds-first-sg = {,(,),} ,
+\end_layout
+
+\begin_layout Plain Layout
+  refbounds = {(,,,)} ,
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+AddToHook{env/covsubexs/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+   
+\backslash
+zcsetup{countertype={enumi=covex}}%
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+% Das Folgende ist mit der Option 
+\begin_inset Quotes eld
+\end_inset
+
+owncounter
+\begin_inset Quotes erd
+\end_inset
+
+ nicht nötig:
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+AddToHook{env/covexamples/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+  
+\backslash
+zcsetup{countertype={equation=covex}}%
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wie bei 
+\emph on
+cleveref
+\emph default
+ wird der Verweistyp über den Zähler bestimmt.
+ Wenn Sie also 
+\emph on
+owncounter
+\emph default
+ verwenden,
+ um Beispiele und Gleichungen separat zu nummerieren,
+ können Sie auch hier wieder den letzten Teil des Codes weglassen.
+\end_layout
+
+\begin_layout Standard
+Beachten Sie,
+ dass 
+\emph on
+zref-clever
+\emph default
+ sogar noch mehr Varianten unterstützt (bspw.
+ unterschiedliche Kasus,
+ also Genitiv,
+ Dativ,
+ Akkusativ,
+ wenn sie sich – wie im Deutschen hier die Genitivform [
+\emph on
+des Beispiels
+\emph default
+] formal vom Nominativ unterscheiden – oder optionale abgekürzte Formen wie 
+\emph on
+Bsp
+\emph default
+.),
+ die man auch in \SpecialChar LyX
+ verwenden kann (über die benutzerdefinierten Optionen im Querverweis-Dialog).
+ Bitte konsuliteren Sie die Dokumentantion des Pakets 
+\emph on
+zref-clever
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zref-clever"
+literal "false"
+
+\end_inset
+
+ für Informationen,
+ wie man diese in die obige Definition einbinden kann.
+\end_layout
+
+\begin_layout Standard
+Beachten Sie schließlich,
+ dass der Befehl 
+\family typewriter
+
+\backslash
+AddToHook
+\family default
+,der in einigen Definitionen erwendet wird,
+ nur bei einigermaßen neuen Versionen von \SpecialChar LaTeX
+ zur Verfügung steht.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 Alle Beispielvarianten können mittels optionaler Argument in vielen Details angepasst werden.
  Diese können Sie über 
@@ -583,7 +1295,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Für globale Anpassungen können Sie die Optionen an das Makro 
+Für Anpassungen,
+ die für das gesamte Dokument wirksam sein sollen,
+ können Sie die Optionen an das Makro 
 \family typewriter
 
 \backslash
@@ -892,7 +1606,6 @@ Glossierte Wortgruppen
 status open
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -903,7 +1616,6 @@ diese Wörter geschweift einklammern
 status open
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -975,7 +1687,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 fsii={
 \backslash
 normalfont
@@ -1296,17 +2007,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 Provides covington 1
 \end_layout
 
 \begin_layout Plain Layout
-
 AddToPreamble
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1317,7 +2025,6 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1328,7 +2035,6 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1339,7 +2045,6 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1350,14 +2055,12 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 usepackage{covington}
 \end_layout
 
 \begin_layout Plain Layout
-
 EndPreamble
 \end_layout
 
@@ -1766,13 +2469,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 floatstyle{plaintop}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 restylefloat{tableau}
@@ -1796,13 +2497,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 floatstyle{komaabove}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 restylefloat{tableau}
@@ -1914,7 +2613,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 renewcommand
@@ -2045,7 +2743,6 @@ als Strukturbaum ausgegeben wird.
 status collapsed
 
 \begin_layout Plain Layout
-
 "=
 \end_layout
 
@@ -2925,13 +3622,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 AtBeginDocument{%
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 newfontfamily{
@@ -2940,7 +3635,6 @@ ipafont}{CMU Serif}% oder eine ander Schriftart
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 def
@@ -2951,7 +3645,6 @@ ipafont}
 \end_layout
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -3189,7 +3882,6 @@ Das covington-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/pkg/covington
 \end_layout
 
@@ -3212,7 +3904,6 @@ Das csquotes-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/csquotes
 \end_layout
 
@@ -3235,7 +3926,6 @@ literal "false"
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/drs
 \end_layout
 
@@ -3258,7 +3948,6 @@ Das enumitem-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/enumitem
 \end_layout
 
@@ -3281,7 +3970,6 @@ Das float-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/float
 \end_layout
 
@@ -3304,7 +3992,6 @@ Das forest-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/graphics/pgf/contrib/forest
 \end_layout
 
@@ -3330,7 +4017,6 @@ Maria Gouskova,
 status collapsed
 
 \begin_layout Plain Layout
-
 https://wiki.lyx.org/LyX/LinguistLyX
 \end_layout
 
@@ -3353,7 +4039,6 @@ Das pict2e-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/pict2e
 \end_layout
 
@@ -3376,7 +4061,6 @@ Das preview-latex-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/preview
 \end_layout
 
@@ -3399,7 +4083,6 @@ Das tipa-Paket und die zugehörigen Schriften:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/fonts/tipa
 \end_layout
 
@@ -3422,8 +4105,29 @@ Das varwidth-Paket:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/varwidth
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "zref-clever"
+literal "false"
+
+\end_inset
+
+Das Paket zref-clever:
+ 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+https://www.ctan.org/tex-archive/macros/latex/contrib/zref-clever
 \end_layout
 
 \end_inset

@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -30,6 +30,9 @@
     }
   }
 }{}
+
+% Formatted references to (sub-)examples via prettyref
+\newrefformat{lex}{example~(\ref{#1})}
 \end_preamble
 \use_default_options false
 \begin_modules
@@ -92,11 +95,19 @@ linguistics
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -113,6 +124,7 @@ linguistics
 \papersides 1
 \paperpagestyle default
 \tablestyle default
+\listings_params "language={[LaTeX]TeX},basicstyle={\ttfamily}"
 \tracking_changes true
 \output_changes false
 \change_bars false
@@ -122,6 +134,8 @@ linguistics
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\author -712698321 "Jürgen Spitzmüller"
 \end_header
 
 \begin_body
@@ -149,7 +163,15 @@ literal "false"
 \end_layout
 
 \begin_layout Date
+
+\change_deleted -712698321 1755087294
 21/04/2015
+\change_inserted -712698321 1755087308
+\SpecialChar LyX
+ v.
+ 2.5
+\change_unchanged
+
 \end_layout
 
 \begin_layout Abstract
@@ -475,12 +497,25 @@ it can have several paragraphs
 
 \begin_layout Numbered Examples (consecutive)
 This is a single example
+\change_inserted -712698321 1755086583
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lex:single-example"
+
+\end_inset
+
+
+\change_deleted -712698321 1755086583
+
 \begin_inset CommandInset label
 LatexCommand label
 name "exa:single-example"
 
 \end_inset
 
+
+\change_unchanged
  [Style 
 \emph on
 Numbered Example (consecutive)
@@ -494,12 +529,25 @@ Consecutive single examples get their own numbers
 
 \begin_layout Subexample
 This is a subexample
+\change_inserted -712698321 1755086597
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lex:subexample"
+
+\end_inset
+
+
+\change_deleted -712698321 1755086597
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:subexample"
 
 \end_inset
 
+
+\change_unchanged
  [Style 
 \emph on
 Subexample
@@ -519,9 +567,33 @@ Insert\SpecialChar menuseparator
 Cross references
 \family default
 .
- We refer here,
+ 
+\change_deleted -712698321 1755090756
+We refer here,
  just for the sake of demonstrating this,
- to 
+ to
+\change_inserted -712698321 1755090863
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755090789
+Simple references which only output the number look like this:
+
+\change_unchanged
+ 
+\change_inserted -712698321 1755086583
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lex:single-example"
+
+\end_inset
+
+
+\change_deleted -712698321 1755090756
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "exa:single-example"
@@ -529,7 +601,20 @@ nolink "false"
 
 \end_inset
 
+
+\change_unchanged
  and 
+\change_inserted -712698321 1755086597
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lex:subexample"
+
+\end_inset
+
+
+\change_deleted -712698321 1755090756
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:subexample"
@@ -537,9 +622,785 @@ nolink "false"
 
 \end_inset
 
+
+\change_unchanged
+.
+
+\change_inserted -712698321 1755092855
+ If you want the numbers to be embraced in parentheses,
+ as is the convention,
+ select the parenthetical format instead:
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lex:single-example"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "lex:subexample"
+
+\end_inset
+
+.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755091020
+For more convenient referencing,
+ you can also use 
+\begin_inset Quotes eld
+\end_inset
+
+formatted references
+\begin_inset Quotes erd
+\end_inset
+
+ that automatically add the 
+\emph on
+example
+\emph default
+ string and embrace the number in parentheses,
+ as in:
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lex:single-example"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lex:subexample"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ However,
+ as the cross-reference packages that are employed by \SpecialChar LyX
+ to produce such references do not know 
+\emph on
+covington
+\emph default
+,
+ you will need to add some preamble code to make this work,
+ and the code depends on your choice in 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+Document Class\SpecialChar menuseparator
+Format Packages
+\family default
 .
 \end_layout
 
+\begin_layout Standard
+
+\change_inserted -712698321 1755091214
+In what follows,
+ we describe the necessary settings for English documents.
+ If you write in a different language (or prefer other terminology),
+ adapt the 
+\emph on
+example
+\emph default
+ strings in their different casing and number variant (
+\emph on
+examples
+\emph default
+,
+ 
+\emph on
+Example
+\emph default
+,
+ 
+\emph on
+Examples
+\emph default
+).
+ For languages that always uppercase nouns (such as German),
+ use uppercase variants in all cases:
+\end_layout
+
+\begin_layout Enumerate
+
+\change_inserted -712698321 1755087781
+With 
+\begin_inset Quotes eld
+\end_inset
+
+prettyref and varioref
+\begin_inset Quotes erd
+\end_inset
+
+ (which we use in this document),
+ add:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\change_inserted -712698321 1755087823
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755087803
+
+\backslash
+newrefformat{lex}{example~(
+\backslash
+ref{#1})}
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755088729
+Note that the 
+\emph on
+prettyref
+\emph default
+ package is rather simple and supports no optional plural (
+\emph on
+examples
+\emph default
+) or uppercase (
+\emph on
+Example
+\emph default
+,
+ 
+\emph on
+Examples
+\emph default
+) variants (which you could otherwise select in the cross-references dialog).
+ Also note that the definition depends on which prefix you use in your labels.
+ The definition above assumes 
+\begin_inset Quotes eld
+\end_inset
+
+lex:
+\begin_inset Quotes erd
+\end_inset
+
+,
+ which is the prefix automatically inserted by \SpecialChar LyX
+ for linguistic examples and subexamples.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\change_inserted -712698321 1755088253
+With 
+\begin_inset Quotes eld
+\end_inset
+
+refstyle and varioref
+\begin_inset Quotes erd
+\end_inset
+
+ (which is the default setting for new documents),
+ add:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\change_inserted -712698321 1755088337
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088284
+
+\backslash
+newref{lex}{
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088289
+    name = 
+\backslash
+RSlextxt,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088291
+    names = 
+\backslash
+RSlexstxt,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088293
+    Name = 
+\backslash
+RSLextxt,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088295
+    Names = 
+\backslash
+RSLexstxt,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088297
+    refcmd =(
+\backslash
+ref{#1})
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088284
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088284
+
+\backslash
+def
+\backslash
+RSlextxt{example~}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088284
+
+\backslash
+def
+\backslash
+RSlexstxt{examples~}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088284
+
+\backslash
+def
+\backslash
+RSLextxt{Example~}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088284
+
+\backslash
+def
+\backslash
+RSLexstxt{Examples~}
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755088852
+As with 
+\emph on
+prettyref
+\emph default
+,
+ the definition depends on which prefix you use in your labels.
+ The definition above assumes 
+\begin_inset Quotes eld
+\end_inset
+
+lex:
+\begin_inset Quotes erd
+\end_inset
+
+,
+ which is the prefix automatically inserted by \SpecialChar LyX
+ for linguistic examples and subexamples.
+ Other than 
+\emph on
+prettyref
+\emph default
+,
+ 
+\emph on
+refstyle
+\emph default
+ supports plural and uppercasing,
+ both can be selected for individual references in the cross-references dialog.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\change_inserted -712698321 1755088875
+With 
+\begin_inset Quotes eld
+\end_inset
+
+cleveref and varioref
+\begin_inset Quotes erd
+\end_inset
+
+,
+ add:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\change_inserted -712698321 1755088967
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088931
+% We must load cleveref manually,
+ as it needs
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755088940
+% to be loaded before covington!
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755091764
+
+\backslash
+usepackage{cleveref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755091764
+
+\backslash
+crefname{covex}{example}{examples}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755091764
+
+\backslash
+Crefname{covex}{Example}{Examples}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755091992
+
+\backslash
+creflabelformat{covex}{
+\backslash
+textup{(#2#1#3)}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755091764
+
+\backslash
+AddToHook{env/covsubexamples/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755091764
+  
+\backslash
+crefalias{enumi}{covex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092013
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092025
+% The following is not needed with option 
+\begin_inset Quotes eld
+\end_inset
+
+owncounter
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092012
+
+\backslash
+AddToHook{env/covexamples/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092012
+  
+\backslash
+crefalias{equation}{covex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092012
+}
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755089448
+Other than 
+\emph on
+prettyref
+\emph default
+ and 
+\emph on
+refstyle
+\emph default
+,
+ 
+\emph on
+cleveref
+\emph default
+ does not use the prefix to determine the references type,
+ but the used \SpecialChar TeX
+ counter.
+ By default,
+ 
+\emph on
+covington
+\emph default
+ re-uses the 
+\family typewriter
+equation
+\family default
+ counter for examples,
+ for sub-examples,
+ it is the 
+\family typewriter
+enumi
+\family default
+ counter.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755092199
+If you want to have separate numbering for equations and examples,
+ you can use the 
+\emph on
+covington
+\emph default
+ package option 
+\emph on
+owncounter
+\emph default
+ (via 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+Document Class\SpecialChar menuseparator
+Class Options\SpecialChar menuseparator
+Custom
+\family default
+).
+ In this case,
+ you can omit the last part of the code (as indicated by the comment in the code).
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755090511
+Also,
+ other than 
+\emph on
+refstyle
+\emph default
+ (but like
+\emph on
+ zref-clever
+\emph default
+),
+ plural is not selected in the dialog,
+ the package automatically chooses it if a reference points to multiple examples.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\change_inserted -712698321 1755089680
+Finally,
+ with 
+\begin_inset Quotes eld
+\end_inset
+
+zref-clever and zref-vario
+\begin_inset Quotes erd
+\end_inset
+
+,
+ use this code:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\change_inserted -712698321 1755089964
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755090117
+
+\backslash
+zcRefTypeSetup{covex}{
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755090117
+  Name-sg = Example ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755090117
+  name-sg = example ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755090117
+  Name-pl = Examples ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755090117
+  name-pl = examples ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755090117
+  refbounds-first-sg = {,(,),} ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755090117
+  refbounds = {(,,,)} ,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092072
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092072
+
+\backslash
+AddToHook{env/covsubexs/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092072
+   
+\backslash
+zcsetup{countertype={enumi=covex}}%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092087
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092087
+% The following is not needed with option 
+\begin_inset Quotes eld
+\end_inset
+
+owncounter
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092079
+
+\backslash
+AddToHook{env/covexamples/begin}{%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092079
+  
+\backslash
+zcsetup{countertype={equation=covex}}%
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755092079
+}
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755094694
+As with 
+\emph on
+cleveref
+\emph default
+,
+ the type is determined via counter.
+ So if you use 
+\emph on
+owncounter
+\emph default
+ to separate example and equation numbering,
+ you can omit the last part of the code.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755095637
+Note that 
+\emph on
+zref-clever
+\emph default
+ provides support for even more variants (e.
+\begin_inset space \thinspace{}
+\end_inset
+
+g.,
+ different grammatical case such as genitive,
+ dative,
+ accusative,
+ if these differ formally from the nominative,
+ or optional abbreviated forms such as 
+\emph on
+ex
+\emph default
+.) which can also be used with \SpecialChar LyX
+ via the custom options of the cross-reference dialog.
+ Please refer to the 
+\emph on
+zref-clever
+\emph default
+ manual 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zref-clever"
+literal "false"
+
+\end_inset
+
+ for details on how to include these in the above definitions.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755094703
+Note,
+ finally,
+ that the 
+\family typewriter
+
+\backslash
+AddToHook
+\family default
+ command used in some of the definitions is only available in fairly recent versions of \SpecialChar LaTeX
+.
+\change_unchanged
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 All example variants can be customized in many details via optional arguments.
  These can be inserted via 
@@ -881,7 +1742,6 @@ GroupGlossedWords
 status open
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -892,7 +1752,6 @@ around those words
 status open
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -962,7 +1821,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 fsii={
 \backslash
 normalfont
@@ -1299,17 +2157,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 Provides covington 1
 \end_layout
 
 \begin_layout Plain Layout
-
 AddToPreamble
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1320,7 +2175,6 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1331,7 +2185,6 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1342,7 +2195,6 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 let
@@ -1353,14 +2205,12 @@ relax
 \end_layout
 
 \begin_layout Plain Layout
-
 		
 \backslash
 usepackage{covington}
 \end_layout
 
 \begin_layout Plain Layout
-
 EndPreamble
 \end_layout
 
@@ -1786,13 +2636,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 floatstyle{plaintop}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 restylefloat{tableau}
@@ -1816,13 +2664,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 floatstyle{komaabove}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 restylefloat{tableau}
@@ -1925,7 +2771,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 renewcommand
@@ -2862,13 +3707,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 AtBeginDocument{%
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 newfontfamily{
@@ -2877,7 +3720,6 @@ ipafont}{CMU Serif}% or another font
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 def
@@ -2888,7 +3730,6 @@ ipafont}
 \end_layout
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -3163,7 +4004,6 @@ The covington package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/pkg/covington
 \end_layout
 
@@ -3186,7 +4026,6 @@ The csquotes package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/csquotes
 \end_layout
 
@@ -3213,7 +4052,6 @@ package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/drs
 \end_layout
 
@@ -3236,7 +4074,6 @@ The enumitem package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/enumitem
 \end_layout
 
@@ -3259,7 +4096,6 @@ The float package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/float
 \end_layout
 
@@ -3282,7 +4118,6 @@ The forest package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/graphics/pgf/contrib/forest
 \end_layout
 
@@ -3308,7 +4143,6 @@ Maria Gouskova,
 status collapsed
 
 \begin_layout Plain Layout
-
 https://wiki.lyx.org/LyX/LinguistLyX
 \end_layout
 
@@ -3331,7 +4165,6 @@ The pict2e package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/pict2e
 \end_layout
 
@@ -3354,7 +4187,6 @@ The preview-latex package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/preview
 \end_layout
 
@@ -3377,7 +4209,6 @@ The tipa package and fonts:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/fonts/tipa
 \end_layout
 
@@ -3400,13 +4231,42 @@ The varwidth package:
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/varwidth
 \end_layout
 
 \end_inset
 
 .
+\change_inserted -712698321 1755095540
+
+\end_layout
+
+\begin_layout Bibliography
+
+\change_inserted -712698321 1755095553
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "zref-clever"
+literal "false"
+
+\end_inset
+
+The zref-clever package:
+ 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755095540
+https://www.ctan.org/tex-archive/macros/latex/contrib/zref-clever
+\end_layout
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \end_body
