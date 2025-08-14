@@ -3182,6 +3182,33 @@ def revert_prettyref_l7n(document):
     if i != -1:
         document.header[i] = "\\crossref_package prettyref"
 
+def convert_refstyle_enu(document):
+    """Convert refstyle enu: formatted refs to simple red"""
+    if find_token(document.header, "\\crossref_package refstyle", 0) == -1:
+        return
+
+    i = 0
+    while True:
+        i = find_token(document.body, "\\begin_inset CommandInset ref", i)
+        if i == -1:
+            break
+        j = find_end_of_inset(document.body, i)
+        if j == -1:
+            document.warning("Can't find end of reference inset at line %d!!" % (i))
+            i += 1
+            continue
+
+        k = find_token(document.body, "LatexCommand formatted", i, j)
+        if k == -1:
+            i += 1
+            continue
+
+        label = get_quoted_value(document.body, "reference", i, j)
+        document.warning("label: %s" % label)
+        if label.startswith("enu:"):
+            document.body[k] = "LatexCommand ref"
+
+        i += 1
 
 def revert_justification_pref(document):
     """Revert justification pref setting"""
@@ -3265,7 +3292,7 @@ convert = [
     [640, []],
     [641, [convert_justification_pref]],
     [642, []],
-    [643, []]
+    [643, [convert_refstyle_enu]]
 ]
 
 
