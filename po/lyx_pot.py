@@ -277,7 +277,7 @@ def layouts_l10n(input_files, output, base, layouttranslations):
                 continue
             res = TheoremCrossRefName.search(line)
             if res != None:
-                string = res.group(1)
+                string = res.group(1).strip('"')
                 if layouttranslations:
                     keyset.add(string)
                     keyset.add(string.lower())
@@ -287,7 +287,7 @@ def layouts_l10n(input_files, output, base, layouttranslations):
                 continue
             res = TheoremCrossRefPluralName.search(line)
             if res != None:
-                string = res.group(1)
+                string = res.group(1).strip('"')
                 if layouttranslations:
                     keyset.add(string)
                     keyset.add(string.lower())
