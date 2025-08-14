@@ -985,8 +985,10 @@ void InsetRef::validate(LaTeXFeatures & features) const
 			features.require("refstyle");
 			if (prefix == "cha")
 				features.addPreambleSnippet(from_ascii("\\let\\charef=\\chapref"));
-			else if (prefix == "subsec")
+			else if (prefix == "subsec" || prefix == "Subsec")
 				features.require("refstyle:subsecref");
+			else if (prefix == "enu" || prefix == "Enu")
+				features.require("refstyle:enuref");
 			else if (!prefix.empty() && !buffer().masterParams().documentClass().hasRefPrefix(prefix)) {
 				// fallback command for unknown prefixes
 				docstring lcmd = "\\AtBeginDocument{\\providecommand" +

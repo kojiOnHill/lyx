@@ -71,6 +71,10 @@ Style Enumerate
 	HTMLItem              li
 	HTMLLabel             NONE
 	RefPrefix             enu
+	# FIXME This is a workaround to get this into l7n
+	# Implement a dedicated tag
+	TheoremCrossRefName   "Item[[enumerate]]"
+	TheoremCrossRefPluralName "Items[[enumerate]]"
 	Argument item:1
 		LabelString   "Custom Item|s"
 		Tooltip       "A customized item string"

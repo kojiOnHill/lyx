@@ -49,28 +49,28 @@ End
 Counter enumi
 	GuiName "Numbered List (Level 1)"
 	LabelString          "\arabic{enumi}."
-	PrettyFormat         "(\arabic{enumi})"
+	PrettyFormat         "Item \arabic{enumi}"
 End
 
 Counter enumii
 	GuiName "Numbered List (Level 2)"
 	Within               enumi
 	LabelString          "(\alph{enumii})"
-	PrettyFormat         "(\alph{enumii})"
+	PrettyFormat         "Item \arabic{enumi}\alph{enumii}"
 End
 
 Counter enumiii
 	GuiName "Numbered List (Level 3)"
 	Within               enumii
 	LabelString          "\roman{enumiii}."
-	PrettyFormat         "(\roman{enumiii})"
+	PrettyFormat         "Item \arabic{enumi}(\alph{enumii})\roman{enumiii}"
 End
 
 Counter enumiv
 	GuiName "Numbered List (Level 4)"
 	Within               enumiii
 	LabelString          "\Alph{enumiv}."
-	PrettyFormat         "(\Alph{enumiv})"
+	PrettyFormat         "Item \arabic{enumi}(\alph{enumii})\roman{enumiii}\Alph{enumiv}"
 End
 
 Counter bibitem

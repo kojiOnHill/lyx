@@ -1832,6 +1832,22 @@ TexString LaTeXFeatures::getMacros() const
 		       << '\n';
 	}
 
+	if (mustProvide("refstyle:enuref")) {
+		// this is not provided by the package, but we use the prefix
+		macros << "\\RS@ifundefined{enuref}{\n"
+		       << "  \\newref{enu}{\n"
+		       << "        name      = \\RSenutxt,\n"
+		       << "        names     = \\RSenustxt,\n"
+		       << "        Name      = \\RSEnutxt,\n"
+		       << "        Names     = \\RSEnustxt,\n"
+		       << "        rngtxt    = \\RSrngtxt,\n"
+		       << "        lsttwotxt = \\RSlsttwotxt,\n"
+		       << "        lsttxt    = \\RSlsttxt\n"
+		       << "  }\n"
+		       << "}{}\n"
+		       << '\n';
+	}
+
 	if (mustProvide("cleveref:cpagereffix")) {
 		macros << "% Fix for pending cleveref bug: https://tex.stackexchange.com/a/620066/105447\n"
 			<< "\\newcommand*{\\@setcpagerefrange}[3]{\\@@setcpagerefrange{#1}{#2}{cref}{#3}}\n"
@@ -2266,23 +2282,6 @@ docstring const i18npreamble(docstring const & templ, Language const * lang,
 
 docstring const LaTeXFeatures::getThmI18nDefs(Layout const & lay) const
 {
-	// For prettyref, we also do the other layout defs here
-	if (params_.xref_package == "prettyref-l7n" && isRequired("prettyref")) {
-		odocstringstream ods;
-		if (lay.refprefix == "part")
-			ods << "\\newrefformat{" << lay.refprefix << "}{_(Part)~\\ref{#1}}\n";
-		if (lay.refprefix == "cha")
-			ods << "\\newrefformat{" << lay.refprefix << "}{_(Chapter)~\\ref{#1}}\n";
-		if (lay.refprefix == "sec" || lay.refprefix == "subsec" || lay.refprefix == "sub")
-			ods << "\\newrefformat{" << lay.refprefix << "}{_(Section)~\\ref{#1}}\n";
-		if (lay.refprefix == "par")
-			ods << "\\newrefformat{alg}{_(Paragraph[[Sectioning]])~\\ref{#1}}\n";
-		if (lay.refprefix == "fn")
-			ods << "\\newrefformat{alg}{_(Footnote)~\\ref{#1}}\n";
-		if (!ods.str().empty())
-			return ods.str();
-	}
-	// Otherwise only handle theorems
 	if (lay.thmName().empty())
 		return docstring();
 	if (params_.xref_package == "zref" && lay.thmZRefName() == "none" && !lay.thmXRefName().empty()
@@ -2326,6 +2325,39 @@ docstring const LaTeXFeatures::getThmI18nDefs(Layout const & lay) const
 }
 
 
+docstring const LaTeXFeatures::getXRefI18nDefs(Layout const & lay) const
+{
+	if (params_.xref_package == "prettyref-l7n" && isRequired("prettyref")) {
+		odocstringstream ods;
+		if (lay.refprefix == "part")
+			ods << "\\newrefformat{" << lay.refprefix << "}{_(Part)~\\ref{#1}}\n";
+		else if (lay.refprefix == "cha")
+			ods << "\\newrefformat{" << lay.refprefix << "}{_(Chapter)~\\ref{#1}}\n";
+		else if (lay.refprefix == "sec" || lay.refprefix == "subsec" || lay.refprefix == "sub")
+			ods << "\\newrefformat{" << lay.refprefix << "}{_(Section)~\\ref{#1}}\n";
+		else if (lay.refprefix == "par")
+			ods << "\\newrefformat{alg}{_(Paragraph[[Sectioning]])~\\ref{#1}}\n";
+		else if (lay.refprefix == "fn")
+			ods << "\\newrefformat{alg}{_(Footnote)~\\ref{#1}}\n";
+		else if (lay.refprefix == "enu")
+			ods << "\\newrefformat{enu}{_(Item[[enumerate]])~\\ref{#1}}\n";
+		if (!ods.str().empty())
+			return ods.str();
+	} else if (params_.xref_package == "refstyle" && isRequired("refstyle:enuref")) {
+		docstring const tn = from_ascii("Item[[enumerate]]");
+		docstring const tnp = from_ascii("Items[[enumerate]]");
+		odocstringstream ods;
+		docstring const prfxname = from_ascii("enu");
+		ods << "\\def\\RS" << prfxname << "txt{_(" << lowercase(tn) << ")~}\n"
+		    << "\\def\\RS" << prfxname << "stxt{_(" << lowercase(tnp) << ")~}\n"
+		    << "\\def\\RS" << capitalize(prfxname) << "txt{_(" << tn << ")~}\n"
+		    << "\\def\\RS" << capitalize(prfxname) << "stxt{_(" << tnp << ")~}\n";
+		return ods.str();
+	}
+	return docstring();
+}
+
+
 docstring const LaTeXFeatures::getTClassI18nPreamble(bool use_babel,
 				bool use_polyglossia, bool use_minted) const
 {
@@ -2339,12 +2371,18 @@ docstring const LaTeXFeatures::getTClassI18nPreamble(bool use_babel,
 	list<docstring>::const_iterator cit = usedLayouts_.begin();
 	list<docstring>::const_iterator end = usedLayouts_.end();
 	for (; cit != end; ++cit) {
-		docstring const thmxref = getThmI18nDefs(tclass[*cit]);
 		// language dependent commands (once per document)
 		snippets.insert(i18npreamble(tclass[*cit].langpreamble(),
 						buffer().language(),
 						buffer().params().encoding(),
 						use_polyglossia, false));
+		docstring const xxref = getXRefI18nDefs(tclass[*cit]);
+		if (!xxref.empty())
+			snippets.insert(i18npreamble(xxref,
+						     buffer().language(),
+						     buffer().params().encoding(),
+						     use_polyglossia, false));
+		docstring const thmxref = getThmI18nDefs(tclass[*cit]);
 		if (!thmxref.empty())
 			snippets.insert(i18npreamble(thmxref,
 						     buffer().language(),

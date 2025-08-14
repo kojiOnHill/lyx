@@ -91,6 +91,8 @@ public:
 	docstring const getTClassPreamble() const;
 	/// Localizations for theorem reference defs
 	docstring const getThmI18nDefs(Layout const &) const;
+	/// Localizations for extra reference defs
+	docstring const getXRefI18nDefs(Layout const &) const;
 	/// The language dependent definitions needed by the document's textclass
 	docstring const getTClassI18nPreamble(bool use_babel,
 				bool use_polyglossia, bool use_minted) const;
