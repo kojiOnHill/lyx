@@ -652,9 +652,9 @@ docstring Counters::formattedCounter(docstring const & name,
 	Counter const & ctr = it->second;
 
 	docstring const value = theCounter(name, lang);
-	docstring const format = translateIfPossible(
-				counterLabel(getFormattedLabel(ctr.refFormat(prex), lc, pl), lang),
-				lang);
+	docstring const format =
+		counterLabel(translateIfPossible(getFormattedLabel(ctr.refFormat(prex), lc, pl), lang),
+			     lang);
 	if (format.empty())
 		return value;
 	return subst(format, from_ascii("##"), value);
