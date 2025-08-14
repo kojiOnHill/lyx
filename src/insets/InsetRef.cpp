@@ -209,8 +209,12 @@ bool InsetRef::getStatus(Cursor & cur, FuncRequest const & cmd,
 	else if (arg == "toggle-caps")
 		pstring = "caps";
 	if (!pstring.empty()) {
-		status.setEnabled(buffer().params().xref_package == "refstyle" &&
-			params().getCmdName() == "formatted");
+		if (pstring == "plural")
+			status.setEnabled(buffer().params().xref_package == "refstyle"
+				&& params().getCmdName() == "formatted");
+		else
+			status.setEnabled(!prefixIs(buffer().params().xref_package, "prettyref")
+				&& params().getCmdName() == "formatted");
 		bool const isSet = (getParam(pstring) == "true");
 		status.setOnOff(isSet);
 		return true;
@@ -222,7 +226,8 @@ bool InsetRef::getStatus(Cursor & cur, FuncRequest const & cmd,
 		return true;
 	}
 	if (arg == "toggle-nolink") {
-		status.setEnabled(params().getCmdName() != "formatted" && params().getCmdName() != "labelonly");
+		status.setEnabled(params().getCmdName() != "formatted"
+			&& params().getCmdName() != "labelonly");
 		bool const isSet = (getParam("nolink") == "true");
 		status.setOnOff(isSet);
 		return true;
