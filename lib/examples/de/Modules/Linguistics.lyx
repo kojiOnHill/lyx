@@ -128,6 +128,7 @@ linguistics
 \papersides 1
 \paperpagestyle default
 \tablestyle default
+\listings_params "language={[LaTeX]TeX},basicstyle={\ttfamily}"
 \tracking_changes false
 \output_changes false
 \change_bars false
@@ -765,7 +766,7 @@ Example
 Examples
 \emph default
 \lang ngerman
-) anbietet (welche Sie ansonsten im Querverweis-Dialog auswählen könnten).
+) anbietet (welche Sie ansonsten im Querverweis-Dialog oder Kontextmenü auswählen könnten).
  Beachten Sie auch,
  dass die Definition von dem Präfix,
  das Sie in den Marken verwenden,
@@ -812,69 +813,29 @@ newref{lex}{
 \end_layout
 
 \begin_layout Plain Layout
-    name = 
-\backslash
-RSlextxt,
+    name = {example~},
 \end_layout
 
 \begin_layout Plain Layout
-    names = 
-\backslash
-RSlexstxt,
+    names = {examples~},
 \end_layout
 
 \begin_layout Plain Layout
-    Name = 
-\backslash
-RSLextxt,
+    Name = {Example~},
 \end_layout
 
 \begin_layout Plain Layout
-    Names = 
-\backslash
-RSLexstxt,
+    Names = {Examples~},
 \end_layout
 
 \begin_layout Plain Layout
-    refcmd =(
+    refcmd = (
 \backslash
 ref{#1})
 \end_layout
 
 \begin_layout Plain Layout
 }
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-def
-\backslash
-RSlextxt{example~}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-def
-\backslash
-RSlexstxt{examples~}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-def
-\backslash
-RSLextxt{Example~}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-def
-\backslash
-RSLexstxt{Examples~}
 \end_layout
 
 \end_inset
@@ -913,7 +874,7 @@ refstyle
 \emph default
  Plural und Großschreibung (bspw.
  am Satzanfang im Englischen).
- Beides kann für individuelle Verweise im Querverwies-Dialog ausgewählt werden.
+ Beides kann für individuelle Verweise im Querverwies-Dialog oder Kontextmenü ausgewählt werden.
 \end_layout
 
 \end_deeper
@@ -937,20 +898,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
-% Wir müssen
-\lang ngerman
- cleveref manuell laden
-\lang ngerman
-,
+% Wir müssen cleveref manuell laden,
  da es
 \end_layout
 
 \begin_layout Plain Layout
-% vor
-\lang ngerman
- covington geladen werden muss
-\lang ngerman
-!
+% vor covington geladen werden muss!
 \end_layout
 
 \begin_layout Plain Layout
@@ -996,9 +949,7 @@ crefalias{enumi}{covex}
 \end_layout
 
 \begin_layout Plain Layout
-% Das Folgende ist mit der O
-\lang ngerman
-ption 
+% Das Folgende ist mit der Option 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1006,9 +957,11 @@ owncounter
 \begin_inset Quotes erd
 \end_inset
 
- nicht nötig
-\lang ngerman
-:
+
+\end_layout
+
+\begin_layout Plain Layout
+% nicht nötig:
 \end_layout
 
 \begin_layout Plain Layout
@@ -1057,12 +1010,20 @@ covington
 \family typewriter
 equation
 \family default
- für Beispiele,
+ (=
+\begin_inset space ~
+\end_inset
+
+Gleichungen) für Beispiele,
  für Unterbeispiele den Zählen 
 \family typewriter
 enumi
 \family default
-.
+ (=
+\begin_inset space ~
+\end_inset
+
+Aufzählung erster Ebene).
 \end_layout
 
 \begin_layout Standard
@@ -1095,7 +1056,7 @@ refstyle
 \emph on
  zref-clever
 \emph default
-) werden Pluralformen nicht im Dialog ausgewählt.
+) werden Pluralformen nicht im Dialog oder Kontextmenü ausgewählt.
  Das Paket wählt sie automatisch,
  wenn ein Querverweis auf mehrere Beispiele verweist.
 \end_layout
@@ -1170,6 +1131,10 @@ zcsetup{countertype={enumi=covex}}%
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 % Das Folgende ist mit der Option 
 \begin_inset Quotes eld
 \end_inset
@@ -1178,7 +1143,11 @@ owncounter
 \begin_inset Quotes erd
 \end_inset
 
- nicht nötig:
+
+\end_layout
+
+\begin_layout Plain Layout
+% nicht nötig:
 \end_layout
 
 \begin_layout Plain Layout

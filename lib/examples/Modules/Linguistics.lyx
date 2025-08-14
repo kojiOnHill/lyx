@@ -666,8 +666,7 @@ formatted references
 example
 \emph default
  string and embrace the number in parentheses,
- as in:
- 
+ as in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "lex:single-example"
@@ -781,7 +780,7 @@ ref{#1})}
 
 \begin_layout Standard
 
-\change_inserted -712698321 1755088729
+\change_inserted -712698321 1755155199
 Note that the 
 \emph on
 prettyref
@@ -799,7 +798,7 @@ Example
 \emph on
 Examples
 \emph default
-) variants (which you could otherwise select in the cross-references dialog).
+) variants (which you could otherwise select in the cross-references dialog or context menu).
  Also note that the definition depends on which prefix you use in your labels.
  The definition above assumes 
 \begin_inset Quotes eld
@@ -848,40 +847,32 @@ newref{lex}{
 
 \begin_layout Plain Layout
 
-\change_inserted -712698321 1755088289
-    name = 
-\backslash
-RSlextxt,
+\change_inserted -712698321 1755154726
+    name = {example~},
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted -712698321 1755088291
-    names = 
-\backslash
-RSlexstxt,
+\change_inserted -712698321 1755154732
+    names = {examples~},
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted -712698321 1755088293
-    Name = 
-\backslash
-RSLextxt,
+\change_inserted -712698321 1755154741
+    Name = {Example~},
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted -712698321 1755088295
-    Names = 
-\backslash
-RSLexstxt,
+\change_inserted -712698321 1755154746
+    Names = {Examples~},
 \end_layout
 
 \begin_layout Plain Layout
 
-\change_inserted -712698321 1755088297
-    refcmd =(
+\change_inserted -712698321 1755154882
+    refcmd = (
 \backslash
 ref{#1})
 \end_layout
@@ -890,46 +881,6 @@ ref{#1})
 
 \change_inserted -712698321 1755088284
 }
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -712698321 1755088284
-
-\backslash
-def
-\backslash
-RSlextxt{example~}
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -712698321 1755088284
-
-\backslash
-def
-\backslash
-RSlexstxt{examples~}
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -712698321 1755088284
-
-\backslash
-def
-\backslash
-RSLextxt{Example~}
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted -712698321 1755088284
-
-\backslash
-def
-\backslash
-RSLexstxt{Examples~}
 \change_unchanged
 
 \end_layout
@@ -941,7 +892,7 @@ RSLexstxt{Examples~}
 
 \begin_layout Standard
 
-\change_inserted -712698321 1755088852
+\change_inserted -712698321 1755155204
 As with 
 \emph on
 prettyref
@@ -969,7 +920,7 @@ prettyref
 refstyle
 \emph default
  supports plural and uppercasing,
- both can be selected for individual references in the cross-references dialog.
+ both can be selected for individual references in the cross-references dialog or context menu.
 \end_layout
 
 \end_deeper
@@ -1067,8 +1018,14 @@ crefalias{enumi}{covex}
 
 \begin_layout Plain Layout
 
-\change_inserted -712698321 1755092025
-% The following is not needed with option 
+\change_inserted -712698321 1755155237
+% The following is not needed
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755155238
+% with option 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1110,7 +1067,7 @@ crefalias{equation}{covex}
 
 \begin_layout Standard
 
-\change_inserted -712698321 1755089448
+\change_inserted -712698321 1755155300
 Other than 
 \emph on
 prettyref
@@ -1142,7 +1099,11 @@ equation
 \family typewriter
 enumi
 \family default
- counter.
+ (=
+\begin_inset space ~
+\end_inset
+
+first-level enumeration) counter.
 \end_layout
 
 \begin_layout Standard
@@ -1172,7 +1133,7 @@ Custom
 
 \begin_layout Standard
 
-\change_inserted -712698321 1755090511
+\change_inserted -712698321 1755155350
 Also,
  other than 
 \emph on
@@ -1183,7 +1144,7 @@ refstyle
  zref-clever
 \emph default
 ),
- plural is not selected in the dialog,
+ plural is not selected in the dialog or context menu,
  the package automatically chooses it if a reference points to multiple examples.
 \end_layout
 
@@ -1286,8 +1247,14 @@ zcsetup{countertype={enumi=covex}}%
 
 \begin_layout Plain Layout
 
-\change_inserted -712698321 1755092087
-% The following is not needed with option 
+\change_inserted -712698321 1755155385
+% The following is not needed
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755155386
+% with option 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1431,7 +1398,15 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-For global adjustments,
+For 
+\change_deleted -712698321 1755155463
+global 
+\change_unchanged
+adjustments
+\change_inserted -712698321 1755155480
+ that should apply for the whole document
+\change_unchanged
+,
  these options can be passed to the 
 \family typewriter
 
@@ -4260,6 +4235,8 @@ status collapsed
 
 \change_inserted -712698321 1755095540
 https://www.ctan.org/tex-archive/macros/latex/contrib/zref-clever
+\change_unchanged
+
 \end_layout
 
 \end_inset
