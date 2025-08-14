@@ -2525,7 +2525,7 @@ def convert_crossref_package(document):
     i = find_token(document.header, "\\use_refstyle", 0)
     if i != -1:
         value = get_value(document.header, "\\use_refstyle", i)
-        if value == 1:
+        if value == "1":
             document.header[i] = "\\crossref_package refstyle"
         else:
             document.header[i] = "\\crossref_package prettyref"
