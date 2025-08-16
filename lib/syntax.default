@@ -539,6 +539,7 @@ $$
 \listoffigures
 \listoftables
 \listtablename
+\lstset{} % listings.sty
 \location{}
 \mainmatter
 \makebox[][]{translate}
@@ -751,7 +752,7 @@ $$
 % LaTeX code that can be translated to LyX.
 \begin{environments}
 bibunit[]{translate}
-listing{} % minted.sty
+listing{} % listing.sty [sic!]
 minted{} % minted.sty
 psmatrix[]{}
 subfigure[]{translate} % subcaption.sty

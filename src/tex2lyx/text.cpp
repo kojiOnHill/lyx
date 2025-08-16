@@ -2435,7 +2435,7 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			break;
 		}
 
-		if (name == "listing") {
+		if (name == "listing" && preamble.minted()) {
 			minted_float = "float";
 			eat_whitespace(p, os, parent_context, false);
 			string const opt = p.hasOpt() ? p.getArg('[', ']') : string();
