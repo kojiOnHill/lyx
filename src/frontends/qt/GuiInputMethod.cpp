@@ -74,11 +74,11 @@ struct GuiInputMethod::Private
 	Rows::iterator rows_;
 	size_type rows_size_;
 
-	pos_type * cur_pos_ptr_ = nullptr;
+	pos_type cur_pos_ = 0;
 	pos_type cur_row_idx_;
 	pos_type caret_pos_;
 
-	pos_type anchor_pos_;
+	pos_type anchor_pos_ = 0;
 	pos_type abs_pos_;
 
 	bool real_boundary_    = false;
@@ -109,6 +109,8 @@ GuiInputMethod::GuiInputMethod(GuiWorkArea *parent)
 	        d->sys_im_, &QInputMethod::update);
 	connect(d->sys_im_, &QInputMethod::localeChanged,
 	        this, &GuiInputMethod::onLocaleChanged);
+	connect(this, &GuiInputMethod::cursorPositionChanged,
+	        this, &GuiInputMethod::onCursorPositionChanged);
 }
 
 GuiInputMethod::~GuiInputMethod()
@@ -256,20 +258,20 @@ void GuiInputMethod::processPreedit(QInputMethodEvent* ev)
 	            d->init_point_.y + d->caret_offset_[1] + d->cur_dim_.height());
 	d->im_state_.anchor_rect_ = d->im_state_.cursor_rect_;
 
-	/*
-	 *          Get surrounding text
-	 */
-	// take this opportunity to obtain the surrounding text to report back to
-	// the input method
-	// FIXME: is there a benefit to cache this?
-	setSurroundingText(*d->cur_);
-
 	// if preedit string is not empty, we are still working on it
 	d->im_state_.preediting_ = d->preedit_str_.empty() ? false : true;
 
 	// notify the completion to both im and app itself
 	Q_EMIT inputMethodStateChanged(Qt::ImQueryInput);
 	Q_EMIT preeditProcessed(ev);
+}
+
+
+void GuiInputMethod::onCursorPositionChanged()
+{
+	d->cur_pos_ = d->cur_->top().pos();
+	d->anchor_pos_ = d->cur_->realAnchor().pos();
+	setSurroundingText(*d->cur_);
 }
 
 
@@ -675,15 +677,15 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 #if defined(Q_OS_MACOS) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	if (d->im_state_.composing_mode_)
 		str_before_caret =
-		    toqstr(d->preedit_str_.substr(0, caret_pos - *d->cur_pos_ptr_));
+		    toqstr(d->preedit_str_.substr(0, caret_pos - d->cur_pos_));
 	else
 		// adjust for the reported caret position in the completion mode in Qt5
 		str_before_caret = toqstr(
-		            d->preedit_str_.substr(0, caret_pos - *d->cur_pos_ptr_ -
+		            d->preedit_str_.substr(0, caret_pos - d->cur_pos_ -
 		                                   shiftFromCaretToSegmentHead()));
 #else
 	str_before_caret =
-		toqstr(d->preedit_str_.substr(0, caret_pos - *d->cur_pos_ptr_));
+		toqstr(d->preedit_str_.substr(0, caret_pos - d->cur_pos_));
 #endif
 
 	// process line wrapping
@@ -707,12 +709,12 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 		else
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 			lastline_str = str_before_caret.sliced(
-			    caret_row.pos - *d->cur_pos_ptr_,
-			    *d->cur_pos_ptr_ + str_before_caret.length() - caret_row.pos);
+			    caret_row.pos - d->cur_pos_,
+			    d->cur_pos_ + str_before_caret.length() - caret_row.pos);
 #else
 			lastline_str = str_before_caret.mid(
-			    caret_row.pos - *d->cur_pos_ptr_,
-			    *d->cur_pos_ptr_ + str_before_caret.length() - caret_row.pos);
+			    caret_row.pos - d->cur_pos_,
+			    d->cur_pos_ + str_before_caret.length() - caret_row.pos);
 #endif
 		//
 		// calculate left margin
@@ -904,6 +906,7 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 	}
 	// plain text before the cursor
 	case Qt::ImTextBeforeCursor: {
+		updatePosAndSurroundingText();
 		if (d->im_state_.text_before_.empty())
 			LYXERR(Debug::DEBUG, msg << "\"\"");
 		else
@@ -914,6 +917,7 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 	}
 	// plain text after the cursor
 	case Qt::ImTextAfterCursor: {
+		updatePosAndSurroundingText();
 		if (d->im_state_.text_after_.empty())
 			LYXERR(Debug::DEBUG, msg << "\"\"");
 		else
@@ -924,12 +928,14 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 	}
 	// logical position of the cursor within the text surrounding the input area
 	case Qt::ImCursorPosition: {
+		updatePosAndSurroundingText();
 		LYXERR(Debug::DEBUG, msg << std::dec << d->cur_->pos());
 		Q_EMIT queryProcessed((qlonglong)d->cur_->pos());
 		break;
 	}
 	// position of the selection anchor
 	case Qt::ImAnchorPosition: {
+		updatePosAndSurroundingText();
 		LYXERR(Debug::DEBUG, msg << std::dec << (unsigned int)d->anchor_pos_);
 		Q_EMIT queryProcessed(QVariant((unsigned int)d->anchor_pos_));
 		break;
@@ -1016,21 +1022,22 @@ docstring GuiInputMethod::inputMethodQueryFlagsAsString(unsigned long int query)
 
 pos_type GuiInputMethod::initializePositions(Cursor * cur) {
 	// the function sets the following variables:
-	//     d->cur_pos_ptr_ = pointer to the starting pos of preedits
+	//     d->cur_pos_ = the starting pos of preedits
 	//     d->real_boundary_ = if the starting point is boundary
 	//     d->virtual_boundary_ = if the preedits hit the boundary
 	// and returns the row index of the starting point of preedits
 
 	// position of the real cursor (also the start of the preedit)
-	d->cur_pos_ptr_ = &cur->top().pos();
+	if (cur->top().pos() != d->cur_pos_)
+		Q_EMIT cursorPositionChanged();
+
 	d->pm_ptr_ = resetParagraphMetrics(cur);
-	d->anchor_pos_ = *d->cur_pos_ptr_;
 	// Note that getRowIndex(., false) gives the row index *after* preedit
 	// strings since they are virtual, so it increases as preedit strings go
 	// over multiple rows. To fix it at the starting point, getRowIndex(., true)
 	// is used here. As a result, cur_row_idx points the row before the boundary
 	// in the case it is true.
-	pos_type cur_row_idx = d->pm_ptr_->getRowIndex(*d->cur_pos_ptr_, true);
+	pos_type cur_row_idx = d->pm_ptr_->getRowIndex(d->cur_pos_, true);
 
 	//
 	// boundary check
@@ -1086,7 +1093,7 @@ pos_type GuiInputMethod::initializePositions(Cursor * cur) {
 	// cursor is at the head of the next row after boundary
 	post_real_boundary =
 	        cur_row_idx + 1 < (pos_type)d->rows_size_ ?
-	            *d->cur_pos_ptr_ == d->rows_[cur_row_idx+1].pos() &&
+	            d->cur_pos_ == d->rows_[cur_row_idx+1].pos() &&
 	            !has_room_to_insert : false;
 
 	// Preedit string and the caret starts from the new line when either
@@ -1187,8 +1194,8 @@ GuiInputMethod::PreeditRow GuiInputMethod::getCaretInfo(
 	// the length of str is used since preedits has zero widths (pos == endpos)
 	// second_row_pos is only useful when preedit string goes over two rows
 	Row::const_iterator begin =
-	        d->rows_[d->cur_row_idx_].findElement(*d->cur_pos_ptr_, false);
-	pos_type second_row_pos = *d->cur_pos_ptr_;
+	        d->rows_[d->cur_row_idx_].findElement(d->cur_pos_, false);
+	pos_type second_row_pos = d->cur_pos_;
 	for (Row::const_iterator eit = begin;
 	     eit < d->rows_[d->cur_row_idx_].end(); ++eit)
 		second_row_pos += eit->str.length();
@@ -1199,7 +1206,7 @@ GuiInputMethod::PreeditRow GuiInputMethod::getCaretInfo(
 	// new line, while the caret on screen stays at the end of one line above
 	// below is the starting point to calculate caret_row.pos
 	caret_row.pos = (real_boundary && !d->im_state_.composing_mode_) ?
-	            *d->cur_pos_ptr_ : second_row_pos;
+	            d->cur_pos_ : second_row_pos;
 
 	// if the preedit caret is on the second row or later, count the second row
 	caret_row.index = d->caret_pos_ > second_row_pos ?
@@ -1223,10 +1230,10 @@ GuiInputMethod::PreeditRow GuiInputMethod::getCaretInfo(
 			}
 		}
 	} else
-		caret_row.pos = *d->cur_pos_ptr_;
+		caret_row.pos = d->cur_pos_;
 
 	LYXERR(Debug::DEBUG, "============= BEGIN: getCaretInfo ===============");
-	LYXERR(Debug::DEBUG, "*d->cur_pos_ptr   = " << *d->cur_pos_ptr_);
+	LYXERR(Debug::DEBUG, "*d->cur_pos_ptr   = " << d->cur_pos_);
 	LYXERR(Debug::DEBUG, "second_row_pos    = " << second_row_pos);
 	LYXERR(Debug::DEBUG, "d->caret_pos_     = " << std::dec << d->caret_pos_ <<
 	        "\tcaret_row.index   = " << std::dec << caret_row.index);
@@ -1251,15 +1258,15 @@ void GuiInputMethod::setSurroundingText(const Cursor & cur) {
 	InsetList const & inset_list = cur.paragraph().insetList();
 	pos_type insets_before_cur = 0;
 	for (const auto & inset : inset_list) {
-		if (inset.pos < *d->cur_pos_ptr_)
+		if (inset.pos < d->cur_pos_)
 			++insets_before_cur;
 	}
 
-	if (*d->cur_pos_ptr_ >= insets_before_cur) {
+	if (d->cur_pos_ >= insets_before_cur) {
 		d->im_state_.text_before_ =
-				partext.substr(0, *d->cur_pos_ptr_ - insets_before_cur);
+				partext.substr(0, d->cur_pos_ - insets_before_cur);
 		d->im_state_.text_after_  =
-				partext.substr(*d->cur_pos_ptr_ - insets_before_cur);
+				partext.substr(d->cur_pos_ - insets_before_cur);
 		d->im_state_.surrounding_text_ =
 		        d->im_state_.text_before_ + d->im_state_.text_after_;
 	} else {
@@ -1284,6 +1291,14 @@ void GuiInputMethod::setSurroundingText(const Cursor & cur) {
 	                               Qt::ImTextAfterCursor);
 	return;
 }
+
+void GuiInputMethod::updatePosAndSurroundingText()
+{
+	if (d->cur_->top().pos() == d->cur_pos_)
+		return;
+	Q_EMIT cursorPositionChanged();
+}
+
 
 docstring & GuiInputMethod::preeditString() const
 {

@@ -118,6 +118,7 @@ Q_SIGNALS:
 	void preeditProcessed(QInputMethodEvent* ev);
 	void queryProcessed(QVariant response);
 	void inputMethodStateChanged(Qt::InputMethodQueries);
+	void cursorPositionChanged();
 
 public Q_SLOT:
 	/// Process incoming preedit string
@@ -127,6 +128,7 @@ public Q_SLOT:
 	/// Turn off IM in math mode and command phase and turn it on otherwise
 	void toggleInputMethodAcceptance() override;
 	void onLocaleChanged();
+	void onCursorPositionChanged();
 #ifdef Q_DEBUG
 	///
 	void setHint(InputMethod::Hint hint) override;
@@ -166,6 +168,8 @@ private:
 	pos_type registerSegment(pos_type start, size_type length, QTextCharFormat char_format);
 	/// Returns enum Qt::InputMethodQuery constant from its value
 	docstring inputMethodQueryFlagsAsString(unsigned long int query) const;
+	/// update cursor position and surrounding text
+	void updatePosAndSurroundingText();
 
 	struct Private;
 	Private * const d;
