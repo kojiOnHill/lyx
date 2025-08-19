@@ -8,6 +8,31 @@
 \options ecta,nameyear
 \use_default_options true
 \maintain_unincluded_children no
+\begin_local_layout
+Style Lemma
+	CopyStyle       Theorem
+	DependsOn       Theorem
+	LaTeXName       lem
+	LabelString      "Lemma \thetheorem."
+	LabelFont
+		Shape   SmallCaps
+		Series  Medium
+	EndFont
+	TheoremName     lem
+	TheoremCounter  thm
+	TheoremLaTeXName lemmaname
+	TheoremZRefName lemma
+	TheoremCrossRefName Lemma
+	TheoremCrossRefPluralName Lemmas
+	LangPreamble
+	  \providecommand{\lemmaname}{_(Lemma)}
+	EndLangPreamble
+	BabelPreamble
+	  \addto\captions$$lang{\renewcommand{\lemmaname}{_(Lemma)}}
+	EndBabelPreamble
+	TheoremStyle    plain
+End
+\end_local_layout
 \language english
 \language_package none
 \inputencoding utf8-plain
@@ -1654,6 +1679,26 @@ tuple "list"
  because they share the same counter.
 \end_layout
 
+\begin_layout Lemma
+\SpecialChar LyX
+ can modify the style of a paragraph through local layout including the change of numbering.
+ See 
+\family sans
+Document\SpecialChar menuseparator
+Local Layout
+\family default
+ in this document for an example.
+ Also,
+ Section 5.3.7 Paragraph styles in 
+\family sans
+Help\SpecialChar menuseparator
+Customization
+\family default
+ provides explanation of the grammer.
+ By default,
+ the layout uses the counter by type.
+\end_layout
+
 \begin_layout Fact
 This is the body of the fact.
  Fact is unnumbered since it is defined so in the layout file.
@@ -1671,30 +1716,28 @@ Layout
 :
 \end_layout
 
-\begin_deeper
 \begin_layout Verbatim
     Style Fact
 \end_layout
 
 \begin_layout Verbatim
-        LabelString    "Fact 
+       LabelString    "Fact 
 \backslash
 thefact:"
 \end_layout
 
 \begin_layout Verbatim
-        LabelCounter   fact
+       LabelCounter   fact
 \end_layout
 
 \begin_layout Verbatim
-        TheoremCounter ""
+       TheoremCounter ""
 \end_layout
 
 \begin_layout Verbatim
     End
 \end_layout
 
-\end_deeper
 \begin_layout Proof
 \begin_inset Argument 1
 status open

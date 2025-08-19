@@ -167,7 +167,6 @@ End
 
 # Math theorem environments that use the plain style
 Style Theorem
-	LabelString     "Theorem \thetheorem:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -176,7 +175,6 @@ Style Theorem
 End
 
 Style Axiom
-	LabelString     "Axiom \theaxiom:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -185,7 +183,6 @@ Style Axiom
 End
 
 Style Claim
-	LabelString     "Claim \theclaim:"
 	Font
 		Shape   Italic
 	EndFont
@@ -197,19 +194,14 @@ Style Claim
 End
 
 Style Lemma
-	DependsOn       Theorem
-	LabelString      "Lemma \arabic{theorem}:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
 	EndFont
-	LabelCounter    theorem
-	TheoremCounter  thm
 	TheoremStyle    plain
 End
 
 Style Fact
-	LabelString     "Fact:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -219,7 +211,6 @@ Style Fact
 End
 
 Style Assumption
-	LabelString     "Assumption \theassumption:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -228,7 +219,6 @@ Style Assumption
 End
 
 Style Corollary
-	LabelString     "Corollary \thecorollary:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -237,7 +227,6 @@ Style Corollary
 End
 
 Style Proposition
-	LabelString     "Proposition \theproposition:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -247,7 +236,7 @@ End
 
 # Math theorem environments that use the definition style
 Style Definition
-	LabelString     "Definition \thedefinition:"
+	DependsOn       Theorem
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -256,7 +245,6 @@ Style Definition
 End
 
 Style Example
-	LabelString     "Example:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -265,7 +253,6 @@ Style Example
 End
 
 Style Remark
-	LabelString     "Remark \theremark:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -274,7 +261,6 @@ Style Remark
 End
 
 Style Notation
-	LabelString     "Notation \thenotation:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -283,7 +269,6 @@ Style Notation
 End
 
 Style Proof
-	LabelString     "Proof:"
 	LabelSep        M
 	LabelFont
 		Shape   SmallCaps
@@ -295,7 +280,6 @@ End
 
 # Other AMS environments (which are left to defaults)
 Style Conjecture
-	LabelString     "Conjecture \theconjecture:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -303,7 +287,6 @@ Style Conjecture
 End
 
 Style Problem
-	LabelString     "Problem \theproblem:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -311,7 +294,6 @@ Style Problem
 End
 
 Style Exercise
-	LabelString     "Exercise \theexercise:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -319,7 +301,6 @@ Style Exercise
 End
 
 Style Solution
-	LabelString     "Solution \thesolution:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -327,7 +308,6 @@ Style Solution
 End
 
 Style Case
-	LabelString     "Case \thecase:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -335,7 +315,6 @@ Style Case
 End
 
 Style Criterion
-	LabelString     "Criterion \thecriterion:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -343,7 +322,6 @@ Style Criterion
 End
 
 Style Algorithm
-	LabelString     "Algorithm \thealgorithm:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -351,7 +329,6 @@ Style Algorithm
 End
 
 Style Condition
-	LabelString     "Condition \thecondition:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -359,7 +336,6 @@ Style Condition
 End
 
 Style Note
-	LabelString     "Note \thenote:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -367,7 +343,6 @@ Style Note
 End
 
 Style Summary
-	LabelString     "Summary \thesummary:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -375,7 +350,6 @@ Style Summary
 End
 
 Style Conclusion
-	LabelString     "Conclusion \theconclusion:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
@@ -383,7 +357,6 @@ Style Conclusion
 End
 
 Style Question
-	LabelString     "Question \thequestion:"
 	LabelFont
 		Shape   SmallCaps
 		Series  Medium
