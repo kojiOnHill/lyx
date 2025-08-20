@@ -3107,6 +3107,17 @@ void Paragraph::latex(BufferParams const & bparams,
 			}
 		}
 
+		if (runparams.wasDisplayMath && c == ' ' && i + 1 < size()
+		    && getInset(i + 1) && getInset(i + 1)->asInsetMath()
+		    && getInset(i + 1)->asInsetMath()->asHullInset()
+		    && getInset(i + 1)->asInsetMath()->asHullInset()->outerDisplay()) {
+			// A blank following displayed math, and another displayed math follows:
+			// Add group to prevent LaTeX from interpreting this as a paragraph break.
+			// Within a changed font, LaTeX would even error as font commands are
+			// not \long (#13216).
+			os << "{}";
+		}
+
 		OutputParams rp = runparams;
 		rp.free_spacing = style.free_spacing;
 		rp.local_font = &current_font;
