@@ -127,6 +127,7 @@ public Q_SLOT:
 	void processQuery(Qt::InputMethodQuery query);
 	/// Turn off IM in math mode and command phase and turn it on otherwise
 	void toggleInputMethodAcceptance() override;
+	/// Handles the localeChanged() signal the input method emits
 	void onLocaleChanged();
 	void onCursorPositionChanged();
 #ifdef Q_DEBUG

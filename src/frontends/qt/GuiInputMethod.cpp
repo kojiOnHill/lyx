@@ -111,6 +111,9 @@ GuiInputMethod::GuiInputMethod(GuiWorkArea *parent)
 	        this, &GuiInputMethod::onLocaleChanged);
 	connect(this, &GuiInputMethod::cursorPositionChanged,
 	        this, &GuiInputMethod::onCursorPositionChanged);
+
+	// initialize locale status
+	onLocaleChanged();
 }
 
 GuiInputMethod::~GuiInputMethod()
@@ -128,12 +131,14 @@ void GuiInputMethod::toggleInputMethodAcceptance(){
 		        d->cur_->getFont().language()->inputMethodOffInMath();
 
 	// note that d->cur_->inset() is a cache so it lags from actual key moves
-	d->im_state_.enabled_=
+	bool enabled =
 	        !((d->im_off_in_math_
 	           && d->cur_->inset().currentMode() == Inset::MATH_MODE)
 	          || guiApp->isInCommandMode());
-
-	Q_EMIT inputMethodStateChanged(Qt::ImEnabled);
+	if (enabled != d->im_state_.enabled_) {
+		d->im_state_.enabled_= enabled;
+		Q_EMIT inputMethodStateChanged(Qt::ImEnabled);
+	}
 }
 
 
