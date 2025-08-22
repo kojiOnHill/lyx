@@ -6,7 +6,7 @@
 # It is desirable, as far as possible, to have the same look and feel for
 # related layouts in latex and docbook.
 
-Format 110
+Format 111
 Input stdtitle.inc
 
 

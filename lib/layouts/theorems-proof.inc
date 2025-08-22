@@ -8,7 +8,7 @@
 # Tinkered with Sep. '07 by Paul Rubin <rubin@msu.edu>
 # Modularized Jan 08 by Richard Kimberly Heck <rikiheck@lyx.org>
 
-Format 110
+Format 111
 
 Style Proof
 	Category              Reasoning
