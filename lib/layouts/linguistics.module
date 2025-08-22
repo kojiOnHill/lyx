@@ -14,13 +14,6 @@ Format 110
 # Counters
 #
 
-Counter example
-	GuiName Example
-	Within               chapter
-	LabelString          "(\arabic{example})"
-	PrettyFormat         "(\arabic{example})"
-End
-
 Counter examplei
 	GuiName              "Numbered Example (Multiline)"
 	Within               chapter
@@ -28,39 +21,11 @@ Counter examplei
 	PrettyFormat         "(\arabic{examplei})"
 End
 
-Counter subexample
-	GuiName              Subexample
-	Within               examplei
-	LabelString          "\theexamplei (\alph{subexample})"
-	PrettyFormat         "\theexamplei (\alph{subexample})"
-End
-
 Counter subexamplei
 	GuiName              Subexample
 	Within               examplei
 	LabelString          "\theexamplei (\alph{subexamplei})"
 	PrettyFormat         "\theexamplei (\alph{subexamplei})"
-End
-
-Counter subexampleii
-	GuiName              Subexample
-	Within               examplei
-	LabelString          "\theexamplei (\alph{subexampleii})"
-	PrettyFormat         "\theexamplei (\alph{subexampleii})"
-End
-
-Counter subexampleiii
-	GuiName              Subexample
-	Within               examplei
-	LabelString          "\theexamplei (\alph{subexampleiii})"
-	PrettyFormat         "\theexamplei (\alph{subexampleiii})"
-End
-
-Counter subexampleiv
-	GuiName              Subexample
-	Within               examplei
-	LabelString          "\theexamplei (\alph{subexampleiv})"
-	PrettyFormat         "\theexamplei (\alph{subexampleiv})"
 End
 
 #
@@ -83,8 +48,8 @@ Style Numbered_Example_(multiline)
 	Align                 Block
 	AlignPossible         Block, Left
 	LabelType             Static
-	LabelCounter          "examplei"
-	RefPrefix             "lex"
+	LabelCounter          examplei
+	RefPrefix             lex
 	LabelFont
 		Color         textlabel1
 	EndFont
@@ -109,7 +74,7 @@ Style Numbered_Examples_(consecutive)
 	LatexType             Item_Environment
 	LatexName             covexamples
 	LabelType             Enumerate
-	LabelCounter          "example"
+	LabelCounter          example
 	ResumeCounter         true
 	Argument listpreamble:1
 		LabelString    "List preamble"
@@ -143,7 +108,7 @@ End
 Style Subexample
 	CopyStyle	      Numbered_Examples_(consecutive)
 	LatexName             covsubexamples
-	LabelCounter          "subexample"
+	LabelCounter          subexample
 	StepParentCounter     true
 	Requires	      covington
 	Argument 1
