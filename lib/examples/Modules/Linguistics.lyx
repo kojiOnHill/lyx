@@ -39,6 +39,15 @@
 linguistics
 \end_modules
 \maintain_unincluded_children no
+\begin_local_layout
+Counter examplei
+	PrettyFormat         "Example|Examples ##"
+End
+
+Counter subexamplei
+	PrettyFormat         "Example|Examples ##"
+End
+\end_local_layout
 \language english
 \language_package default
 \inputencoding utf8
@@ -559,6 +568,157 @@ Subexample
 And another one
 \end_layout
 
+\begin_layout Subsection
+
+\change_inserted -712698321 1755846246
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:numbering"
+
+\end_inset
+
+Numbering Examples and Equations
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755845776
+By default,
+ 
+\emph on
+covington
+\emph default
+ re-uses the 
+\family typewriter
+equation
+\family default
+ counter for examples,
+ that is,
+ mathematical equations and linguistic examples are numbered subsequently (which is also reflected in the \SpecialChar LyX
+ workarea).
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755845729
+If you use both equations and examples and want to have separate numbering for each of them,
+ 
+\emph on
+covington
+\emph default
+ provides the option 
+\emph on
+owncounter
+\emph default
+ which causes examples to use their own counter,
+ 
+\family typewriter
+covex
+\family default
+.
+ In order to activate this,
+ add to 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+Local Layout
+\family default
+:
+\end_layout
+
+\begin_layout Quote
+
+\change_inserted -712698321 1755845744
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845882
+PackageOptions covington owncounter
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845882
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845883
+Counter examplei
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845917
+	LabelString          "(
+\backslash
+arabic{examplei})"
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845889
+	StepOtherCounter      none
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845883
+End
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845883
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845883
+Counter subexamplei
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755846646
+	LabelString  "(
+\backslash
+arabic{examplei}) (
+\backslash
+alph{subexamplei})"
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755845883
+End
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -712698321 1755846008
+This separates the numbering of examples and equations both in the output and the workarea.
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted -712698321 1755845360
+Referring to Numbered Examples
+\end_layout
+
 \begin_layout Standard
 References to examples are produced as usual:
  insert a label to the example and a cross-reference via 
@@ -1067,7 +1227,7 @@ crefalias{equation}{covex}
 
 \begin_layout Standard
 
-\change_inserted -712698321 1755155300
+\change_inserted -712698321 1755846288
 Other than 
 \emph on
 prettyref
@@ -1084,7 +1244,14 @@ cleveref
  does not use the prefix to determine the references type,
  but the used \SpecialChar TeX
  counter.
- By default,
+ As elaborated above (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:numbering"
+
+\end_inset
+
+),
  
 \emph on
 covington
@@ -1093,7 +1260,7 @@ covington
 \family typewriter
 equation
 \family default
- counter for examples,
+ counter for examples by default;
  for sub-examples,
  it is the 
 \family typewriter
@@ -1108,26 +1275,15 @@ first-level enumeration) counter.
 
 \begin_layout Standard
 
-\change_inserted -712698321 1755092199
-If you want to have separate numbering for equations and examples,
- you can use the 
-\emph on
-covington
-\emph default
- package option 
-\emph on
-owncounter
-\emph default
- (via 
-\family sans
-Document\SpecialChar menuseparator
-Settings\SpecialChar menuseparator
-Document Class\SpecialChar menuseparator
-Class Options\SpecialChar menuseparator
-Custom
-\family default
-).
- In this case,
+\change_inserted -712698321 1755846317
+If you separate numbering for equations and examples as documented in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "subsec:numbering"
+
+\end_inset
+
+,
  you can omit the last part of the code (as indicated by the comment in the code).
 \end_layout
 
@@ -1303,11 +1459,7 @@ cleveref
 \emph default
 ,
  the type is determined via counter.
- So if you use 
-\emph on
-owncounter
-\emph default
- to separate example and equation numbering,
+ So if you separate example and equation numbering,
  you can omit the last part of the code.
 \end_layout
 
@@ -1352,7 +1504,7 @@ literal "false"
 
 \begin_layout Standard
 
-\change_inserted -712698321 1755094703
+\change_inserted -712698321 1755844757
 Note,
  finally,
  that the 
@@ -1363,11 +1515,102 @@ AddToHook
 \family default
  command used in some of the definitions is only available in fairly recent versions of \SpecialChar LaTeX
 .
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\change_inserted -712698321 1755844908
+If you want the formatted references also to appear that way in the workarea or cross-references dialog,
+ add this to 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+Local Layout
+\family default
+ (as we have done for the current document):
+\end_layout
+
+\begin_layout Quote
+
+\change_inserted -712698321 1755844867
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755844872
+Counter examplei
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755844881
+    PrettyFormat 
+\begin_inset Quotes eld
+\end_inset
+
+Example|Examples ##
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755844872
+End
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755844872
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755844872
+Counter subexamplei
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755844884
+    PrettyFormat 
+\begin_inset Quotes eld
+\end_inset
+
+Example|Examples ##
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1755844872
+End
 \change_unchanged
 
 \end_layout
 
-\end_deeper
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted -712698321 1755845220
+Adaptations
+\end_layout
+
 \begin_layout Standard
 All example variants can be customized in many details via optional arguments.
  These can be inserted via 
