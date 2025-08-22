@@ -268,6 +268,7 @@ currentFormat = 111
 
 # Incremented to format 81, 12 August 2019 by rikiheck
 # New tag GuiName for counters
+# Add tag StepParentCounter to InsetLayout
 
 # Incremented to format 82, 4 June 2017 by tcuvelier
 # - Add new tags for Layout:

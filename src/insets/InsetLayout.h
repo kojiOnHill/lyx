@@ -272,6 +272,8 @@ public:
 	bool allowedOccurrencesPerItem() const { return allowed_occurrences_per_item_; }
 	///
 	bool insertCotext() const { return insert_cotext_; }
+	///
+	bool stepParentCounter() const { return stepparentcounter_; }
 private:
 	///
 	void makeDefaultCSS() const;
@@ -471,6 +473,8 @@ private:
 	bool allowed_occurrences_per_item_ = false;
 	///
 	bool insert_cotext_ = false;
+	/// Step parent counter?
+	bool stepparentcounter_ = false;
 };
 
 ///

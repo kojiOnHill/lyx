@@ -156,6 +156,7 @@ bool InsetLayout::read(Lexer & lex, TextClass const & tclass,
 		IL_RESETARGS,
 		IL_RESETSFONT,
 		IL_SPELLCHECK,
+		IL_STEPPARENTCOUNTER,
 		IL_END
 	};
 
@@ -248,7 +249,8 @@ bool InsetLayout::read(Lexer & lex, TextClass const & tclass,
 		{ "resetargs", IL_RESETARGS },
 		{ "resetsfont", IL_RESETSFONT },
 		{ "rightdelim", IL_RIGHTDELIM },
-		{ "spellcheck", IL_SPELLCHECK }
+		{ "spellcheck", IL_SPELLCHECK },
+		{ "stepparentcounter", IL_STEPPARENTCOUNTER }
 	};
 
 	lex.pushTable(elementTags);
@@ -691,6 +693,9 @@ bool InsetLayout::read(Lexer & lex, TextClass const & tclass,
 			break;
 		case IL_ALLOWED_OCCURRENCES_PER_ITEM:
 			lex >> allowed_occurrences_per_item_;
+			break;
+		case IL_STEPPARENTCOUNTER:
+			lex >> stepparentcounter_;
 			break;
 		case IL_END:
 			getout = true;
