@@ -186,30 +186,6 @@ void InsetLabel::setFormattedCounter(docstring const & fc, bool const lc, bool c
 }
 
 
-namespace {
-docstring stripSubrefs(docstring const & in){
-	docstring res;
-	bool have_digit = false;
-	size_t const len = in.length();
-	for (size_t i = 0; i < len; ++i) {
-		// subref can be an alphabetic letter or '?'
-		// as soon as we encounter this, break
-		char_type const c = in[i];
-		if (have_digit && (('a' <= c && c <= 'z') || c == '?'))
-			continue;
-		else {
-			if (isNumberChar(c) && !have_digit)
-				have_digit = true;
-			else if (have_digit)
-				have_digit = false;
-			res += c;
-		}
-	}
-	return res;
-}
-}
-
-
 void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*deleted*/)
 {
 	docstring const & label = getParam("name");
@@ -245,8 +221,11 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 	docstring const parent = (cnts.isSubfloat()) ? cnts.currentParentCounter() : docstring();
 	Language const * lang = it->getParLanguage(buffer().params());
 	if (lang && !active_counter_.empty()) {
-		bool const equation = active_counter_ == from_ascii("equation");
-		if (!equation || it.inTexted()) {
+		if (it.inTexted()) {
+			// Insets with a subequation counter
+			// use the the main equation only outside of math insets
+			if (active_counter_ == from_ascii("subequation"))
+				active_counter_ = from_ascii("equation");
 			counter_value_ = cnts.theCounter(active_counter_, lang->code());
 			pretty_counter_ = cnts.prettyCounter(active_counter_, lang->code());
 			docstring pretty_counter_pl = cnts.prettyCounter(active_counter_, lang->code(), false, true);
@@ -298,15 +277,6 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 				formatted_counter_pl_ = subst(formatted_counter_pl_, plain_value, counter_value_);
 				formatted_counter_lc_ = subst(formatted_counter_lc_, plain_value, counter_value_);
 				formatted_counter_lc_pl_ = subst(formatted_counter_lc_pl_, plain_value, counter_value_);
-			}
-			if (equation) {
-				// FIXME: special code just for the subequations module (#13199)
-				//        replace with a genuine solution long-term!
-				counter_value_ = stripSubrefs(counter_value_);
-				formatted_counter_ = stripSubrefs(formatted_counter_);
-				formatted_counter_pl_ = stripSubrefs(formatted_counter_pl_);
-				formatted_counter_lc_ = stripSubrefs(formatted_counter_lc_);
-				formatted_counter_lc_pl_ = stripSubrefs(formatted_counter_lc_pl_);
 			}
 		} else {
 			// For equations, the counter value and pretty counter

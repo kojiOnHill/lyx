@@ -158,36 +158,18 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 		cnts.saveLastCounter();
 	}
 
-	// Special case for `subequations' module.
-	// FIXME: replace with a genuine solution long-term!
-	if (il.latextype() == InsetLaTeXType::ENVIRONMENT &&
-	    il.latexname() == "subequations") {
-		docstring equation(from_ascii("equation"));
-		docstring parentequation(from_ascii("parentequation"));
-		if (!deleted)
-			cnts.step(equation, utype);
-		// save a copy of the equation counter definition
-		cnts.copy(equation, parentequation);
-		// redefine the equation counter definition
-		docstring const eqlabel = deleted ? from_ascii("#")
-			: cnts.theCounter(equation, it->getParLanguage(bp)->code());
-		cnts.newCounter(equation, parentequation,
-		                eqlabel + from_ascii("\\alph{equation}"),
-		                eqlabel + from_ascii("\\alph{equation}"),
-		                from_ascii("Equation|Equations (##)"),
-		                cnts.guiName(parentequation));
-		InsetCollapsible::updateBuffer(it, utype, deleted);
-		// reset equation counter as it was.
-		cnts.copy(parentequation, equation);
-		cnts.remove(parentequation);
-		return;
-	}
-
 	if (have_counter) {
 		if (!deleted) {
 			cnts.step(count, utype);
+			if (il.stepParentCounter())
+				cnts.stepParent(count, utype);
+			// Exception: insets with a subequation counter
+			// use the the main equation only for the label
+			docstring const lcounter = (count == from_ascii("subequation"))
+					? from_ascii("equation")
+					: count;
 			custom_label += ' ' +
-				cnts.theCounter(count, it.paragraph().getParLanguage(bp)->code());
+				cnts.theCounter(lcounter, it.paragraph().getParLanguage(bp)->code());
 		} else
 			custom_label += ' ' + from_ascii("#");
 	}

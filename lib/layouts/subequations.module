@@ -8,9 +8,18 @@
 
 Format 111
 
+Counter subequation
+  GuiName              Sub-Equation
+  Within               equation
+  LabelString          "\arabic{equation}\alph{subequation}"
+  PrettyFormat         "Equation|Equations (##)"
+End
+
 InsetLayout Flex:Subequations
   LyxType               custom
   Decoration            classic
+  Counter               subequation
+  StepParentCounter     true
   LabelString           Subequations
   LatexType             Environment
   LatexName             subequations

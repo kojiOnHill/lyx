@@ -251,8 +251,10 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 		Counters & cnts =
 			buffer_->masterBuffer()->params().documentClass().counters();
 
-		// this has to be done separately
-		docstring const eqstr = from_ascii("equation");
+		// Counter is equation by default, but the context might require subequations
+		docstring const eqstr = (cnts.currentCounter() == from_ascii("subequation"))
+				? cnts.currentCounter()
+				: from_ascii("equation");
 		if (cnts.hasCounter(eqstr)) {
 			for (size_t i = 0; i != labels_.size(); ++i) {
 				docstring const oldnumber = numbers_[i];
@@ -281,23 +283,47 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 			labels_[i]->updateBuffer(it, utype, deleted);
 	}
 
-	// set up equation numbers
-	for (row_type row = 0; row != nrows(); ++row) {
-		if (numbered(row) && labels_[row]) {
-			labels_[row]->setCounterValue(numbers_[row]);
-			labels_[row]->setPrettyCounter("(" + numbers_[row] + ")");
-			// lowercase singular
-			docstring pf = translateIfPossible(from_ascii("equation (##)"), lang);
-			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), true, false);
-			// lowercase plural
-			pf = translateIfPossible(from_ascii("equations (##)"), lang);
-			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), true, true);
-			// uppercase singular
-			pf = translateIfPossible(from_ascii("Equation (##)"), lang);
-			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), false, false);
-			// uppercase plural
-			pf = translateIfPossible(from_ascii("Equations (##)"), lang);
-			labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), false, true);
+	if (haveNumbers()) {
+		Counters & cnts =
+			buffer_->masterBuffer()->params().documentClass().counters();
+		// Counter is equation by default, but the context might require subequations
+		docstring const eqstr = (cnts.currentCounter() == from_ascii("subequation"))
+				? cnts.currentCounter()
+				: from_ascii("equation");
+		docstring const eqprf = from_ascii("eq");
+		bool const have_cnt = cnts.hasCounter(eqstr);
+		// set up equation numbers
+		for (row_type row = 0; row != nrows(); ++row) {
+			if (numbered(row) && labels_[row]) {
+				labels_[row]->setCounterValue(numbers_[row]);
+				if (have_cnt) {
+					// We use the format definitions as specified in the counter definition if available
+					labels_[row]->setPrettyCounter(cnts.prettyCounter(eqstr, lang));
+					// lowercase singular
+					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, true, false), true, false);
+					// lowercase plural
+					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, true, true), true, true);
+					// uppercase singular
+					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, false, false),  false, false);
+					// uppercase plural
+					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, false, true), false, true);
+				} else {
+					// Hardcoded fallbacks for the case the counter definition is not available
+					labels_[row]->setPrettyCounter("(" + numbers_[row] + ")");
+					// lowercase singular
+					docstring pf = translateIfPossible(from_ascii("equation (##)"), lang);
+					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), true, false);
+					// lowercase plural
+					pf = translateIfPossible(from_ascii("equations (##)"), lang);
+					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), true, true);
+					// uppercase singular
+					pf = translateIfPossible(from_ascii("Equation (##)"), lang);
+					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), false, false);
+					// uppercase plural
+					pf = translateIfPossible(from_ascii("Equations (##)"), lang);
+					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), false, true);
+				}
+			}
 		}
 	}
 
