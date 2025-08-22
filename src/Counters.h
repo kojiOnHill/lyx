@@ -75,6 +75,8 @@ public:
 	docstring const & guiName() const { return guiname_; }
 	///
 	docstring const & latexName() const { return latexname_; }
+	///
+	docstring const & stepOtherCounter() const { return stepothercounter_; }
 
 	/// Returns a map of LaTeX-like strings to format the counter.
 	/** For each language, the string is similar to what one gets
@@ -99,6 +101,8 @@ private:
 	 *  parent is "section".
 	 */
 	docstring parent_;
+	/// Another counter that is stepped with this
+	docstring stepothercounter_;
 	/// Contains a LaTeX-like string to format the counter.
 	docstring labelstring_;
 	/// The same as labelstring_, but in appendices.

@@ -62,6 +62,7 @@ bool Counter::read(Lexer & lex)
 		CT_GUINAME,
 		CT_LATEXNAME,
 		CT_REFFORMAT,
+		CT_STEPOTHERCOUNTER,
 		CT_END
 	};
 
@@ -74,6 +75,7 @@ bool Counter::read(Lexer & lex)
 		{ "latexname", CT_LATEXNAME },
 		{ "prettyformat", CT_PRETTYFORMAT },
 		{ "refformat", CT_REFFORMAT },
+		{ "stepothercounter", CT_STEPOTHERCOUNTER },
 		{ "within", CT_WITHIN }
 	};
 
@@ -136,6 +138,12 @@ bool Counter::read(Lexer & lex)
 			case CT_LATEXNAME:
 				lex.next();
 				latexname_ = lex.getDocString();
+				break;
+			case CT_STEPOTHERCOUNTER:
+				lex.next();
+				stepothercounter_ = lex.getDocString();
+				if (stepothercounter_ == "none")
+					stepothercounter_.erase();
 				break;
 			case CT_END:
 				getout = true;
@@ -382,6 +390,9 @@ void Counters::step(docstring const & ctr, UpdateType /* deleted */)
 	}
 
 	it->second.step();
+	if (!it->second.stepOtherCounter().empty())
+		step(it->second.stepOtherCounter(), InternalUpdate);
+
 	LBUFERR(!counter_stack_.empty());
 	counter_stack_.pop_back();
 	counter_stack_.push_back(ctr);

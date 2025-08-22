@@ -23516,7 +23516,7 @@ string
 \begin_inset Quotes gld
 \end_inset
 
-Formatierten Querverweisen
+formatierten Querverweisen
 \begin_inset Quotes grd
 \end_inset
 
@@ -23589,6 +23589,56 @@ PrettyFormat
 \end_inset
 
  zurückgegriffen.
+\end_layout
+
+\begin_layout Description
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+StepOtherCounter
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+string
+\end_layout
+
+\end_inset
+
+ = ""] Spezifiziert einen anderen Zähler (mittels des Zählernamens),
+ der ebenfalls erhöht wird,
+ sobald der hier definierte Zähler erhöht wird.
+ Der Wert 
+\begin_inset Quotes gld
+\end_inset
+
+
+\lang english
+none
+\lang ngerman
+
+\begin_inset Quotes grd
+\end_inset
+
+ bedeutet,
+ dass kein anderer Zähler mit erhöht wird (dies kann verwendet werden,
+ um eine ererbte Einstellung von 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+StepOtherCounter
+\end_layout
+
+\end_inset
+
+ zurückzusetzen).
 \end_layout
 
 \begin_layout Description
