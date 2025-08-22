@@ -376,11 +376,11 @@ void Counters::stepParent(docstring const & ctr, UpdateType utype)
 		       << to_utf8(ctr) << endl;
 		return;
 	}
-	step(it->second.parent(), utype);
+	step(it->second.parent(), utype, false);
 }
 
 
-void Counters::step(docstring const & ctr, UpdateType /* deleted */)
+void Counters::step(docstring const & ctr, UpdateType /* deleted */, bool const set_active)
 {
 	CounterList::iterator it = counterList_.find(ctr);
 	if (it == counterList_.end()) {
@@ -391,11 +391,13 @@ void Counters::step(docstring const & ctr, UpdateType /* deleted */)
 
 	it->second.step();
 	if (!it->second.stepOtherCounter().empty())
-		step(it->second.stepOtherCounter(), InternalUpdate);
+		step(it->second.stepOtherCounter(), InternalUpdate, false);
 
-	LBUFERR(!counter_stack_.empty());
-	counter_stack_.pop_back();
-	counter_stack_.push_back(ctr);
+	if (set_active) {
+		LBUFERR(!counter_stack_.empty());
+		counter_stack_.pop_back();
+		counter_stack_.push_back(ctr);
+	}
 
 	resetChildren(ctr);
 }

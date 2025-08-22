@@ -167,7 +167,7 @@ public:
 	/// Increment by one counter named by \c ctr, and zeroes child
 	/// counter(s) for which it is the parent.
 	/// \param utype determines whether we track the counters.
-	void step(docstring const & ctr, UpdateType utype);
+	void step(docstring const & ctr, UpdateType utype, bool const set_active = true);
 	/// Reset all counters, and all the internal data structures
 	/// used for keeping track of their values.
 	void reset();
