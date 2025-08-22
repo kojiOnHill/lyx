@@ -5262,11 +5262,12 @@ static depth_type getItemDepth(ParIterator const & it)
 			}
 		}
 
-		// We search for the first paragraph with same label
+		// We search for the first paragraph with same counter
 		// that is not more deeply nested.
 		Paragraph & prev_par = *prev_it;
 		depth_type const prev_depth = getDepth(prev_it);
-		if (labeltype == prev_par.layout().labeltype) {
+		if (labeltype == prev_par.layout().labeltype
+		    && par.layout().counter == prev_par.layout().counter) {
 			if (prev_depth < min_depth)
 				return prev_par.itemdepth + 1;
 			if (prev_depth == min_depth)
