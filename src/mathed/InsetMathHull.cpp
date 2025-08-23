@@ -249,20 +249,21 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 	bool have_cnt = false;
 	Counters & cnts =
 		buffer_->masterBuffer()->params().documentClass().counters();
-	// Counter is equation by default, but the context might require subequations
-	// This is the case if the equation counter is already active
-	// and we have a subequation counter (as in the subequations inset)
-	bool const need_subequations = cnts.currentCounter() == from_ascii("equation")
-			&& cnts.hasCounter(from_ascii("subequation"));
-	if (need_subequations)
-		// the subequations counter will be local
-		cnts.saveLastCounter();
 	// if any of the equations are numbered, then we want to save the values
 	// of some of the counters.
 	if (haveNumbers()) {
-		eqstr = need_subequations ? from_ascii("subequation") : from_ascii("equation");
+		// Counter is equation by default, but the context might require subequations
+		// This is the case if the equation counter is already active
+		// and we have a subequation counter (as in the subequations inset)
+		eqstr = (cnts.currentCounter() == from_ascii("equation")
+			 && cnts.hasCounter(from_ascii("subequation")))
+				? from_ascii("subequation")
+				: from_ascii("equation");
 		have_cnt = cnts.hasCounter(eqstr);
 		if (have_cnt) {
+			// the equations counter is local
+			cnts.saveLastCounter();
+			// also save value since we need to traverse through it twice
 			cnts.saveValue(eqstr);
 			for (size_t i = 0; i != labels_.size(); ++i) {
 				docstring const oldnumber = numbers_[i];
@@ -298,9 +299,9 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 		cnts.restoreValue(eqstr);
 		for (row_type row = 0; row != nrows(); ++row) {
 			if (numbered(row) && labels_[row]) {
-				cnts.step(eqstr, utype);
 				labels_[row]->setCounterValue(numbers_[row]);
 				if (have_cnt) {
+					cnts.step(eqstr, utype);
 					// We use the format definitions as specified in the counter definition
 					labels_[row]->setPrettyCounter(cnts.prettyCounter(eqstr, lang));
 					labels_[row]->setFormattedCounter(
@@ -317,8 +318,7 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 			}
 		}
 	}
-	if (need_subequations)
-		// the subequations counter will be local
+	if (have_cnt)
 		cnts.restoreLastCounter();
 
 	// pass down
