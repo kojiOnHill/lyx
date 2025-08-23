@@ -17,7 +17,7 @@ Format 111
 Counter examplei
 	GuiName              "Numbered Example (Multiline)"
 	Within               chapter
-	LabelString          "(\arabic{equation})"
+	LabelString          "(\theequation)"
 	PrettyFormat         "##"
 	StepOtherCounter      equation
 End
@@ -25,7 +25,7 @@ End
 Counter subexamplei
 	GuiName              Subexample
 	Within               examplei
-	LabelString          "(\arabic{equation}) (\alph{subexamplei})"
+	LabelString          "(\theequation) (\alph{subexamplei})"
 	PrettyFormat         "##"
 End
 
