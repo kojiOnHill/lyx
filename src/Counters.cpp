@@ -51,7 +51,7 @@ Counter::Counter(docstring const & mc, docstring const & ls,
 }
 
 
-bool Counter::read(Lexer & lex)
+bool Counter::read(Lexer & lex, docstring const & name)
 {
 	enum {
 		CT_WITHIN = 1,
@@ -155,6 +155,12 @@ bool Counter::read(Lexer & lex)
 				prettyformat_ = from_ascii("##");
 			else
 				prettyformat_ = "## (" + guiname_ + ")";
+		}
+		// Check for recursive relation which would crash (#12544)
+		if (parent_ == name) {
+			LYXERR0("A counter cannot be within itself! "
+				"Ignoring 'Within " << parent_ << "' for counter " << name);
+			parent_.erase();
 		}
 	}
 
@@ -278,12 +284,12 @@ bool Counters::read(Lexer & lex, docstring const & name, bool makenew)
 {
 	if (hasCounter(name)) {
 		LYXERR(Debug::TCLASS, "Reading existing counter " << to_utf8(name));
-		return counterList_[name].read(lex);
+		return counterList_[name].read(lex, name);
 	}
 
 	LYXERR(Debug::TCLASS, "Reading new counter " << to_utf8(name));
 	Counter cnt;
-	bool success = cnt.read(lex);
+	bool success = cnt.read(lex, name);
 	// if makenew is false, we will just discard what we read
 	if (success && makenew)
 		counterList_[name] = cnt;

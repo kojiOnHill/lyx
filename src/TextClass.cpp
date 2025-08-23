@@ -881,7 +881,7 @@ TextClass::ReturnValues TextClass::read(Lexer & lexrc, ReadType rt)
 					Counter c;
 					// Since we couldn't read the name, we just scan the rest
 					// and discard it.
-					c.read(lexrc);
+					c.read(lexrc, name);
 				} else
 					error = !counters_.read(lexrc, name, !ifcounter);
 			}

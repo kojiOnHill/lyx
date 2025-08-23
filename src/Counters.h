@@ -39,7 +39,7 @@ public:
 		docstring const & lsa, docstring const & prettyformat,
 		docstring const & guiname);
 	/// \return true on success
-	bool read(support::Lexer & lex);
+	bool read(support::Lexer & lex, docstring const & name);
 	///
 	void set(int v);
 	///
