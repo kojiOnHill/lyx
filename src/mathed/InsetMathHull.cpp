@@ -245,17 +245,25 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 
 	BufferParams const & bp = buffer_->params();
 	string const & lang = it->getParLanguage(bp)->code();
+	docstring eqstr;
+	bool have_cnt = false;
+	Counters & cnts =
+		buffer_->masterBuffer()->params().documentClass().counters();
+	// Counter is equation by default, but the context might require subequations
+	// This is the case if the equation counter is already active
+	// and we have a subequation counter (as in the subequations inset)
+	bool const need_subequations = cnts.currentCounter() == from_ascii("equation")
+			&& cnts.hasCounter(from_ascii("subequation"));
+	if (need_subequations)
+		// the subequations counter will be local
+		cnts.saveLastCounter();
 	// if any of the equations are numbered, then we want to save the values
 	// of some of the counters.
 	if (haveNumbers()) {
-		Counters & cnts =
-			buffer_->masterBuffer()->params().documentClass().counters();
-
-		// Counter is equation by default, but the context might require subequations
-		docstring const eqstr = (cnts.currentCounter() == from_ascii("subequation"))
-				? cnts.currentCounter()
-				: from_ascii("equation");
-		if (cnts.hasCounter(eqstr)) {
+		eqstr = need_subequations ? from_ascii("subequation") : from_ascii("equation");
+		have_cnt = cnts.hasCounter(eqstr);
+		if (have_cnt) {
+			cnts.saveValue(eqstr);
 			for (size_t i = 0; i != labels_.size(); ++i) {
 				docstring const oldnumber = numbers_[i];
 				if (numbered(i)) {
@@ -284,48 +292,34 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 	}
 
 	if (haveNumbers()) {
-		Counters & cnts =
-			buffer_->masterBuffer()->params().documentClass().counters();
-		// Counter is equation by default, but the context might require subequations
-		docstring const eqstr = (cnts.currentCounter() == from_ascii("subequation"))
-				? cnts.currentCounter()
-				: from_ascii("equation");
 		docstring const eqprf = from_ascii("eq");
-		bool const have_cnt = cnts.hasCounter(eqstr);
 		// set up equation numbers
+		// we need to start afresh to generate the definitions
+		cnts.restoreValue(eqstr);
 		for (row_type row = 0; row != nrows(); ++row) {
 			if (numbered(row) && labels_[row]) {
+				cnts.step(eqstr, utype);
 				labels_[row]->setCounterValue(numbers_[row]);
 				if (have_cnt) {
-					// We use the format definitions as specified in the counter definition if available
+					// We use the format definitions as specified in the counter definition
 					labels_[row]->setPrettyCounter(cnts.prettyCounter(eqstr, lang));
-					// lowercase singular
-					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, true, false), true, false);
-					// lowercase plural
-					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, true, true), true, true);
-					// uppercase singular
-					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, false, false),  false, false);
-					// uppercase plural
-					labels_[row]->setFormattedCounter(cnts.formattedCounter(eqstr, eqprf, lang, false, true), false, true);
-				} else {
-					// Hardcoded fallbacks for the case the counter definition is not available
-					labels_[row]->setPrettyCounter("(" + numbers_[row] + ")");
-					// lowercase singular
-					docstring pf = translateIfPossible(from_ascii("equation (##)"), lang);
-					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), true, false);
-					// lowercase plural
-					pf = translateIfPossible(from_ascii("equations (##)"), lang);
-					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), true, true);
-					// uppercase singular
-					pf = translateIfPossible(from_ascii("Equation (##)"), lang);
-					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), false, false);
-					// uppercase plural
-					pf = translateIfPossible(from_ascii("Equations (##)"), lang);
-					labels_[row]->setFormattedCounter(subst(pf, from_ascii("##"), numbers_[row]), false, true);
+					labels_[row]->setFormattedCounter(
+						// lowercase singular
+						cnts.formattedCounter(eqstr, eqprf, lang, true, false),
+						// lowercase plural
+						cnts.formattedCounter(eqstr, eqprf, lang, true, true),
+						// uppercase singular
+						cnts.formattedCounter(eqstr, eqprf, lang, false, false),
+						// uppercase plural
+						cnts.formattedCounter(eqstr, eqprf, lang, false, true)
+					);
 				}
 			}
 		}
 	}
+	if (need_subequations)
+		// the subequations counter will be local
+		cnts.restoreLastCounter();
 
 	// pass down
 	InsetMathGrid::updateBuffer(it, utype, deleted);

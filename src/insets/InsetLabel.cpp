@@ -170,19 +170,13 @@ docstring InsetLabel::formattedCounter(bool const lc, bool const pl) const
 }
 
 
-void InsetLabel::setFormattedCounter(docstring const & fc, bool const lc, bool const pl)
+void InsetLabel::setFormattedCounter(docstring const & ls, docstring const & lp,
+				     docstring const & us, docstring const & up)
 {
-	if (pl) {
-		if (lc)
-			formatted_counter_lc_pl_ = fc;
-		else
-			formatted_counter_pl_ = fc;
-	} else {
-		if (lc)
-			formatted_counter_lc_ = fc;
-		else
-			formatted_counter_ = fc;
-	}
+	formatted_counter_lc_ = ls;
+	formatted_counter_lc_pl_ = lp;
+	formatted_counter_ = us;
+	formatted_counter_pl_ = up;
 }
 
 
@@ -222,10 +216,6 @@ void InsetLabel::updateBuffer(ParIterator const & it, UpdateType, bool const /*d
 	Language const * lang = it->getParLanguage(buffer().params());
 	if (lang && !active_counter_.empty()) {
 		if (it.inTexted()) {
-			// Insets with a subequation counter
-			// use the the main equation only outside of math insets
-			if (active_counter_ == from_ascii("subequation"))
-				active_counter_ = from_ascii("equation");
 			counter_value_ = cnts.theCounter(active_counter_, lang->code());
 			pretty_counter_ = cnts.prettyCounter(active_counter_, lang->code());
 			docstring pretty_counter_pl = cnts.prettyCounter(active_counter_, lang->code(), false, true);

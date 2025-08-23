@@ -163,13 +163,8 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 			cnts.step(count, utype);
 			if (il.stepParentCounter())
 				cnts.stepParent(count, utype);
-			// Exception: insets with a subequation counter
-			// use the the main equation only for the label
-			docstring const lcounter = (count == from_ascii("subequation"))
-					? from_ascii("equation")
-					: count;
 			custom_label += ' ' +
-				cnts.theCounter(lcounter, it.paragraph().getParLanguage(bp)->code());
+				cnts.theCounter(count, it.paragraph().getParLanguage(bp)->code());
 		} else
 			custom_label += ' ' + from_ascii("#");
 	}

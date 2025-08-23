@@ -37,8 +37,10 @@ public:
 	void setCounterValue(docstring const & cv) { counter_value_ = cv; }
 	///
 	void setPrettyCounter(docstring const & pc) { pretty_counter_ = pc; }
-	///
-	void setFormattedCounter(docstring const & fc, bool lc = false, bool pl = false);
+	/** Formatted counter definition: lowercase singular (\p ls), lowercase plural (\p lp),
+	    uppercase singular (\p us), and uppercase plural (\p up) */
+	void setFormattedCounter(docstring const & ls, docstring const & lp,
+				 docstring const & us, docstring const & up);
 	///
 	int rowFlags() const override { return CanBreakBefore | CanBreakAfter; }
 	/// Updates only the label string, doesn't handle undo nor references.

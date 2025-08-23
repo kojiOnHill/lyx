@@ -8,6 +8,9 @@
 
 Format 111
 
+# This counter is used by the equations within the inset below
+# but the inset itself uses the equation counter (outside of
+# mathed
 Counter subequation
   GuiName              Sub-Equation
   Within               equation
@@ -18,8 +21,7 @@ End
 InsetLayout Flex:Subequations
   LyxType               custom
   Decoration            classic
-  Counter               subequation
-  StepParentCounter     true
+  Counter               equation
   LabelString           Subequations
   LatexType             Environment
   LatexName             subequations
