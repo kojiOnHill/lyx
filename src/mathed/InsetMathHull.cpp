@@ -298,22 +298,25 @@ void InsetMathHull::updateBuffer(ParIterator const & it, UpdateType utype, bool 
 		// we need to start afresh to generate the definitions
 		cnts.restoreValue(eqstr);
 		for (row_type row = 0; row != nrows(); ++row) {
-			if (numbered(row) && labels_[row]) {
-				labels_[row]->setCounterValue(numbers_[row]);
-				if (have_cnt) {
+			if (numbered(row)) {
+				if (!it.paragraph().isDeleted(it.pos()))
 					cnts.step(eqstr, utype);
-					// We use the format definitions as specified in the counter definition
-					labels_[row]->setPrettyCounter(cnts.prettyCounter(eqstr, lang));
-					labels_[row]->setFormattedCounter(
-						// lowercase singular
-						cnts.formattedCounter(eqstr, eqprf, lang, true, false),
-						// lowercase plural
-						cnts.formattedCounter(eqstr, eqprf, lang, true, true),
-						// uppercase singular
-						cnts.formattedCounter(eqstr, eqprf, lang, false, false),
-						// uppercase plural
-						cnts.formattedCounter(eqstr, eqprf, lang, false, true)
-					);
+				if (labels_[row]) {
+					labels_[row]->setCounterValue(numbers_[row]);
+					if (have_cnt) {
+						// We use the format definitions as specified in the counter definition
+						labels_[row]->setPrettyCounter(cnts.prettyCounter(eqstr, lang));
+						labels_[row]->setFormattedCounter(
+							// lowercase singular
+							cnts.formattedCounter(eqstr, eqprf, lang, true, false),
+							// lowercase plural
+							cnts.formattedCounter(eqstr, eqprf, lang, true, true),
+							// uppercase singular
+							cnts.formattedCounter(eqstr, eqprf, lang, false, false),
+							// uppercase plural
+							cnts.formattedCounter(eqstr, eqprf, lang, false, true)
+						);
+					}
 				}
 			}
 		}
