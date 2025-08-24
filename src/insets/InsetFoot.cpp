@@ -26,6 +26,7 @@
 #include "support/debug.h"
 #include "support/docstream.h"
 #include "support/gettext.h"
+#include "support/lstrings.h"
 
 using namespace std;
 
@@ -80,17 +81,17 @@ void InsetFoot::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 	docstring const & count = il.counter();
 	custom_label_ = translateIfPossible(il.labelstring());
 
-	int val = cnts.value(count);
+	docstring val = from_ascii("#");
 	if (cnts.hasCounter(count)) {
+		int v = cnts.value(count);
 		cnts.step(count, utype);
-		if (!custom_label_.empty())
-			custom_label_ += ' ';
-		custom_label_ += cnts.theCounter(count, lang->code());
+		val = cnts.theCounter(count, lang->code());
 		if (deleted)
 			// un-step after deleted counter
-			cnts.set(count, val);
-	} else
-		custom_label_ += ' ' + from_ascii("#");
+			cnts.set(count, v);
+	}
+
+	custom_label_ = support::subst(custom_label_, from_ascii("##"), val);
 	setLabel(custom_label_);
 
 	InsetCollapsible::updateBuffer(it, utype, deleted);

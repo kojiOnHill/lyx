@@ -19879,6 +19879,27 @@ string
 =""] wird auf dem Knopf der Einfügung und anderswo als Marke angezeigt.
  Einige Einfügungstypen (\SpecialChar TeX
 -Code und Zweig) ändern diese Marke temporär.
+ Falls die Einfügung einen Zähler verwendet,
+ kann dieser der Marke über den Platzhalter 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+##
+\end_layout
+
+\end_inset
+
+ hinzugefügt werden (bspw.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Fußnote ##
+\begin_inset Quotes grd
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Description

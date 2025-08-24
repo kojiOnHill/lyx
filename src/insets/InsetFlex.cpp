@@ -159,14 +159,14 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 	}
 
 	if (have_counter) {
+		docstring val = from_ascii("#");
 		if (!deleted) {
 			cnts.step(count, utype);
 			if (il.stepParentCounter())
 				cnts.stepParent(count, utype);
-			custom_label += ' ' +
-				cnts.theCounter(count, it.paragraph().getParLanguage(bp)->code());
-		} else
-			custom_label += ' ' + from_ascii("#");
+			val = cnts.theCounter(count, it.paragraph().getParLanguage(bp)->code());
+		}
+		custom_label = support::subst(custom_label, from_ascii("##"), val);
 	}
 	setLabel(custom_label);
 

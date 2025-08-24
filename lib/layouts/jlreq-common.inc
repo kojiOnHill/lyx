@@ -136,7 +136,7 @@ InsetLayout Flex:Endnote
 	LatexName            endnote
 	Counter              footnote
 	Decoration           Classic
-	LabelString          "Endnote"
+	LabelString          "Endnote ##"
 	ForcePlain           1
 	BgColor              background
 	ResetsFont true

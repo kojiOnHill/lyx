@@ -16,7 +16,7 @@ End
 OutlinerName literate "Literate programming"
 
 InsetLayout "Flex:Chunk"
-    LabelString          "Chunk"
+    LabelString          "Chunk ##"
     LatexType            none
     LyXType              Custom
     Counter              chunk
