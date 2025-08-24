@@ -76,16 +76,17 @@ void InsetFoot::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 		}
 	}
 
-	Language const * lang = it.paragraph().getParLanguage(bp);
+	string const lc = it.paragraph().getParLanguage(bp)->code();
 	InsetLayout const & il = getLayout();
 	docstring const & count = il.counter();
 	custom_label_ = translateIfPossible(il.labelstring());
+	custom_label_ = cnts.counterLabel(translateIfPossible(il.labelstring()), lc);
 
 	docstring val = from_ascii("#");
 	if (cnts.hasCounter(count)) {
 		int v = cnts.value(count);
 		cnts.step(count, utype);
-		val = cnts.theCounter(count, lang->code());
+		val = cnts.theCounter(count, lc);
 		if (deleted)
 			// un-step after deleted counter
 			cnts.set(count, v);

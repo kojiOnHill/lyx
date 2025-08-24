@@ -14310,7 +14310,7 @@ LabelCounter
 \end_inset
 
  is set,
- this string can be contain the special formatting commands described in 
+ this string might contain the special formatting commands described in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Counters"
@@ -21896,7 +21896,7 @@ Branch
 
 ) modify this label on the fly.
 
-\change_inserted -712698321 1756021044
+\change_inserted -712698321 1756046664
  If the inset has a counter,
  it can be added to the label via the placeholder 
 \begin_inset Flex Code
@@ -21922,6 +21922,16 @@ Foot ##
 \end_inset
 
 ).
+ Furthermore,
+ the label string might contain the special formatting commands described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Counters"
+nolink "false"
+
+\end_inset
+
+ if it should refer to other counter values.
 \change_unchanged
 
 \end_layout

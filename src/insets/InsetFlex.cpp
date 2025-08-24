@@ -146,9 +146,11 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 {
 	BufferParams const & bp = buffer().masterBuffer()->params();
 	InsetLayout const & il = getLayout();
-	docstring custom_label = translateIfPossible(il.labelstring());
 
 	Counters & cnts = bp.documentClass().counters();
+	string const lc = it.paragraph().getParLanguage(bp)->code();
+	docstring custom_label =
+		cnts.counterLabel(translateIfPossible(il.labelstring()), lc);
 	docstring const & count = il.counter();
 	bool const have_counter = cnts.hasCounter(count);
 	if (have_counter) {
@@ -164,7 +166,7 @@ void InsetFlex::updateBuffer(ParIterator const & it, UpdateType utype, bool cons
 			cnts.step(count, utype);
 			if (il.stepParentCounter())
 				cnts.stepParent(count, utype);
-			val = cnts.theCounter(count, it.paragraph().getParLanguage(bp)->code());
+			val = cnts.theCounter(count, lc);
 		}
 		custom_label = support::subst(custom_label, from_ascii("##"), val);
 	}
