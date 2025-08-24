@@ -20369,6 +20369,41 @@ CopyStyle Flex:<name>
 \end_inset
 
 .
+\change_inserted -712698321 1756018877
+
+\end_layout
+
+\begin_layout Description
+
+\change_inserted -712698321 1756018900
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1756018883
+Counter
+\end_layout
+
+\end_inset
+
+ [
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1756018878
+<name>
+\end_layout
+
+\end_inset
+
+] The counter,
+ if any,
+ used and stepped by this inset.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Description
@@ -20591,7 +20626,7 @@ LatexName
 
 \begin_layout Description
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 EditExternal
@@ -23814,6 +23849,8 @@ status collapsed
 
 \change_inserted -712698321 1755872622
 StepParentCounter
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -23828,6 +23865,8 @@ status collapsed
 
 \emph on
 0
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -23840,6 +23879,8 @@ status collapsed
 
 \change_inserted -712698321 1755872622
 1
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -25714,7 +25755,27 @@ hebrew
 
 \end_deeper
 \begin_layout Standard
-If LabelString is not defined,
+If 
+\change_deleted -712698321 1756018721
+LabelString
+\change_inserted -712698321 1756018721
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted -712698321 1756018721
+LabelString
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ is not defined,
  a default value is constructed as follows:
  if the counter has a parent counter 
 \begin_inset Flex Code
