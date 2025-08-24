@@ -95,8 +95,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX 2.4git\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-08-22 08:31+0200\n"
-"PO-Revision-Date: 2025-08-22 08:32+0200\n"
+"POT-Creation-Date: 2025-08-24 10:06+0200\n"
+"PO-Revision-Date: 2025-08-24 10:08+0200\n"
 "Last-Translator: Juergen Spitzmueller <spitz@lyx.org>\n"
 "Language-Team: German <lyx-docs@lists.lyx.org>\n"
 "Language: de\n"
@@ -6917,7 +6917,7 @@ msgstr "Fußnote"
 
 #: lib/citeengines/biblatex-chicago.citeengine:152
 #: lib/citeengines/biblatex-natbib.citeengine:150
-#: lib/citeengines/biblatex.citeengine:140 lib/layouts/stdinsets.inc:52
+#: lib/citeengines/biblatex.citeengine:140
 msgid "Foot"
 msgstr "Fußnote"
 
@@ -9433,7 +9433,7 @@ msgid "Altaffilation"
 msgstr "Alt. Zugehörigkeit"
 
 #: lib/layouts/aastex.layout:201 lib/layouts/agutex.layout:132
-#: src/mathed/InsetMathHull.cpp:1939 src/mathed/InsetMathHull.cpp:1948
+#: src/mathed/InsetMathHull.cpp:1959 src/mathed/InsetMathHull.cpp:1968
 msgid "Number"
 msgstr "Nummer"
 
@@ -13563,8 +13563,10 @@ msgstr ""
 msgid "Endnotes"
 msgstr "Endnoten"
 
-#: lib/layouts/endnotes.module:16 lib/layouts/enotez.module:16
-#: lib/layouts/memoir.layout:310
+#: lib/layouts/endnotes.module:16 lib/layouts/endnotes.module:29
+#: lib/layouts/enotez.module:16 lib/layouts/enotez.module:29
+#: lib/layouts/jlreq-common.inc:139 lib/layouts/memoir.layout:310
+#: lib/layouts/memoir.layout:323
 msgid "Endnote ##"
 msgstr "Endnote ##"
 
@@ -13585,14 +13587,8 @@ msgstr "Endnoten ##"
 
 #: lib/layouts/endnotes.module:19 lib/layouts/enotez.module:19
 #: lib/layouts/foottoend.module:16 lib/layouts/foottoenotez.module:17
-#: lib/layouts/jlreq-common.inc:133 lib/layouts/jlreq-common.inc:139
-#: lib/layouts/memoir.layout:313
+#: lib/layouts/jlreq-common.inc:133 lib/layouts/memoir.layout:313
 msgid "Endnote"
-msgstr "Endnote"
-
-#: lib/layouts/endnotes.module:29 lib/layouts/enotez.module:29
-#: lib/layouts/memoir.layout:323
-msgid "endnote"
 msgstr "Endnote"
 
 #: lib/layouts/endnotes.module:32 lib/layouts/endnotes.module:35
@@ -13709,10 +13705,6 @@ msgstr "Gleichung"
 #: lib/layouts/eqs-within-sections.module:19
 msgid "\\thesection.\\arabic{equation}"
 msgstr "\\thesection.\\arabic{equation}"
-
-#: lib/layouts/eqs-within-sections.module:20
-msgid "(\\thesection.\\arabic{equation})"
-msgstr "(\\thesection.\\arabic{equation})"
 
 #: lib/layouts/europasscv.layout:3 lib/examples/Articles:0
 msgid "Europass CV (2013)"
@@ -16211,17 +16203,21 @@ msgstr ""
 msgid "Numbered Example (Multiline)"
 msgstr "Nummeriertes Beispiel (mehrere Zeilen)"
 
-#: lib/layouts/linguistics.module:20 lib/layouts/linguistics.module:21
-msgid "(\\arabic{equation})"
-msgstr "(\\arabic{equation})"
+#: lib/layouts/linguistics.module:20
+msgid "(\\theequation)"
+msgstr "(\\theequation)"
+
+#: lib/layouts/linguistics.module:21 lib/layouts/linguistics.module:29
+msgid "##"
+msgstr "##"
 
 #: lib/layouts/linguistics.module:26 lib/layouts/linguistics.module:109
 msgid "Subexample"
 msgstr "Unterbeispiel"
 
-#: lib/layouts/linguistics.module:28 lib/layouts/linguistics.module:29
-msgid "(\\arabic{equation}) (\\alph{subexamplei})"
-msgstr "(\\arabic{equation}) (\\alph{subexamplei})"
+#: lib/layouts/linguistics.module:28
+msgid "(\\theequation) (\\alph{subexamplei})"
+msgstr "(\\theequation) (\\alph{subexamplei})"
 
 #: lib/layouts/linguistics.module:37
 msgid "Numbered Example (multiline)"
@@ -16647,7 +16643,7 @@ msgstr "Tableaus ##"
 msgid "tableaux ##"
 msgstr "Tableaus ##"
 
-#: lib/layouts/litinsets.inc:13
+#: lib/layouts/litinsets.inc:13 lib/layouts/litinsets.inc:19
 msgid "Chunk ##"
 msgstr "Stück ##"
 
@@ -16667,7 +16663,7 @@ msgstr "Stücke ##"
 msgid "Literate programming"
 msgstr "Literarische Programmierung"
 
-#: lib/layouts/litinsets.inc:18 lib/layouts/litinsets.inc:19
+#: lib/layouts/litinsets.inc:18
 msgid "Chunk"
 msgstr "Stück"
 
@@ -17436,11 +17432,13 @@ msgstr "Fußnote \\arabic{footnote}"
 msgid "footnote \\arabic{footnote}"
 msgstr "Fußnote \\arabic{footnote}"
 
-#: lib/layouts/numreport.inc:46
+#: lib/layouts/numreport.inc:46 lib/layouts/stdcounters.inc:92
+#: lib/layouts/stdcounters.inc:97
 msgid "Footnotes \\arabic{footnote}"
-msgstr "Fußnote \\arabic{footnote}"
+msgstr "Fußnoten \\arabic{footnote}"
 
-#: lib/layouts/numreport.inc:46
+#: lib/layouts/numreport.inc:46 lib/layouts/stdcounters.inc:92
+#: lib/layouts/stdcounters.inc:97
 msgid "footnotes \\arabic{footnote}"
 msgstr "Fußnoten \\arabic{footnote}"
 
@@ -19260,6 +19258,14 @@ msgstr "Punkt \\arabic{enumi}"
 msgid "item \\arabic{enumi}"
 msgstr "Punkt \\arabic{enumi}"
 
+#: lib/layouts/stdcounters.inc:52
+msgid "Items \\arabic{enumi}"
+msgstr "Punkte \\arabic{enumi}"
+
+#: lib/layouts/stdcounters.inc:52
+msgid "items \\arabic{enumi}"
+msgstr "Punkte \\arabic{enumi}"
+
 #: lib/layouts/stdcounters.inc:59
 msgid "Item \\arabic{enumi}\\alph{enumii}"
 msgstr "Punkt \\arabic{enumi}\\alph{enumii}"
@@ -19267,6 +19273,14 @@ msgstr "Punkt \\arabic{enumi}\\alph{enumii}"
 #: lib/layouts/stdcounters.inc:59
 msgid "item \\arabic{enumi}\\alph{enumii}"
 msgstr "Punkt \\arabic{enumi}\\alph{enumii}"
+
+#: lib/layouts/stdcounters.inc:59
+msgid "Items \\arabic{enumi}\\alph{enumii}"
+msgstr "Punkte \\arabic{enumi}\\alph{enumii}"
+
+#: lib/layouts/stdcounters.inc:59
+msgid "items \\arabic{enumi}\\alph{enumii}"
+msgstr "Punkte \\arabic{enumi}\\alph{enumii}"
 
 #: lib/layouts/stdcounters.inc:65
 msgid "\\roman{enumiii}."
@@ -19280,6 +19294,14 @@ msgstr "Punkt \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
 msgid "item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
 msgstr "Punkt \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
 
+#: lib/layouts/stdcounters.inc:66
+msgid "Items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+msgstr "Punkte \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+
+#: lib/layouts/stdcounters.inc:66
+msgid "items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+msgstr "Punkte \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+
 #: lib/layouts/stdcounters.inc:72
 msgid "\\Alph{enumiv}."
 msgstr "\\Alph{enumiv}."
@@ -19289,8 +19311,16 @@ msgid "Item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
 msgstr "Punkt \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
 
 #: lib/layouts/stdcounters.inc:73
-msgid "item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\alph{enumiv}"
-msgstr "Punkt \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\alph{enumiv}"
+msgid "item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+msgstr "Punkt \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+
+#: lib/layouts/stdcounters.inc:73
+msgid "Items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+msgstr "Punkte \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+
+#: lib/layouts/stdcounters.inc:73
+msgid "items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+msgstr "Punkte \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
 
 #: lib/layouts/stdcounters.inc:82
 msgid "Listing ##"
@@ -19308,19 +19338,19 @@ msgstr "Programmlistings ##"
 msgid "listings ##"
 msgstr "Programmlistings ##"
 
-#: lib/layouts/stdcounters.inc:87
+#: lib/layouts/stdcounters.inc:87 lib/layouts/subequations.module:18
 msgid "Equation (##)"
 msgstr "Gleichung (##)"
 
-#: lib/layouts/stdcounters.inc:87
+#: lib/layouts/stdcounters.inc:87 lib/layouts/subequations.module:18
 msgid "equation (##)"
 msgstr "Gleichung (##)"
 
-#: lib/layouts/stdcounters.inc:87
+#: lib/layouts/stdcounters.inc:87 lib/layouts/subequations.module:18
 msgid "Equations (##)"
 msgstr "Gleichungen (##)"
 
-#: lib/layouts/stdcounters.inc:87
+#: lib/layouts/stdcounters.inc:87 lib/layouts/subequations.module:18
 msgid "equations (##)"
 msgstr "Gleichungen (##)"
 
@@ -19378,6 +19408,10 @@ msgstr "Programmlistings"
 #: lib/layouts/stdinsets.inc:19
 msgid "Margin"
 msgstr "Rand"
+
+#: lib/layouts/stdinsets.inc:52
+msgid "Foot ##"
+msgstr "Fußnote ##"
 
 #: lib/layouts/stdinsets.inc:181
 msgid "Greyedout"
@@ -19539,8 +19573,7 @@ msgstr "Geschützter Trennstrich|T"
 msgid "Subparagraph*"
 msgstr "Unterparagraph*"
 
-#: lib/layouts/subequations.module:2 lib/layouts/subequations.module:11
-#: lib/layouts/subequations.module:14
+#: lib/layouts/subequations.module:2 lib/layouts/subequations.module:21
 msgid "Subequations"
 msgstr "Untergleichungen"
 
@@ -19551,6 +19584,18 @@ msgid ""
 msgstr ""
 "Bietet eine elegante Möglichkeit, Untergleichungen zu erstellen. Bitte "
 "konsultieren Sie das Mathe-Handbuch für weitere Informationen."
+
+#: lib/layouts/subequations.module:15
+msgid "Sub-Equation"
+msgstr "Untergleichung"
+
+#: lib/layouts/subequations.module:17
+msgid "\\theequation\\alph{subequation}"
+msgstr "\\theequation\\alph{subequation}"
+
+#: lib/layouts/subequations.module:25
+msgid "Subequations (##)"
+msgstr "Untergleichungen (##)"
 
 #: lib/layouts/svcommon.inc:125 lib/layouts/svmult.layout:117
 msgid "PartBacktext"
@@ -42551,7 +42596,7 @@ msgstr "FEHLER: Nicht existierender Gleitobjekt-Typ!"
 msgid "LyX cannot generate a list of %1$s"
 msgstr "LyX kann keine Liste mit %1$s erzeugen"
 
-#: src/insets/InsetFoot.cpp:123
+#: src/insets/InsetFoot.cpp:124
 msgid "footnote"
 msgstr "Fußnote"
 
@@ -43175,7 +43220,7 @@ msgstr ""
 "Die Marke %1$s existiert bereits,\n"
 "sie wird zu %2$s geändert."
 
-#: src/insets/InsetLabel.cpp:235
+#: src/insets/InsetLabel.cpp:205
 msgid "DUPLICATE: "
 msgstr "DUPLIKAT: "
 
@@ -43949,7 +43994,7 @@ msgid "Match found."
 msgstr "Die Zeichenkette wurde gefunden!"
 
 #: src/mathed/InsetMathAMSArray.cpp:136 src/mathed/InsetMathCases.cpp:91
-#: src/mathed/InsetMathHull.cpp:2244 src/mathed/InsetMathSplit.cpp:127
+#: src/mathed/InsetMathHull.cpp:2264 src/mathed/InsetMathSplit.cpp:127
 #: src/mathed/InsetMathSubstack.cpp:89
 #, c-format
 msgid "Can't add vertical grid lines in '%1$s'"
@@ -44005,16 +44050,16 @@ msgstr "Keine vertikale Linie zu löschen"
 msgid "Unknown tabular feature '%1$s'"
 msgstr "Unbekanntes Tabellenmerkmal '%1$s'"
 
-#: src/mathed/InsetMathHull.cpp:1780
+#: src/mathed/InsetMathHull.cpp:1800
 #, c-format
 msgid "Type: %1$s"
 msgstr "Typ: %1$s"
 
-#: src/mathed/InsetMathHull.cpp:1816
+#: src/mathed/InsetMathHull.cpp:1836
 msgid "Bad math environment"
 msgstr "Ungeeignete Matheumgebung"
 
-#: src/mathed/InsetMathHull.cpp:1817
+#: src/mathed/InsetMathHull.cpp:1837
 msgid ""
 "Computation cannot be performed for AMS math environments.\n"
 "Change the math formula type and try again."
@@ -44022,16 +44067,16 @@ msgstr ""
 "In AMS-Matheumgebungen kann keine Berechnung durchgeführt werden.\n"
 "Bitte ändern Sie die Formelart und versuchen Sie es noch einmal."
 
-#: src/mathed/InsetMathHull.cpp:1939 src/mathed/InsetMathHull.cpp:1948
+#: src/mathed/InsetMathHull.cpp:1959 src/mathed/InsetMathHull.cpp:1968
 msgid "No number"
 msgstr "Keine Nummer"
 
-#: src/mathed/InsetMathHull.cpp:2227
+#: src/mathed/InsetMathHull.cpp:2247
 #, c-format
 msgid "Can't change number of rows in '%1$s'"
 msgstr "Die Anzahl der Zeilen in '%1$s' kann nicht geändert werden."
 
-#: src/mathed/InsetMathHull.cpp:2237
+#: src/mathed/InsetMathHull.cpp:2257
 #, c-format
 msgid "Can't change number of columns in '%1$s'"
 msgstr "Die Anzahl der Spalten in '%1$s' kann nicht geändert werden."
@@ -44559,6 +44604,18 @@ msgstr ""
 msgid "Unknown user"
 msgstr "Unbekannter Benutzer"
 
+#~ msgid "item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\alph{enumiv}"
+#~ msgstr "Punkt \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\alph{enumiv}"
+
+#~ msgid "endnote"
+#~ msgstr "Endnote"
+
+#~ msgid "(\\thesection.\\arabic{equation})"
+#~ msgstr "(\\thesection.\\arabic{equation})"
+
+#~ msgid "(\\arabic{equation})"
+#~ msgstr "(\\arabic{equation})"
+
 #~ msgid "Theorem \\thetheorem:"
 #~ msgstr "Theorem \\thetheorem:"
 
@@ -45028,9 +45085,6 @@ msgstr "Unbekannter Benutzer"
 
 #~ msgid "\\superarabic{footnote}"
 #~ msgstr "\\superarabic{footnote}"
-
-#~ msgid "Footnote ##"
-#~ msgstr "Fußnote ##"
 
 #, c-format
 #~ msgid "Branch \"%1$s\" does not exist."
