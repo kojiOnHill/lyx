@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LyX-2.5\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-08-20 06:40+0200\n"
-"PO-Revision-Date: 2025-08-20 05:25+0000\n"
+"POT-Creation-Date: 2025-08-24 10:26+0200\n"
+"PO-Revision-Date: 2025-08-24 08:32+0000\n"
 "Last-Translator: Kornel Benko <kornel@lyx.org>\n"
 "Language-Team: Slovak <kornel@lyx.org>\n"
 "Language: sk\n"
@@ -13208,11 +13208,6 @@ msgstr "koncové poznámky ##"
 msgid "Endnote"
 msgstr "Koncová poznámka"
 
-#: lib/layouts/endnotes.module:29 lib/layouts/enotez.module:29
-#: lib/layouts/memoir.layout:323
-msgid "endnote"
-msgstr "koncová poznámka"
-
 #: lib/layouts/endnotes.module:32 lib/layouts/endnotes.module:35
 #: lib/layouts/foottoend.module:20 lib/layouts/foottoend.module:23
 #: lib/layouts/memoir.layout:328 lib/layouts/memoir.layout:331
@@ -13327,10 +13322,6 @@ msgstr "Rovnica"
 #: lib/layouts/eqs-within-sections.module:19
 msgid "\\thesection.\\arabic{equation}"
 msgstr "\\thesection.\\arabic{equation}"
-
-#: lib/layouts/eqs-within-sections.module:20
-msgid "(\\thesection.\\arabic{equation})"
-msgstr "(\\thesection.\\arabic{equation})"
 
 #: lib/layouts/europasscv.layout:3 lib/examples/Articles:0
 msgid "Europass CV (2013)"
@@ -15813,17 +15804,17 @@ msgstr ""
 "glosy, sémantické štýly znakov (markup), plávajúce tabuľky). Pozrite "
 "Pomocník->špecifické manuály->Lingvistika."
 
-#: lib/layouts/linguistics.module:20 lib/layouts/linguistics.module:21
-msgid "(\\arabic{example})"
-msgstr "(\\arabic{example})"
-
 #: lib/layouts/linguistics.module:25
 msgid "Numbered Example (Multiline)"
 msgstr "Číslovaný príklad (viac-riadkový)"
 
-#: lib/layouts/linguistics.module:27 lib/layouts/linguistics.module:28
-msgid "(\\arabic{examplei})"
-msgstr "(\\arabic{examplei})"
+#: lib/layouts/linguistics.module:20
+msgid "(\\theequation)"
+msgstr "(\\theequation)"
+
+#: lib/layouts/linguistics.module:21 lib/layouts/linguistics.module:29
+msgid "##"
+msgstr "##"
 
 #: lib/layouts/linguistics.module:32 lib/layouts/linguistics.module:39
 #: lib/layouts/linguistics.module:46 lib/layouts/linguistics.module:53
@@ -15831,25 +15822,9 @@ msgstr "(\\arabic{examplei})"
 msgid "Subexample"
 msgstr "Podpríklad"
 
-#: lib/layouts/linguistics.module:34 lib/layouts/linguistics.module:35
-msgid "\\theexamplei (\\alph{subexample})"
-msgstr "\\theexamplei (\\alph{subexample})"
-
-#: lib/layouts/linguistics.module:41 lib/layouts/linguistics.module:42
-msgid "\\theexamplei (\\alph{subexamplei})"
-msgstr "\\theexamplei (\\alph{subexamplei})"
-
-#: lib/layouts/linguistics.module:48 lib/layouts/linguistics.module:49
-msgid "\\theexamplei (\\alph{subexampleii})"
-msgstr "\\theexamplei (\\alph{subexampleii})"
-
-#: lib/layouts/linguistics.module:55 lib/layouts/linguistics.module:56
-msgid "\\theexamplei (\\alph{subexampleiii})"
-msgstr "\\theexamplei (\\alph{subexampleiii})"
-
-#: lib/layouts/linguistics.module:62 lib/layouts/linguistics.module:63
-msgid "\\theexamplei (\\alph{subexampleiv})"
-msgstr "\\theexamplei (\\alph{subexampleiv})"
+#: lib/layouts/linguistics.module:28
+msgid "(\\theequation) (\\alph{subexamplei})"
+msgstr "(\\theequation) (\\alph{subexamplei})"
 
 #: lib/layouts/linguistics.module:71
 msgid "Numbered Example (multiline)"
@@ -18872,6 +18847,14 @@ msgstr "Položka \\arabic{enumi}"
 msgid "item \\arabic{enumi}"
 msgstr "položka \\arabic{enumi}"
 
+#: lib/layouts/stdcounters.inc:52
+msgid "Items \\arabic{enumi}"
+msgstr "Položky \\arabic{enumi}"
+
+#: lib/layouts/stdcounters.inc:52
+msgid "items \\arabic{enumi}"
+msgstr "položky \\arabic{enumi}"
+
 #: lib/layouts/stdcounters.inc:59
 msgid "Item \\arabic{enumi}\\alph{enumii}"
 msgstr "Položka \\arabic{enumi}\\alph{enumii}"
@@ -18879,6 +18862,14 @@ msgstr "Položka \\arabic{enumi}\\alph{enumii}"
 #: lib/layouts/stdcounters.inc:59
 msgid "item \\arabic{enumi}\\alph{enumii}"
 msgstr "položka \\arabic{enumi}\\alph{enumii}"
+
+#: lib/layouts/stdcounters.inc:59
+msgid "Items \\arabic{enumi}\\alph{enumii}"
+msgstr "Položky \\arabic{enumi}\\alph{enumii}"
+
+#: lib/layouts/stdcounters.inc:59
+msgid "items \\arabic{enumi}\\alph{enumii}"
+msgstr "položky \\arabic{enumi}\\alph{enumii}"
 
 #: lib/layouts/stdcounters.inc:65
 msgid "\\roman{enumiii}."
@@ -18892,6 +18883,14 @@ msgstr "Položka \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
 msgid "item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
 msgstr "položka \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
 
+#: lib/layouts/stdcounters.inc:66
+msgid "Items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+msgstr "Položky \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+
+#: lib/layouts/stdcounters.inc:66
+msgid "items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+msgstr "položky \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}"
+
 #: lib/layouts/stdcounters.inc:72
 msgid "\\Alph{enumiv}."
 msgstr "\\Alph{enumiv}."
@@ -18901,8 +18900,16 @@ msgid "Item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
 msgstr "Položka \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
 
 #: lib/layouts/stdcounters.inc:73
-msgid "item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\alph{enumiv}"
+msgid "item \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
 msgstr "položka \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+
+#: lib/layouts/stdcounters.inc:73
+msgid "Items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+msgstr "Položky \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+
+#: lib/layouts/stdcounters.inc:73
+msgid "items \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
+msgstr "položky \\arabic{enumi}(\\alph{enumii})\\roman{enumiii}\\Alph{enumiv}"
 
 #: lib/layouts/stdcounters.inc:82
 msgid "Listing ##"
@@ -18991,6 +18998,10 @@ msgstr "Výpisy"
 #: lib/layouts/stdinsets.inc:19
 msgid "Margin"
 msgstr "Okraj"
+
+#: lib/layouts/stdinsets.inc:52
+msgid "Foot ##"
+msgstr "Päta ##"
 
 #: lib/layouts/stdinsets.inc:180
 msgid "Greyedout"
@@ -19135,6 +19146,18 @@ msgid ""
 "manual."
 msgstr ""
 "Umožniť priamy spôsob na oddelenie podrovníc v LyXe. Viďte manuál Math."
+
+#: lib/layouts/subequations.module:12
+msgid "Sub-Equation"
+msgstr "Pod-Rovnica"
+
+#: lib/layouts/subequations.module:14
+msgid "\\theequation\\alph{subequation}"
+msgstr "\\theequation\\alph{subequation}"
+
+#: lib/layouts/subequations.module:25
+msgid "Subequations (##)"
+msgstr "Podrovnice (##)"
 
 #: lib/layouts/svcommon.inc:125 lib/layouts/svmult.layout:117
 msgid "PartBacktext"
