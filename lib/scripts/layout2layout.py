@@ -374,6 +374,7 @@ currentFormat = 111
 
 # Incremented to format 111, 22 August 2025 by spitz
 # New Counter tag "StepOtherCounter"
+# New InsetLayout tag "StepParentCounter"
 
 # Do not forget to document format change in Customization
 # Manual (section "Declaring a new text class").
