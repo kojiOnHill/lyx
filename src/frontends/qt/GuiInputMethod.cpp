@@ -261,7 +261,12 @@ void GuiInputMethod::processPreedit(QInputMethodEvent* ev)
 	            d->init_point_.y + d->caret_offset_[1],
 	            d->init_point_.x + d->caret_offset_[0] + d->cur_dim_.width(),
 	            d->init_point_.y + d->caret_offset_[1] + d->cur_dim_.height());
-	d->im_state_.anchor_rect_ = d->im_state_.cursor_rect_;
+	// while preedit exists, this is just coords of real cursor
+	d->im_state_.anchor_rect_.setCoords(
+	            d->init_point_.x,
+	            d->init_point_.y,
+	            d->init_point_.x + d->cur_dim_.width(),
+	            d->init_point_.y + d->cur_dim_.height());
 
 	// if preedit string is not empty, we are still working on it
 	d->im_state_.preediting_ = d->preedit_str_.empty() ? false : true;
