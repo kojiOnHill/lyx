@@ -9,6 +9,10 @@
 \use_default_options true
 \maintain_unincluded_children no
 \begin_local_layout
+Counter theorem
+	RefFormat       lem "Lemma|Lemmas \arabic{theorem}"
+End
+
 Style Lemma
 	CopyStyle       Theorem
 	DependsOn       Theorem
