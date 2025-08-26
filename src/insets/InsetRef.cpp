@@ -440,7 +440,7 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 				else
 					os << ",";
 			}
-			if (contains(*it, ' ') && buffer().masterParams().xref_package == "refstyle"
+			if (contains(*it, ' ') && !useRange() && buffer().masterParams().xref_package == "refstyle"
 			    && isRefStyleSupported(prefix))
 				// refstyle bug: labels with blanks need to be grouped for known commands
 				// otherwise the blanks will be gobbled
