@@ -344,6 +344,34 @@ docstring InsetRef::getEscapedLabel(OutputParams const & rp) const
 }
 
 
+bool InsetRef::isRefStyleSupported(docstring & pr) const
+{
+	// lowercase capitalized prefixes
+	char_type t = lowercase(pr[0]);
+	pr[0] = t;
+
+	// These are supported by the package
+	if (pr == "part" || pr == "chap" || pr == "sec" || pr == "eq"
+	    || pr == "fig" || pr == "tab" || pr == "fn")
+		return true;
+
+	// These are additionally supported by LyX
+	if (pr == "cha" || pr == "enu" || pr == "subsec")
+		return true;
+
+	// Theorems are all supported by LyX
+	DocumentClass const & tclass = buffer().masterParams().documentClass();
+	DocumentClass::const_iterator lit = tclass.begin();
+	DocumentClass::const_iterator len = tclass.end();
+	for (; lit != len; ++lit) {
+		if (!lit->thmName().empty() && lit->refprefix == pr)
+			return true;
+	}
+
+	return false;
+}
+
+
 void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 {
 	string const & cmd = getCmdName();
@@ -413,9 +441,8 @@ void InsetRef::latex(otexstream & os, OutputParams const & rp) const
 					os << ",";
 			}
 			if (contains(*it, ' ') && buffer().masterParams().xref_package == "refstyle"
-			    && buffer().masterParams().documentClass().hasRefPrefix(prefix))
+			    && isRefStyleSupported(prefix))
 				// refstyle bug: labels with blanks need to be grouped for known commands
-				// (basically those with known refprefixes)
 				// otherwise the blanks will be gobbled
 				os << "{" << *it << "}";
 			else {
@@ -989,8 +1016,8 @@ void InsetRef::validate(LaTeXFeatures & features) const
 				features.require("refstyle:subsecref");
 			else if (prefix == "enu" || prefix == "Enu")
 				features.require("refstyle:enuref");
-			else if (!prefix.empty() && !buffer().masterParams().documentClass().hasRefPrefix(prefix)) {
-				// fallback command for unknown prefixes
+			else if (!prefix.empty() && !isRefStyleSupported(prefix)) {
+				// fallback command for unsupported prefixes
 				docstring lcmd = "\\AtBeginDocument{\\providecommand" +
 						fcmd + "[1]{\\ref{" + prefix + ":#1}}}";
 				features.addPreambleSnippet(lcmd);

@@ -2091,15 +2091,6 @@ bool DocumentClass::hasLaTeXLayout(std::string const & lay) const
 }
 
 
-bool DocumentClass::hasRefPrefix(docstring const & pr) const
-{
-	for (auto const & l : layoutlist_)
-		if (l.refprefix == pr)
-			return true;
-	return false;
-}
-
-
 bool DocumentClass::provides(string const & p) const
 {
 	return provides_.find(p) != provides_.end();

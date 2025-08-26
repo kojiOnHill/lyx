@@ -143,6 +143,8 @@ private:
 	std::vector<docstring> getLabels() const { return support::getVectorFromString(getParam("reference")); }
 	///
 	bool isBroken(docstring const & label) const;
+	///
+	bool isRefStyleSupported(docstring & pr) const;
 
 	///
 	mutable docstring screen_label_;
