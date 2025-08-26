@@ -23,6 +23,7 @@
 #include "GuiFontLoader.h"
 #include "GuiWorkArea.h"
 #include "InsetList.h"
+#include "mathed/InsetMathMacro.h"
 #include "KeyMap.h"
 #include "Language.h"
 #include "LyX.h"
@@ -131,10 +132,12 @@ void GuiInputMethod::toggleInputMethodAcceptance(){
 		        d->cur_->getFont().language()->inputMethodOffInMath();
 
 	// note that d->cur_->inset() is a cache so it lags from actual key moves
+	bool inMathMode = d->cur_->inset().currentMode() == Inset::MATH_MODE;
+	bool inMathMacro = d->cur_->inset().asInsetMath() != nullptr &&
+	                   d->cur_->inset().asInsetMath()->asMacroInset() != nullptr;
 	bool enabled =
-	        !((d->im_off_in_math_
-	           && d->cur_->inset().currentMode() == Inset::MATH_MODE)
-	          || guiApp->isInCommandMode());
+	        !((d->im_off_in_math_ && (inMathMode || inMathMacro)) ||
+	          guiApp->isInCommandMode());
 	if (enabled != d->im_state_.enabled_) {
 		d->im_state_.enabled_= enabled;
 		Q_EMIT inputMethodStateChanged(Qt::ImEnabled);
