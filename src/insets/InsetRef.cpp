@@ -983,8 +983,8 @@ void InsetRef::validate(LaTeXFeatures & features) const
 			getFormattedCmd(data, label, prefix, buffer().masterParams().xref_package, use_caps, useRange());
 		if (buffer().masterParams().xref_package == "refstyle") {
 			features.require("refstyle");
-			if (prefix == "cha")
-				features.addPreambleSnippet(from_ascii("\\let\\charef=\\chapref"));
+			if (prefix == "cha" || prefix == "Cha")
+				features.require("refstyle:charef");
 			else if (prefix == "subsec" || prefix == "Subsec")
 				features.require("refstyle:subsecref");
 			else if (prefix == "enu" || prefix == "Enu")

@@ -1814,6 +1814,19 @@ TexString LaTeXFeatures::getMacros() const
 	// floats
 	getFloatDefinitions(macros);
 
+	if (mustProvide("refstyle:charef")) {
+		// this is not provided by the package, but we use the prefix
+		// copy the definition is a copy of chapref
+		macros << "\\RS@ifundefined{charef}{\n"
+		       << "  \\newref{cha}{%\n"
+		       << "         refcmd    = {{\\let\\chpname=\\RS@chpname\\ref{#1}}},\n"
+		       << "         rngtxt    = \\RSrngtxt,\n"
+		       << "         lsttwotxt = \\RSlsttwotxt,\n"
+		       << "         lsttxt    = \\RSlsttxt}\n"
+		       << "}{}\n"
+		       << '\n';
+	}
+
 	if (mustProvide("refstyle:subsecref")) {
 		// this is not provided by the package, but we use the prefix
 		// the definition is a copy of secref
