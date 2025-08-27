@@ -147,7 +147,7 @@ void InsetNomencl::addToToc(DocIterator const & cpit, bool output_active,
 			    UpdateType, TocBackend & backend) const
 {
 	TocBuilder & b = backend.builder("nomencl");
-	b.pushItem(cpit, getSymbol(), output_active);
+	b.pushItem(cpit, text().asString(AS_STR_INSETS), output_active);
 	b.pop();
 }
 
