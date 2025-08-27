@@ -356,7 +356,7 @@ bool InsetRef::isRefStyleSupported(docstring & pr) const
 		return true;
 
 	// These are additionally supported by LyX
-	if (pr == "cha" || pr == "enu" || pr == "subsec")
+	if (pr == "alg" || pr == "cha" || pr == "enu" || pr == "subsec")
 		return true;
 
 	// Theorems are all supported by LyX
@@ -1010,12 +1010,14 @@ void InsetRef::validate(LaTeXFeatures & features) const
 			getFormattedCmd(data, label, prefix, buffer().masterParams().xref_package, use_caps, useRange());
 		if (buffer().masterParams().xref_package == "refstyle") {
 			features.require("refstyle");
-			if (prefix == "cha" || prefix == "Cha")
+			if (prefix == "alg" || prefix == "Alg")
+				features.require("refstyle:algref");
+			else if (prefix == "cha" || prefix == "Cha")
 				features.require("refstyle:charef");
-			else if (prefix == "subsec" || prefix == "Subsec")
-				features.require("refstyle:subsecref");
 			else if (prefix == "enu" || prefix == "Enu")
 				features.require("refstyle:enuref");
+			else if (prefix == "subsec" || prefix == "Subsec")
+				features.require("refstyle:subsecref");
 			else if (!prefix.empty() && !isRefStyleSupported(prefix)) {
 				// fallback command for unsupported prefixes
 				docstring lcmd = "\\AtBeginDocument{\\providecommand" +

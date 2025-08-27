@@ -1814,6 +1814,8 @@ TexString LaTeXFeatures::getMacros() const
 	// floats
 	getFloatDefinitions(macros);
 
+	// extra xref definitions
+	// FIXME: longterm, provide layout tags
 	if (mustProvide("refstyle:charef")) {
 		// this is not provided by the package, but we use the prefix
 		// copy the definition is a copy of chapref
@@ -1853,6 +1855,22 @@ TexString LaTeXFeatures::getMacros() const
 		       << "        names     = \\RSenustxt,\n"
 		       << "        Name      = \\RSEnutxt,\n"
 		       << "        Names     = \\RSEnustxt,\n"
+		       << "        rngtxt    = \\RSrngtxt,\n"
+		       << "        lsttwotxt = \\RSlsttwotxt,\n"
+		       << "        lsttxt    = \\RSlsttxt\n"
+		       << "  }\n"
+		       << "}{}\n"
+		       << '\n';
+	}
+
+	if (mustProvide("refstyle:algref")) {
+		// this is not provided by the package, but we use the prefix
+		macros << "\\RS@ifundefined{algref}{\n"
+		       << "  \\newref{alg}{\n"
+		       << "        name      = \\RSalgtxt,\n"
+		       << "        names     = \\RSalgstxt,\n"
+		       << "        Name      = \\RSAlgtxt,\n"
+		       << "        Names     = \\RSAlgstxt,\n"
 		       << "        rngtxt    = \\RSrngtxt,\n"
 		       << "        lsttwotxt = \\RSlsttwotxt,\n"
 		       << "        lsttxt    = \\RSlsttxt\n"
@@ -2356,6 +2374,16 @@ docstring const LaTeXFeatures::getXRefI18nDefs(Layout const & lay) const
 			ods << "\\newrefformat{enu}{_(Item[[enumerate]])~\\ref{#1}}\n";
 		if (!ods.str().empty())
 			return ods.str();
+	} else if (params_.xref_package == "refstyle" && isRequired("refstyle:algref")) {
+		docstring const tn = from_ascii("Algorithm");
+		docstring const tnp = from_ascii("Algorithms");
+		odocstringstream ods;
+		docstring const prfxname = from_ascii("alg");
+		ods << "\\def\\RS" << prfxname << "txt{_(" << lowercase(tn) << ")~}\n"
+		    << "\\def\\RS" << prfxname << "stxt{_(" << lowercase(tnp) << ")~}\n"
+		    << "\\def\\RS" << capitalize(prfxname) << "txt{_(" << tn << ")~}\n"
+		    << "\\def\\RS" << capitalize(prfxname) << "stxt{_(" << tnp << ")~}\n";
+		return ods.str();
 	} else if (params_.xref_package == "refstyle" && isRequired("refstyle:enuref")) {
 		docstring const tn = from_ascii("Item[[enumerate]]");
 		docstring const tnp = from_ascii("Items[[enumerate]]");

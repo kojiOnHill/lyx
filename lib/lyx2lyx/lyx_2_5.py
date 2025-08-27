@@ -3182,8 +3182,8 @@ def revert_prettyref_l7n(document):
     if i != -1:
         document.header[i] = "\\crossref_package prettyref"
 
-def convert_refstyle_enu(document):
-    """Convert refstyle enu: formatted refs to simple ref"""
+def convert_refstyle_unsupported(document):
+    """Convert previously unsupported refstyle refs (enu: and alg:) to simple ref"""
     if find_token(document.header, "\\crossref_package refstyle", 0) == -1:
         return
 
@@ -3204,7 +3204,7 @@ def convert_refstyle_enu(document):
             continue
 
         label = get_quoted_value(document.body, "reference", i, j)
-        if label.startswith("enu:"):
+        if label.startswith("enu:") or label.startswith("alg:"):
             document.body[k] = "LatexCommand ref"
 
         i += 1
@@ -3291,7 +3291,7 @@ convert = [
     [640, []],
     [641, [convert_justification_pref]],
     [642, []],
-    [643, [convert_refstyle_enu]]
+    [643, [convert_refstyle_unsupported]]
 ]
 
 
