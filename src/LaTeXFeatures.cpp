@@ -2358,8 +2358,8 @@ docstring const LaTeXFeatures::getThmI18nDefs(Layout const & lay) const
 
 docstring const LaTeXFeatures::getXRefI18nDefs(Layout const & lay) const
 {
+	odocstringstream ods;
 	if (params_.xref_package == "prettyref-l7n" && isRequired("prettyref")) {
-		odocstringstream ods;
 		if (lay.refprefix == "part")
 			ods << "\\newrefformat{" << lay.refprefix << "}{_(Part)~\\ref{#1}}\n";
 		else if (lay.refprefix == "cha")
@@ -2374,28 +2374,26 @@ docstring const LaTeXFeatures::getXRefI18nDefs(Layout const & lay) const
 			ods << "\\newrefformat{enu}{_(Item[[enumerate]])~\\ref{#1}}\n";
 		if (!ods.str().empty())
 			return ods.str();
-	} else if (params_.xref_package == "refstyle" && isRequired("refstyle:algref")) {
+	}
+	if (params_.xref_package == "refstyle" && isRequired("refstyle:algref")) {
 		docstring const tn = from_ascii("Algorithm");
 		docstring const tnp = from_ascii("Algorithms");
-		odocstringstream ods;
 		docstring const prfxname = from_ascii("alg");
 		ods << "\\def\\RS" << prfxname << "txt{_(" << lowercase(tn) << ")~}\n"
 		    << "\\def\\RS" << prfxname << "stxt{_(" << lowercase(tnp) << ")~}\n"
 		    << "\\def\\RS" << capitalize(prfxname) << "txt{_(" << tn << ")~}\n"
 		    << "\\def\\RS" << capitalize(prfxname) << "stxt{_(" << tnp << ")~}\n";
-		return ods.str();
-	} else if (params_.xref_package == "refstyle" && isRequired("refstyle:enuref")) {
+	}
+	if (params_.xref_package == "refstyle" && isRequired("refstyle:enuref")) {
 		docstring const tn = from_ascii("Item[[enumerate]]");
 		docstring const tnp = from_ascii("Items[[enumerate]]");
-		odocstringstream ods;
 		docstring const prfxname = from_ascii("enu");
 		ods << "\\def\\RS" << prfxname << "txt{_(" << lowercase(tn) << ")~}\n"
 		    << "\\def\\RS" << prfxname << "stxt{_(" << lowercase(tnp) << ")~}\n"
 		    << "\\def\\RS" << capitalize(prfxname) << "txt{_(" << tn << ")~}\n"
 		    << "\\def\\RS" << capitalize(prfxname) << "stxt{_(" << tnp << ")~}\n";
-		return ods.str();
 	}
-	return docstring();
+	return ods.str();
 }
 
 
