@@ -79,6 +79,10 @@ public:
 	virtual bool canWrapAnywhere(pos_type const char_format_index) = 0;
 	///
 	virtual void toggleInputMethodAcceptance() = 0;
+	///
+	virtual void enableInputMethod() = 0;
+	///
+	virtual void disableInputMethod() = 0;
 #ifdef Q_DEBUG
 	///
 	virtual void setHint(Hint) = 0;

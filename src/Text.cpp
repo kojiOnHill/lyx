@@ -5781,6 +5781,7 @@ void Text::dispatch(Cursor & cur, FuncRequest & cmd)
 				cur.resetAnchor();
 				cur.selection(true);
 				cur.top().pos() = 0;
+				cur.bv().inputMethod()->disableInputMethod();
 			} else
 				delete inset;
 		}
