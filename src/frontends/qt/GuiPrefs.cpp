@@ -5,6 +5,7 @@
  *
  * \author John Levon
  * \author Bo Peng
+ * \author Koji Yokota
  *
  * Full author contact details are available in file CREDITS.
  */
