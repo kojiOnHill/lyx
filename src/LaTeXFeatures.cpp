@@ -2349,9 +2349,9 @@ docstring const LaTeXFeatures::getXRefI18nDefs(Layout const & lay) const
 		else if (lay.refprefix == "sec" || lay.refprefix == "subsec" || lay.refprefix == "sub")
 			ods << "\\newrefformat{" << lay.refprefix << "}{_(Section)~\\ref{#1}}\n";
 		else if (lay.refprefix == "par")
-			ods << "\\newrefformat{alg}{_(Paragraph[[Sectioning]])~\\ref{#1}}\n";
+			ods << "\\newrefformat{par}{_(Paragraph[[Sectioning]])~\\ref{#1}}\n";
 		else if (lay.refprefix == "fn")
-			ods << "\\newrefformat{alg}{_(Footnote)~\\ref{#1}}\n";
+			ods << "\\newrefformat{fn}{_(Footnote)~\\ref{#1}}\n";
 		else if (lay.refprefix == "enu")
 			ods << "\\newrefformat{enu}{_(Item[[enumerate]])~\\ref{#1}}\n";
 		if (!ods.str().empty())
