@@ -3071,7 +3071,7 @@ void Tabular::TeXBottomHLine(otexstream & os, row_type row, list<col_type> const
 						++offset;
 				// If the two iterators differ, we are in bidi with swapped columns
 				col_type firstcol = (*it1 == *it2) ? c + 1 + offset : columns.size() - c + offset;
-				while (isPartOfMultiColumn(row, c))
+				while (isPartOfMultiColumn(row, c) && c < columns.size() - 1)
 					++c;
 				string trim;
 				if (bottomltrims[c])
