@@ -1441,8 +1441,6 @@ void PrefColors::saveTheme()
 		QFile target_file(toqstr(file_path));
 		if (!target_file.exists() || wantToOverwrite()) {
 			saveExportThemeCommon(toqstr(file_path));
-			cacheAllThemes();
-			selectCurrentTheme(theme_name_);
 			initial_edit_ = true;
 			break;
 		}
@@ -1517,6 +1515,8 @@ void PrefColors::saveExportThemeCommon(QString file_path)
 	}
 	ofs.close();
 	initializeThemesLW();
+	cacheAllThemes();
+	selectCurrentTheme(theme_name_);
 	activatePrefsWindow(form_);
 }
 
