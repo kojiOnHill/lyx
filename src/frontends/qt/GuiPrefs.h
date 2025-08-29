@@ -270,6 +270,7 @@ public:
 
 private Q_SLOTS:
 	void onColorsTVClicked(const QModelIndex index);
+	void onRejected();
 	void selectionChanged(const QItemSelection &selected,
 	                      const QItemSelection &deselected);
 	bool resetAllColor();

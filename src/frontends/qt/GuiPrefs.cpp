@@ -1036,9 +1036,10 @@ PrefColors::PrefColors(GuiPreferences * form)
 
 	// End initialization
 
+	connect(form_, SIGNAL(rejected()),
+	        this, SLOT(onRejected()));
 	connect(autoapplyCB, SIGNAL(toggled(bool)),
 	        this, SLOT(changeAutoapply()));
-
 	connect(bothColorResetPB, SIGNAL(clicked()),
 	        this, SLOT(resetColors()));
 	connect(clearFilterPB, SIGNAL(clicked()),
@@ -1119,6 +1120,12 @@ void PrefColors::updateRC(LyXRC const & rc)
 
 	syscolorsCB->setChecked(rc.use_system_colors);
 	colorsTV->update();
+}
+
+
+void PrefColors::onRejected()
+{
+	initializeThemes();
 }
 
 
