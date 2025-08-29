@@ -2436,7 +2436,12 @@ docstring const LaTeXFeatures::getTClassI18nPreamble(bool use_babel,
 						use_polyglossia, false));
 			for (lang_it lit = lbeg; lit != lend; ++lit) {
 				if (!thmxref.empty())
-					snippets.insert(i18npreamble(thmxref,
+					snippets.insert(i18npreamble("\\addto\\captions$$lang{" + rtrim(thmxref, "\n") + "}\n",
+								     *lit,
+								     buffer().params().encoding(),
+								     use_polyglossia, false));
+				if (!xxref.empty())
+					snippets.insert(i18npreamble("\\addto\\captions$$lang{" + rtrim(xxref, "\n") + "}\n",
 								     *lit,
 								     buffer().params().encoding(),
 								     use_polyglossia, false));
@@ -2501,11 +2506,12 @@ docstring const LaTeXFeatures::getTClassI18nPreamble(bool use_babel,
 							type, name, *lit,
 							buffer().params().encoding(),
 							use_polyglossia));
-					if (!prettyreffloatdefs.empty())
-						snippets.insert(i18npreamble(prettyreffloatdefs,
+					if (!prettyreffloatdefs.empty()) {
+						snippets.insert(i18npreamble("\\addto\\captions$$lang{" + rtrim(prettyreffloatdefs, "\n") + "}\n",
 									     *lit,
 									     buffer().params().encoding(),
 									     use_polyglossia, false));
+					}
 				}
 			}
 		}
