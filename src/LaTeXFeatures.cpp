@@ -2368,8 +2368,6 @@ docstring const LaTeXFeatures::getXRefI18nDefs(Layout const & lay) const
 			ods << "\\newrefformat{" << lay.refprefix << "}{_(Section)~\\ref{#1}}\n";
 		else if (lay.refprefix == "par")
 			ods << "\\newrefformat{par}{_(Paragraph[[Sectioning]])~\\ref{#1}}\n";
-		else if (lay.refprefix == "fn")
-			ods << "\\newrefformat{fn}{_(Footnote)~\\ref{#1}}\n";
 		else if (lay.refprefix == "enu")
 			ods << "\\newrefformat{enu}{_(Item[[enumerate]])~\\ref{#1}}\n";
 		if (!ods.str().empty())
@@ -2392,6 +2390,17 @@ docstring const LaTeXFeatures::getXRefI18nDefs(Layout const & lay) const
 		    << "\\def\\RS" << prfxname << "stxt{_(" << lowercase(tnp) << ")~}\n"
 		    << "\\def\\RS" << capitalize(prfxname) << "txt{_(" << tn << ")~}\n"
 		    << "\\def\\RS" << capitalize(prfxname) << "stxt{_(" << tnp << ")~}\n";
+	}
+	return ods.str();
+}
+
+
+docstring const LaTeXFeatures::getXRefI18nDefs(InsetLayout const & lay) const
+{
+	odocstringstream ods;
+	if (params_.xref_package == "prettyref-l7n" && isRequired("prettyref")) {
+		if (lay.refprefix() == "fn")
+			ods << "\\newrefformat{fn}{_(Footnote)~\\ref{#1}}\n";
 	}
 	return ods.str();
 }
@@ -2539,6 +2548,12 @@ docstring const LaTeXFeatures::getTClassI18nPreamble(bool use_babel,
 						buffer().language(),
 						buffer().params().encoding(),
 						use_polyglossia, need_fixedwidth));
+		docstring const xxref = getXRefI18nDefs(it->second);
+		if (!xxref.empty())
+			snippets.insert(i18npreamble(xxref,
+						     buffer().language(),
+						     buffer().params().encoding(),
+						     use_polyglossia, false));
 		// commands for language changing (for multilanguage documents)
 		if ((use_babel || use_polyglossia) && !UsedLanguages_.empty()) {
 			snippets.insert(i18npreamble(
@@ -2546,12 +2561,18 @@ docstring const LaTeXFeatures::getTClassI18nPreamble(bool use_babel,
 						buffer().language(),
 						buffer().params().encoding(),
 						use_polyglossia, need_fixedwidth));
-			for (lang_it lit = lbeg; lit != lend; ++lit)
+			for (lang_it lit = lbeg; lit != lend; ++lit) {
 				snippets.insert(i18npreamble(
 						it->second.babelpreamble(),
 						*lit,
 						buffer().params().encoding(),
 						use_polyglossia, need_fixedwidth));
+				if (!xxref.empty())
+					snippets.insert(i18npreamble("\\addto\\captions$$lang{" + rtrim(xxref, "\n") + "}\n",
+							*lit,
+							buffer().params().encoding(),
+							use_polyglossia, false));
+			}
 		}
 	}
 
