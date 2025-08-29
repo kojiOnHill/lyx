@@ -346,7 +346,7 @@ private:
 	void initializeColorsTV();
 	/// Find a theme name of the current color set and indicates it in themesLW
 	/// if there is a match.
-	void selectCurrentTheme(QString theme_name_en);
+	void selectCurrentTheme(QString theme_name_en, bool user_theme_only = false);
 	///
 	void cacheAllThemes();
 	///

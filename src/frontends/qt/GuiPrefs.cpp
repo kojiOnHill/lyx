@@ -1094,8 +1094,7 @@ void PrefColors::applyRC(LyXRC & rc) const
 	LyXRC oldrc = rc;
 
 	for (unsigned int i = 0; i < lcolors_.size(); ++i)
-		if (curcolors_[i] != newcolors_[i])
-			form_->setColor(lcolors_[i], newcolors_[i]);
+		form_->setColor(lcolors_[i], newcolors_[i]);
 	rc.use_system_colors = syscolorsCB->isChecked();
 
 	if (toqstr(rc.ui_theme) != theme_name_)
@@ -1556,13 +1555,20 @@ void PrefColors::importTheme()
 	// copy to user theme dir
 	import_file.copy(toqstr(target_file_path));
 
+	// list up all theme files in the themes directory in themesLW
 	initializeThemesLW();
+	// cache all themes in themesLW
+	cacheAllThemes();
+	// update theme indicator
+	selectCurrentTheme(theme_name_, true);
+
 	ColorNamePairs colors = readTheme(FileName(fromqstr(file_path)));
-	loadImportThemeCommon(colors);
 	theme_colors_ = newcolors_ = colors;
 	theme_filename_ = onlyFileName(toqstr(target_file_path));
 	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
 	initial_edit_ = true;
+
+	loadImportThemeCommon(colors);
 
 	return;
 }
@@ -1674,11 +1680,12 @@ void PrefColors::removeTheme()
 	msgBox.setDefaultButton(QMessageBox::No);
 
 	if (msgBox.exec() == QMessageBox::Yes) {
+		dismissCurrentTheme();
 		QFile file(theme_fullpaths_[cur_row]);
 		file.remove();
 		theme_name_ = "";
 		initializeThemesLW();
-		dismissCurrentTheme();
+		cacheAllThemes();
 		initial_edit_ = true;
 	}
 }
@@ -1774,10 +1781,10 @@ void PrefColors::initializeThemesLW()
 }
 
 
-void PrefColors::selectCurrentTheme(QString theme_name_en)
+void PrefColors::selectCurrentTheme(QString theme_name_en, bool user_theme_only)
 {
 	// note that themesLW->findItems() matches translated theme name
-	// whereas theme_name contains untranslated one
+	// whereas theme_name_en contains untranslated one
 	ThemeNameDic::iterator dic_it = theme_name_dic_.find(theme_name_en);
 	QString translated_name;
 	if (dic_it != theme_name_dic_.end())
@@ -1787,10 +1794,19 @@ void PrefColors::selectCurrentTheme(QString theme_name_en)
 
 	QList<QListWidgetItem *> selected_items =
 	        themesLW->findItems(translated_name, Qt::MatchExactly);
-	if (!selected_items.empty())
-		themesLW->setCurrentItem(selected_items.first());
-	else
+	if (selected_items.empty())
 		dismissCurrentTheme();
+	else if (user_theme_only) {
+		bool found = false;
+		for (auto item : std::as_const(selected_items))
+			if (isSysThemes_[themesLW->row(item)] == false) {
+				themesLW->setCurrentItem(item);
+				found = true;
+				break;
+			}
+		LATTEST(found);
+	} else
+		themesLW->setCurrentItem(selected_items.first());
 }
 
 
