@@ -46,7 +46,7 @@ function add_suffix () {
 #
 # These tests take a long time. They often timeout with the '600' used below.
 # If run sequentially, they often complete faster and do not timeout.
-lyx_ctests_long_time='ru/UserGuide_(dvi3|pdf4|pdf5)_systemF'
+lyx_ctests_long_time='ru/UserGuide_(dvi3|pdf4|pdf5)_systemF|export/doc/ja/UserGuide_pdf5_systemF'
 #
 # These tests require a lot of RAM (e.g., 10 GB for each one), so it is best not
 # to run them in parallel.
