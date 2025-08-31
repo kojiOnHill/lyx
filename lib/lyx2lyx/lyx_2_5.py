@@ -2706,6 +2706,29 @@ def convert_reflists(document):
             document.body[k] = document.body[k].replace(",", ".")
         i += 1
 
+    # Same for mathed
+    i = 0
+    regexp = re.compile(r"(.*\\)(label{|[a-zA-Z]*ref{)([^}]+\,[^}]+)(}.*)")
+    while True:
+        i = find_token(document.body, "\\begin_inset Formula", i)
+        if i == -1:
+            break
+        j = find_end_of_inset(document.body, i)
+        if j == -1:
+            document.warning("Can't find end of Formula inset at line %d!!" % (i))
+            i += 1
+            continue
+
+        k = find_re(document.body, regexp, i, j)
+        if k != -1:
+            while True:
+                m = regexp.match(document.body[k])
+                if not m:
+                    break
+                # replace comma by dot
+                document.body[k] = m.group(1) + m.group(2) + m.group(3).replace(",", ".") + m.group(4)
+        i += 1
+
 
 def revert_reflists(document):
     "Reverts crossref lists and ranges to ERT"
