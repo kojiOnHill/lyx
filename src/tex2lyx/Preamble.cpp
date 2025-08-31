@@ -454,7 +454,7 @@ vector<string> split_options(string const & input)
  * The found option is also removed from \p options.
  */
 string process_keyval_opt(vector<string> & options, string const & name,
-			  string const defval = string())
+                          string const & defval = empty_string())
 {
 	for (size_t i = 0; i < options.size(); ++i) {
 		vector<string> option;
@@ -480,7 +480,7 @@ string const tripleToString(double const a, double const b, double const c)
 }
 
 
-string convert_color_value(string const & model, string const & value) 
+string convert_color_value(string const & model, string const & value)
 {
 	// we attempt to convert color values to rgb
 	// for the formulae, cf. the xcolor manual
