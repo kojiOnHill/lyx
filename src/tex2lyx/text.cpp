@@ -2617,7 +2617,6 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 			ostringstream oss;
 			p.pushPosition();
 			parse_text(p, oss, FLAG_END, outer, newcontext);
-			string const save_extrastuff = parent_context.extra_stuff;
 			if (newcontext.has_custom_mp_environment) {
 				parent_context.extra_stuff.erase();
 				parent_context.check_layout(os);
@@ -2625,7 +2624,6 @@ void parse_environment(Parser & p, ostream & os, bool outer,
 				p.popPosition();
 				parse_text(p, os, FLAG_END, outer, parent_context);
 				output_ert_inset(os, "\\end{" + name + "}", parent_context);
-				parent_context.extra_stuff = save_extrastuff;
 			} else {
 				p.popPosition();
 				parse_text(p, os, FLAG_END, outer, parent_context);
