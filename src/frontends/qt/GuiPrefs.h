@@ -266,7 +266,7 @@ public:
 
 	void applyRC(LyXRC & rc) const override;
 	void updateRC(LyXRC const & rc) override;
-	QColor getCurrentColor(ColorCode color_code, bool is_dark_mode);
+	QColor getCurrentColor(ColorCode color_code, bool is_dark_mode) const;
 
 private Q_SLOTS:
 	void onColorsTVClicked(const QModelIndex index);
@@ -351,7 +351,7 @@ private:
 	///
 	void cacheAllThemes();
 	///
-	ColorNamePairs readTheme(support::FileName fullpath);
+	ColorNamePairs readTheme(support::FileName fullpath, LyXRC rc) const;
 	/// Common algorithm between saving and exporting
 	void saveExportThemeCommon(QString file_path);
 	/// Common algorithm between loading and importing.

@@ -1569,7 +1569,7 @@ void PrefColors::importTheme()
 	// update theme indicator
 	selectCurrentTheme(theme_name_, true);
 
-	ColorNamePairs colors = readTheme(FileName(fromqstr(file_path)));
+	ColorNamePairs colors = readTheme(FileName(fromqstr(file_path)), form_->rc());
 	theme_colors_ = newcolors_ = colors;
 	theme_filename_ = onlyFileName(toqstr(target_file_path));
 	theme_name_ = removeExtension(theme_filename_).replace('_', ' ');
@@ -1604,24 +1604,22 @@ void PrefColors::cacheAllThemes()
 	guiApp->setOverrideCursor(QCursor(Qt::WaitCursor));
 	themes_cache_.clear();
 	theme_names_cache_.clear();
-	// readTheme() changes form_->rc()
-	LyXRC origrc = form_->rc();
+	LyXRC dummyrc;
 	for (int id = 0; id < themesLW->count(); ++id) {
 		FileName const fn(fromqstr(theme_fullpaths_[id]));
-		themes_cache_.push_back(readTheme(fn));
+		themes_cache_.push_back(readTheme(fn, dummyrc));
 		theme_names_cache_.push_back(themesLW->item(id)->text());
 	}
-	form_->rc() = origrc;
 	guiApp->restoreOverrideCursor();
 }
 
 
-ColorNamePairs PrefColors::readTheme(FileName fullpath)
+ColorNamePairs PrefColors::readTheme(FileName fullpath, LyXRC rc) const
 {
 	ColorNamePairs colors;
 	colors.resize(lcolors_.size());
 	// read RC colors to extern ColorSet lcolor
-	form_->rc().read(fullpath, true);
+	rc.read(fullpath, true);
 	for (size_type row = 0; row < lcolors_.size(); ++row) {
 		// get colors from extern lcolor
 		colors[size_t(row)] =
@@ -1931,7 +1929,7 @@ void PrefColors::initializeColorsTV()
 }
 
 
-QColor PrefColors::getCurrentColor(ColorCode color_code, bool is_dark_mode)
+QColor PrefColors::getCurrentColor(ColorCode color_code, bool is_dark_mode) const
 {
 	return lcolor.getX11HexName(color_code, is_dark_mode).c_str();
 }
