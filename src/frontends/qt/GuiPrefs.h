@@ -266,7 +266,7 @@ public:
 
 	void applyRC(LyXRC & rc) const override;
 	void updateRC(LyXRC const & rc) override;
-	QColor getCurrentColor(ColorCode color_code, bool is_dark_mode) const;
+	QColor getCurrentColor(ColorCode color_code, bool const is_dark_mode) const;
 
 private Q_SLOTS:
 	void onColorsTVClicked(const QModelIndex index);
@@ -316,9 +316,9 @@ private:
 	void setEditButtonStatus();
 	/// Get default color of current theme at (row, column) in the colorsTV.
 	/// If theme_colors_ is empty, this returns an invalid QColor.
-	QColor getCurrentThemeColor(int const &row, bool const &is_dark_color);
+	QColor getCurrentThemeColor(int const &row, bool const &is_dark_color) const;
 	///
-	ColorPair getCurrentThemeColors(int const &row);
+	ColorPair getCurrentThemeColors(int const &row) const;
 	/// Find a theme name of the current color set and indicates it in themesLW
 	/// if there is a match.
 	void findThemeFromColorSet();

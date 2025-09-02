@@ -1929,14 +1929,14 @@ void PrefColors::initializeColorsTV()
 }
 
 
-QColor PrefColors::getCurrentColor(ColorCode color_code, bool is_dark_mode) const
+QColor PrefColors::getCurrentColor(ColorCode color_code, bool const is_dark_mode) const
 {
 	return lcolor.getX11HexName(color_code, is_dark_mode).c_str();
 }
 
 
 QColor PrefColors::getCurrentThemeColor(int const &row,
-                                        bool const &is_dark_color)
+                                        bool const &is_dark_color) const
 {
 	QColor color;
 
@@ -1950,7 +1950,7 @@ QColor PrefColors::getCurrentThemeColor(int const &row,
 }
 
 
-ColorPair PrefColors::getCurrentThemeColors(int const &row)
+ColorPair PrefColors::getCurrentThemeColors(int const &row) const
 {
 	return theme_colors_[row];
 }
