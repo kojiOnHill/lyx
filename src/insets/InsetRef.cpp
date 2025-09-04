@@ -78,16 +78,19 @@ ParamInfo const & InsetRef::findInfo(string const & /* cmdName */)
 {
 	static ParamInfo param_info_;
 	if (param_info_.empty()) {
-		param_info_.add("name", ParamInfo::LATEX_OPTIONAL);
 		param_info_.add("reference", ParamInfo::LATEX_REQUIRED,
 				ParamInfo::HANDLING_ESCAPE);
+		param_info_.add("options", ParamInfo::LATEX_OPTIONAL);
 		param_info_.add("plural", ParamInfo::LYX_INTERNAL);
 		param_info_.add("caps", ParamInfo::LYX_INTERNAL);
 		param_info_.add("noprefix", ParamInfo::LYX_INTERNAL);
 		param_info_.add("nolink", ParamInfo::LYX_INTERNAL);
-		param_info_.add("options", ParamInfo::LYX_INTERNAL);
 		param_info_.add("tuple", ParamInfo::LYX_INTERNAL);
 		param_info_.add("filenames", ParamInfo::LYX_INTERNAL);
+		// FIXME: This is unused as of 2020 (fd6e14414f272)
+		// remove param later (needs file format change,
+		// since InsetCommandParams would assert otherwise)
+		param_info_.add("name", ParamInfo::LYX_INTERNAL);
 	}
 	return param_info_;
 }
@@ -650,26 +653,6 @@ void InsetRef::docbook(XMLStream & xs, OutputParams const &) const
 	vector<docstring> labels = getVectorFromString(getParam("reference"));
 	string const & cmd = params().getCmdName();
 
-	// A name is provided, LyX will provide it. This is supposed to be a very rare case.
-	// Link with linkend, as is it within the document (not outside, in which case xlink:href is better suited).
-	docstring const & name = getParam("name");
-	if (!name.empty()) {
-		bool first_iteration = true;
-		for (const docstring & label : labels) {
-			if (!first_iteration) {
-				xs << ", ";
-			}
-			first_iteration = false;
-
-			docstring attr = from_utf8("linkend=\"") + xml::cleanID(label) + from_utf8("\"");
-
-			xs << xml::StartTag("link", to_utf8(attr));
-			xs << name;
-			xs << xml::EndTag("link");
-		}
-		return;
-	}
-
 	// The DocBook processor will generate the name when required.
 	//
 	// The DocBook processor deals with generating the right text,
@@ -922,11 +905,6 @@ void InsetRef::updateBuffer(ParIterator const & it, UpdateType, bool const /*del
 		}
 	}
 
-	if (!buffer().params().isLatex() && !getParam("name").empty()) {
-		label += "||";
-		label += getParam("name");
-	}
-	
 	// The tooltip will be over-written later, in addToToc, if need be.
 	tooltip_ = label;
 	toc_string_ = label;

@@ -274,8 +274,6 @@ string const InsetMathRef::createDialogStr(string const & type) const
 	InsetCommandParams icp(REF_CODE, (type.empty()
 			?  to_ascii(commandname()) : type));
 	icp["reference"] = asString(cell(0));
-	if (!cell(1).empty())
-		icp["name"] = asString(cell(1));
 	return InsetCommand::params2string(icp);
 }
 
@@ -290,8 +288,6 @@ void InsetMathRef::changeTarget(docstring const & target)
 {
 	InsetCommandParams icp(REF_CODE, to_ascii(commandname()));
 	icp["reference"] = target;
-	if (!cell(1).empty())
-		icp["name"] = asString(cell(1));
 	MathData md(buffer_);
 	Buffer & buf = buffer();
 	if (createInsetMath_fromDialogStr(
