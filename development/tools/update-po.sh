@@ -12,9 +12,10 @@ DEBUG="";
 COMMIT="";
 
 # shellcheck disable=SC2086
-while getopts ":cdh" options $ARGS; do
+while getopts ":cCdh" options $ARGS; do
   case $options in
     c)  COMMIT="TRUE";;
+    C)  COMMIT="TRUE";;
     d)  DEBUG="echo";;
     h)  echo "update-po.sh [-c] [-d]"; 
         echo "-c: Commit any changes we find.";
@@ -83,7 +84,7 @@ fi
 
 # make sure things are clean
 rm -f i18n.inc;
-svn revert "$FARM/$I18NFILE";
+# git checkout "$FARM/$I18NFILE";
 
 echo Running make i18n.inc...
 make i18n.inc  >/dev/null 2>&1;
@@ -91,7 +92,7 @@ if [ -n "$TRUNK" ]; then
   mv -f i18n.inc i18n_trunk.inc
 fi
 
-if diff -w -q "$I18NFILE $FARM/$I18NFILE" >/dev/null 2>&1; then
+if diff -w -q "$I18NFILE" "$FARM/$I18NFILE" >/dev/null 2>&1; then
   echo No string differences found.
   git checkout ./*.po ./*.gmo;
   exit 0;
@@ -100,7 +101,7 @@ fi
 # So there are differences.
 if [ -z "$COMMIT" ]; then
   echo "Differences found!";
-  diff -wu "$FARM/$I18NFILE $I18NFILE" | less;
+  diff -wu "$FARM/$I18NFILE" "$I18NFILE" | less;
   git checkout ./*.po ./*.gmo;
   exit 0;
 fi
