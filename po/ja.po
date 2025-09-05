@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lyx-japanese\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-09-04 10:45+0900\n"
+"POT-Creation-Date: 2025-09-05 07:35+0200\n"
 "PO-Revision-Date: 2025-09-04 10:50+0900\n"
 "Last-Translator: Koji Yokota <yokota@lyx.org>\n"
 "Language-Team: Japanese\n"
@@ -2352,8 +2352,8 @@ msgstr "リンク型"
 
 #: src/frontends/qt/ui/HyperlinkUi.ui:136
 msgid ""
-"Link to the web or any other target with an \"authority\" component "
-"(i.e., :// in the URI)"
+"Link to the web or any other target with an \"authority\" component (i."
+"e., :// in the URI)"
 msgstr ""
 "ウェブやその他のターゲットに「オーソリティ」要素(URIにおける://の直後部分)を"
 "リンク"
@@ -3594,8 +3594,8 @@ msgstr "mml"
 
 #: src/frontends/qt/ui/OutputUi.ui:604 src/frontends/qt/ui/OutputUi.ui:622
 msgid ""
-"Scaling factor for images that are generated for some LaTeX constructs "
-"(e.g., math formulae) in non-LaTeX output."
+"Scaling factor for images that are generated for some LaTeX constructs (e."
+"g., math formulae) in non-LaTeX output."
 msgstr ""
 "非LaTeX出力において数式のようなLaTeX要素を表すために生成された画像の伸縮因子"
 
@@ -5484,7 +5484,7 @@ msgid "Selected &Labels:"
 msgstr "選択済みラベル(&L)："
 
 #: src/frontends/qt/ui/RefUi.ui:144 lib/layouts/econsocart.layout:422
-#: lib/layouts/econsocart.layout:441 src/insets/InsetRef.cpp:1084
+#: lib/layouts/econsocart.layout:441 src/insets/InsetRef.cpp:1062
 msgid "Label"
 msgstr "ラベル"
 
@@ -8028,7 +8028,7 @@ msgstr "IEEE Transactions"
 #: lib/layouts/slides.layout:61 lib/layouts/stdclass.inc:28
 #: lib/layouts/stdinsets.inc:771 lib/layouts/stdletter.inc:12
 #: lib/layouts/svcommon.inc:26 lib/layouts/tufte-book.layout:35
-#: src/insets/InsetRef.cpp:1076
+#: src/insets/InsetRef.cpp:1054
 msgid "Standard"
 msgstr "標準"
 
@@ -13396,8 +13396,8 @@ msgstr ""
 "付けます．"
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:29
-#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:1077
-#: src/mathed/InsetMathRef.cpp:426
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:1055
+#: src/mathed/InsetMathRef.cpp:410
 msgid "Equation"
 msgstr "数式"
 
@@ -13704,7 +13704,7 @@ msgid "Size the photo is resized to"
 msgstr "写真を合わせる寸法"
 
 #: lib/layouts/europecv.layout:185 src/frontends/qt/GuiDocument.cpp:126
-#: src/insets/InsetRef.cpp:1078
+#: src/insets/InsetRef.cpp:1056
 msgid "Page"
 msgstr "ページ"
 
@@ -15716,8 +15716,8 @@ msgid ""
 msgstr ""
 "動的レポート生成用にRでknitrパッケージを使用します．このモジュールを機能させ"
 "るには，install.packages('knitr') のようにして，Rパッケージを導入してくださ"
-"い．これは，R >= 2.14.1 に依存します．詳細については http：//"
-"yihui.github.com/knitr をご覧ください"
+"い．これは，R >= 2.14.1 に依存します．詳細については http：//yihui.github."
+"com/knitr をご覧ください"
 
 #: lib/layouts/knitr.module:14 lib/layouts/litinsets.inc:12
 #: lib/layouts/sweave.module:14
@@ -32428,12 +32428,12 @@ msgid "LyX Archive (tar.gz)"
 msgstr "LyX書庫(tar.gz)"
 
 #: lib/examples/Articles:0
-msgid "Game 2"
-msgstr "ゲーム２"
-
-#: lib/examples/Articles:0
 msgid "Game 1"
 msgstr "ゲーム１"
+
+#: lib/examples/Articles:0
+msgid "Game 2"
+msgstr "ゲーム２"
 
 #: lib/examples/Articles:0
 msgid "Example (LyXified)"
@@ -32449,6 +32449,30 @@ msgid "External Material"
 msgstr "外部素材"
 
 #: lib/examples/Articles:0
+msgid "XY-Figure"
+msgstr "XY-Figure"
+
+#: lib/examples/Articles:0
+msgid "Minted Listings"
+msgstr "Mintedプログラムリスト"
+
+#: lib/examples/Articles:0
+msgid "Instant Preview"
+msgstr "自動プレビュー"
+
+#: lib/examples/Articles:0
+msgid "XY-Pic"
+msgstr "XY-Pic"
+
+#: lib/examples/Articles:0
+msgid "Computer Algebra Systems"
+msgstr "コンピュータ代数システム"
+
+#: lib/examples/Articles:0
+msgid "Minted File Listing"
+msgstr "Mintedプログラムリストファイル"
+
+#: lib/examples/Articles:0
 msgid "Itemize Bullets"
 msgstr "箇条書きのブリット"
 
@@ -32457,56 +32481,28 @@ msgid "Feynman Diagrams"
 msgstr "ファインマン図"
 
 #: lib/examples/Articles:0
-msgid "Instant Preview"
-msgstr "自動プレビュー"
-
-#: lib/examples/Articles:0
-msgid "Minted Listings"
-msgstr "Mintedプログラムリスト"
-
-#: lib/examples/Articles:0
-msgid "Minted File Listing"
-msgstr "Mintedプログラムリストファイル"
-
-#: lib/examples/Articles:0
-msgid "XY-Figure"
-msgstr "XY-Figure"
-
-#: lib/examples/Articles:0
-msgid "Computer Algebra Systems"
-msgstr "コンピュータ代数システム"
-
-#: lib/examples/Articles:0
-msgid "XY-Pic"
-msgstr "XY-Pic"
-
-#: lib/examples/Articles:0
 msgid "Graphics and Insets"
 msgstr "グラフィックと差込枠"
-
-#: lib/examples/Articles:0
-msgid "Mixing Japanese with other Languages (with platex)"
-msgstr "日本語と他言語の混成(platexを使用)"
-
-#: lib/examples/Articles:0
-msgid "Writing Armenian"
-msgstr "アルメニア語の執筆"
-
-#: lib/examples/Articles:0
-msgid "Localization Test (for Developers)"
-msgstr "翻訳テスト(開発者向け)"
 
 #: lib/examples/Articles:0
 msgid "Mixing Japanese with other Languages (with CJKutf8)"
 msgstr "日本語と他言語の混成(CJKutf8を使用)"
 
 #: lib/examples/Articles:0
-msgid "Language Support"
-msgstr "言語サポート"
+msgid "Localization Test (for Developers)"
+msgstr "翻訳テスト(開発者向け)"
 
 #: lib/examples/Articles:0
-msgid "Serial Letter 2"
-msgstr "定期郵便２"
+msgid "Writing Armenian"
+msgstr "アルメニア語の執筆"
+
+#: lib/examples/Articles:0
+msgid "Mixing Japanese with other Languages (with platex)"
+msgstr "日本語と他言語の混成(platexを使用)"
+
+#: lib/examples/Articles:0
+msgid "Language Support"
+msgstr "言語サポート"
 
 #: lib/examples/Articles:0
 msgid "Serial Letter 3"
@@ -32517,12 +32513,12 @@ msgid "Serial Letter 1"
 msgstr "定期郵便１"
 
 #: lib/examples/Articles:0
-msgid "LilyPond Book"
-msgstr "LilyPond Book"
+msgid "Serial Letter 2"
+msgstr "定期郵便２"
 
 #: lib/examples/Articles:0
-msgid "Noweb Listerrors"
-msgstr "Noweb Listerrors"
+msgid "LilyPond Book"
+msgstr "LilyPond Book"
 
 #: lib/examples/Articles:0
 msgid "Multilingual Captions"
@@ -32535,6 +32531,10 @@ msgstr "危険有害性情報・注意書き"
 #: lib/examples/Articles:0
 msgid "Noweb2LyX"
 msgstr "Noweb2LyX"
+
+#: lib/examples/Articles:0
+msgid "Noweb Listerrors"
+msgstr "Noweb Listerrors"
 
 #: lib/examples/Articles:0 src/frontends/qt/GuiDocument.cpp:1896
 msgid "Modules"
@@ -32561,10 +32561,6 @@ msgid "Writing Korean with CJK-ko"
 msgstr "韓国語の執筆(CJK-koを使用)"
 
 #: lib/examples/Articles:0
-msgid "IEEE Transactions Journal"
-msgstr "IEEE Transactions Journal"
-
-#: lib/examples/Articles:0
 msgid "Mathematical Monthly"
 msgstr "Mathematical Monthly"
 
@@ -32573,40 +32569,32 @@ msgid "Springers Global Journal Template (V. 3)"
 msgstr "Springer国際誌ひな型(V. 3)"
 
 #: lib/examples/Articles:0
+msgid "IEEE Transactions Conference"
+msgstr "IEEE Transactions Conference"
+
+#: lib/examples/Articles:0
+msgid "IEEE Transactions Journal"
+msgstr "IEEE Transactions Journal"
+
+#: lib/examples/Articles:0
 msgid "Hebrew Article (KOMA-Script)"
 msgstr "ヘブライ語Article (KOMA-Script)"
 
 #: lib/examples/Articles:0
-msgid "IEEE Transactions Conference"
-msgstr "IEEE Transactions Conference"
+msgid "00 Main File"
+msgstr "00主幹ファイル"
 
 #: lib/examples/Articles:0
 msgid "02 Foreword"
 msgstr "02巻頭言"
 
 #: lib/examples/Articles:0
-msgid "01 Dedication"
-msgstr "01献呈"
+msgid "10 Glossary"
+msgstr "10用語集"
 
 #: lib/examples/Articles:0
-msgid "06 Part"
-msgstr "06部"
-
-#: lib/examples/Articles:0
-msgid "03 Preface"
-msgstr "03序文"
-
-#: lib/examples/Articles:0
-msgid "07 Chapter"
-msgstr "07章"
-
-#: lib/examples/Articles:0
-msgid "10 Solutions"
-msgstr "10解"
-
-#: lib/examples/Articles:0
-msgid "05 Acronym"
-msgstr "05頭字語"
+msgid "09 Appendix"
+msgstr "09付録"
 
 #: lib/examples/Articles:0
 msgid "11 References"
@@ -32617,52 +32605,68 @@ msgid "04 Acknowledgements"
 msgstr "04謝辞"
 
 #: lib/examples/Articles:0
-msgid "09 Glossary"
-msgstr "09用語集"
-
-#: lib/examples/Articles:0
-msgid "08 Appendix"
-msgstr "08付録"
-
-#: lib/examples/Articles:0
-msgid "00 Main File"
-msgstr "00主幹ファイル"
+msgid "08 Author"
+msgstr "08著者"
 
 #: lib/examples/Articles:0
 msgid "06 Acronym"
 msgstr "06頭字語"
 
 #: lib/examples/Articles:0
-msgid "05 Contributor List"
-msgstr "05寄稿者一覧"
+msgid "01 Dedication"
+msgstr "01献呈"
+
+#: lib/examples/Articles:0
+msgid "03 Preface"
+msgstr "03序文"
 
 #: lib/examples/Articles:0
 msgid "07 Part"
 msgstr "07部"
 
 #: lib/examples/Articles:0
-msgid "08 Author"
-msgstr "08著者"
+msgid "05 Contributor List"
+msgstr "05寄稿者一覧"
 
 #: lib/examples/Articles:0
-msgid "09 Appendix"
-msgstr "09付録"
+msgid "09 Glossary"
+msgstr "09用語集"
 
 #: lib/examples/Articles:0
-msgid "10 Glossary"
-msgstr "10用語集"
+msgid "06 Part"
+msgstr "06部"
+
+#: lib/examples/Articles:0
+msgid "05 Acronym"
+msgstr "05頭字語"
+
+#: lib/examples/Articles:0
+msgid "07 Chapter"
+msgstr "07章"
+
+#: lib/examples/Articles:0
+msgid "08 Appendix"
+msgstr "08付録"
+
+#: lib/examples/Articles:0
+msgid "10 Solutions"
+msgstr "10解"
 
 #: lib/examples/Articles:0
 msgid "Econometrica"
 msgstr "Econometrica"
 
 #: lib/examples/Articles:0
+msgid "Simple"
+msgstr "シンプル"
+
+#: lib/examples/Articles:0
 msgid "Colored"
 msgstr "カラー"
 
 #: lib/examples/Articles:0
-msgid "Simple"
-msgstr "シンプル"
+msgid "Main File"
+msgstr "主幹ファイル"
 
 #: lib/examples/Articles:0
 msgid "Chapter 1"
@@ -32673,10 +32677,6 @@ msgid "Chapter 2"
 msgstr "第２章"
 
 #: lib/examples/Articles:0
-msgid "Main File"
-msgstr "主幹ファイル"
-
-#: lib/examples/Articles:0
 msgid "PhD Thesis"
 msgstr "博士論文"
 
@@ -32685,16 +32685,16 @@ msgid "Theses"
 msgstr "学位論文"
 
 #: lib/examples/Articles:0
-msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日本語Article (LuaTeX用標準クラス：縦書き)"
+msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日本語Report (LuaTeX用標準クラス：縦書き)"
 
 #: lib/examples/Articles:0
 msgid "Japanese Book (Standard Class for LuaTeX%2C vertical Writing)"
 msgstr "日本語Book (LuaTeX用標準クラス：縦書き)"
 
 #: lib/examples/Articles:0
-msgid "Japanese Report (Standard Class for LuaTeX%2C vertical Writing)"
-msgstr "日本語Report (LuaTeX用標準クラス：縦書き)"
+msgid "Japanese Article (Standard Class for LuaTeX%2C vertical Writing)"
+msgstr "日本語Article (LuaTeX用標準クラス：縦書き)"
 
 #: lib/tabletemplates/Formal_with_Footline.lyx:0
 msgid "Formal with Footline"
@@ -35513,8 +35513,8 @@ msgstr ""
 
 #: src/LyXRC.cpp:3219
 msgid ""
-"Define how to run chktex. E.g. \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -n30 "
-"-n38\" Refer to the ChkTeX documentation."
+"Define how to run chktex. E.g. \"chktex -n11 -n1 -n3 -n6 -n9 -22 -n25 -n30 -"
+"n38\" Refer to the ChkTeX documentation."
 msgstr ""
 "chktex をどうやって実行するかを指定します．例えば，\"chktex -n11 -n1 -n3 -n6 "
 "-n9 -22 -n25 -n30 -n38\" など．ChkTeX のドキュメントを参照してください．"
@@ -35639,8 +35639,8 @@ msgid ""
 "\"makeindex.sh -m $$lang\"."
 msgstr ""
 "makeindex のオプションを指定する(man makeindex 参照)か，他のコンパイラを選び"
-"ます．例えば，xindy/make-rules を使うときには，コマンド文字列は "
-"\"makeindex.sh -m $$lang\" のようになります．"
+"ます．例えば，xindy/make-rules を使うときには，コマンド文字列は \"makeindex."
+"sh -m $$lang\" のようになります．"
 
 #: src/LyXRC.cpp:3308
 msgid "Define the options of the index program for PLaTeX (Japanese LaTeX)."
@@ -39702,8 +39702,8 @@ msgid ""
 "these files are hidden by default by some file managers."
 msgstr ""
 "これを有効にすると，文書のバックアップはバックアップディレクトリ(%1$s)に生成"
-"されます．バックアップファイルは，フルパス＋ファイル名をファイル名として"
-"「.lyx~」という拡張子を持ちます（例：!mydir!filename.lyx~）．これらのファイル"
+"されます．バックアップファイルは，フルパス＋ファイル名をファイル名として「."
+"lyx~」という拡張子を持ちます（例：!mydir!filename.lyx~）．これらのファイル"
 "は，ファイルマネージャによっては隠しファイルとして扱われることがあります．"
 
 #: src/frontends/qt/GuiPrefs.cpp:3670
@@ -41841,8 +41841,8 @@ msgstr "書誌情報が定義されていません！"
 msgid "+ %1$d more entries."
 msgstr "項目がさらに＋%1$d個あります．"
 
-#: src/insets/InsetCitation.cpp:585 src/insets/InsetRef.cpp:952
-#: src/insets/InsetRef.cpp:1095
+#: src/insets/InsetCitation.cpp:585 src/insets/InsetRef.cpp:930
+#: src/insets/InsetRef.cpp:1073
 msgid "BROKEN: "
 msgstr "破損："
 
@@ -43024,26 +43024,26 @@ msgstr "%1$sテキスト"
 msgid "text%1$s"
 msgstr "テキスト%1$s"
 
-#: src/insets/InsetRef.cpp:432 src/insets/InsetRef.cpp:608
-#: src/insets/InsetRef.cpp:788 src/insets/InsetRef.cpp:812
+#: src/insets/InsetRef.cpp:435 src/insets/InsetRef.cpp:611
+#: src/insets/InsetRef.cpp:771 src/insets/InsetRef.cpp:795
 msgid "[[reference 1]] and [[reference2]]"
 msgstr "および"
 
-#: src/insets/InsetRef.cpp:434 src/insets/InsetRef.cpp:610
-#: src/insets/InsetRef.cpp:790 src/insets/InsetRef.cpp:814
+#: src/insets/InsetRef.cpp:437 src/insets/InsetRef.cpp:613
+#: src/insets/InsetRef.cpp:773 src/insets/InsetRef.cpp:797
 msgid "[[reference 1, ...]], and [[reference n]]"
 msgstr "および"
 
-#: src/insets/InsetRef.cpp:436 src/insets/InsetRef.cpp:612
-#: src/insets/InsetRef.cpp:792 src/insets/InsetRef.cpp:816
+#: src/insets/InsetRef.cpp:439 src/insets/InsetRef.cpp:615
+#: src/insets/InsetRef.cpp:775 src/insets/InsetRef.cpp:799
 msgid "[[reference 1]], [[reference2, ...]]"
 msgstr ", "
 
-#: src/insets/InsetRef.cpp:451
+#: src/insets/InsetRef.cpp:454
 msgid "Invalid label!"
 msgstr "無効なラベルです！"
 
-#: src/insets/InsetRef.cpp:452
+#: src/insets/InsetRef.cpp:455
 #, c-format
 msgid ""
 "The label `%1$s' does not have a prefix (e.g., `sec:'), which is needed for "
@@ -43054,71 +43054,71 @@ msgstr ""
 "れた参照に必要です．\n"
 "LaTeXエラーに嵌まる可能性が高いでしょう．"
 
-#: src/insets/InsetRef.cpp:754
+#: src/insets/InsetRef.cpp:737
 msgid "elsewhere"
 msgstr "他の箇所"
 
-#: src/insets/InsetRef.cpp:1076
+#: src/insets/InsetRef.cpp:1054
 msgid "Ref"
 msgstr "参照"
 
-#: src/insets/InsetRef.cpp:1077
+#: src/insets/InsetRef.cpp:1055
 msgid "EqRef"
 msgstr "数式参照"
 
-#: src/insets/InsetRef.cpp:1078 src/mathed/InsetMathRef.cpp:427
+#: src/insets/InsetRef.cpp:1056 src/mathed/InsetMathRef.cpp:411
 msgid "Page Number"
 msgstr "頁参照"
 
-#: src/insets/InsetRef.cpp:1079 src/mathed/InsetMathRef.cpp:428
+#: src/insets/InsetRef.cpp:1057 src/mathed/InsetMathRef.cpp:412
 msgid "Prefixed Page Number"
 msgstr "個別頁参照"
 
-#: src/insets/InsetRef.cpp:1079
+#: src/insets/InsetRef.cpp:1057
 msgid "PrefPage"
 msgstr "個別頁"
 
-#: src/insets/InsetRef.cpp:1080 src/mathed/InsetMathRef.cpp:429
+#: src/insets/InsetRef.cpp:1058 src/mathed/InsetMathRef.cpp:413
 msgid "Textual Page Number"
 msgstr "叙述的頁参照"
 
-#: src/insets/InsetRef.cpp:1080
+#: src/insets/InsetRef.cpp:1058
 msgid "TextPage"
 msgstr "叙述頁"
 
-#: src/insets/InsetRef.cpp:1081 src/mathed/InsetMathRef.cpp:430
+#: src/insets/InsetRef.cpp:1059 src/mathed/InsetMathRef.cpp:414
 msgid "Standard+Textual Page"
 msgstr "標準＋叙述的頁参照"
 
-#: src/insets/InsetRef.cpp:1081
+#: src/insets/InsetRef.cpp:1059
 msgid "Ref+Text"
 msgstr "参照＋叙述"
 
-#: src/insets/InsetRef.cpp:1082 src/mathed/InsetMathRef.cpp:432
+#: src/insets/InsetRef.cpp:1060 src/mathed/InsetMathRef.cpp:416
 msgid "Reference to Name"
 msgstr "名称の参照"
 
-#: src/insets/InsetRef.cpp:1082
+#: src/insets/InsetRef.cpp:1060
 msgid "NameRef"
 msgstr "名称参照"
 
-#: src/insets/InsetRef.cpp:1083
+#: src/insets/InsetRef.cpp:1061
 msgid "Formatted"
 msgstr "整形済み"
 
-#: src/insets/InsetRef.cpp:1083
+#: src/insets/InsetRef.cpp:1061
 msgid "Format"
 msgstr "整形"
 
-#: src/insets/InsetRef.cpp:1084 src/mathed/InsetMathRef.cpp:433
+#: src/insets/InsetRef.cpp:1062 src/mathed/InsetMathRef.cpp:417
 msgid "Label Only"
 msgstr "ラベルのみ"
 
-#: src/insets/InsetRef.cpp:1177
+#: src/insets/InsetRef.cpp:1155
 msgid "Unknown external file!"
 msgstr "知らない外部ファイルです！"
 
-#: src/insets/InsetRef.cpp:1178
+#: src/insets/InsetRef.cpp:1156
 #, c-format
 msgid ""
 "The label `%1$s' refers to an external file\n"
@@ -43548,47 +43548,47 @@ msgstr "正規表現エディタモード"
 msgid "Cannot apply %1$s here."
 msgstr "ここで%1$sを適用することはできません．"
 
-#: src/mathed/InsetMathRef.cpp:425
+#: src/mathed/InsetMathRef.cpp:409
 msgid "Standard[[mathref]]"
 msgstr "標準"
 
-#: src/mathed/InsetMathRef.cpp:425
+#: src/mathed/InsetMathRef.cpp:409
 msgid "Ref: "
 msgstr "参照："
 
-#: src/mathed/InsetMathRef.cpp:426
+#: src/mathed/InsetMathRef.cpp:410
 msgid "EqRef: "
 msgstr "数式参照："
 
-#: src/mathed/InsetMathRef.cpp:427
+#: src/mathed/InsetMathRef.cpp:411
 msgid "Page: "
 msgstr "頁："
 
-#: src/mathed/InsetMathRef.cpp:428
+#: src/mathed/InsetMathRef.cpp:412
 msgid "PrefPage: "
 msgstr "個別頁："
 
-#: src/mathed/InsetMathRef.cpp:429
+#: src/mathed/InsetMathRef.cpp:413
 msgid "TextPage: "
 msgstr "叙述頁："
 
-#: src/mathed/InsetMathRef.cpp:430
+#: src/mathed/InsetMathRef.cpp:414
 msgid "Ref+Text: "
 msgstr "参照＋叙述："
 
-#: src/mathed/InsetMathRef.cpp:431
+#: src/mathed/InsetMathRef.cpp:415
 msgid "PrettyRef"
 msgstr "装飾参照"
 
-#: src/mathed/InsetMathRef.cpp:431
+#: src/mathed/InsetMathRef.cpp:415
 msgid "FormatRef: "
 msgstr "整形参照："
 
-#: src/mathed/InsetMathRef.cpp:432
+#: src/mathed/InsetMathRef.cpp:416
 msgid "NameRef: "
 msgstr "名称参照："
 
-#: src/mathed/InsetMathRef.cpp:433
+#: src/mathed/InsetMathRef.cpp:417
 msgid "Label Only: "
 msgstr "ラベルのみ: "
 

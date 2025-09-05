@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lyx 2.4\n"
 "Report-Msgid-Bugs-To: lyx-devel@lists.lyx.org\n"
-"POT-Creation-Date: 2025-08-27 10:14+0200\n"
+"POT-Creation-Date: 2025-09-05 07:35+0200\n"
 "PO-Revision-Date: 2025-07-09 01:09-0800\n"
 "Last-Translator: Pavel Sanda <sanda@lyx.org>\n"
 "Language-Team: Czech <LL@li.org>\n"
@@ -153,8 +153,8 @@ msgstr "&Varianta:"
 msgid "Provides available cite style variants."
 msgstr "Možné citační varianty"
 
-#: src/frontends/qt/ui/BiblioUi.ui:121 src/frontends/qt/GuiPrefs.cpp:625
-#: src/frontends/qt/GuiPrefs.cpp:754
+#: src/frontends/qt/ui/BiblioUi.ui:121 src/frontends/qt/GuiPrefs.cpp:626
+#: src/frontends/qt/GuiPrefs.cpp:755
 msgid "Opt&ions:"
 msgstr "Vol&by:"
 
@@ -261,8 +261,8 @@ msgid "Select a processor"
 msgstr "Vybrat generátor"
 
 #: src/frontends/qt/ui/BiblioUi.ui:442 src/frontends/qt/ui/PrefLatexUi.ui:113
-#: src/frontends/qt/ui/PrefLatexUi.ui:229 src/frontends/qt/GuiPrefs.cpp:650
-#: src/frontends/qt/GuiPrefs.cpp:781
+#: src/frontends/qt/ui/PrefLatexUi.ui:229 src/frontends/qt/GuiPrefs.cpp:651
+#: src/frontends/qt/GuiPrefs.cpp:782
 msgid "Op&tions:"
 msgstr "&Možnosti:"
 
@@ -488,7 +488,7 @@ msgstr "Typ vnitřního rámečku"
 #: src/frontends/qt/GuiBox.cpp:339 src/frontends/qt/GuiBox.cpp:549
 #: src/frontends/qt/GuiDocument.cpp:114 src/frontends/qt/GuiGraphics.cpp:593
 #: src/frontends/qt/GuiIndex.cpp:39 src/frontends/qt/GuiMathMatrix.cpp:29
-#: src/frontends/qt/GuiPrefs.cpp:3094 src/frontends/qt/GuiPrefs.cpp:3119
+#: src/frontends/qt/GuiPrefs.cpp:3116 src/frontends/qt/GuiPrefs.cpp:3141
 msgid "None"
 msgstr "Žádné"
 
@@ -768,8 +768,8 @@ msgstr "Přidat &všechny"
 #: src/Buffer.cpp:4872 src/Buffer.cpp:4982 src/LyXVC.cpp:114 src/LyXVC.cpp:309
 #: src/buffer_funcs.cpp:56 src/frontends/qt/GuiBranches.cpp:256
 #: src/frontends/qt/GuiClipboard.cpp:251 src/frontends/qt/GuiDocument.cpp:3058
-#: src/frontends/qt/GuiParagraph.cpp:173 src/frontends/qt/GuiPrefs.cpp:4261
-#: src/frontends/qt/GuiPrefs.cpp:4285 src/frontends/qt/GuiView.cpp:3128
+#: src/frontends/qt/GuiParagraph.cpp:173 src/frontends/qt/GuiPrefs.cpp:4283
+#: src/frontends/qt/GuiPrefs.cpp:4307 src/frontends/qt/GuiView.cpp:3128
 #: src/frontends/qt/GuiView.cpp:3291 src/frontends/qt/GuiView.cpp:3521
 #: src/frontends/qt/GuiView.cpp:3545 src/frontends/qt/GuiView.cpp:3559
 #: src/frontends/qt/GuiView.cpp:3663 src/frontends/qt/GuiView.cpp:3707
@@ -827,8 +827,8 @@ msgstr "Ve&likost:"
 #: src/frontends/qt/GuiDocument.cpp:5206 src/frontends/qt/GuiExternal.cpp:70
 #: src/frontends/qt/GuiGraphics.cpp:67 src/frontends/qt/GuiIndex.cpp:44
 #: src/frontends/qt/GuiIndices.cpp:57 src/frontends/qt/GuiListings.cpp:153
-#: src/frontends/qt/GuiListings.cpp:160 src/frontends/qt/GuiPrefs.cpp:3251
-#: src/frontends/qt/GuiPrefs.cpp:3413 src/frontends/qt/GuiPrefs.cpp:3427
+#: src/frontends/qt/GuiListings.cpp:160 src/frontends/qt/GuiPrefs.cpp:3273
+#: src/frontends/qt/GuiPrefs.cpp:3435 src/frontends/qt/GuiPrefs.cpp:3449
 #: src/frontends/qt/GuiPrintNomencl.cpp:43 src/frontends/qt/GuiTabular.cpp:65
 #: src/frontends/qt/GuiTabular.cpp:66 src/frontends/qt/GuiTabular.cpp:67
 #: src/frontends/qt/GuiTabular.cpp:68 src/frontends/qt/GuiTabularCreate.cpp:102
@@ -1007,7 +1007,7 @@ msgstr "Př&eškrtnutí:"
 msgid "Underlining of text"
 msgstr "Podtržení textu"
 
-#: src/frontends/qt/ui/CharacterUi.ui:251 src/frontends/qt/GuiPrefs.cpp:99
+#: src/frontends/qt/ui/CharacterUi.ui:251 src/frontends/qt/GuiPrefs.cpp:100
 msgid "Language Settings"
 msgstr "Jazyková nastavení"
 
@@ -1023,7 +1023,7 @@ msgstr "&Jazyk:"
 #: lib/layouts/europasscv.layout:441 lib/layouts/europasscv.layout:476
 #: lib/layouts/europasscv.layout:483 lib/layouts/europecv.layout:322
 #: lib/layouts/europecv.layout:328 lib/layouts/moderncv.layout:581
-#: src/frontends/qt/GuiDocument.cpp:1902 src/frontends/qt/GuiPrefs.cpp:3202
+#: src/frontends/qt/GuiDocument.cpp:1902 src/frontends/qt/GuiPrefs.cpp:3224
 #: src/frontends/qt/Menus.cpp:1023
 msgid "Language"
 msgstr "Jazyk"
@@ -1417,7 +1417,7 @@ msgstr "Ulož jako standardní nastavení pro nové dokumenty"
 msgid "Save as Document Defaults"
 msgstr "Uložit jako standardní nastavení dokumentu"
 
-#: src/frontends/qt/ui/ERTUi.ui:38 src/frontends/qt/GuiPrefs.cpp:2063
+#: src/frontends/qt/ui/ERTUi.ui:38 src/frontends/qt/GuiPrefs.cpp:2085
 msgid "Display"
 msgstr "Zobrazení"
 
@@ -2522,8 +2522,8 @@ msgstr "Zde lze nastavit alternativní generátor rejstříku a určit jeho volb
 msgid "Index Generation"
 msgstr "Generování rejstříku"
 
-#: src/frontends/qt/ui/IndicesUi.ui:58 src/frontends/qt/GuiPrefs.cpp:600
-#: src/frontends/qt/GuiPrefs.cpp:726
+#: src/frontends/qt/ui/IndicesUi.ui:58 src/frontends/qt/GuiPrefs.cpp:601
+#: src/frontends/qt/GuiPrefs.cpp:727
 msgid "&Options:"
 msgstr "&Možnosti:"
 
@@ -3519,7 +3519,7 @@ msgstr "Obrázky"
 #: src/frontends/qt/ui/OutputUi.ui:317 lib/layouts/aapaper.layout:63
 #: lib/layouts/egs.layout:720 lib/languages:164
 #: src/frontends/qt/GuiDocument.cpp:1730 src/frontends/qt/GuiErrorList.cpp:47
-#: src/frontends/qt/GuiLog.cpp:246 src/frontends/qt/GuiPrefs.cpp:534
+#: src/frontends/qt/GuiLog.cpp:246 src/frontends/qt/GuiPrefs.cpp:535
 msgid "LaTeX"
 msgstr "LaTeX"
 
@@ -3809,9 +3809,9 @@ msgstr "Dva"
 #: src/frontends/qt/GuiDocument.cpp:1111 src/frontends/qt/GuiDocument.cpp:1197
 #: src/frontends/qt/GuiDocument.cpp:1254 src/frontends/qt/GuiDocument.cpp:1661
 #: src/frontends/qt/GuiHSpace.cpp:50 src/frontends/qt/GuiIndex.cpp:48
-#: src/frontends/qt/GuiPrefs.cpp:708 src/frontends/qt/GuiPrefs.cpp:736
-#: src/frontends/qt/GuiPrefs.cpp:763 src/frontends/qt/GuiPrefs.cpp:3098
-#: src/frontends/qt/GuiPrefs.cpp:3123 src/frontends/qt/GuiPrintNomencl.cpp:49
+#: src/frontends/qt/GuiPrefs.cpp:709 src/frontends/qt/GuiPrefs.cpp:737
+#: src/frontends/qt/GuiPrefs.cpp:764 src/frontends/qt/GuiPrefs.cpp:3120
+#: src/frontends/qt/GuiPrefs.cpp:3145 src/frontends/qt/GuiPrintNomencl.cpp:49
 #: src/insets/InsetInfo.cpp:240 src/insets/InsetInfo.cpp:250
 #: src/insets/InsetInfo.cpp:254 src/insets/InsetInfo.cpp:263
 #: src/insets/InsetInfo.cpp:322 src/insets/InsetInfo.cpp:341
@@ -3950,7 +3950,7 @@ msgid "Reset &All Colors"
 msgstr "V&ynulovat vše"
 
 #: src/frontends/qt/ui/PrefColorsUi.ui:182
-#: src/frontends/qt/GuiApplication.cpp:780 src/frontends/qt/GuiPrefs.h:386
+#: src/frontends/qt/GuiApplication.cpp:780 src/frontends/qt/GuiPrefs.h:387
 msgid "Reset"
 msgstr "Vynulovat"
 
@@ -4025,8 +4025,8 @@ msgstr "Smazat vybraný barevný motiv"
 
 #: src/frontends/qt/ui/PrefColorsUi.ui:479
 #: src/frontends/qt/ui/PrefConvertersUi.ui:300
-#: src/frontends/qt/ui/PrefShortcutsUi.ui:48 src/frontends/qt/GuiPrefs.cpp:3999
-#: src/frontends/qt/GuiPrefs.cpp:4085
+#: src/frontends/qt/ui/PrefShortcutsUi.ui:48 src/frontends/qt/GuiPrefs.cpp:4021
+#: src/frontends/qt/GuiPrefs.cpp:4107
 msgid "Remo&ve"
 msgstr "&Smazat"
 
@@ -4099,7 +4099,7 @@ msgid "Cursor i&ndicator"
 msgstr "I&ndikátor kurzoru"
 
 #: src/frontends/qt/ui/PrefCompletionUi.ui:119
-#: src/frontends/qt/GuiPrefs.cpp:215
+#: src/frontends/qt/GuiPrefs.cpp:216
 msgid "General[[settings]]"
 msgstr "Obecné"
 
@@ -4412,7 +4412,7 @@ msgstr "Skryje dokument"
 msgid "Ask the user"
 msgstr "Zeptat se uživatele"
 
-#: src/frontends/qt/ui/PrefEditUi.ui:26 src/frontends/qt/GuiPrefs.cpp:98
+#: src/frontends/qt/ui/PrefEditUi.ui:26 src/frontends/qt/GuiPrefs.cpp:99
 msgid "Editing"
 msgstr "Editace"
 
@@ -4728,7 +4728,7 @@ msgstr ""
 
 #: src/frontends/qt/ui/PrefLanguageUi.ui:77
 #: src/frontends/qt/GuiDocument.cpp:1107 src/frontends/qt/GuiDocument.cpp:2937
-#: src/frontends/qt/GuiPrefs.cpp:707 src/frontends/qt/GuiPrefs.cpp:735
+#: src/frontends/qt/GuiPrefs.cpp:708 src/frontends/qt/GuiPrefs.cpp:736
 msgid "Automatic"
 msgstr "Automaticky"
 
@@ -5415,7 +5415,7 @@ msgstr ""
 "LaTeX-u v rejstříkových jménech."
 
 #: src/frontends/qt/ui/ProgressViewUi.ui:93
-#: src/frontends/qt/GuiDocument.cpp:1915 src/frontends/qt/GuiPrefs.cpp:100
+#: src/frontends/qt/GuiDocument.cpp:1915 src/frontends/qt/GuiPrefs.cpp:101
 msgid "Output"
 msgstr "Výstup"
 
@@ -5492,7 +5492,7 @@ msgid "Selected &Labels:"
 msgstr "&Vybrané značky:"
 
 #: src/frontends/qt/ui/RefUi.ui:144 lib/layouts/econsocart.layout:422
-#: lib/layouts/econsocart.layout:441 src/insets/InsetRef.cpp:1055
+#: lib/layouts/econsocart.layout:441 src/insets/InsetRef.cpp:1062
 msgid "Label"
 msgstr "Značka"
 
@@ -8040,7 +8040,7 @@ msgstr "IEEE Transactions"
 #: lib/layouts/slides.layout:61 lib/layouts/stdclass.inc:28
 #: lib/layouts/stdinsets.inc:771 lib/layouts/stdletter.inc:12
 #: lib/layouts/svcommon.inc:26 lib/layouts/tufte-book.layout:35
-#: src/insets/InsetRef.cpp:1047
+#: src/insets/InsetRef.cpp:1054
 msgid "Standard"
 msgstr "Standardní"
 
@@ -10556,7 +10556,7 @@ msgstr "Chapter Exercises"
 #: lib/layouts/foils.layout:136 lib/layouts/ijmpc.layout:330
 #: lib/layouts/ijmpc.layout:369 lib/layouts/ijmpd.layout:336
 #: lib/layouts/ijmpd.layout:375 lib/layouts/iucr.layout:281
-#: lib/layouts/linguistics.module:81 lib/layouts/powerdot.layout:290
+#: lib/layouts/linguistics.module:83 lib/layouts/powerdot.layout:290
 #: lib/layouts/powerdot.layout:355 lib/layouts/simplecv.layout:77
 #: lib/layouts/simplecv.layout:115 lib/layouts/stdlists.inc:37
 #: lib/layouts/stdlists.inc:83 lib/layouts/stdlists.inc:130
@@ -10575,7 +10575,7 @@ msgstr "Preambule seznamu"
 #: lib/layouts/foils.layout:137 lib/layouts/ijmpc.layout:331
 #: lib/layouts/ijmpc.layout:370 lib/layouts/ijmpd.layout:337
 #: lib/layouts/ijmpd.layout:376 lib/layouts/iucr.layout:282
-#: lib/layouts/linguistics.module:82 lib/layouts/powerdot.layout:291
+#: lib/layouts/linguistics.module:84 lib/layouts/powerdot.layout:291
 #: lib/layouts/powerdot.layout:356 lib/layouts/simplecv.layout:78
 #: lib/layouts/simplecv.layout:116 lib/layouts/stdlists.inc:38
 #: lib/layouts/stdlists.inc:84 lib/layouts/stdlists.inc:131
@@ -10594,7 +10594,7 @@ msgstr "Preambule seznamu"
 #: lib/layouts/foils.layout:138 lib/layouts/ijmpc.layout:332
 #: lib/layouts/ijmpc.layout:371 lib/layouts/ijmpd.layout:338
 #: lib/layouts/ijmpd.layout:377 lib/layouts/iucr.layout:283
-#: lib/layouts/linguistics.module:83 lib/layouts/powerdot.layout:292
+#: lib/layouts/linguistics.module:85 lib/layouts/powerdot.layout:292
 #: lib/layouts/powerdot.layout:357 lib/layouts/simplecv.layout:79
 #: lib/layouts/simplecv.layout:117 lib/layouts/stdlists.inc:39
 #: lib/layouts/stdlists.inc:85 lib/layouts/stdlists.inc:132
@@ -13414,8 +13414,8 @@ msgstr ""
 "např. (2.1)"
 
 #: lib/layouts/eqs-within-sections.module:17 lib/layouts/scrbook.layout:29
-#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:1048
-#: src/mathed/InsetMathRef.cpp:426
+#: lib/layouts/stdcounters.inc:86 src/insets/InsetRef.cpp:1055
+#: src/mathed/InsetMathRef.cpp:410
 msgid "Equation"
 msgstr "Rovnice"
 
@@ -13722,7 +13722,7 @@ msgid "Size the photo is resized to"
 msgstr "Size the photo is resized to"
 
 #: lib/layouts/europecv.layout:185 src/frontends/qt/GuiDocument.cpp:126
-#: src/insets/InsetRef.cpp:1049
+#: src/insets/InsetRef.cpp:1056
 msgid "Page"
 msgstr "Stránka"
 
@@ -15890,7 +15890,7 @@ msgid ""
 "options)."
 msgstr "Čárkami oddělený seznam voleb (viz dokumentace LiLyPondu)."
 
-#: lib/layouts/linguistics.module:2 lib/layouts/linguistics.module:64
+#: lib/layouts/linguistics.module:2 lib/layouts/linguistics.module:66
 #: lib/examples/Articles:0
 msgid "Linguistics"
 msgstr "Lingvistika"
@@ -15913,439 +15913,439 @@ msgstr "Číslovaný příklad (víceřádkový)"
 msgid "(\\theequation)"
 msgstr "(\\theequation)"
 
-#: lib/layouts/linguistics.module:21 lib/layouts/linguistics.module:29
+#: lib/layouts/linguistics.module:21 lib/layouts/linguistics.module:30
 msgid "##"
 msgstr "##"
 
-#: lib/layouts/linguistics.module:26 lib/layouts/linguistics.module:109
+#: lib/layouts/linguistics.module:27 lib/layouts/linguistics.module:111
 msgid "Subexample"
 msgstr "Podpříklad"
 
-#: lib/layouts/linguistics.module:28
+#: lib/layouts/linguistics.module:29
 msgid "(\\theequation) (\\alph{subexamplei})"
 msgstr "(\\theequation) (\\alph{subexamplei})"
 
-#: lib/layouts/linguistics.module:37
+#: lib/layouts/linguistics.module:39
 msgid "Numbered Example (multiline)"
 msgstr "Číslovaný příklad (víceřádkový)"
 
-#: lib/layouts/linguistics.module:59
+#: lib/layouts/linguistics.module:61
 msgid "Example options"
 msgstr "Volby příkladu"
 
-#: lib/layouts/linguistics.module:60
+#: lib/layouts/linguistics.module:62
 msgid "Examples options|s"
 msgstr "Volby příkladu|o"
 
-#: lib/layouts/linguistics.module:61
+#: lib/layouts/linguistics.module:63
 msgid "Add examples options here"
 msgstr "Zde vložte volby příkladu"
 
-#: lib/layouts/linguistics.module:73
+#: lib/layouts/linguistics.module:75
 msgid "Numbered Examples (consecutive)"
 msgstr "Číslovaný příklad (nepřetržitý)"
 
-#: lib/layouts/linguistics.module:91
+#: lib/layouts/linguistics.module:93
 msgid "Judgment|J"
 msgstr "Úsudek|d"
 
-#: lib/layouts/linguistics.module:92
+#: lib/layouts/linguistics.module:94
 msgid "Grammaticality judgment marker"
 msgstr "Značka gramatického úsudku"
 
-#: lib/layouts/linguistics.module:97
+#: lib/layouts/linguistics.module:99
 msgid "Custom Numbering|s"
 msgstr "Vlastní číslování|l"
 
-#: lib/layouts/linguistics.module:98
+#: lib/layouts/linguistics.module:100
 msgid "Customize the numeration"
 msgstr "Přizpůsobení číslování"
 
-#: lib/layouts/linguistics.module:116
+#: lib/layouts/linguistics.module:118
 msgid "Subexamples options"
 msgstr "Volby podpříkladu"
 
-#: lib/layouts/linguistics.module:117
+#: lib/layouts/linguistics.module:119
 msgid "Subexamples options|s"
 msgstr "Volby podpříkladu|d"
 
-#: lib/layouts/linguistics.module:118
+#: lib/layouts/linguistics.module:120
 msgid "Add subexamples options here"
 msgstr "Zde vložte volby podpříkladu"
 
-#: lib/layouts/linguistics.module:124
+#: lib/layouts/linguistics.module:126
 msgid "Example Preamble"
 msgstr "Preambule příkladu"
 
-#: lib/layouts/linguistics.module:129
+#: lib/layouts/linguistics.module:131
 msgid "Ex. Preamble"
 msgstr "Preambule př."
 
-#: lib/layouts/linguistics.module:138
+#: lib/layouts/linguistics.module:140
 msgid "Subexample Preamble"
 msgstr "Preambule podpříkladu"
 
-#: lib/layouts/linguistics.module:141
+#: lib/layouts/linguistics.module:143
 msgid "Subex. Preamble"
 msgstr "Preambule podpř."
 
-#: lib/layouts/linguistics.module:148
+#: lib/layouts/linguistics.module:150
 msgid "Example Postamble"
 msgstr "Postambule příkladu"
 
-#: lib/layouts/linguistics.module:151
+#: lib/layouts/linguistics.module:153
 msgid "Ex. Postamble"
 msgstr "Postambule př."
 
-#: lib/layouts/linguistics.module:154
+#: lib/layouts/linguistics.module:156
 msgid "Subexample Postamble"
 msgstr "Postambule podpříkladu"
 
-#: lib/layouts/linguistics.module:157
+#: lib/layouts/linguistics.module:159
 msgid "Subex. Postamble"
 msgstr "Postambule podpř."
 
-#: lib/layouts/linguistics.module:169
+#: lib/layouts/linguistics.module:171
 msgid "Interlinear Gloss (2 Lines)"
 msgstr "Meziřádková glosa (2 řádky)"
 
-#: lib/layouts/linguistics.module:171
+#: lib/layouts/linguistics.module:173
 msgid "Gloss"
 msgstr "Gloss"
 
-#: lib/layouts/linguistics.module:187 lib/layouts/linguistics.module:243
+#: lib/layouts/linguistics.module:189 lib/layouts/linguistics.module:245
 msgid "Gloss options"
 msgstr "Volby glosy"
 
-#: lib/layouts/linguistics.module:188 lib/layouts/linguistics.module:244
+#: lib/layouts/linguistics.module:190 lib/layouts/linguistics.module:246
 msgid "Gloss Options|s"
 msgstr "Volby glosy|g"
 
-#: lib/layouts/linguistics.module:189
+#: lib/layouts/linguistics.module:191
 msgid "Add digloss options here"
 msgstr "Zde přidat možnosti pro di-glosu"
 
-#: lib/layouts/linguistics.module:192 lib/layouts/linguistics.module:193
-#: lib/layouts/linguistics.module:248 lib/layouts/linguistics.module:249
+#: lib/layouts/linguistics.module:194 lib/layouts/linguistics.module:195
+#: lib/layouts/linguistics.module:250 lib/layouts/linguistics.module:251
 msgid "Sentence Comment"
 msgstr "Komentář věty"
 
-#: lib/layouts/linguistics.module:194 lib/layouts/linguistics.module:250
+#: lib/layouts/linguistics.module:196 lib/layouts/linguistics.module:252
 msgid "Add an optional sentence comment here"
 msgstr "Zde přidat volitelný komentář věty"
 
-#: lib/layouts/linguistics.module:198 lib/layouts/linguistics.module:199
+#: lib/layouts/linguistics.module:200 lib/layouts/linguistics.module:201
 msgid "Interlinear Gloss"
 msgstr "Meziřádková glosa"
 
-#: lib/layouts/linguistics.module:200
+#: lib/layouts/linguistics.module:202
 msgid "Add the inter-linear gloss here"
 msgstr "Zde přidat meziřádkovou glosu"
 
-#: lib/layouts/linguistics.module:207 lib/layouts/linguistics.module:208
+#: lib/layouts/linguistics.module:209 lib/layouts/linguistics.module:210
 msgid "Gloss Comment"
 msgstr "Komentář glosy"
 
-#: lib/layouts/linguistics.module:209 lib/layouts/linguistics.module:265
-#: lib/layouts/linguistics.module:280
+#: lib/layouts/linguistics.module:211 lib/layouts/linguistics.module:267
+#: lib/layouts/linguistics.module:282
 msgid "Add an optional gloss comment here"
 msgstr "Zde přidat volitelný komentář glosy"
 
-#: lib/layouts/linguistics.module:213 lib/layouts/linguistics.module:284
+#: lib/layouts/linguistics.module:215 lib/layouts/linguistics.module:286
 msgid "Translation"
 msgstr "Překlad"
 
-#: lib/layouts/linguistics.module:214 lib/layouts/linguistics.module:285
+#: lib/layouts/linguistics.module:216 lib/layouts/linguistics.module:287
 msgid "Gloss Translation"
 msgstr "Překlad glosy"
 
-#: lib/layouts/linguistics.module:215
+#: lib/layouts/linguistics.module:217
 msgid "Add a free translation for the gloss"
 msgstr "Přidat volný překlad glosy"
 
-#: lib/layouts/linguistics.module:225
+#: lib/layouts/linguistics.module:227
 msgid "Interlinear Gloss (3 Lines)"
 msgstr "Meziřádková glosa (3 řádky)"
 
-#: lib/layouts/linguistics.module:227
+#: lib/layouts/linguistics.module:229
 msgid "Tri-Gloss"
 msgstr "Tri-Glosa"
 
-#: lib/layouts/linguistics.module:245
+#: lib/layouts/linguistics.module:247
 msgid "Add trigloss options here"
 msgstr "Zde vložte volby pro tri-glosu"
 
-#: lib/layouts/linguistics.module:254
+#: lib/layouts/linguistics.module:256
 msgid "Interlinear Gloss (1)"
 msgstr "Meziřádková glosa (1)"
 
-#: lib/layouts/linguistics.module:255
+#: lib/layouts/linguistics.module:257
 msgid "Interlinear Gloss (Line 1)|1"
 msgstr "Meziřádková glosa (řádek 1)|1"
 
-#: lib/layouts/linguistics.module:256
+#: lib/layouts/linguistics.module:258
 msgid "Add the first inter-linear gloss line here"
 msgstr "Zde přidat první řádek meziřádkové glosy"
 
-#: lib/layouts/linguistics.module:263
+#: lib/layouts/linguistics.module:265
 msgid "Gloss Comment (1)"
 msgstr "Komentář glosy (1)"
 
-#: lib/layouts/linguistics.module:264
+#: lib/layouts/linguistics.module:266
 msgid "Gloss Comment (Line 1)"
 msgstr "Komentář glosy (řádek 1)"
 
-#: lib/layouts/linguistics.module:269
+#: lib/layouts/linguistics.module:271
 msgid "Interlinear Gloss (2)"
 msgstr "Meziřádková glosa (2)"
 
-#: lib/layouts/linguistics.module:270
+#: lib/layouts/linguistics.module:272
 msgid "Interlinear Gloss (Line 2)|2"
 msgstr "Meziřádková glosa (řádek 2)|2"
 
-#: lib/layouts/linguistics.module:271
+#: lib/layouts/linguistics.module:273
 msgid "Add the second inter-linear gloss line here"
 msgstr "Zde přidat druhý řádek meziřádkové glosy"
 
-#: lib/layouts/linguistics.module:278
+#: lib/layouts/linguistics.module:280
 msgid "Gloss Comment (2)"
 msgstr "Komentář glosy (2)"
 
-#: lib/layouts/linguistics.module:279
+#: lib/layouts/linguistics.module:281
 msgid "Gloss Comment (Line 2)"
 msgstr "Komentář glosy (řádek 2)"
 
-#: lib/layouts/linguistics.module:286
+#: lib/layouts/linguistics.module:288
 msgid "Add a translation for the glosse"
 msgstr "Přidat překlad glosy"
 
-#: lib/layouts/linguistics.module:295
+#: lib/layouts/linguistics.module:297
 msgid "GroupGlossedWords"
 msgstr "SeskupitGlosovanáSlova"
 
-#: lib/layouts/linguistics.module:297
+#: lib/layouts/linguistics.module:299
 msgid "Group"
 msgstr "Skupina"
 
-#: lib/layouts/linguistics.module:314
+#: lib/layouts/linguistics.module:316
 msgid "Structure Tree"
 msgstr "Stromová struktura"
 
-#: lib/layouts/linguistics.module:316
+#: lib/layouts/linguistics.module:318
 msgid "Tree"
 msgstr "Strom"
 
-#: lib/layouts/linguistics.module:344 lib/layouts/linguistics.module:346
+#: lib/layouts/linguistics.module:346 lib/layouts/linguistics.module:348
 msgid "DRS"
 msgstr "RSD"
 
-#: lib/layouts/linguistics.module:347
+#: lib/layouts/linguistics.module:349
 msgid "Discourse Representation Structure|D"
 msgstr "Reprezentace struktury diskurzu|d"
 
-#: lib/layouts/linguistics.module:359 lib/layouts/linguistics.module:506
+#: lib/layouts/linguistics.module:361 lib/layouts/linguistics.module:508
 msgid "Referents"
 msgstr "Referenti"
 
-#: lib/layouts/linguistics.module:360 lib/layouts/linguistics.module:507
+#: lib/layouts/linguistics.module:362 lib/layouts/linguistics.module:509
 msgid "DRS Referents"
 msgstr "RSD referenti"
 
-#: lib/layouts/linguistics.module:361 lib/layouts/linguistics.module:508
+#: lib/layouts/linguistics.module:363 lib/layouts/linguistics.module:510
 msgid "Add the DRS referents (universe) here"
 msgstr "Zde přidat RSD referenty"
 
-#: lib/layouts/linguistics.module:368 lib/layouts/linguistics.module:370
+#: lib/layouts/linguistics.module:370 lib/layouts/linguistics.module:372
 msgid "DRS*"
 msgstr "RSD*"
 
-#: lib/layouts/linguistics.module:371
+#: lib/layouts/linguistics.module:373
 msgid "Discourse Representation Structure (unspaced)|u"
 msgstr "Reprezentace struktury diskurzu (bez mezer)|m"
 
-#: lib/layouts/linguistics.module:376
+#: lib/layouts/linguistics.module:378
 msgid "IfThen-DRS"
 msgstr "KdyžPotom-RSD"
 
-#: lib/layouts/linguistics.module:378 lib/layouts/linguistics.module:379
+#: lib/layouts/linguistics.module:380 lib/layouts/linguistics.module:381
 msgid "If-Then DRS"
 msgstr "KdyžPotom RSD"
 
-#: lib/layouts/linguistics.module:383 lib/layouts/linguistics.module:418
-#: lib/layouts/linguistics.module:462
+#: lib/layouts/linguistics.module:385 lib/layouts/linguistics.module:420
+#: lib/layouts/linguistics.module:464
 msgid "Then-Referents"
 msgstr "Potom-Referenti"
 
-#: lib/layouts/linguistics.module:384 lib/layouts/linguistics.module:393
-#: lib/layouts/linguistics.module:419 lib/layouts/linguistics.module:428
-#: lib/layouts/linguistics.module:463 lib/layouts/linguistics.module:472
+#: lib/layouts/linguistics.module:386 lib/layouts/linguistics.module:395
+#: lib/layouts/linguistics.module:421 lib/layouts/linguistics.module:430
+#: lib/layouts/linguistics.module:465 lib/layouts/linguistics.module:474
 msgid "DRS Then-Referents"
 msgstr "DRS Potom-Referenti"
 
-#: lib/layouts/linguistics.module:385 lib/layouts/linguistics.module:420
-#: lib/layouts/linguistics.module:464
+#: lib/layouts/linguistics.module:387 lib/layouts/linguistics.module:422
+#: lib/layouts/linguistics.module:466
 msgid "Add the DRS then-referents (universe) here"
 msgstr "Zde přidat RSD Potom-referenty"
 
-#: lib/layouts/linguistics.module:392 lib/layouts/linguistics.module:427
-#: lib/layouts/linguistics.module:471
+#: lib/layouts/linguistics.module:394 lib/layouts/linguistics.module:429
+#: lib/layouts/linguistics.module:473
 msgid "Then-Conditions"
 msgstr "Potom-Podmínky"
 
-#: lib/layouts/linguistics.module:394 lib/layouts/linguistics.module:429
-#: lib/layouts/linguistics.module:473
+#: lib/layouts/linguistics.module:396 lib/layouts/linguistics.module:431
+#: lib/layouts/linguistics.module:475
 msgid "Add the DRS then-conditions here"
 msgstr "Zde přidat RSD Potom-podmínky"
 
-#: lib/layouts/linguistics.module:402
+#: lib/layouts/linguistics.module:404
 msgid "Cond-DRS"
 msgstr "Podm-RSD"
 
-#: lib/layouts/linguistics.module:404
+#: lib/layouts/linguistics.module:406
 msgid "Cond. DRS"
 msgstr "Podm. RSD"
 
-#: lib/layouts/linguistics.module:405
+#: lib/layouts/linguistics.module:407
 msgid "Conditional DRS"
 msgstr "Podmínečná RSD"
 
-#: lib/layouts/linguistics.module:409
+#: lib/layouts/linguistics.module:411
 msgid "Cond."
 msgstr "Podm."
 
-#: lib/layouts/linguistics.module:410
+#: lib/layouts/linguistics.module:412
 msgid "DRS Condition"
 msgstr "RSD Podmínka"
 
-#: lib/layouts/linguistics.module:411
+#: lib/layouts/linguistics.module:413
 msgid "Add the DRS condition here"
 msgstr "Zde přidat RSD podmínku"
 
-#: lib/layouts/linguistics.module:437
+#: lib/layouts/linguistics.module:439
 msgid "QDRS"
 msgstr "KRSD"
 
-#: lib/layouts/linguistics.module:439
+#: lib/layouts/linguistics.module:441
 msgid "Dupl. Cond. DRS"
 msgstr "Dupl. Podm. RSD"
 
-#: lib/layouts/linguistics.module:440
+#: lib/layouts/linguistics.module:442
 msgid "Duplex Condition DRS"
 msgstr "Duplexní podmínka RSD"
 
-#: lib/layouts/linguistics.module:444
+#: lib/layouts/linguistics.module:446
 msgid "Quant."
 msgstr "Kvant."
 
-#: lib/layouts/linguistics.module:445
+#: lib/layouts/linguistics.module:447
 msgid "DRS Quantifier"
 msgstr "RSD kvantifikátor"
 
-#: lib/layouts/linguistics.module:446
+#: lib/layouts/linguistics.module:448
 msgid "Add the DRS duplex quantifier here"
 msgstr "Zde přidat RSD duplexní kvantifikátor"
 
-#: lib/layouts/linguistics.module:453
+#: lib/layouts/linguistics.module:455
 msgid "Quant. Var."
 msgstr "Kvant. Prom."
 
-#: lib/layouts/linguistics.module:454
+#: lib/layouts/linguistics.module:456
 msgid "DRS Quantifier Variable"
 msgstr "RSD proměnná kvantifikátoru"
 
-#: lib/layouts/linguistics.module:455
+#: lib/layouts/linguistics.module:457
 msgid "Add the DRS duplex quantifier variables here"
 msgstr "Zde přidat RSD duplexní proměnnou kvantifikátoru"
 
-#: lib/layouts/linguistics.module:482
+#: lib/layouts/linguistics.module:484
 msgid "NegDRS"
 msgstr "NegRDS"
 
-#: lib/layouts/linguistics.module:484
+#: lib/layouts/linguistics.module:486
 msgid "Neg. DRS"
 msgstr "Neg. RDS"
 
-#: lib/layouts/linguistics.module:485
+#: lib/layouts/linguistics.module:487
 msgid "Negated DRS"
 msgstr "Negovaná RDS"
 
-#: lib/layouts/linguistics.module:490
+#: lib/layouts/linguistics.module:492
 msgid "SDRS"
 msgstr "VRDS"
 
-#: lib/layouts/linguistics.module:492
+#: lib/layouts/linguistics.module:494
 msgid "Sent. DRS"
 msgstr "Vět. RDS"
 
-#: lib/layouts/linguistics.module:493
+#: lib/layouts/linguistics.module:495
 msgid "DRS with Sentence above"
 msgstr "RDS s Větou výše"
 
-#: lib/layouts/linguistics.module:497
+#: lib/layouts/linguistics.module:499
 msgid "Sentence"
 msgstr "Věta"
 
-#: lib/layouts/linguistics.module:498
+#: lib/layouts/linguistics.module:500
 msgid "DRS Sentence"
 msgstr "RDS věta"
 
-#: lib/layouts/linguistics.module:499
+#: lib/layouts/linguistics.module:501
 msgid "Add the sentence here"
 msgstr "Zde přidat větu."
 
-#: lib/layouts/linguistics.module:520
+#: lib/layouts/linguistics.module:522
 msgid "Expression"
 msgstr "Výraz"
 
-#: lib/layouts/linguistics.module:522
+#: lib/layouts/linguistics.module:524
 msgid "expr."
 msgstr "výraz"
 
-#: lib/layouts/linguistics.module:534
+#: lib/layouts/linguistics.module:536
 msgid "Concepts"
 msgstr "Koncept"
 
-#: lib/layouts/linguistics.module:536
+#: lib/layouts/linguistics.module:538
 msgid "concept"
 msgstr "koncept"
 
-#: lib/layouts/linguistics.module:548
+#: lib/layouts/linguistics.module:550
 msgid "Meaning"
 msgstr "Význam"
 
-#: lib/layouts/linguistics.module:550
+#: lib/layouts/linguistics.module:552
 msgid "meaning"
 msgstr "význam"
 
-#: lib/layouts/linguistics.module:563
+#: lib/layouts/linguistics.module:565
 msgid "Tableaux"
 msgstr "Tablo"
 
-#: lib/layouts/linguistics.module:567
+#: lib/layouts/linguistics.module:569
 msgid "Tableau"
 msgstr "Tablo"
 
-#: lib/layouts/linguistics.module:567
+#: lib/layouts/linguistics.module:569
 msgid "Sub-Tableau"
 msgstr "Podtablo"
 
-#: lib/layouts/linguistics.module:572
+#: lib/layouts/linguistics.module:575
 msgid "List of Tableaux"
 msgstr "Seznam tabel"
 
-#: lib/layouts/linguistics.module:575
+#: lib/layouts/linguistics.module:578
 msgid "Tableau ##"
 msgstr "Tablo ##"
 
-#: lib/layouts/linguistics.module:575
+#: lib/layouts/linguistics.module:578
 msgid "tableau ##"
 msgstr "tablo ##"
 
-#: lib/layouts/linguistics.module:575
+#: lib/layouts/linguistics.module:578
 msgid "Tableaux ##"
 msgstr "Tabla ##"
 
-#: lib/layouts/linguistics.module:575
+#: lib/layouts/linguistics.module:578
 msgid "tableaux ##"
 msgstr "tabla ##"
 
@@ -33787,14 +33787,14 @@ msgstr "Vyhledávat od začátku/konce?"
 
 #: src/BufferView.cpp:1962 src/BufferView.cpp:1973 src/VCBackend.cpp:1519
 #: src/VCBackend.cpp:1523 src/frontends/qt/FindAndReplace.cpp:390
-#: src/frontends/qt/GuiPrefs.cpp:2660 src/lyxfind.cpp:315 src/lyxfind.cpp:342
+#: src/frontends/qt/GuiPrefs.cpp:2682 src/lyxfind.cpp:315 src/lyxfind.cpp:342
 #: src/lyxfind.cpp:362
 msgid "&Yes"
 msgstr "&Ano"
 
 #: src/BufferView.cpp:1962 src/BufferView.cpp:1973 src/VCBackend.cpp:1519
 #: src/VCBackend.cpp:1523 src/frontends/qt/FindAndReplace.cpp:390
-#: src/frontends/qt/GuiPrefs.cpp:2660 src/lyxfind.cpp:315 src/lyxfind.cpp:342
+#: src/frontends/qt/GuiPrefs.cpp:2682 src/lyxfind.cpp:315 src/lyxfind.cpp:342
 #: src/lyxfind.cpp:362
 msgid "&No"
 msgstr "&Ne"
@@ -36207,28 +36207,28 @@ msgstr "Style tabulky"
 msgid "Missing argument"
 msgstr "Chybí argument"
 
-#: src/Text.cpp:5930
+#: src/Text.cpp:5931
 msgid "Invalid argument (number exceeds stack size)!"
 msgstr "Chybný argument (číslo překračuje velikost zásobníku)!"
 
-#: src/Text.cpp:5934
+#: src/Text.cpp:5935
 msgid "Invalid argument (must be a non-negative number)!"
 msgstr "Chybný argument (musí být nezáporné číslo)!"
 
-#: src/Text.cpp:5939 src/Text.cpp:5953
+#: src/Text.cpp:5940 src/Text.cpp:5954
 #, c-format
 msgid "Text properties applied: %1$s"
 msgstr "Použité vlastnosti textu: %1$s"
 
-#: src/Text.cpp:5955
+#: src/Text.cpp:5956
 msgid "Invalid argument of textstyle-update"
 msgstr "Chybný argument pro funkci textstyle-update"
 
-#: src/Text.cpp:6112
+#: src/Text.cpp:6113
 msgid "Path to thesaurus directory not set!"
 msgstr "Cesta ke slovníku tezauru nenastavena!"
 
-#: src/Text.cpp:6113
+#: src/Text.cpp:6114
 msgid ""
 "The path to the thesaurus directory has not been specified.\n"
 "The thesaurus is not functional.\n"
@@ -36239,7 +36239,7 @@ msgstr ""
 "Tezaurus není funkční.\n"
 "Nahlédňete do Uživatelské příručky pro instrukce (sekce 6.15.1)."
 
-#: src/Text.cpp:6239 src/Text.cpp:6250
+#: src/Text.cpp:6240 src/Text.cpp:6251
 msgid "Paragraph layout set"
 msgstr "Nastavení rozvržení odstavce"
 
@@ -36999,7 +36999,7 @@ msgstr "O programu LyX"
 msgid "About %1"
 msgstr "O programu %1"
 
-#: src/frontends/qt/GuiApplication.cpp:773 src/frontends/qt/GuiPrefs.cpp:4401
+#: src/frontends/qt/GuiApplication.cpp:773 src/frontends/qt/GuiPrefs.cpp:4423
 msgid "Preferences"
 msgstr "Nastavení"
 
@@ -38204,7 +38204,7 @@ msgstr "Třída dokumentu"
 msgid "Local Layout"
 msgstr "Lokální rozvržení"
 
-#: src/frontends/qt/GuiDocument.cpp:1903 src/frontends/qt/GuiPrefs.cpp:985
+#: src/frontends/qt/GuiDocument.cpp:1903 src/frontends/qt/GuiPrefs.cpp:986
 msgid "Colors"
 msgstr "Barvy"
 
@@ -39422,189 +39422,189 @@ msgstr "&Zavřít"
 msgid "Phantom Settings"
 msgstr "Nastavení fantómu"
 
-#: src/frontends/qt/GuiPrefs.cpp:97
+#: src/frontends/qt/GuiPrefs.cpp:98
 msgid "Look & Feel"
 msgstr "Vzhled"
 
-#: src/frontends/qt/GuiPrefs.cpp:101
+#: src/frontends/qt/GuiPrefs.cpp:102
 msgid "File Handling"
 msgstr "Obsluha souborů"
 
-#: src/frontends/qt/GuiPrefs.cpp:312
+#: src/frontends/qt/GuiPrefs.cpp:313
 msgid "Keyboard/Mouse"
 msgstr "Klávesnice/myš"
 
-#: src/frontends/qt/GuiPrefs.cpp:444
+#: src/frontends/qt/GuiPrefs.cpp:445
 msgid "Input Completion"
 msgstr "Doplňování"
 
-#: src/frontends/qt/GuiPrefs.cpp:584 src/frontends/qt/GuiPrefs.cpp:730
+#: src/frontends/qt/GuiPrefs.cpp:585 src/frontends/qt/GuiPrefs.cpp:731
 msgid "C&ommand:"
 msgstr "&Příkaz:"
 
-#: src/frontends/qt/GuiPrefs.cpp:609 src/frontends/qt/GuiPrefs.cpp:634
-#: src/frontends/qt/GuiPrefs.cpp:758 src/frontends/qt/GuiPrefs.cpp:785
+#: src/frontends/qt/GuiPrefs.cpp:610 src/frontends/qt/GuiPrefs.cpp:635
+#: src/frontends/qt/GuiPrefs.cpp:759 src/frontends/qt/GuiPrefs.cpp:786
 msgid "Co&mmand:"
 msgstr "&Příkaz:"
 
-#: src/frontends/qt/GuiPrefs.cpp:806
+#: src/frontends/qt/GuiPrefs.cpp:807
 msgid "Screen Fonts"
 msgstr "Fonty na obrazovce"
 
-#: src/frontends/qt/GuiPrefs.cpp:1419
+#: src/frontends/qt/GuiPrefs.cpp:1426
 msgid "Export a color theme"
 msgstr "Export motivu barev"
 
-#: src/frontends/qt/GuiPrefs.cpp:1455
+#: src/frontends/qt/GuiPrefs.cpp:1460
 msgid "Enter the name of the color theme."
 msgstr "Zadejte jméno motivu barev"
 
-#: src/frontends/qt/GuiPrefs.cpp:1456
+#: src/frontends/qt/GuiPrefs.cpp:1461
 msgid "Enter the name of the new color theme to save."
 msgstr "Zadejte jméno nového motivu barev pro uložení."
 
-#: src/frontends/qt/GuiPrefs.cpp:1460
+#: src/frontends/qt/GuiPrefs.cpp:1465
 msgid "Name the color theme"
 msgstr "Pojmenovat motiv barev"
 
-#: src/frontends/qt/GuiPrefs.cpp:1462
+#: src/frontends/qt/GuiPrefs.cpp:1467
 msgid "New theme name"
 msgstr "Nové jméno motivu"
 
-#: src/frontends/qt/GuiPrefs.cpp:1484
+#: src/frontends/qt/GuiPrefs.cpp:1489
 msgid "A user color theme with the same name exists."
 msgstr "Uživatelský motiv s tímto jménem již existuje."
 
-#: src/frontends/qt/GuiPrefs.cpp:1485
+#: src/frontends/qt/GuiPrefs.cpp:1490
 msgid "Do you want to overwrite the theme?"
 msgstr "Chcete tento motiv přepsat?"
 
-#: src/frontends/qt/GuiPrefs.cpp:1526
+#: src/frontends/qt/GuiPrefs.cpp:1533
 msgid "Import a color theme"
 msgstr "Importovat motiv"
 
-#: src/frontends/qt/GuiPrefs.cpp:1645
+#: src/frontends/qt/GuiPrefs.cpp:1657
 msgid "Select a user theme"
 msgstr "Vybrat uživatelský motiv"
 
-#: src/frontends/qt/GuiPrefs.cpp:1646
+#: src/frontends/qt/GuiPrefs.cpp:1658
 msgid "Please select a user theme to remove from the \"Themes\" list menu."
 msgstr "Vyberte uživatelský motiv ke smazání ze seznamu motivů."
 
-#: src/frontends/qt/GuiPrefs.cpp:1658
+#: src/frontends/qt/GuiPrefs.cpp:1670
 msgid "Not a user theme"
 msgstr "Není uživatlským motivem"
 
-#: src/frontends/qt/GuiPrefs.cpp:1659
+#: src/frontends/qt/GuiPrefs.cpp:1671
 msgid "The selected theme is a system theme. It cannot be removed."
 msgstr "Vybraný motiv je systémovým a nemůže být smazán."
 
-#: src/frontends/qt/GuiPrefs.cpp:1669
+#: src/frontends/qt/GuiPrefs.cpp:1681
 msgid "Confirm the removal"
 msgstr "Potvrdit výmaz"
 
-#: src/frontends/qt/GuiPrefs.cpp:1670
+#: src/frontends/qt/GuiPrefs.cpp:1682
 #, c-format
 msgid "Do you really want to remove the theme \"%1$s\"?"
 msgstr "Přejete si opravdu smazat motiv \"%1$s\"?"
 
-#: src/frontends/qt/GuiPrefs.cpp:1798
+#: src/frontends/qt/GuiPrefs.cpp:1820
 msgid "&Export..."
 msgstr "&Export..."
 
-#: src/frontends/qt/GuiPrefs.cpp:1799
+#: src/frontends/qt/GuiPrefs.cpp:1821
 msgid "&Import..."
 msgstr "&Import..."
 
-#: src/frontends/qt/GuiPrefs.cpp:1829
+#: src/frontends/qt/GuiPrefs.cpp:1851
 msgid "Click here to change the color in the light mode"
 msgstr "Klikněte pro změnu barvy ve světlém modu"
 
-#: src/frontends/qt/GuiPrefs.cpp:1831
+#: src/frontends/qt/GuiPrefs.cpp:1853
 msgid "Click here to change the color in the dark mode"
 msgstr "Klikněte pro změnu barvy v tmavém modu"
 
-#: src/frontends/qt/GuiPrefs.cpp:2003
+#: src/frontends/qt/GuiPrefs.cpp:2025
 msgid "Such a color is not found"
 msgstr "Zadaná barva nenalezena"
 
-#: src/frontends/qt/GuiPrefs.cpp:2072
+#: src/frontends/qt/GuiPrefs.cpp:2094
 msgid "No[[bookmarks]]"
 msgstr "Nezobrazovat"
 
-#: src/frontends/qt/GuiPrefs.cpp:2073
+#: src/frontends/qt/GuiPrefs.cpp:2095
 msgid "Inline"
 msgstr "Uvnitř řádky"
 
-#: src/frontends/qt/GuiPrefs.cpp:2074
+#: src/frontends/qt/GuiPrefs.cpp:2096
 msgid "In Margin"
 msgstr "Na okraji"
 
-#: src/frontends/qt/GuiPrefs.cpp:2166
+#: src/frontends/qt/GuiPrefs.cpp:2188
 msgid "Paths"
 msgstr "Cesty"
 
-#: src/frontends/qt/GuiPrefs.cpp:2253
+#: src/frontends/qt/GuiPrefs.cpp:2275
 msgid "Select directory for example files"
 msgstr "Vybrat adresář s příklady"
 
-#: src/frontends/qt/GuiPrefs.cpp:2262
+#: src/frontends/qt/GuiPrefs.cpp:2284
 msgid "Select a document templates directory"
 msgstr "Vybrat adresář se šablonami dokumentů"
 
-#: src/frontends/qt/GuiPrefs.cpp:2271
+#: src/frontends/qt/GuiPrefs.cpp:2293
 msgid "Select a temporary directory"
 msgstr "Vybrat pomocný adresář"
 
-#: src/frontends/qt/GuiPrefs.cpp:2280
+#: src/frontends/qt/GuiPrefs.cpp:2302
 msgid "Select a backups directory"
 msgstr "Vybrat adresář na zálohy"
 
-#: src/frontends/qt/GuiPrefs.cpp:2289
+#: src/frontends/qt/GuiPrefs.cpp:2311
 msgid "Select a document directory"
 msgstr "Vybrat adresář pro dokumenty"
 
-#: src/frontends/qt/GuiPrefs.cpp:2298
+#: src/frontends/qt/GuiPrefs.cpp:2320
 msgid "Set the path to the thesaurus dictionaries"
 msgstr "Nastavit cestu ke slovníkům tezauru"
 
-#: src/frontends/qt/GuiPrefs.cpp:2307
+#: src/frontends/qt/GuiPrefs.cpp:2329
 msgid "Set the path to the Hunspell dictionaries"
 msgstr "Nastavit cesta ke slovníkům pro Hunspell"
 
-#: src/frontends/qt/GuiPrefs.cpp:2316
+#: src/frontends/qt/GuiPrefs.cpp:2338
 msgid "Give a filename for the LyX server pipe"
 msgstr "Jméno souboru pro rouru (pipe) LyX serveru"
 
-#: src/frontends/qt/GuiPrefs.cpp:2329 src/frontends/qt/GuiSpellchecker.cpp:618
+#: src/frontends/qt/GuiPrefs.cpp:2351 src/frontends/qt/GuiSpellchecker.cpp:618
 msgid "Spellchecker"
 msgstr "Kontrola pravopisu"
 
-#: src/frontends/qt/GuiPrefs.cpp:2335
+#: src/frontends/qt/GuiPrefs.cpp:2357
 msgid "Native"
 msgstr "Nativní"
 
-#: src/frontends/qt/GuiPrefs.cpp:2341
+#: src/frontends/qt/GuiPrefs.cpp:2363
 msgid "Aspell"
 msgstr "Aspell"
 
-#: src/frontends/qt/GuiPrefs.cpp:2344
+#: src/frontends/qt/GuiPrefs.cpp:2366
 msgid "Enchant"
 msgstr "Enchant"
 
-#: src/frontends/qt/GuiPrefs.cpp:2347
+#: src/frontends/qt/GuiPrefs.cpp:2369
 msgid "Hunspell"
 msgstr "Hunspell"
 
-#: src/frontends/qt/GuiPrefs.cpp:2420
+#: src/frontends/qt/GuiPrefs.cpp:2442
 msgid "Converters"
 msgstr "Konvertory"
 
-#: src/frontends/qt/GuiPrefs.cpp:2659
+#: src/frontends/qt/GuiPrefs.cpp:2681
 msgid "SECURITY WARNING!"
 msgstr "BEZPEČNOSTNÍ UPOZORNĚNÍ"
 
-#: src/frontends/qt/GuiPrefs.cpp:2659
+#: src/frontends/qt/GuiPrefs.cpp:2681
 msgid ""
 "Unchecking this option has the effect that potentially harmful converters "
 "would be run without asking your permission first. This is UNSAFE and NOT "
@@ -39616,15 +39616,15 @@ msgstr ""
 "doporučeno, pakliže nevíte, co činíte. Přejete si přesto zrušit tuto volbu? "
 "Doporučená a bezpečná odpověď zní NE."
 
-#: src/frontends/qt/GuiPrefs.cpp:2780
+#: src/frontends/qt/GuiPrefs.cpp:2802
 msgid "File Formats"
 msgstr "Formáty souborů"
 
-#: src/frontends/qt/GuiPrefs.cpp:3023 src/frontends/qt/GuiPrefs.cpp:3180
+#: src/frontends/qt/GuiPrefs.cpp:3045 src/frontends/qt/GuiPrefs.cpp:3202
 msgid "Format in use"
 msgstr "Používaný formát"
 
-#: src/frontends/qt/GuiPrefs.cpp:3024
+#: src/frontends/qt/GuiPrefs.cpp:3046
 msgid ""
 "You cannot change a format's short name if the format is used by a "
 "converter. Please remove the converter first."
@@ -39632,64 +39632,64 @@ msgstr ""
 "Nelze měnit krátké jméno formátu pokud je formát používaný konvertorem. "
 "Nejprve smažte konvertor."
 
-#: src/frontends/qt/GuiPrefs.cpp:3096 src/frontends/qt/GuiPrefs.cpp:3121
-#: src/frontends/qt/GuiPrefs.cpp:3419
+#: src/frontends/qt/GuiPrefs.cpp:3118 src/frontends/qt/GuiPrefs.cpp:3143
+#: src/frontends/qt/GuiPrefs.cpp:3441
 msgid "System Default"
 msgstr "Systénový standard"
 
-#: src/frontends/qt/GuiPrefs.cpp:3181
+#: src/frontends/qt/GuiPrefs.cpp:3203
 msgid "Cannot remove a Format used by a Converter. Remove the converter first."
 msgstr "Nelze smazat Formát používaný konvertorem. Nejprve smažte konvertor."
 
-#: src/frontends/qt/GuiPrefs.cpp:3278
+#: src/frontends/qt/GuiPrefs.cpp:3300
 msgid "LyX needs to be restarted!"
 msgstr "Je potřeba restartovat LyX!"
 
-#: src/frontends/qt/GuiPrefs.cpp:3279
+#: src/frontends/qt/GuiPrefs.cpp:3301
 msgid ""
 "The change of user interface language will be fully effective only after a "
 "restart."
 msgstr ""
 "Změna uživatelského rozhraní bude plně aktivní pouze po restartu LyX-u."
 
-#: src/frontends/qt/GuiPrefs.cpp:3379
+#: src/frontends/qt/GuiPrefs.cpp:3401
 msgid "User Interface"
 msgstr "Uživatelské rozhraní"
 
-#: src/frontends/qt/GuiPrefs.cpp:3414
+#: src/frontends/qt/GuiPrefs.cpp:3436
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: src/frontends/qt/GuiPrefs.cpp:3415
+#: src/frontends/qt/GuiPrefs.cpp:3437
 msgid "Classic"
 msgstr "Klasická"
 
-#: src/frontends/qt/GuiPrefs.cpp:3416
+#: src/frontends/qt/GuiPrefs.cpp:3438
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: src/frontends/qt/GuiPrefs.cpp:3420
+#: src/frontends/qt/GuiPrefs.cpp:3442
 msgid "Light Mode"
 msgstr "Světlý mód"
 
-#: src/frontends/qt/GuiPrefs.cpp:3421
+#: src/frontends/qt/GuiPrefs.cpp:3443
 msgid "Dark Mode"
 msgstr "Tmavý mód"
 
-#: src/frontends/qt/GuiPrefs.cpp:3449
+#: src/frontends/qt/GuiPrefs.cpp:3471
 msgid "Restart needed"
 msgstr "Restart aplikace"
 
-#: src/frontends/qt/GuiPrefs.cpp:3450
+#: src/frontends/qt/GuiPrefs.cpp:3472
 msgid ""
 "Resetting the user interface style to 'Default' requires a restart of LyX."
 msgstr "Nastavení uživatelského rozhraní vyžaduje restart LyX-u."
 
-#: src/frontends/qt/GuiPrefs.cpp:3526
+#: src/frontends/qt/GuiPrefs.cpp:3548
 msgid "Document Handling"
 msgstr "Obsluha souborů"
 
-#: src/frontends/qt/GuiPrefs.cpp:3617
+#: src/frontends/qt/GuiPrefs.cpp:3639
 msgid ""
 "If this is checked, a backup of the document is created in the current "
 "working directory. The backup file has the same name but the suffix '.lyx~'. "
@@ -39701,7 +39701,7 @@ msgstr ""
 "implicitně skrývají tyto soubory. Dedikovaný adresář pro tyto zálohy lze "
 "nastavit v panelu 'Cesty'."
 
-#: src/frontends/qt/GuiPrefs.cpp:3623
+#: src/frontends/qt/GuiPrefs.cpp:3645
 #, c-format
 msgid ""
 "If this is checked, a backup of the document is created in the backup "
@@ -39714,64 +39714,64 @@ msgstr ""
 "a jméno s příponou '.lyx~' (např. !adresar!soubor.lyx~). Upozorňujeme, že "
 "někteří správci souborů implicitně skrývají tyto soubory."
 
-#: src/frontends/qt/GuiPrefs.cpp:3648
+#: src/frontends/qt/GuiPrefs.cpp:3670
 msgid "Control"
 msgstr "Ovládání"
 
-#: src/frontends/qt/GuiPrefs.cpp:3759
+#: src/frontends/qt/GuiPrefs.cpp:3781
 msgid "Shortcuts"
 msgstr "Klávesové zkratky"
 
-#: src/frontends/qt/GuiPrefs.cpp:3766
+#: src/frontends/qt/GuiPrefs.cpp:3788
 msgid "Function"
 msgstr "Funkce"
 
-#: src/frontends/qt/GuiPrefs.cpp:3767
+#: src/frontends/qt/GuiPrefs.cpp:3789
 msgid "Shortcut"
 msgstr "Zkratka"
 
-#: src/frontends/qt/GuiPrefs.cpp:3844
+#: src/frontends/qt/GuiPrefs.cpp:3866
 msgid "Cursor, Mouse and Editing Functions"
 msgstr "Kurzor, myš, editační funkce"
 
-#: src/frontends/qt/GuiPrefs.cpp:3848
+#: src/frontends/qt/GuiPrefs.cpp:3870
 msgid "Mathematical Symbols"
 msgstr "Matematické symboly"
 
-#: src/frontends/qt/GuiPrefs.cpp:3852
+#: src/frontends/qt/GuiPrefs.cpp:3874
 msgid "Document and Window"
 msgstr "Dokument a okno"
 
-#: src/frontends/qt/GuiPrefs.cpp:3856
+#: src/frontends/qt/GuiPrefs.cpp:3878
 msgid "Font, Layouts and Textclasses"
 msgstr "Font, Rozvržení a třídy "
 
-#: src/frontends/qt/GuiPrefs.cpp:3860
+#: src/frontends/qt/GuiPrefs.cpp:3882
 msgid "System and Miscellaneous"
 msgstr "Systém, Různé"
 
-#: src/frontends/qt/GuiPrefs.cpp:3997 src/frontends/qt/GuiPrefs.cpp:4057
+#: src/frontends/qt/GuiPrefs.cpp:4019 src/frontends/qt/GuiPrefs.cpp:4079
 msgid "Res&tore"
 msgstr "&Obnovit"
 
-#: src/frontends/qt/GuiPrefs.cpp:4226 src/frontends/qt/GuiPrefs.cpp:4236
-#: src/frontends/qt/GuiPrefs.cpp:4243 src/frontends/qt/GuiPrefs.cpp:4327
+#: src/frontends/qt/GuiPrefs.cpp:4248 src/frontends/qt/GuiPrefs.cpp:4258
+#: src/frontends/qt/GuiPrefs.cpp:4265 src/frontends/qt/GuiPrefs.cpp:4349
 msgid "Failed to create shortcut"
 msgstr "Selhalo vytvoření klávesové zkratky"
 
-#: src/frontends/qt/GuiPrefs.cpp:4227
+#: src/frontends/qt/GuiPrefs.cpp:4249
 msgid "Unknown or invalid LyX function"
 msgstr "Neznámá nebo chybná LyX-funkce"
 
-#: src/frontends/qt/GuiPrefs.cpp:4237
+#: src/frontends/qt/GuiPrefs.cpp:4259
 msgid "This LyX function is hidden and cannot be bound."
 msgstr "Tato funkce LyX-u je skrytá a nelze přiřadit."
 
-#: src/frontends/qt/GuiPrefs.cpp:4244
+#: src/frontends/qt/GuiPrefs.cpp:4266
 msgid "Invalid or empty key sequence"
 msgstr "Chybná nebo prázdná sekvence kláves"
 
-#: src/frontends/qt/GuiPrefs.cpp:4257
+#: src/frontends/qt/GuiPrefs.cpp:4279
 #, c-format
 msgid ""
 "Shortcut `%1$s' is already a prefix for other commands.\n"
@@ -39780,15 +39780,15 @@ msgstr ""
 "Zkratka `%1$s' je již prefixem jiného příkazu.\n"
 "Opravdu chcete toto přiřazení změnit na %2$s?"
 
-#: src/frontends/qt/GuiPrefs.cpp:4260 src/frontends/qt/GuiPrefs.cpp:4284
+#: src/frontends/qt/GuiPrefs.cpp:4282 src/frontends/qt/GuiPrefs.cpp:4306
 msgid "Redefine shortcut?"
 msgstr "Změnit zkratku?"
 
-#: src/frontends/qt/GuiPrefs.cpp:4261 src/frontends/qt/GuiPrefs.cpp:4285
+#: src/frontends/qt/GuiPrefs.cpp:4283 src/frontends/qt/GuiPrefs.cpp:4307
 msgid "&Redefine"
 msgstr "&Změnit"
 
-#: src/frontends/qt/GuiPrefs.cpp:4278
+#: src/frontends/qt/GuiPrefs.cpp:4300
 #, c-format
 msgid ""
 "Shortcut `%1$s' is already bound to %2$s.\n"
@@ -39797,47 +39797,47 @@ msgstr ""
 "Zkratka `%1$s' je již použita pro %2$s.\n"
 "Opravdu chcete toto přiřazení změnit na %3$s?"
 
-#: src/frontends/qt/GuiPrefs.cpp:4328
+#: src/frontends/qt/GuiPrefs.cpp:4350
 msgid "Can not insert shortcut to the list"
 msgstr "Nelze přidat zkratku do seznamu"
 
-#: src/frontends/qt/GuiPrefs.cpp:4360
+#: src/frontends/qt/GuiPrefs.cpp:4382
 msgid "Identity"
 msgstr "Vaše identita"
 
-#: src/frontends/qt/GuiPrefs.h:379
+#: src/frontends/qt/GuiPrefs.h:380
 msgid "Default[[sortkey]]"
 msgstr "Standardní"
 
-#: src/frontends/qt/GuiPrefs.h:379
+#: src/frontends/qt/GuiPrefs.h:380
 msgid "Default[[guiname]]"
 msgstr "Standardní"
 
-#: src/frontends/qt/GuiPrefs.h:380
+#: src/frontends/qt/GuiPrefs.h:381
 msgid "Monochrome[[sortkey]]"
 msgstr "Monochromatický"
 
-#: src/frontends/qt/GuiPrefs.h:380
+#: src/frontends/qt/GuiPrefs.h:381
 msgid "Monochrome[[guiname]]"
 msgstr "Monochromatický"
 
-#: src/frontends/qt/GuiPrefs.h:381
+#: src/frontends/qt/GuiPrefs.h:382
 msgid "Solarized[[sortkey]]"
 msgstr "Solarizovaný"
 
-#: src/frontends/qt/GuiPrefs.h:381
+#: src/frontends/qt/GuiPrefs.h:382
 msgid "Solarized[[guiname]]"
 msgstr "Solarizovaný"
 
-#: src/frontends/qt/GuiPrefs.h:385
+#: src/frontends/qt/GuiPrefs.h:386
 msgid "Light"
 msgstr "Světlý"
 
-#: src/frontends/qt/GuiPrefs.h:385
+#: src/frontends/qt/GuiPrefs.h:386
 msgid "Dark"
 msgstr "Tmavý"
 
-#: src/frontends/qt/GuiPrefs.h:385
+#: src/frontends/qt/GuiPrefs.h:386
 msgid "Object/Element"
 msgstr "Objekt/element"
 
@@ -41851,8 +41851,8 @@ msgstr "Není definována žádná bibliografie!"
 msgid "+ %1$d more entries."
 msgstr "+ %1$d dalších položek."
 
-#: src/insets/InsetCitation.cpp:585 src/insets/InsetRef.cpp:925
-#: src/insets/InsetRef.cpp:1066
+#: src/insets/InsetCitation.cpp:585 src/insets/InsetRef.cpp:930
+#: src/insets/InsetRef.cpp:1073
 msgid "BROKEN: "
 msgstr "NEPLATNÝ: "
 
@@ -43038,26 +43038,26 @@ msgstr "%1$stext"
 msgid "text%1$s"
 msgstr "text%1$s"
 
-#: src/insets/InsetRef.cpp:404 src/insets/InsetRef.cpp:581
-#: src/insets/InsetRef.cpp:761 src/insets/InsetRef.cpp:785
+#: src/insets/InsetRef.cpp:435 src/insets/InsetRef.cpp:611
+#: src/insets/InsetRef.cpp:771 src/insets/InsetRef.cpp:795
 msgid "[[reference 1]] and [[reference2]]"
 msgstr "[[reference 1]] a [[reference2]]"
 
-#: src/insets/InsetRef.cpp:406 src/insets/InsetRef.cpp:583
-#: src/insets/InsetRef.cpp:763 src/insets/InsetRef.cpp:787
+#: src/insets/InsetRef.cpp:437 src/insets/InsetRef.cpp:613
+#: src/insets/InsetRef.cpp:773 src/insets/InsetRef.cpp:797
 msgid "[[reference 1, ...]], and [[reference n]]"
 msgstr "[[reference 1, ...]], a [[reference n]]"
 
-#: src/insets/InsetRef.cpp:408 src/insets/InsetRef.cpp:585
-#: src/insets/InsetRef.cpp:765 src/insets/InsetRef.cpp:789
+#: src/insets/InsetRef.cpp:439 src/insets/InsetRef.cpp:615
+#: src/insets/InsetRef.cpp:775 src/insets/InsetRef.cpp:799
 msgid "[[reference 1]], [[reference2, ...]]"
 msgstr "[[reference 1]], [[reference2, ...]]"
 
-#: src/insets/InsetRef.cpp:424
+#: src/insets/InsetRef.cpp:454
 msgid "Invalid label!"
 msgstr "Neplatný štítek!"
 
-#: src/insets/InsetRef.cpp:425
+#: src/insets/InsetRef.cpp:455
 #, c-format
 msgid ""
 "The label `%1$s' does not have a prefix (e.g., `sec:'), which is needed for "
@@ -43068,71 +43068,71 @@ msgstr ""
 "odkazy s balíčkem prettyref.\n"
 "Pravděpodobně narazíte na chybu LaTeX-u. "
 
-#: src/insets/InsetRef.cpp:727
+#: src/insets/InsetRef.cpp:737
 msgid "elsewhere"
 msgstr "jinde"
 
-#: src/insets/InsetRef.cpp:1047
+#: src/insets/InsetRef.cpp:1054
 msgid "Ref"
 msgstr "Ref"
 
-#: src/insets/InsetRef.cpp:1048
+#: src/insets/InsetRef.cpp:1055
 msgid "EqRef"
 msgstr "RovRef: "
 
-#: src/insets/InsetRef.cpp:1049 src/mathed/InsetMathRef.cpp:427
+#: src/insets/InsetRef.cpp:1056 src/mathed/InsetMathRef.cpp:411
 msgid "Page Number"
 msgstr "Číslo stránky"
 
-#: src/insets/InsetRef.cpp:1050 src/mathed/InsetMathRef.cpp:428
+#: src/insets/InsetRef.cpp:1057 src/mathed/InsetMathRef.cpp:412
 msgid "Prefixed Page Number"
 msgstr "Prefixované číslo stránky"
 
-#: src/insets/InsetRef.cpp:1050
+#: src/insets/InsetRef.cpp:1057
 msgid "PrefPage"
 msgstr "PrefStránky"
 
-#: src/insets/InsetRef.cpp:1051 src/mathed/InsetMathRef.cpp:429
+#: src/insets/InsetRef.cpp:1058 src/mathed/InsetMathRef.cpp:413
 msgid "Textual Page Number"
 msgstr "Odkaz pomocí čísla stránky"
 
-#: src/insets/InsetRef.cpp:1051
+#: src/insets/InsetRef.cpp:1058
 msgid "TextPage"
 msgstr "Strana Textu"
 
-#: src/insets/InsetRef.cpp:1052 src/mathed/InsetMathRef.cpp:430
+#: src/insets/InsetRef.cpp:1059 src/mathed/InsetMathRef.cpp:414
 msgid "Standard+Textual Page"
 msgstr "Standard+Číslo strany"
 
-#: src/insets/InsetRef.cpp:1052
+#: src/insets/InsetRef.cpp:1059
 msgid "Ref+Text"
 msgstr "Ref+Text"
 
-#: src/insets/InsetRef.cpp:1053 src/mathed/InsetMathRef.cpp:432
+#: src/insets/InsetRef.cpp:1060 src/mathed/InsetMathRef.cpp:416
 msgid "Reference to Name"
 msgstr "Odkaz na jméno"
 
-#: src/insets/InsetRef.cpp:1053
+#: src/insets/InsetRef.cpp:1060
 msgid "NameRef"
 msgstr "NameRef"
 
-#: src/insets/InsetRef.cpp:1054
+#: src/insets/InsetRef.cpp:1061
 msgid "Formatted"
 msgstr "Formátovaný"
 
-#: src/insets/InsetRef.cpp:1054
+#: src/insets/InsetRef.cpp:1061
 msgid "Format"
 msgstr "Formát"
 
-#: src/insets/InsetRef.cpp:1055 src/mathed/InsetMathRef.cpp:433
+#: src/insets/InsetRef.cpp:1062 src/mathed/InsetMathRef.cpp:417
 msgid "Label Only"
 msgstr "Pouze značka"
 
-#: src/insets/InsetRef.cpp:1148
+#: src/insets/InsetRef.cpp:1155
 msgid "Unknown external file!"
 msgstr "Neznámý externí soubor!"
 
-#: src/insets/InsetRef.cpp:1149
+#: src/insets/InsetRef.cpp:1156
 #, c-format
 msgid ""
 "The label `%1$s' refers to an external file\n"
@@ -43562,48 +43562,48 @@ msgstr "Editace v módu regulárních výrazů"
 msgid "Cannot apply %1$s here."
 msgstr "Zde nelze použít %1$s."
 
-#: src/mathed/InsetMathRef.cpp:425
+#: src/mathed/InsetMathRef.cpp:409
 msgid "Standard[[mathref]]"
 msgstr "Standardní"
 
-#: src/mathed/InsetMathRef.cpp:425
+#: src/mathed/InsetMathRef.cpp:409
 msgid "Ref: "
 msgstr "Ref: "
 
-#: src/mathed/InsetMathRef.cpp:426
+#: src/mathed/InsetMathRef.cpp:410
 msgid "EqRef: "
 msgstr "RovRef: "
 
-#: src/mathed/InsetMathRef.cpp:427
+#: src/mathed/InsetMathRef.cpp:411
 msgid "Page: "
 msgstr "Stránka: "
 
-#: src/mathed/InsetMathRef.cpp:428
+#: src/mathed/InsetMathRef.cpp:412
 msgid "PrefPage: "
 msgstr "PrefStránka:"
 
-#: src/mathed/InsetMathRef.cpp:429
+#: src/mathed/InsetMathRef.cpp:413
 msgid "TextPage: "
 msgstr "Strana Textu: "
 
-#: src/mathed/InsetMathRef.cpp:430
+#: src/mathed/InsetMathRef.cpp:414
 msgid "Ref+Text: "
 msgstr "Ref+Text: "
 
-#: src/mathed/InsetMathRef.cpp:431
+#: src/mathed/InsetMathRef.cpp:415
 msgid "PrettyRef"
 msgstr "PrettyRef"
 
 # TODO kde to je ?
-#: src/mathed/InsetMathRef.cpp:431
+#: src/mathed/InsetMathRef.cpp:415
 msgid "FormatRef: "
 msgstr "FormatRef: "
 
-#: src/mathed/InsetMathRef.cpp:432
+#: src/mathed/InsetMathRef.cpp:416
 msgid "NameRef: "
 msgstr "NameRef: "
 
-#: src/mathed/InsetMathRef.cpp:433
+#: src/mathed/InsetMathRef.cpp:417
 msgid "Label Only: "
 msgstr "Pouze značka: "
 
