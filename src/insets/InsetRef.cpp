@@ -78,9 +78,9 @@ ParamInfo const & InsetRef::findInfo(string const & /* cmdName */)
 {
 	static ParamInfo param_info_;
 	if (param_info_.empty()) {
+		param_info_.add("options", ParamInfo::LATEX_OPTIONAL);
 		param_info_.add("reference", ParamInfo::LATEX_REQUIRED,
 				ParamInfo::HANDLING_ESCAPE);
-		param_info_.add("options", ParamInfo::LATEX_OPTIONAL);
 		param_info_.add("plural", ParamInfo::LYX_INTERNAL);
 		param_info_.add("caps", ParamInfo::LYX_INTERNAL);
 		param_info_.add("noprefix", ParamInfo::LYX_INTERNAL);
