@@ -522,18 +522,15 @@ void InsetMathScript::writeMath(TeXMathStream & os) const
 		    (up().size() == 1 && up().back()->asBraceInset() &&
 		     up().back()->asBraceInset()->cell(0).empty())))
 			os << "^ {}";
-		else {
+		else
 			os << "^{" << up() << '}';
-			// Avoid double superscript errors by writing an
-			// empty group {} when a prime immediately follows
-			if (os.latex())
-				os.useBraces(true);
-		}
 	}
 
 	if (hasDown() /*&& !down().empty()*/) {
 		os << "_{" << down() << '}';
-		if (os.latex())
+		// Avoid double superscript errors by writing an
+		// empty group {} when a prime immediately follows
+		if (os.latex() && hasUp())
 			os.useBraces(true);
 	}
 
