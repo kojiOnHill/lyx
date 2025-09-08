@@ -1051,6 +1051,9 @@ pos_type GuiInputMethod::initializePositions(Cursor * cur) {
 	//     d->virtual_boundary_ = if the preedits hit the boundary
 	// and returns the row index of the starting point of preedits
 
+	if (d->rows_size_ == 0 || d->rows_->empty())
+		return 0;
+
 	// position of the real cursor (also the start of the preedit)
 	if (cur->top().pos() != d->cur_pos_)
 		Q_EMIT cursorPositionChanged();
@@ -1081,7 +1084,7 @@ pos_type GuiInputMethod::initializePositions(Cursor * cur) {
 
 	// width of first-row preedit string in the case of virtual boundary
 	int orphan_width = 0;
-	if (!(d->rows_->empty() || d->rows_[cur_row_idx].empty()) &&
+	if (!d->rows_[cur_row_idx].empty() &&
 	        d->rows_[cur_row_idx].back().isPreedit())
 		orphan_width =
 		        horizontalAdvance(d->rows_[cur_row_idx].back().str);
