@@ -130,6 +130,7 @@ endforeach()
 
 foreach(_imgext "png" "svgz" "gif" "xpm")
   lyx_install("data" ${TOP_SRC_DIR}/lib images       "*.${_imgext}"      . adwaita bullets ipa classic oxygen)
+  lyx_install("data" ${TOP_SRC_DIR}/lib images/adwaita "*.${_imgext}"      . darkmode)
   lyx_install("data" ${TOP_SRC_DIR}/lib images/math  "*.${_imgext}"      . oxygen)
 endforeach()
 lyx_install("data" ${TOP_SRC_DIR}/lib        citeengines          *.citeengine .)
