@@ -13,7 +13,7 @@ project(hunspell)
 
 handle_warning_options("hunspell" "CXX" -Wno-unused-but-set-variable -Wno-deprecated-declarations -Wno-format-nonliteral -Wno-unused-macros)
 
-set(HUNSPELL_VERSION 1.7.0)
+set(HUNSPELL_VERSION 1.7.2)
 
 set(SRCDIR ${CMAKE_CURRENT_SOURCE_DIR}/${HUNSPELL_VERSION}/src)
 
