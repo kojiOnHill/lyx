@@ -11,7 +11,7 @@ endif()
 
 project(hunspell)
 
-handle_warning_options("hunspell" "CXX" -Wno-unused-but-set-variable -Wno-deprecated-declarations -Wno-format-nonliteral -Wno-unused-macros)
+handle_warning_options("hunspell" "CXX" -Wno-suggest-final-types -Wno-suggest-final-methods -Wno-unused-but-set-variable -Wno-deprecated-declarations -Wno-format-nonliteral -Wno-unused-macros -Wno-sign-compare -Wno-unused-parameter)
 
 set(HUNSPELL_VERSION 1.7.2)
 
