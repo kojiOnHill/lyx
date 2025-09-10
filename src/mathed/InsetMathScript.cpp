@@ -526,13 +526,13 @@ void InsetMathScript::writeMath(TeXMathStream & os) const
 			os << "^{" << up() << '}';
 	}
 
-	if (hasDown() /*&& !down().empty()*/) {
+	if (hasDown() /*&& !down().empty()*/)
 		os << "_{" << down() << '}';
-		// Avoid double superscript errors by writing an
-		// empty group {} when a prime immediately follows
-		if (os.latex() && hasUp())
-			os.useBraces(true);
-	}
+
+	// Avoid double superscript errors by writing an
+	// empty group {} when a prime immediately follows
+	if (os.latex() && hasUp())
+		os.useBraces(true);
 
 	if (lock_ && !os.latex())
 		os << "\\lyxlock ";
