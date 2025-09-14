@@ -13,6 +13,7 @@
 #include "InsetMathScript.h"
 
 #include "InsetMathBrace.h"
+#include "InsetMathChar.h"
 #include "MathData.h"
 #include "MathStream.h"
 #include "MathSupport.h"
@@ -531,7 +532,9 @@ void InsetMathScript::writeMath(TeXMathStream & os) const
 
 	// Avoid double superscript errors by writing an
 	// empty group {} when a prime immediately follows
-	if (os.latex() && hasUp())
+	if (os.latex() && (hasUp() ||
+	    (hasDown() && !nuc().empty() && nuc().back()->asCharInset() &&
+	     nuc().back()->asCharInset()->getChar() == '\'')))
 		os.useBraces(true);
 
 	if (lock_ && !os.latex())
