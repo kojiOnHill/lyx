@@ -66,6 +66,8 @@ public:
 	void addPreview(DocIterator const & inset_pos,
 		graphics::PreviewLoader & ploader) const override;
 
+	bool notifyCursorEnters(Cursor const & old, Cursor & cur) override;
+
 	bool notifyCursorLeaves(Cursor const & old, Cursor & cur) override;
 
 	void write(std::ostream & os) const override;

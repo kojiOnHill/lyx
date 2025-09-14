@@ -2475,7 +2475,7 @@ bool notifyCursorLeavesOrEnters(Cursor const & old, Cursor & cur)
 	// notify everything on top of the common part in new cursor,
 	// but stop if the inset claims the cursor to be invalid now
 	for (; i < cur.depth(); ++i) {
-		if (cur[i].inset().notifyCursorEnters(cur))
+		if (cur[i].inset().notifyCursorEnters(old, cur))
 			return true;
 	}
 

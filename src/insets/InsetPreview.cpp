@@ -215,6 +215,13 @@ Inset * InsetPreview::editXY(Cursor & cur, int x, int y)
 }
 
 
+bool InsetPreview::notifyCursorEnters(Cursor const & old, Cursor & cur)
+{
+	cur.screenUpdateFlags(Update::Force);
+	return InsetText::notifyCursorEnters(old, cur);
+}
+
+
 bool InsetPreview::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 {
 	reloadPreview(old);

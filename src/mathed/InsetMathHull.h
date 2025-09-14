@@ -157,6 +157,8 @@ public:
 	///
 	void forOutliner(docstring &, size_t const, bool const) const override;
 
+	/// get notification when the cursor enters this inset
+	bool notifyCursorEnters(Cursor const & old, Cursor & cur) override;
 	/// get notification when the cursor leaves this inset
 	bool notifyCursorLeaves(Cursor const & old, Cursor & cur) override;
 	///

@@ -581,7 +581,7 @@ void BufferView::processUpdateFlags(Update::flags flags)
 	 * We handle this before FitCursor because the later will require
 	 * correct metrics at cursor position.
 	 */
-	else if ((flags & Update::SinglePar) && !(flags & Update::ForceDraw)) {
+	else if (flags & Update::SinglePar) {
 		if (singleParUpdate())
 			updateMetrics(false);
 		else
@@ -2686,6 +2686,7 @@ void BufferView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			cursor().fixIfBroken();
 			resetInlineCompletionPos();
 		}
+		dr.screenUpdate(dr.screenUpdate() | cursor().result().screenUpdate());
 		old.endUndoGroup();
 	}
 }

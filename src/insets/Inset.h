@@ -325,7 +325,7 @@ public:
 	/// anymore.
 	/// \c cur is the new cursor, some slice points to this. Use the update
 	/// flags to cause a redraw.
-	virtual bool notifyCursorEnters(Cursor & /*cur*/)
+	virtual bool notifyCursorEnters(Cursor const & /*old*/, Cursor & /*cur*/)
 		{ return false; }
 	/// is called when the mouse enters or leaves this inset
 	/// return true if this inset needs a repaint
