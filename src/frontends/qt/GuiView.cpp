@@ -5190,6 +5190,13 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			TabWorkArea * twa = addTabWorkArea();
 			GuiWorkArea * wa = twa->addWorkArea(*doc_buffer, *this);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+			// Adjust all views to have equal sizes
+			QList<int> sizelist;
+			for (int i=0; i < d.splitter_->count(); ++i)
+				sizelist.append(1);
+			d.splitter_->setSizes(sizelist);
+#endif
 			wa->bufferView().copySettingsFrom(*bv);
 			dr.screenUpdate(Update::ForceAll);
 			setCurrentWorkArea(wa);
