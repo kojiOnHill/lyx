@@ -44,5 +44,4 @@ liblyxhunspell_a_SOURCES = \
 	1.7.2/src/hunspell/suggestmgr.cxx \
 	1.7.2/src/hunspell/suggestmgr.hxx \
 	1.7.2/src/hunspell/utf_info.hxx \
-	1.7.2/src/hunspell/w_char.hxx \
-	1.7.2/src/win_api/config.h
+	1.7.2/src/hunspell/w_char.hxx

@@ -19,11 +19,6 @@ set(SRCDIR ${CMAKE_CURRENT_SOURCE_DIR}/${HUNSPELL_VERSION}/src)
 
 include_directories(./ ${SRCDIR}/hunspell)
 
-if(WIN32)
-    include_directories(${SRCDIR}/win_api)
-    set(HUNCONFIG ${SRCDIR}/win_api/config.h)
-endif()
-
 # LIBS
 set(SRCS
     ${SRCDIR}/hunspell/affentry.cxx
