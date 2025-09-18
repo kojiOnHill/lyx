@@ -1,9 +1,9 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties false
-\origin /systemlyxdir/doc/ja/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % DO NOT ALTER THIS PREAMBLE!!!
@@ -67,10 +67,10 @@ Style Acknowledgement*
   CopyStyle             Remark*
   LatexName             acknowledgement*
   LabelString           "Acknowledgement."
-  Preamble
-    \theoremstyle{remark}
-    \newtheorem*{acknowledgement*}{\protect\acknowledgementname}
-  EndPreamble
+  TheoremName           "acknowledgement*"
+  TheoremLaTeXName      "acknowledgementname"
+  TheoremCounter        "none"
+  TheoremStyle          "remark"
   LangPreamble
     \providecommand{\acknowledgementname}{_(Acknowledgement)}
   EndLangPreamble
@@ -186,12 +186,20 @@ End
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\notefontcolor #0000ff
+\customcolor lyxnotefontcolor 0000ff
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lyxnotefontcolor
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index 索引
 \shortcut idx
 \color #008000
@@ -218,6 +226,7 @@ End
 \html_be_strict true
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -1401,20 +1410,17 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{tabular}{ll}
 \end_layout
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{minipage}{5cm}
 \end_layout
 
 \begin_layout Plain Layout
-
 これは，
 ミニページ環境の例です．これには，
 （フロートでない）図表を含め，
@@ -1424,19 +1430,16 @@ end{minipage}
 \end_layout
 
 \begin_layout Plain Layout
-
 &
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 begin{minipage}{5cm}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 begin{verbatim}
@@ -1444,25 +1447,21 @@ begin{verbatim}
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{minipage}{5cm}
 \end_layout
 
 \begin_layout Plain Layout
-
 これは...
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{minipage}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{verbatim}
@@ -1470,13 +1469,11 @@ end{verbatim}
 
 \begin_layout Plain Layout
 
-
 \backslash
 end{minipage}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{tabular}
@@ -2108,8 +2105,26 @@ status collapsed
 \bar default
 \noun default
 \color inherit
-\SpecialChar LaTeX
 プリアンブル
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\SpecialChar menuseparator
+
+\family sans
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+LaTeX
 \family roman
 \series medium
 \shape up
@@ -3177,7 +3192,8 @@ status open
 \color inherit
 文書\SpecialChar menuseparator
 設定\SpecialChar menuseparator
-プリアンブル
+プリアンブル\SpecialChar menuseparator
+LaTeX
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -3255,7 +3271,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 https://texfaq.org/FAQ-overfull
 \end_layout
 
@@ -4060,7 +4075,6 @@ book (AMS)
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.ams.org/publications/authors/tex/amslatex
 \end_layout
 
@@ -4098,7 +4112,6 @@ AMSの説明書をご参照ください（通常は，
 status open
 
 \begin_layout Plain Layout
-
 https://www.ams.org
 \end_layout
 
@@ -4110,7 +4123,6 @@ FTPで
 status open
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/required/amsmath
 \end_layout
 
@@ -5217,7 +5229,6 @@ World Wide Webコンソーシアム（W3C，
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.w3.org/TR/jlreq/?lang=en
 \end_layout
 
@@ -5292,7 +5303,6 @@ jlreq
 status collapsed
 
 \begin_layout Plain Layout
-
 https://mirrors.ctan.org/macros/jptex/latex/jlreq/jlreq.pdf
 \end_layout
 
@@ -5303,7 +5313,6 @@ https://mirrors.ctan.org/macros/jptex/latex/jlreq/jlreq.pdf
 status collapsed
 
 \begin_layout Plain Layout
-
 https://ftp.kddilabs.jp/CTAN/macros/jptex/latex/jlreq/jlreq-ja.pdf
 \end_layout
 
@@ -5337,7 +5346,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 :{U}
 \end_layout
@@ -5349,7 +5357,6 @@ rgen Spitzm
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 :{U}
@@ -6244,8 +6251,8 @@ KOMA-Scriptは，
 \family sans
 文書\SpecialChar menuseparator
 設定\SpecialChar menuseparator
-\SpecialChar LaTeX
-プリアンブル
+プリアンブル\SpecialChar menuseparator
+LaTeX
 \series bold
 
 \begin_inset space \thinspace{}
@@ -6892,7 +6899,6 @@ aa.cls
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.aanda.org/for-authors/latex-issues/texnical-background-information
 \end_layout
 
@@ -7725,7 +7731,6 @@ American Astronomical Society（アメリカ天文学会）が発行するAstrop
 status collapsed
 
 \begin_layout Plain Layout
-
 https://journals.aas.org/aastex-package-for-manuscript-preparation/
 \end_layout
 
@@ -9064,7 +9069,6 @@ The Rev\SpecialChar TeX
 status collapsed
 
 \begin_layout Plain Layout
-
 https://journals.aps.org/revtex
 \end_layout
 
@@ -9343,7 +9347,6 @@ sn-jnl.cls
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.springernature.com/gp/authors/campaigns/latex-author-support
 \end_layout
 
@@ -9423,7 +9426,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 lyx-devel@lists.lyx.org
 \end_layout
 
@@ -9474,7 +9476,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 CTAN:/macros/latex/memoir/memman.pdf
 \end_layout
 
@@ -9697,7 +9698,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 CTAN:/macros/latex/memoir/memman.pdf
 \end_layout
 
@@ -10047,7 +10047,6 @@ Deutsches Institut f
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 
@@ -14348,7 +14347,8 @@ fixme
 \family sans
 文書\SpecialChar menuseparator
 設定\SpecialChar menuseparator
-プリアンブル
+プリアンブル\SpecialChar menuseparator
+LaTeX
 \family default
 
 \begin_inset space \thinspace{}
@@ -15741,7 +15741,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 label=
 \backslash
 #
@@ -15771,7 +15770,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 label=
 \backslash
 Alph{enumi}.
@@ -15803,7 +15801,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 label=
 \backslash
 bfseries{
@@ -15831,7 +15828,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 label=
 \backslash
 emph{
@@ -15924,7 +15920,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 renewcommand{
@@ -16027,7 +16022,6 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-
 label=
 \backslash
 arabic{enumi}.
@@ -16133,7 +16127,6 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-
 start=4
 \end_layout
 
@@ -16255,7 +16248,6 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-
 nolistsep
 \end_layout
 
@@ -16379,7 +16371,6 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-
 labelindent=
 \backslash
 parindent,
@@ -16528,7 +16519,6 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-
 labelindent=0pt,
  labelsep=1cm,
  font=
@@ -16815,7 +16805,6 @@ install.packages('knitr')
 status collapsed
 
 \begin_layout Plain Layout
-
 https://yihui.name/knitr
 \end_layout
 
@@ -17918,7 +17907,8 @@ thepage}
 \family sans
 文書\SpecialChar menuseparator
 設定\SpecialChar menuseparator
-LaTeXプリアンブル
+プリアンブル\SpecialChar menuseparator
+LaTeX
 \family default
 
 \begin_inset space \thinspace{}
@@ -18193,7 +18183,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 3
 \end_layout
 
@@ -18491,7 +18480,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 subsubsection{
 \end_layout
@@ -18503,7 +18491,6 @@ subsubsection{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -18604,7 +18591,6 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 baselineskip
@@ -18716,7 +18702,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 setlength{
 \backslash
@@ -18799,7 +18784,6 @@ setlength
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 setlength{
@@ -18927,7 +18911,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 columnbreak{}
 \end_layout
@@ -19039,7 +19022,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 setlength{
 \backslash
@@ -19091,7 +19073,6 @@ My observations of No.
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 setlength{
@@ -19152,7 +19133,6 @@ pt幅に設定されています．
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 setlength{
@@ -19369,7 +19349,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 setlength{
 \backslash
@@ -19377,7 +19356,6 @@ columnsep}{1cm}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 renewcommand{
@@ -19521,7 +19499,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 setlength{
 \backslash
@@ -19529,7 +19506,6 @@ columnseprule}{0pt}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 renewcommand{
@@ -20453,7 +20429,7 @@ status open
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "../SpecialParagraphShape.tex"
+filename "../en/SpecialParagraphShape.tex"
 literal "true"
 
 \end_inset
@@ -20962,7 +20938,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/custom-bib
 \end_layout
 
@@ -21016,7 +20991,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 https://www.ctan.org/tex-archive/macros/latex/contrib/bibtopic
 \end_layout
 
@@ -22040,7 +22014,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 let
 \backslash
@@ -22059,7 +22032,6 @@ labelitemi
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 renewcommand
@@ -22163,7 +22135,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 (
 \backslash
@@ -22225,7 +22196,6 @@ star
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 renewcommand
@@ -22719,7 +22689,7 @@ status collapsed
 
 \end_inset
 
-．これらは2つのグループに大別できます．1つは，
+．これらの変換子，
 
 \begin_inset Flex Code
 status collapsed
@@ -22750,26 +22720,12 @@ plastex
 
 \end_inset
 
-のように，
+などは，
 \SpecialChar LaTeX
 を中間形式として用い，
 その\SpecialChar LaTeX
 を生成するのに\SpecialChar LyX
-を用いるもの．2つめは，
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-e\SpecialChar LyX
-er
-\end_layout
-
-\end_inset
-
-のように，
-直接\SpecialChar LyX
-ファイルに働きかける変換子です．これらは，
+を用います．これらは，
 それぞれに長所・短所を有しています．
 \end_layout
 
@@ -22840,206 +22796,32 @@ HTML文書からこれらの画像へのリンクを張ります．これらの�
 正確です．しかしながら，
 これらはうまく伸縮できないので，
 実際の文書の中で表現されるように—
-フォント寸が凡そ正しくなるように—
+フォント寸法が凡そ正しくなるように—
 見せようとすると，
 大変な苦労を伴います．
 \end_layout
 
 \begin_layout Standard
-Alex Fernandezの
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-e\SpecialChar LyX
-er
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset href
-LatexCommand href
-name "http://pinchito.es/elyxer/"
-target "https://pinchito.es/elyxer/"
-literal "false"
-
-\end_inset
-
-）は，
-これらの問題の一部を解決します．特に，
-これは数式を画像に変換するのではなく，
-HTMLとCSSを組み合わせて数式を生成するので，
-生成される数式は完璧な大きさに伸縮されて表示されます．しかしながら，
-ちょっとだけ複雑な数式でさえ，
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-htlatex
-\end_layout
-
-\end_inset
-
-よりも質が落ちます．これはHTMLの限界を示しています
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-とはいえ，
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-e\SpecialChar LyX
-er
-\end_layout
-
-\end_inset
-
-では，
-数式用にjsMathとMathJaxを使用することもできます．ただし，
-この設定はグローバルにしか設定することができず，
-バックエンドで実行させるサーバへのアクセスが利用できる必要があります．
-\end_layout
-
-\end_inset
-
-．さらに重要なことは（少なくとも第1.1.1版においては），
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-e\SpecialChar LyX
-er
-\end_layout
-
-\end_inset
-
-は数式マクロを一部しかサポートしておらず，
-ユーザ定義の段落様式や文字様式をサポートしていません．これらの制約によって，
+しかしながら，
 \SpecialChar LyX
-ユーザが生成する文書の多くにとっては，
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-e\SpecialChar LyX
-er
-\end_layout
-
-\end_inset
-
-は不向きなものになっています．もちろん，
-原理的に，
-これらの問題を解決することもできたのですが，
-\SpecialChar LyX
-開発陣は別の方法を採ることとし，
-\SpecialChar LyX
-が\SpecialChar LaTeX
+ 2.0以降，
+\SpecialChar LaTeX
 やDocBook，
-平文を書き出すことができるのと同様に，
+平文と同じように，
 \SpecialChar LyX
-自身にXHTMLを書きだす能力を身につけさせることとしたのです．
+自身がXHTMLを書きだすことができるようになりました．
 \end_layout
 
 \begin_layout Standard
+ただし，
 この原稿執筆時点では，
 XHTML出力は開発途上であり，
-おそらく「実験的」機能として解されるべきでしょう
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\SpecialChar LyX
-ソースツリーもしくは
-\begin_inset CommandInset href
-LatexCommand href
-name "オンラインでのアクセス"
-target "https://www.lyx.org/trac/browser/lyxgit/development/HTML/HTML.notes"
-literal "false"
-
-\end_inset
-
-にある
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-development/HTML/HTML.notes
-\end_layout
-
-\end_inset
-
-ファイルには，
-通常，
-XHTML出力の現状についての最新の情報が収録されています．
-\begin_inset CommandInset href
-LatexCommand href
-name "バグ追跡ページ"
-target "https://www.lyx.org/trac/query?status=reopened&status=assigned&status=new&max=0&component=xhtml+export&order=id&col=id&col=summary&col=reporter&col=keywords&keywords=%21%7Efixedintrunk&desc=1"
-literal "false"
-
-\end_inset
-
-にあるXHTML関連バグ一覧も参照のこと．
-\end_layout
-
-\end_inset
-
-．それでもこのアプローチは，
-他の2つの方法よりも，
-潜在的な利点がいくつもあるので，
-開発陣はこの方法を選択したのです．
+おそらく「実験的」機能として解されるべきでしょう．それでもこの方法は，
+上述の変換子よりも，
+いくつかの利点を有しています．
 \end_layout
 
 \begin_layout Standard
-これらの利点は，
-主に，
-XHTML出力ルーチンが\SpecialChar LyX
-の一部となっているため，
-\SpecialChar LyX
-が出力する文書について\SpecialChar LyX
-が関知しているところのものは，
-すべて知り得るというところから来ています
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-他には，
-これらのルーチンが\SpecialChar LyX
-内部にあるため，
-\SpecialChar LyX
-ファイル形式や既存の差込枠の文法に変更があっても，
-影響を受けずに済むという利点もあります．
-\end_layout
-
-\end_inset
-
-．つまり，
-XHTML出力ルーチンは，
-（文書構造に表示されるような形での）目次や，
-それぞれの段落様式に関連付けられたカウンタや，
-ユーザ定義の様式についても知っているのです．XHTML出力ルーチンは，
-国際化について\SpecialChar LyX
-が関知しているものも知っているので，
-ちょうどその時に有効になっている言語に依存して，
-「Chapter 1」と出力されたり，
-「Kapitel 1」と出力されたりするのです．
-\end_layout
-
-\begin_layout Standard
-汎く一般的に，
-出力ルーチンは，
-\SpecialChar LyX
-が文書レイアウトについて関知しているものは知っており，
-したがって，
-文書が画面上にどのように描画されるかも知っています．文書をXHTMLに出力するときには，
-この情報を利用します．特に，
 \SpecialChar LyX
 は，
 文書を画面上に描画するときに使用するレイアウト情報に対応したCSSスタイル情報を
@@ -23136,56 +22918,8 @@ HTML
 \begin_inset Newline newline
 \end_inset
 
-前述のとおり，
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-elyxer
-\end_layout
-
-\end_inset
-
-は，
-数式をCSSで装飾したHTMLとして出力します
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\SpecialChar LyX
-は，
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-elyxer
-\end_layout
-
-\end_inset
-
-からのHTML出力のために，
-CSSの一部を拝借しています．
-\end_layout
-
-\end_inset
-
-．簡単な数式では，
-これは非常にうまく行きますが，
-少し複雑な数式になると，
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-elyxer
-\end_layout
-
-\end_inset
-
-は歯が立たなくなります．それでも，
 この方法は非常に広くサポートされているという利点があり，
+複雑な数式ではうまく行かなくなることがありますが，
 かなり簡単な数式を少しだけ含んでいるような文書に適しているでしょう．
 \begin_inset Newline newline
 \end_inset
@@ -24223,7 +23957,7 @@ echo $a
 \end_layout
 
 \begin_layout Subsection
-AppleScript (Mac OS X)
+AppleScript (Mac OS)
 \end_layout
 
 \begin_layout Standard
@@ -25888,6 +25622,11 @@ DVI出力とPDF出力の双方で動作します．\SpecialChar LyX
 その形式に適切な設定を選択します．
 \end_layout
 
+\begin_layout Chapter
+ソフトウェアの追加を必要とする\SpecialChar LyX
+の機能
+\end_layout
+
 \begin_layout Section
 \SpecialChar TeX
 のチェック
@@ -25910,24 +25649,7 @@ Asger Alstrup
 \family typewriter
 chktex
 \family default
-プログラムが導入されていると
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\SpecialChar LaTeX
-頒布版としてMiK\SpecialChar TeX
-を使用している場合には，
-
-\family typewriter
-chktex
-\family default
-はまだ利用可能ではありません．
-\end_layout
-
-\end_inset
-
-，
+プログラムが導入されていると，
 
 \family sans
 ツール
@@ -27587,7 +27309,6 @@ CVSの詳細な情報は，
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.nongnu.org/cvs/
 \end_layout
 
@@ -27598,7 +27319,6 @@ https://www.nongnu.org/cvs/
 status collapsed
 
 \begin_layout Plain Layout
-
 https://cvs.nongnu.org/
 \end_layout
 
@@ -28731,7 +28451,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 https://svnbook.red-bean.com/en/1.2/svn.advanced.locking.html
 \end_layout
 
@@ -29608,7 +29327,6 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 \end_layout
 
@@ -29819,7 +29537,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 https://svnbook.red-bean.com/en/1.4/svn.advanced.props.file-portability.html
 \end_layout
 
@@ -30498,7 +30215,6 @@ Literate Programming FAQ
 status open
 
 \begin_layout Plain Layout
-
 http://www.literateprogramming.com/lpfaq.pdf
 \end_layout
 
@@ -30571,7 +30287,6 @@ Nowebホームページ
 status collapsed
 
 \begin_layout Plain Layout
-
 https://www.cs.tufts.edu/~nr/noweb/
 \end_layout
 
