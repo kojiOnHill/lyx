@@ -50,8 +50,8 @@ global.
   display-related information, in particular the BufferView that owns it.
 */
 
-#ifndef LCURSOR_H
-#define LCURSOR_H
+#ifndef CURSOR_H
+#define CURSOR_H
 
 #include "DispatchResult.h"
 #include "DocIterator.h"
@@ -565,4 +565,4 @@ bool notifyCursorLeavesOrEnters(Cursor const & old, Cursor & cur);
 
 } // namespace lyx
 
-#endif // LCURSOR_H
+#endif // CURSOR_H
