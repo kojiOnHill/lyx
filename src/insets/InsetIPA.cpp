@@ -211,7 +211,7 @@ void InsetIPA::metrics(MetricsInfo & mi, Dimension & dim) const
 bool InsetIPA::notifyCursorEnters(Cursor const & old, Cursor & cur)
 {
 	cur.screenUpdateFlags(Update::Force);
-	return InsetText::notifyCursorLeaves(old, cur);
+	return InsetText::notifyCursorEnters(old, cur);
 }
 
 
