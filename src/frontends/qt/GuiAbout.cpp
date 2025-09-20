@@ -155,7 +155,7 @@ static QString release_notes()
 					}
 					out << "<h2>" << line.mid(1) << "</h2>";
 				// lists
-				} else if (line.startsWith("* ")) {
+				} else if (line.startsWith("* ") || line.startsWith("- ")) {
 					if (inlist)
 						out << "</li>";
 					else
