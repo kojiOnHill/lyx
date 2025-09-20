@@ -1614,7 +1614,7 @@ void PrefColors::cacheAllThemes()
 }
 
 
-ColorNamePairs PrefColors::readTheme(FileName fullpath, LyXRC rc) const
+ColorNamePairs PrefColors::readTheme(FileName const & fullpath, LyXRC & rc) const
 {
 	ColorNamePairs colors;
 	colors.resize(lcolors_.size());

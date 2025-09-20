@@ -351,7 +351,7 @@ private:
 	///
 	void cacheAllThemes();
 	///
-	ColorNamePairs readTheme(support::FileName fullpath, LyXRC rc) const;
+	ColorNamePairs readTheme(support::FileName const & fullpath, LyXRC & rc) const;
 	/// Common algorithm between saving and exporting
 	void saveExportThemeCommon(QString file_path);
 	/// Common algorithm between loading and importing.
