@@ -1469,11 +1469,9 @@ pit_type TextMetrics::getPitNearY(int y)
 {
 	LASSERT(!text_->paragraphs().empty(), return -1);
 	LASSERT(!par_metrics_.empty(), return -1);
-	LYXERR(Debug::PAINTING, "y: " << y << " cache size: " << par_metrics_.size());
 
 	// look for highest numbered paragraph with y coordinate less than given y
 	pit_type pit = -1;
-	int yy = -1;
 	ParMetricsCache::const_iterator it = par_metrics_.begin();
 	ParMetricsCache::const_iterator et = par_metrics_.end();
 	ParMetricsCache::const_iterator last = et;
@@ -1506,16 +1504,9 @@ pit_type TextMetrics::getPitNearY(int y)
 	}
 
 	for (; it != et; ++it) {
-		// LYXERR(Debug::PAINTING, "examining: pit: " << it->first
-		// 	<< " y: " << it->second.position());
-
-		if (it->first >= pit && it->second.top() <= y) {
+		if (it->first >= pit && it->second.top() <= y)
 			pit = it->first;
-			yy = it->second.position();
-		}
 	}
-
-	LYXERR(Debug::PAINTING, "found best y: " << yy << " for pit: " << pit);
 
 	return pit;
 }
@@ -2068,9 +2059,9 @@ void TextMetrics::drawParagraph(PainterInfo & pi, pit_type const pit, int const 
 		// 12 lines lower):
 		if (lyxerr.debugging(Debug::PAINTING)
 		    && (row.selection() || pi.full_repaint || row.changed())) {
-			string const foreword = text_->isMainText() ? "main text redraw "
-				: "inset text redraw: ";
-			LYXERR0(foreword << "pit=" << pit << " row=" << i
+			string const foreword = text_->isMainText() ? "main  text redraw "
+				: "inset text redraw ";
+			LYXERR0(foreword << "@(" << row_x << "," << y << ") " << "pit=" << pit << " row=" << i
 			        << (row.selection() ? " row_selection": "")
 			        << (pi.full_repaint ? " full_repaint" : "")
 			        << (row.changed() ? " row.changed" : ""));
