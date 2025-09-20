@@ -327,6 +327,13 @@ public:
 	/// flags to cause a redraw.
 	virtual bool notifyCursorEnters(Cursor const & /*old*/, Cursor & /*cur*/)
 		{ return false; }
+	// Is called when a mouse selection ends by a mouse release event.
+	// Previews of inset that have been left by the cursor are delayed
+	// until this point, so it is an occasion for insets to ask for
+	// metrics recomputation.
+	// \c cur is the cursor position that contains the final selection.
+	virtual void notifyMouseSelectionDone(Cursor & /*cur*/) {}
+
 	/// is called when the mouse enters or leaves this inset
 	/// return true if this inset needs a repaint
 	virtual bool setMouseHover(BufferView const *, bool) const

@@ -960,6 +960,23 @@ bool InsetMathHull::notifyCursorEnters(Cursor const & old, Cursor & cur)
 }
 
 
+void InsetMathHull::notifyMouseSelectionDone(Cursor & cur)
+{
+	if (RenderPreview::previewMath()) {
+		reloadPreview(cur.realAnchor());
+		/** FIXME: currently, SinglePar operates on the current
+		 * paragraph at processUpdateFlags time (here cur) and not the
+		 * paragraph where the change happened (old). When this is
+		 * fixed, the following test will become useless.
+		 */
+		if (&cur.innerParagraph() == &cur.realAnchor().innerParagraph())
+			cur.screenUpdateFlags(Update::SinglePar);
+		else
+			cur.screenUpdateFlags(Update::Force);
+	}
+}
+
+
 bool InsetMathHull::insetAllowed(InsetCode code) const
 {
 	switch (code) {

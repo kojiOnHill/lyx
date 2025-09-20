@@ -563,6 +563,9 @@ public:
 bool notifyCursorLeavesOrEnters(Cursor const & old, Cursor & cur);
 
 
+ // Notifies all insets which appear in \c cur anchor, but not in \c cur tip.
+void notifyMouseSelectionDone(Cursor & cur);
+
 } // namespace lyx
 
 #endif // CURSOR_H

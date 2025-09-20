@@ -230,4 +230,12 @@ bool InsetPreview::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 }
 
 
+void InsetPreview::notifyMouseSelectionDone(Cursor & cur)
+{
+	reloadPreview(cur.realAnchor());
+	cur.screenUpdateFlags(Update::Force);
+	return InsetText::notifyMouseSelectionDone(cur);
+}
+
+
 } // namespace lyx

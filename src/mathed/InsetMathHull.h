@@ -161,6 +161,9 @@ public:
 	bool notifyCursorEnters(Cursor const & old, Cursor & cur) override;
 	/// get notification when the cursor leaves this inset
 	bool notifyCursorLeaves(Cursor const & old, Cursor & cur) override;
+	/// get notification when mouse selection has ended and anchor is
+	/// in this inset but not the cursor tip.
+	void notifyMouseSelectionDone(Cursor & cur) override;
 	///
 	bool insetAllowed(InsetCode code) const override;
 	///

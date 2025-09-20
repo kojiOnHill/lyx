@@ -70,6 +70,8 @@ public:
 
 	bool notifyCursorLeaves(Cursor const & old, Cursor & cur) override;
 
+	void notifyMouseSelectionDone(Cursor & cur) override;
+
 	void write(std::ostream & os) const override;
 
 	void edit(Cursor & cur, bool front, EntryDirection entry_from) override;

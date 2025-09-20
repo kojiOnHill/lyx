@@ -2483,6 +2483,26 @@ bool notifyCursorLeavesOrEnters(Cursor const & old, Cursor & cur)
 }
 
 
+void notifyMouseSelectionDone(Cursor & cur)
+{
+	// find inset in common
+	size_type i;
+	DocIterator const & anchor = cur.realAnchor();
+	for (i = 0; i < cur.depth() && i < anchor.depth(); ++i) {
+		if (&anchor[i].inset() != &cur[i].inset())
+			break;
+	}
+
+	// notify everything on top of the common part in old cursor
+	for (size_type j = i; j < anchor.depth(); ++j) {
+		Cursor tmpcur = cur;
+		tmpcur.realAnchor().resize(j + 1);
+		anchor[j].inset().notifyMouseSelectionDone(tmpcur);
+		cur.screenUpdateFlags(cur.result().screenUpdate() | tmpcur.result().screenUpdate());
+	}
+}
+
+
 void Cursor::setLanguageFromInput()
 {
 	if (!lyxrc.respect_os_kbd_language

@@ -223,6 +223,14 @@ bool InsetIPA::notifyCursorLeaves(Cursor const & old, Cursor & cur)
 }
 
 
+void InsetIPA::notifyMouseSelectionDone(Cursor & cur)
+{
+	reloadPreview(cur.realAnchor());
+	cur.screenUpdateFlags(Update::Force);
+	return InsetText::notifyMouseSelectionDone(cur);
+}
+
+
 void InsetIPA::validate(LaTeXFeatures & features) const
 {
 	features.require("tipa");

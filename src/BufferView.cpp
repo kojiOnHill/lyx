@@ -2912,8 +2912,13 @@ void BufferView::mouseEventDispatch(FuncRequest const & cmd0)
 	d->mouse_position_cache_.x = cmd.x();
 	d->mouse_position_cache_.y = cmd.y();
 
-	d->mouse_selecting_ =
-		cmd.action() == LFUN_MOUSE_MOTION && cmd.button() == mouse_button::button1;
+	bool mouse_selection_done = false;
+	if (cmd.action() == LFUN_MOUSE_MOTION && cmd.button() == mouse_button::button1)
+		d->mouse_selecting_ = true;
+	else if (d->mouse_selecting_) {
+		mouse_selection_done = true;
+		d->mouse_selecting_ = false;
+	}
 
 	if (cmd.action() == LFUN_MOUSE_MOTION && cmd.button() == mouse_button::none) {
 		updateHoveredInset();
@@ -2922,6 +2927,7 @@ void BufferView::mouseEventDispatch(FuncRequest const & cmd0)
 
 	Cursor old = cursor();
 	Cursor cur(*this);
+	cur.realAnchor() = cursor().realAnchor();
 	cur.push(buffer_.inset());
 	cur.selection(d->cursor_.selection());
 
@@ -2941,9 +2947,6 @@ void BufferView::mouseEventDispatch(FuncRequest const & cmd0)
 		// Always place cursor in front of a separator inset.
 		cur.posBackward();
 	}
-
-	// Put anchor at the same position.
-	cur.resetAnchor();
 
 	old.beginUndoGroup();
 
@@ -2969,6 +2972,10 @@ void BufferView::mouseEventDispatch(FuncRequest const & cmd0)
 	}
 
 	old.endUndoGroup();
+
+	// Notify end of selection
+	if (mouse_selection_done)
+		notifyMouseSelectionDone(cur);
 
 	// Do we have a selection?
 	theSelection().haveSelection(cursor().selection());
