@@ -2025,7 +2025,8 @@ string const LaTeXFeatures::getThmDefinitions() const
 				tmp << "[" << thm.counter << "]";
 		}
 		tmp << "{\\protect\\" << thm.latexname << "}";
-		if (!thm.parent_counter.empty()) {
+		// counter and parent counter are mutually exclusive
+		if (!thm.parent_counter.empty() && thm.counter.empty()) {
 			if (thm.parent_counter != "chapter"
 			    || params_.documentClass().hasLaTeXLayout("chapter"))
 				tmp << "[" << thm.parent_counter << "]";
