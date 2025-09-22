@@ -150,7 +150,7 @@ private:
 	ParagraphMetrics * resetParagraphMetrics(Cursor * cur);
 
 	///
-	pos_type setCaretPos(size_type preedit_length);
+	pos_type getCaretPos(size_type preedit_length);
 	/// Aquire and set character style of each preedit segment from
 	/// attributes of the incoming input method event
 	void setPreeditStyle(const QList<QInputMethodEvent::Attribute> & attr);

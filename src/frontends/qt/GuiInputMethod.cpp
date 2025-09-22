@@ -382,7 +382,7 @@ void GuiInputMethod::setPreeditStyle(
 			break;
 
 		case QInputMethodEvent::Cursor:
-			d->caret_pos_ = setCaretPos(it.start);
+			d->caret_pos_ = getCaretPos(it.start);
 			d->style_.caret_visible_ = it.length != 0;
 
 			// colorization of caret is not implemented yet:
@@ -1207,7 +1207,8 @@ ParagraphMetrics * GuiInputMethod::resetParagraphMetrics(Cursor * cur) {
 }
 
 
-pos_type GuiInputMethod::setCaretPos(size_type preedit_length) {
+pos_type GuiInputMethod::getCaretPos(size_type preedit_length)
+{
 	return d->cur_->top().pos() + preedit_length;
 }
 
