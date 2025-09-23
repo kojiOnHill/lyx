@@ -293,8 +293,37 @@ void GuiInputMethod::processPreedit(QInputMethodEvent* ev)
 
 void GuiInputMethod::onCursorPositionChanged()
 {
+	if (d->cur_->atEnd()) {
+		// Slices are empty:
+		// Reset pos caches and quit.
+		d->cur_pos_ = 0;
+		d->anchor_pos_ = 0;
+		return;
+	}
+
 	d->cur_pos_ = d->cur_->top().pos();
-	d->anchor_pos_ = d->cur_->realAnchor().pos();
+
+	// We are only interested in the current paragraph
+	// (where cur_pos_ is) with the anchor_pos_.
+	// Hence:
+	// 1.) If they are at document end, the realAnchor()
+	// slices are empty, so top() [= back()] would assert.
+	// We use the paragraph's last pos.
+	if (d->cur_->realAnchor().atEnd())
+		d->anchor_pos_ = d->cur_->top().lastpos();
+	// 2.) multipar-selection with anchor in later paragraph:
+	// Again, we use the current paragraph's last pos.
+	else if (d->cur_->top().pit() < d->cur_->realAnchor().pit())
+		d->anchor_pos_ = d->cur_->top().lastpos();
+	// 3.) multipar-selection with anchor in previous paragraph
+	// We use pos 0.
+	else if (d->cur_->top().pit() > d->cur_->realAnchor().pit())
+		d->anchor_pos_ = 0;
+	// 4.) singlepar-selection with anchor in same paragraph
+	// Here, finally, we can use the realAnchor().pos()
+	else
+		d->anchor_pos_ = d->cur_->realAnchor().pos();
+
 	setSurroundingText(*d->cur_);
 }
 
@@ -1210,6 +1239,10 @@ ParagraphMetrics * GuiInputMethod::resetParagraphMetrics(Cursor * cur)
 
 pos_type GuiInputMethod::getCaretPos(size_type preedit_length)
 {
+	if (d->cur_->atEnd())
+		// Slices are empty
+		return 0;
+
 	return d->cur_->top().pos() + preedit_length;
 }
 
@@ -1324,8 +1357,17 @@ void GuiInputMethod::setSurroundingText(const Cursor & cur) {
 
 void GuiInputMethod::updatePosAndSurroundingText()
 {
-	if (d->cur_->top().pos() == d->cur_pos_)
+	if (d->cur_->atEnd()) {
+		// Slices are empty:
+		// Reset pos caches and quit.
+		d->cur_pos_ = 0;
+		d->anchor_pos_ = 0;
 		return;
+	}
+	if (d->cur_->top().pos() == d->cur_pos_)
+		// Nothing to do
+		return;
+
 	Q_EMIT cursorPositionChanged();
 }
 
