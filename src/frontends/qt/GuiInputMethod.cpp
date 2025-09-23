@@ -122,19 +122,19 @@ GuiInputMethod::~GuiInputMethod()
 }
 
 
-void GuiInputMethod::toggleInputMethodAcceptance(){
+void GuiInputMethod::toggleInputMethodAcceptance()
+{
 	if (guiApp->platformName() != "cocoa")
 		// Since QInputMethod::locale() doesn't work on other systems, use
 		// language at the cursor point to infer the current input language
 		// as a second best
 		d->im_off_in_math_ =
-		        d->cur_->getFont().language()->inputMethodOffInMath();
+			d->cur_->getFont().language()->inputMethodOffInMath();
 
 	// note that d->cur_->inset() is a cache so it lags from actual key moves
-	bool enabled =
-	        !((d->im_off_in_math_
-	           && d->cur_->inset().currentMode() == Inset::MATH_MODE)
-	          || guiApp->isInCommandMode());
+	bool enabled = !((d->im_off_in_math_
+			  && d->cur_->inset().currentMode() == Inset::MATH_MODE)
+			 || guiApp->isInCommandMode());
 	if (enabled != d->im_state_.enabled_) {
 		d->im_state_.enabled_= enabled;
 		Q_EMIT inputMethodStateChanged(Qt::ImEnabled);
@@ -168,7 +168,8 @@ void GuiInputMethod::onLocaleChanged()
 #ifdef Q_DEBUG
 // this is experimental (2024/10/28)
 // don't input methods implement ImHints except for Qt::ImhDigitsOnly yet?
-void GuiInputMethod::setHint(Hint hint){
+void GuiInputMethod::setHint(Hint hint)
+{
 	d->work_area_->setInputMethodHints(
 	            d->work_area_->inputMethodHints() | (Qt::InputMethodHints)hint);
 	Q_EMIT inputMethodStateChanged(Qt::ImHints);
@@ -182,8 +183,8 @@ void GuiInputMethod::setHint(Hint hint){
 void GuiInputMethod::processPreedit(QInputMethodEvent* ev)
 {
 	// Linux can call this function even when IM is not used
-	if (ev->preeditString().isEmpty() && ev->commitString().isEmpty() &&
-	        !d->has_selection_ && d->im_state_.preediting_ == false)
+	if (ev->preeditString().isEmpty() && ev->commitString().isEmpty()
+	    && !d->has_selection_ && d->im_state_.preediting_ == false)
 		return;
 
 	if (!d->buffer_view_->inlineCompletion().empty())
@@ -254,8 +255,8 @@ void GuiInputMethod::processPreedit(QInputMethodEvent* ev)
 	d->cur_row_idx_ = initializePositions(d->cur_);
 	// initialize virtual caret to the anchor (real cursor) position
 	d->init_point_ =
-	        initializeCaretCoords(d->cur_row_idx_,
-	                              d->real_boundary_ && !d->im_state_.composing_mode_);
+		initializeCaretCoords(d->cur_row_idx_,
+				      d->real_boundary_ && !d->im_state_.composing_mode_);
 
 	// Push preedit texts into row elements, which can shift the anchor
 	// point of the preedit texts in a centered or right-flushed row.
@@ -329,7 +330,7 @@ void GuiInputMethod::onCursorPositionChanged()
 
 
 void GuiInputMethod::setPreeditStyle(
-        const QList<QInputMethodEvent::Attribute> & attr)
+		const QList<QInputMethodEvent::Attribute> & attr)
 {
 	d->style_.segments_.clear();
 
@@ -363,7 +364,6 @@ void GuiInputMethod::setPreeditStyle(
 	LYXERR(Debug::GUI, "Start parsing attributes of the preedit");
 	// obtain attributes of input method
 	for (const QInputMethodEvent::Attribute & it : attr) {
-
 		switch (it.type) {
 		case QInputMethodEvent::TextFormat:
 			// Explanation on attributes of QInputMethodEvent:
@@ -405,9 +405,7 @@ void GuiInputMethod::setPreeditStyle(
 			// Whereas observed protocol shows a fixed pattern which we are
 			// going to utilize, we need prepare for *any* type of information
 			// arrival that satisfies the documented protocol.
-
 			next_seg_pos = setTextFormat(it, next_seg_pos, brush);
-
 			break;
 
 		case QInputMethodEvent::Cursor:
@@ -449,7 +447,6 @@ void GuiInputMethod::setPreeditStyle(
 			       "QInputMethodEvent::Selection start: " << it.start <<
 			       " length: " << it.length);
 			break;
-
 		} // end switch
 	} // end for
 
@@ -509,7 +506,7 @@ void GuiInputMethod::setPreeditStyle(
 }
 
 pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
-                                       pos_type next_seg_pos, const QBrush brush[])
+				       pos_type next_seg_pos, const QBrush brush[])
 {
 	// get LyX's color setting
 	QTextCharFormat char_format = it.value.value<QTextCharFormat>();
@@ -572,7 +569,7 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 			LYXERR(Debug::GUI, "Pushing to preedit register: (" << it.start
 			       << ", " << it.start + it.length - 1
 			       << ") fg: "
-		           << char_format.foreground().color().name()
+			       << char_format.foreground().color().name()
 			       << " bg: "
 			       << char_format.background().color().name());
 			next_seg_pos =
@@ -591,7 +588,8 @@ pos_type GuiInputMethod::setTextFormat(const QInputMethodEvent::Attribute & it,
 
 
 pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos,
-                                                QTextCharFormat * cf) {
+						QTextCharFormat * cf)
+{
 	std::vector<PreeditSegment>::iterator to_erase;
 	bool is_matched = false;
 
@@ -645,14 +643,16 @@ pos_type GuiInputMethod::pickNextSegFromTurnout(pos_type next_seg_pos,
 
 
 pos_type GuiInputMethod::registerSegment(pos_type start, size_type length,
-                                         QTextCharFormat char_format) {
+					 QTextCharFormat char_format)
+{
 	PreeditSegment seg = {start, length, char_format};
 	d->style_.segments_.push_back(seg);
 	return start + length;
 }
 
 
-void GuiInputMethod::conformToSurroundingFont(QTextCharFormat & char_format) {
+void GuiInputMethod::conformToSurroundingFont(QTextCharFormat & char_format)
+{
 	// Surrounding font at the cursor position
 	d->cur_->setCurrentFont();
 	const QFont & surrounding_font =
@@ -692,19 +692,19 @@ void GuiInputMethod::conformToSurroundingFont(QTextCharFormat & char_format) {
 		char_format.setForeground(
 		    cc.get(d->cur_->real_current_font.fontInfo().realColor(), false));
 	}
-
 }
 
 
 /* *
  * *         Drawing
  * */
-void GuiInputMethod::setParagraphMetrics(ParagraphMetrics & pm){
+void GuiInputMethod::setParagraphMetrics(ParagraphMetrics & pm)
+{
 	d->pm_ptr_ = &pm;
 }
 
-std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
-
+std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos)
+{
 	// Note that preedit elements are virtual and not counted in pos().
 	// pos: 0 1 2 3 4 5 6 7 8 | 8 8 8 8 8 8 8 8 8 8 | 9 10 11 ...
 	//      <-  non-virtual ->|<- preedit element ->|<- non-virtual
@@ -823,20 +823,23 @@ std::array<int,2> GuiInputMethod::setCaretOffset(pos_type caret_pos){
 
 
 // returns (x_offset, y_offset) array
-std::array<int, 2> GuiInputMethod::preeditCaretOffset() const {
+std::array<int, 2> GuiInputMethod::preeditCaretOffset() const
+{
 	return d->caret_offset_;
 }
 
 
 // returns whether the caret is visible
-bool GuiInputMethod::isCaretVisible() const {
+bool GuiInputMethod::isCaretVisible() const
+{
 	return d->style_.caret_visible_;
 }
 
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 // Returns index of the focused segment (just in front of the virtual caret)
-pos_type GuiInputMethod::focusedSegmentIndex() {
+pos_type GuiInputMethod::focusedSegmentIndex()
+{
 	pos_type idx = 0;
 	// position within the preedit string
 	pos_type pos = d->caret_pos_ - d->cur_->pos();
@@ -872,7 +875,8 @@ pos_type GuiInputMethod::focusedSegmentIndex() {
 
 
 // pos shift factor from the caret to the selection segment's head
-int GuiInputMethod::shiftFromCaretToSegmentHead() {
+int GuiInputMethod::shiftFromCaretToSegmentHead()
+{
 	if (d->style_.segments_.empty()) {
 		return 0;
 	} else {
@@ -900,10 +904,9 @@ void GuiInputMethod::processQuery(Qt::InputMethodQuery query)
 	}
 
 	docstring msg = "Responded to query " +
-	        inputMethodQueryFlagsAsString(query) + " = ";
+		inputMethodQueryFlagsAsString(query) + " = ";
 
 	switch (query) {
-
 	// The widget accepts input method input
 	case Qt::ImEnabled: {
 		if (d->im_state_.enabled_)
@@ -1073,7 +1076,8 @@ docstring GuiInputMethod::inputMethodQueryFlagsAsString(unsigned long int query)
 //     helper functions
 //
 
-pos_type GuiInputMethod::initializePositions(Cursor * cur) {
+pos_type GuiInputMethod::initializePositions(Cursor * cur)
+{
 	// the function sets the following variables:
 	//     d->cur_pos_ = the starting pos of preedits
 	//     d->real_boundary_ = if the starting point is boundary
@@ -1189,7 +1193,7 @@ pos_type GuiInputMethod::initializePositions(Cursor * cur) {
 
 
 Point GuiInputMethod::initializeCaretCoords(pos_type const cur_row_idx,
-                                            bool const boundary)
+					    bool const boundary)
 {
 	// returns the real caret position adjusting boundary case
 	// so that it points to the head of the next row
@@ -1219,7 +1223,8 @@ Point GuiInputMethod::initializeCaretCoords(pos_type const cur_row_idx,
 }
 
 
-void GuiInputMethod::updateMetrics(Cursor * cur) {
+void GuiInputMethod::updateMetrics(Cursor * cur)
+{
 	d->buffer_view_->updateMetrics();
 	resetParagraphMetrics(cur);
 }
@@ -1248,9 +1253,8 @@ pos_type GuiInputMethod::getCaretPos(size_type preedit_length)
 
 
 GuiInputMethod::PreeditRow GuiInputMethod::getCaretInfo(
-        const bool real_boundary, const bool virtual_boundary)
+		const bool real_boundary, const bool virtual_boundary)
 {
-
 	const pos_type second_row_idx = d->cur_row_idx_ + 1 - virtual_boundary;
 
 	// accumulate the length of preedit elements within d->rows_[d->cur_row_idx_]
@@ -1311,7 +1315,8 @@ GuiInputMethod::PreeditRow GuiInputMethod::getCaretInfo(
 
 // Get the text before and after the cursor, only those representable as
 // a string, which is used to report back to the input method
-void GuiInputMethod::setSurroundingText(const Cursor & cur) {
+void GuiInputMethod::setSurroundingText(const Cursor & cur)
+{
 	if (cur.top().inset().asInsetText() == nullptr)
 		return;
 
@@ -1376,22 +1381,34 @@ docstring & GuiInputMethod::preeditString() const
 {
 	return d->preedit_str_;
 }
+
+
 pos_type & GuiInputMethod::segmentStart(size_type seg_id) const
 {
 	return d->style_.segments_[seg_id].start_;
 }
+
+
 size_type & GuiInputMethod::segmentLength(size_type seg_id) const
 {
 	return d->style_.segments_[seg_id].length_;
 }
+
+
 size_type GuiInputMethod::segmentSize() const
 {
 	return d->style_.segments_.size();
 }
-QTextCharFormat & GuiInputMethod::charFormat(pos_type index) const {
+
+
+QTextCharFormat & GuiInputMethod::charFormat(pos_type index) const
+{
 	return d->style_.segments_[index].char_format_;
 }
-pos_type GuiInputMethod::charFormatIndex(pos_type pos) const {
+
+
+pos_type GuiInputMethod::charFormatIndex(pos_type pos) const
+{
 	// find out format index at preedit_pos
 	// note that vector preeditStarts may not be sorted
 	size_t fmt_index;
@@ -1408,10 +1425,12 @@ pos_type GuiInputMethod::charFormatIndex(pos_type pos) const {
 	return fmt_index;
 }
 
+
 QLocale & GuiInputMethod::locale() const
 {
 	return d->locale_;
 }
+
 
 // set absolute position of the cursor in the entire document
 void GuiInputMethod::setAbsolutePosition(Cursor & cur) const
@@ -1426,7 +1445,8 @@ void GuiInputMethod::setAbsolutePosition(Cursor & cur) const
 }
 
 int GuiInputMethod::horizontalAdvance(docstring const & s,
-                                      pos_type const char_format_index) {
+				      pos_type const char_format_index)
+{
 	QFontMetrics qfm(charFormat(char_format_index).font());
 #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
 	return qfm.horizontalAdvance(toqstr(s));
@@ -1435,7 +1455,9 @@ int GuiInputMethod::horizontalAdvance(docstring const & s,
 #endif
 }
 
-int GuiInputMethod::horizontalAdvance(docstring const & s) {
+
+int GuiInputMethod::horizontalAdvance(docstring const & s)
+{
 	QTextCharFormat qtcf;
 	conformToSurroundingFont(qtcf);
 	QFontMetrics qfm(qtcf.font());
@@ -1446,7 +1468,9 @@ int GuiInputMethod::horizontalAdvance(docstring const & s) {
 #endif
 }
 
-bool GuiInputMethod::canWrapAnywhere(pos_type const char_format_index) {
+
+bool GuiInputMethod::canWrapAnywhere(pos_type const char_format_index)
+{
 	QLocale locale =
 		charFormat(char_format_index).property(QMetaType::QLocale).toLocale();
 	// Languages wrappable at any place that use the input method
@@ -1459,7 +1483,6 @@ bool GuiInputMethod::canWrapAnywhere(pos_type const char_format_index) {
 }
 
 } // namespace frontend
-
 } // namespace lyx
 
 #include "moc_GuiInputMethod.cpp"
