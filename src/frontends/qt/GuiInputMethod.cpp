@@ -1196,7 +1196,8 @@ void GuiInputMethod::updateMetrics(Cursor * cur) {
 }
 
 
-ParagraphMetrics * GuiInputMethod::resetParagraphMetrics(Cursor * cur) {
+ParagraphMetrics * GuiInputMethod::resetParagraphMetrics(Cursor * cur)
+{
 	// paragraph metrics of the par we are in
 	ParagraphMetrics * pm_ptr =
 	    &cur->bv().textMetrics(cur->innerText()).parMetrics(cur->top().pit());
@@ -1214,7 +1215,8 @@ pos_type GuiInputMethod::getCaretPos(size_type preedit_length)
 
 
 GuiInputMethod::PreeditRow GuiInputMethod::getCaretInfo(
-        const bool real_boundary, const bool virtual_boundary){
+        const bool real_boundary, const bool virtual_boundary)
+{
 
 	const pos_type second_row_idx = d->cur_row_idx_ + 1 - virtual_boundary;
 
