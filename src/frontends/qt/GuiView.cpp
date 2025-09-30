@@ -22,6 +22,7 @@
 #include "FontLoader.h"
 #include "GuiApplication.h"
 #include "GuiClickableLabel.h"
+#include "GuiCollaborate.h"
 #include "GuiCompleter.h"
 #include "GuiFontMetrics.h"
 #include "GuiInputMethod.h"
@@ -2968,6 +2969,8 @@ bool GuiView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 	case LFUN_VC_COMPARE:
 		enable = doc_buffer && doc_buffer->lyxvc().prepareFileRevisionEnabled();
 		break;
+	case LFUN_GITHUB_AUTH:
+		break;
 
 	case LFUN_SERVER_GOTO_FILE_ROW:
 	case LFUN_LYX_ACTIVATE:
@@ -4356,6 +4359,13 @@ void GuiView::dispatchVC(FuncRequest const & cmd, DispatchResult & dr)
 }
 
 
+void GuiView::githubAuth()
+{
+	GuiCollaborate github;
+	github.githubAuth();
+}
+
+
 void GuiView::openChildDocument(string const & fname)
 {
 	LASSERT(documentBufferView(), return);
@@ -5307,6 +5317,10 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 		case LFUN_VC_COMMAND:
 		case LFUN_VC_COMPARE:
 			dispatchVC(cmd, dr);
+			break;
+
+		case LFUN_GITHUB_AUTH:
+			githubAuth();
 			break;
 
 		case LFUN_SERVER_GOTO_FILE_ROW:

@@ -528,6 +528,8 @@ private:
 	///
 	void dispatchToBufferView(FuncRequest const & cmd, DispatchResult & dr);
 	///
+	void githubAuth();
+	///
 	void showMessage();
 	/// Check whether any of the stats is enabled in status bar
 	bool statsEnabled() const;

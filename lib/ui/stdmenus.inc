@@ -33,6 +33,7 @@ Menuset
 		Submenu "Insert|I" "insert"
 		Submenu "Navigate|N" "navigate"
 		Submenu "Document|D" "document"
+		Submenu "Collaboration|C" "collaboration"
 		Submenu "Tools|T" "tools"
 		Submenu "Help|H" "help"
 	End
@@ -625,6 +626,13 @@ Menuset
 		Separator
 		Item "Navigate Back|B" "bookmark-goto 0"
 		Bookmarks
+	End
+
+#
+# COLLABORATION MENU
+#
+	Menu "collaboration"
+		Item "Authorize|A" "github-auth"
 	End
 
 #

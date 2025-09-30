@@ -4420,6 +4420,8 @@ void LyXAction::init()
  */
 		{ LFUN_VC_UNDO_LAST, "vc-undo-last", ReadOnly, System },
 
+        { LFUN_GITHUB_AUTH, "github-auth", NoBuffer, System },
+
 /*!
  * \var lyx::FuncCode lyx::LFUN_VIEW_CLOSE
  * \li Action: Close the current document work area.

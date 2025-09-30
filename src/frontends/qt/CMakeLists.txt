@@ -17,7 +17,7 @@ if (${LYX_DEBUG_SANITIZE} MATCHES "ADDRESS")
 endif()
 foreach(_base Dialog DialogFactory FindAndReplace FloatPlacement
 	GuiApplication GuiBibitem GuiBibtex GuiBox GuiBranch GuiBranches
-	GuiChanges GuiCharacter GuiCitation GuiClipboard GuiCommandBuffer GuiCompleter GuiCounter
+	GuiChanges GuiCharacter GuiCitation GuiClipboard GuiCollaborate GuiCommandBuffer GuiCompleter GuiCounter
 	GuiDelimiter GuiDocument GuiERT GuiExternal
 	GuiFontLoader GuiGraphics GuiHSpace GuiHyperlink GuiInclude GuiIndex GuiIndices GuiInfo GuiInputMethod
 	GuiLabel GuiLine GuiListings GuiLog GuiLyXFiles GuiNote GuiPainter GuiParagraph GuiPhantom GuiPrintNomencl GuiPrintindex
@@ -76,14 +76,14 @@ endif()
 set_target_properties(frontend_qt PROPERTIES FOLDER "applications/LyX" QT_NO_UNICODE_DEFINES TRUE)
 
 if(Qt6Core_FOUND)
-       qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg SvgWidgets)
+       qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg SvgWidgets Network NetworkAuth)
 elseif(Qt5Core_FOUND AND APPLE)
-       qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg MacExtras)
+       qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg Network NetworkAuth MacExtras)
 else()
        if (Qt5WinExtras_FOUND)
-           qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg WinExtras)
+           qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg Network NetworkAuth WinExtras)
        else()
-           qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg)
+           qt_use_modules(frontend_qt Core Gui Widgets Concurrent Svg Network NetworkAuth)
        endif()
 endif()
 target_link_libraries(frontend_qt

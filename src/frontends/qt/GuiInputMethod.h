@@ -120,7 +120,7 @@ Q_SIGNALS:
 	void inputMethodStateChanged(Qt::InputMethodQueries);
 	void cursorPositionChanged();
 
-public Q_SLOT:
+public Q_SLOTS:
 	/// Process incoming preedit string
 	void processPreedit(QInputMethodEvent* ev);
 	/// Process incoming input method query

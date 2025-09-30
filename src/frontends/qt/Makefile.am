@@ -71,6 +71,7 @@ SOURCEFILES = \
 	GuiCitation.cpp \
 	GuiClickableLabel.cpp \
 	GuiClipboard.cpp \
+	GuiCollaborate.cpp \
 	GuiCommandBuffer.cpp \
 	GuiCommandEdit.cpp \
 	GuiCompare.cpp \
@@ -194,6 +195,7 @@ MOCHEADER = \
 	GuiCitation.h \
 	GuiClickableLabel.h \
 	GuiClipboard.h \
+	GuiCollaborate.h \
 	GuiCommandBuffer.h \
 	GuiCommandEdit.h \
 	GuiCompare.h \
