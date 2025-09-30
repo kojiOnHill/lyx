@@ -31,6 +31,8 @@
 #include <QRestReply>
 #include <QUrl>
 
+#include <QSignalSpy>
+#include <QTest>
 
 using namespace std;
 
@@ -56,13 +58,14 @@ GuiCollaborate::~GuiCollaborate()
 }
 
 
-void GuiCollaborate::githubAuthOld()
+void GuiCollaborate::githubAuth()
 {
 	QString const auth_host = "github.com";
 	QString const auth_path = "/login/device/code";
 	QString const client_id = "Iv23liuXnC0RE3zhAaji";
 
-	QUrl auth_url(auth_host);
+	QUrl auth_url;
+	auth_url.setHost(auth_host);
 	auth_url.setScheme("https");
 	auth_url.setPath(auth_path);
 
@@ -76,15 +79,16 @@ void GuiCollaborate::githubAuthOld()
 	                }));
 
 	QNetworkAccessManager manager;
-	manager.connectToHostEncrypted(auth_host, 443, ssl_config);
+	// manager.connectToHostEncrypted(auth_host, 443, ssl_config);
 	// QRestAccessManager rest(&manager);
 
 	// LYXERR0("connectToHostEncrypted done");
 
 	QNetworkRequest request(auth_url);
 	// request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-	request.setAttribute(QNetworkRequest::SynchronousRequestAttribute, true);
+	// request.setAttribute(QNetworkRequest::SynchronousRequestAttribute, true);
 	// request.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
+	// request.setRawHeader(QByteArray("Accept"), QByteArray("application/xml"));
 
 	// const QByteArray data("client_id=Iv23liuXnC0RE3zhAaji&scope=identity");
 	// rest.post(request, data, this, [this](QRestReply &reply){
@@ -94,14 +98,15 @@ void GuiCollaborate::githubAuthOld()
 	// 	qDebug() << "rest replied";
 	// });
 
+	request.setTransferTimeout();
+
 	// Use the custom network access manager set up above
-	QOAuth2DeviceAuthorizationFlow *device_flow =
-	        new QOAuth2DeviceAuthorizationFlow(&manager);
-	// device_flow->setNetworkAccessManager(&manager);
-	// device_flow->prepareRequest(&request, QByteArray("POST"));
+	QOAuth2DeviceAuthorizationFlow *device_flow = new QOAuth2DeviceAuthorizationFlow;
+	device_flow->setNetworkAccessManager(&manager);
+	// device_flow->prepareRequest(&request, QByteArray("POST"), QByteArray("client_id=Iv23liuXnC0RE3zhAaji&scope=repo"));
 	device_flow->setAuthorizationUrl(auth_url);
 	device_flow->setTokenUrl(QUrl("https://github.com/login/oauth/access_token"));
-	device_flow->setRequestedScopeTokens({"user", "repo"}); // Example scopes
+	device_flow->setRequestedScopeTokens({"repo", "user"});
 	device_flow->setClientIdentifier(client_id);
 	device_flow->setContentType(QAbstractOAuth::ContentType::WwwFormUrlEncoded);
 
@@ -124,7 +129,7 @@ void GuiCollaborate::githubAuthOld()
 
 	connect(device_flow, &QAbstractOAuth::requestFailed,
 	        this, [=](const QAbstractOAuth::Error error){
-		qDebug() << "request failure received: " << (int)error;
+		qDebug() << "Request failure received: Error code = " << (int)error;
 	});
 
 	connect(device_flow, &QAbstractOAuth2::authorizationCallbackReceived,
@@ -139,12 +144,6 @@ void GuiCollaborate::githubAuthOld()
 	connect(device_flow, &QAbstractOAuth2::stateChanged,
 	        this, [=](const QString &state){qDebug() << state;});
 
-	connect(device_flow, &QAbstractOAuth::requestFailed, this, [=](QAbstractOAuth::Error error) {
-	    Q_UNUSED(error);
-	    // Handle error
-		qDebug() << "Error occured";
-	});
-
 	connect(device_flow, &QAbstractOAuth2::serverReportedErrorOccurred, this,
 	    [=](const QString &error, const QString &errorDescription, const QUrl &uri) {
 	        // Check server reported error details if needed
@@ -157,13 +156,16 @@ void GuiCollaborate::githubAuthOld()
 
 	connect(device_flow, &QAbstractOAuth::granted, this, &GuiCollaborate::onGranted);
 
+	LYXERR0("Authorization URL = " << device_flow->authorizationUrl().toString());
+	LYXERR0("Client Identifier = " << device_flow->clientIdentifier());
+	LYXERR0("Response type   = " << device_flow->responseType());
 	device_flow->grant();
 
-	LYXERR0("device_flow grant done");
+	QSignalSpy spy(device_flow, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode);
 
-	LYXERR0("content type = " << (int)device_flow->contentType());
-	LYXERR0("status = " << (int)device_flow->status());
-	LYXERR0("received user code = " << device_flow->userCode());
+	spy.wait(30000);
+
+	LYXERR0("user code = " << device_flow->userCode());
 
 	// QUrl url;
 	// url.setScheme("https");
@@ -239,7 +241,7 @@ void GuiCollaborate::onFinished(QNetworkReply* reply)
 	LYXERR0(reply->readAll().toStdString());
 }
 
-void GuiCollaborate::githubAuth()
+void GuiCollaborate::githubAuthOld()
 {
 	// requires Qt 6.9 or later
 
@@ -264,7 +266,7 @@ void GuiCollaborate::githubAuth()
 	                }));
 
 	QNetworkAccessManager * manager = new QNetworkAccessManager;
-	manager->connectToHostEncrypted(auth_host, 443, ssl_config);
+	// manager->connectToHostEncrypted(auth_host, 443, ssl_config);
 	// QNetworkRequest request(QUrl("https://api.github.com"));
 	// request.setRawHeader(QByteArray("Authorization"), QByteArray("token OAUTH-TOKEN"));
 	// d->reply_= manager->get(request);
@@ -291,11 +293,13 @@ void GuiCollaborate::githubAuth()
 	// d->reply_->startTimer(30s);
 	// d->reply_->deleteLater();
 
-	LYXERR0("Emitting socket started connecting signal");
-	Q_EMIT d->reply_->socketStartedConnecting();
-	LYXERR0("Doing Q_EMIT");
-	Q_EMIT test();
+	// QSignalSpy spy(d->reply_, &QNetworkReply::socketStartedConnecting);
+	QSignalSpy spy(d->reply_, &QNetworkReply::errorOccurred);
 
+	spy.wait(30000);
+
+	LYXERR0("Is finished? " << d->reply_->isFinished() << " count: " << spy.count());
+	LYXERR0("Is Running?  " << d->reply_->isRunning());
 	// // QUrl authorizationUrl("https://github.com/login/oauth/authorize");
 	// // QUrl accessTokenUrl("https://github.com/login/oauth/access_token");
 	// QUrl authorizationUrl("https://github.com/login/oauth/authorize?scope=repo&client_id=" + client_id);
