@@ -10,13 +10,17 @@
 
 #include <QtCore/qcoreevent.h>
 #include <QtCore/qeventloop.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qmessagebox.h>
 #include <config.h>
 
 #include "GuiCollaborate.h"
+#include "qt_helpers.h"
 #include "support/debug.h"
+#include "support/Package.h"
 #include "support/qstring_helpers.h"
 
-#include <QHttpMultiPart>
+#include <QHttp2Configuration>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkRequestFactory>
@@ -24,12 +28,9 @@
 
 #include <QDesktopServices>
 #include <QOAuth2AuthorizationCodeFlow>
-#include <QOAuthUriSchemereplyHandler>
-
 #include <QOAuth2DeviceAuthorizationFlow>
-#include <QRestAccessManager>
-#include <QRestReply>
 #include <QUrl>
+#include <QSystemTrayIcon>
 
 #include <QSignalSpy>
 #include <QTest>
@@ -41,6 +42,14 @@ namespace frontend {
 
 struct GuiCollaborate::Private
 {
+	// Github information
+	QString const auth_scheme_ = "https";
+	QString const auth_host_ = "github.com";
+	QString const auth_path_ = "/login/device/code";
+	QString const client_id_ = "Iv23liuXnC0RE3zhAaji";
+	QSet<QByteArray> const scope_ = {"repo", "user"};
+	QUrl const token_url_ = QUrl("https://github.com/login/oauth/access_token");
+
 	QNetworkReply * reply_ = nullptr;
 };
 
@@ -60,53 +69,33 @@ GuiCollaborate::~GuiCollaborate()
 
 void GuiCollaborate::githubAuth()
 {
-	QString const auth_host = "github.com";
-	QString const auth_path = "/login/device/code";
-	QString const client_id = "Iv23liuXnC0RE3zhAaji";
-
 	QUrl auth_url;
-	auth_url.setHost(auth_host);
-	auth_url.setScheme("https");
-	auth_url.setPath(auth_path);
+	auth_url.setHost(d->auth_host_);
+	auth_url.setScheme(d->auth_scheme_);
+	auth_url.setPath(d->auth_path_);
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
-	// Allow HTTP/2 preconnection
-	QSslConfiguration ssl_config;
-	ssl_config.setAllowedNextProtocols(
-	            QList<QByteArray>(
-	                {
-	                    QSslConfiguration::ALPNProtocolHTTP2,
-	                    QSslConfiguration::NextProtocolHttp1_1
-	                }));
-
 	QNetworkRequest request(auth_url);
 	request.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
 	request.setTransferTimeout();
+	request.setAttribute(QNetworkRequest::Http2AllowedAttribute, QVariant(true));
 
 	QOAuth2DeviceAuthorizationFlow *device_flow = new QOAuth2DeviceAuthorizationFlow;
 	device_flow->setAuthorizationUrl(auth_url);
-	device_flow->setTokenUrl(QUrl("https://github.com/login/oauth/access_token"));
-	device_flow->setRequestedScopeTokens({"repo", "user"});
-	device_flow->setClientIdentifier(client_id);
+	device_flow->setTokenUrl(d->token_url_);
+	device_flow->setRequestedScopeTokens(d->scope_);
+	device_flow->setClientIdentifier(d->client_id_);
 	device_flow->setContentType(QAbstractOAuth::ContentType::WwwFormUrlEncoded);
 	// Need to ask Github to respond in JSON format
 	device_flow->setNetworkRequestModifier(this, [](QNetworkRequest& req, QAbstractOAuth::Stage stage){
-		if (stage == QAbstractOAuth::Stage::RequestingAuthorization) {
+		// if (stage == QAbstractOAuth::Stage::RequestingAuthorization) {
 			req.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
-			req.setTransferTimeout();}
+			req.setTransferTimeout();
+		// }
 	});
 
 	connect(device_flow, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode,
-	        this, [=](const QUrl &verificationUrl, const QString &userCode, const QUrl &completeVerificationUrl)
-	{
-		if(completeVerificationUrl.isValid()) {
-			QDesktopServices::openUrl(completeVerificationUrl);
-			qDebug() << "Complete verification uri:" << completeVerificationUrl;
-		} else {
-			QDesktopServices::openUrl(verificationUrl);
-			qDebug() << "Verification uri and usercode:" << verificationUrl << userCode;
-		}
-	} );
+	        this, &GuiCollaborate::onAskedToAuthorize);
 
 	connect(device_flow, &QAbstractOAuth::requestFailed,
 	        this, [=](const QAbstractOAuth::Error error){
@@ -142,57 +131,7 @@ void GuiCollaborate::githubAuth()
 	QSignalSpy spy(device_flow, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode);
 
 	spy.wait(30000);
-
-	LYXERR0("user code = " << device_flow->userCode());
 #endif // QT_VERSION
-
-	// QUrl url;
-	// url.setScheme("https");
-	// url.setAuthority("github.com");
-	// url.setPath("/login/device/code");
-
-	// QNetworkAccessManager * manager = new QNetworkAccessManager(this);
-	// connect(manager, &QNetworkAccessManager::finished, this, &GuiCollaborate::onFinished);
-
-	// // QNetworkRequest request(QUrl("https://github.com/login/device/code"));
-	// QNetworkRequest request(url);
-	// request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-	// request.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
-	// request.setAttribute(QNetworkRequest::SynchronousRequestAttribute, true);
-	// QUrlQuery urlQuery;
-	// urlQuery.addQueryItem("client_id", "Iv23liuXnC0RE3zhAaji");
-	// urlQuery.addQueryItem("scope", "repo");
-	// // const QByteArray data("client_id=Iv23liuXnC0RE3zhAaji&scope=identity");
-
-	// QUrl params;
-	// params.setQuery(urlQuery);
-
-	// QHttpMultiPart *multi_part = new QHttpMultiPart(QHttpMultiPart::FormDataType);
-	// QHttpPart text_part;
-	// // Commenting out the below line causes "500 Internal Server Error"
-	// // text_part.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/x-www-form-urlencoded"));
-	// text_part.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"text\""));
-
-	// // text_part.setBody(params.toEncoded());
-	// text_part.setBody(QByteArray("client_id=Iv23liuXnC0RE3zhAaji&scope=repo"));
-	// multi_part->append(text_part);
-	// LYXERR0("dest URL = " << fromqstr(request.url().toDisplayString()));
-
-	// manager->connectToHostEncrypted("https://github.com");
-	// QNetworkReply* reply = manager->post(request, multi_part);
-	// // QNetworkReply* reply = manager->post(request, params.toEncoded());
-	// int v = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-	// LYXERR0("return to sent post: " << v);
-
-	// QEventLoop eventLoop;
-	// connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
-	// eventLoop.exec();
-
-	// auto data = reply->readAll();
-	// multi_part->setParent(reply);
-	// reply->deleteLater();
-	// LYXERR0("received data = " << data.toStdString());
-	// connect(reply, &QNetworkReply::readyRead, this, &GuiCollaborate::onReadyRead);
 }
 
 
@@ -219,6 +158,51 @@ void GuiCollaborate::onFinished(QNetworkReply* reply)
 {
 	LYXERR0(reply->readAll().toStdString());
 }
+
+void GuiCollaborate::onAskedToAuthorize(QUrl const &verification_url,
+                                        QString const &user_code,
+                                        QUrl const &complete_verification_url)
+{
+	if(complete_verification_url.isValid()) {
+		QDesktopServices::openUrl(complete_verification_url);
+		qDebug() << "Complete verification uri:" << complete_verification_url;
+	} else {
+		QSystemTrayIcon tray;
+		QPixmap pix_icon(toqstr(support::package().system_support().absFileName() + "images/lyx.png"));
+		LYXERR0("is null? " << pix_icon.isNull());
+		QIcon lyx_icon(pix_icon);
+		QMenu menu;
+		tray.setIcon(lyx_icon);
+		tray.setToolTip("This is a tooltip");
+		tray.setContextMenu(&menu);
+		if (tray.supportsMessages()) {
+			tray.showMessage("Code", user_code, QSystemTrayIcon::Information);
+		}
+		tray.show();
+
+		QMessageBox msgBox;
+		msgBox.setIcon(QMessageBox::Information);
+		msgBox.setText(qt_("Jumping to Device Activation Page"));
+		msgBox.setInformativeText(qt_("User code = " + user_code));
+		msgBox.setStandardButtons(QMessageBox::Ok);
+		msgBox.setDefaultButton(QMessageBox::Ok);
+		msgBox.exec();
+
+		QDesktopServices::openUrl(verification_url);
+
+		QMessageBox msgBox2;
+		msgBox2.setIcon(QMessageBox::Information);
+		msgBox2.setText(qt_("Enter the following code"));
+		msgBox2.setInformativeText(qt_("User code = " + user_code));
+		msgBox2.setStandardButtons(QMessageBox::Ok);
+		msgBox2.setDefaultButton(QMessageBox::Ok);
+		msgBox2.exec();
+
+		qDebug() << "Verification uri and usercode:" << verification_url <<
+		            user_code;
+	}
+}
+
 
 void GuiCollaborate::githubAuthOld()
 {

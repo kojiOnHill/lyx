@@ -29,11 +29,12 @@ public:
 	void githubAuth();
 	void githubAuthOld();
 
-public Q_SLOTS:
+private Q_SLOTS:
 	void onGranted();
 	void onReadyRead();
 	void onFinished(QNetworkReply*);
 	void onTested();
+	void onAskedToAuthorize(const QUrl &, const QString &, const QUrl &);
 
 protected:
 	void timerEvent(QTimerEvent *event) override;
