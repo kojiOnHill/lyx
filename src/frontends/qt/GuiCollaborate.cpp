@@ -69,6 +69,7 @@ void GuiCollaborate::githubAuth()
 	auth_url.setScheme("https");
 	auth_url.setPath(auth_path);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
 	// Allow HTTP/2 preconnection
 	QSslConfiguration ssl_config;
 	ssl_config.setAllowedNextProtocols(
@@ -78,42 +79,22 @@ void GuiCollaborate::githubAuth()
 	                    QSslConfiguration::NextProtocolHttp1_1
 	                }));
 
-	QNetworkAccessManager manager;
-	// manager.connectToHostEncrypted(auth_host, 443, ssl_config);
-	// QRestAccessManager rest(&manager);
-
-	// LYXERR0("connectToHostEncrypted done");
-
 	QNetworkRequest request(auth_url);
-	// request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-	// request.setAttribute(QNetworkRequest::SynchronousRequestAttribute, true);
-	// request.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
-	// request.setRawHeader(QByteArray("Accept"), QByteArray("application/xml"));
-
-	// const QByteArray data("client_id=Iv23liuXnC0RE3zhAaji&scope=identity");
-	// rest.post(request, data, this, [this](QRestReply &reply){
-	// 	if (!reply.isSuccess()) {
-	// 		qDebug() << "not success";
-	// 	}
-	// 	qDebug() << "rest replied";
-	// });
-
+	request.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
 	request.setTransferTimeout();
 
-	// Use the custom network access manager set up above
 	QOAuth2DeviceAuthorizationFlow *device_flow = new QOAuth2DeviceAuthorizationFlow;
-	device_flow->setNetworkAccessManager(&manager);
-	// device_flow->prepareRequest(&request, QByteArray("POST"), QByteArray("client_id=Iv23liuXnC0RE3zhAaji&scope=repo"));
 	device_flow->setAuthorizationUrl(auth_url);
 	device_flow->setTokenUrl(QUrl("https://github.com/login/oauth/access_token"));
 	device_flow->setRequestedScopeTokens({"repo", "user"});
 	device_flow->setClientIdentifier(client_id);
 	device_flow->setContentType(QAbstractOAuth::ContentType::WwwFormUrlEncoded);
-
-	// If your app requires a client secret for the device flow, set it here:
-	// device_flow->setClientIdentifierSharedKey("YOUR_GITHUB_CLIENT_SECRET");
-
-	// connect(&manager, &QNetworkAccessManager::destroyed, &rest, &QRestAccessManager::deleteLater);
+	// Need to ask Github to respond in JSON format
+	device_flow->setNetworkRequestModifier(this, [](QNetworkRequest& req, QAbstractOAuth::Stage stage){
+		if (stage == QAbstractOAuth::Stage::RequestingAuthorization) {
+			req.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
+			req.setTransferTimeout();}
+	});
 
 	connect(device_flow, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode,
 	        this, [=](const QUrl &verificationUrl, const QString &userCode, const QUrl &completeVerificationUrl)
@@ -156,9 +137,6 @@ void GuiCollaborate::githubAuth()
 
 	connect(device_flow, &QAbstractOAuth::granted, this, &GuiCollaborate::onGranted);
 
-	LYXERR0("Authorization URL = " << device_flow->authorizationUrl().toString());
-	LYXERR0("Client Identifier = " << device_flow->clientIdentifier());
-	LYXERR0("Response type   = " << device_flow->responseType());
 	device_flow->grant();
 
 	QSignalSpy spy(device_flow, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode);
@@ -166,6 +144,7 @@ void GuiCollaborate::githubAuth()
 	spy.wait(30000);
 
 	LYXERR0("user code = " << device_flow->userCode());
+#endif // QT_VERSION
 
 	// QUrl url;
 	// url.setScheme("https");
