@@ -69,6 +69,10 @@ GuiCollaborate::~GuiCollaborate()
 
 void GuiCollaborate::githubAuth()
 {
+	// See "OAuth 2.0 Device Authorization Grant" at
+	//     https://datatracker.ietf.org/doc/html/rfc8628
+	// for the grant procedure
+
 	QUrl auth_url;
 	auth_url.setHost(d->auth_host_);
 	auth_url.setScheme(d->auth_scheme_);
@@ -167,6 +171,13 @@ void GuiCollaborate::onAskedToAuthorize(QUrl const &verification_url,
 		QDesktopServices::openUrl(complete_verification_url);
 		qDebug() << "Complete verification uri:" << complete_verification_url;
 	} else {
+		// Note for macOS:
+		// - The Growl notification system must be installed for
+		//   QSystemTrayIcon::showMessage() to display messages (2025/10/1)
+		//       (https://doc.qt.io/qt-6/qtwidgets-desktop-systray-example.html)
+		// - On the other hand, Growl does not support Apple Silicon and also
+		//   has ceased its development
+		//       (https://growl.github.io/growl/)
 		QSystemTrayIcon tray;
 		QPixmap pix_icon(toqstr(support::package().system_support().absFileName() + "images/lyx.png"));
 		LYXERR0("is null? " << pix_icon.isNull());
