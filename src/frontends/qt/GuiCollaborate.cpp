@@ -10,6 +10,7 @@
 
 #include <QtCore/qcoreevent.h>
 #include <QtCore/qeventloop.h>
+#include <QtCore/qtimer.h>
 #include <QtGui/qclipboard.h>
 #include <QtWidgets/qmainwindow.h>
 #include <QtWidgets/qmenu.h>
@@ -59,6 +60,8 @@ struct GuiCollaborate::Private
 	QOAuth2DeviceAuthorizationFlow * device_flow_ =
 	        new QOAuth2DeviceAuthorizationFlow(manager_);
 	QNetworkReply * reply_ = nullptr;
+
+	bool granted_ = false;
 };
 
 
@@ -73,7 +76,7 @@ GuiCollaborate::~GuiCollaborate()
 }
 
 
-void GuiCollaborate::githubAuth()
+bool GuiCollaborate::githubAuth()
 {
 	// See "OAuth 2.0 Device Authorization Grant" at
 	//     https://datatracker.ietf.org/doc/html/rfc8628
@@ -133,20 +136,32 @@ void GuiCollaborate::githubAuth()
 	        this, [=](const QString &token){LYXERR0("Token changed. token = " << token);});
 	connect(d->device_flow_, &QAbstractOAuth::granted, this, &GuiCollaborate::onGranted);
 
-	// QEventLoop loop;
-	// connect(d->device_flow_, &QAbstractOAuth::granted, &loop, &QEventLoop::quit);
-	// connect(d->device_flow_, &QAbstractOAuth::requestFailed, &loop, &QEventLoop::quit);
-	// loop.exec();
+	QEventLoop loop;
+	QTimer timer;
+	timer.setSingleShot(true);
+	connect(d->device_flow_, &QAbstractOAuth::granted, &loop, &QEventLoop::quit);
+	connect(d->device_flow_, &QAbstractOAuth::requestFailed, &loop, &QEventLoop::quit);
+	timer.start(300000);
 
+	// d->device_flow_->setAutoRefresh(true);
 	d->device_flow_->grant();
+	loop.exec();
 
-	d->device_flow_->setAutoRefresh(true);
+	if (timer.isActive())
+		return true;
+	else {
+		QMessageBox msgBox;
+		msgBox.setIcon(QMessageBox::Critical);
+		msgBox.setText("Connection to the authorization server could not be established.");
+		msgBox.setStandardButtons(QMessageBox::Ok);
+		return false;
+	}
 
-	QSignalSpy spy(d->device_flow_, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode);
-	QSignalSpy callback_spy(d->device_flow_, &QOAuth2DeviceAuthorizationFlow::authorizationCallbackReceived);
+	// QSignalSpy spy(d->device_flow_, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode);
+	// QSignalSpy callback_spy(d->device_flow_, &QOAuth2DeviceAuthorizationFlow::authorizationCallbackReceived);
 
-	spy.wait(30000);
-	callback_spy.wait(120000);
+	// spy.wait(30000);
+	// callback_spy.wait(120000);
 #endif // QT_VERSION
 }
 
@@ -162,6 +177,7 @@ void GuiCollaborate::onGranted()
 	d->api_.setCommonHeaders(headers);
 	LYXERR0("Common authorization header is created with value: " <<
 	        d->api_.bearerToken().toStdString());
+	d->granted_ = true;
 }
 
 void GuiCollaborate::onTested()
@@ -235,6 +251,8 @@ void GuiCollaborate::onAskedToAuthorize(QUrl const &verification_url,
 //
 void GuiCollaborate::createRepository()
 {
+	if (d->api_.bearerToken().isEmpty())
+		githubAuth();
 	QNetworkRequest request(d->api_.createRequest("/repos"));
 	QUrlQuery post_data;
 	LYXERR0("Common headers set: ");
@@ -245,10 +263,29 @@ void GuiCollaborate::createRepository()
 	for (const auto &header : request.headers().toListOfPairs())
 		LYXERR0(header.first.toStdString() << ": " <<
 		        header.second.toStdString());
-	post_data.addQueryItem("name", "Test repository");
+	post_data.addQueryItem("name", "Test");
 	post_data.addQueryItem("auto_init", "true");
 	post_data.addQueryItem("private", "true");
-	d->manager_->post(request, post_data.query(QUrl::FullyEncoded).toUtf8());
+
+	QEventLoop loop;
+	QTimer timer;
+	timer.setSingleShot(true);
+
+	QNetworkReply * reply = d->manager_->post(request, post_data.query(QUrl::FullyEncoded).toUtf8());
+	connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+	connect(d->manager_, &QNetworkAccessManager::authenticationRequired, this, [this](){
+		LYXERR0("Authentication is required before POST. Authenticating...");
+		githubAuth();
+		createRepository();
+	});
+	connect(reply, &QNetworkReply::errorOccurred, this, [](){
+		LYXERR0("POST error occurred in createRepository().");
+	});
+	timer.start(300000);
+
+	// d->device_flow_->setAutoRefresh(true);
+	loop.exec();
+
 }
 
 

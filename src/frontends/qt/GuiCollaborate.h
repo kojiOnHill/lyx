@@ -26,7 +26,7 @@ class GuiCollaborate : public QObject
 public:
 	explicit GuiCollaborate(QObject* parent = 0);
 	~GuiCollaborate();
-	void githubAuth();
+	bool githubAuth();
 	void githubAuthOld();
 	void createRepository();
 	enum GIT {
