@@ -633,6 +633,7 @@ Menuset
 #
 	Menu "collaboration"
 		Item "Authorize|A" "github-auth"
+		Item "Create a Repository|R" "github-create-repo"
 	End
 
 #

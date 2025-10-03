@@ -28,6 +28,11 @@ public:
 	~GuiCollaborate();
 	void githubAuth();
 	void githubAuthOld();
+	void createRepository();
+	enum GIT {
+		auth,
+		createRepo
+	};
 
 private Q_SLOTS:
 	void onGranted();

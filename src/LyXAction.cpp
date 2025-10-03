@@ -4422,6 +4422,8 @@ void LyXAction::init()
 
         { LFUN_GITHUB_AUTH, "github-auth", NoBuffer, System },
 
+        { LFUN_GITHUB_CREATE_REPO, "github-create-repo", NoBuffer, System },
+
 /*!
  * \var lyx::FuncCode lyx::LFUN_VIEW_CLOSE
  * \li Action: Close the current document work area.

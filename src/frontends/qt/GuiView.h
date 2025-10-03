@@ -16,6 +16,7 @@
 #define GUI_VIEW_H
 
 #include "frontends/Delegates.h"
+#include "frontends/qt/GuiCollaborate.h"
 
 #include <QMainWindow>
 #include <QLabel>
@@ -528,7 +529,7 @@ private:
 	///
 	void dispatchToBufferView(FuncRequest const & cmd, DispatchResult & dr);
 	///
-	void githubAuth();
+	void github(GuiCollaborate::GIT command);
 	///
 	void showMessage();
 	/// Check whether any of the stats is enabled in status bar

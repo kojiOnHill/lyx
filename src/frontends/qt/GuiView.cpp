@@ -22,7 +22,6 @@
 #include "FontLoader.h"
 #include "GuiApplication.h"
 #include "GuiClickableLabel.h"
-#include "GuiCollaborate.h"
 #include "GuiCompleter.h"
 #include "GuiFontMetrics.h"
 #include "GuiInputMethod.h"
@@ -2970,6 +2969,7 @@ bool GuiView::getStatus(FuncRequest const & cmd, FuncStatus & flag)
 		enable = doc_buffer && doc_buffer->lyxvc().prepareFileRevisionEnabled();
 		break;
 	case LFUN_GITHUB_AUTH:
+	case LFUN_GITHUB_CREATE_REPO:
 		break;
 
 	case LFUN_SERVER_GOTO_FILE_ROW:
@@ -4359,10 +4359,13 @@ void GuiView::dispatchVC(FuncRequest const & cmd, DispatchResult & dr)
 }
 
 
-void GuiView::githubAuth()
+void GuiView::github(GuiCollaborate::GIT command)
 {
 	GuiCollaborate github;
-	github.githubAuth();
+	if (command == GuiCollaborate::GIT::auth)
+		github.githubAuth();
+	else if (command == GuiCollaborate::GIT::createRepo)
+		github.createRepository();
 }
 
 
@@ -5320,7 +5323,11 @@ void GuiView::dispatch(FuncRequest const & cmd, DispatchResult & dr)
 			break;
 
 		case LFUN_GITHUB_AUTH:
-			githubAuth();
+			github(GuiCollaborate::GIT::auth);
+			break;
+
+		case LFUN_GITHUB_CREATE_REPO:
+			github(GuiCollaborate::GIT::createRepo);
 			break;
 
 		case LFUN_SERVER_GOTO_FILE_ROW:
