@@ -31,7 +31,9 @@
 #include <QOAuth2DeviceAuthorizationFlow>
 #include <QUrl>
 #include <QSystemTrayIcon>
+#include <QTimerEvent>
 
+#include <QAbstractOAuthReplyHandler>
 #include <QSignalSpy>
 #include <QTest>
 
@@ -50,14 +52,13 @@ struct GuiCollaborate::Private
 	QSet<QByteArray> const scope_ = {"repo", "user"};
 	QUrl const token_url_ = QUrl("https://github.com/login/oauth/access_token");
 
+	QOAuth2DeviceAuthorizationFlow * device_flow_ = new QOAuth2DeviceAuthorizationFlow;
 	QNetworkReply * reply_ = nullptr;
 };
 
 
 GuiCollaborate::GuiCollaborate(QObject* parent): QObject(parent), d(new Private)
 {
-	connect(this, &GuiCollaborate::test, this, &GuiCollaborate::onTested);
-	// connect(this, SIGNAL(test()), this, SLOT(onTested()));
 }
 
 
@@ -72,7 +73,6 @@ void GuiCollaborate::githubAuth()
 	// See "OAuth 2.0 Device Authorization Grant" at
 	//     https://datatracker.ietf.org/doc/html/rfc8628
 	// for the grant procedure
-
 	QUrl auth_url;
 	auth_url.setHost(d->auth_host_);
 	auth_url.setScheme(d->auth_scheme_);
@@ -84,41 +84,32 @@ void GuiCollaborate::githubAuth()
 	request.setTransferTimeout();
 	request.setAttribute(QNetworkRequest::Http2AllowedAttribute, QVariant(true));
 
-	QOAuth2DeviceAuthorizationFlow *device_flow = new QOAuth2DeviceAuthorizationFlow;
-	device_flow->setAuthorizationUrl(auth_url);
-	device_flow->setTokenUrl(d->token_url_);
-	device_flow->setRequestedScopeTokens(d->scope_);
-	device_flow->setClientIdentifier(d->client_id_);
-	device_flow->setContentType(QAbstractOAuth::ContentType::WwwFormUrlEncoded);
+	d->device_flow_->setAuthorizationUrl(auth_url);
+	d->device_flow_->setTokenUrl(d->token_url_);
+	d->device_flow_->setRequestedScopeTokens(d->scope_);
+	d->device_flow_->setClientIdentifier(d->client_id_);
+	d->device_flow_->setContentType(QAbstractOAuth::ContentType::WwwFormUrlEncoded);
 	// Need to ask Github to respond in JSON format
-	device_flow->setNetworkRequestModifier(this, [](QNetworkRequest& req, QAbstractOAuth::Stage stage){
-		// if (stage == QAbstractOAuth::Stage::RequestingAuthorization) {
+	d->device_flow_->setNetworkRequestModifier(this, [this](QNetworkRequest& req, QAbstractOAuth::Stage stage){
+		// Q_UNUSED(stage)
+		if (stage == QAbstractOAuth::Stage::RequestingAuthorization)
 			req.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
-			req.setTransferTimeout();
-		// }
+		else
+			req.setRawHeader(QByteArray("Accept"), QByteArray("application/json"));
+		req.setTransferTimeout();
+		if (stage == QAbstractOAuth::Stage::RequestingAccessToken)
+			qDebug() << "Requesting access token";
+		if (stage == QAbstractOAuth::Stage::RefreshingAccessToken)
+			qDebug() << "Refreshing access token, cur token = " << d->device_flow_->token();
 	});
 
-	connect(device_flow, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode,
+	connect(d->device_flow_, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode,
 	        this, &GuiCollaborate::onAskedToAuthorize);
-
-	connect(device_flow, &QAbstractOAuth::requestFailed,
+	connect(d->device_flow_, &QAbstractOAuth::requestFailed,
 	        this, [=](const QAbstractOAuth::Error error){
 		qDebug() << "Request failure received: Error code = " << (int)error;
 	});
-
-	connect(device_flow, &QAbstractOAuth2::authorizationCallbackReceived,
-	        this, [=](const QVariantMap &data){
-		Q_UNUSED(data);
-		qDebug() << "callback received";
-	});
-
-	connect(device_flow, &QAbstractOAuth2::accessTokenAboutToExpire,
-	        this, [=](){qDebug() << "access token about to expire";});
-
-	connect(device_flow, &QAbstractOAuth2::stateChanged,
-	        this, [=](const QString &state){qDebug() << state;});
-
-	connect(device_flow, &QAbstractOAuth2::serverReportedErrorOccurred, this,
+	connect(d->device_flow_, &QAbstractOAuth2::serverReportedErrorOccurred, this,
 	    [=](const QString &error, const QString &errorDescription, const QUrl &uri) {
 	        // Check server reported error details if needed
 	        Q_UNUSED(error);
@@ -127,25 +118,44 @@ void GuiCollaborate::githubAuth()
 			qDebug() << "Server error occured";
 	    }
 	);
+	connect(d->device_flow_, &QAbstractOAuth2::authorizationCallbackReceived,
+	        this, [=](const QVariantMap &data){
+		Q_UNUSED(data);
+		qDebug() << "callback received";
+	});
+	connect(d->device_flow_, &QAbstractOAuth2::accessTokenAboutToExpire,
+	        this, [=](){qDebug() << "access token about to expire";});
+	connect(d->device_flow_, &QAbstractOAuth2::stateChanged,
+	        this, [=](const QString &state){qDebug() << "State changed. state = " << state;});
+	connect(d->device_flow_, &QAbstractOAuth2::tokenChanged,
+	        this, [=](const QString &token){qDebug() << "Token changed. token = " << token;});
+	connect(d->device_flow_, &QAbstractOAuth::granted, this, &GuiCollaborate::onGranted);
 
-	connect(device_flow, &QAbstractOAuth::granted, this, &GuiCollaborate::onGranted);
+	// QEventLoop loop;
+	// connect(d->device_flow_, &QAbstractOAuth::granted, &loop, &QEventLoop::quit);
+	// connect(d->device_flow_, &QAbstractOAuth::requestFailed, &loop, &QEventLoop::quit);
+	// loop.exec();
 
-	device_flow->grant();
+	d->device_flow_->grant();
 
-	QSignalSpy spy(device_flow, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode);
+	d->device_flow_->setAutoRefresh(true);
+
+	QSignalSpy spy(d->device_flow_, &QOAuth2DeviceAuthorizationFlow::authorizeWithUserCode);
+	QSignalSpy callback_spy(d->device_flow_, &QOAuth2DeviceAuthorizationFlow::authorizationCallbackReceived);
 
 	spy.wait(30000);
+	callback_spy.wait(120000);
 #endif // QT_VERSION
 }
 
 
 void GuiCollaborate::onGranted()
 {
-	// QNetworkRequestFactory api{{device_flow->tokenUrl()}};
+	QNetworkRequestFactory api{{d->device_flow_->tokenUrl()}};
 
 	LYXERR0("Granted!");
-	// api.setBearerToken(device_flow->token().toLatin1());
-	// qDebug() << "obtained token:" << device_flow->token().toStdString();
+	api.setBearerToken(d->device_flow_->token().toLatin1());
+	qDebug() << "obtained token:" << d->device_flow_->token().toStdString();
 }
 
 void GuiCollaborate::onTested()
@@ -178,6 +188,7 @@ void GuiCollaborate::onAskedToAuthorize(QUrl const &verification_url,
 		// - On the other hand, Growl does not support Apple Silicon and also
 		//   has ceased its development
 		//       (https://growl.github.io/growl/)
+#ifndef Q_OS_MACOS
 		QSystemTrayIcon tray;
 		QPixmap pix_icon(toqstr(support::package().system_support().absFileName() + "images/lyx.png"));
 		LYXERR0("is null? " << pix_icon.isNull());
@@ -190,7 +201,7 @@ void GuiCollaborate::onAskedToAuthorize(QUrl const &verification_url,
 			tray.showMessage("Code", user_code, QSystemTrayIcon::Information);
 		}
 		tray.show();
-
+#endif
 		QMessageBox msgBox;
 		msgBox.setIcon(QMessageBox::Information);
 		msgBox.setText(qt_("Jumping to Device Activation Page"));
